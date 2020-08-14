@@ -1,0 +1,1136 @@
+\documentclass[14pt]{extarticle}
+\usepackage{common}
+\begin{document}
+\subsection*{\il{T-}matrix}
+It is defined as
+\beq
+V\psi = T\phi
+\eeq
+where \il{\psi} is the total scattered wavefunction and \il{\phi} is the incoming wavefunction. They satisfy the Schrodinger equations
+\begin{gather}
+H_0 \phi = E \phi\\
+(H_0 + V)\psi = E \psi
+\end{gather}
+Since we are assuming elastic scattering, both have the same energy. The Schrodinger equation for \il{\psi} can be rearranged into
+\beq[lse]
+\psi = \phi + G_0V\psi
+\eeq
+where \il{G_0^{-1} = E - H_0}. This is also called the Lippmann-Schwinger equation. Using the definition of \il{T} gives
+\beq
+\psi &= \phi + G_0 T \phi \\
+\implies \psi &=(1+G_0T) \phi
+\eeq
+Eq.~\ref{lse} can also be written as 
+\beq
+\psi = (1- G_0V)^{-1} \phi
+\eeq
+Comparing the last two equations gives
+\beq
+1 &= (1-G_0 V)(1+G_0 T) \\
+\implies T &= V +VG_0 T
+\eeq
+The last equation allows us to perturbatively expand the \il{T-} matrix.
+\beq
+T = V + VG_0V + VG_0VG_0V + ...
+\eeq
+From scattering theory, we can write
+\beq
+\psi = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + f \fr{e^{ikr}}{r}}
+\eeq
+where the wave amplitude \il{f(k^\prime,k) \sim \bra{k^\prime} V \ket{\psi}}. Using the definition of \il{T}, we get
+\beq
+f(k^\prime,k) \sim \bra{k^\prime} T \ket{k}
+\eeq
+For a spherically symmetric scatterer, the transition happens independently along each of the angular momenta. For a phase shift of \il{\delta_l} along the orbital quantum number \il{l},
+\beq[tphase]
+T_l = -\fr{e^{i\delta_l}\sin \delta_l}{\pi}
+\eeq
+
+\subsection*{An identity}
+If, for some operator \il{A}, we have \il{\qq{H,A} = \lambda A}, where \il{\lambda} is some scalar, then we can write
+\beq
+HA = A(\lambda+H)
+\eeq
+A consequence of this is, for another scalar E, we can write
+\begin{gather}
+(E - H)A = AE - A(\lambda+H) = A\rr{E -\lambda -H} \\
+\implies A(E - \lambda - H)^{-1} = (E-H)^{-1}A\label{identity}
+\end{gather}
+
+
+\subsection*{The model}
+\beq
+H = \epsilon_d \hat n_d + \sum_{k} \epsilon_k \hat n_k + \sum_{k\sigma}t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}} + U\hat n_{d\ua}\hat n_{d\da}
+\eeq
+\paragraph{Energy scales:}
+\begin{itemize}
+	\item \il{\epsilon_d}
+	\item \il{U}
+	\item \il{\fr{2\Delta}{\hbar} = \tau^{-1} = \fr{2\pi}{\hbar}t^2\sum_k \rho(\epsilon_k) \ra } extent of hybridisation (rate of transition) between conduction band and impurity site
+\end{itemize}
+\paragraph{Situations:}
+\begin{itemize}
+	\item \il{U \gg \epsilon_d \gg \Delta}: Double occupation is not possible. \il{\Delta} being small means very small hybridisation. So, d-site is either up or down, hence magnetic.
+	\item \il{U \gg \Delta\gg \epsilon_d }: Double occupation is still not possible, but now hybridisation will allows the up and down spins to fluctuate on the d-site, leading to zero average magnetization.
+	\item \il{\Delta\gg U \gg \epsilon_d}: Hybridisation now fluctuates the up and down spins , leading to zero average magnetization.
+\end{itemize}
+
+\subsection*{Atomic limit (\il{t=0})}
+\beq
+H_\text{atomic} = E_d + E_{CB} + U n_{d\ua}n_{d\da}
+\eeq
+Since we are not interested in the Fermi sea, the \il{E_{CB}} is dropped:
+\beq
+H_\text{atomic} = \epsilon_d n_d + U n_{d\ua}n_{d\da}
+\eeq
+For a magnetic solution, we need
+\beq
+(\epsilon_\ua = \epsilon_\da =)\epsilon_d < (\epsilon_0,\epsilon_{\ua\da}) 0,2\epsilon_d + U
+\eeq
+Since \il{\epsilon_d = -|\epsilon_d|}, this is equivalent to
+\beq
+\epsilon_d > -U
+\eeq
+
+\subsection*{Non-interacting limit (\il{U=0}):}
+\beq
+H_\text{non-int} = \epsilon_d n_d + \sum_k \epsilon_k n_k + \sum_{k\sigma} t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}}
+\eeq
+\subsubsection*{Green's function of impurity site:}
+We want to write down the \it{Green's function} \il{G_d} for the impurity site. In the absence of the hybridisation, this quantity is
+\beq
+G^0_d(E) = \fr{1}{E - \epsilon_d}
+\eeq
+In the presence of the coupling with the conduction band, there are several ways of creating an excitation at the impurity site, with an energy \il{E}. The first is the bare Green's function. This is the situation when the impurity site electron has not scattered. Next is the case that there is an excitation with energy E (\il{G^0_d(E)}) followed by a scattering to the conduction band at some momentum \il{k}. The probability of the scattering is \il{t}. The Greens function for creating the electron \il{k} is \il{G^0_k = \fr{1}{E-\epsilon_k}}, and the probability of again scattering back to the impurity site is \il{t}, with the Greens function for this final excitation being \il{G^0_d}. The total Greens function contribution for this case is
+\beq
+G^0_d \Sigma_c G^0_d, \text{  where  }\Sigma_c = t \rr{\sum_k G^0_k} t = \sum_k \fr{t^2}{E - \epsilon_k}
+\eeq
+Considering higher scatterings lead to terms like \il{G^0_d \Sigma_c G^0_d\Sigma_c G^0_d},\\\il{G^0_d \Sigma_c G^0_d\Sigma_c G^0_d\Sigma_c G^0_d} and so on. The total Greens function is
+\beq
+G_d(E) &= G^0_d + G^0_d \Sigma_c G^0_d + G^0_d \Sigma_c G^0_d\Sigma_c G^0_d + G^0_d \Sigma_c G^0_d\Sigma_c G^0_d\Sigma_c G^0_d + ... \\
+       &= G^0_d\qq{1+\rr{\Sigma_c G^0_d}^2+...} = G^0_d \fr{1}{1-\Sigma_c G^0_d} = \fr{1}{E - \epsilon_d - \Sigma_c(E)} 
+\eeq
+Now,
+\begin{gather}
+\fr{1}{t^2}\Sigma_c(E) = \sum_k \fr{1}{E - \epsilon_k} = \lim_{\eta \ra 0}\int_{-W}^W d\epsilon \rho(\epsilon) \fr{1}{E - \epsilon + i\eta}\\
+\implies \fr{1}{t^2}\text{Re} \qq{\Sigma_c(E)} = \int_{-W}^W d\epsilon \rho(\epsilon)\fr{1}{E - \epsilon}, \text{and }\\
+\fr{1}{t^2}\text{Im} \qq{\Sigma_c(E)} = \int_{-W}^W d\epsilon \rho(\epsilon) (-i\pi)\delta(E-\epsilon)
+\end{gather}
+Assuming \il{\rho(E)} varies sufficiently slowly, we can neglect the real part,
+\beq
+\Sigma_c(E) = \text{Im}\qq{\Sigma_c(E)} = -i\pi t^2 \rho(E) = -i\Delta
+\eeq
+Therefore,
+\beq
+G_d(E) = \fr{1}{E-\epsilon_d+i\Delta}
+\eeq
+The difference from \il{G^0_f} can be seen by computing the density of states for both the bare and the interacting ones:
+\begin{gather}
+	\rho_d^0(E) = -\fr{1}{\pi}\text{Im}\qq{G^0_f} = -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i\eta} = \delta(E - \epsilon_d)\\
+	\rho_d(E) = -\fr{1}{\pi}\text{Im}\qq{G_f}= -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i(\eta+\Delta)} = \fr{1}{\pi}\fr{\Delta}{(E-\epsilon_d)^2 + \Delta^2}
+\end{gather}
+The first density of states is delta function, because \il{\epsilon_d} is an eigenstate in that case, and the poles of the corresponding Green's function are real poles. But the presence of the hybridisation means that is no longer the case in the second density of states, so the delta function fades into a Lorentzian in that case, and the poles of the Greens function move off the real axis.
+
+The total number of d-electrons can be calculated as:
+\beq[total]
+\avg{n_d} = 2\int d\epsilon \rho_d(\epsilon) = \fr{2\Delta}{\pi} \int \fr{d\epsilon}{(\epsilon-\epsilon_d)^2 + \Delta^2} = \fr{2}{\pi}\cot^{-1}\rr{\fr{\epsilon_d}{\Delta}}
+\eeq
+\subsubsection*{Phase shift of conduction electron due to scattering off the impurity:}
+\il{T-}matrix is defined by
+\beq
+T = V + VGT 
+\eeq
+We also have
+\beq
+G = G_0 + G_0VG &= G_0 + G_0 T \fr{1}{1+GT}G \\
+		&= G_0 + G_0T(1-GT+...)(G_0+G_0VG_0+...)\\
+		&= G_0 + G_0 T G_0 \label{green}
+\eeq
+The conduction electron Green's function can be calculated as
+\beq
+G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t G^0_f t G^0_c(k^\prime) + \\ G_c^0(k)t G^0_f t \sum_q G_c^0(q) t G^0_f t G^0_c(k^\prime) + ...\\
+\eeq
+Noting that 
+\beq
+t\sum_q G_c^0(q)t = \Sigma_c,
+\eeq
+we have
+\beq
+G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t^2 G_f(E)G_c^0(k)
+\eeq
+Comparing with the final form of \il{G} in eq.~\ref{green}, we can write
+\beq[tm]
+T(k,k^\prime,E) = t^2 G_f(E) = \fr{t^2}{E-\epsilon_d + i\Delta}=-\fr{t^2}{\Delta} \fr{1}{\fr{ \epsilon_d- E}{\Delta}-i}
+\eeq
+If the phase shift of the conduction electrons due to scattering off the impurity is \il{\delta}, we have
+\beq
+T = e^{2i\delta} - 1 = e^{i\delta}\rr{e^{i\delta} - e^{-i\delta}} \sim \fr{1}{\cot \delta - i}
+\eeq
+Comparing with eq.~\ref{tm}, we can write
+\beq
+\delta(E) = \cot^{-1}\rr{\fr{\epsilon_d - E}{\Delta}}
+\eeq
+When \il{E = \epsilon_d}, the phase shift is \il{\pi}, and the scattering is head on (the conduction electron is reflected back). Comparing with eq.~\ref{total},
+\beq
+\fr{2}{\pi}\delta(0) = \avg{n_d}
+\eeq
+This is an example of the Friedel sum rule which states that the total number of electrons bound inside a resonance is \il{\fr{1}{\pi}} times the total scattering phase shift at the Fermi surface. In other words, the impuritywill be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
+
+\subsection*{Total Hamiltonian: Mean field treatment}
+\begin{gather}
+n_{d\ua}n_{d\da} \approx n_{d\ua}\avg{n_{d\da}} + n_{d\da}\avg{n_{d\ua}} + \text{constant}\\
+H \approx \sum_k \epsilon_k n_k + \sum_\sigma \qq{\epsilon_d+U \avg{n_{d\ol \sigma}}}n_{d\sigma} + t\sum_{k\sigma}\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}}
+\end{gather}
+The only change is \il{\epsilon_d \ra \epsilon_{d\sigma} = \epsilon_d + U\avg{n_{d\bar\sigma}}}. This allows us to write
+\beq
+\rho_{d\sigma} = \fr{1}{\pi}\fr{\Delta}{(E-\epsilon_{d\sigma})^2 + \Delta^2} \implies \avg{n_{d\sigma}} = \int \rho_{d\sigma} = \fr{1}{\pi}\cot^{-1}\rr{\fr{\epsilon_{d\sigma}}{\Delta}}
+\eeq
+An alternative way of writing that is
+\beq[density]
+\fr{\epsilon_{d\sigma}}{\Delta} = \fr{\epsilon_d + U\avg{n_{d\sigma}}}{\Delta} =  \cot\rr{\pi\avg{n_{d\sigma}}} \implies \avg{n_{d\sigma}} = \fr{\Delta}{U}\qq{{\cot\rr{\pi\avg{n_{d\ol\sigma}}} - \fr{\epsilon_d}{\Delta}}}
+\eeq
+Introducing \il{n_d = \avg{n_{d\ua}} + \avg{n_{d\da}}} and \il{m = \avg{n_{d\ua}} - \avg{n_{d\da}}}, we can write
+\beq
+\avg{n_{d\ua} - n_{d\da}} \equiv m = \fr{\Delta}{U}\qq{\cot\rr{\pi\avg{n_{d\da}}}-\cot\rr{\pi\avg{n_{d\ua}}}} \\= \fr{\Delta}{U}\qq{\cot\fr{\pi}{2}\rr{n_d-m}-\cot\fr{\pi}{2}\rr{n_d+m}}
+\eeq
+We want to find the critical condition for the onset of magnetism. This occurs when \il{M \ra 0^+}. This means we can expand the \il{\cot} around \il{m=0}. Since
+\beq
+\cot (a+x) \approx \cot a -x\rr{\sin a}^{-2} \implies \cot (a-x) - \cot(a+x) \approx 2x\rr{\sin a}^{-2}
+\eeq
+we get
+\beq[final]
+m = \fr{\Delta}{U}\qq{-\pi\fr{ m}{\sin^2 \fr{\pi}{2} n_d}} \implies 1 = \lim_{m \ra 0}\fr{U}{\pi \Delta}\fr{1}{1+\cot^2\fr{\pi n_d}{2}}
+\eeq
+At \il{m=0}, \il{\avg{n_{d\ua}} = \avg{n_{d\da}}}, therefore \il{\cot \fr{\pi n_d}{2} = \fr{U n_d}{2\Delta}+\fr{\epsilon_d}{\Delta}}. Substituting in eq.~\ref{final},
+\beq
+1 = \fr{U}{\pi}\fr{\Delta}{\Delta^2+\rr{\fr{U n_d}{2}+\epsilon_d}^2}
+\eeq
+Comparing with eq.~\ref{density},
+\beq
+1 = U \rho_d(E=0)
+\eeq
+
+\subsection*{Some points:}
+\begin{itemize}
+	\item The mean field solution predicts that local moments are sustained in the limit of large \il{U} and small \il{|\epsilon_d|}.
+	\item This treatment becomes faulty at low temperatures.
+	\item At low temperatures, the resistivity is found to reach a minimum and then vary as \il{\ln T}.
+	\item This behaviour stops at some very low temperature \il{T_K}.
+	\item The temperature \il{T_K} is also that at which the magnetisation vanishes, and the susceptibility becomes constant, suggesting that the impurity spin has condensed into a singlet.
+	\item Since the disappearance of the \il{\ln T} behaviour is coincident with the condensation of the spin degree of freedom, it is natural to hope to that the resistivity minimum is a result of the interaction between the impurity and the conduction spins.
+	\item To describe such an interaction, the way to proceed is to strip the model of the charge excitations (via a \it{Schrieffer-Wolff transformation}). The resultant Hamiltonian consists of an antiferromagnetic interaction between the itinerant spins and the impurity spin, and is called the Kondo model.
+	\item Calculating the scattering rate up to second order using the Kondo model produces a logarithmic term, which explains the log-dependence.
+	\item Since this perturbative treatment will fail at small temperatures (where the log term diverges), we need some other technique to find out the fate of the model at low temperatures.
+	\item Anderson's poor man's scaling wraps the effects of high energy scatterings into the low energy model, showing that the antiferromagnetic coupling diverges at low temperatures, producing a singlet.
+\end{itemize}
+
+\subsection*{Derivation of the Kondo Hamiltonian:}
+The space of the impurity electron can be divided into low energy and high energy subspaces:
+\beq
+\text{low energy (L)} \ra \begin{cases} \ket{\ua} \\ \ket{\da} \end{cases}\\
+\text{high energy (H)} \ra \begin{cases} \ket{} \\ \ket{\ua\da} \end{cases}\\
+\eeq
+\beq
+H = H_0 + V = \bordermatrix{~ & \text{low} & \text{high} \cr 
+\text{low} & H^L & v^\dagger \cr
+	   &&\cr
+\text{high} & v & H^H }
+\eeq
+\beq
+H_0 = \sum_{k}\epsilon_k n_{k}+ \epsilon_d n_d + U n_{d\ua}n_{d\da}, V=\sum_{k\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} +V_k^* c^\dagger_{d\sigma}c_{k\sigma}}
+\eeq
+Let \il{S} be some anti-Hermitian operator, of the order of \il{V}. Expanding in powers of \il{V},
+\beq
+\ol H = e^{-S} H e^S = H_0 + \rr{V+\qq{H_0,S}} + \fr{1}{2}\rr{\qq{V,S}+\qq{\qq{H_0,S},S}}
+\eeq
+Defining \il{S} such that the first order term vanishes,
+\begin{gather}
+	V = \qq{S,H_0} \label{sdef}\\
+\ol H = H_0 + \fr{1}{2}\qq{V,S}
+\end{gather}
+Take \il{S = \begin{pmatrix} 0 & -s^\dagger \\ s & 0 \end{pmatrix}}. From eq.~\ref{sdef},
+\beq
+V = \begin{pmatrix} 0 & -s^\dagger \\ s & 0 \end{pmatrix} \begin{pmatrix} H^L & 0 \\ 0 & H^H \end{pmatrix} - \begin{pmatrix} H^L & 0 \\ 0 & H^H \end{pmatrix} \begin{pmatrix} 0 & -s^\dagger \\ s & 0 \end{pmatrix} \\= \begin{pmatrix} 0 & -s^\dagger H^H+H^L s^\dagger \\ s H^L - H^H s & 0 \end{pmatrix}
+\eeq 
+Comparing with the definition of \il{V}, we can write
+\begin{gather}
+v^\dagger_{ij} = s^\dagger_{ij}\rr{E^L_i - E^H_j}, v_{ij} = s_{ij}\rr{E^L_j - E^H_i}\\
+\implies s^\dagger_{ij} = \fr{v^\dagger_{ij}}{E^L_i - E^H_j}, s_{ij} = \fr{v_{ij}}{E^L_j - E^H_i}
+\end{gather}
+From the structure of \il{S}, it is clear that \il{i \in H, j \in L}.
+\beq
+\qq{V,S} = \begin{pmatrix} 0 & v^\dagger \\ v & 0 \end{pmatrix}\begin{pmatrix} 0 & -s^\dagger \\ s & 0 \end{pmatrix} - \begin{pmatrix} 0 & -s^\dagger \\ s & 0 \end{pmatrix}\begin{pmatrix} 0 & v^\dagger \\ v & 0 \end{pmatrix} = \begin{pmatrix} v^\dagger s + s^\dagger v & 0 \\ 0 & -vs^\dagger -sv^\dagger \end{pmatrix}
+\eeq
+Hence,
+\beq
+\ol H = H_0 + \fr{\qq{V,S}}{2} = \begin{pmatrix} H^L + \fr{1}{2}\rr{v^\dagger s + s^\dagger v} & 0 \\ 0 & H^H -vs^\dagger -sv^\dagger \end{pmatrix}
+\eeq
+Since we want the low energy excitations, the effective low-energy Hamiltonian is
+\beq
+\ham = \bra{L} \ol H \ket{L} = H^L + \fr{1}{2}\rr{v^\dagger s + s^\dagger v}
+\eeq
+where \il{H^L = \sum_\sigma \bra{\sigma_d} H_0 \ket{\sigma_d} = \epsilon_d n_d + \sum_{k} n_{k}}. Now,
+\beq
+\Delta H = \fr{1}{2}\rr{v^\dagger s + s^\dagger v} &= \fr{1}{2}\rr{v^\dagger \sum_{HL} s_{HL}\ket{H}\bra{L} + \text{h.c.}} \\
+&= \fr{1}{2}\sum_{HL}\qq{v^\dagger \ket{H}\bra{L}\fr{v_{HL}}{E_L - E_H} + \ket{L}\bra{H} \fr{v^\dagger_{LH}}{E_L - E_H}v}
+\eeq
+Taking a matrix element between two low energy states \il{l, l^\prime}, we get
+\beq
+\Delta H_{ll^\prime} = \bra{l} \Delta H \ket{l^\prime} &= \fr{1}{2}\sum_H v^\dagger_{lH}v_{Hl^\prime}\rr{\fr{1}{E_{l^\prime} - E_H}+\fr{1}{E_l - E_H}}
+\eeq
+This can also be written as
+\beq[hamtmat]
+\Delta H_{ll^\prime} = \fr{1}{2}\qq{T_{ll^\prime}(E_l) + T_{ll^\prime}(E_{l^\prime})}
+\eeq
+where 
+\beq
+T_{ll^\prime}(E) = \sum_H \fr{v^\dagger_{lH}v_{Hl^\prime}}{E-E_H} = \sum_H \fr{V^\dagger_{lH} V_{Hl^\prime}}{E-E_H}
+\eeq
+\il{T(E)}, here, is the second order contribution of the \il{T-}matrix due to scattering off the interaction \il{V}. The \il{\ket{H}} act as the intermediate states during the second order scatterings. This is a slight generalization from second order perturbation theory. In second order perturbation, we only consider the scattering amplitude between the same states, but here we consider the scattering between two potentially different states \il{\ket{l},\ket{l^\prime}}. The total amplitude is an average of these two amplitudes.
+\\\\If we assume the high energy subspace is very far away from the low energy one (\il{E_H \gg E_L}), we can assume \il{E_l \approx E_{l^\prime} = E_L}, we can write
+\beq
+\Delta H_{ll^\prime} &=\sum_H v^\dagger_{lH}v_{Hl^\prime}\fr{1}{E_L-E_H}\\
+\implies \Delta H &=V \rr{\sum_H \fr{1}{\Delta_{LH}}\ket{H}\bra{H}}V
+\eeq
+where \il{\Delta_{LH}=E_L - E_H} is the energy difference between the low energy subspace and the high energy state \il{\ket{H}}. For our Hamiltonian, \il{\ket{H_1} = \ket{0}, \ket{H_2} = \ket{\ua\da}}. Therefore,
+\beq
+\Delta_{LH_1} = \epsilon_d - 0 = \epsilon_d, \Delta_{LH_2} = \epsilon_d - \rr{2\epsilon_d + U} = -\epsilon_d - U
+\eeq
+Also, \il{V = \sum_{k\sigma}\qq{V(k) c^\dagger_{k\sigma}c_{d\sigma} + V^*(k) c^\dagger_{d\sigma}c_{k\sigma}}}. Hence,
+\beq
+\Delta H &= V\fr{\ket{0}\bra{0}}{\epsilon_d}V - V\fr{\ket{\ua\da}\bra{\ua\da}}{\epsilon_d + U}V\\
+	 &= \sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\qq{\fr{c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}\ket{0}\bra{0}c^\dagger_{k_1\sigma_1} c_{d \sigma_1}}{\epsilon_d} - \fr{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}\ket{\ua\da}\bra{\ua\da}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}}{\epsilon_d+U}}\\
+&=\sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\fr{c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1}\ket{d\sigma_1,h_{k_1\sigma_1}}\bra{d\sigma_1,h_{k_1\sigma_1}}}{\epsilon_d} \\
+&- \sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\fr{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}\ket{d\ol{\sigma_2},e_{k_2\sigma_2}}\bra{d\ol{\sigma_2},e_{k_2\sigma_2}}}{\epsilon_d+U}\\
+&=\sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\qq{\fr{c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1}}{\epsilon_d} - \fr{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}}{\epsilon_d+U}}P_{n_d=1}
+\eeq
+Using Fierz indentity \il{\delta_{\sigma_1\sigma_3}\delta_{\sigma_4\sigma_2} = \fr{1}{2}\delta_{\sigma_1\sigma_2}\delta_{\sigma_3\sigma_4} + \fr{1}{2}\vec\sigma_{\sigma_1\sigma_2}\cdot\vec\sigma_{\sigma_3\sigma_4}}, we can write
+\beq
+c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1} &= \sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_4}\delta_{\sigma_1\sigma_3}\delta_{\sigma_4\sigma_2}\\
+&=\fr{1}{2}\sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_4}\rr{\delta_{\sigma_1\sigma_2}\delta_{\sigma_3\sigma_4} + \vec\sigma_{\sigma_1\sigma_2}\cdot\vec\sigma_{\sigma_3\sigma_4}}\\
+&=\fr{1}{2}c_{k_2 \sigma_1}c^\dagger_{k_1\sigma_1}n_d+c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}\cdot\sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3}\fr{\vec \sigma_{\sigma_3\sigma_4}}{2}c_{d\sigma_4}
+\eeq
+Now, \il{c_{k_2 \sigma_1}c^\dagger_{k_1\sigma_1} = \delta_{k_1,k_2}-c^\dagger_{k_1\sigma_1}c_{k_2 \sigma_1}}, and  \il{c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} = \delta_{\sigma_1,\sigma_2}\delta_{k_1,k_2}-c^\dagger_{k_1\sigma_1}c_{k_2 \sigma_1}}. The \il{\delta} will result in terms that have no interaction, so we drop these terms. Also, the \il{P_{n_d=1}} ensures we can substitute \il{n_d=1}.
+\beq
+c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1} &= -\fr{1}{2}c^\dagger_{k_1\sigma_1}c_{k_2 \sigma_1} - c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot\sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3}\fr{\vec\sigma_{\sigma_3\sigma_4}}{2}c_{d\sigma_4}\\
+\eeq
+Since the first term does not have any spin-spin interaction, we drop that term. 
+Defining \il{\vec \sigma_d = \sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3}\vec\sigma_{\sigma_3\sigma_4}c_{d\sigma_4}}, we have
+\beq
+c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1} =-\fr{1}{2}c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot \vec \sigma_d
+\eeq
+Similarly,
+\beq
+c^\dagger_{k_1\sigma_1} c_{d \sigma_1} c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}=-\fr{1}{2}c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot \vec \sigma_d
+\eeq
+Finally, putting all this together,
+\beq
+\Delta H = \fr{1}{2}\sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\qq{\fr{1}{\epsilon_d+U}-\fr{1}{\epsilon_d}}c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot \vec \sigma_d \\
+= \fr{1}{2}\sum_{k_1,k_2,\sigma_1,\sigma_2} J(k_1,k_2)c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot \vec \sigma_d
+\eeq
+where
+\beq
+J(k_1,k_2) = V(k_1)V^*(k_2)\qq{\fr{1}{\epsilon_d+U}-\fr{1}{\epsilon_d}}
+\eeq
+Assuming \il{V(k) \equiv t},
+\beq
+H_K = \sum_k \epsilon_k n_k + \fr{J}{2} \vec \sigma_e \cdot \vec \sigma_d
+\eeq
+where
+\beq
+\vec \sigma_e = \sum_{k_1,k_2,\sigma_1,\sigma_2}c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2} = \sum_{\sigma_1,\sigma_2}c^\dagger_{\sigma_1}(\vec r = 0)\vec\sigma_{\sigma_1\sigma_2}c_{\sigma_2}(\vec r = 0)
+\eeq
+\il{\vec \sigma_e} is thus the spin density at the origin.
+
+\subsection*{Obtaining the resistivity minimum and \il{\log}-dependence}
+The model we are working with is
+\beq
+H_K &= H_0 + V = \sum_k \epsilon_k n_k + \fr{J}{2} \sum_{k_1,k_2,\sigma_1,\sigma_2}c^\dagger_{k_1\sigma_1}\vec \sigma_d \cdot \vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}
+\eeq
+\beq
+\sum_{\sigma_1,\sigma_2}c^\dagger_{k_1\sigma_1}\vec \sigma_d \cdot \vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2} = \sigma_d^z\rr{c^\dagger_{k_1\ua}c_{k_2\ua} - c^\dagger_{k_1\da}c_{k_2\da}} +\sigma_d^x\rr{c^\dagger_{k_1\da}c_{k_2\ua} + c^\dagger_{k_1\ua}c_{k_2\da}} \\
+-i \sigma_d^y\rr{ c^\dagger_{k_1\ua}c_{k_2\da}- c^\dagger_{k_1\da}c_{k_2\ua}}
+\eeq
+\beq
+=\sigma_d^z\rr{c^\dagger_{k_1\ua}c_{k_2\ua} - c^\dagger_{k_1\da}c_{k_2\da}} + c^\dagger_{k_1\da}c_{k_2\ua}\sigma_d^+ + c^\dagger_{k_1\ua}c_{k_2\da}\sigma_d^-
+\eeq
+where \il{\sigma^\pm = \sigma^x \pm i \sigma^y}. Therefore,
+\beq
+H_K &=\sum_k \epsilon_k n_k + \fr{J}{2} \sum_{k_1,k_2}\qq{\sigma_d^z\rr{c^\dagger_{k_1\ua}c_{k_2\ua} - c^\dagger_{k_1\da}c_{k_2\da}}+\sigma_d^+ c^\dagger_{k_1\da}c_{k_2\ua} + \sigma_d^- c^\dagger_{k_1\ua}c_{k_2\da}}\\
+    &=\sum_k \epsilon_k n_k + J \sum_{k_1,k_2}\qq{S_d^z\rr{c^\dagger_{k_1\ua}c_{k_2\ua} - c^\dagger_{k_1\da}c_{k_2\da}}+S_d^+ c^\dagger_{k_1\da}c_{k_2\ua} + S_d^- c^\dagger_{k_1\ua}c_{k_2\da}}
+\eeq
+To see the \il{\log-}dependence, we need to calculate the transition matrix up to second order:
+\beq
+T = V + V G_0 V
+\eeq
+We wish to calculate the scattering probability of a conduction electron \il{\ket{k \ua}}.
+\subsubsection*{First order scattering}
+\begin{center}
+$\left.\begin{tabular}{@{}l@{}}
+\il{\ket{k \ua, d_\sigma} \ra \ket{q \ua, d_\sigma}}
+%\il{\ket{k \da, d_\sigma} \ra \ket{q \da, d_\sigma}}\\
+\end{tabular}\right\}$ non-spin-flip\\[10pt]
+$\left.\begin{tabular}{@{}l@{}}
+\il{\ket{k \ua, d_\da} \ra \ket{q \da, d_\ua}}
+%\il{\ket{k \da, d_\ua} \ra \ket{q \ua, d_\da}}\\
+\end{tabular}\right\}$ pro-spin-flip
+\end{center}
+For non-flip, the matrix elements for the \il{T-}matrix is
+\beq
+T^{(1)}_\text{nonflip} = T_{k_\ua,d_{\sigma} \ra q_\ua,d_{\sigma}} = \bra{q_\ua,d_{\sigma}}V\ket{k_\ua,d_{\sigma}} = m_d J
+\eeq
+where \il{m_d \in \{-s_d, s_d\}} is the spin of the impurity electron. The probability for this scattering is
+\beq
+\mathcal{P}_{k_\sigma,d_{\sigma^\prime} \ra q_\sigma,d_{\sigma^\prime}} = 2\pi\sum_{\epsilon} \rho(\epsilon)T_{k_\ua,d_{\sigma} \ra q_\ua,d_{\sigma}}^2 = 2\pi \rho(0) J^2 m_d^2
+\eeq
+Since we are considering scattering close to the Fermi surface, we replaced the sum with \il{\rho(0)}. 
+\beq
+\mathcal{P}_1 = 2\pi\rho(0)J^2 m_d^2
+\eeq
+For spin-flip, the matrix element is
+\beq
+T^{(1)}_\text{flip} =T_{k_\ua,d_{\da} \ra q_\da,d_{\ua}} = \bra{q_\da,d_{\ua}}V\ket{k_\ua,d_{\da}} = \lambda_+ J
+\eeq
+where \il{\lambda_\pm = \bra{m_d \pm 1} S_d^\pm \ket{m_d} = \sqrt{s_d(s_d+1)-m_d(m_d\pm 1)}}. The probability for this scattering is hence
+\beq
+\mathcal{P}_2 = \mathcal{P}_{k_\ua,d_{\da} \ra q_\da,d_{\ua}} = 2\pi \rho(0) J \qq{s_d(s_d+1)-m_d(m_d + 1)}
+\eeq
+The total first order scattering probability is (averaged over all configurations of the impurity)
+\beq
+\mathcal{P}^{(1)} = \fr{1}{2s_d+1}\sum_{m_d = -s_d}^{s_d}\rr{\mathcal{P}_1 + \mathcal{P}_2} = \fr{2\pi \rho(0) J^2}{(2s_d+1)}\sum_{m_d = -s_d}^{s_d}\rr{s_d(s_d+1) - m_d} \\
+= 2\pi \rho(0)J^2 s_d(s_d+1)
+\eeq
+\subsubsection*{Second order scattering}
+
+\begin{center}
+$\left.\begin{tabular}{@{}l@{}}
+\text{no-impurity-flip}\il{\begin{cases}
+\ket{k \ua, d_\sigma} \ra \ket{q \ua, d_\sigma} \ra \ket{k^\prime \ua, d_\sigma}\\
+\ket{k \ua, q \ua, d_\sigma} \ra \ket{k \ua, k^\prime \ua, d_\sigma} \ra \ket{k^\prime \ua,q \ua, d_\sigma}
+\end{cases}}\\[30pt]
+\text{pro-impurity-flip}\il{\begin{cases} 
+\ket{k \ua, d_\da} \ra \ket{q \da, d_\ua} \ra \ket{k^\prime \ua, d_\da}\\
+\ket{k \ua, q \da, d_\ua} \ra \ket{k \ua, k^\prime \ua, d_\da} \ra \ket{k^\prime \ua,q \da, d_\ua}
+\end{cases}}
+\end{tabular}\right\}$ no-cond-flip\\[40pt]
+$\left.\begin{tabular}{@{}l@{}}
+\text{flip-first}\il{\begin{cases} 
+\ket{k \ua, d_\da} \ra \ket{q \da, d_\ua} \ra \ket{k^\prime \da, d_\ua}\\
+\ket{k \ua, q \ua, d_\da} \ra \ket{k \ua, k^\prime \da, d_\ua} \ra \ket{k^\prime \da,q \ua, d_\ua}
+\end{cases}}\\[30pt]
+\text{flip-later}\il{\begin{cases} 
+\ket{k \ua, d_\da} \ra \ket{q \ua, d_\da} \ra \ket{k^\prime \da, d_\ua}\\
+\ket{k \ua, q \da, d_\da} \ra \ket{k \ua, k^\prime \da, d_\da} \ra \ket{k^\prime \da,q \da, d_\ua}
+\end{cases}}\\
+\end{tabular}\right\}$ pro-cond-flip
+\end{center}
+The second order transition matrix contribution is of the form
+\beq
+T^{(2)}_{i \ra j} = \bra{j} V G_0 V \ket{i} = \sum_l \fr{\bra{j}V\ket{l}\bra{l}V\ket{i}}{E_i - E_l}
+\eeq
+The sum is over all the intermediate states in going from \il{\ket{i}} to \il{\ket{k}}. For no flipping of the conduction electron, there are four possible processes. The first process has the following \it{T}-matrix:
+\beq
+T^{(2)}_{11}&=\sum_q\fr{\bra{k^\prime_\ua d_\sigma}V\ket{q_\ua d_\sigma}\bra{q_\ua d_\sigma}V\ket{k_\ua d_\sigma}}{\epsilon_k-\epsilon_q}\\
+      &= \rr{J m_d}^2\sum_q \fr{1-P(q)}{\epsilon_k - \epsilon_q} = J^2 m_d^2 \sum_q \fr{1-P(q)}{\epsilon_k - \epsilon_q}
+\eeq
+where \il{m_d = \bra{d_\sigma}S_d^z\ket{d_\sigma}} and \il{1-P(q)} is the probability that the state \il{q\ua} is empty. For the second process,
+\beq
+T^{(2)}_{12} = \sum_q \fr{\bra{q_\ua k^\prime_\ua d_\sigma} V \ket{k^\prime_\ua k_\ua d_\sigma}\bra{k^\prime_\ua k_\ua d_\sigma}V\ket{q_\ua k_\ua d_\sigma}}{\epsilon_q - \epsilon_{k^\prime}}P(q)
+\eeq
+Note that if \il{\bra{k^\prime k}V\ket{q k} \sim \bra{k^\prime k} c^\dagger_{k^\prime}c_q\ket{q k} = 1}, then \il{\bra{q k^\prime }V\ket{k^\prime k} \sim \bra{qk^\prime }c^\dagger_q c_k\ket{k^\prime k} =}\\\il{ -\bra{qk^\prime }c^\dagger_q c_k\ket{k k^\prime} = -1}. Assuming the scattering conserves energy \il{(\epsilon_k = \epsilon_k^\prime)}, we get
+\beq
+T^{(2)}_{12} = -J^2 m_d^2\sum_q\fr{P(q)}{\epsilon_q - \epsilon_{k}} = J^2 m_d^2 \sum_q \fr{P(q)}{\epsilon_k - \epsilon_q}
+\eeq
+For the third process,
+\beq
+T^{(2)}_{13}=\sum_q\fr{\bra{k^\prime_\ua d_\da}V\ket{q_\da d_\ua}\bra{q_\da d_\ua}V\ket{k_\ua d_\da}}{\epsilon_k-\epsilon_q}
+\eeq
+Using \il{\bra{m_d\pm 1}S_d^\pm\ket{m_d} = \sqrt{s_d(s_d+1)-m_d(m_d\pm 1)} = \lambda_\pm}, we get
+\beq
+T^{(2)}_{13} = \lambda_+^2J^2 \sum_q \fr{1-P(q)}{\epsilon_k-\epsilon_q}
+\eeq
+For the fourth process,
+\beq
+T^{(2)}_{14}&=\sum_q\fr{\bra{q_\da k^\prime_\ua d_\ua}V\ket{k^\prime_\ua k_\ua d_\da}\bra{k^\prime_\ua k_\ua d_\da}V\ket{q_\da k_\ua d_\ua}}{\epsilon_q-\epsilon_k^\prime}\\
+      &=-\lambda_-^2J^2 \sum_q \fr{P(q)}{\epsilon_q-\epsilon_k}\\
+      &=\lambda_-^2J^2 \sum_q \fr{P(q)}{\epsilon_k-\epsilon_q}
+\eeq
+The sum of all the elements gives the transition matrix element for the scattering \il{k\ua \ra k^\prime\ua}:
+\beq
+T^{(2)}_{\text{nonflip}} = \sum_{i=1}^4 T^{(2)}_{1i} &= J^2 \sum_q \fr{m_d^2 + \lambda_+^2 -P(q)\rr{\lambda_+^2 - \lambda_-^2}}{\epsilon_k-\epsilon_q}\\
+&= J^2 \sum_q \fr{s(s+1)-m_d + 2m_dP(q)}{\epsilon_k-\epsilon_q}\\
+&= J^2\qq{s(s+1)-m_d}(\alpha+\gamma) + 2 J^2 m_d \gamma
+\eeq
+where \il{\gamma = \sum_q\fr{P(q)}{\epsilon_k-\epsilon_q},\alpha = \sum_q\fr{1-P_q}{\epsilon_k- \epsilon_q}}. The second term has the Fermi-Dirac distribution and hence is the only temperature dependent term. Accordingly, we drop the first term.
+\beq
+T^{(2)}_{\text{nonflip}} &= 2 J^2 m_d \gamma\\
+			 &=2J^2 m_d \int d\epsilon N(\epsilon) \fr{P(\epsilon)}{\epsilon_k - \epsilon} = \fr{\sqrt 2 J^2 m_d m^{\fr{3}{2}}}{\pi^2 \hbar^3}\int d\epsilon \fr{\sqrt \epsilon P(\epsilon)}{\epsilon_k - \epsilon}
+\eeq
+Assuming \il{T=0}, \il{P(\epsilon) = \theta(\epsilon_F - \epsilon)}. Then
+\beq
+T^{(2)}_{\text{nonflip}} &=\fr{\sqrt 2 J^2 m_d m^{\fr{3}{2}}}{\pi^2 \hbar^3}\sqrt{\epsilon_k}\ln \bigg\vert \fr{\sqrt{\epsilon_k}+\sqrt{\epsilon_{F}}}{\sqrt {\epsilon_k}-\sqrt{\epsilon_{F}}} \bigg\vert \\
+    &= \fr{\sqrt 2 J^2 m_d m^{\fr{3}{2}}}{\pi^2 \hbar^3}\sqrt{\epsilon_k} \ln \bigg\vert \fr{\epsilon_k + \epsilon_{F} + 2\sqrt{\epsilon_k \epsilon_F}}{\epsilon_k-\epsilon_{F}} \bigg\vert 
+\eeq
+For \il{T >0} but \il{\ll T_F}, the excitation energy of the electrons is very small and of the order of \il{k_B T}. Hence, we can replace \il{\epsilon_k - \epsilon_F = k_B T} and everywhere else replace \il{\epsilon_k = \epsilon_F}.
+
+\beq
+T^{(2)}_{\text{nonflip}} = \fr{\sqrt 2 J^2 m_d m^{\fr{3}{2}}}{\pi^2 \hbar^3}\sqrt{\epsilon_F} \ln \bigg\vert \fr{4T_F}{T} \bigg\vert 
+\eeq
+Dropping the temperature-independent \il{\log 4} term and recognizing \il{N(\epsilon_F)} in the pre-factor,
+\beq
+T^{(2)}_{\text{nonflip}} = 2J^2 m_d N(\epsilon_F) \ln \bigg\vert \fr{T_F}{T} \bigg\vert 
+\eeq
+Adding the first order non-flip contribution (\il{T^{(1)}_\text{nonflip}}) to the \il{T-}matrix, we get
+\beq
+T_\text{nonflip} = J m_d\qq{1+2N(\epsilon_F) J \ln \fr{T_F}{T}}
+\eeq
+The upshot is that the additional contribution in second order is obtained by replacing \il{J \ra 2J N(\epsilon_F) \ln \fr{T_F}{T}}. For the spin-flip scatterings (processes 5\uu{th} to 8\uu{th}),
+\beq
+T^{(2)}_{21} &= -J^2 (m_d+1)\lambda_+\sum_q\fr{1-P_q}{\epsilon_k- \epsilon_q}\\
+T^{(2)}_{23} &= J^2 m_d \lambda_+\sum_q\fr{1-P_q}{\epsilon_k- \epsilon_q}\\
+T^{(2)}_{22} &= J^2 (m_d+1) \lambda_+  \sum_q \fr{P(q)}{\epsilon_k - \epsilon_q}\\
+T^{(2)}_{24} &= -\lambda_+ m_d J^2 \sum_q \fr{P(q)}{\epsilon_k-\epsilon_q}
+\eeq
+\beq
+T^{(2)}_\text{flip} = -J^2 \lambda_+ \rr{\alpha - \gamma}
+\eeq
+The total spin-flip matrix element (temperature-dependent part) is
+\beq
+T^{(2)}_\text{flip} &= 2 J^2 \lambda_+ \sum_q \fr{P(q)}{\epsilon_k - \epsilon_q} \\
+     &= 2 J^2 \lambda_+ N(\epsilon_F) \ln \bigg\vert \fr{T_F}{T} \bigg\vert 
+\eeq
+Adding the first order contribution,
+\beq
+T_\text{flip} = \lambda_+ J \qq{1 + 2 N(\epsilon_F) J \ln \fr{T}{T_F}}
+\eeq
+Here again, the second order contribution is obtained by replacing \\
+\il{J \ra 2J N(\epsilon_F) \ln \fr{T_F}{T}}. Both the solutions together imply that the next order probability for scattering of \il{k\ua} is obtained by replacing the additional \il{J} with \il{2J N(\epsilon_F) \ln \fr{T_F}{T}}.
+\beq[change]
+\mathcal{P} = \mathcal{P}^{(2)}\qq{1 + 2J N(\epsilon_F) \ln \fr{T_F}{T}}
+\eeq
+
+\subsection*{Three peak structure}
+Since \il{V} conserves total angular momentum, \il{\bra{s}V\ket{s^\prime} \sim \delta_{s s^\prime}}. Hence
+\beq
+T_{a \ra b} = \sum_{s,m_s} |\langle{s,m_s}|{a}\rangle|^2 T_s
+\eeq
+Now, \il{\ket{k \ua, d_\ua} = \ket{s=1}}, so
+\beq
+T_{\ket{k \ua, d_\ua} \ra \ket{k^\prime \ua d_\ua}} = T_1
+\eeq
+But. since \il{\ket{k \ua, d_\da} = \fr{\ket{s=1}+\ket{s=0}}{\sqrt 2}},
+\beq
+T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \ua d_\da}} = \fr{T_1 + T_0}{2}
+\eeq
+and \il{\ket{k \da, d_\ua} = \fr{\ket{s=1}-\ket{s=0}}{\sqrt 2}},
+\beq
+T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \da d_\ua}} = \fr{T_1 - T_0}{2}
+\eeq
+Therefore,
+\beq
+T_1 = T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \ua d_\da}} + T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \da d_\ua}} = T_\text{nonflip} + T_\text{flip}\\
+T_0 = T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \ua d_\da}} - T_{\ket{k \ua, d_\da} \ra \ket{k^\prime \da d_\ua}} = T_\text{nonflip} - T_\text{flip}\\
+\eeq
+Assuming spin-half impurity, (\il{s=\fr{1}{2}})
+\begin{gather}
+T_\text{nonflip} =J\qq{m_d + \fr{J}{4}\cc{3(\alpha + \gamma) + 4m_d( \gamma - \alpha)}} \\
+T_\text{flip} = J\qq{1 + J\rr{\gamma - \alpha}}
+\end{gather}
+Setting \il{m_d = -\fr{1}{2}},
+\beq[tmatrix]
+T_1 &= \fr{J}{2}\qq{1+\fr{J}{2}\rr{\alpha + 5 \gamma}}\\
+T_0 &= -\fr{3J}{2}\qq{1-\fr{3J}{2}\rr{\alpha - \fr{\gamma}{3}}}
+\eeq
+The value of the prefactors can be understood as follows: The interaction term is 
+\beq
+J \vec S_d \cdot \vec \sigma_e = 2J \vec S_d \cdot \vec S_e = J \rr{S^2 - S_d^2 - S_e^2} = J \rr{s(s+1) - \fr{3}{2}} = \begin{cases} -\fr{3J}{2} &\text{(singlet)}\\ \fr{J}{2} &\text{(triplet)}\end{cases}
+\eeq
+Hence, the pre-factors are just the bare values of the interaction Hamiltonian, \il{V}. Hence, the equations \ref{tmatrix} can be written as 
+\beq
+T = V(1 + TG)
+\eeq
+For the singlet and triplet \il{T-}matrices, it becomes
+\beq[texp]
+T_1 &= \fr{J}{2}\qq{1+T_1\rr{\alpha + 5 \gamma}} \implies T_1 = \fr{J/2}{1-\fr{J}{2}(\alpha + 5 \gamma)}\\
+T_0 &= -\fr{3J}{2}\qq{1+T_0\rr{\alpha - \fr{\gamma}{3}}} \implies T_0 = \fr{-3J/2}{1+\fr{3J}{2}(\alpha - \gamma/3)}
+\eeq
+We want to find the maximum value of \il{|T_s|}. To this end, rewrite
+\begin{gather}
+T_1 = \fr{1}{2/J - 5 \gamma - \alpha}\\
+T_0 = \fr{1}{-2/3J + \gamma/2 - \alpha}
+\end{gather}
+For excitations \il{(k)} just above the Fermi surface, \il{\alpha} will encounter a zero in its denominator, because the integral in \il{\alpha} is outside the Fermi surface. On the other hand, the integral in \il{\gamma} is inside the Fermi surface, so the denominator in \il{\gamma} will never become zero for \il{k} just outside the Fermi surface.  Hence, \il{\alpha = \text{real part} - i\pi N(0), \gamma =\text{real part}}. Accordingly, the expressions for \il{T_s} can be written as
+\beq
+T_s = \fr{1}{\text{real part} + i \pi N(0)}
+\eeq
+The maximum value of \il{|T_s|} will occur when the denominator is minimum, that is, when \il{\text{real part} = 0}. Hence,
+\beq
+|T_s| \leq \fr{1}{\pi N_0}
+\eeq
+From eq.~\ref{tphase}, we can write
+\beq
+T_s = -\fr{e^{i \delta_s}\sin \delta_s}{\pi N(0)}
+\eeq
+Eq.~\ref{texp} can be written as
+\begin{gather}
+T_1 = \fr{J/2}{1 - 2 J \gamma - \fr{J}{2}\rr{\alpha + \gamma}}\\
+T_0 = \fr{-3J/2}{1 - 2 J \gamma + \fr{3J}{2}\rr{\alpha + \gamma}}
+\end{gather}
+Defining \il{J_\text{eff} = \fr{J}{1 - 2J\gamma}}, the scattering amplitudes \il{T_1} and \il{T_0} can be written as
+\beq
+T_1 = \fr{1}{\fr{2}{J_\text{eff}} - \rr{\alpha + \gamma}}\\
+T_0 = \fr{-1}{\fr{2}{3J_\text{eff}}+\alpha + \gamma}
+\eeq
+\il{\alpha + \gamma} can be calculated as 
+\beq
+\alpha + \gamma &= \lim_{\eta \ra 0}\int_0^\infty d\epsilon \fr{N(\epsilon)}{\epsilon_k - \epsilon+ i\eta} \\
+		&\sim\lim_{\epsilon_\text{up} \ra \infty} \ln \bigg\lvert \fr{\sqrt \epsilon_k - \sqrt{\epsilon_\text{up}}}{\sqrt \epsilon_k + \sqrt{\epsilon_\text{up}}}\bigg \rvert - i \pi N(0)
+\eeq
+In the limit of \il{\epsilon_\text{up} \ra \infty}, the argument of the \il{\log} becomes
+\beq
+\bigg\lvert \fr{\sqrt \epsilon_k - \sqrt{\epsilon_\text{up}}}{\sqrt \epsilon_k + \sqrt{\epsilon_\text{up}}}\bigg \rvert \approx \bigg\lvert \fr{- \sqrt{\epsilon_\text{up}}}{\sqrt{\epsilon_\text{up}}}\bigg \rvert = 1
+\eeq
+Hence, the real part vanishes, and the expression for \il{T_1} becomes
+\beq
+T_1 = \fr{1}{2J^{-1}_\text{eff} + i \pi N(0)} \sim \fr{1}{\fr{2}{\pi N(0)J_\text{eff}} + i}
+\eeq
+Since
+\beq
+T_s \sim e^{i \delta_s} \sin \delta_s = \fr{1}{\cot \delta_s - i}
+\eeq
+we can write
+\beq
+\cot \delta_1 = -\fr{2}{\pi N(0) J_\text{eff}}\implies \tan \delta_1 = -\fr{\pi}{2} N(0) J_\text{eff}
+\eeq 
+Similarly,
+\beq
+T_0 =  \fr{-1}{\fr{2}{3 J_\text{eff}} - i\pi N(0)} \sim \fr{-1}{\fr{2}{3 J_\text{eff} \pi N(0)} - i}
+\eeq
+giving
+\beq
+\cot \delta_0 = \fr{2}{3 J_\text{eff} \pi N(0)} \implies \tan \delta_0 = \fr{3\pi}{2} J_\text{eff} N(0)
+\eeq
+Since \il{J_\text{eff} > 0}, \il{\delta_1 < 0} and \il{\delta_0 > 0}. The significance of this can be seen as follows. For scattering at the Fermi surface, the scattered wavefunction can be written as
+\beq
+\psi \sim \psi_\text{in} - e^{2 i \delta_d} \psi_\text{out}
+\eeq
+where \il{\psi_\text{in} = \fr{e^{ik_F r}}{r}} is the incoming wave and \il{\psi_\text{out} = \fr{e^{-ik_F r}}{r}} is the outgoing one. Hence,
+\beq
+\psi = \fr{e^{i \delta}}{r} \rr{e^{-i\rr{k_Fr + \delta_d}} - e^{i\rr{k_Fr + \delta_d}}} \sim \fr{e^{i \delta}}{r} \sin \qq{k_F\rr{r + \Delta r}}
+\eeq
+This scattered wave is thus another radial wave but its phase is shifted by an amount \il{\Delta r = \fr{\delta_d}{k_F}}. For a positive \il{\Delta r} (and hence a positive \il{\delta_d}), the wave will be drawn inward. Hence, the singlet channel having a positive \il{\delta} will lead to formation of bound states. On the  other hand, the triplet channel has a negative phase shift, meaning it is repulsive.
+
+\subsection{The Kondo temperature}
+We consider a simplified model where a single conduction electron forms a singlet with the d-electron, and the rest of the conduction electrons simply fill the Fermi sea. For the singlet state, \il{\vec S_e \cdot \vec S_d = -\fr{3}{2}}. So,
+\beq
+H_K = \sum_{k > k_F} \epsilon_k n_k -\fr{3J}{2} \sum_{k,k^\prime > k_F} c^\dagger_{k^\prime \sigma}c_{k \sigma}
+\eeq
+The operator to create the singlet state \il{\ket{S_k} = \fr{1}{\sqrt 2}\rr{\ket{k\ua,d\da} - \ket{k\da,d\ua}}} off the Fermi sea (\il{\ket{\Phi}}) is
+\beq
+b_k^\dagger = \fr{1}{\sqrt 2}\rr{c^\dagger_{k \ua}c^\dagger_{d\da} - c^\dagger_{k \da}c^\dagger_{d\ua}}
+\eeq
+Hence the total wavefunction of singlet+Fermi-sea is
+\beq
+\ket{\Psi} = \sum_{k>k_F} a_k b_k^\dagger \ket{\Phi} = \ket{\Phi} \otimes \sum_{k > k_F}a_k \ket{S_k}
+\eeq
+\il{a_k} is the probability amplitude for the conduction electron in the single to have momentum \il{k}.
+\beq[ak]
+a_q = \bra{\Phi}\bra{S_q} \sum_k a_k \ket{S_k}\ket{\Phi} = \bra{\Phi}b_q\ket{\Psi}
+\eeq
+The Schrodinger equation for \il{\ket{\Psi}} is
+\beq
+E \ket{\Psi} = H_K \ket{\Psi} &= \ket{\Phi} \otimes H_k \sum_{k > k_F}a_k \ket{S_k}\\
+			      &= \ket{\Phi} \otimes \sum_{k > k_F}a_k \rr{\epsilon_k \ket{S_k} -\fr{3J}{2}\sum_{k^\prime > k_F} \ket{S_{k^\prime}}}\\
+			      &= \sum_{k>k_F} a_k \rr{\epsilon_k b^\dagger_k -\fr{3J}{2}\sum_{k^\prime > k_F}b^\dagger_{k^\prime}}\ket{\Phi}
+\eeq
+Multiplying \il{b_q} from left  gives
+\beq
+E b_q \ket{\Psi} = \epsilon_q a_q \ket{\Phi} - \fr{3J}{2}\sum_{k>k_F} a_k \ket{\Phi}
+\eeq
+Multiplying \il{\bra{\Phi}} from left and looking at eq.~\ref{ak} gives
+\beq
+E \bra{\Phi}b_q\ket{\Psi} = E a_q = a_q \epsilon_q - \fr{3J}{2}\sum_k a_k \\
+\implies a_q = \fr{3J/2}{\epsilon_q - E}\sum_k a_k\\
+\implies \sum_q a_q = \sum_q \fr{3J/2}{\epsilon_q - E}\sum_k a_k
+\eeq
+Since \il{\sum_q a_q =\sum_k a_k}, we get an equation for \il{E}
+\beq
+1 = \fr{3J}{2}\sum_{q>k_F} \fr{1}{\epsilon_q -E}
+\eeq
+Converting to integral,
+\beq
+1 = \fr{3J}{2}\int_{\epsilon_F}^D d\epsilon \fr{N(\epsilon)}{\epsilon -E}
+\eeq
+\il{D} is the upper limit of the conduction band. Assuming \il{N(\epsilon)} is constant \il{(N(0))} in this range, we get
+\beq
+\fr{2}{3JN(0)} &= \ln \bigg \vert \fr{D-E}{\epsilon_F - E} \bigg\vert \approx \ln \bigg \vert \fr{D}{\epsilon_F - E}\bigg \vert\\
+\implies E &= \epsilon_F - D e^{-\fr{2}{3N(0)J}}
+\eeq
+Thus, the energy of the ground state is lowered from the Fermi energy by an amount
+\beq
+E_b = D e^{-\fr{2}{3N(0)J}}
+\eeq
+The temperature below which this will be stable, \il{T_K}, is given by the relation
+\beq[tk]
+k_B T_k \sim E_b \implies T_K = \fr{D}{k_B}e^{-\fr{2}{3N(0)J}}
+\eeq
+
+\subsection*{Poor man's scaling}
+The idea is to reduce the bandwidth from \il{D} to \il{D - \delta D}, by considering all possible excitations in that range, up to second order. The transition matrix second order contributions in that range
+\beq
+T^{(2)} = VG_0V
+\eeq
+can be clubbed into a term \il{\Delta V}. This term is a representative of the scatterings from that range. After reducing the bandwidth to \il{D -\delta D}, the effect of the excluded region can be incorporated by changing the interaction term \il{V \ra V^\prime = V + \Delta V}. The interaction part is
+\beq
+H^\prime = J_z \sum_{k_1,k_2}S_d^z\rr{c^\dagger_{k_1\ua}c_{k_2\ua} - c^\dagger_{k_1\da}c_{k_2\da}} + J_T \sum_{k_1,k_2}\rr{S_d^+ c^\dagger_{k_1\da}c_{k_2\ua} + S_d^- c^\dagger_{k_1\ua}c_{k_2\da}}
+\eeq
+Incorporating \il{\Delta V} will involve changing the coupling constants \il{J_z} and \il{J_T}. There are three types of scattering processes at second order:
+\begin{enumerate}
+	\item No spin-flip of impurity - involving \il{\rr{S_d^z}^2}
+	\item one spin-flip of impurity - involving \il{S_d^z S_d^\pm} or \il{S_d^\pm S_d^z}
+	\item two spin-flips of impurity - involving \il{S_d^\pm S_d^\mp}
+\end{enumerate}
+
+The first kind does not involve any spin impurity operator (\il{S_z^2 = \fr{1}{4}}), so it will be ignored. The second kind will leave the impurity spin flipped at the end, and will hence result in a renormalization of \il{J_T}. The third kind will leave the impurity spin unchanged (two flips), and hence will involve a renormalization of \il{J_z}.
+
+\subsubsection*{Renormalization of \il{J_z}}
+First consider the process
+\beq
+k \ua, d\da \ra q \da d \ua \ra k^\prime \ua d\da
+\eeq
+The \il{T-}matrix term is
+\beq
+T_1 = J_T^2\sum_q S_d^- c^\dagger_{k^\prime \ua}c_{q\da}\fr{1}{E - H_0}S_d^+ c^\dagger_{q \da}c_{k\ua}
+\eeq
+Using eq.~\ref{identity}, we can write
+\beq
+(E - H_0)^{-1} c^\dagger_{q \da}c_{k\ua} = c^\dagger_{q \da}c_{k\ua}(E - \lambda -H_0)^{-1}
+\eeq
+where \il{\lambda} is given by \il{\qq{H_0,c^\dagger_{q \da}c_{k\ua}} = (\epsilon_q - \epsilon_k) c^\dagger_{q \da}c_{k\ua} \implies \lambda = \epsilon_q - \epsilon_k}. Hence,
+\beq
+T_1 = J_T^2 S_d^- S_d^+ \sum_q c^\dagger_{k^\prime \ua}c_{q\da}c^\dagger_{q \da}c_{k\ua}\rr{E - \epsilon_q + \epsilon_k - H_0}^{-1}
+\eeq
+Since the upper momenta states are unoccupied, \il{c_{q\da}c^\dagger_{q \da} = 1 -n_q = 1}.
+\beq
+T_1 = J_T^2 S_d^- S_d^+ c^\dagger_{k^\prime \ua}c_{k\ua}\sum_q \rr{E - \epsilon_q + \epsilon_k - H_0}^{-1}
+\eeq
+If we set the Fermi level to 0, \il{H_0 = 0}. Since the summation is over the narrow band \il{\{D - \delta D, D\}}, we can approximate the result of the summation as 
+\beq
+\sum_q \rr{E - \epsilon_q + \epsilon_k - H_0}^{-1} = N |\delta D | \fr{1}{E - D + \epsilon_k}
+\eeq
+\il{N} is the density of states. Also,
+\beq
+S^- S^+= \rr{S^x - iS^y}\rr{S^x + iS^y} = \fr{1}{2} + i\qq{S^x,S^y} = \fr{1}{2} - S^z
+\eeq 
+Putting it all together, 
+\beq
+T_1 = J_T^2\rr{\fr{1}{2} - S_d^z}N|\delta D|c^\dagger_{k^\prime \ua}c_{k\ua}\fr{1}{E - D + \epsilon_k}
+\eeq
+For the second possible scattering,
+\beq
+q \da k \ua d\ua \ra k^\prime \ua k \ua d\da \ra k^\prime\ua q \da d\ua
+\eeq
+we get
+\beq
+T_2 = J_T^2\sum_q S_d^+S_d^- c^\dagger_{q\da}c_{k\ua}\fr{1}{E - H_0}c^\dagger_{k^\prime \ua}c_{q\da}
+\eeq
+Using \il{\qq{H_0, c^\dagger_{k^\prime \ua}c_{q\da}} = \rr{\epsilon_{k^\prime} - \epsilon_q} c^\dagger_{k^\prime \ua}c_{q\da}= \rr{\epsilon_{k^\prime} +D} c^\dagger_{k^\prime \ua}c_{q\da}}, and \il{S_d^+ S_d^- = \fr{1}{2}+S_d^z}, we get
+\beq
+T_2 &= J_T^2 \rr{\fr{1}{2}+S_d^z} N |\delta D|c_{k\ua}c^\dagger_{k^\prime \ua} \fr{1}{E - D - \epsilon_{k^\prime}} \\
+	   &=-J_T^2 \rr{\fr{1}{2}+S_d^z} N |\delta D|c^\dagger_{k^\prime \ua} c_{k\ua}\fr{1}{E - D - \epsilon_{k^\prime}}
+\eeq
+The constant term resulting from the commutator at the last line was dropped. For each of these two processes, there are identical processes that start with the conduction electron in \il{\da}:
+\begin{gather}
+k \da, d\ua \ra q \ua d \da \ra k^\prime \da d\ua\\
+q \ua k \da d\da \ra k^\prime \da k \da d\ua \ra k^\prime\da q \ua d\da
+\end{gather}
+The only difference from the previous processes is that \il{S^+} is replaced by \il{S^-} and vice versa. Hence, these  processes give
+\begin{gather}
+T_3 = J_T^2\rr{\fr{1}{2} + S_d^z}N|\delta D|c^\dagger_{k^\prime \da}c_{k\da}\fr{1}{E - D + \epsilon_k}\\
+T_4 = -J_T^2 \rr{\fr{1}{2}-S_d^z} N |\delta D|c^\dagger_{k^\prime c_{k\da}\da} \fr{1}{E - D - \epsilon_{k^\prime}}
+\end{gather}
+The total second order contribution is
+\beq
+T^{(2)} &= -J_T^2 S_d^z N|\delta D|\rr{\fr{1}{E - D + \epsilon_k} + \fr{1}{E - D - \epsilon_{k^\prime}}}\rr{c^\dagger_{k^\prime \ua}c_{k\ua} - c^\dagger_{k^\prime \da}c_{k\da}}\\
+\eeq
+Comparing this with the \il{S_d^z} term in the Hamiltonian
+\beq
+J_z S_d^z\rr{c^\dagger_{k^\prime \ua}c_{k\ua} - c^\dagger_{k^\prime \da}c_{k\da}}\\
+\eeq
+we can easily write down the change in the coupling \il{J_d^z},
+\beq
+\delta J_d^z = -J_T^2 N|\delta D|\rr{\fr{1}{E - D + \epsilon_k} + \fr{1}{E - D - \epsilon_{k^\prime}}}
+\eeq
+For low energy excitations, we can neglect \il{E, \epsilon_k, \epsilon_{k^\prime}} with respect to \il{D}. Noting that the bandwidth is decreasing and hence \il{\delta D < 0},
+\beq
+\dv{J_d^z}{D}=-J_T^2N \fr{2}{D}
+\eeq
+This is the scaling equation for the coupling \il{J_d^z}.
+
+\subsubsection*{Renormalization of \il{J_T}}
+Consider the scattering
+\beq
+k \ua d\da \ra q\da d\ua \ra k^\prime \da d\ua
+\eeq
+\beq
+T_1 = -J_T J_z S_d^z S_d^+N|\delta D|c^\dagger_{k^\prime \da}c_{k\ua}\fr{1}{E - D + \epsilon_k}
+\eeq
+The minus sign at the front comes from the term
+\beq
+-S_d^z c^\dagger_{k^\prime \da}c_{q\da}
+\eeq
+in the Hamiltonian. Using \il{S_d^z S_d^+ = \fr{S_d^+}{2}},
+\beq
+T_1 = -J_T J_z \fr{S_d^+}{2} N|\delta D|c^\dagger_{k^\prime \da}c_{k\ua}\fr{1}{E - D + \epsilon_k}
+\eeq
+The second process is
+\beq
+q \ua k\ua d\da \ra k^\prime \da k \ua d\ua \ra q \ua k^\prime \da d\ua
+\eeq
+\beq
+T_2 = -J_T J_z  \fr{S_d^+}{2}N |\delta D|c^\dagger_{k^\prime \da} c_{k\ua}\fr{1}{E - D - \epsilon_{k^\prime}}
+\eeq
+Two more processes can be constructed from the above two processes, by switching the \il{S_d^+} and \il{S_d^z} operations. The change in the first process is that the \il{S_d^z} term will now become
+\beq
++S_d^z c^\dagger_{k^\prime \ua}c_{q\ua}
+\eeq
+so that will invert the sign.
+The change in the second process is that now the \il{q}-electron has to start off as \il{\da}, which means that the \il{S_d^z} term for this process becomes
+\beq
+-S_d^z c^\dagger_{k^\prime \da}c_{q\da}
+\eeq
+So the sign of the second process will also invert. The change common to both the process is that \il{S_d^z S_d^+} becomes \il{ S_d^+S_d^z}. Since  \il{ S_d^+S_d^z = -\fr{S_d^+}{2}}, this will involve a second change in sign for both processes. Thus, overall there is no change for either proces.
+\begin{gather}
+T_3 = T_1\\
+T_4 = T_2
+\end{gather}
+The total contribution is
+\beq
+T^{(2)} = -J_T J_z S_d^+ N |\delta D|c^\dagger_{k^\prime \da} c_{k\ua}\rr{\fr{1}{E - D - \epsilon_{k^\prime}} + \fr{1}{E - D + \epsilon_k}}
+\eeq
+Comparing with the \il{S_d^+} term in the Hamiltonian
+\beq
+J_T S_d^+ c^\dagger_{k^\prime \da} c_{k\ua}
+\eeq
+we can write
+\beq
+\delta J_T = -J_T J_z N |\delta D|\rr{\fr{1}{E - D - \epsilon_{k^\prime}} + \fr{1}{E - D + \epsilon_k}}
+\eeq
+Again neglecting the terms in the denominator, we get
+\beq
+\dv{J_T}{D} = -J_T J_z N\fr{2}{D}
+\eeq
+This is the scaling equation for \il{J_T}.
+
+\subsubsection*{Flow of the couplings}
+Switching to the dimensionless couplings
+\beq
+g_1 = N J_z, g_2 = N J_T
+\eeq
+the equations become
+\begin{gather}\label{ceq}
+\dv{g_1}{D} = -\fr{2g_2^2}{D}\\
+\dv{g_2}{D} = -\fr{2g_1g_2}{D}
+\end{gather}
+The first equation says that as the cutoff decreases, \il{g_1} will always increase. For \il{g<0} (ferromagnetic coupling), the coupling will go to zero. That is, at sufficiently low temperatures, the impurity electron becomes effectively decoupled from the conduction band. The phenomenon is called asymptotic freedom. For the antiferromagnetic case, the coupling should go to infinity. This means that at sufficiently low temperatures, the coupling will necessarily become appreciable large so as to render perturbation theory inapplicable.
+Dividing the two coupling equations gives
+\beq
+\dv{g_1}{g_2} = \fr{g_2}{g_1}\implies g_1^2 - g_2^2 = \text{constant}
+\eeq
+Taking \il{g_1} as the x-axis and \il{g_2} as the y-axis, depending on the sign of the constant, the solution is a vertical hyperbola or horizontal hyperbola. Since the coupling equations are unchanged  under the transformation \il{g_2 \ra -g_2}, analyzing the upper half (\il{g_2 > 0}) suffices. The antiferromagnetic case is easy. \il{g_1 > 0} means \il{g_1} will always increase the RG flow. The only solution is that both \il{g_1} and \il{g_2} flow to infinity. For the ferromagnetic case, if \il{|g_1|>g_2}, \il{g_1} will increase and the representative point will reach the x-axis (\il{g_2 = 0}). At this point, both the couplings will stop changing because both the derivatives involve \il{g_2}. So the fixed point in this case is \il{g_2 = 0} and \il{g_1} is some negative value. However, if \il{|g_1|<g_2}, the representative point will reach the positive y-axis. Since \il{g_2 \neq 0} here, \il{g_1} will continue to grow and become positive at some point. From there, it becomes the antiferromagnetic case.\\\\
+Setting \il{g_1 = g_2 =g >0} and integrating either of the scaling equations gives
+\beq[isot]
+g(D^\prime) &= \fr{g_0}{1-2g_0\ln\fr{D}{D^\prime}} \\
+\implies 2g(D^\prime) &= \fr{1}{\ln \fr{D^\prime}{T_K}}
+\eeq
+where \il{T_K = \fr{D}{k_B} \ex{-\fr{1}{2g_0}}}. \il{D^\prime} is the running bandwidth and \il{D} is the original bandwidth. This is almost the same as the one obtained in eq.~\ref{tk}, because \il{g = N J}. The expression for \il{g_{D^\prime}} shows that perturbation theory will work only for \il{T \gg T_K}, because close to \il{T_K}, the expression becomes non-analytic.\\\\
+The ferromagnetic case \il{(g<0)}, on the other hand, remains perturbative.
+\beq
+g(D^\prime) = \fr{g_0}{1-2g_0\ln\fr{D}{D^\prime}} = -\fr{|g_0|}{1+2|g_0|\ln\fr{D}{D^\prime}}
+\eeq
+At all points, the expression remains analytic, and gradually goes to zero at \il{D^\prime = 0}.
+
+\subsubsection*{Alternate way of obtaining the scaling equations}
+From eq.~\ref{hamtmat}, the interaction part can be written as
+\beq
+\Delta H_{ll^\prime} = \fr{1}{2}\qq{T_{ll^\prime}(E_l) + T_{ll^\prime}(E_{l^\prime})}
+\eeq
+where the transition matrix \il{T} is
+\beq
+T_{ll^\prime}(E) = \sum_H \fr{V_{lH}V_{Hl^\prime}}{E - E_H}
+\eeq
+Here, \il{\{H\} = \{D-\delta D, D\}} and 
+\beq
+V = J \vec S_d \cdot \sum_{k,k^\prime,\alpha,\alpha^\prime} c^\dagger_{k \alpha} \vec \sigma_{\alpha \alpha^\prime} c_{k^\prime \alpha^\prime}
+\eeq
+The first process is 
+\begin{gather}
+	k \alpha \xrightarrow{\quad \sigma^b \quad} q \lambda \xrightarrow{\quad \sigma^a \quad} k^\prime \beta \\
+	d \sigma \xrightarrow{\quad S_d^b \quad} d\sigma^{\prime\prime} \xrightarrow{\quad S_d^a \quad} d\sigma^\prime
+\end{gather}
+The transition matrix element is
+\beq
+T_1 &= \sum_{q\in\{D-\delta D\},\lambda,\sigma^{\prime\prime}}\bra{k^\prime\beta,\sigma^\prime}V\ket{q \lambda,\sigma^{\prime\prime}}\bra{q \lambda,\sigma^{\prime\prime}}V\ket{k\alpha,\sigma}\fr{1}{E-E_q}\\
+    &= J^2\sum_{\sigma^{\prime\prime}}\rr{S_d^a}_{\sigma^\prime \sigma^{\prime\prime}}\rr{S_d^b}_{ \sigma^{\prime\prime}\sigma}\sum_\lambda \rr{\sigma^a}_{\beta \lambda} \rr{\sigma^b}_{\lambda\alpha}\sum_{q\in\{D-\delta D\}}\fr{1}{E-E_q}\\
+    &\approx J^2\rr{ S_d^a S_d^b}_{ \sigma^{\prime}\sigma}\rr{\sigma^a \sigma^b}_{\beta \alpha} \fr{N |\delta D|}{E -D}
+\eeq
+The second process is
+\begin{gather}
+	k \alpha \xrightarrow{\quad \quad} k \alpha \xrightarrow{\quad \sigma^a \quad} q \lambda \\
+q \lambda \xrightarrow{\quad \sigma^b \quad} k^\prime \beta \xrightarrow{\quad \quad} k^\prime \beta \\
+	d \sigma \xrightarrow{\quad S_d^b \quad} d\sigma^{\prime\prime} \xrightarrow{\quad S_d^a \quad} d\sigma^\prime
+\end{gather}
+Here the intermediate state consists of two electrons with energy \il{E_k, E_{k^\prime}} and a hole with energy \il{-E_q}. The transition matrix element is
+\beq
+T_2 &= \sum_{q\in\{D-|\delta D|\},\lambda,\sigma^{\prime\prime}}\bra{q \lambda,k^\prime\beta,\sigma^\prime}V\ket{k^\prime \beta,k \alpha,\sigma^{\prime\prime}}\bra{k^\prime \beta,k \alpha,\sigma^{\prime\prime}}V\ket{q\lambda,k\alpha,\sigma}\fr{1}{E-\rr{E_k + E_{k^\prime} - E_q}}\\
+    &\approx -J^2\rr{ S_d^a S_d^b}_{ \sigma^{\prime}\sigma}\rr{\sigma^b\sigma^a }_{\beta \alpha} \fr{N |\delta D|}{E -D}
+\eeq
+Neglecting \il{E} with respect to \il{D} and adding the contributions, we get
+\beq
+T &= \fr{J^2 N |\delta D|}{D} \rr{S_d^a S_d^b}_{\sigma^{\prime}\sigma}\qq{\sigma^b,\sigma^a}_{\beta \alpha}\\
+  &=\fr{J^2 N |\delta D|}{2D} \qq{S_d^a,S_d^b}_{\sigma^{\prime}\sigma}\qq{\sigma^b,\sigma^a}_{\beta \alpha}
+\eeq
+In the last step, I used \il{\cc{S^a,S^b}=0}. Now,
+\beq
+\qq{S_d^a,S_d^b}_{\sigma^{\prime}\sigma}\qq{\sigma^b,\sigma^a}_{\beta \alpha} &= -\qq{S_d^a,S_d^b}_{\sigma^{\prime}\sigma}\qq{\sigma^a,\sigma^b}_{\beta \alpha}\\
+&= -i\epsilon_{abc}S^c_{\sigma \sigma^\prime} 2 i \epsilon_{abd}\sigma^d_{\beta \alpha}\\
+&=4\delta_{cd}S^c_{\sigma \sigma^\prime} \sigma^d_{\beta \alpha}\\
+&=4\vec S_{\sigma \sigma^\prime} \cdot \vec \sigma_{\beta \alpha}
+\eeq
+Therefore,
+\beq
+T = \fr{2J^2 N |\delta D|}{D}\vec S_{\sigma \sigma^\prime} \cdot \vec \sigma_{\beta \alpha}
+\eeq
+The correction to the coupling \il{J} can be read off:
+\beq
+J(D - \delta D) = J(D) - \fr{2J^2 N \delta D}{D}
+\eeq
+This gives the same scaling equations we found earlier.
+
+\subsection*{Universality}
+Adding a higher order correction to the Poor Man's scaling gives
+\beq
+\pd{g}{\ln D} = -2g^2 + 2g^3
+\eeq
+It can be integrated from \il{g^0(D)} to \il{g(D^\prime)}:
+\beq
+\ln \fr{D^\prime}{D} = -\int_{g_0}^g\fr{dg}{2g^2 - 2g^3} = -\int_{g_0}^g\fr{dg}{2g^2}\rr{1+g} \\
+\eeq
+Defining \il{D^\prime = k_B T_K} to be the temperature where \il{g \sim 1}, we can write
+\beq
+\ln \fr{k_B T_K}{D} = -\int_{g_0}^1\fr{dg}{2g^2}\rr{1+g} = -\fr{1}{2g_0} + \fr{1}{2}\ln g_0 + O(1)\\
+=-\fr{1}{2g_0} + \fr{1}{2}\ln 2g_0 + O(1)
+\eeq
+This gives a better estimate of the Kondo temperature
+\beq[sol]
+T_K = \fr{D}{k_B} \sqrt{2g_0}\ex{-\fr{1}{2g_0}}
+\eeq
+\il{T_K} can also be determined by appealing to dimensional arguments and ideas of universality. Since the energy scale in question is \il{D}, we can write
+\beq[form]
+k_B T_K = D y(g)
+\eeq
+where \il{y} is some dimensionless quantity. Since \il{T_K} is a physical quantity, it cannot change with our choice of the bandwidth \il{D}:
+\beq
+\dv{T_K}{D}=0
+\eeq
+Substituting the form of \il{T_K}, eq.~\ref{form}, in this equation gives
+\beq
+y(g) + D\dv{y(g)}{D} = 0\\
+\implies y + D\dv{y}{g}\dv{g}{D} = 0\\
+\implies y -2g^2\dv{y}{g} = 0\\
+\implies y = e^{-\fr{1}{2g}}
+\eeq
+This gives almost the same solution as eq.~\ref{sol}:
+\beq
+T_K = \fr{D}{k_B}e^{-\fr{1}{2g}}
+\eeq
+The difference in the pre-factor arises from the extra contribution incorporated in that solution.\\\\
+The fact that the scaling equations are universal can be seen by noting that from eq.~\ref{isot}, up to second order, we can write
+\beq
+g(D^\prime) = g_0\rr{1 + 2g_0^2\ln\fr{D}{D^\prime}}
+\eeq
+As we lower the temperature, the quantum processes are able to be coherent and lower energies.  At temperature \il{T}, the order of energies that is explored by the processes is \il{k_B T}. Hence we can set \il{\fr{D}{D^\prime} =\fr{T}{T_F}}. This says that the variation of the coupling from \il{g_0} to \il{g} is
+\beq
+g_0 \ra g = g_0\rr{1 + 2g_0 \ln \fr{T_F}{T}}
+\eeq
+Since \il{g \equiv N J}, we have recovered eq.~\ref{change}. Since eq.~\ref{change} was obtained as a perturbation calculation, it should have been valid only at \il{T \gg T_K}, but the scaling relation holds at all temperatures.
+
+\subsection{Method of pseudo-fermions}
+Spin operators, unlike fermionic creation and annihilation operators,  do not satisfy Wick's theorem. To remedy this, they can be factorised into fermionic operators. For example,
+\beq
+S^z = \fr{\sigma^z}{2} = \sum_{ij} c^\dagger_i \fr{\sigma^z_{ij}}{2} c_j = \fr{1}{2}\rr{c^\dagger_\ua c_\ua - c^\dagger_\da c_\da}
+\eeq
+Similarly,
+\beq
+S^x = \fr{1}{2}\rr{c^\dagger_\ua c_\da + c^\dagger_\da c_\ua}\\
+S^y = \fr{-i}{2}\rr{c^\dagger_\ua c_\da - c^\dagger_\da c_\ua}
+\eeq
+Now, the state \il{\ket{\ua}} can be represented as
+\beq
+\ket{\ua} = c^\dagger_\ua \ket{0}
+\eeq
+This however means that we get two other states in the Hilbert space, \il{\ket{0}} and \il{\ket{\ua\da}}, which are not allowed physically. To remove them, we can do the following. We can modify the Hamiltonian \il{H}, by introducing a complex chemical potential
+\beq
+\mu = -i\fr{\pi}{2}k_B T
+\eeq
+The new Hamiltonian is
+\beq
+\widetilde H = H -\mu (n_d - 1)
+\eeq
+The new partition function is then allowed to run over the entire Hilbert space, including the unphysical states. The actual partition function for the original Hamiltonian \il{H} is
+\beq
+Z = \text{Tr}\qq{\ex{-\beta H}} = \sum_{\sigma_d = \ua,\da}\sum_{k}\qq{\ex{-\beta H}}
+\eeq
+The modified partition function is
+\beq
+\widetilde Z &= \text{Tr}\qq{\ex{-\beta \rr{H -  \mu(n_d-1)}}}\\
+	     &=\text{Tr}\qq{\ex{-\beta H - i\fr{\pi}{2}(n_d -1)}}\\
+	     &=\sum_{\sigma_d = \ua,\da}\sum_{k}\qq{\ex{-\beta H}} + \sum_{k}\ex{-\beta H + i\fr{\pi}{2}} + \sum_{k}\ex{-\beta H - i\fr{\pi}{2}}\\
+	     &= Z\bigg\vert_{n_d = 1} + i Z\bigg\vert_{n_d = 0} - i Z\bigg\vert_{n_d = 0}
+\eeq
+Since the Hamiltonian involves the impurity electrons only as spin operators, and since \il{S_d(0) = 0 = S_d(\ua\da)}, we have 
+\beq
+Z\bigg\vert_{n_d = 0} = Z\bigg\vert_{n_d = 0}
+\eeq
+Hence,
+\beq
+\widetilde Z = Z
+\eeq
+Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.
+
+\subsection*{Nozières' local Fermi liquid theory}
+Wilson's numerical renormalization group calculation showed that the low temperature specific heat contribution from the singlet is linear in temperature
+\beq
+C_V = \gamma T
+\eeq
+This suggests that the strong-coupling limit of the Kondo model is a Fermi liquid.\\
+The singlet state (\il{s=0}) has an energy
+\beq
+E_g = J\qq{2\vec S_e \cdot \vec S_d} = J\qq{S^2 - S_d^2 - S_e^2} = J\qq{s\rr{s+1} - \fr{3}{2}} = -\fr{3J}{2}
+\eeq
+Since the interaction term is spherically symmetric, it suffices to consider a one dimensional chain of conduction electrons with the impurity site coupling to the conduction electron at the origin. This electron forms a singlet with the impurity electron,
+\beq
+\fr{\ket{0_\ua,d\da} - \ket{0_\da,d_\ua}}{\sqrt 2}
+\eeq
+Considering a tight-binding model, the only electron that can hop to the zeroth site is the one on the first site. The hopping of this electron on to the zeroth site would lead to an energy of
+\beq
+E_1 = -\fr{3}{2}J + \fr{3}{2}J = 0
+\eeq
+because the new electron would have the spin opposite to the other electron on the \il{0^\text{th}} site. This means that breaking the singlet raises the energy by \il{\fr{3}{2}J}. At low temperatures and very large \il{J}, this is not possible. That being said, there can always be virtual fluctuations into excited states. For example, the impurity electron can tunnel into the conduction band (\il{n_d = 0}) or another conduction electron may scatter into the impurity site (\il{n_d = 2}). Both these states have zero energy. With further virtual excitations, it is also possible to go into the triplet state with energy \il{\fr{J}{2}}. What this means is that although the singlet is stable with respect to energy-conserving transitions, the singlet is virtually polarizable, with the help of the site 1 electron. This induces an interaction on the site 1. Since the interaction on the site 1 is just a manifestation of the polarizability of the singlet, we can either take the singlet with its polarizability and assume the conduction band to be non-interacting, or we can assume the singlet to be static and take the Fermi sea to have a localised interaction at the site 1. In the latter picture, we have a frozen singlet (which can be ignored) and an interacting Fermi sea.\\\\
+The goal is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions. In the absence of interactions, the scattered wavefunction is
+\beq[shift]
+\psi \sim \fr{\sin\qq{kr + \delta(E_k)}}{r}
+\eeq
+That is, the phase shift is only a function of the energy. At the Fermi surface, this value \il{\delta(0)} is \il{\fr{\pi}{2}}, as known from the Friedel sum rule.
+\beq
+n = \sum_\sigma \fr{\delta}{\pi} \implies 1 = \fr{2\delta}{\pi} \implies \delta = \fr{\pi}{2}
+\eeq
+\il{n} is the number of conduction electrons bound in the resonance and the sum is over the possible quantum numbers (spin in this case). \il{\delta(0)} can also be obtained directly from eq.~\ref{shift}, by substituting \il{k=k_F} and noting that the isolation of the 0\uu{th} site means all wavefunctions should shift by \il{\Delta r = a}:
+\beq
+k_F a = \delta(0) \implies \delta(0) = \fr{\pi}{2a} 2 = \fr{\pi}{2}
+\eeq
+where the formula for \il{k_F} was used.\\\\
+In a Fermi gas, the energy levels are separated by
+\beq
+\Delta \epsilon = \pd{\epsilon}{k}\Delta k
+\eeq
+With the condition that the wavefunction should vanish at the boundary, we have \il{\Delta k = k_n - k_{n-1} = \fr{\pi}{L}}. Hence,
+\beq
+\Delta \epsilon = \pd{\epsilon}{k}\fr{\pi}{L}
+\eeq
+However, this changes in the presence of the impurity. Because of eq.~\ref{shift}, the boundary condition becomes
+\beq
+k_nL + \delta(\epsilon_k) = n\pi \implies k_n = \fr{n\pi}{L} - \fr{\delta}{L} = k_n^0 -\fr{\delta(\epsilon_k)}{L}
+\eeq
+The energy becomes
+\beq
+\epsilon(k) &= \epsilon(k^0) + \pd{\epsilon}{k}\rr{k - k_0}\\
+	    &= \epsilon_k - \pd{\epsilon}{k}\fr{\delta(\epsilon_k)}{L}
+\eeq
+In the Landau formulation of an interacting Fermi liquid, the phase shifts will depend on the quasiparticle occupation probabilities \il{n_{k\sigma}}. Hence,
+\beq
+\widetilde \epsilon_\sigma(k) = \epsilon_k - \pd{\epsilon}{k}\fr{\delta_\sigma(\epsilon_k,\{n_{q,\sigma}\})}{L}
+\eeq
+In bulk Fermi liquid, we expand the quasiparticle energy in the deviation of the quasiparticle distribution \il{n_k} from the ideal Fermi-Dirac distribution \il{n^0_k},
+\beq[fliq]
+\widetilde \epsilon_p = \underbrace{\epsilon_F}_{\text{Fermi gas}} &+ \overbrace{\fr{p_F^*}{m}\rr{p-p_F}}^{\text{linear contribution for \it{p} close to }p_F} \\
+	    &+ \underbrace{\sum_{q\sigma}f(p,q)\rr{n_q - n^0_q}}_{\text{interacting between two quasiparticles at momenta \it{p} and \it{q}}}
+\eeq
+Similarly, for this local Fermi liquid, the phase shift depends on the energy of the quasiparticle \il{\widetilde \epsilon} and the quasiparticle occupation \il{n_{q\sigma}}. Accordingly,
+\beq
+\delta_\sigma(\widetilde \epsilon,\{n_{q,\sigma}\}) = \delta_\sigma(\widetilde \epsilon = \epsilon_F, n_k = n^0_k) + \alpha\rr{\widetilde \epsilon - \epsilon_F} + \Phi \sum_{q\sigma^\prime}\rr{n_{q\sigma^\prime} - n^0_{q\sigma^\prime}}
+\eeq
+This is just a Taylor expansion of \il{\delta_\sigma} around \il{\tilde \epsilon = \epsilon_F} and \il{n_q = n^0_q}. \il{\Phi} and \il{\alpha} play the same role as \il{f} and \il{\fr{p_F^*}{m}} in eq.~\ref{fliq}. Specifically, \il{\Phi} represents the onsite interaction between quasiparticles of  opposite spin. Hence, the last term can be simplified by requiring \il{\sigma^\prime = -\sigma},
+
+\beq[phases]
+\delta_\sigma(\widetilde \epsilon,\{n_{q,\sigma}\}) = \delta_\sigma(\widetilde \epsilon = \epsilon_F, n_k = n^0_k) + \alpha\rr{\widetilde \epsilon - \epsilon_F} + \Phi \sum_{q}\delta n_{q,-\sigma}
+\eeq
+Since the singlet is isolated from the Fermi liquid, any change in the chemical potential will not affect the average occupation of the impurity site \il{\avg{n_d}}, and since we know that \il{\avg{n_d} = \fr{2\delta(0)}{\pi}}, this means that \il{\delta(0)}, the phase shift at the Fermi surface, is invariant under a change of the chemical potential. This in turn means that the resonance scattering (\il{\delta = \fr{\pi}{2}}) will always be pinned to the Fermi surface. With this knowledge, let us explicitly try to calculate the change in the phase shift at Fermi surface when we change the chemical potential by \il{\Delta \mu}. Before the change in chemical potential,
+\beq
+\delta^0_\ua = \fr{\pi}{2} + \Phi\sum_q \delta n^0_{q\da}
+\eeq
+Since \il{\delta n^0 = n^0 - n^0 =0},
+\beq
+\delta^0_\ua = \fr{\pi}{2}
+\eeq
+After the change in chemical potential, \il{\epsilon_F^\prime = \epsilon_F + \Delta \mu} and 
+\begin{gather}
+N(\mu = 0) = N^0 \\
+N(E^\prime = E+\mu) = N(E^\prime = E) + \dv{N}{E^\prime}\rr{E^\prime - E} = N^0 + \rho \Delta \mu\\
+\implies \sum_q \delta n_q = N - N^0 = \rho \Delta \mu
+\end{gather}
+Hence, from eq.~\ref{phases},
+\beq
+\delta_\ua &= \fr{\pi}{2} + \alpha\rr{\epsilon_F^\prime - \epsilon_F} + \Phi\sum_q \delta n_{q\da}\\
+	   &= \delta^0_\ua + \alpha\Delta\mu + \Phi \rho \Delta \mu
+\eeq
+Hence the change in the phase is
+\beq
+0 = \Delta \delta_\ua = \Delta \mu\rr{\alpha + \Phi \rho} \implies \alpha = -\Phi\rho
+\eeq\\\\
+This shows that the interaction term \il{\Phi} is responsible for pinning the resonance at the Fermi level; without that term in the formalism, the occupancy of the impurity site will change. This is similar to the fact that the interaction term \il{f(k,k^\prime)} in the bulk Fermi liquid is responsible for making the Landau theory invariant under Galilean transformations.\\\\
+Now we can calculate the density of states. From the boundary condition, we have
+\beq
+n_\sigma = \fr{kL}{\pi} + \fr{\delta_\sigma(E)}{\pi} = n^0 + \fr{\delta_\sigma(E)}{\pi}
+\eeq
+Hence,
+\beq
+\rho &= \dv{n_\sigma}{E} = \rho^0 + \fr{1}{\pi}\dv{\delta_\sigma}{E} \\
+\implies \Delta_\sigma\rho &=\rho - \rho^0 = \fr{1}{\pi}\alpha
+\eeq
+\il{\rho^0} is the density of states in absence of the impurity. The low temperature specific heat of an ideal Fermi liquid can be shown to be
+\beq
+C_v^0 = \gamma T = \fr{\pi^2 k_B^2}{3} \rho^0 T
+\eeq
+The interacting Fermi liquid is just a renormalised version of the Fermi gas, with a modified density of states \il{\fr{1}{\pi}\alpha}. Hence, the impurity contribution to the specific heat is
+\beq
+C_v &= \fr{\pi^2 k_B^2}{3}\rr{\Delta_\ua\rho + \Delta_\da\rho} T = \\
+    &=2 \fr{\pi^2 k_B^2}{3} T
+\eeq
+In presence of a magnetic field \il{B}, the magnetization is 
+\beq
+m = \avg{n_\ua} - \avg{n_\da} = \fr{1}{\pi}\rr{\delta_\ua - \delta_\da}
+\eeq
+In the presence of the magnetic field, all energies get modified,
+\beq
+E^B_\sigma = E + \sigma B
+\eeq
+Hence,
+\beq
+\sum_k \delta n_{k\sigma} = N_\sigma(B) - N(B=0) = \dv{N}{E^B}\rr{E^B - E} = \rho \sigma B
+\eeq
+This modifies the phase shift at the Fermi surface,
+\beq
+\delta_\sigma(\epsilon_F) &= \fr{\pi}{2} + \alpha\rr{\epsilon_F + \sigma B - \epsilon_F} + \Phi\sum_q \delta n_{q,-\sigma}\\
+			  &= \fr{\pi}{2} + \sigma \alpha B - \Phi \rho \sigma B\\
+			  &= \fr{\pi}{2} + 2\alpha\sigma B
+\eeq
+Hence,
+\beq
+m = \fr{1}{\pi}\rr{\delta_\ua - \delta_\da} = \fr{4\alpha B}{\pi}
+\eeq
+The susceptibility is
+\beq
+\chi = \pd{m}{B} = \fr{4\alpha}{\pi}
+\eeq
+\end{document}
