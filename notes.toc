@@ -6,17 +6,17 @@
 \contentsline {paragraph}{Situations:}{6}{section*.3}%
 \contentsline {subsection}{\numberline {0.5}Atomic limit (\({t=0}\))}{6}{subsection.0.5}%
 \contentsline {subsection}{\numberline {0.6}Non-interacting limit (\({U=0}\)):}{6}{subsection.0.6}%
-\contentsline {subsection}{\numberline {0.7}Total Hamiltonian: Mean field treatment}{9}{subsection.0.7}%
+\contentsline {subsection}{\numberline {0.7}Total Hamiltonian: Mean field treatment}{10}{subsection.0.7}%
 \contentsline {subsection}{\numberline {0.8}Some points:}{11}{subsection.0.8}%
-\contentsline {subsection}{\numberline {0.9}Derivation of the Kondo Hamiltonian:}{12}{subsection.0.9}%
+\contentsline {subsection}{\numberline {0.9}Derivation of the Kondo Hamiltonian:}{13}{subsection.0.9}%
 \contentsline {subsection}{\numberline {0.10}Obtaining the resistivity minimum and \({\qopname \relax o{log}}\)-dependence}{16}{subsection.0.10}%
-\contentsline {subsection}{\numberline {0.11}The Kondo resonance}{20}{subsection.0.11}%
+\contentsline {subsection}{\numberline {0.11}The Kondo resonance}{21}{subsection.0.11}%
 \contentsline {subsection}{\numberline {0.12}Adiabatic route to the Kondo resonance}{24}{subsection.0.12}%
 \contentsline {subsection}{\numberline {0.13}The Kondo temperature}{25}{subsection.0.13}%
 \contentsline {subsection}{\numberline {0.14}Poor man's scaling}{27}{subsection.0.14}%
-\contentsline {subsection}{\numberline {0.15}Universality}{33}{subsection.0.15}%
-\contentsline {subsection}{\numberline {0.16}Method of pseudo-fermions}{35}{subsection.0.16}%
-\contentsline {subsection}{\numberline {0.17}Nozières' local Fermi liquid theory}{36}{subsection.0.17}%
+\contentsline {subsection}{\numberline {0.15}Universality}{34}{subsection.0.15}%
+\contentsline {subsection}{\numberline {0.16}Method of pseudo-fermions}{36}{subsection.0.16}%
+\contentsline {subsection}{\numberline {0.17}Nozières' local Fermi liquid theory}{37}{subsection.0.17}%
 \contentsline {subsection}{\numberline {0.18}Numerical renormalization group calculation}{42}{subsection.0.18}%
-\contentsline {subsection}{\numberline {0.19}Anderson model \({\leftrightarrow }\) Fermi liquid}{46}{subsection.0.19}%
-\contentsline {subsection}{\numberline {0.20}Microscopic approach}{47}{subsection.0.20}%
+\contentsline {subsection}{\numberline {0.19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{46}{subsection.0.19}%
+\contentsline {subsection}{\numberline {0.20}Microscopic approach}{49}{subsection.0.20}%

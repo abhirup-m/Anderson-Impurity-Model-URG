@@ -263,7 +263,31 @@ When \il{E = \epsilon_d}, the phase shift is \il{\pi}, and the scattering is hea
 \beq
 \fr{2}{\pi}\delta(0) = \avg{n_d}
 \eeq
-This is an example of the Friedel sum rule which states that the total number of electrons bound inside a resonance is \il{\fr{1}{\pi}} times the total scattering phase shift at the Fermi surface. In other words, the impuritywill be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
+This is an example of the Friedel sum rule which states that the total number of electrons bound inside a resonance is \il{\fr{1}{\pi}} times the total scattering phase shift at the Fermi surface. In other words, the impurity will be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
+
+\subsubsection*{Coulomb blockade}
+A quantum dot is a set of electrons that are localised in a sufficiently small region so that their spectrum is quantised. The localization means that double occupation will come at a cost of \il{U}.
+\beq
+H_\text{dot} = \sum_{m\sigma} \epsilon_m n_{m\sigma} + U\fr{N(N+1)}{2}
+\eeq
+\il{\epsilon_m} are the single-particle energy levels. \il{N =\sum_{m\sigma} n_{m\sigma}} is the total number of electrons.  Switching on a voltage \il{V} across the dot shifts the energy levels, creating the possibility of conduction.
+\beq
+H_\text{dot} = \sum_{m\sigma} \rr{\epsilon_m -eV} n_{m\sigma} + U\fr{N(N+1)}{2}
+\eeq
+\il{e} is positive. The energy difference between \il{n_{N}=1} and \il{n_N = 2} levels is
+\beq
+\Delta E = UN + \epsilon_{N} -eV
+\eeq
+Tuning the voltage can make these two levels degenerate.
+\beq
+eV^* = UN + \epsilon_{N}
+\eeq
+At this voltage, the two levels have the same energy and double occupancy becomes possible. Electrons can flow from the source to the sink via double occupation on the dot.\\\\
+For a non-interacting resonance, the conductance can be calculated as follows. The conductance for perfect transmission is given by the quantum of conductance \il{G_0 = \fr{2e^2}{h}}. In this case, the transmission is not perfect, but is modulated by the density of states of the dot at the Fermi surface. Hence,
+\beq
+G(V) = G_0 \rho(0) = \fr{2e^2}{h} \fr{\Delta^2}{\rr{\epsilon_m - eV}^2 + \Delta^2}
+\eeq
+The conductance is maximum whenever \il{\epsilon_m = eV}. 
 
 \subsection{Total Hamiltonian: Mean field treatment}
 \begin{gather}
@@ -1454,40 +1478,53 @@ The next Hamiltonian is then
 This is the same equation as eq.~\ref{rec}, with \il{\ol H_N} expressed in its eigenbasis and the creation and annihilation operators also expressed in that basis; the \il{C(m,m^\prime)} are just the matrix elements of \il{c} and \il{c^\dagger} in that basis.\\\\
 To check whether the guesses about the fixed points are true, Wilson did the following. He set \il{J=0.009} and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \il{N}. They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \infty}, meaning that under the application of the NRG, the \il{J=0.009} Hamiltonian flowed to the fixed-point Hamiltonian \il{J = \infty}.
 
-\subsection{Anderson model \il{\leftrightarrow} Fermi liquid}
+\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
 The fixed-point Hamiltonians are found to represent interacting Fermi liquids. The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
 \eeq
-The parameters \il{\epsilon_k,V_k,U} are not the same as the Anderson model we start with, but I am using the same symbols for convenience. We will see that a mean-field treatment of this model goes to the Landau Fermi liquid model at \il{T \ra 0}. Under mean-field,
+The parameters \il{\epsilon_k,V_k,U} are not the same as the Anderson model we start with, but I am using the same symbols for convenience. The interaction term \il{\wl U} is the leading irrelevant operator near the low-energy fixed point. For \il{T \ra 0}, assuming only single excitations, the interacting term will not get invoked.\\\\
+Under mean-field,
 \beq
 n_{d\ua}n_{d\da} \approx n_{d\ua}\avg{n_{d\da}} + n_{d\da}\avg{n_{d\ua}} = \sum_{k,q,\sigma} |\alpha_{q}|^2|\alpha_{k}|^2 n_{k\sigma} \avg{n_{q,-\sigma}}
 \eeq
 Since the \il{\alpha} are pure phases, there mod-square are unity. The effective one-particle energy becomes
 \beq
-\wl\epsilon_{k\sigma} = \epsilon_k + U\sum_q \avg{n_{q,-\sigma}}
+\wl\epsilon_{k\sigma} = \epsilon_k + U\sum_q \avg{\delta n_{q,-\sigma}} = \epsilon_k + U \eta_\sigma
 \eeq
-This is analogous to eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles.  This quantity \il{\gamma = \fr{C_v}{T}} is
+This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles. \il{\delta n} acts as the excitations from the ground state.
+\beq
+\avg{\delta n_{k,\sigma}} = \begin{cases} \avg{n_{k\sigma}}, &\wl \epsilon_k > \epsilon_F\\ -\avg{n_{k\sigma}}, &\wl \epsilon_k < \epsilon_F\end{cases}
+\eeq
+This quantity \il{\gamma = \fr{C_v}{T}} is
 \begin{gather}
 	\gamma_\text{imp} = \fr{2\pi^2 k_B^2}{3}\rho_d(0)\label{gimp}
 \end{gather}
-The magnetic susceptibility is
+Under a magnetic field \il{B}, \il{ \wl \epsilon_{k\sigma} = \epsilon_k +U\eta_\sigma +\sigma h}. where \il{h=\fr{1}{2}g B \mu_B}. The magnetic susceptibility is
 \beq
-\chi_m &= -\fr{g\mu_B}{2}\pd{}{B}\qq{n(\wl\epsilon_{F\ua}-h) - n(\wl \epsilon_{F\da}+h)}\\
-       &= -\fr{g\mu_B}{2}\sum_k \delta(\wl\epsilon_k - \epsilon_F)\qq{\pd{}{B}\rr{\epsilon_k + Ud_\ua - h} - \pd{}{B}\rr{\epsilon_k + Ud_\da + h}}\\
-       &=-\fr{g\mu_B}{2}\sum_k \delta(\wl\epsilon_k - \epsilon_F)\qq{-g\mu_B + U\pd{d_\ua}{B} - U\pd{d_\da}{B}}
+\chi_m &= \fr{g\mu_B}{2}\pd{}{B}\avg{\delta n_\ua(\wl\epsilon_F) - \delta n_\da(\wl\epsilon_F)}\\
+       &= \fr{g\mu_B}{2}\pd{}{B}\sum_{\sigma}\sigma \avg{\delta n(\wl \epsilon_F,\sigma)}\\
+       &= \fr{g\mu_B}{2}\sum_{k,\sigma}\sigma \pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)}\pd{\wl \epsilon_{k\sigma}}{B}
 \eeq
-where \il{h = \fr{g\mu_B B}{2}} and \il{d_\sigma = \sum_l \avg{\delta n_{l,-\sigma}}}. Since \il{\ua} is shifted below the Fermi surface and \il{\da} is shifted above, we have \il{d_\ua = -d_\da}. Therefore,
+The term \il{\pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)}} is the density of states of the whole system.
 \beq
-\chi_m &=\fr{g^2\mu_B^2}{2}\sum_k \delta(\wl\epsilon_k - \epsilon_F)\qq{1 + U\pd{d_\da}{h}}
+\pd{}{\wl \epsilon_{k}}\avg{\delta n(\wl \epsilon_F,\sigma)}=\delta(\wl \epsilon_{k\sigma} - \epsilon_F)
 \eeq
-Since \il{\partial_h d_\da = \sum_k \delta(\epsilon_F - \wl\epsilon_k)\partial_h h} up to lowest order,
+In the limit of \il{T \ra 0} and \il{h \ra 0}, the quasiparticle energy becomes that of a non-interacting system.
 \beq
- \chi_m&=\fr{g^2\mu_B^2}{2}\rr{\rho_0(0)+\rho_{d}(0)}\qq{1+U\rho_{d}(0)}
+\lim_{T \ra 0,h \ra 0} \pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)} = \delta(\wl \epsilon_k - \epsilon_F)
+\eeq
+Therefore,
+\beq
+\chi_m = -\fr{g\mu_B}{2}\sum_{k} \delta\rr{\wl \epsilon_k - \epsilon_F}\sum_\sigma \sigma \pd{\wl \epsilon_{k\sigma}}{B}
+\eeq
+Now, the remaining derivative can be evaluated as
+\beq
+\pd{\wl \epsilon_{k\sigma}}{B} = \pd{}{B}\rr{\epsilon_k +\sigma h + U\eta_\sigma} = \fr{g \mu_B}{2}\pd{}{h}\rr{+\sigma h + U\eta_\sigma} = \fr{g \mu_B}{2}\sigma\qq{1 + U\rho_d}
 \eeq
 The impurity contribution is
 \beq[mimp]
-\chi_{\text{m,imp}} = \fr{g^2\mu_B^2}{2}\rho_{d}(0)\qq{1+U\rho_{d}(0)}
+\chi_{\text{m,imp}} = \rr{\fr{g\mu_B}{2}}^2\rho_{d}(0)\sum_\sigma\qq{1+U\rho_{d}(0)} = \fr{\rr{g\mu_B}^2}{2}\rho_{d}(0)\qq{1+U\rho_{d}(0)}
 \eeq
 Similarly, the charge susceptibility is
 \begin{gather}
@@ -1517,49 +1554,9 @@ Substituting this in the Wilson ratio gives
 \beq
 R = 2
 \eeq
+We thus see that a mean-field treatment of the Anderson model gives results similar to Landau's phenomenological treatment of the Fermi liquid. 
 
 \subsection{Microscopic approach}
-To do a perturbative expansion of the Hamiltonian in terms of the interaction \il{U}, it is useful to introduce the self energy \il{\Sigma(E) = \Sigma(0) + E\Sigma^\prime + \Sigma^\text{rem}(E)}. In the absence of interaction, the impurity Green's function is
-\beq
-G_d^0 = \fr{1}{E - \epsilon_d + i\Delta}
-\eeq
-Including the self energy gives
-\beq[greend1]
-G_d = \fr{1}{E - \epsilon_d + i\Delta - \Sigma(E)}
-\eeq
-Looking at eq.~\ref{greend1}, we can write down the density of states and hence the average occupancy of the impurity site
-\begin{gather}
-	\rho_{d\sigma} = \fr{-1}{\pi}\text{Im}\qq{G_d}\label{jaeger} \\
-	\avg{n_{d\sigma}} = \int_{-\infty}^0 dE\;\rho_{d\sigma} = -\fr{1}{\pi}\text{Im}\int_{-\infty}^0 dE\;\;G_d(E)\label{allforone}
-\end{gather}
-Luttinger proved that 
-\beq
-\int_{-\infty}^0 \Sigma^\prime G dE = 0
-\eeq
-In order to use this, note that
-\beq
-		     &\ln G_d^{-1}  = \ln\rr{E - \epsilon_d +i\Delta -\Sigma}\\
-		     &\implies \dv{\ln G_d^{-1}}{E} = \fr{1}{E - \epsilon_d +i\Delta -\Sigma}\rr{1 - \Sigma^\prime} = G_d - \Sigma^\prime G_d\\
-		     &\implies G_d = \Sigma^\prime G_d - \dv{\ln G_d}{E}
-\eeq
-Substituting this expression for \il{G_d} in eq.~\ref{allforone},
-\beq
-\avg{n_{d\sigma}} = -\fr{1}{\pi}\text{Im}\int_{-\infty}^0\Sigma^\prime G\;dE +\fr{1}{\pi}\text{Im}\int_{-\infty}^0\dv{\ln G_d}{E}dE
-\eeq
-The first integral is zero, courtesy Luttinger. We get
-\beq
-\avg{n_{d\sigma}} &= \fr{1}{\pi}\text{Im}\qq{\ln \fr{1}{E - \epsilon_d +i\Delta -\Sigma}}_{-\infty}^0\\
-&=-\fr{1}{\pi}\text{Im}\qq{\ln \rr{E - \epsilon_d +i\Delta -\Sigma}}_{-\infty}^0\\
-&=-\fr{1}{\pi}\text{Im}\qq{\ln{e^{i\theta}}}_{-\infty}^0 && \qq{\tan \theta = \fr{\Delta}{E - \epsilon_d -\Sigma}}\\
-&= -\fr{1}{\pi}\qq{\theta(0) - \theta(-\infty)}\\
-&= \fr{1}{\pi}\tan^{-1}\fr{\Delta}{\epsilon_d+\Sigma(0)}\\
-&=\fr{1}{2} - \fr{1}{\pi}\tan^{-1}\fr{\epsilon_d+\Sigma(0)}{\Delta}
-\eeq
-We can now relate the average occupancy with the density of states. From eq.~\ref{jaeger},
-\beq
-\rho_{d\sigma} = \fr{1}{\pi}\fr{\Delta}{\rr{\epsilon_d + \Sigma(0)}^2 + \Delta^2} = \fr{1}{\pi\Delta}\qq{1+\rr{\fr{\epsilon_d+\Sigma(0)}{\Delta}}^2}^{-1}\\
-=\fr{1}{\pi\Delta}\qq{1+\cot^2\pi\avg{n_{d\sigma}}}^{-1}=\fr{\sin^2 \pi\avg{n_{d\sigma}}}{\pi \Delta}
-\eeq
 The average occupation for the non-interacting quasiparticles can be similarly written from eq.~\ref{nandemonayi}.
 \beq
 \avg{\wl n_d} =\fr{1}{2} - \fr{1}{\pi}\tan^{-1}\fr{\wl\epsilon_d}{\wl\Delta} = \fr{1}{2} - \fr{1}{\pi}\tan^{-1}\fr{\epsilon_d - \Sigma(0)}{\Delta} = \avg{n_d} 
@@ -1579,8 +1576,17 @@ where
 \alpha^{\prime\prime}=\fr{1+\partial_\mu\Sigma_\sigma(\epsilon_F,0)}{1-\partial_E\Sigma_\sigma(\epsilon_F,0)}
 \end{gather}
 
-\subsection*{Perturbation expansion approach}
-As shown previously in section \ref{adiab}, this can be shown to take the form
+\subsection*{Renormalized perturbation}
+This is a perturbative expansion of the Hamiltonian in terms of the renormalised inteaction \il{\wl U}, and the second order results obtained from this approach coincide with the phenomenological results at \il{T,h \ra 0}.. This approach is obviously more general as all terms in the original Hamiltonian are retained.\\\\
+To do a perturbative expansion of the Hamiltonian in terms of the interaction \il{U}, it is useful to introduce the self energy \il{\Sigma(E) = \Sigma(0) + E\Sigma^\prime + \Sigma^\text{rem}(E)}. In the absence of interaction, the impurity Green's function is
+\beq
+G_d^0 = \fr{1}{E - \epsilon_d + i\Delta}
+\eeq
+Including the self energy gives
+\beq[greend1]
+G_d = \fr{1}{E - \epsilon_d + i\Delta - \Sigma(E)}
+\eeq
+As shown previously in section \ref{adiab}, the impurity Green's function can be shown to take the form
 \beq[greend2]
 G_d = \fr{Z}{E - \wl \epsilon_d + i\wl \Delta - \wl \Sigma(E)}
 \eeq
@@ -1595,7 +1601,7 @@ where the \il{\large \textasciitilde} represents the renormalised quantities
 \eeq
 The perturbative expansion is about the bare Hamiltonian, that is, the one with \il{\wl\Sigma = 0}. The corresponding Greens function (non-interacting quasiparticle Green's function) is
 \beq[nandemonayi]
-G^0_d = \fr{1}{E - \wl\epsilon_d + i\wl\Delta}
+\wl G_d = \fr{1}{E - \wl\epsilon_d + i\wl\Delta}
 \eeq
 The Anderson hamiltonian
 \beq
@@ -1624,8 +1630,8 @@ where
 \lambda_1 = z\Sigma(0,0)\\
 \lambda_2 = z^2 \qq{\Gamma_{\ua\da}(0,0) - U}
 \end{gather}
-Close to the Fermi surface, we want the renormalised self-energy \il{\wl \Sigma(E)} to vary as \il{E^2}. That gives two constraints
-\beq
+\il{\wl H_{qp}} is the effective Hamiltonian close to the strong-coupling fixed point. \il{\wl H_c} is the counter-term. It is introduced to cancel divergences. Close to the Fermi surface, we want the renormalised self-energy \il{\wl \Sigma(E)} to vary as \il{E^2}. That gives two constraints
+\beq[conditions]
 \wl \Sigma(0) &= 0\\
 \wl \Sigma^\prime(0) &= 0
 \eeq
@@ -1644,11 +1650,85 @@ The expansion is about the non-interacting quasiparticle Hamiltonian. The corres
 \beq
 G^0 = \fr{1}{E -\wl\epsilon_d +i\wl \Delta}
 \eeq
-By considering diagrams for the self energy, we get
+From the Friedel sum rule in the next section, we get
 \beq
-\pd{\Sigma_\sigma(0)}{h} - \pd{\Sigma_\sigma(0)}{\mu} = 2\pd{\Sigma_\sigma(0)}{E}
+\avg{n_{d\sigma}} = \fr{1}{\pi}\tan^{-1} \fr{\Delta}{\epsilon_d + \Sigma(0,h)}
 \eeq
-This can be used to prove the mean-field result eq.~\ref{historia}.
+Multiplying the numerator and denominator by \il{z}, we get the same occupancy in terms of the renormalised parameters.
+\beq
+\avg{n_{d\sigma}} = \fr{1}{\pi}\tan^{-1} \fr{\wl\Delta}{\wl\epsilon_d + \wl\Sigma(0,h)}
+\eeq
+For \il{T,h \ra 0}, the counter-term cancels appropriate terms from the quasiparticle Hamiltonian leading to the vanishing of the effects of the self-energy, eq.~\ref{conditions}. In that case, \il{\avg{n_{d\sigma}} = \avg{n^0_{d\sigma}}}, that is, the quasiparticle distribution becomes the same as the free fermionic distribution.\\\\
+By considering diagrams for the self energy, we get
+\begin{gather}
+\rr{\pd{}{E} + \pd{}{\mu}}\Sigma(E)\bigg\vert_{E = 0} = -\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0)\\
+\rr{\pd{}{h} - \pd{}{E}}\Sigma(E)\bigg\vert_{E = 0} = -\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0)
+\end{gather}
+Multiplying both equations throughout by \il{Z}, we get
+\begin{gather}
+	\rr{\pd{}{E} + \pd{}{\mu}}\wl \Sigma(E)\bigg\vert_{E = 0} = -Z\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0) = -\fr{1}{Z}\rho_{d\sigma}(0)\wl U\\
+\rr{\pd{}{h} - \pd{}{E}}\wl \Sigma(E)\bigg\vert_{E = 0} = -Z\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0)=-\fr{1}{Z}\rho_{d\sigma}(0)\wl U
+\end{gather}
+where I used \il{Z^2 \Gamma = \wl U}. We also have the relation \il{\wl \rho_d = \fr{1}{Z}\rho_d}, because
+\beq
+\wl \rho(0) \sim \fr{\wl \Delta}{\wl \epsilon_d^2 + \wl \Delta^2} = \fr{1}{Z} \fr{\Delta}{\epsilon_d^2 + \Delta^2}= \fr{1}{Z}\rho_d(0)
+\eeq
+Noting that the derivating of the renormalised self energy goes to zero at the Fermi surface, we get
+\beq[grisha]
+\pd{\wl \Sigma(E)}{\mu} \bigg\vert_{E=0} = \pd{\wl \Sigma(E)}{h} \bigg\vert_{E=0} = -\wl\rho_{d\sigma}(0)\wl U
+\eeq
+\\\\These can be used to prove the mean-field results regarding specific heat and the susceptibilities. Similar to the mean field treatment, close to \il{T=0}, the effects of the self energy vanish, and the specific heat linear term, \il{\gamma}, involves only the non-interacting density of states.
+\beq
+\wl \gamma \sim \wl \rho_d(0)
+\eeq
+The susceptibilities are given by
+\beq
+\chi_m = -\rr{\fr{g\mu_B}{2}}^2 \wl \rho_d \sum_\sigma \pd{\rr{\epsilon_{k} -h\sigma + \wl\Sigma}}{h} = \fr{g^2 \mu_B^2}{2}\wl \rho_d \rr{1 - \pd{\wl\Sigma}{h}}
+\eeq
+Substituting from eq.~\ref{grisha},
+\beq
+\chi_m = \fr{g^2 \mu_B^2}{2}\wl \rho_d \rr{1 + \wl U\wl\rho_d(0)}
+\eeq
+Similarly,
+\beq
+\chi_c = \dv{n}{\mu} = \wl\rho_d(0)\sum_\sigma\dv{\rr{\epsilon_F + \wl \Sigma}}{\mu} = 2\wl\rho_d(0)\rr{1+\pd{\wl\Sigma}{\mu}} = 2\wl\rho_d(0)\rr{1-\wl U\wl \rho_d(0)}
+\eeq
+\subsubsection*{Friedel sum rule}
 
+Looking at eq.~\ref{greend1}, we can write down the density of states and hence the average occupancy of the impurity site
+\begin{gather}
+	\rho_{d\sigma} = \fr{-1}{\pi}\text{Im}\qq{G_d}\label{jaeger} \\
+	\avg{n_{d\sigma}} = \int_{-\infty}^0 dE\;\rho_{d\sigma} = -\fr{1}{\pi}\text{Im}\int_{-\infty}^0 dE\;\;G_d(E)\label{allforone}
+\end{gather}
+Luttinger proved that 
+\beq
+\int_{-\infty}^0 \Sigma^\prime G dE = 0
+\eeq
+In order to use this, note that
+\beq
+		     &\ln G_d^{-1}  = \ln\rr{E - \epsilon_d +i\Delta -\Sigma}\\
+		     &\implies \dv{\ln G_d^{-1}}{E} = \fr{1}{E - \epsilon_d +i\Delta -\Sigma}\rr{1 - \Sigma^\prime} = G_d - \Sigma^\prime G_d\\
+		     &\implies G_d = \Sigma^\prime G_d - \dv{\ln G_d}{E}
+\eeq
+Substituting this expression for \il{G_d} in eq.~\ref{allforone},
+\beq
+\avg{n_{d\sigma}} = -\fr{1}{\pi}\text{Im}\int_{-\infty}^0\Sigma^\prime G\;dE +\fr{1}{\pi}\text{Im}\int_{-\infty}^0\dv{\ln G_d}{E}dE
+\eeq
+The first integral is zero, courtesy Luttinger. We get
+\beq
+\avg{n_{d\sigma}} &= \fr{1}{\pi}\text{Im}\qq{\ln \fr{1}{E - \epsilon_d +i\Delta -\Sigma}}_{-\infty}^0\\
+&=-\fr{1}{\pi}\text{Im}\qq{\ln \rr{E - \epsilon_d +i\Delta -\Sigma}}_{-\infty}^0\\
+&=-\fr{1}{\pi}\text{Im}\qq{\ln{e^{i\theta}}}_{-\infty}^0 && \qq{\tan \theta = \fr{\Delta}{E - \epsilon_d -\Sigma}}\\
+&= -\fr{1}{\pi}\qq{\theta(0) - \theta(-\infty)}\\
+&= \fr{1}{\pi}\tan^{-1}\fr{\Delta}{\epsilon_d+\Sigma(0,h)}\\
+&=\fr{1}{2} - \fr{1}{\pi}\tan^{-1}\fr{\epsilon_d+\Sigma(0,h)}{\Delta}
+\eeq
+We can now relate the average occupancy with the density of states. From eq.~\ref{jaeger},
+\beq
+\rho_{d\sigma} &= \fr{1}{\pi}\fr{\Delta}{\rr{\epsilon_d + \Sigma(0)}^2 + \Delta^2}\\
+	       &= \fr{1}{\pi\Delta}\qq{1+\rr{\fr{\epsilon_d+\Sigma(0)}{\Delta}}^2}^{-1}\\
+	       &=\fr{1}{\pi\Delta}\qq{1+\cot^2\pi\avg{n_{d\sigma}}}^{-1}\\
+	       &=\fr{\sin^2 \pi\avg{n_{d\sigma}}}{\pi \Delta}
+\eeq
 
 \end{document}
