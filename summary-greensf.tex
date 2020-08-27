@@ -1,0 +1,18 @@
+\documentclass[14pt]{extarticle}
+\usepackage{common}
+\begin{document}
+Everything is in interaction picture. Hamiltonian is  \il{H = H_0 + V}.
+\beq
+U(t) &= e^{iH_0 t} e^{-iHt}\\
+\psi(t) &= S(t,t^\prime) \psi(t^\prime)\\
+S(t,t^\prime) &= U(t)U^\dagger(t^\prime)\\
+i \dv{S(t,t^\prime)}{t} &= V(t)S(t,t^\prime)\\
+S(t,t^\prime) &= \hat T \ex{-i\int_{t^\prime}^t d\tau V(\tau)} \\
+	      &= \sum_n \fr{\rr{-i}^n}{n!}\int_{-\infty}^\infty d\tau_1...d \tau_n \hat T \bigg[V(\tau_1)...V(\tau_n)\bigg]\\
+G(t-t^\prime) &= -i\bra{0} \hat T c(t)c^\dagger(t^\prime) \ket{0} \ra \text{1-particle G.F.}\\
+G(t_1...t_n;t^\prime_1...t^\prime_n) &= \rr{-i}^n\bra{0} \hat T c(t_1)...c(t_n)c^\dagger(t^\prime_1)...c^\dagger(t^\prime_n)\ket{0} \ra \text{n-particle G.F.}\\
+				     &=\sum_{\{P^\prime_i\}}G(t_1 - P^\prime_1)...G(t_n - P^\prime_n) \ra \text{Wick's theorem}\\
+\bra{\phi_0}S\ket{\phi_0} &= \sum_n \fr{\rr{-i}^n}{n!}\int_{-\infty}^\infty d\tau_1...d \tau_n \bra{\phi_0}\hat T \bigg[V(\tau_1)...V(\tau_n)\bigg]\ket{\phi_0}\\
+			  &= \sum_n \fr{\rr{-i}^n}{n!}\int_{-\infty}^\infty d\tau_1...d \tau_n \sum_\text{contradictions}G_1 G_2 ... G_n
+\eeq
+\end{document}
