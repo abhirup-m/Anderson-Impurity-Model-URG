@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.5)  25 AUG 2020 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.27)  28 AUG 2020 20:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -620,7 +620,7 @@ Package rerunfilecheck Info: File `summary-greensf.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  18657 strings out of 480478
- 340835 string characters out of 5905960
+ 340835 string characters out of 5905959
  589300 words of memory out of 5000000
  34321 multiletter control sequences out of 15000+600000
  545146 words of font info for 39 fonts, out of 8000000 for 9000

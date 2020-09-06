@@ -175,7 +175,7 @@ Assuming \il{\epsilon_d = -|\epsilon_d|}, this is equivalent to
 \beq
 H_\text{non-int} = \epsilon_d n_d + \sum_k \epsilon_k n_k + \sum_{k\sigma} t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}}
 \eeq
-\subsubsection*{Green's function of impurity site:}
+\subsubsection{Green's function of impurity site:}
 We want to write down the \it{Green's function} \il{G_d} for the impurity site. In the absence of the hybridisation, this quantity is
 \beq
 G^0_d(E) = \fr{1}{E - \epsilon_d}
@@ -214,7 +214,7 @@ The total number of d-electrons can be calculated as:
 \beq[total]
 \avg{n_d} = 2\int d\epsilon \rho_d(\epsilon) = \fr{2\Delta}{\pi} \int \fr{d\epsilon}{(\epsilon-\epsilon_d)^2 + \Delta^2} = \fr{2}{\pi}\cot^{-1}\rr{\fr{\epsilon_d}{\Delta}}
 \eeq
-\subsubsection*{Phase shift of conduction electron due to scattering off the impurity:}
+\subsubsection{Phase shift of conduction electron due to scattering off the impurity:}
 \il{T-}matrix is defined by
 \beq
 T = V + VGT 
@@ -265,7 +265,7 @@ When \il{E = \epsilon_d}, the phase shift is \il{\pi}, and the scattering is hea
 \eeq
 This is an example of the Friedel sum rule which states that the total number of electrons bound inside a resonance is \il{\fr{1}{\pi}} times the total scattering phase shift at the Fermi surface. In other words, the impurity will be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
 
-\subsubsection*{Coulomb blockade}
+\subsubsection{Coulomb blockade}
 A quantum dot is a set of electrons that are localised in a sufficiently small region so that their spectrum is quantised. The localization means that double occupation will come at a cost of \il{U}.
 \beq
 H_\text{dot} = \sum_{m\sigma} \epsilon_m n_{m\sigma} + U\fr{N(N+1)}{2}
@@ -458,7 +458,7 @@ Finally, putting all this together,
 = \fr{1}{2}\sum_{k_1,k_2,\sigma_1,\sigma_2} J(k_1,k_2)c^\dagger_{k_1\sigma_1}\vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}\cdot \vec \sigma_d
 \eeq
 where
-\beq
+\beq[jexpr]
 J(k_1,k_2) = V(k_1)V^*(k_2)\qq{\fr{1}{\epsilon_d+U}-\fr{1}{\epsilon_d}}
 \eeq
 Assuming \il{V(k) \equiv t},
@@ -493,7 +493,7 @@ To see the \il{\log-}dependence, we need to calculate the transition matrix up t
 T = V + V G_0 V
 \eeq
 We wish to calculate the scattering probability of a conduction electron \il{\ket{k \ua}}.
-\subsubsection*{First order scattering}
+\subsubsection{First order scattering}
 \begin{center}
 $\left.\begin{tabular}{@{}l@{}}
 \il{\ket{k \ua, d_\sigma} \ra \ket{q \ua, d_\sigma}}
@@ -529,7 +529,7 @@ The total first order scattering probability is (averaged over all configuration
 \mathcal{P}^{(1)} = \fr{1}{2s_d+1}\sum_{m_d = -s_d}^{s_d}\rr{\mathcal{P}_1 + \mathcal{P}_2} = \fr{2\pi \rho(0) J^2}{(2s_d+1)}\sum_{m_d = -s_d}^{s_d}\rr{s_d(s_d+1) - m_d} \\
 = 2\pi \rho(0)J^2 s_d(s_d+1)
 \eeq
-\subsubsection*{Second order scattering}
+\subsubsection{Second order scattering}
 
 \begin{center}
 $\left.\begin{tabular}{@{}l@{}}
@@ -878,7 +878,7 @@ Incorporating \il{\Delta V} will involve changing the coupling constants \il{J_z
 
 The first kind does not involve any spin impurity operator (\il{S_z^2 = \fr{1}{4}}), so it will be ignored. The second kind will leave the impurity spin flipped at the end, and will hence result in a renormalization of \il{J_T}. The third kind will leave the impurity spin unchanged (two flips), and hence will involve a renormalization of \il{J_z}.
 
-\subsubsection*{Renormalization of \il{J_z}}
+\subsubsection{Renormalization of \il{J_z}}
 First consider the process
 \beq
 k \ua, d\da \ra q \da d \ua \ra k^\prime \ua d\da
@@ -952,7 +952,7 @@ For low energy excitations, we can neglect \il{E, \epsilon_k, \epsilon_{k^\prime
 \eeq
 This is the scaling equation for the coupling \il{J_d^z}.
 
-\subsubsection*{Renormalization of \il{J_T}}
+\subsubsection{Renormalization of \il{J_T}}
 Consider the scattering
 \beq
 k \ua d\da \ra q\da d\ua \ra k^\prime \da d\ua
@@ -1007,7 +1007,7 @@ Again neglecting the terms in the denominator, we get
 \eeq
 This is the scaling equation for \il{J_T}.
 
-\subsubsection*{Flow of the couplings}
+\subsubsection{Flow of the couplings}
 Switching to the dimensionless couplings
 \beq
 g_1 = N J_z, g_2 = N J_T
@@ -1035,7 +1035,7 @@ g(D^\prime) = \fr{g_0}{1-2g_0\ln\fr{D}{D^\prime}} = -\fr{|g_0|}{1+2|g_0|\ln\fr{D
 \eeq
 At all points, the expression remains analytic, and gradually goes to zero at \il{D^\prime = 0}.
 
-\subsubsection*{Alternate way of obtaining the scaling equations}
+\subsubsection{Alternate way of obtaining the scaling equations}
 From eq.~\ref{hamtmat}, the interaction part can be written as
 \beq
 \Delta H_{ll^\prime} = \fr{1}{2}\qq{T_{ll^\prime}(E_l) + T_{ll^\prime}(E_{l^\prime})}
@@ -1181,8 +1181,60 @@ Hence,
 \beq
 \wl Z = Z
 \eeq
-Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.
-
+Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.\\\\
+This method can also be used to determine the higher order corrections to the susceptibility. The zeroth order diagrams are\\\\
+%\begin{minipage}{250pt}
+%	\begin{center} \includegraphics[scale=0.3]{poppov1.png} \end{center}
+%\end{minipage}
+%\begin{minipage}{250pt}
+%	\begin{center} \includegraphics[scale=0.3]{poppov2.png} \end{center}
+%\end{minipage}\\\\
+The dotted lines are the impurity Greens function, so that diagram gives the impurity contribution to the susceptibility. Similarly, the solid lines are the conduction electron Greens function. The first diagram gives
+\beq
+\chi_c = -k_B T \sum_{k,\omega_n,\phi_0} \bra{\phi_0} \sigma^a G(k,i\omega_n)\sigma^bG_k(i\omega_n)\ket{\phi_0}
+\eeq
+The sum over the ground states \il{\ket{\phi_0}} constitutes a trace, so we can write it as
+\beq
+\chi_c &= -k_B T \sum_{k,\omega_n} \text{Tr}\qq{\sigma^a G(k,i\omega_n)\sigma^bG(k,i\omega_n)} \\
+       &= -2 k_B T \sum_{k,\omega_n} G^2(k,i\omega_n)\\
+       &= -2 k_B T \sum_{k,\omega_n} \rr{i\omega_n - \epsilon_k}^{-2}\\
+       &= 2 \sum_k \dv{}{\epsilon_k}k_B T\sum_{\omega_n} \rr{i\omega_n - \epsilon_k}^{-1}
+\eeq
+Now, it can be shown that
+\beq
+k_B T\sum_{\omega_n} \rr{i\omega_n - \epsilon_k}^{-1} = f(\epsilon_k) - \fr{1}{2}
+\eeq
+where \il{f(\epsilon_k)} is the FD-distribution at \il{\epsilon_k}. Therefore,
+\beq
+\chi_c &=2 \sum_k \dv{f(\epsilon_k)}{\epsilon_k}= 2\sum_k \rho(\epsilon_k) = 2 N(0)
+\eeq
+The second diagram gives
+\beq
+\chi_d^{(0)} = -k_B T \sum_{\omega_n} \text{Tr}\qq{\sigma^a G_d(i\omega_n)\sigma^bG_d(i\omega_n)} \\
+\eeq
+In the Popov-Fedotov scheme, we replace the impurity Greens function with
+\beq
+G_d = \frac{1}{i\omega_n - \lambda_d}
+\eeq
+where \il{\lambda_d = i\pi\fr{1}{2\beta}} is the imaginary chemical potential introduced. Since this is, for mathematical purposes, the same as the conduction Greens function with \il{\lambda_d} replacing \il{\epsilon_k}, we again get
+\beq
+\chi^{(0)}_d &=2 \dv{f(\lambda_d)}{\lambda_d}= -2\beta\fr{e^{\beta \lambda_d}}{\rr{1+e^{\beta \lambda_d}}^2} = \beta
+\eeq
+The first order diagrams are
+%\begin{center} \includegraphics[scale=0.3]{poppov3.png} \end{center}
+%\begin{center} \includegraphics[scale=0.3]{poppov4.png} \end{center}
+The first diagram gives
+\beq
+\chi^{(1)} = \chi_c \rr{-\fr{J}{2}} \chi_d = -\beta JN(0)
+\eeq
+The second one gives
+\beq
+\chi_d^{(1)} = \chi_d \rr{-\fr{J}{2}} \chi_c = -\beta JN(0)
+\eeq
+The total susceptibility is
+\beq
+\chi_d = \chi^{(0)}_d + \chi_d^{(1)} = \beta\rr{1 - 2 J N(0)}
+\eeq
 \subsection{Nozières' local Fermi liquid theory}
 Wilson's numerical renormalization group calculation showed that the low temperature specific heat contribution from the singlet is linear in temperature
 \beq
@@ -1404,7 +1456,7 @@ H_c &= \sum_{n_1,n_2} \ket{n_1}\bra{n_1} H_c \ket{n_2}\bra{n_2}\\
     &= \sum_{n}\epsilon_n \hat n_n + \sum_{n}\rr{\gamma_nc^\dagger_n c_{n+1}+ \gamma^*_nc^\dagger_{n+1} c_{n}}
 \eeq
 The diagonalization of these chains become impossible for \il{n>8}. To remedy this problem, Wilson, after diagonalization a chain of a particular length, retained only the lowest parts of the spectrum, and the Hamiltonian for the next stage was formed out of these low-lying states. This keeps the size of the Hilber space (and hence the matrices) manageable. Another problem is that as one goes on adding sites to the chain, the couplings need to die off, otherwise this process will never converge. 
-\subsubsection*{Logarithmic discretization}
+\subsubsection{Logarithmic discretization}
 First, note that up to first order
 \beq
 \epsilon_k = \epsilon_F + (k-k_F)\pd{\epsilon_k}{k}
@@ -1576,8 +1628,8 @@ where
 \alpha^{\prime\prime}=\fr{1+\partial_\mu\Sigma_\sigma(\epsilon_F,0)}{1-\partial_E\Sigma_\sigma(\epsilon_F,0)}
 \end{gather}
 
-\subsection*{Renormalized perturbation}
-This is a perturbative expansion of the Hamiltonian in terms of the renormalised inteaction \il{\wl U}, and the second order results obtained from this approach coincide with the phenomenological results at \il{T,h \ra 0}.. This approach is obviously more general as all terms in the original Hamiltonian are retained.\\\\
+\subsection{Renormalized perturbation theory}
+This is a perturbative expansion of the Hamiltonian in terms of the renormalised inteaction \il{\wl U}, and the second order results obtained from this approach coincide with the phenomenological results at \il{T,h \ra 0}.. This approach is obviously more general as all terms in the original Hamiltonian are retained. This is an alternative to the full microscopic approach. In the microscopic approach, we take the exact microscopic Hamiltonian and calculate observables from it. In the renormalised perturbation, we separate the Hamiltonian into a non-interacting  quasiparticle Hamiltonian which is like the low-energy free Hamiltonian, and an interacting part, and also a counter-term to prevent divergences. The original parameters of the model get replaced by renormalised paramters, and we can analyse the model perturbatively in powers of the renormalised interaction.\\\\
 To do a perturbative expansion of the Hamiltonian in terms of the interaction \il{U}, it is useful to introduce the self energy \il{\Sigma(E) = \Sigma(0) + E\Sigma^\prime + \Sigma^\text{rem}(E)}. In the absence of interaction, the impurity Green's function is
 \beq
 G_d^0 = \fr{1}{E - \epsilon_d + i\Delta}
@@ -1623,7 +1675,7 @@ The renormalised parameters are defined in eq.~\ref{renpar}. The renormalised op
 \end{gather}
 The \il{\wl H_c} that satisfies eq.~\ref{id} is
 \beq
-\wl H_c = \lambda_1 \wl n_d + \lambda_2 n_{d\ua}n_{d\da}
+\wl H_c = \lambda_1 \wl n_d + \lambda_2 \wl n_{d\ua}\wl n_{d\da}
 \eeq
 where
 \begin{gather}
@@ -1652,14 +1704,55 @@ G^0 = \fr{1}{E -\wl\epsilon_d +i\wl \Delta}
 \eeq
 From the Friedel sum rule in the next section, we get
 \beq
-\avg{n_{d\sigma}} = \fr{1}{\pi}\tan^{-1} \fr{\Delta}{\epsilon_d + \Sigma(0,h)}
+\avg{n_{d\sigma}} = \fr{1}{2} - \fr{1}{\pi}\tan^{-1} \fr{\epsilon_d + \Sigma(0,h)}{\Delta}
 \eeq
 Multiplying the numerator and denominator by \il{z}, we get the same occupancy in terms of the renormalised parameters.
-\beq
-\avg{n_{d\sigma}} = \fr{1}{\pi}\tan^{-1} \fr{\wl\Delta}{\wl\epsilon_d + \wl\Sigma(0,h)}
+\beq[jean]
+\avg{n_{d\sigma}} = \fr{1}{2} - \fr{1}{\pi}\tan^{-1} \fr{\wl\epsilon_d +\wl \Sigma(0,h)}{\wl\Delta}
 \eeq
 For \il{T,h \ra 0}, the counter-term cancels appropriate terms from the quasiparticle Hamiltonian leading to the vanishing of the effects of the self-energy, eq.~\ref{conditions}. In that case, \il{\avg{n_{d\sigma}} = \avg{n^0_{d\sigma}}}, that is, the quasiparticle distribution becomes the same as the free fermionic distribution.\\\\
-By considering diagrams for the self energy, we get
+The first order Feynman diagram for the self-energy is of the Hartree type. They give a contribution
+\beq
+\wl \Sigma(\omega,H,T) = \wl U\rr{n^{(0)}_{d\sigma}(0,H,T) - n^{(0)}_{d\sigma}(0,0,0)}
+\eeq
+This satisfies the constraint eq.~\ref{conditions}. That is, \il{\Sigma^{(1)}(0,0) = 0}. With the expression for self-energy, we can write down the impurity magnetic susceptibility, \il{\chi_d = \pd{m}{B}}, where
+\beq
+m = \fr{g \mu_B}{2} \avg{n_{d\ua} - n_{d\da}}
+\eeq
+We can substitute the expression for the self-energy into eq.~\ref{jean}. That gives
+\beq
+\chi_d = \fr{1}{2}\rr{g \mu_B}^2 \pd{\avg{n_{d\ua} - n_{d\da}}}{h} = \fr{1}{2\pi}\rr{g \mu_B}^2 \pd{}{h}\rr{\tan^{-1}\fr{\wl \epsilon_{d\da}}{\wl \Delta} - \tan^{-1} \fr{\wl \epsilon_{d\ua}}{\wl \Delta}}
+\eeq
+where \il{h = g\mu_B B} and \il{\wl\epsilon_{d\sigma} = \wl\epsilon_d + \wl Un_{d\sigma}^{(0)}}. Performing the derivative and taking the limits of \il{T \ra 0} and \il{B \ra 0} gives
+\beq
+\chi_d = \fr{1}{2\pi}\rr{g \mu_B}^2 \fr{1}{1 + \rr{\fr{\wl \epsilon_d}{\wl \Delta}}^2}\fr{1}{\wl \Delta}\pd{}{h}\qq{\wl\epsilon_{d\da} - \wl\epsilon_{d\ua}}
+\eeq
+We can recognize that 
+\beq
+\fr{1}{1 + \rr{\fr{\wl \epsilon_d}{\wl \Delta}}^2} \fr{1}{\pi  \wl \Delta} = \fr{1}{\pi} \fr{\wl \Delta}{\wl\Delta^2 + \wl \epsilon_d^2} = \rho_d(0)
+\eeq
+Therefore,
+\beq
+\chi_d = \fr{1}{2}\rr{g \mu_B}^2 \rho_d(0) \pd{}{h}\qq{\wl\epsilon_{d\da} - \wl\epsilon_{d\ua}}
+\eeq
+Up to first order, we can write
+\beq
+\wl\epsilon_{d\da} - \wl\epsilon_{d\ua} = \epsilon_{d\da} - \epsilon_{d\ua} + \wl U\rr{n^{(0)}_{d\da} - n^{(0)}_{d\ua}} = 2\epsilon_d + h + \wl U\rr{n^{(0)}_{d\da} - n^{(0)}_{d\ua}}
+\eeq
+where I used \il{\epsilon_{d\sigma}(h) = \epsilon_d - \fr{h}{2}\sigma}. Substituting this in the expression for \il{\chi_d} gives
+\beq
+\pd{}{h}\qq{\wl\epsilon_{d\da} - \wl\epsilon_{d\ua}} = 1 + \wl U \rr{\pd{n^{(0)}_{d\da}}{\epsilon_{d\da}}\pd{\epsilon_{d\da}}{h} - \pd{n^{(0)}_{d\ua}}{\epsilon_{d\ua}}\pd{\epsilon_{d\ua}}{h}}
+\eeq
+Up to first order, we can approximate \il{\pd{\epsilon_{d\sigma}}{h} = \fr{\sigma}{2}}, therefore,
+\beq
+\pd{}{h}\qq{\wl\epsilon_{d\da} - \wl\epsilon_{d\ua}} = 1 + \wl U\rho_d(0)
+\eeq
+Substituting in to the parent equation, we get
+\beq
+\chi_d = \fr{1}{2}\rr{g \mu_B}^2 \rho_d(0) \rr{1 + \wl U \rho_d(0)}
+\eeq
+which is same as the one obtained from mean-field.\\\\
+It is possible to take higher order contributions into account, but there are identities which show that these results are exact. 
 \begin{gather}
 \rr{\pd{}{E} + \pd{}{\mu}}\Sigma(E)\bigg\vert_{E = 0} = -\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0)\\
 \rr{\pd{}{h} - \pd{}{E}}\Sigma(E)\bigg\vert_{E = 0} = -\rho_{d\sigma}(0)\Gamma_{\ua\da}(0,0)
@@ -1677,7 +1770,7 @@ Noting that the derivating of the renormalised self energy goes to zero at the F
 \beq[grisha]
 \pd{\wl \Sigma(E)}{\mu} \bigg\vert_{E=0} = \pd{\wl \Sigma(E)}{h} \bigg\vert_{E=0} = -\wl\rho_{d\sigma}(0)\wl U
 \eeq
-\\\\These can be used to prove the mean-field results regarding specific heat and the susceptibilities. Similar to the mean field treatment, close to \il{T=0}, the effects of the self energy vanish, and the specific heat linear term, \il{\gamma}, involves only the non-interacting density of states.
+These can be used to prove the mean-field results regarding specific heat and the susceptibilities. Similar to the mean field treatment, close to \il{T=0}, the effects of the self energy vanish, and the specific heat linear term, \il{\gamma}, involves only the non-interacting density of states.
 \beq
 \wl \gamma \sim \wl \rho_d(0)
 \eeq
@@ -1693,7 +1786,7 @@ Similarly,
 \beq
 \chi_c = \dv{n}{\mu} = \wl\rho_d(0)\sum_\sigma\dv{\rr{\epsilon_F + \wl \Sigma}}{\mu} = 2\wl\rho_d(0)\rr{1+\pd{\wl\Sigma}{\mu}} = 2\wl\rho_d(0)\rr{1-\wl U\wl \rho_d(0)}
 \eeq
-\subsubsection*{Friedel sum rule}
+\subsubsection{Friedel sum rule}
 
 Looking at eq.~\ref{greend1}, we can write down the density of states and hence the average occupancy of the impurity site
 \begin{gather}
@@ -1730,5 +1823,112 @@ We can now relate the average occupancy with the density of states. From eq.~\re
 	       &=\fr{1}{\pi\Delta}\qq{1+\cot^2\pi\avg{n_{d\sigma}}}^{-1}\\
 	       &=\fr{\sin^2 \pi\avg{n_{d\sigma}}}{\pi \Delta}
 \eeq
+
+\subsection{Scaling of Anderson model}
+First consider the case in which \il{\epsilon_d \ll -D, U+\epsilon_d \gg D}. The situation is such that both the impurity levels are fat outside the bandwidth, as shown in fig.~\ref{and1}. The maximum energy scale at which scattering with conduction electrons can take place is of the order of the bandwidth \il{D}. Since the impurity energies are much higher than the bandwidth, no charge fluctuation can take place. The impurity state will be fixed at \il{\epsilon_d}. The only remaining degree of freedom will be the spin fluctuations, and we can then do the S-W transformation.\\\\
+On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth. So there wont be any renormalization of the impurity levels. From another perspective, it can be said that there won't be any renormalization because both the impurity levels \il{\ket{0},\ket{1}} will be able to hybridise with two states each: \il{\ket{0}} can hybridize with \il{\ket{k\ua},\ket{k\da}} and \il{\ket{1\sigma}} can hybridize with \il{\ket{0},\ket{2}}.\\\\
+\begin{minipage}{220pt}
+	\centering
+	\includegraphics[scale=0.3]{anderson.png}
+	\captionof{figure}{Impurity levels outside}
+	\label{and1}
+\end{minipage}
+\begin{minipage}{220pt}
+	\centering
+	\includegraphics[scale=0.3]{anderson2.png}
+	\captionof{figure}{Impurity levels inside}
+	\label{and2}
+\end{minipage}\\\\
+The limit where there will be some renormalization is the following. We are working with the asymmetric Anderson model, that is,\\ \il{U + \epsilon_d \gg D \gg |\epsilon_d|,\Delta}. The total Hamiltonian is
+\beq
+H = \sum_{k\sigma} \epsilon_{k\sigma}n_{k\sigma} + \epsilon_d \sum_\sigma n_{d\sigma} + U n_{d\ua}n_{d\da} + \sum_{k\sigma}\rr{V_{kd} c^\dagger_{k\sigma}c_{d\sigma} + V^*_{kd}c^\dagger_{d\sigma}c_{k\sigma}}
+\eeq
+This means that the doubly-occupied state is decoupled from the conduction band; it cannot hybridize through the \il{V_{kd}} because the virtual transition will involve a huge amount of energy and so it is practically impossible.\\\\
+At the first iteration, we will reduce the cut-off from \il{D} to \il{D - \delta D}. The zeroth approximation to this Hamiltonian is
+\beq
+H^{(0)} = \sum_{k<D-\delta D, \sigma} \epsilon_{k\sigma}n_{k\sigma} + \epsilon_d \sum_\sigma n_{d\sigma} + \sum_{k<D-\delta D,\sigma}\rr{V_{kd} c^\dagger_{k\sigma}c_{d\sigma} + V^*_{kd}c^\dagger_{d\sigma}c_{k\sigma}}
+\eeq
+As is apparent, the zeroth approximation involves completely ignoring the region to be integrated out. All kinetic energies and actual scatterings are strictly within the smaller region \il{[-D + \delta D, D - \delta D]}. The higher approximations  allow these states to make virtual transitions to the band edge states and then come back. The Hamiltonian term for the virtual excitation in to the upper band edge (with a particle in the intermediate state) is
+\beq
+H^{(1,p)}_\sigma = \sum_{k\in k^+} \alpha_{k\sigma} c^\dagger_{d\sigma} c_{k\sigma}c^\dagger_{k\sigma} c_{d\sigma}
+\eeq
+There are two things to note here. Firstly, \il{\alpha_{k\sigma}} is the probability of such a virtual transition and is found from perturbation theory. Secondly, the summation \il{k^+} is over the states in \il{[D-\delta D,D]}. To calculate \il{\alpha_{k\sigma}}, note that such a virtual excitation can take place only from the state \il{1_{d\sigma}}. Therefore, we look at the first order correction to this state under the perturbation \il{V_{kd}}.
+\beq
+\alpha_{k\sigma} = \fr{\bra{1_{d\sigma}}V^*_{kd} c^\dagger_{d\sigma} c_{k\sigma}\ket{k\sigma}\bra{k\sigma}V_{kd}c^\dagger_{k\sigma} c_{d\sigma}\ket{1_{d\sigma}}}{E_{1_d\sigma} - E_{k\sigma}} = \fr{|V_{kd}|^2}{\epsilon_d - \epsilon_k}
+\eeq
+The analogous term in the same order for the virtual transition to the lower edge consists of a hole in the intermediate state, because the lower edge states are already filled. This term is of the form
+\beq
+H^{(1,h)} = \sum_{k\in k^-,\sigma} \beta_{k\sigma} c^\dagger_{k\sigma} c_{d\sigma} c_{k\sigma} c_{d\sigma}^\dagger
+\eeq
+\il{\beta_{k\sigma}} is calculated similarly, using perturbation theory.
+
+\beq
+\beta_{k\sigma} = \fr{\bra{0}V^*_{kd} c_{d\sigma} c^\dagger_{k\sigma}\ket{k\sigma}\bra{k\sigma}V_{kd}c_{k\sigma} c^\dagger_{d\sigma}\ket{0}}{E_0 - E_{k\sigma}} = \fr{|V_{kd}|^2}{\epsilon_k - \epsilon_d}
+\eeq
+The total first order  correction to the Hamiltonian is of the form
+\beq
+H^{(1)} = \sum_{k^+,\sigma}\alpha_{k\sigma} T^+_{k\sigma} + \sum_{k^-,\sigma}\beta_{k\sigma} T^-_{k\sigma}
+\eeq
+\il{T^{+,-}} represent virtual transitions to the upper and lower edges. Since these terms do not cause any real fluctuations in the impurity sites, they renormalize only the impurity energy \il{\epsilon_d}, and not the hybridisation coupling \il{V_{kd}}. To find the renormalization in the site energies \il{\epsilon_0} and \il{\epsilon_1} (and hence in \il{\epsilon_d \equiv \epsilon_1 - \epsilon_0}), note that the term \il{T^+} virtually excites the state \il{n_{d\sigma} = 1}, and hence the change in \il{\epsilon_{1}} is
+\beq
+\delta \epsilon_{1} = \alpha_{k\sigma} = \sum_{k^+}\fr{|V_{kd}|^2}{\epsilon_d - \epsilon_k}
+\eeq
+We can write this summation in terms of \il{\Delta(E) = \pi N(E) V^2(E)}, under the assumption \il{\Delta (E) \approx \Delta} for \il{E \in \{-D,D\}}.
+\beq
+\delta \epsilon_{1} =\sum_{k^+}\fr{|V_{kd}|^2}{\epsilon_d - \epsilon_k} = \int_{D-\delta D}^{D} dE N(E) \frac{|V(E)|^2}{\epsilon_d - E} \approx \frac{\Delta}{\pi}\fr{ |\delta D|}{\epsilon_d - D}
+\eeq
+The change in \il{\epsilon_0} is
+\beq
+\delta \epsilon_{0} = \sum_\sigma \beta_{k\sigma} \approx -2\frac{\Delta}{\pi}\fr{ |\delta D|}{\epsilon_d + D}
+\eeq
+The change in the denominator occurs because in the lower edge, \il{\epsilon_k = -D}.  The change in \il{\epsilon_d} is
+\beq
+\delta \epsilon_d = \delta \epsilon_1 - \delta \epsilon_0 = \fr{\Delta |\delta D|}{\pi}\qq{\fr{1}{\epsilon_d - D} + \fr{2}{\epsilon_d +D}} = \fr{\Delta}{\pi}\fr{|\delta D|}{D} = -\fr{\Delta}{\pi}\delta\ln D
+\eeq
+We assumed \il{D \gg \epsilon_d}. In the limit of infinitesimal change, we get the equation
+\beq[scale_eq]
+\dv{\epsilon_d}{\ln D} = -\fr{\Delta}{\pi}
+\eeq
+We do not yet know whether \il{\Delta} is a function of the cutoff \il{D}. To find the renormalization of \il{\Delta}, we need to find the renormalization of \il{V_{kd}}. Note that the lowest order virtual transitions do not cause any actual charge fluctuation, and hence they do not renormalize \il{V_{kd}}. To see the renormalization of \il{V_{kd}}, we need to consider one order higher. These higher order terms involve transitions within the lower subspace along with virtual transitions into the higher subspaces. \beq
+H^{(2)} = \sum_{k^+,q,\sigma}\alpha_{k\sigma} T^+_{k\sigma}\gamma_{q,k,\sigma}c^\dagger_{d\sigma}c_{q\sigma} + \sum_{k^-,q,\sigma}\beta_{k\sigma} T^-_{k\sigma}\gamma_{q,k,\sigma}c_{d\sigma}c^\dagger_{q\sigma}
+\eeq
+The \il{\gamma_{k\sigma}} can be calculated as 
+\beq
+\alpha_{k\sigma}\gamma_{q,k,\sigma} = \fr{\bra{1_{d\sigma}}V^*_{kd} c^\dagger_{d\sigma} c_{k\sigma}\ket{k\sigma}\bra{k\sigma}V_{kd}c^\dagger_{k\sigma} c_{d\sigma}\ket{1_{d\sigma}}\bra{1_{d\sigma}}V_{kd}c_{q\sigma} c^\dagger_{d\sigma}\ket{q\sigma}}{(E_{1_d\sigma} - E_{k\sigma})(E_q - E_k)} = \alpha_{k\sigma}\fr{V_{kd}}{\epsilon_q - \epsilon_k}
+\eeq
+The renormalization in \il{V_{kd}} is therefore
+\beq
+\delta V_{kd} = \fr{\Delta}{\pi}\fr{|\delta D|}{\epsilon_d - D}\fr{V_{kd}}{\epsilon_q - \epsilon_k}
+\eeq
+Close to the band edge, we get
+\beq
+\delta V = \fr{\Delta}{\pi}\fr{|\delta D|}{\epsilon_d - D}\fr{V}{\epsilon_q - D} \approx \fr{\Delta}{\pi}\fr{|\delta D|}{D^2}V
+\eeq
+Therefore,
+\beq
+\delta \Delta \sim V\delta V = \fr{\Delta V^2}{\pi D^2}|\delta D| \implies \dv{\Delta}{D} \sim \rr{\fr{\Delta}{D}}^2
+\eeq
+For \il{D \gg \Delta}, this will vanish very quickly. Hence, in this regime, there is no renormalization of \il{\Delta}, and we can take it to be a constant in the renormalization flow. Integrating eq.~\ref{scale_eq} gives
+\beq
+\epsilon_d = -\fr{\Delta}{\pi}\ln D + \text{constant}
+\eeq
+Defining the constant as 
+\beq
+\text{constant} = \epsilon_d^* + \fr{\Delta}{\pi}\ln \Delta
+\eeq
+we get
+\begin{gather}
+\epsilon_d = -\fr{\Delta}{\pi}\ln D +  \epsilon_d^* + \fr{\Delta}{\pi}\ln \Delta \\
+\implies \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{D}{\Delta}\label{const}
+\end{gather}
+This result is in the regime \il{U + \epsilon_d \gg D \gg |\epsilon_d|}. Say, as a result of scaling, the bandwidth decreases and \il{\epsilon_d} increases (which it will, as is apparent from the eq.~\ref{const}). At some point, \il{-D \lesssim \epsilon_d}.At this point, perturbation theory breaks down and we resort to SWT. We denote this point of the scaling by \il{D = -a|\wl \epsilon_d|, a > 0}. We can then express the SWT coupling constant \il{\wl J} by replacing \il{\epsilon_d} with \il{\wl \epsilon_d} in eq.~\ref{jexpr}. For simplicity set \il{U = \infty}. Then,
+\beq
+\wl J = \fr{|V|^2}{\wl \epsilon_d} = \fr{a|V|^2}{D}
+\eeq
+We can then do the poor man's scaling with this coupling. From eq.~\ref{sol},
+\beq
+T_K \sim D \sqrt{\wl J N(0)^2} \ex{-\fr{1}{2 \wl J N(0)^2}} = \sqrt{\Delta D}\ex{-\fr{D}{2\Delta}}
+\eeq
+A different result is obtained if one is in the regime of \il{\epsilon_d < -D}. Then, the 
 
 \end{document}
