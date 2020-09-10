@@ -1,35 +1,35 @@
-\contentsline {subsection}{\numberline {0.1}\({T-}\)matrix and \({S-}\)matrix}{2}{subsection.0.1}%
-\contentsline {subsection}{\numberline {0.2}An identity}{3}{subsection.0.2}%
-\contentsline {subsection}{\numberline {0.3}Landau's theory of Fermi liquid}{4}{subsection.0.3}%
-\contentsline {subsection}{\numberline {0.4}The model}{8}{subsection.0.4}%
+\contentsline {subsection}{\numberline {1}\({T-}\)matrix and \({S-}\)matrix}{2}{subsection.0.1}%
+\contentsline {subsection}{\numberline {2}An identity}{3}{subsection.0.2}%
+\contentsline {subsection}{\numberline {3}Landau's theory of Fermi liquid}{4}{subsection.0.3}%
+\contentsline {subsection}{\numberline {4}The model}{8}{subsection.0.4}%
 \contentsline {paragraph}{Energy scales:}{8}{section*.2}%
 \contentsline {paragraph}{Situations:}{8}{section*.3}%
-\contentsline {subsection}{\numberline {0.5}Atomic limit (\({t=0}\))}{9}{subsection.0.5}%
-\contentsline {subsection}{\numberline {0.6}Non-interacting limit (\({U=0}\)):}{9}{subsection.0.6}%
-\contentsline {subsubsection}{\numberline {0.6.1}Green's function of impurity site:}{9}{subsubsection.0.6.1}%
-\contentsline {subsubsection}{\numberline {0.6.2}Phase shift of conduction electron due to scattering off the impurity:}{11}{subsubsection.0.6.2}%
-\contentsline {subsubsection}{\numberline {0.6.3}Coulomb blockade}{13}{subsubsection.0.6.3}%
-\contentsline {subsection}{\numberline {0.7}Total Hamiltonian: Mean field treatment}{14}{subsection.0.7}%
-\contentsline {subsection}{\numberline {0.8}Some points:}{16}{subsection.0.8}%
-\contentsline {subsection}{\numberline {0.9}Derivation of the Kondo Hamiltonian:}{18}{subsection.0.9}%
-\contentsline {subsection}{\numberline {0.10}Obtaining the resistivity minimum and \({\qopname \relax o{log}}\)-dependence}{23}{subsection.0.10}%
-\contentsline {subsubsection}{\numberline {0.10.1}First order scattering}{24}{subsubsection.0.10.1}%
-\contentsline {subsubsection}{\numberline {0.10.2}Second order scattering}{25}{subsubsection.0.10.2}%
-\contentsline {subsection}{\numberline {0.11}The Kondo resonance}{30}{subsection.0.11}%
-\contentsline {subsection}{\numberline {0.12}Adiabatic route to the Kondo resonance}{34}{subsection.0.12}%
-\contentsline {subsection}{\numberline {0.13}The Kondo temperature}{36}{subsection.0.13}%
-\contentsline {subsection}{\numberline {0.14}Poor man's scaling}{38}{subsection.0.14}%
-\contentsline {subsubsection}{\numberline {0.14.1}Renormalization of \({J_z}\)}{39}{subsubsection.0.14.1}%
-\contentsline {subsubsection}{\numberline {0.14.2}Renormalization of \({J_T}\)}{42}{subsubsection.0.14.2}%
-\contentsline {subsubsection}{\numberline {0.14.3}Flow of the couplings}{43}{subsubsection.0.14.3}%
-\contentsline {subsubsection}{\numberline {0.14.4}Alternate way of obtaining the scaling equations}{45}{subsubsection.0.14.4}%
-\contentsline {subsection}{\numberline {0.15}Universality}{47}{subsection.0.15}%
-\contentsline {subsection}{\numberline {0.16}Method of pseudo-fermions}{49}{subsection.0.16}%
-\contentsline {subsection}{\numberline {0.17}Nozières' local Fermi liquid theory}{53}{subsection.0.17}%
-\contentsline {subsection}{\numberline {0.18}Numerical renormalization group calculation}{60}{subsection.0.18}%
-\contentsline {subsubsection}{\numberline {0.18.1}Logarithmic discretization}{63}{subsubsection.0.18.1}%
-\contentsline {subsection}{\numberline {0.19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{66}{subsection.0.19}%
-\contentsline {subsection}{\numberline {0.20}Microscopic approach}{69}{subsection.0.20}%
-\contentsline {subsection}{\numberline {0.21}Renormalized perturbation theory}{70}{subsection.0.21}%
-\contentsline {subsubsection}{\numberline {0.21.1}Friedel sum rule}{77}{subsubsection.0.21.1}%
-\contentsline {subsection}{\numberline {0.22}Scaling of Anderson model}{78}{subsection.0.22}%
+\contentsline {subsection}{\numberline {5}Atomic limit (\({t=0}\))}{9}{subsection.0.5}%
+\contentsline {subsection}{\numberline {6}Non-interacting limit (\({U=0}\)):}{9}{subsection.0.6}%
+\contentsline {subsubsection}{\numberline {6.1}Green's function of impurity site:}{9}{subsubsection.0.6.1}%
+\contentsline {subsubsection}{\numberline {6.2}Phase shift of conduction electron due to scattering off the impurity:}{11}{subsubsection.0.6.2}%
+\contentsline {subsubsection}{\numberline {6.3}Coulomb blockade}{13}{subsubsection.0.6.3}%
+\contentsline {subsection}{\numberline {7}Total Hamiltonian: Mean field treatment}{14}{subsection.0.7}%
+\contentsline {subsection}{\numberline {8}Some points:}{16}{subsection.0.8}%
+\contentsline {subsection}{\numberline {9}Derivation of the Kondo Hamiltonian:}{18}{subsection.0.9}%
+\contentsline {subsection}{\numberline {10}Obtaining the resistivity minimum and \({\qopname \relax o{log}}\)-dependence}{23}{subsection.0.10}%
+\contentsline {subsubsection}{\numberline {10.1}First order scattering}{24}{subsubsection.0.10.1}%
+\contentsline {subsubsection}{\numberline {10.2}Second order scattering}{25}{subsubsection.0.10.2}%
+\contentsline {subsection}{\numberline {11}The Kondo resonance}{30}{subsection.0.11}%
+\contentsline {subsection}{\numberline {12}Adiabatic route to the Kondo resonance}{34}{subsection.0.12}%
+\contentsline {subsection}{\numberline {13}The Kondo temperature}{36}{subsection.0.13}%
+\contentsline {subsection}{\numberline {14}Poor man's scaling}{38}{subsection.0.14}%
+\contentsline {subsubsection}{\numberline {14.1}Renormalization of \({J_z}\)}{39}{subsubsection.0.14.1}%
+\contentsline {subsubsection}{\numberline {14.2}Renormalization of \({J_T}\)}{42}{subsubsection.0.14.2}%
+\contentsline {subsubsection}{\numberline {14.3}Flow of the couplings}{43}{subsubsection.0.14.3}%
+\contentsline {subsubsection}{\numberline {14.4}Alternate way of obtaining the scaling equations}{45}{subsubsection.0.14.4}%
+\contentsline {subsection}{\numberline {15}Universality}{48}{subsection.0.15}%
+\contentsline {subsection}{\numberline {16}Method of pseudo-fermions}{50}{subsection.0.16}%
+\contentsline {subsection}{\numberline {17}Nozières' local Fermi liquid theory}{53}{subsection.0.17}%
+\contentsline {subsection}{\numberline {18}Numerical renormalization group calculation}{61}{subsection.0.18}%
+\contentsline {subsubsection}{\numberline {18.1}Logarithmic discretization}{63}{subsubsection.0.18.1}%
+\contentsline {subsection}{\numberline {19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{66}{subsection.0.19}%
+\contentsline {subsection}{\numberline {20}Microscopic approach}{69}{subsection.0.20}%
+\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{70}{subsection.0.21}%
+\contentsline {subsubsection}{\numberline {21.1}Friedel sum rule}{77}{subsubsection.0.21.1}%
+\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{78}{subsection.0.22}%

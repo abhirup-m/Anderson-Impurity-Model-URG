@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1599410656 "notes.tex" "notes.pdf" "notes" 1599410660
+["pdflatex"] 1599756735 "notes.tex" "notes.pdf" "notes" 1599756739
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1591545468 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1591545468 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1591545468 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -173,13 +173,13 @@
   "anderson.png" 1599389043 54007 14d95798b1723837065d7d62fe4c02a8 ""
   "anderson2.png" 1599389055 54097 8053d770f14a9c4783c9b9fe7d2b7864 ""
   "common.sty" 1599387021 2685 c81dd4df1ded55711329c9394c6be45c ""
-  "notes.aux" 1599410660 10599 dc316b35c3444e850bee3a429ba72c36 "pdflatex"
-  "notes.out" 1599410660 2536 25c25f5c81d8c80cb4d1014ee1c22b55 "pdflatex"
-  "notes.tex" 1599410653 118627 23a592e0828e87bbd4930ace7f71eb73 ""
-  "notes.toc" 1599410660 3480 45c225fe28c63998d256fd18ad8123ea "pdflatex"
+  "notes.aux" 1599756739 10782 3382df228141b5fe90238210c3784e87 "pdflatex"
+  "notes.out" 1599756739 2536 25c25f5c81d8c80cb4d1014ee1c22b55 "pdflatex"
+  "notes.tex" 1599756735 124543 e06c2670683c21ea895a0a531e440122 ""
+  "notes.toc" 1599756739 3414 f92cd76f0f051cae74c1346219ed5a72 "pdflatex"
   (generated)
   "notes.toc"
-  "notes.pdf"
   "notes.log"
+  "notes.pdf"
   "notes.aux"
   "notes.out"

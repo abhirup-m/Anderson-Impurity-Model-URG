@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.27)  6 SEP 2020 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.27)  10 SEP 2020 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -490,22 +490,22 @@ File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count291
 \l__pdf_internal_box=\box64
 ) (./notes.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
@@ -530,7 +530,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 3.
+Package hyperref Info: Link coloring OFF on input line 5.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -540,9 +540,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 3.
-LaTeX Info: Redefining \pageref on input line 3.
-LaTeX Info: Redefining \nameref on input line 3.
+LaTeX Info: Redefining \ref on input line 5.
+LaTeX Info: Redefining \pageref on input line 5.
+LaTeX Info: Redefining \nameref on input line 5.
  (./notes.out) (./notes.out)
 \@outlinefile=\write6
  (./notes.toc
@@ -560,304 +560,314 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 5.
+(hyperref)                removing `math shift' on input line 7.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 5.
+(hyperref)                removing `math shift' on input line 7.
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
 
 [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 121--125
+Underfull \hbox (badness 10000) in paragraph at lines 123--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+Underfull \hbox (badness 10000) in paragraph at lines 128--132
 
  []
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 157.
+(hyperref)                removing `math shift' on input line 159.
 
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 174.
+(hyperref)                removing `math shift' on input line 176.
 
 [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 251--256
+Underfull \hbox (badness 10000) in paragraph at lines 253--258
 
  []
 
 [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 284--288
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
 
 [14]
-Overfull \hbox (29.63033pt too wide) detected at line 312
+Overfull \hbox (29.63033pt too wide) detected at line 314
 [][][]
  []
 
 [15] [16]
-Overfull \hbox (22.57251pt too wide) in paragraph at lines 347--348
+Overfull \hbox (22.57251pt too wide) in paragraph at lines 349--350
 \T1/cmr/m/n/14.4 model pro-duces a log-a-rith-mic term, which ex-plains the log-dependence. 
  []
 
 
-Overfull \hbox (12.79942pt too wide) in paragraph at lines 351--352
+Overfull \hbox (12.79942pt too wide) in paragraph at lines 353--354
 \T1/cmr/m/n/14.4 from the An-der-son model ($[]$) to the Fermi liq-uid state ($[]$).
  []
 
 [17] [18]
-Overfull \hbox (39.73341pt too wide) detected at line 392
+Overfull \hbox (39.73341pt too wide) detected at line 394
 [][][]
  []
 
 
-Overfull \hbox (12.34645pt too wide) detected at line 405
+Overfull \hbox (12.34645pt too wide) detected at line 407
 [][][]
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 417--421
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 
  []
 
 [20]
-Overfull \hbox (70.87119pt too wide) detected at line 435
+Overfull \hbox (70.87119pt too wide) detected at line 437
 [][][]
  []
 
 
-Overfull \hbox (4.83742pt too wide) in paragraph at lines 435--438
+Overfull \hbox (4.83742pt too wide) in paragraph at lines 437--440
 \T1/cmr/m/n/14.4 Using Fierz in-den-tity $[]$, we can write 
  []
 
 [21]
-Overfull \hbox (12.44608pt too wide) in paragraph at lines 441--444
+Overfull \hbox (12.44608pt too wide) in paragraph at lines 443--446
 \T1/cmr/m/n/14.4 Now, $[]$, and $[]$.
  []
 
 [22]
-Overfull \hbox (57.96529pt too wide) in paragraph at lines 474--474
+Overfull \hbox (43.46478pt too wide) in paragraph at lines 476--476
 []\T1/cmr/bx/n/17.28 Obtaining the re-sis-tiv-ity min-i-mum and $[]$-dependence 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 474.
+(hyperref)                removing `math shift' on input line 476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathop' on input line 474.
+(hyperref)                removing `\mathop' on input line 476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathgroup' on input line 474.
+(hyperref)                removing `\mathgroup' on input line 476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\symoperators' on input line 474.
+(hyperref)                removing `\symoperators' on input line 476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 474.
+(hyperref)                removing `\@ifnextchar' on input line 476.
 
 
-Overfull \hbox (10.9828pt too wide) detected at line 482
+Overfull \hbox (10.9828pt too wide) detected at line 484
 [][][]
  []
 
 
-Overfull \hbox (19.4558pt too wide) detected at line 490
+Overfull \hbox (19.4558pt too wide) detected at line 492
 [][][]
  []
 
 [23] [24] [25]
-Overfull \hbox (65.87093pt too wide) in paragraph at lines 568--571
+Overfull \hbox (65.87093pt too wide) in paragraph at lines 570--573
 \T1/cmr/m/n/14.4 Note that if $[]$, then $[]$ 
  []
 
 
-Overfull \hbox (17.87572pt too wide) in paragraph at lines 568--571
+Overfull \hbox (17.87572pt too wide) in paragraph at lines 570--573
 []$\T1/cmr/m/n/14.4 . As-sum-ing the scat-ter-ing con-serves en-ergy $[]$,
  []
 
 [26] [27]
-Overfull \hbox (0.34477pt too wide) in paragraph at lines 607--610
+Overfull \hbox (0.34477pt too wide) in paragraph at lines 609--612
 \T1/cmr/m/n/14.4 Dropping the temperature-independent $[]$ term and rec-og-niz-ing $[]$
  []
 
 [28] [29]
-Overfull \hbox (62.29422pt too wide) detected at line 676
+Overfull \hbox (62.29422pt too wide) detected at line 678
 [][][]
  []
 
 [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 710--713
+Underfull \hbox (badness 10000) in paragraph at lines 712--715
 
  []
 
 [32] [33] [34] [35] [36] [37] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 881.
+(hyperref)                removing `math shift' on input line 883.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 881.
+(hyperref)                removing `subscript' on input line 883.
 
 
-Overfull \hbox (13.53606pt too wide) in paragraph at lines 893--896
+Overfull \hbox (13.53606pt too wide) in paragraph at lines 895--898
 \T1/cmr/m/n/14.4 where $\OML/cmm/m/it/14.4 ^^U$ \T1/cmr/m/n/14.4 is given by $[]$. Hence, 
  []
 
 [39]
-Overfull \hbox (35.23663pt too wide) in paragraph at lines 921--924
+Overfull \hbox (35.23663pt too wide) in paragraph at lines 923--926
 \T1/cmr/m/n/14.4 Using $[]$, and $[]$,
  []
 
 [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 955.
+(hyperref)                removing `math shift' on input line 957.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 955.
+(hyperref)                removing `subscript' on input line 957.
 
 [41] [42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1029
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1034
+Underfull \hbox (badness 10000) in paragraph at lines 1032--1036
 
  []
 
 [45]
-Overfull \hbox (128.66183pt too wide) detected at line 1072
+Overfull \hbox (128.66183pt too wide) detected at line 1074
 [][][]
  []
 
-[46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1131--1135
+[46] [47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1137
 
  []
 
-[48] [49]
-Overfull \hbox (27.0166pt too wide) detected at line 1175
+[49]
+Overfull \hbox (27.0166pt too wide) detected at line 1177
 [][][]
  []
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1183--1194
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1183--1194
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1196
 
  []
 
-[51] [52]
-Underfull \hbox (badness 10000) in paragraph at lines 1255--1258
+[51] [52] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 1257--1260
 
  []
 
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 1268--1272
-
- []
-
-[54] [55] [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1331--1335
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 1270--1274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1331--1335
+Overfull \hbox (1.59543pt too wide) in paragraph at lines 1279--1282
+\T1/cmr/m/n/14.4 However, this changes in the pres-ence of the im-pu-rity. Be-cause of eq. []17.5[],
+ []
+
+[55] [56] [57]
+Underfull \hbox (badness 10000) in paragraph at lines 1333--1337
 
  []
 
-[57] [58] [59]
-Overfull \hbox (18.6576pt too wide) detected at line 1393
+
+Underfull \hbox (badness 10000) in paragraph at lines 1333--1337
+
+ []
+
+[58] [59]
+Overfull \hbox (18.6576pt too wide) detected at line 1395
 [][][]
  []
 
 [60] [61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 1463--1467
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1469
 
  []
 
 
-Overfull \hbox (26.42574pt too wide) in paragraph at lines 1468--1471
+Overfull \hbox (26.42574pt too wide) in paragraph at lines 1470--1473
 \T1/cmr/m/n/14.4 We can now de-fine or-thog-o-nal func-tions in this $[]$ in-ter-val $[]$, 
  []
 
 
-Overfull \hbox (30.98787pt too wide) in paragraph at lines 1476--1478
+Overfull \hbox (30.98787pt too wide) in paragraph at lines 1478--1480
 \T1/cmr/m/n/14.4 Similarly func-tions can be de-fined in the neg-a-tive in-ter-val $[]$. 
  []
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1499
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1501
 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1529--1532
+Underfull \hbox (badness 10000) in paragraph at lines 1531--1534
 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1537--1541
+Overfull \hbox (22.80492pt too wide) in paragraph at lines 1535--1535
+[]\T1/cmr/bx/n/17.28 Correspondence be-tween the An-der-son model fixed-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1539--1543
 
  []
 
 [66]
-Overfull \hbox (0.86209pt too wide) detected at line 1576
+Overfull \hbox (0.86209pt too wide) detected at line 1578
 [][][]
  []
 
 [67] [68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 1632--1635
+Underfull \hbox (badness 10000) in paragraph at lines 1634--1637
 
  []
 
 
-Overfull \hbox (43.95709pt too wide) in paragraph at lines 1632--1635
+Overfull \hbox (43.95709pt too wide) in paragraph at lines 1634--1637
 \T1/cmr/m/n/14.4 ac-tion $\OML/cmm/m/it/14.4 U$\T1/cmr/m/n/14.4 , it is use-ful to in-tro-duce the self en-ergy $[]$.
  []
 
 [70]
 
-LaTeX Font Warning: Command \large invalid in math mode on input line 1645.
+LaTeX Font Warning: Command \large invalid in math mode on input line 1647.
 
 
-LaTeX Warning: Command \textasciitilde invalid in math mode on input line 1645.
+LaTeX Warning: Command \textasciitilde invalid in math mode on input line 1647.
 
 [71] [72]
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1716
+Underfull \hbox (badness 10000) in paragraph at lines 1714--1718
 
  []
 
 [73] [74]
-Underfull \hbox (badness 10000) in paragraph at lines 1753--1756
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1758
 
  []
 
 [75]
-Overfull \hbox (44.45613pt too wide) detected at line 1788
+Overfull \hbox (44.45613pt too wide) detected at line 1790
 [][][]
  []
 
@@ -865,81 +875,101 @@ Overfull \hbox (44.45613pt too wide) detected at line 1788
 <anderson.png, id=999, 636.49843pt x 801.06506pt>
 File: anderson.png Graphic file (type png)
 <use anderson.png>
-Package pdftex.def Info: anderson.png  used on input line 1832.
+Package pdftex.def Info: anderson.png  used on input line 1834.
 (pdftex.def)             Requested size: 190.95099pt x 240.32137pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1833.
+(caption)                particular \caption on input line 1835.
 See the caption package documentation for explanation.
 
 <anderson2.png, id=1001, 636.49843pt x 801.06506pt>
 File: anderson2.png Graphic file (type png)
 <use anderson2.png>
-Package pdftex.def Info: anderson2.png  used on input line 1838.
+Package pdftex.def Info: anderson2.png  used on input line 1840.
 (pdftex.def)             Requested size: 190.95099pt x 240.32137pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1839.
+(caption)                particular \caption on input line 1841.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1828--1844
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1828--1844
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1846
 
  []
 
 
-Overfull \hbox (13.04219pt too wide) in paragraph at lines 1828--1844
+Overfull \hbox (13.04219pt too wide) in paragraph at lines 1830--1846
 []$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1828--1844
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1846
 
  []
 
 [78] [79 <./anderson.png> <./anderson2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1845--1849
+Underfull \hbox (badness 10000) in paragraph at lines 1847--1851
 
  []
 
 [80] [81]
-Overfull \hbox (7.78996pt too wide) in paragraph at lines 1883--1886
+Overfull \hbox (7.78996pt too wide) in paragraph at lines 1885--1888
 \T1/cmr/m/n/14.4 The change in the de-nom-i-na-tor oc-curs be-cause in the lower edge, $[]$.
  []
 
 
-Overfull \hbox (71.91228pt too wide) detected at line 1898
-[][][]
+Underfull \hbox (badness 10000) in paragraph at lines 1901--1904
+
  []
 
-[82] [83] [84]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1934.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1934.
+[82] [83]
+Underfull \hbox (badness 10000) in paragraph at lines 1935--1939
+
+ []
+
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 1951--1956
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1951--1956
+
+ []
+
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 1961--1965
+
+ []
+
+[86] [87]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1968.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1968.
  (./notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1934.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1934.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1968.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1968.
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 25C25F5C81D8C80CB4D1014EE1C22B55;2536.
  ) 
 Here is how much of TeX's memory you used:
- 18861 strings out of 480478
- 342178 string characters out of 5905959
- 585741 words of memory out of 5000000
- 33954 multiletter control sequences out of 15000+600000
+ 18873 strings out of 480478
+ 343053 string characters out of 5905959
+ 586004 words of memory out of 5000000
+ 33955 multiletter control sequences out of 15000+600000
  546598 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,18n,79p,1333b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on notes.pdf (84 pages, 572251 bytes).
+Output written on notes.pdf (87 pages, 581898 bytes).
 PDF statistics:
- 1254 PDF objects out of 1440 (max. 8388607)
- 1132 compressed objects within 12 object streams
- 570 named destinations out of 1000 (max. 500000)
+ 1283 PDF objects out of 1440 (max. 8388607)
+ 1158 compressed objects within 12 object streams
+ 581 named destinations out of 1000 (max. 500000)
  287 words of extra memory for PDF output out of 10000 (max. 10000000)
 

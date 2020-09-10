@@ -1,5 +1,7 @@
 \documentclass[14pt]{extarticle}
 \usepackage{common}
+\numberwithin{equation}{subsection}
+\renewcommand\thesubsection{\arabic{subsection}}
 \begin{document}
 \tableofcontents
 \subsection{\il{T-}matrix and \il{S-}matrix}
@@ -1889,12 +1891,22 @@ We assumed \il{D \gg \epsilon_d}. In the limit of infinitesimal change, we get t
 \beq[scale_eq]
 \dv{\epsilon_d}{\ln D} = -\fr{\Delta}{\pi}
 \eeq
+If we had allowed the \il{\ket{1_{d\sigma}}} to hybridize with the state \il{\ket{2_d}} (that is, if we had assumed both \il{U} and \il{\epsilon_d} to be \il{\ll D}), then \il{\alpha_{k\sigma}} would have had another term added to it:
+\beq
+\fr{|V_{kd}|^2}{\epsilon_k - U -\epsilon_d} \approx  \fr{|V|^2}{-D - U -\epsilon_d}
+\eeq
+\il{-(U+\epsilon_d)} is the change in energy from \il{\ket{1_d}} to \il{\ket{2_d}} and \il{-D} is the energy of the hole created in the process. The renormalization in \il{\epsilon_d} would then have been
+\beq
+\delta \epsilon_d = \fr{\Delta |\delta D|}{\pi}\rr{\fr{1}{\epsilon_d - D} - \fr{1}{D + U + \epsilon_d} + \fr{2}{\epsilon_d + D}}
+\eeq
+which is zero in the limit of \il{U,|\epsilon_d| \ll D}. This is the equal renormalization in \il{\epsilon_0} and \il{\epsilon_1} discussed earlier.\\\\
 We do not yet know whether \il{\Delta} is a function of the cutoff \il{D}. To find the renormalization of \il{\Delta}, we need to find the renormalization of \il{V_{kd}}. Note that the lowest order virtual transitions do not cause any actual charge fluctuation, and hence they do not renormalize \il{V_{kd}}. To see the renormalization of \il{V_{kd}}, we need to consider one order higher. These higher order terms involve transitions within the lower subspace along with virtual transitions into the higher subspaces. \beq
 H^{(2)} = \sum_{k^+,q,\sigma}\alpha_{k\sigma} T^+_{k\sigma}\gamma_{q,k,\sigma}c^\dagger_{d\sigma}c_{q\sigma} + \sum_{k^-,q,\sigma}\beta_{k\sigma} T^-_{k\sigma}\gamma_{q,k,\sigma}c_{d\sigma}c^\dagger_{q\sigma}
 \eeq
 The \il{\gamma_{k\sigma}} can be calculated as 
 \beq
-\alpha_{k\sigma}\gamma_{q,k,\sigma} = \fr{\bra{1_{d\sigma}}V^*_{kd} c^\dagger_{d\sigma} c_{k\sigma}\ket{k\sigma}\bra{k\sigma}V_{kd}c^\dagger_{k\sigma} c_{d\sigma}\ket{1_{d\sigma}}\bra{1_{d\sigma}}V_{kd}c_{q\sigma} c^\dagger_{d\sigma}\ket{q\sigma}}{(E_{1_d\sigma} - E_{k\sigma})(E_q - E_k)} = \alpha_{k\sigma}\fr{V_{kd}}{\epsilon_q - \epsilon_k}
+\alpha_{k\sigma}\gamma_{q,k,\sigma} = \fr{\bra{1_{d\sigma}}V^*_{kd} c^\dagger_{d\sigma} c_{k\sigma}\ket{k\sigma}\bra{k\sigma}V_{kd}c^\dagger_{k\sigma} c_{d\sigma}\ket{1_{d\sigma}}\bra{1_{d\sigma}}V_{kd}c_{q\sigma} c^\dagger_{d\sigma}\ket{q\sigma}}{(E_{1_d\sigma} - E_{k\sigma})(E_q - E_k)} \\
+= \alpha_{k\sigma}\fr{V_{kd}}{\epsilon_q - \epsilon_k}
 \eeq
 The renormalization in \il{V_{kd}} is therefore
 \beq
@@ -1905,7 +1917,7 @@ Close to the band edge, we get
 \delta V = \fr{\Delta}{\pi}\fr{|\delta D|}{\epsilon_d - D}\fr{V}{\epsilon_q - D} \approx \fr{\Delta}{\pi}\fr{|\delta D|}{D^2}V
 \eeq
 Therefore,
-\beq
+\beq[mirai]
 \delta \Delta \sim V\delta V = \fr{\Delta V^2}{\pi D^2}|\delta D| \implies \dv{\Delta}{D} \sim \rr{\fr{\Delta}{D}}^2
 \eeq
 For \il{D \gg \Delta}, this will vanish very quickly. Hence, in this regime, there is no renormalization of \il{\Delta}, and we can take it to be a constant in the renormalization flow. Integrating eq.~\ref{scale_eq} gives
@@ -1921,14 +1933,36 @@ we get
 \epsilon_d = -\fr{\Delta}{\pi}\ln D +  \epsilon_d^* + \fr{\Delta}{\pi}\ln \Delta \\
 \implies \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{D}{\Delta}\label{const}
 \end{gather}
-This result is in the regime \il{U + \epsilon_d \gg D \gg |\epsilon_d|}. Say, as a result of scaling, the bandwidth decreases and \il{\epsilon_d} increases (which it will, as is apparent from the eq.~\ref{const}). At some point, \il{-D \lesssim \epsilon_d}.At this point, perturbation theory breaks down and we resort to SWT. We denote this point of the scaling by \il{D = -a|\wl \epsilon_d|, a > 0}. We can then express the SWT coupling constant \il{\wl J} by replacing \il{\epsilon_d} with \il{\wl \epsilon_d} in eq.~\ref{jexpr}. For simplicity set \il{U = \infty}. Then,
+This result is in the regime \il{U + \epsilon_d \gg D \gg |\epsilon_d|}. Even if \il{U \ll D} initially, scaling will begin once \il{D \sim U}. Until then, as mentioned previously, both \il{\epsilon_1} and \il{\epsilon_0} will change equally and there won't be any scaling in \il{\epsilon_d}. If we start with \il{U \ll D}, under scaling, as \il{D} will decrease, there won't be any renormalization until we reach the point \il{D \sim U}.\\\\
+Say, as a result of scaling, the bandwidth decreases and \il{\epsilon_d} increases (which it will, as is apparent from the eq.~\ref{const}). At some point, \il{-D \lesssim \epsilon_d}. At this point, perturbation theory breaks down and we resort to SWT. We denote this point of the scaling by \il{D = -a|\wl \epsilon_d|, a > 0}. We can then express the SWT coupling constant \il{\wl J} by replacing \il{\epsilon_d} with \il{\wl \epsilon_d} in eq.~\ref{jexpr}. For simplicity set \il{U = \infty}. Then,
 \beq
 \wl J = \fr{|V|^2}{\wl \epsilon_d} = \fr{a|V|^2}{D}
 \eeq
 We can then do the poor man's scaling with this coupling. From eq.~\ref{sol},
 \beq
-T_K \sim D \sqrt{\wl J N(0)^2} \ex{-\fr{1}{2 \wl J N(0)^2}} = \sqrt{\Delta D}\ex{-\fr{D}{2\Delta}}
+T_K \sim D \sqrt{\wl J N(0)^2} \ex{-\fr{1}{2 \wl J N(0)^2}} = \sqrt{\Delta D}\ex{-\fr{D}{2\Delta}}\\
+\sim D\sqrt{\fr{\Delta}{D}}\ex{\fr{\epsilon_d}{2\Delta}}
 \eeq
-A different result is obtained if one is in the regime of \il{\epsilon_d < -D}. Then, the 
-
+A different result is obtained if one is in the regime of \il{\epsilon_d < -D}. This is the situation mentioned at the very beginning of the discussion, fig.~\ref{and1}. Assuming \il{U \ra \infty} and \il{\epsilon_d} outside the conduction band, we can do a SWT and the \il{T_K} obtained is eq.~\ref{sol},
+\begin{gather}
+	J = -\fr{V^2}{\epsilon_d}\\
+	g = J\rho = -\fr{\Delta}{\epsilon_d}\\
+	\implies T_K = D\sqrt{\fr{\Delta}{\epsilon_d}}\ex{\fr{\epsilon_d}{2\Delta}}
+\end{gather}
+The two forms of the Kondo temperature show that the prefactor is not a universal function; it depends on the starting conditions (the microscopic Hamiltonian from which we start the scaling). But the universal fact is that in the local moment regime (\il{U \ra \infty}), all physical quantities will involve only one energy scale, \il{T_K}. This \il{T_K} itself might be different based on the starting Hamiltonian.\\\\
+Next we consider the mixed valence regime, described by \il{|\epsilon_d^*| < \Delta}. It is clear that since the impurity level is within an interval of the hybridisation from the Fermi surface, the charge fluctuations can cause transitions between the various states of the impurity. This means that the occupation number of the impurity site is not a good quantum number in this regime, and the average number of impurity electrons will be fractional. This definition is a bit arbitrary because any observed sample will display an eigenstate in which the impurity states have contributions from both \il{\avg{n_d}=0} and \il{\avg{n_d}=1}, so any sample will be mixed in that sense. However, if we are not in the mixed valence regime (\il{|\epsilon_d| \gg \Delta}), then the contribution from any one state will far outweigh the other. If \il{\epsilon_d > 0}, then the impurity level is far above the Fermi level and it will most probably not be occupied and the majority of the contribution will come from \il{\avg{n_d} = 0}. Similarly, if \il{\epsilon_d < 0}, then the impurity level is far below the Fermi level and the average occupation will be close to 1. The regime of mixed valence is one in which these two contributions are comparable. \\\\
+Since we have \il{|\epsilon_d^*| \lesssim \Delta}, as we renormalize, the decreasing cutoff will first match \il{\Delta} or \il{k_B T}, whichever is greater. From eq.~\ref{mirai}, we know that if \il{D} comes close to \il{\Delta}, our analysis will break down because we can no longer ignore that term. Since that term represents the broadening of the impurity level, this same broadening can also be brought about by the thermal fluctuations which are of the scale \il{k_B T}. This means that real valence fluctuations will now renormalize the potential \il{V_{kd}}. Hence, our analysis will stop at \il{D = \text{max}\cc{\Delta, k_B T}}. For the simpler situation in which \il{T = 0}, the renormalization will stop at \il{D = \Delta}. From eq.~\ref{const}, putting \il{D = \Delta}, we get
+\beq
+\rr{\epsilon_d}_\text{MV} = \epsilon_d^*
+\eeq
+This is the renormalized impurity level in the mixed valence regime. A characteristic feature of this regime is that the charge fluctuations can be thermally excited. This can be seen as follows. The probability of  a transition from, say, \il{\ket{n_d = 0}} to \il{\ket{n_d = 1}} is
+\beq
+\sim \fr{k_B T}{\epsilon_d}
+\eeq
+Assuming the thermal fluctuations are more or less of the order \il{\Delta}, for \il{\epsilon_d \gg \Delta}, this transition will not be possible. However, in the mixed valence regime, because \il{\epsilon_d \sim \Delta}, these excitations do occur. These fluctuations, as well as the ones from the hybridisation with the conduction band, are responsible for the mixing of the singly-occupied and null-occupied states.\\\\
+For \il{\epsilon_d^* \gg \Delta}, the analysis will break not at \il{D = \Delta}, but much before that. Note that we had assumed \il{D \gg \epsilon_d}. That was the starting condition, that is, \il{\epsilon_d} deep inside the Fermi surface. During the renormalization, \il{D} will keep on decreasing and \il{\epsilon_d} will continuously increase. At some value of \il{D}, they will become equal and the impurity level will go outside the Fermi surface. At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff. Hence the renormalization stops at this point. This point is given by \il{\ol D = \epsilon_d(\ol D) \equiv \ol \epsilon_d}. It satisfies the equation
+\beq
+\ol \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{\ol \epsilon_d}{\Delta}
+\eeq
+which is just eq.~\ref{const} with the substitution \il{D = \epsilon_d = \ol \epsilon_d}.
 \end{document}
