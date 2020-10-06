@@ -1,4 +1,5 @@
 \documentclass[14pt]{extarticle}
+
 \usepackage{common}
 \numberwithin{equation}{subsection}
 \renewcommand\thesubsection{\arabic{subsection}}
@@ -1185,12 +1186,12 @@ Hence,
 \eeq
 Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.\\\\
 This method can also be used to determine the higher order corrections to the susceptibility. The zeroth order diagrams are\\\\
-%\begin{minipage}{250pt}
-%	\begin{center} \includegraphics[scale=0.3]{poppov1.png} \end{center}
-%\end{minipage}
-%\begin{minipage}{250pt}
-%	\begin{center} \includegraphics[scale=0.3]{poppov2.png} \end{center}
-%\end{minipage}\\\\
+\begin{minipage}{250pt}
+	\begin{center} \includegraphics[scale=0.3]{poppov1.png} \end{center}
+\end{minipage}
+\begin{minipage}{250pt}
+	\begin{center} \includegraphics[scale=0.3]{poppov2.png} \end{center}
+\end{minipage}\\\\
 The dotted lines are the impurity Greens function, so that diagram gives the impurity contribution to the susceptibility. Similarly, the solid lines are the conduction electron Greens function. The first diagram gives
 \beq
 \chi_c = -k_B T \sum_{k,\omega_n,\phi_0} \bra{\phi_0} \sigma^a G(k,i\omega_n)\sigma^bG_k(i\omega_n)\ket{\phi_0}
@@ -1825,22 +1826,36 @@ We can now relate the average occupancy with the density of states. From eq.~\re
 	       &=\fr{1}{\pi\Delta}\qq{1+\cot^2\pi\avg{n_{d\sigma}}}^{-1}\\
 	       &=\fr{\sin^2 \pi\avg{n_{d\sigma}}}{\pi \Delta}
 \eeq
-
+\\
 \subsection{Scaling of Anderson model}
 First consider the case in which \il{\epsilon_d \ll -D, U+\epsilon_d \gg D}. The situation is such that both the impurity levels are fat outside the bandwidth, as shown in fig.~\ref{and1}. The maximum energy scale at which scattering with conduction electrons can take place is of the order of the bandwidth \il{D}. Since the impurity energies are much higher than the bandwidth, no charge fluctuation can take place. The impurity state will be fixed at \il{\epsilon_d}. The only remaining degree of freedom will be the spin fluctuations, and we can then do the S-W transformation.\\\\
-On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth. So there wont be any renormalization of the impurity levels. From another perspective, it can be said that there won't be any renormalization because both the impurity levels \il{\ket{0},\ket{1}} will be able to hybridise with two states each: \il{\ket{0}} can hybridize with \il{\ket{k\ua},\ket{k\da}} and \il{\ket{1\sigma}} can hybridize with \il{\ket{0},\ket{2}}.\\\\
+On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth. So there wont be any renormalization of the impurity levels. From another perspective, it can be said that there won't be any renormalization because both the impurity levels \il{\ket{0},\ket{1}} will be able to hybridise with two states each: \il{\ket{0}} can hybridize with \il{\ket{k\ua},\ket{k\da}} and \il{\ket{1\sigma}} can hybridize with \il{\ket{0},\ket{2}}.
+\begin{figure}
 \begin{minipage}{220pt}
 	\centering
-	\includegraphics[scale=0.3]{anderson.png}
-	\captionof{figure}{Impurity levels outside}
-	\label{and1}
+       	\includegraphics[scale=0.28]{anderson.png}
+       	\captionof{figure}{Impurity levels outside}
+       	\label{and1}
 \end{minipage}
 \begin{minipage}{220pt}
 	\centering
-	\includegraphics[scale=0.3]{anderson2.png}
-	\captionof{figure}{Impurity levels inside}
-	\label{and2}
-\end{minipage}\\\\
+       	\includegraphics[scale=0.28]{anderson2.png}
+       	\captionof{figure}{Impurity levels inside}
+       	\label{and2}
+\end{minipage}
+\end{figure}
+%\begin{minipage}{220pt}
+%	\centering
+%	\includegraphics[scale=0.28]{anderson.png}
+%	\captionof{figure}{Impurity levels outside}
+%	\label{and1}
+%\end{minipage}
+%\begin{minipage}{220pt}
+%	\centering
+%	\includegraphics[scale=0.28]{anderson2.png}
+%	\captionof{figure}{Impurity levels inside}
+%	\label{and2}
+%\end{minipage}
 The limit where there will be some renormalization is the following. We are working with the asymmetric Anderson model, that is,\\ \il{U + \epsilon_d \gg D \gg |\epsilon_d|,\Delta}. The total Hamiltonian is
 \beq
 H = \sum_{k\sigma} \epsilon_{k\sigma}n_{k\sigma} + \epsilon_d \sum_\sigma n_{d\sigma} + U n_{d\ua}n_{d\da} + \sum_{k\sigma}\rr{V_{kd} c^\dagger_{k\sigma}c_{d\sigma} + V^*_{kd}c^\dagger_{d\sigma}c_{k\sigma}}
@@ -1934,23 +1949,149 @@ we get
 \implies \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{D}{\Delta}\label{const}
 \end{gather}
 This result is in the regime \il{U + \epsilon_d \gg D \gg |\epsilon_d|}. Even if \il{U \ll D} initially, scaling will begin once \il{D \sim U}. Until then, as mentioned previously, both \il{\epsilon_1} and \il{\epsilon_0} will change equally and there won't be any scaling in \il{\epsilon_d}. If we start with \il{U \ll D}, under scaling, as \il{D} will decrease, there won't be any renormalization until we reach the point \il{D \sim U}.\\\\
-Say, as a result of scaling, the bandwidth decreases and \il{\epsilon_d} increases (which it will, as is apparent from the eq.~\ref{const}). At some point, \il{-D \lesssim \epsilon_d}. At this point, perturbation theory breaks down and we resort to SWT. We denote this point of the scaling by \il{D = -a|\wl \epsilon_d|, a > 0}. We can then express the SWT coupling constant \il{\wl J} by replacing \il{\epsilon_d} with \il{\wl \epsilon_d} in eq.~\ref{jexpr}. For simplicity set \il{U = \infty}. Then,
-\beq
-\wl J = \fr{|V|^2}{\wl \epsilon_d} = \fr{a|V|^2}{D}
+Say, as a result of scaling, the bandwidth decreases and \il{\epsilon_d} increases (which it will, as is apparent from the eq.~\ref{const}). At some point, \il{-D \lesssim \epsilon_d}. At this point, perturbation theory breaks down and we resort to SWT. We denote this point of the scaling by \il{D = -a\wl \epsilon_d, a > 1}. We can then express the SWT coupling constant \il{\wl J} by replacing \il{\epsilon_d} with \il{\wl \epsilon_d} in eq.~\ref{jexpr}. For simplicity set \il{U = \infty}. Then,
+\beq[historia]
+\wl J = -\fr{|V|^2}{\wl \epsilon_d} = \fr{a|V|^2}{D}
 \eeq
 We can then do the poor man's scaling with this coupling. From eq.~\ref{sol},
 \beq
 T_K \sim D \sqrt{\wl J N(0)^2} \ex{-\fr{1}{2 \wl J N(0)^2}} = \sqrt{\Delta D}\ex{-\fr{D}{2\Delta}}\\
 \sim D\sqrt{\fr{\Delta}{D}}\ex{\fr{\epsilon_d}{2\Delta}}
 \eeq
-A different result is obtained if one is in the regime of \il{\epsilon_d < -D}. This is the situation mentioned at the very beginning of the discussion, fig.~\ref{and1}. Assuming \il{U \ra \infty} and \il{\epsilon_d} outside the conduction band, we can do a SWT and the \il{T_K} obtained is eq.~\ref{sol},
+A different result is obtained if one is in the regime of \il{\epsilon_d < -D}. This is the situation mentioned at the very beginning of the discussion, fig.~\ref{and1}. Assuming \il{U \ra \infty} and \il{\epsilon_d} outside the conduction band, we can do a SWT and the \il{T_K} obtained is q.~\ref{sol},
 \begin{gather}
 	J = -\fr{V^2}{\epsilon_d}\\
 	g = J\rho = -\fr{\Delta}{\epsilon_d}\\
-	\implies T_K = D\sqrt{\fr{\Delta}{\epsilon_d}}\ex{\fr{\epsilon_d}{2\Delta}}
+	\implies T_K = D\sqrt{\fr{\Delta}{\epsilon_d}}\ex{\fr{\epsilon_d}{2\Delta}}\label{jean}
 \end{gather}
 The two forms of the Kondo temperature show that the prefactor is not a universal function; it depends on the starting conditions (the microscopic Hamiltonian from which we start the scaling). But the universal fact is that in the local moment regime (\il{U \ra \infty}), all physical quantities will involve only one energy scale, \il{T_K}. This \il{T_K} itself might be different based on the starting Hamiltonian.\\\\
+For \il{\epsilon_d^* \gg \Delta}, the renormalization will stop at \il{D \sim \epsilon_d}. Note that we had assumed \il{D \gg \epsilon_d}. That was the starting condition, that is, \il{\epsilon_d} deep inside the Fermi surface. During the renormalization, \il{D} will keep on decreasing and \il{\epsilon_d} will continuously increase. At some value of \il{D}, they will become equal and the impurity level will go outside the Fermi surface. At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff. Hence the renormalization stops at this point.
+\begin{center} \includegraphics[scale=0.29]{full.png}\end{center}
+This point is given by \il{\ol D = a\epsilon_d(\ol D) \equiv \ol \epsilon_d} where \il{a} is a constant of order unity. It satisfies the equation
+\beq[eraser]
+\ol \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{a\ol \epsilon_d}{\Delta}
+\eeq
+which is just eq.~\ref{const} with the substitution \il{D =a  \ol \epsilon_d}. In this regime, because \il{\epsilon_d \gg \Delta}, we can do a perturbative expansion of the  bare Hamiltonian in terms of \il{\fr{\Delta}{\epsilon_d}}. The susceptibility is
+\beq
+\chi_d = \fr{\Delta}{2\pi}\rr{\fr{g \mu_B}{\epsilon_d}}^2\qq{1 + \fr{2\Delta}{\pi \epsilon_d}\ln \fr{\epsilon_d}{D} + ...}
+\eeq
+From the scaling, we know that \il{D} can be decreased to \il{\ol D}. We can hence substitute \il{D =a \ol \epsilon_d, \epsilon_d = \ol \epsilon_d}. With this in mind, the susceptibility becomes
+\beq
+\chi_d = \fr{\Delta}{2\pi}\rr{\fr{g \mu_B}{\ol\epsilon_d}}^2\qq{1 + \fr{2\Delta}{\pi \ol\epsilon_d}\ln a + ...} \\
+= \fr{\Delta}{2\pi}\rr{\fr{g \mu_B}{\ol \epsilon_d}}^2\qq{1 +\text{O}\rr{\fr{2\Delta}{\pi \ol\epsilon_d}}}
+\eeq
+where I used the fact that \il{\ln a } will be of order 1. As we go on decreasing the cutoff, the impurity level will go on moving farther away from the Fermi level, and impurity site will become null occupied: \il{\avg{n_d} \approx 0}. The critical cutoff \il{\ol D} can be associated with a temperature  scale \il{k_b \ol T = \ol D}. At temperatures sufficiently below this temperature (\il{T \ll \ol T}), the susceptibility becomes (again from perturbation theory)
+\beq
+\chi_d(T) = \fr{\Delta}{2\pi}\rr{\fr{g \mu_B}{\ol \epsilon_d}}^2 + \fr{1}{4T}\qq{1+\fr{1}{2}\ex{\fr{T^*}{T}}}^{-1}
+\eeq
+For temperatures sufficiently low, which we demarcate by a temperature \il{T_{FL}}, the denominator in the second term will be sufficiently large so that we can ignore that term with respect to the first term:
+\beq
+T \gg T_{FL} \implies e^\fr{T^*}{T} \gg 1 \implies \qq{1+\fr{1}{2}\ex{\fr{T^*}{T}}}^{-1} \approx 0 
+\eeq
+The susceptibility in this low temperature range can thus be written as
+\beq[sakura]
+\chi_d = \fr{\Delta}{2\pi}\rr{\fr{g \mu_B}{\ol \epsilon_d}}^2
+\eeq
+This is analogous to the  result obtained in eq.~\ref{mimp}, from the mean field version of the Fermi liquid theory, and also obtained from a renormalized perturbation theory of Anderson model. To see how, note that since we are in the limit \il{\avg{n_d} = 0}, the onsite repulsion term \il{U} can be dropped because there is no probability of double occupation. Eq.~\ref{mimp} then becomes
+\beq[sasuke]
+\chi_d = \fr{g^2 \mu_B^2}{2} \rho_d(0) = \fr{g^2 \mu_B^2}{2} \fr{\Delta}{\pi}\fr{1}{\ol \epsilon_d^2 + \Delta^2}
+\eeq
+Next note that we had assumed at the beginning that \il{\epsilon_d^* \gg \Delta}. We need to find the relative order difference between \il{\ol \epsilon_d} and \il{\Delta}. From eq.~\ref{eraser}, we can drop the \il{\pi} and \il{a} because they are of order 1.
+\beq
+\ol \epsilon_d = \epsilon_d^* - \Delta \ln \fr{\ol \epsilon_d}{\Delta}
+\eeq
+Dividing through by \il{\Delta} and defining \il{x_1 = \fr{\ol \epsilon_d}{\Delta}, x_2 = \fr{\epsilon_d^*}{\Delta}}, we get
+\beq
+x_1 + \ln x_1 = x_2
+\eeq
+Since \il{O(\ln x_1) \leq O(x_1)}, we can write
+\begin{gather}
+O(x_1) = O(x_2)\\
+\implies O\rr{\fr{\ol \epsilon_d}{\Delta}} = O\rr{\fr{\epsilon_d^*}{\Delta}}\\
+\implies O\rr{\ol \epsilon_d} = O\rr{\epsilon_d^*}\\
+\end{gather}
+Since \il{\ol \epsilon_d} and \il{\epsilon_d^*} are of the same order, we can say:
+\beq
+\epsilon_d^* \gg \Delta \implies \ol \epsilon_d \gg \Delta
+\eeq
+Applying this to eq.~\ref{sasuke} means
+\beq
+\chi_d \approx \fr{g^2 \mu_B^2}{2} \fr{\Delta}{\pi}\fr{1}{\ol \epsilon_d^2}
+\eeq
+which is the same as eq.~\ref{sakura}. This tells us that scaling all the way down to very low temperatures in regime \il{\epsilon_d^* \gg \Delta} brings us into a Fermi liquid state, characterized by a temperature-independent susceptibility (as is standard in a Fermi liquid). The crossovers can be seen by looking at the variation of the Curie constant \il{\chi T}.\\\\
+Since the susceptibility is proportional to the magnetic moment, presence of degeneracy will reduce this moment because the probability of occupying the states will decrease. As a result, the Curie constant is also a measure of the effective degeneracy of the impurity orbital. At very high temperatures \il{T \gg U,\epsilon_d}, all the impurity levels \il{0,\epsilon_d} and \il{2\epsilon_d + U} will become degenerate on energy scales of the order of \il{k_B T}. As a result, the Curie constant is approximately \il{\fr{1}{8}} in this range. The impurity occupancy is \il{n_d = 1}, because there are 4 degenerate states and the average number of electrons on them is 1. At lower temperatures \il{U \gg T \gg T^*}, the degeneracy gets lowered; now, only the vacant and single-occupied states are degenerate. Here the Curie constant is \il{\fr{1}{6}}. In this case, the average occupancy is \il{n_d = \fr{0+1+1}{3} = \fr{2}{3}}. At still lower temperatures, we saw that the impurity becomes vacant and \il{n_d = 0}. The Curie constant becomes linear in temperature, going down to 0. More formally,
+\beq
+m = \fr{1}{\beta}\pd{\ln Z}{B} \implies \chi = \lim_{B \to 0}\pd{m}{B} = \lim_{B \to 0}\fr{1}{\beta}\qq{\fr{1}{Z}\fr{\partial^2 Z}{\partial B^2} + \rr{\pd{Z}{B}}^2}
+\eeq
+For the case of four-fold degeneracy, all the states can be assumed to be at zero energy. Then, under a magnetic field B (\il{h=\fr{g\mu_B}{2}B}), the partition function is
+\begin{gather}
+Z = 1 + \ex{\beta h} + \ex{-\beta h} + 1 = 2\rr{1+\cosh \beta h}\\
+\implies \pd{Z}{B} = g \mu_B \beta \sinh \beta h\\
+\implies \fr{\partial^2 Z}{\partial B^2} = \fr{1}{2}\rr{g \mu_B}^2 \beta^2 \cosh \beta h
+\end{gather}
+Since \il{\lim_{h \to 0} \sinh \beta h = 0} and \il{\lim_{h \to 0} \cosh \beta h = 1}, we get
+\begin{gather}
+\chi = \fr{\beta g^2 \mu_B^2}{2 Z(h=0)}
+\end{gather}
+Setting \il{g \mu_B = k_B = 1}, we get
+\beq[suscdeg]
+\chi T =\fr{1}{2\mc{D}}
+\eeq
+where \il{Z(h=0) = 2 + 2 = 4 = \mc{D}} is the degeneracy. \\\\
+Similarly, for the triplet case (\il{\epsilon_d} and 0 are degenerate while \il{U \gg T}), the doubly occupied case is essentially cut off from the available states, so \il{Z = 1 + 2\cosh \beta h}. The proof again goes through similarly. But this time, we have \il{Z(h=0) = 1 + 2 = 3 = \mc{D}}.\\\\
+For \il{\epsilon_d = k_B T^* > k_B T} such that \il{k_B T^* \gg \Delta}, we can find the magnetic moment in a perturbative fashion. At the zeroth order, we can neglect the hybridisation \il{\Delta}. Then,
+\beq
+m^{(0)} = \fr{1}{\beta}\pd{\ln Z(h)}{B}
+\eeq
+where
+\beq
+Z(h) = 1 + e^{-\beta\rr{k_B T^* -h}}+ e^{-\beta\rr{k_B T^* +h}} = 1 + e^{-\fr{\beta}{\beta^*}}2\cosh \beta h
+\eeq
+Therefore,
+\beq
+\chi^{(0)} = \lim_{h \to 0} \fr{1}{\beta Z}\fr{\partial^2 Z}{\partial B^2} = \lim_{h \to 0} \fr{g^2 \mu_B^2}{4 \beta Z}\fr{\partial^2 Z}{\partial h^2} = \fr{g^2 \mu_B^2}{4}\beta \fr{2e^{-\fr{\beta}{\beta^*}}}{1 + 2e^{-\fr{\beta}{\beta^*}}}
+\eeq
+Again setting \il{g \mu_B = k_B = 1}, we get,
+\beq
+\chi^{(0)} = \fr{1}{4 T} \fr{2e^{-\fr{\beta}{\beta^*}}}{1 + 2e^{-\fr{\beta}{\beta^*}}} = \fr{1}{4 T} \fr{2}{e^{\fr{\beta}{\beta^*}} + 2} 
+\eeq
+As a first approximation, we can include the hybridisation by using the expression for the average number of spin up or spin down impurity as obtained from the non-interacting treatment, eq.~\ref{total}
+\beq
+m^{(1)} =\fr{g \mu_B}{2}\rr{ n_\ua - n_\da} = \fr{g \mu_B}{2\pi}\qq{\tan^{-1}\fr{\Delta}{k_B T^* - h} - \tan^{-1}\fr{\Delta}{k_B T^* + h}}
+\eeq
+Since \il{\Delta \ll T^*}, we can expand the arctan in a Taylor series. Up to first order, we get
+\beq
+m^{(1)} = \fr{g \mu_B}{2\pi}\qq{\fr{\Delta}{k_B T^* - h} - \fr{\Delta}{k_B T^* + h}} = \fr{g \mu_B \Delta}{\pi}\fr{h}{k_B \rr{T^*}^2 - h^2}
+\eeq
+Differentiating with \il{B} gives
+\beq
+\chi^{(1)} = \lim_{h \to 0} \pd{m^{(1)}}{B} = \fr{g^2\mu_B^2}{2}\fr{\Delta}{\pi}\fr{1}{k_B^2 {T^*}^2} = \fr{\Delta}{2\pi {T^*}^2}
+\eeq
+Combining the zeroth and first order terms, the susceptibility in the regime \il{T \lesssim T^*} is
+\beq
+\chi = \fr{1}{4 T} \fr{2}{e^{\fr{\beta}{\beta^*}} + 2}  + \fr{\Delta}{2\pi {T^*}^2}
+\eeq
+Below some temperature \il{T_\text{FL} \ll T^*}, the susceptibility reduces to
+\begin{gather}
+\chi \approx \fr{1}{4 T} \fr{2}{e^{\fr{\beta}{\beta^*}}} + \fr{\Delta}{2\pi {T^*}^2} \approx\fr{\Delta}{2\pi {T^*}^2}\\
+\implies \chi T \propto T
+\end{gather}
+We can now visualize the various phases as the temperature is changed. For \il{T \gg U,\epsilon_d}, all the four states states \il{\ket{0},\ket{\ua},\ket{\da},\ket{2}} are degenerate (\il{\mc D = 4}), the average occupancy is \il{\avg{n_d} = \fr{0+1+1+2}{4}=1} and the effective Curie constant is \il{\fr{1}{2\mc D} = \fr{1}{8}}. At lower temperatures \il{U \gg T \gg T^*}, the level \il{\ket{2}} is disconnected from the conduction band and the three remaining states are now degenerate (\il{\mc D = 3}). The average occupancy becomes \il{\fr{0+1+1}{3} = \fr{2}{3}} and the effective Curie constant is now \il{\fr{1}{2\times 3} = \fr{1}{6}}. At still lower temperatures \il{T^* \gg T}, the singly-occupied levels become disconnected and thee impurity occupancy becomes 0. The effective Curie constant in this regime is linear in \il{T}.
+\begin{center}
+\begin{minipage}{50pt}
+	\il{n_d = 1}\\\il{\chi T \sim \fr{1}{8}}\\\il{T\gg U}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = \fr{2}{3}}\\\il{\chi T \sim \fr{1}{6}}\\\il{T\gg T^*}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = 0}\\\il{\chi T \sim T}\\\il{T\ll T^*}
+\end{minipage}
+\end{center}
 Next we consider the mixed valence regime, described by \il{|\epsilon_d^*| < \Delta}. It is clear that since the impurity level is within an interval of the hybridisation from the Fermi surface, the charge fluctuations can cause transitions between the various states of the impurity. This means that the occupation number of the impurity site is not a good quantum number in this regime, and the average number of impurity electrons will be fractional. This definition is a bit arbitrary because any observed sample will display an eigenstate in which the impurity states have contributions from both \il{\avg{n_d}=0} and \il{\avg{n_d}=1}, so any sample will be mixed in that sense. However, if we are not in the mixed valence regime (\il{|\epsilon_d| \gg \Delta}), then the contribution from any one state will far outweigh the other. If \il{\epsilon_d > 0}, then the impurity level is far above the Fermi level and it will most probably not be occupied and the majority of the contribution will come from \il{\avg{n_d} = 0}. Similarly, if \il{\epsilon_d < 0}, then the impurity level is far below the Fermi level and the average occupation will be close to 1. The regime of mixed valence is one in which these two contributions are comparable. \\\\
+\begin{center} \includegraphics[scale=0.29]{mixed.png} \end{center}
 Since we have \il{|\epsilon_d^*| \lesssim \Delta}, as we renormalize, the decreasing cutoff will first match \il{\Delta} or \il{k_B T}, whichever is greater. From eq.~\ref{mirai}, we know that if \il{D} comes close to \il{\Delta}, our analysis will break down because we can no longer ignore that term. Since that term represents the broadening of the impurity level, this same broadening can also be brought about by the thermal fluctuations which are of the scale \il{k_B T}. This means that real valence fluctuations will now renormalize the potential \il{V_{kd}}. Hence, our analysis will stop at \il{D = \text{max}\cc{\Delta, k_B T}}. For the simpler situation in which \il{T = 0}, the renormalization will stop at \il{D = \Delta}. From eq.~\ref{const}, putting \il{D = \Delta}, we get
 \beq
 \rr{\epsilon_d}_\text{MV} = \epsilon_d^*
@@ -1960,9 +2101,782 @@ This is the renormalized impurity level in the mixed valence regime. A character
 \sim \fr{k_B T}{\epsilon_d}
 \eeq
 Assuming the thermal fluctuations are more or less of the order \il{\Delta}, for \il{\epsilon_d \gg \Delta}, this transition will not be possible. However, in the mixed valence regime, because \il{\epsilon_d \sim \Delta}, these excitations do occur. These fluctuations, as well as the ones from the hybridisation with the conduction band, are responsible for the mixing of the singly-occupied and null-occupied states.\\\\
-For \il{\epsilon_d^* \gg \Delta}, the analysis will break not at \il{D = \Delta}, but much before that. Note that we had assumed \il{D \gg \epsilon_d}. That was the starting condition, that is, \il{\epsilon_d} deep inside the Fermi surface. During the renormalization, \il{D} will keep on decreasing and \il{\epsilon_d} will continuously increase. At some value of \il{D}, they will become equal and the impurity level will go outside the Fermi surface. At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff. Hence the renormalization stops at this point. This point is given by \il{\ol D = \epsilon_d(\ol D) \equiv \ol \epsilon_d}. It satisfies the equation
+The crossovers in the mixed valence regime are as follows. Similar to the previous case, at high and intermediate temperatures, we have \il{n_d = 1} and \il{n_d = \fr{2}{3}} respectively. However, while the triplet degeneracy lasted upto \il{T \sim T^*} in the previous case, here it continues up to \il{T \sim \Delta} because that is where the scaling breaks down. That is, \il{T = \Delta} is the point where we can no longer ignore the renormalization in \il{V} and it begins to increase with scaling. Beyond this point, the impurity occupation remains fractional and not much else can be said.
+\begin{center}
+\begin{minipage}{50pt}
+\il{n_d = 1}\\\il{\chi T = \fr{1}{8}}\\\il{T\gg U}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = \fr{2}{3}}\\\il{\chi T = \fr{1}{6}}\\\il{T\gg \Delta}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+	\il{n_d = \text{fractional}}\\\il{\chi T \propto T}\\\il{T\ll \Delta}
+\end{minipage}
+\end{center}
+For \il{\epsilon_d^* \ll -\Delta}, the scaling will stop when the impurity level again goes out of the Fermi surface. But this time, it goes out from below. This again decouples the singly-occupied state from the conduction band and the scaling stops. This happens at say \il{\wl D = -\wl {\epsilon_d} = \wl {T}}. Since the singly-occupied impurity level is now well below \il{-D}, we have \il{\avg{n_d} = 1} and we are comfortably in the Kondo limit and the SWT and a consequent poor man's scaling can be performed, which will give eqs.~\ref{historia} through \ref{jean}. The resulf of the Schrieffer-Wolff transformation is a Hamiltonian that couples the impurity to the conduction electrons only through their spins; their is no charge fluctuation. At high temperatures \il{T \gg T_K}, the impurity is essentially decoupled and we get a susceptibility of the form eq.~\ref{suscdeg}, but with a degeneracy of 2. To go to lower temperatures, we can do a Poor Man's scaling which suggests that the Hamiltonian at \il{T\ll T_K} is one with a large coupling between the impurity and the conduction electrons.
+
+\begin{center}
+\begin{minipage}{50pt}
+\il{n_d = 1}\\\il{\chi T = \fr{1}{8}}\\\il{T\gg U}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = \fr{2}{3}}\\\il{\chi T = \fr{1}{6}}\\\il{T\gg \wl T}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = 1}\\\il{\chi T= \fr{1}{4}}\\\il{T\ll \wl T}
+\end{minipage}
+\hspace*{20pt}\il{\Longrightarrow}\hspace*{20pt}
+\begin{minipage}{50pt}
+\il{n_d = 1}\\\il{\chi T \propto T}\\\il{T\ll \wl T_K}
+\end{minipage}
+\end{center}
+\paragraph \centering \includegraphics[scale=0.29]{empty.png}
+
+\subsubsection*{Jefferson's calculation}
+Jefferson did a slightly more rigorous calculation to obtain the scaling equation. He divided the Hamiltonian into two parts
 \beq
-\ol \epsilon_d = \epsilon_d^* - \fr{\Delta}{\pi}\ln \fr{\ol \epsilon_d}{\Delta}
+H = \sum_{k\sigma}\epsilon_{k\sigma} n_{k\sigma} + \epsilon_d n_d + \sum_{k\sigma} \rr{V^-_{kd}c^\dagger_{k\sigma}c_{d\sigma} + V^+_{kd}c^\dagger_{d\sigma}c_{k\sigma}} = H_0 + V
 \eeq
-which is just eq.~\ref{const} with the substitution \il{D = \epsilon_d = \ol \epsilon_d}.
+Before scaling, \il{V^+ = V^- = V}. The Schrodinger equation we want to solve is
+\beq
+H \psi = E \psi
+\eeq
+We know the eigenstates \il{\psi_0} of \il{H_0}. They are the states \il{\{\ket{n_{k_i\sigma},n_{d\sigma^\prime}}\}}. These states of course span the entire Hilbert space. A subset of these states form the model subspace. We call these states \il{\phi}. For our case, that is the subspace with all conduction electrons inside \il{D - \delta D}. The projection operator for this subspace is 
+\beq
+P = \sum \ket{\phi}\bra{\phi} =  \sum_{|k|<D-\delta D, \sigma=\pm 1, n_{d\sigma}=0,1} \ket{n_{k\sigma},n_{d\sigma^\prime}}
+\eeq
+Its orthogonal subspace has a projection operator
+\beq
+Q = 1 - P = \sum_{D-\delta D < |k| < D, \sigma=\pm 1, n_{d\sigma}=0,1} \ket{n_{k\sigma},n_{d\sigma^\prime}}
+\eeq
+If the dimension of model subspace if \il{d}, we can say that \il{P} takes \il{d} eigenstates \il{\psi} of the total Hamiltonian to \il{d} eigenstates in the model subspace:
+\beq
+P \{\psi\}_d = \{\phi\}
+\eeq
+This is of course true in the non-interacting limit. There, the \il{\psi_0} are the exact eigenstates, and the action of \il{P} is basically
+\beq
+P \psi_0\bigg\vert_{|k|<D-\delta D} = \psi_0\bigg\vert_{|k|<D-\delta D}
+\eeq
+Now, as we turn on the interactions adiabatically, it is safe to assume that these \il{d} non-interacting eigenstates flow into \il{d} interacting eigenstates. This means that we can define an inverse for the \il{P} operator which takes a non-interacting eigenstate from the model subspace into the interacting eigenstate:
+\beq
+\Omega \{\phi\} = \{\psi\}
+\eeq
+Since \il{\Omega} can only act on states in the model subspace, we define
+\beq
+\Omega \{\phi\}^\perp = 0
+\eeq
+This allows us to write
+\begin{gather}
+\Omega P \phi = \Omega \phi\\
+\Omega P \phi^\perp = \Omega \times 0 = 0  = \Omega \phi^\perp
+\end{gather}
+In the first equation, I used \il{P \phi = \phi} because the projection of \il{\phi} into the model subspace is \il{\phi} itself. Together these two identities give
+\beq[hikki]
+\Omega P = \Omega
+\eeq
+With these definitions, we now change the problem a bit. We want to solve the Schrodinger equation only in the model subspace. To this end we write the Schrodinger equation as
+\beq
+H \Omega \phi = E \Omega \Phi \\
+\eeq
+Since we want to write down an equation only in the model subspace, the equation should operate only on the \il{\phi}. To remove the \il{\Omega} on the right side, operate on this equation with \il{P} from the left. This gives
+\beq
+P H \Omega \phi = E P \Omega \phi = E \phi\\
+\eeq
+This is the effective Schrodinger equation in the model subspace. The effective Hamiltonian for the model subspace is
+\beq[yuigahama]
+H_\text{eff} = PH\Omega  = PH_0 P + PV\Omega = P H_0 P + PV\Omega
+\eeq
+To solve for the \il{\Omega}, apply eq.~\ref{hikki} on the Schrodinger equation \il{(E - H_0)\psi =V \psi}:
+\beq
+\Omega V\psi = (E \Omega P - \Omega P H_0)\psi
+\eeq
+Now, since \il{P} is made up of the eigenstates of \il{H_0}, those two will commute: \il{\qq{H_0, P} = 0}. The equation then becomes
+\beq
+\Omega V\psi = (E - \Omega H_0 P)\psi
+\eeq
+Subtracting the Schrodinger equation from the last equation gives
+\beq
+\rr{\Omega - 1} V\psi &= \rr{H_0 - \Omega H_0 P}\psi\\
+\implies \rr{\Omega - 1} V \Omega \phi &= \rr{H_0 - \Omega H_0 P}\Omega \phi\\
+\implies \rr{\Omega - 1} V \Omega \phi &= \rr{H_0 \Omega - \Omega H_0} \phi\\
+\implies \rr{\Omega - 1} V \Omega &= \qq{H_0, \Omega}
+\eeq
+This is the main equation. To make progress, we expand the operator \il{\Omega} in powers of the interaction \il{V}:
+\beq
+\Omega = \sum_n c_n V^n = \sum_n \Lambda_n
+\eeq
+The zeroth term in the main equation becomes
+\beq
+\qq{H_0, \Lambda_0} = 0 \implies \Lambda_0 = P
+\eeq
+The first order equation is
+\beq
+\qq{H_0, \Lambda_1} = \rr{\Lambda_0 - 1}V\Lambda_0 = \rr{P - 1}VP = -QVP
+\eeq
+The second order equation is
+\beq
+\qq{H_0, \Lambda_2} = -V\Lambda_1 + \Lambda_0 V \Lambda_1 + \Lambda_1 V \Lambda_0 = -QV\Lambda_1 + \Lambda_1 V P
+\eeq
+These equations are of the form \il{\qq{H_0, \Lambda_n} = A_n}, where \il{A_n} is an operator in terms of \il{\Lambda_{n-1}} and lower orders.
+\begin{gather}
+A_1 = -QVP\\
+A_2 = -QV\Lambda_1 + \Lambda_1 V P
+\end{gather}
+Let \il{\ket{l}} and \il{\ket{h}} belong to the model subspace and its orthogonal subspace respectively. Then, taking matrix element between \il{\bra{h}} and \il{\ket{l}} of the general form equation gives
+\beq
+\bra{h} A_n \ket{l} = \rr{E_h - E_l}\bra{h}\Lambda_n \ket{l} \implies \bra{h}\Lambda_n \ket{l} = \fr{\bra{h} A_n \ket{l}}{E_h - E_l}
+\eeq
+If we define an operator \il{S} by its action on a general operator A as
+\beq
+\bra{h}S A \ket{l} = \fr{\bra{h} A \ket{l}}{E_l - E_h}
+\eeq
+we can write the solution
+\beq
+\Lambda_n = -S(A_n)
+\eeq
+The expression of \il{SA} can be written as
+\beq
+SA &= \sum_{h,l}\ket{h}\bra{l} \fr{\bra{h}A\ket{l}}{E_l - E_H} \\
+   &= \sum_{h,l}\fr{1}{E_l - E_h}\ket{h}\bra{h}A\ket{l}\bra{l}\\
+   &= \sum_{l}\fr{1}{E_l - H_0}\rr{\sum_h \ket{h}\bra{h}}A\ket{l}\bra{l}\\
+   &= \sum_l G_l A P_l
+\eeq
+where \il{P_l = \ket{l}\bra{l}} and \il{G_l = \fr{1}{E_l - H_0}Q}.\\\\
+\il{S} has the property
+\beq
+\bra{h}S QA \ket{l} &= \fr{\bra{h}Q A \ket{l}}{E_l - E_h} = \fr{\bra{h}A \ket{l}}{E_l - E_h} = \bra{h}SA\ket{l} \\
+\implies S(QA) &= S(A)
+\eeq
+The lowest order solutions are thus
+\begin{gather}
+	\Lambda_1 = S(QVP) = S(VP)\\
+	\Lambda_2 = S(QV\Lambda_1) - S(\Lambda_1 V P) = S(VS(VP)) - S(S(VP)VP)
+\end{gather}
+We can now expand the effective Hamiltonian in powers of \il{V}. From eq.~\ref{yuigahama}, the interacting part of the effective Hamiltonian becomes
+\beq
+H_\text{eff} - P H_0 P &= P V\Omega \\
+		       &\approx PV(\Lambda_0 + \Lambda_1 + \Lambda_2)\\
+				   &= PV\qq{P + S(VP) + S(VS(VP)) - S(S(VP)VP)}\\
+				   &= PVP + PVS(VP) + PVS(VS(VP)) - PVS(S(VP)VP)
+\eeq
+Therefore,
+\beq
+H_\text{eff} = PHP + PVS(VP) + PVS(VS(VP)) - PVS(S(VP)VP)
+\eeq
+The first term is the obvious lowest approximation; you just project the entire Hamiltonian into the model subspace.  The second term is
+\beq
+PVSVP = PV \sum_l G_l V P P_l = PV \sum_l G_l V P_l
+\eeq
+where I used \il{P P_l = \sum_{l^\prime} \ket{l^\prime}\bra{l^\prime} \ket{l}\bra{l} = \sum_{l^\prime}\ket{l^\prime}\bra{l^\prime}\delta_{ll^\prime} = P_l}. The third term becomes
+\beq
+PVSVSVP  = PVSV \sum_l G_l V P_l = PV\sum_l S V G_l V P_l \\
+= PV\sum_{l,l^\prime} G_{l^\prime} V G_l V P_lP_{l^\prime} = PV \sum_l  G_{l} V G_l V P_l
+\eeq
+The fourth term is
+\beq
+PVS(S(VP)VP) = PVS(\sum_l G_l VP P_l VP) = PV \sum_{l,l^\prime} G_{l^\prime} G_l VP_l VP P_{l^\prime} \\
+= PV \sum_{l^\prime} G_{l^\prime} \rr{\sum_l G_l VP_l} V P_{l^\prime}
+\eeq
+The effective Hamiltonian up to third order in \il{V} is
+\beq
+H_\text{eff} = PH_0 P + PV \sum_l G_l V P_l + PV \sum_l  G_{l} V G_l V P_l \\
+- PV \sum_{l,l^\prime} G_{l^\prime} G_l VP_l V P_{l^\prime}
+\eeq
+These results have been more or less general. We now need to write these in terms of the creation and annihilation operators of our Hamiltonian. The model subspace for our problem is the part of the conduction band up to \il{D - \delta D}. Here on, \il{\sum} represent sum over the model subspace momenta and \il{\sum^\prime} represent sum over the remaining momenta. To facilitate writing the effective Hamiltonian in terms of the creation and annihilation operators, we change the projection operators from the bra-ket representation to operator representation:
+\begin{gather}
+	\ket{k_1}\bra{k_2} = c^\dagger_{k_1}c_{k_2} \\
+	P_k = \ket{k,n_{d\sigma}}\bra{k,n_{d\sigma}} = c^\dagger_{k}c_{k}c^\dagger_{d\sigma}c_{d\sigma} = n_{k\sigma}n_{d\sigma}
+\end{gather}
+The first term becomes
+\beq
+P H_0 P = \sum_{k\sigma} \epsilon_{k\sigma} n_{k\sigma} + \epsilon_d n_d + \sum_{k\sigma}\rr{V_{kd} c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}}
+\eeq
+The second term involves two potential terms that scatter from the model subspace to the high energy subspace and then back to the model subspace. Hence this term is 
+\beq
+PV \sum_l G_l V P_l  &= V \sum_{q\sigma}\rr{\fr{V_q}{\epsilon_d - \epsilon_q} c^\dagger_{q\sigma}c_{d\sigma} + \fr{V^*_q}{\epsilon_q - \epsilon_d} c^\dagger_{d\sigma}c_{q\sigma}}\\
+		     &= {\sum_{q\sigma}}^+\fr{|V_q|^2 c^\dagger_{d\sigma}c_{q\sigma} c^\dagger_{q\sigma}c_{d\sigma}}{\epsilon_d - \epsilon_q} + {\sum_{q\sigma}}^-\fr{|V_q|^2c^\dagger_{q\sigma}c_{d\sigma}c^\dagger_{d\sigma}c_{q\sigma}}{\epsilon_q - \epsilon_d}\\
+		     &= {\sum_{q\sigma}}^+\fr{|V_q|^2 n_{d\sigma}\rr{1-n_{q\sigma}}}{\epsilon_d - \epsilon_q} + {\sum_{q\sigma}}^-\fr{|V_q|^2n_{q\sigma}\rr{1-n_{d\sigma}}}{\epsilon_q - \epsilon_d}\\
+\eeq
+In the high energy subspaces, \il{n_q^+ = 1-n_q^- = 0}. Therefore,
+\beq
+PV \sum_l G_l V P_l  &= {\sum_q}^+\fr{|V_q|^2 n_{d\sigma}}{\epsilon_d - \epsilon_q} + {\sum_q}^-\fr{|V_q|^2\rr{1-n_{d\sigma}}}{\epsilon_q - \epsilon_d} \\
+		     &= n_d \rr{{\sum_q}^+\fr{|V_q|^2 }{\epsilon_d - \epsilon_q} + 2{\sum_q}^-\fr{|V_q|^2}{\epsilon_d - \epsilon_q}}\\
+		     &= n_d \delta \epsilon_d
+\eeq
+The third term is zero in our case. The part \il{G_l V G_l V} will do the following. 
+\beq
+\ket{k,n_{d\sigma}} \ra \begin{cases} \ket{q_e,n_d=0} \ra \begin{cases} \ket{q_e,n_d=1}\\\ket{q_e,q^\prime_h,n_d = 1} \end{cases}
+\\ 
+\ket{q_h,n_d=1} \ra \begin{cases} \ket{q_h,q^\prime_e,n_d=0} \\ \ket{q_h,n_d=0} \end{cases}
+\end{cases} 
+\eeq
+None of the four final states belong to the model subspace, so this term is zero.\\\\
+The fourth term involves a first scattering between two model states, followed by a scattering to a high energy subspace and then a scattering back to the model subspace. One way for going through such a process is
+\beq
+\ket{k,n_d = 0} \underbrace{\ra \ket{n_d=1} \ra}_{\Delta E = \epsilon_k - \epsilon_q} \ket{q_e,n_d = 0} \underbrace{\ra}_{\Delta E = \epsilon_q - \epsilon_d} \ket{k^\prime, n_d = 1}
+\eeq
+Another way is to start with \il{c_d} instead of \il{c^\dagger_d} 
+\beq
+\ket{n_{d\sigma} = 1} \underbrace{\ra \ket{k\sigma,n_d=0} \ra}_{\Delta E = \epsilon_k - \epsilon_q} \begin{cases} \ket{q_h\ua, n_{d\ua} = 1}\\ \ket{q_h\da, n_{d\da} = 1} \end{cases} \underbrace{\ra}_{\Delta E = \epsilon_q - \epsilon_d} \ket{n_d = 0}
+\eeq
+Combining the two processes gives
+
+\beq
+{\sum_{q}}^+\sum_{k\sigma} \fr{|V_q|^2c^\dagger_{d\sigma}c_{q\sigma}c^\dagger_{q\sigma}c_{d\sigma}c^\dagger_{d\sigma}c_{k\sigma}}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)} + {\sum_{q\sigma^\prime}}^-\sum_{k\sigma} \fr{|V_q|^2c^\dagger_{q\sigma^\prime}c_{d\sigma^\prime}c^\dagger_{d\sigma^\prime}c_{q\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
+=\sum_{k\sigma}\rr{c^\dagger_{k\sigma}c_{d\sigma} \delta V^-_k + c^\dagger_{d\sigma}c_{k\sigma}\delta V^-_k}
+\eeq
+where
+\beq
+\delta V^+ = {\sum_q}^+ \fr{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
+\delta V^- = {\sum_q}^- 2\fr{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}
+\eeq
+The total Hamiltonian can be written in the form
+\beq
+H_\text{eff} = \sum_{k\sigma}\epsilon_{k\sigma} n_{k\sigma} + &\rr{\epsilon_d + \delta \epsilon_d}n_d \\
+												     + &\sum_{k\sigma}\cc{\rr{V^-_k + \delta V^-_k} c^\dagger_{k\sigma}c_{d\sigma} + \rr{V^+_k + \delta V^+_k} c^\dagger_{d\sigma}c_{k\sigma}}
+\eeq
+We now evaluate the changes:
+\beq
+\delta \epsilon_d &= \rr{{\sum_q}^+\fr{|V_q|^2 }{\epsilon_d - \epsilon_q} + 2{\sum_q}^-\fr{|V_q|^2}{\epsilon_d - \epsilon_q}} \\
+&\approx |V|^2 \rho |\delta D| \rr{\fr{1}{\epsilon_d - D} + \fr{2}{\epsilon_d + D}}\\
+&=|V|^2 \rho |\delta D|\fr{D - 3\epsilon_d}{D^2 - \epsilon_d^2}
+\eeq
+I used the approximation
+\beq
+\sum_{q=D-\delta D}^D f(q) = \int_{D- \delta D}^D dE \rho(E) f(E) \approx \rho f(D) \delta D
+\eeq
+Also,
+\beq
+\delta V_k^+ &= {\sum_q}^+ \fr{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
+	       &\approx |V|^2 \rho |\delta D|\fr{1}{(D - \epsilon_d)(\epsilon_k - D)}\\
+\delta V_k^- &= 2{\sum_q}^- \fr{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
+	       &\approx -|V|^2 \rho |\delta D|\fr{2}{(D + \epsilon_d)(\epsilon_k + D)}
+\eeq
+We now make the following assumptions:
+\begin{itemize}
+	\item \il{k} is close to the Fermi level (\il{\epsilon_k \approx 0})
+	\item Because \il{k} is close to the Fermi surface, we assume the potential is independent of momenta: \il{V_k^+ \equiv v^+, V^-_k \equiv v^-}
+	\item Since we truncated at third order, we need \il{D - |\epsilon_d| \gg v^\pm}. This gives us \il{D \gg |\epsilon_d|}.
+\end{itemize}
+With these assumptions, we get the scaling equations similar to the ones obtained previously.
+
+\subsection{URG Formalism\footnote{hi}}
+We are given a Hamiltonian \il{\ham} which is not diagonal in a particular occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. The goal is to obtain the unitary transformation \il{U_k} that diagonalizes this Hamiltonian in this particular basis:
+\beq
+\wl \ham = U_k \ham U^\dagger_k \text{  such that  } \qq{\wl \ham,n_k} = 0
+\eeq
+Another way to express the above problem is that, with the original Hamiltonian \il{\ham}, the diagonal terms are not zero:
+\beq
+n_k \ham(1-n_k) \neq 0
+\eeq
+so we want to find a rotated Hamiltonian \il{\wl \ham = U_k \ham U_k^\dagger} such that the off-diagonal term is zero:
+\beq[solve]
+n_k \wl \ham(1-n_k) =0
+\eeq
+To find the form for \il{U_k}, we define a few things. First,
+\beq
+P_k = U_k^\dagger n_k U_k
+\eeq
+To get a feel for what \il{P_k} is, note that
+\beq
+\qq{\ham, P_k} = \qq{U^\dagger_k U_k \ham, U_k^\dagger n_k U_k} = U_k^\dagger \qq{\wl \ham, n_k}U_k = 0
+\eeq
+\il{P_k} is hence those degrees of freedom in which the given Hamiltonian \il{\ham} is diagonal. Hence it is natural that they are obtained by rotating the \il{n_k}. If we were to go to the eigenbasis of \ham, the form for \il{\wl \ham} will be 
+\beq
+\begin{pmatrix} E_1 & \\ & E_2 \end{pmatrix}
+\eeq
+while the form for \il{P_k} will be
+\beq
+\begin{pmatrix} 1 & 0  \\ 0 & 0\end{pmatrix}
+\eeq
+It is obvious that
+\beq
+P_k^2 = P_k
+\eeq
+Another thing that we will define is
+\beq
+\ol \ham  = P_k \ham P_k
+\eeq
+\il{\ol \ham} is a matrix that, in the eigenbasis of \ham, has only the upper diagonal block of \il{\ham}.  That is, you first form a matrix by keeping only the upper diagonal block of \il{\wl \ham} and then rotating to the basis of \il{n_k}. Finally, let \il{\psi} be a wavefunction such that
+\beq
+P\psi = \psi
+\eeq
+This means that \il{\psi} is an eigenvector of \il{P_k} and hence also of \il{\ham} since \il{P_k} and \il{\ham} commute.
+\\\\
+Combining \il{P_k \ham = \ham P_k} and the idempotence of \il{P_k} gives
+\beq
+\ham P_k = P_k \ham = P_k \ham P_k = \ol\ham
+\eeq
+Operating this equation on \il{\psi} gives
+\beq[tanjiro]
+\ham \psi = \ol \ham \psi
+\eeq
+This is the equation we will use to find \il{U_k}. But first we will write \il{\psi} in the following fashion:
+\beq
+\ket{\psi} = a_1 \ket{1,\psi_1} + a_0\ket{0,\psi_0}
+\eeq
+The first entry signifies whether the degree of freedom \il{k} is occupied or not, and the second entry is the wavefunction of the remaining degrees of freedom. This is just a resolution of the total wavefunction in the two-dimensional Hilbert space of \il{k}.\\\\
+We will also write the Hamiltonian \il{\ham} as
+\beq[ham]
+\ham = \ham^D + \ham^I + \ham^i 
+\eeq
+\il{\ham^D} is the diagonal part of the Hamiltonian, something of the form \il{\epsilon_k n_k}. \il{\ham^I} is the interaction between the current degree of freedom \il{k} and the remaining degrees of freedom. It will consist of terms like \il{c^\dagger_q c_k} or \il{c^\dagger_k c_q}. The third term \il{\ham^i} has interactions between the remaining degrees of freedom. This term will also be diagonal in \il{n_k} because it doesn't involve scattering of \il{k} states. It will involve terms like \il{c^\dagger_{q_1}c_{q_2}}. \\\\
+\comm{
+The Hamiltonian \il{\ol\ham} can also be decomposed in a similar form. Note however that since it is already diagonal in \il{n_k}, it won't have any scattering in \il{k}, and hence won't have a term like \il{\ham^I}.
+\beq
+\ol \ham = \ol \ham^D + \ol \ham^i
+\eeq}
+Substituting the decomposition of \il{\ket{\psi}} and \ham into eq.~\ref{tanjiro} gives
+\beq[zenitsu]
+\ol \ham \rr{a_1\ket{1,\psi_1} + a_0\ket{0,\psi_0}} = \qq{\ham^D  + \ham^I + \ham^i }\rr{a_1 \ket{1,\psi_1} + a_0\ket{0,\psi_0}}
+\eeq
+To get expressions from this, note that on the left hand side, \il{\ol \ham} does not scatter \il{k}, so it will not change left entry in the kets; it can only change the right entries. Similarly, on the right hand side, \il{\ham^D} and \il{\ham^i} will not change the occupation of the \il{k} degree of freedom. \il{\ham^I} however \it{will} change it. Matching the states with \il{\ket{0}} gives
+\beq
+\ol \ham a_0\ket{0,\psi_0} = \rr{\ham^D + \ham^i}a_0\ket{0,\psi_0} + \ham^Ia_1\ket{1,\psi_1}
+\eeq
+We can simplify this equation by noting that
+\begin{gather}
+\ham^D = \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k + \text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k)\\
+ \implies  \ham^D \ket{0,\psi_0} = \text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k)\ket{0,\psi_0}
+\end{gather}
+and
+\begin{gather}
+ \ham^I = \text{ Tr} \qq{c^\dagger_k \ham } c_k + c^\dagger_k \text{ Tr} \qq{\ham c_k}
+ \implies \ham^I\ket{1,\psi_1} = \text{ Tr} \qq{c^\dagger_k \ham } c_k \ket{1,\psi_1}
+\end{gather}
+Substituting these in the equation gives
+\begin{gather}
+\ol \ham a_0\ket{0,\psi_0} = \cc{\text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k) + \ham^i}a_0\ket{0,\psi_0}
++ \text{ Tr} \qq{c^\dagger_k \ham } c_k a_1\ket{1,\psi_1}\\
+\implies \cc{\ol\ham - \ham^i - \text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k)} a_0 \ket{0,\psi_0}
+= \text{ Tr} \qq{c^\dagger_k \ham } c_k a_1\ket{1,\psi_1}
+\end{gather}
+Defining \il{\hat \omega = \ol\ham - \ham^i}, we get the result
+\beq
+a_0 \ket{0,\psi_0} = \qq{\hat \omega - \text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k)}^{-1}\text{ Tr} \qq{c^\dagger_k \ham } c_k a_1\ket{1,\psi_1}
+\eeq
+We define 
+\beq[etadef]
+\eta_k \equiv \fr{1}{\hat \omega - \text{ Tr} \qq{\ham^D (1 - \hat n_k)}(1-\hat n_k)}\text{ Tr} \qq{c^\dagger_k \ham } c_k
+\eeq
+which gives the equation a compact form
+\beq
+a_0 \ket{0,\psi_0} = \eta_k a_1\ket{1,\psi_1}
+\eeq
+The equation obtained by matching the states \il{\ket{1}} is
+\beq
+a_1 \ol \ham \ket{1,\psi_1} &= \rr{\ham^D + \ham^i}a_1\ket{1,\psi_1} + \ham^I a_0\ket{0,\psi_0}\\
+			    &= \rr{\text{ Tr }\qq{\ham^D \hat n_k}\hat n_k + \ham^i}a_1\ket{1,\psi_1} + c^\dagger_k \text{ Tr }\qq{\ham c_k}a_0\ket{0,\psi_0}\\
+\implies a_1 \ket{\psi_1} &= \rr{\ol\ham - \ham^i - \text{ Tr }\qq{\ham^D \hat n_k}\hat n_k }^{-1} c^\dagger_k \text{ Tr }\qq{\ham c_k}a_0\ket{0,\psi_0}\\
+			  &=\eta_k^\dagger a_0\ket{0,\psi_0}
+\eeq
+where 
+\beq[etadagdef]
+\eta_k^\dagger = \fr{1}{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k} c_k^\dagger \text{ Tr}\qq{ \ham c_k}
+\eeq
+We thus get the following two equations:
+\begin{gather}
+	a_0 \ket{0,\psi_0} = \eta_k a_1\ket{1,\psi_1}\label{eta}\\
+	a_1 \ket{1,\psi_1} = \eta^\dagger_k a_0\ket{0,\psi_0}\label{etad}
+\end{gather}
+Combining eqs.~\ref{eta} and \ref{etad}, we get
+\beq
+a_0 \ket{0,\psi_0} = \eta_k a_1\ket{1,\psi_1} = \eta_k \eta_k^\dagger a_0 \ket{0,\psi_0}
+\eeq
+Combining this with the fact that \il{\eta^\dagger_k} should have a \il{c^\dagger_k} and hence should give \il{\eta^\dagger_k \ket{1,\psi_1}}, we get
+\beq
+\eta_k \eta^\dagger_k = 1 - \hat n_k
+\eeq
+Similarly, combining the equations the other way round gives
+\beq[prod]
+\eta_k^\dagger \eta_k = \hat n_k
+\eeq
+As a consequence,
+\beq
+ \cc{\eta_k,\eta^\dagger_k} &= 1\\
+ \qq{\eta_k,\eta^\dagger_k} &= 1 - 2\hat n_k\\
+\eeq
+Other properties include
+\begin{gather}
+\eta_k^2 = \rr{\eta_k^\dagger}^2 = 0\\
+\hat n_k \eta_k = (1-\hat n_k)\eta_k^\dagger = 0\\
+\eta_k \hat n_k=\eta_k\\
+\eta^\dagger(1-\hat n_k) = \eta^\dagger_k
+\end{gather}
+We now need to find the unitary operation \il{U_k} that disentangles the state \il{\ket{1,\psi_1}} from the state \il{\ket{psi}}. Using eq.~\ref{eta},
+\beq
+\ket{\psi} = a_1\ket{1,\psi_1} + a_0\ket{0,\psi_0}  = a_1\ket{1,\psi_1} +  \eta_k a_1\ket{1,\psi_1} = \rr{1+\eta_k}\ket{1,\psi_1}
+\eeq
+This means that the operator \il{U_k} for going from \il{\ket{,\psi_1}} to \il{\ket{\psi}} is described by 
+\beq[inv]
+U_k^{-1} = \mc{C}\rr{1+ \eta_k + \mc{O}}
+\eeq
+where \il{\mc{O}} is some operator function of \il{\eta_k} and \il{\eta_k^\dagger} such that 
+\beq
+\rr{1 + \eta_k + \mc{O}}\ket{1,\psi_1} = \rr{1+\eta_k}\ket{1,\psi_1} \implies \mc{O}\ket{1,\psi_1} = 0
+\eeq
+and \il{\mc{C}} is a real scalar. To find \il{\mc{O}}, note that we can write \il{U_k^{-1}} as 
+\beq
+U_k^{-1} = \mc{C} \ex{\eta_k + \mc{O}}
+\eeq
+This is because \il{\eta_k^2 = 0} and since \il{\mc{O}} is made up of \il{\eta_k} and \il{\eta_k^\dagger} is has the same property. This exponential form allows us to write
+\beq[u1]
+U_k = \mc{C} \ex{-\eta_k - \mc{O}} = \mc{C}\rr{1 - \eta_k - \mc{O}}
+\eeq
+But, since \il{U_k} is required to be unitary, we can write, from eq.~\ref{inv},
+\beq[u2]
+U_k^\dagger = U_k^{-1} = \mc{C}\rr{1+\eta_k+\mc{O}} \implies U_k = \mc{C}\rr{1+\eta_k^\dagger + \mc{O}^\dagger}
+\eeq
+Comparing the two expression of \il{U_k} in eqs.~\ref{u1} and \ref{u2},
+\beq
+1 - \eta_k - \mc{O} = 1+\eta_k^\dagger + \mc{O}^\dagger \implies -\eta_k = \mc{O}^\dagger \implies \mc{O} = -\eta_k^\dagger
+\eeq
+This improves eq.~\ref{u1}:
+\beq
+U_k = \mc{C}\rr{1 + \eta_k^\dagger - \eta_k}
+\eeq
+To find \il{\mc{C}}, we can use the unitarity of \il{U_k}:
+\beq
+1 = U_k^\dagger U_k = \mc{C}^2\rr{1 + \cc{\eta_k^\dagger,\eta_k}} = \mc{C}^2\times 2 \implies \mc{C} = \fr{1}{\sqrt 2}
+\eeq
+The unitary operator that transforms the entangled eigenstate \il{\ket{\psi}} to the eigenstate with good quantum number \il{n_k}, \il{\ket{1,\psi_1}} is thus
+\beq
+U_k = \fr{1}{\sqrt 2}\rr{1 + \eta_k^\dagger - \eta_k}
+\eeq
+The form of the rotated Hamiltonian can now be written down.
+\beq[roth]
+ \wl\ham &= U_k \ham U_k^\dagger\\
+	 &= \fr{1}{2}\rr{1+\eta_k^\dagger - \eta_k}\ham\rr{1 + \eta_k - \eta^\dagger_k}\\
+				&= \fr{1}{2}\rr{1+\eta_k^\dagger - \eta_k}\rr{\ham + \ham\eta - \ham\eta_k^\dagger}\\
+				&=\fr{1}{2}\rr{\ham+ \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham + \eta_k^\dagger\ham\eta_k - \eta_k^\dagger \ham\eta_k^\dagger - \eta_k\ham - \eta_k \ham \eta_k + \eta_k \ham \eta_k^\dagger}\\
+&=\fr{1}{2}\rr{\ham^D + \ham^i + \ham^I + \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham + \eta_k^\dagger\ham\eta_k - \eta_k^\dagger \ham\eta_k^\dagger - \eta_k\ham - \eta_k \ham \eta_k + \eta_k \ham \eta_k^\dagger}\\
+\eeq
+In the last step I split \il{\ham} using eq.~\ref{ham}. At this stage, note that terms that have two \il{\eta_k} or two \il{\eta_k^\dagger} can only be nonzero if the intervening \il{\ham} has a creation or destruction operator. If we resolve the Hamiltonian in the basis of \il{k} in the following form:
+\beq[hisoka]
+ \ham &= \text{Tr}\qq{\ham \hat n_k}\hat n_k + \text{Tr}\qq{\ham \rr{1 - \hat n_k}}\rr{1 - \hat n_k} + c_k^\dagger \text{Tr}\qq{\ham c_k} + \text{Tr}\qq{c_k^\dagger \ham}c_k\\
+      &=H_e \hat n_k + H_h (1-\hat n_k) + c^\dagger_k T + T^\dagger c_k
+\eeq
+Using this form, we can write
+\beq[beats]
+\eta_k \ham \eta_k = \eta_k c_k^\dagger  T \eta_k
+\eeq
+and
+\beq[tora]
+\eta_k^\dagger \ham\eta_k^\dagger = \eta_k^\dagger T^\dagger c_k \eta_k^\dagger
+\eeq
+To simplify this, note the following relation:
+\beq[main]
+\eta_k c_k^\dagger T \eta_k = T^\dagger  c_k
+\eeq
+To prove this, we will use eqs.~\ref{etadef} and ~\ref{etadagdef}.
+\begin{gather}
+\eta_k^\dagger = \fr{1}{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k} c_k^\dagger T \\
+\implies \rr{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k}\eta_k^\dagger = c_k^\dagger T \\
+\end{gather}
+Taking the Hermitian conjugate gives
+\beq[lulu]
+\eta_k\rr{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k} =  T^\dagger  c_k
+\eeq
+While taking the conjugate, I used the fact that \il{\hat \omega} is Hermitian:
+\beq
+ \hat \omega &= \ol \ham - \ham^i \\
+	     &= P_k \ham P_k - \qq{H_e \hat n + H_h(1-\hat n) - \text{Tr }\qq{\ham \hat n_1 \hat n_2 ... \hat n_N}\hat n_1 \hat n_2 ... \hat n_N}
+\eeq
+From eq.~\ref{prod}, we get
+\begin{gather}
+\eta^\dagger_k \eta_k = \hat n \\
+\implies \fr{1}{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k} c_k^\dagger T  \eta_k = \hat n\\
+\implies c_k^\dagger T  \eta_k = \rr{\hat \omega - \text{ Tr} \qq{\ham^D \hat n_k}\hat n_k}\hat n\\
+\end{gather}
+Multiplying with \il{\eta_k} from left and then using eq.~\ref{lulu} gives
+\beq
+\eta_k c_k^\dagger T  \eta_k =  T^\dagger  c_k
+\eeq
+This proves eq.~\ref{main}. The Hermitian conjugate of the equation is
+\beq[main2]
+\eta_k^\dagger T^\dagger c_k\eta_k^\dagger = c_k^\dagger  T 
+\eeq
+Substituting eqs.~\ref{main} and \ref{main2} in eqs.~\ref{beats} and \ref{tora} gives
+\beq[gon]
+\eta_k \ham \eta_k + \eta_k^\dagger \ham \eta_k^\dagger = c_k^\dagger  T  + T^\dagger c_k
+\eeq
+Since \il{\ham^I} is the part of the Hamiltonian that causes scattering between \il{\ket{n_k=0}} and \il{\ket{n_k=1}}, we can write, from eq.~\ref{hisoka},
+\beq[kill]
+\ham^I = c_k^\dagger  T  +  T^\dagger c_k
+\eeq
+Comparing eqs.~\ref{gon} and \ref{kill}, we get
+\beq
+\ham^I - \eta_k \ham \eta_k - \eta_k^\dagger \ham \eta_k^\dagger = 0
+\eeq
+Substituting this in the rotated Hamiltonian gives
+\beq
+\wl \ham = \fr{1}{2}\rr{\ham^D + \ham^i + \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham + \eta_k^\dagger\ham\eta_k - \eta_k\ham  + \eta_k \ham \eta_k^\dagger}
+\eeq
+To simplify the last 6 terms, we note the following:
+\begin{gather}
+ \eta_k^\dagger = \fr{1}{\ol H - H_e \hat n_k}c^\dagger_k T,\;\;\;\;\;\;\; \eta_k = \fr{1}{\ol H - H_h (1-\hat n_k)}T^\dagger c_k
+ \end{gather}
+ Then,
+ \beq
+ \implies& \fr{1}{\ol H - H_e \hat n_k}c^\dagger_k T= c^\dagger_kT\fr{1}{\ol H - H_h (1-\hat n_k)}\\
+ \implies& c_k^\dagger T H_h(1-\hat n_k) = H_e \hat n_k c_k^\dagger T\\
+ \implies& \fr{1}{\ol H - H_e \hat n_k}c_k^\dagger T H_h(1-\hat n_k) = \fr{1}{\ol H - H_e \hat n_k}H_e \hat n_k c_k^\dagger T\\
+ \implies& \eta_k^\dagger H_h(1-\hat n_k) = H_e \hat n_k \fr{1}{\ol H - H_e \hat n_k}c_k^\dagger T\\
+ \implies& \eta_k^\dagger H_h(1-\hat n_k) = H_e \hat n_k \eta_k^\dagger\\
+ \implies& \eta_k^\dagger H_h = H_e \hat \eta_k^\dagger\label{iden}
+\eeq
+Using this identity and its conjugate (\il{\eta_k H_e = H_h \hat \eta_k}), the expression for \il{\eta_k H \eta_k^\dagger} can be simplified:
+\beq
+ \eta_k \ham \eta_k^\dagger &= \eta_k H_e \hat n_k \eta_k^\dagger\\
+			    &= H_h \eta_k \eta_k^\dagger\\
+			    &= H_h (1-\hat n_k)
+\eeq
+Similarly,
+\beq
+ \eta_k^\dagger  \ham \eta_k&= \eta_k^\dagger  H_h \eta_k\\
+			    & = H_e \eta_k^\dagger \eta_k\\
+			    &= H_e \hat n_k
+\eeq
+Also, 
+\beq
+\ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham - \eta_k\ham = \rr{\eta^\dagger_k H_h - H_e \eta_k^\dagger} + \rr{H_h \eta - \eta H_e} + \eta_k^\dagger T^\dagger c_k - \eta_k c^\dagger_k T + \\
+c_k^\dagger T \eta_k - T^\dagger c_k \eta_k^\dagger
+\eeq
+By virtue of eq.~\ref{iden} and its conjugate, the first two terms will vanish.
+\beq[link]
+\ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham - \eta_k\ham = \eta_k^\dagger T^\dagger c_k - \eta_k c^\dagger_k T + c_k^\dagger T \eta_k - T^\dagger c_k \eta_k^\dagger
+\eeq
+From eq.~\ref{main},
+\begin{gather}
+\eta_k^\dagger T ^\dagger c_k = \eta_k^\dagger \eta_k c_k^\dagger T \eta_k = \hat n_k c_k^\dagger T\eta_k = c_k^\dagger T\eta_k\\
+T ^\dagger c_k \eta_k^\dagger = \eta_k c_k^\dagger T \eta_k \eta_k^\dagger = \eta_k c_k^\dagger T \rr{1-\hat n_k} = \eta_k c_k^\dagger T\\
+\end{gather}
+Eq.~\ref{link} becomes
+\beq
+ \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham - \eta_k\ham &= c_k^\dagger T\eta_k - \eta_k c^\dagger_k T + c_k^\dagger T \eta_k - \eta_k c_k^\dagger T
+								     &=2\qq{c_k^\dagger T,\eta_k}
+\eeq
+Putting it all together,
+\beq
+ \wl \ham &= \fr{1}{2}\rr{\ham^D + \ham^i + \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham + \eta_k^\dagger\ham\eta_k - \eta_k\ham  + \eta_k \ham \eta_k^\dagger}\\
+	  &=\fr{1}{2}\rr{\ham^D + \ham^i} + \qq{c_k^\dagger T,\eta_k} + \fr{1}{2}\qq{H_e \hat n_k + H_h(1-\hat n_k)}
+\eeq
+One further simplification is possible. The last two terms constitute the total diagonal part of the Hamiltonian, but so do the first two terms:
+\beq
+\ham^D + \ham^i = H_e \hat n_k + H_h\rr{1-\hat n_k}
+\eeq
+Hence,
+\beq
+ \wl \ham &= \fr{1}{2}\rr{\ham^D + \ham^i + \ham\eta - \ham\eta_k^\dagger + \eta_k^\dagger \ham + \eta_k^\dagger\ham\eta_k - \eta_k\ham  + \eta_k \ham \eta_k^\dagger}\\
+	  &=H_e \hat n_k + H_h(1-\hat n_k) + \qq{c_k^\dagger T,\eta_k}\\
+	  &=\text{Tr}\qq{\ham\hat n_k}\hat n_k + \text{Tr}\qq{\ham\hat(1- n_k)}(1-\hat n_k) + \qq{c_k^\dagger \text{Tr}\rr{\ham c_k},\eta_k}
+\eeq
+The two terms at the front can be written in a slightly different fashion.
+\beq
+ \text{Tr}\qq{\ham\hat n_k}\hat n_k + \text{Tr}\qq{\ham(1- \hat n_k)}(1-\hat n_k) &= \text{Tr}\qq{\ham\hat n_k}\hat n_k + \text{Tr}\qq{\ham(\hat n_k -1)}(\hat n_k -1)\\
+										  &=\text{Tr}\qq{\ham\hat n_k}\hat n_k + \text{Tr}\qq{\ham(\hat n_k -1)}n_k -\text{Tr}\qq{\ham\hat(n_k -1)}\\
+										  &=\text{Tr}\qq{\ham\rr{2\hat n_k - 1}}\hat n_k -\text{Tr}\qq{\ham(\hat n_k -1)}\\
+										  &=\text{Tr}\qq{\ham\rr{\hat n_k - \fr{1}{2}}}2\hat n_k -\text{Tr}\qq{\ham(\hat n_k -\fr{1}{2})} + \fr{1}{2}\text{Tr}\qq{\ham} \\
+										  &= \text{Tr}\qq{\ham\rr{\hat n_k - \fr{1}{2}}}\rr{2\hat n_k - 1} + \fr{1}{2}\text{Tr}\qq{\ham}\\
+										  &=\text{Tr}\qq{\ham\tau_k}2\tau_k + \fr{1}{2}\text{Tr}\qq{\ham}\\
+\eeq
+The last term can be written as:
+\beq
+ \qq{c_k^\dagger \text{Tr}\rr{\ham c_k},\eta_k} &= c_k^\dagger \text{Tr}\rr{\ham c_k}\eta_k - \eta_kc_k^\dagger \text{Tr}\rr{\ham c_k}\\
+						&=\rr{2\hat n_k - 1}c_k^\dagger \text{Tr}\rr{\ham c_k}\eta_k - \rr{1-2\hat n_k}\eta_kc_k^\dagger \text{Tr}\rr{\ham c_k}
+\eeq
+I used \il{\hat n_k c^\dagger_k = c^\dagger_k} and \il{\hat n_k \eta_k = 0}. Then,
+\beq
+ \qq{c_k^\dagger \text{Tr}\rr{\ham c_k},\eta_k} = 2\tau_k \cc{c_k^\dagger \text{Tr}\rr{\ham c_k},\eta_k}
+\eeq
+The final form of the rotated Hamiltonian is
+\bbx
+\beq
+\wl \ham = U_k \ham U_k^\dagger = \fr{1}{2}\text{Tr}\qq{\ham}+  2\tau_k\text{Tr}\qq{\ham\tau_k} + 2\tau_k \cc{c_k^\dagger \text{Tr}\rr{\ham c_k},\eta_k}
+\eeq
+\ebx
+To check that this indeed commutes with \il{\hat n_k},
+\beq
+ \qq{\wl \ham, \hat n_k} &= \qq{\qq{c_k^\dagger T,\eta_k},\hat n_k}\\
+			 &=\qq{c_k^\dagger T \eta_k,\hat n_k} - \qq{\eta_k c_k^\dagger T,\hat n_k}\\
+			 &=c^\dagger_k T \eta_k \hat n_k - \hat n_kc^\dagger_k T \eta_k &&\qq{\text{2\uu{nd} [ . ] is 0, }\because c_k^\dagger \hat n_k = \hat n_k \eta_k=0}\\
+			 &=c_k^\dagger T \eta_k - c_k^\dagger T \eta_k\\
+			 &=0
+\eeq
+
+\subsection{Kondo Model URG}
+\beq
+\ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}
+\eeq
+The effective Hamiltonian obtained after disentangling momentum+spin states on the shell \il{\Lambda_j} is
+\beq[dec]
+\ham_{j-1} = 2^{-N}\text{Tr}_{1,2,...N}\ham_j + \sum_{l=1}^{N}\tau_l\cc{c^\dagger_{l}\text{Tr}_l\qq{\ham_j c_l},\eta_l}
+\eeq
+Here, \il{l} and the indices \il{1,2,...N} refer to fermionic degrees of freedom on the shell \il{\Lambda_j}. That is, they are a placeholder for \il{(\mathbf q, \beta)} where \il{|\mathbf q| = \Lambda_j} and \il{\beta \in \{\ua,\da\}}. More explicitly, the index 1 designates (\il{\mathbf k_{1,\ua}}),  the index 2 means (\il{\mathbf k_{1,\da}}),  the index 3 means (\il{\mathbf k_{2,\ua}}) and so on.\\\\
+Let \il{j = j_\text{max}}. That is, this is the first decoupling. Then, \il{\ham_j = \ham}. The first term in eq.~\ref{dec} is
+\beq
+\text{Tr}_{1,2,...N}\ham = \sum_{n_1=0,1;n_2=0,1;...;n_N=0,1} \bra{n_1}\bra{n_2}...\bra{n_N} \ham \ket{n_N}...\ket{n_1}
+\eeq
+\il{n_l} refers to the number of fermions in the state \il{\ket{N}}. If I take a single inner product first,
+\beq
+\sum_{n_N=0,1} \bra{n_N} \ham \ket{n_N} = \sum_{k\alpha}\epsilon_k \sum_{n_N=0,1} \bra{n_N} \hat n_{k\alpha} \ket{n_N} + \fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} \sum_{n_N=0,1} \bra{n_N}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}\ket{n_N}
+\eeq
+The first term is easy:
+\beq
+ \sum_{n_N} \bra{n_N} \hat n_{k\alpha} \ket{n_N} = \begin{cases} 1 & \text{if } N = (\mathbf{k}\alpha) \equiv (\mathbf{q}\beta) \\ 2 \hat n_{k\alpha}& \text{if } N \neq (\mathbf{k}\alpha) \end{cases}
+\eeq
+The second term gives
+\beq
+ \sum_{n_N} \bra{n_N} c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime} \ket{n_N} = \begin{cases} 1 & \text{if } (\mathbf{k}\alpha) = N = (\mathbf{k^\prime}\alpha^\prime) \equiv (\mathbf{q}\beta) \\ 0 &\text{if either } (\mathbf{k},\alpha) = N \text{ or } (\mathbf{k^\prime},\alpha^\prime) = N \\ 2c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}  & \text{if } (\mathbf{k^\prime},\alpha^\prime)\neq N \neq (\mathbf{k},\alpha)\end{cases}
+\eeq
+Therefore,
+\beq
+\sum_{k\alpha}\epsilon_k \sum_{n_N=0,1} \bra{n_N} \hat n_{k\alpha} \ket{n_N} = \sum_{k\alpha \neq N}2 \epsilon_k \hat n_{k\alpha} + \epsilon_N
+\eeq
+and
+\beq[ss]
+\fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} \sum_{n_N=0,1} \bra{n_N}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}\ket{n_N} = \fr{J}{2}\sum_{k\alpha\neq N\atop{k^\prime\alpha^\prime \neq N}} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} 2c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime} + \fr{J}{2}\mathbf{S}\cdot \mathbf{\sigma}_{\beta\beta}
+\eeq
+If I now trace over all the momenta \il{|q| = \Lambda} and spins \il{\beta = \ua,\da}, I will get 
+\beq
+ \sum_{k\alpha}\epsilon_k \sum_{n_N=0,1} \bra{n_N} \hat n_{k\alpha} \ket{n_N} &\ra \sum_{k\alpha\neq N}2 \epsilon_k \hat n_{k\alpha} + \epsilon_N\\
+									      &\ra\sum_{k\alpha\neq N,N-1}2^2 \epsilon_k \hat n_{k\alpha} + 2\epsilon_{N} + 2\epsilon_{N-1}\\
+									      &\ra\sum_{|k|<\Lambda_j,\alpha}2^N \epsilon_k \hat n_{k\alpha} + 2^{N-1}\sum_{l=1}^N\epsilon_{l}\\
+									      &=2^N \sum_{|k|<\Lambda_j,\alpha}\epsilon_k \hat n_{k\alpha} + 2^{N}\sum_{|q|=\Lambda_j}\epsilon_{q}
+\eeq
+The spin-spin interaction term eq.~\ref{ss} will lose the terms with \il{\sigma_{\beta\beta}} because \il{\beta} will be summed over and \il{\sum_\beta \mathbf{S}\cdot\mathbf{\sigma}_{\beta\beta} = \sum_\beta S^z\sigma^z_{\beta\beta} = 0}. Therefore, only the first term survives
+\beq
+\fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} \sum_{n_N=0,1} \bra{n_N}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}\ket{n_N} \ra   2^N \fr{J}{2}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}
+\eeq
+The first term of \il{\ham_{j-1}} is thus
+\beq[fir]
+ 2^{-N}\text{Tr}_{1,2,...N}\ham_j &= \sum_{|k|<\Lambda_j,\alpha}\epsilon_k \hat n_{k\alpha} + \sum_{|q|=\Lambda_j}\epsilon_{q} + \fr{J}{2}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}\\
+				  &={\sum_{k,k^\prime\atop{\alpha,\alpha^\prime}}}^<\rr{\epsilon_k \hat n_{k\alpha} + \fr{J}{2}\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}} + \fr{1}{2}{\sum_{q,\alpha}}^=\epsilon_q
+\eeq
+\il{\sum^<} means the sum is over all states below the shell \il{\Lambda_j} while \il{\sum^=} means the sum is over all states pn the shell \il{\Lambda_j}. Now I need to compute the second term. That term involves another trace, \il{\text{Tr}_l\qq{\ham c_l}}. The kinetic energy term will not survive this. The only terms that will survive are those that have exactly one \il{c_{q\beta}^\dagger}. 
+\beq
+ \avg{n_{q\beta}|c^\dagger_{k\alpha} c_{k\alpha} c_{q\beta}|n_{q\beta}} = \begin{cases} c^\dagger_{k\alpha} c_{k\alpha} \avg{n_{q\beta}|c_{q\beta}|n_{q\beta}} = 0 & \text{if }{k\alpha}\neq {q\beta} \\ \avg{n_{q\beta}|c^\dagger_{q\beta} c_{q\beta}^2|n_{q\beta}} =0&\text{if } {k\alpha}={q\beta} \end{cases}
+\eeq
+\beq
+ \avg{n_{q\beta}|c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime} c_{q\beta}|n_{q\beta}} = \begin{cases} c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime} \avg{n_{q\beta}|c_{q\beta}|n_{q\beta}} = 0 & \text{if }{k\alpha}\neq {q\beta}\neq {k^\prime\alpha^\prime}\\ \avg{n_{q\beta}|c^\dagger_{q\beta} c_{q\beta}^2|n_{q\beta}} =0&\text{if } {k\alpha}={q\beta}= {k^\prime\alpha^\prime} \\ \avg{n_{q\beta}|c^\dagger_{q\beta} c_{k^\prime\alpha^\prime}c_{q\beta}|n_{q\beta}} = c_{k^\prime\alpha^\prime}&\text{if } {k\alpha}={q\beta} \neq {k^\prime\alpha^\prime}\end{cases}
+\eeq
+Therefore, the trace becomes
+\beq
+\text{Tr}\qq{\ham c_{q\beta}} = \fr{J}{2}\sum_{k\alpha \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c_{k\alpha}
+\eeq
+Its conjugate is
+\beq
+\text{Tr}\qq{c_{q\beta}^\dagger\ham } = \fr{J}{2}\sum_{k\alpha \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{k\alpha}
+\eeq
+We also compute another trace: \il{\text{Tr}\rr{\ham^D \hat n_{q\beta}}}, where
+\beq
+\ham^D = \sum_{k\alpha}\epsilon_k n_{k\alpha} + \fr{J}{2}\sum_{k\alpha}{S^z}{\sigma^z}_{\alpha\alpha}n_{k\alpha} = \sum_{k\alpha}\xi_{k\beta}n_{k\alpha}
+\eeq
+where \il{\xi_{k\alpha} =\rr{\epsilon_k + \fr{J}{2}{S^z}{\sigma^z}_{\alpha\alpha}}}. Therefore,
+\beq
+ \text{Tr}\rr{\ham^D n_{q\beta}} &= \sum_{k\alpha \neq q\beta}\xi_{k\alpha}n_{k\alpha} + \xi_{q\beta}\\
+				 &= \ol \ham^D_l  + \xi_{q\beta}\\
+ \implies  \text{Tr}\rr{\ham^D \hat n_{q\beta}} \hat n_{q\beta} &= \ol \ham^D_l  \hat n_{q\beta}+ \xi_{q\beta} \hat n_{q\beta}
+\eeq
+where \il{\ol \ham^D_l = \ham^D - \xi_{q\beta} \hat n_{q\beta}}. This allows us to write the \il{\eta_{q\beta}}:
+\beq
+\eta_{q\beta} = \qq{\eta^\dagger_{q\beta}}^\dagger = \qq{\fr{1}{\hat\omega - \text{Tr}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}c^\dagger_{q\beta}T}^\dagger = \text{Tr}\qq{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\hat\omega - \text{Tr}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}\\
+\eeq
+Note that \il{\hat\omega} itself has an \il{\ol \ham^D_l n_l} in its definition. This cancels the \il{\ham^D} in the above trace. The total expression is
+\beq
+\eta_{q\beta} = \rr{\fr{J}{2}\sum_{k\alpha \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{k\alpha}} c_{q\beta}\fr{1}{\rr{\hat\omega - \fr{\xi{q\beta}}{2} - \ol \ham^D_l  \hat n_{q\beta}} - \xi_{q\beta}\tau_{q\beta}}
+\eeq
+Define \il{\hat{\ol  \omega} = \hat\omega -  \fr{\xi{q\beta}}{2} - \ol \ham^D_l  \hat n_{q\beta}}. The second term in the effective Hamiltonian \il{\ham_{j-1}} can then be written as
+\beq
+\sum_{l=1}^{N}\tau_l\left\{c^\dagger_{l}\text{Tr}_l\right.&\left.\qq{\ham_j  c_l},\eta_l\right\} = \\
+							  & \sum_{|q|=\Lambda_j,\atop{\beta=\ua,\da}} \tau_{q\beta}\left\{\fr{J}{2}\sum_{k\alpha \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{k\alpha},\fr{J}{2}\sum_{k^\prime\alpha^\prime \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime} c_{q\beta}\fr{1}{\hat{\ol\omega} - \xi_{q\beta}\tau_{q\beta}}\right\}\\
+							  &=\fr{J^2}{4}\sum_{|q|=\Lambda_j,\atop{\beta=\ua,\da}} \tau_{q\beta}\left\{\sum_{k\alpha \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{k\alpha},\sum_{k^\prime\alpha^\prime \neq q\beta} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime} c_{q\beta}\fr{1}{\hat{\ol\omega} - \xi_{q\beta}\tau_{q\beta}}\right\}\\
+\eeq
+Since we will replace \il{\hat \omega} with some function of \il{\tau_l}, the fraction with \il{\omega} will commute with all the operators. Therefore,
+\beq[kura]
+\sum_{l=1}^{N}\tau_l\left\{c^\dagger_{l}\text{Tr}_l\qq{\ham_j  c_l},\eta_l\right\} &= \sum_{|q|=\Lambda_j,\atop{\beta=\ua,\da}} \fr{J^2\tau_{q\beta}}{4\rr{\hat{\ol\omega}-\xi_{q\beta}\tau_{q\beta}}}\sum_{k\alpha \neq q\beta\atop{k^\prime\alpha ^\prime\neq q\beta}} \left\{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{k\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime} c_{q\beta}\right\}\\
+										   &=\fr{J}{2}\sum_{l=1}^N \fr{J\tau_{q\beta}}{2\rr{\hat{\ol\omega}-\xi_{q\beta}\tau_{q\beta}}}\sum_{m\neq l\neq m^\prime}\mc{C}_{m,m^\prime,l}
+\eeq
+where \il{m\equiv k\alpha, m^\prime \equiv k^\prime\alpha^\prime} and \il{\mc{C}_{lmm^\prime}} is the anticommutator \il{\left\{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{k\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime} c_{q\beta}\right\}}. Denote the prefactor in eq.~\ref{kura} as \il{\Gamma_{q\beta}}. The sum \il{\sum_{m\neq l\neq m^\prime}} is over all points \il{m,m^\prime} except the point \il{m=m^\prime=l}. Split the sum in the following way: 
+\beq
+\sum_{m\neq l\neq m^\prime} = \sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}} + \sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}} + \text{ other terms}
+\eeq
+The second term gives
+\beq
+\sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}}\left\{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{q\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime} c_{q\beta}\right\} &= \sum_{\alpha\neq\beta} \left\{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{q\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}c^\dagger_{q\alpha} c_{q\beta}\right\}\\
+																														   &=\sum_{\alpha\neq\beta}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\hat n_{q\beta}\rr{1-\hat n_{q\alpha}} + \alpha\leftrightarrow\beta
+\eeq
+Keeping in mind that \il{\alpha \neq \beta} and hence only those \il{\sigma_{\beta\alpha}} that have off-diagonal terms can survive, the scalar products evaluate to
+\beq
+\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}} &= \rr{S^x\sigma^x_{\beta\alpha} + S^y\sigma^y_{\beta\alpha}}\rr{S^x\sigma^x_{\alpha\beta} + S^y\sigma^y_{\alpha\beta}}\\
+\eeq
+Now, we use the following identities:
+\begin{gather}
+\rr{S^a}^2 = \fr{1}{4}\\
+S^x S^y = -S^yS^x = \fr{i}{2}S^z\\
+\sigma^x_{\alpha\beta} = \sigma^x_{\beta\alpha}\\
+\sigma^y_{\alpha\beta} = -\sigma^y_{\beta\alpha}
+\end{gather}
+For the special case \il{\alpha \neq \beta}, we have
+\begin{gather}
+\sigma^x_{\alpha\beta} = \sigma^x_{\beta\alpha} = 1\\
+\sigma^y_{\alpha\beta} = -\sigma^y_{\beta\alpha} = -i\sigma_{\alpha\alpha}^z=i\sigma_{\beta\beta}
+\end{gather}
+Using these identities, the scalar product becomes
+\beq
+\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}} &=\rr{S^x - S^y\sigma^y_{\alpha\beta}}\rr{S^x + S^y\sigma^y_{\alpha\beta}}\\
+												     &=\fr{1}{4} + \qq{S^x,S^y}\sigma^y_{\alpha\beta} - \fr{1}{4}\rr{\sigma^y_{\alpha\beta}}^2\\
+												     &=\fr{1}{2} + iS^z\sigma^y_{\alpha\beta}\\
+												     &= \fr{1}{2} - S^z\sigma^z_{\beta\beta}
+\eeq
+The second term then gives
+\beq
+\sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}}\cc{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{q\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime{q\beta}}} &= \sum_{\alpha\neq\beta}\hat n_{q\beta}\rr{1-\hat n_{q\alpha}}\rr{\fr{1}{2} - S^z\sigma^z_{\beta\beta}} + \alpha\leftrightarrow\beta\\
+																												      &=\qq{\fr{\rr{n_{q\beta} - n_{q\ol\beta}}^2}{2} - S^z\sigma^z_{\beta\beta}2\fr{n_{q\beta} - n_{q\ol\beta}}{2}}
+\eeq
+The term with \il{S^z} can be simplified:
+\beq
+\sigma^z_{\beta\beta}\fr{n_{q\beta} - n_{q\ol\beta}}{2} = \begin{cases}\fr{n_{q\ua} - n_{q\da}}{2} &\text{ when }\beta=\ua\\ -\fr{n_{q\da} - n_{q\ua}}{2} &\text{ when }\beta=\da\end{cases}\Bigg\} = \fr{n_{q\ua} - n_{q\da}}{2} \equiv s^z_q
+\eeq
+The second term thus becomes
+\beq
+\sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}}\cc{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha}c^\dagger_{q\beta} c_{q\alpha},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha^\prime\beta}c^\dagger_{k^\prime\alpha^\prime{q\beta}}} &= \qq{\fr{\rr{n_{q\beta} - n_{q\ol\beta}}^2}{2} - 2S^zs^z_q}
+\eeq
+We drop the first term because it does not have  \il{S^z} and hence does not renormalize the Ising term. Joining with the \il{\Gamma_{q\beta}} prefactor, we get
+\beq
+\fr{J}{2}\sum_{l=1}^N\Gamma_{q\beta} \sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}}\mc{C}_{m,m^\prime,l}&= \fr{J}{2}\sum_{l=1}^N \fr{J\tau_{q\beta}}{2\rr{\hat{\ol\omega}-\xi_{q\beta}\tau_{q\beta}}}\rr{- 2S^zs^z_q}
+\eeq
+We replace \il{\hat{\ol \omega}} with \il{2\omega \tau_{q\beta}}. This gives
+\beq
+\fr{J}{2}\sum_{l=1}^N\Gamma_{q\beta} \sum_{k=k^\prime=q\atop{\alpha=\alpha^\prime\neq\beta}}\mc{C}_{m,m^\prime,l}&=-\fr{J^2}{2}\sum_{|q|=\Lambda_j}S^zs^z_q\sum_{\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta} - \xi_{q\beta}\tau_{q\beta}}}
+\eeq
+By setting \il{\tau_{q\beta} = \fr{\beta}{2}}, we can perform the sum over \il{\beta}:
+\beq
+\sum_{\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta} - \xi_{q\beta}\tau_{q\beta}}} = \fr{1}{2}\qq{\fr{1}{\omega - \fr{\epsilon_q}{2} - \fr{1}{2}\fr{J}{2}S^z \sigma^z_{\ua\ua}} - \fr{1}{-\omega + \fr{\epsilon_q}{2} + \fr{1}{2}\fr{J}{2}S^z \sigma^z_{\da\da}}} = \fr{\omega - \fr{\epsilon_q}{2}}{\rr{\omega - \fr{\epsilon_q}{2}}^2 - \fr{J^2}{64}}
+\eeq
+In total, we get
+\beq[aluka]
+-\fr{J^2}{2}\fr{\omega - \fr{\epsilon_j}{2}}{\rr{\omega - \fr{\epsilon_j}{2}}^2 - \fr{J^2}{64}}\sum_{|q|=\Lambda_j}S^zs^z_q
+\eeq
+The first term gives
+\beq
+\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}\mc{C}_{m,m^\prime,l} &= \sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}} \left\{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}c^\dagger_{q\beta} c_{k^\prime\alpha^\prime},\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}c^\dagger_{k\alpha} c_{q\beta}\right\}\\
+									       &=\rr{1-\hat n_{q\beta}}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}} \\
+									       &\quad\quad+ \hat n_{q\beta}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c_{k^\prime\alpha^\prime}c^\dagger_{k\alpha}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}
+\eeq
+Taking the term with \il{1-\hat n_{q\beta}} as the renormalizing term, the renormalization becomes
+\beq[mirai]
+\fr{J}{2}\sum_{l=1}^N\Gamma_{q\beta} \sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}\mc{C}_{m,m^\prime,l}&=\fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}} \\
+&=\fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}} \\
+\eeq
+Combining eqs.~\ref{fir},~\ref{aluka} and ~\ref{mirai}, the renormalized Hamiltonian is
+\beq
+\ham_{j-1} = {\sum_{k,k^\prime\atop{\alpha,\alpha^\prime}}}^<\rr{\epsilon_k \hat n_{k\alpha} + \fr{J}{2}\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}} + n_j \epsilon_j -\fr{J^2}{2}\fr{\omega - \fr{\epsilon_j}{2}}{\rr{\omega - \fr{\epsilon_j}{2}}^2 - \fr{J^2}{64}}\sum_{|q|=\Lambda_j}S^zs^z_q \\
++ \fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}}
+\eeq
+
 \end{document}
