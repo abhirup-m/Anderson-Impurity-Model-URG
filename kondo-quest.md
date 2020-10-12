@@ -5,3 +5,5 @@
 - How do we get the singlet ground state?
 - Why drop terms of same spin in eq. 33?
 - The derivative should produce a factor of 2 in eq. 34.
+- In eq. 54, the $s^+$ and $s^-$ should probably be interchanged.
+- How would you plot eq. 60? 
