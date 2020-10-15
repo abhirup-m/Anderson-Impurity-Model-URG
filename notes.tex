@@ -2878,14 +2878,14 @@ Combining eqs.~\ref{fir},~\ref{aluka} and ~\ref{mirai}, the renormalized Hamilto
 \ham_{j-1} = {\sum_{k,k^\prime\atop{\alpha,\alpha^\prime}}}^<\rr{\epsilon_k \hat n_{k\alpha} + \fr{J}{2}\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}} + n_j \epsilon_j -\fr{J^2}{2}\fr{\omega - \fr{\epsilon_j}{2}}{\rr{\omega - \fr{\epsilon_j}{2}}^2 - \fr{J^2}{64}}\sum_{|q|=\Lambda_j}S^zs^z_q \\
 + \fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}}
 \eeq
-We now change the notation slightly. \il{j} will refer to the current RG step (and hence the momentum shell currently being integrated out). The RG starts from \il{j=0} and runs up to large \il{j}. As a result, integrating out the \il{j^\text{th}} Hamiltonian gives the \il{(j+1)^\text{th}} Hamiltonian. \il{\Lambda_0} is the highest momentum being integrated out and is thus the Brillouin zone edge. From eq.~\ref{rgeqt}, we can write
+The RG starts from \il{j=N} and runs down to \il{j^*<N}. As a result, integrating out the \il{j^\text{th}} Hamiltonian gives the \il{(j-1)^\text{th}} Hamiltonian. \il{\Lambda_N} is the highest momentum being integrated out and is thus the Brillouin zone edge. From eq.~\ref{rgeqt}, we can write
 \beq[diffeq]
-J^{j+1} &= J^j + \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}^2 - \fr{1}{16}{J^j}^2}\\
-\implies \Delta J^j &\equiv J^{j+1} - J^j = \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}^2 - \fr{1}{16}{J^j}^2}\\
+J^{j-1} &= J^j + \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}^2 - \fr{1}{16}{J^j}^2}\\
+\implies \Delta J^j &\equiv J^{j-1} - J^j = \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda^j}^2 - \fr{1}{16}{J^j}^2}\\
 \eeq
-Parameterizing the momenta as \il{\Lambda_j = \Lambda_0 e^{-j}}, we can write 
+Parameterizing the momenta as \il{\Lambda_j = \Lambda_N e^{j-N}}, we can write 
 \beq
--\Delta \log \Lambda_j \equiv -\rr{\log \Lambda_{j+1} - \log \Lambda_{j}} = \log \fr{\Lambda_j}{\Lambda_{j+1}}=\log \fr{e^{-j}}{e^{-j-1}} = 1
+-\Delta \log \Lambda_j \equiv -\rr{\log \Lambda_{j-1} - \log \Lambda_{j}} = \log \fr{\Lambda_j}{\Lambda_{j-1}}=\log \fr{e^{j-N}}{e^{j-N-1}} = 1
 \eeq
 We can then write the difference equation, eq.~\ref{diffeq}, as
 \beq
@@ -2914,17 +2914,56 @@ Close to the Fermi surface (\il{\tilde \Lambda \to 0}),
 \eeq
 where \il{n(0)} is the DOS on FS. There are two fixed points, \il{K^*=0} and \il{K^*=4}. At both these points, \il{\beta(K)} changes sign. At \il{K=0}, it changes between \il{0^+} and \il{0^-}, while at \il{K=4}, it switches between \il{\pm \infty}.
 \pb
-Integrating eq.~\ref{fseqtn} from \il{\Lambda_0} to \il{\Lambda^*} gives
+Integrating eq.~\ref{fseqtn} from \il{\Lambda_N} to \il{\Lambda^*} gives
 \beq
-\int_{K_0}^{K^*} dK\fr{1- \fr{K^2}{16} }{K^2} &=  -n(0)\int_{\Lambda_0}^{\Lambda^*} d\log \tilde\Lambda\\
-\implies -n(0)\log \fr{\Lambda^*}{\Lambda_0} &= \int_{K_0}^{K^*} dK\rr{\fr{1}{K^2} - \fr{1}{16}} = \fr{1}{K_0} - \fr{1}{K^*} - \fr{K^* - K_0}{16} \\
-\implies \Lambda^* &=  \Lambda_0 \exp\qq{-\fr{1}{n(0)}\rr{\fr{1}{K_0} + \fr{K_0}{16} - \fr{1}{2}}}\\
-\implies T_K &=  \fr{E(\Lambda^*)}{k_B} =\fr{\hbar v_F \Lambda^*}{k_B} = \fr{\hbar v_F \Lambda_0}{k_B} \exp\qq{-\fr{1}{n(0)}\rr{\fr{1}{K_0} + \fr{K_0}{16} - \fr{1}{2}}}\\
-\implies \xi_K &= \fr{2\pi}{\Lambda^*} = \fr{2\pi}{\Lambda_0} \exp\qq{\fr{1}{n(0)}\rr{\fr{1}{K_0} + \fr{K_0}{16} - \fr{1}{2}}}\\
+\int_{K_N}^{K^*} dK\fr{1- \fr{K^2}{16} }{K^2} &=  -n(0)\int_{\Lambda_N}^{\Lambda^*} d\log \tilde\Lambda\\
+\implies -n(0)\log \fr{\Lambda^*}{\Lambda_N} &= \int_{K_N}^{K^*} dK\rr{\fr{1}{K^2} - \fr{1}{16}} = \fr{1}{K_N} - \fr{1}{K^*} - \fr{K^* - K_N}{16} \\
+\implies \Lambda^* &=  \Lambda_N \exp\qq{-\fr{1}{n(0)}\rr{\fr{1}{K_N} + \fr{K_N}{16} - \fr{1}{2}}}\\
+\implies T_K &=  \fr{E(\Lambda^*)}{k_B} =\fr{\hbar v_F \Lambda^*}{k_B} = \fr{\hbar v_F \Lambda_N}{k_B} \exp\qq{-\fr{1}{n(0)}\rr{\fr{1}{K_N} + \fr{K_N}{16} - \fr{1}{2}}}\\
+\implies \xi_K &= \fr{2\pi}{\Lambda^*} = \fr{2\pi}{\Lambda_N} \exp\qq{\fr{1}{n(0)}\rr{\fr{1}{K_N} + \fr{K_N}{16} - \fr{1}{2}}}\\
 \eeq
 At the fixed point, the effective Hamiltonian is of the form
 \beq
 \ham = \sum_{k,\sigma} \epsilon_k \hat n_{k\sigma} + \fr{J^*}{2}\sum_{k_1,k_2 < \Lambda^*\atop{\alpha,\beta}} \mb{S}\cdot \mb{\sigma}_{\alpha\beta} c^\dagger_{k_1,\alpha} c_{k_2,\beta} + \sum_{k>\Lambda^*} J_k S^z s^z_k
+\eeq
+The zero-mode Hamiltonian is
+\beq
+\ham_\text{coll} = \fr{J^*}{2}\sum_{k_1,k_2 < \Lambda^*\atop{\alpha,\beta}} \mb{S}\cdot \mb{\sigma}_{\alpha\beta} c^\dagger_{k_1,\alpha} c_{k_2,\beta} + \sum_{k>\Lambda^*} J_k S^z s^z_k = J^* \mb{S}\cdot \mb{s} + S^z \sum_{k>\Lambda^*} J_k s^z_k
+\eeq
+where
+\beq
+\mb{s} = \sum_{k_1,k_2 < \Lambda^*}\mb{s}_{k_1,k_2} \equiv \sum_{k_1,k_2 < \Lambda^*\atop{\alpha,\beta}} \fr{\vec{\sigma}_{\alpha\beta}}{2} c^\dagger_{k_1,\alpha} c_{k_2,\beta}
+\eeq
+and (consequently),
+\begin{gather}
+	s^z_{k,q} = \sum_{\alpha,\beta} \fr{\sigma^z_{\alpha\beta}}{2} c^\dagger_{k,\alpha} c_{q,\beta} = \fr{1}{2}\rr{c^\dagger_{k\ua}c_{q\ua} + c^\dagger_{k\da}c_{q\da}}\\
+s^x_{k,q} = \fr{1}{2}\rr{c^\dagger_{k\ua}c_{q\da} + c^\dagger_{k\da}c_{q\ua}}\\
+s^y_{k,q} = \fr{-i}{2}\rr{c^\dagger_{k\ua}c_{q\da} - c^\dagger_{k\da}c_{q\ua}}\\
+s^+_{k,q} = c^\dagger_{k\ua}c_{q\da}\\
+s^-_{k,q} = c^\dagger_{k\da}c_{q\ua}\\
+s^z_k \equiv s^z_{k,k} = \sum_{\alpha,\beta} \fr{\sigma^z_{\alpha\beta}}{2} c^\dagger_{k,\alpha} c_{k,\beta} = \fr{1}{2}\rr{\hat n_{k\ua} - \hat n_{k\da}}
+\end{gather}
+The ground state is
+\beq
+\ket{\Psi^*} = \sum_{|\mb{k}|<\Lambda^*\atop{\mb{q}\neq \mb{k}}}\rr{\ket{\ua_d}\ket{\da_\mb{k}} \otimes \ket{s^z_\mb{q}=-\fr{1}{2}}- \ket{\da_d}\ket{\ua_\mb{k}}\otimes \ket{s^z_\mb{q}=\fr{1}{2}}}
+\eeq
+which is verified easily:
+\beq
+S^z \sum_{k>\Lambda^*} J_k s^z_k \ket{\Psi^*} &= S^z\sum_{k>\Lambda^*} J_k \sum_{|\mb{k}|<\Lambda^*\atop{\mb{q}\neq \mb{k}}}\rr{\ket{\ua_d}\ket{\da_\mb{k}} \otimes s^z_k\ket{s^z_\mb{q}=-\fr{1}{2}}- \ket{\da_d}\ket{\ua_\mb{k}}\otimes s^z_k\ket{s^z_\mb{q}=\fr{1}{2}}}\\
+					      &=-J_q \sum_{|\mb{k}|<\Lambda^*\atop{\mb{q}\neq \mb{k}}}\rr{\ket{\ua_d}\ket{\da_\mb{k}} \otimes \ket{s^z_\mb{q}=-\fr{1}{2}}- \ket{\da_d}\ket{\ua_\mb{k}}\otimes \ket{s^z_\mb{q}=\fr{1}{2}}}\\
+					      &=-J_q \ket{\Psi^*}
+\eeq
+\beq
+S^z s^z\ket{\Psi^*} &= \sum_{|\mb{k}|<\Lambda^*\atop{\mb{q}\neq \mb{k}}}\rr{S^z \ket{\ua_d}s^z\ket{\da_\mb{k}} \otimes \ket{s^z_\mb{q}=-\fr{1}{2}}- S^z\ket{\da_d}s^z\ket{\ua_\mb{k}}\otimes \ket{s^z_\mb{q}=\fr{1}{2}}}\\
+		    &= -N_\text{shell}\ket{\Psi^*}
+\eeq
+\beq
+\rr{S^+ s^- + S^- s^+}\ket{\Psi^*} &= \sum_{|\mb{k}|<\Lambda^*\atop{\mb{q}\neq \mb{k}}}\rr{S^- \ket{\ua_d}s^+\ket{\da_\mb{k}} \otimes \ket{s^z_\mb{q}=-\fr{1}{2}}- S^+\ket{\da_d}s^-\ket{\ua_\mb{k}}\otimes \ket{s^z_\mb{q}=\fr{1}{2}}}\\
+		    &= -N_\text{shell}\ket{\Psi^*}
+\eeq
+Therefore,
+\beq
+\ham_\text{coll} \ket{\Psi^*} &= -\rr{J^* N_\text{shell} + J_q}\ket{\Psi^*}
 \eeq
 
 
