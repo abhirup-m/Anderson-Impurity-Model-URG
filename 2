@@ -2020,8 +2020,8 @@ Applying this to eq.~\ref{sasuke} means
 \eeq
 which is the same as eq.~\ref{sakura}. This tells us that scaling all the way down to very low temperatures in regime \il{\epsilon_d^* \gg \Delta} brings us into a Fermi liquid state, characterized by a temperature-independent susceptibility (as is standard in a Fermi liquid). The crossovers can be seen by looking at the variation of the Curie constant \il{\chi T}.\\\\
 Since the susceptibility is proportional to the magnetic moment, presence of degeneracy will reduce this moment because the probability of occupying the states will decrease. As a result, the Curie constant is also a measure of the effective degeneracy of the impurity orbital. At very high temperatures \il{T \gg U,\epsilon_d}, all the impurity levels \il{0,\epsilon_d} and \il{2\epsilon_d + U} will become degenerate on energy scales of the order of \il{k_B T}. As a result, the Curie constant is approximately \il{\fr{1}{8}} in this range. The impurity occupancy is \il{n_d = 1}, because there are 4 degenerate states and the average number of electrons on them is 1. At lower temperatures \il{U \gg T \gg T^*}, the degeneracy gets lowered; now, only the vacant and single-occupied states are degenerate. Here the Curie constant is \il{\fr{1}{6}}. In this case, the average occupancy is \il{n_d = \fr{0+1+1}{3} = \fr{2}{3}}. At still lower temperatures, we saw that the impurity becomes vacant and \il{n_d = 0}. The Curie constant becomes linear in temperature, going down to 0. More formally,
-\beq[suscep]
-m = \fr{1}{\beta}\pd{\ln Z}{B} \implies \chi = \lim_{B \to 0}\pd{m}{B} = \lim_{B \to 0}\fr{1}{Z^2\beta}\qq{Z\fr{\partial^2 Z}{\partial B^2} - \rr{\pd{Z}{B}}^2}
+\beq
+m = \fr{1}{\beta}\pd{\ln Z}{B} \implies \chi = \lim_{B \to 0}\pd{m}{B} = \lim_{B \to 0}\fr{1}{\beta}\qq{\fr{1}{Z}\fr{\partial^2 Z}{\partial B^2} + \rr{\pd{Z}{B}}^2}
 \eeq
 For the case of four-fold degeneracy, all the states can be assumed to be at zero energy. Then, under a magnetic field B (\il{h=\fr{g\mu_B}{2}B}), the partition function is
 \begin{gather}
@@ -2928,8 +2928,7 @@ At the fixed point, the effective Hamiltonian is of the form
 \eeq
 The zero-mode Hamiltonian is
 \beq
-\ham_\text{coll} &= \fr{J^*}{2}\sum_{k_1,k_2 < \Lambda^*\atop{\alpha,\beta}} \mb{S}\cdot \mb{\sigma}_{\alpha\beta} c^\dagger_{k_1,\alpha} c_{k_2,\beta} + \sum_{k>\Lambda^*} J_k S^z s^z_k + \sum_{k > \Lambda^*,\sigma}\epsilon_k\hat n_{k\sigma}\\
-		 &= J^* \mb{S}\cdot \mb{s} + S^z \sum_{k>\Lambda^*} J_k s^z_k+ \sum_{k > \Lambda^*,\sigma}\epsilon_k\hat n_{k\sigma}
+\ham_\text{coll} = \fr{J^*}{2}\sum_{k_1,k_2 < \Lambda^*\atop{\alpha,\beta}} \mb{S}\cdot \mb{\sigma}_{\alpha\beta} c^\dagger_{k_1,\alpha} c_{k_2,\beta} + \sum_{k>\Lambda^*} J_k S^z s^z_k = J^* \mb{S}\cdot \mb{s} + S^z \sum_{k>\Lambda^*} J_k s^z_k
 \eeq
 where
 \beq
@@ -2968,107 +2967,11 @@ Therefore,
 \eeq
 The effective Hamiltonian of the disentangled electrons is found by tracing out the impurity and cloud parts from the total density matrix of the low energy Hamiltonian \il{\ham_\text{coll}}:
 \beq
-\rho &= \exp\qq{-\beta\ham_\text{coll}}\\
-     &= \exp\qq{-\beta\rr{\ham_0 + J^* \mb{S}\cdot \mb{s} + 2S^zh }}
+\ham_{FL} &= \sum_{k>\Lambda^*,\sigma} \epsilon_k \hat n_{k\sigma} + \sum_{k,q>\Lambda^*}\fr{J_k J_q}{J^*}s^z_{k}s^z_{q}\\
+\ham_{LFL} & = \sum_{k=\Lambda^*,\sigma} \epsilon_k \hat n_{k\sigma} + \sum_{k,q=\Lambda^*}\fr{J_k J_q}J^*s^z_{k}s^z_{q}
 \eeq
-where \il{\ham_0} is the kinetic energy of the disentangled electrons and \il{h = \fr{1}{2}\sum_{k>\Lambda^*} J_k s^z_k}.
-\beq
-\rho &= \rho_0 \exp\qq{-\beta\rr{J^* \mb{S}\cdot \mb{s} + 2S^zh }}\\
-\rho_\text{eff} &= \rho_0 \text{Tr}_\text{imp+cloud}\exp\qq{-\beta\rr{J^* \mb{S}\cdot \mb{s} + 2S^zh }}
-\eeq
-To take the trace, we diagonalize the matrix:
-\beq
-J^* \mb{S}\cdot \mb{s} + 2S^zh &= \bordermatrix{~ & \ket{\ua\ua}& \ket{\ua\da}& \ket{\da\ua}& \ket{\da\da}\\~&h+\fr{J^*}{4} &&&\\~&&h-\fr{J^*}{4}&\fr{J^*}{2}&\\~&&\fr{J^*}{2}&-h-\fr{J^*}{4}&\\~&&&&-h+\fr{J^*}{4}}\\
-			       &\ra\bordermatrix{~ & \ket{\ua\ua}& \ket{\ua\da} + \ket{\da\ua}& \ket{\ua\da} - \ket{\da\ua}& \ket{\da\da}\\~&h+\fr{J^*}{4} &&&\\~&&-\fr{J^*}{4}+A&&\\~&&&-\fr{J^*}{4}-A&\\~&&&&-h+\fr{J^*}{4}}\\
-\eeq
-where \il{A = \sqrt{h^2 + \rr{\fr{J^*}{2}}^2}}. We can now take the trace by exponentiating this matrix:
-\beq
-\exp\qq{-\beta\rr{J^* \mb{S}\cdot \mb{s} + 2S^zh}} &=\bordermatrix{~ & \ket{\ua\ua}& \ket{\ua\da} + \ket{\da\ua}& \ket{\ua\da} - \ket{\da\ua}& \ket{\da\da}\\~&e^{-\beta\rr{h+\fr{J^*}{4}}} &&&\\~&&e^{-\beta\rr{-\fr{J^*}{4}+A}}&&\\~&&&e^{-\beta\rr{-\fr{J^*}{4}-A}}&\\~&&&&e^{-\beta\rr{-h+\fr{J^*}{4}}}}\\
-\implies \text{Tr} \qq{e^{-\beta\rr{J^* \mb{S}\cdot \mb{s} + 2S^zh}}} &= e^{-\beta\fr{J^*}{4}}2\cosh \beta h + e^{\beta\fr{J^*}{4}}2\cosh A\beta
-\eeq
-In the limit of low temperature (\il{\beta \to \infty}), we have \il{e^{-\beta\fr{J^*}{4}} \to 0} and \il{\cosh A\beta \to e^{A\beta}}. We can then write
-\beq
-\rho_\text{eff} = \rho_0 \text{Tr} \qq{e^{-\beta\rr{J^* \mb{S}\cdot \mb{s} + 2S^zh}}} = \ex{-\beta\qq{\ham_0 - \fr{J^*}{4} - A}} \equiv \ex{-\beta \ham_\text{eff}}
-\eeq
-The effective Hamiltonian for the disentangled electrons is thus
-\beq
-\ham_\text{eff} = \ham_0 - \fr{J^*}{4} - A &= \ham_0 - \fr{J^*}{4} - \sqrt{h^2 + \rr{\fr{J^*}{2}}^2}\\
-					   &=\ham_0 - \fr{J^*}{4} - \fr{J^*}{2}\sqrt{1 + \rr{\fr{2h}{J^*}}^2}\\
-					   &=\ham_0 - \fr{J^*}{4} - \fr{J^*}{2} -  \fr{h^2}{J^*} + ...\\
-					   &\approx\sum_{k>\Lambda^*,\sigma}\epsilon_k \hat n_{k\sigma} - \fr{3J^*}{4} - \fr{h^2}{J^*}\\
-					   &=\sum_{k>\Lambda^*,\sigma}\epsilon_k \hat n_{k\sigma} - \fr{3J^*}{4} - \fr{1}{J^*}{\sum_{k,q>\Lambda^*}J^k J^q s^z_k s^z_q} \\
-\eeq
-Recognizing the constant negative energy as the Kondo singlet ground state energy and noting that since the \il{\Lambda^k} falls sharply as  we move away from \il{\Lambda^*}, we can truncate the second sum at the first shell \il{\Lambda^*}, we obtain the Hamiltonian for the local Fermi liquid.
-\beq
-\ham_{LFL} & = \epsilon_* \sum_{k=\Lambda^*,\sigma} \hat n_{k\sigma} + J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}
-\eeq
-LFL stands for local Fermi liquid; it is the Hamiltonian closest to the cloud. We now consider quasiparticle excitations \il{\delta n_{k\sigma}}. The ground state energy is
-\beq
-E_0 &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}\\
-    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\ua} - n_{k\da}}\rr{n_{q\ua} - n_{q\da}}\\
-    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*,\sigma}n_{k\sigma}\rr{n_{q\sigma} - n_{q\overline\sigma}}\\
-\eeq
-The excited energy is
-\beq
-E &= \epsilon_* \sum_{k=\Lambda^*,\sigma} \rr{n_{k\sigma} + \delta n_{k\sigma}} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\sigma} + \delta n_{k\sigma}}\rr{n_{q\sigma} - n_{q\overline\sigma} + \delta n_{q\sigma}- \delta n_{q\overline\sigma}}\\
-  &=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} + \\
-  &\quad\fr{J^*}{4}\sum_{k,q=\Lambda^*}\qq{n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{n_{q\sigma} - n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}}}\\
-&=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\qq{2n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}}}\\
-\eeq
-Therefore, the energy of one quasiparticle is
-\beq[quasi]
-\xi_{k\sigma} = \fr{\delta E}{\delta n_{k\sigma}} &= \epsilon_* + \fr{J^*}{4}\sum_{q=\Lambda^*}\qq{2n_{q\sigma} -2n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol \sigma}}\\
-		    &=\epsilon_* + \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\sigma} -n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} }\\
-\eeq
-Due to scattering from impurity, the local Fermi liquid electrons suffer a phase shift \il{\delta_{k\sigma}}, such that there spherical wave wavefunctions are of the form
-\beq
-\psi(\mb{r}) \sim \fr{1}{r}\sin\rr{\mb{k}\cdot\mb{r} + \delta_{k\sigma}}
-\eeq
-Open boundary conditions ensure
-\beq
-\mb{k}\cdot\mb{R} + \delta_{k\sigma} = n\pi \implies k = \fr{n\pi - \delta_{k\sigma}}{R}
-\eeq
-We thus see that as a result of the scattering, the momentum eigenvalues change by \il{\Delta k = -\fr{1}{R}\delta_{k\sigma}}. This will change \il{E_k} by
-\beq
-\Delta E_k = \pd{E_k}{k}\Delta_k = -\fr{\delta_{k\sigma}}{R}\pd{E_k}{k}
-\eeq
-The total energy in presence of scattering is thus
-\beq
-\xi_{k\sigma} = E_k - \fr{\delta_{k\sigma}}{R}\pd{E_k}{k}
-\eeq
-Comparing with eq.~\ref{quasi} and noting that \il{E_k = \epsilon_*} is the bare kinetic energy, we get
-\beq
-\fr{\delta_{k\sigma}}{R}\pd{E_k}{k} = \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma}- n_{q\sigma} + \delta n_{q\ol\sigma} - \delta n_{q\sigma} }\\
-\eeq
-The susceptibility can be calculated from the impurity partition function \il{Z_\text{imp}}, eq.~\ref{suscep}:
-\beq
-\chi_\text{imp} = \lim_{B \to 0}\fr{1}{Z_\text{imp}^2\beta}\qq{Z_\text{imp}\fr{\partial^2 Z_\text{imp}}{\partial B^2} - \rr{\pd{Z_\text{imp}}{B}}^2}
-\eeq
-To calculate \il{Z_\text{imp}}, we will use the Hamiltonian of the impurity+cloud:
-\beq
-\ham_K = J^* \mb{S}\cdot\mb{s} + hS^z
-\eeq
-In the presence of a magnetic field on the impurity, the Hamiltonian becomes
-\beq[fieldh]
-\ham_K(B) &= J^* \mb{S}\cdot\mb{s} + hS^z + BS^z\\
-	  &=J^* \mb{S}\cdot\mb{s} + B^\prime S^z\\
-\eeq
-where \il{B^\prime = B+h} is the total field on the impurity spin. We can write the expression for susceptibility in terms of this total field:
-\beq
-\chi_\text{imp} = \lim_{B^\prime \to h}\fr{1}{Z_\text{imp}^2\beta}\qq{Z_\text{imp}\fr{\partial^2 Z_\text{imp}}{\partial {B^\prime}^2} - \rr{\pd{Z_\text{imp}}{B^\prime}}^2}
-\eeq
-From eq.~\ref{fieldh}, we can write the partition function:
-\beq
-Z_\text{imp} = 2e^{\fr{\beta J^*}{4}}\qq{\cosh \fr{\beta B^\prime}{2} + \cosh\rr{\fr{\beta}{2}\sqrt{{B^\prime}^2 + J^2}}}
-\eeq
-Since the \il{2e^{\fr{\beta J^*}{4}}} factor in front will remain unaffected by the derivatives and will get cancelled from numerator and denominator while calculating \il{\chi}, I will drop that henceforth.
-\beq
-Z_\text{imp}&=\cosh \fr{\beta B^\prime}{2} + \cosh\rr{\fr{\beta}{2}\sqrt{{B^\prime}^2 + J^2}}\\
-Z_\text{imp}^2&=\cosh \fr{\beta B^\prime}{2} + \cosh^2\rr{\fr{\beta}{2}\sqrt{{B^\prime}^2 + J^2}} + 2\cosh \fr{\beta B^\prime}{2}\cosh\rr{\fr{\beta}{2}\sqrt{{B^\prime}^2 + J^2}}\\
-	\pd{Z_\text{imp}}{B^\prime} &= \fr{\beta}{2}\qq{\sinh \fr{\beta B^\prime}{2} + \fr{B^\prime}{\sqrt{{B^\prime}^2 + J^2}} \sinh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}}\\
-	\rr{\pd{Z_\text{imp}}{B^\prime}}^2 &= \rr{\fr{\beta}{2}}^2\left\{\sinh^2 \fr{\beta B^\prime}{2} + \fr{{B^\prime}^2}{{B^\prime}^2 + J^2} \sinh^2\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}\right. \\&\quad+ \left.2\sinh \fr{\beta B^\prime}{2}\fr{B^\prime}{\sqrt{{B^\prime}^2 + J^2}} \sinh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}\right\}\\
-	\pd{{}^2Z_\text{imp}}{{B^\prime}^2} &= \rr{\fr{\beta}{2}}^2\left\{\cosh \fr{\beta B^\prime}{2} + \fr{{B^\prime}^2}{{B^\prime}^2 + J^2} \cosh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}\right.\\&\quad+\left.\fr{2}{\beta}\fr{J^2}{\rr{J^2 + {B^\prime}^2}^\fr{3}{2}}\sinh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}\right\}
-\eeq
+LFL stands for local Fermi liquid; it is the Hamiltonian closest to the cloud.
+
 
 
 \end{document}

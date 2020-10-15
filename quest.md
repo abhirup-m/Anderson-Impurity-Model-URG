@@ -12,6 +12,8 @@
 
 - How do we get the singlet ground state?
 
+- Why does the singlet ground state energy appear in the energy of the disentangled electrions?
+
 - Why drop terms of same spin in eq. 33?
 
 - The derivative should produce a factor of 2 in eq. 34.
