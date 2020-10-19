@@ -2960,7 +2960,7 @@ and (consequently),
 s^x_{k,q} = \fr{1}{2}\rr{c^\dagger_{k\ua}c_{q\da} + c^\dagger_{k\da}c_{q\ua}}\\
 s^y_{k,q} = \fr{-i}{2}\rr{c^\dagger_{k\ua}c_{q\da} - c^\dagger_{k\da}c_{q\ua}}\\
 s^+_{k,q} = c^\dagger_{k\ua}c_{q\da}\\
-s^-_{k,q} = c^\dagger_{k\da}c_{q\ua}\\\label{sminus}
+s^-_{k,q} = c^\dagger_{k\da}c_{q\ua}\label{sminus}\\
 s^z_k \equiv s^z_{k,k} = \sum_{\alpha,\beta} \fr{\sigma^z_{\alpha\beta}}{2} c^\dagger_{k,\alpha} c_{k,\beta} = \fr{1}{2}\rr{\hat n_{k\ua} - \hat n_{k\da}}
 \end{gather}
 The ground state is
@@ -3170,22 +3170,46 @@ Now we simplify the terms individually:
 s^+ s^- &= \fr{1}{2} + s^z = 1\\
 \implies \fr{J^*}{4} - J^*s^+ s^- &= \fr{J^*}{4} -J^* = -\fr{3J^*}{4}\\
 4s^+ \ham^*_0 s^- &= 4s^+s^-\ham_0^* + 4s^+\qq{\ham^*_0,s^-} = 4\ham_0^* + 4s^+\qq{\ham^*_0,s^-}\\
-- \fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= - \fr{16}{{J^*}}s^+\ham_0^*\rr{s^- \ham_0^* + \qq{\ham_0^*,s^-}} \\
+-\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= - \fr{16}{{J^*}}s^+\ham_0^*\rr{s^- \ham_0^* + \qq{\ham_0^*,s^-}} \\
 				   &= - \fr{16}{{J^*}}\rr{s^+\ham_0^*\qq{\ham_0^*,s^-} + {\ham_0^*}^2 + s^+\qq{\ham_0^*,s^-}\ham_0^*}\\
 				   &= - \fr{16}{{J^*}}\rr{{\ham_0^*}^2 + s^+\cc{\ham_0^*,\qq{\ham^*_0,s^-}}}
 \eeq
-We can calculate the commutator by looking at the expression of \il{s^-} from eq.~\ref{sminus}: \il{s^- = \sum_{k_1,k_2}c^\dagger_{k_1\ua}c_{k_2\da}}. The commutator becomes
+We can calculate the commutator by looking at the expression of \il{s^-} from eq.~\ref{sminus}: \il{s^- = \sum_{k_1,k_2}c^\dagger_{k_1\da}c_{k_2\ua}}. Using the identities
 \beq
-\qq{\ham^*_0, s^-} &= \sum_{k,k_1,k_2,\sigma}\epsilon_k\qq{c^\dagger_{k\sigma}c_{k\sigma},c^\dagger_{k_1,\ua}c_{k_2,\da}}\\
-		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{c^\dagger_{k\da}\qq{c_{k\da},c^\dagger_{k_1,\ua}c_{k_2,\da}} + \qq{c^\dagger_{k\da},c^\dagger_{k_1,\ua}c_{k_2,\da}}c_{k\da}}\\
-		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{c^\dagger_{k\da}\qq{c_{k\da}c^\dagger_{k_1,\ua}c_{k_2,\da} - c^\dagger_{k_1,\ua}c_{k_2,\da}c_{k\da}} + \qq{c^\dagger_{k\da}c^\dagger_{k_1,\ua}c_{k_2,\da} - c^\dagger_{k_1,\ua}c_{k_2,\da}c^\dagger_{k\da}}c_{k\da}}\\
-		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{-c^\dagger_{k\da}c^\dagger_{k_1,\ua}\cc{c_{k\da},c_{k_2,\da}}- c^\dagger_{k_1,\ua}\cc{c^\dagger_{k\da},c_{k_2,\da}}c_{k\da}}\\
-		   &=\sum_{k,k_1,k_2}\epsilon_k c^\dagger_{k_1,\ua}\delta_{k,k_2} c_{k\da}\\
-		   &= \sum_{k,q,\da}\epsilon_q c^\dagger_{k\ua}c_{q\da}\\
+\qq{n_{k\sigma},c^\dagger_{k_1\da}} &= c^\dagger_{k\da}\delta_{kk_1}\delta_{\sigma,\da}\\
+\qq{n_{k\sigma},c_{k_2\ua}} &= -c_{k\ua}\delta_{kk_2}\delta_{\sigma,\ua}
+\eeq
+the commutator becomes
+\beq
+\qq{\ham^*_0, s^-} &= \sum_{k,k_1,k_2,\sigma}\epsilon_k\qq{n_{k\sigma},c^\dagger_{k_1,\da}c_{k_2,\ua}}\\
+		   &= \sum_{k,k_1,k_2,\sigma}\epsilon_k\cc{-c^\dagger_{k_1\da} c_{k\ua}\delta_{kk_2}\delta_{\sigma\ua} + c^\dagger_{k\da}\delta_{kk_1}\delta_{\sigma,\da}c_{k_2\ua}}\\
+		   &= \sum_{k_1 k_2}c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}
 \eeq
 \beq
-\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,q,k^\prime,\sigma}\epsilon_{k^\prime}\epsilon_q\cc{c^\dagger_{k^\prime\sigma}c_{k^\prime\sigma},c^\dagger_{k\ua}c_{q\da}} \\
-				 &= \sum_{k,q,k^\prime}\epsilon_{k^\prime}\epsilon_q\qq{c^\dagger_{k\ua}c_{q\da}\rr{\delta_{kk^\prime} + \delta_{qk^\prime}} +2c^\dagger_{k\ua}\rr{n_{k^\prime\ua} + n_{k^\prime\da}}c_{q\da}}\\
+4s^+\qq{\ham^*_0,s^-} = 4\sum_{k_1 k_2 k_3 k_4}c^\dagger_{k_3c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}}
 \eeq
+\beq
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\cc{n_{k\sigma},c^\dagger_{k_1\ua}c_{k_2\da}}
+\eeq
+To simplify this anticommutator, note
+\beq
+c^\dagger_{k_1\ua}c_{k_2\da}n_{k\sigma} &= c^\dagger_{k_1\ua}c_{k_2\da}c^\dagger_{k\sigma}c_{k\sigma}\\
+					&= c^\dagger_{k_1\ua}\rr{\delta_{kk_2}\delta_{\sigma\da} - c^\dagger_{k\sigma}c_{k_2\da}}c_{k\sigma}\\
+&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k\sigma}+ c^\dagger_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}c_{k\sigma}\\
+&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k_2\da}- c^\dagger_{k\sigma}c^\dagger_{k_1\ua}c_{k\sigma}c_{k_2\da}\\
+&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k_2\da}- c^\dagger_{k\sigma}\rr{\delta_{kk_1}\delta_{\sigma\ua} -c_{k\sigma}c^\dagger_{k_1\ua}}c_{k_2\da}\\
+&= \rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}}c^\dagger_{k_1\ua}c_{k_2\da} + n_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}\\
+\implies \cc{n_{k\sigma},c^\dagger_{k_1\ua}c_{k_2\da}} &= \qq{\rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}} + 2n_{k\sigma}}c^\dagger_{k_1\ua}c_{k_2\da}
+\eeq
+Therefore,
+\beq
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} \qq{\rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}}c^\dagger_{k_1\ua}c_{k_2\da} + 2n_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}}\\
+				 &=2n(0)\sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_1\ua}c_{k_2\da}
+\eeq
+This gives
+\beq
+-\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= -\fr{16}{J^*}\qq{}
+\eeq
+
 \end{document}
 
