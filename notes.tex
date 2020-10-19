@@ -1,5 +1,4 @@
 \documentclass[14pt]{extarticle}
-
 \usepackage{common}
 \numberwithin{equation}{subsection}
 \renewcommand\thesubsection{\arabic{subsection}}
@@ -2712,6 +2711,26 @@ To check that this indeed commutes with \il{\hat n_k},
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}
 \eeq
+The effective Hamiltonian after one step of the RG on the Hamiltonian \il{\ham_j} is
+\beq
+\ham_{j,1} = \fr{1}{2}\text{Tr}_1\qq{\ham_j}+  \tau_1\text{Tr}_1\qq{\ham_j\tau_1} + \tau_1 \cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}
+\eeq
+The second term is of order \il{\tau^2}, so we drop it because they will vanish in thermodynamic limit:
+\beq
+\ham_{j,1} = \fr{1}{2}\text{Tr}_1\qq{\ham_j} + \tau_1 \cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}\eeq
+The second run gives
+\beq
+ \ham_{j,2} &= \fr{1}{2}\text{Tr}_2\qq{\ham_{j,1}} + \tau_2 \cc{c_2^\dagger \text{Tr}_2\rr{\ham_{j,1} c_2},\eta_2}\\
+ \fr{1}{2}\text{Tr}_2\qq{\ham_{j,1}} &= \fr{1}{2}\text{Tr}_2\qq{\fr{1}{2}\text{Tr}_1\qq{\ham_j} + \tau_1 \cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}}\\
+				     &=\fr{1}{2^2}\text{Tr}_{1,2}\qq{\ham_j} +  \fr{1}{2}\tau_1\text{Tr}_{2}\cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}\\
+\text{Tr}_2\qq{\ham_{j,1}c_2} &= \text{Tr}_2\qq{\fr{1}{2}\text{Tr}_1\qq{\ham_j} c_2+ \tau_1 \cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}c_2}\\
+			      &=\fr{1}{2}\text{Tr}_2\qq{\rr{\text{Tr}_{1}\ham_j}c_2} +  \tau_1\text{Tr}_2\qq{ \cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1}c_2}\\
+\implies \tau_2 \cc{c_2^\dagger \text{Tr}_2\rr{\ham_{j,1} c_2},\eta_2} &= \fr{1}{2}\tau_2 \cc{c_2^\dagger \text{Tr}_2\qq{\rr{\text{Tr}_{1}\ham_j}c_2},\eta_2} 
+\eeq
+Therefore,
+\beq
+ \ham_{j,2} &=\fr{1}{2^2}\text{Tr}_{1,2}\qq{\ham_j} +  \fr{1}{2}\tau_1\text{Tr}_{2}\cc{c_1^\dagger \text{Tr}_1\rr{\ham_j c_1},\eta_1} + \fr{1}{2}\tau_2 \cc{c_2^\dagger \text{Tr}_2\qq{\rr{\text{Tr}_{1}\ham_j}c_2},\eta_2}
+\eeq
 The effective Hamiltonian obtained after disentangling momentum+spin states on the shell \il{\Lambda_j} is
 \beq[dec]
 \ham_{j-1} = 2^{-N}\text{Tr}_{1,2,...N}\ham_j + \sum_{l=1}^{N}\tau_l\cc{c^\dagger_{l}\text{Tr}_l\qq{\ham_j c_l},\eta_l}
@@ -2941,7 +2960,7 @@ and (consequently),
 s^x_{k,q} = \fr{1}{2}\rr{c^\dagger_{k\ua}c_{q\da} + c^\dagger_{k\da}c_{q\ua}}\\
 s^y_{k,q} = \fr{-i}{2}\rr{c^\dagger_{k\ua}c_{q\da} - c^\dagger_{k\da}c_{q\ua}}\\
 s^+_{k,q} = c^\dagger_{k\ua}c_{q\da}\\
-s^-_{k,q} = c^\dagger_{k\da}c_{q\ua}\\
+s^-_{k,q} = c^\dagger_{k\da}c_{q\ua}\\\label{sminus}
 s^z_k \equiv s^z_{k,k} = \sum_{\alpha,\beta} \fr{\sigma^z_{\alpha\beta}}{2} c^\dagger_{k,\alpha} c_{k,\beta} = \fr{1}{2}\rr{\hat n_{k\ua} - \hat n_{k\da}}
 \end{gather}
 The ground state is
@@ -3000,25 +3019,29 @@ The effective Hamiltonian for the disentangled electrons is thus
 \eeq
 Recognizing the constant negative energy as the Kondo singlet ground state energy and noting that since the \il{\Lambda^k} falls sharply as  we move away from \il{\Lambda^*}, we can truncate the second sum at the first shell \il{\Lambda^*}, we obtain the Hamiltonian for the local Fermi liquid.
 \beq
-\ham_{LFL} & = \epsilon_* \sum_{k=\Lambda^*,\sigma} \hat n_{k\sigma} + J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}
+\ham_{LFL} & = \epsilon_* \sum_{k=\Lambda^*,\sigma} \hat n_{k\sigma} - J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}
 \eeq
 LFL stands for local Fermi liquid; it is the Hamiltonian closest to the cloud. We now consider quasiparticle excitations \il{\delta n_{k\sigma}}. The ground state energy is
 \beq
-E_0 &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}\\
-    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\ua} - n_{k\da}}\rr{n_{q\ua} - n_{q\da}}\\
-    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*,\sigma}n_{k\sigma}\rr{n_{q\sigma} - n_{q\overline\sigma}}\\
+E_0 &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} - J^*\sum_{k,q=\Lambda^*}s^z_{k}s^z_{q}\\
+    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} - \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\ua} - n_{k\da}}\rr{n_{q\ua} - n_{q\da}}\\
+    &= \epsilon_* \sum_{k=\Lambda^*,\sigma}  n_{k\sigma} - \fr{J^*}{4}\sum_{k,q=\Lambda^*,\sigma}n_{k\sigma}\rr{n_{q\sigma} - n_{q\overline\sigma}}\\
 \eeq
 The excited energy is
 \beq
-E &= \epsilon_* \sum_{k=\Lambda^*,\sigma} \rr{n_{k\sigma} + \delta n_{k\sigma}} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\sigma} + \delta n_{k\sigma}}\rr{n_{q\sigma} - n_{q\overline\sigma} + \delta n_{q\sigma}- \delta n_{q\overline\sigma}}\\
-  &=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} + \\
+E &= \epsilon_* \sum_{k=\Lambda^*,\sigma} \rr{n_{k\sigma} + \delta n_{k\sigma}} - \fr{J^*}{4}\sum_{k,q=\Lambda^*}\rr{n_{k\sigma} + \delta n_{k\sigma}}\rr{n_{q\sigma} - n_{q\overline\sigma} + \delta n_{q\sigma}- \delta n_{q\overline\sigma}}\\
+  &=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} - \\
   &\quad\fr{J^*}{4}\sum_{k,q=\Lambda^*}\qq{n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{n_{q\sigma} - n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}}}\\
-&=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} + \fr{J^*}{4}\sum_{k,q=\Lambda^*}\qq{2n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}}}\\
+&=E_0 + \epsilon_* \sum_{k=\Lambda^*,\sigma} \delta n_{k\sigma} - \fr{J^*}{4}\sum_{k,q=\Lambda^*}\qq{2n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}} + \delta n_{k\sigma}\rr{ \delta n_{q\sigma}- \delta n_{q\overline\sigma}}}\\
 \eeq
 Therefore, the energy of one quasiparticle is
 \beq[quasi]
-\xi_{k\sigma} = \fr{\delta E}{\delta n_{k\sigma}} &= \epsilon_* + \fr{J^*}{4}\sum_{q=\Lambda^*}\qq{2n_{q\sigma} -2n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol \sigma}}\\
-		    &=\epsilon_* + \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\sigma} -n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} }\\
+\xi_{k\sigma} = \fr{\delta E}{\delta n_{k\sigma}} &= \epsilon_* - \fr{J^*}{4}\sum_{q=\Lambda^*}\qq{2n_{q\sigma} -2n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol \sigma}}\\
+		    &=\epsilon_* - \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\sigma} -n_{q\ol\sigma} + \delta n_{q\sigma} - \delta n_{q\ol\sigma} }\\
+\eeq
+Assuming that the Kondo cloud imparts an interaction of the form \il{Un_\ua n_\da} to the LFL, the self energy will have only antiferromagnetic terms:
+\beq
+\xi_{k\sigma} = \epsilon_* + \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma} + \delta n_{q\ol\sigma} }
 \eeq
 Due to scattering from impurity, the local Fermi liquid electrons suffer a phase shift \il{\delta_{k\sigma}}, such that there spherical wave wavefunctions are of the form
 \beq
@@ -3037,9 +3060,31 @@ The total energy in presence of scattering is thus
 \xi_{k\sigma} = E_k - \fr{\delta_{k\sigma}}{R}\pd{E_k}{k}
 \eeq
 Comparing with eq.~\ref{quasi} and noting that \il{E_k = \epsilon_*} is the bare kinetic energy, we get
-\beq
-\fr{\delta_{k\sigma}}{R}\pd{E_k}{k} = \fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma}- n_{q\sigma} + \delta n_{q\ol\sigma} - \delta n_{q\sigma} }\\
+\beq[phase]
+\fr{\delta_{k\sigma}}{R}\pd{E_k}{k} = -\fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma}+ \delta n_{q\ol\sigma}}\\
 \eeq
+The quantity \il{\pd{E_k}{k}} is calculated as
+\beq
+dE_k &\equiv E_{\mb{k}+\mb{dk}} - E_k \\
+     &= -2t\qq{\cos \rr{k_x +dk} + \cos \rr{k_y+dk}} +2t\qq{\cos \rr{k_x} + \cos \rr{k_y}}\\
+     &=2t dk\rr{\sin k_x + \sin k_y}
+\eeq
+Close to the Fermi surface, \il{\rr{\sin k_x + \sin k_y} \approx k_{Fx} + k_{Fy}}. Therfore,
+\beq
+\pd{E_k}{k} = 2t \rr{k_{Fx} + k_{Fy}}
+\eeq
+Defining \il{\Delta \epsilon \equiv 2t \rr{k_{Fx} + k_{Fy}} \fr{\pi}R}, we can write eq.~\ref{phase} as
+\beq
+\fr{\delta_{k\sigma}}{\pi}\Delta \epsilon &= -\fr{J^*}{2}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma}+ \delta n_{q\ol\sigma}}\\
+\implies \delta_{k\sigma} &= -\fr{\pi J^*}{2 \Delta \epsilon}\sum_{q=\Lambda^*}\qq{n_{q\ol\sigma}+ \delta n_{q\ol\sigma}}
+\eeq
+We can expand the phase shift as a function of the quasiparticle energy and the quasiparticle distribution, around \il{n_{k\sigma} = n^{(0)}_{k\sigma}} and \il{\epsilon_* = E_F}:
+\beq
+\delta_{k\sigma} &= \delta_{k\sigma}(n^{(0)},E_F) + \pd{\delta_{k\sigma}}{\epsilon_*}\rr{\epsilon_* - E_F} + \sum_q \pd{\delta_{k\sigma}}{n_{q\ol\sigma}}\delta n_{q\ol\sigma}\\
+		 &=\fr{\pi}{2} + \alpha\rr{\epsilon_* - E_F} + \Phi\sum_q \delta n_{q\ol\sigma}\\
+\eeq
+From here on, Nozières' calculation gives the value of Wilson ratio.
+\pb
 The susceptibility can be calculated from the impurity partition function \il{Z_\text{imp}}, eq.~\ref{suscep}:
 \beq
 \chi_\text{imp} = \lim_{B \to 0}\fr{1}{Z_\text{imp}^2\beta}\qq{Z_\text{imp}\fr{\partial^2 Z_\text{imp}}{\partial B^2} - \rr{\pd{Z_\text{imp}}{B}}^2}
@@ -3053,7 +3098,7 @@ In the presence of a magnetic field on the impurity, the Hamiltonian becomes
 \ham_K(B) &= J^* \mb{S}\cdot\mb{s} + hS^z + BS^z\\
 	  &=J^* \mb{S}\cdot\mb{s} + B^\prime S^z\\
 \eeq
-where \il{B^\prime = B+h} is the total field on the impurity spin. We can write the expression for susceptibility in terms of this total field:
+where \il{B = J^*\sum_k s^z_k} and \il{h} is an external field.  \il{B^\prime = B+h} is the total field on the impurity spin. We can write the expression for susceptibility in terms of this total field:
 \beq
 \chi_\text{imp} = \lim_{B^\prime \to h}\fr{1}{Z_\text{imp}^2\beta}\qq{Z_\text{imp}\fr{\partial^2 Z_\text{imp}}{\partial {B^\prime}^2} - \rr{\pd{Z_\text{imp}}{B^\prime}}^2}
 \eeq
@@ -3074,6 +3119,73 @@ Z_\text{imp}^2&=\cosh \fr{\beta B^\prime}{2} + \cosh^2\rr{\fr{\beta}{2}\sqrt{{B^
 							&\quad\left.+ Z_\text{imp}\fr{{B^\prime}^2}{{B^\prime}^2 + J^2} \cosh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}} \right.\\
 							&\quad\left.+ Z_\text{imp}\fr{2}{\beta}\fr{J^2}{\rr{J^2 + {B^\prime}^2}^\fr{3}{2}}\sinh\rr{\fr{\beta}{2}\sqrt{{{B^\prime}^2 + J^2}}}\right\}
 \eeq
-
-
+The total expression is
+\beq
+\chi_\text{imp} = \fr{\beta\sigma_1 + \fr{2\sinh \sigma_2}{\sqrt{\sigma_3}} + \fr{B^2 \beta\cosh\sigma_2 }{\sigma_3} - \fr{2B^2\sinh\sigma_2}{\sigma_3^\fr{3}{2}}}{4\rr{\cosh \sigma_2 + \sigma_1}}-\qq{\fr{\fr{\sinh\fr{\beta B}{2}}{2} + \fr{B\sinh \sigma_2}{2\sqrt{\sigma_3}}}{\cosh \sigma_2 + \sigma_1}^2}^2
+\eeq
+To study the excitations of the Kondo cloud, we look at the Hamiltonian of impurity+cloud:
+\beq
+\ham^* = \sum_{k<\Lambda^*,\sigma} \epsilon_k \hat n_{k\sigma} + J^* \mb{S}\cdot\mb{s} = \ham_0^* + J^* \mb{S}\cdot\mb{s}
+\eeq
+In order to separate the cloud from the impurity, take the groundstate wavefunction of \il{\ham^*}:
+\beq
+\ket{\Psi} = a_\da \ket{\ua_\text{imp}}\ket{\da} + a_\ua\ket{\da_\text{imp}}\ket{\ua} 
+\eeq
+Note that \il{\ket{\ua},\ket{\da}} are many-electron states. The eigenvalue equation for this state is
+\beq
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\Psi} &= \rr{S^z s^z + \fr{1}{2}S^+s^- + \fr{1}{2}S^- s^+}\rr{a_\da \ket{\ua_\text{imp}}\ket{\da} + a_\ua\ket{\da_\text{imp}}\ket{\ua}}\\
+						 &=\fr{s^z}{2}\rr{a_\da \ket{\ua_\text{imp}}\ket{\da} - a_\ua\ket{\da_\text{imp}} \ket{\ua}} + a_\da \ket{\da_\text{imp}}\fr{s^+}{2}\ket{\da} + a_\ua \ket{\ua_\text{imp}}\fr{s^-}{2} \ket{\ua}
+\eeq
+Comparing the coefficients of \il{\ket{\ua_\text{imp}}} and \il{\ket{\da_\text{imp}}}, we get
+\beq
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\da\ket{\da} &= \fr{s^z}{2}a_\da \ket{\da} + a_\ua \fr{s^-}{2} \ket{\ua}\\
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\ua\ket{\ua} &= -\fr{s^z}{2}a_\ua \ket{\ua} + a_\da \fr{s^+}{2} \ket{\da}
+\eeq
+From the first equation, we can isolate \il{\ket{\da}}:
+\beq
+\ket{\da} = \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1}\fr{a_\ua}{a_\da} s^-\ket{\ua}
+\eeq
+Substituting this in the second equation gives
+\beq
+\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\ua} &= - \ket{\ua} + s^+ \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1} s^-\ket{\ua}\\
+\rr{E_0 - \ham^*_0}\ket{\ua} &= \qq{-\fr{J^*}{2}s^z + \rr{\fr{J^*}{2}}^2s^+ \fr{1}{\rr{E_0 - \ham^*_0} - \fr{J^*}{2}s^z}s^-}\ket{\ua}\\
+			     &\equiv \ham_\text{eff}\ket{\ua}
+\eeq
+Now we can simplify the effective Hamiltonian for the Kondo cloud. First put \il{E_0=0} and \il{s^z=\fr{1}{2}}. Then,
+\beq
+H_\text{eff} &= -\fr{J^*}{4} -\rr{\fr{J^*}{2}}^2s^+ \fr{1}{\fr{J^*}{4}+\ham^*_0 }s^-\\
+	     &=\fr{J^*}{4} - J^*s^+ \fr{1}{1+\fr{4\ham^*_0}{J^*} }s^-\\
+\eeq
+We can expand the denominator in a power series:
+\beq
+\fr{1}{1+\fr{4\ham^*_0}{J^*}} = 1 - \fr{4\ham^*_0}{J^*} + \fr{16}{{J^*}^2}{\ham^*_0}^2
+\eeq
+Substituting this gives
+\beq
+H_\text{eff}&=\fr{J^*}{4} - J^*s^+ \rr{1 - \fr{4\ham^*_0}{J^*} + \fr{16}{{J^*}^2}{\ham^*_0}^2}s^-\\
+	    &=\fr{J^*}{4} - J^*s^+s^-  + 4s^+ \ham^*_0 s^-  - \fr{16}{{J^*}}s^+{\ham^*_0}^2s^-\\
+\eeq
+Now we simplify the terms individually:
+\beq
+s^+ s^- &= \fr{1}{2} + s^z = 1\\
+\implies \fr{J^*}{4} - J^*s^+ s^- &= \fr{J^*}{4} -J^* = -\fr{3J^*}{4}\\
+4s^+ \ham^*_0 s^- &= 4s^+s^-\ham_0^* + 4s^+\qq{\ham^*_0,s^-} = 4\ham_0^* + 4s^+\qq{\ham^*_0,s^-}\\
+- \fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= - \fr{16}{{J^*}}s^+\ham_0^*\rr{s^- \ham_0^* + \qq{\ham_0^*,s^-}} \\
+				   &= - \fr{16}{{J^*}}\rr{s^+\ham_0^*\qq{\ham_0^*,s^-} + {\ham_0^*}^2 + s^+\qq{\ham_0^*,s^-}\ham_0^*}\\
+				   &= - \fr{16}{{J^*}}\rr{{\ham_0^*}^2 + s^+\cc{\ham_0^*,\qq{\ham^*_0,s^-}}}
+\eeq
+We can calculate the commutator by looking at the expression of \il{s^-} from eq.~\ref{sminus}: \il{s^- = \sum_{k_1,k_2}c^\dagger_{k_1\ua}c_{k_2\da}}. The commutator becomes
+\beq
+\qq{\ham^*_0, s^-} &= \sum_{k,k_1,k_2,\sigma}\epsilon_k\qq{c^\dagger_{k\sigma}c_{k\sigma},c^\dagger_{k_1,\ua}c_{k_2,\da}}\\
+		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{c^\dagger_{k\da}\qq{c_{k\da},c^\dagger_{k_1,\ua}c_{k_2,\da}} + \qq{c^\dagger_{k\da},c^\dagger_{k_1,\ua}c_{k_2,\da}}c_{k\da}}\\
+		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{c^\dagger_{k\da}\qq{c_{k\da}c^\dagger_{k_1,\ua}c_{k_2,\da} - c^\dagger_{k_1,\ua}c_{k_2,\da}c_{k\da}} + \qq{c^\dagger_{k\da}c^\dagger_{k_1,\ua}c_{k_2,\da} - c^\dagger_{k_1,\ua}c_{k_2,\da}c^\dagger_{k\da}}c_{k\da}}\\
+		   &=\sum_{k,k_1,k_2}\epsilon_k\rr{-c^\dagger_{k\da}c^\dagger_{k_1,\ua}\cc{c_{k\da},c_{k_2,\da}}- c^\dagger_{k_1,\ua}\cc{c^\dagger_{k\da},c_{k_2,\da}}c_{k\da}}\\
+		   &=\sum_{k,k_1,k_2}\epsilon_k c^\dagger_{k_1,\ua}\delta_{k,k_2} c_{k\da}\\
+		   &= \sum_{k,q,\da}\epsilon_q c^\dagger_{k\ua}c_{q\da}\\
+\eeq
+\beq
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,q,k^\prime,\sigma}\epsilon_{k^\prime}\epsilon_q\cc{c^\dagger_{k^\prime\sigma}c_{k^\prime\sigma},c^\dagger_{k\ua}c_{q\da}} \\
+				 &= \sum_{k,q,k^\prime}\epsilon_{k^\prime}\epsilon_q\qq{c^\dagger_{k\ua}c_{q\da}\rr{\delta_{kk^\prime} + \delta_{qk^\prime}} +2c^\dagger_{k\ua}\rr{n_{k^\prime\ua} + n_{k^\prime\da}}c_{q\da}}\\
+\eeq
 \end{document}
+
