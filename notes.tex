@@ -1532,7 +1532,8 @@ The next Hamiltonian is then
 This is the same equation as eq.~\ref{rec}, with \il{\ol H_N} expressed in its eigenbasis and the creation and annihilation operators also expressed in that basis; the \il{C(m,m^\prime)} are just the matrix elements of \il{c} and \il{c^\dagger} in that basis.\\\\
 To check whether the guesses about the fixed points are true, Wilson did the following. He set \il{J=0.009} and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \il{N}. They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \infty}, meaning that under the application of the NRG, the \il{J=0.009} Hamiltonian flowed to the fixed-point Hamiltonian \il{J = \infty}.
 
-\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
+\pagebreak
+%\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
 The fixed-point Hamiltonians are found to represent interacting Fermi liquids. The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
@@ -1540,7 +1541,9 @@ H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}}
 The parameters \il{\epsilon_k,V_k,U} are not the same as the Anderson model we start with, but I am using the same symbols for convenience. The interaction term \il{U} is the leading irrelevant operator near the low-energy fixed point. For \il{T \ra 0}, assuming only single excitations, the interacting term will not get invoked.\\\\
 Under mean-field,
 \beq
-n_{d\ua}n_{d\da} \approx n_{d\ua}\avg{n_{d\da}} + n_{d\da}\avg{n_{d\ua}} = \fr{1}{N^2}\sum_{k,q,\sigma} n_{k\sigma} \avg{n_{q,-\sigma}}
+n_{d\ua}n_{d\da} &\approx n_{d\ua}\avg{n_{d\da}} + \avg{n_{d\ua}}n_{d\da} - \avg{n_{d\ua}}\avg{n_{d\da}}\\
+\implies \avg{n_{d\ua}n_{d\da}} &= \avg{n_{d\ua}}\avg{n_{d\da}}\\
+				&= \sum_{k,q}\avg{n_{k\sigma}} \avg{n_{q,-\sigma}}\\
 \eeq
 where \il{N} is the number of sites. Note that the number of excitations, \il{\avg{n_q}} has to be defined differently for the states above and below the Fermi surface. For excited states above \il{\epsilon_F}, the number of excitations is given usually:
 \beq
@@ -1554,53 +1557,177 @@ where \il{n^h_k} stands for the number of holes. We can thus define a generalize
 \beq
 \avg{\delta n_{k,\sigma}} = \begin{cases} n^p_k, &\epsilon_k > \epsilon_F\\ -n^h_k, &\epsilon_k < \epsilon_F\end{cases}
 \eeq
-The effective one-particle energy becomes
+Replacing the quasiparticle excitations with their expectation values, the effective one-particle energy becomes
 \beq
-\wl\epsilon_{k\sigma} = \epsilon_k + \fr{U}{N^2}\sum_q \avg{\delta n_{q,-\sigma}}
+\epsilon_{k\sigma} = \epsilon_k + U\sum_q \avg{\delta n_{q,-\sigma}} \equiv \epsilon_k + U\avg{\delta n_{-\sigma}}
 \eeq
 This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles. \il{\delta n > 0} acts as the excitations from the ground state.
-This quantity \il{\gamma = \fr{C_v}{T}} is
-\begin{gather}
-	\gamma_\text{imp} = \fr{2\pi^2 k_B^2}{3}\rho_d(0)\label{gimp}
-\end{gather}
-Under a magnetic field \il{B}, \il{ \wl \epsilon_{k\sigma} = \epsilon_k +U\eta_\sigma +\sigma h}. where \il{h=\fr{1}{2}g B \mu_B}. The magnetic susceptibility is
+To calculate the specific heat, \il{C_v = \dv{\avg{E}}{T}}, note that a change in temperature would modify the quasiparticle distribution \il{\delta n_{k\sigma}} and hence the quasiparticle energies \il{\epsilon_{k\sigma}}. This leads to a complicated feedback effect. However, at low temperatures, higher order excitations will be very low and we can approximate by considering only the variation in the distribution:
 \beq
-\chi_m &= \fr{g\mu_B}{2}\pd{}{B}\avg{\delta n_\ua(\wl\epsilon_F) - \delta n_\da(\wl\epsilon_F)}\\
-       &= \fr{g\mu_B}{2}\pd{}{B}\sum_{\sigma}\sigma \avg{\delta n(\wl \epsilon_F,\sigma)}\\
-       &= \fr{g\mu_B}{2}\sum_{k,\sigma}\sigma \pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)}\pd{\wl \epsilon_{k\sigma}}{B}
+\dv{\avg{E}}{T} &= \sum_{k,\sigma}\epsilon_{k\sigma}\dv{\avg{\delta n_{k\sigma}}}{T}\\
 \eeq
-The term \il{\pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)}} is the density of states of the whole system.
+%\beq
+%\dv{\avg{E}}{T} &= \dv{}{T}\sum_{k,\sigma}\epsilon_{k\sigma}\avg{\delta n_{k\sigma}}\\
+%		&= \sum_{k,q,\sigma}\dv{}{T}\rr{\epsilon_{k}\avg{\delta n_{k\sigma}} + U\avg{\delta n_{q,-\sigma}}\avg{\delta n_{k\sigma}}}\\
+%		&= \sum_{k,q,\sigma}\rr{\epsilon_{k}\dv{\avg{\delta n_{k\sigma}}}{T} + U\dv{\avg{\delta n_{q,-\sigma}}}{T}\avg{\delta n_{k\sigma}} + U\avg{\delta n_{q,-\sigma}}\dv{\avg{\delta n_{k\sigma}}}{T}}\\
+%		&=\sum_{k,q,\sigma}\rr{\epsilon_{k}\dv{\avg{\delta n_{k\sigma}}}{T} + 2U\avg{\delta n_{q,-\sigma}}\dv{\avg{\delta n_{k\sigma}}}{T}}\\
+%		&=\sum_{k,q,\sigma}\rr{2\epsilon_{k\sigma} - \epsilon_k}\dv{\avg{\delta n_{k\sigma}}}{T}
+%\eeq
+Since the quasiparticle excitations are adiabatically connected to the free electron excitations, \il{\avg{\delta n_{k\sigma}}} will follow a Fermi-Dirac distribution:
 \beq
-\pd{}{\wl \epsilon_{k}}\avg{\delta n(\wl \epsilon_F,\sigma)}=\delta(\wl \epsilon_{k\sigma} - \epsilon_F)
+\avg{\delta n_{k\sigma}}(T) &= \fr{1}{e^{\beta\epsilon_{k\sigma}} + 1}\\
+\implies \dv{\avg{\delta n_{k\sigma}}}{T} &= \fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}\qq{\fr{1}{k_B T^2}\epsilon_{k\sigma} -\fr{1}{k_B T}\rr{2\epsilon_{k\sigma} - \epsilon_k}\dv{\avg{\delta n_{k\sigma}}}{T}}
 \eeq
-In the limit of \il{T \ra 0} and \il{h \ra 0}, the quasiparticle energy becomes that of a non-interacting system.
+At sufficiently low temperatures, the first term will dominate over the others (\il{T^{-2} \gg T^{-1}}). Hence the low temperature specific heat can be written as
 \beq
-\lim_{T \ra 0,h \ra 0} \pd{}{\wl \epsilon_{k\sigma}}\avg{\delta n(\wl \epsilon_F,\sigma)} = \delta(\wl \epsilon_k - \epsilon_F)
+\dv{\avg{E}}{T} &= \sum_{k,\sigma}\epsilon_{k\sigma}\fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}\fr{1}{k_B T^2}\epsilon_{k\sigma}\\
+		&= \fr{1}{k_B T^2}\sum_{k,\sigma}\epsilon_{k\sigma}^2\fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}\\
+		&=\fr{1}{k_B T^2}\sum_{\sigma}\int d\epsilon_\sigma \rho(\epsilon_\sigma) \epsilon_{\sigma}^2\fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}
 \eeq
-Therefore,
+The function \il{\fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}} is very sharply peaked at the Fermi surface \il{\epsilon_\sigma = 0}. Therefore we can replace the density of states by its value at the Fermi surface.
 \beq
-\chi_m = -\fr{g\mu_B}{2}\sum_{k} \delta\rr{\wl \epsilon_k - \epsilon_F}\sum_\sigma \sigma \pd{\wl \epsilon_{k\sigma}}{B}
+\dv{\avg{E}}{T} &=\fr{1}{k_B T^2}\sum_{\sigma}\rho_\sigma(0) \int_{-\infty}^\infty d\epsilon_\sigma\epsilon_{\sigma}^2\fr{e^{\beta\epsilon_{k\sigma}}}{\rr{e^{\beta\epsilon_{k\sigma}} + 1}^2}\\
+		&=-\fr{1}{T}\sum_{\sigma}\rho_\sigma(0) \int_{-\infty}^\infty  d\epsilon_\sigma \epsilon_{\sigma}^2f^\prime(\epsilon_\sigma)\\
+		&=-\fr{1}{T}\sum_{\sigma}\rho_\sigma(0) \int_1^0 df \epsilon_{\sigma}^2
 \eeq
-Now, the remaining derivative can be evaluated as
+\il{f(\epsilon_\sigma)} is the Fermi-Dirac distribution. Note that
 \beq
-\pd{\wl \epsilon_{k\sigma}}{B} = \pd{}{B}\rr{\epsilon_k +\sigma h + U\eta_\sigma} = \fr{g \mu_B}{2}\pd{}{h}\rr{+\sigma h + U\eta_\sigma} = \fr{g \mu_B}{2}\sigma\qq{1 + U\rho_d}
+\epsilon = k_B T\ln \rr{f^{-1} - 1}\implies \epsilon^2 =k_B^2 T^2\qq{\ln \rr{f^{-1} - 1}}^2
 \eeq
-The impurity contribution is
-\beq[mimp]
-\chi_{\text{m,imp}} = \rr{\fr{g\mu_B}{2}}^2\rho_{d}(0)\sum_\sigma\qq{1+U\rho_{d}(0)} = \fr{\rr{g\mu_B}^2}{2}\rho_{d}(0)\qq{1+U\rho_{d}(0)}
+Therfore,
+\beq
+\dv{\avg{E}}{T} &=-k_B^2 T\sum_{\sigma}\rho_\sigma(0) \int_1^0 df \qq{\ln \rr{f^{-1} - 1}}^2
 \eeq
-Similarly, the charge susceptibility is
-\begin{gather}
-	\chi_\text{c,imp} = 2\rho_d(0)\rr{1-U\rho_d(0)}\label{chimp}
-\end{gather}
-where \il{\rho_d(E)} is the density of states in the non-interacting limit. \il{\chi_m} and \il{\chi_c} are the magnetic and charge susceptibilities. Eliminating \il{\rho_d(0)} between eqs.~\ref{gimp},\\\ref{mimp} and \ref{chimp} gives
-\beq[historia]
-\fr{4}{g^2\mu_ B^2}\chi_\text{m,imp} + \chi_\text{c,imp} = \fr{6}{\pi^2k_B^2}\gamma_\text{imp}
+The remaining integral gives \il{-\fr{\pi^2}{3}}. Using \il{\rho_\ua = \rho_\da = \rho_d}, we get
+\beq
+\dv{\avg{E}}{T} &=k_B^2 T\sum_{\sigma}\rho_d(0) \fr{\pi^2}{3}\\
+		&=2k_B^2 T\rho_d(0) \fr{\pi^2}{3}\\
+		&= \gamma_\text{imp}T
 \eeq
+where
+\beq
+\gamma_\text{imp} \equiv \fr{C_v}{T} = \fr{2\pi^2}{3}k_B^2\rho_d(0) 
+\eeq
+Under a magnetic field \il{B}, \il{ \epsilon_{k\sigma} \ra \epsilon_{k\sigma} + \sigma h}. where \il{h=\fr{1}{2}g B \mu_B}. The magnetisation is
+\beq
+m &= \delta n_\ua - \delta n_\da\\
+  &= \sum_\sigma \delta n_\sigma\\
+  &= \sum_{k\sigma} \pd{n_\sigma}{\epsilon_{k\sigma}}\delta \epsilon_{k\sigma}\\
+  &= \sum_{k\sigma} \rho_{k\sigma}\rr{\sigma h + U\delta n_{- \sigma}}\\
+\eeq
+On applying the magnetic field, the Fermi energy of spin \il{-\sigma} decreases as \il{\epsilon_F -\sigma h}. Hence, more number of spin \il{-\sigma} electrons will get excited, the number of such excitations being
+\beq
+\delta n_{- \sigma} = \sum_q \delta n_{q,-\sigma} = \sum_q \Delta \epsilon_F \rho_{q-\sigma} = \sigma h\rho_{-\sigma}(0)
+\eeq
+In the last step, I used the fact that the density of states is non-zero only very close to the Fermi surface.
+Substituting this in the magnetisation gives
+\beq
+m &= \sigma h\sum_{k\sigma} \rho_{k\sigma}\rr{1 + U\rho_{-\sigma}(0)}\\
+  &= \sigma h\rho_{\sigma}(0)\qq{1 + U\rho_{-\sigma}(0)
+}
+\eeq
+The susceptibility is
+\beq
+\chi_\text{imp} = \lim_{h \to 0} \fr{m}{h} = \rho_d(0)\qq{1 + U\rho_d(0)}
+\eeq
+There I used the fact that in the absence of any field, \il{\rho_\ua = \rho_\da = \rho_d}.
 The Wilson ratio is
 \beq
 R = 1+U\rho_d(0)
 \eeq
+The Green's function is of the general form
+\beq
+G_d(\omega) = \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma_I(\omega)}
+\eeq
+Expanding the self energy up to first order in energy gives
+\beq
+\Sigma_I = \Sigma_I(0) + \omega \Sigma_I^\prime \equiv \Sigma_I(0) + \rr{1 - Z^{-1}}\omega
+\eeq
+where \il{Z = \rr{1 - \Sigma_I^\prime}^{-1}}. Substituting this in \il{G_d(\omega)} gives
+\beq[impg]
+G_d(\omega) &= \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma_I(0) - \rr{1 - Z^{-1}}\omega}\\
+	  &= \fr{Z}{Z\omega - Z\epsilon_d - iZ\Delta - Z\Sigma_I(0) - Z\omega + \omega}\\
+	  &= \fr{Z}{\omega - Z\rr{\epsilon_d + \Sigma_I(0)} - iZ\Delta }\\
+	  &\equiv \fr{Z}{\omega - \epsilon_d^* - i\Delta ^*}\\
+\eeq
+The density of states  at the Fermi surface is given by
+\beq
+\rho_d(0) &= \fr{1}{\pi}\text{Im }G_d(\omega)\bigg\vert_{\omega = 0} \\
+	  &= \fr{1}{\pi}\fr{Z \Delta^*}{\rr{\omega - \epsilon_d}^2 + {\Delta^*}^2}\bigg\vert_{\omega = 0}\\
+	  &= \fr{1}{\pi}\fr{Z \Delta^*}{\epsilon_d^2 + {\Delta^*}^2}
+\eeq
+The total Green's function for the conduction electrons can be expressed in powers of the scattering potential \il{V}:
+\beq
+G &= G^{(0)} + G^{(0)}VG^{(0)}_dVG^{(0)} + G^{(0)}VG^{(0)}_dVG^{(0)}VG^{(0)}_dVG^{(0)} + ...\\
+  &= G^{(0)} + G^{(0)}V\qq{ G^{(0)}_d + G^{(0)}_dVG^{(0)}VG^{(0)}_d} VG^{(0)}\\
+  & = G^{(0)} + G^{(0)}V^2 G_d G^{(0)}\\
+\eeq
+Here, \il{G^{(0)}} are the bare Green functions of the conduction and impurity electron and \il{G_d} is the interaction impurity Green's function. Comparing with
+\beq
+G = G_0 + G_0 T G_0
+\eeq
+we can write
+\beq
+T = V^2 G_d 
+\eeq
+where \il{T} is the \il{T-}matrix for scattering of conduction electrons off the impurity. From the optical theorem, we know that the \il{S-}matrix (\il{S(\omega) \equiv e^{2i\delta(\omega)}}) is related to the \il{T-}matrix as
+\beq
+e^{2i\delta(\omega)} &= 1 - 2\pi i \rho T(\omega)\\
+\implies T &= V^2 G_d = \fr{1}{2\pi i \rho}\rr{1 - e^{2i\delta(\omega)}} = \fr{e^{i\delta(\omega)}}{2\pi i \rho}\rr{-2i\sin \delta} \\
+\implies G_d &=  -\fr{e^{i\delta(\omega)}}{V^2\pi \rho}\sin \delta \\
+\eeq
+Since \il{-\fr{1}{V^2\pi \rho}\sin \delta} is real, we can write
+\beq
+G_d = |G_d|e^{i\delta(\omega)}
+\eeq
+From the expression for \il{G_d} in eq.~\ref{impg}, we can find the phase of \il{G_d}:
+\beq
+\delta(\omega) &= \tan^{-1}\fr{\Delta^*}{\omega - \epsilon_d^*}\\
+\implies \epsilon_d^* &= -\Delta^* \cot \delta(0)
+\eeq
+Substituting this in the density of states expression gives
+\beq
+\rho_d(0) &= \fr{Z\sin^2 \delta(0)}{\pi \Delta^*}
+\eeq
+Substituting this expression for the density of states in the expression for the Wilson ratio gives
+\beq
+R = 1+\fr{U Z\sin^2 \delta(0)}{\pi \Delta^*}
+\eeq
+From the definitipon \il{\Delta^* \equiv Z\Delta}, we get
+\beq
+R = 1+\fr{U} {\pi \Delta}\sin^2 \delta(0)
+\eeq
+Now imagine \it{lowering} the Fermi level by \il{\Delta \mu}. Since the energies are measured relative to the Fermi level, all quasiparticle energies will increase by \il{\Delta \epsilon_{k\sigma} = \Delta \mu}. However, some of the quasiparticles closer to the Fermi surface will now come below it,so that the number of quasiparticles will decrease by \il{\Delta n = -\Delta \mu \rho_d(0)}. The net change in \il{n_\ua} is thus
+\beq
+\Delta n_\ua &= \delta n_\ua(\epsilon_{k\ua} + \mu) - \delta n_\ua(\epsilon_{k\ua})\\
+	     &=\rho_d(0)\rr{\Delta \mu + U\Delta n_\da}\\
+	     &= \rho_d(0)\rr{\Delta \mu - U\rho_d(0)\Delta \mu}\\
+	     &=\rho_d(0)\Delta \mu\rr{1 - U\rho_d(0)}\\
+\eeq
+At the Kondo limit, the impurity occupation is fixed at 1 because the resonance in the spectral function of the conduction electrons is pinned at the Fermi energy. This means that even if we shift the Fermi energy, the resonance moves with it, and there should be no change \il{\Delta n_\ua}. Hence,
+\beq[nosusc]
+1 - U\rho_d(0) = 0 \implies U\rho_d(0) = 1
+\eeq
+In the particle-hole symmetric case (\il{\epsilon_d = 0}), the density of states reduces to
+\beq
+\rho_d = \fr{1}{\pi\Delta}
+\eeq
+So the condition eq.~\ref{nosusc} gives \il{U = \pi \Delta}. This can be substituted in the Wilson ratio to give
+\beq
+R = 1 + \sin^2 \delta(0)
+\eeq
+From the Friedel sum rule, we can relate the phase shift \il{\delta(0)} to the number of electrons bound within the singlet, \il{\Delta N\equiv N - N^{(0)}}.
+\beq
+\Delta N = \fr{1}{\pi} \sum_\sigma \delta_\sigma
+\eeq
+The incoming electrons can have \il{\sigma = \ua,\da}. Since the impurity singlet ground state is rotationally invariant, we have \il{\delta_\ua = \delta_\da = \delta(0)}.\beq
+\Delta N = \fr{1}{\pi}2\delta(0) \implies \delta(0) = \fr{\pi}{2}\Delta N
+\eeq
+\beq
+R = 1 + \sin^2 \rr{\fr{\pi}{2}\Delta N}= 1 + \sin^2 \rr{\fr{\pi}{2}n_D(\Gamma)}
+\eeq
+\pagebreak
+
 From the expressions of \il{\chi_m} and \il{\chi_c}, its easy to prove
 \beq
 U\rho_d(0) = \fr{4\chi_m - g^2\mu_B^2\chi_c^2}{4\chi_m + g^2\mu_B^2\chi_c^2}
