@@ -1537,19 +1537,28 @@ The fixed-point Hamiltonians are found to represent interacting Fermi liquids. T
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
 \eeq
-The parameters \il{\epsilon_k,V_k,U} are not the same as the Anderson model we start with, but I am using the same symbols for convenience. The interaction term \il{\wl U} is the leading irrelevant operator near the low-energy fixed point. For \il{T \ra 0}, assuming only single excitations, the interacting term will not get invoked.\\\\
+The parameters \il{\epsilon_k,V_k,U} are not the same as the Anderson model we start with, but I am using the same symbols for convenience. The interaction term \il{U} is the leading irrelevant operator near the low-energy fixed point. For \il{T \ra 0}, assuming only single excitations, the interacting term will not get invoked.\\\\
 Under mean-field,
 \beq
-n_{d\ua}n_{d\da} \approx n_{d\ua}\avg{n_{d\da}} + n_{d\da}\avg{n_{d\ua}} = \sum_{k,q,\sigma} |\alpha_{q}|^2|\alpha_{k}|^2 n_{k\sigma} \avg{n_{q,-\sigma}}
+n_{d\ua}n_{d\da} \approx n_{d\ua}\avg{n_{d\da}} + n_{d\da}\avg{n_{d\ua}} = \fr{1}{N^2}\sum_{k,q,\sigma} n_{k\sigma} \avg{n_{q,-\sigma}}
 \eeq
-Since the \il{\alpha} are pure phases, there mod-square are unity. The effective one-particle energy becomes
+where \il{N} is the number of sites. Note that the number of excitations, \il{\avg{n_q}} has to be defined differently for the states above and below the Fermi surface. For excited states above \il{\epsilon_F}, the number of excitations is given usually:
 \beq
-\wl\epsilon_{k\sigma} = \epsilon_k + U\sum_q \avg{\delta n_{q,-\sigma}} = \epsilon_k + U \eta_\sigma
+\avg{n_q^>} = \bra{\psi^>}c^\dagger_k c_k\ket{\psi^>} = n^p_k
 \eeq
-This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles. \il{\delta n} acts as the excitations from the ground state.
+where \il{n^p_k} stands for the number of particles. For states below \il{\epsilon_F}, however, we need to count the number of holes:
 \beq
-\avg{\delta n_{k,\sigma}} = \begin{cases} \avg{n_{k\sigma}}, &\wl \epsilon_k > \epsilon_F\\ -\avg{n_{k\sigma}}, &\wl \epsilon_k < \epsilon_F\end{cases}
+\avg{n_q^<} = \bra{\psi^<}c^\dagger_k c_k\ket{\psi^<} = -\bra{\psi^<}c_k c^\dagger_k \ket{\psi^<} = -n^h_k
 \eeq
+where \il{n^h_k} stands for the number of holes. We can thus define a generalized excitation:
+\beq
+\avg{\delta n_{k,\sigma}} = \begin{cases} n^p_k, &\epsilon_k > \epsilon_F\\ -n^h_k, &\epsilon_k < \epsilon_F\end{cases}
+\eeq
+The effective one-particle energy becomes
+\beq
+\wl\epsilon_{k\sigma} = \epsilon_k + \fr{U}{N^2}\sum_q \avg{\delta n_{q,-\sigma}}
+\eeq
+This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles. \il{\delta n > 0} acts as the excitations from the ground state.
 This quantity \il{\gamma = \fr{C_v}{T}} is
 \begin{gather}
 	\gamma_\text{imp} = \fr{2\pi^2 k_B^2}{3}\rho_d(0)\label{gimp}

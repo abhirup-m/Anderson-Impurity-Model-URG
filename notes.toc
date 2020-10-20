@@ -30,9 +30,9 @@
 \contentsline {subsubsection}{\numberline {18.1}Logarithmic discretization}{44}{subsubsection.0.18.1}%
 \contentsline {subsection}{\numberline {19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{47}{subsection.0.19}%
 \contentsline {subsection}{\numberline {20}Microscopic approach}{49}{subsection.0.20}%
-\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{49}{subsection.0.21}%
+\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{50}{subsection.0.21}%
 \contentsline {subsubsection}{\numberline {21.1}Friedel sum rule}{54}{subsubsection.0.21.1}%
-\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{55}{subsection.0.22}%
-\contentsline {paragraph}{\centering }{66}{section*.5}%
+\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{56}{subsection.0.22}%
+\contentsline {paragraph}{\centering }{67}{section*.5}%
 \contentsline {subsection}{\numberline {23}URG Formalism}{73}{subsection.0.23}%
-\contentsline {subsection}{\numberline {24}Kondo Model URG}{81}{subsection.0.24}%
+\contentsline {subsection}{\numberline {24}Kondo Model URG}{82}{subsection.0.24}%
