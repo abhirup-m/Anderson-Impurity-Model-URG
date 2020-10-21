@@ -14,4 +14,3 @@
 - The derivative should produce a factor of 2 in eq. 34.
 - In eq. 54, the $s^+$ and $s^-$ should probably be interchanged.
 - How would you plot eq. 60?
-- Why set $E_1=0$ while isolating cloud from impurity?

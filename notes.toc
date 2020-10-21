@@ -5,7 +5,7 @@
 \contentsline {paragraph}{Energy scales:}{6}{section*.2}%
 \contentsline {paragraph}{Situations:}{6}{section*.3}%
 \contentsline {subsection}{\numberline {5}Atomic limit (\({t=0}\))}{6}{subsection.0.5}%
-\contentsline {subsection}{\numberline {6}Non-interacting limit (\({U=0}\)):}{6}{subsection.0.6}%
+\contentsline {subsection}{\numberline {6}Non-interacting limit (\({U=0}\)):}{7}{subsection.0.6}%
 \contentsline {subsubsection}{\numberline {6.1}Green's function of impurity site:}{7}{subsubsection.0.6.1}%
 \contentsline {subsubsection}{\numberline {6.2}Phase shift of conduction electron due to scattering off the impurity:}{8}{subsubsection.0.6.2}%
 \contentsline {subsubsection}{\numberline {6.3}Coulomb blockade}{9}{subsubsection.0.6.3}%
@@ -28,11 +28,17 @@
 \contentsline {subsection}{\numberline {17}Nozières' local Fermi liquid theory}{38}{subsection.0.17}%
 \contentsline {subsection}{\numberline {18}Numerical renormalization group calculation}{43}{subsection.0.18}%
 \contentsline {subsubsection}{\numberline {18.1}Logarithmic discretization}{44}{subsubsection.0.18.1}%
-\contentsline {subsection}{\numberline {19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{47}{subsection.0.19}%
-\contentsline {subsection}{\numberline {20}Microscopic approach}{53}{subsection.0.20}%
-\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{54}{subsection.0.21}%
-\contentsline {subsubsection}{\numberline {21.1}Friedel sum rule}{58}{subsubsection.0.21.1}%
-\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{60}{subsection.0.22}%
-\contentsline {paragraph}{\centering }{71}{section*.5}%
-\contentsline {subsection}{\numberline {23}URG Formalism}{77}{subsection.0.23}%
-\contentsline {subsection}{\numberline {24}Kondo Model URG}{86}{subsection.0.24}%
+\contentsline {subsection}{\numberline {19}Correspondence between the Kondo model fixed-point and a local Fermi liquid - Topological interpretation of Wilson ratio}{47}{subsection.0.19}%
+\contentsline {subsubsection}{\numberline {19.1}Local Fermi liquid}{47}{subsubsection.0.19.1}%
+\contentsline {subsubsection}{\numberline {19.2}Calculation of \({C_v}\)}{48}{subsubsection.0.19.2}%
+\contentsline {subsubsection}{\numberline {19.3}Calculation of \({\chi }\)}{50}{subsubsection.0.19.3}%
+\contentsline {subsubsection}{\numberline {19.4}Relation between the density of states and scattering phase shift}{51}{subsubsection.0.19.4}%
+\contentsline {subsubsection}{\numberline {19.5}The case of \({\ensuremath {\langle {n_d}\rangle }=1}\)}{52}{subsubsection.0.19.5}%
+\contentsline {subsubsection}{\numberline {19.6}Connection to the change in Luttinger's volume}{53}{subsubsection.0.19.6}%
+\contentsline {subsection}{\numberline {20}Microscopic approach}{55}{subsection.0.20}%
+\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{55}{subsection.0.21}%
+\contentsline {subsubsection}{\numberline {21.1}Friedel sum rule}{60}{subsubsection.0.21.1}%
+\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{61}{subsection.0.22}%
+\contentsline {paragraph}{\centering }{72}{section*.5}%
+\contentsline {subsection}{\numberline {23}URG Formalism}{78}{subsection.0.23}%
+\contentsline {subsection}{\numberline {24}Kondo Model URG}{87}{subsection.0.24}%

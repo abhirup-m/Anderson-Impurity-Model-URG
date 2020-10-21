@@ -1533,7 +1533,8 @@ This is the same equation as eq.~\ref{rec}, with \il{\ol H_N} expressed in its e
 To check whether the guesses about the fixed points are true, Wilson did the following. He set \il{J=0.009} and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \il{N}. They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \infty}, meaning that under the application of the NRG, the \il{J=0.009} Hamiltonian flowed to the fixed-point Hamiltonian \il{J = \infty}.
 
 \pagebreak
-\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
+\subsection{Correspondence between the Kondo model fixed-point and a local Fermi liquid - Topological interpretation of Wilson ratio}
+\subsubsection{Local Fermi liquid}
 The fixed-point Hamiltonians are found to represent interacting Fermi liquids. The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
@@ -1562,6 +1563,14 @@ Replacing the quasiparticle excitations with their expectation values, the effec
 \epsilon_{k\sigma} = \epsilon_k + U\sum_q \avg{\delta n_{q,-\sigma}} \equiv \epsilon_k + U\avg{\delta n_{-\sigma}}
 \eeq
 This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \il{U} acting as the interaction between the quasiparticles. \il{\delta n > 0} acts as the excitations from the ground state.
+\pb
+The interacting density of states is
+\beq[dosint]
+\rho_{d\sigma}(\omega) = \fr{\Delta}{\pi}\fr{1}{\rr{\omega - \epsilon_d^*}^2 + \Delta^2}
+\eeq
+where \il{\epsilon_d^* = \epsilon_d + U\avg{\delta n_{-\sigma}}}.
+
+\subsubsection{Calculation of \il{C_v}}
 To calculate the specific heat, \il{C_v = \dv{\avg{E}}{T}}, note that a change in temperature would modify the quasiparticle distribution \il{\delta n_{k\sigma}} and hence the quasiparticle energies \il{\epsilon_{k\sigma}}. This leads to a complicated feedback effect. However, at low temperatures, higher order excitations will be very low and we can approximate by considering only the variation in the distribution:
 \beq
 \dv{\avg{E}}{T} &= \sum_{k,\sigma}\epsilon_{k\sigma}\dv{\avg{\delta n_{k\sigma}}}{T}\\
@@ -1598,7 +1607,7 @@ Therfore,
 \beq
 \dv{\avg{E}}{T} &=-k_B^2 T\sum_{\sigma}\rho_\sigma(0) \int_1^0 df \qq{\ln \rr{f^{-1} - 1}}^2
 \eeq
-The remaining integral gives \il{-\fr{\pi^2}{3}}. Using \il{\rho_\ua = \rho_\da = \rho_d}, we get
+The remaining integral gives \il{-\fr{\pi^2}{3}}. For \il{T \ra 0}, quasiparticle excitations will be absent and we can write \il{\rho_\ua = \rho_\da = \rho_d}:
 \beq
 \dv{\avg{E}}{T} &=k_B^2 T\sum_{\sigma}\rho_d(0) \fr{\pi^2}{3}\\
 		&=2k_B^2 T\rho_d(0) \fr{\pi^2}{3}\\
@@ -1612,6 +1621,7 @@ This is identical in structure to the Fermi gas result \il{C_v^{(0)} \equiv \gam
 \beq
 \fr{\gamma_\text{imp}}{\gamma^{(0)}} = \fr{\rho_d(0)}{\rho^{(0)}_d(0)}
 \eeq
+\subsubsection{Calculation of \il{\chi}}
 Under a magnetic field \il{B}, \il{ \epsilon_{k\sigma} \ra \epsilon_{k\sigma} + \sigma h}. where \il{h=\fr{1}{2}g B \mu_B}. The magnetisation is
 \beq
 m &= \fr{g\mu_B}{2}\rr{\delta n_\ua - \delta n_\da}\\
@@ -1638,12 +1648,14 @@ The susceptibility is
 		&=\fr{\rr{g\mu_B}^2}{2} \rho_{d}(0)\qq{1 + U\rho_{d}(0)}\\
 		&= \chi^{(0)}\fr{\rho_{d}(0)}{\rho_{d}^{(0)}(0)}\qq{1 + U\rho_{d}(0)}
 \eeq
-There I used the fact that in the absence of any field, \il{\rho_\ua = \rho_\da = \rho_d}.
+There I used the fact that in the absence of any field and \il{T \ra 0}, \il{\rho_\ua = \rho_\da = \rho_d}.
 \pb
 The Wilson ratio is
 \beq
 R \equiv \fr{\chi_\text{imp}}{\chi^{(0)}}\fr{\gamma^{(0)}}{\gamma_\text{imp}}= 1+U\rho_d(0)
 \eeq
+
+\subsubsection{Relation between the density of states and scattering phase shift}
 The Green's function is of the general form
 \beq
 G_d(\omega) = \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma(\omega)}
@@ -1673,7 +1685,7 @@ G &= G^{(0)} + G^{(0)}VG^{(0)}_dVG^{(0)} + G^{(0)}VG^{(0)}_dVG^{(0)}VG^{(0)}_dVG
   & = G^{(0)} + G^{(0)}V^2 G_d G^{(0)}\\
 \eeq
 Here, \il{G^{(0)}} are the bare Green functions of the conduction and impurity electron and \il{G_d} is the interaction impurity Green's function. Comparing with
-\beq
+\beq[dyson]
 G = G_0 + G_0 T G_0
 \eeq
 we can write
@@ -1707,7 +1719,11 @@ From the definition \il{\Delta^* \equiv Z\Delta}, we get
 \beq
 R = 1+\fr{U} {\pi \Delta}\sin^2 \delta(0)
 \eeq
-Now imagine \it{lowering} the Fermi level by \il{\Delta \mu}. Since the energies are measured relative to the Fermi level, all quasiparticle energies will increase by \il{\Delta \epsilon_{k\sigma} = \Delta \mu}. However, some of the quasiparticles closer to the Fermi surface will now come below it,so that the number of quasiparticles will decrease by \il{\Delta n = -\Delta \mu \rho_d(0)}. The net change in \il{n_\ua} is thus
+
+\subsubsection{The case of \il{\avg{n_d}=1}}
+Exactly at the strong-coupling fixed point, for particle-hole symmetry, we expect the occupancy of the impurity to be \il{\avg{n_d} = 1}, because the singly-occupied state is below the Fermi level while the doubly occupied state is above. If we now lower the Fermi level by \il{\Delta \mu} while keeping the particle-hole symmetry intact (by suitably shifting the impurity levels), the resonance in the spectral function at the Fermi surface will persist, because the electrons at the Fermi surface will always form a singlet with the impurity and go into a bound state.
+\pb
+Since the energies are measured relative to the Fermi level, all quasiparticle energies will increase by \il{\Delta \epsilon_{k\sigma} = \Delta \mu}. However, some of the quasiparticles closer to the Fermi surface will now come below it,so that the number of quasiparticles will decrease by \il{\Delta n = -\Delta \mu \rho_d(0)}. The net change in \il{n_\ua} is thus
 \beq
 \Delta n_\ua &= \delta n_\ua(\epsilon_{k\ua} + \mu) - \delta n_\ua(\epsilon_{k\ua})\\
 	     &=\rho_d(0)\rr{\Delta \mu + U\Delta n_\da}\\
@@ -1718,39 +1734,44 @@ At the Kondo limit, the impurity occupation is fixed at 1 because the resonance 
 \beq[nosusc]
 1 - U\rho_d(0) = 0 \implies U\rho_d(0) = 1
 \eeq
-This can be substituted in the Wilson ratio to give
+Substituting \il{\avg{n_{d\sigma}} = \fr{1}{2}} and \il{\epsilon_d = -\fr{U}{2}} in the density of states eq.~\ref{dosint} gives \il{\rho_d(0) = \fr{1}{\pi \Delta} = \fr{1}{U}}. This can be substituted in the Wilson ratio to give
 \beq
 R = 1 + \sin^2 \delta(0)
 \eeq
-From the Friedel sum rule, we can relate the phase shift \il{\delta(0)} to the number of electrons bound within the singlet, \il{\Delta N\equiv N - N^{(0)}}.
+\subsubsection{Connection to the change in Luttinger's volume}
+From the Friedel sum rule\footnote{JS Langer and V Ambegaokar. Friedel sum rule for a system of interacting electrons}, we can relate the phase shift \il{\delta(0)} due to scattering (at the Fermi surface) off a local impurity to the number of electrons bound in the potential well produced by that impurity:
 \beq
-\Delta N = \fr{1}{\pi} \sum_\sigma \delta_\sigma
+\wl N = \fr{1}{2\pi i}\text{Tr }\ln S(0) = \int_\Gamma dz\partial_z \fr{1}{2\pi i}\text{Tr }\ln S(0)
 \eeq
-The incoming electrons can have \il{\sigma = \ua,\da}. Since the impurity singlet ground state is rotationally invariant, we have \il{\delta_\ua = \delta_\da = \delta(0)}.\beq
-\Delta N = \fr{1}{\pi}2\delta(0) \implies \delta(0) = \fr{\pi}{2}\Delta N
+From the optical theorem, we can write
+\beq
+S = 1 + TG_0 = \fr{G}{G_0} && \qq{\text{eq.~\ref{dyson}}}
+\eeq
+This allows us to write
+\beq
+\wl N = \int_\Gamma dz\partial_z \fr{1}{2\pi i}\text{Tr }\ln \fr{G}{G_0}
+\eeq
+Since \il{\text{Tr }\ln \hat O = \sum_\lambda \ln O_\lambda = \ln \prod_\lambda O_\lambda = \ln Det \hat O}, we get
+\beq
+\wl N &= \int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln \text{Det } \fr{G}{G_0}\\
+      &= -\int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln \fr{\text{Det } G_0}{\text{Det } G}\\
+      &\equiv -\int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln D\\
+      &= -\int_{\Gamma(D)}\fr{dD}{D}
+\eeq
+From the work of Seki and Yunoki\footnote{Kazuhiro Seki and Seiji Yunoki. Topological interpretation of the luttinger theorem. Physical Review B, 96(8):085124, 2017}, we know that this quantity is essentially the winding number of the curve \il{\Gamma(D)} in the complex plane spanned by the real and imaginary parts of \il{D}, and is equal to the change in Luttinger's volume \il{V_L} at \il{T=0}.
+\beq
+\wl N &= -\int_{\Gamma(D)}\fr{dD}{D} = -\Delta V_L
+\eeq
+The incoming electrons can have \il{\sigma = \ua,\da}. Since the impurity singlet ground state is rotationally invariant, we have \il{\delta_\ua = \delta_\da = \delta(0)}.
+\beq
+\wl N &= \fr{1}{\pi}\sum_\sigma\delta_\sigma(0)\\
+\implies \delta(0) &= \fr{\pi}{2}\wl N = -\fr{\pi}{2}\Delta V_L
 \eeq
 \beq
-R = 1 + \sin^2 \rr{\fr{\pi}{2}\Delta N}= 1 + \sin^2 \rr{\fr{\pi}{2}n_D(\Gamma)}
+R &= 1 + \sin^2 \rr{\fr{\pi}{2}\wl N}\\
+  &= 1 + \sin^2 \rr{\fr{\pi}{2}\Delta V_L}
 \eeq
 \pagebreak
-
-From the expressions of \il{\chi_m} and \il{\chi_c}, its easy to prove
-\beq
-U\rho_d(0) = \fr{4\chi_m - g^2\mu_B^2\chi_c^2}{4\chi_m + g^2\mu_B^2\chi_c^2}
-\eeq
-Substituting that in the Wilson ratio gives
-\beq
-R = \fr{2}{1 + \fr{g^2\mu_B^2}{4}\fr{\chi_c}{\chi_m}}
-\eeq
-At the strong-coupling limit, the impurity is localised at the 0\uu{th} site, so the charge susceptibility must go to zero. This gives
-\beq
-\chi_c= 0
-\eeq
-Substituting this in the Wilson ratio gives
-\beq
-R = 2
-\eeq
-We thus see that a mean-field treatment of the Anderson model gives results similar to Landau's phenomenological treatment of the Fermi liquid. 
 
 \subsection{Microscopic approach}
 The average occupation for the non-interacting quasiparticles can be similarly written from eq.~\ref{nandemonayi}.
