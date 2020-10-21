@@ -1533,7 +1533,7 @@ This is the same equation as eq.~\ref{rec}, with \il{\ol H_N} expressed in its e
 To check whether the guesses about the fixed points are true, Wilson did the following. He set \il{J=0.009} and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \il{N}. They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \infty}, meaning that under the application of the NRG, the \il{J=0.009} Hamiltonian flowed to the fixed-point Hamiltonian \il{J = \infty}.
 
 \pagebreak
-%\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
+\subsection{Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}
 The fixed-point Hamiltonians are found to represent interacting Fermi liquids. The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
@@ -1608,53 +1608,63 @@ where
 \beq
 \gamma_\text{imp} \equiv \fr{C_v}{T} = \fr{2\pi^2}{3}k_B^2\rho_d(0) 
 \eeq
+This is identical in structure to the Fermi gas result \il{C_v^{(0)} \equiv \gamma^{(0)} T = \fr{2\pi^2}{3}k_B^2\rho^{(0)}_d(0) T}:
+\beq
+\fr{\gamma_\text{imp}}{\gamma^{(0)}} = \fr{\rho_d(0)}{\rho^{(0)}_d(0)}
+\eeq
 Under a magnetic field \il{B}, \il{ \epsilon_{k\sigma} \ra \epsilon_{k\sigma} + \sigma h}. where \il{h=\fr{1}{2}g B \mu_B}. The magnetisation is
 \beq
-m &= \delta n_\ua - \delta n_\da\\
-  &= \sum_\sigma \delta n_\sigma\\
-  &= \sum_{k\sigma} \pd{n_\sigma}{\epsilon_{k\sigma}}\delta \epsilon_{k\sigma}\\
-  &= \sum_{k\sigma} \rho_{k\sigma}\rr{\sigma h + U\delta n_{- \sigma}}\\
-\eeq
+m &= \fr{g\mu_B}{2}\rr{\delta n_\ua - \delta n_\da}\\
+  &=\fr{g\mu_B}{2}\sum_\sigma \sigma\delta n_\sigma\\
+  &=\fr{g\mu_B}{2}\sum_{k\sigma} \sigma\pd{n_\sigma}{\epsilon_{k\sigma}}\delta \epsilon_{k\sigma}\\
+  &= \fr{g\mu_B}{2}\sum_{k\sigma} \sigma\rho_{k\sigma}\rr{\sigma h + U\delta n_{- \sigma}}\\
+  &= \fr{g\mu_B}{2}\sum_{\sigma} \sigma\rho_{\sigma}\rr{\sigma h + U\delta n_{- \sigma}}
+\eeq   
 On applying the magnetic field, the Fermi energy of spin \il{-\sigma} decreases as \il{\epsilon_F -\sigma h}. Hence, more number of spin \il{-\sigma} electrons will get excited, the number of such excitations being
 \beq
 \delta n_{- \sigma} = \sum_q \delta n_{q,-\sigma} = \sum_q \Delta \epsilon_F \rho_{q-\sigma} = \sigma h\rho_{-\sigma}(0)
 \eeq
 In the last step, I used the fact that the density of states is non-zero only very close to the Fermi surface.
-Substituting this in the magnetisation gives
+Substituting this in the magnetization gives
 \beq
-m &= \sigma h\sum_{k\sigma} \rho_{k\sigma}\rr{1 + U\rho_{-\sigma}(0)}\\
-  &= \sigma h\rho_{\sigma}(0)\qq{1 + U\rho_{-\sigma}(0)
+m &= \fr{g\mu_B}{2}h\sum_{\sigma} \sigma^2 \rho_{\sigma}(0)\rr{1 + U\rho_{-\sigma}(0)}\\
+  &= \rr{\fr{g\mu_B}{2}}^2 B \sum_{\sigma} \rho_{\sigma}(0)\qq{1 + U\rho_{-\sigma}(0)
 }
 \eeq
 The susceptibility is
 \beq
-\chi_\text{imp} = \lim_{h \to 0} \fr{m}{h} = \rho_d(0)\qq{1 + U\rho_d(0)}
+\chi_\text{imp} &= \lim_{h \to 0} \pd{m}{B}\\
+		&= \rr{\fr{g\mu_B}{2}}^2 \rho_{d}(0)\qq{1 + U\rho_{d}(0)}\sum_{\sigma} \\
+		&=\fr{\rr{g\mu_B}^2}{2} \rho_{d}(0)\qq{1 + U\rho_{d}(0)}\\
+		&= \chi^{(0)}\fr{\rho_{d}(0)}{\rho_{d}^{(0)}(0)}\qq{1 + U\rho_{d}(0)}
 \eeq
 There I used the fact that in the absence of any field, \il{\rho_\ua = \rho_\da = \rho_d}.
+\pb
 The Wilson ratio is
 \beq
-R = 1+U\rho_d(0)
+R \equiv \fr{\chi_\text{imp}}{\chi^{(0)}}\fr{\gamma^{(0)}}{\gamma_\text{imp}}= 1+U\rho_d(0)
 \eeq
 The Green's function is of the general form
 \beq
-G_d(\omega) = \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma_I(\omega)}
+G_d(\omega) = \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma(\omega)}
 \eeq
-Expanding the self energy up to first order in energy gives
+Close to the Fermi surface, the imaginary part of the self energy goes as \il{\omega^2}. Therefore, up to first order in \il{\omega}, the self energy is completely real close to the Fermi surface:
 \beq
-\Sigma_I = \Sigma_I(0) + \omega \Sigma_I^\prime \equiv \Sigma_I(0) + \rr{1 - Z^{-1}}\omega
+\Sigma(\omega) &= \Sigma(0,0) + \omega \Sigma^\prime(0) + O(i\omega^2)\\
+	       &\equiv \Sigma(0) + \rr{1 - Z^{-1}}\omega
 \eeq
-where \il{Z = \rr{1 - \Sigma_I^\prime}^{-1}}. Substituting this in \il{G_d(\omega)} gives
+where \il{Z = \rr{1 - \Sigma^\prime}^{-1}}. Substituting this in \il{G_d(\omega)} gives
 \beq[impg]
-G_d(\omega) &= \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma_I(0) - \rr{1 - Z^{-1}}\omega}\\
-	  &= \fr{Z}{Z\omega - Z\epsilon_d - iZ\Delta - Z\Sigma_I(0) - Z\omega + \omega}\\
-	  &= \fr{Z}{\omega - Z\rr{\epsilon_d + \Sigma_I(0)} - iZ\Delta }\\
+G_d(\omega) &= \fr{1}{\omega - \epsilon_d - i\Delta - \Sigma(0) - \rr{1 - Z^{-1}}\omega}\\
+	  &= \fr{Z}{Z\omega - Z\epsilon_d - iZ\Delta - Z\Sigma(0) - Z\omega + \omega}\\
+	  &= \fr{Z}{\omega - Z\rr{\epsilon_d + \Sigma(0)} - iZ\Delta }\\
 	  &\equiv \fr{Z}{\omega - \epsilon_d^* - i\Delta ^*}\\
 \eeq
 The density of states  at the Fermi surface is given by
 \beq
 \rho_d(0) &= \fr{1}{\pi}\text{Im }G_d(\omega)\bigg\vert_{\omega = 0} \\
-	  &= \fr{1}{\pi}\fr{Z \Delta^*}{\rr{\omega - \epsilon_d}^2 + {\Delta^*}^2}\bigg\vert_{\omega = 0}\\
-	  &= \fr{1}{\pi}\fr{Z \Delta^*}{\epsilon_d^2 + {\Delta^*}^2}
+	  &= \fr{1}{\pi}\fr{Z \Delta^*}{\rr{\omega - {\epsilon_d^*}}^2 + {\Delta^*}^2}\bigg\vert_{\omega = 0}\\
+	  &= \fr{1}{\pi}\fr{Z \Delta^*}{{\epsilon_d^*}^2 + {\Delta^*}^2}
 \eeq
 The total Green's function for the conduction electrons can be expressed in powers of the scattering potential \il{V}:
 \beq
@@ -1693,7 +1703,7 @@ Substituting this expression for the density of states in the expression for the
 \beq
 R = 1+\fr{U Z\sin^2 \delta(0)}{\pi \Delta^*}
 \eeq
-From the definitipon \il{\Delta^* \equiv Z\Delta}, we get
+From the definition \il{\Delta^* \equiv Z\Delta}, we get
 \beq
 R = 1+\fr{U} {\pi \Delta}\sin^2 \delta(0)
 \eeq
@@ -1708,11 +1718,7 @@ At the Kondo limit, the impurity occupation is fixed at 1 because the resonance 
 \beq[nosusc]
 1 - U\rho_d(0) = 0 \implies U\rho_d(0) = 1
 \eeq
-In the particle-hole symmetric case (\il{\epsilon_d = 0}), the density of states reduces to
-\beq
-\rho_d = \fr{1}{\pi\Delta}
-\eeq
-So the condition eq.~\ref{nosusc} gives \il{U = \pi \Delta}. This can be substituted in the Wilson ratio to give
+This can be substituted in the Wilson ratio to give
 \beq
 R = 1 + \sin^2 \delta(0)
 \eeq

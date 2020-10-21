@@ -1,4 +1,4 @@
-\contentsline {subsection}{\numberline {1}\({T-}\)matrix and \({S-}\)matrix}{1}{subsection.0.1}%
+\contentsline {subsection}{\numberline {1}\({T-}\)matrix and \({S-}\)matrix}{2}{subsection.0.1}%
 \contentsline {subsection}{\numberline {2}An identity}{3}{subsection.0.2}%
 \contentsline {subsection}{\numberline {3}Landau's theory of Fermi liquid}{3}{subsection.0.3}%
 \contentsline {subsection}{\numberline {4}The model}{6}{subsection.0.4}%
@@ -28,10 +28,11 @@
 \contentsline {subsection}{\numberline {17}Nozières' local Fermi liquid theory}{38}{subsection.0.17}%
 \contentsline {subsection}{\numberline {18}Numerical renormalization group calculation}{43}{subsection.0.18}%
 \contentsline {subsubsection}{\numberline {18.1}Logarithmic discretization}{44}{subsubsection.0.18.1}%
-\contentsline {subsection}{\numberline {19}Microscopic approach}{53}{subsection.0.19}%
-\contentsline {subsection}{\numberline {20}Renormalized perturbation theory}{54}{subsection.0.20}%
-\contentsline {subsubsection}{\numberline {20.1}Friedel sum rule}{58}{subsubsection.0.20.1}%
-\contentsline {subsection}{\numberline {21}Scaling of Anderson model}{60}{subsection.0.21}%
+\contentsline {subsection}{\numberline {19}Correspondence between the Anderson model fixed-point Hamiltonian and a Fermi liquid}{47}{subsection.0.19}%
+\contentsline {subsection}{\numberline {20}Microscopic approach}{53}{subsection.0.20}%
+\contentsline {subsection}{\numberline {21}Renormalized perturbation theory}{54}{subsection.0.21}%
+\contentsline {subsubsection}{\numberline {21.1}Friedel sum rule}{58}{subsubsection.0.21.1}%
+\contentsline {subsection}{\numberline {22}Scaling of Anderson model}{60}{subsection.0.22}%
 \contentsline {paragraph}{\centering }{71}{section*.5}%
-\contentsline {subsection}{\numberline {22}URG Formalism}{77}{subsection.0.22}%
-\contentsline {subsection}{\numberline {23}Kondo Model URG}{86}{subsection.0.23}%
+\contentsline {subsection}{\numberline {23}URG Formalism}{77}{subsection.0.23}%
+\contentsline {subsection}{\numberline {24}Kondo Model URG}{86}{subsection.0.24}%
