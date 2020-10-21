@@ -1747,7 +1747,7 @@ From the optical theorem, we can write
 \beq
 S = 1 + TG_0 = \fr{G}{G_0} && \qq{\text{eq.~\ref{dyson}}}
 \eeq
-This allows us to write
+This allows us to write\footnote{Mukherjee and Lal-Holographic unitary renormalization group for correlated electrons - I: A tensor network approach-https://doi.org/10.1016/j.nuclphysb.2020.115170}
 \beq
 \wl N = \int_\Gamma dz\partial_z \fr{1}{2\pi i}\text{Tr }\ln \fr{G}{G_0}
 \eeq
@@ -1758,7 +1758,7 @@ Since \il{\text{Tr }\ln \hat O = \sum_\lambda \ln O_\lambda = \ln \prod_\lambda 
       &\equiv -\int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln D\\
       &= -\int_{\Gamma(D)}\fr{dD}{D}
 \eeq
-From the work of Seki and Yunoki\footnote{Kazuhiro Seki and Seiji Yunoki. Topological interpretation of the luttinger theorem. Physical Review B, 96(8):085124, 2017}, we know that this quantity is essentially the winding number of the curve \il{\Gamma(D)} in the complex plane spanned by the real and imaginary parts of \il{D}, and is equal to the change in Luttinger's volume \il{V_L} at \il{T=0}.
+From the work of Seki and Yunoki\footnote{Topological interpretation of the luttinger theorem. Physical Review B, 96(8):085124, 2017}, we know that this quantity is essentially the winding number of the curve \il{\Gamma(D)} in the complex plane spanned by the real and imaginary parts of \il{D}, and is equal to the change in Luttinger's volume \il{V_L} at \il{T=0}.
 \beq
 \wl N &= -\int_{\Gamma(D)}\fr{dD}{D} = -\Delta V_L
 \eeq
@@ -3349,29 +3349,28 @@ the commutator becomes
 		   &= \sum_{k_1 k_2}c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}
 \eeq
 \beq
-4s^+\qq{\ham^*_0,s^-} = 4\sum_{k_1 k_2 k_3 k_4}c^\dagger_{k_3c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}}
-\eeq
-\beq
-\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\cc{n_{k\sigma},c^\dagger_{k_1\ua}c_{k_2\da}}
+4s^+\qq{\ham^*_0,s^-} &= 4\sum_{k_1 k_2 k_3 k_4}c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\\
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\da}}
 \eeq
 To simplify this anticommutator, note
 \beq
-c^\dagger_{k_1\ua}c_{k_2\da}n_{k\sigma} &= c^\dagger_{k_1\ua}c_{k_2\da}c^\dagger_{k\sigma}c_{k\sigma}\\
-					&= c^\dagger_{k_1\ua}\rr{\delta_{kk_2}\delta_{\sigma\da} - c^\dagger_{k\sigma}c_{k_2\da}}c_{k\sigma}\\
-&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k\sigma}+ c^\dagger_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}c_{k\sigma}\\
-&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k_2\da}- c^\dagger_{k\sigma}c^\dagger_{k_1\ua}c_{k\sigma}c_{k_2\da}\\
-&= \delta_{kk_2}\delta_{\sigma\da}c^\dagger_{k_1\ua}c_{k_2\da}- c^\dagger_{k\sigma}\rr{\delta_{kk_1}\delta_{\sigma\ua} -c_{k\sigma}c^\dagger_{k_1\ua}}c_{k_2\da}\\
-&= \rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}}c^\dagger_{k_1\ua}c_{k_2\da} + n_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}\\
-\implies \cc{n_{k\sigma},c^\dagger_{k_1\ua}c_{k_2\da}} &= \qq{\rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}} + 2n_{k\sigma}}c^\dagger_{k_1\ua}c_{k_2\da}
+c^\dagger_{k_1\da}c_{k_2\ua}n_{k\sigma} &= c^\dagger_{k_1\da}c_{k_2\ua}c^\dagger_{k\sigma}c_{k\sigma}\\
+					&= c^\dagger_{k_1\da}\rr{\delta_{kk_2}\delta_{\sigma\ua} - c^\dagger_{k\sigma}c_{k_2\ua}}c_{k\sigma}\\
+&= \delta_{kk_2}\delta_{\sigma\ua}c^\dagger_{k_1\da}c_{k\sigma}+ c^\dagger_{k\sigma}c^\dagger_{k_1\da}c_{k_2\ua}c_{k\sigma}\\
+&= \delta_{kk_2}\delta_{\sigma\ua}c^\dagger_{k_1\da}c_{k_2\ua}- c^\dagger_{k\sigma}c^\dagger_{k_1\da}c_{k\sigma}c_{k_2\ua}\\
+&= \delta_{kk_2}\delta_{\sigma\ua}c^\dagger_{k_1\da}c_{k_2\ua}- c^\dagger_{k\sigma}\rr{\delta_{kk_1}\delta_{\sigma\da} -c_{k\sigma}c^\dagger_{k_1\da}}c_{k_2\ua}\\
+&= \rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}}c^\dagger_{k_1\da}c_{k_2\ua} + n_{k\sigma}c^\dagger_{k_1\da}c_{k_2\ua}\\
+\implies \cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\ua}} &= \qq{\rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}} + 2n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\da}
 \eeq
 Therefore,
 \beq
-\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} \qq{\rr{\delta_{kk_2}\delta_{\sigma\da} - \delta_{kk_1}\delta_{\sigma\ua}}c^\dagger_{k_1\ua}c_{k_2\da} + 2n_{k\sigma}c^\dagger_{k_1\ua}c_{k_2\da}}\\
-				 &=2n(0)\sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_1\ua}c_{k_2\da}
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} \qq{\rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}}c^\dagger_{k_1\da}c_{k_2\ua} + 2n_{k\sigma}c^\dagger_{k_1\da}c_{k_2\ua}}\\
+				 &=2n(0)\sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_1\da}c_{k_2\ua}\\
+\implies s^+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= 2n(0)\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}\\
 \eeq
 This gives
 \beq
--\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= -\fr{16}{J^*}\qq{}
+-\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= -\fr{16}{J^*}{\ham_0^*}^2 -\fr{16}{J^*} 2n(0)\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} -\epsilon_{k_2}} c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}
 \eeq
 
 \end{document}
