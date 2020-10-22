@@ -3292,29 +3292,29 @@ To study the excitations of the Kondo cloud, we look at the Hamiltonian of impur
 \eeq
 In order to separate the cloud from the impurity, take the groundstate wavefunction of \il{\ham^*}:
 \beq
-\ket{\Psi} = a_\da \ket{\ua_\text{imp}}\ket{\da} + a_\ua\ket{\da_\text{imp}}\ket{\ua} 
+\ket{\Psi} = a_\da \ket{\ua_\text{imp}}\ket{\Downarrow} + a_\ua\ket{\da_\text{imp}}\ket{\Uparrow} 
 \eeq
-Note that \il{\ket{\ua},\ket{\da}} are many-electron states. The eigenvalue equation for this state is
+Note that \il{\ket{\Uparrow},\ket{\Downarrow}} are many-electron states. The eigenvalue equation for this state is
 \beq
-	\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\Psi} &= \rr{S^z s^z + \fr{1}{2}S^+s^- + \fr{1}{2}S^- s^+}\rr{a_\da \ket{\ua_\text{imp}}\ket{\da} + a_\ua\ket{\da_\text{imp}}\ket{\ua}}\\
-						 &=\fr{s^z}{2}\rr{a_\da \ket{\ua_\text{imp}}\ket{\da} - a_\ua\ket{\da_\text{imp}} \ket{\ua}} + a_\da \ket{\da_\text{imp}}\fr{s^+}{2}\ket{\da} + a_\ua \ket{\ua_\text{imp}}\fr{s^-}{2} \ket{\ua}
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\Psi} &= \rr{S^z s^z + \fr{1}{2}S^+s^- + \fr{1}{2}S^- s^+}\rr{a_\da \ket{\ua_\text{imp}}\ket{\Downarrow} + a_\ua\ket{\da_\text{imp}}\ket{\Uparrow}}\\
+						 &=\fr{s^z}{2}\rr{a_\da \ket{\ua_\text{imp}}\ket{\Downarrow} - a_\ua\ket{\da_\text{imp}} \ket{\Uparrow}} + a_\da \ket{\da_\text{imp}}\fr{s^+}{2}\ket{\Downarrow} + a_\ua \ket{\ua_\text{imp}}\fr{s^-}{2} \ket{\Uparrow}
 \eeq
 Comparing the coefficients of \il{\ket{\ua_\text{imp}}} and \il{\ket{\da_\text{imp}}}, we get
 \beq
-	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\da\ket{\da} &= \fr{s^z}{2}a_\da \ket{\da} + a_\ua \fr{s^-}{2} \ket{\ua}\\
-	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\ua\ket{\ua} &= -\fr{s^z}{2}a_\ua \ket{\ua} + a_\da \fr{s^+}{2} \ket{\da}
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\da\ket{\Downarrow} &= \fr{s^z}{2}a_\da \ket{\Downarrow} + a_\ua \fr{s^-}{2} \ket{\Uparrow}\\
+	\fr{1}{J^*}\rr{E_0 - \ham^*_0}a_\ua\ket{\Uparrow} &= -\fr{s^z}{2}a_\ua \ket{\Uparrow} + a_\da \fr{s^+}{2} \ket{\Downarrow}
 \eeq
-From the first equation, we can isolate \il{\ket{\da}}:
+From the first equation, we can isolate \il{\ket{\Downarrow}}:
 \beq
-\ket{\da} = \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1}\fr{a_\ua}{a_\da} s^-\ket{\ua}
+\ket{\Downarrow} = \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1}\fr{a_\ua}{a_\da} s^-\ket{\Uparrow}
 \eeq
 Substituting this in the second equation gives
-\beq
-\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\ua} &= - \ket{\ua} + s^+ \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1} s^-\ket{\ua}\\
-\rr{E_0 - \ham^*_0}\ket{\ua} &= \qq{-\fr{J^*}{2}s^z + \rr{\fr{J^*}{2}}^2s^+ \fr{1}{\rr{E_0 - \ham^*_0} - \fr{J^*}{2}s^z}s^-}\ket{\ua}\\
-			     &\equiv \ham_\text{eff}\ket{\ua}
+\beq[effeig]
+\fr{1}{J^*}\rr{E_0 - \ham^*_0}\ket{\Uparrow} &= - \ket{\Uparrow} + s^+ \qq{\fr{1}{J^*}\rr{E_0 - \ham^*_0} + 1}^{-1} s^-\ket{\Uparrow}\\
+\rr{E_0 - \ham^*_0}\ket{\Uparrow} &= \qq{-\fr{J^*}{2}s^z + \rr{\fr{J^*}{2}}^2s^+ \fr{1}{\rr{E_0 - \ham^*_0} - \fr{J^*}{2}s^z}s^-}\ket{\Uparrow}\\
+			     &\equiv \ham_\text{eff}\ket{\Uparrow}
 \eeq
-Now we can simplify the effective Hamiltonian for the Kondo cloud. First put \il{E_0=0} and \il{s^z=\fr{1}{2}}. Then,
+Now we can simplify the effective Hamiltonian for the Kondo cloud. First put \il{E_0=0} and \il{s^z=\fr{1}{2}}. The latter is obvious from the fact that this is the effective Hamiltonian for the up-spin state. The justification for the former will be given later. Then,
 \beq
 H_\text{eff} &= -\fr{J^*}{4} -\rr{\fr{J^*}{2}}^2s^+ \fr{1}{\fr{J^*}{4}+\ham^*_0 }s^-\\
 	     &=\fr{J^*}{4} - J^*s^+ \fr{1}{1+\fr{4\ham^*_0}{J^*} }s^-\\
@@ -3324,7 +3324,7 @@ We can expand the denominator in a power series:
 \fr{1}{1+\fr{4\ham^*_0}{J^*}} = 1 - \fr{4\ham^*_0}{J^*} + \fr{16}{{J^*}^2}{\ham^*_0}^2
 \eeq
 Substituting this gives
-\beq
+\beq[heff]
 H_\text{eff}&=\fr{J^*}{4} - J^*s^+ \rr{1 - \fr{4\ham^*_0}{J^*} + \fr{16}{{J^*}^2}{\ham^*_0}^2}s^-\\
 	    &=\fr{J^*}{4} - J^*s^+s^-  + 4s^+ \ham^*_0 s^-  - \fr{16}{{J^*}}s^+{\ham^*_0}^2s^-\\
 \eeq
@@ -3350,7 +3350,7 @@ the commutator becomes
 \eeq
 \beq
 4s^+\qq{\ham^*_0,s^-} &= 4\sum_{k_1 k_2 k_3 k_4}c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\\
-\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\da}}
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\epsilon_k\rr{\epsilon_{k_1} - \epsilon_{k_2}}\cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\da}}
 \eeq
 To simplify this anticommutator, note
 \beq
@@ -3360,18 +3360,36 @@ c^\dagger_{k_1\da}c_{k_2\ua}n_{k\sigma} &= c^\dagger_{k_1\da}c_{k_2\ua}c^\dagger
 &= \delta_{kk_2}\delta_{\sigma\ua}c^\dagger_{k_1\da}c_{k_2\ua}- c^\dagger_{k\sigma}c^\dagger_{k_1\da}c_{k\sigma}c_{k_2\ua}\\
 &= \delta_{kk_2}\delta_{\sigma\ua}c^\dagger_{k_1\da}c_{k_2\ua}- c^\dagger_{k\sigma}\rr{\delta_{kk_1}\delta_{\sigma\da} -c_{k\sigma}c^\dagger_{k_1\da}}c_{k_2\ua}\\
 &= \rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}}c^\dagger_{k_1\da}c_{k_2\ua} + n_{k\sigma}c^\dagger_{k_1\da}c_{k_2\ua}\\
-\implies \cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\ua}} &= \qq{\rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}} + 2n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\da}
+\implies \cc{n_{k\sigma},c^\dagger_{k_1\da}c_{k_2\ua}} &= \qq{\rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}} + 2n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\ua}
 \eeq
 Therefore,
 \beq
-\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} \qq{\rr{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da}}c^\dagger_{k_1\da}c_{k_2\ua} + 2n_{k\sigma}c^\dagger_{k_1\da}c_{k_2\ua}}\\
-				 &=2n(0)\sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_1\da}c_{k_2\ua}\\
-\implies s^+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= 2n(0)\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} - \epsilon_{k_2}} c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}\\
-\eeq
+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= \sum_{k,\sigma,k_1 k_2}\epsilon_k\rr{\epsilon_{k_1} - \epsilon_{k_2}}\qq{\delta_{kk_2}\delta_{\sigma\ua} - \delta_{kk_1}\delta_{\sigma\da} + 2n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\ua}\\
+				 &= \sum_{k,k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\qq{\delta_{kk_2} \epsilon_{k_2}- \delta_{kk_1}\epsilon_{k_1}+ 2\epsilon_k\sum_\sigma n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\ua}\\
+				 &= \sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}\qq{\epsilon_{k_2}- \epsilon_{k_1}+ 2\sum_{k\sigma}\epsilon_k n_{k\sigma}}c^\dagger_{k_1\da}c_{k_2\ua}\\
+				 &\approx -\sum_{k_1 k_2}\rr{\epsilon_{k_1} - \epsilon_{k_2}}^2c^\dagger_{k_1\da}c_{k_2\ua} \\
+\implies s^+\cc{\ham_0^*,\qq{\ham^*_0, s^-}} &= -\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} - \epsilon_{k_2}}^2c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua} \\\eeq
 This gives
 \beq
--\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= -\fr{16}{J^*}{\ham_0^*}^2 -\fr{16}{J^*} 2n(0)\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} -\epsilon_{k_2}} c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}
+-\fr{16}{{J^*}}s^+{\ham^*_0}^2s^- &= -\fr{16}{J^*}{\ham_0^*}^2 +\fr{16}{J^*}\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} - \epsilon_{k_2}}^2c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}
 \eeq
+The effective Hamiltonian eq.~\ref{heff} is then
+\beq
+H_\text{eff} = - \fr{3J^*}{4} +  4\ham_0^* -\fr{16}{J^*}{\ham_0^*}^2 + \fr{16}{J^*}\sum_{k_1 k_2 k_3 k_4}\rr{\epsilon_{k_1} - \epsilon_{k_2}}^2c^\dagger_{k_3\ua}c_{k_4\da}c^\dagger_{k_1\da}c_{k_2\ua}
+\eeq
+This is the effective Kondo cloud Hamiltonian for the state \il{\ket{\Uparrow}}.
+\subsubsection{Justification for the choice \il{E=0}}
+We want to look at the excitations of the Kondo model in the ground state of the cloud+impurity composite system. If we assume that a single localised impurity cannot destabilize the Fermi surface of the Kondo cloud electrons, the total energy of composite system must be greater than zero. Otherwise, the total system will come below the Fermi surface to form a bound system and the Fermi surface will get destabilized. Consequently, the minimum energy of the composite system has to be \il{E_0 = 0}.
+\pb
+The requirement that the total energy of the composite system be zero constrains the kinetic energy of the Kondo cloud. This is understood by noting that (eq.~\ref{effeig}) the eigenvalue of \il{H_\text{eff}} is \il{E_0 - \ham_0^*}. Equating that to the final form of \il{H_\text{eff}} and dropping the terms with \il{\fr{1}{J^*}}, we get
+\beq
+\rr{E - \ham_0^*}\ket{\Uparrow} =\rr{ - \fr{3J^*}{4} +  4\ham_0^*}\ket{\Uparrow}
+\eeq
+Putting \il{E_0 = 0} gives
+\beq
+\ham_0^* \ket{\Uparrow} = \fr{3J^*}{20}\ket{\Uparrow}
+\eeq
+This is the minimum value of the kinetic energy for the Kondo cloud Hamiltonian; anything lower than this would lead to a total energy \il{E_0} less than 0 and the destabilization of the Fermi surface. This tells us that just as one electron comes below the Fermi surface to form the singlet with the impurity spin, other electrons have to excite suitably above the Fermi surface (that is, become more energetic) in order to constrain the ground state energy at 0. Excitations of the cloud then involve higher values of \il{\ham_0^* > \fr{3J^*}{20}} and lead to excitations of the composite system as a whole (\il{E_0 > 0}). The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic energy must start from a non-zero value. It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
 
 \end{document}
 

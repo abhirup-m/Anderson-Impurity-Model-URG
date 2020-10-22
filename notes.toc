@@ -42,3 +42,4 @@
 \contentsline {paragraph}{\centering }{72}{section*.5}%
 \contentsline {subsection}{\numberline {23}URG Formalism}{78}{subsection.0.23}%
 \contentsline {subsection}{\numberline {24}Kondo Model URG}{87}{subsection.0.24}%
+\contentsline {subsubsection}{\numberline {24.1}Justification for the choice \({E=0}\)}{104}{subsubsection.0.24.1}%
