@@ -1,0 +1,13 @@
+\documentclass[14pt]{extarticle}
+\usepackage{common}
+\begin{document}
+\begin{gather}
+\ham = t\rr{\hat n_{\pi}-\hat n_{0}}+\fr{U}{2}n_\ua n_\da + \fr{U}{2}\prod_\sigma \qq{c^\dagger_{0,\sigma}c_{\pi,\sigma}+c^\dagger_{\pi,\sigma}c_{0,\sigma}}\\
+\ham_{\pi\ua} = \fr{1}{2}\text{Tr}_{\pi\ua}\ham + \tau_{\pi\ua}\text{Tr}_{\pi\ua}\qq{\ham \tau_{\pi\ua}} + \tau_{\pi\ua}\cc{c^\dagger_{\pi\ua}\text{Tr}_{\pi\ua}\qq{\ham c_{\pi\ua}},\eta_{\pi\ua}}\\
+\eta_{\pi\ua} = \fr{1}{\hat \omega - \text{Tr}_{\pi\ua}\qq{\ham \rr{1-\hat n_{\pi\ua}}}\rr{1-\hat n_{\pi\ua}}}\text{Tr}_{\pi\ua}\qq{c_{\pi\ua}^\dagger\ham }c_{\pi\ua}\\
+= \fr{1}{\hat \omega - \qq{t\rr{\hat n_{\pi\da}-\hat n_{0}}+Un_{0\ua} n_\da}\rr{1-\hat n_{\pi\ua}}}\fr{U}{2}\qq{c^\dagger_{0,\da}c_{\pi,\da}+c^\dagger_{\pi,\da}c_{0,\da}}c^\dagger_{0\ua}c_{\pi\ua}\\
+\eta_{\pi\ua}^\dagger = \fr{1}{\hat \omega - \text{Tr}_{\pi\ua}\qq{\ham \hat n_{\pi\ua}}\hat n_{\pi\ua}}\text{Tr}_{\pi\ua}\qq{c_{\pi\ua}^\dagger\ham }c_{\pi\ua}\\
+= \fr{1}{\hat \omega - \qq{t\rr{1 + \hat n_{\pi\da}-\hat n_{0}}+Un_{0\ua} n_\da}\rr{1-\hat n_{\pi\ua}}}\fr{U}{2}\qq{c^\dagger_{0,\da}c_{\pi,\da}+c^\dagger_{\pi,\da}c_{0,\da}}c^\dagger_{0\ua}c_{\pi\ua}\\
+c^\dagger_{\pi\ua}\text{Tr}_{\pi\ua}\qq{\ham c_{\pi\ua}}= \fr{U}{2}\qq{c^\dagger_{0,\da}c_{\pi,\da}+c^\dagger_{\pi,\da}c_{0,\da}}c^\dagger_{\pi\ua}c_{0\ua}
+\end{gather}
+\end{document}
