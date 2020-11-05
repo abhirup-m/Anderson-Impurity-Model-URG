@@ -3120,7 +3120,7 @@ Parameterizing the momenta as \il{\Lambda_j = \Lambda_N e^{j-N}}, we can write
 \eeq
 We can then write the difference equation, eq.~\ref{diffeq}, as
 \beq
--\fr{\Delta J_j}{\Delta\Lambda_j} = \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda_j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda_j}^2 - \fr{1}{16}{J_j}^2}
+-\fr{\Delta J_j}{\Delta\log \Lambda_j} = \fr{n_j J_j^2 \rr{\omega - \fr{\hbar v_F}{2}\Lambda_j}}{\rr{\omega - \fr{\hbar v_F}{2}\Lambda_j}^2 - \fr{1}{16}{J_j}^2}
 \eeq
 Changing this to a continuum equation gives
 \beq[rgeq]
@@ -3527,9 +3527,10 @@ This is the minimum value of the kinetic energy for the Kondo cloud Hamiltonian;
 
 \pagebreak\section{Anderson Model URG}
 \beq
-\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
 \subsection*{One electron on shell}
+\comm{
 At first order, the rotated Hamiltonian is
 \beq
 \ham_{j-1} = 2^{-n_j}\text{Tr}_{1,2,...,n_j}\ham_j + \sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}}
@@ -3538,12 +3539,12 @@ At first order, the rotated Hamiltonian is
 \paragraph{Calculation of first term}
 The first term, the initial trace, is a sequential trace over all the states on the shell being disentangled. At each trace, we consider only electrons on the current degree of freedom and on shells below the current shell:
 \beq
-\fr{1}{2}\text{Tr}_{q\ua} \ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\text{Tr}_{q\ua}\cc{\epsilon_k \hat n_{q\ua}}\\
-&= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\epsilon_q\\
-\fr{1}{2}\text{Tr}_{q\da} \fr{1}{2}\text{Tr}_{q\ua}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
+\fr{1}{2}\text{Tr}_{q\ua} \ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\text{Tr}_{q\ua}\cc{\epsilon_k \hat n_{q\ua}}\\
+&= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\epsilon_q\\
+\fr{1}{2}\text{Tr}_{q\da} \fr{1}{2}\text{Tr}_{q\ua}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
 \eeq
 \beq[term1]
-\implies 2^{-n_j}\text{Tr}_{1,2,...,n_j}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{|q|=\Lambda_N}\epsilon_q\\
+\implies 2^{-n_j}\text{Tr}_{1,2,...,n_j}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{|q|=\Lambda_N}\epsilon_q\\
 \eeq
 \paragraph{Calculation of second term}
 The second term involves some other traces:
@@ -3556,19 +3557,20 @@ The second term involves some other traces:
 \text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham } &= V^*_q c^\dagger_{d\beta}
 \eeq
 \beq
-\ham^D &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}\\
-\text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
+\ham^D &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}\\
+\text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
 \eta_{q\beta} &= \text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\hat \omega - \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_\sigma \epsilon_{d\sigma} \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}}\hat n_{q\beta} - \epsilon_q\hat n_{q\beta}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega\hat n_{q\beta} - \rr{\sum_\sigma \epsilon_{d\sigma}\hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q}\hat n_{q\beta}}\\
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}}\hat n_{q\beta} - \epsilon_q\hat n_{q\beta}}\\
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega\hat n_{q\beta} - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q}\hat n_{q\beta}}\\
 \eeq
 At the last step, \textbf{\textcolor{red}{I replaced \il{\pmb{\hat \omega - \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma}\hat n_{q\beta} }} with \il{\pmb{\omega\hat n_{q\beta}}}}}. Note that since this term has a \il{c^\dagger_{d\beta}}, it will not vanish only when acting on a state with \il{\hat n_{d\beta} = 0}. Hence we can drop the terms \il{\hat n_{d\ua}\hat n_{d\da}} and \il{\epsilon_{d\beta}\hat n_{d\beta}} in the denominator. Also, since it has a \il{c_{q\beta}}, we can set the \il{\hat n_{q\beta}} in the denominator to 1. Putting together the individual pieces, we can now write the second term:
 \beq
-\sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}} &= \sum_{q\beta}\tau_{q\beta}\cc{V_q c^\dagger_{q\beta}c_{d\beta}, V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - \epsilon_q - \epsilon_{d\ol\beta}\hat n_{d\ol\beta}}}
+\sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}} &= \sum_{q\beta}\tau_{q\beta}\cc{V_q c^\dagger_{q\beta}c_{d\beta}, V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - \epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}}
 \eeq
 We now note that the factor with \il{\omega} can be written as follows:
 \beq
-\fr{1}{\omega - \epsilon_q - \epsilon_{d\ol\beta}\hat n_{d\ol\beta}} = \fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q - \epsilon_{d\ol\beta}} + \fr{1 -\hat n_{d\ol\beta}}{\omega - \epsilon_q }
+\fr{1}{\omega - \epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}} &= \fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q - \epsilon_{d}} + \fr{1 -\hat n_{d\ol\beta}}{\omega - \epsilon_q }\\
+							     &= \hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }\\
 \eeq
 Since these terms commute with the other terms, they can be taken out of the anticommutator; what's left is
 \beq
@@ -3581,12 +3583,12 @@ The \il{\tau} and the \il{\hat n} can be multiplied:
 \end{gather}
 The total thing becomes
 \beq
-\sum_{q\beta}\fr{1}{2}|V_q|^2\qq{\hat n_{d\beta}\rr{\hat n_{q\beta} - 1}+ \hat n_{q\beta}\rr{1-\hat n_{d\beta}}}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q - \epsilon_{d\ol\beta}} + \fr{1 -\hat n_{d\ol\beta}}{\omega - \epsilon_q }}\\
-=\sum_{q\beta}\fr{1}{2}|V_q|^2\qq{\hat n_{q\beta}-\hat n_{d\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q - \epsilon_{d\ol\beta}} + \fr{1 -\hat n_{d\ol\beta}}{\omega - \epsilon_q }}\\ 
+\sum_{q\beta}\fr{1}{2}|V_q|^2\qq{\hat n_{d\beta}\rr{\hat n_{q\beta} - 1}+ \hat n_{q\beta}\rr{1-\hat n_{d\beta}}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }}\\
+							     =\sum_{q\beta}\fr{1}{2}|V_q|^2\qq{\hat n_{q\beta}-\hat n_{d\beta}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }} 
 \eeq
 \textbf{\textcolor{red}{Putting \il{\hat n_{q\beta} = 1}}}, and dropping the non-operator terms, we get
 \beq[term2]
-\sum_{\beta}\fr{1}{2}\hat n_{d\beta}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d\beta}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d\beta}}} -  \hat n_{d\ua}\hat n_{d\da}\sum_{q\beta}\fr{1}{2}|V_q|^2\fr{\epsilon_{d\beta}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d\beta}}}
+\sum_{\beta}\fr{1}{2}\hat n_{d\beta}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}} -  \hat n_{d\ua}\hat n_{d\da}\sum_{q\beta}\fr{1}{2}|V_q|^2\fr{\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d}}}
 \eeq
 The first term is the renormalization in on-site energy, \il{\sum_\beta \hat n_{d\beta}\Delta \epsilon_{d\beta}}, and the second term is the renormalization in the onsite repulsion, \il{\hat n_{d\ua}\hat n_{d\da}\Delta U}.
 \paragraph{Renormalized Hamiltonian}
@@ -3596,9 +3598,9 @@ Combining eqs.~\ref{term1} and \ref{term2}, we get
 \eeq
 \it{The second term is the renormalization in the kinetic energy of the disentangled electrons, the  third term is the renormalized impurity site energy and the fourth term is the renormalized onsite repulsion.}
 \beq[impren]
-\Delta \epsilon_{d\beta}^{N} \equiv \epsilon_{d\beta}\big\vert_{N-1} - \epsilon_{d\beta}\big\vert_{N} = \fr{1}{2}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d\beta}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d\beta}}} 
+\Delta \epsilon_{d}^{N} \equiv \epsilon_{d}\big\vert_{N-1} - \epsilon_{d}\big\vert_{N} = \fr{1}{2}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}} 
 \eeq
-Since the equation is same for \il{\beta = \ua,\da}, we can drop the \il{\beta} index. According  to Hewson eq.~3.62 (page 68),
+According  to Hewson eq.~3.62 (page 68),
 \beq[hewson]
 \dv{\epsilon_d}{\ln D} = -\fr{\Delta}{\pi} + O(V^3)= -\rho_0 |V|^2 + O(V^3)
 \eeq
@@ -3614,32 +3616,38 @@ We can then replace the summation in eq.~\ref{impren} by \il{\delta n}:
 \eeq
 where \il{\rho(D)} is the number of single-spin states on the shell D. This can be compared to eq.~\ref{hewson}. In two dimensions, the energy density of states is independent of energy. \textbf{\textcolor{red}{Setting \il{\pmb{\omega = 0}}}}, we get 
 \beq
-\delta\epsilon_{d}(D) &=\fr{1}{2}|V|^2\rho(D)\fr{|\delta D|}{D} \fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}\\
-		      &= -\fr{1}{2}|V|^2\rho(D)\delta \rr{\ln D }\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}
+\delta\epsilon_{d}(D) &=\hf|V|^2\rho(D)\fr{|\delta D|}{D}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}\\
+		      &=-\hf|V|^2\rho(D)\delta \rr{\ln D }\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}
 \eeq
 I used \il{\delta D = -|\delta D|}. Changing to continuum equation,
 \beq
-\dv{\epsilon_d}{\ln D} &= -\fr{\Delta}{2\pi}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}
+\dv{\epsilon_d}{\ln D} &= -\hf\fr{\Delta}{\pi}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}
 \eeq
 In the regime where the single-occupied impurity level is comfortably inside the conduction band (\il{D \gg |\epsilon_d|}), we can approximate both the numerator and denominator as simply \il{D}. Then,
 \begin{gather}
-\dv{\epsilon_d}{\ln D} =- \fr{\Delta}{2\pi} \\
-\implies \epsilon_d + \fr{\Delta}{2\pi}\log D = \text{constant}
+\dv{\epsilon_d}{\ln D} =-\hf\fr{\Delta}{\pi} \\
+\implies \epsilon_d + \hf\fr{\Delta}{\pi}\log D = \text{constant}
 \end{gather}
-\textcolor{red}{This differs from eq.~3.65 in Hewson by a factor \il{2\pi} vs \il{\pi}.}
-\pb
 Turning to the general equation ~\ref{impren}, under the assumption of momentum-independent scattering, the continuum equation is
 \beq
-\dv{\epsilon_d}{\ln D} = \fr{1}{2}|V|^2n(D) \fr{\omega - D - 2\epsilon_{d}}{\rr{\omega - D}\rr{\omega - D - \epsilon_{d}}} 
+\dv{\epsilon_d}{\ln D} &= \fr{1}{2}|V|^2n(D) \fr{\omega - D - 2\epsilon_{d}}{\rr{\omega - D}\rr{\omega - D - \epsilon_{d}}} \\
+		       &= \fr{1}{2}|V|^2n(D) \rr{\fr{2}{\omega - D} - \fr{1}{\omega - D - \epsilon_d}} \\
 \eeq
 \il{n(D)} is not the density of states, but the total number of states on the shell at energy \il{D}. Similarly, the renormalization in \il{U} is
 \beq
-\delta U &= -\sum_{q\beta}\fr{1}{2}|V_q|^2\fr{\epsilon_{d\beta}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d\beta}}}\\
-		       &= -\fr{1}{2}|V|^2n(D) \sum_\beta\fr{\epsilon_{d\beta}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d\beta}}}\\
+\delta U &= -\sum_{q\beta}\fr{1}{2}|V_q|^2\fr{\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d}}}\\
+		       &= -\fr{1}{2}|V|^2n(D) \sum_\beta\fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
 		       &= -|V|^2n(D) \fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
-\implies \dv{U}{\ln D} &= |V|^2n(D) \fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}
+\implies \dv{U}{\ln D} &= |V|^2n(D) \fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
+		       &= |V|^2n(D) \rr{\fr{1}{\omega - D - \epsilon_{d}} - \fr{1}{\omega - D}}\\
 \eeq
-In the last step, I used the fact that since the onsite energy for either spin is same, the summation just returns a factor of 2.
+In the penultimate step, I used the fact that since the onsite energy for either spin is same, the summation just returns a factor of 2.
+\pb
+\textcolor{red}{Putting \il{\omega = \fr{3D}{2} + \fr{\epsilon_d}{2}},}
+\beq
+\dv{\epsilon_d}{\ln D} &= \fr{1}{2}|V|^2n(D) \rr{\fr{2}{\fr{D}{2} + \fr{\epsilon_d}{2}} - \fr{1}{\fr{D}{2} - \fr{\epsilon_d}{2}}} = |V|^2n(D) \rr{\fr{2}{D + \epsilon_d} - \fr{1}{D - \epsilon_d}} \\
+\dv{U}{\ln D}	       &= |V|^2n(D) \rr{\fr{1}{\fr{D}{2} - \fr{\epsilon_d}{2}} - \fr{1}{\fr{D}{2} + \fr{\epsilon_d}{2}}} = 2|V|^2n(D) \rr{\fr{1}{D - \epsilon_d} - \fr{1}{D + \epsilon_d}}\\
+\eeq
 
 \subsection*{Alternate}
 We will write the Hamiltonian in terms of \il{\tau = \hat n -\fr{1}{2}}:
@@ -3654,11 +3662,11 @@ We will write the Hamiltonian in terms of \il{\tau = \hat n -\fr{1}{2}}:
 \eeq
 \il{\xi_0} is the constant background energy \il{\fr{1}{2} \sum_{k\sigma}\epsilon_k + \fr{1}{2}\sum_\sigma \epsilon_{d\sigma} + \fr{1}{4}U} which we will drop henceforth. \il{\xi_{d\sigma} =\epsilon_{d\sigma} + \fr{U}{2}} is a modified impurity-site energy. \il{U} remains unchanged in the process. The renormalized Hamiltonian (up to first order in \il{\tau}) after disentangling the electron at \il{q\beta} is
 \beq
-\ham_{q\beta} = \fr{1}{2}\text{Tr}_{q\beta}\ham_N + \tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}}
+\ham_{q\beta} = \prod_{q\beta}\fr{1}{2}\text{Tr}_{q\beta}\ham_N + \sum_{q\beta}\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}}
 \eeq
 The calculations follow. As a first approximation, we will consider just one electron on the outermost shell \il{\Lambda_N}.
 \beq
-\ham_N = \sum^<_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \epsilon_q \tau_{q\beta} + V_{q} c^\dagger_{q\beta} c_{d\beta} + h.c.
+\ham_N = \sum^<_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \xi_{d}\sum_\sigma \tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \epsilon_q \tau_{q\beta} + V_{q} c^\dagger_{q\beta} c_{d\beta} + h.c.
 \eeq
 The sum \il{\sum^<} runs over all shells below \il{\Lambda_N}. The first term gives
 \beq
@@ -3667,79 +3675,193 @@ The sum \il{\sum^<} runs over all shells below \il{\Lambda_N}. The first term gi
 \eeq
 The first trace, involving terms not having \il{q\beta}, simply give a factor of 2 which is canceled by the half in front. Tracing over \il{\epsilon_q \tau_{q\beta}} gives zero because the eigenvalues of \il{\tau_{q\beta}} are \il{\pm \fr{1}{2}}. Therefore,
 \beq
-\fr{1}{2}\text{Tr}_{q\beta}\ham_N = \sum_{k\sigma}^<\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da}
+\prod_{q\beta}\fr{1}{2}\text{Tr}_{q\beta}\ham_N = \sum_{k\sigma}^<\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \xi_{d}\sum_\sigma \tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da}
 \eeq
 To calculate the second term, we note
 \begin{gather}
 c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}} = V_q c^\dagger_{q\beta}c_{d\beta}\\
 \text{Tr}_{q\beta}\rr{ c_{q\beta}^\dagger \ham_N} c_{q\beta}= V^*_q c^\dagger_{d\beta}c_{q\beta}\\
-\text{Tr}_{q\beta}\rr{\ham^D_N \hat n_{q\beta}}\hat n_{q\beta} = \qq{\sum^<_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\hat n_{q\beta}
+\text{Tr}_{q\beta}\rr{\ham^D_N \hat n_{q\beta}}\hat n_{q\beta} = \qq{\sum^<_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \xi_{d}\sum_\sigma \tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\hat n_{q\beta}
 \end{gather}
 \beq
 \eta_{q\beta} &= \text{Tr}_{q\beta}\rr{ c_{q\beta}^\dagger \ham_N} c_{q\beta}\fr{1}{\hat \omega - \text{Tr}_{q\beta}\rr{\ham^D_N \hat n_{q\beta}}\hat n_{q\beta}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\hat n_{q\beta}}
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\xi_{d}\sum_\sigma \tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\hat n_{q\beta}}
 \eeq
-\textbf{\textcolor{red}{where I absorbed the part below the shell into the \il{\hat \omega}. We can also absorb a \\\il{\fr{1}{2}\times \rr{\sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\hat n_{q\beta}} into \il{\hat \omega} to convert the \il{\hat n_{q\beta}} into \il{\tau_{q\beta}}. Then we replace \il{\hat \omega} with \il{\omega \tau_{q\beta}}}}:
+\textbf{\textcolor{red}{where I absorbed the part below the shell into the \il{\hat \omega}. We can replace \il{\hat \omega} with \il{\fr{\omega}{2} \hat n_{q\beta}}}}:
 \beq
-\eta_{q\beta} &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega \tau_{q\beta} - \rr{\sum_\sigma \xi_{d\sigma}\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}\tau_{q\beta}}
+\eta_{q\beta} &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\qq{\fr{1}{2}\omega - \rr{ \xi_{d}\sum_\sigma\tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \fr{1}{2}\epsilon_q}}\hat n_{q\beta}}
 \eeq
-Since this term has a \il{c_{q\beta}}, it will survive only when acting on \il{\ket{\tau_{q\beta} = \fr{1}{2}}}, so we can replace the \il{\tau_{q\beta}} in the denominator with \il{\fr{1}{2}}. Also, since there is a \il{c^\dagger_{d\beta}}, we can similarly replace \il{\tau_{d\beta} = -\fr{1}{2}}.
+Since this term has a \il{c_{q\beta}}, it will survive only when acting on \il{\ket{\hat n_{q\beta} = 1}}, so we can replace the \il{\hat n_{q\beta}} in the denominator with \il{1}. Also, since there is a \il{c^\dagger_{d\beta}}, we can similarly replace \il{\tau_{d\beta} = -\fr{1}{2}}.
 
 \beq
-\eta_{q\beta} &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{2}{\omega  + \fr{1}{2}\xi_{d\beta} -  \xi_{d\ol\beta}\tau_{d\ol\beta} + \fr{1}{2}U \tau_{d\ol\beta} - \fr{1}{2}\epsilon_q}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\qq{\fr{ \fr{1}{2}+\tau_{d\ol\beta} }{\omega  + \fr{1}{2}\xi_{d\beta} -  \fr{1}{2}\xi_{d\ol\beta} + \fr{1}{4}U - \fr{1}{2}\epsilon_q} + \fr{ \fr{1}{2}- \tau_{d\ol\beta}}{\omega  + \fr{1}{2}\xi_{d\beta} + \fr{1}{2}\xi_{d\ol\beta} - \fr{1}{4}U - \fr{1}{2}\epsilon_q}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}
+\eta_{q\beta} &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\fr{1}{2}\omega  + \xi_{d}\rr{\fr{1}{2} -  \tau_{d\ol\beta}} + \fr{1}{2}U \tau_{d\ol\beta} - \fr{1}{2}\epsilon_q}\\
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\fr{1}{2}\rr{\omega  + \xi_{d} - \epsilon_q} -\rr{\xi_{d}- \fr{1}{2}U} \tau_{d\ol\beta}}\\
+	      &\equiv V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\fr{1}{2}A -B \tau_{d\ol\beta}}\\
+	      &\equiv V^*_q c^\dagger_{d\beta}c_{q\beta}\qq{\fr{2\hat n_{d\ol\beta}}{A - B} + \fr{2\rr{1 - \hat n_{d\ol\beta}}}{A + B}}\\
+	      &\equiv V^*_q c^\dagger_{d\beta}c_{q\beta}\qq{\fr{4B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{2}{A + B}}\\
 \eeq
 Then,
 \beq
-\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &= \tau_{q\beta}|V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\cc{c^\dagger_{q\beta}c_{d\beta},c^\dagger_{d\beta}c_{q\beta}}\\
-											     &= \tau_{q\beta}|V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\rr{\hat n_{q\beta} - \hat n_{d\beta}}\\
-											     &= \tau_{q\beta}|V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\rr{\tau_{q\beta} - \tau_{d\beta}}\\
-											     &= |V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\rr{\fr{1}{4} - \tau_{q\beta}\tau_{d\beta}}\\
+\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &= \tau_{q\beta}|V_q|^2\qq{\fr{4B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{2}{A + B}}\cc{c^\dagger_{q\beta}c_{d\beta},c^\dagger_{d\beta}c_{q\beta}}\\
+											     &= \tau_{q\beta}|V_q|^2\qq{\fr{4B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{2}{A + B}}\cc{\hat n_{q\beta} - \hat n_{d\beta}}
 \eeq
 \textbf{\textcolor{red}{Putting \il{\tau_{q\beta} = \fr{1}{2}}}},
 \beq
-\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &=\fr{1}{2} |V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q - \rr{ \fr{1}{2}U - \xi_{d\ol\beta}}\tau_{q\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\rr{\fr{1}{2} - \tau_{d\beta}}\\
-&=\fr{1}{4} |V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2} \\
-&\quad-\fr{1}{4} |V_q|^2\fr{\fr{1}{2}U - \xi_{d\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\tau_{q\ol\beta}\\
-&\quad-\fr{1}{2} |V_q|^2\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2} \tau_{q\beta}\\
-&\quad+\fr{1}{2} |V_q|^2\fr{\fr{1}{2}U - \xi_{d\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2} \tau_{q\beta}\tau_{q\ol\beta}\\
-&= \Delta \xi_q + \Delta \xi_{d\ol\beta} \tau_{q\ol\beta}+ \Delta \xi_{d\beta} \tau_{q\beta}+ \Delta U\tau_{q\beta}\tau_{q\ol\beta}
+\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &=|V_q|^2\qq{\fr{2B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{1}{A + B}}\cc{1 - \hat n_{d\beta}}\\
+&=|V_q|^2\qq{\fr{2B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{1}{A + B} - \fr{2B\hat n_{d\beta}\hat n_{d\ol\beta}}{A^2 - B^2} - \fr{\hat n_{d\beta}}{A + B}}\\
+\sum_{q\beta}\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &=\sum_{q\beta}|V_q|^2\qq{\fr{2B\hat n_{d\ol\beta}}{A^2 - B^2} + \fr{1}{A + B} - \fr{2B\hat n_{d\beta}\hat n_{d\ol\beta}}{A^2 - B^2} - \fr{\hat n_{d\beta}}{A + B}}\\
 \eeq
-The first term is a renormalization in the kinetic energy of the disentangled electrons. The rest of the terms are self-explanatory.
-\pb
-These are the changes after disentangling just one electron, \il{q\beta}: \begin{gather}
-\xi_{d\beta} \ra \xi_{d\beta}^\prime = \xi_{d\beta} + \Delta \xi_{d\beta}\\
-\xi_{d\ol\beta} \ra \xi_{d\ol\beta}^\prime = \xi_{d\ol\beta} + \Delta \xi_{d\ol\beta}
+Since \il{A} and \il{B} are independent of the index \il{\beta}, we can change \il{\ol\beta} to \il{\beta} because they are being summed over. Dropping the operator-free term,
+\beq
+\sum_{q\beta}\tau_{q\beta} \cc{c^\dagger_{q\beta} \text{Tr}_{q\beta}\rr{\ham_N c_{q\beta}},\eta_{q\beta}} &=\sum_{q\beta}|V_q|^2\qq{\fr{\rr{3B - A}\hat n_{d\ol\beta}}{A^2 - B^2} - \fr{2B\hat n_{d\beta}\hat n_{d\ol\beta}}{A^2 - B^2}}
+\eeq
+The first term is a renormalization in the onsite energy of the impurity \il{ \xi_d}. The second term renormalizes the impurity-impurity repulsion energy \il{ U}.
+\beq
+\Delta \xi_d &= \sum_{q}|V_q|^2\fr{\rr{3B - A}}{A^2 - B^2}\\
+	     &= \sum_{q}|V_q|^2\fr{\qq{\rr{A+B}-2\rr{A-B}}}{A^2 - B^2}\\
+	     &= \sum_{q}|V_q|^2\qq{\fr{1}{A-B} -\fr{2}{A+B}}\\
+	     &= n(D)|V|^2\qq{\fr{1}{A-B} -\fr{2}{A+B}}\\
+\Delta U &= -\sum_{q\beta}|V_q|^2 \fr{2B}{A^2 - B^2}\\
+&= 2n(D)|V|^2 \qq{ \fr{1}{A+B}-\fr{1}{A-B}}\\
+\eeq
+Substituting the values of \il{A,B} and putting \il{\epsilon_q = D},
+\beq
+\Delta \xi_d &= n(D)|V|^2\qq{\fr{1}{\omega - D + \fr{U}{2}} - \fr{2}{\omega - D + 2\xi_d - \fr{U}{2}}}\\
+\Delta U &=  2n(D)|V|^2\qq{\fr{1}{\omega - D + 2\xi_d - \fr{U}{2}}- \fr{1}{\omega - D + \fr{U}{2}}}
+\eeq
+\textcolor{red}{Putting \il{\omega = -\xi_d}},
+\beq
+\Delta \xi_d &= n(D)|V|^2\qq{\fr{2}{D - \rr{\xi_d - \fr{U}{2}}}- \fr{1}{D + \rr{\xi_d - \fr{U}{2}}}}\\
+	     &= n(D)|V|^2\qq{\fr{2}{D - \epsilon_d}- \fr{1}{D + \epsilon_d}}\\
+\Delta U &= 2n(D)|V|^2\qq{\fr{1}{D + \rr{\xi_d - \fr{U}{2}}}- \fr{1}{D - \rr{\xi_d - \fr{U}{2}}}}\\
+	 &= 2n(D)|V|^2\qq{\fr{1}{D + \epsilon_d}- \fr{1}{D - \epsilon_d}}\\
+\eeq
+\textcolor{red}{Putting \il{\omega = 2D -\xi_d}},
+\beq
+\Delta \xi_d &= -n(D)|V|^2\qq{\fr{2}{D + \epsilon_d}- \fr{1}{D - \epsilon_d}}\\
+\Delta U  &= -2n(D)|V|^2\qq{\fr{1}{D - \epsilon_d}- \fr{1}{D + \epsilon_d}}\\
+\eeq
+
+\subsection*{Alternate-II}}
+At first order, the rotated Hamiltonian is
+\beq
+\ham_{j-1} = 2^{-n_j}\text{Tr}_{1,2,...,n_j}\ham_j + \sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\eeq
+\il{n_j} is the number of states on the shell \il{\Lambda_j}. We take the full Hamiltonian as our \il{\ham_j}. Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \il{\Lambda_N}. 
+\paragraph{Calculation of first term}
+The first term, the initial trace, is a sequential trace over all the states on the shell being disentangled. At each trace, we consider only electrons on the current degree of freedom and on shells below the current shell:
+\beq
+\fr{1}{2}\text{Tr}_{q\ua} \ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\text{Tr}_{q\ua}\cc{\epsilon_k \hat n_{q\ua}}\\
+&= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \fr{1}{2}\epsilon_q\\
+\fr{1}{2}\text{Tr}_{q\da} \fr{1}{2}\text{Tr}_{q\ua}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
+\eeq
+\beq[term1]
+\implies 2^{-n_j}\text{Tr}_{1,2,...,n_j}\ham_j &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{|q|=\Lambda_N}\epsilon_q\\
+\eeq
+\paragraph{Calculation of second term}
+The second term involves some other traces:
+\beq
+\text{Tr}_{q\beta}\rr{\ham c_{q\beta}} &= \sum_{k\sigma} V_k \text{Tr}_{q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}\\
+				       &= \sum_{k\sigma} V_k c_{d\sigma}\delta_{\sigma\beta}\delta_{kq}\\
+				       &= V_q c_{d\beta}
+\eeq
+\beq
+\text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham } &= V^*_q c^\dagger_{d\beta}
+\eeq
+\beq
+\ham^D &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}\\
+\text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \epsilon_q\\
+\eta_{q\beta} &= \text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\hat \omega - \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}\\
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} - \epsilon_q}\hat n_{q\beta}}\\
+	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega\tau_{q\beta} - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q}\tau_{q\beta}}\\
+\eeq
+At the last step, \textbf{\textcolor{red}{I replaced \il{\pmb{\hat \omega - \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma}\hat n_{q\beta} - \fr{1}{2}\rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q} }} with \il{\pmb{\omega\tau_{q\beta}}}}}. Note that since this term has a \il{c^\dagger_{d\beta}}, it will not vanish only when acting on a state with \il{\hat n_{d\beta} = 0}. Hence we can drop the terms \il{\hat n_{d\ua}\hat n_{d\da}} and \il{\epsilon_{d\beta}\hat n_{d\beta}} in the denominator. Also, since it has a \il{c_{q\beta}}, we can set the \il{\tau_{q\beta}} in the denominator to \hf. Putting together the individual pieces, we can now write the second term:
+\beq
+\sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}} &= \sum_{q\beta}\tau_{q\beta}\cc{V_q c^\dagger_{q\beta}c_{d\beta}, V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hf\rr{\omega - \epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}}}\\
+&= \sum_{q\beta}2\tau_{q\beta}\cc{V_q c^\dagger_{q\beta}c_{d\beta}, V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - \epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}}
+\eeq
+We now note that the factor with \il{\omega} can be written as follows:
+\beq
+\fr{1}{\omega - \epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}} &= \fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q - \epsilon_{d}} + \fr{1 -\hat n_{d\ol\beta}}{\omega - \epsilon_q }\\
+							     &= \hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }\\
+\eeq
+Since these terms commute with the other terms, they can be taken out of the anticommutator; what's left is
+\beq
+\cc{V_q c^\dagger_{q\beta}c_{d\beta}, V^*_q c^\dagger_{d\beta}c_{q\beta}} = |V_q|^2\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} + \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}} 
+\eeq
+The \il{\tau} and the \il{\hat n} can be multiplied:
+\begin{gather}
+	2\tau_{q\beta}\rr{1-\hat n_{q\beta}} = \rr{\hat n_{q\beta} - 1}\\
+	2\tau_{q\beta}\hat n_{q\beta} = \hat n_{q\beta}
 \end{gather}
-If we now disentangle the electron \il{q\ol\beta}, the changes will get exchanged:
+The total thing becomes
 \beq
-\xi_{d\beta}^\prime \ra \xi_{d\beta}^{\prime\prime} = \xi_{d\beta}^\prime + \Delta \xi_{d\ol\beta} = \xi_{d\beta} + \Delta \xi_{d\beta}+ \Delta \xi_{d\ol\beta} \equiv \Delta \xi_{dq}\\
-\xi_{d\ol\beta}^\prime \ra \xi_{d\ol\beta}^{\prime\prime} = \xi_{d\ol\beta}^\prime + \Delta \xi_{d\beta} = \xi_{d\beta} + \Delta \xi_{d\ol\beta}+ \Delta \xi_{d\beta}\equiv \Delta \xi_{dq}
+\sum_{q\beta}|V_q|^2\qq{\hat n_{d\beta}\rr{\hat n_{q\beta} - 1}+ \hat n_{q\beta}\rr{1-\hat n_{d\beta}}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }}\\
+							     =\sum_{q\beta}|V_q|^2\qq{\hat n_{q\beta}-\hat n_{d\beta}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }} 
 \eeq
-where
+\textbf{\textcolor{red}{Putting \il{\hat n_{q\beta} = 1}}}, and dropping the non-operator terms, we get
+\beq[term2]
+\sum_{\beta}\hat n_{d\beta}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}} -  \hat n_{d\ua}\hat n_{d\da}\sum_{q\beta}|V_q|^2\fr{\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d}}}
+\eeq
+The first term is the renormalization in on-site energy, \il{\sum_\beta \hat n_{d\beta}\Delta \epsilon_{d\beta}}, and the second term is the renormalization in the onsite repulsion, \il{\hat n_{d\ua}\hat n_{d\da}\Delta U}.
+\paragraph{Renormalized Hamiltonian}
+Combining eqs.~\ref{term1} and \ref{term2}, we get
 \beq
-\Delta \xi_{dq} &= \fr{1}{2} |V_q|^2\qq{\fr{\fr{1}{2}U - \xi_{d\ol\beta}}{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2} -\fr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}}\\
-		&=\fr{1}{2} |V_q|^2\fr{\fr{1}{2}U - \xi_{d\ol\beta} - \omega  - \fr{1}{2}\xi_{d\beta} + \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d\beta}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d\ol\beta}}^2}\\
+\ham_{N-1} = \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{|q|=\Lambda_N}\epsilon_q +\sum_\sigma \rr{\epsilon_{d\sigma} + \Delta \epsilon_{d\sigma}} \hat n_{d\sigma} +  \rr{U + \Delta U} \hat n_{d\ua} \hat n_{d\da}
 \eeq
-Since, initially, \il{\xi_{d\beta} = \xi_{d\ol\beta} \equiv \xi_d}, this simplifies to
+\it{The second term is the renormalization in the kinetic energy of the disentangled electrons, the  third term is the renormalized impurity site energy and the fourth term is the renormalized onsite repulsion.}
+\beq[impren]
+\Delta \epsilon_{d}^{N} \equiv \epsilon_{d}\big\vert_{N-1} - \epsilon_{d}\big\vert_{N} = \sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}} 
+\eeq
+According  to Hewson eq.~3.62 (page 68),
+\beq[hewson]
+\dv{\epsilon_d}{\ln D} = -\fr{\Delta}{\pi} + O(V^3)= -\rho_0 |V|^2 + O(V^3)
+\eeq
+in the limit of \il{U + \epsilon_d \gg D} and \il{|\epsilon_d|\ll D}, under the assumptions that \il{V_k} is independent of \il{k} and the conduction band is flat (\il{\rho(\epsilon) = \rho_0} for \il{\epsilon \in \qq{-D,D}}).
+\pb
+\textbf{\textcolor{red}{Assuming that we integrate out a ring at energy \il{D} and of thickness \il{-|\delta D|}, such that \il{\epsilon_q = D} everywhere on the ring}}, the number of available states is 
 \beq
-\Delta \xi_{dq} &= \fr{1}{2} |V_q|^2\fr{\fr{1}{2}U - \fr{3}{2}\xi_{d} - \omega  + \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}\\
+\delta n = \dv{n}{E} \times \delta E = \rho(D)\times |\delta D| 
 \eeq
-Similarly, after two disentanglings, \il{U} changes by
+We can then replace the summation in eq.~\ref{impren} by \il{\delta n}:
 \beq
-\Delta U = |V_q|^2\fr{\fr{1}{2}U - \xi_{d}}{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}
+\delta\epsilon_{d}(D) = |V|^2\rho(D)|\delta D| \fr{D - \omega + 2\epsilon_{d}}{\rr{\omega - D}\rr{\omega - D - \epsilon_{d}}} 
 \eeq
-Disentangling the entire shell (all \il{q}) gives
+where \il{\rho(D)} is the number of single-spin states on the shell D. This can be compared to eq.~\ref{hewson}. In two dimensions, the energy density of states is independent of energy. \textbf{\textcolor{red}{Setting \il{\pmb{\omega = 0}}}}, we get 
 \beq
-\Delta \xi_{d} &= \fr{1}{2} \sum_q |V_q|^2\fr{\fr{1}{2}U - \fr{3}{2}\xi_{d} - \omega  + \fr{1}{2}\epsilon_q }{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}\\
-\Delta U &= \sum_q |V_q|^2\fr{\fr{1}{2}U - \xi_{d}}{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}\epsilon_q}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}
+\delta\epsilon_{d}(D) &=|V|^2\rho(D)|\delta D|\fr{D + 2\epsilon_{d}}{D\rr{D + \epsilon_{d}}}\\
+		      &= |V|^2\rho(D)\fr{|\delta D|}{D}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}\\
 \eeq
-Assuming spherically-symmetric scattering, we can take out \il{|V_q|^2 = |V|^2}. For a spherical shell, we can set \il{\epsilon_q = D}, and the summation will produce a factor \il{n(D)}, the number of states on the shell.
+I used \il{\delta D = -|\delta D|}. Changing to continuum equation,
 \beq
-\Delta \xi_{d} &= \fr{1}{2} |V|^2 n(D) \fr{\fr{1}{2}U - \fr{3}{2}\xi_{d} - \omega  + \fr{1}{2}D }{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}D}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}\\
-\Delta U &= |V|^2 n(D) \fr{\fr{1}{2}U - \xi_{d}}{\rr{\omega  + \fr{1}{2}\xi_{d}- \fr{1}{2}D}^2 - \rr{ \fr{1}{4}U - \fr{1}{2}\xi_{d}}^2}
+\dv{\epsilon_d}{\ln D} &= -\fr{\Delta}{\pi}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}
 \eeq
+In the regime where the single-occupied impurity level is comfortably inside the conduction band (\il{D \gg |\epsilon_d|}), we can approximate both the numerator and denominator as simply \il{D}. Then,
+\begin{gather}
+\dv{\epsilon_d}{\ln D} = -\fr{\Delta}{\pi} \\
+\implies \epsilon_d + \fr{\Delta}{\pi}\log D = \text{constant}
+\end{gather}
+Turning to the general equation ~\ref{impren}, under the assumption of momentum-independent scattering, the continuum equation is
+\beq
+\dv{\epsilon_d}{\ln D} &= |V|^2n(D) \fr{\omega - D - 2\epsilon_{d}}{\rr{\omega - D}\rr{\omega - D - \epsilon_{d}}} \\
+		       &= |V|^2n(D) \rr{\fr{2}{\omega - D} - \fr{1}{\omega - D - \epsilon_d}} \\
+\eeq
+\il{n(D)} is not the density of states, but the total number of states on the shell at energy \il{D}. Similarly, the renormalization in \il{U} is
+\beq
+\delta U &= -\sum_{q\beta}|V_q|^2\fr{\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d}}}\\
+		       &= -|V|^2n(D) \sum_\beta\fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
+		       &= -2|V|^2n(D) \fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
+\implies \dv{U}{\ln D} &= 2|V|^2n(D) \fr{\epsilon_{d}}{\rr{\omega - D}\rr{\omega -D - \epsilon_{d}}}\\
+		       &= 2|V|^2n(D) \rr{\fr{1}{\omega - D - \epsilon_{d}} - \fr{1}{\omega - D}}
+\eeq
+In the penultimate step, I used the fact that since the onsite energy for either spin is same, the summation just returns a factor of 2.
+\pb
+\textcolor{red}{Putting \il{\omega = 0},}
+\beq
+\dv{\epsilon_d}{\ln D} &= |V|^2n(D) \rr{\fr{1}{D + \epsilon_d} - \fr{2}{D}} \\
+\dv{U}{\ln D}	       &= 2|V|^2n(D) \rr{\fr{1}{D} - \fr{1}{D + \epsilon_d}}
+\eeq
+
 
 \end{document}
 
