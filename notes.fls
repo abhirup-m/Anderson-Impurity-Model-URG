@@ -1,4 +1,4 @@
-PWD /home/kirito/storage/iphd_project_2
+PWD /home/abhirup/IPhD-Project-II
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT notes.tex
