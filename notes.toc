@@ -15,8 +15,8 @@
 \contentsline {subsection}{\numberline {1.9}Derivation of the Kondo Hamiltonian:}{14}{subsection.1.9}%
 \contentsline {subsection}{\numberline {1.10}Obtaining the resistivity minimum and \({\qopname \relax o{log}}\)-dependence}{17}{subsection.1.10}%
 \contentsline {subsubsection}{\numberline {1.10.1}First order scattering}{18}{subsubsection.1.10.1}%
-\contentsline {subsubsection}{\numberline {1.10.2}Second order scattering}{18}{subsubsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.11}The Kondo resonance}{21}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.10.2}Second order scattering}{19}{subsubsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.11}The Kondo resonance}{22}{subsection.1.11}%
 \contentsline {subsection}{\numberline {1.12}Adiabatic route to the Kondo resonance}{25}{subsection.1.12}%
 \contentsline {subsection}{\numberline {1.13}The Kondo temperature}{26}{subsection.1.13}%
 \contentsline {subsection}{\numberline {1.14}Poor man's scaling}{28}{subsection.1.14}%
@@ -40,15 +40,15 @@
 \contentsline {subsection}{\numberline {1.21}Renormalized perturbation theory}{56}{subsection.1.21}%
 \contentsline {subsubsection}{\numberline {1.21.1}Friedel sum rule}{61}{subsubsection.1.21.1}%
 \contentsline {subsection}{\numberline {1.22}Scaling of Anderson model}{62}{subsection.1.22}%
-\contentsline {section}{\numberline {2}URG Formalism}{80}{section.2}%
-\contentsline {section}{\numberline {3}Kondo Model URG}{89}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Calculation of renormalized Hamiltonian}{89}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Fixed-point Hamiltonian}{95}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Some entanglement measures}{98}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Local Fermi liquid Hamiltonian}{100}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Calculation of susceptibility from partition function}{104}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Effective Hamiltonian of Kondo cloud}{106}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Anderson Model URG}{112}{section.4}%
-\contentsline {paragraph}{Calculation of first term}{112}{section*.8}%
-\contentsline {paragraph}{Calculation of second term}{112}{section*.9}%
-\contentsline {paragraph}{Renormalized Hamiltonian}{114}{section*.10}%
+\contentsline {section}{\numberline {2}URG Formalism}{81}{section.2}%
+\contentsline {section}{\numberline {3}Kondo Model URG}{90}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Calculation of renormalized Hamiltonian}{90}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fixed-point Hamiltonian}{96}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Some entanglement measures}{99}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Local Fermi liquid Hamiltonian}{101}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Calculation of susceptibility from partition function}{105}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Effective Hamiltonian of Kondo cloud}{107}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Anderson Model URG}{113}{section.4}%
+\contentsline {paragraph}{Calculation of first term}{113}{section*.8}%
+\contentsline {paragraph}{Calculation of second term}{113}{section*.9}%
+\contentsline {paragraph}{Renormalized Hamiltonian}{115}{section*.10}%
