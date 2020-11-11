@@ -4277,9 +4277,9 @@ For convenience later, I first compute a specific quantity:
 \beq
 \text{Tr}_2\rr{\ham_1^D \hat n_2} &= \wl{H}^D_0 + \epsilon_2 + |V_1|^2\tau_1\text{Tr}_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_1}\hat n_1}}\\
 &= \wl{H}^D_0 + \epsilon_2 + |V_1|^2\tau_1\text{Tr}_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_1}\hat n_1}}\\
-&= \wl{H}^D_0 + \epsilon_2 + 2|V_1|^2\tau_1\text{Tr}_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{ \omega - \rr{\epsilon_d \hat n_{d\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_1}}}\\
-&= \wl{H}^D_0 + \epsilon_2 + 2|V_1|^2\tau_1\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1} \text{Tr}_2\qq{\fr{1}{ \omega - \rr{\epsilon_d \hat n_{d\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_1}}}\\
-&= \wl{H}^D_0 + \epsilon_2 + |V_1|^2\rr{\hat n_1 - \hat n_{d\sigma_1}} \qq{\fr{1}{ \omega - \rr{\epsilon_d \hat n_{d\sigma_1} + \epsilon_1}} + \fr{1}{ \omega - \rr{\epsilon_{d} \hat n_{d\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+&= \wl{H}^D_0 + \epsilon_2 + 2|V_1|^2\tau_1\text{Tr}_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{ \omega - \rr{\epsilon_d \sum_\sigma\hat n_{d\sigma} + \epsilon_2 \hat n_2 + \epsilon_1}}}\\
+&= \wl{H}^D_0 + \epsilon_2 + 2|V_1|^2\tau_1\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1} \text{Tr}_2\qq{\fr{1}{ \omega - \rr{\epsilon_d \sum_\sigma\hat n_{d\sigma} + \epsilon_2 \hat n_2 + \epsilon_1}}}\\
+&= \wl{H}^D_0 + \epsilon_2 + |V_1|^2\rr{\hat n_1 - \hat n_{d\sigma_1}} \qq{\fr{1}{ \omega - \rr{\epsilon_d \sum\hat n_{d\sigma} + \epsilon_1}} + \fr{1}{ \omega - \rr{\epsilon_{d} \sum \hat n_{d\sigma} + \epsilon_2 + \epsilon_1}}}\\
 &= \wl{H}^D_0 + \epsilon_2 + \rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega)
 \eeq
 Now the individual terms can be calculated:
@@ -4292,9 +4292,27 @@ Now the individual terms can be calculated:
 				    &= \hf\epsilon_2\tau_2 + \hf\tau_2\rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega)
 \eeq
 \beq
-\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_{1} c_{2}},\eta_{2}} &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{\wl{H}^D_0 + \epsilon_2 + \rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega)}\hat n_2}}\\
-								    &= 2\tau_2 \fr{1}{\hat \omega^\prime - \qq{\wl{H}^D_0 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}|V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2}\\
-				    &= \fr{1}{\hat \omega^\prime - \qq{\wl{H}^D_0 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}|V_2|^2\qq{\hat n_2 - \hat n_{d\sigma_2}}
+				    &\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_{1} c_{2}},\eta_{2}}\\
+				    &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{\wl{H}^D_0 + \epsilon_2 + \rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega)}\hat n_2}}\\
+								    &= 2\tau_2 \fr{1}{\omega^\prime - \qq{\epsilon_d \sum\hat n_{d\sigma} + \fr{3}{2}\epsilon_1 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}|V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2}\\
+								    &= |V_2|^2\qq{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d \sum\hat n_{d\sigma} + \fr{3}{2}\epsilon_1 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}\label{thirdterm}
+\eeq
+The \il{\fr{3}{2}} term comes from the \il{\tau_1} part in \il{\ol H_0} and then putting \il{\tau_1 = 1}. 
+To simplify these terms, we will put \il{\hat n_1 = \hat n_2 = 1}. Then,
+\beq
+				    &\rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega) = \rr{1 - \hat n_{d\sigma_1}} A(\omega)\\
+					     &= \rr{1 - \hat n_{d\sigma_1}}\qq{\fr{1}{ \omega - \rr{\epsilon_d \hat n_{d\ol\sigma_1} + \epsilon_1}} + \fr{1}{ \omega - \rr{\epsilon_{d}\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+					     &= \rr{1 - \hat n_{d\sigma_1}}\epsilon_2 \hat n_{d\ol\sigma_1}\left[\fr{1}{\rr{\omega -\epsilon_1 - \epsilon_2}\rr{\omega -\epsilon_1}} - \fr{1}{\rr{\omega -\epsilon_1 - \epsilon_d}\rr{\omega -\epsilon_1 - \epsilon_2 - \epsilon_d}}\right]
+\eeq
+I dropped a constant term at the last step.
+\beq
+\rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega) =  A_1(\omega) \hat n_{d\ol\sigma_1} + A_2(\omega)\hat n_{d\ua}\hat n_{d\da}
+\eeq
+Eq.~\ref{thirdterm} becomes
+\beq
+					     &|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d \hat n_{d\ol\sigma_2} + \fr{3}{2}\epsilon_1 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}\\
+					     &=|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \epsilon_d \hat n_{d\ol\sigma_2} - \fr{3}{2}\epsilon_1 - \epsilon_2 - A_1(\omega) \hat n_{d\ol\sigma_1} - A_2(\omega)\hat n_{d\ua}\hat n_{d\da}}\\
+					     &=
 \eeq
 
 
