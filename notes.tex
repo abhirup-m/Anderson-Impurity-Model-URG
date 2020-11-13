@@ -3529,7 +3529,7 @@ The anticommutator can now be evaluated:
 					     &= \sum_{a,b}\sum_{k,k^\prime<\Lambda^*\atop{\alpha\gamma}} \cc{{S^a}{\sigma^a}_{\beta\gamma}c^\dagger_{q\beta} c_{k^\prime\gamma},{S^b}{\sigma^b}_{\alpha\beta}c^\dagger_{k\alpha} c_{q\beta}}\\
 					     &= \sum_{a,b}\sum_{k,k^\prime<\Lambda^*\atop{\alpha\gamma}} \qq{{S^a}{S^b}{\sigma^a}_{\beta\gamma}{\sigma^b}_{\alpha\beta}\hat n_{q\beta} c_{k^\prime\gamma} c^\dagger_{k\alpha}+ {S^b}{S^a}{\sigma^b}_{\alpha\beta}{\sigma^a}_{\beta\gamma} \rr{1 - \hat n_{q\beta}} c^\dagger_{k\alpha}c_{k^\prime\gamma} }\\
 \eeq
-
+\comm{
 Since we will replace \il{\hat \omega} with some function of \il{\tau_l}, the fraction with \il{\omega} will commute with all the operators.
 Therefore,
 
@@ -3615,10 +3615,14 @@ Taking the term with \il{1-\hat n_{q\beta}} as the renormalizing term, the renor
 &=\fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}} \\
 \eeq
 Combining eqs.~\ref{fir},~\ref{aluka} and ~\ref{mirai}, the renormalized Hamiltonian is
+}
+\textcolor{red}{After lots of calculation,}
 \beq[rgeqt]
 \ham_{j-1} = {\sum_{k,k^\prime\atop{\alpha,\alpha^\prime}}}^<\rr{\epsilon_k \hat n_{k\alpha} + \fr{J}{2}\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime}c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}} + n_j \epsilon_j -\fr{J^2}{2}\fr{\omega - \fr{\epsilon_j}{2}}{\rr{\omega - \fr{\epsilon_j}{2}}^2 - \fr{J^2}{64}}\sum_{|q|=\Lambda_j}S^zs^z_q \\
 + \fr{J^2}{4}\sum_{|k|,|k^\prime|<\Lambda_j\atop{\alpha,\alpha^\prime}}c^\dagger_{k\alpha} c_{k^\prime\alpha^\prime}\sum_{|q|=\Lambda_j,\beta}\fr{\tau_{q\beta}}{\rr{2\omega\tau_{q\beta}-\xi_{q\beta}\tau_{q\beta}}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\alpha\beta}}\rr{\mathbf{S}\cdot \mathbf{\sigma}_{\beta\alpha^\prime}}
 \eeq
+
+
 \subsection{Fixed-point Hamiltonian}
 The RG starts from \il{j=N} and runs down to \il{j^*<N}.
 As a result, integrating out the \il{j^\text{th}} Hamiltonian gives the \il{(j-1)^\text{th}} Hamiltonian.
@@ -4220,6 +4224,7 @@ In the penultimate step, I used the fact that since the onsite energy for either
 \dv{U}{\ln D}	       &= 2|V|^2n(D) \rr{\fr{1}{D} - \fr{1}{D + \epsilon_d}}
 \eeq
 
+\comm{
 \subsection*{Two electrons on shell}
 Designate the two electrons as \il{q_1\beta_1 \equiv 1,q_2\beta_2 \equiv 2}
 \beq[andersonmodel]
@@ -4311,13 +4316,11 @@ I dropped a constant term at the last step.
 Eq.~\ref{thirdterm} becomes
 \beq
 					     &|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d \hat n_{d\ol\sigma_2} + \fr{3}{2}\epsilon_1 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}\\
-					     &=|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \epsilon_d \hat n_{d\ol\sigma_2} - \fr{3}{2}\epsilon_1 - \epsilon_2 - A_1(\omega) \hat n_{d\ol\sigma_1} - A_2(\omega)\hat n_{d\ua}\hat n_{d\da}}\\
-					     &=
+					     &=|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \epsilon_d \hat n_{d\ol\sigma_2} - \fr{3}{2}\epsilon_1 - \epsilon_2 - A_1(\omega) \hat n_{d\ol\sigma_1} - A_2(\omega)\hat n_{d\ua}\hat n_{d\da}}
 \eeq
 
 
 
-\comm{
 \beq
 \ham_{2,1}&=\hf\text{Tr}_{2}\ham_1 + \tau_2\text{Tr}_2\rr{\ham_1 \tau_2} +\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_1 c_{2}},\eta_{2}}\\
 	&=\hf\text{Tr}_{2}\qq{\hf\text{Tr}_{1}\ham + \tau_1\text{Tr}_1\rr{\ham \tau_1} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}}\\
@@ -4393,44 +4396,169 @@ Therefore,
 }
 
 \subsection*{Three electrons on shell}
+Designate the three electrons as \il{q_1\beta_1 \equiv 1,q_2\beta_2 \equiv 2} and \il{q_3\beta_3 \equiv 3}.
+\beq[andersonmodel]
+\ham &= \qq{\sum_{k<\Lambda_N,\sigma}\rr{\epsilon_k \hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} + \sum_\sigma \epsilon_d \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da}} \\
+     &+ \qq{\epsilon_{q_1} \hat n_{{q_1}\beta_1} + V_{q_1} c^\dagger_{{q_1}\beta_1}c_{d\beta_1} + \text{h.c.}}\\
+     &+ \qq{\epsilon_k \hat n_{k\beta_2} + V_k c^\dagger_{k\beta_2}c_{d\beta_2} + \text{h.c.}}\\
+     &+ \qq{\epsilon_k \hat n_{k\beta_3} + V_k c^\dagger_{k\beta_3}c_{d\beta_3} + \text{h.c.}}\\
+     &= H_0 + H_1 + H_2 + H_3
+\eeq
+\comm{
 \beq
-\ham = H_0 + H_1 + H_2 + H_3
+\ham_{1}&=\hf\text{Tr}_{1}\ham + \tau_{1}\text{Tr}_{1}\rr{\ham \tau_{1}} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}\\
+\ham_{2}&=\hf\text{Tr}_{2}\ham_1 + \tau_{2}\text{Tr}_{2}\rr{\ham_1 \tau_{2}} + \tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_1 c_{2}},\eta_{2}}\\
+	&\quad+ \tau_{2}\text{Tr}_{2}\rr{\qq{\ham_1} \tau_{2}}\\
+	&\quad+ \tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\qq{\ham_1} c_{2}},\eta_{2}}\\
+	&=\hf\text{Tr}_{2}\qq{\hf\text{Tr}_{1}\ham + \tau_{1}\text{Tr}_{1}\rr{\ham \tau_{1}} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}}\\
+	&\quad+ \tau_{2}\text{Tr}_{2}\rr{\qq{\hf\text{Tr}_{1}\ham + \tau_{1}\text{Tr}_{1}\rr{\ham \tau_{1}} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}} \tau_{2}}\\
+	&\quad+ \tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\qq{\hf\text{Tr}_{1}\ham + \tau_{1}\text{Tr}_{1}\rr{\ham \tau_{1}} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}} c_{2}},\eta_{2}}
 \eeq
-where
+Writing the terms individually:
 \beq
-H_0 = \sum_{k<\Lambda_N,\sigma}\rr{\epsilon_k \hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} + \sum_\sigma \epsilon_d \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da}
+\ham_2	&=\fr{1}{4}\text{Tr}_{1,2}\rr{\ham} +\hf\sum_{i=1,2} \tau_i\text{Tr}_{i,\ol i}\rr{\ham \tau_i}\\
+	&+\tau_1\tau_2\text{Tr}_{1,2}\rr{\ham \tau_1\tau_2}\\
+	&+\hf \tau_1\text{Tr}_2\cc{c_1^\dagger\text{Tr}_1\rr{\ham c_1},\eta_1}\\
+	&+\hf \tau_2\cc{c_2^\dagger\text{Tr}_2\qq{\text{Tr}_1\rr{\ham} c_2},\eta_2}\\
+	&+\tau_2\cc{c_2^\dagger\text{Tr}_2\qq{\tau_1 \text{Tr}_1\rr{\ham c_1}c_2},\eta_2}\\
+	&+\tau_1 \tau_2\text{Tr}_2\rr{\cc{c_1^\dagger\text{Tr}_1\rr{\ham c_1},\eta_1}\tau_2}\\
+	&+\tau_2\cc{c_2^\dagger\text{Tr}_2\qq{\tau_1\cc{c_1^\dagger\text{Tr}_1\rr{\ham c_1},\eta_1}c_2},\eta_2}\\
 \eeq
-and
+}
 \beq
-H_{i>0} = \epsilon_k \hat n_{k\beta_i} + V_k c^\dagger_{k\beta_i}c_{d\beta_i} + \text{h.c.}
+\ham_{1}&=\hf\text{Tr}_{1}\ham + \tau_1\text{Tr}_1\rr{\ham \tau_1} + \tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}}
 \eeq
-The first rotated Hamiltonian is
+For a better view, we can compute this Hamiltonian for the model eq.~\ref{andersonmodel}.
 \beq
-\ham_1 = H_0 + H_2 + H_3 + \hf\rr{\tau_1 + 1}\epsilon_1 + |V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}
+\hf\text{Tr}_{1}\ham &= H_0 + H_2 + H_3 + \hf\epsilon_1\\
+\tau_1\text{Tr}_1\rr{\ham \tau_1} &= \hf\epsilon_1\tau_1\\
+\tau_{1}\cc{c^\dagger_{1}\text{Tr}_{1}\rr{\ham c_{1}},\eta_{1}} &= \tau_1 |V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 +\epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}
 \eeq
-We can write this thing as
-\beq[ham2]
-\ham_1 = \wl{H_0} + \epsilon_2 \hat n_2 + |V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}} + V_2 c^\dagger_2 c_{d\sigma_2} + \text{h.c.}
+Therefore, dropping the constant \il{\hf\epsilon_1},
+\beq[ham22]
+\ham_1 &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2\tau_1 \cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}\hat n_1}}\\
+       &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2\tau_1 \cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\epsilon_d\sum_\sigma\hat n_{d\sigma} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}\hat n_1}}\\
+       &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2\tau_1 \cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{2}{\omega - \rr{\epsilon_d\sum_\sigma\hat n_{d\sigma} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}}\\
+       &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2 2\tau_1 \cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}}\\
+       &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2 \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}2\tau_1 \cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1} \\
+       &= H_0 + H_2 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2 \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}\rr{\hat n_1 - \hat n_{d\sigma_1}}
 \eeq
-where the first term \il{\wl{H_0} = H_0 + H_3 + \hf\rr{\tau_1 + 1}\epsilon_1} is the part without any 2, the second and third terms are diagonal in 2 and the final terms cause number fluctuations in 2.
-The next Hamiltonian is
+The next rotated Hamiltonian is
 \beq
-\ham_{2,1} = \hf\text{Tr}_{2}\ham_1 + \tau_2\text{Tr}_2\rr{\ham_1 \tau_2} +\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_1 c_{2}},\eta_{2}}
+\ham_{2}&=\hf\text{Tr}_{2}\ham_{1} + \tau_2\text{Tr}_2\rr{\ham_{1} \tau_2} + \tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_{1} c_{2}},\eta_{2}}
 \eeq
-Applying this on the Hamiltonian eq.~\ref{ham2} will give:
+This can be evaluated by substituting eq.~\ref{ham22} into this expression.
+For convenience later, I first compute a specific quantity:
 \beq
-\hf\text{Tr}_{2}\ham_1 &= \wl{H_0} + \hf\epsilon_2 + \hf|V_1|^2\text{Tr}_{2}\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}\\
-&= \wl{H_0} + \hf\epsilon_2 + \hf|V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}\\
-&+ \hf|V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}\\
+\ham_1^D &= H_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 + \hf\epsilon_1 \tau_1 + |V_1|^2 \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}\rr{\hat n_1 - \hat n_{d\sigma_1}}\\
+\text{Tr}_2\rr{\ham_1^D \hat n_2} &= {H}^D_0 + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2 \\
+				  &+ |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\text{Tr}_2\qq{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}\hat n_2}\\
+&= {H}^D_0 + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 \hat n_3 +\epsilon_1}}\\
+&= {H}^D_0 + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}A(\omega,\epsilon_2)
+\eeq
+where \il{A(\omega,\epsilon_2) \equiv |V_1|^2\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 \hat n_3 +\epsilon_1}}}.
+Now the individual terms can be calculated:
+\beq
+\hf\text{Tr}_{2}\ham_1 &= H_0 + H_3 + \hf\tau_1\epsilon_1 + \hf\epsilon_2 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\text{Tr}_2\qq{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}}\\
+		       &= H_0 + H_3 + \hf\tau_1\epsilon_1 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{A(\omega,\epsilon_2) + A(\omega,0)}
 \eeq
 \beq
-\tau_2\text{Tr}_2\rr{\ham_1 \tau_2} &= \tau_2\text{Tr}_2\rr{\epsilon_2 \hat n_2 \tau_2+ |V_1|^2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}\tau_2}\\
-				    &= \hf\epsilon_2\tau_2 + \hf|V_1|^2\tau_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_2 + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}\\
-				    &- \hf|V_1|^2\tau_2\cc{c_1^\dagger c_{d\sigma_1}, c^\dagger_{d\sigma_1}c_1 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_3 \hat n_3 + \epsilon_1}\hat n_1}}
+\tau_2\text{Tr}_2\rr{\ham_1 \tau_2} &= \tau_2\text{Tr}_2\rr{\epsilon_2 \hat n_2 \tau_2 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}}\tau_2}\\
+				    &= \hf\epsilon_2\tau_2 + |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\tau_2 \text{Tr}_2\qq{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 \hat n_2 + \epsilon_3 \hat n_3 +\epsilon_1}}\tau_2}\\
+				    &= \hf\epsilon_2\tau_2 +  \hf|V_1|^2\rr{\hat n_1 - \hat n_{d\sigma_1}}\tau_2\qq{A(\omega,\epsilon_2) - A(\omega,0)}\\
 \eeq
 \beq
-\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_1 c_{2}},\eta_{2}} &= |V_2|^2 \tau_{2}\cc{c^\dagger_{2}c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2 \fr{1}{\hat \omega - \rr{\ham_0^D + \epsilon_1 \hat n_1 + \epsilon_3 \hat n_3 + \epsilon_2}\hat n_2}}
+				    &\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_{1} c_{2}},\eta_{2}}\\
+				    &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{{H}^D_0 + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2 + |V_1|^2\rr{\hat n_1 - \hat n_{d\sigma_1}} A_2(\omega,\epsilon_2)}\hat n_2}}\\
+				    &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{\epsilon_d\sum_\sigma \hat n_{d\sigma} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}\hat n_2}}
 \eeq
-
+In the last step I absorbed the kinetic energy of the lower shells as well as dropped the \il{A_2(\omega)} because we are ignoring the renormalization of the \il{\omega} by the previous \il{\omega} on the same shell.
+\beq
+				    &\tau_{2}\cc{c^\dagger_{2}\text{Tr}_{2}\rr{\ham_{1} c_{2}},\eta_{2}}\\
+				    &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{\epsilon_d\sum_\sigma \hat n_{d\sigma} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}\hat n_2}}\\
+				    &= \tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2\fr{1}{\hat \omega^\prime - \qq{\epsilon_d \hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}\hat n_2}}\\
+				    &= 2\tau_2 |V_2|^2\cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\\
+				    &= |V_2|^2 2\tau_2 \cc{c^\dagger_2 c_{d\sigma_2},c^\dagger_{d\sigma_2}c_2}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\\
+								    &= |V_2|^2\qq{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\label{thirdterm}
+\eeq
+\comm{
+To simplify these terms, we will put \il{\hat n_1 = \hat n_2 = 1}. Then,
+\beq
+				    &\rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega) = \rr{1 - \hat n_{d\sigma_1}} A(\omega)\\
+					     &= \rr{1 - \hat n_{d\sigma_1}}\qq{\fr{1}{ \omega - \rr{\epsilon_d \hat n_{d\ol\sigma_1} + \epsilon_1}} + \fr{1}{ \omega - \rr{\epsilon_{d}\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+					     &= \rr{1 - \hat n_{d\sigma_1}}\epsilon_2 \hat n_{d\ol\sigma_1}\left[\fr{1}{\rr{\omega -\epsilon_1 - \epsilon_2}\rr{\omega -\epsilon_1}} - \fr{1}{\rr{\omega -\epsilon_1 - \epsilon_d}\rr{\omega -\epsilon_1 - \epsilon_2 - \epsilon_d}}\right]
+\eeq
+I dropped a constant term at the last step.
+\beq
+\rr{\hat n_1 - \hat n_{d\sigma_1}} A(\omega) =  A_1(\omega) \hat n_{d\ol\sigma_1} + A_2(\omega)\hat n_{d\ua}\hat n_{d\da}
+\eeq
+Eq.~\ref{thirdterm} becomes
+\beq
+					     &|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d \hat n_{d\ol\sigma_2} + \fr{3}{2}\epsilon_1 + \epsilon_2 + A(\omega)\rr{\hat n_1 - \hat n_{d\sigma_1}}}}\\
+					     &=|V_2|^2\qq{1 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \epsilon_d \hat n_{d\ol\sigma_2} - \fr{3}{2}\epsilon_1 - \epsilon_2 - A_1(\omega) \hat n_{d\ol\sigma_1} - A_2(\omega)\hat n_{d\ua}\hat n_{d\da}}\\
+					     &=
+				     \eeq}
+				     The total second step Hamiltonian is (dropping a constant term)
+\beq
+	\ham_2 &= H_0 + H_3 + \hf\tau_1\epsilon_1 +  |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{A(\omega,\epsilon_2) + A(\omega,0)} + \hf\epsilon_2\tau_2 \\
+	       &+ \hf|V_1|^2\rr{\hat n_1 - \hat n_{d\sigma_1}}\tau_2\qq{A(\omega,\epsilon_2) - A(\omega,0)} \\
+	       &+ |V_2|^2\qq{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\\
+	       &= H_0 + H_3 + \hf\qq{\epsilon_1\tau_1 + \epsilon_2\tau_2} \\
+	       &+ |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{A(\omega,\epsilon_2) + A(\omega,0) + \hf\tau_2\cc{A(\omega,\epsilon_2) - A(\omega,0)}} \\
+	       &+ |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\\
+\eeq
+To get the next step Hamiltonian, we again compute the same terms, but now with this Hamiltonian.
+\beq
+	\ham_2^D &= H_0^D + \epsilon_3 \hat n_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}\\
+	       &+ |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{A(\omega,\epsilon_2) + A(\omega,0) + \hf\tau_2\cc{A(\omega,\epsilon_2) - A(\omega,0)}} \\
+	       &+ |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 \hat n_3+ \epsilon_2}}\\
+	\text{Tr}_3\rr{\ham_2^D \hat n_3} &= H_0^D + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2} + |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}}\\
+					  &+ |V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\qq{A(\omega,\epsilon_2) + A(\omega,0) + \hf\tau_2\cc{A(\omega,\epsilon_2) - A(\omega,0)}}_{\hat n_3 = 1} \\
+\eeq
+Note that this term will go in the denominator of \il{\eta_3} and hence will renormalize the next quantum fluctuation operator, \il{\omega^{\prime\prime}}.
+Since we are ignoring the renormalization of \il{\omega^{\prime\prime}} by its previous counterparts on the same shell, we can drop the terms containing \il{\omega} and \il{\omega^\prime} in this term:
+\beq
+\text{Tr}_3\rr{\ham_2^D \hat n_3} = H_0^D + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}
+\eeq
+\beq[fterm1]
+	\hf\text{Tr}_3\rr{\ham_2} &= H_0 + \hf\qq{\epsilon_1\tau_1 + \epsilon_2\tau_2} + \hf\epsilon_3 \\
+				  + |V_1|^2& \rr{\hat n_1 - \hat n_{d\sigma_1}}\text{Tr}_3\qq{A(\omega,\epsilon_2) + A(\omega,0) + \hf\tau_2\cc{A(\omega,\epsilon_2) - A(\omega,0)}} \\
+				  + |V_2|^2&\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
+				  = H_0 &+ \hf\qq{\epsilon_1\tau_1 + \epsilon_2\tau_2} + \hf\epsilon_3 \\
+				  + |V_1|^2& \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 + \hf\tau_2}|V_1|^2\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 + \epsilon_1}} + \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+				  + |V_1|^2& \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}|V_1|^2\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_3 + \epsilon_1}} + \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
+				  + |V_2|^2&\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}
+\eeq
+\beq[fterm2]
+					   &\tau_3\text{Tr}_3\rr{\ham_2 \tau_3} = \hf \epsilon_3\tau_3 +\\
+					   &    \tau_3|V_1|^2 \rr{\hat n_1 - \hat n_{d\sigma_1}}\text{Tr}_3\rr{\qq{A(\omega,\epsilon_2) + A(\omega,0) + \hf\tau_2\cc{A(\omega,\epsilon_2) - A(\omega,0)}}\tau_3}\\
+					   &  + \tau_3\hf|V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} - \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
+					   &=\hf \epsilon_3\tau_3 \\
+					   &  +\hf|V_1|^2 \tau_3\rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 + \hf\tau_2}|V_1|^2\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 + \epsilon_1}} - \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+					   &  +\hf|V_1|^2 \tau_3\rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}|V_1|^2\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} -  \epsilon_3 + \epsilon_1}} - \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
+					   &  +\hf|V_2|^2\tau_3\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} - \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}
+\eeq
+\beq[fterm3]
+&\tau_{3}\cc{c^\dagger_{3}\text{Tr}_{3}\rr{\ham_{2} c_{3}},\eta_{3}}\\
+&= \tau_3|V_3|^2 \cc{c^\dagger_3 c_{d\sigma_3}, c_{d\sigma_3}^\dagger c_3\fr{1}{\hat \omega^{\prime\prime} - \rr{H_0^D + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}\hat n_3}}\\
+&= 2\tau_3|V_3|^2 \cc{c^\dagger_3 c_{d\sigma_3}, c_{d\sigma_3}^\dagger c_3}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}\\
+&= |V_3|^2 \rr{\hat n_3 - \hat n_{d\sigma_3}}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}
+\eeq
+Adding the three terms in eqs.~\ref{fterm1}, \ref{fterm2} and \ref{fterm3}, we get the Hamiltonian after disentangling three electrons:
+\beq
+&\ham_3\\
+&= H_0 + \hf\qq{\epsilon_1\tau_1 + \epsilon_2\tau_2} + \hf \epsilon_3\tau_3 \\
+& + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 + \hf\tau_2}\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 + \epsilon_1}} + \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+& + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_3 + \epsilon_1}} + \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
+& + |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
+& +\hf\tau_3|V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 + \hf\tau_2}\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 + \epsilon_1}} - \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+& +\hf\tau_3|V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}\rr{\fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} -  \epsilon_3 + \epsilon_1}} - \fr{1}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
+& +\hf\tau_3|V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} - \fr{1}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
+& + |V_3|^2 \rr{\hat n_3 - \hat n_{d\sigma_3}}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}\\
+&= H_0 + \hf\qq{\epsilon_1\tau_1 + \epsilon_2\tau_2} + \hf \epsilon_3\tau_3 \\
+& + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 + \hf\tau_2}\rr{\fr{1 + \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_3 + \epsilon_1}} + \fr{1 - \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} + \epsilon_2 + \epsilon_1}}}\\
+& + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}\rr{\fr{1 + \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_3 + \epsilon_1}} + \fr{1 - \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
+& + |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1 + \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1 - \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
+& + |V_3|^2 \rr{\hat n_3 - \hat n_{d\sigma_3}}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}
+\eeq
 \end{document}
-

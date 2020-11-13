@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.11.11)  11 NOV 2020 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.11.11)  13 NOV 2020 19:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1008,75 +1008,90 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 3413.
 
-[91] [92] [93] [94] [95] [96]
-Underfull \hbox (badness 10000) in paragraph at lines 3660--3668
+[91] [92] [93]
+Underfull \hbox (badness 10000) in paragraph at lines 3664--3672
 
  []
 
-[97] [98] [99] [100]
-Overfull \hbox (12.49586pt too wide) in paragraph at lines 3766--3771
+[94] [95] [96] [97]
+Overfull \hbox (12.49586pt too wide) in paragraph at lines 3770--3775
 \T1/cmr/m/n/14.4 We thus have the con-clu-sion that all par-tial sys-tems (imp, cloud,LFL, imp+cloud, cloud+LFL,
  []
 
-[101] [102] [103] [104] [105] [106] [107] [108]
-Overfull \hbox (59.85463pt too wide) in paragraph at lines 4003--4007
-\T1/cmr/m/n/14.4 We can cal-cu-late the com-mu-ta-tor by look-ing at the ex-pres-sion of $[]$ from eq. []3.62[]: $[]$.
+[98] [99] [100] [101] [102] [103] [104] [105]
+Overfull \hbox (59.85463pt too wide) in paragraph at lines 4007--4011
+\T1/cmr/m/n/14.4 We can cal-cu-late the com-mu-ta-tor by look-ing at the ex-pres-sion of $[]$ from eq. []3.42[]: $[]$.
  []
 
-[109]
-Underfull \hbox (badness 10000) in paragraph at lines 4046--4052
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 4050--4056
 
  []
 
-[110]
-Overfull \hbox (21.9261pt too wide) in paragraph at lines 4067--4077
+[107]
+Overfull \hbox (21.9261pt too wide) in paragraph at lines 4071--4081
 \T1/cmr/m/n/14.4 We want to look at the ex-ci-ta-tions of the Kondo model in the ground state of the cloud+impurity
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4067--4077
+Underfull \hbox (badness 10000) in paragraph at lines 4071--4081
 
  []
 
-[111] [112] [113] [114]
-Underfull \hbox (badness 10000) in paragraph at lines 4171--4176
+[108] [109] [110] [111]
+Underfull \hbox (badness 10000) in paragraph at lines 4175--4180
 
  []
 
-[115]
-Underfull \hbox (badness 10000) in paragraph at lines 4214--4219
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 4218--4223
 
  []
 
-[116]
-Underfull \hbox (badness 10000) in paragraph at lines 4268--4273
+[113]
+Overfull \hbox (12.38225pt too wide) detected at line 4445
+[][][]
+ []
 
+[114]
+Overfull \hbox (7.48553pt too wide) detected at line 4458
+[][][]
+ []
+
+
+Overfull \hbox (6.24751pt too wide) detected at line 4464
+[][][]
+ []
+
+[115] [116]
+Overfull \hbox (2.51572pt too wide) detected at line 4517
+[][][]
+ []
+
+
+Overfull \hbox (22.40308pt too wide) detected at line 4531
+[][][]
  []
 
 [117]
-Overfull \hbox (15.96231pt too wide) detected at line 4284
+Overfull \hbox (28.23051pt too wide) detected at line 4540
 [][][]
  []
 
-[118]
-Overfull \hbox (7.96701pt too wide) detected at line 4410
-[][][]
- []
-
-[119] [120]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4435.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4435.
+[118] [119]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4564.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4564.
  (./notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4435.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4435.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4564.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4564.
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 4BA9A313D6F554BCE8C973F62953E2E8;4029.
  ) 
 Here is how much of TeX's memory you used:
- 19931 strings out of 480478
- 356806 string characters out of 5905958
- 608902 words of memory out of 5000000
- 34565 multiletter control sequences out of 15000+600000
+ 19903 strings out of 480478
+ 356440 string characters out of 5905958
+ 621804 words of memory out of 5000000
+ 34564 multiletter control sequences out of 15000+600000
  549548 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,20n,79p,876b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1087,10 +1102,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on notes.pdf (120 pages, 1215258 bytes).
+Output written on notes.pdf (119 pages, 1211287 bytes).
 PDF statistics:
- 2062 PDF objects out of 2073 (max. 8388607)
- 1882 compressed objects within 19 object streams
- 1013 named destinations out of 1200 (max. 500000)
+ 2024 PDF objects out of 2073 (max. 8388607)
+ 1845 compressed objects within 19 object streams
+ 986 named destinations out of 1000 (max. 500000)
  440 words of extra memory for PDF output out of 10000 (max. 10000000)
 

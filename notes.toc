@@ -43,12 +43,12 @@
 \contentsline {section}{\numberline {2}URG Formalism}{81}{section.2}%
 \contentsline {section}{\numberline {3}Kondo Model URG}{90}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Calculation of renormalized Hamiltonian}{90}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Fixed-point Hamiltonian}{96}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Some entanglement measures}{99}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Local Fermi liquid Hamiltonian}{101}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Calculation of susceptibility from partition function}{105}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Effective Hamiltonian of Kondo cloud}{107}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Anderson Model URG}{113}{section.4}%
-\contentsline {paragraph}{Calculation of first term}{113}{section*.8}%
-\contentsline {paragraph}{Calculation of second term}{113}{section*.9}%
-\contentsline {paragraph}{Renormalized Hamiltonian}{115}{section*.10}%
+\contentsline {subsection}{\numberline {3.2}Fixed-point Hamiltonian}{94}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Some entanglement measures}{96}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Local Fermi liquid Hamiltonian}{98}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Calculation of susceptibility from partition function}{102}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Effective Hamiltonian of Kondo cloud}{104}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Anderson Model URG}{110}{section.4}%
+\contentsline {paragraph}{Calculation of first term}{110}{section*.8}%
+\contentsline {paragraph}{Calculation of second term}{110}{section*.9}%
+\contentsline {paragraph}{Renormalized Hamiltonian}{112}{section*.10}%
