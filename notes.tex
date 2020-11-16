@@ -4,6 +4,7 @@
 %\renewcommand\thesubsection{\arabic{subsection}}
 \begin{document}
 \tableofcontents
+\comm{
 \pagebreak\section{Preliminaries}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 It is defined as
@@ -4087,11 +4088,12 @@ This tells us that just as one electron comes below the Fermi surface to form th
 Excitations of the cloud then involve higher values of \il{\ham_0^* > \fr{3J^*}{2}} and lead to excitations of the composite system as a whole (\il{E_0 > 0}).
 The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic energy must start from a non-zero value.
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
-
+}
 \pagebreak\section{Anderson Model URG}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
+\comm{
 \subsection*{One electron on shell}
 At first order, the rotated Hamiltonian is
 \beq
@@ -4560,5 +4562,75 @@ Adding the three terms in eqs.~\ref{fterm1}, \ref{fterm2} and \ref{fterm3}, we g
 & + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}\rr{\fr{1 + \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_3 + \epsilon_1}} + \fr{1 - \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
 & + |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1 + \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1 - \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
 & + |V_3|^2 \rr{\hat n_3 - \hat n_{d\sigma_3}}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}
+\eeq}
+\subsection*{With four-Fermion interaction}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{k_,k^\prime,q\atop{\sigma\sigma^\prime}} v_q c^\dagger_{k+q,\sigma}c^\dagger_{k^\prime-q,\sigma^\prime}c_{k,\sigma}c_{k^\prime,\sigma^\prime}
 \eeq
+Considering one electron on the shell,
+\beq
+				  \ham &= \sum_{k<\Lambda_N\atop{\sigma}}\qq{\epsilon_k \hat n_{k\sigma} +  V_{k} c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{k_,k^\prime,q\atop{\sigma\sigma^\prime}} v_q c^\dagger_{k+q,\sigma}c^\dagger_{k^\prime-q,\sigma^\prime}c_{k,\sigma}c_{k^\prime,\sigma^\prime}\\
+				       &+ \epsilon_q \hat n_{q\beta} +  V_{q} c^\dagger_{q\beta} c_{d\beta} + \text{h.c.} + \sum_{k,p\atop{(k,k+p,q-p <\Lambda_N)}}\qq{v_p c^\dagger_{k+p,\sigma}c^\dagger_{q-p,\beta}c_{k\sigma}c_{q\beta} + \text{h.c.}} + \sum_{k<\Lambda_N,\sigma}v_{k-q}\hat n_{k\sigma}\hat n_{q\beta}
+\eeq
+Define
+\begin{gather}
+H_0 \equiv \sum_{k<\Lambda_N\atop{\sigma}}\qq{\epsilon_k \hat n_{k\sigma} +  V_{k} c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}} +  \sum_{k_,k^\prime,q\atop{\sigma\sigma^\prime}} v_q c^\dagger_{k+q,\sigma}c^\dagger_{k^\prime-q,\sigma^\prime}c_{k,\sigma}c_{k^\prime,\sigma^\prime}\\
+H_\text{imp} =\epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\end{gather}
+Then,
+\beq
+\ham_1 &= \hf\text{Tr}_\text{all}\rr{\ham} + \sum_{q\beta}\tau_{q\beta} \cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}}\\
+\eeq
+The first term is
+\beq
+\hf\text{Tr}_\text{all}\rr{\ham} = H_0 + H_\text{imp} + \hf\sum_{q\beta}\qq{\epsilon_q + \sum_{k<\Lambda_N,\sigma}v_{k-q}\hat n_{k\sigma}} 
+\eeq
+The second term is:
+\beq
+c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}} &= V_q c^\dagger_{q\beta}c_{d\beta} + \sum_{k,p}v^*_p c^\dagger_{q\beta}c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}\\
+							 &= c^\dagger_{q\beta}\rr{V_q c_{d\beta} + \sum_{k,p}v^*_p c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}}
+\eeq
+\beq
+\eta_{q\beta} &= \qq{ V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k,p}v_p c^\dagger_{k+p,\sigma}c^\dagger_{q-p,\beta}c_{k\sigma}c_{q\beta}}\fr{1}{\hat \omega - \qq{H_0^D + H_\text{imp} + \epsilon_q + \sum_{k<\Lambda_N,\sigma}v_{k-q}\hat n_{k\sigma}}\hat n_{q\beta}}\\
+	      &=\qq{ \rr{V^*_q c^\dagger_{d\beta} + \sum_{k,p}v_p c^\dagger_{q-p,\beta}c^\dagger_{k+p,\sigma}c_{k\sigma}}c_{q\beta}}\fr{2}{\omega - \qq{\epsilon_d \hat n_{d\ol\beta} + \epsilon_q}}\\
+\eeq
+\beq
+	      \sum_{q\beta}\tau_{q\beta} \cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}} =
+	      \sum_{q\beta}\fr{2\tau_{q\beta}}{\omega - \qq{\epsilon_d \hat n_{d\ol\beta} + \epsilon_q}} \left\{c^\dagger_{q\beta}\rr{V_q c_{d\beta} + \sum_{k,p}v^*_p c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}}\right.,\\
+	      \quad\left.\rr{V^*_q c^\dagger_{d\beta} + \sum_{k,p}v_p c^\dagger_{q-p,\beta}c^\dagger_{k+p,\sigma}c_{k\sigma}}c_{q\beta}\right\}
+\eeq
+Because \il{2\tau_{q\beta}c_{q\beta} = -c_{q\beta}} and \il{2\tau_{q\beta}c^\dagger_{q\beta} = c^\dagger_{q\beta}}, we get
+\beq
+	      \sum_{q\beta}\fr{1}{\omega - \qq{\epsilon_d \hat n_{d\ol\beta} + \epsilon_q}} \left[c^\dagger_{q\beta}\rr{V_q c_{d\beta} + \sum_{k,p}v^*_p c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}}\right.,\\
+	      \quad\left.\rr{V^*_q c^\dagger_{d\beta} + \sum_{k,p}v_p c^\dagger_{q-p,\beta}c^\dagger_{k+p,\sigma}c_{k\sigma}}c_{q\beta}\right]
+\eeq
+The first commutator renormalizes the impurity site energy:
+\beq
+\qq{V_q c^\dagger_{q\beta} c_{d\beta}, V_q^* c^\dagger_{d\beta} c_{q\beta}} = |V_q|^2 \rr{\hat n_{q\beta} - \hat n_{d\beta}}
+\eeq
+The second  term gives:
+\beq
+\qq{V_q c^\dagger_{q\beta}c_{d\beta}, \sum_{k,p,\sigma}v_p c^\dagger_{q-p,\beta}c^\dagger_{k+p,\sigma}c_{k\sigma}c_{q\beta}} &= \sum_{k,p,\sigma}V_q v_p \qq{c^\dagger_{q\beta}c_{d\beta},c^\dagger_{q-p,\beta}c^\dagger_{k+p,\sigma}c_{k,\sigma}c_{q,\beta}}\\
+&=-\sum_{k,p,\sigma}V_q v_p c_{d\beta}c^\dagger_{k+p,\sigma}c^\dagger_{q-p,\beta}c_{k,\sigma}\\
+															     &=-\sum_{k,p,\sigma}V_q v_p c_{d\beta}c^\dagger_{k+p,\sigma}\rr{ \delta_{q=k+p\atop{\beta=\sigma}} - c_{k,\sigma}c^\dagger_{q-p,\beta}}\\
+&=\sum_{k,p,\sigma}V_q v_p c_{d\beta}c^\dagger_{k+p,\sigma}c_{k,\sigma}c^\dagger_{q-p,\beta}
+\eeq
+In the second step, I chose the \il{\hat n_{q\beta}= 1} sector.
+In the last step I used the fact that since the only electron on the shell is the one with \il{q}, we must have \il{k+p \neq q}, hence the \il{\delta_{q=k+p}} gives zero.
+The third term is just the Hermitian conjugate:
+\beq
+\qq{\sum_{k,p,\sigma}v_p^* c^\dagger_{k\sigma}c^\dagger_{q\beta}c_{k+p,\sigma}c_{q-p,\beta},V^*_q c^\dagger_{d\beta} c_{q\beta}} &=\sum_{k,p,\sigma}V^*_q v^*_p c_{q-p,\beta}c^\dagger_{k,\sigma}c_{k+p,\sigma}c^\dagger_{d,\beta}
+\eeq
+The fourth term gives (using \il{\hat n_{q\beta} = 1}),
+\beq
+\qq{\sum_{k,p,\sigma}v_p^* c^\dagger_{k\sigma}c^\dagger_{q\beta}c_{k+p,\sigma}c_{q-p,\beta},\sum_{k^\prime,p^\prime,\sigma^\prime}v_p^\prime c^\dagger_{q-p^\prime,\beta}c^\dagger_{k^\prime+p^\prime,\sigma^\prime}c_{k^\prime\sigma^\prime}c_{q\beta}} \\
+=\sum v_p^* v_{p^\prime} &c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}c^\dagger_{q-p^\prime,\beta}c^\dagger_{k^\prime+p^\prime,\sigma^\prime}c_{k^\prime\sigma^\prime}
+\eeq
+The total renormalization is thus
+\beq
+\Delta H = \sum_{q\beta}\fr{1}{\omega - \qq{\epsilon_d \hat n_{d\ol\beta} + \epsilon_q}} \left[|V_q|^2 \rr{\hat n_{q\beta} - \hat n_{d\beta}} + \sum_{k,p,\sigma}V_q v_p c_{d\beta}c^\dagger_{k+p,\sigma}c_{k,\sigma}c^\dagger_{q-p,\beta} + \text{h.c.} \right.\\
+	 \quad\quad+\left.\sum v_p^* v_{p^\prime} c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}c^\dagger_{q-p^\prime,\beta}c^\dagger_{k^\prime+p^\prime,\sigma^\prime}c_{k^\prime\sigma^\prime}\right]\\
+\eeq
+
+
 \end{document}
