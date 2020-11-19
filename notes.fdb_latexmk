@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1605720924 "notes.tex" "notes.pdf" "notes" 1605720926
+["pdflatex"] 1605786851 "notes.tex" "notes.pdf" "notes" 1605786896
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1591545468 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1591545468 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1591545468 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -159,16 +159,16 @@
   "/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1591524854 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1591545468 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1591545468 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1602301955 336565 41d82b1fbe23b9c6f23f4db899cd990f ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602301916 2514051 ac1f0a84c69809c08d05b4cb997cb78e ""
-  "common.sty" 1605282562 3073 aa12dfff35ce90e28ef0f7ccc39a4a8d ""
-  "notes.aux" 1605720926 1394 cf6a35261b5623d9cd42013f7e15d3c7 "pdflatex"
-  "notes.out" 1605720926 53 feaac91b820dce3a5e178263592274d6 "pdflatex"
-  "notes.tex" 1605720924 285992 13bb15535e21b371d94a967b8d524163 ""
-  "notes.toc" 1605720926 281 dde92d199d51576cd85524a9474fda49 "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1605073323 354315 b0c7cdf0b8acb3f82f89885a58441ef8 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1605073310 2514048 57a9cf9c4786a7b7b2faa2eccd63feaa ""
+  "common.sty" 1605786768 3073 aa12dfff35ce90e28ef0f7ccc39a4a8d ""
+  "notes.aux" 1605786851 1626 8b78d3b96c674257579af51a8ebfec3a "pdflatex"
+  "notes.out" 1605786851 53 feaac91b820dce3a5e178263592274d6 "pdflatex"
+  "notes.tex" 1605786896 289602 5d0b84236a23037372d24c11e7bab4c7 ""
+  "notes.toc" 1605786851 429 8f442b8093d246162f7dfe1ed01cc4bf "pdflatex"
   (generated)
+  "notes.aux"
   "notes.pdf"
+  "notes.log"
   "notes.out"
   "notes.toc"
-  "notes.aux"
-  "notes.log"

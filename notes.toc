@@ -2,3 +2,5 @@
 \contentsline {paragraph}{Calculation of first term}{2}{section*.3}%
 \contentsline {paragraph}{Calculation of second term}{2}{section*.4}%
 \contentsline {paragraph}{Renormalized Hamiltonian}{4}{section*.5}%
+\contentsline {paragraph}{One electron on shell:}{6}{section*.7}%
+\contentsline {paragraph}{For \({\pmb {\hat n_{q\beta } = 1}}\):}{6}{section*.8}%
