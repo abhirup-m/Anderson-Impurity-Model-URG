@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  15 NOV 2020 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  18 NOV 2020 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -608,49 +608,54 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 4094.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 4176--4181
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 4219--4224
+
+ []
+
+[5]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 4568.
+(amsmath)                 on input line 4666.
 
 
-Overfull \hbox (8.44604pt too wide) detected at line 4569
+Overfull \hbox (1.52444pt too wide) detected at line 4671
 [][][]
  []
 
 
-Overfull \hbox (4.71207pt too wide) detected at line 4596
+Overfull \hbox (17.22098pt too wide) detected at line 4677
 [][][]
  []
 
-[2]
-Overfull \hbox (15.41064pt too wide) detected at line 4601
-[][][]
- []
-
-[3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4636.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4636.
+[6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4690.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4690.
  (./notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4636.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4636.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4690.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4690.
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: FEAAC91B820DCE3A5E178263592274D6;53.
  ) 
 Here is how much of TeX's memory you used:
- 18644 strings out of 480478
- 340078 string characters out of 5905958
- 744344 words of memory out of 5000000
- 34285 multiletter control sequences out of 15000+600000
- 541106 words of font info for 43 fonts, out of 8000000 for 9000
+ 18670 strings out of 480478
+ 340366 string characters out of 5905958
+ 747561 words of memory out of 5000000
+ 34290 multiletter control sequences out of 15000+600000
+ 541793 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,12n,79p,876b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on notes.pdf (4 pages, 151024 bytes).
+ 67i,13n,79p,876b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on notes.pdf (6 pages, 186323 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4093,7 +4093,6 @@ It is not possible to have a kinetic energy infinitesimally close to the Fermi s
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
-\comm{
 \subsection*{One electron on shell}
 At first order, the rotated Hamiltonian is
 \beq
@@ -4226,6 +4225,7 @@ In the penultimate step, I used the fact that since the onsite energy for either
 \dv{U}{\ln D}	       &= 2|V|^2n(D) \rr{\fr{1}{D} - \fr{1}{D + \epsilon_d}}
 \eeq
 
+\comm{
 \comm{
 \subsection*{Two electrons on shell}
 Designate the two electrons as \il{q_1\beta_1 \equiv 1,q_2\beta_2 \equiv 2}
@@ -4562,7 +4562,7 @@ Adding the three terms in eqs.~\ref{fterm1}, \ref{fterm2} and \ref{fterm3}, we g
 & + |V_1|^4 \rr{\hat n_1 - \hat n_{d\sigma_1}}\rr{1 - \hf\tau_2}\rr{\fr{1 + \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_3 + \epsilon_1}} + \fr{1 - \hf\tau_3}{\omega - \rr{\epsilon_d\hat n_{d\ol\sigma_1} +  \epsilon_1}}}\\
 & + |V_2|^2\rr{\hat n_2 - \hat n_{d\sigma_2}}\qq{\fr{1 + \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_3 + \epsilon_2}} + \fr{1 - \hf\tau_3}{\omega^\prime - \qq{\epsilon_d\hat n_{d\ol\sigma_2} + \hf\epsilon_1 \tau_1 + \epsilon_2}}}\\
 & + |V_3|^2 \rr{\hat n_3 - \hat n_{d\sigma_3}}\fr{1}{\omega^{\prime\prime} - \rr{\epsilon_d \hat n_{d\ol\sigma_3} + \epsilon_3 + \hf\rr{\tau_1\epsilon_1 + \epsilon_2\tau_2}}}
-\eeq}
+\eeq
 \subsection*{With four-Fermion interaction}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{k_,k^\prime,q\atop{\sigma\sigma^\prime}} v_q c^\dagger_{k+q,\sigma}c^\dagger_{k^\prime-q,\sigma^\prime}c_{k,\sigma}c_{k^\prime,\sigma^\prime}
@@ -4631,6 +4631,60 @@ The total renormalization is thus
 \Delta H = \sum_{q\beta}\fr{1}{\omega - \qq{\epsilon_d \hat n_{d\ol\beta} + \epsilon_q}} \left[|V_q|^2 \rr{\hat n_{q\beta} - \hat n_{d\beta}} + \sum_{k,p,\sigma}V_q v_p c_{d\beta}c^\dagger_{k+p,\sigma}c_{k,\sigma}c^\dagger_{q-p,\beta} + \text{h.c.} \right.\\
 	 \quad\quad+\left.\sum v_p^* v_{p^\prime} c^\dagger_{k\sigma}c_{k+p,\sigma}c_{q-p,\beta}c^\dagger_{q-p^\prime,\beta}c^\dagger_{k^\prime+p^\prime,\sigma^\prime}c_{k^\prime\sigma^\prime}\right]\\
 \eeq
+}
+\comm{
+\subsection*{With impurity spin-flip scattering}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma}}V_2c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma}c_{k^\prime\ol\sigma}
+\eeq
+One electron on shell:
+\beq
+\ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k}V_2c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta} + \sum_{k^\prime}V_2c^\dagger_{k^\prime\ol\beta}c^\dagger_{d\beta}c_{d\ol\beta}c_{q\beta} 
+\eeq
+For \il{\hat n_{q\beta} = 1}:
+\beq
+\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k}V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta}}c_{d\beta}\times c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime} V_2 c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}}c_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} + \epsilon_q}\hat n_{q\beta}}\\
+	      &= \sum_{q\beta}\tau_{q\beta}\hat n_{q\beta}\rr{1- \hat n_{d\beta}}\qq{V_q + \sum_{k}V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta}}\times \qq{V^*_q + V_2 \sum_{k^\prime}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}}\fr{2}{\omega - \rr{H_\text{imp} + \epsilon_q}}\\
+	      &= \sum_{q\beta}\qq{|V_q|^2 + \sum_{k^\prime}V_q V_2 c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta} + \sum_{k}V_q^*V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta} +\sum_{kk^\prime} V_2^2 \hat n_{d\ol\beta}c_{k\ol\beta}c^\dagger_{k^\prime\ol\beta}}\fr{\rr{1 - \hat n_{d\beta}}\hat n_{q\beta}}{\omega - \rr{H_\text{imp} + \epsilon_q}}
+\eeq
+The first term in \il{\Delta \ham_N} is (calculated in the previous section)
+\beq
+\sum_{q\beta}|V_q|^2\rr{1 - \hat n_{d\beta}}\fr{1}{\omega - \rr{H_\text{imp} + \epsilon_q}} = \sum_{q\beta}|V_q|^2\fr{\hat n_{d\beta}\rr{\epsilon_q - \omega + 2\epsilon_{d}} - \hat n_{d\ua}\hat n_{d\da}\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}}
+\eeq
+Just as in the previous section, they renormalize the onsite energy \il{\epsilon_d} and double-occupation penalty \il{U}.
+The second term gives 
+\beq
+\sum_{k^\prime\beta}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}\sum_q V_q V_2 \fr{\rr{1 - \hat n_{d\beta}}}{\omega - \rr{H_\text{imp} + \epsilon_q}} &= \sum_{k^\prime\beta}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}\sum_q V_q V_2 \rr{1 - \hat n_{d\beta}}\fr{1}{\omega - \rr{\epsilon_d + \epsilon_q}}
+\eeq
+The first of the two terms renormalizes the coupling \il{V_k}.
+The third term is the Hermitian conjugate of this term.
+The fourth term produces a potential scattering term.
+}
 
-
+\subsection*{With higher order scattering}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma}}V_2c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma}c_{k^\prime\ol\sigma}
+\eeq
+One electron on shell:
+\beq
+\ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k}V_2c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta} + \sum_{k^\prime}V_2c^\dagger_{k^\prime\ol\beta}c^\dagger_{d\beta}c_{d\ol\beta}c_{q\beta} 
+\eeq
+For \il{\hat n_{q\beta} = 1}:
+\beq
+\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k}V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta}}c_{d\beta}\times c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime} V_2 c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}}c_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} + \epsilon_q}\hat n_{q\beta}}\\
+	      &= \sum_{q\beta}\tau_{q\beta}\hat n_{q\beta}\rr{1- \hat n_{d\beta}}\qq{V_q + \sum_{k}V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta}}\times \qq{V^*_q + V_2 \sum_{k^\prime}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}}\fr{2}{\omega - \rr{H_\text{imp} + \epsilon_q}}\\
+	      &= \sum_{q\beta}\qq{|V_q|^2 + \sum_{k^\prime}V_q V_2 c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta} + \sum_{k}V_q^*V_2 c_{k\ol\beta}c^\dagger_{d\ol\beta} +\sum_{kk^\prime} V_2^2 \hat n_{d\ol\beta}c_{k\ol\beta}c^\dagger_{k^\prime\ol\beta}}\fr{\rr{1 - \hat n_{d\beta}}\hat n_{q\beta}}{\omega - \rr{H_\text{imp} + \epsilon_q}}
+\eeq
+The first term in \il{\Delta \ham_N} is (calculated in the previous section)
+\beq
+\sum_{q\beta}|V_q|^2\rr{1 - \hat n_{d\beta}}\fr{1}{\omega - \rr{H_\text{imp} + \epsilon_q}} = \sum_{q\beta}|V_q|^2\fr{\hat n_{d\beta}\rr{\epsilon_q - \omega + 2\epsilon_{d}} - \hat n_{d\ua}\hat n_{d\da}\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}}
+\eeq
+Just as in the previous section, they renormalize the onsite energy \il{\epsilon_d} and double-occupation penalty \il{U}.
+The second term gives 
+\beq
+\sum_{k^\prime\beta}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}\sum_q V_q V_2 \fr{\rr{1 - \hat n_{d\beta}}}{\omega - \rr{H_\text{imp} + \epsilon_q}} &= \sum_{k^\prime\beta}c_{d\ol\beta}c^\dagger_{k^\prime\ol\beta}\sum_q V_q V_2 \rr{1 - \hat n_{d\beta}}\fr{1}{\omega - \rr{\epsilon_d + \epsilon_q}}
+\eeq
+The first of the two terms renormalizes the coupling \il{V_k}.
+The third term is the Hermitian conjugate of this term.
+The fourth term produces a potential scattering term.
 \end{document}
