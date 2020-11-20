@@ -7,4 +7,5 @@
 \contentsline {paragraph}{Sanity Checks (\({\omega = 0}\))}{9}{section*.9}%
 \contentsline {paragraph}{1. of \({\epsilon _d}\)}{9}{section*.10}%
 \contentsline {paragraph}{2. of \({U}\)}{9}{section*.11}%
-\contentsline {paragraph}{3. of \({V_1}\)}{9}{section*.12}%
+\contentsline {paragraph}{3. of \({V_1}\)}{10}{section*.12}%
+\contentsline {paragraph}{For \({\pmb {\hat n_{q\beta } = 0}}\):}{10}{section*.13}%
