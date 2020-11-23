@@ -4661,7 +4661,6 @@ The third term is the Hermitian conjugate of this term.
 The fourth term produces a potential scattering term.
 }
 
-\comm{
 \subsection*{With higher order scattering}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
@@ -4721,7 +4720,7 @@ The fourth term gives
 	      &+\sum_{kk^\prime q\sigma\sigma^\prime}V^2_2 c^\dagger_{d\sigma}c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}c_{k\sigma} \left[\fr{2\rr{\omega - \epsilon_q - \epsilon_d} - V_2}{\rr{\omega - \epsilon_d - \epsilon_q}\rr{\omega - \epsilon_d - \epsilon_q - V_2}} \right.\\
 	      &\quad\left.+ \quad\hat n_{d\ol\sigma}\cc{\fr{\epsilon_d + U}{\rr{\omega - 2\epsilon_d - U - \epsilon_q - V_2}\rr{\omega - \epsilon_d - \epsilon_q - V_2}} - \fr{1}{\omega - \epsilon_q  -\epsilon_d}}\right]\\
 \eeq
-The first line in the final equation descrives the renormalization of \il{\epsilon_d} and \il{U} at order \il{V_2^2}.
+The first line in the final equation describes the renormalization of \il{\epsilon_d} and \il{U} at order \il{V_2^2}.
 The first term in the second line of the last equation describes the renormalization of the two-particle interaction coupling, \il{V_2}.
 \pb
 The changes in the couplings are
@@ -4813,7 +4812,12 @@ The changes in the couplings are
 \Delta V_k &= \Delta V_k^* = 0\\
 \Delta V_2 &= -\sum_{q}\fr{V_2^2}{\omega + \epsilon_d + V_2 + \epsilon_q}
 \eeq
-}
+
+\subsection*{With higher order scattering}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
+\eeq
+Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well as spin-preserving (\il{d\sigma \to d\sigma}) scattering.
 \paragraph{One electron on shell:}
 \beq
 \ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} - c^\dagger_{d\beta}c_{d\sigma}c^\dagger_{k\sigma}c_{q\beta}}\\
@@ -4827,7 +4831,7 @@ The changes in the couplings are
 The only operators acting on the shell electron can be pushed to the end, and we will get \il{\tau_{q\beta}\hat n_{q\beta} = \hf \hat n_{q\beta}}.
 We can also simplify the last factor as
 \beq
-\hf \hat n_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}} &= \hf \hat n_{q\beta}\fr{1}{\omega \hat n_{q\beta} - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
+\hf \hat n_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}} &= \hf \hat n_{q\beta}\fr{1}{2\omega \tau_{q\beta} - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
 											  &= \fr{1/2}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}} &&\qq{\hat n_{q\beta} = 1}\\
 \eeq
 \beq
@@ -4876,7 +4880,7 @@ The fourth term gives
 	      &+\sum_{kk^\prime q\sigma\sigma^\prime}V^2_2 c^\dagger_{d\sigma}c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}c_{k\sigma} \left[\fr{\rr{\omega - \epsilon_q - \epsilon_d} - V_2/2}{\rr{\omega - \epsilon_d - \epsilon_q}\rr{\omega - \epsilon_d - \epsilon_q - V_2}} \right.\\
 	      &\quad\left.+ \quad\hf\hat n_{d\ol\sigma}\cc{\fr{\epsilon_d + U}{\rr{\omega - 2\epsilon_d - U - \epsilon_q - V_2}\rr{\omega - \epsilon_d - \epsilon_q - V_2}} - \fr{1}{\omega - \epsilon_q  -\epsilon_d}}\right]\\
 \eeq
-The first line in the final equation descrives the renormalization of \il{\epsilon_d} and \il{U} at order \il{V_2^2}.
+The first line in the final equation describes the renormalization of \il{\epsilon_d} and \il{U} at order \il{V_2^2}.
 The first term in the second line of the last equation describes the renormalization of the two-particle interaction coupling, \il{V_2}.
 \pb
 The changes in the couplings are
@@ -4903,20 +4907,21 @@ To get the hole kinetic energy, we write the kinetic energy part as
 and drop the extra constant term.
 \beq
 	   &\Delta \ham_N = \sum_{q\beta}\tau_{q\beta}\fr{1}{\hat \omega - \text{Tr}_{q\beta}\rr{\ham_N^D\rr{1 - \hat n_{q\beta}}}\rr{1 - \hat n_{q\beta}}}\text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham_N}c_{q\beta}c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{ \ham_Nc_{q\beta}}\\
-&= \sum_{q\beta}\tau_{q\beta}\fr{1}{\hat \omega - \rr{H_{imp} - \epsilon_q}\rr{1 - \hat n_{q\beta} }} c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}c_{q\beta} c^\dagger_{q\beta}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\\
-&= \sum_{q\beta}\fr{-1/2}{\omega - H_{imp} + \epsilon_q} c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\\
+	   &= \sum_{q\beta}\tau_{q\beta}\fr{1}{2\omega\tau_{q\beta} - \rr{H_{imp} - \epsilon_q}\rr{1 - \hat n_{q\beta} }} c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}c_{q\beta} c^\dagger_{q\beta}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\\
+&= \sum_{q\beta}\fr{-1/2}{-\omega - H_{imp} + \epsilon_q} c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\\
+&= \sum_{q\beta}\fr{1/2}{\omega + H_{imp} - \epsilon_q} c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\\
 \eeq
 Here I set \il{\hat n_{q\beta} = 0, \tau_{q\beta} = -\hf}.
 Now,
 \beq
-\fr{-1/2}{\omega - H_{imp} + \epsilon_q } c^\dagger_{d\beta} &= \fr{-1/2}{\omega - \epsilon_{d} - \rr{\epsilon_d + U}\hat n_{d\ol\beta} + \epsilon_q } c^\dagger_{d\beta}\\
-							  &=-\hf \qq{\fr{1}{\omega - \epsilon_d + \epsilon_q} + \fr{\hat n_{d\ol\beta}\rr{\epsilon_d + U}}{\rr{\omega - \rr{2\epsilon_d + U} + \epsilon_q}\rr{\omega - \epsilon_d + \epsilon_q}}}c^\dagger_{d\beta}
+\fr{1/2}{\omega + H_{imp} - \epsilon_q } c^\dagger_{d\beta} &= \fr{1/2}{\omega + \epsilon_{d} + \rr{\epsilon_d + U}\hat n_{d\ol\beta} - \epsilon_q } c^\dagger_{d\beta}\\
+							  &=\hf \qq{\fr{1}{\omega + \epsilon_d - \epsilon_q} - \fr{\hat n_{d\ol\beta}\rr{\epsilon_d + U}}{\rr{\omega + \rr{2\epsilon_d + U} - \epsilon_q}\rr{\omega + \epsilon_d - \epsilon_q}}}c^\dagger_{d\beta}
 \eeq
 The first term in \il{\Delta \ham_N} gives
 \beq
--\hf\sum_{q\beta}&\fr{1}{\omega + H_{imp} + \epsilon_q } |V_q|^2 \hat n_{d\beta} \\
-	     &=-\hf\sum_{q\beta} \qq{\fr{|V_q|^2}{\omega - \epsilon_d + \epsilon_q} + \fr{|V_q|^2\hat n_{d\ol\beta}\rr{\epsilon_d + U}}{\rr{\omega - \rr{2\epsilon_d + U} + \epsilon_q}\rr{\omega - \epsilon_d + \epsilon_q}}}\hat n_{d\beta}\\
-	     &=-\hf\sum_{q\beta} \fr{\hat n_{d\beta}|V_q|^2}{\omega - \epsilon_d + \epsilon_q} -\hf \hat n_{d\ua}\hat n_{d\da}\sum_{q}\fr{2|V_q|^2\rr{\epsilon_d + U}}{\rr{\omega - \rr{2\epsilon_d + U} + \epsilon_q}\rr{\omega - \epsilon_d + \epsilon_q}}
+\hf\sum_{q\beta}&\fr{1}{\omega + H_{imp} - \epsilon_q } |V_q|^2 \hat n_{d\beta} \\
+	     &=\hf\sum_{q\beta} \qq{\fr{|V_q|^2}{\omega + \epsilon_d - \epsilon_q} + \fr{|V_q|^2\hat n_{d\ol\beta}\rr{\epsilon_d + U}}{\rr{\omega + \rr{2\epsilon_d + U} - \epsilon_q}\rr{\omega + \epsilon_d - \epsilon_q}}}\hat n_{d\beta}\\
+	     &=\hf\sum_{q\beta} \fr{\hat n_{d\beta}|V_q|^2}{\omega + \epsilon_d - \epsilon_q} + \hat n_{d\ua}\hat n_{d\da}\sum_{q}\fr{|V_q|^2\rr{\epsilon_d + U}}{\rr{\omega + \rr{2\epsilon_d + U} - \epsilon_q}\rr{\omega + \epsilon_d - \epsilon_q}}
 \eeq
 The second term gives
 \beq
@@ -4946,7 +4951,7 @@ The fourth term gives
 \eeq
 The changes in the couplings are
 \beq
-\Delta \epsilon_d &= -\hf\sum_{q} \fr{|V_q|^2}{\omega - \epsilon_d + \epsilon_q}\\
+\Delta \epsilon_d &= \hf\sum_{q} \fr{|V_q|^2}{\omega + \epsilon_d - \epsilon_q}\\
 \Delta U &= \sum_{q}\fr{2|V_q|^2\rr{\epsilon_d + U}}{\rr{\omega + 2\epsilon_d + U + V_2 + \epsilon_q}\rr{\omega + \epsilon_d + V_2 + \epsilon_q}}\\
 \Delta V_k &= \Delta V_k^* = 0\\
 \Delta V_2 &= -\sum_{q}\fr{V_2^2}{\omega + \epsilon_d + V_2 + \epsilon_q}
