@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  21 NOV 2020 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.11.11)  23 NOV 2020 19:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -601,20 +601,20 @@ LaTeX Info: Redefining \nameref on input line 5.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4094.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4095.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4094.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4095.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 4176--4181
+Underfull \hbox (badness 10000) in paragraph at lines 4177--4182
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 4219--4224
+Underfull \hbox (badness 10000) in paragraph at lines 4220--4225
 
  []
 
@@ -622,52 +622,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 4219--4224
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 4666.
+(amsmath)                 on input line 4667.
 
 [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 4722--4728
+Underfull \hbox (badness 10000) in paragraph at lines 4723--4729
 
  []
 
 [8] [9]
-Overfull \hbox (43.55191pt too wide) detected at line 4775
+Overfull \hbox (43.55191pt too wide) detected at line 4776
 [][][]
  []
 
 
-Overfull \hbox (26.97275pt too wide) detected at line 4785
+Overfull \hbox (26.97275pt too wide) detected at line 4786
 [][][]
  []
 
 [10] [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 4882--4888
+Underfull \hbox (badness 10000) in paragraph at lines 4883--4889
 
  []
 
 [15]
-Overfull \hbox (32.84268pt too wide) detected at line 4913
+Overfull \hbox (32.84268pt too wide) detected at line 4914
 [][][]
  []
 
 [16] [17] [18] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4981.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4981.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4982.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4982.
  (./notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4981.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4981.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4982.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4982.
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: FEAAC91B820DCE3A5E178263592274D6;53.
  ) 
 Here is how much of TeX's memory you used:
  18745 strings out of 480478
  341208 string characters out of 5905958
- 752561 words of memory out of 5000000
+ 752562 words of memory out of 5000000
  34293 multiletter control sequences out of 15000+600000
  542438 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,15n,79p,876b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on notes.pdf (19 pages, 234088 bytes).
+Output written on notes.pdf (19 pages, 234085 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams

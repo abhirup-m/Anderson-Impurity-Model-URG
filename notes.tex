@@ -2298,6 +2298,7 @@ From eq.~\ref{jaeger},
 	       &=\fr{\sin^2 \pi\avg{n_{d\sigma}}}{\pi \Delta}
 \eeq
 \\
+
 \subsection{Scaling of Anderson model}
 First consider the case in which \il{\epsilon_d \ll -D, U+\epsilon_d \gg D}.
 The situation is such that both the impurity levels are fat outside the bandwidth, as shown in fig.~\ref{and1}.
@@ -4668,12 +4669,12 @@ The fourth term produces a potential scattering term.
 Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well as spin-preserving (\il{d\sigma \to d\sigma}) scattering.
 \paragraph{One electron on shell:}
 \beq
-\ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} - c^\dagger_{d\beta}c_{d\sigma}c^\dagger_{k\sigma}c_{q\beta}}\\
+\ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} - \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c_{k\sigma}c^\dagger_{d\sigma}c_{d\beta} + c^\dagger_{d\beta}c_{d\sigma}c^\dagger_{k\sigma}c_{q\beta}}\\
 +V_2 \hat n_{q\beta}\hat n_{d\beta}
 \eeq
 \paragraph{For \il{\pmb{\hat n_{q\beta} = 1}}:}
 \beq
-\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\times c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}c_{q\beta}\\
+\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}c_{d\beta}\times c^\dagger_{d\beta}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}c_{q\beta}\\
 	      &\times\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
 	      &= \sum_{q\beta}\qq{V_q - \sum_{k\sigma}V_2 c_{k\sigma}c^\dagger_{d\sigma}}\rr{1-\hat n_{d\beta}}\qq{V^*_q - \sum_{k^\prime\sigma^\prime} V_2 c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime}}\fr{1}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}}\\
 	      &= \sum_{q\beta}\left[{|V_q|^2\rr{1-\hat n_{d\beta}} - \sum_{k^\prime\sigma^\prime} V_qV_2 \rr{1-\hat n_{d\beta}}c_{d\sigma^\prime}c^\dagger_{k^\prime\sigma^\prime} - \sum_{k\sigma}V_q^* V_2 c_{k\sigma}c^\dagger_{d\sigma}\rr{1-\hat n_{d\beta}}}\right.\\
