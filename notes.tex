@@ -4979,4 +4979,108 @@ The changes in the couplings are
 \implies \dv{V_1}{D} &= \fr{V_1 V_2}{D_0 D}\\
 		     &\qq{\text{matches with Jefferson up to a D, should come from the definition of \il{V_2}}}
 \eeq
+
+\subsection*{With higher order scattering}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
+\eeq
+Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well as spin-preserving (\il{d\sigma \to d\sigma}) scattering.
+\paragraph{One electron on shell:}
+\beq
+\ham_N = H_0 + H_\text{imp} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}\\
++V_2 \hat n_{q\beta}\hat n_{d\beta}
+\eeq
+\paragraph{Particle sector:}
+The intermediate state consists of particle states, obtained by exciting electrons to the upper bandwidth edge (\il{+D}).
+\beq
+\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \times\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
+	      &\times c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}
+\eeq
+Since the Greens function is preceded by \il{c_{q\beta}}, we can substitute \il{\hat n_{q\beta}=1} in the denominator.
+\beq
+c_{q\beta} \times\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}} &= c_{q\beta} \times\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}}\\
+													   &= c_{q\beta} \times\fr{1}{\hat \omega - \fr{\epsilon_q}{2} - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}}
+\eeq
+Set \il{\hat \omega - \fr{\epsilon_q}{2} = 2\omega \tau_{q\beta} = \omega}.
+\beq
+c_{q\beta} \times\fr{1}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}}
+\eeq
+Since \il{\tau_{q\beta}c_{q\beta}c^\dagger_{q\beta} = -\hf\rr{1-\hat n_{q\beta}} = -\hf}, we get
+\beq
+\Delta \ham_N &= \fr{-1}{2}\sum_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{1}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}} \qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}
+\eeq
+There are four scattering processes.
+\paragraph{1.}
+\beq
+	      &\fr{-1}{2}\sum_{q\beta}|V_q|^2c^\dagger_{d\beta} \fr{1}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}}c_{d\beta}\\
+	      &\quad=\fr{-1}{2}\sum_{q\beta}|V_q|^2c^\dagger_{d\beta}c_{d\beta} \fr{1}{\omega - \hf\epsilon_q - \epsilon_d\hat n_{d\ol\beta}} &&\qq{\hat n_{d\beta} = 0}\\
+	      &\quad=\fr{-1}{2}\sum_{q\beta}|V_q|^2 \hat n_{d\beta} \qq{\fr{\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q - \epsilon_d} + \fr{1-\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q}}\\
+	      &\quad=\fr{-1}{2}\sum_{q\beta}|V_q|^2 \hat n_{d\beta} \qq{\fr{\hat n_{d\ol\beta}\epsilon_d}{\rr{\omega - \hf\epsilon_q - \epsilon_d}\rr{\omega - \hf\epsilon_q}} + \fr{1}{\omega - \hf\epsilon_q}}\\
+	      &\quad=-\hf\sum_{\beta}\hat n_{d\beta}\sum_q \fr{|V_q|^2}{\omega - \hf\epsilon_q}  - \hat n_{d\ua}\hat n_{d\da}\sum_q\fr{|V_q|^2\epsilon_d}{\rr{\omega - \hf\epsilon_q - \epsilon_d}\rr{\omega - \hf\epsilon_q}}\\
+\eeq
+\paragraph{Hole sector}
+The intermediate state consists of hole states, obtained by exciting electrons from the lower bandwith edge (\il{-D}).
+\beq
+\Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\times\fr{1}{\hat \omega - H_\text{imp}\rr{1 - \hat n_{q\beta}}}\\
+	      &\times c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \\
+&= \hf\sum_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\fr{1}{\hat \omega - H_\text{imp}} c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \\
+\eeq
+The Green's functon simplifies as
+\beq
+c_{d\beta}\fr{1}{\hat \omega - H_\text{imp}\rr{1 - \hat n_{q\beta}}}c^\dagger_{d\beta} &=c_{d\beta}\fr{1}{\hat \omega - H_\text{imp}}c^\dagger_{d\beta} &&\qq{\hat n_{q\beta} = 0}\\
+&=c_{d\beta}\fr{1}{\hat \omega - \hf \epsilon_q + \hf\epsilon_q - H_\text{imp}}c^\dagger_{d\beta}
+\eeq
+Again  set \il{\hat \omega - \hf \epsilon_q = 2\omega \tau_{q\beta} = -\omega}.
+\beq
+c_{d\beta}\fr{1}{-\omega + \hf\epsilon_q - H_\text{imp}}c^\dagger_{d\beta} &= -c_{d\beta}\fr{1}{\omega - \hf\epsilon_q + H_\text{imp}}c^\dagger_{d\beta}\\
+									   &= -c_{d\beta}\fr{1}{\omega - \hf\epsilon_q + \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{d\beta}\\
+									   &= -\rr{1 - \hat n_{d\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q + 2\epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
+									   &= \rr{\hat n_{d\beta} - 1}\qq{\fr{-\rr{\epsilon_d + U}\hat n_{d\ol\beta}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}} + \fr{1}{\omega - \hf\epsilon_q + \epsilon_d}}\\
+									   &= -\fr{1}{\omega - \hf\epsilon_q + \epsilon_d} + \fr{\hat n_{d\beta}}{\omega - \hf\epsilon_q + \epsilon_d} \\
+									   &+ \fr{\rr{\epsilon_d + U}\hat n_{d\ol\beta}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}\\
+									   &- \fr{\rr{\epsilon_d + U}\hat n_{d\beta}\hat n_{d\ol\beta}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}\\
+\eeq
+There are again four possible scattering processes.
+\paragraph{1.}
+\beq
+&\hf\sum_{q\beta}|V_q|^2 c^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - H_\text{imp}} c^\dagger_{d\beta}c_{q\beta}\\
+&= \hf\sum_{q\beta}|V_q|^2\left[\fr{\hat n_{d\beta}}{\omega - \hf\epsilon_q + \epsilon_d}  + \fr{\rr{\epsilon_d + U}\hat n_{d\ol\beta}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}\right.\\
+&\left.- \fr{\rr{\epsilon_d + U}\hat n_{d\beta}\hat n_{d\ol\beta}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}\right]\\
+&= \hf\sum_{q\beta}\fr{|V_q|^2\hat n_{d\beta}\rr{\omega - \hf\epsilon_q + 3\epsilon_d + 2U}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}} -\sum_q \fr{\rr{\epsilon_d + U}\hat n_{d\ua}\hat n_{d\da}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}\\
+\eeq
+\paragraph{Scaling equations}
+\begin{gather}
+\Delta \epsilon_d = -\hf\sum_q \fr{|V_q|^2}{\omega - \hf\epsilon_q} + \hf\sum_{q}\fr{|V_q|^2\rr{\omega - \hf\epsilon_q + 3\epsilon_d + 2U}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}} \\
+\Delta U = -\sum_q\fr{|V_q|^2\epsilon_d}{\rr{\omega - \hf\epsilon_q - \epsilon_d}\rr{\omega - \hf\epsilon_q}} - \sum_q \fr{\epsilon_d + U}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q + \epsilon_d}}
+\end{gather}
+\paragraph{Sanity Checks: \il{\omega = D} }
+\paragraph{1.  \il{\epsilon_d,U+\epsilon_d \ll D}}
+\beq
+\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\omega - \hf D} + \hf n(D)|V_1|^2\fr{\omega - \hf D + 3\epsilon_d + 2U}{\rr{\omega - \hf D + 2\epsilon_d + U}\rr{\omega - \hf D + \epsilon_d}}\\
+&= -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{\hf D + 3\epsilon_d + 2U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
+&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{1}{\hf D + \epsilon_d}\\
+&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{1}{\hf D}\\
+&=0
+\eeq
+\beq
+\Delta U &= - n(D)|V_1|^2\fr{\epsilon_d}{\rr{\hf D - \epsilon_d}\rr{\hf D}} - n(D)|V_1|^2 \fr{\epsilon_d + U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
+	 &= - n(D)|V_1|^2\qq{\fr{1}{\hf D - \epsilon_d}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D + \epsilon_d} - \fr{1}{\hf D + 2\epsilon_d + U}}\\
+	 &\approx - n(D)|V_1|^2\qq{\fr{1}{\hf D}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D} - \fr{1}{\hf D}}\\
+	 &= 0
+\eeq
+\paragraph{2. \il{U+\epsilon_d \gg D \gg \epsilon_d}}
+
+\beq
+\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{\hf D + 3\epsilon_d + 2U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
+&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{2U}{\rr{U}\rr{\hf D}}\\
+&= -n(D)|V_1|^2\fr{1}{D} + 2n(D)|V_1|^2\fr{1}{D}\\
+&= n(D)|V_1|^2\fr{1}{D}\\
+&= -\fr{\Delta}{\pi}\fr{\Delta D}{D}\\
+\implies \dv{\epsilon_d}{\ln D} + \fr{\Delta}{\pi} &= 0
+\eeq
+\beq
+\Delta U &= - n(D)|V_1|^2\qq{\fr{1}{\hf D - \epsilon_d}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D + \epsilon_d} - \fr{1}{\hf D + 2\epsilon_d + U}}\\
+	 &\approx - n(D)|V_1|^2\qq{\fr{1}{\hf D}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D} - \fr{1}{\epsilon_d + U}}\\
+	 &\approx -n(D)|V_1|^2 \qq{\fr{2}{D} - \fr{1}{\epsilon_d + U}}\\
+\eeq
 \end{document}

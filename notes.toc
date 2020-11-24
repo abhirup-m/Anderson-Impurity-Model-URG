@@ -16,3 +16,12 @@
 \contentsline {paragraph}{1. of \({\epsilon _d}\)}{19}{section*.19}%
 \contentsline {paragraph}{2. of \({U}\)}{19}{section*.20}%
 \contentsline {paragraph}{3. of \({V_1}\)}{19}{section*.21}%
+\contentsline {paragraph}{One electron on shell:}{20}{section*.23}%
+\contentsline {paragraph}{Particle sector:}{20}{section*.24}%
+\contentsline {paragraph}{1.}{21}{section*.25}%
+\contentsline {paragraph}{Hole sector}{21}{section*.26}%
+\contentsline {paragraph}{1.}{22}{section*.27}%
+\contentsline {paragraph}{Scaling equations}{22}{section*.28}%
+\contentsline {paragraph}{Sanity Checks: \({\omega = D}\) }{23}{section*.29}%
+\contentsline {paragraph}{1. \({\epsilon _d,U+\epsilon _d \ll D}\)}{23}{section*.30}%
+\contentsline {paragraph}{2. \({U+\epsilon _d \gg D \gg \epsilon _d}\)}{23}{section*.31}%
