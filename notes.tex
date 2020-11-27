@@ -5088,42 +5088,54 @@ There are again four possible scattering processes.
 \Delta V_k^- = -\sum_{q}V_2 V_q\fr{1}{\omega - \hf\epsilon_q + \epsilon_d}
 \end{gather}
 They can be made more compact by defining \il{\mc{W} = \omega - \hf\epsilon_q}:
-\begin{gather}
-	\Delta \epsilon_d = -\hf\sum_q \fr{|V_q|^2}{\mc{W}} + \hf\sum_{q}\fr{|V_q|^2\rr{\mc{W} + 3\epsilon_d + 2U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}} = \hf\sum_q \fr{|V_q|^2\rr{U\mc{W} - U\epsilon_d - 2\epsilon_d^2}}{\mc{W}\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}\\
-	\Delta U = -\sum_q\qq{\fr{|V_q|^2\epsilon_d}{\rr{\mc{W} - \epsilon_d}\mc{W}} + \fr{|V_q|^2\rr{\epsilon_d + U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}} \\
-	= -\sum_q |V_q|^2 \fr{\rr{2\epsilon_d + U}\rr{\mc{W}^2 + \epsilon_d^2} + 2\mc{W}\epsilon_d^2}{\mc{W}\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W}^2 - \epsilon_d^2}}\\
-	\Delta V_k^+ = -\hf\sum_{q}\fr{V_q V_2 \rr{2\mc{W} + \epsilon_d + U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W}  - \epsilon_d}}\\
-	\Delta V_k^- = -\sum_{q}\fr{V_2 V_q}{\mc{W} + \epsilon_d}
-\end{gather}
+\beq
+\Delta \epsilon_d &= -\hf\sum_q \fr{|V_q|^2}{\mc{W}} + \hf\sum_{q}\fr{|V_q|^2\rr{\mc{W} + 3\epsilon_d + 2U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}\\
+		  &= \hf\sum_q \fr{|V_q|^2\rr{U\mc{W} - U\epsilon_d - 2\epsilon_d^2}}{\mc{W}\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}\\
+\Delta U &= -\sum_q\qq{\fr{|V_q|^2\epsilon_d}{\rr{\mc{W} - \epsilon_d}\mc{W}} + \fr{|V_q|^2\rr{\epsilon_d + U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}} \\
+	 &= -\sum_q |V_q|^2 \fr{\rr{2\epsilon_d + U}\rr{\mc{W}^2 + \epsilon_d^2} + 2\mc{W}\epsilon_d^2}{\mc{W}\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W}^2 - \epsilon_d^2}}\\
+\Delta V_k^+ &= -\hf\sum_{q}\fr{V_q V_2 \rr{2\mc{W} + \epsilon_d + U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W}  - \epsilon_d}}\\
+\Delta V_k^- &= -\sum_{q}\fr{V_2 V_q}{\mc{W} + \epsilon_d}
+\eeq
 
 \paragraph{Sanity Checks: \il{\omega = D\text{  }(\mc{W} = \hf D)}}
 \paragraph{1.  \il{\epsilon_d,U+\epsilon_d \ll D}}
 \beq
-\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\mc{W}} + \hf n(D)|V_1|^2\fr{\mc{W} + 3\epsilon_d + 2U}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W} + \epsilon_d}}\\
-&= -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{\hf D + 3\epsilon_d + 2U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
-&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{1}{\hf D + \epsilon_d}\\
-&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{1}{\hf D}\\
-&=0
+\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\mc{W}} + \hf n(D)|V_1|^2\qq{\fr{2}{\mc{W} + \epsilon_d} - \fr{1}{\mc{W} + 2\epsilon_d + U}}\\
+		  &\approx -\hf n(D)|V_1|^2\fr{1}{\mc{W}} + \hf n(D)|V_1|^2\qq{\fr{2\rr{\mc{W} - \epsilon_d}}{\mc{W}^2} - \fr{\mc{W} - 2\epsilon_d - U}{\mc{W}^2}}\\
+&=\hf n(D)|V_1|^2\fr{U}{\mc{W}^2}
 \eeq
 \beq
-\Delta U &= - n(D)|V_1|^2\fr{\epsilon_d}{\rr{\hf D - \epsilon_d}\rr{\hf D}} - n(D)|V_1|^2 \fr{\epsilon_d + U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
-	 &= - n(D)|V_1|^2\qq{\fr{1}{\hf D - \epsilon_d}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D + \epsilon_d} - \fr{1}{\hf D + 2\epsilon_d + U}}\\
-	 &\approx - n(D)|V_1|^2\qq{\fr{1}{\hf D}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D} - \fr{1}{\hf D}}\\
-	 &= 0
+\Delta U &= -n(D)|V_1|^2\qq{\fr{1}{\mc{W} - \epsilon_d} - \fr{1}{\mc{W}}  + \fr{1}{\mc{W} + \epsilon_d} - \fr{1}{\mc{W} + 2\epsilon_d + U} } \\
+	 &\approx -n(D)|V_1|^2\qq{\fr{\mc{W} + \epsilon_d}{\mc{W}^2} - \fr{1}{\mc{W}}  + \fr{\mc{W} - \epsilon_d}{\mc{W}^2} - \fr{\mc{W} - 2\epsilon_d - U}{\mc{W}^2}} \\
+	 &= -n(D)|V_1|^2\fr{2\epsilon_d + U}{\mc{W}^2} \\
 \eeq
 \paragraph{2. \il{U+\epsilon_d \gg D \gg \epsilon_d}}
-
 \beq
-\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{\hf D + 3\epsilon_d + 2U}{\rr{\hf D + 2\epsilon_d + U}\rr{\hf D + \epsilon_d}}\\
-&\approx -\hf n(D)|V_1|^2\fr{1}{\hf D} + \hf n(D)|V_1|^2\fr{2U}{\rr{U}\rr{\hf D}}\\
-&= -n(D)|V_1|^2\fr{1}{D} + 2n(D)|V_1|^2\fr{1}{D}\\
-&= n(D)|V_1|^2\fr{1}{D}\\
-&= -\fr{\Delta}{\pi}\fr{\Delta D}{D}\\
-\implies \dv{\epsilon_d}{\ln D} + \fr{\Delta}{\pi} &= 0
+\Delta \epsilon_d &= -\hf n(D)|V_1|^2\fr{1}{\mc{W}} + \hf n(D)|V_1|^2\qq{\fr{2}{\mc{W} + \epsilon_d} - \fr{1}{\mc{W} + 2\epsilon_d + U}}\\
+		  &\approx -\hf n(D)|V_1|^2\fr{1}{\mc{W}} + \hf n(D)|V_1|^2\qq{\fr{2\rr{\mc{W} - \epsilon_d}}{\mc{W}^2} - \fr{2\epsilon_d + U - \mc{W}}{\rr{2\epsilon_d + U}^2}}\\
+		  &=\hf n(D)|V_1|^2\fr{1}{\mc{W}} - \hf n(D)|V_1|^2\qq{\fr{2\epsilon_d}{\mc{W}^2} + \fr{1}{2\epsilon_d + U} - \fr{\mc{W}}{\rr{2\epsilon_d + U}^2}}
+\eeq
+Following Hewson, the last three terms are very small and can be dropped.
+\beq
+\Delta \epsilon_d &\approx \hf n(D)|V_1|^2\fr{1}{\mc{W}} = -\rho(D)\Delta D |V_1|^2 \fr{1}{D}\\
+\implies \dv{\epsilon_d}{\ln D} &= - \fr{\Delta}{\pi} &&\qq{\Delta \equiv \pi \rho |V_1|^2}
 \eeq
 \beq
-\Delta U &= - n(D)|V_1|^2\qq{\fr{1}{\hf D - \epsilon_d}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D + \epsilon_d} - \fr{1}{\hf D + 2\epsilon_d + U}}\\
-	 &\approx - n(D)|V_1|^2\qq{\fr{1}{\hf D}- \fr{1}{\hf D}} - n(D)|V_1|^2 \qq{\fr{1}{\hf D} - \fr{1}{\epsilon_d + U}}\\
-	 &\approx -n(D)|V_1|^2 \qq{\fr{2}{D} - \fr{1}{\epsilon_d + U}}\\
+\Delta U &= -n(D)|V_1|^2\qq{\fr{1}{\mc{W} - \epsilon_d} - \fr{1}{\mc{W}}  + \fr{1}{\mc{W} + \epsilon_d} - \fr{1}{\mc{W} + 2\epsilon_d + U} } \\
+	 &\approx -n(D)|V_1|^2\qq{\fr{\mc{W} + \epsilon_d}{\mc{W}^2} - \fr{1}{\mc{W}}  + \fr{\mc{W} - \epsilon_d}{\mc{W}^2} - \fr{2\epsilon_d + U - \mc{W}}{\rr{2\epsilon_d + U}^2}} \\
+	 &= -n(D)|V_1|^2\qq{\fr{1}{\mc{W}} - \fr{1}{2\epsilon_d + U} + \fr{\mc{W}}{\rr{2\epsilon_d + U}^2}}
+\eeq
+\beq
+\Delta V_k^+ &= -\hf n(D) V_1 V_2\qq{\fr{1}{\mc{W}  - \epsilon_d} + \fr{1}{\mc{W} + 2\epsilon_d + U}}\\
+	     &= -\hf n(D) V_1 V_2\qq{\fr{\mc{W} + \epsilon_d}{\mc{W}^2} + \fr{2\epsilon_d + U - \mc{W}}{\rr{2\epsilon_d + U}^2}}\\
+\eeq
+Following Jefferson, \il{\mc{W} + \epsilon_d \approx \mc{W}} and we can drop the second term:
+\beq
+\Delta V_k^+ &\approx -\hf n(D) V_1 V_2\fr{1}{\mc{W}}\\
+	     &=\fr{V_1 V_2}{2 D_0 D}\Delta D &&\qq{\rho = \fr{1}{2D_0}}
+\eeq
+\beq
+\Delta V_k^- &= -n(D) V_1 V_2\fr{1}{\mc{W} + \epsilon_d} \approx -n(D) V_1 V_2\fr{1}{\mc{W}}\\
+	     &= \fr{V_1 V_2}{D_0 D}\Delta D
 \eeq
 \end{document}
