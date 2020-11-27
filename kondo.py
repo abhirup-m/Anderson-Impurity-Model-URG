@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 J = 0.01
 k = 2.83
-b = 0.999999999999
+b = 0.9999
 K = []
 flag = False
 sgn = 1 - (J/(4*0.7075*k))**(2)
