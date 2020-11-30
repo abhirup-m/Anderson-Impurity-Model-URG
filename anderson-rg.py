@@ -3,109 +3,128 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 fig, axs = plt.subplots(2, 2)
-
-def eq_ed(W, U, ed, Vp, Vm, V2, num):
-    numr = -0.5 * num * (Vm**2 * (W + 2*ed + U) + Vp**2 * W)
-    den = W * (W + 2*ed + U)
-    ed += numr / den
-    print (den)
-    return ed,  den
-
-
-def eq_U(W, U, ed, Vp, Vm, V2, num):
-    numr = num * (Vm**2 * ed * (W - ed) * (W + 2*ed + U) - Vp**2 * W * (W + ed) * (3*ed + U))
-    den = W * (W**2 - ed**2) * (W + 2*ed + U)
-    U += numr / den
-    return U, den
-
-
-def eq_Vp(W, U, ed, Vp, Vm, V2, num):
-    numr = -0.5 * num * Vp * V2 * (2*W + ed + U)
-    den = (W + 2*ed + U) * (W - ed)
-    Vp += numr / den
-    return Vp, den
-
-
-def eq_Vm(W, U, ed, Vp, Vm, V2, num):
-    numr = -num * Vm * V2
-    den = W + ed
-    Vm += numr / den
-    return Vm, den
-
-
-def check_den(W, U, ed, dens):
-    global flags
-    #print (dens)
-    if dens[0] * W * (W + 2*ed + U) <= 0:
-        flags[0] = True
-    if dens[1] * W * (W**2 - ed**2) * (W + 2*ed + U) <= 0:
-        flags[1] = True
-    if dens[2] * (W + 2*ed + U) * (W - ed) <= 0:
-        flags[2] = True
-    if dens[3] * (W + ed) <= 0:
-        flags[3] = True
-
-
-def master_eq(W, U, ed, Vp, Vm, V2, num):
-    global flags
-    ed_new, den1 = eq_ed(W, U, ed, Vp, Vm, V2, num)
-    U_new, den2 = eq_U(W, U, ed, Vp, Vm, V2, num)
-    Vp_new, den3 = eq_Vp(W, U, ed, Vp, Vm, V2, num)
-    Vm_new, den4 = eq_Vm(W, U, ed, Vp, Vm, V2, num)
-
-    check_den(D*b/2, U_new, ed_new, [den1, den2, den3, den4])
-    if flags[0] == True:
-        ed_new = ed
-    if flags[1] == True:
-        U_new = U
-    if flags[2] == True:
-        Vp_new = Vp
-    if flags[3] == True:
-        Vm_new = Vm
-    return [ed_new, U_new, Vp_new, Vm_new]
-
-
-
-# system size = 100 x 100
-A = 1
-
-# RG scale factor
-b = 0.99999
-
-# upper energy cutoff
-D = 1000
-
-
-# starting values of couplings: ed,V << D << U
-ed = 0
-Vp = 10
-Vm = Vp
-U = 10
-
-# value of extra coupling which remains fixed
-V2 = Vp**2
-num = A * D
-
-global flags
-flags = [False, False, False, False]
-
-while D>999:
-    print (flags)
-    print (D)
-    W = D/2
-    num = A * D
-    ed, U, Vp, Vm = master_eq(W, U, ed, Vp, Vm, V2, num)
-    axs[0,0].scatter(D,ed, marker='.')
-    axs[0,1].scatter(D,U, marker='.')
-    axs[1,0].scatter(D,Vp, marker='.')
-    axs[1,1].scatter(D,Vm, marker='.')
-    D *= b
-
-
-print (flags)
-#plt.legend()
 axs[0,0].set_title("ed")
 axs[0,1].set_title("U")
-axs[1,0].set_title("Vp")
-axs[1,1].set_title("Vm")
+axs[1,0].set_title("vp")
+axs[1,1].set_title("vm")
+
+def rg_eq(W, g, V2, num, i):
+    ed, u, vp, vm = g
+    if i == 0:
+        numr = -0.5 * num * (vm**2 * (W + 2*ed + u) + vp**2 * W)
+        den = W * (W + 2*ed + u)
+    elif i ==1:
+        numr = num * (vm**2 * ed * (W - ed) * (W + 2*ed + u) - vp**2 * W * (W + ed) * (3*ed + u))
+        den = W * (W**2 - ed**2) * (W + 2*ed + u)
+    elif i ==2:
+        numr = -0.5 * num * vp * V2 * (2*W + ed + u)
+        den = (W + 2*ed + u) * (W - ed)
+    elif i ==3:
+        numr = -num * vm * V2
+        den = W + ed
+    return numr, den
+
+
+#def check_den(W, u, ed, dens):
+#    global flags
+#    #print (dens)
+#    if dens[0] * W * (W + 2*ed + u) <= 0:
+#        flags[0] = True
+#    if dens[1] * W * (W**2 - ed**2) * (W + 2*ed + u) <= 0:
+#        flags[1] = True
+#    if dens[2] * (W + 2*ed + u) * (W - ed) <= 0:
+#        flags[2] = True
+#    if dens[3] * (W + ed) <= 0:
+#        flags[3] = True
+
+
+def master_eq(W, g, V2, num, dens):
+    global flags, flag, df
+    g_new = [0,0,0,0]
+    den_new = [0,0,0,0]
+    numr_new = [0,0,0,0]
+    for i in range(len(g[-1])):
+        if flags[i] == False:
+            numr_new[i],den_new[i] = rg_eq(W, g[-1], V2, num, i)
+            if dens != [] and dens[-1][i] * den_new[i] <= 0:
+                flags[i] = True
+                g_new[i] = g[-1][i]
+            else:
+                g_new[i] = g[-1][i] + numr_new[i]/den_new[i]
+        else:
+            g_new[i] = g[-1][i]
+    if flags == [True, True, True, True]:
+        flag = True
+
+    g.append(g_new)
+    dens.append(den_new)
+    return g,dens
+
+
+A       = 1
+b       = 0.9999
+flag    = False
+flags   = [False, False, False, False]
+
+j_start = 500
+j_range = [j_start+1]
+for w in np.arange(300,-300,-5):
+    print ("now in",w)
+    for D0 in range(100,500,5):
+        ed      = 2
+        vp      = 1
+        vm      = vp
+        u       = 1000
+        g       = [[ed, u, vp, vm]]
+        dens    = []
+        D = D0
+        x       = [D]
+        V2      = vp**2/D0
+        flag    = False
+        flags   = [False, False, False, False]
+        for j in range(j_start,0,-1):
+            W = w - D/2
+            num = A * D
+            g, dens = master_eq(W, g, V2, num, dens)
+            j_range.append(j)
+            if flag == True:
+                break
+            D *= b
+            x.append(D)
+        if flag == True:
+            break
+
+quit()
+print (flags)
+axs[0,0].plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
+axs[0,1].plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
+axs[1,0].plot(j_range,[g[i][2] for i in range(0,len(g))], marker='.')
+axs[1,1].plot(j_range,[g[i][3] for i in range(0,len(g))], marker='.')
+fig.suptitle("D0 = {}, w = {}, D* = {}\ninit = {}\nfinal = {}".format(D0, w, round(D,1), g[0], np.array(g[-1]).round(2)))
 plt.show()
+
+
+#axs[0,0].plot(j_range,[g[i][0] for i in range(1,len(g))], marker='.')
+#fig = plt.figure()
+#plt.plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
+#fig.suptitle("ed,\n init=({})".format(g[0]))
+#fig = plt.figure()
+#plt.plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
+#fig.suptitle("U,\n init=({})".format(g[0]))
+#fig = plt.figure()
+#plt.plot(j_range,[g[i][2] for i in range(0,len(g))], marker='.')
+#fig.suptitle("Vp,\n init=({})".format(g[0]))
+#fig = plt.figure()
+#plt.plot(j_range,[g[i][3] for i in range(0,len(g))], marker='.')
+#fig.suptitle("Vm,\n init=({})".format(g[0]))
+#axs[1,0].plot(j_range,[g[i][2] for i in range(1,len(g))], marker='.')
+#axs[1,1].plot(j_range,[g[i][3] for i in range(1,len(g))], marker='.')
+ #   axs[0,0].scatter(D, ed, marker='.')
+ #   axs[0,1].scatter(D, u,  marker='.')
+ #   axs[1,0].scatter(D, vp, marker='.')
+ #   axs[1,1].scatter(D, vm, marker='.')
+#    axs[0,0].plot(x,[y[i][0] for i in range(0,len(y))], marker='.')
+#    axs[0,1].plot(x,[y[i][1] for i in range(0,len(y))], marker='.')
+#    axs[1,0].plot(x,[y[i][2] for i in range(0,len(y))], marker='.')
+#    axs[1,1].plot(x,[y[i][3] for i in range(0,len(y))], marker='.')
+#plt.show()

@@ -17,7 +17,7 @@ for c in np.arange(100,10,-1):
         K.append(K[-1])
     else:
         K.append(J/k)
-        delta_J = 3*J**2/(1 - (J/(4*0.7075*k))**(2))
+        delta_J = 1000*3*J**2/(1 - (J/(4*0.7075*k))**(2))
         k *= b
         J += delta_J
 
