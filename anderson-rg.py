@@ -1,6 +1,10 @@
 #!/bin/python
 import numpy as np
+import matplotlib as mpl
 from matplotlib import pyplot as plt
+import os
+
+mpl.rcParams["savefig.directory"] = os.chdir(os.path.dirname(__file__))
 
 fig, axs = plt.subplots(2, 2)
 axs[0,0].set_title("ed")
@@ -23,19 +27,6 @@ def rg_eq(W, g, V2, num, i):
         numr = -num * vm * V2
         den = W + ed
     return numr, den
-
-
-#def check_den(W, u, ed, dens):
-#    global flags
-#    #print (dens)
-#    if dens[0] * W * (W + 2*ed + u) <= 0:
-#        flags[0] = True
-#    if dens[1] * W * (W**2 - ed**2) * (W + 2*ed + u) <= 0:
-#        flags[1] = True
-#    if dens[2] * (W + 2*ed + u) * (W - ed) <= 0:
-#        flags[2] = True
-#    if dens[3] * (W + ed) <= 0:
-#        flags[3] = True
 
 
 def master_eq(W, g, V2, num, dens):
@@ -66,22 +57,21 @@ b       = 0.9999
 flag    = False
 flags   = [False, False, False, False]
 
-j_start = 500
-j_range = [j_start+1]
-for w in np.arange(300,-300,-5):
-    print ("now in",w)
-    for D0 in range(100,500,5):
-        ed      = 2
+for w in np.arange(91, 92, 5):
+    for D0 in range(186, 187, 5):
+        ed      = -1000
         vp      = 1
         vm      = vp
         u       = 1000
         g       = [[ed, u, vp, vm]]
         dens    = []
-        D = D0
+        D       = D0
         x       = [D]
         V2      = vp**2/D0
         flag    = False
         flags   = [False, False, False, False]
+        j_start = 500
+        j_range = [j_start+1]
         for j in range(j_start,0,-1):
             W = w - D/2
             num = A * D
@@ -94,7 +84,6 @@ for w in np.arange(300,-300,-5):
         if flag == True:
             break
 
-quit()
 print (flags)
 axs[0,0].plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
 axs[0,1].plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
