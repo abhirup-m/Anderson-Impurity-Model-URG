@@ -4,13 +4,10 @@ import matplotlib as mpl
 from matplotlib import pyplot as plt
 import os
 
+
+mng = plt.get_current_fig_manager()
 mpl.rcParams["savefig.directory"] = os.chdir(os.path.dirname(__file__))
 
-fig, axs = plt.subplots(2, 2)
-axs[0,0].set_title("ed")
-axs[0,1].set_title("U")
-axs[1,0].set_title("vp")
-axs[1,1].set_title("vm")
 
 def rg_eq(W, g, V2, num, i):
     ed, u, vp, vm = g
@@ -52,69 +49,54 @@ def master_eq(W, g, V2, num, dens):
     return g,dens
 
 
+def col(g,j):
+    return [g[i][j] for i in range(0,len(g))]
+
+
 A       = 1
 b       = 0.9999
 flag    = False
 flags   = [False, False, False, False]
 
-for w in np.arange(-200, 200, 5):
-    for D0 in range(1, 400, 5):
-        ed      = -1
-        vp      = 10
-        vm      = vp
-        u       = 100
-        g       = [[ed, u, vp, vm]]
-        dens    = []
-        D       = D0
-        x       = [D]
-        V2      = vp**2/D0
-        flag    = False
-        flags   = [False, False, False, False]
-        j_start = 500
-        j_range = [j_start+1]
-        for j in range(j_start,0,-1):
-            W = w - D/2
-            num = A * D
-            g, dens = master_eq(W, g, V2, num, dens)
-            j_range.append(j)
-            if flag == True:
-                break
-            D *= b
-            x.append(D)
-        if flag == True:
-            print (w,D0)
+for w in np.arange(200, 400, 50):
+    for D0 in [10,100,1000]:
+        for ed in [-100,-10,0,10,100]:
+            for u in [0,10,10000]:
+                vp      = 100
+                vm      = vp
+                V2      = vp**2/D0
+                g       = [[ed, u, vp, vm]]
+                dens    = []
+                D       = D0
+                x       = [D]
+                flag    = False
+                flags   = [False, False, False, False]
+                j_start = 500
+                j_range = [j_start+1]
+                for j in range(j_start,0,-1):
+                    W = w - D/2
+                    num = A * D
+                    g, dens = master_eq(W, g, V2, num, dens)
+                    j_range.append(j)
+                    if flag == True and abs(g[-1][1])/abs(g[-1][2])<1:
+                        print (w,D0,u,ed)
+                        print (g[-1])
+                        print ()
+                        break
+                    D *= b
+                    x.append(D)
+                # fig, axs = plt.subplots(2, 2)
+                # axs[0,0].set_title("ed")
+                # axs[0,1].set_title("U")
+                # axs[1,0].set_title("vp")
+                # axs[1,1].set_title("vm")
+                # axs[0,0].plot(j_range,col(g,0), marker='.')
+                # axs[0,1].plot(j_range,col(g,1), marker='.')
+                # axs[1,0].plot(j_range,col(g,2), marker='.')
+                # axs[1,1].plot(j_range,col(g,3), marker='.')
+                # fig.suptitle("D0 = {}, w = {}, D* = {}\ninit = {}\nfinal = {}".format(D0, w, round(D,1), g[0], np.array(g[-1]).round(2)))
+                # figManager = plt.get_current_fig_manager()
+                # figManager.window.showMaximized()
+                # plt.show()
 
 quit()
-print (flags)
-axs[0,0].plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
-axs[0,1].plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
-axs[1,0].plot(j_range,[g[i][2] for i in range(0,len(g))], marker='.')
-axs[1,1].plot(j_range,[g[i][3] for i in range(0,len(g))], marker='.')
-fig.suptitle("D0 = {}, w = {}, D* = {}\ninit = {}\nfinal = {}".format(D0, w, round(D,1), g[0], np.array(g[-1]).round(2)))
-plt.show()
-
-
-#axs[0,0].plot(j_range,[g[i][0] for i in range(1,len(g))], marker='.')
-#fig = plt.figure()
-#plt.plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
-#fig.suptitle("ed,\n init=({})".format(g[0]))
-#fig = plt.figure()
-#plt.plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
-#fig.suptitle("U,\n init=({})".format(g[0]))
-#fig = plt.figure()
-#plt.plot(j_range,[g[i][2] for i in range(0,len(g))], marker='.')
-#fig.suptitle("Vp,\n init=({})".format(g[0]))
-#fig = plt.figure()
-#plt.plot(j_range,[g[i][3] for i in range(0,len(g))], marker='.')
-#fig.suptitle("Vm,\n init=({})".format(g[0]))
-#axs[1,0].plot(j_range,[g[i][2] for i in range(1,len(g))], marker='.')
-#axs[1,1].plot(j_range,[g[i][3] for i in range(1,len(g))], marker='.')
- #   axs[0,0].scatter(D, ed, marker='.')
- #   axs[0,1].scatter(D, u,  marker='.')
- #   axs[1,0].scatter(D, vp, marker='.')
- #   axs[1,1].scatter(D, vm, marker='.')
-#    axs[0,0].plot(x,[y[i][0] for i in range(0,len(y))], marker='.')
-#    axs[0,1].plot(x,[y[i][1] for i in range(0,len(y))], marker='.')
-#    axs[1,0].plot(x,[y[i][2] for i in range(0,len(y))], marker='.')
-#    axs[1,1].plot(x,[y[i][3] for i in range(0,len(y))], marker='.')
-#plt.show()
