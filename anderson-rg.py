@@ -57,12 +57,12 @@ b       = 0.9999
 flag    = False
 flags   = [False, False, False, False]
 
-for w in np.arange(91, 92, 5):
-    for D0 in range(186, 187, 5):
-        ed      = -1000
-        vp      = 1
+for w in np.arange(-200, 200, 5):
+    for D0 in range(1, 400, 5):
+        ed      = -1
+        vp      = 10
         vm      = vp
-        u       = 1000
+        u       = 100
         g       = [[ed, u, vp, vm]]
         dens    = []
         D       = D0
@@ -82,8 +82,9 @@ for w in np.arange(91, 92, 5):
             D *= b
             x.append(D)
         if flag == True:
-            break
+            print (w,D0)
 
+quit()
 print (flags)
 axs[0,0].plot(j_range,[g[i][0] for i in range(0,len(g))], marker='.')
 axs[0,1].plot(j_range,[g[i][1] for i in range(0,len(g))], marker='.')
