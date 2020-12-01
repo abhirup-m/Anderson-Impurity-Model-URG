@@ -43,3 +43,5 @@
 \contentsline {paragraph}{3.}{30}{section*.47}%
 \contentsline {paragraph}{4.}{30}{section*.48}%
 \contentsline {paragraph}{Scaling equations}{30}{section*.49}%
+\contentsline {subsection}{\numberline {1.1}Symmetric Anderson model}{31}{subsection.1.1}%
+\contentsline {paragraph}{1.}{32}{section*.51}%

@@ -5244,4 +5244,50 @@ They can be made more compact by defining \il{\mc{W} = \omega - \hf\epsilon_q}:
 \Delta V_k^+ &= -\hf\sum_{q}\fr{V_{q+} V_2 \rr{2\mc{W} + \epsilon_d + U}}{\rr{\mc{W} + 2\epsilon_d + U}\rr{\mc{W}  - \epsilon_d}}\\
 \Delta V_k^- &= -\sum_{q}\fr{V_2 V_{q-}}{\mc{W} + \epsilon_d}
 \eeq
+
+\subsection{Symmetric Anderson model}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
+\eeq
+The diagonal part can be written as
+\beq
+\ham^D &= \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}\\
+       &= \sum_{k\sigma}\epsilon_k\rr{\hf + \tau_{k\sigma}} + \epsilon_{d}\sum_\sigma\rr{\hf + \tau_{d\sigma}} +  U \rr{\hf + \tau_{d\ua}} \rr{\hf + \tau_{d\da}}\\
+       &= \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + \epsilon_{d}\sum_\sigma\tau_{d\sigma} + \fr{U}{2}\sum_\sigma \tau_{d\sigma} +  U \tau_{d\ua} \tau_{d\da} + \hf\sum_{k\sigma}\epsilon_k + \epsilon_d + \fr{U}{4}\\
+       &= \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + \rr{\epsilon_{d} + \fr{U}{2}}\sum_\sigma\tau_{d\sigma} + U \tau_{d\ua} \tau_{d\da} + \hf\sum_{k\sigma}\rr{\epsilon_k - \mu} + \epsilon_d + \fr{U}{4}\\
+\eeq
+Dropping the constant part and setting \il{\epsilon_d + \fr{U}{2} = 0},
+\beq
+\ham^D = \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + U \tau_{d\ua} \tau_{d\da}
+\eeq
+The terms with \il{V_k,V_k^*} can be written as
+\beq
+\sum_{k\sigma} V_{k} c^\dagger_{k\sigma} c_{d\sigma} &= \sum_{k\sigma}V_k\qq{\hat n_{d\ol\sigma} + \rr{1 - \hat n_{d\ol\sigma}}}c^\dagger_{k\sigma} c_{d\sigma}\\
+						     &\equiv \sum_{k\sigma}\qq{V_p\hat n_{d\ol\sigma} + V_m\rr{1 - \hat n_{d\ol\sigma}}}c^\dagger_{k\sigma} c_{d\sigma}\\
+\eeq
+The on-shell Hamiltonian is
+\beq
+\ham^N = \ham_0 + \epsilon_q\tau_{q\beta} + U \tau_{d\ua} \tau_{d\da} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}\\
++V_2 \hat n_{q\beta}\hat n_{d\beta}
+\eeq
+%The last diagonal term can be written as
+%\beq
+%V_2\hat n_{q\beta}\hat n_{d\beta} = V_2\rr{\hf + \tau_{q\beta}}\rr{\hf + \tau_{d\beta}} = V_2\tau_{q\beta} + V_2\tau_{d\beta} + V_2\tau_{q\beta}\tau_{d\beta}
+%\eeq
+%where I dropped the constant term. To get rid of the \il{\tau_{d\beta}} term, we need to update the particle-hole symmetry constraint to \il{\epsilon_d + \fr{U}{2} + V_2= 0}. This gives
+%\beq
+%\ham^N = \ham_0 + \epsilon_q\tau_{q\beta} + U \tau_{d\ua} \tau_{d\da} + V_q c^\dagger_{q\beta}c_{d\beta} + V^*_q c^\dagger_{d\beta}c_{q\beta} + \sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}\\
+%\eeq
+\subsubsection*{Particle sector}
+\beq
+&\Delta \ham_N\\
+&= \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{-1/2}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}\hat n_{q\beta}}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\\
+&= \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}
+\eeq
+\paragraph{1.}
+\beq
+\sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}V^*_q\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}V_qc_{d\beta}c^\dagger_{q\beta}
+\eeq
+
+
 \end{document}
