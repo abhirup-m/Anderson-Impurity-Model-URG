@@ -5210,7 +5210,8 @@ There are again four possible scattering processes.
 &= -\hf\sum_{q\beta}\qq{V^2_{q+} \hat n_{d\ol\beta} + V_{q-}^2\rr{1 - \hat n_{d\ol\beta}}}\rr{1 - \hat n_{d\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q + 2\epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
 &= -\hf\sum_{q\beta}\rr{1 - \hat n_{d\beta}}\qq{\fr{V_{q+}^2\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q + 2\epsilon_d + U} + \fr{V^2_{q-}\rr{1 - \hat n_{d\ol\beta}}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
 &= -\hf\sum_{q\beta}\rr{1 - \hat n_{d\beta}}\qq{\hat n_{d\ol\beta}\rr{\fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U} - \fr{V^2_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}} + \fr{V^2_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
-&= -\hf\sum_{q\beta}\hat n_{d\ol\beta}\fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U} + \hf\sum_{q\beta}\hat n_{d\beta}\hat n_{d\ol\beta}\rr{\fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U} - \fr{V^2_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
+&= -\hf\sum_{q\beta}\hat n_{d\ol\beta}\qq{\fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U} - \fr{2V^2_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
+&\quad\quad + \hf\sum_{q\beta}\hat n_{d\beta}\hat n_{d\ol\beta}\qq{\fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U} - \fr{V^2_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}}\\
 \eeq
 \paragraph{2.}
 \beq
@@ -5231,11 +5232,12 @@ There are again four possible scattering processes.
 \il{O(V_2^2)}
 \paragraph{Scaling equations}
 \beq
-\Delta \epsilon_d &= -\hf\sum_q\qq{\fr{|V_{q-}|^2}{\omega - \hf\epsilon_q} + \fr{|V_{q+}|^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U}}\\
+\Delta \epsilon_d &= \hf\sum_{q}\qq{\fr{V_{q-}^2\rr{\omega - \hf\epsilon_q - \epsilon_d}}{\rr{\omega - \hf\epsilon_q + \epsilon_d}\rr{\omega - \hf\epsilon_q}} - \fr{V_{q+}^2}{\omega - \hf\epsilon_q + 2\epsilon_d + U}}\\
 \Delta U &= \sum_q\qq{\fr{|V_{q-}|^2\epsilon_d}{\rr{\omega - \hf\epsilon_q + \epsilon_d}\rr{\omega - \hf\epsilon_q}} - \fr{|V_{q+}|^2\rr{3\epsilon_d + U}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q - \epsilon_d}}}\\
 \Delta V_k^+ &= -\hf\sum_{q}\fr{V_{q+} V_2 \rr{2\omega - \epsilon_q + \epsilon_d + U}}{\rr{\omega - \hf\epsilon_q + 2\epsilon_d + U}\rr{\omega - \hf\epsilon_q  - \epsilon_d}}\\
 \Delta V_k^- &= -\sum_{q}\fr{V_2 V_{q-}}{\omega - \hf\epsilon_q + \epsilon_d}
 \eeq
+\comm{
 They can be made more compact by defining \il{\mc{W} = \omega - \hf\epsilon_q}:
 \beq
 \Delta \epsilon_d &= -\hf\sum_q\qq{\fr{|V_{q-}|^2}{\mc{W}} + \fr{|V_{q+}|^2}{\mc{W} + 2\epsilon_d + U}} = -\hf\sum_q \fr{V^2_{q-}\rr{\mc{W} + 2\epsilon_d + U} + V^2_{q+}\mc{W}}{\mc{W}\rr{\mc{W} + 2\epsilon_d + U}}\\
@@ -5281,6 +5283,7 @@ The on-shell Hamiltonian is
 \subsubsection*{Particle sector}
 \beq
 &\Delta \ham_N\\
+&= \sum_{q\beta}\tau_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}\hat n_{q\beta}}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\\
 &= \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{-1/2}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}\hat n_{q\beta}}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\\
 &= \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}
 \eeq
@@ -5295,24 +5298,36 @@ The on-shell Hamiltonian is
 &= -\hf\sum_{q\beta}\rr{\hf + \tau_{d\beta}}\qq{\hf\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} + \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4} }} + \tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} - \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}}}} \\
 &= -\hf\sum_{q\beta}\qq{\tau_{d\beta}\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} + \tau_{d\beta}\tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}}
 \eeq
+\paragraph{2.}
+\beq
+&\sum_{k\sigma q\beta}c_{q\beta}c^\dagger_{d\beta} V_2 c^\dagger_{k\sigma}c_{d\sigma}\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}V_qc_{d\beta}c^\dagger_{q\beta}\\
+&=\sum_{k\sigma q\beta}c_{q\beta}c^\dagger_{d\beta} V_2 c^\dagger_{k\sigma}c_{d\sigma}\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}V_qc_{d\beta}c^\dagger_{q\beta}\\ 
+\eeq
+
 
 \subsubsection*{Hole sector}
 \beq
 &\Delta \ham_N\\
-&= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{-1/2}{\hat \omega - \rr{H_\text{imp} - \fr{\epsilon_q}{2}}\rr{1 - \hat n_{q\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
-&= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{-1/2}{\hat \omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
-&= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{-1/2}{-\omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
-&= \hf\sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\omega - \rr{ \fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
+&= \sum_{q\beta}\tau_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} - \fr{\epsilon_q}{2}}\rr{1 - \hat n_{q\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
+&= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1/2}{\hat \omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
+&= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1/2}{-\omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
+&= -\hf\sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\omega - \rr{ \fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
 \eeq
 \paragraph{1.}
 \beq
 &\sum_{q\beta}V_qc_{d\beta}c^\dagger_{q\beta}\fr{1/2}{\omega - \rr{ \fr{\epsilon_q}{2}- \hf U\tau_{d\ol\beta}}}c_{q\beta}c^\dagger_{d\beta}V^*_q\\
-&= \hf\sum_{q\beta}\rr{1 -\hat n_{d\beta}}V_q\fr{1}{\omega - \rr{\fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}V^*_q\\
-&= \hf\sum_{q\beta}\rr{1 -\hat n_{d\beta}}V_q\qq{\fr{\hf + \tau_{d\ol\beta}}{\omega - \rr{\fr{\epsilon_q}{2} - \fr{1}{4}U}} + \fr{\hf - \tau_{d\ol\beta}}{\omega - \rr{\fr{\epsilon_q}{2} + \fr{1}{4}U}}}V^*_q\\
-&= \hf\sum_{q\beta}\rr{\hf -\tau_{d\beta}}\qq{\fr{V_p^2\rr{\hf + \tau_{d\ol\beta}}}{\omega - \fr{\epsilon_q}{2} + \fr{1}{4}U} + \fr{V_m^2\rr{\hf - \tau_{d\ol\beta}}}{\omega - \fr{\epsilon_q}{2} - \fr{1}{4}U}}\\
-&= \hf\sum_{q\beta}\rr{\hf - \tau_{d\beta}}\qq{\hf\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} + \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4} }} + \tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} - \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}}}} \\
-&= \hf\sum_{q\beta}\qq{-\tau_{d\beta}\fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4} } - \tau_{d\beta}\tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} - \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}}}} \\
-&= -\hf\sum_{q\beta}\qq{\tau_{d\beta}\fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}} + \tau_{d\beta}\tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} - \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}}}} \\
+&= -\hf\sum_{q\beta}\rr{1 -\hat n_{d\beta}}V_q\fr{1}{\omega - \rr{\fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}V^*_q\\
+&= -\hf\sum_{q\beta}\rr{1 -\hat n_{d\beta}}V_q\qq{\fr{\hf + \tau_{d\ol\beta}}{\omega - \rr{\fr{\epsilon_q}{2} - \fr{1}{4}U}} + \fr{\hf - \tau_{d\ol\beta}}{\omega - \rr{\fr{\epsilon_q}{2} + \fr{1}{4}U}}}V^*_q\\
+&= -\hf\sum_{q\beta}\rr{\hf -\tau_{d\beta}}\qq{\fr{V_p^2\rr{\hf + \tau_{d\ol\beta}}}{\omega - \fr{\epsilon_q}{2} + \fr{1}{4}U} + \fr{V_m^2\rr{\hf - \tau_{d\ol\beta}}}{\omega - \fr{\epsilon_q}{2} - \fr{1}{4}U}}\\
+&= -\hf\sum_{q\beta}\rr{\hf - \tau_{d\beta}}\qq{\hf\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} + \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4} }} + \tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \fr{\epsilon_q}{2} + \fr{U}{4}} - \fr{V^2_m}{\omega - \fr{\epsilon_q}{2} - \fr{U}{4}}}} \\
+&= -\hf\sum_{q\beta}\qq{-\tau_{d\beta}\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U } - \tau_{d\beta}\tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}} \\
+&= \hf\sum_{q\beta}\qq{\tau_{d\beta}\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} + \tau_{d\beta}\tau_{d\ol\beta}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}}
 \eeq
-
+\paragraph{Scaling equations}
+\begin{gather*}
+\Delta \epsilon_d^1 = -\hf\sum_{q}\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} ,\quad\quad\Delta U^1 = -\sum_{q}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}\\
+\Delta \epsilon_d^0 = \hf\sum_{q}\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U},\quad\quad \Delta U^0 = \sum_{q}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}\\
+\Delta \epsilon_d   = \hf\sum_{q}\qq{\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} - \fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U}}\\
+\end{gather*}
+}
 \end{document}
