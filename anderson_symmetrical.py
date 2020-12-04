@@ -8,11 +8,11 @@ colors = ['r', 'b', 'g', 'y']
 mng = plt.get_current_fig_manager()
 mpl.rcParams["savefig.directory"] = os.chdir(os.path.dirname(__file__))
 
-for U in range(0,21,2):
+for U in range(1,22,5):
     V = 0.1
     V2 = 0.1
-    D_o = 100
-    b = 0.9999
+    D_o = 100000
+    b = 0.999999999999
     w = (D_o - U)/4
     D = D_o
     col = colors[0]
@@ -25,6 +25,7 @@ for U in range(0,21,2):
         D *= b
         if den * (U**2 - (4*w - 2*D)**2) <=0 or U <=0:
             break
+    print (i)
     print (U,V)
 plt.xlabel("U")
 plt.ylabel("V")
