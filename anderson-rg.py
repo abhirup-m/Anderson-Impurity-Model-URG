@@ -79,9 +79,9 @@ for w in np.arange(200, 400, 50):
                     g, dens = master_eq(W, g, V2, num, dens)
                     j_range.append(j)
                     if flag == True and abs(g[-1][1])/abs(g[-1][2])<1:
-                        print (w,D0,u,ed)
-                        print (g[-1])
-                        print ()
+                        Ua (w,D0,u,ed)
+                        Ua (g[-1])
+                        Ua ()
                         break
                     D *= b
                     x.append(D)

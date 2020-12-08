@@ -4,10 +4,11 @@
 %\renewcommand\thesubsection{\arabic{subsection}}
 \begin{document}
 \tableofcontents
+\pagebreak
 \comm{
-\pagebreak\section{Preliminaries}
+\section{Preliminaries}
 \subsection{\il{T-}matrix and \il{S-}matrix}
-It is defined as
+\il{T-}matrix is defined as
 \beq
 V\psi = T\phi
 \eeq
@@ -96,7 +97,7 @@ Alternatively, there exists a sufficiently slow rate of turning off the interact
 If some state \il{\Gamma^*}, instead of flowing into an ideal excited state, gets lost while the interactions are being turned off, then we arent considering that system.
 All excited states must flow into some ideal state and vice-versa.
 This means that the interacting excited states can be labelled by the same good quantum numbers \il{\vec k} and \il{\sigma}.That is, if some eigenstate of the interacting system flows into the ideal eigenstate \il{\{n_{k\sigma}\}}, we can just as well use the distribution \il{\{n_{k\sigma}\}} to label the interacting eigenstate.
-\it{The particle and hole excitations of the ideal system might flow into some very complicated state of the interacting system, which we call a quasiparticle(hole)}.
+\textit{The particle and hole excitations of the ideal system might flow into some very complicated state of the interacting system, which we call a quasiparticle/quasihole}.
 In other words, a system (ideal ground state + particle of momentum \il{k}) goes to (interacting ground state + quasip of momentum \il{k}).
 If an interacting eigenstate corresponds to the state \il{\{n_{k\sigma}\}}, then \il{\{n_{k\sigma}\}} is said to be the quasiparticle distribution function for that interacting state.
 Just as we denote eigenstates of the total ideal system using the collection of particles and holes, similarly we use the quasiparticle and quasiholes to describe eigenstates of the interacting system.
@@ -1373,12 +1374,11 @@ Hence,
 Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.\\\\
 This method can also be used to determine the higher order corrections to the susceptibility.
 The zeroth order diagrams are\\\\
-\begin{minipage}{250pt}
-	\begin{center} \includegraphics[scale=0.3]{poppov1.png} \end{center}
-\end{minipage}
-\begin{minipage}{250pt}
-	\begin{center} \includegraphics[scale=0.3]{poppov2.png} \end{center}
-\end{minipage}\\\\
+\begin{figure}[tbh!]
+\centering
+\includegraphics[scale=0.3]{poppov1.png} 
+\includegraphics[scale=0.3]{poppov2.png}
+\end{figure}\\\\
 The dotted lines are the impurity Greens function, so that diagram gives the impurity contribution to the susceptibility.
 Similarly, the solid lines are the conduction electron Greens function.
 The first diagram gives
@@ -2309,19 +2309,11 @@ The only remaining degree of freedom will be the spin fluctuations, and we can t
 On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth.
 So there wont be any renormalization of the impurity levels.
 From another perspective, it can be said that there won't be any renormalization because both the impurity levels \il{\ket{0},\ket{1}} will be able to hybridise with two states each: \il{\ket{0}} can hybridize with \il{\ket{k\ua},\ket{k\da}} and \il{\ket{1\sigma}} can hybridize with \il{\ket{0},\ket{2}}.
-\begin{figure}
-\begin{minipage}{220pt}
+\begin{figure}[tbh!]
 	\centering
-       	\includegraphics[scale=0.28]{anderson.png}
-       	\captionof{figure}{Impurity levels outside}
-       	\label{and1}
-\end{minipage}
-\begin{minipage}{220pt}
-	\centering
-       	\includegraphics[scale=0.28]{anderson2.png}
-       	\captionof{figure}{Impurity levels inside}
-       	\label{and2}
-\end{minipage}
+	\subfloat[Subcaption 1]{\label{and1}\includegraphics[scale=0.28]{anderson.png}}
+	\hspace*{30pt}
+	\subfloat[Subcaption 1]{\label{and2}\includegraphics[scale=0.28]{anderson2.png}}
 \end{figure}
 %\begin{minipage}{220pt}
 %	\centering
@@ -2489,7 +2481,7 @@ During the renormalization, \il{D} will keep on decreasing and \il{\epsilon_d} w
 At some value of \il{D}, they will become equal and the impurity level will go outside the Fermi surface.
 At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff.
 Hence the renormalization stops at this point.
-\begin{center} \includegraphics[scale=0.29]{full.png}\captionof{figure}{Renormalization in the energy levels when \il{\epsilon_d^* \gg \Delta}}\end{center}
+\begin{figure} \includegraphics[scale=0.29]{full.png}\caption{Renormalization in the energy levels when \il{\epsilon_d^* \gg \Delta}}\end{figure}
 This point is given by \il{\ol D = a\epsilon_d(\ol D) \equiv \ol \epsilon_d} where \il{a} is a constant of order unity.
 It satisfies the equation
 \beq[eraser]
@@ -2658,7 +2650,7 @@ If \il{\epsilon_d > 0}, then the impurity level is far above the Fermi level and
 Similarly, if \il{\epsilon_d < 0}, then the impurity level is far below the Fermi level and the average occupation will be close to 1.
 The regime of mixed valence is one in which these two contributions are comparable.
 \\\\
-\begin{center} \includegraphics[scale=0.29]{mixed.png}\captionof{figure}{Renormalization in energy levels when \il{|\epsilon_d^*| \lesssim \Delta}} \end{center}
+\begin{figure} \includegraphics[scale=0.29]{mixed.png}\caption{Renormalization in energy levels when \il{|\epsilon_d^*| \lesssim \Delta}} \end{figure}
 Since we have \il{|\epsilon_d^*| \lesssim \Delta}, as we renormalize, the decreasing cutoff will first match \il{\Delta} or \il{k_B T}, whichever is greater.
 From eq.~\ref{mirai2}, we know that if \il{D} comes close to \il{\Delta}, our analysis will break down because we can no longer ignore that term.
 Since that term represents the broadening of the impurity level, this same broadening can also be brought about by the thermal fluctuations which are of the scale \il{k_B T}.
@@ -2723,9 +2715,9 @@ To go to lower temperatures, we can do a Poor Man's scaling which suggests that 
 \il{n_d = 1}\\\il{\chi T \propto T}\\\il{T\ll \wl T_K}
 \end{minipage}
 \end{center}
-\begin{center}
-	\includegraphics[scale=0.29]{empty.png}\captionof{figure}{Renormalization in energy levels when \il{\epsilon_d^* \ll -\Delta}}
-\end{center}
+\begin{figure}
+	\includegraphics[scale=0.29]{empty.png}\caption{Renormalization in energy levels when \il{\epsilon_d^* \ll -\Delta}}
+\end{figure}
 
 \subsubsection*{Jefferson's calculation}
 Jefferson did a slightly more rigorous calculation to obtain the scaling equation.
@@ -4090,10 +4082,12 @@ Excitations of the cloud then involve higher values of \il{\ham_0^* > \fr{3J^*}{
 The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic energy must start from a non-zero value.
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
 }
+
 \pagebreak\section{Anderson Model URG}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
+\comm{
 \subsection*{One electron on shell}
 At first order, the rotated Hamiltonian is
 \beq
@@ -5135,9 +5129,9 @@ Following Jefferson, \il{\mc{W} + \epsilon_d \approx \mc{W}} and we can drop the
 \Delta V_k^- &= -n(D) V_1 V_2\fr{1}{\mc{W} + \epsilon_d} \approx -n(D) V_1 V_2\fr{1}{\mc{W}} = \fr{V_1 V_2}{D_0 D}\Delta D
 \eeq
 \pb
-\paragraph{A more careful calculation with both channels affecting \il{\epsilon_d} and \il{U}}:
+\subsection{A more careful calculation with both channels affecting \il{\epsilon_d} and \il{U}:}
 
-\paragraph{Particle sector:}
+\subsubsection{Particle sector:}
 The intermediate state consists of particle states, obtained by exciting electrons to the upper bandwidth edge (\il{+D}).
 \beq
 \Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \times\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
@@ -5157,7 +5151,7 @@ Since \il{\tau_{q\beta}c_{q\beta} = -\hf c_{q\beta}}, we get
 \Delta \ham_N &= \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{-1/2}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}} \qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}
 \eeq
 There are four scattering processes.
-\paragraph{1.}
+\paragraph{}
 \beq
 	      &\fr{-1}{2}\sum_{q\beta}V_q^* c^\dagger_{d\beta} \fr{1}{\omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \fr{\epsilon_q}{2}}}c_{d\beta} V_q \\
 	      &\quad=\fr{-1}{2}\sum_{q\beta}V_q^* c^\dagger_{d\beta}c_{d\beta} \fr{1}{\omega - \hf\epsilon_q - \epsilon_d\hat n_{d\ol\beta}} V_q&&\qq{\hat n_{d\beta} = 0}  \\
@@ -5165,7 +5159,7 @@ There are four scattering processes.
 	      &\quad=\fr{-1}{2}\sum_{q\beta} \hat n_{d\beta} \qq{\fr{V_{q+}^2\hat n_{d\ol\beta}}{\omega - \hf\epsilon_q - \epsilon_d} + \fr{V_{q-}^2\rr{1-\hat n_{d\ol\beta}}}{\omega - \hf\epsilon_q}} \\
 	      &\quad=\fr{-1}{2}\sum_{q\beta} \hat n_{d\beta} \qq{\fr{V_{q-}^2}{\omega - \hf\epsilon_q} + \hat n_{d\ol\beta}\rr{\fr{V_{q+}^2}{\omega - \hf\epsilon_q - \epsilon_d} - \fr{V_{q-}^2}{\omega - \hf\epsilon_q}}} \\
 \eeq
-\paragraph{2.}
+\paragraph{}
 \beq
 	      &-\hf\sum_{q\beta k\sigma}V_q^* V_2 c_{q\beta}c^\dagger_{d\beta}\fr{1}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta}c^\dagger_{q\beta}\\
 	      &=-\hf\sum_{q \beta k}V_q^* V_2 c_{q\beta}c^\dagger_{d\beta}\fr{1}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}c^\dagger_{q\beta} &&\qq{c^\dagger_\beta c^\dagger_\sigma = \delta_{\beta\sigma}c^\dagger_\beta}\\
@@ -5174,14 +5168,14 @@ There are four scattering processes.
 	      &= -\hf\sum_{q \beta k}\fr{V_q^* V_2}{\omega - \hf\epsilon_q - \epsilon_d} \hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}\\
 	      &= -\hf\sum_{q \beta k}\fr{V_{q+}^* V_2}{\omega - \hf\epsilon_q - \epsilon_d} \hat n_{d\ol\beta}c^\dagger_{d\beta}c_{k\beta}
 \eeq
-\paragraph{3.}
+\paragraph{}
 \beq
 -\hf\sum_{q\beta k \sigma}V_q V_2 c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}\fr{1}{\omega - H_\text{imp} - V_2 \hat n_{d\beta} - \fr{\epsilon_q}{2}} c_{d\beta}c^\dagger_{q\beta} &= \text{h.c. of 2}\\
 																								  &= -\hf\sum_{\beta kq}\fr{V_{q+} V_2}{\omega - \hf\epsilon_q - \epsilon_d} \hat n_{d\ol\beta}c^\dagger_{k\beta}c_{d\beta}
 \eeq
-\paragraph{4.}
+\paragraph{}
 \il{O(V_2^2)}, ignore for now.
-\paragraph{Hole sector}
+\subsubsection{Hole sector}
 The intermediate state consists of hole states, obtained by exciting electrons from the lower bandwidth edge (\il{-D}).
 \beq
 \Delta \ham_N &= \sum_{q\beta}\tau_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\times\fr{1}{\hat \omega - H_\text{imp}\rr{1 - \hat n_{q\beta}}}\\
@@ -5312,7 +5306,7 @@ The on-shell Hamiltonian is
 &= \sum_{q\beta}\tau_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\hat \omega - \rr{H_\text{imp} - \fr{\epsilon_q}{2}}\rr{1 - \hat n_{q\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
 &= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1/2}{\hat \omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
 &= \sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1/2}{-\omega - \rr{\hf U\tau_{d\ol\beta} - \fr{\epsilon_q}{2}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
-&= -\hf\sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\omega - \rr{ \fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
+&= -\hf\sum_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}\fr{1}{\omega - \rr{ \fr{\epsilon_q}{2} - \hf U\tau_{d\ol\beta}}}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum-1_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\\
 \eeq
 \paragraph{1.}
 \beq
@@ -5328,7 +5322,285 @@ The on-shell Hamiltonian is
 \begin{gather*}
 \Delta \epsilon_d^1 = -\hf\sum_{q}\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} ,\quad\quad\Delta U^1 = -\sum_{q}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}\\
 \Delta \epsilon_d^0 = \hf\sum_{q}\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U},\quad\quad \Delta U^0 = \sum_{q}\rr{\fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U} - \fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U}}\\
-\Delta \epsilon_d   = \hf\sum_{q}\qq{\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} - \fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U}}\\
+\Delta \epsilon_d   = \hf\sum_{q}\qq{\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} - \fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U}}
 \end{gather*}
+}
+\subsection*{Without higher order scattering}
+\beq
+\ham_N = H_{N-1} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\eeq
+where \il{H_{N-1} \equiv \sum_{k<\Lambda_N,\sigma}\rr{\epsilon_k \hat n_{k\sigma} + V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}}} features the electrons below the shell. \textit{In the absence of higher order scattering, the only renormalization is in \il{\epsilon_d} and \il{U}, so we do not need to split the \il{V_q} into \il{V^1_q \hat n_{d\ol\beta} + V^0_q\rr{1 - \hat n_{d\ol\beta}}}. These will appear at third order in \il{V_q}.} 
+\subsubsection*{Particle sector}
+The excited states consist of particles on the higher band edge (\il{+D}).
+\beq
+\Delta^+ \ham_N = \sum_{q\beta}\eta_{q\beta}c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}}
+\eeq
+where\footnote{all traces in this subsection are partial in \il{q\beta}} \il{c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}}} is the part of \il{\ham_N} that scatters from \il{\ket{\hat{n}_{q\beta}=0}} to \il{\ket{\hat{n}_{q\beta}=1}}:
+\beq
+c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}} = V_q c^\dagger_{q\beta}c_{d\beta}
+\eeq
+and 
+\beq
+\eta_{q\beta} = \text{Tr}\qq{c^\dagger_{q\beta} \ham_N}\fr{1}{\hat \omega - \ham_N^{D,1}} = V_q^* c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^{C} + \epsilon_q^+ + H_{imp}}\hat n_{q\beta}}
+\eeq
+\il{\epsilon_q^+} is the energy of a particle excitation in the momentum \il{q}.  \il{\ham_N^{D,1} \equiv \text{Tr}\rr{\ham_N \hat n_{q\beta}}\hat n_{q\beta}} is the diagonal part of \il{\ham_N} in the particle sector, \il{H_{N-1}^C} is the remaining conduction band part of the Hamiltonian and \il{H_{imp}} is the impurity-diagonal part (\il{\equiv \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}}). Putting it all together,
+\beq
+\Delta^+ \ham_N = \sum_{q\beta}V_q^* c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_q^+ + H_{imp}}\hat n_{q\beta}}V_q c^\dagger_{q\beta}c_{d\beta}
+\eeq
+Since the internal propagator is preceded by a \il{c^\dagger_{q\beta}c_{d\beta}}, we can set \il{\hat n_{q\beta} =1} and \il{\hat n_{d\beta} = 0} inside the propagator. \il{H_{imp}} then becomes \il{\epsilon_d \hat n_{d\ol\beta}}.
+\beq
+\Delta^+ \ham_N = \sum_{q\beta}V_q^* c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_q^+ + \epsilon_{d}\hat n_{d\ol\beta}}} V_q c^\dagger_{q\beta}c_{d\beta}
+\eeq
+Since the propagator is devoid of any operator in \il{q\beta} or \il{d\beta} now, it can be pushed to the end:
+\beq
+\Delta^+ \ham_N &= \sum_{q\beta}|V_q|^2 c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_q^+ + \epsilon_{d}\hat n_{d\ol\beta}}} \\
+		&= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_{d}\hat n_{d\ol\beta}} - \epsilon_q^+} \\
+\eeq
+The \il{1 - \hat n_{q\beta}} ensures that the state we act on has no excited state \il{q\beta}, so it is a ground state. Similarly, the \il{\hat n_{d\beta}} ensures we need to have \il{\hat n_{d\beta} =1 } in that state. We now add and subtract a \il{\epsilon_d \hat n_{d\beta} + U\hat n_{d\beta} \hat n_{d\ol\beta} = \epsilon_d  + U \hat n_{d\ol\beta}} in the propagator:
+\beq
+\Delta^+ \ham_N	&= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_{d}\hat n_{d\ol\beta} + \epsilon_d \hat n_{d\beta} + U\hat n_{d\beta} \hat n_{d\ol\beta}} - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}
+\eeq
+Note that 
+\beq
+H^G \equiv H_{N-1}^C + \epsilon_{d}\hat n_{d\ol\beta} + \epsilon_d \hat n_{d\beta} + U\hat n_{d\beta} \hat n_{d\ol\beta} = H_{N-1}^C + H_{imp
+}
+\eeq is the Hamiltonian consisting of the remaining conduction band electrons and the impurity, so it gives the energy of the ground state upon which we create the excitations to the band edges. 
+\beq
+\Delta^+ \ham_N	= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\hat \omega - H^G - \epsilon_q^+ + \epsilon_d  + U \hat n_{d\ol\beta}}
+\eeq
+\textit{If we measure the quantum fluctuation energy scale relative to the ground state energy \il{H^G}, we can set \il{H^G} to \il{0}.} A further simplification is made when we replace \il{\hat \omega} by its eigenvalue \il{\omega}:
+\beq
+\Delta^+ \ham_N	= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}
+\eeq
+\textit{Assuming there are no excited states on the band edges to begin with}, we can set \il{\hat n_{q\beta} = 0}.
+\beq
+\Delta^+ \ham_N	= \sum_{q\beta}\hat n_{d\beta}|V_q|^2 \fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}
+\eeq
+To lift the \il{\hat n_{d\ol\beta}} from the denominator into the numerator, we can expand the propagator in the basis of \il{\hat n_{d\ol\beta}}:
+\beq[change]
+\fr{1}{\omega - \epsilon_q^+ + \epsilon_d  + U \hat n_{d\ol\beta}} &= \fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d  + U } + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d}\\
+								 &= \hat n_{d\ol\beta}\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d  + U } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}} + \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}\\
+\eeq
+Substituting in \il{\Delta^+ \ham_N} gives
+\beq
+\Delta^+ \ham_N	&= \sum_{q\beta}|V_q|^2\hat n_{d\beta} \qq{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \hat n_{d\ol\beta}\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}}}\\
+		&= \sum_{\beta}\hat n_{d\beta}\sum_q |V_q|^2 \fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \hat n_{d\ua}\hat n_{d\da} \sum_q 2|V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}} \\
+\eeq
+There I used \il{\sum_{\beta} \hat n_{d\beta} \hat n_{d\ol\beta} = 2\hat n_{d\ua}\hat n_{d\da}}. Comparing with the bare impurity Hamiltonian we get the following scaling equations for the particle sector:
+\beq
+\Delta^+ \epsilon_d &= \sum_q |V_q|^2 \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}\\
+\Delta^+ U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d  + U } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}}
+\eeq
+
+\subsubsection*{Hole sector}
+The excited states consist of holes on the lower band edge (\il{-D}).
+\beq
+\Delta^- \ham_N = \sum_{q\beta}c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}}\eta_{q\beta}
+\eeq
+where\footnote{all traces in this subsection are partial in \il{q\beta}} and 
+\beq
+\eta_{q\beta} = \fr{1}{\hat \omega - \ham_N^{D,0}}\text{Tr}\qq{c^\dagger_{q\beta} \ham_N} = V_q^* c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^{C} + H_{imp}}\rr{1 - \hat n_{q\beta}}}
+\eeq
+\il{\ham_N^{D,0} \equiv \text{Tr}\rr{\ham_N \rr{1 - \hat n_{q\beta}}}\rr{1 - \hat n_{q\beta}}} is the diagonal part of \il{\ham_N} in the hole sector, \il{H_{N-1}^C} is the remaining conduction band part of the Hamiltonian and \il{H_{imp}} is the impurity-diagonal part (\il{\equiv \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}}). Putting it all together,
+\beq
+\Delta^- \ham_N = \sum_{q\beta}V_q c^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + H_{imp}}\rr{1 - \hat n_{q\beta}}}V_q^* c^\dagger_{d\beta}c_{q\beta}
+\eeq
+Since the internal propagator is preceded by a \il{c^\dagger_{d\beta}c_{q\beta}}, we can set \il{\hat n_{q\beta} = 0} and \il{\hat n_{d\beta} = 1} inside the propagator. \il{H_{imp}} then becomes \il{\epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}}.
+\beq
+\Delta^- \ham_N = \sum_{q\beta}V_q c^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}}} V_q^* c^\dagger_{d\beta}c_{q\beta}
+\eeq
+Since the propagator is devoid of any operator in \il{q\beta} or \il{d\beta} now, it can be pushed to the end:
+\beq
+\Delta^- \ham_N &= \sum_{q\beta}V_q c^\dagger_{q\beta}c_{d\beta} V_q^* c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}}}\\
+		&= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}} \fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_d \hat n_{d\ol\beta}} - \epsilon_d - U\hat n_{d\ol\beta}}
+\eeq
+The \il{\hat n_{q\beta}} ensures that the state we act on must have a state on the lower band edge at \il{-D}. Similarly, the \il{1 - \hat n_{d\beta}} ensures we need to have \il{\hat n_{d\beta} = 0} in that state. We can hence subtract a \il{\epsilon_d \hat n_{d\beta} + U\hat n_{d\beta} \hat n_{d\ol\beta} = 0} in the propagator:
+\beq
+\Delta^- \ham_N	&= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}} \fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_d \hat n_{d\ol\beta} + \epsilon_d \hat n_{d\beta} + U\hat n_{d\beta} \hat n_{d\ol\beta}} - \epsilon_d - U\hat n_{d\ol\beta}}
+\eeq
+In order to convert the term in \il{\qq{\quad}} into the ground state energy \il{H^G}, we need to also add the energy of the state \il{-D} which is of course a part of the ground state (it is far inside the Fermi surface and hence most likely to be filled) but is not a part of \il{H^C_{N-1}} (because we are reducing the bandwidth and the state at \il{-D} has just gone out of the bandwidth). Adding and subtracting \il{\epsilon_q \hat n_{q\beta} = \epsilon_q^-} gives
+\beq
+\Delta^- \ham_N	&= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}} \fr{1}{\hat \omega - \qq{H_{N-1}^C + \epsilon_q^- \hat n_{q\beta} + H_{imp}}  + \epsilon_q^- - \epsilon_d - U\hat n_{d\ol\beta}}\\
+&= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}} \fr{1}{\hat \omega - H^G + \epsilon_q^- - \epsilon_d - U\hat n_{d\ol\beta}}\\
+\eeq
+Doing similar simplifications as in the previous section (\il{\hat \omega - H^G = \omega, \hat n_{q\beta} = 1}) gives
+\beq
+\Delta^- \ham_N	&= \sum_{q\beta}|V_q|^2 \rr{1 - \hat n_{d\beta}} \fr{1}{\omega + \epsilon_q^- - \epsilon_d - U\hat n_{d\ol\beta}}\\
+		&= \sum_{q\beta}|V_q|^2 \rr{1 - \hat n_{d\beta}} \qq{\hat n_{d\ol\beta}\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{1}{\omega + \epsilon^-_q - \epsilon_d}} + \fr{1}{\omega + \epsilon^-_q - \epsilon_d}}\\
+		&= \sum_{\beta} \hat n_{d\beta}\sum_q |V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2}{\omega + \epsilon^-_q - \epsilon_d}} \\
+		&+ \sum_{\beta}\hat n_{d\beta}\hat n_{d\ol\beta}\sum_q 2|V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d} - \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U }}\\
+\eeq
+We get the following scaling equations for the hole sector:
+\beq
+\Delta^- \epsilon_d &= \sum_q |V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+\Delta^- U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d} - \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U }}
+\eeq
+\subsubsection*{Scaling equations}
+Combining the two sectors, the scaling equations become
+\beq
+\Delta \epsilon_d &= \sum_q |V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+\Delta U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega + \epsilon^-_q - \epsilon_d} - \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U }}
+\eeq
+\subsubsection*{Particle-hole symmetric case}
+For \il{U = -2\epsilon_d} (and setting \il{\epsilon_q^+ = -\epsilon_q^-}), the equations become
+\begin{equation*}
+\begin{aligned}
+\Delta \epsilon_d &= \sum_q |V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{2}{\omega - \epsilon_q^+ - \epsilon_d}}\\
+&= \sum_q |V_q|^2\rr{\fr{2}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{2}{\omega - \epsilon_q^+ - \epsilon_d}}\\
+\hf\Delta U &= \sum_q |V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ - \epsilon_d} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega - \epsilon_q^+ - \epsilon_d} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+&= \sum_q |V_q|^2\rr{\fr{2}{\omega - \epsilon_q^+ - \epsilon_d} - \fr{2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+\implies \Delta\epsilon_d + \hf \Delta U &= 0
+\end{aligned}
+\end{equation*}
+\textit{The particle-hole symmetry is maintained for all \il{\omega}.}
+\subsubsection*{Matching poor man's scaling}
+\textit{Assuming a spherical shell (\il{\epsilon_q^+ = D,\epsilon_q^- = -D}) and momentum-independent scattering\\ (\il{\sum_q |V_q|^2 = |V|^2 \rho |\delta D| = |\delta D|\fr{\Delta}{\pi}}) and setting \il{\omega = 0}},
+\beq
+\delta \epsilon_d &= |\delta D|\fr{\Delta}{\pi}\rr{\fr{1}{ - D + \epsilon_d} + \fr{1}{ - D - \epsilon_d  - U } - \fr{2}{ - D - \epsilon_d}}\\
+&= |\delta D|\fr{\Delta}{\pi}\rr{\fr{2}{D + \epsilon_d} - \fr{1}{ D - \epsilon_d} - \fr{1}{D + \epsilon_d + U }}\\
+\delta U &= |\delta D|\fr{2\Delta}{\pi}\rr{\fr{1}{ - D + \epsilon_d  + U } - \fr{1}{ - D + \epsilon_d} + \fr{1}{ - D - \epsilon_d} - \fr{1}{ - D - \epsilon_d  - U }}\\
+&= |\delta D|\fr{2\Delta}{\pi}\rr{\fr{1}{D - \epsilon_d} - \fr{1}{D - \epsilon_d - U } - \fr{1}{D + \epsilon_d} + \fr{1}{D + \epsilon_d + U}}\\
+\eeq
+These are identical to equation set 3.61 in Hewson.%TODO cite \footnote{HEWSON, A. C., 1993, The Kondo Problem to Heavy Fermions (Cambridge University Press)}
+
+\subsection*{With higher order scattering}
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
+\eeq
+Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well as spin-preserving (\il{d\sigma \to d\sigma}) scattering.
+\beq
+\ham_N = H_{N-1} + H_\text{imp} + \rr{\epsilon_q  + V_2 \hat n_{d\beta}}\hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.}  \\
++\sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}
+\eeq
+\paragraph{Particle sector:}
+The intermediate state consists of particle states, obtained by exciting electrons to the upper bandwidth edge (\il{+D}).
+\beq
+\Delta^+ \ham_N = \sum_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta}\fr{1}{\hat \omega - \rr{H_{N-1}^C + H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
+c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}
+\eeq
+Since the Greens function is preceded by \il{c^\dagger_{q\beta}}, we can substitute \il{\hat n_{q\beta}=1} in the denominator.
+\beq
+\fr{1}{\hat \omega - \rr{H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}c^\dagger_{q\beta} &= \fr{1}{\hat \omega - \rr{H_{N-1}^C + H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon^+_q}}c_{q\beta}^\dagger\\
+\eeq
+\beq
+\Delta^+ \ham_N = \sum_{q\beta}c_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}\fr{1}{\omega - H_{N-1}^C - H_\text{imp} - V_2 \hat n_{d\beta} - \epsilon_q^+}\\
+\times \qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}c^\dagger_{q\beta}
+\eeq
+There are four scattering processes. The changes will be labeled as \il{\Delta^+_i \ham_N}.
+\paragraph{1.}
+This was calculated in the previous section. The only addition is the splitting of the hybridisation coupling:
+\beq
+|V_q|^2 &= \qq{V_q^1\hat n_{d\ol\beta} + V_q^0\rr{1 - \hat n_{d\ol\beta}}}\times  \qq{\rr{V_q^1}^*\hat n_{d\ol\beta} + \rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}\\
+&=|V_q^1|^2\hat n_{d\ol\beta} + |V_q^0|^2\rr{1 - \hat n_{d\ol\beta}}\\
+&=\rr{|V_q^1|^2 - |V_q^0|^2}\hat n_{d\ol\beta} + |V_q^0|^2
+\eeq
+From eq.~\ref{change},
+\beq
+\Delta_1^+ \ham &= \sum_{q\beta}\hat n_{d\beta}|V_q|^2\qq{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d  + U } + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d}} \\
+&= \sum_{q\beta}\hat n_{d\beta}\qq{\fr{|V_q^1|^2\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d  + U } + \fr{|V_q^0|^2\rr{1 - \hat n_{d\ol\beta}}}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+&= \sum_{q\beta}\hat n_{d\beta}\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + 2\sum_{q}\hat n_{d\ua}\hat n_{d\da}\qq{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d  + U } - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+\eeq
+\paragraph{2.}
+\beq
+\Delta_2^+\ham_N &=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}\fr{V_q^* V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - V_2 \hat n_{d\beta} - \epsilon_q^+}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta}c^\dagger_{q\beta}\\
+		 &=\sum_{q \beta k} c_{q\beta}c^\dagger_{d\beta}\fr{V_q^* V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - V_2 \hat n_{d\beta} - \epsilon_q^+}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}c^\dagger_{q\beta} &&\qq{c^\dagger_\beta c^\dagger_\sigma = \delta_{\beta\sigma}c^\dagger_\beta}\\
+		 &=\sum_{q \beta k}c_{q\beta}c^\dagger_{d\beta}\fr{V_q^* V_2 }{\hat \omega - H_{N-1}^C - \epsilon_d \hat n_{d\ol\beta} - \epsilon_q^+}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}c^\dagger_{q\beta} &&\qq{\hat n_{d\beta} = 0\text{ in propagator}}\\
+\eeq
+We cannot directly push the propagator to the end, because it still has an \il{\hat n_{d\ol\beta}}. We can use an identity. If \il{A} and \il{B} are two entities that commute with \il{c^\dagger_{d\ol\beta}}, then
+\begin{gather*}
+\rr{A - B\hat n_{d\ol\beta}}c^\dagger_{d\ol\beta} = Ac^\dagger_{d\ol\beta} - Bc^\dagger_{d\ol\beta}\rr{1 - \hat n_{d\ol\beta}} = c^\dagger_{d\ol\beta}\rr{A - B + B\hat n_{d\ol\beta}}\\
+\implies \fr{1}{A - B\hat n_{d\ol\beta}}c^\dagger_{d\ol\beta} = c^\dagger_{d\ol\beta} \fr{1}{A - B + B\hat n_{d\ol\beta}}
+\end{gather*}
+This gives
+\beq
+\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d \hat n_{d\ol\beta} - \epsilon_q^+}c^\dagger_{d\ol\beta} = c^\dagger_{d\ol\beta} \fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}\\
+\eeq
+A similar process gives
+\beq
+\fr{1}{\hat \omega - H_{N-1}^{C,\rr{k\ol\beta}} - \epsilon_k \hat n_{k\ol\beta} - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}c_{k\ol\beta} &= c_{k\ol\beta} \fr{1}{\hat \omega - H_{N-1}^{C,\rr{k\ol\beta}} - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}\\
+																			 &= c_{k\ol\beta} \fr{1}{\hat \omega - H_{N-1}^{C} + \epsilon_k \hat n_{k\ol\beta} - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}\\
+																			 &= c_{k\ol\beta} \fr{1}{\hat \omega - H_{N-1}^{C} + \epsilon_k^- - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}\\
+\eeq
+(\il{H_{N-1}^{C,\rr{k\sigma}} = H_{N-1}^C - \epsilon_k \hat n_{k\sigma}}). The change in \il{\ham} becomes
+\beq
+&\sum_{q \beta k}V_q^* V_2 \rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta} \fr{1}{\hat \omega - H_{N-1}^C + \epsilon_k^- - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+}
+\eeq
+Since this term must act on a state with \il{\hat n_{d\beta} = 1 - \hat n_{d\ol\beta} = 1}, we can write
+\beq
+\hat \omega - H_{N-1}^C - \epsilon_d + \epsilon_d\hat n_{d\ol\beta} - \epsilon_q^+ &= \hat \omega - H_{N-1}^C - \epsilon_d\hat n_{d\beta} - \epsilon_d\hat n_{d\ol\beta} - U \hat n_{d\beta}\hat n_{d\ol\beta}- \epsilon_q^+\\
+										   &= \hat \omega - H^G - \epsilon_q^+\\
+										   &= \omega - \epsilon_q^+
+\eeq
+Therefore,
+\beq
+\Delta^+_2 \ham_N &= \sum_{q \beta k}V_q^* V_2 \rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}\\
+&= \sum_{q \beta k}V_q^* V_2 \hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}\\
+&= \sum_{q \beta k}\rr{V_q^1}^* V_2 \hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}&&\qq{V_q = V_q^1 \hat n_{d\ol\beta} +  V_q^0 \rr{1 -\hat n_{d\ol\beta}}} \\
+&= \sum_{q \beta k}\rr{V_q^1}^* V_2 \hat n_{d\ol\beta}c^\dagger_{d\beta}c_{k\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}
+\eeq
+This renormalizes the \il{\rr{V_q^1}^*} coupling.
+\paragraph{3.}
+\beq
+\Delta_3^+\ham_N &=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}\fr{V_q V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - V_2 \hat n_{d\beta} - \epsilon_q^+}c_{d\beta}c^\dagger_{q\beta}\\
+&=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}\fr{V_q V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - \epsilon_q^+}c_{d\beta}c^\dagger_{q\beta}\\
+&=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{d\beta}c^\dagger_{q\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}&&\qq{\text{from prev. section}}\\
+&=\sum_{q\beta k}\rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}\\
+&=\sum_{q\beta k}\rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d}\\
+&=\sum_{q\beta k}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V^1_q V_2}{\omega - \epsilon_q^+ + \epsilon_d}\\
+\eeq
+This renormalizes the \il{V_q^1} coupling.
+\paragraph{4.}
+\il{O(V_2^2)}, ignore for now.
+\paragraph{Hole sector}
+The intermediate state consists of hole states, obtained by exciting electrons from the lower bandwidth edge (\il{-D}).
+\beq
+\Delta^- \ham_N &= \sum_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - H_\text{imp}}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \\
+\eeq
+The Green's function simplifies as
+\beq
+c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - H_\text{imp}}c^\dagger_{d\beta} &=c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{d\beta}\\
+									   &=\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}\\
+\eeq
+\paragraph{1.}
+\beq
+\Delta^-_1 \ham_N &= \sum_{q\beta}|V_q|^2\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}\\
+		  &= \sum_{q\beta}|V_q|^2\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d \hat n_{d\beta}- \epsilon_d \hat n_{d\ol\beta} - U\hat n_{d\ua}\hat n_{d\da} - \epsilon_d - U\hat n_{d\ol\beta}}\\
+		  &= \sum_{q\beta}|V_q|^2\rr{1 - \hat n_{d\beta}}\fr{1}{\omega + \epsilon_q^- - \epsilon_d - U\hat n_{d\ol\beta}}\\
+		  &= \sum_{q\beta}\rr{1 - \hat n_{d\beta}}\qq{\hat n_{d\ol\beta}\rr{\fr{|V^1_q|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{|V^0_q|^2}{\omega + \epsilon^-_q - \epsilon_d}} + \fr{|V^0_q|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+		  &= \sum_{q\beta}\hat n_{d\beta}\rr{\fr{|V^1_q|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2|V^0_q|^2}{\omega + \epsilon^-_q - \epsilon_d}} \\
+		  &+ \hat n_{d\ua}\hat n_{d\da}\sum_{q\beta}2\rr{\fr{|V^0_q|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V^1_q|^2}{\omega + \epsilon^-_q - \epsilon_d  - U }}\\
+		  &+ \sum_{q\beta}\fr{|V^0_q|^2}{\omega + \epsilon^-_q - \epsilon_d}
+\eeq
+\paragraph{2.}
+\beq
+\Delta_2^-\ham_N &=\hf\sum_{k\sigma q\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{k\sigma}c_{d\sigma} \\
+		 &=\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}\rr{c^\dagger_{k\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c_{d\ol\beta}} \\
+		 &=\sum_{kq\beta}V_2 V_q \hat n_{q\beta}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		 &+\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d } \\
+		 &=\sum_{kq\beta}V_2 V_q c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 V_q \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
+		 &=\sum_{kq\beta}V_2 \hat n_{d\ol\beta}c^\dagger_{k\beta}c_{d\beta}\fr{V_q^1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{2V_q^0}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
+\eeq
+\paragraph{3.}
+\beq
+		 &\Delta^-_3 \ham_N\\
+		 &= \sum_{k\sigma q\beta}V^*_qV_2\hat n_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		  &= \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}\rr{c^\dagger_{d\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{k\ol\beta}}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		  &= \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		  &+ \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		  &= \sum_{kq\beta}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \rr{\epsilon_d + U\hat n_{d\ol\beta}}} + \sum_{kq\beta}\hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \epsilon_d - U} \\
+		  &= \sum_{kq\beta}V_2c^\dagger_{d\beta}c_{k\beta}\rr{\fr{\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} + \fr{\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d}} + \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^0}^*\rr{1-\hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d - U} \\
+		  &= \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} + \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\cc{\fr{V_2\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d} + \fr{V_2\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d - U}} \\
+\eeq
+\subsubsection*{Scaling equations}
+\beq
+\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+\Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U }  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+\Delta V_q^1 &= \fr{V_2 V_q^1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{V_2 V_q^1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
+\Delta {V_q^1}^* &= \fr{V_2 {V_q^1}^*}{\omega + \epsilon_k^- - \epsilon_q^+} + \fr{V_2 {V_q^1}^*}{\omega + \epsilon_q^- - \epsilon_d - U}\\
+\Delta V_q^0 &= \fr{2V_2 V_q^0}{\omega + \epsilon_q^- - \epsilon_k^+}\\
+\Delta {V_q^0}^* &= \fr{V_2 {V_q^0}^*}{\omega + \epsilon_q^- - \epsilon_d} + \fr{V_2 {V_q^0}^*}{\omega + \epsilon_q^- - \epsilon_d - U}\\
+\eeq
+
+
 
 \end{document}

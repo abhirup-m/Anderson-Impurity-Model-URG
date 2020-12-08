@@ -9,7 +9,7 @@ E = -10
 D = 100
 b = 0.99
 while E > -D:
-    print (E)
+    Ua (E)
     plt.scatter(D,E,marker='.')
     delta_E = np.sqrt(D)/(-D - E)
     D *= b
