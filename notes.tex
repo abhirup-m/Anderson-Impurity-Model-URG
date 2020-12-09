@@ -5538,17 +5538,17 @@ Therefore,
 &= \sum_{q \beta k}\rr{V_q^1}^* V_2 \hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}&&\qq{V_q = V_q^1 \hat n_{d\ol\beta} +  V_q^0 \rr{1 -\hat n_{d\ol\beta}}} \\
 &= \sum_{q \beta k}\rr{V_q^1}^* V_2 \hat n_{d\ol\beta}c^\dagger_{d\beta}c_{k\beta} \fr{1}{\omega + \epsilon_k^- - \epsilon_q^+}
 \eeq
-This renormalizes the \il{\rr{V_q^1}^*} coupling.
+This renormalizes the coupling \il{\rr{V_k^1}^*}.
 \paragraph{3.}
 \beq
 \Delta_3^+\ham_N &=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}\fr{V_q V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - V_2 \hat n_{d\beta} - \epsilon_q^+}c_{d\beta}c^\dagger_{q\beta}\\
 &=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}\fr{V_q V_2}{\hat \omega - H_{N-1}^C - H_\text{imp} - \epsilon_q^+}c_{d\beta}c^\dagger_{q\beta}\\
 &=\sum_{q\beta k\sigma} c_{q\beta}c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{d\beta}c^\dagger_{q\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}&&\qq{\text{from prev. section}}\\
 &=\sum_{q\beta k}\rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U \hat n_{d\ol\beta}}\\
-&=\sum_{q\beta k}\rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d}\\
-&=\sum_{q\beta k}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V^1_q V_2}{\omega - \epsilon_q^+ + \epsilon_d}\\
+&=\sum_{q\beta k}\rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U}\\
+&=\sum_{q\beta k}\hat n_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{V^1_q V_2}{\omega - \epsilon_q^+ + \epsilon_d + U}\\
 \eeq
-This renormalizes the \il{V_q^1} coupling.
+This renormalizes the coupling \il{\rr{V_k^1}}.
 \paragraph{4.}
 \il{O(V_2^2)}, ignore for now.
 \paragraph{Hole sector}
@@ -5573,13 +5573,14 @@ c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - H_\text{imp}}c^\dagger_{d\beta} &=c_{
 \eeq
 \paragraph{2.}
 \beq
-\Delta_2^-\ham_N &=\hf\sum_{k\sigma q\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{k\sigma}c_{d\sigma} \\
-		 &=\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}\rr{c^\dagger_{k\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c_{d\ol\beta}} \\
-		 &=\sum_{kq\beta}V_2 V_q \hat n_{q\beta}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
-		 &+\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d } \\
-		 &=\sum_{kq\beta}V_2 V_q c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 V_q \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
-		 &=\sum_{kq\beta}V_2 \hat n_{d\ol\beta}c^\dagger_{k\beta}c_{d\beta}\fr{V_q^1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{2V_q^0}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
+\Delta_2^-\ham_N =&\hf\sum_{k\sigma q\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{k\sigma}c_{d\sigma} \\
+=&\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}\rr{c^\dagger_{k\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c_{d\ol\beta}} \\
+=&\sum_{kq\beta}V_2 V_q \hat n_{q\beta}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+ &+\sum_{kq\beta}V_2 V_q \hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{1}{\hat \omega - \epsilon_k^+ - H_{N-1}^C - \epsilon_d } \\
+=&\sum_{kq\beta}V_2 V_q c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 V_q \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{1}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
+=&\sum_{kq\beta}V_2 \hat n_{d\ol\beta}c^\dagger_{k\beta}c_{d\beta}\fr{V_q^1}{\omega - \epsilon_k^+ + \epsilon_q^-} + \sum_{kq\beta}V_2 \rr{1-\hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{2V_q^0}{\omega - \epsilon_k^+ + \epsilon_q^-} \\
 \eeq
+These renormalize \il{V_k^1} and \il{V_k^0}.
 \paragraph{3.}
 \beq
 		 &\Delta^-_3 \ham_N\\
@@ -5587,20 +5588,21 @@ c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - H_\text{imp}}c^\dagger_{d\beta} &=c_{
 		  &= \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}\rr{c^\dagger_{d\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{k\ol\beta}}\rr{1-\hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
 		  &= \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
 		  &+ \sum_{kq\beta}V^*_qV_2\hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{1}{\hat \omega - H_{N-1}^C - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
-		  &= \sum_{kq\beta}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \rr{\epsilon_d + U\hat n_{d\ol\beta}}} + \sum_{kq\beta}\hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \epsilon_d - U} \\
-		  &= \sum_{kq\beta}V_2c^\dagger_{d\beta}c_{k\beta}\rr{\fr{\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} + \fr{\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d}} + \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^0}^*\rr{1-\hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d - U} \\
-		  &= \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} + \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\cc{\fr{V_2\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d} + \fr{V_2\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d - U}} \\
+		  &= \sum_{kq\beta}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \rr{\epsilon_d + U\hat n_{d\ol\beta}}} + \sum_{kq\beta}\hat n_{q\beta}\rr{1-\hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{V^*_qV_2}{\omega + \epsilon_q^- - \epsilon_d} \\
+		  &= \sum_{kq\beta}V_2c^\dagger_{d\beta}c_{k\beta}\rr{\fr{\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} + \fr{\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d}} + \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^0}^*\rr{1-\hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d} \\
+		  &= \sum_{kq\beta}c^\dagger_{d\beta}c_{k\beta}\fr{V_2\rr{V_q^1}^*\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U} \\
+		  &+ \sum_{kq\beta}2V_2\rr{V_q^0}^*\rr{1 - \hat n_{d\ol\beta}}c^\dagger_{d\beta}c_{k\beta}\fr{1}{\omega + \epsilon_q^- - \epsilon_d}\\
 \eeq
+These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
+\paragraph{4.}
+\il{O(V^4)}
 \subsubsection*{Scaling equations}
 \beq
 \Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
 \Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U }  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
-\Delta V_q^1 &= \fr{V_2 V_q^1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{V_2 V_q^1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
-\Delta {V_q^1}^* &= \fr{V_2 {V_q^1}^*}{\omega + \epsilon_k^- - \epsilon_q^+} + \fr{V_2 {V_q^1}^*}{\omega + \epsilon_q^- - \epsilon_d - U}\\
-\Delta V_q^0 &= \fr{2V_2 V_q^0}{\omega + \epsilon_q^- - \epsilon_k^+}\\
-\Delta {V_q^0}^* &= \fr{V_2 {V_q^0}^*}{\omega + \epsilon_q^- - \epsilon_d} + \fr{V_2 {V_q^0}^*}{\omega + \epsilon_q^- - \epsilon_d - U}\\
+\Delta V_k^1 &=\sum_q V_2 V_q^1\qq{\fr{1}{\omega + \epsilon_q^- - \epsilon_k^+} + \fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U}} \\
+\Delta {V_k^1}^* &= \sum_q V_2 {V_q^1}^*\qq{\fr{1}{\omega + \epsilon_k^- - \epsilon_q^+} + \fr{1}{\omega + \epsilon_q^- - \epsilon_d - U}}\\
+\Delta V_k^0 &= \sum_q 2V_2 V_q^0\fr{1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
+\Delta {V_k^0}^* &=\sum_q 2V_2 {V_q^0}^* \fr{1}{\omega + \epsilon_q^- - \epsilon_d}
 \eeq
-
-
-
 \end{document}
