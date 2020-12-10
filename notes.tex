@@ -5614,14 +5614,14 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \begin{equation*}
 \begin{aligned}
 	\ham &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\sigma\sigma^\prime}u_1 c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
-	     &+\sum_{kk^\prime\sigma\sigma^\prime}u_2c^\dagger_{d\sigma}c^\dagger_{k\sigma^\prime}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
-\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U + u_2} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
-\Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_2}  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_2} + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
-\Delta V_k^1 &=\sum_q V_q^1\qq{\fr{u_1 + 2u_2}{\omega + \epsilon_q^- - \epsilon_k^+ - u_2} + 
-\fr{u_1 - u_2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_2}} \\
-\Delta {V_k^1}^* &= \sum_q  {V_q^1}^*\qq{\fr{u_1- u_2}{\omega + \epsilon_k^- - \epsilon_q^+ + u_2} + \fr{u_1  + 2u_2}{\omega + \epsilon_q^- - \epsilon_d - U - u_2}}\\
-\Delta V_k^0 &= \sum_q V_q^0\fr{2u_1 + u_2}{\omega + \epsilon_q^- - \epsilon_k^+}\\
-\Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{2u_1 + u_2}{\omega + \epsilon_q^- - \epsilon_d}
+	     &-\sum_{kk^\prime\sigma\sigma^\prime}u_2c^\dagger_{d\sigma}c^\dagger_{k\sigma^\prime}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
+\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_2} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+\Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U - u_2}  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U + u_2} + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+\Delta V_k^1 &=\sum_q V_q^1\qq{\fr{u_1- 2u_2}{\omega + \epsilon_q^- - \epsilon_k^+ + u_1} + 
+\fr{u_1 + u_2}{\omega - \epsilon_q^+ + \epsilon_d + U - u_2}} \\
+\Delta {V_k^1}^* &= \sum_q  {V_q^1}^*\qq{\fr{u_1+ u_2}{\omega + \epsilon_k^- - \epsilon_q^+} + \fr{u_1 - 2u_2}{\omega + \epsilon_q^- - \epsilon_d - U + u_2}}\\
+\Delta V_k^0 &= \sum_q V_q^0\fr{2u_1 - u_2}{\omega + \epsilon_q^- - \epsilon_k^+ + u_1}\\
+\Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{2u_1 - u_2}{\omega + \epsilon_q^- - \epsilon_d}
 \end{aligned}
 \end{equation*}
 \end{document}

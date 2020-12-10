@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1607575653 "notes.tex" "notes.pdf" "notes" 1607575666
+["pdflatex"] 1607599985 "notes.tex" "notes.pdf" "notes" 1607600001
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1607249373 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1607249373 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -184,15 +184,15 @@
   "empty.png" 1606753357 122984 5c744e9d7e2d6faa79d06bbd08bdc81b ""
   "full.png" 1606753357 119745 a8b2c00134107614b294c5b1d656b2a0 ""
   "mixed.png" 1606753357 116479 2374fa99e9a93c3ccff8fa787fa5dc7c ""
-  "notes.aux" 1607575666 19275 dd611b365531c70a975888ec3f227782 "pdflatex"
-  "notes.out" 1607575666 4895 c05720bc47e3cc2c414b94ed06010d24 "pdflatex"
-  "notes.tex" 1607575653 380706 daec9293668b9546cfaed33e6b8597e6 ""
-  "notes.toc" 1607575666 6571 c906f49db76482d2daa8851e45b68a07 "pdflatex"
+  "notes.aux" 1607600001 19275 dd611b365531c70a975888ec3f227782 "pdflatex"
+  "notes.out" 1607600001 4895 c05720bc47e3cc2c414b94ed06010d24 "pdflatex"
+  "notes.tex" 1607599984 380704 90488dd6ad78d6ffd625c9cb3f08bda9 ""
+  "notes.toc" 1607600001 6571 c906f49db76482d2daa8851e45b68a07 "pdflatex"
   "poppov1.png" 1606753357 101248 e7569e5044dac9d259fa95c5c749f169 ""
   "poppov2.png" 1606753357 78113 7d43ba9941b30ad70fc9aee7752cda75 ""
   (generated)
+  "notes.toc"
+  "notes.log"
   "notes.aux"
   "notes.pdf"
-  "notes.log"
-  "notes.toc"
   "notes.out"
