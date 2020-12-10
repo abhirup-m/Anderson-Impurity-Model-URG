@@ -1,11 +1,16 @@
 \documentclass[14pt]{extarticle}
 \usepackage{common}
 \numberwithin{equation}{section}
+%\usepackage[T1]{fontenc}
+%\usepackage[tracking]{microtype}
+%\usepackage[sc,osf]{mathpazo}
+%\linespread{1.025}
+%\usepackage[euler-digits,small]{eulervm}
 %\renewcommand\thesubsection{\arabic{subsection}}
 \begin{document}
 \tableofcontents
 \pagebreak
-\comm{
+%\comm{
 \section{Preliminaries}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as
@@ -748,7 +753,7 @@ T_\text{flip} = \lambda_+ J \qq{1 + 2 N(\epsilon_F) J \ln \fr{T}{T_F}}
 Here again, the second order contribution is obtained by replacing \\
 \il{J \ra 2J N(\epsilon_F) \ln \fr{T_F}{T}}.
 Both the solutions together imply that the next order probability for scattering of \il{k\ua} is obtained by replacing the additional \il{J} with \il{2J N(\epsilon_F) \ln \fr{T_F}{T}}.
-\beq[change]
+\beq[change1]
 \mathcal{P} = \mathcal{P}^{(2)}\qq{1 + 2J N(\epsilon_F) \ln \fr{T_F}{T}}
 \eeq
 
@@ -1322,8 +1327,8 @@ This says that the variation of the coupling from \il{g_0} to \il{g} is
 \beq
 g_0 \ra g = g_0\rr{1 + 2g_0 \ln \fr{T_F}{T}}
 \eeq
-Since \il{g \equiv N J}, we have recovered eq.~\ref{change}.
-Since eq.~\ref{change} was obtained as a perturbation calculation, it should have been valid only at \il{T \gg T_K}, but the scaling relation holds at all temperatures.
+Since \il{g \equiv N J}, we have recovered eq.~\ref{change1}.
+Since eq.~\ref{change1} was obtained as a perturbation calculation, it should have been valid only at \il{T \gg T_K}, but the scaling relation holds at all temperatures.
 
 \subsection{Method of pseudo-fermions}
 Spin operators, unlike fermionic creation and annihilation operators,  do not satisfy Wick's theorem.
@@ -4081,7 +4086,7 @@ This tells us that just as one electron comes below the Fermi surface to form th
 Excitations of the cloud then involve higher values of \il{\ham_0^* > \fr{3J^*}{2}} and lead to excitations of the composite system as a whole (\il{E_0 > 0}).
 The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic energy must start from a non-zero value.
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
-}
+
 
 \pagebreak\section{Anderson Model URG}
 \beq
@@ -5325,12 +5330,12 @@ The on-shell Hamiltonian is
 \Delta \epsilon_d   = \hf\sum_{q}\qq{\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} - \fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U}}
 \end{gather*}
 }
-\subsection*{Without higher order scattering}
+\subsection{Without higher order scattering}
 \beq
 \ham_N = H_{N-1} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
 where \il{H_{N-1} \equiv \sum_{k<\Lambda_N,\sigma}\rr{\epsilon_k \hat n_{k\sigma} + V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}}} features the electrons below the shell. \textit{In the absence of higher order scattering, the only renormalization is in \il{\epsilon_d} and \il{U}, so we do not need to split the \il{V_q} into \il{V^1_q \hat n_{d\ol\beta} + V^0_q\rr{1 - \hat n_{d\ol\beta}}}. These will appear at third order in \il{V_q}.} 
-\subsubsection*{Particle sector}
+\subsubsection{Particle sector}
 The excited states consist of particles on the higher band edge (\il{+D}).
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}\eta_{q\beta}c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}}
@@ -5392,7 +5397,7 @@ There I used \il{\sum_{\beta} \hat n_{d\beta} \hat n_{d\ol\beta} = 2\hat n_{d\ua
 \Delta^+ U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d  + U } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d}}
 \eeq
 
-\subsubsection*{Hole sector}
+\subsubsection{Hole sector}
 The excited states consist of holes on the lower band edge (\il{-D}).
 \beq
 \Delta^- \ham_N = \sum_{q\beta}c^\dagger_{q\beta}\text{Tr}\qq{\ham_N c_{q\beta}}\eta_{q\beta}
@@ -5435,13 +5440,13 @@ We get the following scaling equations for the hole sector:
 \Delta^- \epsilon_d &= \sum_q |V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2}{\omega + \epsilon^-_q - \epsilon_d}}\\
 \Delta^- U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega + \epsilon^-_q - \epsilon_d} - \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U }}
 \eeq
-\subsubsection*{Scaling equations}
+\subsubsection{Scaling equations}
 Combining the two sectors, the scaling equations become
 \beq
 \Delta \epsilon_d &= \sum_q |V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2}{\omega + \epsilon^-_q - \epsilon_d}}\\
 \Delta U &= \sum_q 2|V_q|^2\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_d + U } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{1}{\omega + \epsilon^-_q - \epsilon_d} - \fr{1}{\omega + \epsilon^-_q - \epsilon_d  - U }}
 \eeq
-\subsubsection*{Particle-hole symmetric case}
+\subsubsection{Particle-hole symmetric case}
 For \il{U = -2\epsilon_d} (and setting \il{\epsilon_q^+ = -\epsilon_q^-}), the equations become
 \begin{equation*}
 \begin{aligned}
@@ -5453,7 +5458,7 @@ For \il{U = -2\epsilon_d} (and setting \il{\epsilon_q^+ = -\epsilon_q^-}), the e
 \end{aligned}
 \end{equation*}
 \textit{The particle-hole symmetry is maintained for all \il{\omega}.}
-\subsubsection*{Matching poor man's scaling}
+\subsubsection{Matching poor man's scaling}
 \textit{Assuming a spherical shell (\il{\epsilon_q^+ = D,\epsilon_q^- = -D}) and momentum-independent scattering\\ (\il{\sum_q |V_q|^2 = |V|^2 \rho |\delta D| = |\delta D|\fr{\Delta}{\pi}}) and setting \il{\omega = 0}},
 \beq
 \delta \epsilon_d &= |\delta D|\fr{\Delta}{\pi}\rr{\fr{1}{ - D + \epsilon_d} + \fr{1}{ - D - \epsilon_d  - U } - \fr{2}{ - D - \epsilon_d}}\\
@@ -5463,7 +5468,7 @@ For \il{U = -2\epsilon_d} (and setting \il{\epsilon_q^+ = -\epsilon_q^-}), the e
 \eeq
 These are identical to equation set 3.61 in Hewson.%TODO cite \footnote{HEWSON, A. C., 1993, The Kondo Problem to Heavy Fermions (Cambridge University Press)}
 
-\subsection*{With higher order scattering}
+\subsection{With higher order scattering}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
 \eeq
@@ -5472,7 +5477,7 @@ Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well 
 \ham_N = H_{N-1} + H_\text{imp} + \rr{\epsilon_q  + V_2 \hat n_{d\beta}}\hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.}  \\
 +\sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}
 \eeq
-\paragraph{Particle sector:}
+\subsubsection{Particle sector:}
 The intermediate state consists of particle states, obtained by exciting electrons to the upper bandwidth edge (\il{+D}).
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta}\fr{1}{\hat \omega - \rr{H_{N-1}^C + H_\text{imp} + V_2 \hat n_{d\beta} + \epsilon_q}\hat n_{q\beta}}\\
@@ -5551,7 +5556,7 @@ This renormalizes the coupling \il{\rr{V_k^1}^*}.
 This renormalizes the coupling \il{\rr{V_k^1}}.
 \paragraph{4.}
 \il{O(V_2^2)}, ignore for now.
-\paragraph{Hole sector}
+\subsubsection{Hole sector}
 The intermediate state consists of hole states, obtained by exciting electrons from the lower bandwidth edge (\il{-D}).
 \beq
 \Delta^- \ham_N &= \sum_{q\beta}c^\dagger_{q\beta}\qq{V_q + \sum_{k\sigma}V_2 c^\dagger_{d\sigma}c_{k\sigma}}c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^C - H_\text{imp}}c^\dagger_{d\beta}\qq{V^*_q + \sum_{k^\prime\sigma^\prime} V_2 c^\dagger_{k^\prime\sigma^\prime}c_{d\sigma^\prime}}c_{q\beta} \\
@@ -5596,7 +5601,7 @@ These renormalize \il{V_k^1} and \il{V_k^0}.
 These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \paragraph{4.}
 \il{O(V^4)}
-\subsubsection*{Scaling equations}
+\subsubsection{Scaling equations}
 \beq
 \Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
 \Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U }  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U } + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
@@ -5605,4 +5610,18 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \Delta V_k^0 &= \sum_q 2V_2 V_q^0\fr{1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
 \Delta {V_k^0}^* &=\sum_q 2V_2 {V_q^0}^* \fr{1}{\omega + \epsilon_q^- - \epsilon_d}
 \eeq
+\subsubsection{Scaling equations (New)}
+\begin{equation*}
+\begin{aligned}
+	\ham &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\sigma\sigma^\prime}u_1 c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
+	     &+\sum_{kk^\prime\sigma\sigma^\prime}u_2c^\dagger_{d\sigma}c^\dagger_{k\sigma^\prime}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
+\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U + u_2} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
+\Delta U &= \sum_q 2\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_2}  - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_2} + \fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d}}\\
+\Delta V_k^1 &=\sum_q V_q^1\qq{\fr{u_1 + 2u_2}{\omega + \epsilon_q^- - \epsilon_k^+ - u_2} + 
+\fr{u_1 - u_2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_2}} \\
+\Delta {V_k^1}^* &= \sum_q  {V_q^1}^*\qq{\fr{u_1- u_2}{\omega + \epsilon_k^- - \epsilon_q^+ + u_2} + \fr{u_1  + 2u_2}{\omega + \epsilon_q^- - \epsilon_d - U - u_2}}\\
+\Delta V_k^0 &= \sum_q V_q^0\fr{2u_1 + u_2}{\omega + \epsilon_q^- - \epsilon_k^+}\\
+\Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{2u_1 + u_2}{\omega + \epsilon_q^- - \epsilon_d}
+\end{aligned}
+\end{equation*}
 \end{document}
