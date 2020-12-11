@@ -10,7 +10,7 @@
 \begin{document}
 \tableofcontents
 \pagebreak
-%\comm{
+\comm{
 \section{Preliminaries}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as
@@ -1869,7 +1869,7 @@ Note that
 \beq
 \epsilon = k_B T\ln \rr{f^{-1} - 1}\implies \epsilon^2 =k_B^2 T^2\qq{\ln \rr{f^{-1} - 1}}^2
 \eeq
-Therfore,
+Therefore,
 \beq
 \dv{\avg{E}}{T} &=-k_B^2 T\sum_{\sigma}\rho_\sigma(0) \int_1^0 df \qq{\ln \rr{f^{-1} - 1}}^2
 \eeq
@@ -2080,12 +2080,12 @@ where
 \end{gather}
 
 \subsection{Renormalized perturbation theory}
-This is a perturbative expansion of the Hamiltonian in terms of the renormalised inteaction \il{\wl U}, and the second order results obtained from this approach coincide with the phenomenological results at \il{T,h \ra 0}..
+This is a perturbative expansion of the Hamiltonian in terms of the renormalized interaction \il{\wl U}, and the second order results obtained from this approach coincide with the phenomenological results at \il{T,h \ra 0}..
 This approach is obviously more general as all terms in the original Hamiltonian are retained.
 This is an alternative to the full microscopic approach.
 In the microscopic approach, we take the exact microscopic Hamiltonian and calculate observables from it.
-In the renormalised perturbation, we separate the Hamiltonian into a non-interacting  quasiparticle Hamiltonian which is like the low-energy free Hamiltonian, and an interacting part, and also a counter-term to prevent divergences.
-The original parameters of the model get replaced by renormalised paramters, and we can analyse the model perturbatively in powers of the renormalised interaction.\\\\
+In the renormalized perturbation, we separate the Hamiltonian into a non-interacting  quasiparticle Hamiltonian which is like the low-energy free Hamiltonian, and an interacting part, and also a counter-term to prevent divergences.
+The original parameters of the model get replaced by renormalized parameters, and we can analyze the model perturbatively in powers of the renormalized interaction.\\\\
 To do a perturbative expansion of the Hamiltonian in terms of the interaction \il{U}, it is useful to introduce the self energy \il{\Sigma(E) = \Sigma(0) + E\Sigma^\prime + \Sigma^\text{rem}(E)}.
 In the absence of interaction, the impurity Green's function is
 \beq
@@ -5610,7 +5610,7 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \Delta V_k^0 &= \sum_q 2V_2 V_q^0\fr{1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
 \Delta {V_k^0}^* &=\sum_q 2V_2 {V_q^0}^* \fr{1}{\omega + \epsilon_q^- - \epsilon_d}
 \eeq
-\subsubsection{Scaling equations (New)}
+\subsubsection{Scaling equations (with both interactions)}
 \begin{equation*}
 \begin{aligned}
 	\ham &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\sigma\sigma^\prime}u_1 c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}\\
@@ -5624,4 +5624,165 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{2u_1 - u_2}{\omega + \epsilon_q^- - \epsilon_d}
 \end{aligned}
 \end{equation*}
+}
+\subsection{With particle-hole symmetric interaction}
+The four-Fermi interaction we are considering is of the form
+\beq
+\ham_I = \sum_{k,q,\sigma_i}u c^\dagger_{k\sigma_1}c^\dagger_{d\sigma_2}c_{q\sigma_3}c_{d\sigma_4}\delta_{\rr{\sigma_1 + \sigma_2 = \sigma_3 + \sigma_4}}
+\eeq
+The \il{u} in general depends on the spin and the momenta. Expanding the summation by using the delta gives
+\beq
+\ham_I = \underbrace{\sum_{k,q,\sigma,\sigma^\prime}u_1 c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime}}_\text{spin-preserving scattering} + \overbrace{\sum_{k,q,\sigma}u_2 c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}u_2 c_{q\ol\sigma}c_{d\sigma}}^\text{spin-flip scattering}
+\eeq
+At this point, we drop the dependence of \il{u} on the momenta and assume it depends only on the spin transfer. The first term (attached with \il{u_1}) involves no spin-flip between the scattering momenta or the scattering impurity electrons (\il{k\sigma \to q\sigma, d\sigma^\prime \to d\sigma^\prime}). We label this coupling as \il{u_P}. The other coupling involves a spin-flip scattering, so we label that as \il{u_A}.
+\beq
+\ham_I = \sum_{k,q,\sigma,\sigma^\prime}u_P c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime}+ \sum_{k,q,\sigma}u_A c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}u_2 c_{q\ol\sigma}c_{d\sigma}
+\eeq
+The anti-parallel part of the interaction is not particle-hole symmetric in this form, as is seen by performing a particle-hole transformation \il{c_k \to c^\dagger_k, c_d \to -c^\dagger_d}:
+\beq
+\sum_{k,q,\sigma,\sigma^\prime}c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime} &\to \sum_{k,q,\sigma,\sigma^\prime}c_{k\sigma}c_{d\sigma^\prime}c^\dagger_{q\sigma}c^\dagger_{d\sigma^\prime}
+\eeq
+The anti-parallel part is on the other hand invariant under this change:
+\beq
+\sum_{k,q,\sigma}c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma}c_{d\sigma} &\to \sum_{k,q,\sigma}c_{k\sigma}c_{d\ol\sigma}c^\dagger_{q\ol\sigma}c^\dagger_{d\sigma}\\
+														&= \sum_{k,q,\sigma}c^\dagger_{q\ol\sigma}c^\dagger_{d\sigma}c_{k\sigma}c_{d\ol\sigma}\\
+														&= \sum_{k,q,\sigma}c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma}c_{d\sigma}
+\eeq
+To make the parallel interaction particle-hole symmetric, we add its particle-hole transformed partner:
+\beq
+\ham_I = \sum_{k,q,\sigma}u_A c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma}c_{d\sigma} + \sum_{k,q,\sigma,\sigma^\prime}\fr{u_P}{2} \qq{c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime} + c_{k\sigma}c_{d\sigma^\prime}c^\dagger_{q\sigma}c^\dagger_{d\sigma^\prime}}
+\eeq
+Since this term is now invariant under the particle-hole transformation, we can see how the other impurity terms transform:
+\begin{gather*}
+	\epsilon_d\sum_\sigma\hat n_{d\sigma} + \sum_{k\sigma}V_k\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{q\sigma}c_{k\sigma}} + U\hat n_{d\ua}\hat n_{d\da}\\ \bigg\downarrow\\ \epsilon_d\sum_\sigma\rr{1 - \hat n_{d\sigma}} - \sum_{k\sigma}V_k\rr{c_{k\sigma}c^\dagger_{d\sigma}+c_{q\sigma}c^\dagger_{k\sigma}} + U\rr{1 - \hat n_{d\ua}}\rr{1 - \hat n_{d\da}}\\
+	=\rr{-U - \epsilon_d}\sum_\sigma \hat n_{d\sigma} + \sum_{k\sigma}V_k\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{q\sigma}c_{k\sigma}} + U\hat n_{d\ua}\hat n_{d\da}
+\end{gather*}
+In the last step I dropped a constant term. The particle-hole symmetry condition is thus
+\beq
+-U - \epsilon_d = \epsilon_d \implies U + 2\epsilon_d = 0
+\eeq
+The total Hamiltonian can be written as
+\beq
+\ham &= \sum_k\rr{ \epsilon_k \hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da} +\\
+     &\quad\sum_{k,q,\sigma}u_A c^\dagger_{k\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma}c_{d\sigma} + \sum_{k,q,\sigma,\sigma^\prime}\fr{u_P}{2} \qq{c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime} + c_{k\sigma}c_{d\sigma^\prime}c^\dagger_{q\sigma}c^\dagger_{d\sigma^\prime}}
+\eeq
+The Hamiltonian with a single electron \il{q\beta} on the \il{N^\text{th}} shell is
+\beq
+\ham_N &= H_{N-1} + H_{imp} + \epsilon_q \hat n_{q\beta} + V_k c^\dagger_{q\beta}c_{d\beta} + \text{h.c.}  \\
+       &\quad+ \sum_{k<\Lambda_N}u_A \rr{c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}\\
+       &\quad+ \sum_{k<\Lambda_N\sigma}\fr{u_P}{2}\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\beta}c_{d\sigma} + c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{q\beta}c_{d\sigma} + c_{k\beta}c_{d\sigma}c^\dagger_{q\beta}c^\dagger_{d\sigma} + c_{q\beta}c_{d\sigma}c^\dagger_{k\beta}c^\dagger_{d\sigma}}\\
+       &\quad-\sum_{\sigma}\fr{u_P}{2}\qq{\hat n_{q\beta} \hat n_{d\sigma} + \rr{1 - \hat n_{q\beta}} \rr{1 - \hat n_{d\sigma}}}\\
+       &= H_{N-1} + H_{imp} + \epsilon_q \hat n_{q\beta} + V_k c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + u_A\sum_{k<\Lambda_N}\rr{c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}\\
+       &\quad + u_P\sum_{k<\Lambda_N\sigma}\rr{\tau_{d\sigma}c_{k\beta} c^\dagger_{q\beta}+ \tau_{d\sigma}c_{q\beta}c^\dagger_{k\beta}} - u_P\tau_{q\beta}\sum_{\sigma}\hat n_{d\sigma} - u_P\rr{1 - \hat n_{q\beta}}\\
+\eeq
+We see that the interaction adds to the already-present dispersions; the energy of a hole state is now \il{-u_P}, and the impurity site energy is now \il{\epsilon_d - u_P \tau_{k\sigma}}. The total diagonal part is
+\beq
+\ham_N^D = \begin{cases} H_{N-1}^D + \epsilon_q^{\pm} + \rr{\epsilon_d - \hf u_P} \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da} &\text{  particle state}\\
+	H_{N-1}^D - u_P + \rr{\epsilon_d + \hf u_P} \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}&\text{  hole state}
+\end{cases}
+\eeq
+\il{H_{N-1}^D} has the dispersions for the electrons on the lower shells and the \il{u_P \tau_{k\sigma^\prime}\sum_\sigma \hat n_{d\sigma}}-type term for \il{k<\Lambda_N}. The \il{\epsilon_q^{\pm}} denotes the kinetic energy for states above (\il{\epsilon_q^+ = |\epsilon_q|}) or below (\il{\epsilon_q^- = -|\epsilon_q|}) the Fermi level.
+\subsubsection{Particle sector}
+For the particle sector, the diagonal part becomes
+\beq
+\ham_N^D = H_{N-1}^D + \epsilon_q^+ + \rr{\epsilon_d - \hf u_P} \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
+\eeq
+The \il{+} on the \il{\epsilon_q} signifies that it is the energy of a particle excitation, as compared to that of a hole excitation while will be denoted by \il{\epsilon_q^-}. The change is
+\begin{gather*}
+\Delta^+ \ham_N = \sum_{q\beta}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + u_P\sum_{k<\Lambda_N\sigma}\tau_{d\sigma}c_{q\beta}c^\dagger_{k\beta} + u_A\sum_{k<\Lambda_N}c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}\\
+		\fr{1}{\hat \omega - H_{N-1}^D - \epsilon_q^+ - \rr{\epsilon_d - \hf u_P} \sum_\sigma \hat n_{d\sigma} - U\hat n_{d\ua}\hat n_{d\da}}\\
+		\qq{V_qc^\dagger_{q\beta}c_{d\beta}+u_P\sum_{k<\Lambda_N\sigma}\tau_{d\sigma}c_{k\beta} c^\dagger_{q\beta} + u_A\sum_{k<\Lambda_N}c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}}
+\end{gather*}
+\paragraph{1.}
+\beq
+\Delta^+_1 \ham_N &=\sum_{q\beta}V_q^*c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - H_{N-1}^D - \epsilon_q^+ - \rr{\epsilon_d - \hf u_P} \sum_\sigma \hat n_{d\sigma} - U\hat n_{d\ua}\hat n_{d\da}}V_qc^\dagger_{q\beta}c_{d\beta}
+\eeq
+Inside the propagator, \il{\hat n_{d\beta} = 0} and \il{\hat n_{q\beta} = 1}, so
+\beq
+\Delta^+_1 \ham_N &=\sum_{q\beta}|V_q|^2c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - H_{N-1}^D - \epsilon_q^+ - \rr{\epsilon_d-\hf u_P} \hat n_{d\ol\beta}}V_qc^\dagger_{q\beta}c_{d\beta}\\
+		  &=\sum_{q\beta}|V_q|^2\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\hat \omega - H_{N-1}^D - \epsilon_q^+ - \rr{\epsilon_d-\hf u_P} \hat n_{d\ol\beta}}\\
+\eeq
+The energy for the initial state on which \il{\Delta_1^+ \ham_N} acts is
+\beq
+H_G &= H_{N-1}^D + \rr{\epsilon_d + \hf u_P}\sum_\beta \hat n_{d\beta} + U \hat n_{d\beta}\hat n_{d\ol\beta} - u_P\\
+\eeq
+This allows us to write the denominator in terms of this ground state energy:
+\beq
+\hat \omega - \epsilon_q^+ - \rr{\epsilon_d-\hf u_P} \hat n_{d\ol\beta}  - H_{N-1}^D = \hat \omega - H_G - \epsilon_q^+  + \epsilon_d - \hf u_P + u_P \hat n_{d\ol\beta} + U\hat n_{d\ol\beta}
+\eeq
+If we measuring the quantum fluctuation \il{\hat \omega} from the initial state energy \il{H_G}, we can set \il{H_G = 0} and replace \il{\hat \omega} with its eigenvalue \il{\omega}.
+\beq
+\omega - \epsilon_q^+  + \epsilon_d - \hf u_P + u_P \hat n_{d\ol\beta} + U\hat n_{d\ol\beta}
+\eeq
+The renormalization in \il{\ham_N} coming from the particle sector due to the first scattering is thus
+\beq
+\Delta^+_1 \ham_N &=\sum_{q\beta}|V_q|^2\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\omega - \epsilon_q^+  + \epsilon_d - \hf u_P + u_P \hat n_{d\ol\beta} + U\hat n_{d\ol\beta}}\\
+		  &=\sum_{q\beta}|V_q|^2\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d + U + \hf u_P } + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d  - \hf u_P}}\\
+\eeq
+Assuming \il{\hat n_{q\beta} = 0} initially (states at the upper edge of the band should be empty in the ground state),
+\beq
+&\Delta^+_1 \ham_N \\
+&=\sum_{q\beta}|V_q|^2\hat n_{d\beta}\qq{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d + U + \hf u_P } + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d  - \hf u_P}}\\
+&=\sum_{q\beta}\hat n_{d\beta}\qq{\fr{|V_q^1|^2\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d + U + \hf u_P } + \fr{|V_q^0|^2\rr{1 - \hat n_{d\ol\beta}}}{\omega - \epsilon_q^+ + \epsilon_d  - \hf u_P}}\\
+&=\sum_{q\beta}|V_q|^2\hat n_{d\beta}\qq{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P } + \hat n_{d\ol\beta}\rr{\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + \hf u_P } - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P }}}\\
+\eeq
+
+\subsubsection{Hole sector}
+For the hole sector, the diagonal part becomes
+\beq
+\ham_N^D = H_{N-1}^D - u_P + \rr{\epsilon_d + \hf u_P} \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
+\eeq
+The change in the Hamiltonian is
+\beq
+\Delta^-_1 \ham_N &=\sum_{q\beta}V_qc^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^D + u_P - \rr{\epsilon_d+\hf u_P} \sum_\sigma \hat n_{d\sigma} - U\hat n_{d\ua}\hat n_{d\da}}V_q^*c^\dagger_{d\beta}c_{q\beta}\\
+&=\sum_{q\beta}|V_q|^2 c^\dagger_{q\beta}c_{d\beta}\fr{1}{\hat \omega - H_{N-1}^D + u_P - \rr{\epsilon_d+\hf u_P} - \rr{\epsilon_d+\hf u_P} \hat n_{d\ol\beta} - U\hat n_{d\ol\beta}}c^\dagger_{d\beta}c_{q\beta}\\
+&=\sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\hat \omega - H_{N-1}^D + u_P - \rr{\epsilon_d+\hf u_P} - \rr{\epsilon_d+\hf u_P} \hat n_{d\ol\beta} - U\hat n_{d\ol\beta}}\\
+\eeq
+The initial state energy in this case is
+\beq
+H_G &= H_{N-1}^D + \epsilon_q^{-} + \rr{\epsilon_d - \hf u_P} \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}\\
+    &= H_{N-1}^D + \epsilon_q^{-} + \rr{\epsilon_d - \hf u_P} \hat n_{d\ol\beta}\\
+    &= H_{N-1}^D + \epsilon_q^{-} + \rr{\epsilon_d + \hf u_P} \hat n_{d\ol\beta} - u_P \hat n_{d\ol\beta} 
+\eeq
+Therefore, the denominator can be written as 
+\begin{gather*}
+\hat \omega - H_G + \epsilon_q^- - \epsilon_d + \hf u_P - \rr{U + u_p}\hat n_{d\ol\beta}
+= \omega + \epsilon_q^- - \epsilon_d + \hf u_P - \rr{U + u_p}\hat n_{d\ol\beta}
+\end{gather*}
+\beq
+\Delta^-_1 \ham_N =&\sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P - \rr{U + u_p}\hat n_{d\ol\beta}}
+\eeq
+We can set \il{\hat n_{q\beta}=1} because the state at the lower edge of the band will be occupied.
+\beq
+\Delta^-_1 \ham_N =&\sum_{q\beta}|V_q|^2 \rr{1 - \hat n_{d\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P} + \fr{1 - \hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}}\\
+=&\sum_{q\beta}\rr{1 - \hat n_{d\beta}}\qq{\fr{|V_q^1|^2 \hat n_{d\ol\beta}}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P} + \fr{|V_q^0|^2 \rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}}\\
+=&\sum_{q\beta}|V_q|^2 \rr{1 - \hat n_{d\beta}}\left[\hat n_{d\ol\beta}\rr{\fr{|V_q^1|^2}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P} - \fr{|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}}\right.\\
+		  &\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\left.+\fr{|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}\right]\\
+		  =&\sum_{q\beta}\left[\hat n_{d\ol\beta}\rr{\fr{|V_q^1|^2 }{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}}\right.\\
+		  &\quad\quad\quad\quad\quad\quad\left.+\hat n_{d\beta}\hat n_{d\ol\beta}\rr{\fr{|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P} - \fr{|V_q^1|^2}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P}}\right]
+\eeq
+\subsubsection{Scaling equations}
+\paragraph{1.}
+\beq
+\Delta \epsilon_d = \sum_q  \qq{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P } + \fr{|V_q^1|^2}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}}
+\eeq
+\paragraph{2.}
+\beq
+\Delta U = \sum_q  \left[\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + \hf u_P } - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P } + \fr{|V_q^0|^2}{\omega + \epsilon_q^- - \epsilon_d + \hf u_P}\right.\\
+\left.- \fr{|V_q^1|^2}{\omega + \epsilon_q^- - \epsilon_d - U - \hf u_P}\right]
+\eeq
+\subsubsection{Particle-hole symmetry}
+On imposing the constraint \il{2\epsilon_d + U = 0} and invoking the relation \il{\epsilon_q^+ = -\epsilon_q^-}, the equations become
+\beq
+		  \Delta \epsilon_d &= 2\sum_q  \qq{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P } - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ - \epsilon_d + \hf u_P}}\\
+		  \hf\Delta U &= \sum_q  \qq{\fr{|V_q^1|^2 + |V_q^0|^2}{\omega - \epsilon_q^+ - \epsilon_d + \hf u_P } - \fr{|V_q^1|^2 + |V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P }}
+\eeq
+We hence see that the quantity \il{\epsilon_d + \hf U} is invariant under the RG if we started with a particle-hole symmetric Hamiltonian:
+\beq
+		  \Delta \rr{\epsilon_d + \hf U} &=\sum_q  \qq{\fr{|V_q^1|^2 - |V_q^0|^2}{\omega - \epsilon_q^+ - \epsilon_d + \hf u_P } - \fr{|V_q^1|^2 - |V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P }}\\
+						 &=\sum_q \qq{|V_q^1|^2 - |V_q^0|^2}\qq{\fr{1}{\omega - \epsilon_q^+ - \epsilon_d + \hf u_P } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P }}\\
+\eeq
+If we had started with particle-hole symmetry, that is, had \il{|V_q^1|^2 = |V_q^0|^2}, then this change will be 0.
+
+
 \end{document}
