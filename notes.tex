@@ -8,7 +8,7 @@
 %\usepackage[euler-digits,small]{eulervm}
 %\renewcommand\thesubsection{\arabic{subsection}}
 \begin{document}
-\tableofcontents
+%\tableofcontents
 \pagebreak
 \comm{
 \section{Preliminaries}
@@ -5330,6 +5330,7 @@ The on-shell Hamiltonian is
 \Delta \epsilon_d   = \hf\sum_{q}\qq{\fr{V^2_m}{\omega - \hf\epsilon_q - \fr{1}{4}U} - \fr{V^2_p}{\omega - \hf\epsilon_q + \fr{1}{4}U}}
 \end{gather*}
 }
+}
 \subsection{Without higher order scattering}
 \beq
 \ham_N = H_{N-1} + \epsilon_q \hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
@@ -5610,6 +5611,7 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \Delta V_k^0 &= \sum_q 2V_2 V_q^0\fr{1}{\omega + \epsilon_q^- - \epsilon_k^+}\\
 \Delta {V_k^0}^* &=\sum_q 2V_2 {V_q^0}^* \fr{1}{\omega + \epsilon_q^- - \epsilon_d}
 \eeq
+
 \subsubsection{Scaling equations (with both interactions)}
 \begin{equation*}
 \begin{aligned}
@@ -5624,7 +5626,8 @@ These renormalize \il{{V_k^1}^*} and \il{{V_k^0}^*}.
 \Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{2u_1 - u_2}{\omega + \epsilon_q^- - \epsilon_d}
 \end{aligned}
 \end{equation*}
-}
+
+\comm{
 \subsection{With particle-hole symmetric interaction}
 The four-Fermi interaction we are considering is of the form
 \beq
@@ -5640,7 +5643,7 @@ At this point, we drop the dependence of \il{u} on the momenta and assume it dep
 \eeq
 The anti-parallel part of the interaction is not particle-hole symmetric in this form, as is seen by performing a particle-hole transformation \il{c_k \to c^\dagger_k, c_d \to -c^\dagger_d}:
 \beq
-\sum_{k,q,\sigma,\sigma^\prime}c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime} &\to \sum_{k,q,\sigma,\sigma^\prime}c_{k\sigma}c_{d\sigma^\prime}c^\dagger_{q\sigma}c^\dagger_{d\sigma^\prime}
+\sum_{k,q,\sigma,\sigma^\prime}c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime} &\to \sum_{k,q,\sigma,\sigma^\prime}c_{q\sigma}c_{d\sigma^\prime}c^\dagger_{k\sigma}c^\dagger_{d\sigma^\prime}
 \eeq
 The anti-parallel part is on the other hand invariant under this change:
 \beq
@@ -5669,9 +5672,8 @@ The total Hamiltonian can be written as
 The Hamiltonian with a single electron \il{q\beta} on the \il{N^\text{th}} shell is
 \beq
 \ham_N &= H_{N-1} + H_{imp} + \epsilon_q \hat n_{q\beta} + V_k c^\dagger_{q\beta}c_{d\beta} + \text{h.c.}  \\
-       &\quad+ \sum_{k<\Lambda_N}u_A \rr{c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}\\
+       &\quad+ \sum_{k<\Lambda_N}u_A \rr{c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}-\sum_{\sigma}\fr{u_P}{2}\qq{\hat n_{q\beta} \hat n_{d\sigma} + \rr{1 - \hat n_{q\beta}} \rr{1 - \hat n_{d\sigma}}}\\
        &\quad+ \sum_{k<\Lambda_N\sigma}\fr{u_P}{2}\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\beta}c_{d\sigma} + c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{q\beta}c_{d\sigma} + c_{k\beta}c_{d\sigma}c^\dagger_{q\beta}c^\dagger_{d\sigma} + c_{q\beta}c_{d\sigma}c^\dagger_{k\beta}c^\dagger_{d\sigma}}\\
-       &\quad-\sum_{\sigma}\fr{u_P}{2}\qq{\hat n_{q\beta} \hat n_{d\sigma} + \rr{1 - \hat n_{q\beta}} \rr{1 - \hat n_{d\sigma}}}\\
        &= H_{N-1} + H_{imp} + \epsilon_q \hat n_{q\beta} + V_k c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + u_A\sum_{k<\Lambda_N}\rr{c^\dagger_{q\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta} + c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{q\beta}c_{d\ol\beta}}\\
        &\quad + u_P\sum_{k<\Lambda_N\sigma}\rr{\tau_{d\sigma}c_{k\beta} c^\dagger_{q\beta}+ \tau_{d\sigma}c_{q\beta}c^\dagger_{k\beta}} - u_P\tau_{q\beta}\sum_{\sigma}\hat n_{d\sigma} - u_P\rr{1 - \hat n_{q\beta}}\\
 \eeq
@@ -5783,6 +5785,6 @@ We hence see that the quantity \il{\epsilon_d + \hf U} is invariant under the RG
 						 &=\sum_q \qq{|V_q^1|^2 - |V_q^0|^2}\qq{\fr{1}{\omega - \epsilon_q^+ - \epsilon_d + \hf u_P } - \fr{1}{\omega - \epsilon_q^+ + \epsilon_d - \hf u_P }}\\
 \eeq
 If we had started with particle-hole symmetry, that is, had \il{|V_q^1|^2 = |V_q^0|^2}, then this change will be 0.
-
+}
 
 \end{document}
