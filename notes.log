@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  12 DEC 2020 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  14 DEC 2020 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -808,60 +808,85 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 )
 \c@theorem=\count312
+) (/usr/share/texmf-dist/tex/latex/draftfigure/draftfigure.sty
+Package: draftfigure 2017/07/19 v0.2 draftfigure (LCB)
+ (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks45
+\XKV@tempa@toks=\toks46
 )
-LaTeX Font Info:    Trying to load font information for T1+jkp on input line 10.
+\XKV@depth=\count313
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count314
+\calc@Bcount=\count315
+\calc@Adimen=\dimen284
+\calc@Bdimen=\dimen285
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count316
+\calc@Cskip=\skip66
+)
+\df@height=\skip67
+\df@length=\skip68
+)
+LaTeX Font Info:    Trying to load font information for T1+jkp on input line 12.
  (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count313
+\l__kernel_color_stack_int=\count317
 \l__pdf_internal_box=\box66
 ) (./notes.aux)
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 10.
-LaTeX Font Info:    Trying to load font information for OML+jkp on input line 10.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 12.
+LaTeX Font Info:    Trying to load font information for OML+jkp on input line 12.
  (/usr/share/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 10.
-LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 10.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 12.
+LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 12.
  (/usr/share/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 10.
-LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 10.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 12.
+LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 12.
  (/usr/share/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 10.
-LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 10.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 12.
+LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 12.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen284
+\scratchcounter=\count318
+\scratchdimen=\dimen286
 \scratchbox=\box67
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen285
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks46
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen287
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks48
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -906,7 +931,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 10.
+Package hyperref Info: Link coloring OFF on input line 12.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -914,34 +939,34 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count324
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+LaTeX Info: Redefining \nameref on input line 12.
  (./notes.out) (./notes.out)
 \@outlinefile=\write6
-LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 5336.
+LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 5338.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 5336.
+LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 5338.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 5336.
+LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 5338.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 5336.
+LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 5338.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 5336.
+LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 5338.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-Overfull \hbox (3.91881pt too wide) in paragraph at lines 5351--5354
+Overfull \hbox (3.91881pt too wide) in paragraph at lines 5353--5356
 \T1/jkp/m/n/14.4 part of the Hamil-to-nian and $[]$ is the impurity-diagonal part ($[]$).
  []
 
@@ -951,34 +976,270 @@ Overfull \hbox (3.91881pt too wide) in paragraph at lines 5351--5354
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 5474.
+(amsmath)                 on input line 5476.
 
 [5]
-Overfull \hbox (16.46202pt too wide) in paragraph at lines 5475--5478
+Overfull \hbox (16.46202pt too wide) in paragraph at lines 5477--5480
 \T1/jkp/m/n/14.4 Such an in-ter-ac-tion al-lows both spin-flip ($[]$) as well as spin-preserving ($[]$)
  []
 
-[6] [7] [8] [9] [10] [11] [12] (./notes.aux)
+
+Overfull \hbox (13.5563pt too wide) in paragraph at lines 5491--5494
+\T1/jkp/m/n/14.4 tween the scat-ter-ing mo-menta or the scat-ter-ing im-pu-rity elec-trons ($[]$).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5495--5500
+
+ []
+
+
+Overfull \hbox (3.42464pt too wide) detected at line 5507
+[][][]
+ []
+
+[6]
+<figures//sc-1.png, id=116, 581.06241pt x 610.66699pt>
+LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 5845.
+ (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
+File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
+)
+LaTeX Font Info:    Trying to load font information for T1+jkpss on input line 5845.
+ (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkpss.fd
+File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 5832--5848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5832--5848
+
+ []
+
+
+Overfull \hbox (10.7686pt too wide) in paragraph at lines 5832--5848
+[]$ $[]$ 
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 5869--5872
+
+ []
+
+<figures//sc-2.png, id=137, 530.85072pt x 523.88493pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5903--5906
+
+ []
+
+
+Overfull \hbox (11.91835pt too wide) in paragraph at lines 5907--5924
+[]$[]$ $[]$ 
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 5929--5954
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5929--5954
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 5959--5980
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5959--5980
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 6060--6085
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6060--6085
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 6090--6111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6090--6111
+
+ []
+
+<figures//sc-h-2.png, id=197, 593.25253pt x 610.66699pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 6123--6142
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 6154--6177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6154--6177
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 6209--6232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6209--6232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 6263--6286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6263--6286
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+
+ []
+
+[20] [21] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 2C6074B15734759519C6944051C3D65C;858.
+(rerunfilecheck)             Checksum: B4DE0C55172537AC3CF3B73022EE0F26;753.
  ) 
 Here is how much of TeX's memory you used:
- 19710 strings out of 479383
- 353741 string characters out of 5875830
- 881513 words of memory out of 5000000
- 36347 multiletter control sequences out of 15000+600000
- 467287 words of font info for 94 fonts, out of 8000000 for 9000
+ 20232 strings out of 479383
+ 361582 string characters out of 5875830
+ 877191 words of memory out of 5000000
+ 36755 multiletter control sequences out of 15000+600000
+ 472661 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,13n,98p,569b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,15n,98p,1199b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on notes.pdf (12 pages, 108258 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
+Output written on notes.pdf (21 pages, 144473 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 80 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 351 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
