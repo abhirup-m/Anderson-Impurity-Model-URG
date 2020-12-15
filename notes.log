@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  14 DEC 2020 23:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  15 DEC 2020 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,232 +1000,339 @@ Overfull \hbox (3.42464pt too wide) detected at line 5507
 
 [6]
 <figures//sc-1.png, id=116, 581.06241pt x 610.66699pt>
-LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 5845.
+LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 5846.
  (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
 File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
 )
-LaTeX Font Info:    Trying to load font information for T1+jkpss on input line 5845.
+LaTeX Font Info:    Trying to load font information for T1+jkpss on input line 5846.
  (/usr/share/texmf-dist/tex/latex/kpfonts/t1jkpss.fd
 File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 5832--5848
+Underfull \hbox (badness 10000) in paragraph at lines 5832--5849
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5832--5848
+Underfull \hbox (badness 10000) in paragraph at lines 5832--5849
 
  []
 
 
-Overfull \hbox (10.7686pt too wide) in paragraph at lines 5832--5848
+Overfull \hbox (10.7686pt too wide) in paragraph at lines 5832--5849
 []$ $[]$ 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 5869--5872
-
- []
-
 <figures//sc-2.png, id=137, 530.85072pt x 523.88493pt>
 
-Underfull \hbox (badness 10000) in paragraph at lines 5903--5906
+Underfull \hbox (badness 10000) in paragraph at lines 5870--5892
 
  []
 
 
-Overfull \hbox (11.91835pt too wide) in paragraph at lines 5907--5924
-[]$[]$ $[]$ 
+Underfull \hbox (badness 10000) in paragraph at lines 5870--5892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5870--5892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5870--5892
+
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 5929--5954
+Underfull \hbox (badness 10000) in paragraph at lines 5905--5927
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5929--5954
+Underfull \hbox (badness 10000) in paragraph at lines 5905--5927
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 5959--5980
+Underfull \hbox (badness 10000) in paragraph at lines 5932--5959
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5959--5980
+Underfull \hbox (badness 10000) in paragraph at lines 5932--5959
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5985--6009
+Underfull \hbox (badness 10000) in paragraph at lines 5932--5959
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+Underfull \hbox (badness 10000) in paragraph at lines 5964--5987
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+Underfull \hbox (badness 10000) in paragraph at lines 5964--5987
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6030--6054
+Underfull \hbox (badness 10000) in paragraph at lines 5964--5987
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 6060--6085
+Underfull \hbox (badness 10000) in paragraph at lines 5992--6018
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6060--6085
+Underfull \hbox (badness 10000) in paragraph at lines 5992--6018
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5992--6018
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5992--6018
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 6090--6111
+Underfull \hbox (badness 10000) in paragraph at lines 6039--6065
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6090--6111
+Underfull \hbox (badness 10000) in paragraph at lines 6039--6065
 
  []
 
-<figures//sc-h-2.png, id=197, 593.25253pt x 610.66699pt>
 
-Underfull \hbox (badness 10000) in paragraph at lines 6123--6142
+Underfull \hbox (badness 10000) in paragraph at lines 6039--6065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6039--6065
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 6154--6177
+Underfull \hbox (badness 10000) in paragraph at lines 6071--6098
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6154--6177
+Underfull \hbox (badness 10000) in paragraph at lines 6071--6098
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6071--6098
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+Underfull \hbox (badness 10000) in paragraph at lines 6103--6126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+Underfull \hbox (badness 10000) in paragraph at lines 6103--6126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6184--6206
+Underfull \hbox (badness 10000) in paragraph at lines 6103--6126
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 6209--6232
+[16] [17]
+<figures//sc-h-2.png, id=218, 593.25253pt x 610.66699pt>
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6209--6232
+Underfull \hbox (badness 10000) in paragraph at lines 6138--6159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6238--6260
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 6263--6286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6263--6286
+Underfull \hbox (badness 10000) in paragraph at lines 6138--6159
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
+Underfull \hbox (badness 10000) in paragraph at lines 6171--6196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
+Underfull \hbox (badness 10000) in paragraph at lines 6171--6196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6293--6319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6322--6348
+Underfull \hbox (badness 10000) in paragraph at lines 6171--6196
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+Underfull \hbox (badness 10000) in paragraph at lines 6203--6227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+Underfull \hbox (badness 10000) in paragraph at lines 6203--6227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6351--6373
+Underfull \hbox (badness 10000) in paragraph at lines 6203--6227
 
  []
 
-[20] [21] (./notes.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 6203--6227
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 6230--6255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6230--6255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6230--6255
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 6261--6285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6261--6285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6261--6285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6261--6285
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 6288--6313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6288--6313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6288--6313
+
+ []
+
+[23]
+Overfull \hbox (5.02502pt too wide) in paragraph at lines 6332--6335
+\T1/jkp/m/n/14.4 The in-ter-me-di-ate ($[]$)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6320--6348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6320--6348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6320--6348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6320--6348
+
+ []
+
+[24]
+Overfull \hbox (5.02502pt too wide) in paragraph at lines 6363--6366
+\T1/jkp/m/n/14.4 The in-ter-me-di-ate ($[]$)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6351--6379
+
+ []
+
+[25]
+Overfull \hbox (5.02502pt too wide) in paragraph at lines 6390--6393
+\T1/jkp/m/n/14.4 The in-ter-me-di-ate ($[]$)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6382--6406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6382--6406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6382--6406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6382--6406
+
+ []
+
+[26] [27] [28] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: B4DE0C55172537AC3CF3B73022EE0F26;753.
  ) 
 Here is how much of TeX's memory you used:
- 20232 strings out of 479383
- 361582 string characters out of 5875830
+ 20240 strings out of 479383
+ 361641 string characters out of 5875830
  877191 words of memory out of 5000000
  36755 multiletter control sequences out of 15000+600000
  472661 words of font info for 98 fonts, out of 8000000 for 9000
@@ -1236,10 +1343,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on notes.pdf (21 pages, 144473 bytes).
+Output written on notes.pdf (28 pages, 150985 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 162 named destinations out of 1000 (max. 500000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 170 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

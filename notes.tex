@@ -447,7 +447,7 @@ This effective coupling \il{J_\text{eff}} flows to \il{\infty} under poor man's 
 Thus, the singlet phase shift at \il{\epsilon_F} approaches \il{\fr{\pi}{2}} as \il{T \ra 0}.
 \end{itemize}
 
-\subsection{Derivation of the Kondo Hamiltonian:}
+\subsection{Derivation of the Kondo Hamiltonian}
 The space of the impurity electron can be divided into low energy and high energy subspaces:
 \beq
 \text{low energy (L)} \ra \begin{cases} \ket{\ua} \\ \ket{\da} \end{cases}\\
@@ -1092,7 +1092,7 @@ The only difference from the previous processes is that \il{S^+} is replaced by 
 Hence, these  processes give
 \begin{gather}
 T_3 = J_T^2\rr{\hf + S_d^z}N|\delta D|c^\dagger_{k^\prime \da}c_{k\da}\fr{1}{E - D + \epsilon_k}\\
-T_4 = -J_T^2 \rr{\hf-S_d^z} N |\delta D|c^\dagger_{k^\prime c_{k\da}\da} \fr{1}{E - D - \epsilon_{k^\prime}}
+T_4 = -J_T^2 \rr{\hf-S_d^z} N |\delta D|c^\dagger_{k^\prime\da} c_{k\da} \fr{1}{E - D - \epsilon_{k^\prime}}
 \end{gather}
 The total second order contribution is
 \beq
@@ -5832,6 +5832,7 @@ The \il{\ham_D} is the diagonal part of the Hamiltonian, and the superscript \il
 \eeq
 The entire renormalization expression has nine terms- one of order \il{|V_q|^2}, four of order \il{V_q u_P} and four of order \il{u_P^2}.
 \pb
+\pagebreak
 \textbf{1.}
 \pb
 \begin{minipage}{350pt}
@@ -5868,9 +5869,10 @@ From this point on, we will not bother to keep track of the energies of the lowe
 		  &= \sum_{q\beta}\hat n_{d\beta}\qq{\fr{|V^0_q|^2}{\omega - \epsilon^+_q + \epsilon_d} + \hat n_{d\ol\beta}\rr{\fr{|V^1_q|^2}{\omega - \epsilon^+_q + \epsilon_d + \rr{U + u_P}} - \fr{|V^0_q|^2}{\omega - \epsilon^+_q + \epsilon_d}}}\\
 \eeq
 \pb
+\pagebreak
+\pb
 \textbf{2.}
-
-
+\pb
 \begin{minipage}{300pt}
 \beq
 \Delta^+_2 \ham_N = \sum_{q\beta k\sigma}u_P V_q^*c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - \ham_D^+}\hat n_{d\sigma}c_{k\beta}c_{q\beta}^\dagger
@@ -5884,10 +5886,10 @@ c^\dagger_{d\beta} \sum_\sigma \hat n_{d\sigma} = c^\dagger_{d\beta}\hat n_{d\ol
 \centering
 \includegraphics[scale=0.3]{sc-2.png} 
 \end{minipage}
-
+\pb
 The expression simplifies to
 \beq
-\Delta^+_2 \ham_N = \sum_{q\beta k\sigma}u_P V_q^*c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}\fr{1}{\omega - \ham_D^+}c_{k\beta}c_{q\beta}^\dagger
+\Delta^+_2 \ham_N = \sum_{q\beta k}u_P V_q^*c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}\fr{1}{\omega - \ham_D^+}c_{k\beta}c_{q\beta}^\dagger
 \eeq
 Intermediate (\il{\hat n_{k\beta}=0,\hat n_{q\beta}=1, \hat n_{d\ol\beta}=1,\hat n_{d\beta}=0}) energy is
 \beq
@@ -5898,12 +5900,13 @@ The initial (\il{\hat n_{k\beta}=1,\hat n_{q\beta}=0, \hat n_{d\ol\beta}=1,\hat 
 H_0 = \epsilon_k - u_P + \epsilon_d = H_1 + \epsilon_k - \epsilon_q^+
 \eeq
 \beq
-\Delta^+_2 \ham_N &= \sum_{q\beta k\sigma}u_P V_q^*c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}c_{k\beta}c_{q\beta}^\dagger\fr{1}{\omega - H_1 + \epsilon_k - \epsilon_q^+}\\
-		  &= \sum_{q\beta k\sigma}c^\dagger_{d\beta}c_{k\beta}\fr{-\hat n_{d\ol\beta}u_P {V_q^1}^*}{\omega - \epsilon_q^+ + \epsilon_k }
+\Delta^+_2 \ham_N &= \sum_{q\beta k}u_P V_q^*c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}c_{k\beta}c_{q\beta}^\dagger\fr{1}{\omega - H_1 + \epsilon_k - \epsilon_q^+}\\
+		  &= \sum_{q\beta k}c^\dagger_{d\beta}c_{k\beta}\fr{-\hat n_{d\ol\beta}u_P {V_q^1}^*}{\omega - \epsilon_q^+ + \epsilon_k }
 \eeq
+\pagebreak
 \pb
 \textbf{3.}
-
+\pb
 \begin{minipage}{330pt}
 \beq
 \Delta^+_3 \ham_N = \sum_{q\beta k}u_A V_q^*c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - \ham_D^+}c^\dagger_{d\ol\beta}c_{q\beta}^\dagger c_{d\beta} c_{k\ol\beta}
@@ -5927,6 +5930,8 @@ H_0 = \epsilon_k - u_P + \epsilon_d = H_1 + \epsilon_k - \epsilon_q^+
 		  &= \sum_{q\beta k}u_A V_q^*\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{1}{\omega - H_1 + \epsilon_k - \epsilon_q^+}\\
 		  &= \sum_{q\beta k}c^\dagger_{d\beta}c_{k\beta}\fr{u_A {V^1_q}^*\hat n_{d\ol\beta}}{\omega + \epsilon_k - \epsilon_q^+}\\
 \eeq
+\pb
+\pagebreak
 \pb
 \textbf{4.}
 \pb
@@ -5958,6 +5963,8 @@ H_0 = 2\epsilon_d + U = H_1 + \epsilon_d + U - \epsilon_q^+ + u_P
 		  &= \sum_{q\beta k}c^\dagger_{k\beta} c_{d\beta}\fr{-u_P V_q^1 \hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P}
 \eeq
 \pb
+\pagebreak
+\pb
 \textbf{5.}
 \pb
 \begin{minipage}{330pt}
@@ -5984,11 +5991,13 @@ H_0 = 2\epsilon_d + U = H_1 + \epsilon_d + U - \epsilon_q^+ + u_P
 		  &= \sum_{q\beta k}c^\dagger_{k\ol\beta} c_{d\ol\beta}\fr{u_A V_q^1 \hat n_{d\beta}}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P}\\
 \eeq
 \pb
+\pagebreak
+\pb
 \textbf{6.}
 \pb
 \begin{minipage}{330pt}
 \beq
-\Delta^+_4 \ham_N = \sum_{q\beta k\sigma\sigma^\prime}u_P^2 \hat n_{d\sigma}c_{q\beta}c^\dagger_{k\beta}\fr{1}{\omega - \ham_D^+}\hat n_{d\sigma^\prime}c_{k^\prime\beta} c^\dagger_{q\beta}
+\Delta^+_4 \ham_N = \sum_{k^\prime q\beta k\sigma\sigma^\prime}u_P^2 \hat n_{d\sigma}c_{q\beta}c^\dagger_{k\beta}\fr{1}{\omega - \ham_D^+}\hat n_{d\sigma^\prime}c_{k^\prime\beta} c^\dagger_{q\beta}
 \eeq
 The first step is a simplification:
 \beq[simpl]
@@ -5996,7 +6005,7 @@ The first step is a simplification:
 =\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}
 \eeq
 \begin{gather*}
-\Delta^+_4 \ham_N = \sum_{q\beta k}u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{q\beta}c^\dagger_{k\beta}\fr{1}{\omega - \ham_D^+}c_{k^\prime\beta} c^\dagger_{q\beta}
+\Delta^+_4 \ham_N = \sum_{k^\prime q\beta k}u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{q\beta}c^\dagger_{k\beta}\fr{1}{\omega - \ham_D^+}c_{k^\prime\beta} c^\dagger_{q\beta}
 \end{gather*}
 \end{minipage}
 \begin{minipage}{200pt}
@@ -6004,30 +6013,32 @@ The first step is a simplification:
 \includegraphics[scale=0.3]{sc-2.png} 
 \end{minipage}
 \pb
-Intermediate (\il{\hat n_{k^\prime\beta}=0,\hat n_{q\beta}=1}) energy is
+Intermediate (\il{\hat n_{k\beta}=\hat n_{k^\prime\beta}=0,\hat n_{q\beta}=1}) energy is
 \beq
 H_1 = \epsilon_q^+ - u_P \hat n_d + \epsilon_d\hat n_{d} + U\hat n_{d\ua}\hat n_{d\da}
 \eeq
-The initial (\il{\hat n_{k^\prime\beta}=1,\hat n_{q\beta}=0}) energy is
+The initial (\il{\hat n_{k^\prime\beta}=1,\hat n_{k\beta}=\hat n_{q\beta}=0}) energy is
 \beq
 H_0 = \epsilon_{k^\prime} - u_P \hat n_d + \epsilon_d\hat n_{d} + U\hat n_{d\ua}\hat n_{d\da} = H_1 - \epsilon_q^+ + \epsilon_{k^\prime}
 \eeq
 \beq
-\Delta^+_6 \ham_N &= \sum_{q\beta k} u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{q\beta}c^\dagger_{k\beta}c_{k^\prime\beta} c^\dagger_{q\beta}\fr{1}{\omega - H_1}\\
-		  &= \sum_{q\beta k} u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}\rr{1  - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{1}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
+\Delta^+_6 \ham_N &= \sum_{k^\prime q\beta k} u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{q\beta}c^\dagger_{k\beta}c_{k^\prime\beta} c^\dagger_{q\beta}\fr{1}{\omega - H_1}\\
+		  &= \sum_{k^\prime q\beta k} u_P^2 \rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}\rr{1  - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{1}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
 \eeq
 The first term gives
 \beq
-\sum_{q\beta k\sigma} u_P^2 \hat n_{d\sigma}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} &= \sum_{q\beta k\sigma} c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{k^\prime\beta}c_{d\sigma} \fr{-u_P^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\
+\sum_{k^\prime q\beta k\sigma} u_P^2 \hat n_{d\sigma}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} &= \sum_{k^\prime q\beta k\sigma} c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{k^\prime\beta}c_{d\sigma} \fr{-u_P^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\
 \eeq
 The second term gives
 \beq
-\sum_{q\beta k} \hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{2u_P^2 }{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\
+\sum_{k^\prime q\beta k} \hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{2u_P^2 }{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\
 \eeq
 In total,
 \beq
-\Delta^+_6 \ham_N =\sum_{q\beta k\sigma} c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{k^\prime\beta}c_{d\sigma} \fr{-u_P^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} + \sum_{q\beta k} \hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{2u_P^2 }{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}
+\Delta^+_6 \ham_N =\sum_{k^\prime q\beta k\sigma} c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{k^\prime\beta}c_{d\sigma} \fr{-u_P^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} + \sum_{k^\prime q\beta k} \hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta} \fr{2u_P^2 }{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}
 \eeq
+\pb
+\pagebreak
 \pb
 \textbf{7.}
 \pb
@@ -6039,7 +6050,7 @@ The first step is a simplification:
 \beq
 \sum_\sigma \hat n_{d\sigma}c^\dagger_{d\ol\beta}c_{d\beta} = c^\dagger_{d\ol\beta}c_{d\beta}
 \eeq
-Intermediate (\il{\hat n_{k\ol\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
+Intermediate (\il{\hat n_{k^\prime\beta}=\hat n_{k\ol\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
 \beq
 H_1 = \epsilon_q^+ - u_P + \epsilon_d
 \eeq
@@ -6049,7 +6060,7 @@ H_1 = \epsilon_q^+ - u_P + \epsilon_d
 \includegraphics[scale=0.3]{sc-2.png} 
 \end{minipage}
 \pb
-The initial (\il{\hat n_{k\ol\beta}=\hat n_{d\beta}=1,\hat n_{q\beta}=\hat n_{d\ol\beta}=0}) energy is
+The initial (\il{\hat n_{k\ol\beta}=\hat n_{d\beta}=1,\hat n_{k^\prime\beta}=\hat n_{q\beta}=\hat n_{d\ol\beta}=0}) energy is
 \beq
 H_0 = \epsilon_k - u_P + \epsilon_d = H_1 - \epsilon_{q^+} + \epsilon_k
 \eeq
@@ -6058,6 +6069,8 @@ H_0 = \epsilon_k - u_P + \epsilon_d = H_1 - \epsilon_{q^+} + \epsilon_k
 		  &= \sum_{q\beta kk^\prime}\rr{1 - \hat n_{q\beta}}c^\dagger_{k^\prime\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}\fr{-u_P u_A }{\omega - \epsilon_{q^+} + \epsilon_k}\\
 		  &= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{-u_P u_A }{\omega - \epsilon_{q^+} + \epsilon_{k^\prime}}\\
 \eeq
+\pb
+\pagebreak
 \pb
 \textbf{8.}
 \pb
@@ -6069,11 +6082,11 @@ The first step is a simplification:
 \beq
 c_{d\beta}^\dagger c_{d\ol\beta}\sum_\sigma \hat n_{d\sigma} =c_{d\beta}^\dagger c_{d\ol\beta}
 \eeq
-Intermediate (\il{\hat n_{k\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
+Intermediate (\il{\hat n_{k^\prime\ol\beta}=\hat n_{k\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
 \beq
 H_1 = \epsilon_q^+ - u_P + \epsilon_d
 \eeq
-The initial (\il{\hat n_{q\beta}=\hat n_{d\beta}=0,\hat n_{k\beta}=\hat n_{d\ol\beta}=1}) energy is
+The initial (\il{\hat n_{k^\prime\ol\beta}=\hat n_{q\beta}=\hat n_{d\beta}=0,\hat n_{k\beta}=\hat n_{d\ol\beta}=1}) energy is
 \beq
 H_0 = \epsilon_k - u_P + \epsilon_d  = H_1 - \epsilon_q^+ + \epsilon_k
 \eeq
@@ -6089,17 +6102,19 @@ H_0 = \epsilon_k - u_P + \epsilon_d  = H_1 - \epsilon_q^+ + \epsilon_k
 		  &= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{-u_A u_P }{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\
 \eeq
 \pb
+\pagebreak
+\pb
 \textbf{9.}
 \pb
 \begin{minipage}{330pt}
 \beq
 \Delta^+_9 \ham_N = \sum_{q\beta k k\prime}u_A^2 c^\dagger_{d\beta}c^\dagger_{k\ol\beta} c_{d\ol\beta}c_{q\beta}\fr{1}{\omega - \ham_D^+}c^\dagger_{d\ol\beta}c_{q\beta}^\dagger c_{d\beta}c_{k^\prime\ol\beta}
 \eeq
-Intermediate (\il{\hat n_{k^\prime\ol\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
+Intermediate (\il{\hat n_{k\ol\beta}=\hat n_{k^\prime\ol\beta}=\hat n_{d\beta}=0,\hat n_{q\beta}=\hat n_{d\ol\beta}=1}) energy is
 \beq
 H_1 = \epsilon_q^+ - u_P + \epsilon_d
 \eeq
-The initial (\il{\hat n_{k^\prime\ol\beta}=\hat n_{d\beta}=1,\hat n_{q\beta}=\hat n_{d\ol\beta}=0}) energy is
+The initial (\il{\hat n_{k^\prime\ol\beta}=\hat n_{d\beta}=1,\hat n_{k\ol\beta}=\hat n_{q\beta}=\hat n_{d\ol\beta}=0}) energy is
 \beq
 H_0 = \epsilon_{k^\prime} - u_P + \epsilon_d = H_1 - \epsilon_q^+ + \epsilon_{k^\prime}
 \eeq
@@ -6111,16 +6126,18 @@ H_0 = \epsilon_{k^\prime} - u_P + \epsilon_d = H_1 - \epsilon_q^+ + \epsilon_{k^
 
 \beq
 \Delta^+_9 \ham_N &= \sum_{q\beta k k\prime}u_A^2 c^\dagger_{d\beta}c^\dagger_{k\ol\beta} c_{d\ol\beta}c_{q\beta}c^\dagger_{d\ol\beta}c_{q\beta}^\dagger c_{d\beta}c_{k^\prime\ol\beta}\fr{1}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
-		  &= \sum_{q\beta k k\prime}\rr{1 - \hat n_{q\beta}} \rr{1 - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta} c^\dagger_{d\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{u_A^2}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
-		  &= \sum_{q\beta k k\prime}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\beta} c^\dagger_{d\ol\beta}c_{k^\prime\beta}c_{d\ol\beta}\fr{u_A^2}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
+		  &= \sum_{q\beta k k\prime}\rr{1 - \hat n_{q\beta}} \rr{1 - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta} c^\dagger_{d\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{-u_A^2}{\omega - H_0 - \epsilon_q^+ + \epsilon_{k^\prime}}\\
+		  &= \sum_{q\beta k k\prime}c^\dagger_{k\beta} c^\dagger_{d\ol\beta}c_{k^\prime\beta}c_{d\ol\beta}\fr{-u_A^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} + \sum_{q\beta k k\prime}\hat n_{d\beta}c^\dagger_{k\beta} c^\dagger_{d\ol\beta}c_{k^\prime\beta}c_{d\ol\beta}\fr{u_A^2}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}\\\\
 \eeq
-
+\pagebreak
 \subsubsection{Hole sector}
 The renormalization in the Hamiltonian in the hole sector is
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}\qq{V_q c^\dagger_{q\beta}c_{d\beta} + u_P \sum_{k\sigma}\hat n_{d\sigma} c_{k\beta} c^\dagger_{q\beta} + u_A\sum_{k\sigma}c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k\ol\beta}}\times\fr{1}{\hat \omega - \ham_D^-}\\
 \times\qq{V_q^* c^\dagger_{d\beta}c_{q\beta} + u_P \sum_{k\sigma}\hat n_{d\sigma} c_{q\beta} c^\dagger_{k\beta} + u_A\sum_{k\sigma}c^\dagger_{d\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{q\beta}}
 \eeq
+\pagebreak
+\pb
 \textbf{1.}
 \pb
 \begin{minipage}{320pt}
@@ -6152,6 +6169,8 @@ H_0 &= \epsilon^-_q - u_P\hat n_{d\ol\beta} + \epsilon_d \hat n_{d\ol\beta}\\
 &= \sum_{q\beta}\left[ \hat n_{d\ol\beta}\rr{\fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d - \rr{U + u_P}} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\right.\\
 &\hspace*{150pt}\left.+ \hat n_{d\ua}\hat n_{d\da}\rr{\fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d - \rr{U + u_P}}}\right]\\
 \eeq
+\pagebreak
+\pb
 \textbf{2.}
 \pb
 \begin{minipage}{320pt}
@@ -6182,6 +6201,8 @@ H_0 &= \epsilon^-_{q} - u_P \rr{1 + \hat n_{d\ol\beta}} + \epsilon_d + \rr{\epsi
 &= \sum_{q\beta k}\hat n_{q\beta}\rr{1 + \hat n_{d\ol\beta}}c^\dagger_{k\beta}c_{d\beta}\fr{u_P V_q}{\omega + \epsilon^-_q - \epsilon_k} \\
 &= \sum_{q\beta k}c^\dagger_{k\beta}c_{d\beta}\qq{\fr{2u_P V_q^1\hat n_{d\ol\beta}}{\omega + \epsilon^-_q - \epsilon_k} + \fr{u_P V_q^0\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon^-_q - \epsilon_k}} \\
 \eeq
+\pagebreak
+\pb
 \textbf{3.}
 \pb
 \begin{minipage}{320pt}
@@ -6207,6 +6228,8 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
 		  &= \sum_{q\beta k}u_A V_q \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{1}{\omega + \epsilon^-_q - \epsilon_k} \\
 		  &= \sum_{q\beta k}c^\dagger_{k\beta}c_{d\beta}\fr{u_A V_q^0 \rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon^-_q - \epsilon_k} \\
 \eeq
+\pagebreak
+\pb
 \textbf{4.}
 \pb
 \begin{minipage}{320pt}
@@ -6234,8 +6257,10 @@ H_0 &= \epsilon_k - u_P \hat n_{d\ol\beta} + \epsilon_{q}^- - u_P  \hat n_{d\ol\
 \beq
 \Delta_4^- \ham_N &= \sum_{q\beta k}u_P V^*_q \rr{1 + \hat n_{d\ol\beta}}c_{k\beta}c^\dagger_{q\beta}c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega - H_0+ \epsilon_{q}^- + u_P  \rr{1 - \hat n_{d\ol\beta}} - \epsilon_d - U\hat n_{d\ol\beta}} \\
 		  &=\sum_{q\beta k}u_P V^*_q \rr{1 + \hat n_{d\ol\beta}}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}\rr{\fr{\hat n_{d\ol\beta}}{\omega - H_0 + \epsilon_{q}^- - \epsilon_d - U} + \fr{1 - \hat n_{d\ol\beta}}{\omega - H_0 + \epsilon_{q}^- + u_P - \epsilon_d}} \\
-		  &=\sum_{q\beta k}c^\dagger_{d\beta}c_{k\beta}\qq{\fr{2u_P {V^1_q}^* \hat n_{d\ol\beta}}{\omega - H_0 + \epsilon_{q}^- - \epsilon_d - U} + \fr{u_P {V^0_q}^* \rr{1 - \hat n_{d\ol\beta}}}{\omega - H_0 + \epsilon_{q}^- + u_P - \epsilon_d}} \\
+		  &=\sum_{q\beta k}c^\dagger_{d\beta}c_{k\beta}\qq{\fr{2u_P {V^1_q}^* \hat n_{d\ol\beta}}{\omega + \epsilon_{q}^- - \epsilon_d - U} + \fr{u_P {V^0_q}^* \rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_{q}^- + u_P - \epsilon_d}} \\
 \eeq
+\pagebreak
+\pb
 \textbf{5.}
 \pb
 \begin{minipage}{320pt}
@@ -6261,6 +6286,8 @@ H_0 &= \epsilon_{q}^- + \epsilon_k = H_1 + \epsilon^-_q + u_P - \epsilon_d
 		  &= \sum_{q\beta k}u_A V_q^* \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{1}{\omega + \epsilon^-_q + u_P - \epsilon_d}\\
 		  &= \sum_{q\beta k}c^\dagger_{d\ol\beta}c_{k\ol\beta}\fr{u_A {V_q^0}^* \rr{1 - \hat n_{d\beta}}}{\omega + \epsilon^-_q + u_P - \epsilon_d}\\
 \eeq
+\pagebreak
+\pb
 \textbf{6.}
 \pb
 \begin{minipage}{320pt}
@@ -6271,9 +6298,9 @@ From eq.~\ref{simpl},
 \beq
 \sum_{\sigma\sigma^\prime} \hat n_{d\sigma}\hat n_{d\sigma^\prime} =\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}
 \eeq
-The intermediate (\il{\hat n_{q\beta}=0,\hat n_{k^\prime\beta}=1}) energy is
+The intermediate (\il{\hat n_{q\beta}=0,\hat n_{k\beta}=\hat n_{k^\prime\beta}=1}) energy is
 \beq
-H_1 = \epsilon_{k^\prime} - u_P\hat n_d  + \epsilon_d\hat n_d + U \hat n_{d\ua}\hat n_{d\da}
+H_1 = \epsilon_{k^\prime} - u_P\hat n_d  + \epsilon_d\hat n_d + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_{k} - u_P\hat n_d 
 \eeq
 \end{minipage}
 \begin{minipage}{200pt}
@@ -6281,16 +6308,18 @@ H_1 = \epsilon_{k^\prime} - u_P\hat n_d  + \epsilon_d\hat n_d + U \hat n_{d\ua}\
 \includegraphics[scale=0.3]{sc-h-2.png} 
 \end{minipage}
 \pb
-The initial state (\il{\hat n_{q\beta}=1,\hat n_{k^\prime\beta}=0}) energy is
+The initial state (\il{\hat n_{k\beta}=\hat n_{q\beta}=1,\hat n_{k^\prime\beta}=0}) energy is
 \beq
-H_0 = \epsilon_{q}^- - u_P\hat n_d  + \epsilon_d\hat n_d + U \hat n_{d\ua}\hat n_{d\da} = H_1 + \epsilon_q^- - \epsilon_{k^\prime}
+H_0 = \epsilon_{q}^- - u_P\hat n_d + \epsilon_{k} - u_P\hat n_d  + \epsilon_d\hat n_d + U \hat n_{d\ua}\hat n_{d\da} = H_1 + \epsilon_q^- - \epsilon_{k^\prime}
 \eeq
 \beq
 \Delta_6^- \ham_N &= \sum_{q\beta kk^\prime}u_P^2\rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{k\beta}c^\dagger_{q\beta}c_{q\beta}c^\dagger_{k^\prime\beta}\fr{1}{\omega - H_1}\\
 		  &= \sum_{q\beta kk^\prime}u_P^2 \hat n_{q\beta}\rr{\hat n_{d} + 2\hat n_{d\ua}\hat n_{d\da}}c_{k\beta}c^\dagger_{k^\prime\beta}\fr{1}{\omega - H_0 + \epsilon_q^- - \epsilon_{k^\prime}}\\
-		  &= \sum_{q\beta kk^\prime\sigma}\hat n_{d\sigma}c^\dagger_{k^\prime\beta}c_{k\beta}\fr{-u_P^2 }{\omega + \epsilon_q^- - \epsilon_{k^\prime}} + \sum_{q\beta kk^\prime}2\hat n_{d\ua}\hat n_{d\da}c^\dagger_{k^\prime\beta}c_{k\beta}\fr{-u_P^2}{\omega + \epsilon_q^- - \epsilon_{k^\prime}}\\
-		  &+ \sum_{q\beta k\sigma}\hat n_{d\sigma}\fr{u_P^2 }{\omega + \epsilon_q^- - \epsilon_{k}} + \sum_{q\beta k}2\hat n_{d\ua}\hat n_{d\da}\fr{u_P^2}{\omega + \epsilon_q^- - \epsilon_{k}}
+		  &= \sum_{q\beta kk^\prime\sigma}c^\dagger_{k\beta}c^\dagger_{d\sigma}c_{k^\prime\beta}c_{d\sigma}\fr{u_P^2 }{\omega + \epsilon_q^- - \epsilon_{k}} + \sum_{q\beta kk^\prime}2\hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{-u_P^2}{\omega + \epsilon_q^- - \epsilon_{k}}\\
+		  &+ \sum_{q\beta k\sigma}\hat n_{d\sigma}\fr{u_P^2 }{\omega + \epsilon_q^- - \epsilon_{k}} + 4\sum_{qk}\hat n_{d\ua}\hat n_{d\da}\fr{u_P^2}{\omega + \epsilon_q^- - \epsilon_{k}}
 \eeq
+\pagebreak
+\pb
 \textbf{7.}
 \pb
 \begin{minipage}{320pt}
@@ -6301,13 +6330,13 @@ Simplification:
 \beq
 \sum_\sigma\hat n_{d\sigma}c^\dagger_{d\beta}c_{d\ol\beta} = c^\dagger_{d\beta}c_{d\ol\beta}
 \eeq
-The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{{k^\prime}\ol\beta}=\hat n_{d\beta}=1}) energy is
+The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{k\beta}=\hat n_{{k^\prime}\ol\beta}=\hat n_{d\beta}=1}) energy is
 \beq
-H_1 = \epsilon_{k^\prime} - u_P + \epsilon_d
+H_1 = \epsilon_{k^\prime} - u_P + \epsilon_d + \epsilon_{k} - u_P
 \eeq
-The initial state (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=1,\hat n_{{k^\prime}\ol\beta}=\hat n_{d\beta}=0}) energy is
+The initial state (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=1,\hat n_{k\beta}=\hat n_{{k^\prime}\ol\beta}=\hat n_{d\beta}=0}) energy is
 \beq
-H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_{k^\prime}
+H_0 &= \epsilon_{q}^- - u_P + \epsilon_d + \epsilon_{k} - u_P = H_1 + \epsilon^-_q - \epsilon_{k^\prime}
 \eeq
 \end{minipage}
 \begin{minipage}{200pt}
@@ -6320,6 +6349,8 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_{k^\pri
 		  &= \sum_{q\beta kk^\prime}u_A u_P \hat n_{q\beta}c^\dagger_{d\beta}c^\dagger_{k^\prime\ol\beta}c_{d\ol\beta}c_{k\beta}\fr{1}{\hat \omega -H_0 + \epsilon^-_q - \epsilon_{k^\prime}} \\
 		  &= \sum_{q\beta kk^\prime}c^\dagger_{k\ol\beta}c^\dagger_{d\beta}c_{k^\prime\beta}c_{d\ol\beta}\fr{u_A u_P }{\omega + \epsilon^-_q - \epsilon_{k}} 
 \eeq
+\pagebreak
+\pb
 \textbf{8.}
 \pb
 \begin{minipage}{320pt}
@@ -6330,13 +6361,13 @@ Simplification:
 \beq
 c^\dagger_{d\ol\beta}c_{d\beta}\sum_\sigma\hat n_{d\sigma} = c^\dagger_{d\ol\beta}c_{d\beta}
 \eeq
-The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{k^\prime\beta}=\hat n_{d\beta}=1}) energy is
+The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{k\ol\beta}=\hat n_{k^\prime\beta}=\hat n_{d\beta}=1}) energy is
 \beq
-H_1 = \epsilon_{k^\prime} - u_P + \epsilon_d
+H_1 = \epsilon_{k^\prime} - u_P + \epsilon_d + \epsilon_{k} - u_P
 \eeq
-The initial state (\il{\hat n_{k^\prime\beta}=\hat n_{d\ol\beta}=0,\hat n_{q\beta}=\hat n_{d\beta}=1}) energy is
+The initial state (\il{\hat n_{k^\prime\beta}=\hat n_{d\ol\beta}=0,\hat n_{k\ol\beta}=\hat n_{q\beta}=\hat n_{d\beta}=1}) energy is
 \beq
-H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
+H_0 &= \epsilon_{q}^- - u_P + \epsilon_d  + \epsilon_{k} - u_P= H_1 + \epsilon^-_q - \epsilon_{k^\prime}
 \eeq
 \end{minipage}
 \begin{minipage}{200pt}
@@ -6346,22 +6377,24 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
 \pb
 \beq
 \Delta_8^- \ham_N &= \sum_{q\beta kk^\prime\sigma}u_Au_P c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k\ol\beta}c_{q\beta}c^\dagger_{k^\prime\beta}\fr{1}{\omega - H_1}\\
-		  &= \sum_{q\beta kk^\prime}u_Au_P \hat n_{q\beta}c^\dagger_{k^\prime\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}\fr{1}{\omega - H_0 + \epsilon^-_q - \epsilon_k}\\
-		  &= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{u_Au_P }{\omega + \epsilon^-_q - \epsilon_k}\\
+		  &= \sum_{q\beta kk^\prime}u_Au_P \hat n_{q\beta}c^\dagger_{k^\prime\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{d\beta}\fr{1}{\omega - H_0 + \epsilon^-_q - \epsilon_{k^\prime}}\\
+		  &= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c_{d\beta}\fr{u_Au_P }{\omega + \epsilon^-_q - \epsilon_{k}}\\
 \eeq
+\pagebreak
+\pb
 \textbf{9.}
 \pb
 \begin{minipage}{320pt}
 \beq
 \Delta_9^- \ham_N &= \sum_{q\beta kk^\prime}u_A^2c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k^\prime\ol\beta}\fr{1}{\hat \omega - \ham_D^-}c^\dagger_{d\beta} c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{q\beta}
 \eeq
-The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{k\ol\beta}=\hat n_{d\beta}=1}) energy is
+The intermediate (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=0,\hat n_{k^\prime\ol\beta}=\hat n_{k\ol\beta}=\hat n_{d\beta}=1}) energy is
 \beq
-H_1 = \epsilon_{k} - u_P + \epsilon_d
+H_1 = \epsilon_{k} - u_P + \epsilon_d + \epsilon_{k^\prime} - u_P
 \eeq
 The initial state (\il{\hat n_{q\beta}=\hat n_{d\ol\beta}=1,\hat n_{k\ol\beta}=\hat n_{d\beta}=0}) energy is
 \beq
-H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
+H_0 &= \epsilon_{q}^- - u_P + \epsilon_d + \epsilon_{k^\prime} - u_P = H_1 + \epsilon^-_q - \epsilon_k
 \eeq
 \end{minipage}
 \begin{minipage}{200pt}
@@ -6371,22 +6404,28 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
 \pb
 \beq
 \Delta_9^- \ham_N &= \sum_{q\beta kk^\prime}u_A^2c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k^\prime\ol\beta}c^\dagger_{d\beta} c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{q\beta}\fr{1}{\omega - H_1}\\
-		  &= \sum_{q\beta kk^\prime}\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{u_Au_P }{\omega + \epsilon^-_q - \epsilon_k}\\
-		  &= \sum_{q\beta kk^\prime}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\ol\beta}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c_{d\ol\beta}\fr{u_Au_P }{\omega + \epsilon^-_q - \epsilon_k} + \sum_{q\beta k}\rr{1 - \hat n_{d\beta}}\hat n_{d\ol\beta}\fr{u_Au_P }{\omega + \epsilon^-_q - \epsilon_k}\\
+		  &= \sum_{q\beta kk^\prime}\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}\fr{u_A^2 }{\omega + \epsilon^-_q - \epsilon_k}\\
+		  &= \sum_{q\beta k}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}\fr{u_A^2 }{\omega + \epsilon^-_q - \epsilon_k} + \sum_{q\beta kk^\prime}\rr{\hat n_{d\ua}\hat n_{d\da} - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\fr{u_A^2 }{\omega + \epsilon^-_q - \epsilon_k}
 \eeq
 \subsubsection{Scaling equations}
 \begin{equation}
 \begin{aligned}
-\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}}\\
-\Delta U &= \sum_q 2\left(\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} +\fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d}\right)\\
-\Delta V_k^1 &=\sum_q V_q^1\qq{\fr{2u_P}{\omega + \epsilon_q^- - \epsilon_{k}^+} + \fr{u_A - u_P}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P}} \\
-\Delta {V_k^1}^* &= \sum_q  {V_q^1}^*\qq{\fr{u_A - u_P}{\omega + \epsilon_k^- - \epsilon_q^+} + \fr{2u_P}{\omega + \epsilon_q^- - \epsilon_d - U - u_P}}\\
-\Delta V_k^0 &= \sum_q V_q^0\fr{u_P + u_A}{\omega + \epsilon_q^- - \epsilon_{k}^+}\\
-\Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{u_P + u_A}{\omega + \epsilon_q^- - \epsilon_d - u_P}\\
-\Delta u_P &= u_P^2\rr{\fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}^-} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k}^-}}\\
-\Delta u_A &= 2 u_P u_A \rr{\fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}^-} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k}^-}}\\
+	\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} + \sum_k\fr{u_P^2 + u_A^2}{\omega + \epsilon_q^- - \epsilon_k}}\\
+	\Delta U &= \sum_q 2\left(\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} +\fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} \right.\\
+		 &\quad\left.+\sum_k \fr{4u_P^2 - 2u_A^2}{\omega + \epsilon_q^- - \epsilon_k}\right)\\
+\Delta V_k^1 &=\sum_q V_q^1\qq{\fr{2u_P}{\omega + \epsilon_q^- - \epsilon_{k}} + \fr{u_A - u_P}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P}} \\
+\Delta {V_k^1}^* &= \sum_q  {V_q^1}^*\qq{\fr{u_A - u_P}{\omega + \epsilon_k - \epsilon_q^+} + \fr{2u_P}{\omega + \epsilon_q^- - \epsilon_d - U}}\\
+\Delta V_k^0 &= \sum_q V_q^0\fr{u_P + u_A}{\omega + \epsilon_q^- - \epsilon_{k}}\\
+\Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{u_P + u_A}{\omega + \epsilon_q^- - \epsilon_d + u_P}\\
+\Delta u_P &= \sum_qu_P^2\rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}}}\\
+\Delta u_A &= 2 \sum_qu_P u_A \rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}}}\\
 \end{aligned}
 \end{equation}
+\paragraph{Extra terms:}
+\begin{gather*}
+	\sum_{q\beta k k^\prime}\hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{2u_P^2 - u_A^2}\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} - \fr{1}{\omega + \epsilon_q^- - \epsilon_{k}}}\\
+	\sum_{q\beta k k^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}u_A^2\rr{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} - \fr{\hat n_{d\beta}}{\omega + \epsilon_q^- - \epsilon_{k}}}
+\end{gather*}
 \paragraph{Note: }The reason for the lack of a \il{u_P} or \il{u_A} in the denominators of the last two equations is the following: The dispersion of the conduction electrons in the presence of the 4-Fermi scattering term is \il{\epsilon_k - u_P n_d}, \il{n_d} being the number of impurity electrons. The scattering processes that give rise to the last two RG equations involve a \il{c^\dagger_k c_q} or its h.c. in front of the propagator. Such a process creates a conduction electron by destroying another. The net change in energy in this process is \il{(\epsilon_q - u_P n_d) - (\epsilon_k - u_P n_d)}. It is clear that \il{u_P} will vanish from such a difference.
 
 \end{document}
