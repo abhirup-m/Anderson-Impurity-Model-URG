@@ -20,13 +20,13 @@
 V\psi = T\phi
 \eeq
 where \il{\psi} is the total scattered wavefunction and \il{\phi} is the incoming wavefunction.
-They satisfy the Schrodinger equations
+They satisfy the Schrödinger equations
 \begin{gather}
 H_0 \phi = E \phi\\
 (H_0 + V)\psi = E \psi
 \end{gather}
 Since we are assuming elastic scattering, both have the same energy.
-The Schrodinger equation for \il{\psi} can be rearranged into
+The Schrödinger equation for \il{\psi} can be rearranged into
 \beq[lse]
 \psi = \phi + G_0V\psi
 \eeq
@@ -969,7 +969,7 @@ Hence the total wavefunction of singlet+Fermi-sea is
 \beq[ak]
 a_q = \bra{\Phi}\bra{S_q} \sum_k a_k \ket{S_k}\ket{\Phi} = \bra{\Phi}b_q\ket{\Psi}
 \eeq
-The Schrodinger equation for \il{\ket{\Psi}} is
+The Schrödinger equation for \il{\ket{\Psi}} is
 \beq
 E \ket{\Psi} = H_K \ket{\Psi} &= \ket{\Phi} \otimes H_k \sum_{k > k_F}a_k \ket{S_k}\\
 			      &= \ket{\Phi} \otimes \sum_{k > k_F}a_k \rr{\epsilon_k \ket{S_k} -\fr{3J}{2}\sum_{k^\prime > k_F} \ket{S_{k^\prime}}}\\
@@ -2733,7 +2733,7 @@ He divided the Hamiltonian into two parts
 H = \sum_{k\sigma}\epsilon_{k\sigma} n_{k\sigma} + \epsilon_d n_d + \sum_{k\sigma} \rr{V^-_{kd}c^\dagger_{k\sigma}c_{d\sigma} + V^+_{kd}c^\dagger_{d\sigma}c_{k\sigma}} = H_0 + V
 \eeq
 Before scaling, \il{V^+ = V^- = V}.
-The Schrodinger equation we want to solve is
+The Schrödinger equation we want to solve is
 \beq
 H \psi = E \psi
 \eeq
@@ -2780,8 +2780,8 @@ Together these two identities give
 \Omega P = \Omega
 \eeq
 With these definitions, we now change the problem a bit.
-We want to solve the Schrodinger equation only in the model subspace.
-To this end we write the Schrodinger equation as
+We want to solve the Schrödinger equation only in the model subspace.
+To this end we write the Schrödinger equation as
 \beq
 H \Omega \phi = E \Omega \Phi \\
 \eeq
@@ -2791,12 +2791,12 @@ This gives
 \beq
 P H \Omega \phi = E P \Omega \phi = E \phi\\
 \eeq
-This is the effective Schrodinger equation in the model subspace.
+This is the effective Schrödinger equation in the model subspace.
 The effective Hamiltonian for the model subspace is
 \beq[yuigahama]
 H_\text{eff} = PH\Omega  = PH_0 P + PV\Omega = P H_0 P + PV\Omega
 \eeq
-To solve for the \il{\Omega}, apply eq.~\ref{hikki} on the Schrodinger equation \il{(E - H_0)\psi =V \psi}:
+To solve for the \il{\Omega}, apply eq.~\ref{hikki} on the Schrödinger equation \il{(E - H_0)\psi =V \psi}:
 \beq
 \Omega V\psi = (E \Omega P - \Omega P H_0)\psi
 \eeq
@@ -2805,7 +2805,7 @@ The equation then becomes
 \beq
 \Omega V\psi = (E - \Omega H_0 P)\psi
 \eeq
-Subtracting the Schrodinger equation from the last equation gives
+Subtracting the Schrödinger equation from the last equation gives
 \beq
 \rr{\Omega - 1} V\psi &= \rr{H_0 - \Omega H_0 P}\psi\\
 \implies \rr{\Omega - 1} V \Omega \phi &= \rr{H_0 - \Omega H_0 P}\Omega \phi\\
@@ -5472,15 +5472,6 @@ For \il{U = -2\epsilon_d} (and setting \il{\epsilon_q^+ = -\epsilon_q^-}), the e
 These are identical to equation set 3.61 in Hewson.%TODO cite \footnote{HEWSON, A. C., 1993, The Kondo Problem to Heavy Fermions (Cambridge University Press)}
 
 \subsection{With higher order scattering}
-\beq
-\ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \sum_{kk^\prime\atop{\sigma\sigma^\prime}}V_2c^\dagger_{d\sigma^\prime}c^\dagger_{k\sigma}c_{d\sigma}c_{k^\prime\sigma^\prime}
-\eeq
-Such an interaction allows both spin-flip (\il{d\sigma \to d\ol\sigma}) as well as spin-preserving (\il{d\sigma \to d\sigma}) scattering.
-\beq
-\ham_N = H_{N-1} + H_\text{imp} + \rr{\epsilon_q  + V_2 \hat n_{d\beta}}\hat n_{q\beta} + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.}  \\
-+\sum_{k\sigma}V_2\rr{c^\dagger_{q\beta}c^\dagger_{d\sigma}c_{k\sigma}c_{d\beta} + c^\dagger_{d\beta}c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}
-\eeq
-
 The four-Fermi interaction we are considering is of the form
 \beq
 \ham_I = \sum_{k,q,\sigma_i}u c^\dagger_{k\sigma_1}c^\dagger_{d\sigma_2}c_{q\sigma_3}c_{d\sigma_4}\delta_{\rr{\sigma_1 + \sigma_2 = \sigma_3 + \sigma_4}}
@@ -6408,9 +6399,8 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d + \epsilon_{k^\prime} - u_P = H_1 + \ep
 		  &= \sum_{q\beta k}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}\fr{u_A^2 }{\omega + \epsilon^-_q - \epsilon_k} + \sum_{q\beta kk^\prime}\rr{\hat n_{d\ua}\hat n_{d\da} - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\fr{u_A^2 }{\omega + \epsilon^-_q - \epsilon_k}
 \eeq
 \subsubsection{Scaling equations}
-\begin{equation}
-\begin{aligned}
-	\Delta \epsilon_d &= \sum_q \rr{\fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} + \sum_k\fr{u_P^2 + u_A^2}{\omega + \epsilon_q^- - \epsilon_k}}\\
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= \sum_q \rr{\frac{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} + \sum_k\fr{u_P^2 + u_A^2}{\omega + \epsilon_q^- - \epsilon_k}}\\
 	\Delta U &= \sum_q 2\left(\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_P} +\fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} \right.\\
 		 &\quad\left.+\sum_k \fr{4u_P^2 - 2u_A^2}{\omega + \epsilon_q^- - \epsilon_k}\right)\\
 \Delta V_k^1 &=\sum_q V_q^1\qq{\fr{2u_P}{\omega + \epsilon_q^- - \epsilon_{k}} + \fr{u_A - u_P}{\omega - \epsilon_q^+ + \epsilon_d + U + u_P}} \\
@@ -6419,13 +6409,12 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d + \epsilon_{k^\prime} - u_P = H_1 + \ep
 \Delta {V_k^0}^* &=\sum_q {V_q^0}^* \fr{u_P + u_A}{\omega + \epsilon_q^- - \epsilon_d + u_P}\\
 \Delta u_P &= \sum_qu_P^2\rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}}}\\
 \Delta u_A &= 2 \sum_qu_P u_A \rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} - \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}}}\\
-\end{aligned}
-\end{equation}
+\end{aligned}\end{equation}
 \paragraph{Extra terms:}
 \begin{gather*}
 	\sum_{q\beta k k^\prime}\hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{2u_P^2 - u_A^2}\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} - \fr{1}{\omega + \epsilon_q^- - \epsilon_{k}}}\\
 	\sum_{q\beta k k^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}u_A^2\rr{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}} - \fr{\hat n_{d\beta}}{\omega + \epsilon_q^- - \epsilon_{k}}}
 \end{gather*}
-\paragraph{Note: }The reason for the lack of a \il{u_P} or \il{u_A} in the denominators of the last two equations is the following: The dispersion of the conduction electrons in the presence of the 4-Fermi scattering term is \il{\epsilon_k - u_P n_d}, \il{n_d} being the number of impurity electrons. The scattering processes that give rise to the last two RG equations involve a \il{c^\dagger_k c_q} or its h.c. in front of the propagator. Such a process creates a conduction electron by destroying another. The net change in energy in this process is \il{(\epsilon_q - u_P n_d) - (\epsilon_k - u_P n_d)}. It is clear that \il{u_P} will vanish from such a difference.
 
+\paragraph{Note: }The reason for the lack of a \il{u_P} or \il{u_A} in the denominators of the last two equations is the following: The dispersion of the conduction electrons in the presence of the 4-Fermi scattering term is \il{\epsilon_k - u_P n_d}, \il{n_d} being the number of impurity electrons. The scattering processes that give rise to the last two RG equations involve a \il{c^\dagger_k c_q} or its h.c. in front of the propagator. Such a process creates a conduction electron by destroying another. The net change in energy in this process is \il{(\epsilon_q - u_P n_d) - (\epsilon_k - u_P n_d)}. It is clear that \il{u_P} will vanish from such a difference.
 \end{document}
