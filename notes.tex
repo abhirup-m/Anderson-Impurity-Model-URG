@@ -6887,4 +6887,27 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k
 \begin{gather*}
 	\sum_{q\beta k k^\prime}\hat n_{d\ua}\hat n_{d\da}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{2u_S^2 + u_A^2}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_{k}} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}
 \end{gather*}
+\paragraph{Decomposition of \(\Delta u_S\) into holon, doublon and spin contributions}~\\
+The total renormalization relevant to \(\rr{\hat n_{d\ua} - \hat n_{d\da}}\sum_{kk^\prime}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\) is
+\beq
+&\sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{u_A^2 + 2u_S^2}\hat n_{d\ua}\hat n_{d\da}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\\
+&- \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}u_S^2\hat n_{d}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\\
+&-\sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}u_A^2\rr{\fr{\hat n_{d\beta}}{\omega + \epsilon_q^- - \epsilon_k} - \fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\\
+\eeq
+\begin{itemize}
+	\item Holon contribution is zero, because setting \(\hat n_{d\ua} = \hat n_{d\da} = 0\) gives 0
+	\item Doublon contribution is obtained by setting \(\hat n_{d\ua} = \hat n_{d\da} = 1\). That also gives 0, because the first term is canceled by the sum of the second and third terms.
+	\item Spin contribution is obtained by setting \(\hat n_{d\ua} + \hat n_{d\da} = 1 \implies S^z_d = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}} = \hat n_{d\ua} - \hf \implies \hat n_{d\ua} = \hf + S^z_d, \hat n_{d\da} = \hf - S^z_d\). The total thing becomes
+\beq
+&\sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{u_A^2 + u_S^2}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}} \\
+&- \sum_{qkk^\prime}u_A^2\rr{\fr{\hat n_{d\ua}}{\omega + \epsilon_q^- - \epsilon_k} - \fr{\hat n_{d\da}}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\\
+%=&\sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{u_A^2 + u_S^2}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}} \\
+%&- \sum_{qkk^\prime}u_A^2\rr{\fr{\hf + S^z_d}{\omega + \epsilon_q^- - \epsilon_k} - \fr{\hf - S^z_d}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\\
+%=&\sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\rr{u_A^2 + u_S^2}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}} \\
+% &-\sum_{qkk^\prime}\fr{u_A^2}{2}\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} - \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\\
+%&- \sum_{qkk^\prime}u_A^2S^z_d\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} + \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\\
+&=\text{terms free of impurity operator} \\
+&- \sum_{qkk^\prime}S^z_d u_A^2\rr{\fr{1}{\omega + \epsilon_q^- - \epsilon_k} + \fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}}}s^z_{kk^\prime}\\
+\eeq
+\end{itemize}
 \end{document}

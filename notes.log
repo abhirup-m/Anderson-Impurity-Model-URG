@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  18 DEC 2020 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  18 DEC 2020 18:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,13 +985,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 6446--6467
 LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 6471.
 (/usr/share/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] (./notes.aux)
+) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: B4DE0C55172537AC3CF3B73022EE0F26;753.
  ) 
 Here is how much of TeX's memory you used:
- 20203 strings out of 479383
- 360956 string characters out of 5875830
+ 20207 strings out of 479383
+ 361002 string characters out of 5875830
  880184 words of memory out of 5000000
  36723 multiletter control sequences out of 15000+600000
  468790 words of font info for 98 fonts, out of 8000000 for 9000
@@ -1002,10 +1002,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on notes.pdf (19 pages, 141823 bytes).
+Output written on notes.pdf (20 pages, 144820 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
- 173 named destinations out of 1000 (max. 500000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 177 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
