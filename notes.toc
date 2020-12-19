@@ -1,9 +1,0 @@
-\contentsline {subsubsection}{\numberline {0.0.1}Scaling equations (with both interactions)}{2}{subsubsection.0.0.1}%
-\contentsline {subsection}{\numberline {0.1}With particle-hole symmetric interaction}{2}{subsection.0.1}%
-\contentsline {subsubsection}{\numberline {0.1.1}Particle sector}{4}{subsubsection.0.1.1}%
-\contentsline {paragraph}{1.}{5}{section*.2}%
-\contentsline {subsubsection}{\numberline {0.1.2}Hole sector}{6}{subsubsection.0.1.2}%
-\contentsline {subsubsection}{\numberline {0.1.3}Scaling equations}{7}{subsubsection.0.1.3}%
-\contentsline {paragraph}{1.}{7}{section*.3}%
-\contentsline {paragraph}{2.}{7}{section*.4}%
-\contentsline {subsubsection}{\numberline {0.1.4}Particle-hole symmetry}{8}{subsubsection.0.1.4}%
