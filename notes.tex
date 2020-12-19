@@ -9,6 +9,7 @@
 %\linespread{1.025}
 %\usepackage[euler-digits,small]{eulervm}
 \renewcommand\thesubsection{\arabic{subsection}}
+\allowdisplaybreaks
 \begin{document}
 %\tableofcontents
 \pagebreak
@@ -7363,9 +7364,8 @@ H_0 &= \epsilon_{q}^- + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k + 2u_S
 &= \sum_{q\beta kk^\prime}u_A^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega + \epsilon_q^- - \epsilon_k}\\
 &= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{-u_A^2\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_k + 2u_S} + \sum_{q k}\fr{u_A^2\rr{\hat n_{d} - 2\hat n_{d\ua}\hat n_{d\da}}}{\omega + \epsilon_q^- - \epsilon_k + 2u_S}\\
 \eeq
-\pagebreak
 \subsubsection{Scaling equations}
-\begin{equation}\begin{aligned}
+\begin{align*}
 	\Delta \epsilon_d &= \sum_q \rr{\frac{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U + u_S} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} + \sum_k\fr{u_S^2 + u_A^2}{\omega + \epsilon_q^- - \epsilon_k}}\\
 	\Delta U &= \sum_q 2\left(\fr{|V_q^1|^2}{\omega - \epsilon_q^+ + \epsilon_d + U + u_S} - \fr{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d} - \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U + u_S} +\fr{|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} \right.\\
 		 &\quad\left.-\sum_k \fr{4u_S^2 + 2u_A^2}{\omega + \epsilon_q^- - \epsilon_k}\right)\\
@@ -7374,14 +7374,13 @@ H_0 &= \epsilon_{q}^- + \epsilon_d = H_1 + \epsilon^-_q - \epsilon_k + 2u_S
 \Delta V_k^0 &= -\sum_q V_q^0\rr{\fr{u_S}{\omega + \epsilon_q^- - \epsilon_{k}} + \fr{u_A}{\omega + \epsilon_q^- - \epsilon_{k} + 2u_S}}\\
 \Delta {V_k^0}^* &=-\sum_q {V_q^0}^* \fr{u_S + u_A}{\omega + \epsilon_q^- - \epsilon_d + u_S}\\
 \Delta u_S &= \sum_q \fr{u_A^2}{2}\rr{\fr{1}{\omega - \epsilon_q^+ + \epsilon_{k^\prime}+2u_S} + \fr{1}{\omega + \epsilon_q^- - \epsilon_k + 2u_S}}\\
-\Delta u_A &= - \sum_q u_S u_A \rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} + \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}} + \fr{1}{\omega + \epsilon_q^-  - \epsilon_{k} + 2u_S} + \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime} + 2u_S}}\\
-\end{aligned}\end{equation}
-\paragraph{Decomposition of \(\Delta u_S\) into holon, doublon and spin contributions}~\\
+\Delta u_A &= - \sum_q u_S u_A \rr{\fr{1}{\omega + \epsilon_q^-  - \epsilon_{k}} + \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime}} + \fr{1}{\omega + \epsilon_q^-  - \epsilon_{k} + 2u_S} + \fr{1}{\omega - \epsilon_q^+  + \epsilon_{k^\prime} + 2u_S}}
+\end{align*}
+\subsubsection*{Decomposition of \(\Delta u_S\) into holon, doublon and spin contributions}
 The total renormalization relevant to \(\rr{\hat n_{d\ua} - \hat n_{d\da}}\sum_{kk^\prime}\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}}\) is
 \beq
 \sum_{kk^\prime q\beta}c^\dagger_{k\beta}c_{k^\prime\beta}\qq{\rr{A_{k^\prime} - B_k}u_S^2\rr{\hat n_d - 2\hat n_{d\ua}\hat n_{d\da}} + C_{k^\prime}u_A^2 \hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}} - D_ku_A^2\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}
 \eeq
-
 \begin{itemize}
 	\item Holon contribution is zero, because setting \(\hat n_{d\ua} = \hat n_{d\da} = 0\) gives 0
 	\item Doublon contribution is obtained by setting \(\hat n_{d\ua} = \hat n_{d\da} = 1\). That gives 0 as well.
