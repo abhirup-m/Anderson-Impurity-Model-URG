@@ -1,0 +1,47 @@
+\documentclass[14pt]{extarticle}
+\usepackage{common}
+\numberwithin{equation}{section}
+\graphicspath{{figures/}}
+\usepackage[allfiguresdraft]{draftfigure}
+%\usepackage[T1]{fontenc}
+%\usepackage[tracking]{microtype}
+%\usepackage[sc,osf]{mathpazo}
+%\linespread{1.025}
+%\usepackage[euler-digits,small]{eulervm}
+\renewcommand\thesubsection{\arabic{subsection}}
+\allowdisplaybreaks
+\begin{document}
+\begin{center}\Large{\textbf{Comparison between PMS, Kondo URG and SIAM URG}}\end{center}
+The model:
+\beq
+\ham = J\vec{S}_d \cdot \vec{s}
+\eeq
+\subsection*{Poor Man's Scaling (Phillip Phillips)}
+Discrete equation:
+\beq
+\delta J = -\hf J^2  n(D) \fr{2}{\omega - D}
+\eeq
+Continuum equation:
+\beq
+\qq{\omega = 0}\longrightarrow&\quad\dv{J}{\ln D} = -\rho(D) J^2
+\eeq
+\subsection*{Kondo Model URG}
+Discrete equation:
+\beq
+\delta J = J^2  n(D) \fr{\omega - \hf D}{\rr{\omega - \hf D}^2 - \fr{J^2}{16}}
+\eeq
+One-loop equation:
+\beq
+\qq{\omega = D}\longrightarrow&\quad\dv{J}{\ln D} = -2 \rho(D) J^2 && \longrightarrow \text{matches PMS up to a factor of 2}\\
+\qq{\omega = 0}\longrightarrow&\quad\dv{J}{\ln D} = 2 \rho(D) J^2 
+\eeq
+\subsection*{SIAM URG}
+Discrete equation:
+\beq
+\delta J = -J^2  n(D) \fr{\omega - D}{\rr{\omega - D}^2 - \fr{J^2}{16}}
+\eeq
+One-loop equation:
+\beq
+\qq{\omega = 0}\longrightarrow&\quad\dv{J}{\ln D} = - \rho(D) J^2 &&\longrightarrow \text{matches PMS exactly}\\
+\eeq
+\end{document}
