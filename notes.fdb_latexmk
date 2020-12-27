@@ -1,11 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1608824636 "notes.tex" "notes.pdf" "notes" 1608824639
+["pdflatex"] 1608972877 "notes.tex" "notes.pdf" "notes" 1608972880
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1607249373 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc" 1607188752 2639 b7bbeb66c016cde6fdcad9263fe54a4a ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1607249373 3584 3169d30142b88a27d4ab0e3468e963a2 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1607249373 1288 655e228510b4c2a1abe905c368440826 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn7t.tfm" 1607188752 4168 1cc01518218b768b26664ac8264a1dfa ""
   "/usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn8r.tfm" 1607188752 1704 3498d78dbc645488e6991702d2fcd9f1 ""
   "/usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbn8t.tfm" 1607188752 20836 dd27a1f6f898752c993b50a7bfb0552d ""
   "/usr/share/texmf-dist/fonts/tfm/public/kpfonts/jkpbne.tfm" 1607188752 1476 e4f5cafc64b9daf0d44d4aebfd40a855 ""
@@ -29,7 +28,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb" 1607188752 35294 e88bb6b7bdd82f594dee041ddea9423c ""
   "/usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb" 1607188752 18013 a3754f8df0b4dd3a76b5353fabb31650 ""
   "/usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb" 1607188752 25860 1e4d17fc7bf1d0b47e9b47e6099f1971 ""
-  "/usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpbn7t.vf" 1607188752 984 cb10e437de92fc0b8181a6322b62c9aa ""
   "/usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpbn8t.vf" 1607188752 1800 bde6e91770b65baf214fcc34f4229391 ""
   "/usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn7t.vf" 1607188752 984 276aff85044bc68260a465c2ce58c070 ""
   "/usr/share/texmf-dist/fonts/vf/public/kpfonts/jkpmn8t.vf" 1607188752 1800 3acf620f6c07a0390a9d216a40a331bc ""
@@ -177,11 +175,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1608125794 4880424 770d30c314622ac43bbe581bc9fca6ef ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1607527333 2635865 bdc384dd43005a12da5caf12de29fb15 ""
   "common.sty" 1607951391 3050 14af2cfa633cc3c19b18eb5ab6c26a7c ""
-  "notes.aux" 1608824638 2465 7c99ddfa3c158fb1ba17e3c7e203081f "pdflatex"
-  "notes.out" 1608824638 512 570c586992c387412f70dec31e6400ca "pdflatex"
-  "notes.tex" 1608824636 576465 d9f4df21d59b3f6f4db03366bb8fddfb ""
+  "notes.aux" 1608972879 3177 cd6cf928a3ca6bd4ec5510c39d626e45 "pdflatex"
+  "notes.out" 1608972879 512 570c586992c387412f70dec31e6400ca "pdflatex"
+  "notes.tex" 1608972877 614168 38d60fed2a1cb6d4976d7525c86e34df ""
   (generated)
   "notes.out"
-  "notes.log"
   "notes.pdf"
+  "notes.log"
   "notes.aux"
