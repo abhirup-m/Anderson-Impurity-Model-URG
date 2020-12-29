@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.9)  26 DEC 2020 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  29 DEC 2020 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -946,69 +946,59 @@ LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
  (./notes.out) (./notes.out)
 \@outlinefile=\write6
-LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 8395.
+LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 8909.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 8395.
+LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 8909.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 8395.
+LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 8909.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 8395.
+LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 8909.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 8395.
+LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 8909.
  (/usr/share/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-Overfull \hbox (17.30827pt too wide) in paragraph at lines 8400--8403
+Overfull \hbox (17.30827pt too wide) in paragraph at lines 8914--8917
 \T1/jkp/m/n/14.4 tween the scat-ter-ing mo-menta or the scat-ter-ing im-pu-rity elec-trons ($[]$).
- []
-
-
-Overfull \hbox (66.70314pt too wide) detected at line 8413
-[][][]
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 8443--8448
+Underfull \hbox (badness 10000) in paragraph at lines 8957--8962
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 8484--8489
+Underfull \hbox (badness 10000) in paragraph at lines 8998--9003
 
  []
 
-[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 8892--8897
-
- []
-
-[17] [18] (./notes.aux)
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 570C586992C387412F70DEC31E6400CA;512.
+(rerunfilecheck)             Checksum: EF230D6E8601FED8906E9AD4C97623A2;278.
  ) 
 Here is how much of TeX's memory you used:
- 20111 strings out of 479383
- 359683 string characters out of 5875830
- 977748 words of memory out of 5000000
- 36662 multiletter control sequences out of 15000+600000
+ 20097 strings out of 479383
+ 359477 string characters out of 5875829
+ 973748 words of memory out of 5000000
+ 36660 multiletter control sequences out of 15000+600000
  449672 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,15n,98p,1199b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpexa.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/share/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on notes.pdf (18 pages, 126061 bytes).
+Output written on notes.pdf (16 pages, 116196 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 275 compressed objects within 3 object streams
- 152 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

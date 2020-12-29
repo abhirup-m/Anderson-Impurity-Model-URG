@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1608972877 "notes.tex" "notes.pdf" "notes" 1608972880
+["pdflatex"] 1609233030 "notes.tex" "notes.pdf" "notes" 1609233033
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1607249373 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc" 1607188752 2639 b7bbeb66c016cde6fdcad9263fe54a4a ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -172,14 +172,14 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1607249373 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1607249373 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1607249373 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1608125794 4880424 770d30c314622ac43bbe581bc9fca6ef ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1607527333 2635865 bdc384dd43005a12da5caf12de29fb15 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1609125735 4880424 770d30c314622ac43bbe581bc9fca6ef ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1609125640 2635859 01359b3afda03ef5314d861ddfaac7df ""
   "common.sty" 1607951391 3050 14af2cfa633cc3c19b18eb5ab6c26a7c ""
-  "notes.aux" 1608972879 3177 cd6cf928a3ca6bd4ec5510c39d626e45 "pdflatex"
-  "notes.out" 1608972879 512 570c586992c387412f70dec31e6400ca "pdflatex"
-  "notes.tex" 1608972877 614168 38d60fed2a1cb6d4976d7525c86e34df ""
+  "notes.aux" 1609233032 2831 71e8457e3a2a8aef8d8b1f14f2efbc31 "pdflatex"
+  "notes.out" 1609233032 278 ef230d6e8601fed8906e9ad4c97623a2 "pdflatex"
+  "notes.tex" 1609233029 646998 75a603b37f7671112dab6b7bf3869ba0 ""
   (generated)
   "notes.out"
-  "notes.pdf"
   "notes.log"
   "notes.aux"
+  "notes.pdf"
