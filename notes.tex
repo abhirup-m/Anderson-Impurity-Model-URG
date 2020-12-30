@@ -9093,7 +9093,7 @@ The operator in the denominator takes the values
 \eeq
 Expanding in this basis gives
 \beq
-\Delta_6^+ \ham_N &= \sum_{k^\prime q\beta k}c^\dagger_{k\beta}c_{k^\prime\beta}\qq{\fr{\fr{1}{4}J_z^2\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^+ - \epsilon_q - \hf\rr{J_c + J_z}} + \fr{\fr{1}{4}J_z^2\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^+ - \epsilon_q - \hf\rr{J_c - J_z}} + \fr{J_c^2\hat n_{d\beta}\hat n_{d\ol\beta}}{\omega^+ - \epsilon_q - J_c}}\\
+\Delta_6^+ \ham_N &= \sum_{k^\prime q\beta k}c^\dagger_{k\beta}c_{k^\prime\beta}\qq{\fr{\fr{1}{4}J_z^2\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^+ - \epsilon_q - \hf\rr{J_c + J_z}} + \fr{\fr{1}{4}J_z^2\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^+ - \epsilon_q - \hf\rr{J_c - J_z}}}\\
 \eeq
 \paragraph{7.}
 \beq
@@ -9373,5 +9373,65 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf\rr{J_c + J_z}
 \Delta J_c &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  - \hf \rr{J_c - J_z}} - \fr{1}{\omega^- - \epsilon_q  - \hf \rr{J_c + J_z}}}\\
 \Delta J_z &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  - \hf \rr{J_c - J_z}} + \fr{1}{\omega^- - \epsilon_q  - \hf \rr{J_c + J_z}}}\\
 \Delta J_t &= -  J_z J_t \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  - \hf \rr{J_c - J_z}} + \fr{1}{\omega^- - \epsilon_q  - \hf \rr{J_c + J_z}}}
+\end{align*}
+To make the conduction bath particle-hole symmetric, we can write the following term in a particle-hole symmetric fashion:
+\beq
+\hf J_c \sum_{k\sigma\beta}\hat n_{d\beta}\hat n_{k\sigma^\prime} = \hf J_c \sum_{k\sigma\beta}\rr{\hat n_{d\beta} - \hf}\rr{\hat n_{k\sigma^\prime} - \hf} + \fr{1}{4}J_c\sum_{k\sigma\beta}\hat n_{d\beta} + \fr{1}{4}J_c\sum_{k\sigma\beta}\hat n_{k\sigma}
+\eeq
+The last term can be combined with a chemical potential term:
+\beq
+\fr{1}{4}J_c\sum_{k\sigma\beta}\hat n_{k\sigma} - \mu \sum_{k\sigma}\hat n_{k\sigma} = -\rr{\mu - \hf J_c} \sum_{k\sigma}\hat n_{k\sigma}
+\eeq
+to define an effective chemical potential \(\mu_\text{eff} = \mu - \hf J_c\). If we set the chemical potential \(\mu = \hf J_c\), this term disappears from the Hamiltonian. Shifting the chemical potential to \(\mu = \hf J_c\) is equivalent to replacing \(\epsilon_q \to \epsilon_q - \hf J_c\).
+\begin{align*}
+\Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega^+ - \epsilon_q + \hf J_c + \epsilon_d } + \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d  + U - \hf J_c} - \fr{2|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z} \right.\\
+			  &\quad\left.+ \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4} J_z^2}{\omega^- - \epsilon_q - \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega^- - \epsilon_q + \hf J_z}}\right]\\
+\Delta U &= \sum_q 2\left[\fr{|V_q^1|^2}{\omega^+ - \epsilon_q + \epsilon_d + U + \hf J_z} - \fr{|V_q^0|^2}{\omega^+ - \epsilon_q + \hf J_c + \epsilon_d} + \fr{|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d  - \hf J_z} \right.\\
+		 &\left. - \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d + U - \hf J_c} - \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4} J_z^2}{\omega^- - \epsilon_q - \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega^- - \epsilon_q + \hf J_z}}\right]\\
+\Delta V_1 &= -\sum_q V_1(q)\rr{\fr{\hf J_z + J_t}{\omega^+ - \epsilon_q +\epsilon_d + U + \hf J_z}}\\
+\Delta V_1^* &= -\sum_q V_1^*(q)\rr{\fr{\hf J_z + J_t}{\omega^+ - \epsilon_q + \hf J_z}}\\
+\Delta V_0 &= -\sum_q V_0(q)\fr{\hf J_z + J_t}{\omega^- - \epsilon_q  - \hf J_z}\\
+\Delta V_0^* &= -\sum_q V_0(q)^*\fr{\hf J_z + J_t}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z}\\
+\Delta J_c &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf  J_z} - \fr{1}{\omega^- - \epsilon_q  - \hf  J_z}}\\
+\Delta J_z &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf  J_z} + \fr{1}{\omega^- - \epsilon_q  - \hf J_z}}\\
+\Delta J_t &= -  J_z J_t \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf J_z} + \fr{1}{\omega^- - \epsilon_q  - \hf J_z}}
+\end{align*}
+\subsubsection{Marginality of \(J_c\)}
+The second fraction in \(\Delta J_c\) is in the hole sector, so we need to change \(J_z \to -J_z\):
+\beq
+\Delta J_c &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf  J_z} - \fr{1}{\omega^- - \epsilon_q  + \hf  J_z}} = 0\\
+\eeq
+This ensures that if there is no off-diagonal term of the form \(\hat n_d \sum_{kk^\prime\sigma}c^\dagger_{k\sigma}c_{k^\prime\sigma}\) in the bare Hamiltonian, it will not be generated along the flow.
+
+\subsubsection{Particle-hole symmetry}
+The particle-hole asymmetry parameter RG equation is
+\beq
+\Delta \rr{\epsilon_d + \hf U} = \sum_q \qq{\fr{|V_q^1|^2}{\omega^+ - \epsilon_q + \epsilon_d + U + \hf J_z}- \fr{|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z}}
+\eeq
+Again making the change \(\epsilon_d, J_z \to -\epsilon_d, -J_z \) for the hole term and setting \(|V^1|^2 = |V^0|^2\) for a particle-hole symmetric Hamiltonian, we get
+\beq
+\Delta \rr{\epsilon_d + \hf U} = \sum_q |V_q|^2\qq{\fr{1}{\omega^+ - \epsilon_q + \epsilon_d + U + \hf J_z}- \fr{1}{\omega^- - \epsilon_q - \epsilon_d + \hf J_z}}
+\eeq
+This becomes zero when \(\epsilon_d = -\epsilon_d - U\).
+
+\subsubsection{Hermiticity}
+The equations in consideration are those of \(\Delta V_1\) and \(\Delta V_1^*\). The superscript \(1\) signifies that \(d\ol\beta\) is filled. For the moment, we label the \(\omega^+\) in \(\Delta V_1^*\) as \({\omega^+}^*\) - the quantum fluctuation energy for the process \(\hat n_{d\ol\beta}c^\dagger_{d\beta}c_k\) - to distinguish it from the \(\omega^+\) that characterizes the process \(\hat n_{d\ol\beta}c^\dagger_{k}c_{d\beta}\). In other words, \(\omega^+\) is the fluctuation energy scale for the singly-occupied state, while \({\omega^+}^*\) is the fluctuation energy scale for the doubly-occupied state. The difference between the two scales is \(\epsilon_d + U\), so we can write \({\omega^+}^* = \omega^+ + \epsilon_d + U\). Assuming \(V_1 = V_1^*\) in the bare model, the two RG equations now becomes
+\beq
+\Delta V_1 &= -\sum_q V_1(q)\rr{\fr{\hf J_z + J_t}{\omega^+ - \epsilon_q +\epsilon_d + U + \hf J_z}} = \Delta V_1^*
+\eeq
+Similarly, if we take the RG equations for \(\Delta V_0\) and \(\Delta V_0^*\), the two quantum fluctuation scales \(\omega^-\) and \({\omega^-}^*\) correspond to those of the singly-occupied and empty states respectively. Since the difference between these states is \(\epsilon_d\), we can write \(\omega^- - {\omega^-}^* = \epsilon_d\).
+\beq
+\Delta V_0 &= -\sum_q V_0(q)\fr{\hf J_z + J_t}{{\omega^-}* - \epsilon_q + \epsilon_d - \hf J_z} = \Delta V_0^*
+\eeq
+\subsubsection{Scaling equations that satisfy all checks (with appropriate shifts and sign changes)}
+\begin{align*}
+\Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega - \epsilon_q + \hf J_c + \epsilon_d } + \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d  - U + \hf J_c} - \fr{2|V_q^0|^2}{\omega - \epsilon_q - \epsilon_d + \hf J_z} \right.\\
+			  &\quad\left.+ \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4} J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
+\Delta U &= \sum_q 2\left[\fr{|V_q^1|^2}{\omega - \epsilon_q + \epsilon_d + U + \hf J_z} - \fr{|V_q^0|^2}{\omega - \epsilon_q + \hf J_c + \epsilon_d} + \fr{|V_q^0|^2}{\omega - \epsilon_q - \epsilon_d  + \hf J_z} \right.\\
+		 &\left. - \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d - U + \hf J_c} - \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4} J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
+\Delta V_1 &= -\sum_q V_1(q)\rr{\fr{\hf J_z + J_t}{\omega - \epsilon_q +\epsilon_d + U + \hf J_z}}\\
+\Delta V_0 &= -\sum_q V_0(q)\fr{\hf J_z + J_t}{\omega - \epsilon_q + \epsilon_d - \hf J_z}\\
+\Delta J_z &= -J_t^2 \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf  J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}\\
+\Delta J_t &= -  J_z J_t \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}
 \end{align*}
 \end{document}
