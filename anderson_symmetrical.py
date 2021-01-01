@@ -43,8 +43,29 @@ matplotlib.rcParams['text.usetex'] = True
 #        print (D,U)
 #        break
 
-# Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 
+# Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
+def fixed_VJ():
+    for D0 in np.arange(0.1,31,5):
+        D = D0
+        V = 2*D
+        J = V**2 / D
+        U = 10
+        b = 0.99
+        while D > 0:
+            plt.scatter(D,U)
+            deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16)) - 4 * V**2 * D * (U + J/4)/((D - U/2 - J/4) * (D + U/2))
+            U += deltaU
+            D *= b
+            if deltaU * (D**2 - J**2/16) <= 0:
+                print (D,U)
+                break
+    plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
+    plt.xlabel(r'D')
+    plt.ylabel(r'U')
+    plt.show()
+
+# Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_J():
     for D0 in np.arange(0.1,21,5):
         J = 0.1
@@ -65,25 +86,35 @@ def fixed_J():
     plt.show()
 
 
+# plot flow of U and J for omega = 0
 def all_flow():
-    J = 0.1
-    D = 20
-    U = 100
-    b = 0.99
-    while D > 0:
-        print (D**2 - J**2/16)
-        plt.scatter(J,U)
-        deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16))
-        deltaJ = J**2 * D**2 / (2 * (D**2 - J**2/16))
-        U += deltaU
-        J += deltaJ
-        D *= b
-        if deltaU * (D**2 - J**2/16) <= 0:
-            print (J,U)
-            break
+    b = 0.9999999
+    colors = ['r','b','w','y','g']
+    for U in np.arange(0.2,1,0.1):
+        for J in np.arange(0.2,1,0.1):
+            colors = colors[-1:]+colors[:-1]
+            X = []
+            Y = []
+            D0 = 20
+            D = D0
+            X.append(J)
+            Y.append(U)
+            while D > 0:
+                print (D**2 - J**2/16)
+                deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16))
+                deltaJ = J**2 * D**2 / (2 * (D**2 - J**2/16))
+                U += deltaU
+                J += deltaJ
+                X.append(J)
+                Y.append(U)
+                D *= b
+                if deltaU * (D**2 - J**2/16) <= 0:
+                    print (J,U)
+                    break
+            plt.plot(X,Y,color=colors[-1])
     plt.xlabel(r'J')
     plt.ylabel(r'U')
     plt.title(r'both flow $\rightarrow \omega=0, J_0=0.1, U_0=100, D_0 = 20$')
     plt.show()
 
-fixed_J()
+all_flow()

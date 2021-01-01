@@ -9946,20 +9946,12 @@ Similarly, if we take the RG equations for \(\Delta V_0\) and \(\Delta V_0^*\), 
 \subsubsection{Scaling equations that satisfy all checks (with appropriate shifts and sign changes)}
 \begin{align*}
 \Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d - U} - \fr{2|V_q^0|^2}{\omega - \epsilon_q - \epsilon_d + \hf J_z} \right.\\
-&\quad\left.+ \sum_{qk}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
+&\quad\left.+ \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
 \Delta U &= \sum_q 2\left[\fr{|V_q^1|^2}{\omega - \epsilon_q + \epsilon_d + U + \hf J_z} - \fr{|V_q^0|^2}{\omega - \epsilon_q + \epsilon_d} + \fr{|V_q^0|^2}{\omega - \epsilon_q - \epsilon_d + \hf J_z}  \right.\\
-&\quad\left.- \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d - U} - 2\sum_{qk}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
+&\quad\left.- \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d - U} - 2\sum_{k}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
 \Delta V_1 &= -\sum_q V_1(q)\rr{\fr{\hf J_z + J_t}{\omega - \epsilon_q +\epsilon_d + U + \hf J_z}}\\
 \Delta V_0 &= -\sum_q V_0(q)\fr{\hf J_z + J_t}{\omega - \epsilon_q + \hf J_z}\\
 \Delta J_z &= -J_t^2 \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf  J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}\\
-\Delta J_t &= -  J_z J_t \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}
-\end{align*}
-\subsubsection{Scaling equations for p-h and SU(2) symmetry and \(\omega = 0\)}
-\begin{align*}
-	\Delta \epsilon_d &= -\sum_q \left[\frac{|V_q^0|^2}{\epsilon_q - \epsilon_d } + \fr{|V_q^1|^2}{\epsilon_q - \epsilon_d} - \fr{2|V_q^0|^2}{\epsilon_q + \epsilon_d - \fr{1}{4}J} + \fr{J^2}{16}\sum_{qk}\rr{\fr{5}{\epsilon_q - \fr{1}{4}J} + \fr{1}{\epsilon_q + \fr{1}{4}J}}\right]\\
-	\Delta U &=- \sum_q 2\left[\fr{|V_q^1|^2 + |V_q^0|^2}{\epsilon_q + \epsilon_d - \fr{1}{4}J} - \fr{|V_q^1|^2 + |V_q^0|^2}{\epsilon_q - \epsilon_d} - \fr{J^2}{8}\sum_{qk}\rr{\fr{5}{\epsilon_q - \fr{1}{4}J} + \fr{1}{\epsilon_q + \fr{1}{4}J}}\right]\\
-	\Delta V_1 &= \sum_q\fr{3}{4}J V_1(q)\fr{1}{ \epsilon_q + \epsilon_d - \fr{1}{4}J}\\
-	\Delta V_0 &= \sum_q\fr{3}{4}J V_0(q)\fr{1}{ \epsilon_q - \fr{1}{4}J}\\
-	\Delta J &= \fr{1}{2}J^2 \sum_q \fr{\epsilon_q}{\epsilon_q^2 - \fr{1}{16}J^2}\\
+\Delta J_t &= - J_z J_t \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}
 \end{align*}
 \end{document}
