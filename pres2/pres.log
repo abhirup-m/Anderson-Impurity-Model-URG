@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  3 JAN 2021 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  2 JAN 2021 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**notes.tex
-(./notes.tex
+**pres.tex
+(./pres.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-03> xparse <2020-03-03> (/usr/share/texmf-dist/tex/latex/extsizes/extarticle.cls
 Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/extsizes/size14.clo
-File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/extsizes/size20.clo
+File: size20.clo 1999/11/11 NON-Standard LaTeX file (size option)
 ) (/usr/share/texmf-dist/tex/latex/base/exscale.sty
 Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
@@ -157,6 +157,42 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count267
 \@lastruleclass=\count268
 \@thisrulewidth=\dimen164
+) (/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/share/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 ) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip56
@@ -209,14 +245,14 @@ File: pgf.cfg 2020/12/01 v3.1.7a (3.1.7a)
 Driver file for pgf: pgfsys-pdftex.def
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2020/12/01 v3.1.7a (3.1.7a)
- (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2020/12/01 v3.1.7a (3.1.7a)
 ))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 \pgfsyssoftpath@smallbuffer@items=\count275
 \pgfsyssoftpath@bigbuffer@items=\count276
-)
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 )) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -282,12 +318,12 @@ File: pgfcoretransformations.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 \pgf@pt@x=\dimen198
 \pgf@pt@y=\dimen199
 \pgf@pt@temp=\dimen256
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2020/12/01 v3.1.7a (3.1.7a)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
@@ -413,14 +449,14 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+)
+(/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ) (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
@@ -512,65 +548,44 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 )
 \c@theorem=\count308
-) (/usr/share/texmf-dist/tex/latex/draftfigure/draftfigure.sty
-Package: draftfigure 2017/07/19 v0.2 draftfigure (LCB)
- (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
- (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks45
-\XKV@tempa@toks=\toks46
 )
-\XKV@depth=\count309
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count310
-\calc@Bcount=\count311
-\calc@Adimen=\dimen284
-\calc@Bdimen=\dimen285
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count312
-\calc@Cskip=\skip66
-)
-\df@height=\skip67
-\df@length=\skip68
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 14.
+ (/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count313
+\l__kernel_color_stack_int=\count309
 \l__pdf_internal_box=\box66
-) (./notes.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+) (./pres.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen286
+\scratchcounter=\count310
+\scratchdimen=\dimen284
 \scratchbox=\box67
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen287
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks48
+\nofMPsegments=\count311
+\nofMParguments=\count312
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count313
+\MPscratchDim=\dimen285
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -588,24 +603,24 @@ Package caption Info: End \AtBeginDocument code.
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
-* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=542.02501pt
-* \textheight=722.7pt
+* modes: landscape 
+* h-part:(L,W,R)=(36.135pt, 722.7pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 542.02501pt, 36.135pt)
+* \paperwidth=794.96999pt
+* \paperheight=614.295pt
+* \textwidth=722.7pt
+* \textheight=542.02501pt
 * \oddsidemargin=-36.135pt
 * \evensidemargin=-36.135pt
-* \topmargin=-75.135pt
-* \headheight=14.0pt
-* \headsep=25.0pt
-* \topskip=14.0pt
-* \footskip=30.0pt
-* \marginparwidth=24.0pt
-* \marginparsep=10.0pt
+* \topmargin=-86.135pt
+* \headheight=20.0pt
+* \headsep=30.0pt
+* \topskip=20.0pt
+* \footskip=35.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=15.0pt
 * \columnsep=10.0pt
-* \skip\footins=12.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=16.0pt plus 6.0pt minus 3.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -615,7 +630,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 14.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -623,461 +638,541 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count316
 )
-LaTeX Info: Redefining \ref on input line 13.
-LaTeX Info: Redefining \pageref on input line 13.
-LaTeX Info: Redefining \nameref on input line 13.
- (./notes.out) (./notes.out)
+LaTeX Info: Redefining \ref on input line 14.
+LaTeX Info: Redefining \pageref on input line 14.
+LaTeX Info: Redefining \nameref on input line 14.
+ (./pres.out) (./pres.out)
 \@outlinefile=\write6
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 42.
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (11.82755pt too wide) in paragraph at lines 48--49
+[]\T1/lmr/bx/n/29.86 Formalism of the uni-tary renor-mal-iza-tion group 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.58 \newpage
+              [1]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 63.
+ (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 63.
+ (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 63.
+ (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 63.
+ (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 63.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 63.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <24.88> on input line 63.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 63.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.86 \newpage
+              [2]
+<one.png, id=26, 557.08125pt x 94.3525pt>
+File: one.png Graphic file (type png)
+<use one.png>
+Package pdftex.def Info: one.png  used on input line 100.
+(pdftex.def)             Requested size: 557.0799pt x 94.35225pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 18.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 18.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
-
+Overfull \hbox (107.0799pt too wide) in paragraph at lines 100--101
+[][] 
  []
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 166--175
+<two.png, id=27, 578.16pt x 151.56625pt>
+File: two.png Graphic file (type png)
+<use two.png>
+Package pdftex.def Info: two.png  used on input line 105.
+(pdftex.def)             Requested size: 578.15858pt x 151.56587pt.
+<three.png, id=28, 571.13374pt x 141.52875pt>
+File: three.png Graphic file (type png)
+<use three.png>
+Package pdftex.def Info: three.png  used on input line 108.
+(pdftex.def)             Requested size: 571.13235pt x 141.5284pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.108 	}
+         [3 <./one.png> <./two.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.110 \newpage
+               [4 <./three.png>]
+LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 116.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <29.86> on input line 116.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.9019> on input line 116.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.93> on input line 116.
+<four.png, id=35, 575.14874pt x 139.52126pt>
+File: four.png Graphic file (type png)
+<use four.png>
+Package pdftex.def Info: four.png  used on input line 120.
+(pdftex.def)             Requested size: 575.14734pt x 139.5209pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 \newpage
+               [5 <./four.png>]
+<five.png, id=39, 299.1175pt x 78.2925pt>
+File: five.png Graphic file (type png)
+<use five.png>
+Package pdftex.def Info: five.png  used on input line 135.
+(pdftex.def)             Requested size: 299.11676pt x 78.2923pt.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--184
-
- []
-
-[4]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 214.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 231.
-
-[5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 319--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 358--366
-
- []
-
-[8] [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 515--523
-
- []
-
-[13] [14]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathop' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathgroup' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\symoperators' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 582.
-
-[15] [16] [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 841--846
-
- []
-
-[21] [22] [23] [24] [25]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1037.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1037.
-
-[26] [27]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1117.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1117.
-
-[28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1196--1209
-
+Overfull \hbox (66.58261pt too wide) in paragraph at lines 130--138
+[]\T1/lmr/m/n/20.74 /2/2$[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1219
-
+Overfull \hbox (38.04736pt too wide) in paragraph at lines 130--138
+\T1/lmr/m/n/20.74 /2/2$[]$
  []
 
-[30]
-Overfull \hbox (16.63683pt too wide) detected at line 1258
-[][][]
+<six.png, id=40, 571.13374pt x 236.885pt>
+File: six.png Graphic file (type png)
+<use six.png>
+Package pdftex.def Info: six.png  used on input line 139.
+(pdftex.def)             Requested size: 571.13235pt x 236.88441pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.140 \newpage
+               [6 <./five.png> <./six.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.151 \newpage
+               [7]
+<./seven1.png, id=50, 420.57124pt x 332.24126pt>
+File: ./seven1.png Graphic file (type png)
+<use ./seven1.png>
+Package pdftex.def Info: ./seven1.png  used on input line 159.
+(pdftex.def)             Requested size: 252.3447pt x 199.34628pt.
+
+Overfull \hbox (52.3447pt too wide) in paragraph at lines 159--159
+ [] 
  []
 
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1320--1324
+<./eight1.png, id=51, 419.5675pt x 331.2375pt>
+File: ./eight1.png Graphic file (type png)
+<use ./eight1.png>
+Package pdftex.def Info: ./eight1.png  used on input line 166.
+(pdftex.def)             Requested size: 251.74243pt x 198.74402pt.
 
- []
-
-[33] [34]
-<figures//poppov1.png, id=692, 721.87875pt x 405.6975pt>
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1387.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1387.
- (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-<figures//poppov2.png, id=694, 721.87875pt x 405.6975pt>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1381--1394
-
+Overfull \hbox (51.74243pt too wide) in paragraph at lines 166--166
+ [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1381--1394
+Overfull \hbox (161.72968pt too wide) in paragraph at lines 155--168
+[]$[]$ $[]$
+ []
+
+
+Overfull \hbox (163.19443pt too wide) in paragraph at lines 155--168
+[]$ $[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.170 \newpage
+               [8 <./seven1.png> <./eight1.png>]
+Overfull \hbox (93.42122pt too wide) in paragraph at lines 176--177
+[]\T1/lmr/bx/n/29.86 Important: We are talk-ing about \T1/lmr/bx/it/29.86 block\T1/lmr/bx/n/29.86 -diagonalization 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1381--1394
-
- []
-
-[35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1459--1473
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1489
-
+Overfull \hbox (16.42317pt too wide) detected at line 201
+[]
  []
 
 
-Overfull \hbox (64.37805pt too wide) in paragraph at lines 1490--1494
-\T1/cmr/m/n/14.4 With the con-di-tion that the wave-func-tion should van-ish at the bound-ary, we have $[]$.
+Overfull \hbox (183.19443pt too wide) in paragraph at lines 180--203
+[]$ $[]$ 
  []
 
-[38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1557--1563
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1557--1563
-
- []
-
-[40] [41] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1711--1716
-
- []
-
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 1743--1749
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 1785--1790
-
- []
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 1798--1804
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.205 \newpage
+               [9]
+Overfull \hbox (23.70164pt too wide) in paragraph at lines 210--222
+[]\T1/lmr/bx/n/29.86 So how do we de-ter-mine this block-diagonal form?
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1827--1832
-
- []
-
-[46]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1837.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1837.
-
-[47]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1894.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\chi' on input line 1894.
-
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 1923--1928
-
- []
-
-[49] [50]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2000.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\langle' on input line 2000.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 2000.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rangle' on input line 2000.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2008
-
- []
-
-[51] [52] [53]
-Underfull \hbox (badness 10000) in paragraph at lines 2086--2095
-
- []
-
-[54] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 2182--2188
-
- []
-
-[56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 2230--2233
-
- []
-
-[58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 2307--2309
-
- []
-
-<figures//anderson.png, id=1018, 636.49843pt x 801.06506pt>
-<figures//anderson2.png, id=1019, 636.49843pt x 801.06506pt>
-
-Underfull \hbox (badness 10000) in paragraph at lines 2311--2342
-
- []
-
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 2343--2348
-
- []
-
-[61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 2411--2420
-
- []
-
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 2453--2465
-
- []
-
-[64]
-<figures//full.png, id=1078, 1474.13385pt x 696.28807pt>
-
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2495
-
- []
-
-[65] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 2555--2570
-
- []
-
-[67]
-Underfull \hbox (badness 10000) in paragraph at lines 2587--2597
-
+Overfull \hbox (12.59929pt too wide) in paragraph at lines 210--222
+\OMS/lmsy/m/n/29.86 P$ []\T1/lmr/bx/n/29.86 ro-tates[] the Hamil-to-nian into block-diagonal form
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2587--2597
-
+Overfull \hbox (27.3pt too wide) in paragraph at lines 222--222
+ [] 
  []
 
-[68]
-<figures//mixed.png, id=1134, 1468.61928pt x 632.14482pt>
-
-Underfull \hbox (badness 10000) in paragraph at lines 2652--2670
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.222 \end{tcolorbox}}
+                       [10]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224 \newpage
+               [11]
+Overfull \hbox (110.67232pt too wide) in paragraph at lines 237--250
+|  \T1/lmr/m/n/29.86 /2/2$[]$
  []
 
-[69]
-Underfull \hbox (badness 10000) in paragraph at lines 2678--2687
-
- []
-
-
-Overfull \hbox (39.8078pt too wide) in paragraph at lines 2697--2698
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.251 \newpage
+               [12]
+Overfull \hbox (3.9723pt too wide) in paragraph at lines 269--270
 []$[]$ 
  []
 
-[70]
-Overfull \hbox (0.59467pt too wide) in paragraph at lines 2723--2724
-[]$ 
+
+Overfull \hbox (169.41295pt too wide) in paragraph at lines 255--278
+[]|  $[]$ $[]$ $[]$ $[]$ 
  []
 
-<figures//empty.png, id=1155, 1534.21373pt x 701.80266pt>
-[71] [72] [73]
-Underfull \hbox (badness 10000) in paragraph at lines 2857--2861
-
- []
-
-[74] [75]
-Underfull \hbox (badness 10000) in paragraph at lines 2937--2942
-
- []
-
-[76] [77] [78]
-Underfull \hbox (badness 10000) in paragraph at lines 3036--3041
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.279 \newpage
+               [13]
+Overfull \hbox (4.48018pt too wide) in paragraph at lines 301--301
+ []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3051--3055
+Overfull \hbox (29.20757pt too wide) in paragraph at lines 288--309
+[]|  \T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.309 \end{tcolorbox}}
+                       [14]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.311 \newpage
+               [15]
+Underfull \hbox (badness 10000) in paragraph at lines 322--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3057--3072
+Underfull \hbox (badness 10000) in paragraph at lines 322--326
 
  []
 
-[79] [80] [81] [82] [83] [84]
-Overfull \hbox (11.77538pt too wide) detected at line 3336
-[][][]
- []
 
-[85] [86]
-Underfull \hbox (badness 10000) in paragraph at lines 3401--3410
+Underfull \hbox (badness 10000) in paragraph at lines 322--326
 
  []
 
-[87]
 
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 3415.
-
-[88] [89] [90]
-Underfull \hbox (badness 10000) in paragraph at lines 3666--3674
-
- []
-
-[91] [92] [93] [94]
-Overfull \hbox (12.49586pt too wide) in paragraph at lines 3772--3777
-\T1/cmr/m/n/14.4 We thus have the con-clu-sion that all par-tial sys-tems (imp, cloud,LFL, imp+cloud, cloud+LFL,
- []
-
-[95] [96] [97] [98] [99] [100] [101]
-Overfull \hbox (59.85463pt too wide) in paragraph at lines 4009--4013
-\T1/cmr/m/n/14.4 We can cal-cu-late the com-mu-ta-tor by look-ing at the ex-pres-sion of $[]$ from eq. []3.42[]: $[]$.
- []
-
-[102] [103]
-Underfull \hbox (badness 10000) in paragraph at lines 4052--4058
-
- []
-
-[104]
-Overfull \hbox (21.9261pt too wide) in paragraph at lines 4073--4083
-\T1/cmr/m/n/14.4 We want to look at the ex-ci-ta-tions of the Kondo model in the ground state of the cloud+impurity
+Underfull \hbox (badness 3199) in paragraph at lines 322--326
+\T1/lmr/bx/n/29.86 Notice the lonely sub-space and the mixed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4073--4083
+Underfull \hbox (badness 10000) in paragraph at lines 330--352
 
  []
 
-[105] [106]
-Overfull \hbox (1.92836pt too wide) detected at line 9475
-[][][]
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 9494--9499
+Underfull \hbox (badness 10000) in paragraph at lines 330--352
 
  []
 
-[107] [108]
-Underfull \hbox (badness 10000) in paragraph at lines 9534--9539
+
+Overfull \hbox (39.20757pt too wide) in paragraph at lines 320--366
+[]|  \T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (180.67232pt too wide) in paragraph at lines 320--366
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.367 \newpage
+               [16]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.367 \newpage
+               [17]
+Overfull \hbox (83.31314pt too wide) in paragraph at lines 385--403
+[]\T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (160.67232pt too wide) in paragraph at lines 385--403
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.403 \newpage
+               [18]
+Overfull \hbox (83.31314pt too wide) in paragraph at lines 421--449
+[]\T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (160.67232pt too wide) in paragraph at lines 421--449
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.450 \newpage
+               [19]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.450 \newpage
+               [20]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.480 ...ock-diagonalizing effect}}}}}\end{center}
+                                                   [21]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.482 \newpage
+               [22]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.515 \newpage
+               [23]
+Overfull \hbox (83.31314pt too wide) in paragraph at lines 523--559
+[]\T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (160.67232pt too wide) in paragraph at lines 523--559
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--559
 
  []
 
-[109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119]
-Overfull \hbox (0.55804pt too wide) in paragraph at lines 9918--9918
-[]\T1/cmr/bx/n/17.28 Particle-hole sym-me-try of im-pu-rity lev-els and An-der-son model
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.559 \end{minipage}}
+                      [24]
+Overfull \hbox (35.54999pt too wide) in paragraph at lines 559--559
+ []$[]$ 
  []
 
-[120]
-Underfull \hbox (badness 10000) in paragraph at lines 9926--9931
+
+Overfull \hbox (250.0pt too wide) in paragraph at lines 559--559
+[] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.561 \newpage
+               [25]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.591 \newpage
+               [26]
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
-[121] [122] (./notes.aux)
-Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 232008B5420B82325B5BE708E99F0146;4640.
+
+Overfull \hbox (16.65134pt too wide) in paragraph at lines 604--604
+ []$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--622
+
+ []
+
+
+Overfull \hbox (139.20757pt too wide) in paragraph at lines 599--624
+[]|  \T1/lmr/m/n/29.86 /3/3$[]$
+ []
+
+
+Overfull \hbox (260.67232pt too wide) in paragraph at lines 599--624
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--624
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.626 
+       [27]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.627 \newpage
+               [28]
+Overfull \hbox (83.31314pt too wide) in paragraph at lines 635--664
+[]\T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (130.67232pt too wide) in paragraph at lines 635--664
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--664
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--664
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.664 
+       [29]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.665 \newpage
+               [30]
+Overfull \hbox (83.31314pt too wide) in paragraph at lines 681--690
+[]\T1/lmr/m/n/29.86 /2/2$[]$
+ []
+
+
+Overfull \hbox (160.67232pt too wide) in paragraph at lines 681--690
+|  \T1/lmr/m/n/29.86 /3/3$[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.691 \newpage
+               [31]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.697 \newpage
+               [32]
+Underfull \hbox (badness 2359) in paragraph at lines 710--711
+[]\T1/lmr/bx/n/29.86 separates into two bands,
+ []
+
+
+Overfull \hbox (232.6241pt too wide) in paragraph at lines 701--728
+[]|  $[]$ $[]$ 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.729 \newpage
+               [33]
+<plot.png, id=155, 1387.584pt x 740.0448pt>
+File: plot.png Graphic file (type png)
+<use plot.png>
+Package pdftex.def Info: plot.png  used on input line 736.
+(pdftex.def)             Requested size: 832.55682pt x 444.0303pt.
+
+Overfull \hbox (109.85683pt too wide) in paragraph at lines 736--736
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.736 }
+        [34]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.738 \newpage
+               [35 <./plot.png>]
+Overfull \hbox (17.09277pt too wide) in paragraph at lines 745--746
+[]\T1/lmr/bx/n/29.86 Writing the Hamil-to-nian in terms of the pseudo-
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.748 \newpage
+               [36]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.752 \end{document}
+                     [37] (./pres.aux)
+Package rerunfilecheck Info: File `pres.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20222 strings out of 479383
- 364103 string characters out of 5875829
- 812232 words of memory out of 5000000
- 35861 multiletter control sequences out of 15000+600000
- 421722 words of font info for 73 fonts, out of 8000000 for 9000
+ 18917 strings out of 479383
+ 347840 string characters out of 5875829
+ 708258 words of memory out of 5000000
+ 35617 multiletter control sequences out of 15000+600000
+ 491295 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,20n,98p,1170b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
-
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on notes.pdf (122 pages, 722006 bytes).
+ 93i,25n,98p,499b,906s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on pres.pdf (38 pages, 323877 bytes).
 PDF statistics:
- 2097 PDF objects out of 2487 (max. 8388607)
- 1920 compressed objects within 20 object streams
- 1076 named destinations out of 1200 (max. 500000)
- 496 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

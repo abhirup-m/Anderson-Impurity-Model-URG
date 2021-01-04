@@ -2,24 +2,18 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
-J = 0.01
-k = 2.83
-b = 0.9999
-K = []
-flag = False
-sgn = 1 - (J/(4*0.7075*k))**(2)
-for c in np.arange(100,10,-1):
-    if sgn*(1 - (J/(4*0.7075*k))**(2)) <=0:
-        flag = True
-    else:
-        sgn = 1 - (J/(4*0.7075*k))**(2)
-    if flag:
-        K.append(K[-1])
-    else:
-        K.append(J/k)
-        delta_J = 1000*3*J**2/(1 - (J/(4*0.7075*k))**(2))
-        k *= b
+for J0 in np.arange(0.0001,1,0.005):
+    print (J0)
+    J = J0
+    D = 5
+    b = 0.999
+    while D>0:
+        delta_J = J**2 * (D**(3/2) / 2) / (D**2/4 - J*2/16)
+        D *= b
         J += delta_J
+        if delta_J * (D**2/4 - J*2/16) <= 0:
+            plt.scatter(np.log10(J0),np.log10(J))
+            break
 
-plt.plot(np.arange(100,10,-1), K)
 plt.show()
+plt.clf()

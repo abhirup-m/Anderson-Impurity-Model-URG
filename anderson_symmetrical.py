@@ -88,33 +88,78 @@ def fixed_J():
 
 # plot flow of U and J for omega = 0
 def all_flow():
-    b = 0.9999999
+    b = 0.999
     colors = ['r','b','w','y','g']
-    for U in np.arange(0.2,1,0.1):
-        for J in np.arange(0.2,1,0.1):
+    for U0 in np.arange(0.01,0.41,0.01):
+        for J0 in np.arange(0.01,1,0.01):
             colors = colors[-1:]+colors[:-1]
             X = []
             Y = []
-            D0 = 20
+            D0 = 0.2
+            V = 0.05
+            J = J0
+            U = U0
+            V1 = V
+            V0 = V
             D = D0
-            X.append(J)
-            Y.append(U)
+            #X.append(J/D)
+            #Y.append(U/D)
+            plt.scatter(J,U,marker='.')
+            sign1 = D - U/2 - J/4
+            sign2 = D - J/4
+            sign3 = D + U/2
+            sign4 = D + J/4
+            sign5 = U + J/4
+            count = 0
+            print ("start",J,U)
             while D > 0:
-                print (D**2 - J**2/16)
-                deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16))
-                deltaJ = J**2 * D**2 / (2 * (D**2 - J**2/16))
+                if sign1 * (D - U/2 - J/4) <= 0:
+                    print ("cutoff by 1, after", count, " steps")
+                    break
+                elif sign2 * (D - J/4) <= 0:
+                    print ("cutoff by 2, after", count, " steps")
+                    break
+                elif sign3 * (D + U/2) <= 0:
+                    print ("cutoff by 3, after", count, " steps")
+                    break
+                elif sign4 * (D + J/4) <= 0:
+                    print ("cutoff by 4, after", count, " steps")
+                    break
+                elif sign5 * (U + J/4) <= 0:
+                    if J0 == 0:
+                        U = 0
+                    print ("cutoff by 5, after", count, " steps")
+                    break
+                sign1 = D - U/2 - J/4
+                sign2 = D - J/4
+                sign3 = D + U/2
+                sign4 = D + J/4
+                sign5 = U + J/4
+                deltaU = - 2 * (V1**2 + V0**2) * D**(1/2) * (U + J/4) / ((D - U/2 - J/4) * (D + U/2)) + J**2 * D * (6*D + J)/(4 * (D**2 - J**2/16))
+                deltaJ = J**2 * D**(1/2) / (2 * (D**2 - J**2/16))
+                deltaV1 = V1 * D**(1/2) * (3*J/4) / (D - U/2 - J/4)
+                deltaV0 = V0 * D**(1/2) * (3*J/4) / (D - J/4)
+                if abs(deltaU) < 10**(-15):
+                    print ("cutoff by 6, after", count, " steps")
+                    break
                 U += deltaU
                 J += deltaJ
-                X.append(J)
-                Y.append(U)
+                V1 += deltaV1
+                V0 += deltaV0
+                #plt.scatter(J,U,marker='.')
+                #X.append(J)
+                #Y.append(U)
                 D *= b
-                if deltaU * (D**2 - J**2/16) <= 0:
-                    print (J,U)
-                    break
-            plt.plot(X,Y,color=colors[-1])
-    plt.xlabel(r'J')
-    plt.ylabel(r'U')
-    plt.title(r'both flow $\rightarrow \omega=0, J_0=0.1, U_0=100, D_0 = 20$')
-    plt.show()
+                count += 1
+                #print (J,U,V1,V0)
+            #plt.plot(X,Y,color=colors[-1])
+            print (U)
+            if U<0:
+                input()
+            #plt.xlabel(r'J')
+            #plt.ylabel(r'U')
+            #plt.title(r'both flow $\rightarrow \omega=0, V1_0={}, V0_0={}, J_0={}, U_0={}, D_0 = 5$'.format(V10,V00,J0,U0))
+            #plt.show()
+            #plt.clf()
 
 all_flow()

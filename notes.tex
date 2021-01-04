@@ -8,12 +8,12 @@
 %\usepackage[sc,osf]{mathpazo}
 %\linespread{1.025}
 %\usepackage[euler-digits,small]{eulervm}
-\renewcommand\thesubsection{\arabic{subsection}}
+%\renewcommand\thesubsection{\arabic{subsection}}
 \allowdisplaybreaks
 \begin{document}
 %\tableofcontents
 \pagebreak
-\comm{
+%\comm{
 \section{Preliminaries}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as
@@ -2987,7 +2987,7 @@ This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 
-\pagebreak\section{URG Formalism}
+\section{URG Formalism}
 We are given a Hamiltonian \il{\ham} which is not diagonal in a particular occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}.
 The goal is to obtain the unitary transformation \il{U_k} that diagonalizes this Hamiltonian in this particular basis:
 \beq
@@ -3360,7 +3360,7 @@ To check that this indeed commutes with \il{\hat n_k},
 			 &=0
 \eeq
 
-\pagebreak\section{Kondo Model URG}
+\section{Kondo Model URG}
 \subsection{Calculation of renormalized Hamiltonian}
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J}{2}\sum_{k,k^\prime,\alpha,\alpha^\prime} \mathbf{S}\cdot \mathbf{\sigma}_{\alpha\alpha^\prime} c^\dagger_{k\alpha}c_{k^\prime\alpha^\prime}
@@ -4090,8 +4090,8 @@ Excitations of the cloud then involve higher values of \il{\ham_0^* > \fr{3J^*}{
 The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic energy must start from a non-zero value.
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
 
-
-\pagebreak\section{Anderson Model URG}
+\comm{
+\section{Anderson Model URG}
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
@@ -6871,7 +6871,7 @@ H_0 &= \epsilon_{q}^- - u_P + \epsilon_d + \epsilon_{k^\prime} - u_P = H_1 + \ep
 %&= \sum_{q\beta kk^\prime}u_A^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega + \epsilon_q^- - \epsilon_k}\\
 %&= \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{-u_A^2\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega + \epsilon_q^- - \epsilon_k} + \sum_{q k}\fr{u_A^2\rr{\hat n_{d} - 2\hat n_{d\ua}\hat n_{d\da}}}{\omega + \epsilon_q^- - \epsilon_k}\\
 %\eeq
-%\pagebreak
+%
 %\subsubsection{Scaling equations}
 %\begin{equation}\begin{aligned}
 %	\Delta \epsilon_d &= \sum_q \rr{\frac{|V_q^0|^2}{\omega - \epsilon_q^+ + \epsilon_d } + \fr{|V_q^1|^2}{\omega + \epsilon^-_q - \epsilon_d  - U - u_S} - \fr{2|V_q^0|^2}{\omega + \epsilon^-_q - \epsilon_d} + \sum_k\fr{u_S^2 + u_A^2}{\omega + \epsilon_q^- - \epsilon_k}}\\
@@ -8336,7 +8336,7 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf J_z
 		  &= \sum_{q\beta kk^\prime}J_t^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega^- - \epsilon_q^-  - \hf J_z}\\
 		  &=-J_t^2 \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^- - \epsilon_q^- - \hf J_z} + J_t^2\sum_{q k \beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^- - \epsilon_q^- - \hf J_z}\\
 \eeq
-\pagebreak
+
 \subsubsection{Scaling equations}
 \begin{align*}
 \Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega^+ - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d  + U} - \fr{2|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z} \right.\\
@@ -8845,7 +8845,7 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf\rr{J_c + J_z}
 		  &= \sum_{q\beta kk^\prime}J_t^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega^- - \epsilon_q^-  - \hf\rr{J_c + J_z}}\\
 		  &=-J_t^2 \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^- - \epsilon_q^- - \hf\rr{J_c + J_z}} + J_t^2\sum_{q k \beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^- - \epsilon_q^- - \hf\rr{J_c + J_z}}\\
 \eeq
-\pagebreak
+
 \subsubsection{Scaling equations}
 \begin{align*}
 	\Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega^+ - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d  + U - J_c} - \fr{2|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf\rr{J_c + J_z}} \right.\\
@@ -9359,7 +9359,7 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf\rr{J_c + J_z}
 		  &= \sum_{q\beta kk^\prime}J_t^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega^- - \epsilon_q^-  - \hf\rr{J_c + J_z}}\\
 		  &=-J_t^2 \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^- - \epsilon_q^- - \hf\rr{J_c + J_z}} + J_t^2\sum_{q k \beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^- - \epsilon_q^- - \hf\rr{J_c + J_z}}\\
 \eeq
-\pagebreak
+
 \subsubsection{Scaling equations}
 \begin{align*}
 	\Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega^+ - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d  + U - J_c} - \fr{2|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf\rr{J_c + J_z}} \right.\\
@@ -9435,7 +9435,8 @@ Similarly, if we take the RG equations for \(\Delta V_0\) and \(\Delta V_0^*\), 
 \Delta J_t &= -  J_z J_t \sum_q \rr{\fr{1}{\omega - \epsilon_q  + \hf J_z} + \fr{1}{\omega - \epsilon_q  - \hf J_z}}
 \end{align*}
 }
-\subsection{Anderson Model URG}
+
+\section{Anderson Model URG}
 The four-Fermi interaction we are considering is of the form
 \beq
 \ham_I = \sum_{k,k^\prime ,\sigma_i}u c^\dagger_{d\sigma_2}c_{d\sigma_4}c_{k^\prime \sigma_3}c^\dagger_{k\sigma_1}\delta_{\rr{\sigma_1 + \sigma_2 = \sigma_3 + \sigma_4}}
@@ -9476,7 +9477,7 @@ where \il{H_{imp}} is the impurity-diagonal part of the Hamiltonian (\il{\epsilo
 \beq
 H_{N-1} = \sum_{k<\Lambda_N,\sigma}\qq{\rr{\epsilon_k +  \sigma J_z S^z_d}\hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} + H_{I,N-1}
 \eeq
-\subsubsection{Particle sector}
+\subsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}\qq{V_q^* c^\dagger_{d\beta}c_{q\beta} +  J_z \beta S^z_d\sum_kc^\dagger_{k\beta}c_{q\beta} + J_t\sum_{k}c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}}\times\fr{1}{\hat \omega^+ - \ham_D^+}\\
@@ -9679,7 +9680,7 @@ H_0 = \epsilon_d = H_1 - \epsilon_q + \hf J_z
 		  &= \sum_{q\beta k k\prime}\rr{1 - \hat n_{q\beta}} \hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\fr{J_t^2}{\omega^+  - \epsilon_q + \hf J_z}\\
 		  &= \sum_{q\beta k k\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{J_t^2\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^+ - \epsilon_q + \hf J_z}\\
 \eeq
-\subsubsection{Hole sector}
+\subsection{Hole sector}
 The renormalization in the Hamiltonian in the hole sector is
 \beq
 \Delta^- \ham_N = \sum_{q\beta}\qq{V_q c^\dagger_{q\beta}c_{d\beta} + J_z\beta S^z_d \sum_{k\sigma}\hat n_{d\sigma} c_{k\beta} c^\dagger_{q\beta} + J_t\sum_{k\sigma}c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k\ol\beta}}\times\fr{-1}{\hat \omega^- - \ham_D^-}\\
@@ -9879,8 +9880,8 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf J_z
 		  &= \sum_{q\beta kk^\prime}J_t^2\hat n_{q\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\fr{1}{\omega^- - \epsilon_q^-  - \hf J_z}\\
 		  &=-J_t^2 \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^- - \epsilon_q^- - \hf J_z} + J_t^2\sum_{q k \beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^- - \epsilon_q^- - \hf J_z}\\
 \eeq
-\pagebreak
-\subsubsection{Scaling equations}
+
+\subsection{Scaling equations}
 \begin{align*}
 \Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega^+ - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega^- - \epsilon_q + \epsilon_d  + U} - \fr{2|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z} \right.\\
 		  &\quad\left.+ \sum_{qk}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega^- - \epsilon_q - \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z}}\right]\\
@@ -9893,7 +9894,7 @@ H_0 &= \epsilon_d = H_1 + \epsilon_q + \hf J_z
 \Delta J_z &= -J_t^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf J_z} + \fr{1}{\omega^- - \epsilon_q  - \hf J_z}}\\
 \Delta J_t &= - J_z J_t \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \hf J_z} + \fr{1}{\omega^- - \epsilon_q  - \hf J_z}}
 \end{align*}
-\subsubsection{SU(2) invariance and Kondo model one-loop form}
+\subsection{SU(2) invariance and Kondo model one-loop form}
 Setting \(J_z = J_t = \hf J\) makes the interaction \(SU(2)\) symmetric; the last two RG equations can then be written in the common form:
 \beq
 2\Delta J_z = 2 \Delta J_t = \Delta J &= - \hf J^2 \sum_q \rr{\fr{1}{\omega^+ - \epsilon_q  + \fr{1}{4}J} + \fr{1}{\omega^- - \epsilon_q  - \fr{1}{4}J}}
@@ -9914,7 +9915,7 @@ This is the familiar one-loop Kondo flow equation obtained from Poor man's scali
 \beq
 \dv{J}{\ln D} = -J^2 \rho(D)
 \eeq
-\subsubsection{Particle-hole symmetry of impurity levels and Anderson model one-loop form}
+\subsection{Particle-hole symmetry of impurity levels and Anderson model one-loop form}
 The terms of order \(J^2\) in \(\Delta \epsilon_d\) and \(\Delta U\) already satisfy \(\Delta \epsilon_d + \hf \Delta U = 0\). They are not relevant to the one-loop form either, because the lowest order is \(J\). So we can ignore those terms in this discussion. The RG equation for the asymmetry factor (\(\epsilon_d + \hf U\)) becomes (after making some obvious cancellations)
 \beq
 \Delta \epsilon_d + \hf \Delta U &= \sum_q \left[- \fr{|V_q^0|^2}{\omega^- - \epsilon_q + \epsilon_d - \hf J_z} + \fr{|V_q^1|^2}{\omega^+ - \epsilon_q + \epsilon_d + U + \hf J_z}\right]
@@ -9934,7 +9935,7 @@ Under the same assumptions as previously, we get
 \Delta \epsilon_d = \fr{|V|^2 }{D}\rho(D) |\Delta D|\\
 \dv{\epsilon_d}{\ln D} + \fr{\Delta}{\pi} = 0 
 \end{gather*}
-\subsubsection{Hermiticity}
+\subsection{Hermiticity}
 The equations in consideration are those of \(\Delta V_1\) and \(\Delta V_1^*\). The superscript \(1\) signifies that \(d\ol\beta\) is filled. For the moment, we label the \(\omega^+\) in \(\Delta V_1^*\) as \({\omega^+}^*\) - the quantum fluctuation energy for the process \(\hat n_{d\ol\beta}c^\dagger_{d\beta}c_k\) - to distinguish it from the \(\omega^+\) that characterizes the process \(\hat n_{d\ol\beta}c^\dagger_{k}c_{d\beta}\). In other words, \(\omega^+\) is the fluctuation energy scale for the singly-occupied state, while \({\omega^+}^*\) is the fluctuation energy scale for the doubly-occupied state. The difference between the two scales is \(\epsilon_d + U\), so we can write \({\omega^+}^* = \omega^+ + \epsilon_d + U\). Assuming \(V_1 = V_1^*\) in the bare model, the two RG equations now becomes
 \beq
 \Delta V_1 &= -\sum_q V_1(q)\rr{\fr{\hf J_z + J_t}{\omega^+ - \epsilon_q +\epsilon_d + U + \hf J_z}} = \Delta V_1^*
@@ -9943,7 +9944,7 @@ Similarly, if we take the RG equations for \(\Delta V_0\) and \(\Delta V_0^*\), 
 \beq
 \Delta V_0^* &= -\sum_q V_0(q)\fr{\hf J_z + J_t}{{\omega^-} - \epsilon_q - \epsilon_d + \epsilon_d - \hf J_z} = \Delta V_0
 \eeq
-\subsubsection{Scaling equations that satisfy all checks (with appropriate shifts and sign changes)}
+\subsection{Scaling equations that satisfy all checks (with appropriate shifts and sign changes)}
 \begin{align*}
 \Delta \epsilon_d &= \sum_q \left[\frac{|V_q^0|^2}{\omega - \epsilon_q + \epsilon_d } + \fr{|V_q^1|^2}{\omega - \epsilon_q - \epsilon_d - U} - \fr{2|V_q^0|^2}{\omega - \epsilon_q - \epsilon_d + \hf J_z} \right.\\
 &\quad\left.+ \sum_{k}\rr{\fr{J_t^2 + \fr{1}{4}J_z^2}{\omega - \epsilon_q + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \epsilon_q - \hf J_z}}\right]\\
