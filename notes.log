@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  3 JAN 2021 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  4 JAN 2021 10:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,34 +512,9 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 )
 \c@theorem=\count308
-) (/usr/share/texmf-dist/tex/latex/draftfigure/draftfigure.sty
-Package: draftfigure 2017/07/19 v0.2 draftfigure (LCB)
- (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
- (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks45
-\XKV@tempa@toks=\toks46
-)
-\XKV@depth=\count309
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count310
-\calc@Bcount=\count311
-\calc@Adimen=\dimen284
-\calc@Bdimen=\dimen285
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count312
-\calc@Cskip=\skip66
-)
-\df@height=\skip67
-\df@length=\skip68
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count313
+\l__kernel_color_stack_int=\count309
 \l__pdf_internal_box=\box66
 ) (./notes.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -560,17 +535,17 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen286
+\scratchcounter=\count310
+\scratchdimen=\dimen284
 \scratchbox=\box67
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen287
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks48
+\nofMPsegments=\count311
+\nofMParguments=\count312
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count313
+\MPscratchDim=\dimen285
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -623,7 +598,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count316
 )
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
@@ -753,15 +728,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1320--1324
 
 [33] [34]
 <figures//poppov1.png, id=692, 721.87875pt x 405.6975pt>
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1387.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1387.
- (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
+File: figures//poppov1.png Graphic file (type png)
+<use figures//poppov1.png>
+Package pdftex.def Info: figures//poppov1.png  used on input line 1387.
+(pdftex.def)             Requested size: 216.56529pt x 121.71017pt.
 <figures//poppov2.png, id=694, 721.87875pt x 405.6975pt>
+File: figures//poppov2.png Graphic file (type png)
+<use figures//poppov2.png>
+Package pdftex.def Info: figures//poppov2.png  used on input line 1388.
+(pdftex.def)             Requested size: 216.56529pt x 121.71017pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1381--1394
 
@@ -777,7 +752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1381--1394
 
  []
 
-[35] [36]
+[35 <./figures//poppov1.png> <./figures//poppov2.png>] [36]
 Underfull \hbox (badness 10000) in paragraph at lines 1459--1473
 
  []
@@ -892,8 +867,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 2307--2309
 
  []
 
-<figures//anderson.png, id=1018, 636.49843pt x 801.06506pt>
-<figures//anderson2.png, id=1019, 636.49843pt x 801.06506pt>
+<figures//anderson.png, id=1020, 636.49843pt x 801.06506pt>
+File: figures//anderson.png Graphic file (type png)
+<use figures//anderson.png>
+Package pdftex.def Info: figures//anderson.png  used on input line 2322.
+(pdftex.def)             Requested size: 178.21834pt x 224.29669pt.
+<figures//anderson2.png, id=1021, 636.49843pt x 801.06506pt>
+File: figures//anderson2.png Graphic file (type png)
+<use figures//anderson2.png>
+Package pdftex.def Info: figures//anderson2.png  used on input line 2324.
+(pdftex.def)             Requested size: 178.21834pt x 224.29669pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2311--2342
 
@@ -904,7 +887,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2343--2348
 
  []
 
-[61] [62]
+[61 <./figures//anderson.png> <./figures//anderson2.png>] [62]
 Underfull \hbox (badness 10000) in paragraph at lines 2411--2420
 
  []
@@ -915,13 +898,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 2453--2465
  []
 
 [64]
-<figures//full.png, id=1078, 1474.13385pt x 696.28807pt>
+<figures//full.png, id=1082, 1474.13385pt x 696.28807pt>
+File: figures//full.png Graphic file (type png)
+<use figures//full.png>
+Package pdftex.def Info: figures//full.png  used on input line 2492.
+(pdftex.def)             Requested size: 427.48787pt x 201.91837pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2481--2495
 
  []
 
-[65] [66]
+[65 <./figures//full.png>] [66]
 Underfull \hbox (badness 10000) in paragraph at lines 2555--2570
 
  []
@@ -937,7 +924,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 2587--2597
  []
 
 [68]
-<figures//mixed.png, id=1134, 1468.61928pt x 632.14482pt>
+<figures//mixed.png, id=1139, 1468.61928pt x 632.14482pt>
+File: figures//mixed.png Graphic file (type png)
+<use figures//mixed.png>
+Package pdftex.def Info: figures//mixed.png  used on input line 2661.
+(pdftex.def)             Requested size: 425.88869pt x 183.3173pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2652--2670
 
@@ -953,13 +944,17 @@ Overfull \hbox (39.8078pt too wide) in paragraph at lines 2697--2698
 []$[]$ 
  []
 
-[70]
+[70 <./figures//mixed.png>]
 Overfull \hbox (0.59467pt too wide) in paragraph at lines 2723--2724
 []$ 
  []
 
-<figures//empty.png, id=1155, 1534.21373pt x 701.80266pt>
-[71] [72] [73]
+<figures//empty.png, id=1161, 1534.21373pt x 701.80266pt>
+File: figures//empty.png Graphic file (type png)
+<use figures//empty.png>
+Package pdftex.def Info: figures//empty.png  used on input line 2727.
+(pdftex.def)             Requested size: 444.91058pt x 203.51756pt.
+[71 <./figures//empty.png>] [72] [73]
 Underfull \hbox (badness 10000) in paragraph at lines 2857--2861
 
  []
@@ -1060,13 +1055,13 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 232008B5420B82325B5BE708E99F0146;4640.
  ) 
 Here is how much of TeX's memory you used:
- 20222 strings out of 479383
- 364103 string characters out of 5875829
- 812232 words of memory out of 5000000
- 35861 multiletter control sequences out of 15000+600000
- 421722 words of font info for 73 fonts, out of 8000000 for 9000
+ 19831 strings out of 479383
+ 357489 string characters out of 5875831
+ 805587 words of memory out of 5000000
+ 35495 multiletter control sequences out of 15000+600000
+ 420640 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,20n,98p,1170b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,20n,98p,827b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
@@ -1074,10 +1069,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on notes.pdf (122 pages, 722006 bytes).
+Output written on notes.pdf (122 pages, 1226781 bytes).
 PDF statistics:
- 2097 PDF objects out of 2487 (max. 8388607)
- 1920 compressed objects within 20 object streams
+ 2104 PDF objects out of 2487 (max. 8388607)
+ 1921 compressed objects within 20 object streams
  1076 named destinations out of 1200 (max. 500000)
  496 words of extra memory for PDF output out of 10000 (max. 10000000)
 

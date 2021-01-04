@@ -4,14 +4,17 @@
 \definecolor{bottlegreen}{rgb}{0,0.3,0}
 \usepackage{lmodern,graphicx}
 \usepackage[scale=2]{ccicons}
+\usetheme{Pittsburgh}
+\usecolortheme{crane}
+%\setbeamercolor{itemize item}{fg=darkred!80!black}
 
-\title{Unitary Renormalization Group Approach to the Anderson model}
+\title{Unitary Renormalization Group Approach to the Single-Impurity Anderson model}
 \subtitle{}
 \date{\today}
-\author[author1]{Abhirup Mukherjee (18IP014)\\[5mm]
-{Supervisor: Dr. Siddhartha All}
-}
-\institute{Department of Physical Sciences, IISER Kolkata}
+\author{Abhirup Mukherjee (18IP014)\\[5mm]{Supervisor: Dr. Siddhartha Lal}}
+%\author[author2]
+
+\institute{IISER Kolkata}
 
 \begin{document}
 
@@ -28,10 +31,7 @@
 
 \end{frame}
 
-
-
-
-\begin{frame}{Single-Impurity Anderson Model}
+\begin{frame}{The Single-Impurity Anderson Model}
 
 \vspace*{20pt}
 \begin{figure}
@@ -47,30 +47,24 @@
 
 \end{frame}
 
-\begin{frame}{Options}
+\begin{frame}{Motivation}
   
-  They admit any \emph{positive} or \emph{negative} spacing \alert{unit}
-  
-  Note that some \alert{warnings} about \emph{badboxes} might be generated at compilation
+\begin{itemize}
+	\item "Poor man's" scaling\footnote{Haldane 1978, Jefferson 1977} is \textit{perturbative} and fails at large values - cannot show strong-coupling (SC) fixed point.
+	\item Instead, one needs to flow to large value of \(U\), do a Schrieffer -Wolff transformation and then flow to the SC fixed point. 
+	\item \textbf{It would be nice to get a single set of equations that show the crossover to the strong-coupling fixed point.}
+\end{itemize}
 
 \end{frame}
 
 
+\begin{frame}{Motivation}
 
-
-\begin{frame}{License}
-
-  \begin{block}{Get the source of this theme and the demo presentation from}
-
-  \begin{center}\url{http://github.com/famuvie/beamerthemesimple}\end{center}
-
-  \end{block}
-  
-  The theme \emph{itself} is licensed under a
-  \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
-  Attribution-ShareAlike 4.0 International License}.
-
-  \begin{center}\ccbysa\end{center}
+\begin{itemize}
+	\item Numerical Renormalization Group (NRG) does not provide any scaling equations - hard to figure out what is really happening.
+	\item NRG cannot show \textit{how the Hamiltonians and many-body wavefunctions vary along the flow} - projective in nature.
+	\item \textbf{It would be enlightening to see the flow into SC regime by tracking the change in entanglement} - hence we need wavefunctions.
+\end{itemize}
 
 \end{frame}
 
