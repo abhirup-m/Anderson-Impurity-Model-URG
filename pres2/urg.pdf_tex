@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0.1 (3bc2e813f5, 2020-09-07), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'model.pdf' (pdf, eps, ps)
+%% Accompanies image file 'urg.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{865.02524068bp}%
+    \setlength{\unitlength}{235.23244542bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.37344825)%
+  \begin{picture}(1,0.73868535)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{model.pdf}}%
-    \put(0.05761643,0.33487575){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kinetic energy\end{tabular}}}}%
-    \put(0.31287912,0.37629691){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}hopping between \\ impurity and bath\end{tabular}}}}%
-    \put(0.83815049,0.38530773){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity-impurity\\\quad\quad repulsion\end{tabular}}}}%
-    \put(0.63621276,0.36661351){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}single-impurity\\\quad energy\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{model.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{urg.pdf}}%
+    \put(4.17678482,1.75195403){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kinetic energy\end{tabular}}}}%
+    \put(5.11546772,1.90427295){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}hopping between \\ impurity and bath\end{tabular}}}}%
+    \put(7.04705921,1.93740862){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity-impurity\\\quad\quad repulsion\end{tabular}}}}%
+    \put(6.30446933,1.86866399){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}single-impurity\\\quad energy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{urg.pdf}}%
+    \put(0.55917343,0.10690972){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}unoccupied\\component\end{tabular}}}}%
+    \put(-0.00549208,0.68092451){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}occupied \\component\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{urg.pdf}}%
+    \put(0.41510109,0.64840005){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}particle-hole \\fluctuation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{urg.pdf}}%
   \end{picture}%
 \endgroup%

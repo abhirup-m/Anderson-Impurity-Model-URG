@@ -14,7 +14,10 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="model.svg"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:export-filename="/home/kirito/storage/IPhD-Project-II/pres2/model_scheme.png"
+   inkscape:export-xdpi="248.64"
+   inkscape:export-ydpi="248.64">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -1982,9 +1985,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.42346265"
-     inkscape:cx="627.595"
-     inkscape:cy="285.3758"
+     inkscape:zoom="0.84692529"
+     inkscape:cx="685.81992"
+     inkscape:cy="368.10588"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -1998,7 +2001,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2042,12 +2045,12 @@
        xml:space="preserve"
        style="font-weight:bold;font-size:3.52778px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';stroke-width:0.264583"
        x="453.73254"
-       y="155.79007"
+       y="161.08174"
        id="text5258"><tspan
          sodipodi:role="line"
          id="tspan5256"
          x="453.73254"
-         y="155.79007"
+         y="161.08174"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">impurity-impurity\\\quad\quad repulsion</tspan></text>
     <text
        xml:space="preserve"
@@ -2074,11 +2077,9 @@
     <g
        inkscape:label=""
        transform="translate(49.369936,130.58178)"
-       id="g2432"
-       style="fill:#000000;fill-opacity:1">
+       id="g2432">
       <g
-         id="g783"
-         style="fill:#000000;fill-opacity:1">
+         id="g783">
         <g
            style="fill:#000000;fill-opacity:1"
            id="g7728">
@@ -2088,8 +2089,7 @@
              y="93.917999"
              id="use9691"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2100,8 +2100,7 @@
              y="93.917999"
              id="use8456"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2112,8 +2111,7 @@
              y="84.453003"
              id="use3441"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2124,8 +2122,7 @@
              y="105.901"
              id="use7397"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2136,8 +2133,7 @@
              y="105.901"
              id="use6914"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2148,8 +2144,7 @@
              y="93.917999"
              id="use4475"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2160,8 +2155,7 @@
              y="95.412003"
              id="use6387"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2172,8 +2166,7 @@
              y="93.917999"
              id="use1648"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2184,8 +2177,7 @@
              y="93.917999"
              id="use1642"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2196,8 +2188,7 @@
              y="95.412003"
              id="use3324"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2208,8 +2199,7 @@
              y="95.412003"
              id="use7814"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2220,8 +2210,7 @@
              y="93.917999"
              id="use9599"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2232,8 +2221,7 @@
              y="84.453003"
              id="use4826"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2244,8 +2232,7 @@
              y="105.901"
              id="use2718"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2256,8 +2243,7 @@
              y="105.901"
              id="use9046"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2268,8 +2254,7 @@
              y="82.859001"
              id="use2143"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2280,8 +2265,7 @@
              y="93.917999"
              id="use8365"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2292,8 +2276,7 @@
              y="93.917999"
              id="use8421"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2304,8 +2287,7 @@
              y="93.917999"
              id="use870"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2316,8 +2298,7 @@
              y="93.917999"
              id="use5831"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2328,8 +2309,7 @@
              y="93.917999"
              id="use7221"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2340,8 +2320,7 @@
              y="89.129997"
              id="use3022"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2352,8 +2331,7 @@
              y="96.922997"
              id="use6456"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2364,8 +2342,7 @@
              y="96.922997"
              id="use6802"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2376,8 +2353,7 @@
              y="93.917999"
              id="use5361"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2388,16 +2364,14 @@
              y="95.412003"
              id="use6225"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
           <use
              xlink:href="#symbol5880"
              x="304.99533"
              y="95.412003"
              id="use6454"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2408,8 +2382,7 @@
              y="93.917999"
              id="use2014"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2420,32 +2393,28 @@
              y="93.917999"
              id="use6184"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
           <use
              xlink:href="#symbol2738"
              x="328.06982"
              y="93.917999"
              id="use9880"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
           <use
              xlink:href="#symbol3068"
              x="330.83743"
              y="93.917999"
              id="use6845"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
           <use
              xlink:href="#symbol2738"
              x="335.26483"
              y="93.917999"
              id="use1358"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2456,8 +2425,7 @@
              y="82.859001"
              id="use7122"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2468,8 +2436,7 @@
              y="93.917999"
              id="use3405"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2480,8 +2447,7 @@
              y="93.917999"
              id="use3108"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2492,8 +2458,7 @@
              y="95.412003"
              id="use4995"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2504,8 +2469,7 @@
              y="84.453003"
              id="use2771"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2516,8 +2480,7 @@
              y="105.375"
              id="use2211"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2528,8 +2491,7 @@
              y="93.917999"
              id="use4429"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2540,8 +2502,7 @@
              y="93.917999"
              id="use7911"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2552,16 +2513,14 @@
              y="95.412003"
              id="use2605"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
           <use
              xlink:href="#symbol5880"
              x="391.44333"
              y="95.412003"
              id="use3592"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2572,8 +2531,7 @@
              y="93.917999"
              id="use1344"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2584,8 +2542,7 @@
              y="93.917999"
              id="use7049"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2596,8 +2553,7 @@
              y="93.917999"
              id="use4204"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2608,8 +2564,7 @@
              y="93.917999"
              id="use2308"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2620,8 +2575,7 @@
              y="95.412003"
              id="use987"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2632,8 +2586,7 @@
              y="95.412003"
              id="use5437"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2644,8 +2597,7 @@
              y="93.917999"
              id="use1570"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2656,8 +2608,7 @@
              y="93.917999"
              id="use1391"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2668,8 +2619,7 @@
              y="95.412003"
              id="use6116"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
         <g
            style="fill:#000000;fill-opacity:1"
@@ -2680,8 +2630,7 @@
              y="95.412003"
              id="use1764"
              width="100%"
-             height="100%"
-             style="fill:#000000;fill-opacity:1" />
+             height="100%" />
         </g>
       </g>
     </g>
@@ -2696,31 +2645,41 @@
        id="path1163-7-5-2"
        sodipodi:nodetypes="cc" />
     <rect
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+       style="fill:none;stroke:#000000;stroke-width:0.971002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
        id="rect3755"
        width="15.680359"
-       height="15.680359"
+       height="14.784169"
        x="329.53464"
-       y="395.72824" />
+       y="396.17212"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <rect
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+       style="fill:none;stroke:#000000;stroke-width:0.971002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
        id="rect3755-6"
        width="15.680359"
-       height="15.680359"
+       height="14.784169"
        x="345.215"
-       y="395.72824" />
+       y="396.17212"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutL-3-5-1)"
-       d="m 337.31497,410.35677 c 0,-11.03627 0,-11.03627 0,-11.03627"
-       id="path1163-7-5-6" />
+       style="fill:none;stroke:#000000;stroke-width:0.485501;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutL-3-5-1)"
+       d="m 337.31497,409.96461 c 0,-10.40551 0,-10.40551 0,-10.40551"
+       id="path1163-7-5-6"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutL-3-5-1-1)"
-       d="m 353.19007,396.47965 c 0,11.03627 0,11.03627 0,11.03627"
-       id="path1163-7-5-6-9" />
+       style="fill:none;stroke:#000000;stroke-width:0.4855;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutL-3-5-1-1)"
+       d="m 353.19007,396.88062 c 0,10.4055 0,10.4055 0,10.4055"
+       id="path1163-7-5-6-9"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <g
        inkscape:label=""
-       transform="translate(229.08013,335.69955)"
-       id="g4828">
+       transform="matrix(1,0,0,0.94284636,229.08013,339.57432)"
+       id="g4828"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g1523">
         <g
@@ -2749,8 +2708,10 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(250.39371,310.38963)"
-       id="g5407">
+       transform="matrix(1,0,0,0.94284636,250.39371,315.71095)"
+       id="g5407"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g3873">
         <g
@@ -2768,8 +2729,10 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(268.98305,334.59691)"
-       id="g4828-9">
+       transform="matrix(1,0,0,0.94284636,268.98305,338.5347)"
+       id="g4828-9"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g1523-1">
         <g
@@ -2797,42 +2760,58 @@
       </g>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 396.7186,362.1148 c 0,82.73699 0,82.73699 0,82.73699"
-       id="path5450" />
+       style="fill:none;stroke:#000000;stroke-width:0.256911px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 396.7186,364.47984 c 0,78.00827 0,78.00827 0,78.00827"
+       id="path5450"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 428.46862,362.1148 c 0,82.73699 0,82.73699 0,82.73699"
-       id="path5450-5" />
-    <circle
-       style="fill:#ffffff;stroke:#000000;stroke-width:0.600001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill;fill-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.256911px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 428.46862,364.47984 c 0,78.00827 0,78.00827 0,78.00827"
+       id="path5450-5"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.582602;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
        id="path5467"
        cx="428.24634"
-       cy="421.57568"
-       r="2.8947759" />
-    <circle
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.600001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+       cy="420.5423"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64"
+       rx="2.8947759"
+       ry="2.7293289" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.582602;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
        id="path5467-9"
        cx="396.72232"
-       cy="384.70123"
-       r="2.8947759" />
+       cy="385.77536"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64"
+       rx="2.8947759"
+       ry="2.7293289" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#marker4020)"
-       d="m 392.9467,382.01913 c -1.27048,-0.76723 -2.61298,-1.41514 -4.00408,-1.93243 -5.42544,-2.0175 -11.59353,-1.96108 -16.98116,0.15533 -5.38762,2.11641 -9.94496,6.27324 -12.54664,11.44402"
+       style="fill:none;stroke:#000000;stroke-width:0.388401;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4020)"
+       d="m 392.9467,383.24657 c -1.2769,-0.72492 -2.6187,-1.33548 -4.00408,-1.82199 -5.37055,-1.88601 -11.39881,-1.8348 -16.73654,0.14217 -5.33773,1.97698 -9.94496,5.8649 -12.79126,10.79424"
        id="path5506"
        inkscape:path-effect="#path-effect5508"
-       inkscape:original-d="m 392.9467,382.01913 c -1.33443,-0.64388 -2.66912,-1.28802 -4.00408,-1.93243 -1.33496,-0.64441 -19.68493,7.73316 -29.5278,11.59935" />
+       inkscape:original-d="m 392.9467,383.24657 c -1.33443,-0.60708 -2.66912,-1.21441 -4.00408,-1.82199 -1.33496,-0.60758 -19.68493,7.29118 -29.5278,10.93641"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4020-7)"
-       d="m 343.06328,414.20193 c 1.32305,0.66791 2.65802,1.31219 4.00408,1.93243 23.19081,10.68585 49.71539,13.99334 74.82021,9.32972"
+       style="fill:none;stroke:#000000;stroke-width:0.388401;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4020-7)"
+       d="m 343.06328,413.59 c 1.32432,0.62979 2.65927,1.23724 4.00408,1.82199 23.36214,10.15831 49.73908,13.2594 74.82021,8.79649"
        id="path5506-6"
        inkscape:path-effect="#path-effect5929"
-       inkscape:original-d="m 343.06328,414.20193 c 1.33443,0.64388 3.27524,9.15324 4.00408,1.93243 0.49683,-4.92225 64.97734,13.19591 74.82021,9.32972"
-       sodipodi:nodetypes="csc" />
+       inkscape:original-d="m 343.06328,413.59 c 1.33443,0.60708 3.27524,8.6301 4.00408,1.82199 0.49683,-4.64093 64.97734,12.44171 74.82021,8.79649"
+       sodipodi:nodetypes="csc"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <g
        inkscape:label=""
-       transform="translate(308.4208,300.58273)"
-       id="g6607">
+       transform="matrix(1,0,0,0.94284636,308.4208,306.46455)"
+       id="g6607"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g1043">
         <g
@@ -2861,8 +2840,10 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(340.53999,337.92558)"
-       id="g7233">
+       transform="matrix(1,0,0,0.94284636,340.53999,341.67312)"
+       id="g7233"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g568">
         <g
@@ -2891,8 +2872,10 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(276.95462,291.76504)"
-       id="g7882">
+       transform="matrix(1,0,0,0.94284636,276.95462,298.15083)"
+       id="g7882"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g7775">
         <g
@@ -2932,8 +2915,10 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(307.77125,353.90535)"
-       id="g8550">
+       transform="matrix(1,0,0,0.94284636,307.77125,356.73959)"
+       id="g8550"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g9513">
         <g
@@ -2960,12 +2945,5 @@
         </g>
       </g>
     </g>
-    <rect
-       style="fill:#000000;fill-opacity:0.27317765;stroke:none;stroke-width:0.922201;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
-       id="rect2911"
-       width="286.23181"
-       height="27.434988"
-       x="211.82924"
-       y="212.1353" />
   </g>
 </svg>

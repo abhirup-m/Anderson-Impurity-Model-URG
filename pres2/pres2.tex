@@ -1,11 +1,11 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage{xcolor}
 \definecolor{maroon}{rgb}{0.6,0,0}
 \definecolor{bottlegreen}{rgb}{0,0.3,0}
 \usepackage{lmodern,graphicx}
-\usepackage[scale=2]{ccicons}
-\usetheme{Pittsburgh}
-\usecolortheme{crane}
+\usetheme{focus}
+\newcommand{\cen}[1]{\begin{center}{#1}\end{center}}
+%\usecolortheme{crane}
 %\setbeamercolor{itemize item}{fg=darkred!80!black}
 
 \title{Unitary Renormalization Group Approach to the Single-Impurity Anderson model}
@@ -18,14 +18,17 @@
 
 \begin{document}
 
+
+\begin{frame}
 \maketitle
+\end{frame}
 
 \begin{frame}{Outline}
 
 \begin{itemize}
   \item The model
   \item Motivation
-  \item URG formalism
+  \item Unitary Renormalization Group (URG) formalism
   \item Results 
 \end{itemize}
 
@@ -39,8 +42,8 @@
 \def\svgwidth{\columnwidth}
 \hspace*{-20pt}\input{model.pdf_tex}
 \end{figure}
-\vspace*{-40pt}
-\centering\includegraphics[scale=0.4]{model_scheme.png}
+\vspace*{-60pt}
+\hspace*{100pt}\centering\includegraphics[scale=0.4]{model_scheme.png}
 %\begin{equation*}
 %	\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}
 %\end{equation*}
@@ -50,9 +53,11 @@
 \begin{frame}{Motivation}
   
 \begin{itemize}
-	\item "Poor man's" scaling\footnote{Haldane 1978, Jefferson 1977} is \textit{perturbative} and fails at large values - cannot show strong-coupling (SC) fixed point.
-	\item Instead, one needs to flow to large value of \(U\), do a Schrieffer -Wolff transformation and then flow to the SC fixed point. 
-	\item \textbf{It would be nice to get a single set of equations that show the crossover to the strong-coupling fixed point.}
+	\uncover<1->{\item "Poor man's" scaling\footnote{Haldane 1978, Jefferson 1977} is \textit{perturbative} and fails at large values - cannot show strong-coupling (SC) fixed point.}
+	\vspace*{20pt}
+	\uncover<2->{\item Instead, one needs to flow to large value of \(U\), do a Schrieffer -Wolff transformation and then flow to the SC fixed point. }
+	\vspace*{20pt}
+	\uncover<3->{\item \textbf{It would be nice to get a single set of equations that show the crossover to the strong-coupling fixed point.}}
 \end{itemize}
 
 \end{frame}
@@ -61,11 +66,28 @@
 \begin{frame}{Motivation}
 
 \begin{itemize}
-	\item Numerical Renormalization Group (NRG) does not provide any scaling equations - hard to figure out what is really happening.
-	\item NRG cannot show \textit{how the Hamiltonians and many-body wavefunctions vary along the flow} - projective in nature.
-	\item \textbf{It would be enlightening to see the flow into SC regime by tracking the change in entanglement} - hence we need wavefunctions.
+	\uncover<1->{\item Numerical Renormalization Group (NRG) does not provide any scaling equations - hard to figure out what is really happening.}
+	\vspace*{20pt}
+	\uncover<2->{\item NRG cannot show \textit{how the Hamiltonians and many-body wavefunctions vary along the flow} - projective in nature.}
+	\vspace*{20pt}
+	\uncover<3->{\item \textbf{It would be enlightening to see the flow into SC regime by tracking the change in entanglement} - hence we need wavefunctions.}
 \end{itemize}
+\end{frame}
 
+\begin{frame}{Unitary Renormalization Group Formalism}
+
+	\uncover<1->{\begin{minipage}{200pt}Start with the electrons farthest from the Fermi surface. Write the Hamiltonian as diagonal and off-diagonal terms in this basis.}\end{minipage}\begin{minipage}{300pt}
+\only<1>{\begin{figure}
+\def\svgwidth{\columnwidth}
+\centering
+\input{ham.pdf_tex}
+\end{figure}}
+\only<2>{\begin{figure}
+\def\svgwidth{\columnwidth}
+\centering
+\input{urg.pdf_tex}
+\end{figure}}
+\end{minipage}
 \end{frame}
 
 \end{document}
