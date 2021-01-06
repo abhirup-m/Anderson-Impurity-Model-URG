@@ -27,8 +27,11 @@
 
 \begin{itemize}
   \item The model
+	  \vspace*{20pt}
   \item Motivation
+	  \vspace*{20pt}
   \item Unitary Renormalization Group (URG) formalism
+	  \vspace*{20pt}
   \item Results 
 \end{itemize}
 
@@ -36,17 +39,25 @@
 
 \begin{frame}{The Single-Impurity Anderson Model}
 
-\vspace*{20pt}
+%\vspace*{5pt}
+%\begin{figure}
+%\centering
+%\def\svgwidth{\columnwidth}
+%\centering
+%\input{model.pdf_tex}
+%\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.55]{model_scheme.png}
+%\end{figure}
+	\scalebox{1.38}{
+		\hspace*{-10pt}\(	\mathcal{H}_\text{siam} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}
+\)
+}
 \begin{figure}
 \centering
-\def\svgwidth{\columnwidth}
-\hspace*{-20pt}\input{model.pdf_tex}
+\includegraphics[scale=0.55]{model_scheme.png}
 \end{figure}
-\vspace*{-60pt}
-\hspace*{100pt}\centering\includegraphics[scale=0.4]{model_scheme.png}
-%\begin{equation*}
-%	\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}
-%\end{equation*}
 
 \end{frame}
 
@@ -76,18 +87,35 @@
 
 \begin{frame}{Unitary Renormalization Group Formalism}
 
-	\uncover<1->{\begin{minipage}{200pt}Start with the electrons farthest from the Fermi surface. Write the Hamiltonian as diagonal and off-diagonal terms in this basis.}\end{minipage}\begin{minipage}{300pt}
-\only<1>{\begin{figure}
+	\only<+>{\begin{minipage}{200pt}\cen{\textbf{The Short Version}}Apply \textit{unitary many-body transformations} to the Hamiltonian so as to successively \textit{decouple} high energy states and hence obtain scaling equations.\end{minipage}\begin{minipage}{250pt}\begin{figure}
 \def\svgwidth{\columnwidth}
 \centering
-\input{ham.pdf_tex}
-\end{figure}}
-\only<2>{\begin{figure}
+\scalebox{0.7}{\input{urg_short.pdf_tex}}
+\end{figure}\end{minipage}}
+\only<+>{\begin{minipage}{200pt}\cen{\large{\textbf{Step 1:}}}Start with the electrons farthest from the Fermi surface. Write the Hamiltonian as \textit{diagonal and off-diagonal terms} in this basis.\end{minipage}\begin{minipage}{300pt}
+	\begin{figure}
 \def\svgwidth{\columnwidth}
 \centering
-\input{urg.pdf_tex}
+\input{matrix.pdf_tex}
+\end{figure}
+\end{minipage}}
+\only<+>{\cen{\large{\textbf{Step 2:}}\\Rotate the Hamiltonian to kill the off-diagonal blocks.}
+\begin{figure}
+\def\svgwidth{\columnwidth}
+\centering
+\input{rotation.pdf_tex}
 \end{figure}}
-\end{minipage}
+\only<+>{\cen{\large{\textbf{Step 3:}}\\Repeat the process with the new blocks.}
+\begin{figure}
+\def\svgwidth{\columnwidth}
+\centering
+\input{repeat.pdf_tex}
+\end{figure}}
 \end{frame}
 
+\begin{frame}{Results}
+
+	\centering \scalebox{1.4}{\(\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + U\hat n_{d\uparrow}\hat n_{d\downarrow}
+ + J \vec{S_d}\cdot \vec{s}\)}
+\end{frame}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  5 JAN 2021 01:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  6 JAN 2021 00:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -926,119 +926,106 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./model.pdf_tex
-<model.pdf, id=27, page=1, 868.26912pt x 324.25359pt>
-File: model.pdf Graphic file (type pdf)
-<use model.pdf, page 1>
-Package pdftex.def Info: model.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 412.56497pt x 154.07152pt.
-LaTeX Font Info:    Trying to load font information for OT1+FiraSans-OsF on input line 57.
+]
+LaTeX Font Info:    Trying to load font information for OT1+FiraSans-OsF on input line 62.
  (/usr/share/texmf-dist/tex/latex/fira/OT1FiraSans-OsF.fd
 File: OT1FiraSans-OsF.fd 2019/10/10 (autoinst) Font definitions for OT1/FiraSans-OsF.
 )
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <10.95> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 57.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 57.
+(Font)              scaled to size 10.95pt on input line 62.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <8> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 57.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 62.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <6> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 57.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 6.0pt on input line 57.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 57.
+(Font)              scaled to size 6.0pt on input line 62.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 62.
  (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 57.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 62.
  (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 57.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 62.
  (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 57.
+(Font)              <10.95> on input line 62.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 57.
+(Font)              <8> on input line 62.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 57.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+(Font)              <6> on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <10.95> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 57.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 10.95pt on input line 57.
+(Font)              scaled to size 10.95pt on input line 62.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <8> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 57.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 62.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <6> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 57.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 6.0pt on input line 57.
-<model.pdf, id=28, page=2, 868.26912pt x 324.25359pt>
-File: model.pdf Graphic file (type pdf)
-<use model.pdf, page 2>
-Package pdftex.def Info: model.pdf , page2 used on input line 61.
-(pdftex.def)             Requested size: 412.56497pt x 154.07152pt.
-)
-<model_scheme.png, id=29, 336.96976pt x 235.09518pt>
-File: model_scheme.png Graphic file (type png)
-<use model_scheme.png>
-Package pdftex.def Info: model_scheme.png  used on input line 51.
-(pdftex.def)             Requested size: 134.7855pt x 94.03639pt.
+(Font)              scaled to size 6.0pt on input line 62.
 
-Overfull \vbox (10.72174pt too high) detected at line 51
+Overfull \hbox (11.80145pt too wide) in paragraph at lines 62--62
+[][]  
  []
 
+<model_scheme.png, id=27, 336.96976pt x 235.09518pt>
+File: model_scheme.png Graphic file (type png)
+<use model_scheme.png>
+Package pdftex.def Info: model_scheme.png  used on input line 62.
+(pdftex.def)             Requested size: 185.33394pt x 129.30273pt.
 [3
 
- <./model.pdf> <./model.pdf
-
-pdfTeX warning: pdflatex (file ./model.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./model_scheme.png>]
+ <./model_scheme.png>]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <9> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 63.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 9.0pt on input line 63.
+(Font)              scaled to size 9.0pt on input line 74.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <9> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 63.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 9.0pt on input line 63.
+(Font)              scaled to size 9.0pt on input line 74.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <5> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 63.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 5.0pt on input line 63.
+(Font)              scaled to size 5.0pt on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 63.
+(Font)              <9> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 63.
+(Font)              <5> on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <5> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 63.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 5.0pt on input line 63.
+(Font)              scaled to size 5.0pt on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <9> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 63.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 9.0pt on input line 63.
+(Font)              scaled to size 9.0pt on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <5> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 63.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 5.0pt on input line 63.
+(Font)              scaled to size 5.0pt on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <10.95> not available
-(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 63.
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 63.
+(Font)              scaled to size 10.95pt on input line 74.
  [4
 
 ] [5
@@ -1051,106 +1038,186 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
 
 ] [9
 
-] (./ham.pdf_tex
-<ham.pdf, id=77, page=1, 236.11458pt x 174.41437pt>
-File: ham.pdf Graphic file (type pdf)
-<use ham.pdf, page 1>
-Package pdftex.def Info: ham.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<ham.pdf, id=78, page=2, 236.11458pt x 174.41437pt>
-File: ham.pdf Graphic file (type pdf)
-<use ham.pdf, page 2>
-Package pdftex.def Info: ham.pdf , page2 used on input line 61.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<ham.pdf, id=79, page=3, 236.11458pt x 174.41437pt>
-File: ham.pdf Graphic file (type pdf)
-<use ham.pdf, page 3>
-Package pdftex.def Info: ham.pdf , page3 used on input line 64.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<ham.pdf, id=80, page=4, 236.11458pt x 174.41437pt>
-File: ham.pdf Graphic file (type pdf)
-<use ham.pdf, page 4>
-Package pdftex.def Info: ham.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-)
-Overfull \hbox (87.43503pt too wide) in paragraph at lines 91--91
-[]$[]$$[]$  
+]
+Underfull \hbox (badness 3271) in paragraph at lines 114--114
+\T1/FiraSans-OsF/regular/n/10.95 Apply \T1/FiraSans-OsF/regular/it/10.95 uni-tary many-body trans-for-ma-
  []
 
-
-Overfull \vbox (15.219pt too high) detected at line 91
+(./urg_short.pdf_tex
+<urg_short.pdf, id=74, page=1, 253.90204pt x 268.1939pt>
+File: urg_short.pdf Graphic file (type pdf)
+<use urg_short.pdf, page 1>
+Package pdftex.def Info: urg_short.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 250.0pt x 264.08044pt.
+<urg_short.pdf, id=75, page=2, 253.90204pt x 268.1939pt>
+File: urg_short.pdf Graphic file (type pdf)
+<use urg_short.pdf, page 2>
+Package pdftex.def Info: urg_short.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 250.0pt x 264.08044pt.
+<urg_short.pdf, id=76, page=3, 253.90204pt x 268.1939pt>
+File: urg_short.pdf Graphic file (type pdf)
+<use urg_short.pdf, page 3>
+Package pdftex.def Info: urg_short.pdf , page3 used on input line 64.
+(pdftex.def)             Requested size: 250.0pt x 264.08044pt.
+<urg_short.pdf, id=77, page=4, 253.90204pt x 268.1939pt>
+File: urg_short.pdf Graphic file (type pdf)
+<use urg_short.pdf, page 4>
+Package pdftex.def Info: urg_short.pdf , page4 used on input line 66.
+(pdftex.def)             Requested size: 250.0pt x 264.08044pt.
+)
+Overfull \hbox (37.43503pt too wide) in paragraph at lines 114--114
+[]$[]$$[]$ 
  []
 
 [10
 
- <./ham.pdf> <./ham.pdf
+ <./urg_short.pdf> <./urg_short.pdf
 
-pdfTeX warning: pdflatex (file ./ham.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./ham.pdf
+pdfTeX warning: pdflatex (file ./urg_short.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./urg_short.pdf
 
-pdfTeX warning: pdflatex (file ./ham.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./ham.pdf
+pdfTeX warning: pdflatex (file ./urg_short.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./urg_short.pdf
 
-pdfTeX warning: pdflatex (file ./ham.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./urg.pdf_tex
-<urg.pdf, id=88, page=1, 236.11458pt x 174.41437pt>
-File: urg.pdf Graphic file (type pdf)
-<use urg.pdf, page 1>
-Package pdftex.def Info: urg.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<urg.pdf, id=89, page=2, 236.11458pt x 174.41437pt>
-File: urg.pdf Graphic file (type pdf)
-<use urg.pdf, page 2>
-Package pdftex.def Info: urg.pdf , page2 used on input line 61.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<urg.pdf, id=90, page=3, 236.11458pt x 174.41437pt>
-File: urg.pdf Graphic file (type pdf)
-<use urg.pdf, page 3>
-Package pdftex.def Info: urg.pdf , page3 used on input line 64.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
-<urg.pdf, id=91, page=4, 236.11458pt x 174.41437pt>
-File: urg.pdf Graphic file (type pdf)
-<use urg.pdf, page 4>
-Package pdftex.def Info: urg.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 300.0pt x 221.62352pt.
+pdfTeX warning: pdflatex (file ./urg_short.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <12> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 114.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 114.
+ (./matrix.pdf_tex
+<matrix.pdf, id=85, page=1, 218.04697pt x 159.20662pt>
+File: matrix.pdf Graphic file (type pdf)
+<use matrix.pdf, page 1>
+Package pdftex.def Info: matrix.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 300.0pt x 219.05916pt.
+<matrix.pdf, id=86, page=2, 218.04697pt x 159.20662pt>
+File: matrix.pdf Graphic file (type pdf)
+<use matrix.pdf, page 2>
+Package pdftex.def Info: matrix.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 300.0pt x 219.05916pt.
+<matrix.pdf, id=87, page=3, 218.04697pt x 159.20662pt>
+File: matrix.pdf Graphic file (type pdf)
+<use matrix.pdf, page 3>
+Package pdftex.def Info: matrix.pdf , page3 used on input line 64.
+(pdftex.def)             Requested size: 300.0pt x 219.05916pt.
+<matrix.pdf, id=88, page=4, 218.04697pt x 159.20662pt>
+File: matrix.pdf Graphic file (type pdf)
+<use matrix.pdf, page 4>
+Package pdftex.def Info: matrix.pdf , page4 used on input line 66.
+(pdftex.def)             Requested size: 300.0pt x 219.05916pt.
 )
-Overfull \hbox (87.43503pt too wide) in paragraph at lines 91--91
-[]$[]$$[]$  
+Overfull \hbox (87.43503pt too wide) in paragraph at lines 114--114
+[]$[]$$[]$ 
  []
 
 
-Overfull \vbox (15.219pt too high) detected at line 91
+Overfull \vbox (13.6601pt too high) detected at line 114
  []
 
 [11
 
- <./urg.pdf> <./urg.pdf
+ <./matrix.pdf> <./matrix.pdf
 
-pdfTeX warning: pdflatex (file ./urg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./urg.pdf
+pdfTeX warning: pdflatex (file ./matrix.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./matrix.pdf
 
-pdfTeX warning: pdflatex (file ./urg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./urg.pdf
+pdfTeX warning: pdflatex (file ./matrix.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./matrix.pdf
 
-pdfTeX warning: pdflatex (file ./urg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
+pdfTeX warning: pdflatex (file ./matrix.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./rotation.pdf_tex
+<rotation.pdf, id=96, page=1, 696.9245pt x 228.6435pt>
+File: rotation.pdf Graphic file (type pdf)
+<use rotation.pdf, page 1>
+Package pdftex.def Info: rotation.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 412.56497pt x 135.35204pt.
+<rotation.pdf, id=97, page=2, 696.9245pt x 228.6435pt>
+File: rotation.pdf Graphic file (type pdf)
+<use rotation.pdf, page 2>
+Package pdftex.def Info: rotation.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 412.56497pt x 135.35204pt.
+<rotation.pdf, id=98, page=3, 696.9245pt x 228.6435pt>
+File: rotation.pdf Graphic file (type pdf)
+<use rotation.pdf, page 3>
+Package pdftex.def Info: rotation.pdf , page3 used on input line 64.
+(pdftex.def)             Requested size: 412.56497pt x 135.35204pt.
+<rotation.pdf, id=99, page=4, 696.9245pt x 228.6435pt>
+File: rotation.pdf Graphic file (type pdf)
+<use rotation.pdf, page 4>
+Package pdftex.def Info: rotation.pdf , page4 used on input line 66.
+(pdftex.def)             Requested size: 412.56497pt x 135.35204pt.
+) [12
+
+ <./rotation.pdf> <./rotation.pdf
+
+pdfTeX warning: pdflatex (file ./rotation.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./rotation.pdf
+
+pdfTeX warning: pdflatex (file ./rotation.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./rotation.pdf
+
+pdfTeX warning: pdflatex (file ./rotation.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./repeat.pdf_tex
+<repeat.pdf, id=107, page=1, 680.96976pt x 258.51381pt>
+File: repeat.pdf Graphic file (type pdf)
+<use repeat.pdf, page 1>
+Package pdftex.def Info: repeat.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 412.56497pt x 156.62419pt.
+<repeat.pdf, id=108, page=2, 680.96976pt x 258.51381pt>
+File: repeat.pdf Graphic file (type pdf)
+<use repeat.pdf, page 2>
+Package pdftex.def Info: repeat.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 412.56497pt x 156.62419pt.
+<repeat.pdf, id=109, page=3, 680.96976pt x 258.51381pt>
+File: repeat.pdf Graphic file (type pdf)
+<use repeat.pdf, page 3>
+Package pdftex.def Info: repeat.pdf , page3 used on input line 64.
+(pdftex.def)             Requested size: 412.56497pt x 156.62419pt.
+<repeat.pdf, id=110, page=4, 680.96976pt x 258.51381pt>
+File: repeat.pdf Graphic file (type pdf)
+<use repeat.pdf, page 4>
+Package pdftex.def Info: repeat.pdf , page4 used on input line 66.
+(pdftex.def)             Requested size: 412.56497pt x 156.62419pt.
+<repeat.pdf, id=111, page=5, 680.96976pt x 258.51381pt>
+File: repeat.pdf Graphic file (type pdf)
+<use repeat.pdf, page 5>
+Package pdftex.def Info: repeat.pdf , page5 used on input line 69.
+(pdftex.def)             Requested size: 412.56497pt x 156.62419pt.
+) [13
+
+ <./repeat.pdf> <./repeat.pdf
+
+pdfTeX warning: pdflatex (file ./repeat.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./repeat.pdf
+
+pdfTeX warning: pdflatex (file ./repeat.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./repeat.pdf
+
+pdfTeX warning: pdflatex (file ./repeat.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./repeat.pdf
+
+pdfTeX warning: pdflatex (file ./repeat.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [14
+
+]
 \tf@nav=\write5
 \tf@toc=\write6
 \tf@snm=\write7
  (./pres2.aux) ) 
 Here is how much of TeX's memory you used:
- 22524 strings out of 479383
- 444445 string characters out of 5875829
- 727751 words of memory out of 5000000
- 39026 multiletter control sequences out of 15000+600000
- 702382 words of font info for 84 fonts, out of 8000000 for 9000
+ 22569 strings out of 479383
+ 445716 string characters out of 5875829
+ 730243 words of memory out of 5000000
+ 39061 multiletter control sequences out of 15000+600000
+ 718355 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,428b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc}</usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb>
-Output written on pres2.pdf (11 pages, 193296 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_337jzs.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc}</usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on pres2.pdf (14 pages, 216648 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 169 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

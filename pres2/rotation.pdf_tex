@@ -1,0 +1,70 @@
+%% Creator: Inkscape 1.0.1 (3bc2e813f5, 2020-09-07), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'rotation.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{694.32079886bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.328075)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{rotation.pdf}}%
+    \put(0.03988723,-0.28366753){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kinetic energy\end{tabular}}}}%
+    \put(0.35790834,-0.23206263){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}hopping between \\ impurity and bath\end{tabular}}}}%
+    \put(1.01232197,-0.22083643){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity-impurity\\\quad\quad repulsion\end{tabular}}}}%
+    \put(0.7607362,-0.24412677){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}single-impurity\\\quad energy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{rotation.pdf}}%
+    \put(0.05460466,-0.91760153){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}unoccupied\\component\end{tabular}}}}%
+    \put(-0.11077645,-0.75121322){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}occupied \\component\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{rotation.pdf}}%
+    \put(0.00579367,-0.74494938){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}particle-hole \\fluctuation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{rotation.pdf}}%
+    \put(0.44501933,0.19223934){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}rotation\\\end{tabular}}}}%
+    \put(0.45761878,0.11270257){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U\mathcal{H}U^\dagger$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
