@@ -88,79 +88,86 @@ def fixed_J():
 
 # plot flow of U and J for omega = 0
 def all_flow():
-    b = 0.999
-    D0 = 0.2
-    V = 0.1
+    b = 0.999999
     colors = ['r','b','w','y','g']
-    for U0 in np.arange(0.01,1,0.01):
-        for J0 in np.arange(0.01, 0.8 - 2*U0, 0.1):
-            colors = colors[-1:]+colors[:-1]
-            X = []
-            Y = []
-            J = J0
+    ci=0
+    for U0 in np.arange(0.5,1.3,0.7):
+        for J0 in np.arange(0.01,0.11,2):
+            D = 0.3
             U = U0
-            V1 = V
-            V0 = V
-            D = D0
-            #X.append(J/D)
-            #Y.append(U/D)
-            plt.scatter(J,U,marker='.')
-            sign1 = D - U/2 - J/4
-            sign2 = D - J/4
-            sign3 = D + U/2
-            sign4 = D + J/4
+            V = 0.01
+            J = J0
+            sign1 = D + U/4 - J/8
+            sign2 = D - U/4 - J/4
+            sign3 = D + U/4 - 3*J/8
             sign5 = U + J/4
             count = 0
-            print ("start",J,U)
+            x = [J]
+            y = [U]
             while D > 0:
-                #print (sign1)
-                if sign1 * (D - U/2 - J/4) <= 0:
-                    print ("cutoff by 1, after", count, " steps")
+                if sign1 * (D + U/4 - J/8) <= 0:
+                    #print ("cut by 1,after",count," steps")
                     break
-                elif sign2 * (D - J/4) <= 0:
-                    print ("cutoff by 2, after", count, " steps")
+                elif sign2 * (D - U/4 - J/4) <= 0:
+                    #print ("cut by 2,after",count," steps")
                     break
-                elif sign3 * (D + U/2) <= 0:
-                    print ("cutoff by 3, after", count, " steps")
+                elif sign3 * (D + U/4 - 3*J/4) <= 0:
+                    #print ("cut by 3,after",count," steps")
                     break
-                elif sign4 * (D + J/4) <= 0:
-                    print ("cutoff by 4, after", count, " steps")
+                elif sign5 * U <= 0 and J0 == 0:
+                    U = 0
+                    #print ("cut by 5,after",count," steps")
                     break
-                elif sign5 * (U + J/4) <= 0:
-                    if J0 == 0:
-                        U = 0
-                    print ("cutoff by 5, after", count, " steps")
-                    break
-                sign1 = D - U/2 - J/4
-                sign2 = D - J/4
-                sign3 = D + U/2
-                sign4 = D + J/4
+                sign1 = D + U/4 - J/8
+                sign2 = D - U/4 - J/4
+                sign3 = D + U/4 - 3*J/8
                 sign5 = U + J/4
-                deltaU = - 2 * (V1**2 + V0**2) * D**(1/2) * (U + J/4) / ((D - U/2 - J/4) * (D + U/2)) + J**2 * D * (6*D + J)/(4 * (D**2 - J**2/16))
-                deltaJ = J**2 * D**(1/2) / (2 * (D**2 - J**2/16))
-                deltaV1 = V1 * D**(1/2) * (3*J/4) / (D - U/2 - J/4)
-                deltaV0 = V0 * D**(1/2) * (3*J/4) / (D - J/4)
-                if abs(deltaU) < 10**(-15):
-                    print ("cutoff by 6, after", count, " steps")
-                    break
+                deltaU = 0.5 * V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (5/sign1 + 1/sign3)
+                deltaJ = J**2 * D**(1/2) / (8 * sign1)
+                deltaV = V * D**(1/2) * (3*J/4) / sign1
                 U += deltaU
                 J += deltaJ
-                V1 += deltaV1
-                V0 += deltaV0
-                #plt.scatter(J,U,marker='.')
-                #X.append(J)
-                #Y.append(U)
+                V += deltaV
                 D *= b
+                x.append(J)
+                y.append(U)
                 count += 1
-                #print (J,U,V1,V0)
-            #plt.plot(X,Y,color=colors[-1])
-                print (J, U)
-            if U<0:
-                input()
-            #plt.xlabel(r'J')
-            #plt.ylabel(r'U')
-            #plt.title(r'both flow $\rightarrow \omega=0, V1_0={}, V0_0={}, J_0={}, U_0={}, D_0 = 5$'.format(V10,V00,J0,U0))
-            #plt.show()
-            #plt.clf()
+            print (U,J)
+            plt.scatter(x,y,color=colors[ci%5])
+            ci += 1
+    plt.show()
+
+def func():
+        J = 0.1
+        sign1 = D + U/4 - J/8
+        sign2 = D - U/4 - J/4
+        sign5 = U + J/4
+        count = 0
+        #print ("start val: D={}, J={}, U={}".format(D, J,U))
+        while D > 0:
+            if sign1 * (D + U/4 - J/8) <= 0:
+                print ("cut by 1,after",count," steps")
+                break
+            elif sign2 * (D - U/4 - J/4) <= 0:
+                print ("cut by 2,after",count," steps")
+                break
+            elif sign5 * U <= 0 and J0 == 0:
+                U = 0
+                print ("cut by 5,after",count," steps")
+                break
+            sign1 = D + U/4 - J/8
+            sign2 = D - U/4 - J/4
+            sign5 = U + J/4
+            deltaU = 0.5 * V**2 * D**(1/2) * sign5 / (sign1 * sign2)
+            deltaJ = J**2 * D**(1/2) / (8 * sign1)
+            deltaV = V * D**(1/2) * (3*J/4) / sign1
+            U += deltaU
+            J += deltaJ
+            V += deltaV
+            D *= b
+            count += 1
+        print ("End val: D={}, U={}, J={}".format(D,U,J))
+        if U < 0:
+            input()
 
 all_flow()
