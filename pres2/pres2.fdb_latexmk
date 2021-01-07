@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1610046001 "pres2.tex" "pres2.pdf" "pres2" 1610046010
+["pdflatex"] 1610047914 "pres2.tex" "pres2.pdf" "pres2" 1610047925
   "/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc" 1607188752 3443 c184b8b1bd90c3ec5d4289b992e64d96 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_337jzs.enc" 1607188752 2952 6101deaf2e29800c3f438cc30978a854 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc" 1607188752 3071 cfa92ee28d698dd9275559d9d1c3a233 ""
@@ -267,9 +267,9 @@
   "matrix.pdf_tex" 1609859060 3258 480e1494639d0129c50f8a521ea7c4ee ""
   "model_scheme.png" 1609698344 33130 d300d5dfaa92f223dddfc2152a5cceeb ""
   "nrg.png" 1610034247 71179 3338f2387c95e49e0c44bc424a109b9a ""
-  "pres2.aux" 1610046009 2471 184804bb461bf5ee0d71f65a058eebf4 "pdflatex"
-  "pres2.nav" 1610046009 1224 25819dfed7d1886c5920a462a0c7f720 "pdflatex"
-  "pres2.tex" 1610046001 10787 64a1a861b14faa3855fd4a2f4eb006eb ""
+  "pres2.aux" 1610047924 2471 184804bb461bf5ee0d71f65a058eebf4 "pdflatex"
+  "pres2.nav" 1610047924 1224 25819dfed7d1886c5920a462a0c7f720 "pdflatex"
+  "pres2.tex" 1610047914 10869 80a44aa276197d4b5d30186de481c42b ""
   "repeat.pdf" 1609867331 8224 f281bfbf71fb401d7757fdcfb399844c ""
   "repeat.pdf_tex" 1609867331 3603 7159f78aee40abec01c782c2a4da0fc7 ""
   "rotation.pdf" 1610046000 31688 477d378e389988b681ef19216af33b19 ""
@@ -278,9 +278,9 @@
   "urg_short.pdf" 1609858064 10426 d64bbddb101bac2fa82e104a62215a4e ""
   "urg_short.pdf_tex" 1609858064 3275 444c754299998489536ee25a62708484 ""
   (generated)
-  "pres2.log"
-  "pres2.toc"
   "pres2.snm"
-  "pres2.nav"
-  "pres2.pdf"
   "pres2.aux"
+  "pres2.toc"
+  "pres2.log"
+  "pres2.pdf"
+  "pres2.nav"
