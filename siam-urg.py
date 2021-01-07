@@ -88,52 +88,54 @@ def fixed_J():
 
 # plot flow of U and J for omega = 0
 def all_flow():
-    b = 0.999999
-    colors = ['r','b','w','y','g']
+    b = 0.9999
+    colors = ['r','b','y','g']
     ci=0
-    for U0 in np.arange(0.5,1.3,0.7):
-        for J0 in np.arange(0.01,0.11,2):
-            D = 0.3
+    for U0 in np.arange(0,1,0.3):
+        for J0 in np.arange(0,0.1,0.03):
+            D = 0.5
             U = U0
             V = 0.01
             J = J0
-            sign1 = D + U/4 - J/8
-            sign2 = D - U/4 - J/4
-            sign3 = D + U/4 - 3*J/8
-            sign5 = U + J/4
+            sign1 = D - J/4
+            sign2 = D - U/2 - J/2
+            sign5 = U + J/2
+            flag = False
             count = 0
             x = [J]
             y = [U]
             while D > 0:
-                if sign1 * (D + U/4 - J/8) <= 0:
-                    #print ("cut by 1,after",count," steps")
+                if sign1 * (D - J/4) <= 0:
+                    print ("found 1")
                     break
-                elif sign2 * (D - U/4 - J/4) <= 0:
-                    #print ("cut by 2,after",count," steps")
-                    break
-                elif sign3 * (D + U/4 - 3*J/4) <= 0:
-                    #print ("cut by 3,after",count," steps")
-                    break
+                elif sign2 * (D - U/2 - J/2) <= 0:
+                    flag = True
+                    print ("found 2")
                 elif sign5 * U <= 0 and J0 == 0:
                     U = 0
-                    #print ("cut by 5,after",count," steps")
+                    print ("found 5")
                     break
-                sign1 = D + U/4 - J/8
-                sign2 = D - U/4 - J/4
-                sign3 = D + U/4 - 3*J/8
-                sign5 = U + J/4
-                deltaU = 0.5 * V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (5/sign1 + 1/sign3)
-                deltaJ = J**2 * D**(1/2) / (8 * sign1)
+                sign1 = D - J/4
+                sign2 = D - U/2 - J/2
+                sign5 = U + J/2
+                deltaU = V**2 * D**(1/2) * sign5 / (sign1 * sign2)
+                #deltaU = 0.5 * V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (5/sign1 + 1/sign3)
+                deltaJ = J**2 * D**(1/2) / (4 * sign1)
                 deltaV = V * D**(1/2) * (3*J/4) / sign1
-                U += deltaU
+                if flag == False:
+                    U += deltaU
                 J += deltaJ
                 V += deltaV
                 D *= b
                 x.append(J)
                 y.append(U)
                 count += 1
-            print (U,J)
-            plt.scatter(x,y,color=colors[ci%5])
+            print (J, U)
+            if U < 0:
+                print ("start",U0,J0)
+                print (U,J)
+            else:
+                plt.scatter(x[:-1],y[:-1],marker='.')
             ci += 1
     plt.show()
 
