@@ -5,16 +5,24 @@
 \usepackage{lmodern,graphicx}
 \usetheme{focus}
 \newcommand{\cen}[1]{\begin{center}{#1}\end{center}}
-%\usecolortheme{crane}
-%\setbeamercolor{itemize item}{fg=darkred!80!black}
+\usepackage[absolute,overlay]{textpos}
+
+\setbeamercolor{framesource}{fg=gray}
+\setbeamerfont{framesource}{size=\tiny}
+
+\newcommand{\source}[1]{\begin{textblock*}{4cm}(8.7cm,8.6cm)
+    \begin{beamercolorbox}[ht=0.5cm,right]{framesource}
+        \usebeamerfont{framesource}\usebeamercolor[fg]{framesource} Source: {#1}
+    \end{beamercolorbox}
+\end{textblock*}}
 
 \title{Unitary Renormalization Group Approach to the Single-Impurity Anderson model}
 \subtitle{}
 \date{\today}
 \author{Abhirup Mukherjee (18IP014)\\[5mm]{Supervisor: Dr. Siddhartha Lal}}
-%\author[author2]
 
 \institute{IISER Kolkata}
+\date{January 8, 2021}
 
 \begin{document}
 
@@ -39,7 +47,6 @@
 
 \begin{frame}{The Single-Impurity Anderson Model}
 
-%\vspace*{5pt}
 %\begin{figure}
 %\centering
 %\def\svgwidth{\columnwidth}
@@ -50,40 +57,115 @@
 %\centering
 %\includegraphics[scale=0.55]{model_scheme.png}
 %\end{figure}
-	\scalebox{1.38}{
-		\hspace*{-10pt}\(	\mathcal{H}_\text{siam} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}
+\only<+>{
+\scalebox{1.38}{
+\hspace*{-10pt}\(\mathcal{H}_\text{siam} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}
 \)
 }
 \begin{figure}
 \centering
 \includegraphics[scale=0.55]{model_scheme.png}
 \end{figure}
-
+}
+\only<+>{
+	\vspace*{-20pt}
+\cen{\Large\textbf{Poor Man's Scaling Results}}
+\begin{tabular}{cl}  
+\begin{tabular}{l}
+             \parbox{0.5\linewidth}{
+		     For large \(U\), Haldane and Jefferson find\footnote{{Haldane-1978, Jefferson-1977, Hewson, A. C.-1993-The Kondo Problem to Heavy Fermions}} three low energy theories:
+\begin{itemize}
+	\item the \textbf{frozen impururity fixed point} (\(\left<n_d\right> = 0\))
+	\item the \textbf{local moment fixed point} (\(\left<n_d\right> = 1\)), and 
+	\item the \textbf{valence fluctuation fixed point} (\(\left<n_d\right> \sim \frac{1}{2}\)).
+% Not much is reported about their stability, and the method itself is perturbative, so it breaks down before reaching the low energy theory.  
+\end{itemize}
+    }
+         \end{tabular}
+           &   \begin{tabular}{c}
+\includegraphics[scale=0.29]{haldane.png}
+           \end{tabular}\\
+   
+\end{tabular}
+}
+\only<+>{
+	\vspace*{-20pt}
+\cen{\Large\textbf{NRG Results - Symmetric Model}}
+\begin{tabular}{cl}  
+\begin{tabular}{l}
+             \parbox{0.5\linewidth}{
+		     For the symmetric Anderson model\footnote{Krishna-murthy et al, 1980}:
+		     \vspace*{10pt}
+\begin{itemize}
+\item the \textbf{free-orbital} fixed point (\(U=\Delta=0\)) - unstable
+		     \vspace*{10pt}
+     \item the \textbf{local moment} fixed point (\(U = \infty, \Delta=0\)) - saddle point, and 
+		     \vspace*{10pt}
+     \item the \textbf{strong-coupling} fixed point (\(\Delta=\infty, U = \text{finite}\)) - stable.
+\end{itemize}
+    }
+         \end{tabular}
+           &   \begin{tabular}{c}
+\includegraphics[scale=0.35]{nrg.png}
+           \end{tabular}\\
+   
+\end{tabular}
+}
+\only<+>{
+	\vspace*{-100pt}
+\cen{\Large\textbf{NRG Results - Asymmetric Model}}
+Two more fixed points exist - 
+	\vspace*{10pt}
+\begin{itemize}
+	\item the \textbf{valence fluctuation} fixed point (\(\epsilon_d = V = 0, U = \infty\)) 
+	\vspace*{10pt}
+\item the \textbf{frozen impurity} fixed point (\(U = V = 0, \epsilon_d = \infty\))
+\end{itemize}
+}
 \end{frame}
 
-\begin{frame}{Motivation}
+\begin{frame}{Some Outstanding Questions}
   
 \begin{itemize}
-	\uncover<1->{\item "Poor man's" scaling\footnote{Haldane 1978, Jefferson 1977} is \textit{perturbative} and fails at large values - cannot show strong-coupling (SC) fixed point.}
-	\vspace*{20pt}
-	\uncover<2->{\item Instead, one needs to flow to large value of \(U\), do a Schrieffer -Wolff transformation and then flow to the SC fixed point. }
-	\vspace*{20pt}
-	\uncover<3->{\item \textbf{It would be nice to get a single set of equations that show the crossover to the strong-coupling fixed point.}}
+	\uncover<1->{\item Is it possible to get \textbf{nonperturbative scaling equations} for the whole journey?}
+	\vspace*{10pt}
+	\uncover<2->{\item Can we get Hamiltonians and wavefunctions in the \textbf{crossover region} (\(T \sim T_K\))?}
+	\vspace*{10pt}
+	\uncover<3->{\item What is the nature of the strong-coupling fixed point for a \textbf{finite system} (\(J \neq \infty\))? Will the results change if we introduce a \textbf{non-uniform density of states}?}
+	\vspace*{10pt}
+	\uncover<4->{\item Can we get \textbf{better estimates of dynamic quantities} in the crossover region?}
+	\vspace*{10pt}
+	\uncover<5->{\item Is it possible to show the \textbf{transfer of spectral weight} along the flow, possibly by tracking the bath spectral function or the many-particle entanglement?}
+	\vspace*{10pt}
+	\uncover<6->{\item How does NRG obtain the local moment in the \textbf{absence of hybridisation}?}
+	\vspace*{10pt}
+	\uncover<7->{\item Are there any interesting \textbf{topological aspects} of the fixed points?}
 \end{itemize}
 
 \end{frame}
 
-
-\begin{frame}{Motivation}
-
-\begin{itemize}
-	\uncover<1->{\item Numerical Renormalization Group (NRG) does not provide any scaling equations - hard to figure out what is really happening.}
-	\vspace*{20pt}
-	\uncover<2->{\item NRG cannot show \textit{how the Hamiltonians and many-body wavefunctions vary along the flow} - projective in nature.}
-	\vspace*{20pt}
-	\uncover<3->{\item \textbf{It would be enlightening to see the flow into SC regime by tracking the change in entanglement} - hence we need wavefunctions.}
-\end{itemize}
-\end{frame}
+%\begin{frame}{Motivation}
+%  
+%\begin{itemize}
+%	\uncover<1->{\item "Poor man's" scaling\footnote{Haldane 1978, Jefferson 1977} is \textit{perturbative} and fails at large values - cannot show strong-coupling (SC) fixed point.}
+%	\vspace*{20pt}
+%	\uncover<2->{\item Instead, one needs to flow to large value of \(U\), do a Schrieffer -Wolff transformation and then flow to the SC fixed point. }
+%	\vspace*{20pt}
+%	\uncover<3->{\item \textbf{It would be nice to get a single set of equations that show the crossover to the strong-coupling fixed point.}}
+%\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}{Motivation}
+%
+%\begin{itemize}
+%	\uncover<1->{\item Numerical Renormalization Group (NRG) does not provide any scaling equations - hard to figure out what is really happening.}
+%	\vspace*{20pt}
+%	\uncover<2->{\item NRG cannot show \textit{how the Hamiltonians and many-body wavefunctions vary along the flow} - projective in nature.}
+%	\vspace*{20pt}
+%	\uncover<3->{\item \textbf{It would be enlightening to see the flow into SC regime by tracking the change in entanglement} - hence we need wavefunctions.}
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}{Unitary Renormalization Group Formalism}
 
@@ -104,16 +186,68 @@
 \def\svgwidth{\columnwidth}
 \centering
 \input{rotation.pdf_tex}
-\end{figure}}
+\end{figure}
+% mention the commutator here
+}
 \only<+>{\cen{\large{\textbf{Step 3:}}\\Repeat the process with the new blocks.}
 \begin{figure}
 \def\svgwidth{\columnwidth}
 \centering
 \input{repeat.pdf_tex}
 \end{figure}}
+\only<+>{
+\vspace{-50pt}
+\cen{\Large{\textbf{Some Characteristic features of the URG}}}
+\vspace{10pt}
+\begin{itemize}
+	\item Presence of the quantum fluctuation energy scale \(\omega\)
+\vspace{10pt}
+	\item Presence of finite-valued fixed points
+\vspace{10pt}
+	\item Spectrum-preserving transformations
+\vspace{10pt}
+	\item Tractable low-energy effective Hamiltonians
+\end{itemize}
+}
 \end{frame}
 
 \begin{frame}{Results}
-	\Large{\[\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + U\hat n_{d\uparrow}\hat n_{d\downarrow} + J \vec{S_d}\cdot \sum_{kq\alpha\beta}\vec{\sigma}_{\alpha,\beta}c^\dagger_{k\alpha}c_{q\beta}\]}
+\only<1>{
+\large{\[\mathcal{H} = \overbrace{\sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}}^{SIAM} + \underbrace{J \vec{S_d}\cdot \sum_{kq\alpha\beta}\vec{\sigma}_{\alpha,\beta}c^\dagger_{k\alpha}c_{q\beta}}_\text{spin-spin interaction}\]}}
+\only<2>{
+	\vspace*{-15pt}
+	\cen{\Large{\textbf{RG Equations}}
+		\begin{equation*}\begin{aligned}\Delta U_n &= \left(U + \frac{1}{2}J\right)\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J)(\omega - \epsilon_q)}\\[5pt]
+			\Delta V(q)_n &= -\frac{3}{4}J\sum_{|q|=\Lambda_n} \frac{V(q)}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\\[5pt]
+\Delta J_n &= -\frac{1}{4}J^2\sum_{|q|=\Lambda_n\atop{k<\Lambda_n}} \frac{1}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\end{aligned}\end{equation*}
+}
+}
+\only<3-5>{
+	\cen{\Large{\textbf{The case of \(\pmb{J=0}\)}}
+	\vspace*{5pt}
+\begin{equation*}\Delta U_n = U\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U)(\omega - \epsilon_q)}\end{equation*}}
+	\vspace*{10pt}
+\only<3>{\begin{figure}
+\def\svgwidth{\columnwidth}
+\centering
+\scalebox{0.7}{\input{lmflow.pdf_tex}}
+\end{figure}
+}
+
+\begin{tabular}{cl}  
+\begin{tabular}{l}
+	\hspace*{-20pt}\parbox{0.4\linewidth}{
+	\begin{itemize}\uncover<4->{\item \textbf{No separatrix}\footnote{ Rukhsan, Vidhyadhiraja - Scaling analysis of the extended single impurity Anderson model} for the flows to the local moment.} 
+		\uncover<5>{\item Local moment forms at finite \(U\).}
+\end{itemize}
+    }
+         \end{tabular}
+           &  \uncover<5>{ \begin{tabular}{c}
+\includegraphics[scale=0.2]{UvsbareD.png}
+	   \end{tabular}}\\
+   
+\end{tabular}
+
+}
 \end{frame}
 \end{document}

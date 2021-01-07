@@ -3,6 +3,11 @@
 import matplotlib
 from matplotlib import pyplot as plt
 import numpy as np
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 25}
+
+matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
 #    for U in range(10,20,50):
 #        V = 0.1
@@ -91,38 +96,44 @@ def all_flow():
     b = 0.9999
     colors = ['r','b','y','g']
     ci=0
-    for U0 in np.arange(0,1,0.3):
-        for J0 in np.arange(0,0.1,0.03):
-            D = 0.5
-            U = U0
-            V = 0.01
-            J = J0
+    for D0 in [1,10,100,650,1000]:
+        for J0 in [0]:
+            D = D0
+            U = 0.5
+            V = 1
+            J = 0
             sign1 = D - J/4
             sign2 = D - U/2 - J/2
+            sign3 = D - 3*J/4
             sign5 = U + J/2
             flag = False
             count = 0
             x = [J]
             y = [U]
+            print (J, U)
             while D > 0:
+            #    print (D-J/4,D - U/2 - J/2,D - 3*J/4)
+            #    print (U)
                 if sign1 * (D - J/4) <= 0:
-                    print ("found 1")
                     break
                 elif sign2 * (D - U/2 - J/2) <= 0:
-                    flag = True
-                    print ("found 2")
+                    #print ("found 2")
+                    break
+                elif sign3 * (D - 3*J/4) <= 0:
+                    #print ("found 3")
+                    break
                 elif sign5 * U <= 0 and J0 == 0:
                     U = 0
-                    print ("found 5")
                     break
                 sign1 = D - J/4
                 sign2 = D - U/2 - J/2
+                sign3 = D - 3*J/4
                 sign5 = U + J/2
-                deltaU = V**2 * D**(1/2) * sign5 / (sign1 * sign2)
-                #deltaU = 0.5 * V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (5/sign1 + 1/sign3)
+                deltaU = V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (6 * D - 4 * J)/(sign1 * sign3)
                 deltaJ = J**2 * D**(1/2) / (4 * sign1)
                 deltaV = V * D**(1/2) * (3*J/4) / sign1
                 if flag == False:
+                    #count -= 1
                     U += deltaU
                 J += deltaJ
                 V += deltaV
@@ -130,13 +141,14 @@ def all_flow():
                 x.append(J)
                 y.append(U)
                 count += 1
-            print (J, U)
+            print (U)
+            plt.plot(np.log10(D0),U,marker='o')
             if U < 0:
-                print ("start",U0,J0)
-                print (U,J)
-            else:
-                plt.scatter(x[:-1],y[:-1],marker='.')
+                print (U)
             ci += 1
+    plt.xlabel(r'$\log_{10}(D)$')
+    plt.ylabel(r'$U^*$')
+    plt.title(r'Variation of $U^*$ with bandwidth ($V=1$)')
     plt.show()
 
 def func():
