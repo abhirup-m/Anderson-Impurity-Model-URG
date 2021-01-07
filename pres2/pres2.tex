@@ -197,7 +197,7 @@ Two more fixed points exist -
 \end{figure}}
 \only<+>{
 \vspace{-50pt}
-\cen{\Large{\textbf{Some Characteristic features of the URG}}}
+{\Large{\textbf{Some Characteristic features of the URG}}}
 \vspace{10pt}
 \begin{itemize}
 	\item Presence of the quantum fluctuation energy scale \(\omega\)
@@ -216,38 +216,87 @@ Two more fixed points exist -
 \large{\[\mathcal{H} = \overbrace{\sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}}^{SIAM} + \underbrace{J \vec{S_d}\cdot \sum_{kq\alpha\beta}\vec{\sigma}_{\alpha,\beta}c^\dagger_{k\alpha}c_{q\beta}}_\text{spin-spin interaction}\]}}
 \only<2>{
 	\vspace*{-15pt}
-	\cen{\Large{\textbf{RG Equations}}
-		\begin{equation*}\begin{aligned}\Delta U_n &= \left(U + \frac{1}{2}J\right)\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J)(\omega - \epsilon_q)}\\[5pt]
-			\Delta V(q)_n &= -\frac{3}{4}J\sum_{|q|=\Lambda_n} \frac{V(q)}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\\[5pt]
-\Delta J_n &= -\frac{1}{4}J^2\sum_{|q|=\Lambda_n\atop{k<\Lambda_n}} \frac{1}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\end{aligned}\end{equation*}
+	{\Large{\textbf{RG Equations}}
+		\begin{equation*}\begin{aligned}\Delta U &= \left(U + \frac{1}{2}J\right)\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J)(\omega - \epsilon_q)}\\[5pt]
+			\Delta V(q) &= -\frac{3}{4}J\sum_{|q|=\Lambda_n} \frac{V(q)}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\\[5pt]
+\Delta J &= -\frac{1}{4}J^2\sum_{|q|=\Lambda_n\atop{k<\Lambda_n}} \frac{1}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\end{aligned}\end{equation*}
 }
 }
-\only<3-5>{
-	\cen{\Large{\textbf{The case of \(\pmb{J=0}\)}}
-	\vspace*{5pt}
-\begin{equation*}\Delta U_n = U\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U)(\omega - \epsilon_q)}\end{equation*}}
-	\vspace*{10pt}
-\only<3>{\begin{figure}
+\end{frame}
+\begin{frame}{Results (\(\pmb{J=0}\))}
+\vspace*{-10pt}
+\begin{figure}
 \def\svgwidth{\columnwidth}
 \centering
-\scalebox{0.7}{\input{lmflow.pdf_tex}}
+\scalebox{1}{\input{lmflow.pdf_tex}}
 \end{figure}
-}
-
+\only<1>{\vspace*{10pt}\centering \includegraphics[scale=0.2]{fo2lm.png}}
 \begin{tabular}{cl}  
 \begin{tabular}{l}
-	\hspace*{-20pt}\parbox{0.4\linewidth}{
-	\begin{itemize}\uncover<4->{\item \textbf{No separatrix}\footnote{ Rukhsan, Vidhyadhiraja - Scaling analysis of the extended single impurity Anderson model} for the flows to the local moment.} 
-		\uncover<5>{\item Local moment forms at finite \(U\).}
+	\hspace*{-30pt}\parbox{0.33\linewidth}{
+		\vspace*{-10pt}
+	\begin{itemize}\uncover<2->{\item \textbf{No separatrix} for the flows to the local moment} 
+		\vspace*{10pt}
+		\uncover<3>{\item Local moment forms at \textbf{finite \(U\)}.}
 \end{itemize}
     }
          \end{tabular}
-           &  \uncover<5>{ \begin{tabular}{c}
-\includegraphics[scale=0.2]{UvsbareD.png}
+           &  \uncover<3>{ \begin{tabular}{c}
+			   \includegraphics[scale=0.2]{UvsbareD.png}
 	   \end{tabular}}\\
    
 \end{tabular}
+\end{frame}
 
+\begin{frame}{Results (\(\pmb{J>0}\))}
+ 
+\begin{tabular}{cl}  
+\begin{tabular}{l}
+\hspace*{-20pt}\parbox{0.5\linewidth}{
+\begin{itemize}
+\vspace*{-20pt}
+\item J now drives the flow towards strong-coupling fixed point.
+\vspace*{10pt}
+\item This is in contrast to the NRG flow diagram where \(\Delta \sim \frac{V^2}{U}\) was the driver of the flow.
+\end{itemize}
 }
+\end{tabular}
+& \begin{tabular}{c}
+\only<1>{    
+\centering \includegraphics[scale=0.5]{schematic.png}
+}
+\only<2>{%
+\includegraphics[width=0.35\textwidth]{lm2sc.png}\\
+\hspace*{5pt}\includegraphics[width=0.35\textwidth]{fo2sc.png}
+}
+\end{tabular}
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Conclusions}
+\begin{itemize} 
+	\item Our analysis suggests that indeed there cannot be any renormalization in \(U\) unless at least one of \(J\) and \(\Delta\) are nonzero.
+		\vspace{10pt}
+	\item We also find that the main interaction that drives the flow to the strong-coupling regime is the spin-spin interaction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What's Next?}
+We have barely scratched the surface of the problem.
+\vspace{10pt}
+\begin{itemize} 
+\item Asymmetric model and valence fluctuations
+	\vspace{10pt}
+\item effective Hamiltonians and wavefunctions.
+	\vspace{10pt}
+\item entanglement measures and dynamic quantities like susceptibility
+	\vspace{10pt}
+\item use as impurity solver in DMFT
+	\vspace{10pt}
+\item extensions to the Kondo and Anderson lattices, and hence to the problem of heavy Fermions
+\end{itemize}
+\end{frame}
+\begin{frame}
+	\LARGE \centering Thank You!
 \end{frame}
 \end{document}
