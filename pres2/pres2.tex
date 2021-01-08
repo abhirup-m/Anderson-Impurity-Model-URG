@@ -70,7 +70,7 @@
 \end{figure}
 }
 \only<+>{
-	\vspace*{-20pt}
+	\vspace*{-10pt}
 \cen{\Large\textbf{Poor Man's Scaling Results}}
 \begin{tabular}{cl}  
 \begin{tabular}{l}
@@ -91,7 +91,7 @@
 \end{tabular}
 }
 \only<+>{
-	\vspace*{-20pt}
+	\vspace*{-15pt}
 \cen{\Large\textbf{NRG Results - Symmetric Model}}
 \begin{tabular}{cl}  
 \begin{tabular}{l}
@@ -108,7 +108,7 @@
     }
          \end{tabular}
            &   \begin{tabular}{c}
-\includegraphics[scale=0.35]{nrg.png}
+\includegraphics[scale=0.32]{nrg.png}
            \end{tabular}\\
    
 \end{tabular}
@@ -216,12 +216,24 @@ Two more fixed points exist -
 \begin{frame}{Results}
 \only<1>{
 \large{\[\mathcal{H} = \overbrace{\sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}}^{SIAM} + \underbrace{J \vec{S_d}\cdot \sum_{kq\alpha\beta}\vec{\sigma}_{\alpha,\beta}c^\dagger_{k\alpha}c_{q\beta}}_\text{spin-spin interaction}\]}}
+\only<2-3>{\Large{\textbf{RG Equations}}
 \only<2>{
 	\vspace*{-15pt}
-	{\Large{\textbf{RG Equations}}
 		\begin{equation*}\begin{aligned}\Delta U &= \left(U + \frac{1}{2}J\right)\sum_{|q|=\Lambda_n} \frac{|V(q)|^2}{(\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J)(\omega - \epsilon_q)}\\[5pt]
 			\Delta V(q) &= -\frac{3}{4}J\sum_{|q|=\Lambda_n} \frac{V(q)}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\\[5pt]
 \Delta J &= -\frac{1}{4}J^2\sum_{|q|=\Lambda_n\atop{k<\Lambda_n}} \frac{1}{\omega - \epsilon_q - \frac{1}{2}U - \frac{1}{4}J}\end{aligned}\end{equation*}
+}
+\only<3>{
+	\vspace*{25pt}
+\begin{itemize}
+	\item Particle-hole symmetric
+	\vspace*{10pt}
+	\item Hermitian
+	\vspace*{10pt}
+	\item \(SU(2)\)-symmetric
+	\vspace*{10pt}
+	\item Reduce to Poor Man's scaling and Kondo 1-loop forms
+\end{itemize}
 }
 }
 \end{frame}
@@ -277,9 +289,11 @@ Two more fixed points exist -
 
 \begin{frame}{Conclusions}
 \begin{itemize} 
-	\item Our analysis suggests that indeed there cannot be any renormalization in \(U\) unless at least one of \(J\) and \(\Delta\) are nonzero.
+	\item No renormalization in \(U\) unless \(J\) or \(\Delta\) is nonzero.
 		\vspace{10pt}
-	\item We also find that the main interaction that drives the flow to the strong-coupling regime is the spin-spin interaction.
+	\item The spin-spin interaction is the main interaction
+		\vspace{10pt}
+	\item U remains non-zero at strong-coupling
 \end{itemize}
 \end{frame}
 

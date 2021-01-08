@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  8 JAN 2021 01:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.12.28)  8 JAN 2021 09:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1070,13 +1070,8 @@ Overfull \hbox (12.29048pt too wide) in paragraph at lines 127--127
 File: nrg.png Graphic file (type png)
 <use nrg.png>
 Package pdftex.def Info: nrg.png  used on input line 127.
-(pdftex.def)             Requested size: 170.969pt x 162.74054pt.
-
-Overfull \hbox (12.68657pt too wide) in paragraph at lines 127--127
-[] 
- []
-
-[5
+(pdftex.def)             Requested size: 156.31535pt x 148.79216pt.
+ [5
 
  <./nrg.png>] [6
 
@@ -1320,57 +1315,59 @@ pdfTeX warning: pdflatex (file ./repeat.pdf): PDF inclusion: multiple pdfs with 
 
 ]
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <12> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 227.
+(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 227.
+(Font)              scaled to size 12.0pt on input line 239.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 227.
+(Font)              <12> on input line 239.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <12> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 227.
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 239.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
-(Font)              scaled to size 12.0pt on input line 227.
+(Font)              scaled to size 12.0pt on input line 239.
  [19
 
 ]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 227.
+(amsmath)                 on input line 239.
 
 [20
 
+] [21
+
 ] (./lmflow.pdf_tex
-<lmflow.pdf, id=191, page=1, 422.00035pt x 34.86314pt>
+<lmflow.pdf, id=196, page=1, 422.00035pt x 34.86314pt>
 File: lmflow.pdf Graphic file (type pdf)
 <use lmflow.pdf, page 1>
 Package pdftex.def Info: lmflow.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 412.56497pt x 34.08583pt.
-<lmflow.pdf, id=192, page=2, 422.00035pt x 34.86314pt>
+<lmflow.pdf, id=197, page=2, 422.00035pt x 34.86314pt>
 File: lmflow.pdf Graphic file (type pdf)
 <use lmflow.pdf, page 2>
 Package pdftex.def Info: lmflow.pdf , page2 used on input line 61.
 (pdftex.def)             Requested size: 412.56497pt x 34.08583pt.
 )
-<fo2lm.png, id=193, 1387.584pt x 746.5491pt>
+<fo2lm.png, id=198, 1387.584pt x 746.5491pt>
 File: fo2lm.png Graphic file (type png)
 <use fo2lm.png>
-Package pdftex.def Info: fo2lm.png  used on input line 251.
+Package pdftex.def Info: fo2lm.png  used on input line 263.
 (pdftex.def)             Requested size: 277.51189pt x 149.30717pt.
-<UvsbareD.png, id=194, 1387.584pt x 746.5491pt>
+<UvsbareD.png, id=199, 1387.584pt x 746.5491pt>
 File: UvsbareD.png Graphic file (type png)
 <use UvsbareD.png>
-Package pdftex.def Info: UvsbareD.png  used on input line 251.
+Package pdftex.def Info: UvsbareD.png  used on input line 263.
 (pdftex.def)             Requested size: 277.51189pt x 149.30717pt.
 
-Overfull \hbox (21.99591pt too wide) in paragraph at lines 251--251
+Overfull \hbox (21.99591pt too wide) in paragraph at lines 263--263
  [] 
  []
 
 
-Overfull \vbox (140.39241pt too high) detected at line 251
+Overfull \vbox (140.39241pt too high) detected at line 263
  []
 
-[21
+[22
 
  <./lmflow.pdf> <./lmflow.pdf
 
@@ -1387,14 +1384,14 @@ Package pdftex.def Info: lmflow.pdf , page2 used on input line 61.
 )
 File: UvsbareD.png Graphic file (type png)
 <use UvsbareD.png>
-Package pdftex.def Info: UvsbareD.png  used on input line 251.
+Package pdftex.def Info: UvsbareD.png  used on input line 263.
 (pdftex.def)             Requested size: 277.51189pt x 149.30717pt.
 
-Overfull \hbox (21.99591pt too wide) in paragraph at lines 251--251
+Overfull \hbox (21.99591pt too wide) in paragraph at lines 263--263
 []  
  []
 
-[22
+[23
 
 ] (./lmflow.pdf_tex
 File: lmflow.pdf Graphic file (type pdf)
@@ -1408,51 +1405,51 @@ Package pdftex.def Info: lmflow.pdf , page2 used on input line 61.
 )
 File: UvsbareD.png Graphic file (type png)
 <use UvsbareD.png>
-Package pdftex.def Info: UvsbareD.png  used on input line 251.
+Package pdftex.def Info: UvsbareD.png  used on input line 263.
 (pdftex.def)             Requested size: 277.51189pt x 149.30717pt.
 
-Overfull \hbox (21.99591pt too wide) in paragraph at lines 251--251
+Overfull \hbox (21.99591pt too wide) in paragraph at lines 263--263
 []  
- []
-
-[23
-
-]
-<schematic.png, id=214, 351.48181pt x 303.01157pt>
-File: schematic.png Graphic file (type png)
-<use schematic.png>
-Package pdftex.def Info: schematic.png  used on input line 276.
-(pdftex.def)             Requested size: 175.74046pt x 151.5054pt.
-
-Overfull \hbox (6.16328pt too wide) in paragraph at lines 276--276
-[][]  
  []
 
 [24
 
+]
+<schematic.png, id=219, 351.48181pt x 303.01157pt>
+File: schematic.png Graphic file (type png)
+<use schematic.png>
+Package pdftex.def Info: schematic.png  used on input line 288.
+(pdftex.def)             Requested size: 175.74046pt x 151.5054pt.
+
+Overfull \hbox (6.16328pt too wide) in paragraph at lines 288--288
+[][]  
+ []
+
+[25
+
  <./schematic.png>]
-<lm2sc.png, id=221, 740.0448pt x 504.4446pt>
+<lm2sc.png, id=227, 740.0448pt x 504.4446pt>
 File: lm2sc.png Graphic file (type png)
 <use lm2sc.png>
-Package pdftex.def Info: lm2sc.png  used on input line 276.
+Package pdftex.def Info: lm2sc.png  used on input line 288.
 (pdftex.def)             Requested size: 144.40025pt x 98.42403pt.
-<fo2sc.png, id=222, 740.0448pt x 504.4446pt>
+<fo2sc.png, id=228, 740.0448pt x 504.4446pt>
 File: fo2sc.png Graphic file (type png)
 <use fo2sc.png>
-Package pdftex.def Info: fo2sc.png  used on input line 276.
+Package pdftex.def Info: fo2sc.png  used on input line 288.
 (pdftex.def)             Requested size: 144.40025pt x 98.42403pt.
- [25
+ [26
 
- <./lm2sc.png> <./fo2sc.png>] [26
+ <./lm2sc.png> <./fo2sc.png>] [27
 
-] [27
+] [28
 
 ]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <17.28> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 303.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 317.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 17.28pt on input line 303.
- [28
+(Font)              scaled to size 17.28pt on input line 317.
+ [29
 
 ]
 \tf@nav=\write5
@@ -1460,18 +1457,18 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
 \tf@snm=\write7
  (./pres2.aux) ) 
 Here is how much of TeX's memory you used:
- 22858 strings out of 479383
- 450540 string characters out of 5875829
- 743428 words of memory out of 5000000
+ 22860 strings out of 479383
+ 450559 string characters out of 5875829
+ 743429 words of memory out of 5000000
  39289 multiletter control sequences out of 15000+600000
  856976 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,23n,126p,428b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_337jzs.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc}</usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/share/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on pres2.pdf (28 pages, 535938 bytes).
+Output written on pres2.pdf (29 pages, 536761 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

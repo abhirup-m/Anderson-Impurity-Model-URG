@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="125.19592mm"
-   height="110.66064mm"
-   viewBox="0 0 125.19592 110.66063"
+   width="253.62532mm"
+   height="96.123421mm"
+   viewBox="0 0 253.62532 96.123413"
    version="1.1"
    id="svg8"
    sodipodi:docname="pres.svg"
@@ -3401,9 +3401,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.7234522"
-     inkscape:cx="150.16421"
-     inkscape:cy="250.04663"
+     inkscape:zoom="0.70923818"
+     inkscape:cx="619.74373"
+     inkscape:cy="428.40482"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -3426,7 +3426,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-768.93291,-199.84573)">
+     transform="translate(-587.20455,-79.819577)">
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:14.1111px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';stroke-width:0.264583"
@@ -5475,7 +5475,7 @@
          id="tspan24677"
          x="696.20801"
          y="113.09129"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">rotation</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">\Large rotation</tspan><tspan
          sodipodi:role="line"
          x="696.20801"
          y="121.91074"
@@ -5491,7 +5491,7 @@
          id="tspan24919"
          x="699.29413"
          y="132.5731"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">$U\mathcal{H}U^\dagger$</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">\Large $U\mathcal{H}U^\dagger$</tspan></text>
     <g
        id="g24899-9"
        transform="translate(199.75192,1.7934419)">
@@ -6765,71 +6765,99 @@
     <path
        style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 780.3549,307.92788 c 0,-104.00638 0,-104.10931 0,-104.10931"
-       id="path5235" />
+       id="path5235"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.748636;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 780.3549,307.92788 c 113.66143,0 113.77392,0 113.77392,0"
-       id="path5235-2" />
+       id="path5235-2"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <circle
        style="fill:#00000f;stroke:#000000;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
        id="path7177"
        cx="780.35492"
        cy="307.92789"
-       r="2.1284795" />
+       r="2.1284795"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <circle
        style="fill:#000096;fill-opacity:1;stroke:#000003;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="path7177-9"
        cx="780.35492"
        cy="228.55295"
-       r="2.1284795" />
+       r="2.1284795"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <circle
        style="fill:#000096;fill-opacity:1;stroke:#000003;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="path7177-9-3"
        cx="868.16809"
        cy="262.26675"
-       r="2.1284795" />
+       r="2.1284795"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7237)"
        d="m 780.3549,280.68343 c 0,-4.50557 0,-4.50557 0,-4.50557"
-       id="path7233" />
+       id="path7233"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.600001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7237-1)"
        d="m 780.3549,203.81857 c 0,4.50557 0,4.50557 0,4.50557"
-       id="path7233-4" />
+       id="path7233-4"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 780.35492,307.92789 87.81317,-45.66113"
        id="path8916"
        inkscape:path-effect="#path-effect8918"
-       inkscape:original-d="m 780.35492,307.92789 c 29.27132,-15.22012 58.54238,-30.44049 87.81317,-45.66113" />
+       inkscape:original-d="m 780.35492,307.92789 c 29.27132,-15.22012 58.54238,-30.44049 87.81317,-45.66113"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 780.35492,228.55295 87.81317,33.71381"
        id="path8920"
        inkscape:path-effect="#path-effect8922"
-       inkscape:original-d="m 780.35492,228.55295 c 29.27132,11.2382 58.54238,22.47614 87.81317,33.71381" />
+       inkscape:original-d="m 780.35492,228.55295 c 29.27132,11.2382 58.54238,22.47614 87.81317,33.71381"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 780.35492,307.92789 c 0.68705,-6.4497 1.9605,-12.83682 3.79951,-19.05684 1.44977,-4.90351 3.3434,-9.85476 6.8968,-13.53166 2.47215,-2.55807 5.63216,-4.36601 8.93027,-5.69932 4.60461,-1.86149 9.51083,-2.84795 14.40636,-3.68545 17.71392,-3.0304 35.73941,-4.23635 53.69914,-3.59263"
        id="path8924"
        inkscape:path-effect="#path-effect8926"
-       inkscape:original-d="m 780.35492,307.92789 c 1.20145,-6.43288 2.53327,-12.7043 3.79951,-19.05684 1.26623,-6.35255 4.59813,-9.02084 6.8968,-13.53166 2.29866,-4.51082 5.95377,-3.79928 8.93027,-5.69932 2.97649,-1.90003 9.6045,-2.4567 14.40636,-3.68545 4.80186,-1.22874 35.79969,-2.39482 53.69914,-3.59263" />
+       inkscape:original-d="m 780.35492,307.92789 c 1.20145,-6.43288 2.53327,-12.7043 3.79951,-19.05684 1.26623,-6.35255 4.59813,-9.02084 6.8968,-13.53166 2.29866,-4.51082 5.95377,-3.79928 8.93027,-5.69932 2.97649,-1.90003 9.6045,-2.4567 14.40636,-3.68545 4.80186,-1.22874 35.79969,-2.39482 53.69914,-3.59263"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.600001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7237-7)"
        d="m 819.74484,286.88583 c 4.01348,-2.04747 4.01348,-2.04747 4.01348,-2.04747"
-       id="path7233-45" />
+       id="path7233-45"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.600001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7237-7-0)"
        d="m 815.34397,242.04141 c 4.22004,1.57843 4.22004,1.57843 4.22004,1.57843"
-       id="path7233-45-6" />
+       id="path7233-45-6"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.600001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7237-7-0-1)"
        d="m 810.11418,266.75814 c 4.28318,-1.39806 4.28318,-1.39806 4.28318,-1.39806"
-       id="path7233-45-6-6" />
+       id="path7233-45-6-6"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64" />
     <g
        inkscape:label=""
        transform="matrix(0.99555556,0,0,0.99555556,678.26514,130.76233)"
-       id="g12477">
+       id="g12477"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g1078">
         <g
@@ -6848,7 +6876,9 @@
     <g
        inkscape:label=""
        transform="matrix(0.99555556,0,0,0.99555556,793.22571,224.49631)"
-       id="g13805">
+       id="g13805"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g1611">
         <g
@@ -6867,7 +6897,9 @@
     <g
        inkscape:label=""
        transform="matrix(1.0275229,0,0,1.0275229,689.83837,141.99266)"
-       id="g15145">
+       id="g15145"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g8218">
         <g
@@ -6893,7 +6925,9 @@
     <g
        inkscape:label=""
        transform="matrix(0.96551724,0,0,0.96551724,783.66833,184.73645)"
-       id="g16501">
+       id="g16501"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g5853">
         <g
@@ -6919,7 +6953,9 @@
     <g
        inkscape:label=""
        transform="matrix(0.96551724,0,0,0.96551724,694.84413,223.74889)"
-       id="g17868">
+       id="g17868"
+       inkscape:export-xdpi="248.64"
+       inkscape:export-ydpi="248.64">
       <g
          id="g2270">
         <g
@@ -6946,6 +6982,28 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.52778px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';stroke-width:0.264583"
+       x="608.94775"
+       y="175.17593"
+       id="text20640"><tspan
+         sodipodi:role="line"
+         id="tspan20638"
+         x="608.94775"
+         y="175.17593"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">\Large $[\mathcal{H},\hat n]\neq 0$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.52778px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';stroke-width:0.264583"
+       x="769.4151"
+       y="174.12155"
+       id="text20640-1"><tspan
+         sodipodi:role="line"
+         id="tspan20638-5"
+         x="769.4151"
+         y="174.12155"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.264583">\Large $[\mathcal{H},\hat n] = 0$</tspan></text>
   </g>
   <script
      id="mesh_polyfill"
