@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 font = {'family' : 'normal',
         'weight' : 'bold',
-        'size'   : 25}
+        'size'   : 27}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -96,11 +96,13 @@ def all_flow():
     b = 0.9999
     colors = ['r','b','y','g']
     ci=0
-    for D0 in [1,10,100,650,1000]:
+    x = []
+    y = []
+    for D0 in [1,10,100,1000]:
         for J0 in [0]:
             D = D0
-            U = 0.5
-            V = 1
+            U = 1
+            V = 2
             J = 0
             sign1 = D - J/4
             sign2 = D - U/2 - J/2
@@ -108,9 +110,7 @@ def all_flow():
             sign5 = U + J/2
             flag = False
             count = 0
-            x = [J]
-            y = [U]
-            print (J, U)
+            print (V, U)
             while D > 0:
             #    print (D-J/4,D - U/2 - J/2,D - 3*J/4)
             #    print (U)
@@ -138,17 +138,20 @@ def all_flow():
                 J += deltaJ
                 V += deltaV
                 D *= b
-                x.append(J)
-                y.append(U)
+            #    x.append(U)
+            #    y.append(V)
                 count += 1
-            print (U)
-            plt.plot(np.log10(D0),U,marker='o')
+            print (V,U)
+            x.append(D0)
+            y.append(U)
+            #plt.plot(x,y,marker='o')
             if U < 0:
                 print (U)
             ci += 1
-    plt.xlabel(r'$\log_{10}(D)$')
+    plt.plot(np.log10(x),y,marker='o')
+    plt.xlabel(r'$\log_{10}D$')
     plt.ylabel(r'$U^*$')
-    plt.title(r'Variation of $U^*$ with bandwidth ($V=1$)')
+    plt.title(r'Dependence of $U^*$ on $D$($V=0.1$)')
     plt.show()
 
 def func():
