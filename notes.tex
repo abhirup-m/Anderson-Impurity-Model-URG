@@ -3053,7 +3053,8 @@ This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 
-\section{URG Formalism}\label{section2}
+\section{URG Method}\label{section2}
+\subsection{Formalism}
 This section is adapted from ref.\cite{holography1}.
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spinless Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
 \pb To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
@@ -3420,8 +3421,8 @@ Then,
  \qq{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q} = 2\tau_q \cc{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q}
 \eeq
 The final form of the rotated Hamiltonian is
-\beq
-\wl \ham = U_q \ham U_q^\dagger = \hf\text{Tr}\qq{\ham}+  2\tau_q\text{Tr}\qq{\ham\tau_q} + 2\tau_q \cc{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q}
+\beq[final]
+\wl \ham = U_q \ham U_q^\dagger =  \text{Tr}\qq{\ham\hat n_q}\hat n_q + \text{Tr}\qq{\ham(1- \hat n_q)}(1-\hat n_q) + 2\tau_q \cc{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q}
 \eeq
 To check that this indeed commutes with \il{\hat n_q},
 \beq
@@ -3450,6 +3451,32 @@ In either case, we see that the eigenvalue of \(\hat \omega\) matches the eigenv
 &= \rr{\omega_e - H_e}\ket{1,\Psi_1}\\
 \eeq
 If \(\omega_e = H_e\), we will have \(c^\dagger T = 0\). This implies \(T^\dagger c = 0\) and hence \(\ham^I = 0\).
+\subsection{Prescription}
+Given a Hamiltonian
+\beq
+\ham = \ham_1 + \ham_0 + c^\dagger T + T^\dagger c
+\eeq
+the goal is to look at the renormalization of the various couplings in the Hamiltonian as we decouple high energy electron states. Typically we have a shell of electrons at some energy \(D\). During the process, we make one simplification. We assume that there is only one electron on that shell at a time, say with quantum numbers \(q,\sigma\), and calculate the renormalization of the various couplings due to this electron. We then sum the momentum \(q\) over the shell and the spin \(\beta\), and this gives the total renormalization due to decoupling the entire shell. 
+\pb From eq.~\ref{final}, the first two terms in the rotated Hamiltonian are just the diagonal parts of the bare Hamiltonian; they are unchanged in that part. The renormalization comes from the third term. For one electron \(q\beta\) on the shell, the renormalization is
+\beq
+\Delta \ham_{q\beta} = 2\tau_{q\beta} \cc{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\eeq
+Decoupling the entire shell gives
+\beq
+\Delta \ham = \sum_{q\beta}2\tau_{q\beta} \cc{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\eeq
+One can look at the particle and hole sectors separately. The particle sector involves those processes which create a particle with high energy in the intermediate state. The hole sector consists of those processes that destroy a deep-lying electron in the intermediate state. It is clear that the first term of the anticommutator, one that starts with \(c^\dagger\) and ends with \(\eta\) will destroy an electron in the intermediate state. That gives the hole sector contribution:
+\beq
+\Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
+	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - H_h}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
+\eeq
+where we have replaced \(\hat \omega\) by its eigenvalue \(\omega\) and \(H_h = \text{Tr}\rr{\ham \rr{1- \hat n_{q\beta}}}\) and we used \(2\tau c^\dagger = c^\dagger\).  The other term in the commutator gives the particle sector contribution:
+\beq
+\Delta^+ \ham &= -\sum_{q\beta} \eta_{q\beta}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+	      &= -\sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - H_e}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+\eeq
+where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\beta}}\).
+These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 %\comm{
 \section{Kondo Model URG}\label{section3}
 \subsection{Calculation of renormalized Hamiltonian}
@@ -4981,9 +5008,20 @@ We can then write
 \Delta V_P &= \rr{\fr{\hat n_{d\ol\beta}}{\xi + E_0^a - \epsilon_q - \epsilon_d } + \fr{1 - \hat n_{d\ol\beta}}{\xi + E_0^b - \epsilon_q }}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
 &= \rr{\fr{\hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
 \eeq
-The quantity \(\xi\) now represents the energy of the many-body eigenstate above the non-interacting state. We typically take that to be very small and ignore it w.r.t the bandwidth \(\epsilon_q\).
+The quantity \(\xi\) now represents the energy of the many-body eigenstate above the non-interacting state. We typically take that to be very small and ignore it w.r.t the bandwidth \(\epsilon_q\). This gives the ground state of the total Hamiltonian.
+\beq
+\Delta V_P = -\rr{\fr{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U} + \fr{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+\eeq
 \pb The URG calculation proceeds similarly with the \(\omega\) replacing the \(E\).
-\newpage
+\beq
+\Delta V_U = \rr{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q + \epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q + \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+\eeq
+Setting \(\omega=0\) gives us the lowest energy scale renormalization and reproduces the PMS result, while tuning the value of \(\omega\) allows us to access high energy states as well. The \(\eta\) in URG can be written for PMS as well:
+\beq
+\eta_{p} = \fr{1}{E - \hat \ham_0}V, \eta_p^\dagger = \fr{1}{E - \hat \ham_0}V^\dagger
+\eeq
+Here \(V\) destroys a high energy electron and \(V^\dagger\) creates one.
+
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
