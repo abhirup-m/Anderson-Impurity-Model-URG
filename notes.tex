@@ -58,7 +58,7 @@ Later calculations with Bethe ansatz in 1980 by Andrei and Weigman \cite{Andrei}
 		NRG does give us some Hamiltonians, but those are valid very close to the fixed points. The harder challenge is to get Hamiltonians for all energy scales, possibly in the form of some running couplings. That would also show us exactly how the wavefunctions morph as we reduce the bandwidth. \(T_K\) is the temperature at which the crossover occurs, so that is the most interesting regime.
 	\item \textit{What is the nature of the strong-coupling fixed point for a \textbf{finite system} (\(J \neq \infty\))? Will the results change if we introduce a \textbf{non-uniform density of states}?}
 		NRG and Bethe ansatz work very well for continuum systems where the bandwidth is essentially infinite. As a result, they get an infinite \(J\) strong-coupling fixed point. For a finite lattice, things are different. It would be interesting to know how the finite \(J\) fixed point looks like and whether the conclusions of NRG break down.
-	\item \textit{Can we get \textbf{better estimates of thermodunalical quantities} in the crossover region?}
+	\item \textit{Can we get \textbf{better estimates of thermodynamic quantities} in the crossover region?}
 		Calculation of thermodynamic quantities like magnetic susceptibility and specific heat require not just the ground state but the excited states as well. Since NRG projects out most of the states above the ground state, it is difficult to get very accurate estimates of such quantities far away from the fixed point. Bethe ansatz calculations also typically  employ approximations like \(T>>T_K\). Moreover, Bethe ansatz equations have to be solved numerically so they lack the transparency of analytical solutions.
 	\item \textit{Is it possible to show the \textbf{transfer of spectral weight} along the flow, possibly by tracking the bath spectral function or the many-particle entanglement?}
 	Such an exercise will requite the entire spectrum to be preserved along the flow. NRG, being projective will not work here. If the entire spectrum is available, computing the many-particle entanglement of the spectral function along the flow should indicate how the spectral weight is being distributed between the impurity and the conduction bath.
@@ -2557,7 +2557,7 @@ During the renormalization, \il{D} will keep on decreasing and \il{\epsilon_d} w
 At some value of \il{D}, they will become equal and the impurity level will go outside the Fermi surface.
 At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff.
 Hence the renormalization stops at this point.
-\begin{figure} \includegraphics[scale=0.29]{full.png}\caption{Renormalization in the energy levels when \il{\epsilon_d^* \gg \Delta}}\end{figure}
+\begin{figure} \centering \includegraphics[scale=0.29]{full.png}\caption{Renormalization in the energy levels when \il{\epsilon_d^* \gg \Delta}}\end{figure}
 This point is given by \il{\ol D = a\epsilon_d(\ol D) \equiv \ol \epsilon_d} where \il{a} is a constant of order unity.
 It satisfies the equation
 \beq[eraser]
@@ -2726,7 +2726,7 @@ If \il{\epsilon_d > 0}, then the impurity level is far above the Fermi level and
 Similarly, if \il{\epsilon_d < 0}, then the impurity level is far below the Fermi level and the average occupation will be close to 1.
 The regime of mixed valence is one in which these two contributions are comparable.
 \\\\
-\begin{figure} \includegraphics[scale=0.29]{mixed.png}\caption{Renormalization in energy levels when \il{|\epsilon_d^*| \lesssim \Delta}} \end{figure}
+\begin{figure} \centering \includegraphics[scale=0.29]{mixed.png}\caption{Renormalization in energy levels when \il{|\epsilon_d^*| \lesssim \Delta}} \end{figure}
 Since we have \il{|\epsilon_d^*| \lesssim \Delta}, as we renormalize, the decreasing cutoff will first match \il{\Delta} or \il{k_B T}, whichever is greater.
 From eq.~\ref{mirai2}, we know that if \il{D} comes close to \il{\Delta}, our analysis will break down because we can no longer ignore that term.
 Since that term represents the broadening of the impurity level, this same broadening can also be brought about by the thermal fluctuations which are of the scale \il{k_B T}.
@@ -2792,7 +2792,7 @@ To go to lower temperatures, we can do a Poor Man's scaling which suggests that 
 \end{minipage}
 \end{center}
 \begin{figure}
-	\includegraphics[scale=0.29]{empty.png}\caption{Renormalization in energy levels when \il{\epsilon_d^* \ll -\Delta}}
+	\centering \includegraphics[scale=0.29]{empty.png}\caption{Renormalization in energy levels when \il{\epsilon_d^* \ll -\Delta}}
 \end{figure}
 
 \subsubsection*{Jefferson's calculation}
@@ -3058,7 +3058,7 @@ With these assumptions, we get the scaling equations similar to the ones obtaine
 \section{URG Method}\label{section2}
 \subsection{Formalism}
 This section is adapted from ref.\cite{holography1}.
-We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spinless Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
+We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
 \pb To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
 \pb \(U_q\) is defined by
 \beq
@@ -4406,7 +4406,7 @@ There is a more straightforward way of getting these expressions. Some thought r
 	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\hat \omega - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} - \epsilon_q}\hat n_{q\beta}}\\
 	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega\tau_{q\beta} - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q}\tau_{q\beta}}\\
 \eeq
-At the last step, \textbf{\textcolor{red}{I replaced \il{\pmb{\hat \omega - \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma}\hat n_{q\beta} - \hf\rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q} }} with \il{\pmb{\omega\tau_{q\beta}}}}}.
+At the last step, I replaced \(\hat \omega - \sum_{k<\Lambda_N,\sigma}\epsilon_k \hat n_{k\sigma}\hat n_{q\beta} - \hf\rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \epsilon_q}\) with \(\omega\tau_{q\beta}\).
 Note that since this term has a \il{c^\dagger_{d\beta}}, it will not vanish only when acting on a state with \il{\hat n_{d\beta} = 0}.
 Hence we can drop the terms \il{\hat n_{d\ua}\hat n_{d\da}} and \il{\epsilon_{d\beta}\hat n_{d\beta}} in the denominator.
 Also, since it has a \il{c_{q\beta}}, we can set the \il{\tau_{q\beta}} in the denominator to \hf.
@@ -4434,7 +4434,7 @@ The total thing becomes
 \sum_{q\beta}|V_q|^2\qq{\hat n_{d\beta}\rr{\hat n_{q\beta} - 1}+ \hat n_{q\beta}\rr{1-\hat n_{d\beta}}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }}\\
 							     =\sum_{q\beta}|V_q|^2\qq{\hat n_{q\beta}-\hat n_{d\beta}}\qq{\hat n_{d\ol\beta}\fr{\epsilon_d}{\rr{\omega - \epsilon_q - \epsilon_{d}}\rr{\omega - \epsilon_q }} + \fr{1}{\omega - \epsilon_q }} 
 \eeq
-\textbf{\textcolor{red}{Putting \il{\hat n_{q\beta} = 1}}}, and dropping the non-operator terms, we get
+Putting \il{\hat n_{q\beta} = 1}, and dropping the non-operator terms, we get
 \beq[term2]
 \sum_{\beta}\hat n_{d\beta}\sum_q |V_q|^2\fr{\epsilon_q - \omega + 2\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega - \epsilon_q - \epsilon_{d}}} -  \hat n_{d\ua}\hat n_{d\da}\sum_{q\beta}|V_q|^2\fr{\epsilon_{d}}{\rr{\omega - \epsilon_q}\rr{\omega -\epsilon_q - \epsilon_{d}}}
 \eeq
@@ -4454,7 +4454,7 @@ According  to Hewson eq.~3.62 (page 68),
 \eeq
 in the limit of \il{U + \epsilon_d \gg D} and \il{|\epsilon_d|\ll D}, under the assumptions that \il{V_k} is independent of \il{k} and the conduction band is flat (\il{\rho(\epsilon) = \rho_0} for \il{\epsilon \in \qq{-D,D}}).
 \pb
-\textbf{\textcolor{red}{Assuming that we integrate out a ring at energy \il{D} and of thickness \il{-|\delta D|}, such that \il{\epsilon_q = D} everywhere on the ring}}, the number of available states is 
+Assuming that we integrate out a ring at energy \il{D} and of thickness \il{-|\delta D|}, such that \il{\epsilon_q = D} everywhere on the ring, the number of available states is 
 \beq
 \delta n = \dv{n}{E} \times \delta E = \rho(D)\times |\delta D| 
 \eeq
@@ -4465,7 +4465,7 @@ We can then replace the summation in eq.~\ref{impren} by \il{\delta n}:
 where \il{\rho(D)} is the number of single-spin states on the shell D.
 This can be compared to eq.~\ref{hewson}.
 In two dimensions, the energy density of states is independent of energy.
-\textbf{\textcolor{red}{Setting \il{\pmb{\omega = 0}}}}, we get 
+Setting \il{\omega = 0}, we get 
 \beq
 \delta\epsilon_{d}(D) &=|V|^2\rho(D)|\delta D|\fr{D + 2\epsilon_{d}}{D\rr{D + \epsilon_{d}}}\\
 		      &= |V|^2\rho(D)\fr{|\delta D|}{D}\fr{D + 2\epsilon_{d}}{D + \epsilon_{d}}\\
@@ -4496,8 +4496,7 @@ Similarly, the renormalization in \il{U} is
 		       &= 2|V|^2n(D) \rr{\fr{1}{\omega - D - \epsilon_{d}} - \fr{1}{\omega - D}}
 \eeq
 In the penultimate step, I used the fact that since the onsite energy for either spin is same, the summation just returns a factor of 2.
-\pb
-\textcolor{red}{Putting \il{\omega = 0},}
+Putting \il{\omega = 0},
 \beq
 \dv{\epsilon_d}{\ln D} &= |V|^2n(D) \rr{\fr{1}{D + \epsilon_d} - \fr{2}{D}} \\
 \dv{U}{\ln D}	       &= 2|V|^2n(D) \rr{\fr{1}{D} - \fr{1}{D + \epsilon_d}}

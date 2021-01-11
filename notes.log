@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  12 JAN 2021 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  12 JAN 2021 00:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -874,4 +874,285 @@ Package pdftex.def Info: figures//anderson.png  used on input line 2390.
 <figures//anderson2.png, id=1078, 636.49843pt x 801.06506pt>
 File: figures//anderson2.png Graphic file (type png)
 <use figures//anderson2.png>
-Package pdftex.def Info: figures//anderson2.png  used on input lin
+Package pdftex.def Info: figures//anderson2.png  used on input line 2392.
+(pdftex.def)             Requested size: 178.21834pt x 224.29669pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2379--2410
+
+ []
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 2411--2416
+
+ []
+
+[68 <./figures//anderson.png> <./figures//anderson2.png>] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 2479--2488
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2521--2533
+
+ []
+
+[71]
+<figures//full.png, id=1141, 1474.13385pt x 696.28807pt>
+File: figures//full.png Graphic file (type png)
+<use figures//full.png>
+Package pdftex.def Info: figures//full.png  used on input line 2560.
+(pdftex.def)             Requested size: 427.48787pt x 201.91837pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2549--2563
+
+ []
+
+[72 <./figures//full.png>] [73]
+Underfull \hbox (badness 10000) in paragraph at lines 2623--2638
+
+ []
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 2655--2665
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2655--2665
+
+ []
+
+[75]
+<figures//mixed.png, id=1197, 1468.61928pt x 632.14482pt>
+File: figures//mixed.png Graphic file (type png)
+<use figures//mixed.png>
+Package pdftex.def Info: figures//mixed.png  used on input line 2729.
+(pdftex.def)             Requested size: 425.88869pt x 183.3173pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2738
+
+ []
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 2746--2755
+
+ []
+
+
+Overfull \hbox (39.8078pt too wide) in paragraph at lines 2765--2766
+[]$[]$ 
+ []
+
+[77 <./figures//mixed.png>]
+Overfull \hbox (0.59467pt too wide) in paragraph at lines 2791--2792
+[]$ 
+ []
+
+<figures//empty.png, id=1220, 1534.21373pt x 701.80266pt>
+File: figures//empty.png Graphic file (type png)
+<use figures//empty.png>
+Package pdftex.def Info: figures//empty.png  used on input line 2795.
+(pdftex.def)             Requested size: 444.91058pt x 203.51756pt.
+[78 <./figures//empty.png>] [79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 2925--2929
+
+ []
+
+[81] [82]
+Underfull \hbox (badness 10000) in paragraph at lines 3005--3010
+
+ []
+
+[83] [84]
+Underfull \hbox (badness 10000) in paragraph at lines 3060--3065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3060--3065
+
+ []
+
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 3080--3086
+
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 3080--3086
+[]$ \T1/cmr/m/n/14.4 is the in-ter-ac-tion be-tween the cur-rent de-
+ []
+
+<ham.png, id=1313, 228.41963pt x 261.79735pt>
+File: ham.png Graphic file (type png)
+<use ham.png>
+Package pdftex.def Info: ham.png  used on input line 3089.
+(pdftex.def)             Requested size: 159.89264pt x 183.25688pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 3090.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 6001) in paragraph at lines 3090--3090
+[]\T1/cmr/m/n/14.4 Figure 4: |[]Decomposition of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3078--3097
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3078--3097
+
+ []
+
+[86 <./ham.png>] [87] [88] [89] [90] [91]
+Overfull \hbox (6.88982pt too wide) detected at line 3414
+[][][]
+ []
+
+[92]
+Underfull \hbox (badness 10000) in paragraph at lines 3460--3464
+
+ []
+
+[93] [94]
+Underfull \hbox (badness 10000) in paragraph at lines 3517--3521
+
+ []
+
+[95]
+Underfull \hbox (badness 10000) in paragraph at lines 3528--3532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3539--3543
+
+ []
+
+[96]
+Underfull \hbox (badness 10000) in paragraph at lines 3565--3569
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3575--3579
+
+ []
+
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 3586--3590
+
+ []
+
+[98] [99] [100] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 4454--4459
+
+ []
+
+[102] [103] [104]
+Overfull \hbox (2.89775pt too wide) detected at line 4536
+[][][]
+ []
+
+
+Overfull \hbox (1.92836pt too wide) detected at line 4546
+[][][]
+ []
+
+[105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116]
+<phsymm.png, id=1736, 640.85205pt x 501.53639pt>
+File: phsymm.png Graphic file (type png)
+<use phsymm.png>
+Package pdftex.def Info: phsymm.png  used on input line 4922.
+(pdftex.def)             Requested size: 224.30157pt x 175.54036pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 4923.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4917--4927
+
+ []
+
+[117 <./phsymm.png>] [118] [119]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4997.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 4997.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 4997.
+
+<lmflow.png, id=1770, 647.23735pt x 94.32831pt>
+File: lmflow.png Graphic file (type png)
+<use lmflow.png>
+Package pdftex.def Info: lmflow.png  used on input line 5022.
+(pdftex.def)             Requested size: 323.61787pt x 47.16403pt.
+<fo2lm.png, id=1771, 1387.584pt x 746.5491pt>
+File: fo2lm.png Graphic file (type png)
+<use fo2lm.png>
+Package pdftex.def Info: fo2lm.png  used on input line 5028.
+(pdftex.def)             Requested size: 416.27841pt x 223.96646pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5016--5032
+
+ []
+
+[120] [121 <./lmflow.png> <./fo2lm.png>]
+<schematic.png, id=1794, 351.48181pt x 303.01157pt>
+File: schematic.png Graphic file (type png)
+<use schematic.png>
+Package pdftex.def Info: schematic.png  used on input line 5058.
+(pdftex.def)             Requested size: 228.46046pt x 196.95517pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 5059.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5044--5063
+
+ []
+
+[122 <./schematic.png>] [123] [124] [125]
+Underfull \hbox (badness 10000) in paragraph at lines 5165--5168
+
+ []
+
+(./notes.bbl) [126] (./notes.aux)
+Package rerunfilecheck Info: File `notes.out' has not changed.
+(rerunfilecheck)             Checksum: C993834B31DEC6057247B4BCC7587251;3218.
+ ) 
+Here is how much of TeX's memory you used:
+ 20327 strings out of 479383
+ 365237 string characters out of 5875830
+ 687328 words of memory out of 5000000
+ 35977 multiletter control sequences out of 15000+600000
+ 422800 words of font info for 74 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 93i,20n,98p,1406b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
+Output written on notes.pdf (126 pages, 1865316 bytes).
+PDF statistics:
+ 2156 PDF objects out of 2487 (max. 8388607)
+ 1949 compressed objects within 20 object streams
+ 1067 named destinations out of 1200 (max. 500000)
+ 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+
