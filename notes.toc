@@ -79,3 +79,4 @@
 \contentsline {subsection}{\numberline {4.7}SU(2) invariance and Kondo model one-loop form}{132}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Connection with Kondo URG result}{133}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Fixed points for the symmetric Anderson model with \(J_z = J_t\)}{133}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Connection between Unitary Renormalization Group and Poor Man's Scaling}{136}{section.5}%

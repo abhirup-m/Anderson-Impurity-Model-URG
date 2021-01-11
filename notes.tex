@@ -80,7 +80,7 @@ The final Hamiltonians obtained at the fixed point are usually tractable and all
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
 \pagebreak
-	\section{Preliminaries}\label{section1}
+\section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as
 \beq
@@ -109,7 +109,7 @@ Eq.~\ref{lse} can also be written as
 \psi = (1- G_0V)^{-1} \phi
 \eeq
 Comparing the last two equations gives
-\beq
+\beq[tmat]
 1 &= (1-G_0 V)(1+G_0 T) \\
 \implies T &= V +VG_0 T
 \eeq
@@ -4848,19 +4848,126 @@ We can now see how the couplings will flow if we start at the local moment fixed
 \Delta J &= \hf J^2 n(D)\fr{1}{D^* - \fr{1}{4}J}>0
 \end{flalign*}
 The \(U\) is irrelevant and will flow down. The \(J\) on the other hand is relevant and will flow to some large value. This fixed point, characterized by a large positive \(J\) is the strong-coupling fixed point.
-\pb A similar flow happens if we start from the free orbital fixed point. There, \(U\) is 0, and the equations look like
+\pb
+\begin{minipage}{250pt}
+	A similar flow happens if we start from the free orbital fixed point. There, \(U\) is 0, and the equations look like
 \begin{flalign*}
 \Delta U &= \hf \fr{|V|^2Jn(D)}{\rr{D - \fr{1}{4}J}\rr{D - \hf J}} > 0\\
 \Delta V &= \fr{3}{4}Jn(D)V\fr{1}{D - \fr{1}{4}J} > 0\\
 \Delta J &= \hf J^2 n(D)\fr{1}{D - \fr{1}{4}J}>0
 \end{flalign*}
 Here both \(U\) and \(J\) are relevant and they flow up to the strong-coupling fixed point. A schematic flow diagram is shown in fig.~\ref{schemesc}.
-\begin{figure}
+\end{minipage}
+\hspace*{30pt}\begin{minipage}{250pt}
 \centering
-\includegraphics[scale=0.7]{schematic.png}
-\caption{Schematic flows from local moment and free orbital to strong-coupling}
+\includegraphics[scale=0.65]{schematic.png}
+\captionof{figure}{Schematic flows from local moment and free orbital to strong-coupling}
 \label{schemesc}
-\end{figure}
+\end{minipage}
+\pagebreak
+\section{Connection between Unitary Renormalization Group and Poor Man's Scaling}
+We first motivate the expansion of PMS method. The problem is defined as
+\beq[problem]
+\rr{\hat\ham_0 + \hat V}\ket{\Psi} = E\ket{\Psi}
+\eeq
+\(\hat\ham_0\) is the diagonal part of the Hamiltonian. Starting from the definition of \(\hat T-\)matrix,
+\beq
+\hat T\ket{\Psi_0} = \hat V\ket{\Psi}
+\eeq
+where \(\ket{\Psi_0}\) is an eigenstate of \(\hat\ham_0\), we can write an equation for the \(\hat T-\)matrix (see eq.~\ref{tmat}):
+\beq[tmat2]
+\hat T = \hat V + \hat V\rr{E - \hat\ham_0}^{-1}\hat T
+\eeq
+Define the non-interacting Green's function
+\beq
+G_0 = \rr{E - \hat\ham_0}^{-1}
+\eeq
+Substituting the expression of \(\hat T\) back into the right hand side gives an infinite sum. PMS typically requires up to \(O(V^2)\):
+\beq
+\hat T &= \hat V + \hat VG_0\qq{\hat V + \hat VG_0\rr{\hat V + \hat VG_0}...}\\
+  &= \hat V + \hat VG_0\hat V + \hat VG_0\hat VG_0\hat V + ...\\
+  &= \hat V + \hat VG\hat V\\
+\eeq
+where \(G\) is the total interacting Green's function:
+\beq
+G = G_0 + G_0\hat VG_0 + ... = \fr{1}{E - \hat\ham}
+\eeq
+The current bandwidth is \(D\). We want to find a Hamiltonian with bandwidth \(D - \delta D\). That is, we intend to integrate out all conduction band states in the range \(\epsilon_k \in \qq{D-\delta D, D}\). The crudest approximation would be to directly project out all such states. We call this the zeroth approximation:
+\beq
+\hat\ham^{(0)}(D - \delta D) = P \hat\ham(D)P = P\hat\ham_0P + P\hat VP
+\eeq
+where 
+\beq
+P(D-\delta D) = \sum_{k_1,k_2<D-\delta D}\ket{n_{k_1}}\bra{n_{k_2}}
+\eeq
+projects out states above \(D - \delta D\). This zeroth approximation retains no information about the eliminated subspace. A better approximation would be to retain the effects of the high energy subspace through virtual transitions to those states and then back to the low energy subspace. The way we do this is by calculating the \(T\)-matrix to arbitrary order, by taking into account those transitions that connect the high and low energy subspaces. Note that since the total scattering has to be inside the low energy subspace, we need atleast two scatterings, one that takes me into the high energy subspace and one that brings me back. Consequently, there is no first order \(V\) contribution:
+\beq
+\Delta T = \hat VG\hat V
+\eeq
+As mentioned already, \(\hat V\) refers to all those processes that connect the two subspaces. If we now write the \(T-\)matrix for the low energy subspace up to second order by replacing \(\hat T\) with \(\hat V\) in eq.~\ref{tmat2}, the change \(\Delta \hat T\) can be interpreted as a renormalization in \(\hat V\) itself.
+\beq
+\hat T \to \hat V \implies \Delta \hat T = \Delta \hat V
+\eeq
+This gives us an exact equation for the renormalization of \(\hat V\):
+\beq[deltaV]
+\Delta \hat V = \hat V\fr{1}{E - \hat\ham_0 - \hat V}\hat V
+\eeq
+with the understanding that the \(\hat V\)'s in the numerators must connect the two subspaces in order to renormalize \(\hat V\).
+For PMS, we typically expand the denominator and keep only the lowest order.
+\beq[pms]
+\Delta \hat V_{P} = \hat V\fr{1}{E - \hat\ham_0}\hat V
+\eeq
+To make the connection with URG, note that instead of eq.~\ref{problem}, the problem URG is trying to solve is:
+\beq
+\hat\ham\ket{\Psi} = \hat\ham^\prime \ket{\Psi}
+\eeq
+That is, while PMS intends to solve the entire problem, URG tries to decouple just one degree of freedom at each step. The difference is that PMS deals with a scalar energy \(E\), while URG deals with an operator \(\hat\ham^\prime\). Hence, we can make a similar transformation in eq.~\ref{deltaV}:
+\beq
+\Delta \hat V_{U} = \hat V\fr{1}{\hat\ham^\prime - \hat\ham_0 - \hat V}\hat V
+\eeq
+We can separate the term \(\hat V\) into two parts; one part \(V^D\) consists of diagonal terms that may arise from the scattering term like an \(S^z s_z\) term that arises from a Heisenberg-like term, and the other part is the purly scattering part which we call \(\hat V_i\).
+\beq
+\Delta \hat V_{U} = \hat V\fr{1}{\hat\ham^\prime - \hat V_i - \hat\ham_0 - V^D}\hat V
+\eeq
+We now define a new quantity \(\hat \omega = \hat\ham^\prime - \hat V_i\):
+\beq[urg]
+\Delta \hat V_{U} = \hat V\fr{1}{\hat\omega - \hat\ham_0 - V^D}\hat V
+\eeq
+	Comparing the two equations \ref{pms} and \ref{urg}, we can note the following points:
+\begin{itemize}
+	\item The scalar \(E\) in PMS refers to the energy eigenvalue of the many-body eigenstate \(\ket{\Psi}\), while the operator \(\hat \omega\) in URG contains both the renormalized Hamiltonian as well as the current purely scattering term \(V^i\). The difference is that while PMS ignores the scattering in the denominator, URG accounts for it, atleast in principle, inside the \(\hat \omega\).
+	\item URG has an extra term in the denominator, the diagonal term \(V^D\) that arises from the scattering term. It is this term that makes the URG equations non-perturbative. This term is not there in PMS because the PMS result is the lowest order term in an expansion.
+	\item If the scattering term \(\hat V\) is such that such a term does not appear, then the URG expression becomes more or less the same as the PMS expression and URG loses its charm in some sense.
+\end{itemize}
+To make matters more clear, we can look at a specific term. For the SIAM, we will consider the scattering \(V=c^\dagger_{q\ua}c_{d\ua}\). \(q\ua\) is a state in the high energy subspace.
+\beq
+\Delta V_P &=  c^\dagger_{d\ua}c_{q\ua}\fr{1}{E - \hat \ham_0}c^\dagger_{q\ua}c_{d\ua}\\
+\eeq
+The intermediate energy (at the propagator) is
+\beq
+E_1 = \epsilon_d \hat n_{d\ol\beta} + \epsilon_q
+\eeq
+which gives
+\beq
+\Delta V_P &=  c^\dagger_{d\ua}c_{q\ua}\fr{1}{E - \epsilon_q - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{q\ua}c_{d\ua}\\
+&=  \fr{1}{E - \epsilon_q - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+&= \rr{\fr{\hat n_{d\ol\beta}}{E^a - \epsilon_q - \epsilon_d } + \fr{1 - \hat n_{d\ol\beta}}{E^b - \epsilon_q }}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+\eeq
+There are two terms. The two terms differ in their initial states; one starts from \(n_{d\ol\beta}=1\) (corresponding to \(E^a\)) and the other starts from \(n_{d\ol\beta}=0\) (corresponding to \(E^b\)). From the definition of the \(T-\)matrix we can see that different initial states will give rise to different final eigenstates. To treat the various energies \(E^a\) and \(E^b\) on an equal footing, we need to subtract off the initial energies:
+\beq
+E_0 &= \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}\\
+\implies E^a_0 &= 2\epsilon_d + U\\
+E^b_0 &= \epsilon_d
+\eeq
+Defining \(\xi = E - E_0\),
+We can then write
+\beq
+\Delta V_P &= \rr{\fr{\hat n_{d\ol\beta}}{\xi + E_0^a - \epsilon_q - \epsilon_d } + \fr{1 - \hat n_{d\ol\beta}}{\xi + E_0^b - \epsilon_q }}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+&= \rr{\fr{\hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+\eeq
+The quantity \(\xi\) now represents the energy of the many-body eigenstate above the non-interacting state. We typically take that to be very small and ignore it w.r.t the bandwidth \(\epsilon_q\).
+\pb The URG calculation proceeds similarly with the \(\omega\) replacing the \(E\).
+\newpage
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
