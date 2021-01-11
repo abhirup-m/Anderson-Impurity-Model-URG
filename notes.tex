@@ -3432,7 +3432,24 @@ To check that this indeed commutes with \il{\hat n_q},
 			 &=c_q^\dagger T \eta_q - c_q^\dagger T \eta_q\\
 			 &=0
 \eeq
-
+The fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
+\begin{gather*}
+\hat \omega - H_e \hat n = 0\\
+\implies \omega_e = H_e
+\end{gather*}
+or 
+\begin{gather*}
+\hat \omega - H_h\rr{1 - \hat n} = 0\\
+\implies \omega_h = H_h
+\end{gather*}
+In either case, we see that the eigenvalue of \(\hat \omega\) matches the eigenvalue of one of the blocks. This also leads to the vanishing of the off-diagonal block. To see how,
+\beq
+\eta^\dagger \eta \ket{1,\Psi_1} &= \ket{1,\Psi_1} &&\qq{\eta^\dagger \eta = \hat n}\\
+\implies \fr{1}{\hat \omega - \hat H_e}c^\dagger T \eta &= \ket{1,\Psi_1} \\
+\implies c^\dagger T \eta &= \rr{\hat \omega - \hat H_e}\ket{1,\Psi_1} \\
+&= \rr{\omega_e - H_e}\ket{1,\Psi_1}\\
+\eeq
+If \(\omega_e = H_e\), we will have \(c^\dagger T = 0\). This implies \(T^\dagger c = 0\) and hence \(\ham^I = 0\).
 %\comm{
 \section{Kondo Model URG}\label{section3}
 \subsection{Calculation of renormalized Hamiltonian}
@@ -4935,9 +4952,8 @@ We now define a new quantity \(\hat \omega = \hat\ham^\prime - \hat V_i\):
 \eeq
 	Comparing the two equations \ref{pms} and \ref{urg}, we can note the following points:
 \begin{itemize}
-	\item The scalar \(E\) in PMS refers to the energy eigenvalue of the many-body eigenstate \(\ket{\Psi}\), while the operator \(\hat \omega\) in URG contains both the renormalized Hamiltonian as well as the current purely scattering term \(V^i\). The difference is that while PMS ignores the scattering in the denominator, URG accounts for it, atleast in principle, inside the \(\hat \omega\).
-	\item URG has an extra term in the denominator, the diagonal term \(V^D\) that arises from the scattering term. It is this term that makes the URG equations non-perturbative. This term is not there in PMS because the PMS result is the lowest order term in an expansion.
-	\item If the scattering term \(\hat V\) is such that such a term does not appear, then the URG expression becomes more or less the same as the PMS expression and URG loses its charm in some sense.
+	\item The scalar \(E\) in PMS refers to the energy eigenvalue of the many-body eigenstate \(\ket{\Psi}\), while the operator \(\hat \omega\) in URG contains both the renormalized Hamiltonian as well as the purely scattering term \(V^i\). The difference is that while PMS ignores the scattering in the denominator, URG accounts for it, atleast in principle, inside the \(\hat \omega\).
+	\item URG has an extra term in the denominator, the diagonal term \(V^D\) that arises from the scattering term. This term is not there in PMS because the PMS result is the lowest order term in an expansion.
 \end{itemize}
 To make matters more clear, we can look at a specific term. For the SIAM, we will consider the scattering \(V=c^\dagger_{q\ua}c_{d\ua}\). \(q\ua\) is a state in the high energy subspace.
 \beq

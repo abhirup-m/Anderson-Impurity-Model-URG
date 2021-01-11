@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex notes"] 1610364646 "notes.aux" "notes.bbl" "notes" 1610364651
+["bibtex notes"] 1610372625 "notes.aux" "notes.bbl" "notes" 1610372752
   "/usr/share/texmf-dist/bibtex/bst/base/unsrt.bst" 1607249373 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "notes.aux" 1610364650 23985 045b218f9c4c9543cc894d18f3972cf0 "pdflatex"
+  "notes.aux" 1610372752 23987 b88e87827dae62a6cbd7e6f41dbeea9d "pdflatex"
   "notes.bib" 1610352905 1678 125bb14902dc9b3638a1396bf0d439c3 ""
   (generated)
-  "notes.blg"
   "notes.bbl"
-["pdflatex"] 1610364646 "notes.tex" "notes.pdf" "notes" 1610364651
+  "notes.blg"
+["pdflatex"] 1610372747 "notes.tex" "notes.pdf" "notes" 1610372752
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1607249373 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1607249373 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -209,16 +209,16 @@
   "fo2lm.png" 1610337877 26910 5083e668856997117fd803d2ae7eaff2 ""
   "ham.png" 1610352905 54653 cd00f1485b9b537aa969a771f0bb0fb6 ""
   "lmflow.png" 1610337877 16131 84565168fcd7b4083bcc87553fb9a377 ""
-  "notes.aux" 1610364650 23985 045b218f9c4c9543cc894d18f3972cf0 "pdflatex"
-  "notes.bbl" 1610364646 739 e458a16454b8c23c0e8cb4d2b53c3458 "bibtex notes"
-  "notes.out" 1610364650 4883 71931b362f06419849f1286c1789866f "pdflatex"
-  "notes.tex" 1610364641 309213 1f9a6495a81c0b0a4315584913103b6a ""
-  "notes.toc" 1610364650 7269 43689dd98f9dcfc71ad4b53dca1c3c6f "pdflatex"
+  "notes.aux" 1610372752 23987 b88e87827dae62a6cbd7e6f41dbeea9d "pdflatex"
+  "notes.bbl" 1610372625 739 e458a16454b8c23c0e8cb4d2b53c3458 "bibtex notes"
+  "notes.out" 1610372752 4883 71931b362f06419849f1286c1789866f "pdflatex"
+  "notes.tex" 1610372747 309821 14da855c8a73884096c6807545ba5904 ""
+  "notes.toc" 1610372752 7270 7ea255e50fd8be971ffcfcf1c43b42eb "pdflatex"
   "phsymm.png" 1610337877 447792 d83de427c0ff57ec950010886b715ec7 ""
   "schematic.png" 1610352905 44158 1aa8fbcd803789e7dc2ef284f23ece38 ""
   (generated)
   "notes.aux"
-  "notes.log"
   "notes.pdf"
   "notes.out"
+  "notes.log"
   "notes.toc"

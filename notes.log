@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  11 JAN 2021 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  11 JAN 2021 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1067,140 +1067,142 @@ Overfull \hbox (6.88982pt too wide) detected at line 3411
  []
 
 [92] [93]
-Underfull \hbox (badness 10000) in paragraph at lines 3475--3484
+Underfull \hbox (badness 10000) in paragraph at lines 3492--3501
 
  []
 
+[94]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 3489.
+(amsmath)                 on input line 3506.
 
-[94] [95] [96]
-Underfull \hbox (badness 10000) in paragraph at lines 3740--3748
+[95] [96] [97]
+Underfull \hbox (badness 10000) in paragraph at lines 3757--3765
 
  []
 
-[97] [98] [99] [100]
-Overfull \hbox (12.49586pt too wide) in paragraph at lines 3846--3851
+[98] [99] [100] [101]
+Overfull \hbox (12.49586pt too wide) in paragraph at lines 3863--3868
 \T1/cmr/m/n/14.4 We thus have the con-clu-sion that all par-tial sys-tems (imp, cloud,LFL, imp+cloud, cloud+LFL,
  []
 
-[101] [102] [103] [104] [105] [106] [107] [108]
-Overfull \hbox (59.85463pt too wide) in paragraph at lines 4083--4087
+[102] [103] [104] [105] [106] [107] [108]
+Overfull \hbox (59.85463pt too wide) in paragraph at lines 4100--4104
 \T1/cmr/m/n/14.4 We can cal-cu-late the com-mu-ta-tor by look-ing at the ex-pres-sion of $[]$ from eq. []3.42[]: $[]$.
  []
 
-[109]
-Underfull \hbox (badness 10000) in paragraph at lines 4126--4132
+[109] [110]
+Underfull \hbox (badness 10000) in paragraph at lines 4143--4149
 
  []
 
-[110]
-Overfull \hbox (21.9261pt too wide) in paragraph at lines 4147--4157
+[111]
+Overfull \hbox (21.9261pt too wide) in paragraph at lines 4164--4174
 \T1/cmr/m/n/14.4 We want to look at the ex-ci-ta-tions of the Kondo model in the ground state of the cloud+impurity
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4147--4157
+Underfull \hbox (badness 10000) in paragraph at lines 4164--4174
 
  []
 
-[111] [112] [113] [114]
-Underfull \hbox (badness 10000) in paragraph at lines 4258--4263
-
- []
-
-[115]
-Underfull \hbox (badness 10000) in paragraph at lines 4301--4306
+[112] [113] [114] [115]
+Underfull \hbox (badness 10000) in paragraph at lines 4275--4280
 
  []
 
 [116]
-Overfull \hbox (2.89775pt too wide) detected at line 4341
-[][][]
+Underfull \hbox (badness 10000) in paragraph at lines 4318--4323
+
  []
 
 [117]
-Overfull \hbox (1.92836pt too wide) detected at line 4351
+Overfull \hbox (2.89775pt too wide) detected at line 4358
 [][][]
  []
 
-[118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129]
-<phsymm.png, id=1953, 640.85205pt x 501.53639pt>
+
+Overfull \hbox (1.92836pt too wide) detected at line 4368
+[][][]
+ []
+
+[118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130]
+<phsymm.png, id=1961, 640.85205pt x 501.53639pt>
 File: phsymm.png Graphic file (type png)
 <use phsymm.png>
-Package pdftex.def Info: phsymm.png  used on input line 4727.
+Package pdftex.def Info: phsymm.png  used on input line 4744.
 (pdftex.def)             Requested size: 224.30157pt x 175.54036pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 4728.
+(caption)                particular \caption on input line 4745.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4722--4732
+Underfull \hbox (badness 10000) in paragraph at lines 4739--4749
 
  []
 
-[130 <./phsymm.png>] [131] [132]
+[131 <./phsymm.png>] [132]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4802.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4802.
+(hyperref)                removing `math shift' on input line 4819.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4802.
+(hyperref)                removing `subscript' on input line 4819.
 
-<lmflow.png, id=1987, 647.23735pt x 94.32831pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 4819.
+
+[133]
+<lmflow.png, id=1995, 647.23735pt x 94.32831pt>
 File: lmflow.png Graphic file (type png)
 <use lmflow.png>
-Package pdftex.def Info: lmflow.png  used on input line 4827.
+Package pdftex.def Info: lmflow.png  used on input line 4844.
 (pdftex.def)             Requested size: 323.61787pt x 47.16403pt.
-<fo2lm.png, id=1988, 1387.584pt x 746.5491pt>
+<fo2lm.png, id=1996, 1387.584pt x 746.5491pt>
 File: fo2lm.png Graphic file (type png)
 <use fo2lm.png>
-Package pdftex.def Info: fo2lm.png  used on input line 4833.
+Package pdftex.def Info: fo2lm.png  used on input line 4850.
 (pdftex.def)             Requested size: 416.27841pt x 223.96646pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4821--4837
+Underfull \hbox (badness 10000) in paragraph at lines 4838--4854
 
  []
 
-[133] [134 <./lmflow.png> <./fo2lm.png>]
-<schematic.png, id=2011, 351.48181pt x 303.01157pt>
+[134] [135 <./lmflow.png> <./fo2lm.png>]
+<schematic.png, id=2016, 351.48181pt x 303.01157pt>
 File: schematic.png Graphic file (type png)
 <use schematic.png>
-Package pdftex.def Info: schematic.png  used on input line 4863.
+Package pdftex.def Info: schematic.png  used on input line 4880.
 (pdftex.def)             Requested size: 228.46046pt x 196.95517pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 4864.
+(caption)                particular \caption on input line 4881.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4849--4868
+Underfull \hbox (badness 10000) in paragraph at lines 4866--4885
 
  []
 
-[135 <./schematic.png>] [136] [137] [138]
-Underfull \hbox (badness 10000) in paragraph at lines 4967--4970
+[136 <./schematic.png>] [137] [138]
+Underfull \hbox (badness 10000) in paragraph at lines 4983--4986
 
  []
 
-[139] (./notes.bbl) [140] (./notes.aux)
+[139] [140] (./notes.bbl) [141] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 71931B362F06419849F1286C1789866F;4883.
  ) 
 Here is how much of TeX's memory you used:
- 20449 strings out of 479383
- 366830 string characters out of 5875831
- 673528 words of memory out of 5000000
+ 20451 strings out of 479383
+ 366851 string characters out of 5875831
+ 671529 words of memory out of 5000000
  36008 multiletter control sequences out of 15000+600000
  422800 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1212,10 +1214,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on notes.pdf (140 pages, 1920752 bytes).
+Output written on notes.pdf (141 pages, 1921775 bytes).
 PDF statistics:
- 2394 PDF objects out of 2487 (max. 8388607)
- 2171 compressed objects within 22 object streams
- 1158 named destinations out of 1200 (max. 500000)
+ 2400 PDF objects out of 2487 (max. 8388607)
+ 2176 compressed objects within 22 object streams
+ 1160 named destinations out of 1200 (max. 500000)
  545 words of extra memory for PDF output out of 10000 (max. 10000000)
 
