@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  11 JAN 2021 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  11 JAN 2021 23:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -528,11 +528,7 @@ Package: authblk 2001/02/27 1.3 (PWD)
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count314
 \l__pdf_internal_box=\box66
-) (./notes.aux
-
-LaTeX Warning: Label `final' multiply defined.
-
-)
+) (./notes.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
@@ -641,582 +637,567 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2])
 \tf@toc=\write7
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--53
+Underfull \hbox (badness 10000) in paragraph at lines 25--54
 
  []
 
 [4] [5] [6] [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 84.
+(hyperref)                removing `math shift' on input line 85.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 84.
+(hyperref)                removing `math shift' on input line 85.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 160--167
+Underfull \hbox (badness 10000) in paragraph at lines 161--168
 
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 232--241
+Underfull \hbox (badness 10000) in paragraph at lines 233--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--250
+Underfull \hbox (badness 10000) in paragraph at lines 243--251
 
  []
 
 [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 280.
+(hyperref)                removing `math shift' on input line 281.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 297.
+(hyperref)                removing `math shift' on input line 298.
 
 [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 385--390
+Underfull \hbox (badness 10000) in paragraph at lines 386--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--432
+Underfull \hbox (badness 10000) in paragraph at lines 425--433
 
  []
 
 [15] [16] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 581--589
+Underfull \hbox (badness 10000) in paragraph at lines 582--590
 
  []
 
 [20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 649.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathop' on input line 648.
+(hyperref)                removing `\mathop' on input line 649.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathgroup' on input line 648.
+(hyperref)                removing `\mathgroup' on input line 649.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\symoperators' on input line 648.
+(hyperref)                removing `\symoperators' on input line 649.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 648.
+(hyperref)                removing `\@ifnextchar' on input line 649.
 
 [22] [23] [24] [25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 907--912
+Underfull \hbox (badness 10000) in paragraph at lines 908--913
 
  []
 
 [28] [29] [30] [31] [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1103.
+(hyperref)                removing `math shift' on input line 1104.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1103.
+(hyperref)                removing `subscript' on input line 1104.
 
 [33] [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1184.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1183.
+(hyperref)                removing `subscript' on input line 1184.
 
 [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1262--1275
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1278--1285
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1286
 
  []
 
 [37]
-Overfull \hbox (16.63683pt too wide) detected at line 1324
+Overfull \hbox (16.63683pt too wide) detected at line 1325
 [][][]
  []
 
 [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1386--1390
+Underfull \hbox (badness 10000) in paragraph at lines 1387--1391
 
  []
 
 [40] [41]
-<figures//poppov1.png, id=828, 721.87875pt x 405.6975pt>
+<figures//poppov1.png, id=812, 721.87875pt x 405.6975pt>
 File: figures//poppov1.png Graphic file (type png)
 <use figures//poppov1.png>
-Package pdftex.def Info: figures//poppov1.png  used on input line 1453.
+Package pdftex.def Info: figures//poppov1.png  used on input line 1454.
 (pdftex.def)             Requested size: 216.56529pt x 121.71017pt.
-<figures//poppov2.png, id=830, 721.87875pt x 405.6975pt>
+<figures//poppov2.png, id=814, 721.87875pt x 405.6975pt>
 File: figures//poppov2.png Graphic file (type png)
 <use figures//poppov2.png>
-Package pdftex.def Info: figures//poppov2.png  used on input line 1454.
+Package pdftex.def Info: figures//poppov2.png  used on input line 1455.
 (pdftex.def)             Requested size: 216.56529pt x 121.71017pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1447--1460
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1461
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1447--1460
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1461
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1447--1460
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1461
 
  []
 
 [42 <./figures//poppov1.png> <./figures//poppov2.png>] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1525--1539
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1540
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 1551--1555
+Underfull \hbox (badness 10000) in paragraph at lines 1552--1556
 
  []
 
 
-Overfull \hbox (64.37805pt too wide) in paragraph at lines 1556--1560
+Overfull \hbox (64.37805pt too wide) in paragraph at lines 1557--1561
 \T1/cmr/m/n/14.4 With the con-di-tion that the wave-func-tion should van-ish at the bound-ary, we have $[]$.
  []
 
 [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1623--1629
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1623--1629
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1630
 
  []
 
 [47] [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1782
+Underfull \hbox (badness 10000) in paragraph at lines 1778--1783
 
  []
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1809--1815
+Underfull \hbox (badness 10000) in paragraph at lines 1810--1816
 
  []
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1851--1856
+Underfull \hbox (badness 10000) in paragraph at lines 1852--1857
 
  []
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 1864--1870
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1871
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1893--1898
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1899
 
  []
 
 [53]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1903.
+(hyperref)                removing `math shift' on input line 1904.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1903.
+(hyperref)                removing `subscript' on input line 1904.
 
 [54]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1960.
+(hyperref)                removing `math shift' on input line 1961.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\chi' on input line 1960.
+(hyperref)                removing `\chi' on input line 1961.
 
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 1989--1994
+Underfull \hbox (badness 10000) in paragraph at lines 1990--1995
 
  []
 
 [56] [57]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2066.
+(hyperref)                removing `math shift' on input line 2067.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\langle' on input line 2066.
+(hyperref)                removing `\langle' on input line 2067.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 2066.
+(hyperref)                removing `subscript' on input line 2067.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rangle' on input line 2066.
+(hyperref)                removing `\rangle' on input line 2067.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2067--2074
+Underfull \hbox (badness 10000) in paragraph at lines 2068--2075
 
  []
 
 [58] [59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 2152--2161
+Underfull \hbox (badness 10000) in paragraph at lines 2153--2162
 
  []
 
 [61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 2248--2254
+Underfull \hbox (badness 10000) in paragraph at lines 2249--2255
 
  []
 
 [63] [64]
-Underfull \hbox (badness 10000) in paragraph at lines 2296--2299
+Underfull \hbox (badness 10000) in paragraph at lines 2297--2300
 
  []
 
 [65] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 2373--2375
+Underfull \hbox (badness 10000) in paragraph at lines 2374--2376
 
  []
 
-<figures//anderson.png, id=1157, 636.49843pt x 801.06506pt>
+<figures//anderson.png, id=1141, 636.49843pt x 801.06506pt>
 File: figures//anderson.png Graphic file (type png)
 <use figures//anderson.png>
-Package pdftex.def Info: figures//anderson.png  used on input line 2388.
+Package pdftex.def Info: figures//anderson.png  used on input line 2389.
 (pdftex.def)             Requested size: 178.21834pt x 224.29669pt.
-<figures//anderson2.png, id=1158, 636.49843pt x 801.06506pt>
+<figures//anderson2.png, id=1142, 636.49843pt x 801.06506pt>
 File: figures//anderson2.png Graphic file (type png)
 <use figures//anderson2.png>
-Package pdftex.def Info: figures//anderson2.png  used on input line 2390.
+Package pdftex.def Info: figures//anderson2.png  used on input line 2391.
 (pdftex.def)             Requested size: 178.21834pt x 224.29669pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2377--2408
+Underfull \hbox (badness 10000) in paragraph at lines 2378--2409
 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 2409--2414
+Underfull \hbox (badness 10000) in paragraph at lines 2410--2415
 
  []
 
 [68 <./figures//anderson.png> <./figures//anderson2.png>] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 2477--2486
+Underfull \hbox (badness 10000) in paragraph at lines 2478--2487
 
  []
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 2519--2531
+Underfull \hbox (badness 10000) in paragraph at lines 2520--2532
 
  []
 
 [71]
-<figures//full.png, id=1220, 1474.13385pt x 696.28807pt>
+<figures//full.png, id=1204, 1474.13385pt x 696.28807pt>
 File: figures//full.png Graphic file (type png)
 <use figures//full.png>
-Package pdftex.def Info: figures//full.png  used on input line 2558.
+Package pdftex.def Info: figures//full.png  used on input line 2559.
 (pdftex.def)             Requested size: 427.48787pt x 201.91837pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2547--2561
+Underfull \hbox (badness 10000) in paragraph at lines 2548--2562
 
  []
 
 [72 <./figures//full.png>] [73]
-Underfull \hbox (badness 10000) in paragraph at lines 2621--2636
+Underfull \hbox (badness 10000) in paragraph at lines 2622--2637
 
  []
 
 [74]
-Underfull \hbox (badness 10000) in paragraph at lines 2653--2663
+Underfull \hbox (badness 10000) in paragraph at lines 2654--2664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2653--2663
+Underfull \hbox (badness 10000) in paragraph at lines 2654--2664
 
  []
 
 [75]
-<figures//mixed.png, id=1277, 1468.61928pt x 632.14482pt>
+<figures//mixed.png, id=1261, 1468.61928pt x 632.14482pt>
 File: figures//mixed.png Graphic file (type png)
 <use figures//mixed.png>
-Package pdftex.def Info: figures//mixed.png  used on input line 2727.
+Package pdftex.def Info: figures//mixed.png  used on input line 2728.
 (pdftex.def)             Requested size: 425.88869pt x 183.3173pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2718--2736
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2737
 
  []
 
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 2744--2753
+Underfull \hbox (badness 10000) in paragraph at lines 2745--2754
 
  []
 
 
-Overfull \hbox (39.8078pt too wide) in paragraph at lines 2763--2764
+Overfull \hbox (39.8078pt too wide) in paragraph at lines 2764--2765
 []$[]$ 
  []
 
 [77 <./figures//mixed.png>]
-Overfull \hbox (0.59467pt too wide) in paragraph at lines 2789--2790
+Overfull \hbox (0.59467pt too wide) in paragraph at lines 2790--2791
 []$ 
  []
 
-<figures//empty.png, id=1299, 1534.21373pt x 701.80266pt>
+<figures//empty.png, id=1283, 1534.21373pt x 701.80266pt>
 File: figures//empty.png Graphic file (type png)
 <use figures//empty.png>
-Package pdftex.def Info: figures//empty.png  used on input line 2793.
+Package pdftex.def Info: figures//empty.png  used on input line 2794.
 (pdftex.def)             Requested size: 444.91058pt x 203.51756pt.
 [78 <./figures//empty.png>] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 2923--2927
+Underfull \hbox (badness 10000) in paragraph at lines 2924--2928
 
  []
 
 [81] [82]
-Underfull \hbox (badness 10000) in paragraph at lines 3003--3008
+Underfull \hbox (badness 10000) in paragraph at lines 3004--3009
 
  []
 
 [83] [84]
-Underfull \hbox (badness 10000) in paragraph at lines 3058--3063
+Underfull \hbox (badness 10000) in paragraph at lines 3059--3064
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3058--3063
+Underfull \hbox (badness 10000) in paragraph at lines 3059--3064
 
  []
 
 [85]
-Underfull \hbox (badness 10000) in paragraph at lines 3078--3084
+Underfull \hbox (badness 10000) in paragraph at lines 3079--3085
 
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 3078--3084
+Underfull \hbox (badness 1418) in paragraph at lines 3079--3085
 []$ \T1/cmr/m/n/14.4 is the in-ter-ac-tion be-tween the cur-rent de-
  []
 
-<ham.png, id=1394, 228.41963pt x 261.79735pt>
+<ham.png, id=1378, 228.41963pt x 261.79735pt>
 File: ham.png Graphic file (type png)
 <use ham.png>
-Package pdftex.def Info: ham.png  used on input line 3087.
+Package pdftex.def Info: ham.png  used on input line 3088.
 (pdftex.def)             Requested size: 159.89264pt x 183.25688pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 3088.
+(caption)                particular \caption on input line 3089.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 3088--3088
+Underfull \hbox (badness 6001) in paragraph at lines 3089--3089
 []\T1/cmr/m/n/14.4 Figure 4: |[]Decomposition of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3076--3095
+Underfull \hbox (badness 10000) in paragraph at lines 3077--3096
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3076--3095
+Underfull \hbox (badness 10000) in paragraph at lines 3077--3096
 
  []
 
 [86 <./ham.png>] [87] [88] [89] [90] [91]
-Overfull \hbox (6.88982pt too wide) detected at line 3412
+Overfull \hbox (6.88982pt too wide) detected at line 3413
 [][][]
  []
 
 [92]
-Underfull \hbox (badness 10000) in paragraph at lines 3458--3462
+Underfull \hbox (badness 10000) in paragraph at lines 3459--3463
 
  []
 
 [93] [94]
-Underfull \hbox (badness 10000) in paragraph at lines 3519--3528
+Underfull \hbox (badness 10000) in paragraph at lines 3516--3520
 
  []
 
 [95]
-
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 3533.
-
-[96] [97] [98]
-Underfull \hbox (badness 10000) in paragraph at lines 3784--3792
+Underfull \hbox (badness 10000) in paragraph at lines 3527--3531
 
  []
 
-[99] [100] [101] [102]
-Overfull \hbox (12.49586pt too wide) in paragraph at lines 3890--3895
-\T1/cmr/m/n/14.4 We thus have the con-clu-sion that all par-tial sys-tems (imp, cloud,LFL, imp+cloud, cloud+LFL,
- []
 
-[103] [104] [105] [106] [107] [108] [109]
-Overfull \hbox (59.85463pt too wide) in paragraph at lines 4127--4131
-\T1/cmr/m/n/14.4 We can cal-cu-late the com-mu-ta-tor by look-ing at the ex-pres-sion of $[]$ from eq. []3.42[]: $[]$.
- []
-
-[110] [111]
-Underfull \hbox (badness 10000) in paragraph at lines 4170--4176
+Underfull \hbox (badness 10000) in paragraph at lines 3538--3542
 
  []
 
-[112]
-Overfull \hbox (21.9261pt too wide) in paragraph at lines 4191--4201
-\T1/cmr/m/n/14.4 We want to look at the ex-ci-ta-tions of the Kondo model in the ground state of the cloud+impurity
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4191--4201
+[96]
+Underfull \hbox (badness 10000) in paragraph at lines 3564--3568
 
  []
 
-[113] [114] [115] [116]
-Underfull \hbox (badness 10000) in paragraph at lines 4302--4307
+
+Underfull \hbox (badness 10000) in paragraph at lines 3574--3578
 
  []
 
-[117]
-Underfull \hbox (badness 10000) in paragraph at lines 4345--4350
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 3585--3589
 
  []
 
-[118]
-Overfull \hbox (2.89775pt too wide) detected at line 4385
+[98] [99] [100] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 4441--4446
+
+ []
+
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 4484--4489
+
+ []
+
+[103]
+Overfull \hbox (2.89775pt too wide) detected at line 4524
 [][][]
  []
 
 
-Overfull \hbox (1.92836pt too wide) detected at line 4395
+Overfull \hbox (1.92836pt too wide) detected at line 4534
 [][][]
  []
 
-[119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131]
-<phsymm.png, id=1981, 640.85205pt x 501.53639pt>
+[104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116]
+<phsymm.png, id=1801, 640.85205pt x 501.53639pt>
 File: phsymm.png Graphic file (type png)
 <use phsymm.png>
-Package pdftex.def Info: phsymm.png  used on input line 4771.
+Package pdftex.def Info: phsymm.png  used on input line 4910.
 (pdftex.def)             Requested size: 224.30157pt x 175.54036pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 4772.
+(caption)                particular \caption on input line 4911.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4766--4776
+Underfull \hbox (badness 10000) in paragraph at lines 4905--4915
 
  []
 
-[132 <./phsymm.png>] [133]
+[117 <./phsymm.png>] [118]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4846.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4846.
+(hyperref)                removing `math shift' on input line 4985.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4846.
+(hyperref)                removing `subscript' on input line 4985.
 
-[134]
-<lmflow.png, id=2016, 647.23735pt x 94.32831pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 4985.
+
+[119]
+<lmflow.png, id=1834, 647.23735pt x 94.32831pt>
 File: lmflow.png Graphic file (type png)
 <use lmflow.png>
-Package pdftex.def Info: lmflow.png  used on input line 4871.
+Package pdftex.def Info: lmflow.png  used on input line 5010.
 (pdftex.def)             Requested size: 323.61787pt x 47.16403pt.
-<fo2lm.png, id=2017, 1387.584pt x 746.5491pt>
+<fo2lm.png, id=1835, 1387.584pt x 746.5491pt>
 File: fo2lm.png Graphic file (type png)
 <use fo2lm.png>
-Package pdftex.def Info: fo2lm.png  used on input line 4877.
+Package pdftex.def Info: fo2lm.png  used on input line 5016.
 (pdftex.def)             Requested size: 416.27841pt x 223.96646pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4865--4881
+Underfull \hbox (badness 10000) in paragraph at lines 5004--5020
 
  []
 
-[135] [136 <./lmflow.png> <./fo2lm.png>]
-<schematic.png, id=2036, 351.48181pt x 303.01157pt>
+[120] [121 <./lmflow.png> <./fo2lm.png>]
+<schematic.png, id=1855, 351.48181pt x 303.01157pt>
 File: schematic.png Graphic file (type png)
 <use schematic.png>
-Package pdftex.def Info: schematic.png  used on input line 4907.
+Package pdftex.def Info: schematic.png  used on input line 5046.
 (pdftex.def)             Requested size: 228.46046pt x 196.95517pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 4908.
+(caption)                particular \caption on input line 5047.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4893--4912
+Underfull \hbox (badness 10000) in paragraph at lines 5032--5051
 
  []
 
-[137 <./schematic.png>] [138] [139] [140]
-Underfull \hbox (badness 10000) in paragraph at lines 5014--5017
+[122 <./schematic.png>] [123] [124] [125]
+Underfull \hbox (badness 10000) in paragraph at lines 5153--5156
 
  []
 
-(./notes.bbl) [141] (./notes.aux)
+(./notes.bbl) [126] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 57A9F551B07EF1E0122D91F0FE9E4CE2;5001.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 671E5DA5C81CC0DB29F5E17B5A37454F;4687.
  ) 
 Here is how much of TeX's memory you used:
- 20463 strings out of 479383
- 367015 string characters out of 5875831
- 671456 words of memory out of 5000000
- 36010 multiletter control sequences out of 15000+600000
+ 20340 strings out of 479383
+ 365552 string characters out of 5875830
+ 688742 words of memory out of 5000000
+ 35993 multiletter control sequences out of 15000+600000
  422800 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,20n,98p,1406b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1227,10 +1208,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on notes.pdf (141 pages, 1926259 bytes).
+Output written on notes.pdf (126 pages, 1866730 bytes).
 PDF statistics:
- 2420 PDF objects out of 2487 (max. 8388607)
- 2196 compressed objects within 22 object streams
- 1170 named destinations out of 1200 (max. 500000)
- 561 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2218 PDF objects out of 2487 (max. 8388607)
+ 2010 compressed objects within 21 object streams
+ 1064 named destinations out of 1200 (max. 500000)
+ 537 words of extra memory for PDF output out of 10000 (max. 10000000)
 
