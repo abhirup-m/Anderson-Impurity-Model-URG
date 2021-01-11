@@ -47,35 +47,36 @@
 \contentsline {subsection}{\numberline {3.1}Particle sector}{95}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Hole sector}{97}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Scaling equations}{98}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Renormalized Hamiltonian}{99}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Anderson Model URG}{99}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Without spin-spin interaction}{99}{subsection.4.1}%
-\contentsline {paragraph}{Calculation of first term}{99}{section*.12}%
+\contentsline {paragraph}{Calculation of first term}{100}{section*.12}%
 \contentsline {paragraph}{Calculation of second term}{100}{section*.13}%
 \contentsline {paragraph}{Renormalized Hamiltonian}{102}{section*.14}%
-\contentsline {subsection}{\numberline {4.2}With Kondo-like interaction}{103}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}With Kondo-like interaction}{104}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Particle sector}{105}{subsection.4.3}%
 \contentsline {paragraph}{1.}{105}{section*.15}%
 \contentsline {paragraph}{2.}{106}{section*.16}%
 \contentsline {paragraph}{3.}{107}{section*.17}%
 \contentsline {paragraph}{4.}{107}{section*.18}%
-\contentsline {paragraph}{5.}{107}{section*.19}%
+\contentsline {paragraph}{5.}{108}{section*.19}%
 \contentsline {paragraph}{6.}{108}{section*.20}%
-\contentsline {paragraph}{7.}{108}{section*.21}%
+\contentsline {paragraph}{7.}{109}{section*.21}%
 \contentsline {paragraph}{8.}{109}{section*.22}%
-\contentsline {paragraph}{9.}{109}{section*.23}%
+\contentsline {paragraph}{9.}{110}{section*.23}%
 \contentsline {subsection}{\numberline {4.4}Hole sector}{111}{subsection.4.4}%
 \contentsline {paragraph}{1.}{111}{section*.25}%
 \contentsline {paragraph}{2.}{112}{section*.26}%
 \contentsline {paragraph}{3.}{112}{section*.27}%
-\contentsline {paragraph}{4.}{112}{section*.28}%
+\contentsline {paragraph}{4.}{113}{section*.28}%
 \contentsline {paragraph}{5.}{113}{section*.29}%
-\contentsline {paragraph}{6.}{113}{section*.30}%
+\contentsline {paragraph}{6.}{114}{section*.30}%
 \contentsline {paragraph}{7.}{114}{section*.31}%
-\contentsline {paragraph}{8.}{114}{section*.32}%
+\contentsline {paragraph}{8.}{115}{section*.32}%
 \contentsline {paragraph}{9.}{115}{section*.33}%
 \contentsline {subsection}{\numberline {4.5}Particle-Hole symmetry}{116}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}"Poor Man's" one-loop form for asymmetric Anderson model}{118}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}SU(2) invariance and Kondo model one-loop form}{118}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Connection with Kondo URG result}{119}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.7}SU(2) invariance and Kondo model one-loop form}{119}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Connection with Kondo URG result}{120}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Fixed points for the symmetric Anderson model with \(J_z = J_t\)}{120}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Connection between Unitary Renormalization Group and Poor Man's Scaling}{123}{section.5}%

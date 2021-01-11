@@ -3616,6 +3616,13 @@ For the symmetric model (\(J_z = J_t = J\), we get the equation
 \beq
 \Delta J = -J^2\sum_{q}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z}
 \eeq
+\subsection{Renormalized Hamiltonian}
+The renormalized Hamiltonian after disentangling the shell at \(\Lambda_N\) is
+\beq
+\ham_{N-1} = \sum_{k\sigma} \epsilon_k \hat n_{k\sigma} + \sum_{k,k^\prime<\Lambda_N}\qq{\fr{J_z^{N-1}}{2}S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + \fr{J_t^{N-1}}{2}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}}\\
++\fr{J_z^N}{2}\sum_{q=\Lambda_N} S_d^z\rr{\hat n_{q\ua} - \hat n_{q\da}}
+\eeq
+The superscript \(N-1\) implies it has been renormalized.
 \comm{
 	\subsection{Calculation of renormalized Hamiltonian}
 \beq
