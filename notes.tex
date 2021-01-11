@@ -1,4 +1,5 @@
 \documentclass[14pt]{extarticle}
+\setcounter{tocdepth}{2}
 \usepackage{common}
 %\usepackage{newtxtext,newtxmath}
 \usepackage[affil-it]{authblk}
@@ -3614,8 +3615,13 @@ Doing the calculation with the down spin should produce the other term, \(\hf S_
 \eeq
 For the symmetric model (\(J_z = J_t = J\), we get the equation
 \beq
-\Delta J = -J^2\sum_{q}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z}
+\Delta J = -J^2\sum_{q}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J}
 \eeq
+To obtain the familiar Kondo model one-loop form, we need to take low energy excitations (\(\omega \ll \epsilon_q\), expand the denominator and take only \(O(J^0)\) and assume isotropic dispersion \(\epsilon_q = D\).
+\beq
+\delta J = J^2\rho |\delta D|\fr{1}{D}
+\eeq
+
 \subsection{Renormalized Hamiltonian}
 The renormalized Hamiltonian after disentangling the shell at \(\Lambda_N\) is
 \beq
