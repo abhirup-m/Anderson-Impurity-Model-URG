@@ -336,10 +336,10 @@ Therefore,
 \beq
 G_d(E) = \fr{1}{E-\epsilon_d+i\Delta}
 \eeq
-The difference from \il{G^0_f} can be seen by computing the density of states for both the bare and the interacting ones:
+The difference from \il{G^0_d} can be seen by computing the density of states for both the bare and the interacting ones:
 \begin{gather}
-	\rho_d^0(E) = -\fr{1}{\pi}\text{Im}\qq{G^0_f} = -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i\eta} = \delta(E - \epsilon_d)\\
-	\rho_d(E) = -\fr{1}{\pi}\text{Im}\qq{G_f}= -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i(\eta+\Delta)} = \fr{1}{\pi}\fr{\Delta}{(E-\epsilon_d)^2 + \Delta^2}\label{densitys}
+	\rho_d^0(E) = -\fr{1}{\pi}\text{Im}\qq{G^0_d} = -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i\eta} = \delta(E - \epsilon_d)\\
+	\rho_d(E) = -\fr{1}{\pi}\text{Im}\qq{G_d}= -\fr{1}{\pi} \lim_{\eta \ra 0} \fr{1}{E - \epsilon_d + i(\eta+\Delta)} = \fr{1}{\pi}\fr{\Delta}{(E-\epsilon_d)^2 + \Delta^2}\label{densitys}
 \end{gather}
 The first density of states is delta function, because \il{\epsilon_d} is an eigenstate in that case, and the poles of the corresponding Green's function are real poles.
 But the presence of the hybridisation means that is no longer the case in the second density of states, so the delta function fades into a Lorentzian in that case, and the poles of the Greens function move off the real axis.
@@ -361,7 +361,7 @@ G = G_0 + G_0VG &= G_0 + G_0 T \fr{1}{1+GT}G \\
 \eeq
 The conduction electron Green's function can be calculated as
 \beq
-G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t G^0_f t G^0_c(k^\prime) + \\ G_c^0(k)t G^0_f t \sum_q G_c^0(q) t G^0_f t G^0_c(k^\prime) + ...\\
+G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t G^0_d t G^0_c(k^\prime) + \\ G_c^0(k)t G^0_d t \sum_q G_c^0(q) t G^0_d t G^0_c(k^\prime) + ...\\
 \eeq
 Noting that 
 \beq
@@ -369,7 +369,7 @@ t\sum_q G_c^0(q)t = \Sigma_c,
 \eeq
 we have
 \beq
-G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t^2 G_f(E)G_c^0(k)
+G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t^2 G_d(E)G_c^0(k^\prime)
 \eeq
 Comparing with the final form of \il{G} in eq.~\ref{green}, we can write
 \beq[tm]
@@ -981,12 +981,12 @@ we can write
 \eeq
 The interacting Green's function for the impurity becomes
 \beq
-G_f(E) &= \fr{1}{E - \epsilon_d - \Sigma - i\Delta}\\
+G_d(E) &= \fr{1}{E - \epsilon_d - \Sigma - i\Delta}\\
 \eeq
 where \il{\Delta} is the result of the hybridisation.
 Substituting eq.~\ref{sigma} and gathering the terms gives
 \beq
-G_f(E) = \fr{Z}{E - Z (\epsilon_d + \Sigma(0)) - iZ\Delta}
+G_d(E) = \fr{Z}{E - Z (\epsilon_d + \Sigma(0)) - iZ\Delta}
 \eeq
 Defining the renormalised parameters
 \begin{gather}
@@ -995,7 +995,7 @@ Defining the renormalised parameters
 \end{gather}
 we have
 \beq
-G_f(E) = \fr{Z}{E - \epsilon_d^* - i \Delta^*}
+G_d(E) = \fr{Z}{E - \epsilon_d^* - i \Delta^*}
 \eeq
 What this means is that as we adiabatically vary the interaction \il{U}, the parameters \il{\epsilon_d^*} and \il{\Delta^*} also morph, keeping the form of the Greens's function constant.
 In the non-interacting limit (\il{U=0}), we have 
