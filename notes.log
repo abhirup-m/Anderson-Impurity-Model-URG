@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  13 JAN 2021 08:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  13 JAN 2021 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -647,74 +647,74 @@ Overfull \hbox (1.92836pt too wide) detected at line 4543
  []
 
 [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
-<phsymm.png, id=261, 640.85205pt x 501.53639pt>
+<phsymm.png, id=262, 640.85205pt x 501.53639pt>
 File: phsymm.png Graphic file (type png)
 <use phsymm.png>
-Package pdftex.def Info: phsymm.png  used on input line 4935.
+Package pdftex.def Info: phsymm.png  used on input line 4931.
 (pdftex.def)             Requested size: 224.30157pt x 175.54036pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 4936.
+(caption)                particular \caption on input line 4932.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4930--4940
+Underfull \hbox (badness 10000) in paragraph at lines 4926--4936
 
  []
 
 [16] [17 <./phsymm.png>] [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 5010.
+(hyperref)                removing `math shift' on input line 5006.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 5010.
+(hyperref)                removing `subscript' on input line 5006.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 5010.
+(hyperref)                removing `subscript' on input line 5006.
 
 [19]
-<lmflow.png, id=309, 647.23735pt x 94.32831pt>
+<lmflow.png, id=310, 647.23735pt x 94.32831pt>
 File: lmflow.png Graphic file (type png)
 <use lmflow.png>
-Package pdftex.def Info: lmflow.png  used on input line 5035.
+Package pdftex.def Info: lmflow.png  used on input line 5031.
 (pdftex.def)             Requested size: 323.61787pt x 47.16403pt.
-<fo2lm.png, id=310, 1387.584pt x 746.5491pt>
+<fo2lm.png, id=311, 1387.584pt x 746.5491pt>
 File: fo2lm.png Graphic file (type png)
 <use fo2lm.png>
-Package pdftex.def Info: fo2lm.png  used on input line 5041.
+Package pdftex.def Info: fo2lm.png  used on input line 5037.
 (pdftex.def)             Requested size: 416.27841pt x 223.96646pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5029--5045
+Underfull \hbox (badness 10000) in paragraph at lines 5025--5041
 
  []
 
 [20]
-<schematic.png, id=323, 351.48181pt x 303.01157pt>
+<schematic.png, id=324, 351.48181pt x 303.01157pt>
 File: schematic.png Graphic file (type png)
 <use schematic.png>
-Package pdftex.def Info: schematic.png  used on input line 5071.
+Package pdftex.def Info: schematic.png  used on input line 5067.
 (pdftex.def)             Requested size: 228.46046pt x 196.95517pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 5072.
+(caption)                particular \caption on input line 5068.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5057--5076
+Underfull \hbox (badness 10000) in paragraph at lines 5053--5072
 
  []
 
 [21 <./lmflow.png> <./fo2lm.png>] [22 <./schematic.png>]
 
-LaTeX Warning: Reference `tmat' on page 23 undefined on input line 5085.
+LaTeX Warning: Reference `tmat' on page 23 undefined on input line 5081.
 
 [23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 5178--5181
+Underfull \hbox (badness 10000) in paragraph at lines 5174--5177
 
  []
 
@@ -731,18 +731,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19261 strings out of 479383
- 351509 string characters out of 5875830
- 842985 words of memory out of 5000000
+ 19260 strings out of 479383
+ 351495 string characters out of 5875831
+ 844985 words of memory out of 5000000
  35786 multiletter control sequences out of 15000+600000
  419315 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,15n,98p,1406b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on notes.pdf (26 pages, 839006 bytes).
+Output written on notes.pdf (26 pages, 839675 bytes).
 PDF statistics:
  499 PDF objects out of 1000 (max. 8388607)
  437 compressed objects within 5 object streams
- 205 named destinations out of 1000 (max. 500000)
+ 204 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

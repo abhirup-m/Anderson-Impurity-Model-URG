@@ -10,7 +10,7 @@
 \contentsline {paragraph}{8.}{9}{section*.9}%
 \contentsline {paragraph}{9.}{9}{section*.10}%
 \contentsline {subsection}{\numberline {0.3}Hole sector}{10}{subsection.0.3}%
-\contentsline {paragraph}{1.}{11}{section*.12}%
+\contentsline {paragraph}{1.}{10}{section*.12}%
 \contentsline {paragraph}{2.}{11}{section*.13}%
 \contentsline {paragraph}{3.}{12}{section*.14}%
 \contentsline {paragraph}{4.}{12}{section*.15}%
@@ -19,7 +19,7 @@
 \contentsline {paragraph}{7.}{13}{section*.18}%
 \contentsline {paragraph}{8.}{14}{section*.19}%
 \contentsline {paragraph}{9.}{14}{section*.20}%
-\contentsline {subsection}{\numberline {0.4}Particle-Hole symmetry}{16}{subsection.0.4}%
+\contentsline {subsection}{\numberline {0.4}Particle-Hole symmetry}{15}{subsection.0.4}%
 \contentsline {subsection}{\numberline {0.5}"Poor Man's" one-loop form for asymmetric Anderson model}{18}{subsection.0.5}%
 \contentsline {subsection}{\numberline {0.6}SU(2) invariance and Kondo model one-loop form}{18}{subsection.0.6}%
 \contentsline {subsection}{\numberline {0.7}Connection with Kondo URG result}{19}{subsection.0.7}%
