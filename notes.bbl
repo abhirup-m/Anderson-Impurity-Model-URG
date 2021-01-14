@@ -1,3 +1,33 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{Friedel}
+J.~Friedel.
+\newblock {\em Nuovo Cimento Suppl. VII}, 287, 1958.
+
+\bibitem{Anderson}
+P.~W. Anderson.
+\newblock {\em Phys Rev}, 124, 1961.
+
+\bibitem{Kondo}
+Jun Kondo.
+\newblock {\em Prog. Theor. Phys.}, 32, 1964.
+
+\bibitem{Andrei}
+N.~Andrei.
+\newblock {\em Phys. Rev. Lett}, 87A, 1980.
+
+\bibitem{Weigman}
+P.B.Weigman.
+\newblock {\em Sov. Phys. JETP Lett.}, 31, 1980.
+
+\bibitem{Tsvelick}
+P.B.~Weigman A.~M.~Tsvelick.
+\newblock {\em Adv. in Phys.}, 32, 1983.
+
+\bibitem{holography1}
+Siddhartha~Lal Anirban~Mukherjee.
+\newblock Holographic unitary renormalization group for correlated electrons -
+  i: A tensor network approach.
+\newblock {\em Nuclear Physics B}, 960, 2020.
 
 \end{thebibliography}

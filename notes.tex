@@ -21,7 +21,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-\comm{
+%\comm{
 \section*{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -3470,17 +3470,132 @@ Decoupling the entire shell gives
 One can look at the particle and hole sectors separately. The particle sector involves those processes which create a particle with high energy in the intermediate state. The hole sector consists of those processes that destroy a deep-lying electron in the intermediate state. It is clear that the first term of the anticommutator, one that starts with \(c^\dagger\) and ends with \(\eta\) will destroy an electron in the intermediate state. That gives the hole sector contribution:
 \beq
 \Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
-	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - H_h}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
+	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - \ham^D}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
 \eeq
-where we have replaced \(\hat \omega\) by its eigenvalue \(\omega\) and \(H_h = \text{Tr}\rr{\ham \rr{1- \hat n_{q\beta}}}\). The other term in the commutator gives the particle sector contribution:
+where we have replaced \(\hat \omega\) by its eigenvalue \(\omega_h\) and \(H_h = \text{Tr}\rr{\ham \rr{1- \hat n_{q\beta}}}\). The other term in the commutator gives the particle sector contribution:
 \beq
 \Delta^+ \ham &= \sum_{q\beta} \eta_{q\beta}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
-	      &= \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - H_e}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+	      &= \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^D}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
 \eeq
 where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\beta}}\).
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
+\pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
 %\comm{
+\section{Star Graph URG}
+The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+\beq
+\ham = \sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_i \vec{S}_0 \cdot \vec{S}_i
+\eeq
+By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
+\beq
+\ham = \sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_i\qq{S^z_0 S^z_i + \hf\rr{S_0^+ S^-_i + S_0^- S^+_i}}
+\eeq
+The diagonal terms are the ones that preserve the number or (in this case) spin.
+\beq
+\ham^D =\sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_iS^z_0 S^z_i 
+\eeq
+This is the piece that comes in the denominator. The off-diagonal terms are the ones that change the number or spin. For this problem, they are the last two terms, \(S_0^+ S_i^-\) and \(S_0^- S_i^+\).
+\pb The RG involves decoupling the nodes \(N\) through 1, and looking at the resultant renormalization in \(\epsilon_i\) and \(J_i\). As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node \(N\). Since node \(0\) is connected to node \(N\), we will keep node \(0\) in the denominator as well. Making this simplification gives
+\beq[stardiag]
+\ham^D =\epsilon_0 S^z_0 + \epsilon_N S^z_N + J_NS^z_0 S^z_N 
+\eeq
+
+\subsection{Particle sector}
+This sector consists of the renormalization caused due to particle excitations in the intermediate state. In the spin language, this translates to looking at those terms where the node that is being decoupled, \(N\), is upwards in the excited state. 
+\beq
+\Delta^+ \ham = \hf J_N S_0^+ S_N^- \fr{1}{\hat \omega - \ham^D}\hf J_N S_0^- S_N^+
+\eeq
+Note that we have chosen those particle scattering term because the \(S_N^+\) on the right will create an up spin in the intermediate state, hence justifying the particle sector. The next order of business is to evaluate the \(\ham^D\) in the propagator. Since the propagator has an \(S_0^-S_N^+\) in front, we can substitute \(S_0^z = -\hf\) and \(S_N^z = \hf\) in \(\ham^D\). Any other value would be annihilated by the operator at the front (\(S^+ \ket{\hf} = S^- \ket{-\hf} = 0\)). Therefore, from eq.~\ref{stardiag}.
+\beq
+\ham^D = -\hf\epsilon_0 + \hf\epsilon_N  - \fr{1}{4} J_N 
+\eeq
+Substituting this in \(\Delta^+ \ham\) gives
+\beq
+\Delta^+ \ham = \hf J_N S_0^+ S_N^- \fr{1}{\hat \omega +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\hf J_N S_0^- S_N^+
+\eeq
+	At this point we make another simplification, we replace \(\hat \omega\) by its eigenvalue \(\omega^+\). The \(+\) in the superscript indicates that it is from hte particle sector.
+\beq
+\Delta^+ \ham &= \hf J_N S_0^+ S_N^- \fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\hf J_N S_0^- S_N^+\\
+	      &= \fr{1}{4} J^2_N S_0^+ S_N^- S_0^- S_N^+\fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+	      &= \fr{1}{4} J^2_N S_0^+ S_0^- S_N^- S_N^+\fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+Here we used the fact that the spins commute. We can now use the identities \(S^+ S^- = \rr{\hf + S^z}\) and \(S^- S^+ = \rr{\hf - S^z}\) to write
+\beq
+S_0^+ S_0^- S_N^- S_N^+ &= \rr{\hf + S_0^z}\rr{\hf - S_N^z}\\
+\eeq
+Since we want a particle in the intermediate state, we must have a hole in the initial state. Hence, we can substitute \(S_N^z = -\hf\) in the last equation:
+\beq
+S_0^+ S_0^- S_N^- S_N^+&= \rr{\hf + S_0^z}
+\eeq
+This gives
+\beq
+\Delta^+ \ham &= \fr{1}{4} J^2_N \rr{\hf + S_0^z}\fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+This is the final form and we can now read off the renormalizations. The term with \(S_0^z\) will renormalize the term in the Hamiltonian that comes with \(S_0^z\), which is the term with \(\epsilon_0\).
+\beq
+\Delta^+ \epsilon_0 = \fr{1}{4} J^2_N \fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+The remaining part is operator less and will hence renormalize the on-site energy of the term that was just decoupled, that is \(N\):
+\beq
+\Delta^+ \epsilon_N = \fr{1}{8} J^2_N \fr{1}{\omega^+ +\hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+
+\subsection{Hole sector}
+This sector consists of the renormalization caused due to hole excitations in the intermediate state. In the spin language, this translates to looking at those terms where the node that is being decoupled, \(N\), is downwards in the excited state. 
+\beq
+\Delta^- \ham = \hf J_N S_0^- S_N^+ \fr{1}{\hat \omega - \ham^D}\hf J_N S_0^+ S_N^-
+\eeq
+Note that we have chosen those particle scattering term because the \(S_N^-\) on the right will create a down spin in the intermediate state, hence justifying the hole sector. The next order of business is to evaluate the \(\ham^D\) in the propagator. Since the propagator has an \(S_0^+S_N^-\) in front, we can substitute \(S_0^z = \hf\) and \(S_N^z = -\hf\) in \(\ham^D\). Any other value would be annihilated by the operator at the front (\(S^+ \ket{\hf} = S^- \ket{-\hf} = 0\)). Therefore, from eq.~\ref{stardiag}.
+\beq
+\ham^D = \hf\epsilon_0 - \hf\epsilon_N  - \fr{1}{4} J_N 
+\eeq
+Substituting this in \(\Delta^- \ham\) gives
+\beq
+\Delta^- \ham = \hf J_N S_0^- S_N^+ \fr{1}{\hat \omega -\hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\hf J_N S_0^+ S_N^-
+\eeq
+At this point we make another simplification, we replace \(\hat \omega\) by its eigenvalue \(\omega^-\).
+\beq
+\Delta^- \ham &= \hf J_N S_0^- S_N^+ \fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\hf J_N S_0^+ S_N^-\\
+	      &= \fr{1}{4} J^2_N S_0^- S_N^+ S_0^+ S_N^-\fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+	      &= \fr{1}{4} J^2_N S_0^- S_0^+ S_N^+ S_N^-\fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+Here we used the fact that the spins commute. We can now use the identities \(S^+ S^- = \rr{\hf + S^z}\) and \(S^- S^+ = \rr{\hf - S^z}\) to write
+\beq
+S_0^- S_0^+ S_N^+ S_N^- &= \rr{\hf - S_0^z}\rr{\hf + S_N^z}
+\eeq
+Since we want a hole in the intermediate state, we must have a particle in the initial state. Hence, we can substitute \(S_N^z = \hf\) in the last equation:
+\beq
+S_0^- S_0^+ S_N^+ S_N^- &= \rr{\hf - S_0^z}
+\eeq
+This gives
+\beq
+\Delta^- \ham &= \fr{1}{4} J^2_N \rr{\hf - S_0^z}\fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+This is the final form and we can now read off the renormalizations. The term with \(S_0^z\) will renormalize the term in the Hamiltonian that comes with \(S_0^z\), which is the term with \(\epsilon_0\).
+\beq
+\Delta^- \epsilon_0 = -\fr{1}{4} J^2_N \fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+The remaining part is operator less and will hence renormalize the on-site energy of the term that was just decoupled, that is \(N\):
+\beq
+\Delta^- \epsilon_N = \fr{1}{8} J^2_N \fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+\subsection{Summary}
+These are the scaling equations for the couplings \(\epsilon_0\) and \(\epsilon_N\) on decoupling the \(N^\text{th}\) node. Further calculations will involve checking where the couplings are relevant, what fixed point conditions exist and form of the effective Hamiltonians at the fixed points. If we consider the RG equations for \(\epsilon_0\) for the time being,
+\beq
+\Delta^+ \epsilon_0 = \fr{1}{4} J^2_N \fr{1}{\omega^+ + \hf\epsilon_0 - \hf\epsilon_N + \fr{1}{4} J_N }\\
+\Delta^- \epsilon_0 = -\fr{1}{4} J^2_N \fr{1}{\omega^- - \hf\epsilon_0 + \hf\epsilon_N + \fr{1}{4} J_N }\\
+\eeq
+Since \(J_N\) does not renormalize and \(\epsilon_N\) is the unrenormalized guy, we can abosrb them into the \(\omega\) to make matters simpler: \(\omega^+_N = \omega^+ + \fr{1}{4}J_N - \hf \epsilon_N\), \(\omega^-_N = \omega^- + \fr{1}{4}J_N + \hf \epsilon_N\).
+\beq
+\Delta^+ \epsilon_0 = \fr{1}{4} J^2_N \fr{1}{\omega^+_N + \hf\epsilon_0}\\
+\Delta^- \epsilon_0 = -\fr{1}{4} J^2_N \fr{1}{\omega^-_N - \hf\epsilon_0}\\
+\eeq
+Note the property of \(\omega^+_N\) that it grows as we go on decoupling the nodes, because \(\epsilon_N > \epsilon_{N-1}\). In contrast, \(\omega^-_N\) shrinks as we go on decoupling nodes, for the same reason.
+\pb We can now look for nature of flow ((ir)relevance) and fixed points. From the URG prescription, we know that a fixed point is reached when the denominator vanishes.
+\pb For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + \hf\epsilon_0>0\) and negative otherwise. Hence, \(\epsilon_0\) will grow in the former regime and shrink in the latter. First consider the regime in which \(\epsilon_0\) grows. As we 
+
+
 \section{Kondo Model URG}\label{section3}
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J_z}{2}\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + \fr{J_t}{2}\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
@@ -3489,7 +3604,12 @@ We take an electron \(q\ua\) on the shell. The diagonal part of the Hamiltonian 
 \beq
 \ham^D = \epsilon_q \hat n_{q\ua} + \hf J_z S_d^z \hat n_{q\ua}
 \eeq
-This is the piece that comes in the denominator. The off-diagonal part involving the electron on the shell is
+This is the piece that comes in the denominator. Note that in this form, the hole energy comes out to be zero, because the Hamiltonian is written only in terms of \(\hat n_{q\beta}\). To remedy this, we write the Hamiltonian in terms of \(\tau_{q\beta} = \hat n_{q\beta} - \hf\).
+\beq[kondodiag]
+\ham^D = \epsilon_q \tau_{q\ua} + \hf J_z S_d^z \tau_{q\ua}
+\eeq
+A constant \(\hf \epsilon_q\) has been dropped while transforming the first term. The second term transforms exactly because we can just the bare Hamiltonian term \(S_d^z\rr{\hat n_{q\ua} - \hat n_{q\da}}\) as \(S_d^z\rr{\tau_{q\ua} - \tau_{q\da}}\).
+\pb The off-diagonal part involving the electron on the shell is
 \beq
 \ham^I = \hf J_z\sum_{kq}S^z_d\rr{c^\dagger_{k\ua}c_{q\ua} +  c^\dagger_{q\ua}c_{k\ua}} + \hf J_t \sum_{kq}\rr{S_d^+ c^\dagger_{k\da}c_{q\ua} + S_d^- c^\dagger_{q\ua}c_{k\da}}
 \eeq
@@ -3497,103 +3617,135 @@ These are the terms that come in the numerator.
 \subsection{Particle sector}
 The renormalization in the particle sector is
 \beq
-\Delta^+ \ham = \sum_{kk^\prime q}\hf  \rr{J_z S_d^z c^\dagger_{k\ua}c_{q\ua} + J_t S_d^+ c^\dagger_{k\da}c_{q\ua}}\fr{1}{\omega - \ham^D}\hf\rr{ J_z S_d^z c^\dagger_{q\ua}c_{k^\prime \ua} + J_t S_d^- c^\dagger_{q\ua}c_{k^\prime \da}}
+\Delta^+ \ham = \sum_{kk^\prime q}\hf  \rr{J_z S_d^z c^\dagger_{k\ua}c_{q\ua} + J_t S_d^+ c^\dagger_{k\da}c_{q\ua}}\fr{1}{\omega^+ - \ham^D}\hf\rr{ J_z S_d^z c^\dagger_{q\ua}c_{k^\prime \ua} + J_t S_d^- c^\dagger_{q\ua}c_{k^\prime \da}}
 \eeq
-Notice that all the operators on the left of the propagator have a \(c_{q\ua}\) and those on the right have a \(c^\dagger_{q\ua}\). This combination produces a particle in the intermediate state. In this intermediate state, since we have \(\hat n_{q\ua} = 1\), we can evaluate the diagonal part:
+\(\omega^+\) represents the quantum fluctuation scale for the particle sector. Notice that all the operators on the left of the propagator have a \(c_{q\ua}\) and those on the right have a \(c^\dagger_{q\ua}\). This combination produces a particle in the intermediate state. In this intermediate state, since we have \(\tau_{q\ua} = \hf\), we can evaluate the diagonal part from eq.~\ref{kondodiag}:
 \beq
-\ham^D = \epsilon_q + \hf J_z S_d^z
+\ham^D = \hf\epsilon_q + \fr{1}{4} J_z S_d^z
 \eeq
 There are two terms in each bracket, so in total there are four terms. The first term has two \(S^z\).
 \beq
-\Delta^+_1 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z^2 S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} S_d^zc^\dagger_{q\ua}c_{k^\prime\ua}\\
-	&= \sum_{kk^\prime q} \fr{1}{4} J_z^2 c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} S_d^z S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\\
-	&= \sum_{kk^\prime q} \fr{1}{16} J_z^2 c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} c^\dagger_{q\ua}c_{k^\prime\ua}\\
-&= \fr{1}{16} J_z^2 \sum_{kk^\prime q} c^\dagger_{k\ua}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\ua} \qq{\fr{\hf + S^z_d }{\omega - \epsilon_q - \fr{1}{4} J_z } + \fr{\hf - S^z_d}{\omega - \epsilon_q + \fr{1}{4} J_z}} \\
-&= \fr{1}{32} J_z^2 \sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega - \epsilon_q - \fr{1}{4} J_z } + \fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z}} \\
-	   &+ \fr{1}{16} J_z^2 \sum_{kk^\prime q} S_d^z c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega - \epsilon_q - \fr{1}{4} J_z } - \fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z}} \\
+\Delta^+_1 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z^2 S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} S_d^zc^\dagger_{q\ua}c_{k^\prime\ua}\\
+		&= \sum_{kk^\prime q} \fr{1}{4} J_z^2 c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} S_d^z S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\\
+		&= \sum_{kk^\prime q} \fr{1}{16} J_z^2 c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} c^\dagger_{q\ua}c_{k^\prime\ua}\\
+&= \fr{1}{16} J_z^2 \sum_{kk^\prime q} c^\dagger_{k\ua}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\ua} \qq{\fr{\hf + S^z_d }{\omega^+ - \hf\epsilon_q - \fr{1}{8} J_z } + \fr{\hf - S^z_d}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z}} \\
+&= \fr{1}{32} J_z^2 \sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{8} J_z } + \fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z}} \\
+	   &+ \fr{1}{16} J_z^2 \sum_{kk^\prime q} S_d^z c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{8} J_z } - \fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z}} \\
 \eeq
 The first term is a potential scattering term; the second term renormalizes the up spin part of the \(S^z_d\) term, that is, \(J_z\).
 \pb The second term gives
 \beq
-\Delta^+_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} S_d^-c^\dagger_{q\ua}c_{k^\prime\da}
+\Delta^+_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{8} J_z S_d^z} S_d^-c^\dagger_{q\ua}c_{k^\prime\da}
 \eeq
 The \(S_d^-\) in the numerator on the right means we must have \(S^z_d = -\hf\) in the denominator. 
 \beq
-\Delta^+_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\\
-&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^-c^\dagger_{k\ua}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c^\dagger_{k\ua}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^+_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\\
+&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^-c^\dagger_{k\ua}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c^\dagger_{k\ua}c_{k^\prime\da}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^z S_d^- = -\hf S_d^-\). This renormalizes \(J_t\).
 \pb The third term gives
 \beq
-\Delta^+_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}
+\Delta^+_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}
 \eeq
 The \(S_d^+\) in the numerator on the left means we must have \(S^z_d = -\hf\) in the denominator. 
 \beq
-\Delta^+_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\\
-&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ S_d^z c^\dagger_{k\da}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^+_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\\
+&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ S_d^z c^\dagger_{k\da}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^+ S_d^z = -\hf S_d^+\). This renormalizes \(J_t\).
 \pb The fourth term gives
 \beq
-\Delta^+_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q - \hf J_z S_d^z} S_d^- c^\dagger_{q\ua}c_{k^\prime\da}
+\Delta^+_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} S_d^- c^\dagger_{q\ua}c_{k^\prime\da}
 \eeq
 The \(S_d^+\) in the numerator on the left means we must have \(S^z_d = -\hf\) in the denominator. 
 \beq
-\Delta^+_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\\
-&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^+ S_d^- c^\dagger_{k\da}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  \fr{1}{4} J_t^2\sum_{kk^\prime q} \rr{\hf + S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^+_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\\
+&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^+ S_d^- c^\dagger_{k\da}c_{q\ua}c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{4} J_t^2\sum_{kk^\prime q} \rr{\hf + S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega^+ - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^+ S_d^- = \rr{\hf + S_d^z}\). The first term produces a potential scattering and the second term renormalizes \(J_z\).
 \subsection{Hole sector}
 The renormalization in the hole sector is
 \beq
-\Delta^- \ham = \sum_{kk^\prime q}\hf\rr{ J_z S_d^z c^\dagger_{q\ua}c_{k^\prime \ua} + J_t S_d^- c^\dagger_{q\ua}c_{k^\prime \da}}\fr{1}{\omega - \ham^D}\hf \rr{J_z S_d^z c^\dagger_{k\ua}c_{q\ua} + J_t S_d^+ c^\dagger_{k\da}c_{q\ua}}
+\Delta^- \ham = \sum_{kk^\prime q}\hf\rr{ J_z S_d^z c^\dagger_{q\ua}c_{k^\prime \ua} + J_t S_d^- c^\dagger_{q\ua}c_{k^\prime \da}}\fr{1}{\omega^- - \ham^D}\hf \rr{J_z S_d^z c^\dagger_{k\ua}c_{q\ua} + J_t S_d^+ c^\dagger_{k\da}c_{q\ua}}
 \eeq
-The diagonal part will be 0, because \(\hat n_{q\ua} =0\) in intermediate state. However, we will need to subtract an initial energy from \(\omega\), and that initial energy is \(E_0 = -\epsilon_q + \hf J_z S^z_d\)
+The \(\omega^-\) represents the quantum fluctuation energy scale for the hole sector. In this intermediate state, since we have \(\tau_{q\ua} = -\hf\), we can evaluate the diagonal part from eq.~\ref{kondodiag}:
+\beq
+\ham^D = -\hf\epsilon_q - \fr{1}{4} J_z S_d^z
+\eeq
 The first term has two \(S^z\).
 \beq
-\Delta^-_1 \ham &= \sum_{kk^\prime q} S_d^zc^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{4} J_z^2 \fr{1}{\omega - E_0 + E_0} S_d^z c^\dagger_{k\ua}c_{q\ua}\\
-	&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \fr{1}{\omega - \epsilon_q + \hf J_z S_d^z} \\
-	&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua}c^\dagger_{k\ua} \qq{\fr{\hf + S^z_d}{\omega - \epsilon_q + \fr{1}{4} J_z} + \fr{\hf - S^z_d}{\omega - \epsilon_q - \fr{1}{4} J_z}} \\
-	&= -\fr{1}{32} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} + \fr{1}{\omega - \epsilon_q - \fr{1}{4} J_z}} \\
-	&- \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} S_d^z\qq{\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} - \fr{1}{\omega - \epsilon_q - \fr{1}{4} J_z}}\\
+\Delta^-_1 \ham &= \sum_{kk^\prime q} S_d^zc^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{4} J_z^2 \fr{1}{\omega^- - \ham^D} S_d^z c^\dagger_{k\ua}c_{q\ua}\\
+		&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua} c^\dagger_{k\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} \\
+	&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua}c^\dagger_{k\ua} \qq{\fr{\hf + S^z_d}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} + \fr{\hf - S^z_d}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}} \\
+	&= -\fr{1}{32} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} + \fr{1}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}} \\
+	&- \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} S_d^z\qq{\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} - \fr{1}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}}\\
 \eeq
 In the last step, we dropped a constant term which came from the commutator of \(c^\dagger_{k}\) and \(c_{k^\prime}\). Note that this term exactly cancels the first term in the particle sector.
 \pb The second term gives
 \beq
-\Delta^-_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \hf J_z S_d^z} S_d^z c^\dagger_{k\ua}c_{q\ua}
+\Delta^-_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^z c^\dagger_{k\ua}c_{q\ua}
 \eeq
 The \(S_d^-\) in the numerator on the left means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^- S_d^z c^\dagger_{q\ua}c_{k^\prime\da}c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  \fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c_{k^\prime\da}c^\dagger_{k\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^-_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^- S_d^z c^\dagger_{q\ua}c_{k^\prime\da}c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c_{k^\prime\da}c^\dagger_{k\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c^\dagger_{k\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^- S_d^z = \hf S_d^-\). This renormalizes \(J_t\).
 \pb The third term gives
 \beq
-\Delta^-_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega - \epsilon_q + \hf J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
+\Delta^-_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
 \eeq
 The \(S_d^+\) in the numerator on the right means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^+ c^\dagger_{q\ua}c_{k^\prime\ua}c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^-_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^+ c^\dagger_{q\ua}c_{k^\prime\ua}c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^z S_d^+ = \hf S_d^+\). This renormalizes \(J_t\).
 \pb The fourth term gives
 \beq
-\Delta^-_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \hf J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
+\Delta^-_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
 \eeq
 The \(S_d^+\) in the numerator on the right means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^- S_d^+ c^\dagger_{q\ua}c_{k^\prime\da} c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c_{k^\prime\da}c^\dagger_{k\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
-&=  -\fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
+\Delta^-_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^- S_d^+ c^\dagger_{q\ua}c_{k^\prime\da} c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c_{k^\prime\da}c^\dagger_{k\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^- S_d^+ = \rr{\hf - S_d^z}\).
 \subsection{Scaling equations}
+Focusing on the first terms of each sector, we can see that 
+\beq[delta1]
+\Delta^+_1 \ham &= \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} \\
+\Delta^-_1 \ham &= -\fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua} c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z}
+\eeq
+To connect the two \(\omega\), we can use \(\eta = {\eta^\dagger}^\dagger\). If we choose the scattering term \(c^\dagger T=\sum_k S_d^z c^\dagger_{q\ua}c_{k\ua}\), then
+\beq
+\eta &= \fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4}J_z S_d^z}\sum_k S_d^z c^\dagger_{k\ua}c_{q\ua}
+\eeq
+and
+\beq
+\eta^\dagger &= \fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z}\sum_k S_d^z c^\dagger_{q\ua}c_{k\ua}\\
+\implies \rr{\eta^\dagger}^\dagger &= \sum_k S_d^z c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z}\\
+&= \fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z}\sum_k S_d^z c^\dagger_{k\ua}c_{q\ua}
+\eeq
+Comparing \(\eta\) and \(\rr{\eta^\dagger}^\dagger\), we can write
+\beq
+\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z} = \fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4}J_z S_d^z}
+\eeq
+Using this on eq.~\ref{delta1} gives 
+\beq
+\Delta_1 \ham \equiv \Delta^+_1\ham + \Delta^-_1\ham=0
+\eeq
+This means there is no net renormalization from the first terms in each sector. Doing similar things for the other terms gives
+\beq
+\Delta_2^++  \Delta_3^+ &= \Delta_2^- + \Delta_3^-\\
+\implies \Delta_2 \ham + \Delta_3 \ham &= 2\Delta_2^+ + 2\Delta_3^+
+\eeq
 Adding the terms that renormalize \(S_d^+\) from both sectors gives the renormalization
 \beq
 -\fr{1}{2} J_z J_t\sum_{q} \fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
@@ -3606,7 +3758,7 @@ Similarly, adding the term 4 from both sectors gives a renormalization in \(-\hf
 \beq
 -\hf J_t^2 \sum_{q}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
 \eeq
-Doing the calculation with the down spin should produce the other term, \(\hf S_d^z c^\dagger_{k\ua}c_{k^\prime\ua}\), but that does not add to the previous renormalization,so there is no multiplication by 2 here:
+Doing the calculation with the down spin should produce the other term, \(\hf S_d^z c^\dagger_{k\ua}c_{k^\prime\ua}\), but that does not add to the previous renormalization, so there is no multiplication by 2 here:
 \beq
 \Delta J_z = -J_t^2 \sum_{q}\fr{1}{\omega - \epsilon_q + \fr{1}{4} J_z} \\
 \eeq
@@ -4498,7 +4650,7 @@ Putting \il{\omega = 0},
 \dv{\epsilon_d}{\ln D} &= |V|^2n(D) \rr{\fr{1}{D + \epsilon_d} - \fr{2}{D}} \\
 \dv{U}{\ln D}	       &= 2|V|^2n(D) \rr{\fr{1}{D} - \fr{1}{D + \epsilon_d}}
 \eeq
-}
+
 \subsection{With Kondo-like interaction}
 The four-Fermi interaction we are considering is of the form
 \beq
@@ -4563,7 +4715,7 @@ where \(\tau \equiv \hat n - \hf\) and \(\mc{C}\) is non-dynamic and will hence 
 \ham_D^+ = \epsilon_q \hat \tau_{q\beta} + \beta J_z S^z_d\hat \tau_{q\beta} + H_{imp}\\
 \eeq
 
-\subsection{Particle sector}
+\subsubsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}\qq{V_q^* c^\dagger_{d\beta}c_{q\beta} +  J_z \beta S^z_d\sum_kc^\dagger_{k\beta}c_{q\beta} + J_t\sum_{k}c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}}\times\fr{1}{\hat \omega^+ - \ham_D}\\
@@ -4735,7 +4887,7 @@ The scaling equations are obtained as follows. The first term gives the renormal
 \Delta^+ J_t &= -J_z J_t\sum_{q}\fr{1}{\omega^+ - \hf \epsilon_q - \epsilon_d + \fr{1}{4} J_z}\\
 \Delta^+ J_z &= -J_t^2 \sum_{q}\fr{1}{\omega^+ - \hf \epsilon_q - \epsilon_d + \fr{1}{4} J_z}
 \end{flalign}
-\subsection{Hole sector}
+\subsubsection{Hole sector}
 The renormalization in the Hamiltonian in the hole sector is
 \beq
 \Delta^- \ham_N = \sum_{q\beta}\qq{V_q c^\dagger_{q\beta}c_{d\beta} + J_z\beta S^z_d \sum_{k\sigma}\hat n_{d\sigma} c_{k\beta} c^\dagger_{q\beta} + J_t\sum_{k\sigma}c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k\ol\beta}}\times\fr{1}{\hat \omega^- - \ham_D^-}\\
@@ -4758,8 +4910,8 @@ H_1 = \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta} -\hf\epsilon_q - \hf\be
 \eeq
 For hole excitations, the initial state must be filled, so we can set \(\hat n_{q\beta} = 1\).
 \beq
-\Delta_1^- \ham_N &= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\omega^- + \hf\epsilon_q - \fr{1}{4}J_z\rr{1 - \hat n_{d\ol\beta}} - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
-		  &= \sum_{q\beta}\rr{1 - \hat n_{d\beta}}\qq{\fr{|V_q^1|^2 \hat n_{d\ol\beta}}{\omega^- + \hf\epsilon_q - 2\epsilon_d - U } + \fr{|V_q^0|^2\rr{1 - \hat n_{d\ol\beta}}}{\omega^- + \hf\epsilon_q - \epsilon_d  + \fr{1}{4} J_z}}\\
+\Delta_1^- \ham_N &= \sum_{q\beta}|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4}J_z\rr{1 - \hat n_{d\ol\beta}} - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}} \\
+		  &= \sum_{q\beta}|V_q|^2\rr{1 - \hat n_{d\beta}}\qq{\fr{\hat n_{d\ol\beta}}{\omega^- + \hf\epsilon_q - 2\epsilon_d - U } + \fr{1 - \hat n_{d\ol\beta}}{\omega^- + \hf\epsilon_q - \epsilon_d  + \fr{1}{4} J_z}}\\
 		  &= \sum_{q\beta}|V(q)|^2\left[ \hat n_{d\ol\beta}\rr{\fr{1}{\omega^- + \hf\epsilon_q - 2\epsilon_d - U} - \fr{2}{\omega^- + \hf\epsilon_q - \epsilon_d  + \fr{1}{4} J_z}} \right.\\
 		  &\quad\quad\left.+ \hat n_{d\ua}\hat n_{d\da}\rr{\fr{1}{\omega^- + \hf\epsilon_q - \epsilon_d  + \fr{1}{4} J_z} - \fr{1}{\omega^- + \hf\epsilon_q - 2\epsilon_d - U}}\right]
 \eeq
