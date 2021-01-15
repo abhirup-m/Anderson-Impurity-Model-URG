@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1610644187 "notes.tex" "notes.pdf" "notes" 1610644189
+["pdflatex"] 1610685276 "notes.tex" "notes.pdf" "notes" 1610685277
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1607249373 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1607249373 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1607249373 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -166,16 +166,16 @@
   "/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1607185936 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1607249373 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1607249373 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1610258825 4880424 770d30c314622ac43bbe581bc9fca6ef ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1610258784 2635860 626bb75df74c352822529302275c1f3a ""
-  "common.sty" 1610565563 3059 bb4819f762e1ede421ba02a05ed68b61 ""
-  "notes.aux" 1610644189 1213 b97aaea8aa0a84cbba4c2570fa0b9072 "pdflatex"
-  "notes.out" 1610644189 229 0c802b5170f3299b4775504468adaf55 "pdflatex"
-  "notes.tex" 1610644186 339886 1cc47092edbb8d8bd40b975a2354e185 ""
-  "notes.toc" 1610644189 301 856f7bddfd5e80445d953e88eededc6c "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1609752003 4905560 e67924595f5bf8ecf79c2804cb9bbc27 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1609751982 2635858 86a4e381e0645c8db20e5600170bf4c7 ""
+  "common.sty" 1610337877 3059 bb4819f762e1ede421ba02a05ed68b61 ""
+  "notes.aux" 1610685277 1213 b97aaea8aa0a84cbba4c2570fa0b9072 "pdflatex"
+  "notes.out" 1610685277 229 0c802b5170f3299b4775504468adaf55 "pdflatex"
+  "notes.tex" 1610685276 339910 410b05fe0d0a2c27243b8490575958e2 ""
+  "notes.toc" 1610685277 301 856f7bddfd5e80445d953e88eededc6c "pdflatex"
   (generated)
-  "notes.toc"
   "notes.out"
   "notes.aux"
   "notes.log"
+  "notes.toc"
   "notes.pdf"
