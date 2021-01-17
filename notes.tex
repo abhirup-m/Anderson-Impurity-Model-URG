@@ -3605,7 +3605,7 @@ For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + 
 \end{itemize}
 
 
-\comm{
+%\comm{
 \section{Kondo Model URG}\label{section3}
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J_z}{2}\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + \fr{J_t}{2}\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
@@ -5232,78 +5232,88 @@ Here both \(U\) and \(J\) are relevant and they flow up to the strong-coupling f
 \end{minipage}
 \pagebreak
 \section{Connection between Unitary Renormalization Group and Poor Man's Scaling}
-We first motivate the expansion of PMS method. The problem is defined as
+We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
-\rr{\hat\ham_0 + \hat V}\ket{\Psi} = E\ket{\Psi}
+\ham\ket{\Psi} = E\ket{\Psi}
 \eeq
-\(\hat\ham_0\) is the diagonal part of the Hamiltonian. Starting from the definition of \(\hat T-\)matrix,
+\(\ham\) is the total Hamiltonian and \(\ket{\Psi}\) and \(E\) are the exact eigenstate and eigenvalue of \(\ham\). The problems we deal with typically have a bath of mobile electrons, with energies spanning from \(-D\) to \(D\). We are interested in finding effective Hamiltonians after "removing" the highest shell in the conduction bath. This will give us a Hamiltonian to which we can again apply the same procedure.
+\pb We want to decouple one electron at momentum \(q\). We can split the exact wavefunction as
+\beq[wf]
+\ket{\Psi} = \ket{\Psi_0} + \ket{\Psi_1}
+\eeq
+where \(\ket{\Psi_0} = \rr{1 - \hat n_{q}}\ket{\Psi^N}\) is that part of the wavefunction where the state \(q\) is occupied. \(\ket{\Psi^N_1} = \hat n_q \ket{\Psi}\) is that part of the wavefunction where the state \(q\) is occupied. We can also split the Hamiltonian as
+\beq[hami]
+\ham = \ham^d + V_0 + V_+ + V_-
+\eeq
+\(\ham^d\) is the diagonal part; it has the purely energy terms as well as self-energies that may arise from the diagonal parts of interactions; \(V_0\) is the purely off-diagonal term that does not change \(\hat n_q\); it is the scattering \textit{inside} the low energy subspace. \(V_+\) and \(V_-\) are the purely off-diagonal terms that \textit{do} change \(\hat n_q\); \(V_+\) takes you from \(\hat n_q = 0\) to \(\hat n_q = 1\) and \(V_-\) does the opposite.
+\pb Substituting eqs.~\ref{hami} and \ref{wf} in eq.~\ref{problem} gives
 \beq
-\hat T\ket{\Psi_0} = \hat V\ket{\Psi}
+\rr{\ham^d + V_0 + V_+ + V_-}\rr{\ket{\Psi_0} + \ket{\Psi_1}} = E\rr{\ket{\Psi_0} + \ket{\Psi_1}}
 \eeq
-where \(\ket{\Psi_0}\) is an eigenstate of \(\hat\ham_0\), we can write an equation for the \(\hat T-\)matrix (see eq.~\ref{tmat}):
-\beq[tmat2]
-\hat T = \hat V + \hat V\rr{E - \hat\ham_0}^{-1}\hat T
-\eeq
-Define the non-interacting Green's function
+Gathering the kets with \(\hat n_q = 0,1\) gives
 \beq
-G_0 = \rr{E - \hat\ham_0}^{-1}
+\rr{\ham^d_0 + V_0}\ket{\Psi_0} + V_- \ket{\Psi_1} = E\ket{\Psi_0}\\
+\rr{\ham^d_1 + V_0}\ket{\Psi_1} + V_+\ket{\Psi_0} = E\ket{\Psi_1}
 \eeq
-Substituting the expression of \(\hat T\) back into the right hand side gives an infinite sum. PMS typically requires up to \(O(V^2)\):
+
+Eliminating \(\ket{\Psi_1}\) from the two equations gives
+\beq[reneq]
+\rr{\ham^d_0 + V_0 + V_- \fr{1}{E - \ham^d_1 - V_0}V_+}\ket{\Psi_0} = E\ket{\Psi_0}
+\eeq
+This new Hamiltonian,
 \beq
-\hat T &= \hat V + \hat VG_0\qq{\hat V + \hat VG_0\rr{\hat V + \hat VG_0}...}\\
-  &= \hat V + \hat VG_0\hat V + \hat VG_0\hat VG_0\hat V + ...\\
-  &= \hat V + \hat VG\hat V\\
+\tilde \ham_0 = \ham^d_0 + V_0 + V_- \fr{1}{E - \ham^d_1 - V_0}V_+
 \eeq
-where \(G\) is the total interacting Green's function:
-\beq
-G = G_0 + G_0\hat VG_0 + ... = \fr{1}{E - \hat\ham}
-\eeq
-The current bandwidth is \(D\). We want to find a Hamiltonian with bandwidth \(D - \delta D\). That is, we intend to integrate out all conduction band states in the range \(\epsilon_k \in \qq{D-\delta D, D}\). The crudest approximation would be to directly project out all such states. We call this the zeroth approximation:
-\beq
-\hat\ham^{(0)}(D - \delta D) = P \hat\ham(D)P = P\hat\ham_0P + P\hat VP
-\eeq
-where 
-\beq
-P(D-\delta D) = \sum_{k_1,k_2<D-\delta D}\ket{n_{k_1}}\bra{n_{k_2}}
-\eeq
-projects out states above \(D - \delta D\). This zeroth approximation retains no information about the eliminated subspace. A better approximation would be to retain the effects of the high energy subspace through virtual transitions to those states and then back to the low energy subspace. The way we do this is by calculating the \(T\)-matrix to arbitrary order, by taking into account those transitions that connect the high and low energy subspaces. Note that since the total scattering has to be inside the low energy subspace, we need atleast two scatterings, one that takes me into the high energy subspace and one that brings me back. Consequently, there is no first order \(V\) contribution:
-\beq
-\Delta T = \hat VG\hat V
-\eeq
-As mentioned already, \(\hat V\) refers to all those processes that connect the two subspaces. If we now write the \(T-\)matrix for the low energy subspace up to second order by replacing \(\hat T\) with \(\hat V\) in eq.~\ref{tmat2}, the change \(\Delta \hat T\) can be interpreted as a renormalization in \(\hat V\) itself.
-\beq
-\hat T \to \hat V \implies \Delta \hat T = \Delta \hat V
-\eeq
-This gives us an exact equation for the renormalization of \(\hat V\):
+has the high energy mode removed; the scattering terms start from the low energy subspace and end at the low energy subspace as well. The renormalization in the low energy subspace scatterings  is
 \beq[deltaV]
-\Delta \hat V = \hat V\fr{1}{E - \hat\ham_0 - \hat V}\hat V
+\Delta V_0\big\vert_{PMS} = V_- \fr{1}{E - \ham^d_1 - V_0}V_+
 \eeq
-with the understanding that the \(\hat V\)'s in the numerators must connect the two subspaces in order to renormalize \(\hat V\).
-For PMS, we typically expand the denominator and keep only the lowest order.
-\beq[pms]
-\Delta \hat V_{P} = \hat V\fr{1}{E - \hat\ham_0}\hat V
-\eeq
-To make the connection with URG, note that instead of eq.~\ref{problem}, the problem URG is trying to solve is:
+We can write down the renormalized Schrodinger equation in the low energy subspace, from eq.~\ref{reneq},
 \beq
-\hat\ham\ket{\Psi} = \hat\ham^\prime \ket{\Psi}
+\tilde \ham_0 \ket{\Psi_0} = E\ket{\Psi_0}
 \eeq
-That is, while PMS intends to solve the entire problem, URG tries to decouple just one degree of freedom at each step. The difference is that PMS deals with a scalar energy \(E\), while URG deals with an operator \(\hat\ham^\prime\). Hence, we can make a similar transformation in eq.~\ref{deltaV}:
+and again repeat the entire process. \(\tilde \ham_0\) now takes the place of \(\ham\) and \(\ket{\Psi_0}\) takes the place of \(\ket{\Psi}\) in eq.~\ref{problem}.
+\pb The expression for URG is obtained in an almost identical way. The only difference is that instead of starting with the exact eigenpair (\(E,\ket{\Psi}\)), we start with a more general pair (\(\tilde \ham, \ket{\Phi}\)) where \(\ket{\Phi}\) is not necessarily an exact eigenstate of \(\ham\). It is defined by \(\ham^\prime\), which is in turn defined as \(\hat n_q \ham^\prime\rr{1 - \hat n_q} = 0\). \(\ket{\Phi}\) is then defined by
 \beq
-\Delta \hat V_{U} = \hat V\fr{1}{\hat\ham^\prime - \hat\ham_0 - \hat V}\hat V
+\ham\ket{\Phi} = \ham^\prime \ket{\Phi}
 \eeq
-We can separate the term \(\hat V\) into two parts; one part \(V^D\) consists of diagonal terms that may arise from the scattering term like an \(S^z s_z\) term that arises from a Heisenberg-like term, and the other part is the purly scattering part which we call \(\hat V_i\).
+This definition of \(\ham^\prime\) is the very minimum that we must have in order to fulfill our goal (decouple \(q\)). 
+The final expression for the renormalization can be written directly from the PMS expression simply by replacing \(E\) with \(\ham^\prime\).
 \beq
-\Delta \hat V_{U} = \hat V\fr{1}{\hat\ham^\prime - \hat V_i - \hat\ham_0 - V^D}\hat V
+\Delta V_0\big\vert_{URG} =  V_-\fr{1}{\ham^\prime_1 - \ham^d_1 -  V_0} V_+
 \eeq
-We now define a new quantity \(\hat \omega = \hat\ham^\prime - \hat V_i\):
-\beq[urg]
-\Delta \hat V_{U} = \hat V\fr{1}{\hat\omega - \hat\ham_0 - V^D}\hat V
+This allows us to write down a unitary operator that decouples the entangled state:
+\beq
+U \ket{\Phi} = \ket{\Phi_0} \text{ and } \qq{\hat n_q, \tilde \ham} = 0
 \eeq
-	Comparing the two equations \ref{pms} and \ref{urg}, we can note the following points:
-\begin{itemize}
-	\item The scalar \(E\) in PMS refers to the energy eigenvalue of the many-body eigenstate \(\ket{\Psi}\), while the operator \(\hat \omega\) in URG contains both the renormalized Hamiltonian as well as the purely scattering term \(V^i\). The difference is that while PMS ignores the scattering in the denominator, URG accounts for it, atleast in principle, inside the \(\hat \omega\).
-	\item URG has an extra term in the denominator, the diagonal term \(V^D\) that arises from the scattering term. This term is not there in PMS because the PMS result is the lowest order term in an expansion.
-\end{itemize}
+where \(\tilde \ham = U^\dagger \ham U\). We can now write down a new problem in this decoupled space with the rotated items and attempt to decouple another electron \(q^\prime\). We will again choose some general eigenpair (\(\ham^\prime,\ket{\Phi}\)) such that \(\tilde\ham\ket{\Phi} = \ham^{\prime}\ket{\Phi}\) and \(\qq{\ham^{\prime},\hat n_{q^\prime}}=0\).
+\pb Summarizing, the general Hamiltonian is not diagonal in the Fock space basis.
+URG, in order to proceed, selects one non-Fock basis of states \(\ket{\Phi}\) such that \(q\) is decoupled in that Hamiltonian.
+Since there can be lots of such basis, there is a freedom in this choice.
+With this basis in mind, URG then finds a unitary operator which when operated on the Hamiltonian takes me to the form in which it is diagonal in the Fock space basis.
+Note that this form is a function of the chosen \(\ket{\Phi}\).
+We then select the second degree of freedom and repeat the process.
+What PMS does is, it exploits the freedom of choice and selects the exact eigenstate \(\ket{\Psi}\) of the Hamiltonian as the non-Fock basis \(\ket{\Phi}\).
+Doing that returns a rotated Hamiltonian which is diagonal in \(q\), and is a function of the chosen state, same as URG.
+The conclusion is that depending on which state we choose as our diagonal non-Fock basis, URG and PMS will cause flows along different lines in general.
+\pb In the context of URG, we define a quantum fluctuation energy scale \(\hat \omega\):
+\beq
+\hat \omega = \ham^\prime_1 -  V_0
+\eeq
+This allows us to write
+\beq
+\Delta V_0\big\vert_{URG} =  V_-\fr{1}{\hat\omega - \ham^d_1} V_+
+\eeq
+As the couplings flow, \(V_0\) will also flow, leading to a flow of \(\hat\omega\). Just at the fixed point, the denominator of URG vanishes, giving the equation
+\beq
+\rr{\hat\omega - \ham_1^d}V_+\ket{\Psi_0} \text{ or } \rr{\hat\omega - \ham_1^d}V_-\ket{\Psi_1}
+\eeq
+This means that one of the eigenvalues of \(\hat\omega\) matches with the eigenvalue of the diagonal part \(\ham^d\), either in the occupied sector (\(\ham^d_1\)) or unoccupied sector (\(\ham^d_1\)). Since the eigenvalues are unchanged during the unitary renormalization, this implies that \(\omega\) takes up one of the eigenvalues of the whole Hamiltonian \(\ham\). This will correspond to the fixed point obtained from PMS if we had started PMS with that eigenvalue.
+\pb In short, while the PMS flow is parametrised by one of the exact energy eigenvalues \(E\), the URG flow is parametrised by a non-trivial operator \(\hat \omega\) which incorporates both a diagonal part and an off-diagonal part and itself flows under the URG. At the fixed point, the off-diagonal part cancels out and the \(\hat\omega\) finally flows to one of the energy eigenvalues and the URG fixed point matches with one of the PMS fixed points.
+\begin{center}
+\includegraphics[scale=0.42]{pms_vs_urg.png}
+\captionof{figure}{Flows of PMS(green) and URG(blue)}
+\end{center}
 To make matters more clear, we can look at a specific term. For the SIAM, we will consider the scattering \(V=c^\dagger_{q\ua}c_{d\ua}\). \(q\ua\) is a state in the high energy subspace.
 \beq
 \Delta V_P &=  c^\dagger_{d\ua}c_{q\ua}\fr{1}{E - \hat \ham_0}c^\dagger_{q\ua}c_{d\ua}\\
@@ -5342,8 +5352,8 @@ Setting \(\omega=0\) gives us the lowest energy scale renormalization and reprod
 \beq
 \eta_{p} = \fr{1}{E - \hat \ham_0}V, \eta_p^\dagger = \fr{1}{E - \hat \ham_0}V^\dagger
 \eeq
-Here \(V\) destroys a high energy electron and \(V^\dagger\) creates one.
+Here \(V\) destroys a high energy electron and \(V^\dagger\) creates one.\cite{Kondo}
 \bibliographystyle{unsrt}
 \bibliography{notes}
-}
+%}
 \end{document}
