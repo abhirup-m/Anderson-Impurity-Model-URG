@@ -21,7 +21,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-\comm{
+%\comm{
 \section*{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -84,7 +84,7 @@ The work is organized as follows. Section \ref{section1} goes over the available
 \pagebreak
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
-\il{T-}matrix is defined as
+\il{T-}matrix is defined as\cite{sakurai}
 \beq
 V\psi = T\phi
 \eeq
@@ -153,7 +153,7 @@ A consequence of this is, for another scalar E, we can write
 \end{gather}
 
 \subsection{Landau's theory of Fermi liquid}
-A ideal Fermi gas is a collection of non-interacting Fermions.
+This section is adapted from ref.~\cite{pethick}. A ideal Fermi gas is a collection of non-interacting Fermions.
 Since they are non-interacting, the eigenstates of the complete system are just the collections of the eigenstates of the particles and holes.
 The eigenstate will be of  the form \il{\{n_{k_1\ua},n_{k_1\da},n_{k_2\ua},n_{k_2\da},n_{k_3\ua},n_{k_3\da},...,\}}, where \il{n_{k\sigma}\in\{0,1\}} is the number of particles with momentum \il{k} and spin \il{\sigma}.
 In the ground state,
@@ -404,7 +404,7 @@ This is an example of the Friedel sum rule which states that the total number of
 In other words, the impurity will be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
 
 \subsubsection{Coulomb blockade}
-A quantum dot is a set of electrons that are localised in a sufficiently small region so that their spectrum is quantised.
+This section follows the discussion in reference \cite{piers}. A quantum dot is a set of electrons that are localised in a sufficiently small region so that their spectrum is quantised.
 The localization means that double occupation will come at a cost of \il{U}.
 \beq
 H_\text{dot} = \sum_{m\sigma} \epsilon_m n_{m\sigma} + U\fr{N(N+1)}{2}
@@ -648,7 +648,7 @@ where
 \il{\vec \sigma_e} is thus the spin density at the origin.
 
 \subsection{Obtaining the resistivity minimum and \il{\log}-dependence}
-The model we are working with is
+The next few sections follow the approach in \cite{phill}. The model we are working with is
 \beq
 H_K &= H_0 + V = \sum_k \epsilon_k n_k + \fr{J}{2} \sum_{k_1,k_2,\sigma_1,\sigma_2}c^\dagger_{k_1\sigma_1}\vec \sigma_d \cdot \vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}
 \eeq
@@ -1403,7 +1403,7 @@ Since eq.~\ref{change1} was obtained as a perturbation calculation, it should ha
 
 \subsection{Method of pseudo-fermions}
 Spin operators, unlike fermionic creation and annihilation operators,  do not satisfy Wick's theorem.
-To remedy this, they can be factorised into fermionic operators.
+To remedy this, they can be factorised into fermionic operators \cite{abrikosov}.
 For example,
 \beq
 S^z = \fr{\sigma^z}{2} = \sum_{ij} c^\dagger_i \fr{\sigma^z_{ij}}{2} c_j = \hf\rr{c^\dagger_\ua c_\ua - c^\dagger_\da c_\da}
@@ -1419,7 +1419,7 @@ Now, the state \il{\ket{\ua}} can be represented as
 \eeq
 This however means that we get two other states in the Hilbert space, \il{\ket{0}} and \il{\ket{\ua\da}}, which are not allowed physically.
 To remove them, we can do the following.
-We can modify the Hamiltonian \il{H}, by introducing a complex chemical potential
+We can modify the Hamiltonian \il{H}, by introducing a complex chemical potential \cite{poppov}
 \beq
 \mu = -i\fr{\pi}{2}k_B T
 \eeq
@@ -1536,7 +1536,7 @@ What this means is that although the singlet is stable with respect to energy-co
 This induces an interaction on the site 1.
 Since the interaction on the site 1 is just a manifestation of the polarizability of the singlet, we can either take the singlet with its polarizability and assume the conduction band to be non-interacting, or we can assume the singlet to be static and take the Fermi sea to have a localised interaction at the site 1.
 In the latter picture, we have a frozen singlet (which can be ignored) and an interacting Fermi sea.\\\\
-The goal is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions.
+The goal \cite{nozieres} is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions.
 In the absence of interactions, the scattered wavefunction is
 \beq[shift]
 \psi \sim \fr{\sin\qq{kr + \delta(E_k)}}{r}
@@ -1706,7 +1706,7 @@ R = \frac{\chi/\chi_0}{C_v/C_v^0} = \frac{4\alpha/\pi\mathcal{N}(0)}{2\alpha/\pi
 \eeq
 
 \subsection{Numerical renormalization group calculation}
-Wilson's idea wanted to remove the limitations of the perturbative nature of Anderson's scaling method.
+Wilson's idea \cite{wilson} was to remove the limitations of the perturbative nature of Anderson's scaling method.
 To that end, we transformed the Hamiltonian into a one-dimensional chain, and then iteratively diagonalised chains of increasing length.
 The Hamiltonian we are working with is
 \beq
@@ -1859,7 +1859,7 @@ They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \i
 \pagebreak
 \subsection{Correspondence between the Kondo model fixed-point and a local Fermi liquid - Topological interpretation of Wilson ratio}
 \subsubsection{Local Fermi liquid}
-The fixed-point Hamiltonians are found to represent interacting Fermi liquids.
+The fixed-point Hamiltonians \cite{hewsonp} are found to represent interacting Fermi liquids.
 The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \beq
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\ua}n_{d\da}
@@ -2090,8 +2090,7 @@ This can be substituted in the Wilson ratio to give
 R = 1 + \sin^2 \delta(0)
 \eeq
 \subsubsection{Connection to the change in Luttinger's volume}
-From the Friedel sum rule\footnote{JS Langer and V Ambegaokar.
-Friedel sum rule for a system of interacting electrons}, we can relate the phase shift \il{\delta(0)} due to scattering (at the Fermi surface) off a local impurity to the number of electrons bound in the potential well produced by that impurity:
+From the Friedel sum rule\cite{langer}, we can relate the phase shift \il{\delta(0)} due to scattering (at the Fermi surface) off a local impurity to the number of electrons bound in the potential well produced by that impurity:
 \beq
 \wl N = \fr{1}{2\pi i}\text{Tr }\ln S(0) = \int_\Gamma dz\partial_z \fr{1}{2\pi i}\text{Tr }\ln S(0)
 \eeq
@@ -2099,19 +2098,18 @@ From the optical theorem, we can write
 \beq
 S = 1 + TG_0 = \fr{G}{G_0} && \qq{\text{eq.~\ref{dyson}}}
 \eeq
-This allows us to write\footnote{Mukherjee and Lal-Holographic unitary renormalization group for correlated electrons - I: A tensor network approach-https://doi.org/10.1016/j.nuclphysb.2020.115170}
+This allows us to write \cite{holography1}
 \beq
 \wl N = \int_\Gamma dz\partial_z \fr{1}{2\pi i}\text{Tr }\ln \fr{G}{G_0}
 \eeq
-Since \il{\text{Tr }\ln \hat O = \sum_\lambda \ln O_\lambda = \ln \prod_\lambda O_\lambda = \ln Det \hat O}, we get
+Since \il{\text{Tr }\ln \hat O = \sum_\lambda \ln O_\lambda = \ln \prod_\lambda O_\lambda = \ln \text{Det} \hat O}, we get
 \beq
 \wl N &= \int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln \text{Det } \fr{G}{G_0}\\
       &= -\int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln \fr{\text{Det } G_0}{\text{Det } G}\\
       &\equiv -\int_\Gamma dz\partial_z \fr{1}{2\pi i}\ln D\\
       &= -\int_{\Gamma(D)}\fr{dD}{D}
 \eeq
-From the work of Seki and Yunoki\footnote{Topological interpretation of the luttinger theorem.
-Physical Review B, 96(8):085124, 2017}, we know that this quantity is essentially the winding number of the curve \il{\Gamma(D)} in the complex plane spanned by the real and imaginary parts of \il{D}, and is equal to the change in Luttinger's volume \il{V_L} at \il{T=0}.
+From the work of Seki and Yunoki \cite{seki}, we know that this quantity is essentially the winding number of the curve \il{\Gamma(D)} in the complex plane spanned by the real and imaginary parts of \il{D}, and is equal to the change in Luttinger's volume \il{V_L} at \il{T=0}.
 \beq
 \wl N &= -\int_{\Gamma(D)}\fr{dD}{D} = -\Delta V_L
 \eeq
@@ -3480,7 +3478,7 @@ where we have replaced \(\hat \omega\) by its eigenvalue \(\omega_h\) and \(H_h 
 where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\beta}}\).
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
-}
+%}
 %\comm{
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.

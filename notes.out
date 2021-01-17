@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.1}{Preliminaries}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{T-matrix and S-matrix}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{An identity}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Landau's theory of Fermi liquid}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{The model}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Atomic limit \(t=0\)}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Non-interacting limit \(U=0\):}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Total Hamiltonian: Mean field treatment}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.8}{Some points:}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.9}{Derivation of the Kondo Hamiltonian}{section.1}% 10
+\BOOKMARK [2][-]{subsection.1.10}{Obtaining the resistivity minimum and log-dependence}{section.1}% 11
+\BOOKMARK [2][-]{subsection.1.11}{The Kondo resonance}{section.1}% 12
+\BOOKMARK [2][-]{subsection.1.12}{Adiabatic route to the Kondo resonance}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.13}{The Kondo temperature}{section.1}% 14
+\BOOKMARK [2][-]{subsection.1.14}{Poor man's scaling}{section.1}% 15
+\BOOKMARK [2][-]{subsection.1.15}{Universality}{section.1}% 16
+\BOOKMARK [2][-]{subsection.1.16}{Method of pseudo-fermions}{section.1}% 17
+\BOOKMARK [2][-]{subsection.1.17}{Nozi\350res' local Fermi liquid theory}{section.1}% 18
+\BOOKMARK [2][-]{subsection.1.18}{Numerical renormalization group calculation}{section.1}% 19
+\BOOKMARK [2][-]{subsection.1.19}{Correspondence between the Kondo model fixed-point and a local Fermi liquid - Topological interpretation of Wilson ratio}{section.1}% 20
+\BOOKMARK [2][-]{subsection.1.20}{Microscopic approach}{section.1}% 21
+\BOOKMARK [2][-]{subsection.1.21}{Renormalized perturbation theory}{section.1}% 22
+\BOOKMARK [2][-]{subsection.1.22}{Scaling of Anderson model}{section.1}% 23
+\BOOKMARK [1][-]{section.2}{URG Method}{}% 24
+\BOOKMARK [2][-]{subsection.2.1}{Formalism}{section.2}% 25
+\BOOKMARK [2][-]{subsection.2.2}{Prescription}{section.2}% 26
+\BOOKMARK [1][-]{section.3}{Star Graph URG}{}% 27
+\BOOKMARK [2][-]{subsection.3.1}{Particle sector}{section.3}% 28
+\BOOKMARK [2][-]{subsection.3.2}{Hole sector}{section.3}% 29
+\BOOKMARK [2][-]{subsection.3.3}{Summary}{section.3}% 30
+\BOOKMARK [1][-]{section.4}{Kondo Model URG}{}% 31
+\BOOKMARK [2][-]{subsection.4.1}{Particle sector}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.2}{Hole sector}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.3}{Scaling equations}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.4}{Renormalized Hamiltonian}{section.4}% 35
+\BOOKMARK [1][-]{section.5}{Anderson Model URG}{}% 36
+\BOOKMARK [2][-]{subsection.5.1}{Without spin-spin interaction}{section.5}% 37
+\BOOKMARK [2][-]{subsection.5.2}{With Kondo-like interaction}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.3}{Particle-Hole symmetry}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.4}{"Poor Man's" one-loop form for asymmetric Anderson model}{section.5}% 40
+\BOOKMARK [2][-]{subsection.5.5}{SU\(2\) invariance and Kondo model one-loop form}{section.5}% 41
+\BOOKMARK [2][-]{subsection.5.6}{Connection with Kondo URG result}{section.5}% 42
+\BOOKMARK [2][-]{subsection.5.7}{Fixed points for the symmetric Anderson model with Jz = Jt}{section.5}% 43
+\BOOKMARK [1][-]{section.6}{Connection between Unitary Renormalization Group and Poor Man's Scaling}{}% 44
