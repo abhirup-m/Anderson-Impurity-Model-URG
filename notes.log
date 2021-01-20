@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.4)  19 JAN 2021 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  19 JAN 2021 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -517,6 +517,8 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 )
 \c@theorem=\count310
+) (/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 ) (/usr/share/texmf-dist/tex/latex/preprint/authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip64
@@ -1213,10 +1215,10 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: E79A482F5F42452E68849FFFEB95BF10;3391.
  ) 
 Here is how much of TeX's memory you used:
- 20420 strings out of 479383
- 366744 string characters out of 5875831
- 691574 words of memory out of 5000000
- 36002 multiletter control sequences out of 15000+600000
+ 20434 strings out of 479383
+ 367039 string characters out of 5875830
+ 691811 words of memory out of 5000000
+ 36012 multiletter control sequences out of 15000+600000
  422800 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,20n,98p,1377b,437s stack positions out of 5000i,500n,10000p,200000b,80000s

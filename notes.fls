@@ -1,4 +1,4 @@
-PWD /home/abhirup/IPhD-Project-II
+PWD /home/kirito/storage/IPhD-Project-II
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT notes.tex
@@ -727,6 +727,16 @@ INPUT /usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
+INPUT /usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
 INPUT /usr/share/texmf-dist/tex/latex/preprint/authblk.sty
 INPUT /usr/share/texmf-dist/tex/latex/preprint/authblk.sty
 INPUT /usr/share/texmf-dist/tex/latex/preprint/authblk.sty

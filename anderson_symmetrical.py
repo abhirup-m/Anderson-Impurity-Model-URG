@@ -4,6 +4,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 import numpy as np
 matplotlib.rcParams['text.usetex'] = True
+
 #    for U in range(10,20,50):
 #        V = 0.1
 #        V2 = 0.1
@@ -46,44 +47,52 @@ matplotlib.rcParams['text.usetex'] = True
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_VJ():
-    for D0 in np.arange(0.1,31,5):
-        D = D0
-        V = 2*D
-        J = V**2 / D
-        U = 10
-        b = 0.99
-        while D > 0:
-            plt.scatter(D,U)
-            deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16)) - 4 * V**2 * D * (U + J/4)/((D - U/2 - J/4) * (D + U/2))
-            U += deltaU
-            D *= b
-            if deltaU * (D**2 - J**2/16) <= 0:
-                print (D,U)
-                break
-    plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
-    plt.xlabel(r'D')
-    plt.ylabel(r'U')
-    plt.show()
+    for w in range(-11,11,2):
+        for D0 in np.arange(11,21,2):
+            J = 0
+            D = D0
+            U = 10
+            b = 0.99
+            V = 10
+            x = []
+            y = []
+            while D > 0:
+                x.append(D)
+                y.append(U)
+                den = (w - D/2)*(w - D/2 + U/2)
+                plt.scatter(D,U)
+                deltaU = -2 * V**2 * D**0.5 / ((w - D/2)*(w - D/2 + U/2))
+                U += deltaU
+                D *= b
+                if den * (w - D/2)*(w - D/2 + U/2) <= 0 or U <= 0:
+                    break
+            plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
+            plt.xlabel(r'D')
+            plt.ylabel(r'U')
+            plt.plot(x,y)
+        plt.show()
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_J():
-    for D0 in np.arange(0.1,21,5):
-        J = 0.1
-        D = D0
-        U = 10
-        b = 0.99
-        while D > 0:
-            plt.scatter(D,U)
-            deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16))
-            U += deltaU
-            D *= b
-            if deltaU * (D**2 - J**2/16) <= 0:
-                print (D,U)
-                break
-    plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
-    plt.xlabel(r'D')
-    plt.ylabel(r'U')
-    plt.show()
+    for w in range(-40,40,1):
+        for D0 in np.arange(1,41,1):
+            J = 0.1
+            D = D0
+            U = 10
+            b = 0.999
+            while D > 0:
+                #plt.scatter(D,U)
+                deltaU = 0
+                U += deltaU
+                D *= b
+                if deltaU * (D**2 - J**2/16) <= 0:
+                    if U < 10:
+                        print ("end",D,U)
+                    break
+#        plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
+#        plt.xlabel(r'D')
+#        plt.ylabel(r'U')
+#        plt.show()
 
 
 # plot flow of U and J for omega = 0
@@ -117,4 +126,4 @@ def all_flow():
     plt.title(r'both flow $\rightarrow \omega=0, J_0=0.1, U_0=100, D_0 = 20$')
     plt.show()
 
-all_flow()
+fixed_VJ()
