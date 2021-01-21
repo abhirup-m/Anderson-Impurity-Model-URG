@@ -5275,7 +5275,7 @@ The second equation can be written as
 \eeq
 where
 \beq
-\eta^\dagger = \fr{1}{E - \ham^d_1 - V_0}V_+
+\rr{\eta^\dagger}_\text{PMS} = \fr{1}{E - \ham^d_1 - V_0}V_+
 \eeq
 Substituting this in the second equation gives
 \beq[reneq]
@@ -5287,7 +5287,7 @@ This new Hamiltonian,
 \eeq
 has the high energy mode removed; the scattering terms start from the low energy subspace and end at the low energy subspace as well. The renormalization in the low energy subspace scatterings  is
 \beq[deltaV]
-\Delta V_0\big\vert_{PMS} = V_- \eta^\dagger
+\Delta V_0 = V_- \eta^\dagger
 \eeq
 If we eliminate \(\ket{\Psi_0}\) instead of \(\ket{\Psi_1}\), we get the renormalized equation in the high energy subspace:
 \beq
@@ -5295,7 +5295,7 @@ If we eliminate \(\ket{\Psi_0}\) instead of \(\ket{\Psi_1}\), we get the renorma
 \eeq
 where
 \beq
-\eta = \fr{1}{E - \ham^d_0 - V_0}V_-
+\rr{\eta}_\text{PMS} = \fr{1}{E - \ham^d_0 - V_0}V_-
 \eeq
 ,so
 \beq
@@ -5312,7 +5312,7 @@ If we want to keep both the high energy and low energy parts of the Hamiltonian,
 \eeq
 The total renormalization is
 \beq
-\Delta \ham = V_+ \eta + V_- \eta^\dagger
+\rr{\Delta \ham}_\text{PMS} = V_+ \rr{\eta}_\text{PMS} + V_- \rr{\eta^\dagger}_\text{PMS}
 \eeq
 It can be shown that if we define a unitary operator \(U = 1 - \eta + \eta^\dagger\), the transformed Hamiltonian \(U \ham U^\dagger\) is the same as eq.~\ref{transham}. This, along with the properties of \(\eta\), have been shown in section \ref{urgform}. The important feature of eq.~\ref{transham} is that there is no term in the transformed Hamiltonian which scatters between \(\ket{\Psi_0}\) and \(\ket{\Psi_0}\)- the two subspaces have been truly decoupled.
 \beq
@@ -5330,16 +5330,16 @@ and again repeat the entire process. \(\tilde \ham_0\) now takes the place of \(
 This definition of \(\ham^\prime\) is the very minimum that we must have in order to fulfill our goal (decouple \(q\)). 
 \pb The operators \(\eta\) and its conjugate change accordingly:
 \beq
-\eta &= \fr{1}{\tilde\ham - \ham^d_0 - V_0}V_-\\
+\rr{\eta}_\text{URG} &= \fr{1}{\tilde\ham - \ham^d_0 - V_0}V_-\\
      &= \fr{1}{\hat \omega - \ham^d_0}V_-\\
 \eeq
 where \(\hat \omega \equiv \ham^\prime - V_0\) now embodies the quantum fluctuations inherent in the Hamiltonian through the scattering term \(V_0\). Similarly,
 \beq
-\eta^\dagger &= \fr{1}{\hat \omega - \ham^d_1}V_+\\
+\rr{\eta^\dagger}_\text{URG} &= \fr{1}{\hat \omega - \ham^d_1}V_+\\
 \eeq
 The renormalization is again
 \beq
-\Delta \ham = V_+\eta + V_-\eta^\dagger
+\rr{\Delta \ham}_\text{URG} = V_+\rr{\eta}_\text{URG} + V_-\rr{\eta^\dagger}_\text{URG}
 \eeq
 This again allows us to write down a unitary operator that decouples the entangled state:
 \beq
@@ -5353,17 +5353,8 @@ With this basis in mind, URG then finds a unitary operator which when operated o
 Note that this form is a function of the chosen \(\ket{\Phi}\).
 We then select the second degree of freedom and repeat the process.
 What PMS does is, it exploits the freedom of choice and selects the exact eigenstate \(\ket{\Psi}\) of the Hamiltonian as the non-Fock basis \(\ket{\Phi}\).
-Doing that returns a rotated Hamiltonian which is diagonal in \(q\), and is a function of the chosen state, same as URG.
-The conclusion is that depending on which state we choose as our diagonal non-Fock basis, URG and PMS will cause flows along different lines in general.
-\pb In the context of URG, we define a quantum fluctuation energy scale \(\hat \omega\):
-\beq
-\hat \omega = \ham^\prime_1 -  V_0
-\eeq
-This allows us to write
-\beq
-\Delta V_0\big\vert_{URG} =  V_-\fr{1}{\hat\omega - \ham^d_1} V_+
-\eeq
-As the couplings flow, \(V_0\) will also flow, leading to a flow of \(\hat\omega\). Just at the fixed point, the denominator of URG vanishes, giving the equation
+Doing that returns a rotated Hamiltonian which is diagonal in \(q\), and is a function of the chosen state, same as URG. The conclusion is that depending on which state we choose as our diagonal non-Fock basis, URG and PMS will cause flows along different lines in general.
+\pb As the couplings flow, \(V_0\) will also flow, leading to a flow of \(\hat\omega\). Just at the fixed point, the denominator of URG vanishes, giving the equation
 \beq
 \rr{\hat\omega - \ham_1^d}V_+\ket{\Psi_0} \text{ or } \rr{\hat\omega - \ham_1^d}V_-\ket{\Psi_1}
 \eeq
@@ -5373,32 +5364,74 @@ This means that one of the eigenvalues of \(\hat\omega\) matches with the eigenv
 \includegraphics[scale=0.42]{pms_vs_urg.png}
 \captionof{figure}{Flows of PMS(green) and URG(blue)}
 \end{center}
-To make matters more clear, we can look at a specific term. For the SIAM,
+To demonstrate the implementation, we can look at a specific model. For the SIAM,
 \beq
 \ham = \sum_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}
 \eeq
-we will consider the scattering \(V=c^\dagger_{q\ua}c_{d\ua}\). \(q\ua\) is a state in the high energy subspace. The model
+We want to decouple the state \(q\beta\) from the rest of the electrons. We have \(\hat\ham_0 = \epsilon_d\hat n_d + U \hat n_{d\ua}n_{d\da} + \sum_{k\sigma} \epsilon_k \hat n_{k\sigma}\), \(V_0 = \sum_{k<q,\sigma}c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}\), \(V_+ = V c^\dagger_{q\beta}c_{d\beta}\) and \(V_- = V c^\dagger_{d\beta}c_{q\beta}\). The renormalization in particle sector
 \beq
-\Delta V_0 &=  c^\dagger_{d\ua}c_{q\ua}\fr{1}{E - \hat \ham_0}c^\dagger_{q\ua}c_{d\ua}\\
+\Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\fr{1}{\rr{E - V_0} - \hat \ham^d_0}c^\dagger_{q\beta}c_{d\beta}\\
 \eeq
 The intermediate energy (at the propagator) is
 \beq
-\hat \ham_0 = \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_d \hat n_{d\ol\beta} + \hf\epsilon_q
+\hat \ham^d_0 = \sum_{k,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_d \hat n_{d\ol\beta}
 \eeq
-which gives
+This is because the \(c_{d\beta}\) at the right of the propagator ensures that we must have \(\hat n_{d\beta}=0\) at the propagator.
 \beq
-\Delta V_0 &=  c^\dagger_{d\ua}c_{q\ua}\fr{1}{E - \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} - \hf \epsilon_q - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{q\ua}c_{d\ua}\\
-&=  \fr{1}{E - \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} - \hf \epsilon_q - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+\Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\fr{1}{\rr{E - V_0} - \sum_{k,\sigma}\epsilon_k \tau_{k\sigma} - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{q\beta}c_{d\beta}\\
 \eeq
-Note that \(E\) is the exact eigenvalue corresponding to the initial state \(\ket{\Psi_0}\). Since we do not know that energy, we will approximate it by the bare energy \(E = \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}\). 
+Since \(E\) is the exact eigenvalue, we do not have an expression for it. Instead, we approximate \(E - V_0\) by substituting it with the current diagonal part corresponding to the initial state on which this entire term will act. The intial state is characterized by \(\hat n_{q\beta}=0\) and \(\hat n_{d\beta} = 1\), so
 \beq
-\Delta V_0 &=  \fr{1}{\epsilon_d + U\hat n_{d\ol\beta}  - \hf \epsilon_q}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+E - V_0= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} - \hf\epsilon_q + \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}
 \eeq
-The URG result is
+The \(- \hf\epsilon_q\) comes from substituting \(\hat n_{q\beta}=0\) in \(\epsilon_q \tau_{q\beta}\).
+\pb  Substituting this in \(\Delta V_0\) gives
 \beq
-\Delta V_0 &=  \fr{1}{\omega - \hf \epsilon_q - \epsilon_d \hat n_{d\ol\beta}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
+\Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\fr{1}{-\hf\epsilon_q -\epsilon_q \tau_{q\beta} + \epsilon_d + U\hat n_{d\ol\beta}}c^\dagger_{q\beta}c_{d\beta}\\
+&=  c^\dagger_{d\beta}c_{q\beta}\fr{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\ol\beta}}c^\dagger_{q\beta}c_{d\beta}\\
+&=  c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\fr{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\ol\beta}}\\
+&=  -c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\fr{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\beta}}\\
+&=  \rr{1 - \hat n_{q\beta}}\rr{\fr{-\hat n_{d\beta}\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U} + \fr{-\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\epsilon_q - \epsilon_d}}\\
 \eeq
-The difference from PMS is that in URG, \(\omega\) is obtained numerically by searching for fixed points.
+On the second line, we substituted \(\tau_{q\beta} = \hf\) in the denominator, which is ensured by the \(c^\dagger_{q\beta}\) to the right of the propagator. The first term renormalizes the energy of the doublon state and the second term renormalizes that of the singly-occupied state:
+\beq
+\Delta E_2 &= \fr{-1}{\epsilon_q - \epsilon_d - U}\\
+\Delta E_1 &= \fr{-1}{\epsilon_q - \epsilon_d}
+\eeq
+The renormalization in the hole sector is
+\beq
+\Delta V_0 &=  c^\dagger_{q\beta}c_{d\beta}\fr{1}{\rr{E - V_0} - \hat \ham^d_0}c^\dagger_{d\beta}c_{q\beta}\\
+	   &=  c^\dagger_{q\beta}c_{d\beta}\fr{1}{\rr{E - V_0} - \sum_{k,\sigma}\epsilon_k\tau_{k\sigma} - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta}}c^\dagger_{d\beta}c_{q\beta}
+\eeq
+This time we substitute
+\beq
+E - V_0 &= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \tau_{q\beta} \epsilon^-_q + \epsilon_d\hat n_{d\ol\beta}\\
+&= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \hf \epsilon^-_q + \epsilon_d\hat n_{d\ol\beta}\\
+\eeq
+In the last step we put \(\tau_{q\beta}=\hf\) because the state is occupied in the initial configuratin. Note that since the electron \(q\beta\) was occupied in the intial state, the energy \(\epsilon^-_q\) in this sector must be opposite to that of the particle sector, \(\epsilon_q\). Hence \(\epsilon^-_q = -\epsilon_q\), which gives
+\beq
+\Delta V_0 & = c^\dagger_{q\beta}c_{d\beta}\fr{1}{-\hf \epsilon_q -\epsilon^-_q\tau_{q\beta} - \epsilon_d - U\hat n_{d\ol\beta}}c^\dagger_{d\beta}c_{q\beta}\\
+& = c^\dagger_{q\beta}c_{d\beta}c^\dagger_{d\beta}c_{q\beta}\fr{1}{-\epsilon_q - \epsilon_d - U\hat n_{d\ol\beta}}\\
+& = \hat n_{q\beta}\rr{\fr{-\rr{1 - \hat n_{d\beta}}\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U} + \fr{-\rr{1 - \hat n_{d\beta}}\rr{1 - \hat n_{d\ol\beta}}}{\epsilon_q + \epsilon_d}}\\
+\eeq
+In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = -\hf\). The first term renormalizes the singly-occupied state while the second term renormalizes the holon state. Combining with the particle sector results, the total renormalization in all the three impurity states (holon, single and doublon) are
+\beq
+\Delta E_0 &= -\fr{1}{\epsilon_q + \epsilon_d}\\
+\Delta E_1 &= -\fr{1}{\epsilon_q + \epsilon_d + U} - \fr{1}{\epsilon_q - \epsilon_d}\\
+\Delta E_2 &= -\fr{1}{\epsilon_q - \epsilon_d - U}\\
+\eeq
+These results are also obtained in ref.~\cite{hewson}. The complete process is depicted in fig.~\ref{pmsflow}.
+\pb \textbf{Some conclusions}:
+\begin{itemize}
+	\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
+	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. There are several points to make here. Firstly, we are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. Secondly, the ideal solution would have been to substitute the exact energy, but since we do not know it, we use our current best guess (renormalised diagonal part). And thirdly, in doing so, we essentially ignore the \(V_0\) in the denominator, since it is not possible to compute off-diagonal terms.
+\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{pms-flowchart.png}
+	\label{pmsflow}
+	\caption{Flow chart of "Poor Man's" scaling algorithm}
+\end{figure}
 \comm{
 	\There are two terms. The two terms differ in their initial states; one starts from \(n_{d\ol\beta}=1\) (corresponding to \(E^a\)) and the other starts from \(n_{d\ol\beta}=0\) (corresponding to \(E^b\)). From the definition of the \(T-\)matrix we can see that different initial states will give rise to different final eigenstates. To treat the various energies \(E^a\) and \(E^b\) on an equal footing, we need to subtract off the initial energies:
 \beq

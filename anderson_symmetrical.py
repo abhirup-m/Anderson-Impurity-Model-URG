@@ -47,30 +47,39 @@ matplotlib.rcParams['text.usetex'] = True
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_VJ():
-    for w in range(-11,11,2):
-        for D0 in np.arange(11,21,2):
+    for w in range(-11,11,3):
+        for D0 in np.arange(1,20,6):
+            print (D0)
             J = 0
+            U0 = 10
             D = D0
-            U = 10
-            b = 0.99
-            V = 10
+            U = U0
+            b = 0.999
+            V = 2
             x = []
             y = []
             while D > 0:
                 x.append(D)
                 y.append(U)
                 den = (w - D/2)*(w - D/2 + U/2)
-                plt.scatter(D,U)
+                #plt.scatter(D,U)
                 deltaU = -2 * V**2 * D**0.5 / ((w - D/2)*(w - D/2 + U/2))
                 U += deltaU
                 D *= b
-                if den * (w - D/2)*(w - D/2 + U/2) <= 0 or U <= 0:
+                if den * (w - D/2)*(w - D/2 + U/2) <= 0:
+                    print ("stable")
                     break
-            plt.title(r'J fixed $\rightarrow \omega=0, J=2, U_0=10, D_0 \in [1,20]$')
+                if  U <= 0:
+                    print ("zero")
+                    break
+                if abs(deltaU) < 10**(-100) :
+                    print ("too slow")
+                    break
+            plt.title(r'J fixed $\rightarrow \omega={}, J={}, U_0={}$'.format(w,J,U0))
             plt.xlabel(r'D')
             plt.ylabel(r'U')
             plt.plot(x,y)
-        plt.show()
+            plt.show()
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_J():

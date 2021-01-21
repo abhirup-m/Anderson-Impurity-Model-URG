@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.10)  19 JAN 2021 22:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.21)  21 JAN 2021 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1186,47 +1186,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 5329--5333
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5347--5360
+Underfull \hbox (badness 10000) in paragraph at lines 5347--5359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5347--5360
+Underfull \hbox (badness 10000) in paragraph at lines 5347--5359
 
  []
 
 [132]
-Underfull \hbox (badness 10000) in paragraph at lines 5369--5372
+Underfull \hbox (badness 10000) in paragraph at lines 5360--5363
 
  []
 
 <./figures//pms_vs_urg.png, id=1951, 996.39723pt x 642.59349pt>
 File: ./figures//pms_vs_urg.png Graphic file (type png)
 <use ./figures//pms_vs_urg.png>
-Package pdftex.def Info: ./figures//pms_vs_urg.png  used on input line 5373.
+Package pdftex.def Info: ./figures//pms_vs_urg.png  used on input line 5364.
 (pdftex.def)             Requested size: 418.484pt x 269.88742pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 5374.
+(caption)                particular \caption on input line 5365.
 See the caption package documentation for explanation.
 
-[133 <./figures//pms_vs_urg.png>] (./notes.bbl [134]) [135] (./notes.aux)
+[133 <./figures//pms_vs_urg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 5386--5390
+
+ []
+
+[134]
+
+Package caption Warning: \label without proper reference on input line 5432.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `pmsflow' on page 135 undefined on input line 5423.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5422--5426
+
+ []
+
+[135]
+<./figures//pms-flowchart.png, id=1984, 1501.12627pt x 706.4465pt>
+File: ./figures//pms-flowchart.png Graphic file (type png)
+<use ./figures//pms-flowchart.png>
+Package pdftex.def Info: ./figures//pms-flowchart.png  used on input line 5431.
+(pdftex.def)             Requested size: 525.40207pt x 247.25998pt.
+ (./notes.bbl [136 <./figures//pms-flowchart.png>]) [137] (./notes.aux)
 Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: E79A482F5F42452E68849FFFEB95BF10;3391.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 20434 strings out of 479383
- 367039 string characters out of 5875830
- 691811 words of memory out of 5000000
- 36012 multiletter control sequences out of 15000+600000
+ 20449 strings out of 479383
+ 367315 string characters out of 5875830
+ 691974 words of memory out of 5000000
+ 36019 multiletter control sequences out of 15000+600000
  422800 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,20n,98p,1377b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,20n,98p,1377b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on notes.pdf (135 pages, 2050498 bytes).
+Output written on notes.pdf (137 pages, 2224138 bytes).
 PDF statistics:
- 2299 PDF objects out of 2487 (max. 8388607)
- 2080 compressed objects within 21 object streams
- 1134 named destinations out of 1200 (max. 500000)
- 438 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2319 PDF objects out of 2487 (max. 8388607)
+ 2096 compressed objects within 21 object streams
+ 1141 named destinations out of 1200 (max. 500000)
+ 443 words of extra memory for PDF output out of 10000 (max. 10000000)
 
