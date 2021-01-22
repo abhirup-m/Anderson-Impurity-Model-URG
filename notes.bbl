@@ -88,9 +88,27 @@ Kazuhiro Seki and Seiji Yunoki.
 \newblock Topological interpretation of the luttinger theorem.
 \newblock {\em Physical Review B}, 96, 2017.
 
+\bibitem{suzuki}
+Kenji Suzuki.
+\newblock {Construction of Hermitian Effective Interaction in Nuclei: —
+  General Relation between Hermitian and Non-Hermitian Forms —}.
+\newblock {\em Progress of Theoretical Physics}, 68, 1982.
+
 \bibitem{hewson}
 A.~C. Hewson.
 \newblock {\em The Kondo Problem to Heavy Fermions}.
 \newblock Cambridge University Press, 1993.
+
+\bibitem{tatha}
+Mengxing Cheng, Tathagata Chowdhury, Aaron Mohammed, and Kevin Ingersent.
+\newblock Phase boundaries of power-law anderson and kondo models: A poor man's
+  scaling study.
+\newblock {\em Phys. Rev. B}, 96, 2017.
+
+\bibitem{raja}
+Rukhsan~Ul {Haq} and N.~S. {Vidhyadhiraja}.
+\newblock {Scaling analysis of the extended single impurity Anderson model:
+  Renormalization due to valence fluctuations}.
+\newblock {\em arXiv e-prints}, 2017.
 
 \end{thebibliography}

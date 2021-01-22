@@ -3239,39 +3239,15 @@ Using eq.~\ref{eta},
 \beq
 \ket{\Psi} = a_1\ket{1,\Psi_1} + a_0\ket{0,\Psi_0}  = a_1\ket{1,\Psi_1} +  \eta_q a_1\ket{1,\Psi_1} = \rr{1+\eta_q}\ket{1,\Psi_1}
 \eeq
-This means that the operator \il{U_q} for going from \il{\ket{,\Psi_1}} to \il{\ket{\Psi}} is described by 
-\beq[inv]
-U_q^{-1} = \mc{C}\rr{1+ \eta_q + \mc{O}}
-\eeq
-where \il{\mc{O}} is some operator function of \il{\eta_q} and \il{\eta_q^\dagger} such that 
+Since \(\eta^2 = 0\), we can write \(1+\eta_q = e^{\eta_q}\). \(S \equiv e^{\eta_q}\) constitutes a similarity transformation. It is shown in ref.~\cite{suzuki} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
 \beq
-\rr{1 + \eta_q + \mc{O}}\ket{1,\Psi_1} = \rr{1+\eta_q}\ket{1,\Psi_1} \implies \mc{O}\ket{1,\Psi_1} = 0
+G = \tanh^{-1}\rr{\omega - \omega^\dagger}
 \eeq
-and \il{\mc{C}} is a real scalar.
-To find \il{\mc{O}}, note that we can write \il{U_q^{-1}} as 
+Applying that to the problem at hand gives
 \beq
-U_q^{-1} = \mc{C} \ex{\eta_q + \mc{O}}
-\eeq
-This is because \il{\eta_q^2 = 0} and since \il{\mc{O}} is made up of \il{\eta_q} and \il{\eta_q^\dagger} is has the same property.
-This exponential form allows us to write
-\beq[u1]
-U_q = \mc{C} \ex{-\eta_q - \mc{O}} = \mc{C}\rr{1 - \eta_q - \mc{O}}
-\eeq
-But, since \il{U_q} is required to be unitary, we can write, from eq.~\ref{inv},
-\beq[u2]
-U_q^\dagger = U_q^{-1} = \mc{C}\rr{1+\eta_q+\mc{O}} \implies U_q = \mc{C}\rr{1+\eta_q^\dagger + \mc{O}^\dagger}
-\eeq
-Comparing the two expression of \il{U_q} in eqs.~\ref{u1} and \ref{u2},
-\beq
-1 - \eta_q - \mc{O} = 1+\eta_q^\dagger + \mc{O}^\dagger \implies -\eta_q = \mc{O}^\dagger \implies \mc{O} = -\eta_q^\dagger
-\eeq
-This improves eq.~\ref{u1}:
-\beq
-U_q = \mc{C}\rr{1 + \eta_q^\dagger - \eta_q}
-\eeq
-To find \il{\mc{C}}, we can use the unitarity of \il{U_q}:
-\beq
-1 = U_q^\dagger U_q = \mc{C}^2\rr{1 + \cc{\eta_q^\dagger,\eta_q}} = \mc{C}^2\times 2 \implies \mc{C} = \fr{1}{\sqrt 2}
+ U^\dagger &= \ex{\tanh^{-1}\rr{\eta - \eta^\dagger}}\\
+	   &= \frac{1 + \eta - \eta^\dagger}{1 + \cc{\eta,\eta^\dagger}}\\
+	   &= \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger}
 \eeq
 The unitary operator that transforms the entangled eigenstate \il{\ket{\Psi}} to the eigenstate with good quantum number \il{n_q}, \il{\ket{1,\Psi_1}} is thus
 \beq
@@ -3433,7 +3409,7 @@ To check that this indeed commutes with \il{\hat n_q},
 			 &=c_q^\dagger T \eta_q - c_q^\dagger T \eta_q\\
 			 &=0
 \eeq
-The fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
+Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
 \begin{gather*}
 \hat \omega - H_e \hat n = 0\\
 \implies \omega_e = H_e
@@ -3681,59 +3657,63 @@ The renormalization in the hole sector is
 \eeq
 The \(\omega^-\) represents the quantum fluctuation energy scale for the hole sector. In this intermediate state, since we have \(\tau_{q\ua} = -\hf\), we can evaluate the diagonal part from eq.~\ref{kondodiag}:
 \beq
-\ham^D = -\hf\epsilon_q - \fr{1}{4} J_z S_d^z
+\ham^D = -\hf\epsilon^-_q - \fr{1}{4} J_z S_d^z
+\eeq
+The energy \(\epsilon_q^-\) has to be opposite to \(\epsilon_q\), because the state was initially occupied, so this energy has to be inside the Fermi surface: \(\epsilon_q^- = -\epsilon_q\).
+\beq
+\ham^D = \hf\epsilon_q - \fr{1}{4} J_z S_d^z
 \eeq
 The first term has two \(S^z\).
 \beq
 \Delta^-_1 \ham &= \sum_{kk^\prime q} S_d^zc^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{4} J_z^2 \fr{1}{\omega^- - \ham^D} S_d^z c^\dagger_{k\ua}c_{q\ua}\\
-		&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua} c^\dagger_{k\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} \\
-	&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua}c^\dagger_{k\ua} \qq{\fr{\hf + S^z_d}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} + \fr{\hf - S^z_d}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}} \\
-	&= -\fr{1}{32} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} + \fr{1}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}} \\
-	&- \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} S_d^z\qq{\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} - \fr{1}{\omega^- + \hf\epsilon_q - \fr{1}{8} J_z}}\\
+		&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua} c^\dagger_{k\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4} J_z S_d^z} \\
+	&= \fr{1}{16} J_z^2\sum_{kk^\prime q} c_{k^\prime\ua}c^\dagger_{k\ua} \qq{\fr{\hf + S^z_d}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} + \fr{\hf - S^z_d}{\omega^- - \hf\epsilon_q - \fr{1}{8} J_z}} \\
+	&= -\fr{1}{32} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} \qq{\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} + \fr{1}{\omega^- - \hf\epsilon_q - \fr{1}{8} J_z}} \\
+	&- \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua} S_d^z\qq{\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} - \fr{1}{\omega^- - \hf\epsilon_q - \fr{1}{8} J_z}}\\
 \eeq
 In the last step, we dropped a constant term which came from the commutator of \(c^\dagger_{k}\) and \(c_{k^\prime}\). Note that this term exactly cancels the first term in the particle sector.
 \pb The second term gives
 \beq
-\Delta^-_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^z c^\dagger_{k\ua}c_{q\ua}
+\Delta^-_2 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^-c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^z c^\dagger_{k\ua}c_{q\ua}
 \eeq
 The \(S_d^-\) in the numerator on the left means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^- S_d^z c^\dagger_{q\ua}c_{k^\prime\da}c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  \fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c_{k^\prime\da}c^\dagger_{k\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c^\dagger_{k\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+\Delta^-_2 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^- S_d^z c^\dagger_{q\ua}c_{k^\prime\da}c^\dagger_{k\ua}c_{q\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c_{k^\prime\da}c^\dagger_{k\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^-c^\dagger_{k\ua}c_{k^\prime\da}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^- S_d^z = \hf S_d^-\). This renormalizes \(J_t\).
 \pb The third term gives
 \beq
-\Delta^-_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
+\Delta^-_3 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_z J_t S_d^z c^\dagger_{q\ua}c_{k^\prime\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
 \eeq
 The \(S_d^+\) in the numerator on the right means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^+ c^\dagger_{q\ua}c_{k^\prime\ua}c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+\Delta^-_3 \ham &=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^z S_d^+ c^\dagger_{q\ua}c_{k^\prime\ua}c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{4} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{8} J_z J_t\sum_{kk^\prime q} S_d^+ c^\dagger_{k\da}c_{k^\prime\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^z S_d^+ = \hf S_d^+\). This renormalizes \(J_t\).
 \pb The fourth term gives
 \beq
-\Delta^-_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
+\Delta^-_4 \ham &= \sum_{kk^\prime q} \fr{1}{4} J_t^2 S_d^- c^\dagger_{q\ua}c_{k^\prime\da}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4} J_z S_d^z} S_d^+ c^\dagger_{k\da}c_{q\ua}
 \eeq
 The \(S_d^+\) in the numerator on the right means we must have \(S^z_d = \hf\) in the denominator. 
 \beq
-\Delta^-_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^- S_d^+ c^\dagger_{q\ua}c_{k^\prime\da} c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c_{k^\prime\da}c^\dagger_{k\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
-&=  -\fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{8} J_z} \\
+\Delta^-_4 \ham &=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} S_d^- S_d^+ c^\dagger_{q\ua}c_{k^\prime\da} c^\dagger_{k\da}c_{q\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  \fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c_{k^\prime\da}c^\dagger_{k\da}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
+&=  -\fr{1}{4} J_t^2 \sum_{kk^\prime q} \rr{\hf - S_d^z} c^\dagger_{k\da}c_{k^\prime\da}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{8} J_z} \\
 \eeq
 There we used \(S_d^- S_d^+ = \rr{\hf - S_d^z}\).
 \subsection{Scaling equations}
 Focusing on the first terms of each sector, we can see that 
 \beq[delta1]
 \Delta^+_1 \ham &= \fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua}c_{k^\prime\ua}\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4} J_z S_d^z} \\
-\Delta^-_1 \ham &= -\fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua} c_{k^\prime\ua}\fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4} J_z S_d^z}
+\Delta^-_1 \ham &= -\fr{1}{16} J_z^2\sum_{kk^\prime q} c^\dagger_{k\ua} c_{k^\prime\ua}\fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4} J_z S_d^z}
 \eeq
 To connect the two \(\omega\), we can use \(\eta = {\eta^\dagger}^\dagger\). If we choose the scattering term \(c^\dagger T=\sum_k S_d^z c^\dagger_{q\ua}c_{k\ua}\), then
 \beq
-\eta &= \fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4}J_z S_d^z}\sum_k S_d^z c^\dagger_{k\ua}c_{q\ua}
+\eta &= \fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4}J_z S_d^z}\sum_k S_d^z c^\dagger_{k\ua}c_{q\ua}
 \eeq
 and
 \beq
@@ -3743,7 +3723,7 @@ and
 \eeq
 Comparing \(\eta\) and \(\rr{\eta^\dagger}^\dagger\), we can write
 \beq
-\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z} = \fr{1}{\omega^- + \hf\epsilon_q + \fr{1}{4}J_z S_d^z}
+\fr{1}{\omega^+ - \hf\epsilon_q - \fr{1}{4}J_z S_d^z} = \fr{1}{\omega^- - \hf\epsilon_q + \fr{1}{4}J_z S_d^z}
 \eeq
 Using this on eq.~\ref{delta1} gives 
 \beq
@@ -5179,6 +5159,7 @@ For \(\tilde \omega^+ = 0\) and \(\epsilon_q = D\), we get
 \Delta J = 2J^2 \sum_{q}\fr{1}{D - \fr{1}{2} J}
 \eeq
 This has the same fixed point structure as the Kondo URG scaling equation.
+\comm{
 \subsection{Fixed points for the symmetric Anderson model with \(J_z = J_t\)}
 We first consider the simpler case where \(\epsilon_d + \hf U = 0\), \(J_z = J_t = \hf J\) and \(\omega^+ = \omega^-\). We also assume an isotropic dispersion \(\epsilon_q =D\) and momentum independent potential \(V(q)\equiv V\). For convenience, we define \(n(D) = \sum_{\epsilon_q=D}\) and \(\mc{V}(D) = \sum_{\epsilon_k<D}\). The former is the number of states on the energy shell at \(D\), while the latter is the number of states inside the energy shell \(D\). The combined (particle+hole) scaling equations become:
 \begin{flalign*}
@@ -5244,7 +5225,7 @@ Here both \(U\) and \(J\) are relevant and they flow up to the strong-coupling f
 \captionof{figure}{Schematic flows from local moment and free orbital to strong-coupling}
 \label{schemesc}
 \end{minipage}
-\pagebreak
+}
 \section{Connection between Unitary Renormalization Group and Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
@@ -5424,13 +5405,16 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 \pb \textbf{Some conclusions}:
 \begin{itemize}
 	\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
-	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. There are several points to make here. Firstly, we are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. Secondly, the ideal solution would have been to substitute the exact energy, but since we do not know it, we use our current best guess (renormalised diagonal part). And thirdly, in doing so, we essentially ignore the \(V_0\) in the denominator, since it is not possible to compute off-diagonal terms.
+	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. There are several points to make here. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
+	\item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
+	\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
+	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} does bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.35]{pms-flowchart.png}
-	\label{pmsflow}
 	\caption{Flow chart of "Poor Man's" scaling algorithm}
+	\label{pmsflow}
 \end{figure}
 \comm{
 	\There are two terms. The two terms differ in their initial states; one starts from \(n_{d\ol\beta}=1\) (corresponding to \(E^a\)) and the other starts from \(n_{d\ol\beta}=0\) (corresponding to \(E^b\)). From the definition of the \(T-\)matrix we can see that different initial states will give rise to different final eigenstates. To treat the various energies \(E^a\) and \(E^b\) on an equal footing, we need to subtract off the initial energies:
