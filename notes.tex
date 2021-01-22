@@ -261,7 +261,7 @@ where \il{\avg{\delta n_q}} is obtained by
 \dv{F}{\delta n_q}\bigg|_{\delta n_q = \avg{\delta n_q}} = 0
 \eeq
 \subsection{The model}
-\beq
+\beq[model]
 H = \epsilon_d \hat n_d + \sum_{k} \epsilon_k \hat n_k + \sum_{k\sigma}t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}} + U\hat n_{d\ua}\hat n_{d\da}
 \eeq
 \paragraph{Energy scales:}
@@ -3253,7 +3253,23 @@ The unitary operator that transforms the entangled eigenstate \il{\ket{\Psi}} to
 \beq
 U_q = \fr{1}{\sqrt 2}\rr{1 + \eta_q^\dagger - \eta_q}
 \eeq
-The form of the rotated Hamiltonian can now be written down.
+It can also be written as \(\ex{\frac{\pi}{4}\rr{\eta^\dagger_q - \eta_q}}\) because
+\beq
+ \ex{\frac{\pi}{4}\rr{\eta^\dagger_q - \eta_q}} &= 1 + \rr{\eta^\dagger_q - \eta_q}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger_q - \eta_q}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger_q - \eta_q}^3\rr{\fr{\pi}{4}}^3 + ...\\
+&= 1 + \rr{\eta^\dagger_q - \eta_q}\fr{\pi}{4} - \frac{1}{2!}\rr{\fr{\pi}{4}}^2 - \frac{1}{3!}\rr{\eta^\dagger_q - \eta_q}\rr{\fr{\pi}{4}}^3 + \frac{1}{4!}\rr{\fr{\pi}{4}}^4 + ...\\
+&= \cos \frac{\pi}{4} + \rr{\eta^\dagger_q - \eta_q}\sin\fr{\pi}{4}\\
+&= 1 + \eta_q^\dagger - \eta_q
+\eeq
+There we used
+\beq
+\rr{\eta^\dagger_q - \eta_q}^2 = {\eta^\dagger_q}^2 + \eta_q^2 - \cc{\eta^\dagger_q,\eta_q} = -1 &&\qq{\because\eta^2 = {\eta^\dagger}^2=0}
+\eeq
+and so
+\beq
+\rr{\eta^\dagger_q - \eta_q}^3 = -1\rr{\eta^\dagger_q - \eta_q}
+\eeq
+and so on.
+\pb The form of the rotated Hamiltonian can now be written down.
 \beq[roth]
  \wl\ham &= U_q \ham U_q^\dagger\\
 	 &= \hf\rr{1+\eta_q^\dagger - \eta_q}\ham\rr{1 + \eta_q - \eta^\dagger_q}\\
@@ -5405,10 +5421,10 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 \pb \textbf{Some conclusions}:
 \begin{itemize}
 	\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
-	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. There are several points to make here. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
+	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
 	\item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
 	\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
-	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} does bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
+	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 \begin{figure}
 	\centering
@@ -5416,33 +5432,36 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\caption{Flow chart of "Poor Man's" scaling algorithm}
 	\label{pmsflow}
 \end{figure}
-\comm{
-	\There are two terms. The two terms differ in their initial states; one starts from \(n_{d\ol\beta}=1\) (corresponding to \(E^a\)) and the other starts from \(n_{d\ol\beta}=0\) (corresponding to \(E^b\)). From the definition of the \(T-\)matrix we can see that different initial states will give rise to different final eigenstates. To treat the various energies \(E^a\) and \(E^b\) on an equal footing, we need to subtract off the initial energies:
+\section{Schrieffer-Wolff Transformation as a limit of URG}
+In this section, we show that the generator for Schrieffer-Wolff transformation of the Anderson model can be derived as a first order approximation of a more general decoupling condition which arises from the URG.
+\pb The function of the Schrieffer-Wolff transformation is to decouple a set of states. In the following, we wish to decouple the electronic state \(q\beta\). Following ref.~\cite{piers}, we assume an operator 
 \beq
-E_0 &= \epsilon_d + \rr{\epsilon_d + U}\hat n_{d\ol\beta}\\
-\implies E^a_0 &= 2\epsilon_d + U\\
-E^b_0 &= \epsilon_d
+\eta^\dagger = \theta c^\dagger_{q\beta}c_{d\beta}
 \eeq
-Defining \(\xi = E - E_0\),
-We can then write
+where \(\theta \equiv A + B\hat n_{d\ol\beta}\) and the coefficients \(A,B\) are in general a function of all orders of \(V\). From the formalism of URG, we know that the unitary transformation is
 \beq
-\Delta V_P &= \rr{\fr{\hat n_{d\ol\beta}}{\xi + E_0^a - \epsilon_q - \epsilon_d } + \fr{1 - \hat n_{d\ol\beta}}{\xi + E_0^b - \epsilon_q }}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}\\
-&= \rr{\fr{\hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\xi - \epsilon_q + \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+U = \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} = \frac{1}{\sqrt 2}\rr{1 + \eta^\dagger - \eta}
 \eeq
-The quantity \(\xi\) now represents the energy of the many-body eigenstate above the non-interacting state. We typically take that to be very small and ignore it w.r.t the bandwidth \(\epsilon_q\). This gives the ground state of the total Hamiltonian.
+We will now find the transformed Hamiltonian \(\tilde \ham = U \ham U^\dagger\) where \(\ham\) is the SIAM Hamiltonian eq.~\ref{model}, and we will determine \(\theta\) by requiring the off-diagonal terms to vanish. We will first determine how each of the operators transform under the operation.
 \beq
-\Delta V_P = -\rr{\fr{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U} + \fr{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+\tilde c_{k\neq q,\sigma} &= U c_{k\neq q,\sigma} U^\dagger\\
+			  &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{k\neq q,\sigma} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
+			  &= \qq{1 + \theta^2\rr{ \hat n_{q\beta} + \hat n_{d\beta} - 2\hat n_{q\beta}}} c_{k\neq q,\sigma}
 \eeq
-\pb The URG calculation proceeds similarly with the \(\omega\) replacing the \(E\).
 \beq
-\Delta V_U = \rr{\fr{\hat n_{d\ol\beta}}{\omega - \epsilon_q + \epsilon_d + U} + \fr{1 - \hat n_{d\ol\beta}}{\omega - \epsilon_q + \epsilon_d}}c^\dagger_{d\ua}c_{q\ua}c^\dagger_{q\ua}c_{d\ua}
+\tilde c_{q,\beta}   &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{q\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
+&= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta}} c_{q\beta} \rr{1 - \theta c^\dagger_{q\beta}c_{d\beta}}\\
+&= c_{q\beta} - \theta c_{d\beta}
 \eeq
-Setting \(\omega=0\) gives us the lowest energy scale renormalization and reproduces the PMS result, while tuning the value of \(\omega\) allows us to access high energy states as well. The \(\eta\) in URG can be written for PMS as well:
 \beq
-\eta_{p} = \fr{1}{E - \hat \ham_0}V, \eta_p^\dagger = \fr{1}{E - \hat \ham_0}V^\dagger
+\tilde c_{d,\beta}   &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{d\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
+&= \rr{1 - \theta c^\dagger_{d\beta}c_{q\beta}} c_{d\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta}}\\
+&= c_{d\beta} + \theta c_{q\beta}
 \eeq
-Here \(V\) destroys a high energy electron and \(V^\dagger\) creates one.
-}
+\beq
+\tilde c_{d,\ol\beta}   &= \rr{1 + A c^\dagger_{q\beta}c_{d\beta} - A c^\dagger_{d\beta}c_{q\beta}} c_{d\ol\beta} \rr{1 + \rr{A+B} c^\dagger_{d\beta}c_{q\beta} - \rr{A+B} c^\dagger_{q\beta}c_{d\beta}}\\
+			&= \rr{1 + Bc^\dagger_{d\beta}c_{q\beta} - Bc^\dagger_{q\beta}c_{d\beta} + A(A+B) \rr{\hat n_{q\beta} + \hat n_{d\beta} - 2\hat n_{q\beta}\hat n_{d\beta}}} c_{d\ol\beta}
+\eeq
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
