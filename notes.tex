@@ -5433,6 +5433,42 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\label{pmsflow}
 \end{figure}
 \section{Schrieffer-Wolff Transformation as a limit of URG}
+We have a general Hamiltonian
+\beq
+\ham = \ham_0 + \ham_X
+\eeq
+\(\ham^D\) is diagonal w.r.t a particular degree of freedom. \(V\) is off-diagonal w.r.t that same degree of freedom. Let \(S\) be an \textit{anti-Hermitian} and \textit{off-diagonal} operator. \(U = e^S\) is then a unitary transformation.
+\beq
+U \ham U^\dagger &= e^S \rr{\ham_0 + \ham_X}e^{-S}\\
+		 &= \rr{\cosh\rr{S} + \sinh\rr{S}}\rr{\ham_0 + \ham_X}\rr{\cosh\rr{S} + \sinh\rr{S}}\\
+		 &= H_1 + H_2
+\eeq
+where \(H_1\) is diagonal and \(H_2\) is off-diagonal.
+\beq
+H_1=\cosh\rr{S} \ham_0 \cosh\rr{S} - \sinh\rr{S} \ham_0 \sinh\rr{S} -\cosh\rr{S} \ham_X \sinh\rr{S}\\
++\sinh\rr{S} \ham_X \cosh\rr{S}\\
+H_2 = - \cosh\rr{S} \ham_0 \sinh\rr{S} + \sinh\rr{S} \ham_0 \cosh\rr{S} +\cosh\rr{S} \ham_X \cosh\rr{S}\\
+-\sinh\rr{S} \ham_X \sinh\rr{S}
+\eeq
+\textbf{The decoupling condition is \(H_2=0\)}.
+\pb For small \(S\), we have \(\sinh S \sim S\) and \(\cosh S \sim 1 + \hf S^2\). Therefore, the off-diagonal part, up to second order, is 
+\beq
+H_2 = -\ham_0 S + S \ham_0 + \ham_X + O(S^3) = \qq{S,\ham_0} + \ham_X
+\eeq
+\textbf{The second order decoupling condition is thus}
+\beq
+\qq{S,\ham_0} = -\ham_X
+\eeq
+Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG. As a result, 
+\beq
+\cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{1}{\sqrt 2}\rr{\eta^\dagger - \eta}
+\eeq
+The off-diagonal part now becomes
+\beq
+H_2 = \hf\rr{\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta + \qq{\eta^\dagger - \eta, \ham^D}}
+\eeq
+The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{holography1}.
+\comm{
 In this section, we show that the generator for Schrieffer-Wolff transformation of the Anderson model can be derived as a first order approximation of a more general decoupling condition which arises from the URG.
 \pb The function of the Schrieffer-Wolff transformation is to decouple a set of states. In the following, we wish to decouple the electronic state \(q\beta\). Following ref.~\cite{piers}, we assume an operator 
 \beq
@@ -5462,6 +5498,7 @@ We will now find the transformed Hamiltonian \(\tilde \ham = U \ham U^\dagger\) 
 \tilde c_{d,\ol\beta}   &= \rr{1 + A c^\dagger_{q\beta}c_{d\beta} - A c^\dagger_{d\beta}c_{q\beta}} c_{d\ol\beta} \rr{1 + \rr{A+B} c^\dagger_{d\beta}c_{q\beta} - \rr{A+B} c^\dagger_{q\beta}c_{d\beta}}\\
 			&= \rr{1 + Bc^\dagger_{d\beta}c_{q\beta} - Bc^\dagger_{q\beta}c_{d\beta} + A(A+B) \rr{\hat n_{q\beta} + \hat n_{d\beta} - 2\hat n_{q\beta}\hat n_{d\beta}}} c_{d\ol\beta}
 \eeq
+}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
