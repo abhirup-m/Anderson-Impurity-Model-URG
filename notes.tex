@@ -5496,37 +5496,6 @@ The vanishing of this quantity is now the decoupling condition, and is also give
 \beq
 \ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta = 0
 \eeq
-\comm{
-In this section, we show that the generator for Schrieffer-Wolff transformation of the Anderson model can be derived as a first order approximation of a more general decoupling condition which arises from the URG.
-\pb The function of the Schrieffer-Wolff transformation is to decouple a set of states. In the following, we wish to decouple the electronic state \(q\beta\). Following ref.~\cite{piers}, we assume an operator 
-\beq
-\eta^\dagger = \theta c^\dagger_{q\beta}c_{d\beta}
-\eeq
-where \(\theta \equiv A + B\hat n_{d\ol\beta}\) and the coefficients \(A,B\) are in general a function of all orders of \(V\). From the formalism of URG, we know that the unitary transformation is
-\beq
-U = \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} = \frac{1}{\sqrt 2}\rr{1 + \eta^\dagger - \eta}
-\eeq
-We will now find the transformed Hamiltonian \(\tilde \ham = U \ham U^\dagger\) where \(\ham\) is the SIAM Hamiltonian eq.~\ref{model}, and we will determine \(\theta\) by requiring the off-diagonal terms to vanish. We will first determine how each of the operators transform under the operation.
-\beq
-\tilde c_{k\neq q,\sigma} &= U c_{k\neq q,\sigma} U^\dagger\\
-			  &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{k\neq q,\sigma} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
-			  &= \qq{1 + \theta^2\rr{ \hat n_{q\beta} + \hat n_{d\beta} - 2\hat n_{q\beta}}} c_{k\neq q,\sigma}
-\eeq
-\beq
-\tilde c_{q,\beta}   &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{q\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
-&= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta}} c_{q\beta} \rr{1 - \theta c^\dagger_{q\beta}c_{d\beta}}\\
-&= c_{q\beta} - \theta c_{d\beta}
-\eeq
-\beq
-\tilde c_{d,\beta}   &= \rr{1 + \theta c^\dagger_{q\beta}c_{d\beta} - \theta c^\dagger_{d\beta}c_{q\beta}} c_{d\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta} - \theta c^\dagger_{q\beta}c_{d\beta}}\\
-&= \rr{1 - \theta c^\dagger_{d\beta}c_{q\beta}} c_{d\beta} \rr{1 + \theta c^\dagger_{d\beta}c_{q\beta}}\\
-&= c_{d\beta} + \theta c_{q\beta}
-\eeq
-\beq
-\tilde c_{d,\ol\beta}   &= \rr{1 + A c^\dagger_{q\beta}c_{d\beta} - A c^\dagger_{d\beta}c_{q\beta}} c_{d\ol\beta} \rr{1 + \rr{A+B} c^\dagger_{d\beta}c_{q\beta} - \rr{A+B} c^\dagger_{q\beta}c_{d\beta}}\\
-			&= \rr{1 + Bc^\dagger_{d\beta}c_{q\beta} - Bc^\dagger_{q\beta}c_{d\beta} + A(A+B) \rr{\hat n_{q\beta} + \hat n_{d\beta} - 2\hat n_{q\beta}\hat n_{d\beta}}} c_{d\ol\beta}
-\eeq
-}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
