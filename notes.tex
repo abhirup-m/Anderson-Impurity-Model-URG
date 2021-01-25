@@ -14,7 +14,6 @@
 %\renewcommand\thesubsection{\arabic{subsection}}
 \allowdisplaybreaks
 \begin{document}
-\comm{
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
 \author{Abhirup Mukherjee\\[5pt]{Supervisor: Dr. Siddhartha Lal}}
 \affil{Department of Physics, IISER Kolkata}
@@ -22,6 +21,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
+%\comm{
 \section*{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -81,6 +81,7 @@ Since the RG transformations are unitary, all eigenvalues and eigenstates are ke
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
+\pagebreak
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -3051,7 +3052,7 @@ We now make the following assumptions:
 This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
-}
+
 \section{URG Method}\label{section2}
 \subsection{Formalism}\label{urgform}
 This section is adapted from ref.\cite{holography1}.
@@ -3470,7 +3471,7 @@ where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\bet
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
-\comm{
+%\comm{
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
@@ -3592,7 +3593,7 @@ For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + 
 	\item When \(\omega^+_N + \hf\epsilon_0>0\), \(\epsilon_0\) will grow. Since \(\omega^+_N\) also grows, the expression \(\omega^+_N + \hf\epsilon_0\) will become more and more positive as the RG progresses and there is no possibility of the denominator becoming zero. We cannot reach a fixed point in this regime, so ignore this regime.
 	\item When \(\omega^+_N + \hf\epsilon_0<0\), \(\epsilon_0\) will shrink. Here it is possible to reach a fixed point, but in this case, both \(\epsilon_i\) as well as \(\epsilon_0\) are decreasing, so this is like an overall scaling of the Hamiltonian. It is unlikely that it contains interesting physics, so we ignore this case as well and move on to the hole sector.
 \end{itemize}
-}
+
 
 %\comm{
 \section{Kondo Model URG}\label{section3}
@@ -5505,12 +5506,6 @@ The decoupling condition becomes
 \qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S
 \eeq
 This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\).
-\comm{
-	As shown there, the last commutator vanishes, so we are left with the decoupling condition
-\beq
-\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta = 0
-\eeq
-}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
