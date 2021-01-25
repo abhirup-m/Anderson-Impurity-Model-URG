@@ -5437,7 +5437,7 @@ We have a general Hamiltonian
 \beq
 \ham = \ham_0 + \ham_X
 \eeq
-\(\ham^D\) is diagonal w.r.t a particular degree of freedom. \(V\) is off-diagonal w.r.t that same degree of freedom. Let \(S\) be an \textit{anti-Hermitian} and \textit{off-diagonal} operator. \(U = e^S\) is then a unitary transformation.
+\(\ham_0\) is diagonal w.r.t a particular degree of freedom. \(V\) is off-diagonal w.r.t that same degree of freedom. Let \(S\) be an \textit{anti-Hermitian} and \textit{off-diagonal} operator. \(U = e^S\) is then a unitary transformation.
 \beq
 U \ham U^\dagger &= e^S \rr{\ham_0 + \ham_X}e^{-S}\\
 		 &= \rr{\cosh\rr{S} + \sinh\rr{S}}\rr{\ham_0 + \ham_X}\rr{\cosh\rr{S} + \sinh\rr{S}}\\
@@ -5459,15 +5459,43 @@ H_2 = -\ham_0 S + S \ham_0 + \ham_X + O(S^3) = \qq{S,\ham_0} + \ham_X
 \beq
 \qq{S,\ham_0} = -\ham_X
 \eeq
-Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG. As a result, 
+In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = \rr{A + B\hat n_{d\ol\beta}}\rr{c^\dagger_{q\beta}c_{d\beta} - \text{h.c.}}\). Plugging this into the decoupling condition gives
+\beq
+-\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
+\eeq
+which gives
+\beq
+S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+\eeq
+The remaining diagonal part constitutes the effective Hamiltonian.
+\beq
+H_1 &= \ham_0 + \hf \cc{\ham_0, S^2} - S \ham_0 S + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{\qq{\ham_0, S},S} + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{\ham_X,S} + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{S,\ham_X}
+\eeq
+For the SIAM (and noting that we are decoupling \(q\beta\)), the two parts are
+\beq
+\ham_0 &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da} + \sum_{k\sigma \neq q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}\\
+\ham_X &= c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} 
+\eeq
+The renormalization in the effective Hamiltonian is thus
+\beq
+\hf \qq{S,\ham_X} = -\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+\eeq
+This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one-shot.}
+\pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG. As a result, 
 \beq
 \cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{1}{\sqrt 2}\rr{\eta^\dagger - \eta}
 \eeq
 The off-diagonal part now becomes
 \beq
-H_2 = \hf\rr{\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta + \qq{\eta^\dagger - \eta, \ham^D}}
+H_2 = \hf\rr{\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta + \qq{\eta^\dagger - \eta, \ham_0}}
 \eeq
-The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{holography1}.
+The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{holography1}. As shown there, the last commutator vanishes, so we are left with the decoupling condition
+\beq
+\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta = 0
+\eeq
 \comm{
 In this section, we show that the generator for Schrieffer-Wolff transformation of the Anderson model can be derived as a first order approximation of a more general decoupling condition which arises from the URG.
 \pb The function of the Schrieffer-Wolff transformation is to decouple a set of states. In the following, we wish to decouple the electronic state \(q\beta\). Following ref.~\cite{piers}, we assume an operator 
