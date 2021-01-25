@@ -47,18 +47,27 @@ matplotlib.rcParams['text.usetex'] = True
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
 def fixed_VJ():
-    for w in range(-11,11,3):
-        for D0 in np.arange(1,20,6):
-            print (D0)
+    for w in np.arange(0.43,0.6,0.02):
+        #print (w)
+        for D0 in [1]:
             J = 0
-            U0 = 10
+            U0 = 0.1
             D = D0
             U = U0
             b = 0.999
             V = 2
             x = []
             y = []
+            den = (w - D/2)*(w - D/2 + U/2)
+            deltaU = -2 * V**2 * D**0.5 / ((w - D/2)*(w - D/2 + U/2))
+            if den * (w - D/2)*(w - D/2 + U/2) == 0:
+                print (w,"stable")
+                break
+            if  U == 0:
+                print (w,"zero")
+                break
             while D > 0:
+                print (D)
                 x.append(D)
                 y.append(U)
                 den = (w - D/2)*(w - D/2 + U/2)
@@ -67,18 +76,18 @@ def fixed_VJ():
                 U += deltaU
                 D *= b
                 if den * (w - D/2)*(w - D/2 + U/2) <= 0:
-                    print ("stable")
+                    print (w,"stable")
                     break
                 if  U <= 0:
-                    print ("zero")
+                    print (w,"zero")
                     break
-                if abs(deltaU) < 10**(-100) :
-                    print ("too slow")
+                if abs(deltaU) < 10**(-10) :
+                    print (w,"too slow")
                     break
             plt.title(r'J fixed $\rightarrow \omega={}, J={}, U_0={}$'.format(w,J,U0))
             plt.xlabel(r'D')
             plt.ylabel(r'U')
-            plt.plot(x,y)
+            plt.plot(x,y,marker="o")
             plt.show()
 
 # Constant hyb, vary starting D, plot flow of U for fixed starting U, omega = 0, J = 2
@@ -107,32 +116,50 @@ def fixed_J():
 # plot flow of U and J for omega = 0
 def all_flow():
     b = 0.9999
-    colors = ['r','b','w','y','g']
-    for U in np.arange(0.2,1,0.1):
-        for J in np.arange(0.2,1,0.1):
-            colors = colors[-1:]+colors[:-1]
-            X = []
-            Y = []
-            D0 = 20
-            D = D0
+    #colors = ['r','b','w','y','g']
+    wrange1 = np.arange(-20,-6,1.1)
+    wrange2 = np.arange(0.1,6,1.1)
+    for w in wrange1:
+        print ("w=",w)
+        D0 = 0.1
+        D = D0
+        V = 0
+        U = 10
+        J = 0.1
+        x = w - D/2
+
+        # expressions of three denominators
+        d1 = x
+        d2 = x + U/2 + J/4
+        d3 = x + U/2 - J/4
+
+        #check denominators at start
+        if d1 == 0 or d2 == 0 or d3 == 0:
+            print (x,U,J)
+            continue
+
+        X,Y = [],[]
+        count=0
+        while D > 0:
+            count += 1
             X.append(J)
             Y.append(U)
-            while D > 0:
-                print (D**2 - J**2/16)
-                deltaU = J**2 * D**(5/2) * (6*D + J)/(4 * (D**2 - J**2/16))
-                deltaJ = J**2 * D**2 / (2 * (D**2 - J**2/16))
-                U += deltaU
-                J += deltaJ
-                X.append(J)
-                Y.append(U)
-                D *= b
-                if deltaU * (D**2 - J**2/16) <= 0:
-                    print (J,U)
-                    break
-            plt.plot(X,Y,color=colors[-1])
-    plt.xlabel(r'J')
-    plt.ylabel(r'U')
-    plt.title(r'both flow $\rightarrow \omega=0, J_0=0.1, U_0=100, D_0 = 20$')
+            deltaU = -V**2 * D**0.5 * (2*U + J)/(d1 * d2) + J**2 * D**(3/2) * (6*x - J)/(8 * d2 * d3)
+            deltaV = -(3 * J * D**0.5 / 4) * V / d2
+            deltaJ = -J**2 * D**0.5 / d2
+            U += deltaU
+            V += deltaV
+            J += deltaJ
+            D *= b
+            x = w - D/2
+            if d2 * (x + U/2 + J/4) <= 0 or abs(deltaU) < 10**(-10):
+                print ("U=",U-deltaU,"J=",J-deltaJ)
+                break
+#        plt.plot(X,Y,color=colors[-1])
+#    plt.xlabel(r'J')
+#    plt.ylabel(r'U')
+#    plt.title(r'both flow $\rightarrow \omega=0, J_0=0.1, U_0=100, D_0 = 20$')
+        plt.plot(X,Y,marker=".")
     plt.show()
 
-fixed_VJ()
+all_flow()

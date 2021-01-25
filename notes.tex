@@ -14,6 +14,7 @@
 %\renewcommand\thesubsection{\arabic{subsection}}
 \allowdisplaybreaks
 \begin{document}
+\comm{
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
 \author{Abhirup Mukherjee\\[5pt]{Supervisor: Dr. Siddhartha Lal}}
 \affil{Department of Physics, IISER Kolkata}
@@ -21,7 +22,6 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-%\comm{
 \section*{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -81,7 +81,6 @@ Since the RG transformations are unitary, all eigenvalues and eigenstates are ke
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
-\pagebreak
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -3052,7 +3051,7 @@ We now make the following assumptions:
 This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
-
+}
 \section{URG Method}\label{section2}
 \subsection{Formalism}\label{urgform}
 This section is adapted from ref.\cite{holography1}.
@@ -3471,7 +3470,7 @@ where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\bet
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
-%\comm{
+\comm{
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
@@ -3593,7 +3592,7 @@ For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + 
 	\item When \(\omega^+_N + \hf\epsilon_0>0\), \(\epsilon_0\) will grow. Since \(\omega^+_N\) also grows, the expression \(\omega^+_N + \hf\epsilon_0\) will become more and more positive as the RG progresses and there is no possibility of the denominator becoming zero. We cannot reach a fixed point in this regime, so ignore this regime.
 	\item When \(\omega^+_N + \hf\epsilon_0<0\), \(\epsilon_0\) will shrink. Here it is possible to reach a fixed point, but in this case, both \(\epsilon_i\) as well as \(\epsilon_0\) are decreasing, so this is like an overall scaling of the Hamiltonian. It is unlikely that it contains interesting physics, so we ignore this case as well and move on to the hole sector.
 \end{itemize}
-
+}
 
 %\comm{
 \section{Kondo Model URG}\label{section3}
@@ -5054,7 +5053,7 @@ The scaling equations are obtained similarly as in the particle sector. The impo
 		    &\quad\sum_{q k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega^- - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
 	\Delta^- U &=  2\sum_{q}|V(q)|^2\rr{\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z} - \fr{1}{\omega^- - \hf\epsilon_q - 2\epsilon_d - U}} -\\
 		    &\quad2\sum_{q k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega^- - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
-\Delta^- V &= -\rr{\fr{1}{4} J_z + J_t}\sum_{q}V_q\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}\\
+\Delta^- V &= -\rr{\fr{1}{2} J_z + J_t}\sum_{q}V_q\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}\\
 \Delta^- J_t &= -J_z J_t\sum_{q}\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}\\
 \Delta^- J_z &= -J_t^2 \sum_{q}\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}
 \end{flalign*}
@@ -5456,7 +5455,7 @@ H_2 = - \cosh\rr{S} \ham_0 \sinh\rr{S} + \sinh\rr{S} \ham_0 \cosh\rr{S} +\cosh\r
 H_2 = -\ham_0 S + S \ham_0 + \ham_X + O(S^3) = \qq{S,\ham_0} + \ham_X
 \eeq
 \textbf{The second order decoupling condition is thus}
-\beq
+\beq[dec_cond]
 \qq{S,\ham_0} = -\ham_X
 \eeq
 In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = \rr{A + B\hat n_{d\ol\beta}}\rr{c^\dagger_{q\beta}c_{d\beta} - \text{h.c.}}\). Plugging this into the decoupling condition gives
@@ -5483,19 +5482,35 @@ The renormalization in the effective Hamiltonian is thus
 \beq
 \hf \qq{S,\ham_X} = -\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
-This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one-shot.}
-\pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG. As a result, 
-\beq
+This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one shot.}
+\pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG, and are in general non-perturbative since they encode the whole scattering term inside the \(\hat \omega\). From the properties of \(\eta\) (\(\eta^2 = {\eta^\dagger}^2 = 0\)), we can write
+\beq[cossin]
 \cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{1}{\sqrt 2}\rr{\eta^\dagger - \eta}
 \eeq
 The off-diagonal part now becomes
 \beq
 H_2 = \hf\rr{\ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta + \qq{\eta^\dagger - \eta, \ham_0}}
 \eeq
-The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{holography1}. As shown there, the last commutator vanishes, so we are left with the decoupling condition
+The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{holography1}.
+\pb To look for a decoupling condition similar to eq.~\ref{dec_cond}, we can re-express the \(\cosh\) and \(\sinh\) in eq.~\ref{cossin} in terms of \(S\), by substituting \(\eta^\dagger - \eta = \frac{4}{\pi}S\):
+\beq
+\cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{4}{\sqrt 2 \pi}S
+\eeq
+That gives
+\beq
+H_2 = \hf\qq{\frac{4}{\pi}\qq{S,\ham_0} + \ham_X - \frac{16}{\pi^2}S \ham_X S}
+\eeq
+The decoupling condition becomes
+\beq
+\qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S
+\eeq
+This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\).
+\comm{
+	As shown there, the last commutator vanishes, so we are left with the decoupling condition
 \beq
 \ham_X - \eta^\dagger \ham_X \eta^\dagger - \eta \ham_X \eta = 0
 \eeq
+}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
