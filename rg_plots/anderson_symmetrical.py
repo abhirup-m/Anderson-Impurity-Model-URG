@@ -132,7 +132,7 @@ def all_flow():
         U = U0
         J = J0
         x = w - D/2
-
+ 
         # expressions of three denominators
         d1 = x
         d2 = x + U/2 + J/4
