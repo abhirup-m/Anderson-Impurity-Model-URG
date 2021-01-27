@@ -3,8 +3,11 @@
 import math
 import matplotlib
 from matplotlib import pyplot as plt
+from matplotlib.pyplot import figure
 import numpy as np
-matplotlib.rcParams['text.usetex'] = True
+#matplotlib.rcParams['text.usetex'] = True
+#figure(num=None, figsize=(10, 7), dpi=100, facecolor='w', edgecolor='k')
+
 
 #    for U in range(10,20,50):
 #        V = 0.1
@@ -116,17 +119,20 @@ def fixed_J():
 
 # plot flow of U and J for omega = 0
 def all_flow():
-    b = 0.999
-    D0 = 1
-    V0 = 0.1
-    U0 = 1
-    J0 = 1
+    b  = 0.999
+    D0 = 0.01
+    V0 = 0.001
+    U0 = 0.01
+    J0 = 0.05
+
     # \omega range for which J is relevant
-    wrange1 = np.linspace(D0/2 - U0 - J0,D0/2 - U0/2 - J0/4,5)
+    #wrange1 = np.linspace(- U0 - J0/2,D0/2 - U0/2 - J0/4,6,endpoint=False)
+    low = np.round(np.arange(-30,-10,1),2)
+    neg = np.round(np.arange(-15,-1,1),2)
     # \omega range for which J is irrelevant
-    wrange2 = np.linspace(D0/2 - U0/2 - J0/4,D0/2,6)
-    for w in wrange1:
-        print ("w=",w)
+    high = np.round(np.arange(2,15,1),2)
+    full = np.round(np.arange(-15,15,1),2)
+    for w in low:
         D = D0
         V = V0
         U = U0
@@ -140,7 +146,7 @@ def all_flow():
 
         #check denominators at start
         if d1 == 0 or d2 == 0 or d3 == 0:
-            print ("U=",U,"J=",J)
+            print ("w=",w,"U=",U,"J=",J)
             continue
 
         X,Y = [],[]
@@ -158,17 +164,17 @@ def all_flow():
             D *= b
             x = w - D/2
             if d2 * (x + U/2 + J/4) <= 0:
-                print ("U=",U-deltaU,"J=",J-deltaJ)
+                print ("w=",w,"U=",U-deltaU,"J=",J-deltaJ)
                 break
             if abs(deltaU) < 10**(-10):
-                print ("slow: U=",U-deltaU,"J=",J-deltaJ)
+                print ("slow: w=",w,"U=",U-deltaU,"J=",J-deltaJ)
                 break
 #        plt.plot(X,Y,color=colors[-1])
 #    plt.xlabel(r'J')
 #    plt.ylabel(r'U')
-        plt.plot(X,Y,label=r'$\omega=${}'.format(w))
-    plt.title(r'Relevant J$\to J_0=V_0^2/D_0={}, U_0={}, V_0={}, D_0={}$'.format(J0,U0,V0,D0))
-    plt.legend()
+        plt.plot(X,Y,marker='.',label=r'$\omega=${}'.format(w))
+    plt.title(r'$J_0={}, U_0={}, V_0={}, D_0={}$'.format(J0,U0,V0,D0))
+    #plt.legend()
     plt.show()
 
 all_flow()
