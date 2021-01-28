@@ -121,15 +121,14 @@ def fixed_J():
 def all_flow():
     b  = 0.999
     D0 = 0.01
-    V0 = 0.001
-    U0 = 0.01
+    V0 = 0.003
+    U0 = 0.0003
     J0 = 0.05
 
     # \omega range for which J is relevant
-    #wrange1 = np.linspace(- U0 - J0/2,D0/2 - U0/2 - J0/4,6,endpoint=False)
-    low = np.round(np.arange(-30,-10,1),2)
+    # wrange1 = np.linspace(- U0 - J0/2,D0/2 - U0/2 - J0/4,6,endpoint=False)
+    low = np.round(np.arange(-30,-9,1),2)
     neg = np.round(np.arange(-15,-1,1),2)
-    # \omega range for which J is irrelevant
     high = np.round(np.arange(2,15,1),2)
     full = np.round(np.arange(-15,15,1),2)
     for w in low:
