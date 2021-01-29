@@ -5521,7 +5521,7 @@ E\ket{\psi} &= \ham\ket{\psi} \\
 	    &= \rr{\ham_0 + V_{0\to 1}}\ket{\psi_0} + \rr{\ham_0 + H_1 + V_{1\to 2} + V_{1 \to 0}}\ket{\psi_1} + \rr{\ham_0 + H_2 + V_{2\to 1}}\ket{\psi_2}
 \eeq
 where \(\ket{\psi_i} = \ket{n_d = i}\bra{n_d = i}\ket{\psi}\). We can separate the entire equation into three individual equations for each of the three subspaces:
-\beq
+\beq[sceq]
 E\ket{\psi_0} &= \ham_0\ket{\psi_0} + V_{1 \to 0}\ket{\psi_1}\\
 E\ket{\psi_1} &= \rr{\ham_0 + \epsilon_d}\ket{\psi_1} + V_{0\to 1}\ket{\psi_0} + V_{2\to 1}\ket{\psi_2}\\
 E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}}\ket{\psi_1}\\
@@ -5576,6 +5576,25 @@ We can define \(S_d^\sigma = c^\dagger_{d\sigma}c_{d\ol\sigma}\) where \(\sigma 
 The total renormalization, minus the potential scattering and constant terms, is
 \beq
 2\sum_{kq}J_{kq}\qq{S_d^z s^z_{kq} + \hf\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}} = 2\sum_{kq}J_{kq}\vec{S}_d\cdot\vec{s}_{kq}
+\eeq
+Note that when we wrote the entire Schrodinger equation in the subspace of \(\ket{\psi_1}\), we projected out all contributions of the Hamiltonian in the subspace of the doublon and holon. To recover those parts, we can look at eq.~\ref{sceq} by eliminating \(\ket{\psi_1}\). That gives
+\beq
+E\ket{\psi_0} &= \rr{\ham_0 + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}}\ket{\psi_0} + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}\psi_2\\
+E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}}\ket{\psi_2} + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}\psi_0\\
+\eeq
+There are two scattering terms in each equation. The first scattering term (of the forms \(V_{1 \to 0}GV_{0\to 1}\) and \(V_{1 \to 2}GV_{2\to 1}\)) involve virtual excitations to the single-occupied subspace. They are diagonal in their respective subspaces. However, \textit{the second scattering term in each equation, of the form \(V_{1 \to 0}GV_{2\to 1}\) or \(V_{1 \to 2}GV_{0\to 1}\) scatter between the doublon and holon subspace.} The first one takes you from the doublon to the holon (\(2 \to 1 \to 0\)), the second one does the oppposte. Let us take a look at these terms. The first term becomes
+\beq
+V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} &= \sum_{kq\sigma\gamma}V_q c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}\frac{1}{E - \ham_0 - \epsilon_d}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}\\
+						       &=\sum_{kq\sigma\gamma}V_q c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}\frac{1}{\epsilon_d + U - \epsilon_k}
+\eeq
+where I put \(E = \ham_0 - \epsilon_k + 2\epsilon_d + U\) as the energy of the initial state \(\ket{\psi_2}\). Since the expression has \(c_{d\gamma}\) followed by \(c_{d\sigma}\) with only diagonal terms in between, we must have \(\gamma = \ol\sigma\). Hence it becomes
+\beq
+\sum_{kq\sigma}V_qV_k c^\dagger_{q\ol\sigma}c_{d\ol\sigma}c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_d + U - \epsilon_k}
+\eeq
+The second scattering term becomes
+\beq
+V_{1 \to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} &= \sum_{kq\sigma\gamma}V_q^* c^\dagger_{d\gamma}c_{q\gamma}\hat n_{d\ol\gamma}\frac{1}{E - \ham_0 - \epsilon_d}V_k^* c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\\
+						       &=\sum_{kq\sigma\gamma}V_q^* c^\dagger_{d\gamma}c_{q\gamma}\hat n_{d\ol\gamma}V_k^* c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\frac{1}{\epsilon_k - \epsilon_d}\\
 \eeq
 \bibliographystyle{unsrt}
 \bibliography{notes}
