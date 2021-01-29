@@ -31,7 +31,7 @@ The model consisted of a bath of mobile electrons which interacted with the loca
 The engine of magnetism was the local onsite Coulomb repulsion on the impurity site.
 This repulsion favours the formation of local moments because it makes it harder for the impurity to be doubly-occupied.
 \pb Mean-field calculations of the impurity occupation reveals a criterion for the formation of local moments; this criterion is similar to the Stoner criterion for ferromagnetism. This mean-field analysis is of course only valid at high temperatures where electron-correlations are not so important. At low temperatures, it was found that the resistivity of the material reaches a minimum at some temperature, and then increases as \(\ln T\) as we further reduce the temperature. This is in contrast to the previews results. And that was not all; at a sufficiently low temperature, it was found that the \(\ln T\)-dependence disappears and the susceptibility became constant, implying the formation of a singlet state.
-\pb The fact that the logarithmic dependence vanishes once the singlet is formed suggests that it arises from the local moment on the impurity; once the local moment disappears (singlet), the log dependence vanishes as well.
+\pb The fact that this logarithmic dependence vanishes once the singlet is formed suggests that it arises from the local moment on the impurity; once the local moment disappears (singlet), the log dependence vanishes as well.
 This led people to design a model in which the impurity interacted with the conduction bath through a Heisenberg-like spin-spin interaction.
 This model can be related to the SIAM through a canonical transformation followed by a projection to the low energy subspace.
 In 1964, Jun Kondo\cite{Kondo} found that a perturbative calculation of the transition probability of electrons from scattering via the impurity, up to second order in the exchange coupling \(J\), revealed a logarithmic dependence of the resistivity on temperature.
@@ -45,7 +45,32 @@ This problem came to be known as the Kondo problem.
 In his "Poor Man's Scaling" approach, he progressively reduced the bandwidth while taking account of the eliminated states into the couplings via second order perturbation theory.
 This showed how the couplings would flow as we went to low temperatures, but it still could not remove the divergence as it was perturbative.
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
-In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he ieratively diagonalized chains of increasing length to go to the low energy physics.
+In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of@thesis{ID,
+	author = {author},
+	title = {title},
+	type = {type},
+	institution = {institution},
+	date = {date},
+	OPTsubtitle = {subtitle},
+	OPTtitleaddon = {titleaddon},
+	OPTlanguage = {language},
+	OPTnote = {note},
+	OPTlocation = {location},
+	OPTmonth = {month},
+	OPTisbn = {isbn},
+	OPTchapter = {chapter},
+	OPTpages = {pages},
+	OPTpagetotal = {pagetotal},
+	OPTaddendum = {addendum},
+	OPTpubstate = {pubstate},
+	OPTdoi = {doi},
+	OPTeprint = {eprint},
+	OPTeprintclass = {eprintclass},
+	OPTeprinttype = {eprinttype},
+	OPTurl = {url},
+	OPTurldate = {urldate},
+}
+ increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
 Later calculations with Bethe ansatz in 1980 by Andrei and Weigman \cite{Andrei},\cite{Weigman} corroborated Wilson's findings.
 \pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Weigman and Tsvelick\cite{Tsvelick}.
@@ -5395,7 +5420,8 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\caption{Flow chart of "Poor Man's" scaling algorithm}
 	\label{pmsflow}
 \end{figure}
-\section{Schrieffer-Wolff Transformation as a limit of URG}
+\section{Schrieffer-Wolff Transformation in the context of URG and PMS}
+\subsection{Schrieffer-Wolff transformation as a limit of URG}
 We have a general Hamiltonian
 \beq
 \ham = \ham_0 + \ham_X
@@ -5413,12 +5439,12 @@ H_1=\cosh\rr{S} \ham_0 \cosh\rr{S} - \sinh\rr{S} \ham_0 \sinh\rr{S} -\cosh\rr{S}
 H_2 = - \cosh\rr{S} \ham_0 \sinh\rr{S} + \sinh\rr{S} \ham_0 \cosh\rr{S} +\cosh\rr{S} \ham_X \cosh\rr{S}\\
 -\sinh\rr{S} \ham_X \sinh\rr{S}
 \eeq
-\textbf{The decoupling condition is \(H_2=0\)}.
+The decoupling condition is \(H_2=0\).
 \pb For small \(S\), we have \(\sinh S \sim S\) and \(\cosh S \sim 1 + \hf S^2\). Therefore, the off-diagonal part, up to second order, is 
 \beq
 H_2 = -\ham_0 S + S \ham_0 + \ham_X + O(S^3) = \qq{S,\ham_0} + \ham_X
 \eeq
-\textbf{The second order decoupling condition is thus}
+The second order decoupling condition is thus
 \beq[dec_cond]
 \qq{S,\ham_0} = -\ham_X
 \eeq
@@ -5446,7 +5472,7 @@ The renormalization in the effective Hamiltonian is thus
 \beq
 \hf \qq{S,\ham_X} = -\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
-This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one shot.}
+This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one shot.} This relation is further substantiated in the next subsection.
 \pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG, and are in general non-perturbative since they encode the whole scattering term inside the \(\hat \omega\). From the properties of \(\eta\) (\(\eta^2 = {\eta^\dagger}^2 = 0\)), we can write
 \beq[cossin]
 \cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{1}{\sqrt 2}\rr{\eta^\dagger - \eta}
@@ -5470,7 +5496,87 @@ The decoupling condition becomes
 \eeq
 This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\).
 \pb There appear to be two differences between these decoupling conditions:(a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-
+\subsection{Kondo model from PMS-type approach}
+In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
+\pb First note that the goal of PMS here would be to decouple the single-occupied subspace of the impurity from the doublon and holon subspaces. To that end, we write the interaction part of the Hamiltonian as
+\beq
+\sum_{k\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} &= \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}\cc{\hat n_{d\ol\sigma} + \rr{1 - \hat n_{d\ol\sigma}}} + \text{h.c.}}\\
+								    &= V_{2\to 1} + V_{1\to 0} + \text{h.c.}
+\eeq
+where 
+\beq
+V_{2\to 1} = \sum_{k\sigma}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}
+\eeq
+takes us from doublon to spinon while
+\beq
+V_{1\to 0} = \sum_{k\sigma}V_k c^\dagger_{k\sigma}c_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}}
+\eeq
+takes us from spinon to holon. The Hermitian conjugate involves \(V_{1\to 2} = \sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}\) and \(V_{0\to 1} = \sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\). Similarly, the diagonal part can be separated as follows:
+\beq
+\ham_D = \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\sum_\sigma\hat n_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}} + \rr{2\epsilon_d + U}\hat n_{d\ua}\hat n_{d\da} = \ham_\text{bath} + H_1 + H_2
+\eeq
+We can now separate the Hamiltonian into the three subspaces:
+\beq
+E\ket{\psi} &= \ham\ket{\psi} \\
+	    &= \rr{\ham_0 + V_{0\to 1}}\ket{\psi_0} + \rr{\ham_0 + H_1 + V_{1\to 2} + V_{1 \to 0}}\ket{\psi_1} + \rr{\ham_0 + H_2 + V_{2\to 1}}\ket{\psi_2}
+\eeq
+where \(\ket{\psi_i} = \ket{n_d = i}\bra{n_d = i}\ket{\psi}\). We can separate the entire equation into three individual equations for each of the three subspaces:
+\beq
+E\ket{\psi_0} &= \ham_0\ket{\psi_0} + V_{1 \to 0}\ket{\psi_1}\\
+E\ket{\psi_1} &= \rr{\ham_0 + \epsilon_d}\ket{\psi_1} + V_{0\to 1}\ket{\psi_0} + V_{2\to 1}\ket{\psi_2}\\
+E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}}\ket{\psi_1}\\
+\eeq
+Eliminating \(\ket{\psi_0}\) and \(\ket{\psi_2}\) from the equations gives the effective Hamiltonian in the single-occupied subspace.
+\beq
+E\ket{\psi_1} &= \qq{\ham_0 + \epsilon_d + V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} + V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2}}\ket{\psi_1}\\
+	      &= \ham_\text{eff}\ket{\psi_1}
+\eeq
+We can evaluate the effective Hamiltonian.
+\beq
+\ham_\text{eff} &= \ham_0 + \epsilon_d + V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} + V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2}\\
+\eeq
+The first renormalization term gives
+\beq
+V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} = \sum_{kq\sigma\alpha}V_k^*V_qc^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\frac{1}{E - \ham_0} c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}
+\eeq
+We can \textit{approximate} \(E\) by replacing it with the bare energy of \(\ket{\psi_1}\): \(E = \ham_0 - \epsilon_q + \epsilon_d\).
+\beq
+V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}\frac{1}{\epsilon_d - \epsilon_q}
+\eeq
+Similarly, the second term becomes
+\beq
+V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{q\gamma}c_{d\gamma}\hat n_{d\ol\gamma}\frac{1}{E - \ham_0 - 2\epsilon_d - U}c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}
+\eeq
+We again approximate \(E\): \(E = \ham_0 + \epsilon_k - \epsilon_d\):
+\beq
+V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{q\gamma}c_{d\gamma}\hat n_{d\ol\gamma}c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}\frac{1}{\epsilon_k - \epsilon_d - U}
+\eeq
+The sum of these two terms give the total renormalization. First we look at those terms where \(\gamma=\sigma\). The total renormalization from that part is
+\beq
+\sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}}c_{k\sigma}c^\dagger_{q\sigma}}{\epsilon_d - \epsilon_q} + \frac{\rr{1 - \hat n_{d\sigma}}\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}} &= \sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}c_{k\sigma}c^\dagger_{q\sigma}}{\epsilon_d - \epsilon_q} + \frac{\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}\\
+&= \sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}
+\eeq
+In the first step we used \(\hat n_{\sigma}\hat n_{d\ol\sigma}=0\) because we are in the single-occupied subspace and in the second step we used \(c_{k\sigma}c^\dagger_{q\sigma} = \delta_{kq} - c^\dagger_{q\sigma}c_{k\sigma}\) and dropped the constant \(\delta\) part. We can now write this this thing in terms of spin operator \(S_d^z = \hf\sigma\rr{\hat n_{d\sigma} - \hat n_{d\ol\sigma}}\) and also use \(\hat n_{\sigma} + \hat n_{\ol\sigma} = 1\). They give
+\beq
+&\sum_{kq\sigma}V_k^*V_q\qq{\frac{\rr{\hf + \sigma S_d^z}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_q - \epsilon_d} + \frac{\rr{\hf - \sigma S_d^z}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}\\
+&= \sum_{kq\sigma}V_k^*V_qS_d^z \sigma c^\dagger_{q\sigma}c_{k\sigma}\qq{\frac{1}{\epsilon_q - \epsilon_d} - \frac{1}{\epsilon_k - \epsilon_d - U}} + \hf\sum_{kq\sigma}V_k^*V_qc^\dagger_{q\sigma}c_{k\sigma}\qq{\frac{1}{\epsilon_q - \epsilon_d} + \frac{1}{\epsilon_k - \epsilon_d - U}}
+\eeq
+The latter term is a potential scattering term; it vanishes in the particle-hole symmetric case (\(\epsilon_d + U = -\epsilon_d\)) and we will ignore it from now. The first term is the gives rise to the spin-preserving scattering in the s-d model; we can write \(\sum_\sigma\sigma c^\dagger_{q\sigma}c_{k\sigma} = c^\dagger_{q\ua}c_{k\ua} - c^\dagger_{q\da}c_{k\da} \equiv 2s^z_{kq}\). Defining \(J_{kq} = V_k^*V_q\qq{\frac{1}{\epsilon_q - \epsilon_d} - \frac{1}{\epsilon_k - \epsilon_d - U}}\), gives us the first term in s-d model
+\beq
+2\sum_{kq}J_{kq} S_d^z s^z_{kq}
+\eeq
+Setting \(\gamma = \ol\sigma\) in the total renormalization gives the rest of the terms:
+\beq
+\sum_{kq\sigma}V_k^*V_qc^\dagger_{d\sigma}c_{d\ol\sigma}c^\dagger_{q\ol\sigma}c_{k\sigma}\qq{\frac{-1}{\epsilon_d - \epsilon_q} + \frac{-1}{\epsilon_k - \epsilon_d - U}} =\sum_{kq\sigma}J_{kq}c^\dagger_{d\sigma}c_{d\ol\sigma}c^\dagger_{q\ol\sigma}c_{k\sigma}
+\eeq
+We can define \(S_d^\sigma = c^\dagger_{d\sigma}c_{d\ol\sigma}\) where \(\sigma \in \cc{+,-}\) and \(s^{\ol\sigma}_{kq} = c^\dagger_{q\ol\sigma}c_{k\sigma}\). This gives
+\beq
+\sum_{kq\sigma}J_{kq}S_d^\sigma s_{kq}^{\ol\sigma} = \sum_{kq}J_{kq}\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}
+\eeq
+The total renormalization, minus the potential scattering and constant terms, is
+\beq
+2\sum_{kq}J_{kq}\qq{S_d^z s^z_{kq} + \hf\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}} = 2\sum_{kq}J_{kq}\vec{S}_d\cdot\vec{s}_{kq}
+\eeq
 \bibliographystyle{unsrt}
 \bibliography{notes}
 %}
