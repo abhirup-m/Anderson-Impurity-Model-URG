@@ -5408,6 +5408,12 @@ In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = 
 \Delta E_2 &= -\fr{1}{\epsilon_q - \epsilon_d - U}\\
 \eeq
 These results are also obtained in ref.~\cite{hewson}. The complete process is depicted in fig.~\ref{pmsflow}.
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{pms-flowchart.png}
+	\caption{Flow chart of "Poor Man's" scaling algorithm}
+	\label{pmsflow}
+\end{figure}
 \pb \textbf{Some conclusions}:
 \begin{itemize}
 	\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
@@ -5416,12 +5422,6 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
 	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.35]{pms-flowchart.png}
-	\caption{Flow chart of "Poor Man's" scaling algorithm}
-	\label{pmsflow}
-\end{figure}
 \section{Schrieffer-Wolff Transformation in the context of URG and PMS}
 \subsection{Schrieffer-Wolff transformation as a limit of URG}
 We have a general Hamiltonian
@@ -5470,11 +5470,16 @@ For the SIAM (and noting that we are decoupling \(q\beta\)), the two parts are
 \ham_0 &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da} + \sum_{k\sigma \neq q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}\\
 \ham_X &= c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} 
 \eeq
-The renormalization in the effective Hamiltonian is thus
+The renormalization in the effective Hamiltonian from decoupling a high energy particle state is thus
 \beq
-\hf \qq{S,\ham_X} = -\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+\hf \qq{S,\ham_X} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\\
+		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
-This is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). This shows that the extra terms that are generated in SWT (the s-d term) appear \textit{only because the connection between the impurity subspaces are integrated out in one shot.} This relation is further substantiated in the next subsection.
+In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state. We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
+\beq
+\hf \qq{S,\ham_X} &=-\rr{1 - \hat n_{d\beta}}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U}}
+\eeq
+These two results - the renormalization in the particle and hole sectors - is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). 
 \pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\). The \(\eta\) and its conjugate satisfy the properties laid out in the formalism of URG, and are in general non-perturbative since they encode the whole scattering term inside the \(\hat \omega\). From the properties of \(\eta\) (\(\eta^2 = {\eta^\dagger}^2 = 0\)), we can write
 \beq[cossin]
 \cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{1}{\sqrt 2}\rr{\eta^\dagger - \eta}
@@ -5500,20 +5505,22 @@ This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\).
 \beq
 U\ham U^\dagger = H_1 = \hf \ham_0 - \frac{4}{\pi^2}S\ham_0 S  + \frac{2}{\pi}\qq{S,\ham_X}
 \eeq
-The differences between the perturbative and non-perturbative ways are summarized in the table below.
-\begin{center}
+The differences between the perturbative and non-perturbative ways are summarized in table \ref{comparison}.
+\begin{table}
 \def\arraystretch{2}\tabcolsep=10pt
+\centering
 \begin{tabular}{|c|c|c|}
 	\hline
 		&renormalization&decoupling condition\\
 	\hline
 		SWT&\(\hf \qq{S,\ham_X}\)&\(\qq{S,\ham_0} = -\ham_X\)\\
-		URG&\(- \frac{4}{\pi^2}S\ham_0 S  + \frac{2}{\pi}\qq{S,\ham_X}\)&\(\qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S\)\\
+		URG&\(\frac{2}{\pi}\qq{S,\ham_X}\)&\(\qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S\)\\
 	\hline
-%\captionof{table}{Comparison of perturbative and non-perturbative canonical transformations}
 \end{tabular}
-\end{center}
-There appear to be two differences between these decoupling conditions:(a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
+	\caption{Comparison of perturbative and non-perturbative canonical transformations}
+	\label{comparison}
+\end{table}
+There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
 
 \subsection{Kondo model from PMS-type approach}\label{SWT from PMS}
 In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
@@ -5624,7 +5631,8 @@ V_{1 \to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} &= \sum_{kq\sigma\gamma}V
 \eeq
 Combining the two terms, we get the total charge-Kondo contribution:
 \beq
-\ham_{ch} = \sum_{kq}\qq{V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} + V_q^*V_k^* \rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}}
+\ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
++ \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
 \bibliographystyle{unsrt}
 \bibliography{notes}
