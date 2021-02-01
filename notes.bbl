@@ -39,6 +39,16 @@ Piers Coleman.
 \newblock {\em Introduction to Many-Body Physics}.
 \newblock Cambridge University Press, 2015.
 
+\bibitem{Schrieffer_Wolff}
+J.~R. Schrieffer and P.~A. Wolff.
+\newblock Relation between the anderson and kondo hamiltonians.
+\newblock {\em Phys. Rev.}, 149:491--492, Sep 1966.
+
+\bibitem{hewson}
+A.~C. Hewson.
+\newblock {\em The Kondo Problem to Heavy Fermions}.
+\newblock Cambridge University Press, 1993.
+
 \bibitem{phill}
 Philip Phillips.
 \newblock {\em Advanced Solid State Physics}.
@@ -99,11 +109,6 @@ Kenji Suzuki.
 \newblock {Construction of Hermitian Effective Interaction in Nuclei: —
   General Relation between Hermitian and Non-Hermitian Forms —}.
 \newblock {\em Progress of Theoretical Physics}, 68, 1982.
-
-\bibitem{hewson}
-A.~C. Hewson.
-\newblock {\em The Kondo Problem to Heavy Fermions}.
-\newblock Cambridge University Press, 1993.
 
 \bibitem{tatha}
 Mengxing Cheng, Tathagata Chowdhury, Aaron Mohammed, and Kevin Ingersent.

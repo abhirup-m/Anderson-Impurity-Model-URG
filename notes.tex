@@ -542,7 +542,8 @@ Thus, the singlet phase shift at \il{\epsilon_F} approaches \il{\fr{\pi}{2}} as 
 \end{itemize}
 
 \subsection{Derivation of the Kondo Hamiltonian}
-The space of the impurity electron can be divided into low energy and high energy subspaces:
+Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\ua} \neq \hat n_{d\da}\)) from the doublon and holon subspaces (\(\hat n_{d\ua} \neq \hat n_{d\da}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{Schrieffer_Wolff}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} iI decided to do my MSc thesis with Dr. Sunethra Ramanan, Indian Institute of Technology, Madras, on the application Similarity Renormalization group (SRG) method in quantum optics.s shown in \ref{SWT from PMS}.
+\pb The space of the impurity electron can be divided into low energy and high energy subspaces:
 \beq
 \text{low energy (L)} \ra \begin{cases} \ket{\ua} \\ \ket{\da} \end{cases}\\
 \text{high energy (H)} \ra \begin{cases} \ket{} \\ \ket{\ua\da} \end{cases}\\
@@ -5230,6 +5231,7 @@ Here both \(U\) and \(J\) are relevant and they flow up to the strong-coupling f
 \label{schemesc}
 \end{minipage}
 }
+
 \section{Connection between URG and Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
@@ -5458,7 +5460,7 @@ S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{
 \eeq
 The remaining diagonal part constitutes the effective Hamiltonian.
 \beq
-H_1 &= \ham_0 + \hf \cc{\ham_0, S^2} - S \ham_0 S + \qq{S,\ham_X}\\
+U\ham U^\dagger = H_1 &= \ham_0 + \hf \cc{\ham_0, S^2} - S \ham_0 S + \qq{S,\ham_X}\\
     &=\ham_0 + \hf \qq{\qq{\ham_0, S},S} + \qq{S,\ham_X}\\
     &=\ham_0 + \hf \qq{\ham_X,S} + \qq{S,\ham_X}\\
     &=\ham_0 + \hf \qq{S,\ham_X}
@@ -5494,9 +5496,26 @@ The decoupling condition becomes
 \beq
 \qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S
 \eeq
-This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\).
-\pb There appear to be two differences between these decoupling conditions:(a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-\subsection{Kondo model from PMS-type approach}
+This can be compared to the second order condition: \(\qq{S,\ham_0} = -\ham_X\). We  can also write the effective Hamiltonian for this non-perturbative case.
+\beq
+U\ham U^\dagger = H_1 = \hf \ham_0 - \frac{4}{\pi^2}S\ham_0 S  + \frac{2}{\pi}\qq{S,\ham_X}
+\eeq
+The differences between the perturbative and non-perturbative ways are summarized in the table below.
+\begin{center}
+\def\arraystretch{2}\tabcolsep=10pt
+\begin{tabular}{|c|c|c|}
+	\hline
+		&renormalization&decoupling condition\\
+	\hline
+		SWT&\(\hf \qq{S,\ham_X}\)&\(\qq{S,\ham_0} = -\ham_X\)\\
+		URG&\(- \frac{4}{\pi^2}S\ham_0 S  + \frac{2}{\pi}\qq{S,\ham_X}\)&\(\qq{S,\ham_0} = -\frac{\pi}{4}\ham_X + \frac{4}{\pi}S \ham_X S\)\\
+	\hline
+%\captionof{table}{Comparison of perturbative and non-perturbative canonical transformations}
+\end{tabular}
+\end{center}
+There appear to be two differences between these decoupling conditions:(a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
+
+\subsection{Kondo model from PMS-type approach}\label{SWT from PMS}
 In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
 \pb First note that the goal of PMS here would be to decouple the single-occupied subspace of the impurity from the doublon and holon subspaces. To that end, we write the interaction part of the Hamiltonian as
 \beq
@@ -5573,14 +5592,18 @@ We can define \(S_d^\sigma = c^\dagger_{d\sigma}c_{d\ol\sigma}\) where \(\sigma 
 \beq
 \sum_{kq\sigma}J_{kq}S_d^\sigma s_{kq}^{\ol\sigma} = \sum_{kq}J_{kq}\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}
 \eeq
-The total renormalization, minus the potential scattering and constant terms, is
+The total renormalization, minus the potential scattering and constant terms constitutes the spin-flip scattering part of the Kondo model:
 \beq
-2\sum_{kq}J_{kq}\qq{S_d^z s^z_{kq} + \hf\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}} = 2\sum_{kq}J_{kq}\vec{S}_d\cdot\vec{s}_{kq}
+\ham_{s-d} = 2\sum_{kq}J_{kq}\qq{S_d^z s^z_{kq} + \hf\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}} = 2\sum_{kq}J_{kq}\vec{S}_d\cdot\vec{s}_{kq}
 \eeq
 Note that when we wrote the entire Schrodinger equation in the subspace of \(\ket{\psi_1}\), we projected out all contributions of the Hamiltonian in the subspace of the doublon and holon. To recover those parts, we can look at eq.~\ref{sceq} by eliminating \(\ket{\psi_1}\). That gives
 \beq
 E\ket{\psi_0} &= \rr{\ham_0 + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}}\ket{\psi_0} + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}\psi_2\\
 E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}}\ket{\psi_2} + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}\psi_0\\
+\eeq
+It can be represented in the matrix form:
+\beq
+\begin{pmatrix} \ham_0 + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} & V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} \\\\ V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} & \ham_0 + 2\epsilon_d + U + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} \end{pmatrix} \begin{pmatrix} \psi_0 \\\\ \psi_2 \end{pmatrix} = E \begin{pmatrix} \psi_0 \\\\ \psi_2 \end{pmatrix}
 \eeq
 There are two scattering terms in each equation. The first scattering term (of the forms \(V_{1 \to 0}GV_{0\to 1}\) and \(V_{1 \to 2}GV_{2\to 1}\)) involve virtual excitations to the single-occupied subspace. They are diagonal in their respective subspaces. However, \textit{the second scattering term in each equation, of the form \(V_{1 \to 0}GV_{2\to 1}\) or \(V_{1 \to 2}GV_{0\to 1}\) scatter between the doublon and holon subspace.} The first one takes you from the doublon to the holon (\(2 \to 1 \to 0\)), the second one does the oppposte. Let us take a look at these terms. The first term becomes
 \beq
@@ -5589,12 +5612,19 @@ V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} &= \sum_{kq\sigma\gamma}V
 \eeq
 where I put \(E = \ham_0 - \epsilon_k + 2\epsilon_d + U\) as the energy of the initial state \(\ket{\psi_2}\). Since the expression has \(c_{d\gamma}\) followed by \(c_{d\sigma}\) with only diagonal terms in between, we must have \(\gamma = \ol\sigma\). Hence it becomes
 \beq
-\sum_{kq\sigma}V_qV_k c^\dagger_{q\ol\sigma}c_{d\ol\sigma}c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_d + U - \epsilon_k}
+\sum_{kq\sigma}V_qV_k c^\dagger_{q\ol\sigma}c_{d\ol\sigma}c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_d + U - \epsilon_k} &= \sum_{kq}V_q V_k\frac{1}{\epsilon_d + U - \epsilon_k}\qq{c^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua} + c^\dagger_{q\da}c^\dagger_{k\ua}c_{d\ua}c_{d\da}}\\
+&= \sum_{kq}V_q V_k\frac{1}{\epsilon_d + U - \epsilon_k}\qq{c^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua} + c^\dagger_{k\ua}c^\dagger_{q\da}c_{d\da}c_{d\ua}}\\
+&= \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}}
 \eeq
-The second scattering term becomes
+In the last step, we relabeled \(k \leftrightarrow q\). The second scattering term similarly becomes
 \beq
 V_{1 \to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} &= \sum_{kq\sigma\gamma}V_q^* c^\dagger_{d\gamma}c_{q\gamma}\hat n_{d\ol\gamma}\frac{1}{E - \ham_0 - \epsilon_d}V_k^* c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\\
-						       &=\sum_{kq\sigma\gamma}V_q^* c^\dagger_{d\gamma}c_{q\gamma}\hat n_{d\ol\gamma}V_k^* c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\frac{1}{\epsilon_k - \epsilon_d}\\
+						       &=\sum_{kq\sigma}V_q^*V_k^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma} c^\dagger_{d\sigma}c_{k\sigma}\frac{1}{\epsilon_k - \epsilon_d}\\
+						       &=\sum_{kq}V_q^*V_k^* \rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}
+\eeq
+Combining the two terms, we get the total charge-Kondo contribution:
+\beq
+\ham_{ch} = \sum_{kq}\qq{V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} + V_q^*V_k^* \rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}}
 \eeq
 \bibliographystyle{unsrt}
 \bibliography{notes}
