@@ -1,4 +1,4 @@
-\documentclass[14pt]{extarticle}
+\documentclass[14pt, twoside]{extarticle}
 \setcounter{tocdepth}{2}
 \usepackage{common}
 \usepackage{helvet}
@@ -6,12 +6,6 @@
 \numberwithin{equation}{section}
 \graphicspath{{./figures/}}
 %\usepackage[allfiguresdraft]{draftfigure}
-%\usepackage[T1]{fontenc}
-%\usepackage[tracking]{microtype}
-%\usepackage[sc,osf]{mathpazo}
-%\linespread{1.025}
-%\usepackage[euler-digits,small]{eulervm}
-%\renewcommand\thesubsection{\arabic{subsection}}
 \allowdisplaybreaks
 \begin{document}
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
@@ -3389,7 +3383,7 @@ Also,
 \ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham - \eta_q\ham = \rr{\eta^\dagger_q H_h - H_e \eta_q^\dagger} + \rr{H_h \eta - \eta H_e} + \eta_q^\dagger T^\dagger c_q - \eta_q c^\dagger_q T + \\
 c_q^\dagger T \eta_q - T^\dagger c_q \eta_q^\dagger
 \eeq
-By virtue of eq.~\ref{iden} and its conjugate, the first two terms will vanish.
+By virtue of eq.~\ref{iden} and its conjugate, the first two terms will vanish, so we are left with
 \beq[link]
 \ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham - \eta_q\ham = \eta_q^\dagger T^\dagger c_q - \eta_q c^\dagger_q T + c_q^\dagger T \eta_q - T^\dagger c_q \eta_q^\dagger
 \eeq
@@ -5355,7 +5349,7 @@ To demonstrate the implementation, we can look at a specific model. For the SIAM
 \beq
 \ham = \sum_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}
 \eeq
-We want to decouple the state \(q\beta\) from the rest of the electrons. We have \(\hat\ham_0 = \epsilon_d\hat n_d + U \hat n_{d\ua}n_{d\da} + \sum_{k\sigma} \epsilon_k \hat n_{k\sigma}\), \(V_0 = \sum_{k<q,\sigma}c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}\), \(V_+ = V c^\dagger_{q\beta}c_{d\beta}\) and \(V_- = V c^\dagger_{d\beta}c_{q\beta}\). The renormalization in particle sector
+where \(\tau = \hat n - \hf\). We want to decouple the state \(q\beta\) from the rest of the electrons. We have \(\hat\ham_0 = \epsilon_d\hat n_d + U \hat n_{d\ua}n_{d\da} + \sum_{k\sigma} \epsilon_k \hat n_{k\sigma}\), \(V_0 = \sum_{k<q,\sigma}c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}\), \(V_+ = V c^\dagger_{q\beta}c_{d\beta}\) and \(V_- = V c^\dagger_{d\beta}c_{q\beta}\). The renormalization in particle sector
 \beq
 \Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\fr{1}{\rr{E - V_0} - \hat \ham^d_0}c^\dagger_{q\beta}c_{d\beta}\\
 \eeq

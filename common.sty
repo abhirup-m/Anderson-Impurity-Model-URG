@@ -1,13 +1,20 @@
 \ProvidesPackage{common}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption}
+\usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption,fancyhdr}
 \usepackage[caption=false]{subfig}
 %\usepackage{newpxtext}
 %\usepackage{newpxmath}
 %\usepackage{times}
 %\usepackage{kpfonts}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.5in, bottom=1in,top=0.3in]{geometry}
+\pagestyle{fancy}
+\fancyhf{}    
+\fancyfoot{} 
+\fancyhead[RO,LE]{\thepage}    
+\fancyhead[LO]{\textbf{\leftmark}}
+\fancyhead[RE]{\textbf{\rightmark}}
+\setlength{\headheight}{52pt}
 \usepackage[hidelinks,pdfusetitle]{hyperref}
 \usepackage[stable]{footmisc}
 \newcommand{\ham}{\ensuremath{\mathcal{H}}}
