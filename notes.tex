@@ -1,4 +1,5 @@
-\documentclass[14pt, twoside]{extarticle}
+\documentclass[12pt, twoside]{article}
+%\documentclass[14pt]{extarticle}
 \setcounter{tocdepth}{2}
 \usepackage{common}
 \usepackage{helvet}
@@ -16,7 +17,7 @@
 \tableofcontents
 \pagebreak
 %\comm{
-\section*{Introduction}
+\section{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
 Friedel\cite{Friedel}, in 1958, gave a phenomenological theory in which a local impurity developed an effective repulsion which forced the formation of bound states; those bound states where the up and down states became non-degenerate would correspond to the local moment.
@@ -39,32 +40,7 @@ This problem came to be known as the Kondo problem.
 In his "Poor Man's Scaling" approach, he progressively reduced the bandwidth while taking account of the eliminated states into the couplings via second order perturbation theory.
 This showed how the couplings would flow as we went to low temperatures, but it still could not remove the divergence as it was perturbative.
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
-In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of@thesis{ID,
-	author = {author},
-	title = {title},
-	type = {type},
-	institution = {institution},
-	date = {date},
-	OPTsubtitle = {subtitle},
-	OPTtitleaddon = {titleaddon},
-	OPTlanguage = {language},
-	OPTnote = {note},
-	OPTlocation = {location},
-	OPTmonth = {month},
-	OPTisbn = {isbn},
-	OPTchapter = {chapter},
-	OPTpages = {pages},
-	OPTpagetotal = {pagetotal},
-	OPTaddendum = {addendum},
-	OPTpubstate = {pubstate},
-	OPTdoi = {doi},
-	OPTeprint = {eprint},
-	OPTeprintclass = {eprintclass},
-	OPTeprinttype = {eprinttype},
-	OPTurl = {url},
-	OPTurldate = {urldate},
-}
- increasing length to go to the low energy physics.
+In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
 Later calculations with Bethe ansatz in 1980 by Andrei and Weigman \cite{Andrei},\cite{Weigman} corroborated Wilson's findings.
 \pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Weigman and Tsvelick\cite{Tsvelick}.
@@ -88,19 +64,17 @@ Later calculations with Bethe ansatz in 1980 by Andrei and Weigman \cite{Andrei}
 \end{itemize}
 The method employed in this work is a unitary renormalization group (URG) technique which progressively block-diagonalizes the Hamiltonian in the space of single high energy electrons. At each step of the process, the highest electron is decoupled from the system and it becomes an integral of motion, and the lower electronic system gets rotated to account for the decoupled electron. In this way, the RG goes on resolving the number fluctuations of the electrons. A fixed point is reached when the off-diagonal terms can no longer be removed. Since the method is unitary, it preserves the spectrum and allows calculating effective eigenvalues and eigenstates. It has some characteristic features:
 \begin{itemize}
-	\item \textit{Presence of a quantum fluctuation energy scale \(\omega\)}: The URG process involves a parameter \(\omega\) which contains the off-diagonal terms in the Hamiltonian. It quantifies the quantum fluctuation still unresolved in the system. Exactly at the fixed point, when the fluctuations are resolved, it assumes the value of one of the energies of the Hamiltonian. By probing the values of \(\omega\), all regions of the spectrum can, at least in principle, be accessed.
-\vspace{10pt}
-	\item \textit{Presence of finite-valued fixed points}
-\vspace{10pt}
+	\item \textit{Presence of a quantum fluctuation energy scale \(\omega\)}: 
+The URG process involves a parameter \(\omega\) which contains the off-diagonal terms in the Hamiltonian. It quantifies the quantum fluctuation still unresolved in the system. Exactly at the fixed point, when the fluctuations are resolved, it assumes the value of one of the energies of the Hamiltonian. By probing the values of \(\omega\), all regions of the spectrum can, at least in principle, be accessed.
+	\item \textit{Presence of finite-valued fixed points}:
 The URG has a definite prescription for reaching the fixed point and it terminates after a finite number of steps (for a finite system). This leads to finite values of the fixed point  couplings. This is also in accordance with our intuition that finite systems should not have diverging couplings.
-	\item \textit{Spectrum-preserving transformations}
-\vspace{10pt}
+	\item \textit{Spectrum-preserving transformations}:
 Since the RG transformations are unitary, all eigenvalues and eigenstates are kept track of the in the process. This allows us to calculate exact quantities for simple systems like the Kondo model.
-	\item \textit{Tractable low-energy effective Hamiltonians}
+	\item \textit{Tractable low-energy effective Hamiltonians}:
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
-\pagebreak
+%\pagebreak
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -5341,10 +5315,11 @@ Doing that returns a rotated Hamiltonian which is diagonal in \(q\), and is a fu
 \eeq
 This means that one of the eigenvalues of \(\hat\omega\) matches with the eigenvalue of the diagonal part \(\ham^d\), either in the occupied sector (\(\ham^d_1\)) or unoccupied sector (\(\ham^d_1\)). Since the eigenvalues are unchanged during the unitary renormalization, this implies that \(\omega\) takes up one of the eigenvalues of the whole Hamiltonian \(\ham\). This will correspond to the fixed point obtained from PMS if we had started PMS with that eigenvalue.
 \pb In short, while the PMS flow is parametrised by one of the exact energy eigenvalues \(E\), the URG flow is parametrised by a non-trivial operator \(\hat \omega\) which incorporates both a diagonal part and an off-diagonal part and itself flows under the URG. At the fixed point, the off-diagonal part cancels out and the \(\hat\omega\) finally flows to one of the energy eigenvalues and the URG fixed point matches with one of the PMS fixed points.
-\begin{center}
+\begin{figure}
+\centering
 \includegraphics[scale=0.42]{pms_vs_urg.png}
-\captionof{figure}{Flows of PMS(green) and URG(blue)}
-\end{center}
+\caption{Flows of PMS(green) and URG(blue)}
+\end{figure}
 To demonstrate the implementation, we can look at a specific model. For the SIAM,
 \beq
 \ham = \sum_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}
