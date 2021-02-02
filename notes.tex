@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside]{article}
+\documentclass[12pt]{article}
 %\documentclass[14pt]{extarticle}
 \setcounter{tocdepth}{2}
 \usepackage{common}
@@ -16,7 +16,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-%\comm{
+\comm{
 \section{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -3046,12 +3046,166 @@ We now make the following assumptions:
 This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
-
+}
 \section{Unitary Renormalization Group Method}\label{section2}
 \subsection{Formalism}\label{urgform}
 This section is adapted from ref.\cite{holography1}.
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
-\pb To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
+\pb We take a general Hamiltonian,
+\beq
+\ham = H_e \hat n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}} + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}
+\eeq
+Formally, we can decompose the entire Hamiltonian in the subspace of the electron we want to decouple (\(q\beta\)).
+\beq[matham]
+\ham = \bordermatrix{~ & \ket{1} & \ket{0} \cr
+              & H_1 & T \cr
+              & T^\dagger & H_0 \cr}
+\eeq
+The basis in which this matrix is written is \(\cc{\ket{1},\ket{0}}\) where \(\ket{i}\) is the set of all states where \(\hat n_{q\beta}=i\). The aim of one step of the URG is to find a unitary operator \(U\) such that the new Hamiltonian \(U \ham U^\dagger\) is diagonal in this already-chosen basis.
+\beq
+\tilde \ham \equiv U \ham U^\dagger = \bordermatrix{~ & \ket{1} & \ket{0} \cr
+              & \tilde H_1 & 0 \cr
+              & 0 & \tilde H_0 \cr}
+\eeq
+\(U_q\) is defined by
+\beq
+\tilde \ham = U_q \ham U^\dagger_q \text{   such that  } \qq{\tilde \ham,n_q} = 0
+\eeq
+It is clear that \(U\) is the diagonalizing matrix for \(\ham\). Hence we can frame this problem as an eigenvalue equation as well. Let \(\ket{\psi_1},\ket{\psi_0}\) be the basis in which the original Hamiltonian \(\ham\) has no off-diagonal terms corresponding to \(q\beta\). Hence, we can write
+\beq[diageq]
+	\ham \ket{\psi_i} = \tilde H_i\ket{\psi_i}, i\in\cc{0,1}
+\eeq
+Since \(\ket{\psi_i}\) is the set of eigenstates of \(\ham\) and \(\ket{i}\) is the set of eigenstates in which \(U\ham U^\dagger\), we can relate \(\ket{\psi_i}\) and \(\ket{i}\) by the same transformation : \(\ket{\psi_i} = U^\dagger\ket{i}\). We can expand the state \(\ket{\psi_i}\) in the subspace of \(q\beta\):
+\beq[matpsi]
+\ket{\psi_i} = \sum_{j=0,1} \ket{j}\bra{j}\ket{\psi_i} \equiv \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i}\eeq
+where \(\ket{\phi_j^i} = \bra{j}\ket{\psi_i}\). If we substitute the expansions \ref{matpsi} and \ref{matham} into the eigenvalue equation \ref{diageq}, we get
+\beq
+\qq{H_e \hat n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}} + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\qq{\ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i}} = \tilde H_i\qq{\ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i}}
+\eeq
+Gathering the terms that result in \(\hat n_{q\beta}=1\) gives
+\beq[changea]
+H_e\ket{1}\ket{\phi_1^i} + c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \tilde H_i\ket{1}\ket{\phi_1^i} \implies \rr{\tilde H_i - H_e}\ket{1}\ket{\phi_1^i} = c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i}
+\eeq
+Similarly, gathering the terms that result in \(\hat n_{q\beta}=0\) gives
+\beq[changeb]
+H_h\ket{0}\ket{\phi_0^i} + T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \tilde H_i\ket{0}\ket{\phi_0^i} \implies \rr{\tilde H_i - H_h}\ket{0}\ket{\phi_0^i} = T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i}
+\eeq
+The diagonal parts \(H_e = \text{tr}\qq{\ham \hat n_{q\beta}}\) and \(H_e = \text{tr}\qq{\ham \rr{1 - \hat n_{q\beta}}}\) can be separated into a purely diagonal part \(\ham^d\) that contains the single-particle energies and the multi-particle correlation energies or Hartree-like contributions, and an off-diagonal part  \(\ham^i\) that scatters between the remaining degrees of freedom \(k\sigma \neq q\beta\). That is,
+\begin{equation*}
+\begin{gathered}
+H_e \hat n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}} = \ham^d + \ham^i\\
+H_e = \text{tr}\qq{\ham \hat n_{q\beta}} = \text{tr}\qq{\rr{\ham^d + \ham^i}\hat n_{q\beta}} = \ham^d_e + \ham^i_e\\
+H_h = \text{tr}\qq{\ham \rr{1 - \hat n_{q\beta}}} = \text{tr}\qq{\rr{\ham^d + \ham^i}\rr{1 - \hat n_{q\beta}}} = \ham^d_h + \ham^i_h
+\end{gathered}
+\end{equation*}
+Using this separation, we can write eqs.~\ref{changea} and \ref{changeb} as
+\beq[change]
+\rr{\rr{\tilde H_i - \ham^i_e}- \ham^d_e}\ket{1}\ket{\phi_1^i} = c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i}\\
+\rr{\rr{\tilde H_i - \ham^i_h} - \ham^d_h}\ket{0}\ket{\phi_0^i} = T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i}
+\eeq
+We now define a new operator \(\hat \omega_i = \tilde H_i - \ham^i\), such that 
+\begin{equation*}
+	\begin{gathered}
+\tilde H_i - \ham^i_e = \text{tr}\qq{\rr{\tilde H_i - \ham^i}\hat n_{q\beta}} = \text{tr}\qq{\hat \omega \hat n_{q\beta}} \equiv \hat \omega_e\\
+\tilde H_i - \ham^i_h = \hat \omega_h
+\end{gathered}
+\end{equation*}
+We can now write eq.~\ref{change} in terms of \(\hat\omega\):
+\beq[changec]
+\rr{\hat \omega_e- \ham^d_e}\ket{1}\ket{\phi_1^i} = c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i}\\
+\rr{\hat \omega_h - \ham^d_h}\ket{0}\ket{\phi_0^i} = T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i}
+\eeq
+We now choose the \(\ket{\phi_j^i}\) such that they are eigenstates of \(\hat \omega_{e,h}\):
+\begin{flalign*}
+\hat \omega_e\ket{\phi_1^i} = \omega_e\ket{\phi_1^i}\\
+\hat \omega_h\ket{\phi_0^i} = \omega_h\ket{\phi_0^i}
+\end{flalign*}
+where \(\omega_{e,h}\) are numbers, not operators. The states \(\ket{\phi_j^i}\) are therefore characterized by eigenvalues \(\omega_{e,h}\). Eqs.~\ref{changec} simplify to
+\beq[changed]
+\ket{1}\ket{\phi_1^i(\omega_e)} = \fr{1}{\omega_e- \ham^d_e}c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i(\omega_h)}\\
+\ket{0}\ket{\phi_0^i(\omega_h)} = \fr{1}{\omega_h - \ham^d_h}T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i(\omega_e)}
+\eeq
+We now define two many-particle transition operators:
+\beq[etadagdef]
+{\eta_e}^\dagger(\omega_e) = \fr{1}{\omega_e- \ham^d_e}c^\dagger_{q\beta}T \\
+\eta_h(\omega_h) = \fr{1}{\omega_h- \ham^d_h}T^\dagger c_{q\beta}
+\eeq
+In terms of these operators, eqs.~\ref{changed} become
+\beq
+	\ket{1}\ket{\phi_1^i} &= {\eta_e}^\dagger\ket{0}\ket{\phi_0^i}\\
+	\ket{0}\ket{\phi_0^i} &= \eta_h\ket{1}\ket{\phi_1^i}
+\eeq
+These allow us to write
+\beq
+	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \rr{1 + \eta_h}\ket{1}\ket{\phi_1^i}\\
+	\ket{\psi_0} &= \rr{1 + {\eta_e}^\dagger}\ket{0}\ket{\phi_0^i}
+\eeq
+Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the required transformations:
+\beq[Ui]
+	U_1 &= 1 + \eta_h\\
+	U_0 &= 1 + \eta_e^\dagger
+\eeq
+The operators \(\eta\) have some important properties. First is the Fermionic nature:
+\beq
+	\eta_h^2 = {\eta_e^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
+\eeq
+Second is:
+\beq[antic]
+	\ket{1}\ket{\phi_1^i} &= {\eta_e}^\dagger\ket{0}\ket{\phi_0^i} = \eta_e^\dagger \eta_h \ket{1}\ket{\phi_1^i} \implies \eta_e^\dagger \eta_h = \hat n_{q\beta}\\
+	\ket{0}\ket{\phi_0^i} &= \eta_h\ket{1}\ket{\phi_1^i} = \eta_h \eta_e^\dagger\ket{\phi_0^i}\implies \eta_h  \eta_e^\dagger= 1 - \hat n_{q\beta}\\
+	\implies \cc{\eta_h,\eta_e^\dagger} &= 1
+\eeq
+Note that the three equations in \ref{antic} work only when applied on the eigenstate \(\ket{\psi_i}\) and not any arbitrary state.
+\begin{equation*}
+	\begin{gathered}
+	\eta_e^\dagger \eta_h \ket{\psi_i} = \ket{1}\ket{\phi_1^i} = \hat n_{q\beta}\ket{\psi_i}\\
+	\eta_h\eta_e^\dagger \ket{\psi_i} = \ket{0}\ket{\phi_0^i} = \rr{1 - \hat n_{q\beta}}\ket{\psi_i}\\
+	\cc{\eta_e^\dagger,\eta_h}\ket{\psi_i} = \ket{\psi_i}
+\end{gathered}
+\end{equation*}
+Although we have found the correct similarity transformations \(U_i\) (eqs. \ref{Ui}), we need to convert them into a unitary transformation. Say we are trying to rotate the eigenstate \(\ket{\psi_1}\) into the state \(\ket{1}\). We can then work with the transformation
+\beq
+U_1 = 1 + \eta_h
+\eeq
+In this form, this transformation is not unitary. It can however be written in an exponential form:
+\beq
+U_1 = e^{\eta_h}
+\eeq
+using the fact that \(\eta_h^2 = 0\). It is shown in ref.~\cite{suzuki} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
+\beq
+G = \tanh^{-1}\rr{\omega - \omega^\dagger}
+\eeq
+Applying that to the problem at hand gives
+\beq
+ U_1^\dagger &= \ex{\tanh^{-1}\rr{\eta_h - \eta_h^\dagger}}\\
+	   &= \frac{1 + \eta_h - \eta_h^\dagger}{1 + \cc{\eta_h,\eta_h^\dagger}}\\
+	   &= \fr{1}{\sqrt 2}\rr{1 + \eta_h - \eta_h^\dagger}
+\eeq
+The \textit{unitary} operator that transforms the entangled eigenstate \il{\ket{\psi_1}} to the state \il{\ket{1}} is thus
+\beq
+U_1 = \fr{1}{\sqrt 2}\rr{1 + \eta_h^\dagger - \eta_h}
+\eeq
+It can also be written as \(\ex{\frac{\pi}{4}\rr{\eta^\dagger_h - \eta_h}}\) because
+\beq
+ \ex{\frac{\pi}{4}\rr{\eta^\dagger_h - \eta_h}} &= 1 + \rr{\eta^\dagger_h - \eta_h}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger_h - \eta_h}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger_h - \eta_h}^3\rr{\fr{\pi}{4}}^3 + ...\\
+&= 1 + \rr{\eta^\dagger_h - \eta_h}\fr{\pi}{4} - \frac{1}{2!}\rr{\fr{\pi}{4}}^2 - \frac{1}{3!}\rr{\eta^\dagger_h - \eta_h}\rr{\fr{\pi}{4}}^3 + \frac{1}{4!}\rr{\fr{\pi}{4}}^4 + ...\\
+&= \cos \frac{\pi}{4} + \rr{\eta^\dagger_h - \eta_h}\sin\fr{\pi}{4}\\
+&= 1 + \eta_h^\dagger - \eta_h
+\eeq
+There we used
+\beq
+\rr{\eta^\dagger_h - \eta_h}^2 = {\eta^\dagger_h}^2 + \eta_h^2 - \cc{\eta^\dagger_h,\eta_h} = -1 &&\qq{\because\eta^2 = {\eta^\dagger}^2=0}
+\eeq
+and hence
+\beq
+\rr{\eta^\dagger_h - \eta_h}^3 = -1\rr{\eta^\dagger_h - \eta_h}
+\eeq
+and so on. Since \(U_0\) is obtained from \(U_1\) simply by replacing \(\eta_h\) with \(\eta_e^\dagger\), we can easily surmise that the unitary transformation that rotates an eigenstate \(\ket{\psi_0}\) to the state \(\ket{0}\) is
+\beq
+U_0 = \fr{1}{\sqrt 2}\rr{1 + \eta_e - \eta_e^\dagger} = \ex{\frac{\pi}{4}\rr{\eta_e - \eta_e^\dagger}}
+\eeq
+\comm{
+To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
 \pb \(U_q\) is defined by
 \beq
 \tilde \ham = U_q \ham U^\dagger_q \text{   such that  } \qq{\tilde \ham,n_q} = 0
@@ -3068,7 +3222,7 @@ To make progress, we write the Hamiltonian \il{\ham} as
 \beq[ham]
 \ham = \ham^D + \ham^I + \ham^i 
 \eeq
-\begin{minipage}{310pt}
+\begin{minipage}{300pt}
 	\il{\ham^D} is the diagonal part of the Hamiltonian, something of the form \il{\sum_k \epsilon_k n_k}.
 It also has the self energies that might arise from certain interactions.
 For example, if we have an interaction term of the form \(J \sum_{k_1,k_2}c^\dagger_{k_1}c_{k_2}\), the term where both momenta are equal gives a diagonal term \(J c^\dagger_{k_1}c_{k_1}\).
@@ -3076,10 +3230,10 @@ Such terms are also included in \(\ham^D\).
 \pb \il{\ham^I} is the interaction between the current degree of freedom \il{q} and the remaining degrees of freedom \(k\).
 It will consist of terms like \il{c^\dagger_q c_k} or \il{c^\dagger_k c_q} that scatter between the current degree of freedom and the other degrees of freedom.
 \end{minipage}
-\hspace*{20pt}\begin{minipage}{200pt}
+\begin{minipage}{165pt}
 \begin{center}
-\includegraphics[scale=0.7]{ham.png}
-\captionof{figure}{Decomposition of Hamiltonian}
+\includegraphics[scale=0.6]{ham.png}
+\captionof{figure}{Block-decomposition of Hamiltonian}
 \end{center}
 \end{minipage}
 \pb The third term \il{\ham^i} has interactions between the remaining degrees of freedom.
@@ -3263,6 +3417,7 @@ and so
 \rr{\eta^\dagger_q - \eta_q}^3 = -1\rr{\eta^\dagger_q - \eta_q}
 \eeq
 and so on.
+}
 \pb The form of the rotated Hamiltonian can now be written down.
 \beq[roth]
  \wl\ham &= U_q \ham U_q^\dagger\\
@@ -3273,7 +3428,19 @@ and so on.
 &=\hf\rr{\ham^D + \ham^i + \ham^I + \qq{\eta^\dagger_q - \eta,\ham} + \eta_q^\dagger\ham\eta_q - \eta_q^\dagger \ham\eta_q^\dagger - \eta_q \ham \eta_q + \eta_q \ham \eta_q^\dagger}\\
 \eeq
 In the last step I split \il{\ham} using eq.~\ref{ham}.
-For reasons that will become apparent later, we will split the terms into two groups:
+\beq[ham]
+\ham = \ham^D + \ham^I + \ham^i 
+\eeq
+\il{\ham^D} is the diagonal part of the Hamiltonian, something of the form \il{\sum_k \epsilon_k n_k}.
+It also has the self energies that might arise from certain interactions.
+For example, if we have an interaction term of the form \(J \sum_{k_1,k_2}c^\dagger_{k_1}c_{k_2}\), the term where both momenta are equal gives a diagonal term \(J c^\dagger_{k_1}c_{k_1}\).
+Such terms are also included in \(\ham^D\).
+\pb \il{\ham^I} is the interaction between the current degree of freedom \il{q} and the remaining degrees of freedom \(k\).
+It will consist of terms like \il{c^\dagger_q c_k} or \il{c^\dagger_k c_q} that scatter between the current degree of freedom and the other degrees of freedom.
+\pb The third term \il{\ham^i} has interactions between the remaining degrees of freedom.
+This term will also be diagonal in \il{n_k} because it doesn't involve scattering either from or into \il{q} states.
+It will involve terms like \il{c^\dagger_{k_1}c_{k_2}}.
+\pb For reasons that will become apparent later, we will split the terms into two groups:
 \beq
  \tilde \ham &= \hf\rr{\underbrace{\ham^D + \ham^i + \qq{\eta^\dagger_q - \eta,\ham} + \eta_q^\dagger\ham\eta_q + \eta_q \ham \eta_q^\dagger}_\text{group 1} + \overbrace{\ham^I - \eta_q^\dagger \ham\eta_q^\dagger - \eta_q \ham \eta_q}^\text{group 2}}\\
 \eeq
@@ -3308,7 +3475,7 @@ Using this, we can write
  \eta_q c_q^\dagger  T \eta_q &= T^\dagger c_q \fr{1}{\hat \omega - H_e \hat n_q}c_q^\dagger  T \eta_q\\
 			      &= T^\dagger c_q \rr{\fr{1}{\hat \omega - H_e \hat n_q}c_q^\dagger  T} \eta_q\\
 			      &= T^\dagger c_q \eta_q^\dagger\eta_q &&\qq{\text{eq.~\ref{etadagdef}}}\\
-			      &= T^\dagger c_q \hat n_q &&\qq{\text{eq.~\ref{prod}}}
+			      &= T^\dagger c_q \hat n_q &&\qq{\text{eq.~\ref{antic}}}
 \eeq
 which gives
 \beq[id1]
@@ -3465,7 +3632,7 @@ where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\bet
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
-%\comm{
+\comm{
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
@@ -5603,7 +5770,8 @@ Combining the two terms, we get the total charge-Kondo contribution:
 \ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
 + \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
+}
 \bibliographystyle{unsrt}
 \bibliography{notes}
-%}
+
 \end{document}
