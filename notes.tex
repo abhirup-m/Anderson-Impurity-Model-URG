@@ -3096,197 +3096,217 @@ We now define a new operator \(\hat \omega_i = \tilde H_i - \ham^i\), such that
 \beq
 \qq{c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i} = \rr{\hat \omega_i - \ham^d}\ket{\psi_i}
 \eeq
-Since the only requirement on \(\ket{\psi_i}\) is that it diagonalize the Hamiltonian in the subspace of \(q\beta\), there is freedom in the choice of this state. We can exploit this freedom and choose the \(\ket{\psi_i}\) to be an eigenstate of \(\hat \omega_i\) corresponding to an eigenvalue \(\omega_i\):
+From the definition of \(\hat \omega_i\), we can see that it is Hermitian and has no term that scatters in the subspace of \(q\beta\), so it is diagonal in \(q\beta\) and we can expand it as \(\hat \omega_i = \hat \omega_i^1 \hat n_{q\beta} + \hat \omega_i^0 \rr{1 - \hat n_{q\beta}}\). Using the expansion \ref{matpsi}, we can write
 \beq
-\qq{\ham^d + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i(\omega_i)} = \rr{\omega_i - \ham^d}\ket{\psi_i(\omega_i)}
+\hat \omega_i \ket{\psi_i} = \hat \omega_i^1 \ket{1}\ket{\phi_1^i} + \hat \omega_i^0 \ket{0}\ket{\phi_0^i}
+\eeq
+Since the only requirement on \(\ket{\psi_i}\) is that it diagonalize the Hamiltonian in the subspace of \(q\beta\), there is freedom in the choice of this state. We can exploit this freedom and choose the \(\ket{\phi_{0,}^i}\) to be an eigenstates of \(\hat \omega_i^{1,0}\) corresponding to real eigenvalues \(\omega_i^{1,0}\):
+\beq
+\qq{\ham^d + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i(\omega_i)} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} + \rr{\omega_i^0 - \ham^d_0}\ket{0}\ket{\phi_0^i}
 \eeq
 If we now substitue the expansion \ref{matpsi} and gather the terms that result in \(\hat n_{q\beta}=1\), we get
 \beq[changea]
-c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i - \ham^d_e}\ket{1}\ket{\phi_1^i}
+c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i}
 \eeq
 Similarly, gathering the terms that result in \(\hat n_{q\beta}=0\) gives
 \beq[changeb]
-T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \rr{\omega_i - \ham^d_h}\ket{0}\ket{\phi_0^i}
+T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \rr{\omega_i^0 - \ham^d_0}\ket{0}\ket{\phi_0^i}
 \eeq
 We now define two many-particle transition operators:
+\beq
+{\eta_1}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T \\
+\eta_0(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d_0}T^\dagger c_{q\beta}
+\eeq
+We will later find that it is important to demand that these two be Hermitian conjugates of each other; that constraint is imposed on the denominators:
+\beq[constraint]
+\eta_0^+ = \eta_1^\dagger \implies \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d_0}
+\eeq
+Hereafter, we will assume that this constraint has been imposed, and we will drop the labels \(1\) and \(0\) on the \(\eta\):
 \beq[etadagdef]
-{\eta_e}^\dagger(\omega_i) = \fr{1}{\omega_i- \ham^d_e}c^\dagger_{q\beta}T \\
-\eta_h(\omega_i) = \fr{1}{\omega_i- \ham^d_h}T^\dagger c_{q\beta}
+\eta^\dagger = \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T \\
+\eta = \fr{1}{\omega_i^0- \ham^d_0}T^\dagger c_{q\beta}
 \eeq
 In terms of these operators, eqs.~\ref{changeb} become
 \beq
-	\ket{1}\ket{\phi_1^i} &= {\eta_e}^\dagger\ket{0}\ket{\phi_0^i}\\
-	\ket{0}\ket{\phi_0^i} &= \eta_h\ket{1}\ket{\phi_1^i}
+	\ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i}\\
+	\ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i}
 \eeq
 These allow us to write
 \beq
-	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \rr{1 + \eta_h}\ket{1}\ket{\phi_1^i}\\
-	\ket{\psi_0} &= \rr{1 + {\eta_e}^\dagger}\ket{0}\ket{\phi_0^i}
+	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \rr{1 + \eta}\ket{1}\ket{\phi_1^i}\\
+	\ket{\psi_0} &= \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i}
 \eeq
 Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the required transformations:
 \beq[Ui]
-	U_1 &= 1 + \eta_h\\
-	U_0 &= 1 + \eta_e^\dagger
+	U_1 &= 1 + \eta\\
+	U_0 &= 1 + \eta^\dagger
 \eeq
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
 \beq
-	\eta_h^2 = {\eta_e^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
+	\eta^2 = {\eta^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
 \eeq
 Second is:
 \beq[antic]
-	\ket{1}\ket{\phi_1^i} &= {\eta_e}^\dagger\ket{0}\ket{\phi_0^i} = \eta_e^\dagger \eta_h \ket{1}\ket{\phi_1^i} \implies \eta_e^\dagger \eta_h = \hat n_{q\beta}\\
-	\ket{0}\ket{\phi_0^i} &= \eta_h\ket{1}\ket{\phi_1^i} = \eta_h \eta_e^\dagger\ket{\phi_0^i}\implies \eta_h  \eta_e^\dagger= 1 - \hat n_{q\beta}
+	\ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i} = \eta^\dagger \eta \ket{1}\ket{\phi_1^i} \implies \eta^\dagger \eta = \hat n_{q\beta}\\
+	\ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i} = \eta \eta^\dagger\ket{\phi_0^i}\implies \eta  \eta^\dagger= 1 - \hat n_{q\beta}
 \eeq
 and hence the anticommutator
 \beq[antico]
-	\implies \cc{\eta_h,\eta_e^\dagger} = 1
+	\implies \cc{\eta,\eta^\dagger} = 1
 \eeq
 Note that the three equations in \ref{antic} work only when applied on the eigenstate \(\ket{\psi_i}\) and not any arbitrary state.
 \begin{equation*}
 	\begin{gathered}
-	\eta_e^\dagger \eta_h \ket{\psi_i} = \ket{1}\ket{\phi_1^i} = \hat n_{q\beta}\ket{\psi_i}\\
-	\eta_h\eta_e^\dagger \ket{\psi_i} = \ket{0}\ket{\phi_0^i} = \rr{1 - \hat n_{q\beta}}\ket{\psi_i}\\
-	\cc{\eta_e^\dagger,\eta_h}\ket{\psi_i} = \ket{\psi_i}
+	\eta^\dagger \eta \ket{\psi_i} = \ket{1}\ket{\phi_1^i} = \hat n_{q\beta}\ket{\psi_i}\\
+	\eta\eta^\dagger \ket{\psi_i} = \ket{0}\ket{\phi_0^i} = \rr{1 - \hat n_{q\beta}}\ket{\psi_i}\\
+	\cc{\eta^\dagger,\eta}\ket{\psi_i} = \ket{\psi_i}
 \end{gathered}
 \end{equation*}
 Although we have found the correct similarity transformations \(U_i\) (eqs. \ref{Ui}), we need to convert them into a unitary transformation. Say we are trying to rotate the eigenstate \(\ket{\psi_1}\) into the state \(\ket{1}\). We can then work with the transformation
 \beq
-U_1 = 1 + \eta_h
+U_1 = 1 + \eta
 \eeq
 In this form, this transformation is not unitary. It can however be written in an exponential form:
 \beq
-U_1 = e^{\eta_h}
+U_1 = e^{\eta}
 \eeq
-using the fact that \(\eta_h^2 = 0\). It is shown in ref.~\cite{suzuki} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
+using the fact that \(\eta^2 = 0\). It is shown in ref.~\cite{suzuki} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
 \beq
 G = \tanh^{-1}\rr{\omega - \omega^\dagger}
 \eeq
 Applying that to the problem at hand gives
 \beq
- U_1^\dagger &= \ex{\tanh^{-1}\rr{\eta_h - \eta_h^\dagger}}\\
-	   &= \frac{1 + \eta_h - \eta_h^\dagger}{1 + \cc{\eta_h,\eta_h^\dagger}}\\
-	   &= \fr{1}{\sqrt 2}\rr{1 + \eta_h - \eta_h^\dagger}
+ U_1^\dagger &= \ex{\tanh^{-1}\rr{\eta - \eta^\dagger}}\\
+	   &= \frac{1 + \eta - \eta^\dagger}{1 + \cc{\eta,\eta^\dagger}}\\
+	   &= \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger}
 \eeq
 The \textit{unitary} operator that transforms the entangled eigenstate \il{\ket{\psi_1}} to the state \il{\ket{1}} is thus
 \beq[finalu]
-U_1 = \fr{1}{\sqrt 2}\rr{1 + \eta_h^\dagger - \eta_h}
+U_1 = \fr{1}{\sqrt 2}\rr{1 + \eta^\dagger - \eta}
 \eeq
-It can also be written as \(\ex{\frac{\pi}{4}\rr{\eta^\dagger_h - \eta_h}}\) because
+It can also be written as \(\ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}}\) because
 \beq
- \ex{\frac{\pi}{4}\rr{\eta^\dagger_h - \eta_h}} &= 1 + \rr{\eta^\dagger_h - \eta_h}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger_h - \eta_h}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger_h - \eta_h}^3\rr{\fr{\pi}{4}}^3 + ...\\
-&= 1 + \rr{\eta^\dagger_h - \eta_h}\fr{\pi}{4} - \frac{1}{2!}\rr{\fr{\pi}{4}}^2 - \frac{1}{3!}\rr{\eta^\dagger_h - \eta_h}\rr{\fr{\pi}{4}}^3 + \frac{1}{4!}\rr{\fr{\pi}{4}}^4 + ...\\
-&= \cos \frac{\pi}{4} + \rr{\eta^\dagger_h - \eta_h}\sin\fr{\pi}{4}\\
-&= 1 + \eta_h^\dagger - \eta_h
+ \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} &= 1 + \rr{\eta^\dagger - \eta}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger - \eta}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger - \eta}^3\rr{\fr{\pi}{4}}^3 + ...\\
+&= 1 + \rr{\eta^\dagger - \eta}\fr{\pi}{4} - \frac{1}{2!}\rr{\fr{\pi}{4}}^2 - \frac{1}{3!}\rr{\eta^\dagger - \eta}\rr{\fr{\pi}{4}}^3 + \frac{1}{4!}\rr{\fr{\pi}{4}}^4 + ...\\
+&= \cos \frac{\pi}{4} + \rr{\eta^\dagger - \eta}\sin\fr{\pi}{4}\\
+&= 1 + \eta^\dagger - \eta
 \eeq
 There we used
 \beq
-\rr{\eta^\dagger_h - \eta_h}^2 = {\eta^\dagger_h}^2 + \eta_h^2 - \cc{\eta^\dagger_h,\eta_h} = -1 &&\qq{\because\eta^2 = {\eta^\dagger}^2=0}
+\rr{\eta^\dagger - \eta}^2 = {\eta^\dagger}^2 + \eta^2 - \cc{\eta^\dagger,\eta} = -1 &&\qq{\because\eta^2 = {\eta^\dagger}^2=0}
 \eeq
 and hence
 \beq
-\rr{\eta^\dagger_h - \eta_h}^3 = -1\rr{\eta^\dagger_h - \eta_h}
+\rr{\eta^\dagger - \eta}^3 = -1\rr{\eta^\dagger - \eta}
 \eeq
-and so on. Since \(U_0\) is obtained from \(U_1\) simply by replacing \(\eta_h\) with \(\eta_e^\dagger\), we can easily surmise that the unitary transformation that rotates an eigenstate \(\ket{\psi_0}\) to the state \(\ket{0}\) is
+and so on. Since \(U_0\) is obtained from \(U_1\) simply by replacing \(\eta\) with \(\eta^\dagger\), we can easily surmise that the unitary transformation that rotates an eigenstate \(\ket{\psi_0}\) to the state \(\ket{0}\) is
 \beq
-U_0 = \fr{1}{\sqrt 2}\rr{1 + \eta_e - \eta_e^\dagger} = \ex{\frac{\pi}{4}\rr{\eta_e - \eta_e^\dagger}}
+U_0 = \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger} = \ex{\frac{\pi}{4}\rr{\eta - \eta^\dagger}}
 \eeq
 We can now compute the form of the effective Hamiltonian that comes about when we apply \(U_1\) - that is - when we rotate one exact eigenstate \(\ket{\psi_1}\) into the occupied Fock space basis \(\ket{1}\). From eq.~\ref{finalu},
 \beq
-U_1 \ham U_1^\dagger &= \hf\rr{1+\eta_h^\dagger - \eta_h}\ham\rr{1 + \eta_h - \eta^\dagger_h}\\
-				&= \hf\rr{1+\eta_h^\dagger - \eta_h}\rr{\ham + \ham\eta_h - \ham\eta_h^\dagger}\\
-				&=\hf\rr{\ham+ \ham\eta_h - \ham\eta_h^\dagger + \eta_h^\dagger \ham + \eta_h^\dagger\ham\eta_h - \eta_h^\dagger \ham\eta_h^\dagger - \eta_h\ham - \eta_h \ham \eta_h + \eta_h \ham \eta_h^\dagger}\\
-&=\hf\rr{\ham^D + \ham^i + \ham^I + \ham\eta_h - \ham\eta_h^\dagger + \eta_h^\dagger \ham + \eta_h^\dagger\ham\eta_h - \eta_h^\dagger \ham\eta_h^\dagger - \eta_h\ham - \eta_h \ham \eta_h + \eta_h \ham \eta_h^\dagger}\\
-&=\hf\rr{\ham^D + \ham^i + \ham^I + \qq{\eta^\dagger_h - \eta_h,\ham} + \eta_h^\dagger\ham\eta_h - \eta_h^\dagger \ham\eta_h^\dagger - \eta_h \ham \eta_h + \eta_h \ham \eta_h^\dagger}\\
+U_1 \ham U_1^\dagger &= \hf\rr{1+\eta^\dagger - \eta}\ham\rr{1 + \eta - \eta^\dagger}\\
+				&= \hf\rr{1+\eta^\dagger - \eta}\rr{\ham + \ham\eta - \ham\eta^\dagger}\\
+				&=\hf\rr{\ham+ \ham\eta - \ham\eta^\dagger + \eta^\dagger \ham + \eta^\dagger\ham\eta - \eta^\dagger \ham\eta^\dagger - \eta\ham - \eta \ham \eta + \eta \ham \eta^\dagger}\\
+&=\hf\rr{\ham^d + \ham^i + \ham^I + \ham\eta - \ham\eta^\dagger + \eta^\dagger \ham + \eta^\dagger\ham\eta - \eta^\dagger \ham\eta^\dagger - \eta\ham - \eta \ham \eta + \eta \ham \eta^\dagger}\\
+&=\hf\rr{\ham^d + \ham^i + \ham^I + \qq{\eta^\dagger - \eta,\ham} + \eta^\dagger\ham\eta - \eta^\dagger \ham\eta^\dagger - \eta \ham \eta + \eta \ham \eta^\dagger}\\
 \eeq
 In the last two lines, we expanded the Hamiltonian into the three parts \(\ham^d,\ham^i\) and a third piece \(\ham^I \equiv c_{q\beta}^\dagger T + T^\dagger c_{q\beta}\).
 \pb For reasons that will become apparent later, we will split the terms into two groups:
 \beq
- \tilde \ham &= \hf\rr{\underbrace{\ham^D + \ham^i + \qq{\eta^\dagger_h - \eta_h,\ham} + \eta_h^\dagger\ham\eta_h + \eta_h \ham \eta_h^\dagger}_\text{group 1} + \overbrace{\ham^I - \eta_h^\dagger \ham\eta_h^\dagger - \eta_h \ham \eta_h}^\text{group 2}}\\
+ \tilde \ham &= \hf\rr{\underbrace{\ham^d + \ham^i + \qq{\eta^\dagger - \eta,\ham} + \eta^\dagger\ham\eta + \eta \ham \eta^\dagger}_\text{group 1} + \overbrace{\ham^I - \eta^\dagger \ham\eta^\dagger - \eta \ham \eta}^\text{group 2}}\\
 \eeq
-Group 2 consists of purely off-diagonal terms; they amount to 0. To see how, note that terms that have two \il{\eta_h} or two \il{\eta_h^\dagger} can only be nonzero if the intervening \il{\ham} has an odd number of creation or destruction operators.
+Group 2 consists of purely off-diagonal terms; they amount to 0. To see how, note that terms that have two \il{\eta} or two \il{\eta^\dagger} can only be nonzero if the intervening \il{\ham} has an odd number of creation or destruction operators.
 \beq[beats]
-\eta_h \ham \eta_h = \eta_h c_q^\dagger  T \eta_h
+\eta \ham \eta = \eta c_q^\dagger  T \eta
 \eeq
 and
 \beq[tora]
-\eta_h^\dagger \ham\eta_h^\dagger = \eta_h^\dagger T^\dagger c_q \eta_h^\dagger
+\eta^\dagger \ham\eta^\dagger = \eta^\dagger T^\dagger c_q \eta^\dagger
 \eeq
 Group 2 becomes
-\beq
-\text{group 2} = \ham^I - \eta_q^\dagger T^\dagger c_q \eta_q^\dagger - \eta_q c_q^\dagger  T \eta_q = c^\dagger_q T + T^\dagger c_q - \eta_q^\dagger T^\dagger c_q \eta_q^\dagger - \eta_q c_q^\dagger  T \eta_q
+\beq[group2]
+\text{group 2} = \ham^I - \eta^\dagger T^\dagger c_q \eta^\dagger - \eta c_q^\dagger  T \eta = c^\dagger_q T + T^\dagger c_q - \eta^\dagger T^\dagger c_q \eta^\dagger - \eta c_q^\dagger  T \eta
 \eeq
 To simplify this, we use the relation
 \beq
-\eta_h c_q^\dagger  T \eta_h &= T^\dagger c_q \fr{1}{\hat \omega - H_e \hat n_q}c_q^\dagger  T \eta_h\\
-			      &= T^\dagger c_q \rr{\fr{1}{\hat \omega - H_e \hat n_q}c_q^\dagger  T} \eta_h\\
-			      &= T^\dagger c_q \eta_h^\dagger\eta_h &&\qq{\text{eq.~\ref{etadagdef}}}\\
+ \eta c_q^\dagger  T \eta &= \fr{1}{\omega_i^0 - \ham^d_0}T^\dagger c_q c_q^\dagger  T \eta\\
+			      &= T^\dagger c_q \fr{1}{\omega_i^1 - \ham^d_1}c_q^\dagger  T \eta && \qq{\text{eq.~\ref{constraint}}}\\
+			      &= T^\dagger c_q \eta^\dagger\eta &&\qq{\text{eq.~\ref{etadagdef}}}\\
 			      &= T^\dagger c_q \hat n_q &&\qq{\text{eq.~\ref{antic}}}
 \eeq
 which gives
 \beq[id1]
- \eta_q c_q^\dagger  T \eta_q  &= T^\dagger c_q 
+ \eta c_q^\dagger  T \eta  &= T^\dagger c_q 
 \eeq
-Similarly, we can express \(\eta^\dagger_q\) by taking Hermitian conjugate of \(\eta_q\):
-\beq
-\eta^\dagger_q = \fr{1}{\hat \omega - H_h \rr{1 - \hat n_q}}T^\dagger c_q 
-\eeq
-which gives
+Taking the Hermitian conjugate of eq.~\ref{id1} gives
 \beq[id2]
-\eta_q^\dagger T^\dagger c_q \eta_q^\dagger = c_q^\dagger T
+\eta^\dagger T^\dagger c_q \eta^\dagger = c_q^\dagger T
 \eeq
-Substituting the expressions \ref{id1} and \ref{id2}, we get \(\text{group 2}=0\).
-Substituting this in the rotated Hamiltonian gives
+Substituting the expressions \ref{id1} and \ref{id2} into the expression for group 2, \ref{group2}, shows that is vanishes. This leaves us only with group 1:
 \beq
-\wl \ham = \hf\rr{\ham^D + \ham^i + \ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham + \eta_q^\dagger\ham\eta_q - \eta_q\ham  + \eta_q \ham \eta_q^\dagger}
+\wl \ham = \hf\rr{\ham^d + \ham^i + \overbrace{\eta^\dagger\ham\eta + \eta \ham \eta^\dagger}^\text{group A} + \underbrace{\qq{\eta^\dagger - \eta,\ham}}_{group B}}
 \eeq
-To simplify the last 6 terms, we note the following:
+Group A simplifies in the following way. First note that \(\eta^\dagger \ham^I \eta = \eta^\dagger \ham^I \eta = 0\) must be 0 because it will involve consecutive \(c_{q\beta}\) or  consecutive \(c^\dagger_{q\beta}\). We are therefore left with the diagonal part of \(\ham\), which is \(H_e \hat  n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}}\).
+\beq
+\eta^\dagger\qq{H_e \hat  n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}}}\eta + \eta\qq{H_e \hat  n_{q\beta} + H_h \rr{1 - \hat n_{q\beta}}}\eta^\dagger = \eta^\dagger H_h \eta + \eta H_e \eta^\dagger
+\eeq
+\comm{
 \begin{gather}
- \eta_q^\dagger = \fr{1}{\omega - H_e \hat n_q}c^\dagger_q T,\;\;\;\;\;\;\; \eta_q = \fr{1}{\omega - H_h (1-\hat n_q)}T^\dagger c_q
+ \eta^\dagger = \fr{1}{\omega - H_e \hat n_q}c^\dagger_q T,\;\;\;\;\;\;\; \eta = \fr{1}{\omega - H_h (1-\hat n_q)}T^\dagger c_q
  \end{gather}
  Then,
  \beq
  \implies& \fr{1}{\omega - H_e \hat n_q}c^\dagger_q T= c^\dagger_qT\fr{1}{\omega - H_h (1-\hat n_q)}\\
  \implies& c_q^\dagger T H_h(1-\hat n_q) = H_e \hat n_q c_q^\dagger T\\
  \implies& \fr{1}{\omega - H_e \hat n_q}c_q^\dagger T H_h(1-\hat n_q) = \fr{1}{\omega - H_e \hat n_q}H_e \hat n_q c_q^\dagger T\\
- \implies& \eta_q^\dagger H_h(1-\hat n_q) = H_e \hat n_q \fr{1}{\omega - H_e \hat n_q}c_q^\dagger T\\
- \implies& \eta_q^\dagger H_h(1-\hat n_q) = H_e \hat n_q \eta_q^\dagger\\
- \implies& \eta_q^\dagger H_h = H_e \hat \eta_q^\dagger\label{iden}
+ \implies& \eta^\dagger H_h(1-\hat n_q) = H_e \hat n_q \fr{1}{\omega - H_e \hat n_q}c_q^\dagger T\\
+ \implies& \eta^\dagger H_h(1-\hat n_q) = H_e \hat n_q \eta^\dagger\\
+ \implies& \eta^\dagger H_h = H_e \hat \eta^\dagger\label{iden}
 \eeq
-Using this identity and its conjugate (\il{\eta_q H_e = H_h \hat \eta_q}), the expression for \il{\eta_q H \eta_q^\dagger} can be simplified:
+Using this identity and its conjugate (\il{\eta H_e = H_h \hat \eta}), the expression for \il{\eta H \eta^\dagger} can be simplified:
 \beq
- \eta_q \ham \eta_q^\dagger &= \eta_q H_e \hat n_q \eta_q^\dagger\\
-			    &= H_h \eta_q \eta_q^\dagger\\
+ \eta \ham \eta^\dagger &= \eta H_e \hat n_q \eta^\dagger\\
+			    &= H_h \eta \eta^\dagger\\
 			    &= H_h (1-\hat n_q)
 \eeq
 Similarly,
 \beq
- \eta_q^\dagger  \ham \eta_q&= \eta_q^\dagger  H_h \eta_q\\
-			    & = H_e \eta_q^\dagger \eta_q\\
+ \eta^\dagger  \ham \eta&= \eta^\dagger  H_h \eta\\
+			    & = H_e \eta^\dagger \eta\\
 			    &= H_e \hat n_q
 \eeq
 Also, 
 \beq
-\ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham - \eta_q\ham = \rr{\eta^\dagger_q H_h - H_e \eta_q^\dagger} + \rr{H_h \eta - \eta H_e} + \eta_q^\dagger T^\dagger c_q - \eta_q c^\dagger_q T + \\
-c_q^\dagger T \eta_q - T^\dagger c_q \eta_q^\dagger
+\ham\eta - \ham\eta^\dagger + \eta^\dagger \ham - \eta\ham = \rr{\eta^\dagger_q H_h - H_e \eta^\dagger} + \rr{H_h \eta - \eta H_e} + \eta^\dagger T^\dagger c_q - \eta c^\dagger_q T + \\
+c_q^\dagger T \eta - T^\dagger c_q \eta^\dagger
 \eeq
 By virtue of eq.~\ref{iden} and its conjugate, the first two terms will vanish, so we are left with
 \beq[link]
-\ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham - \eta_q\ham = \eta_q^\dagger T^\dagger c_q - \eta_q c^\dagger_q T + c_q^\dagger T \eta_q - T^\dagger c_q \eta_q^\dagger
+\ham\eta - \ham\eta^\dagger + \eta^\dagger \ham - \eta\ham = \eta^\dagger T^\dagger c_q - \eta c^\dagger_q T + c_q^\dagger T \eta - T^\dagger c_q \eta^\dagger
 \eeq
 From eqs.~\ref{id1} and \ref{id2},
 \begin{gather}
-\eta_q^\dagger T ^\dagger c_q = \eta_q^\dagger \eta_q c_q^\dagger T \eta_q = \hat n_q c_q^\dagger T\eta_q = c_q^\dagger T\eta_q\\
-T ^\dagger c_q \eta_q^\dagger = \eta_q c_q^\dagger T \eta_q \eta_q^\dagger = \eta_q c_q^\dagger T \rr{1-\hat n_q} = \eta_q c_q^\dagger T\\
+\eta^\dagger T ^\dagger c_q = \eta^\dagger \eta c_q^\dagger T \eta = \hat n_q c_q^\dagger T\eta = c_q^\dagger T\eta\\
+T ^\dagger c_q \eta^\dagger = \eta c_q^\dagger T \eta \eta^\dagger = \eta c_q^\dagger T \rr{1-\hat n_q} = \eta c_q^\dagger T\\
 \end{gather}
 Eq.~\ref{link} becomes
 \beq
- \ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham - \eta_q\ham &= c_q^\dagger T\eta_q - \eta_q c^\dagger_q T + c_q^\dagger T \eta_q - \eta_q c_q^\dagger T
-								     &=2\qq{c_q^\dagger T,\eta_q}
+ \ham\eta - \ham\eta^\dagger + \eta^\dagger \ham - \eta\ham &= c_q^\dagger T\eta - \eta c^\dagger_q T + c_q^\dagger T \eta - \eta c_q^\dagger T
+								     &=2\qq{c_q^\dagger T,\eta}
+\eeq
+}
+This can be shown (\textcolor{red}{\textbf{clear with AM}}) to be equal to the diagonal part:
+\beq
+\text{group A} = \eta^\dagger H_h \eta + \eta H_e \eta^\dagger = H_e \hat n_{q\beta} + H_h\rr{1 - \hat n_{q\beta}} = \ham^d + \ham^i
+\eeq
+It can also be shown (\textcolor{red}{\textbf{clear with AM}}) that
+\beq
+\text{group B} = \qq{\eta^\dagger - \eta,\ham} = 2\qq{c^\dagger_{q\beta} T,\eta}
 \eeq
 Putting it all together,
-\beq
- \wl \ham &= \hf\rr{\ham^D + \ham^i + \ham\eta - \ham\eta_q^\dagger + \eta_q^\dagger \ham + \eta_q^\dagger\ham\eta_q - \eta_q\ham  + \eta_q \ham \eta_q^\dagger}\\
-	  &=\hf\rr{\ham^D + \ham^i} + \qq{c_q^\dagger T,\eta_q} + \hf\qq{H_e \hat n_q + H_h(1-\hat n_q)}
+\beq[final2]
+\tilde \ham = \ham^d + \ham^i + \qq{c^\dagger_{q\beta} T, \eta}
 \eeq
 \comm{
 To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
@@ -3628,6 +3648,7 @@ Putting it all together,
 	  &=\hf\rr{\ham^D + \ham^i} + \qq{c_q^\dagger T,\eta_q} + \hf\qq{H_e \hat n_q + H_h(1-\hat n_q)}
 \eeq
 }
+\comm{
 One further simplification is possible.
 The last two terms constitute the total diagonal part of the Hamiltonian, but so do the first two terms:
 \beq
@@ -3662,33 +3683,24 @@ The final form of the rotated Hamiltonian is
 \beq[final2]
 \wl \ham = U_q \ham U_q^\dagger =  \text{Tr}\qq{\ham\hat n_q}\hat n_q + \text{Tr}\qq{\ham(1- \hat n_q)}(1-\hat n_q) + 2\tau_q \cc{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q}
 \eeq
-To check that this indeed commutes with \il{\hat n_q},
+}
+To check that this indeed commutes with \il{\hat n_{q\beta}},
 \beq
- \qq{\wl \ham, \hat n_q} &= \qq{\qq{c_q^\dagger T,\eta_q},\hat n_q}\\
-			 &=\qq{c_q^\dagger T \eta_q,\hat n_q} - \qq{\eta_q c_q^\dagger T,\hat n_q}\\
-			 &=c^\dagger_q T \eta_q \hat n_q - \hat n_qc^\dagger_q T \eta_q &&\qq{\text{2\uu{nd} [ .
-] is 0, }\because c_q^\dagger \hat n_q = \hat n_q \eta_q=0}\\
-			 &=c_q^\dagger T \eta_q - c_q^\dagger T \eta_q\\
+\qq{\wl \ham, \hat n_{q\beta}} &= \qq{\qq{c_{q\beta}^\dagger T,\eta},\hat n_{q\beta}}\\
+			       &=\qq{c_{q\beta}^\dagger T \eta,\hat n_{q\beta}} - \qq{\eta c_{q\beta}^\dagger T,\hat n_{q\beta}}\\
+			       &=c^\dagger_{q\beta} T \eta \hat n_{q\beta} - \hat n_{q\beta}c^\dagger_{q\beta} T \eta &&\qq{\text{2\uu{nd} [ .
+			       ] is 0, }\because c_{q\beta}^\dagger \hat n_{q\beta} = \hat n_{q\beta} \eta=0}\\
+			       &=c_{q\beta}^\dagger T \eta - c_{q\beta}^\dagger T \eta\\
 			 &=0
 \eeq
 Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
 \begin{gather*}
-\hat \omega - H_e \hat n = 0\\
-\implies \omega_e = H_e
+\omega_i^1 - \ham^d_1 = \omega_i^0 - \ham^d_0 = 0
 \end{gather*}
-or 
-\begin{gather*}
-\hat \omega - H_h\rr{1 - \hat n} = 0\\
-\implies \omega_h = H_h
-\end{gather*}
-In either case, we see that the eigenvalue of \(\hat \omega\) matches the eigenvalue of one of the blocks. This also leads to the vanishing of the off-diagonal block. To see how,
+We see that a the fixed point, the eigenvalue of \(\hat \omega_i\) matches the eigenvalues of the diagonal blocks. This also leads to the vanishing of the off-diagonal block, because eqs.~\ref{changea} and \ref{changeb} gives
 \beq
-\eta^\dagger \eta \ket{1,\Psi_1} &= \ket{1,\Psi_1} &&\qq{\eta^\dagger \eta = \hat n}\\
-\implies \fr{1}{\hat \omega - \hat H_e}c^\dagger T \eta &= \ket{1,\Psi_1} \\
-\implies c^\dagger T \eta &= \rr{\hat \omega - \hat H_e}\ket{1,\Psi_1} \\
-&= \rr{\omega_e - H_e}\ket{1,\Psi_1}\\
+c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} = 0 \implies c^\dagger_{q\beta}T = 0
 \eeq
-If \(\omega_e = H_e\), we will have \(c^\dagger T = 0\). This implies \(T^\dagger c = 0\) and hence \(\ham^I = 0\).
 \subsection{Prescription}
 Given a Hamiltonian
 \beq
@@ -3697,24 +3709,36 @@ Given a Hamiltonian
 the goal is to look at the renormalization of the various couplings in the Hamiltonian as we decouple high energy electron states. Typically we have a shell of electrons at some energy \(D\). During the process, we make one simplification. We assume that there is only one electron on that shell at a time, say with quantum numbers \(q,\sigma\), and calculate the renormalization of the various couplings due to this electron. We then sum the momentum \(q\) over the shell and the spin \(\beta\), and this gives the total renormalization due to decoupling the entire shell. 
 \pb From eq.~\ref{final2}, the first two terms in the rotated Hamiltonian are just the diagonal parts of the bare Hamiltonian; they are unchanged in that part. The renormalization comes from the third term. For one electron \(q\beta\) on the shell, the renormalization is
 \beq
-\Delta \ham_{q\beta} = 2\tau_{q\beta} \cc{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\Delta \ham = \qq{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta} = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta - \eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
 \eeq
-Decoupling the entire shell gives
+It is clear that the first term takes into account virtual excitations that start from a filled state (\(\hat n_{q\beta}=1\) initially) - such a term is said to be a part of the \textit{particle sector}.
 \beq
-\Delta \ham = \sum_{q\beta}2\tau_{q\beta} \cc{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\Delta_1 \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta
 \eeq
-One can look at the particle and hole sectors separately. The particle sector involves those processes which create a particle with high energy in the intermediate state. The hole sector consists of those processes that destroy a deep-lying electron in the intermediate state. It is clear that the first term of the anticommutator, one that starts with \(c^\dagger\) and ends with \(\eta\) will destroy an electron in the intermediate state. That gives the hole sector contribution:
+The second term, on the other hand, considers excitations that start from an empty state. They constitute the \textit{hole sector}.
+\beq
+\Delta_0 \ham = -\eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
+\eeq
+Since the effective Hamiltonian eq.~\ref{final2} was derived with the aim of obtaining the particle sector diagonal part, it makes sense to repeat the calculation but now obtain the unitary from the other equation:
+\beq
+\ket{\psi_0} &= \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i} \implies U_0 = 1 -\eta^\dagger + \eta
+\eeq
+We can similarly obtain a renormalised Hamiltonian for this unitary; it comes out to be
+\beq
+\Delta \ham =\eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}} - c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta
+\eeq
+The hole sector renormalization then comes out to be
+\beq
+\Delta_0 \ham = \eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
+\eeq
+The renormalization due to the entire shell is obtained by summing over all states on the shell. Written out explicitly, they take the forms.
 \beq[deltah]
-\Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
-	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - \ham^D}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
+\Delta_0 \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_1 - \ham^d_1}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
 \eeq
-where we have replaced \(\hat \omega\) by its eigenvalue \(\omega_h\) and \(H_h = \text{Tr}\rr{\ham \rr{1- \hat n_{q\beta}}}\). The other term in the commutator gives the particle sector contribution:
 \beq[deltap]
-\Delta^+ \ham &= \sum_{q\beta} \eta_{q\beta}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
-	      &= \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^D}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+\Delta_1 \ham &= \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_0 - \ham^d_0}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
 \eeq
-where we used \(2\tau \eta = -\eta\) and \(H_e = \text{Tr}\rr{\ham \hat n_{q\beta}}\).
-These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we employ is that \(H_e\) and \(H_h\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
+These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we typically employ is that \(\ham^d_{0,1}\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
 \comm{
