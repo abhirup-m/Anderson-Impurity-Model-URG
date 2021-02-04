@@ -1,8 +1,6 @@
 \documentclass[12pt]{article}
-%\documentclass[14pt]{extarticle}
 \setcounter{tocdepth}{2}
 \usepackage{common}
-\usepackage{helvet}
 \usepackage[affil-it]{authblk}
 \numberwithin{equation}{section}
 \graphicspath{{./figures/}}
@@ -3048,7 +3046,7 @@ This gives us \il{D \gg |\epsilon_d|}.
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 }
 \section{Unitary Renormalization Group Method}\label{section2}
-\subsection{Formalism}\label{urgform}
+\subsection{Description of the problem}
 This section is adapted from ref.\cite{holography1}.
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
 \pb We take a general Hamiltonian,
@@ -3092,6 +3090,7 @@ This gives
 \beq
 \qq{c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i} = \rr{\tilde H_i - \ham^i - \ham^d}\ket{\psi_i}
 \eeq
+\subsection{Obtaining the decoupling transformation}
 We now define a new operator \(\hat \omega_i = \tilde H_i - \ham^i\), such that 
 \beq
 \qq{c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i} = \rr{\hat \omega_i - \ham^d}\ket{\psi_i}
@@ -3141,6 +3140,7 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 	U_1 &= 1 + \eta\\
 	U_0 &= 1 + \eta^\dagger
 \eeq
+\subsection{Form of the unitary operators}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
 \beq
 	\eta^2 = {\eta^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
@@ -3203,6 +3203,7 @@ and so on. Since \(U_0\) is obtained from \(U_1\) simply by replacing \(\eta\) w
 \beq
 U_0 = \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger} = \ex{\frac{\pi}{4}\rr{\eta - \eta^\dagger}}
 \eeq
+\subsection{Effective Hamiltonian}
 We can now compute the form of the effective Hamiltonian that comes about when we apply \(U_1\) - that is - when we rotate one exact eigenstate \(\ket{\psi_1}\) into the occupied Fock space basis \(\ket{1}\). From eq.~\ref{finalu},
 \beq
 U_1 \ham U_1^\dagger &= \hf\rr{1+\eta^\dagger - \eta}\ham\rr{1 + \eta - \eta^\dagger}\\
@@ -3693,6 +3694,7 @@ To check that this indeed commutes with \il{\hat n_{q\beta}},
 			       &=c_{q\beta}^\dagger T \eta - c_{q\beta}^\dagger T \eta\\
 			 &=0
 \eeq
+\subsection{Fixed point condition}
 Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
 \begin{gather*}
 \omega_i^1 - \ham^d_1 = \omega_i^0 - \ham^d_0 = 0
@@ -5668,7 +5670,7 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 }
-\section{Schrieffer-Wolff Transformation in the context of URG and PMS}
+\section{Schrieffer-Wolff Transformation in context of URG}
 \subsection{Schrieffer-Wolff transformation as a limit of URG}
 We have a general Hamiltonian
 \beq
@@ -5761,7 +5763,7 @@ The vanishing of this quantity is now the decoupling condition, and is also give
 \eeq
 That gives
 \beq
-H_2 = \hf\qq{\frac{4}{\pi}\qq{S,\ham_0} + \ham_X - \frac{16}{\pi^2}S \ham_X S}
+H_2 = \hf\rr{\frac{4}{\pi}\qq{S,\ham_0} + \ham_X - \frac{16}{\pi^2}S \ham_X S}
 \eeq
 The decoupling condition becomes
 \beq
