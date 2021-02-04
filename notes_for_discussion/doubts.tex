@@ -1,0 +1,94 @@
+\documentclass[12pt]{beamer}
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+\usepackage{xcolor,helvet}
+\definecolor{maroon}{rgb}{0.6,0,0}
+\definecolor{bottlegreen}{rgb}{0,0.3,0}
+\usepackage{graphicx}
+\usetheme{boxes}
+\setbeamertemplate{frametitle}{\small\insertframetitle}
+\linespread{1.5}
+%\usefonttheme{serif}     % Font theme: serif
+%\usepackage{ccfonts}     % Font family: Concrete Math
+%\usepackage[T1]{fontenc} % Font encoding: T1
+\newcommand{\cen}[1]{\begin{center}{#1}\end{center}}
+\usepackage[absolute,overlay]{textpos}
+
+\begin{document}
+
+\begin{frame}{Question 1}
+	Section 2.2, Equation \textcolor{blue}{2.18} of thesis
+\begin{equation*}
+\begin{gathered}
+	\frac{1}{H^\prime - H_e\hat n_N}c^\dagger_N T	= c^\dagger_N T\frac{1}{H^\prime - H_h(1-\hat n_N)}\\
+	\implies \textcolor{blue}{H_e\hat n_Nc^\dagger_N T = c^\dagger_N TH_h(1-\hat n_N)}
+\end{gathered}
+\end{equation*}
+This seems to \textbf{require \(H^\prime\) commuting with \(T\)}, because
+\begin{equation*}
+	\textcolor{red}{c^\dagger_N TH^\prime} - \textcolor{blue}{c^\dagger_N TH_h(1-\hat n_N)}= \textcolor{red}{H^\prime c^\dagger_N T} - \textcolor{blue}{H_e\hat n_Nc^\dagger_N T}
+\end{equation*}
+\centering\textbf{\textcolor{bottlegreen}{Why should $H^\prime$ commute with $T$?}}
+\begin{equation*}
+	(\text{where } H_e = Tr\left(H\hat n_N\right) \text{, } H_h = Tr\left[H\left(1-\hat n_N\right)\right] \text{ and }T = Tr\left(Hc_N\right))
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Question 2}
+	Section 2.2, Equation \textcolor{blue}{2.19} of thesis
+\begin{equation*}
+	\eta_N H \eta_N^\dagger = H_h \left(1 - n_N\right)
+\end{equation*}
+If I try to derive this using the result on the previous slide:
+\begin{equation*}
+\begin{aligned}
+	\eta H \eta^\dagger = \eta H_e \eta^\dagger = \eta \textcolor{blue}{H_e c^\dagger T} G &= \eta \textcolor{blue}{c^\dagger T H_h} G \\
+											       &= \eta c^\dagger T \textcolor{red}{G H_h} = \eta \eta^\dagger H_h = H_h \left(1 - \hat n\right)
+\end{aligned}
+\end{equation*}
+\centering\textbf{\textcolor{bottlegreen}{That required $\left[G,H_h\right]=0$. How does that work out?}}
+\begin{equation*}
+	(\text{where } H_e = Tr\left(H\hat n_N\right) \text{, } H_h = Tr\left[H\left(1-\hat n_N\right)\right] \text{ and }T = Tr\left(Hc_N\right))
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Question 3}
+	\only<1>{Kondo Model appendix, Equation \textcolor{blue}{9.61} of thesis}
+\begin{equation*}
+\begin{aligned}
+	\Delta\hat{H}_{(j)} &= \sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^2}{\textcolor{red}{2}}\frac{\textcolor{red}{\tau_{j,\hat{s}_{m},\beta}}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\nonumber\\
+&\times\bigg[S^{a}S^{b}\sigma^{a}_{\alpha\beta}\sigma^{b}_{\beta\gamma} \sum_{\substack{(j_{1},j_{2}< j),\\ n,o}}c^{\dagger}_{j_{1},\hat{s}_{n},\alpha}c_{j_{2},\hat{s}_{o},\gamma}(1-\hat{n}_{j,\hat{s}_{m},\beta})+...%S^{b}S^{a}\sigma^{b}_{\beta\gamma}\sigma^{a}_{\alpha\beta} \sum_{\substack{(j_{1},j_{2}<j),\\ n,o}}c_{j_{2},\hat{s}_{o},\gamma}c^{\dagger}_{j_{1},\hat{s}_{n},\alpha}\hat{n}_{j,\hat{s}_{m},\beta}\bigg]\nonumber
+\\
+&+\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{2(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\\
+&\bigg[S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}\nonumber + S^{y}S^{x}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\beta}...%c_{j,\hat{s}_{m},\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}\bigg]~.
+\end{aligned}
+\end{equation*}
+\only<2-3>{\begin{itemize}
+		\only<2>{\item The \(\tau\) should \textcolor{red}{not} be there in numerator i presume?}
+	\only<3>{\item Since coupling is \(\frac{J}{2}\), shouldn't the thing be \textcolor{red}{\(\frac{J^2}{4}\)} instead of \textcolor{red}{\(\frac{J^2}{2}\)}?}
+\end{itemize}}
+\end{frame}
+\begin{frame}{Question 4}
+	URG coupling equation for \(J\) (equation 9.65):
+\begin{equation*}
+\begin{aligned}
+\Delta J^{(j)}=\frac{n_{j}(J^{(j)})^{2}\left[\omega- \frac{\epsilon_{j,l}}{2}\right]}{(\frac{\epsilon_{j,l}}{2}-\omega)^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}}~.
+\end{aligned}
+\end{equation*}
+One-loop form (after setting \(\omega = \epsilon_{j,l}\)):
+\begin{equation*}
+\begin{aligned}
+	\Delta J^{(j)}= \frac{n_{j}(J^{(j)})^{2}}{\omega-\frac{\epsilon_{j,l}}{2}} = 2\frac{n_{j}(J^{(j)})^{2}}{\epsilon_{j,l}} = \textcolor{blue}{\frac{\textcolor{red}{2} \rho |\Delta D| J^2}{D}}
+\end{aligned}
+\end{equation*}
+One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)):
+\begin{equation*}
+\begin{aligned}
+	\Delta \tilde J = \frac{2 \rho |\Delta D| \tilde J^2}{D} \implies \Delta J = \textcolor{blue}{\frac{\rho |\Delta D| J^2}{D}}
+\end{aligned}
+\end{equation*}
+\end{frame}
+
+\end{document}
