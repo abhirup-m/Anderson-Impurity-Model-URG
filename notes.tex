@@ -1,5 +1,6 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside]{article}
 \setcounter{tocdepth}{2}
+\raggedbottom
 \usepackage{common}
 \usepackage[affil-it]{authblk}
 \numberwithin{equation}{section}
@@ -72,7 +73,6 @@ Since the RG transformations are unitary, all eigenvalues and eigenstates are ke
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
-%\pagebreak
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -1847,8 +1847,6 @@ This is the same equation as eq.~\ref{rec}, with \il{\ol H_N} expressed in its e
 To check whether the guesses about the fixed points are true, Wilson did the following.
 He set \il{J=0.009} and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \il{N}.
 They indeed correspond to the excitations of the Kondo hamiltonian at \il{J = \infty}, meaning that under the application of the NRG, the \il{J=0.009} Hamiltonian flowed to the fixed-point Hamiltonian \il{J = \infty}.
-
-\pagebreak
 \subsection{Correspondence between the Kondo model fixed-point and a local Fermi liquid - Topological interpretation of Wilson ratio}
 \subsubsection{Local Fermi liquid}
 The fixed-point Hamiltonians \cite{hewsonp} are found to represent interacting Fermi liquids.
@@ -3046,8 +3044,8 @@ This gives us \il{D \gg |\epsilon_d|}.
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 }
 \section{Unitary Renormalization Group Method}\label{section2}
-\subsection{Description of the problem}
 This section is adapted from ref.\cite{holography1}.
+\subsection{Description of the problem}
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
 \pb We take a general Hamiltonian,
 \beq
@@ -3116,16 +3114,17 @@ We now define two many-particle transition operators:
 {\eta_1}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T \\
 \eta_0(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d_0}T^\dagger c_{q\beta}
 \eeq
+We can write this compactly as
+\beq[etadagdef]
+\eta(\hat \omega) = \fr{1}{\hat \omega_i- \ham^d}T^\dagger c_{q\beta}
+\eeq
+where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
 We will later find that it is important to demand that these two be Hermitian conjugates of each other; that constraint is imposed on the denominators:
 \beq[constraint]
 \eta_0^+ = \eta_1^\dagger \implies \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d_0}
 \eeq
-Hereafter, we will assume that this constraint has been imposed, and we will drop the labels \(1\) and \(0\) on the \(\eta\):
-\beq[etadagdef]
-\eta^\dagger = \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T \\
-\eta = \fr{1}{\omega_i^0- \ham^d_0}T^\dagger c_{q\beta}
-\eeq
-In terms of these operators, eqs.~\ref{changeb} become
+Henceforth we will assume that this constraint has been imposed and drop the subscripts \(0\) and \(1\) on the \(\eta\). 
+\pb In terms of these operators, eq.~\ref{changeb} becomes
 \beq
 	\ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i}\\
 	\ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i}
@@ -3135,10 +3134,9 @@ These allow us to write
 	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \rr{1 + \eta}\ket{1}\ket{\phi_1^i}\\
 	\ket{\psi_0} &= \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i}
 \eeq
-Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the required transformations:
+Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the required transformation:
 \beq[Ui]
-	U_1 &= 1 + \eta\\
-	U_0 &= 1 + \eta^\dagger
+	U_1 &= 1 + \eta
 \eeq
 \subsection{Form of the unitary operators}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
@@ -3213,11 +3211,11 @@ U_1 \ham U_1^\dagger &= \hf\rr{1+\eta^\dagger - \eta}\ham\rr{1 + \eta - \eta^\da
 &=\hf\rr{\ham^d + \ham^i + \ham^I + \qq{\eta^\dagger - \eta,\ham} + \eta^\dagger\ham\eta - \eta^\dagger \ham\eta^\dagger - \eta \ham \eta + \eta \ham \eta^\dagger}\\
 \eeq
 In the last two lines, we expanded the Hamiltonian into the three parts \(\ham^d,\ham^i\) and a third piece \(\ham^I \equiv c_{q\beta}^\dagger T + T^\dagger c_{q\beta}\).
-\pb For reasons that will become apparent later, we will split the terms into two groups:
+\pb For reasons that will become apparent, we will split the terms into two groups:
 \beq
  \tilde \ham &= \hf\rr{\underbrace{\ham^d + \ham^i + \qq{\eta^\dagger - \eta,\ham} + \eta^\dagger\ham\eta + \eta \ham \eta^\dagger}_\text{group 1} + \overbrace{\ham^I - \eta^\dagger \ham\eta^\dagger - \eta \ham \eta}^\text{group 2}}\\
 \eeq
-Group 2 consists of purely off-diagonal terms; they amount to 0. To see how, note that terms that have two \il{\eta} or two \il{\eta^\dagger} can only be nonzero if the intervening \il{\ham} has an odd number of creation or destruction operators.
+Group 2 can be easily shown to be 0. Note that terms that have two \il{\eta} or two \il{\eta^\dagger} sandwiching a \(\ham\) can only be nonzero if the intervening \il{\ham} has an odd number of creation or destruction operators.
 \beq[beats]
 \eta \ham \eta = \eta c_q^\dagger  T \eta
 \eeq
