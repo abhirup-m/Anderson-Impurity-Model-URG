@@ -3099,38 +3099,38 @@ From the definition of \(\hat \omega_i\), we can see that it is Hermitian and ha
 \eeq
 Since the only requirement on \(\ket{\psi_i}\) is that it diagonalize the Hamiltonian in the subspace of \(q\beta\), there is freedom in the choice of this state. We can exploit this freedom and choose the \(\ket{\phi_{0,}^i}\) to be an eigenstates of \(\hat \omega_i^{1,0}\) corresponding to real eigenvalues \(\omega_i^{1,0}\):
 \beq
-\qq{\ham^d + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i(\omega_i)} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} + \rr{\omega_i^0 - \ham^d_0}\ket{0}\ket{\phi_0^i}
+\qq{\ham^d + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}}\ket{\psi_i(\omega_i)} = \rr{\omega_i^1 - \ham^d}\ket{1}\ket{\phi_1^i} + \rr{\omega_i^0 - \ham^d}\ket{0}\ket{\phi_0^i}
 \eeq
 If we now substitue the expansion \ref{matpsi} and gather the terms that result in \(\hat n_{q\beta}=1\), we get
 \beq[changea]
-c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i}
+c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d}\ket{1}\ket{\phi_1^i}
 \eeq
 Similarly, gathering the terms that result in \(\hat n_{q\beta}=0\) gives
 \beq[changeb]
-T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \rr{\omega_i^0 - \ham^d_0}\ket{0}\ket{\phi_0^i}
+T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \rr{\omega_i^0 - \ham^d}\ket{0}\ket{\phi_0^i}
 \eeq
 We now define two many-particle transition operators:
 \beq
-{\eta_1}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T \\
-\eta_0(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d_0}T^\dagger c_{q\beta}
+{\eta}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T \\
+\eta(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d}T^\dagger c_{q\beta}
 \eeq
 We can write this compactly as
 \beq[etadagdef]
 \eta(\hat \omega) = \fr{1}{\hat \omega_i- \ham^d}T^\dagger c_{q\beta}
 \eeq
-where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
+	where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta} = \begin{pmatrix} \omega_i^1 & \\ & \omega_i^0 \end{pmatrix}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
 We will later find that it is important to demand that these two be Hermitian conjugates of each other; that constraint is imposed on the denominators:
 \beq[constraint]
-\eta_0^+ = \eta_1^\dagger \implies \fr{1}{\omega_i^1- \ham^d_1}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d_0}
+\eta^\dagger(\omega_i^0) = \eta^\dagger(\omega_i^1) \implies \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d}
 \eeq
-Henceforth we will assume that this constraint has been imposed and drop the subscripts \(0\) and \(1\) on the \(\eta\). 
+Henceforth we will assume that this constraint has been imposed. 
 \pb In terms of these operators, eq.~\ref{changeb} becomes
 \beq
 	\ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i}\\
 	\ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i}
 \eeq
 These allow us to write
-\beq
+\beq[trans]
 	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \rr{1 + \eta}\ket{1}\ket{\phi_1^i}\\
 	\ket{\psi_0} &= \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i}
 \eeq
@@ -3138,7 +3138,7 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 \beq[Ui]
 	U_1 &= 1 + \eta
 \eeq
-\subsection{Form of the unitary operators}
+\subsection{Properties of the many-body transition operator \(\eta\)}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
 \beq
 	\eta^2 = {\eta^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
@@ -3160,6 +3160,7 @@ Note that the three equations in \ref{antic} work only when applied on the eigen
 	\cc{\eta^\dagger,\eta}\ket{\psi_i} = \ket{\psi_i}
 \end{gathered}
 \end{equation*}
+\subsection{Form of the unitary operators}\label{unitary-form}
 Although we have found the correct similarity transformations \(U_i\) (eqs. \ref{Ui}), we need to convert them into a unitary transformation. Say we are trying to rotate the eigenstate \(\ket{\psi_1}\) into the state \(\ket{1}\). We can then work with the transformation
 \beq
 U_1 = 1 + \eta
@@ -3197,10 +3198,7 @@ and hence
 \beq
 \rr{\eta^\dagger - \eta}^3 = -1\rr{\eta^\dagger - \eta}
 \eeq
-and so on. Since \(U_0\) is obtained from \(U_1\) simply by replacing \(\eta\) with \(\eta^\dagger\), we can easily surmise that the unitary transformation that rotates an eigenstate \(\ket{\psi_0}\) to the state \(\ket{0}\) is
-\beq
-U_0 = \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger} = \ex{\frac{\pi}{4}\rr{\eta - \eta^\dagger}}
-\eeq
+and so on.
 \subsection{Effective Hamiltonian}
 We can now compute the form of the effective Hamiltonian that comes about when we apply \(U_1\) - that is - when we rotate one exact eigenstate \(\ket{\psi_1}\) into the occupied Fock space basis \(\ket{1}\). From eq.~\ref{finalu},
 \beq
@@ -3229,8 +3227,8 @@ Group 2 becomes
 \eeq
 To simplify this, we use the relation
 \beq
- \eta c_q^\dagger  T \eta &= \fr{1}{\omega_i^0 - \ham^d_0}T^\dagger c_q c_q^\dagger  T \eta\\
-			      &= T^\dagger c_q \fr{1}{\omega_i^1 - \ham^d_1}c_q^\dagger  T \eta && \qq{\text{eq.~\ref{constraint}}}\\
+ \eta c_q^\dagger  T \eta &= \fr{1}{\omega_i^0 - \ham^d}T^\dagger c_q c_q^\dagger  T \eta\\
+			      &= T^\dagger c_q \fr{1}{\omega_i^1 - \ham^d}c_q^\dagger  T \eta && \qq{\text{eq.~\ref{constraint}}}\\
 			      &= T^\dagger c_q \eta^\dagger\eta &&\qq{\text{eq.~\ref{etadagdef}}}\\
 			      &= T^\dagger c_q \hat n_q &&\qq{\text{eq.~\ref{antic}}}
 \eeq
@@ -3693,14 +3691,47 @@ To check that this indeed commutes with \il{\hat n_{q\beta}},
 			 &=0
 \eeq
 \subsection{Fixed point condition}
-Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to the condition:
-\begin{gather*}
-\omega_i^1 - \ham^d_1 = \omega_i^0 - \ham^d_0 = 0
-\end{gather*}
-We see that a the fixed point, the eigenvalue of \(\hat \omega_i\) matches the eigenvalues of the diagonal blocks. This also leads to the vanishing of the off-diagonal block, because eqs.~\ref{changea} and \ref{changeb} gives
+Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to either \(\omega_i^1 = \ham^d_1 \) or \(\omega_i^0 = \ham^d_0 \).
+This shows that at the fixed point, one of the eigenvalues of \(\hat \omega_i\) matches the corresponding eigenvalue of the diagonal blocks. This also leads to the vanishing of the off-diagonal block, because eqs.~\ref{changea} and \ref{changeb} gives
 \beq
 c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} = 0 \implies c^\dagger_{q\beta}T = 0
 \eeq
+\subsection{Equivalence of the two unitaries}
+In the subsection \ref{unitary-form}, we determined the form of the operator \(U_1\) that unitarily decouples the node \(q\beta\) from the other degrees of freedom. Eq.~\ref{finalu} was derived by reading off the transformation of \(\ket{1}\) to \(\ket{\psi_1}\), the first equation in \ref{trans}. We could easily have chosen the other equation in the same equation set,
+\begin{gather*}
+\ket{\psi_0} = \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i}
+\end{gather*}
+which gives a similarity  transformation \(1+\eta^\dagger\) and hence a unitary
+\beq
+U_0 = \frac{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger}
+\eeq
+This \(\eta\) will however be different from the \(\eta\) in eq.~\ref{finalu}. The reason is, in order to get \(U_1\), we must start from the eigenvalue equation \(\ham \ket{\psi_1} = \tilde H_1 \ket{\psi_1}\). This means that the corresponding \(\hat \omega\) will be defined as \(\hat \omega_1 = \tilde H_1 - \ham^i\). On the other hand, in order to get \(U_0\) we must start with \(\ham \ket{\psi_0} = \tilde H_0 \ket{\psi_0}\), and hence this \(\hat \omega\) will be \(\hat \omega_0 = \tilde H_0 - \ham^i\). This difference in the \(\hat \omega\) will define two different sets of \(\eta\):
+\beq
+\text{Starting from \(\ket{\psi_1}\):	}\eta_1 = \fr{1}{\omega_1^0- \ham^d}T^\dagger c_{q\beta} && \text{and }\eta^\dagger_1 = \fr{1}{\omega_1^1- \ham^d}T^\dagger c_{q\beta}\\
+\text{Starting from \(\ket{\psi_0}\):	}\eta_0 = \fr{1}{\omega_0^0- \ham^d}T^\dagger c_{q\beta} && \text{and }\eta^\dagger_0 = \fr{1}{\omega_0^1- \ham^d}T^\dagger c_{q\beta}
+\eeq
+The \(\omega_j^i\) eigenvalues have both upper and lower indices. The upper index \(i\) signifies which eigenstate it relates to - \(\omega_j \ket{i} = \omega_j^i\ket{i}\). The lower index refers to the exact eigenstate we started with - starting with \(\ham \ket{\psi_j} = \tilde H_j\ket{\psi_j}\) leads to \(\omega_j\). The two unitaries are
+\beq
+U_1 &= \frac{1}{\sqrt 2}\rr{1 + \eta_1^\dagger - \eta_1}\\
+U_0 &= \frac{1}{\sqrt 2}\rr{1 + \eta_0 - \eta_0^\dagger}
+\eeq
+\pb Since the two unitaries should give the same effective Hamiltonian, we require \(U_1 = U_0\). That requires \(\eta_1 = -\eta_0\). Comparing the expressions of the \(\eta\)s, we get
+\beq
+\omega_1^0 - \ham^d_0 = -\rr{\omega_0^0 - \ham^d_0}
+\eeq
+This is the constraint that ensures that both unitaries give the same effective Hamiltonian. The condition \(\eta_1 + \eta_0 = 0\), when expressed without resolving \(\hat \omega\) into its eigenvalues can also be shown to be a statement of the preservation of the partial trace under the RG flow.
+\beq[trace]
+\eta_1 &= \fr{1}{\tilde H_1 - \ham^i - \ham^d}T^\dagger c_{q\beta}\\
+\eta_0 &= \fr{1}{\tilde H_0 - \ham^i - \ham^d}T^\dagger c_{q\beta}\\
+\implies  \eta_1 + \eta_0 &= \qq{\fr{1}{\tilde H_1 - \ham^i - \ham^d} + \fr{1}{\tilde H_0 - \ham^i - \ham^d}}T^\dagger c_{q\beta} = 0\\
+\implies \tilde H_1 - \ham^i - \ham^d &= -\qq{\tilde H_0 - \ham^i - \ham^d}\\
+\implies \tilde H_1 + \tilde H_0 &= 2\ham_0
+\eeq
+\(\ham_0 = \ham^i + \ham^d\) is the total diagonal part of the bare model. To match the dimensions, we must take \(\tilde H_1 = E_1 \otimes I\) and similarly \(\tilde H_0 = E_0 \otimes I\), where the rotated Hamiltonian is
+\beq
+\tilde H = \begin{pmatrix} E_1 & 0 \\ 0 & E_0\end{pmatrix}
+\eeq
+Therefore, the trace of the rotated Hamiltonian is \(t_\text{new} = E_1 + E_0 \). The trace of the LHS in the final equation of \ref{trace} is \(\text{tr}\rr{\tilde H_1 + \tilde H_0} = \text{tr}\rr{E_1 \otimes I + E_0 \otimes I} = 2\rr{E_1 + E_0} = 2t_\text{new}\). The trace of the RHS in final equation of \ref{trace} is \(2\times\text{tr}\rr{\ham_0} = 2t_\text{old}\) where \(t_\text{old} = \text{tr}\rr{\ham_0}\) is the trace of the old Hamiltonian. Equating the LHS and RHS gives \(t_\text{new} = t_\text{old}\).
 \subsection{Prescription}
 Given a Hamiltonian
 \beq

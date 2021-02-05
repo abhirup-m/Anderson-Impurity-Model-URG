@@ -18,7 +18,7 @@ The difference here is that the kets are many-body and the eigenvalue is not rea
 \eeq
 The important fact here is that from eq.~\ref{eigeq}, we can see that there isn't any connection between \(\ket{\psi_1}\) and \(\ket{0}\), so \textit{we can ignore the second equality}, and construct our transformation purly from the first equality. That gives a similarity and consequently a unitary transformation.
 \beq
-\hat P_1 = 1+ \eta_1, && U_1^\dagger = 1 + \eta_1 - \eta_1^\dagger
+\hat P_1^{-1} = 1+ \eta_1, && U_1 = \frac{1}{\sqrt 2}\rr{1 + \eta_1^\dagger - \eta_1}
 \eeq
 \textbf{Crucially important is the subscript 1 on \(\eta\), \(\hat P\) and \(U^\dagger\). That subscript signifies that those operators are functions of a particular eigenvalue of the quantum fluctuation operator - \(\omega_1\).}
 \pb \textit{My previous contention was that applying \(U_1\) does not give back the final equality in eq.~\ref{final}, but that is not a problem since that equality does not have any significance to begin with; \(\ket{0}\) must relate to \(\ket{\psi_0}\) and \textbf{not} \(\ket{\psi_1}\).}
@@ -28,12 +28,15 @@ The important fact here is that from eq.~\ref{eigeq}, we can see that there isn'
 \eeq
 The subscript \(0\) means these operators are parametrised by a different eigenvalue \(\omega_0\). In this case we must contruct the similarity as well as the unitary from the equality relating \(\ket{0}\) with \(\ket{\psi_0}\). That gives
 \beq
-\hat P_0 = 1+ \eta^\dagger_0, && U_0^\dagger = 1 + \eta^\dagger_0 - \eta_0
+\hat P_0^{-1} = 1+ \eta^\dagger_0, && U_0 = \frac{1}{\sqrt 2}\rr{1 - \eta^\dagger_0 + \eta_0}
 \eeq
 If we want the two unitaries to give the same effective Hamiltonian, we must demand \(U_0^\dagger = U_1^\dagger\) which translates to demanding \(\eta_1 = - \eta_0\). From the expressions of \(\eta\), this becomes
 \beq
 \frac{1}{\omega_1 - \ham^d}T^\dagger c = -\frac{1}{\omega_0 - \ham^d}T^\dagger c \implies \textcolor{blue}{\omega_1 + \omega_0 = 2\ham^d}
 \eeq
-Note the \textbf{minus sign} on the RHS. This minus sign takes care of the apparent difference between URG and PMS. The final relation is also in line with the fact that at the fixed point, the \(\omega\) eigenvalues match up with the Hamiltonian eigenvalues (\(\omega_1 = \omega_0 = \ham^d\)); away from the fixed point, they change such that the total thing remains equal to twice the diagonal component.
-\pb \textcolor{blue}{\textbf{Summary: Both the unitaries are perfectly correct but they relate to different values of \(\hat \omega\).}}
+Note the \textbf{minus sign} on the RHS. This minus sign takes care of the apparent difference between URG and PMS. The final relation is also in line with the fact that at the fixed point, the \(\omega\) eigenvalues match up with the Hamiltonian eigenvalues (\(\omega_1 = \omega_0 = \ham^d\)); away from the fixed point, they change such that the total thing remains equal to twice the diagonal component. It is a manifestation of the trace-preserving nature of the transformation:
+\beq
+2\ham^d = \omega_1 + \omega_0 = \tilde H_1 + \tilde H_0 - \ham^i_0 - \ham^i_1 \implies \tilde H_1 + \tilde H_0 - \ham^i_0 - \ham^i_1 = 2\ham^d
+\eeq
+\textcolor{blue}{\textbf{Summary: Both the unitaries are perfectly correct but they relate to different values of \(\hat \omega\).}}
 \end{document}
