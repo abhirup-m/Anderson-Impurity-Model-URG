@@ -3043,7 +3043,7 @@ This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 }
-\section{Unitary Renormalization Group Method}\label{section2}
+\section{Unitary Renormalization Group Method}\label{urgform}
 This section is adapted from ref.\cite{holography1}.
 \subsection{Description of the problem}
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
@@ -3696,7 +3696,7 @@ This shows that at the fixed point, one of the eigenvalues of \(\hat \omega_i\) 
 \beq
 c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} = 0 \implies c^\dagger_{q\beta}T = 0
 \eeq
-\subsection{Equivalence of the two unitaries}
+\subsection{Equivalence of the two unitaries and preservation of partial trace}
 In the subsection \ref{unitary-form}, we determined the form of the operator \(U_1\) that unitarily decouples the node \(q\beta\) from the other degrees of freedom. Eq.~\ref{finalu} was derived by reading off the transformation of \(\ket{1}\) to \(\ket{\psi_1}\), the first equation in \ref{trans}. We could easily have chosen the other equation in the same equation set,
 \begin{gather*}
 \ket{\psi_0} = \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i}
@@ -3742,32 +3742,33 @@ the goal is to look at the renormalization of the various couplings in the Hamil
 \beq
 \Delta \ham = \qq{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}},\eta} = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta - \eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
 \eeq
+Since this assumes we have obtained this from \(U_1\), it is fair to tag the \(\eta\) with a suitable label:
+\beq
+\Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_1 - \eta_1 c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
+\eeq
 It is clear that the first term takes into account virtual excitations that start from a filled state (\(\hat n_{q\beta}=1\) initially) - such a term is said to be a part of the \textit{particle sector}.
 \beq
-\Delta_1 \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta
+\Delta_1 \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_1
 \eeq
 The second term, on the other hand, considers excitations that start from an empty state. They constitute the \textit{hole sector}.
 \beq
-\Delta_0 \ham = -\eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
+\Delta_0 \ham = -\eta_1 c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
 \eeq
-Since the effective Hamiltonian eq.~\ref{final2} was derived with the aim of obtaining the particle sector diagonal part, it makes sense to repeat the calculation but now obtain the unitary from the other equation:
+To write the total renormalization in a particle-hole symmetric form, we can use the relation \(\eta_0=-\eta_1\), such that both the terms will now come with a positive sign:
 \beq
-\ket{\psi_0} &= \rr{1 + {\eta}^\dagger}\ket{0}\ket{\phi_0^i} \implies U_0 = 1 -\eta^\dagger + \eta
+\Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_1 + \eta_0 c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
 \eeq
-We can similarly obtain a renormalised Hamiltonian for this unitary; it comes out to be
+We can make one more manipulation: using eq.~\ref{constraint}, we get
 \beq
-\Delta \ham =\eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}} - c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta
+\Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_1 + \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta}\eta^\dagger_0 
 \eeq
-The hole sector renormalization then comes out to be
+This form of the total renormalization is identical to the one we use in the "Poor Man's scaling"-type of renormalization that was used to get the scaling equations in the Kondo and Anderson models \cite{Anderson},\cite{haldane}. Writing down the forms of \(\eta\) and \(\eta^\dagger\) explicitly, we get
 \beq
-\Delta_0 \ham = \eta c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}
+\Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\frac{1}{\omega_1^0 - \ham^d_0} \text{Tr}\rr{c_{q\beta}^\dagger\ham} c_{q\beta}+ \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta} \frac{1}{\omega_0^1 - \ham^d_1}c_{q\beta}^\dagger\text{Tr}\rr{\ham c_{q\beta}}
 \eeq
-The renormalization due to the entire shell is obtained by summing over all states on the shell. Written out explicitly, they take the forms.
-\beq[deltah]
-\Delta_0 \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_1 - \ham^d_1}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
-\eeq
-\beq[deltap]
-\Delta_1 \ham &= \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_0 - \ham^d_0}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+The renormalization due to the entire shell is obtained by summing over all states on the shell.
+\beq[delta]
+\Delta \ham = \sum_{q\beta}\qq{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\frac{1}{\omega_1^0 - \ham^d_0} \text{Tr}\rr{c_{q\beta}^\dagger\ham} c_{q\beta} + \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta}\frac{1}{\omega_0^1 - \ham^d_1}c_{q\beta}^\dagger\text{Tr}\rr{\ham c_{q\beta}}} 
 \eeq
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we typically employ is that \(\ham^d_{0,1}\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
@@ -4814,7 +4815,7 @@ The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic ener
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
 %}
 }
-
+}
 \section{Anderson Model URG}\label{section4}
 \subsection{Without spin-spin interaction}
 The model is the usual single-impurity Anderson model Hamiltonian.
@@ -4822,50 +4823,47 @@ The model is the usual single-impurity Anderson model Hamiltonian.
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
 To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\) and drop the extra constant part.
-\pb At first order, the rotated Hamiltonian is
+\beq
+\ham = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\eeq
+From eq.~\ref{delta}, the renormalized Hamiltonian is
 \beq[newh]
-\ham_{j-1} = \ham_0 + \sum_{q\beta}\tau_{q\beta}\cc{c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}},\eta_{q\beta}}
+\tilde\ham = \ham_0 + \sum_{q\beta}\qq{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\frac{1}{\omega_1^0 - \ham^d_0} \text{Tr}\rr{c_{q\beta}^\dagger\ham} c_{q\beta} + \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta}\frac{1}{\omega_0^1 - \ham^d_1} c_{q\beta}^\dagger\text{Tr}\rr{\ham c_{q\beta}}}
 \eeq
 \(\ham_0\) is the part of the Hamiltonian that conserves the operator \(\hat n_{q\beta}\).
 \beq[term1]
-\ham_0 = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k<\Lambda_N,\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\ham_0 = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k<\Lambda_N,\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
-We take the full Hamiltonian as our \il{\ham_j}.
 Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \il{\Lambda_N}.
-
 \subsubsection*{Particle Sector}
-The particle sector involves only particle excitations. The state \(q\beta\) is occupied in the intermediate (excited) state. This means that the state must be vacant in the initial state, so we must have \(\epsilon_q > 0\). This contribution will be given by the first term in the anticommutator of eq.~\ref{newh}.
-From the prescription (eq.~\ref{deltap}), the renormalization in the particle sector is
+The particle sector involves only particle excitations. The state \(q\beta\) is occupied in the intermediate (excited) state. This means that the state must be vacant in the initial state, so we must have \(\epsilon_q > 0\). This contribution will be given by the second term inside the summation of eq.~\ref{newh}.
 \beq
-\Delta^+ \ham = \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^D}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+\Delta^+ \ham = \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^d_1}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
 \eeq
-We now compute each of the terms.
-\beq
-\text{Tr}_{q\beta}\rr{\ham c_{q\beta}} &= \sum_{k\sigma} V_k \text{Tr}_{q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}}\\
-				       &= \sum_{k\sigma} V_k c_{d\sigma}\delta_{\sigma\beta}\delta_{kq}\\
-				       &= V_q c_{d\beta}\\
-\text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham } &= V^*_q c^\dagger_{d\beta}
-\eeq
+We have labeled \(\omega_0^1 = \omega_e\). We now compute this term.
+\begin{equation*}
+\begin{gathered}
+\text{Tr}_{q\beta}\rr{\ham c_{q\beta}} = \sum_{k\sigma} V_k \text{Tr}_{q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}} = \sum_{k\sigma} V_k c_{d\sigma}\delta_{\sigma\beta}\delta_{kq} = V_q c_{d\beta}\\
+\text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham } = V^*_q c^\dagger_{d\beta}
+\end{gathered}
+\end{equation*}
 \beq[dham]
-\ham^D &= \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\ham^d &= \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
 \beq
-\text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} &= \sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q
+\ham^d_1 &= \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} = \sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q
 \eeq
 There is a more straightforward way of getting these expressions. Some thought reveals that \(c_{q\beta}^\dagger\text{Tr}_{q\beta}\rr{\ham c_{q\beta}}\) is, by definition, the part of the Hamiltonian that scatters from electrons \textit{not at} \(q\beta\) to \(q\beta\). In other words,\textbf{ it is that off-diagonal part of the Hamiltonian that involves a \(c_{q\beta}^\dagger\)}. That part is, of course, \(V_q c^\dagger_{q\beta}c_{d\beta}\). Similarly, \(\text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\) is the off-diagonal part that has a \(c_{q\beta}\), \(V_q^* c^\dagger_{d\beta}c_{q\beta}\). Finally, the term in the denominator of \(\eta\) is simply the diagonal part of the Hamiltonian, which in our case is the kinetic energies of all the electrons and the impurity diagonal part. The point of this paragraph is that one can write down these terms simply by looking at the Hamiltonian and without carrying out any trace.
+\pb Substituting these into the expression for \(\Delta^+\ham\) gives
 \beq
-\eta_{q\beta} &\equiv \text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^D}\\
-	      &= \text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\omega_e - \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega_e - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q}\hat n_{q\beta}}\\
-	      &= V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega_e - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \hf\epsilon_q}}\\
+\Delta^+ \ham &=\sum_{q\beta}\text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\omega_e - \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
+	      &=\sum_{q\beta}V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega_e - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q}\hat n_{q\beta}}V_q c_{q\beta}^\dagger c_{d\beta}\\
+	      &=\sum_{q\beta}|V_q|^2 c^\dagger_{d\beta}c_{q\beta}c_{q\beta}^\dagger c_{d\beta}\fr{1}{\omega_e - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \hf\epsilon_q}}\\
 \eeq
-At the last step, I dropped the lower shell electrons from the denominator to simplify the calculation. I also replaced \(\hat n_{q\beta}\) with 1 because the propagator has a \(c_{q\beta}\) to the left.
-\pb Note that since this term has a \il{c^\dagger_{d\beta}}, it will survive only when acting on a state with \il{\hat n_{d\beta} = 0}.
+At the last step, I dropped the lower shell electrons from the denominator to simplify the calculation. I also replaced \(\hat n_{q\beta}\) with 1 because the propagator has a \(c_{q\beta}\) to the left. Note that since this term has a \il{c^\dagger_{d\beta}}, it will survive only when acting on a state with \il{\hat n_{d\beta} = 0}.
 Hence we can drop the terms \il{\hat n_{d\ua}\hat n_{d\da}} and \il{\epsilon_{d\beta}\hat n_{d\beta}} in the denominator.
-Putting together the individual pieces, we can now write the whole thing:
 \beq
-\Delta^+ \ham &= \sum_{q\beta}\eta_{q\beta}c^\dagger_{q\beta}\text{Tr}_{q\beta}\rr{\ham c_{q\beta}}\\
-	    &= \sum_{q\beta}V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}V_q c^\dagger_{q\beta}c_{d\beta} \\
+\Delta^+ \ham &= \sum_{q\beta}|V_q|^2 c^\dagger_{d\beta}c_{q\beta}c_{q\beta}^\dagger c_{d\beta}\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}} \\
 	    &= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}\\
 	    &= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\qq{\fr{\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q - \epsilon_{d}} + \fr{1 -\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q }}
 \eeq
@@ -4875,18 +4873,18 @@ In the last step, we replaced \(\hat n_{q\beta}=0\) because we are working with 
 \eeq
 From the expression of \(\Delta^+ \ham\), we see two terms: the first term renormalizes the energy of the doubly-occupied state \(E_2\), while the other term renormalizes the singly-occupied state \(E_1\):
 \beq
-\Delta^+ E_1 &= \sum_{q,\epsilon_q>0}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q}\\
-\Delta^+ E_2 &= 2\sum_{q,\epsilon_q>0}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q - \epsilon_d}
+\Delta^+ E_1 &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q}\\
+\Delta^+ E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q - \epsilon_d}
 \eeq
 \subsubsection*{Hole Sector}
 The hole sector consists of those excitations where the state is occupied in the initial state but vacant in the final state (\(\epsilon_q < 0\)). Again from the prescription, we have
 \beq
 \Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
-	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - \ham^D}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
+	      &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - \ham^d_0}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
 \eeq
-In this sector, the diagonal part \(\ham^D\) is obtained by changing eq.~\ref{dham}: \(\epsilon_q \to -\epsilon_q\) and \(\tau_{q\beta} = -\hf\):
+where we have labeled \(\omega_1^0 = \omega_h\). In this sector, the diagonal part \(\ham^d_0\) is obtained by changing eq.~\ref{dham}: \(\epsilon_q \to -\epsilon_q\) and \(\tau_{q\beta} = -\hf\):
 \beq
-\ham^D = \hf\epsilon_q + \epsilon_d\sum_\sigma\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
+\ham^d_0 = \hf\epsilon_q + \epsilon_d\sum_\sigma\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
 \eeq
 Therefore,
 \beq
@@ -4896,29 +4894,52 @@ Therefore,
 \eeq
 We replaced \(\hat n_{q\beta}=1\) because \(\epsilon_q<0\). The renormalizations in this sector are
 \beq
-\Delta^- E_0 &= 2\sum_{q,\epsilon_q<0}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - \epsilon_d}\\
-\Delta^- E_1 &= \sum_{q,\epsilon_q<0}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - 2\epsilon_d - U}
+\Delta^- E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - \epsilon_d}\\
+\Delta^- E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - 2\epsilon_d - U}
 \eeq
 \(E_0\) is the energy of the vacant state.
-\paragraph{Flow Equations}
-The \(\omega\) have to be determined self-consistently or numerically by searching for fixed points where they become identical to the energy eigenvalues. Presently we replace them with the renormalized diagonal part of the initial state (since the \(\omega\) relate to the Hamiltonian where the electron has already been decoupled, it makes sense to compute them from states which do not have these excitations) to make some qualititative analysis. For the particle sector we have then have
-\beq[abcd]
-\Delta^+ E_1 &= \sum_{q,\epsilon_q>0}\fr{|V_q|^2}{\epsilon_d - \hf\epsilon_q - \hf \epsilon_q} = \sum_{q,\epsilon_q>0}\fr{|V_q|^2}{\epsilon_d - \epsilon_q}\\
-\Delta^+ E_2 &= 2\sum_{q,\epsilon_q>0}\fr{|V_q|^2}{2\epsilon_d + U - \hf \epsilon_q- \hf \epsilon_q - \epsilon_d}= 2\sum_{q,\epsilon_q>0}\fr{|V_q|^2}{\epsilon_d + U - \epsilon_q}
+\subsubsection*{Flow Equations}
+The \(\omega\) have to be determined self-consistently or numerically by searching for fixed points where they become identical to the energy eigenvalues. As a simplification, we set \(\omega_e = \omega_h\).
+\beq
+\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
+\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
+\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
 \eeq
-In the first equation, we replaced \(\omega_e = \epsilon_d - \hf\epsilon_q\), because the impurity must be singly-occupied in the initial state if the term has to renormalize \(E_1\) and the state \(q\beta\) is empty, hence the \(-\hf\epsilon_q\). Similar arguments give
-\beq[defg]
-\Delta^- E_0 &= 2\sum_{q,\epsilon_q<0}\fr{|V_q|^2}{- \epsilon_q - \epsilon_d}\\
-\Delta^- E_1 &= \sum_{q,\epsilon_q<0}\fr{|V_q|^2}{- \hf \epsilon_q - \epsilon_d - U}
+The above equations are just the total renormalizations obtained by adding the particle and hole sector contributions. This is the total change in the Hamiltonian on decoupling the states at the upper and lower edges of the bandwidth. They can be translated into the renormalizations of the quantities \(\epsilon_d\) and \(U\) by using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\).
+\beq
+\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
+\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d} - \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
 \eeq
-These results (eqs.~\ref{abcd} and \ref{defg}) are quoted in \cite{hewson}, and give the familiar one-loop RG equations.
+\subsubsection*{Connection to Poor Man's scaling}
+To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First, for \(U,\epsilon_d \ll \epsilon_q\), we get
+\beq
+\Delta \epsilon_d &= \sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\eeq
+Assuming the upper and lower band edges are symmetrical such that \(\sum_{-D} = \sum_D\), we get \(\Delta \epsilon_d = \Delta U = 0\). 
+\pb In the regime \(U \gg \epsilon_q \gg \epsilon_d\), we get
+\beq
+\Delta \epsilon_d &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\eeq
+Again assuming symmetrical upper and lower edges and \(|\epsilon_q|=D\) and \(\sum_q |V|^2 = \frac{\Delta}{\pi}|\delta D|\), we get
+\beq
+\Delta U &= 0\\
+\delta \epsilon_d &= -\frac{\Delta}{\pi}\fr{1}{\omega - \hf D}
+\eeq
+There we replaced the change symbol \(\Delta\) for \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). If we recall that \(\omega\) was defined as \(\tilde \ham - \ham^i\), we can make a crude estimate of \(\omega\) by ignoring the off-diagonal part and replace it with the renormalized diagonal part of the initial state from which the particle excitations arise (\(\epsilon_q \tau_{q\beta} = -\hf D\):
+\beq
+\delta \epsilon_d &= \frac{\Delta}{\pi}\fr{\delta D}{D}
+\eeq
+This is the one-loop scaling equation.
 \subsubsection{Particle-Hole symmetry}
 For a particle-hole symmetric model, we can substitute \(\omega_e = \omega_h = \omega\). This gives
 \beq
 \Delta^- E_0 &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d} = \Delta^+ E_2\\
 \eeq
 This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
-
+\comm
+{
 \subsection{With Kondo-like interaction}
 The four-Fermi interaction we are considering is of the form
 \beq
@@ -5696,9 +5717,9 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
 	\item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
 	\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
-	\item PMS mostly drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
+	\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
-}
+%\comm{
 \section{Schrieffer-Wolff Transformation in context of URG}
 \subsection{Schrieffer-Wolff transformation as a limit of URG}
 We have a general Hamiltonian
@@ -5931,7 +5952,7 @@ Combining the two terms, we get the total charge-Kondo contribution:
 \ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
 + \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
-%}
+}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 

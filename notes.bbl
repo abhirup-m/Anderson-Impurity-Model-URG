@@ -12,9 +12,13 @@ Kenji Suzuki.
   General Relation between Hermitian and Non-Hermitian Forms —}.
 \newblock {\em Progress of Theoretical Physics}, 68, 1982.
 
-\bibitem{hewson}
-A.~C. Hewson.
-\newblock {\em The Kondo Problem to Heavy Fermions}.
-\newblock Cambridge University Press, 1993.
+\bibitem{Anderson}
+P.~W. Anderson.
+\newblock {\em Phys Rev}, 124, 1961.
+
+\bibitem{haldane}
+F.~D.~M. Haldane.
+\newblock Scaling theory of the asymmetric anderson model.
+\newblock {\em Phys. Rev. Lett.}, 40:416--419, Feb 1978.
 
 \end{thebibliography}
