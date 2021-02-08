@@ -15,7 +15,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-\comm{
+%\comm{
 \section{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
 It shows how strong correlations between electrons give rise to a residual local moment.
@@ -41,7 +41,7 @@ This showed how the couplings would flow as we went to low temperatures, but it 
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
 In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
-Later calculations with Bethe ansatz in 1980 by Andrei and Weigman \cite{Andrei},\cite{Weigman} corroborated Wilson's findings.
+Later calculations with Bethe ansatz in 1980 by Andrei and Weigmann \cite{Andrei},\cite{weigmann} corroborated Wilson's findings.
 \pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Weigman and Tsvelick\cite{Tsvelick}.
 \pb The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one mobile electron at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
 \pb Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
@@ -72,7 +72,7 @@ Since the RG transformations are unitary, all eigenvalues and eigenstates are ke
 	\item \textit{Tractable low-energy effective Hamiltonians}:
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
-The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{section2} lays out the URG formalism and prescription. Section \ref{section3} solves the Kondo model using the URG method. Section \ref{section4} contains the URG analysis of the SIAM.
+The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{urgform} lays out the URG formalism and prescription. Section \ref{kondourg} solves the Kondo model using the URG method. Section \ref{siamurg} contains the URG analysis of the SIAM.
 \section{Preliminaries}\label{section1}
 \subsection{\il{T-}matrix and \il{S-}matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -3042,7 +3042,7 @@ We now make the following assumptions:
 This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
-}
+%}
 \section{Unitary Renormalization Group Method}\label{urgform}
 This section is adapted from ref.\cite{holography1}.
 \subsection{Description of the problem}
@@ -3773,7 +3773,7 @@ The renormalization due to the entire shell is obtained by summing over all stat
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we typically employ is that \(\ham^d_{0,1}\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 %}
-\comm{
+%\comm{
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
@@ -3898,7 +3898,7 @@ For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + 
 
 
 %\comm{
-\section{Kondo Model URG}\label{section3}
+\section{Kondo Model URG}\label{kondourg}
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + \fr{J_z}{2}\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + \fr{J_t}{2}\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
 \eeq
@@ -4815,8 +4815,8 @@ The spectrum of \il{\ham^*_0} can then be thought to be gapped; the kinetic ener
 It is not possible to have a kinetic energy infinitesimally close to the Fermi surface.
 %}
 }
-}
-\section{Anderson Model URG}\label{section4}
+%}
+\section{Anderson Model URG}\label{siamurg}
 \subsection{Without spin-spin interaction}
 The model is the usual single-impurity Anderson model Hamiltonian.
 \beq
@@ -4938,8 +4938,7 @@ For a particle-hole symmetric model, we can substitute \(\omega_e = \omega_h = \
 \Delta^- E_0 &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d} = \Delta^+ E_2\\
 \eeq
 This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
-\comm
-{
+%\comm{
 \subsection{With Kondo-like interaction}
 The four-Fermi interaction we are considering is of the form
 \beq
@@ -5952,7 +5951,7 @@ Combining the two terms, we get the total charge-Kondo contribution:
 \ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
 + \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
-}
+%}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 
