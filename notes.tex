@@ -4927,7 +4927,7 @@ Again assuming symmetrical upper and lower edges and \(|\epsilon_q|=D\) and \(\s
 \Delta U &= 0\\
 \delta \epsilon_d &= -\frac{\Delta}{\pi}\fr{1}{\omega - \hf D}
 \eeq
-There we replaced the change symbol \(\Delta\) for \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). If we recall that \(\omega\) was defined as \(\tilde \ham - \ham^i\), we can make a crude estimate of \(\omega\) by ignoring the off-diagonal part and replace it with the renormalized diagonal part of the initial state from which the particle excitations arise (\(\epsilon_q \tau_{q\beta} = -\hf D\):
+There we replaced the change symbol \(\Delta\) for \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). If we recall that \(\omega\) was defined as \(\tilde \ham - \ham^i\), we can make a crude estimate of \(\omega\) by ignoring the off-diagonal part and replace it with the renormalized diagonal part of the initial state from which the particle excitations arise (\(\epsilon_q \tau_{q\beta} = -\hf D\)):
 \beq
 \delta \epsilon_d &= \frac{\Delta}{\pi}\fr{\delta D}{D}
 \eeq
@@ -5747,7 +5747,7 @@ The second order decoupling condition is thus
 \beq[dec_cond]
 \qq{S,\ham_0} = -\ham_X
 \eeq
-In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = \rr{A + B\hat n_{d\ol\beta}}\rr{c^\dagger_{q\beta}c_{d\beta} - \text{h.c.}}\). Plugging this into the decoupling condition gives
+In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
 \beq
 -\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
 \eeq
@@ -5772,7 +5772,7 @@ The renormalization in the effective Hamiltonian from decoupling a high energy p
 \hf \qq{S,\ham_X} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\\
 		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
-In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state. We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
+In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state (at \(T=0\)). We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
 \beq
 \hf \qq{S,\ham_X} &=-\rr{1 - \hat n_{d\beta}}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U}}
 \eeq
