@@ -4826,7 +4826,7 @@ It is not possible to have a kinetic energy infinitesimally close to the Fermi s
 }
 %}
 \section{Anderson Model URG}\label{siamurg}
-\subsection{Without spin-spin interaction}
+\subsection{Setting up the terms in the URG}
 The model is the usual single-impurity Anderson model Hamiltonian.
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
@@ -4844,7 +4844,7 @@ From eq.~\ref{delta}, the renormalized Hamiltonian is
 \ham_0 = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k<\Lambda_N,\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
 Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \il{\Lambda_N}.
-\subsubsection*{Particle Sector}
+\subsection{Particle Sector}
 The particle sector involves only particle excitations. The state \(q\beta\) is occupied in the intermediate (excited) state. This means that the state must be vacant in the initial state, so we must have \(\epsilon_q > 0\). This contribution will be given by the second term inside the summation of eq.~\ref{newh}.
 \beq
 \Delta^+ \ham = \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^d_1}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
@@ -4885,7 +4885,7 @@ From the expression of \(\Delta^+ \ham\), we see two terms: the first term renor
 \Delta^+ E_1 &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q}\\
 \Delta^+ E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q - \epsilon_d}
 \eeq
-\subsubsection*{Hole Sector}
+\subsection{Hole Sector}
 The hole sector consists of those excitations where the state is occupied in the initial state but vacant in the final state (\(\epsilon_q < 0\)). Again from the prescription, we have
 \beq
 \Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
@@ -4907,49 +4907,90 @@ We replaced \(\hat n_{q\beta}=1\) because \(\epsilon_q<0\). The renormalizations
 \Delta^- E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - 2\epsilon_d - U}
 \eeq
 \(E_0\) is the energy of the vacant state.
-\subsubsection*{Flow Equations}
-The \(\omega\) have to be determined self-consistently or numerically by searching for fixed points where they become identical to the energy eigenvalues. As a simplification, we set \(\omega_e = \omega_h\).
+\subsection{Flow Equations}
+The \(\omega\) have to be determined self-consistently or numerically by searching for fixed points where they become identical to the energy eigenvalues. Since \(\omega\) is defined as \(\omega \equiv \tilde \ham - \ham^i\), we can replace the diagonal part of \(\tilde \ham\) with the renormalized initial energy of the state, and the extra renormalization by a new \(\omega\). This is necessary because while the denominator depends on the value of \(\hat n_{d\ol\beta}\), the numerator (\(T,T^\dagger\)) does not, and this affects the \(U \hat n_{d\beta}\hat n_{d\ol\beta}\) term in the denominator. This is also in line with the fact that each term, in principle, has a separate \(\omega\). Denoting the \(\omega\) in the denominator of \(\Delta E_j\) by \(\omega_j\), we then write \(\omega_j = E_j + \omega\), \(E_j\) being the initial energy of that state.
 \beq
-\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
-\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
-\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\omega_0 &= \omega\\
+\omega_1 &= \omega + \epsilon_d\\
+\omega_2 &= \omega + 2\epsilon_d + U 
+\eeq
+This gives
+\beq
+\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
+\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
+\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
 \eeq
 The above equations are just the total renormalizations obtained by adding the particle and hole sector contributions. This is the total change in the Hamiltonian on decoupling the states at the upper and lower edges of the bandwidth. They can be translated into the renormalizations of the quantities \(\epsilon_d\) and \(U\) by using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\).
 \beq
-\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d}\\
-\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d} - \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q - 2\epsilon_d - U} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
+\Delta U &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U} + 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} \\
+	 &\quad - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}
 \eeq
-\subsubsection*{Connection to Poor Man's scaling}
-To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First, for \(U,\epsilon_d \ll \epsilon_q\), we get
+\subsection{Connection to Poor Man's scaling}\label{pms}
+To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
 \beq
-\Delta \epsilon_d &= \sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
-\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
+\Delta U &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}
 \eeq
 Assuming the upper and lower band edges are symmetrical such that \(\sum_{-D} = \sum_D\), we get \(\Delta \epsilon_d = \Delta U = 0\). 
-\pb In the regime \(U \gg \epsilon_q \gg \epsilon_d\), we get
+\pb In the regime \(U \gg \epsilon_q \gg \epsilon_d\), the doubly-occupied state is far above the bandwidth. We can now ignore the terms that have \(U\) in the denominator. We get
 \beq
-\Delta \epsilon_d &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
-\Delta U &= 2\sum_{q,|\epsilon_q|=D}\fr{|V_q|^2}{\omega - \hf \epsilon_q} - \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf \epsilon_q}\\
+\Delta \epsilon_d &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
+\Delta U &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}  - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} 
 \eeq
-Again assuming symmetrical upper and lower edges and \(|\epsilon_q|=D\) and \(\sum_q |V|^2 = \frac{\Delta}{\pi}|\delta D|\), we get
+Again assuming symmetrical upper and lower edges, and isotropic dispersion \(\epsilon_q=D\) and \(\sum_q |V|^2 = \frac{\Delta}{\pi}|\delta D|\), we get
 \beq
 \Delta U &= 0\\
 \delta \epsilon_d &= -\frac{\Delta}{\pi}\fr{1}{\omega - \hf D}
 \eeq
-There we replaced the change symbol \(\Delta\) for \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). If we recall that \(\omega\) was defined as \(\tilde \ham - \ham^i\), we can make a crude estimate of \(\omega\) by ignoring the off-diagonal part and replace it with the renormalized diagonal part of the initial state from which the particle excitations arise (\(\epsilon_q \tau_{q\beta} = -\hf D\)):
+There we replaced the difference symbol \(\Delta\) with \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). For low quantum fluctuations, we can ignore the renormalization in the couplings and replace \(\omega\) with the initial conduction electron energy: \(\omega = \epsilon_q\tau_{q\beta} = -\hf D\).
 \beq
 \delta \epsilon_d &= \frac{\Delta}{\pi}\fr{\delta D}{D}
 \eeq
 This is the one-loop scaling equation.
 \subsubsection{Particle-Hole symmetry}
-For a particle-hole symmetric model, we can substitute \(\omega_e = \omega_h = \omega\). This gives
+The Anderson model Hamiltonian, eq.~\ref{andham}, has an impurity particle-hole symmetry for a certain condition of the couplings. To see this, we apply the particle-hole transformation \(c_k \to c^\dagger_k, c_d \to -c^\dagger_d\) to the Hamiltonian. Since we are looking at the impurity symmetry, we will only look at the terms involving the impurity. The particle-hole symmetry of the conduction bath is a separate thing and that requires a specific lattice. Hence we will not consider kinetic energy term in this discussion. The rest of the terms transform as
+\begin{gather}
+	\epsilon_d \sum_\sigma \hat n_{d\sigma} \to 2\epsilon_d - \epsilon_d \sum_\sigma \hat n_{d\sigma}\label{imp1}\\
+U \hat n_{d\ua}\hat n_{d\da} \to U \hat n_{d\ua}\hat n_{d\da} - U\sum_\sigma \hat n_{d\sigma} + U\label{imp2}\\
+\sum_{k\sigma}V(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \to \sum_{k\sigma}-V(k)c_{k\sigma}c^\dagger_{d\sigma} + hc = \sum_{k\sigma}V^*(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \label{hop}\\
+S^z\sum_{kq}s^z_{kq} \to \rr{-S^z}\sum_{kq}\rr{-s^z_{kq}} = S^z\sum_{kq}s^z_{kq}\label{spin1}\\
+S^{\pm}\sum_{kq}s^{\mp}_{kq} \to \rr{-S^{\pm}}\sum_{kq}\rr{-s^{\mp}_{kq}} = S^{\pm}\sum_{kq}s^{\mp}_{kq}\label{spin2}
+\end{gather}
+The transformation of the spin terms, eqs.~\ref{spin1} and \ref{spin2}, can be understood from the fact that since a spin degree of freedom can be written in terms of the number operator as \(\hat S = \hat n - \hf\), it must transform by flipping its sign: \(\hat S = \hat n - \hf \to \hf - \hat n = -\hat S\). The spin terms are thus invariant under the particle-hole transformation. The impurity-bath hopping term can be made symmetric by making \(V(k)\) real; then we would have, from eq.~\ref{hop},
 \beq
-\Delta^- E_0 &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf \epsilon_q - \epsilon_d} = \Delta^+ E_2\\
+V(k)\rr{c^\dagger_{k\sigma}c_{d\sigma} + c^\dagger_{d\sigma}c_{k\sigma}}\to V(k)\rr{c^\dagger_{d\sigma}c_{k\sigma} + c^\dagger_{k\sigma}c_{d\sigma}}
 \eeq
-This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
+The impurity diagonal terms, \(\epsilon_d\) and \(U\), require a specific condition. Combining eqs.~\ref{imp1} and \ref{imp2},
+\beq
+\epsilon_d\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da} \to \rr{-\epsilon_d - U}\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
+\eeq
+We dropped some constant terms in the transformed Hamiltonian. For particle-hole symmetry, the left and right hand sides must be same. The required condition is thus 
+\beq[phs]
+\epsilon_d = -\epsilon_d - U \implies \epsilon_d + \hf U = 0
+\eeq
+\begin{minipage}{260pt}
+	This same condition can be obtained in a more physical way. If we consider the singly-occupied state of the impurity as the reference state, the doubly-occupied state is the particle-excitation and the vacant state is the hole excitation. The energy of this particle state is \(E_2 = 2\epsilon_d + U\) and that of the hole state is \(E_0 = 0\). Particle-hole symmetry then requires the particle and hole levels to be degenerate, which means \(E_2 = E_0\), and we recover the condition eq.~\ref{phs}.
+\end{minipage}
+\hspace*{15pt}\begin{minipage}{200pt}
+	\centering\includegraphics[scale=0.3]{phsymm.png}
+	\captionof{figure}{Particle and hole excitations of the impurity}
+\end{minipage}
+\pb Since the URG is unitary, if we start from a model that is particle-hole symmetric, the RG equations should uphold that symmetry. What this means is that if we have \(\epsilon_d + \hf U = 0\) in the bare model, the new couplings should also satisfy \(\epsilon_d^\prime + \hf U^\prime = 0\). This means we must have 
+\beq
+\Delta\rr{\epsilon_d + \hf U} = 0
+\eeq
+The quantity \(\gamma = \epsilon_d + \hf U\) is thus an RG-invariant for the particle-hole symmetric model; it does not change under the RG flow. It is often referred to as the asymmetry parameter; it quantifies the asymmetry in the model. We need to check if our equations satisfy this. Looking at the RG equations for \(\epsilon_d\) and \(U\), we can find the RG equation for the asymmetry parameter. The slightly easier way is to just note that the renormalization in \(E_2\) should be equal to the renormalization in \(E_0\), in order for p-h symmetry to hold.
+\beq
+\Delta E_2 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D + \epsilon_d + U}\\
+\Delta E_0 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D - \epsilon_d}\\
+\eeq
+If we start with a particle-hole symmetric model, we will have \(-\epsilon_d = \epsilon_d + U\). Substituting that gives \(\Delta E_2= \Delta E_0\). This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
 %\comm{
-\subsection{With Kondo-like interaction}
-The four-Fermi interaction we are considering is of the form
+\section{Anderson-Kondo model URG}
+In order to obtain a renormalization in \(V\), we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
+\subsection{Spin-spin interaction}
+We first consider a general four-Fermion interaction of the form
 \beq
 \ham_I = \sum_{k,k^\prime ,\sigma_i}u c^\dagger_{d\sigma_2}c_{d\sigma_4}c_{k^\prime \sigma_3}c^\dagger_{k\sigma_1}\delta_{\rr{\sigma_1 + \sigma_2 = \sigma_3 + \sigma_4}}
 \eeq
@@ -5011,7 +5052,7 @@ where \(\tau \equiv \hat n - \hf\) and \(\mc{C}\) is non-dynamic and will hence 
 \ham_D = \epsilon_q \tau_{q\beta} + 2J_z S^z_d s^z_q  + H_{imp}\\
 \eeq
 
-\subsubsection{Particle sector}
+\subsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
 \beq
 \Delta^+ \ham_N = \sum_{q\beta}\qq{V_q^* c^\dagger_{d\beta}c_{q\beta} +  J_z \beta S^z_d\sum_kc^\dagger_{k\beta}c_{q\beta} + J_t\sum_{k}c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}}\times\fr{1}{\hat \omega^+ - \ham_D}\\
@@ -5174,7 +5215,7 @@ H_1 = \hf \epsilon_q - \hf J_z + \epsilon_d
 		  &= J_t^2\sum_{q\beta k k\prime}\rr{1 - \hat n_{q\beta}} \hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\fr{1}{\omega^+  - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
 		  &= J_t^2\sum_{q\beta k k\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^+ - \hf \epsilon_q - \epsilon_d + \hf J_z}
 \eeq
-\subsubsection*{Scaling equations for particle sector}
+\subsection{Scaling equations for particle sector}
 The scaling equations are obtained as follows. The first term gives the renormalization in \(\epsilon_d\) and \(U\). The renormalization in \(U\) will come with a factor of 2 because \(\sum_\beta \hat n_{d\beta}\hat n_{d\ol\beta} = 2\hat n_{d\ua}\hat n_{d\da}\). Terms 2 and 3 renormalize \(V^*\). Terms 4 and 5 renormalize \(V\). Since these renormalizations are same, we write just one them. Also, in the terms 2 through 5, the renormalization is actually that of \(V\hat n_{d\ol\beta}\), not strictly of \(V\). In other words, if we split \(V\) as \(V = V \qq{\hat n_{d\ol\beta} + \rr{1 - \hat n_{d\ol\beta}}} = V^1 \hat n_{d\ol\beta} + V^0\rr{1 - \hat n_{d\ol\beta}}\), then these terms will renormalize \(V^1\). However, we do not make this distinction here because in the particle sector, we will get a renormalization in \(V^0\), and that will turn out to be the same, so we can just talk about the renormalization in \(V\) instead of splitting it. Terms 7 and 8 renormalize \(J_t\) and term 9 renormalizes the anti-parallel part of \(J_z\), that is, the part in which the conduction electron has spin \(\ol\beta\). The other term, with spin \(\beta\) will renormalize in the hole sector. Term 6 can be ignored for now because it will get canceled by an opposite term in the hole sector, see \ref{vanish}. Otherwise it will renormalize \(J_z\).
 \begin{flalign}
 \Delta^+ \epsilon_d &=  \sum_{q}|V(q)|^2\fr{1}{\omega^+ - \hf \epsilon_q}\\
@@ -5183,7 +5224,7 @@ The scaling equations are obtained as follows. The first term gives the renormal
 \Delta^+ J_t &= -J_z J_t\sum_{q}\fr{1}{\omega^+ - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
 \Delta^+ J_z &= -J_t^2 \sum_{q}\fr{1}{\omega^+ - \hf \epsilon_q - \epsilon_d + \hf J_z}
 \end{flalign}
-\subsubsection{Hole sector}
+\subsection{Hole sector}
 The renormalization in the Hamiltonian in the hole sector is
 \beq
 \Delta^- \ham_N = \sum_{q\beta}\qq{V_q c^\dagger_{q\beta}c_{d\beta} + J_z\beta S^z_d \sum_{k\sigma}\hat n_{d\sigma} c_{k\beta} c^\dagger_{q\beta} + J_t\sum_{k\sigma}c^\dagger_{d\ol\beta}c^\dagger_{q\beta}c_{d\beta}c_{k\ol\beta}}\times\fr{1}{\hat \omega^- - \ham_D^-}\\
@@ -5340,7 +5381,7 @@ H_1 = -\hf\epsilon_q - \hf J_z + \epsilon_d
 		  &=-J_t^2 \sum_{q\beta kk^\prime}c^\dagger_{k\beta}c_{k^\prime\beta}\fr{\hat n_{d\beta}\rr{1 - \hat n_{d\ol\beta}}}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf J_z} + J_t^2\sum_{q k \beta}\fr{\hat n_{d\ol\beta}\rr{1 - \hat n_{d\beta}}}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf J_z}\\
 \eeq
 
-\subsubsection*{Scaling equations for hole sector}
+\subsection{Scaling equations for hole sector}
 The scaling equations are obtained similarly as in the particle sector. The important things to note are the following. The first two terms in term 6 here cancel the term 6 of the particle sector. The last two terms in term 6 and the last term in term 9 renormalize \(U\) and \(\epsilon_d\).
 \begin{flalign*}
 	\Delta^- \epsilon_d &=  \sum_{q}|V(q)|^2\rr{\fr{1}{\omega^- - \hf\epsilon_q - 2\epsilon_d - U} - \fr{2}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}} + \\
@@ -5351,73 +5392,6 @@ The scaling equations are obtained similarly as in the particle sector. The impo
 \Delta^- J_t &= -J_z J_t\sum_{q}\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}\\
 \Delta^- J_z &= -J_t^2 \sum_{q}\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf  J_z}
 \end{flalign*}
-\subsection{Particle-Hole symmetry}
-The Anderson model Hamiltonian, eq.~\ref{andham}, has an impurity particle-hole symmetry for a certain condition of the couplings. To see this, we apply the particle-hole transformation \(c_k \to c^\dagger_k, c_d \to -c^\dagger_d\) to the Hamiltonian. Since we are looking at the impurity symmetry, we will only look at the terms involving the impurity. The particle-hole symmetry of the conduction bath is a separate thing and that requires a specific lattice. Hence we will not consider kinetic energy term in this discussion. The rest of the terms transform as
-\begin{gather}
-	\epsilon_d \sum_\sigma \hat n_{d\sigma} \to 2\epsilon_d - \epsilon_d \sum_\sigma \hat n_{d\sigma}\label{imp1}\\
-U \hat n_{d\ua}\hat n_{d\da} \to U \hat n_{d\ua}\hat n_{d\da} - U\sum_\sigma \hat n_{d\sigma} + U\label{imp2}\\
-\sum_{k\sigma}V(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \to \sum_{k\sigma}-V(k)c_{k\sigma}c^\dagger_{d\sigma} + hc = \sum_{k\sigma}V^*(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \label{hop}\\
-S^z\sum_{kq}s^z_{kq} \to \rr{-S^z}\sum_{kq}\rr{-s^z_{kq}} = S^z\sum_{kq}s^z_{kq}\label{spin1}\\
-S^{\pm}\sum_{kq}s^{\mp}_{kq} \to \rr{-S^{\pm}}\sum_{kq}\rr{-s^{\mp}_{kq}} = S^{\pm}\sum_{kq}s^{\mp}_{kq}\label{spin2}
-\end{gather}
-The transformation of the spin terms, eqs.~\ref{spin1} and \ref{spin2}, can be understood from the fact that since a spin degree of freedom can be written in terms of the number operator as \(\hat S = \hat n - \hf\), it must transform by flipping its sign: \(\hat S = \hat n - \hf \to \hf - \hat n = -\hat S\). The spin terms are thus invariant under the particle-hole transformation. The impurity-bath hopping term can be made symmetric by making \(V(k)\) real; then we would have, from eq.~\ref{hop},
-\beq
-V(k)\rr{c^\dagger_{k\sigma}c_{d\sigma} + c^\dagger_{d\sigma}c_{k\sigma}}\to V(k)\rr{c^\dagger_{d\sigma}c_{k\sigma} + c^\dagger_{k\sigma}c_{d\sigma}}
-\eeq
-The impurity diagonal terms, \(\epsilon_d\) and \(U\), require a specific condition. Combining eqs.~\ref{imp1} and \ref{imp2},
-\beq
-\epsilon_d\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da} \to \rr{-\epsilon_d - U}\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
-\eeq
-We dropped some constant terms in the transformed Hamiltonian. For particle-hole symmetry, the left and right hand sides must be same. The required condition is thus 
-\beq[phs]
-\epsilon_d = -\epsilon_d - U \implies \epsilon_d + \hf U = 0
-\eeq
-\begin{minipage}{260pt}
-	This same condition can be obtained in a more physical way. If we consider the singly-occupied state of the impurity as the reference state, the doubly-occupied state is the particle-excitation and the vacant state is the hole excitation. If we measure the energies with w.r.t this singly occupied state, the energy of the particle state is \(E_p = 2\epsilon_d + U - \epsilon_d = \epsilon_d + U\) and that of the hole state is \(E_h = 0 - \epsilon_d = - \epsilon_d\). Particle-hole symmetry then requires the particle and hole levels to be degenerate, which means \(E_p = E_h\), and we recover the condition eq.~\ref{phs}.
-\end{minipage}
-\hspace*{15pt}\begin{minipage}{250pt}
-	\centering\includegraphics[scale=0.35]{phsymm.png}
-	\captionof{figure}{Particle and hole excitations of the impurity}
-\end{minipage}
-\pb Since the URG is unitary, if we start from a model that is particle-hole symmetric, the RG equations should uphold that symmetry. What this means is that if we have \(\epsilon_d + \hf U = 0\) in the bare model, the new couplings should also satisfy \(\epsilon_d^\prime + \hf U^\prime = 0\). This means we must have 
-\beq
-\Delta\rr{\epsilon_d + \hf U} = 0
-\eeq
-The quantity \(\gamma = \epsilon_d + \hf U\) is thus an RG-invariant for the particle-hole symmetric model; it does not change under the RG flow. It is often referred to as the asymmetry parameter; it quantifies the asymmetry in the model. We need to check if our equations satisfy this. Looking at both the particle and hole equations, we can find the RG equation for the asymmetry parameter
-\beq
-\Delta^+\gamma\equiv\Delta^+\rr{\epsilon_d + \hf U} &= \sum_q |V(q)|^2\fr{1}{\omega^+ - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
-\Delta^-\gamma\equiv\Delta^-\rr{\epsilon_d + \hf U} &= -\sum_q |V(q)|^2\fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \hf J_z}
-\eeq
-\comm{
-At this point, we must note that \(\omega^+\) and \(\omega^-\), the quantum fluctuation energy scales, for the particle and hole sectors are not entirely independent. Recall that if we require the RG to be unitary, we must have \(\eta(\omega^-) = \rr{\eta^\dagger(\omega^+)}^\dagger\). This condition constrains the relation between \(\omega^\pm\). To see what the relation is, we can demand \(\Delta \gamma \equiv \Delta^+ \gamma + \Delta^- \gamma = 0\). That gives
-\beq[phcond]
-\omega^+  - \hf \epsilon_q = \omega^-  + \hf \epsilon_q
-\eeq
-}
-For a particle-hole symmetric bare model, we can set \(\omega^+ = \omega^-\). That gives \(\Delta \gamma = 0\).
-
-\subsection{"Poor Man's" one-loop form for asymmetric Anderson model}
-In the limit of \(\epsilon_d, J \ll D \ll U \), the equation for \(\epsilon_d\) becomes, up to lowest order in \(J\),
-\beq
-\delta \epsilon_d = -\sum_q \fr{|V_q|^2 }{\omega^+ - \epsilon_q}
-\eeq
-If we assume an isotropic dispersion (\(\epsilon_q = D\)), where \(D\) is the current(running) bandwidth and a momentum-independent hopping potential \(V\),
-\begin{gather*}
-	\delta \epsilon_d = -\fr{1}{\omega^+ - D}\sum_q |V_q|^2 = -\fr{1}{\omega^+ - D}\rho(D) |\delta D| |V|^2
-\end{gather*}
-There we used 
-\beq
-\sum_q = \sum_{\epsilon_q\in\qq{D- |\delta D|, D}} = \rho(D) |\delta D|
-\eeq
-where \(\rho(D)\) is the single-spin density of states at the energy \(D\) and \(|\Delta D|\) is the thickness of the band that we disentangled at this step. In the literature, we usually define a quantity that denotes the amount of hybridisation between the impurity and the bath: \(\Delta \equiv \pi \rho(D) |V|^2\). In terms of this \(\Delta\), we get
-\beq
-\delta \epsilon_d = -\fr{\Delta |\delta D|}{\omega^+ - D}
-\eeq
-For low energy excitations, we can use \(\omega^+ \ll D\). Further, since we have defined \(\delta \epsilon_d = \epsilon_d(D-|\delta D|) - \epsilon_d(D)\), we must have \(\delta D = D - |\delta D| - D = - |\delta D|\).
-\beq
-\dv{\epsilon_d}{D} = -\fr{\Delta}{D}
-\eeq
-This is the form obtained from Poor Man's scaling of the asymmetric Anderson model.
 \subsection{Vanishing of \(\Delta^6 \ham\)}\label{vanish}
 If take the scattering term \(J_z \beta S^z_d c^\dagger_{q\beta}c_{k^\prime\beta}\) and construct the \(\eta\) and \(\eta^\dagger\) operators from them,
 \beq
@@ -5433,22 +5407,57 @@ Comparing the two expressions gives
 \fr{1}{\omega^- - \hf\epsilon_q - \epsilon_d + \beta J_z S^z_d} = \fr{1}{\omega^+ - \hf\epsilon_q - H_\text{imp} - \beta J_z S^z_d}
 \eeq
 Substituting this equation into either \(\Delta^+_6\) or \(\Delta^-_6\) gives \(\Delta^+_6 \ham = -\Delta^-_6 \ham\), so \(\Delta_6 \ham = 0\).
+\subsection{Total RG Equations}
+Just as in the previous section, we replace \(\omega^\pm_j\) with \(\omega + E_j\) in the first term in each sector. For the rest of the equations, we set \(\omega^+ = \omega^- = \omega\). We can ignore the sixth term in each sector since they add up to zero as shown in the previous section. We then get, after adding contributions from both sectors,
+\beq
+\Delta \epsilon_d &=  \sum_{\epsilon_q = D}|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d} + \sum_{\epsilon_q = -D}|V(q)|^2\rr{\fr{1}{\omega - \hf\epsilon_q - \epsilon_d - U} - \fr{2}{\omega - \hf\epsilon_q - \epsilon_d + \hf  J_z}} \\
+		    &\quad+ \sum_{\epsilon_q=-D\atop{k<q}}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
+\Delta U &=  \sum_{\epsilon_q = D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d + U + \hf {J_z}} - \sum_{\epsilon_q = D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d}\\
+	   &+\sum_{\epsilon_q = -D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf {J_z}} - \sum_{\epsilon_q = -D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d - U}\\
+	   &-\sum_{\epsilon_q=-D,\atop{k<q}}2\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
+\Delta V &= -\rr{\hf J_z + J_t}\sum_{|\epsilon_q|=D}V_q\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\Delta J_t &= -J_z J_t\sum_{|\epsilon_q|=D}\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\Delta J_z &= -J_t^2 \sum_{|\epsilon_q|=D}\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\eeq
+\subsection{Particle-Hole symmetry}
+As discussed in the previous section, the particle-hole symmetry condition is \(\epsilon_d + U = -\epsilon_d\). We henceforth also assume that \(\sum_{D} = \sum_{-D}\) and drop the indices on the summations. The RG equations for \(\epsilon_d\) and \(U\)  then look like,
+\beq
+\Delta \epsilon_d &=  2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d} - 2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf\epsilon_q - \epsilon_d + \hf  J_z} \\
+		  &\quad+ \sum_{q,k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
+\hf\Delta U &=  2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf {J_z}} - 2\sum_{q} |V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d}\\
+	    &-\sum_{q,k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
+\eeq
+The asymmetry parameter \(\gamma = \epsilon_d + \hf U\) is thus invariant under the flow.
+\beq
+\implies \Delta \rr{\epsilon_d + \hf U} &= 0
+\eeq
+Starting from a particle-hole symmetric model keeps you on a symmetric flow.
+\subsection{"Poor Man's" one-loop form for asymmetric Anderson model}
+In the limit of \(\epsilon_d, J \ll D \ll U \), the equation for \(\epsilon_d\) becomes, up to lowest order in \(J\),
+\beq
+\delta \epsilon_d = -\sum_q \fr{|V_q|^2 }{\omega^+ - \hf\epsilon_q}
+\eeq
+This is the same form that we had in the pure SIAM, and we can again repeat what we did in \ref{pms}.
 \subsection{SU(2) invariance and Kondo model one-loop form}
 Setting \(J_z = J_t = \hf J\) makes the interaction \(SU(2)\) symmetric; the last two RG equations can then be written in the common form:
 \beq
-2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{q}\fr{1}{\omega^+ - \hf\epsilon_q - \epsilon_d + \fr{1}{4}J}
+2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{|\epsilon_q| = D}\fr{1}{\omega - \hf\epsilon_q - \epsilon_d + \fr{1}{4}J}
 \eeq
-In order to reach the Kondo RG equations, we need to make the appropriate physical change; the difference between the Anderson model and the Kondo model is that the impurity charge fluctuations are frozen at single occupation in the latter. This means that the ground state of the impurity is now at \(\epsilon_d\). We can take account of this change by now measuring \(\omega^+\) from the single occupation energy itself, \(\epsilon_d\). Hence we should redefine \(\omega^+ - \epsilon_d \to \tilde \omega^+\). 
+In order to reach the Kondo RG equations, we need to make the appropriate physical change; the difference between the Anderson model and the Kondo model is that the impurity charge fluctuations are frozen at single occupation in the latter. This means that the ground state of the impurity is now at \(\epsilon_d\). We can take account of this change by now measuring \(\omega\) from the single occupation energy itself, \(\epsilon_d\). Hence we should redefine \(\omega - \epsilon_d \to \tilde \omega\). 
 \beq[and2kondo]
-2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{q}\fr{1}{\tilde \omega^+ - \hf\epsilon_q + \fr{1}{4}J}
+2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{|\epsilon_q|=D}\fr{1}{\tilde \omega - \hf\epsilon_q + \fr{1}{4}J}
 \eeq
-If we now consider low energy excitations (\(\tilde\omega^+ - \epsilon_q \approx  - \epsilon_q\)) and expand the denominator in powers of \(J\) and keep only the lowest order, we get
+For low quantum fluctuations we can ignore the renormalization and replace \(\tilde \omega\) with the bare initial energy value \(-\hf\epsilon_q\).
 \beq
-\Delta J = -J^2 \sum_q \fr{1}{-\hf\epsilon_q}
+\Delta J = - J^2 \sum_{|\epsilon_q|=D}\fr{1}{-\epsilon_q + \fr{1}{4}J}
+\eeq
+We can now expand the denominator in powers of \(J\) and keep only the lowest order, we get
+\beq
+\Delta J = -J^2 \sum_{|\epsilon_q|=D} \fr{1}{-\epsilon_q}
 \eeq
 For an isotropic dispersion, we can use \(\epsilon_q = D\). The sum can then be evaluated as
 \beq
-\sum_q = \rho(D)\Delta D
+\sum_{|\epsilon_q|=D} = \sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D} = 2\rho(D)|\Delta D|
 \eeq
 The flow equation of \(J\) becomes
 \beq
@@ -5458,84 +5467,6 @@ This is the familiar one-loop Kondo flow equation obtained from Poor man's scali
 \beq
 \dv{J}{\ln D} = -2J^2 \rho(D)
 \eeq
-\subsection{Connection with Kondo URG result}
-Recall eq.~\ref{and2kondo}.
-\beq
-\Delta J = - J^2 \sum_{q}\fr{1}{\tilde \omega^+ - \hf\epsilon_q + \fr{1}{4}J}
-\eeq
-For \(\tilde \omega^+ = 0\) and \(\epsilon_q = D\), we get
-\beq
-\Delta J = 2J^2 \sum_{q}\fr{1}{D - \fr{1}{2} J}
-\eeq
-This has the same fixed point structure as the Kondo URG scaling equation.
-\comm{
-\subsection{Fixed points for the symmetric Anderson model with \(J_z = J_t\)}
-We first consider the simpler case where \(\epsilon_d + \hf U = 0\), \(J_z = J_t = \hf J\) and \(\omega^+ = \omega^-\). We also assume an isotropic dispersion \(\epsilon_q =D\) and momentum independent potential \(V(q)\equiv V\). For convenience, we define \(n(D) = \sum_{\epsilon_q=D}\) and \(\mc{V}(D) = \sum_{\epsilon_k<D}\). The former is the number of states on the energy shell at \(D\), while the latter is the number of states inside the energy shell \(D\). The combined (particle+hole) scaling equations become:
-\begin{flalign*}
-	\Delta U &= -\fr{|V|^2 n(D)\rr{2U +  J}}{\rr{\omega - \hf D + \hf U + \fr{1}{4} J}\rr{\omega - \hf D}} - \fr{\fr{1}{8}J^2n(D) \mc{V}(D)\qq{6\rr{\omega - \hf D + \hf U} - J}}{\rr{\omega - \hf D + \hf U + \fr{1}{4}J}\rr{\omega - \hf D + \hf U - \fr{1}{4}J}}\\
-\Delta V &= -\fr{5}{8}J V n(D)\fr{1}{\omega - \hf D + \hf U + \fr{1}{4} J}\\
-\Delta J &= -J^2 n(D) \fr{1}{\omega - \hf D + \hf U + \fr{1}{4} J}\\
-\end{flalign*}
-\subsubsection*{In absence of Kondo-type interaction (\(\pmb{J=0}\))}
-We first consider the case where \(J=0\). The only relevant equation is then that of \(U\), because \(V\) and \(J\) will then not flow.
-\beq
-\Delta U &= \fr{-2|V|^2 U n(D)}{\rr{\omega - \hf D}\rr{\omega - \hf D + \hf U}}
-\eeq
-To get a feel for this equation, we look at a specific value of \(\omega = \hf U\). For this value,
-\beq
-\Delta U &= \fr{|V|^2 U n(D)}{D\rr{D - \hf U}}
-\eeq
-If we start with bare values \(U\) and \(D\) such that \(U <  2D\), then \(U\) is relevant, and it will increase. Meanwhile, the bandwidth will decrease as we go to lower energies. The fixed point is achieved when the denominator becomes zero.
-\beq
-U^* = 2 D^*
-\eeq
-The opposite thing happens if we start with bare values such that  \(U >  2D\). Then, \(U\) is irrelevant and it will decrease until it reaches the same fixed point condition. This fixed point, characterized by \(U^* = 2 D^*\) and \(J=0\), is the \textit{local moment fixed point}. It is stable along both directions in the \(U-\)axis. It is however unstable to perturbations in \(J\), as we will see later.
-\pb
-There is another fixed point in this picture, the free orbital fixed point at \(U=V=0\). It is unstable in all directions. The two fixed points and the flows are schematically shown in fig.~\ref{lmflow}. One specific flow line for \(J=0\) is shown in fig.~\ref{fo2lm}.
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{lmflow.png}
-\caption{Flows towards local moment for \(J=0\)}
-\label{lmflow}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{fo2lm.png}
-\caption{Plot of a particular flow from free orbital (leftmost) to local moment (rightmost) for \(J=0\)}
-\label{fo2lm}
-\end{figure}
-\subsubsection*{With the Kondo-type interaction (\(\pmb{J>0})\)}
-In this case, all three equations will come into play. Using the value \(\omega^- = \hf U + \hf J\), the equations become
-\begin{flalign*}
-\Delta U &= \fr{|V|^2\rr{U + \hf J}n(D)}{\rr{D - \fr{1}{4}J}\rr{D - \hf U - \hf J}} + \fr{1}{8} \fr{J^2n(D)\mc{V}(D)\qq{6D - 2J}}{\rr{D - \fr{1}{4}J}\rr{D - \fr{3}{4}J}}\\
-\Delta V &= \fr{3}{4}Jn(D)V\fr{1}{D - \fr{1}{4}J}\\
-\Delta J &= \hf J^2 n(D)\fr{1}{D - \fr{1}{4}J}
-\end{flalign*}
-We can now see how the couplings will flow if we start at the local moment fixed point and add a small perturbation \(J\). Because of the condition for the local moment fixed point, we know that \(D^* - \hf U^* = 0\). Also, close to the local moment, \(J\) is small so we can ignore the \(J^2\) term. The equations thus become
-\begin{flalign*}
-\Delta U &= -2\fr{|V|^2\rr{U^* + \hf J}n(D)}{\rr{D^* - \fr{1}{4}J}J} < 0\\
-\Delta V &= \fr{3}{4}Jn(D)V\fr{1}{D^* - \fr{1}{4}J} > 0\\
-\Delta J &= \hf J^2 n(D)\fr{1}{D^* - \fr{1}{4}J}>0
-\end{flalign*}
-The \(U\) is irrelevant and will flow down. The \(J\) on the other hand is relevant and will flow to some large value. This fixed point, characterized by a large positive \(J\) is the strong-coupling fixed point.
-\pb
-\begin{minipage}{250pt}
-	A similar flow happens if we start from the free orbital fixed point. There, \(U\) is 0, and the equations look like
-\begin{flalign*}
-\Delta U &= \hf \fr{|V|^2Jn(D)}{\rr{D - \fr{1}{4}J}\rr{D - \hf J}} > 0\\
-\Delta V &= \fr{3}{4}Jn(D)V\fr{1}{D - \fr{1}{4}J} > 0\\
-\Delta J &= \hf J^2 n(D)\fr{1}{D - \fr{1}{4}J}>0
-\end{flalign*}
-Here both \(U\) and \(J\) are relevant and they flow up to the strong-coupling fixed point. A schematic flow diagram is shown in fig.~\ref{schemesc}.
-\end{minipage}
-\hspace*{30pt}\begin{minipage}{250pt}
-\centering
-\includegraphics[scale=0.65]{schematic.png}
-\captionof{figure}{Schematic flows from local moment and free orbital to strong-coupling}
-\label{schemesc}
-\end{minipage}
-}
-
 \section{Connection between URG and Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
