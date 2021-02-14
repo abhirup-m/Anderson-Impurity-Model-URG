@@ -3110,15 +3110,15 @@ Similarly, gathering the terms that result in \(\hat n_{q\beta}=0\) gives
 T^\dagger c_{q\beta}\ket{1}\ket{\phi_1^i} = \rr{\omega_i^0 - \ham^d}\ket{0}\ket{\phi_0^i}
 \eeq
 We now define two many-particle transition operators:
-\beq
-{\eta}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T \\
-\eta(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d}T^\dagger c_{q\beta}
+\beq[etadefine]
+{\eta}^\dagger(\omega_i^1) = \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T \equiv G_1 c^\dagger_{q\beta}T\\
+\eta(\omega_i^0) = \fr{1}{\omega_i^0- \ham^d}T^\dagger c_{q\beta} \equiv G_0 T^\dagger c_{q\beta}
 \eeq
-We can write this compactly as
+wher \(G_j\) is the propagator \(\fr{1}{\omega_i^j- \ham^d}\). We can write this compactly as
 \beq[etadagdef]
-\eta(\hat \omega) = \fr{1}{\hat \omega_i- \ham^d}T^\dagger c_{q\beta}
+\eta(\hat \omega) = GT^\dagger c_{q\beta} = \fr{1}{\hat \omega_i- \ham^d}T^\dagger c_{q\beta}
 \eeq
-	where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta} = \begin{pmatrix} \omega_i^1 & \\ & \omega_i^0 \end{pmatrix}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
+	where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta} = \begin{pmatrix} \omega_i^1 & \\ & \omega_i^0 \end{pmatrix}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\) and \(G = \rr{\hat \omega - \ham^d}^{-1}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
 We will later find that it is important to demand that these two be Hermitian conjugates of each other; that constraint is imposed on the denominators:
 \beq[constraint]
 \eta^\dagger(\omega_i^0) = \eta^\dagger(\omega_i^1) \implies \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d}
@@ -3298,13 +3298,22 @@ This can be shown (\textcolor{red}{\textbf{clear with AM}}) to be equal to the d
 \text{group A} = \eta^\dagger H_h \eta + \eta H_e \eta^\dagger = H_e \hat n_{q\beta} + H_h\rr{1 - \hat n_{q\beta}} = \ham^d + \ham^i
 \eeq
 It can also be shown (\textcolor{red}{\textbf{clear with AM}}) that
-\beq
+\beq[group B]
 \text{group B} = \qq{\eta^\dagger - \eta,\ham} = 2\qq{c^\dagger_{q\beta} T,\eta}
 \eeq
 Putting it all together,
 \beq[final2]
 \tilde \ham = \ham^d + \ham^i + \qq{c^\dagger_{q\beta} T, \eta}
 \eeq
+The renormalizing in the Hamiltonian is
+\beq
+\Delta \ham = \tilde \ham - \ham^d - \ham^i = \qq{c^\dagger_{q\beta} T, \eta}
+\eeq
+Because of eq.~\ref{group B}, it can also be written as
+\beq[renurg]
+\Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham}
+\eeq
+This form will be useful later when we make the connection with CUT RG.
 \comm{
 To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
 \pb \(U_q\) is defined by
@@ -5952,6 +5961,79 @@ Combining the two terms, we get the total charge-Kondo contribution:
 + \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
 %}
+\section{Connection to CUT RG}
+In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against some parameter \(\lambda\) of the Hamiltonian. Denoting the unitary transformation generator by \(Sd\lambda\) for a change \(d\lambda\), we can write
+\beq
+H (\lambda + d\lambda) = e^{Sd\lambda} \ham(\lambda) e^{-Sd\lambda} \approx \rr{1 + Sd\lambda}\ham(\lambda) \rr{1 - Sd\lambda}\\
+= \ham(\lambda) + d\lambda\qq{S,\ham(\lambda)} + O(d\lambda^2)
+\eeq
+Formally taking the limit of \(d\lambda \to 0\) gives
+\beq
+\dv{\ham(\lambda)}{\lambda} = \qq{S,\ham(\lambda)}
+\eeq
+In CUT RG, we choose the generator as \(S = \qq{\ham_d,\ham_X}\), where \(\ham_d\) is the diagonal part of the Hamiltonian and \(\ham_X = \ham - \ham_d\) is the off-diagonal part of the Hamiltonian. Therefore,
+\beq[cut]
+\dv{\ham}{\lambda} = \qq{\qq{\ham_d,\ham_X},\ham}
+\eeq
+We will now see that the renormalization in URG can also be put into a similar form. From eq.~\ref{renurg}, we can write the URG renormalization as
+\beq
+\Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham}
+\eeq
+The URG generator can be recast (starting from the definitions of \(\eta\), eqs.~\ref{etadefine}) as
+\beq
+\eta^\dagger - \eta &= G_1 c^\dagger T - G_0 T^\dagger c\\
+		    &= \frac{1}{\omega_1 - \omega_0}\qq{G_1 \rr{\omega_1 - \omega_0}c^\dagger T - G_0 \rr{\omega_1 - \omega_0}T^\dagger c}\\
+		    &= \frac{1}{\omega_1 - \omega_0}\qq{G_1 \omega_1 c^\dagger T - c^\dagger T\omega_0G_0 - T^\dagger c \omega_1 G_1 +  G_0\omega_0T^\dagger c}\\
+\eeq
+In the last step, we changed the second and fourth terms using the constraints \(G_1 c^\dagger T = c^\dagger T G_0\) and \(G_0 T^\dagger c = T^\dagger c G_1\), eq.~\ref{constraint}. We now add and subtract \(G_1 G_1^{-1}c^\dagger T = c^\dagger T\) and \(G_0 G_0^{-1}T^\dagger c = T^\dagger c\) for each term.
+\beq
+\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}&\left[G_1 \rr{\omega_1 - G_1^{-1}}c^\dagger T + c^\dagger T - c^\dagger T \rr{\omega_0 - G_0^{-1}} G_0 - c^\dagger T \right.\\
+						   &\left.-  T^\dagger c\rr{\omega_1 - G_1^{-1}}G_1 - T^\dagger c +  G_0\rr{\omega_0 - G_0^{-1}}T^\dagger c + T^\dagger c\right]\\
+= \frac{1}{\omega_1 - \omega_0}&\left[G_1 \rr{\omega_1 - G_1^{-1}}c^\dagger T - c^\dagger T \rr{\omega_0 - G_0^{-1}} G_0 \right.\\
+&\left.-  T^\dagger c\rr{\omega_1 - G_1^{-1}}G_1 +  G_0\rr{\omega_0 - G_0^{-1}}T^\dagger c\right]\\
+\eeq
+In the last step, the extra \(c^\dagger T\) and \(T^\dagger c\) terms canceled out. In the second and third terms, we can bring the Greens function closer to the operators \(c^\dagger T\) and \(T^\dagger c\) because \(\rr{\omega_j - G_j^{-1}}G_j = G_j\rr{\omega_j - G_j^{-1}}\):
+\beq
+\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}&\left[G_1 \rr{\omega_1 - G_1^{-1}}c^\dagger T - c^\dagger T G_0 \rr{\omega_0 - G_0^{-1}} \right.\\
+&\left.-  T^\dagger cG_1\rr{\omega_1 - G_1^{-1}} +  G_0\rr{\omega_0 - G_0^{-1}}T^\dagger c\right]\\
+= \frac{1}{\omega_1 - \omega_0}&\left[G_1 \rr{\omega_1 - G_1^{-1}}c^\dagger T - G_1c^\dagger T  \rr{\omega_0 - G_0^{-1}} \right.\\
+&\left.-  G_0T^\dagger c\rr{\omega_1 - G_1^{-1}} +  G_0\rr{\omega_0 - G_0^{-1}}T^\dagger c\right]\\
+\eeq
+In the last step, we again used the constraint \(G_1 c^\dagger T = c^\dagger T G_0\) and its partner. From the definition of the Green's function \(G = \rr{\omega - \ham^d}^{-1}\), we can write \(\omega_j - G_j^{-1} = \ham^d_j\). Therefore,
+\beq
+\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}&\left[G_1 \ham^d_1 c^\dagger T - G_1c^\dagger T \ham^d_0  -  G_0 T^\dagger c \ham^d_1 +  G_0 \ham^d_0 T^\dagger c\right]\\
+= \frac{1}{\omega_1 - \omega_0}&\left[G \ham^d c^\dagger T - Gc^\dagger T \ham^d  -  G T^\dagger c \ham^d +  G \ham^d T^\dagger c\right]\\
+= \frac{1}{\omega_1 - \omega_0}&G\qq{ \ham^d, c^\dagger T + T^\dagger c}\\
+\eeq
+where \(\ham^d = \ham^d_1 \hat n + \ham^d_0 \rr{1 - \hat n}\) and \(G = G_1 \hat n + G_0 \rr{1 -\hat n} = \rr{\hat \omega - \ham^d}^{-1}\). For URG, the relevant off-diagonal part of the Hamiltonian for the current node is \(\ham^I = c^\dagger T + T^\dagger c\). Therefore,
+\beq
+\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}G\qq{ \ham^d, \ham^I}\\
+\eeq
+The renormalization in the Hamiltonian under URG, which is a function of both the quantum fluctuation scale \(\omega\) and the running bandwidth \(D\), can thus be written as
+\beq
+\Delta \ham (\omega,D) =  \frac{1}{\omega_1 - \omega_0}\qq{G\qq{ \ham^d, \ham^I},\ham}\\
+\eeq
+This can be compared to the analogous equation for CUT (eq.~\ref{cut}),
+\beq
+\Delta{\ham}(\lambda) = \Delta{\lambda}\qq{\qq{\ham_d,\ham_X},\ham}
+\eeq
+Leaving aside the obvious differences in the philosophies (the presence of \(\omega\) in URG or the fact that while URG decouples as a flow in the bandwidth, CUT uses a general parameter \(\lambda\) or the algorithmic difference that while URG decouples one specific node, CUT tries to make the Hamiltonian band-diagonal), the major physical difference is the presence of the total Green's function in the URG equation. It must be noted that while CUT employs the entire off-diagonal part in \(\ham_X\), the \(\ham^I\) of URG contains only those parts that are off-diagonal with respect to the node being decoupled at this step. To bring the URG form closer to CUT, we can make some approximations. 
+\beq
+G c^\dagger T = G_1 c^\dagger T = \fr{1}{\omega_1 - \ham^d_1}c^\dagger T \approx -\fr{1}{\ham^d_1}c^\dagger T
+\eeq
+where we dropped \(\omega_1\) for small quantum fluctuations. Similarly,
+\beq
+G T^\dagger c = G_0 T^\dagger c = T^\dagger c \fr{1}{\omega_1 - \ham^d_1}\approx -\fr{1}{\ham^d_1}T^\dagger c
+\eeq
+This gives
+\beq
+\Delta \ham (\omega,D) =  \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}\qq{\qq{ \ham^d, \ham^I},\ham}
+\eeq
+We can thus make the connection,
+\beq
+\Delta \lambda \sim \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}
+\eeq
+
 \bibliographystyle{unsrt}
 \bibliography{notes}
 

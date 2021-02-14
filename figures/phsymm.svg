@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="185.68376mm"
+   height="139.9119mm"
+   viewBox="0 0 185.68376 139.9119"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="phsymm.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs2">
+    <rect
+       x="26.334888"
+       y="25.436687"
+       width="80.467873"
+       height="17.166222"
+       id="rect2391" />
+    <marker
+       style="overflow:visible"
+       id="TriangleInL"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-3-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-5-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-2-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-9-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-3-1-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-5-2-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-2-02"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-9-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL-3-1-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1072-5-2-5" />
+    </marker>
+    <rect
+       x="26.334888"
+       y="25.436687"
+       width="75.551918"
+       height="18.658764"
+       id="rect2391-0" />
+    <rect
+       x="26.334888"
+       y="25.436687"
+       width="58.712482"
+       height="17.559677"
+       id="rect2404" />
+    <rect
+       x="26.334888"
+       y="25.436687"
+       width="75.551918"
+       height="18.658764"
+       id="rect2391-0-4" />
+    <rect
+       x="26.334888"
+       y="25.436687"
+       width="75.551918"
+       height="18.658764"
+       id="rect2440" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70782148"
+     inkscape:cx="218.1612"
+     inkscape:cy="397.71456"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-object-midpoints="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(81.915189,-29.151589)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -81.915189,46.190852 c 148.816925,0 148.816925,0 148.816925,0"
+       id="path10" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -81.915189,99.107522 c 148.816929,0 148.816929,0 148.816929,0"
+       id="path10-3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -81.915189,152.02422 c 148.816929,0 148.816929,0 148.816929,0"
+       id="path10-3-6" />
+    <g
+       id="g1455">
+      <rect
+         style="fill:#ffffff;fill-opacity:0.666667;stroke:#000000;stroke-width:1.65016;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.666667;paint-order:markers stroke fill"
+         id="rect895"
+         width="35.719543"
+         height="32.428368"
+         x="-25.366497"
+         y="29.976669" />
+      <g
+         id="g1401"
+         transform="translate(173.84442,-1.9880915)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.35426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL)"
+           d="m -189.22581,45.085243 c 0,14.178739 0,14.178739 0,14.178739"
+           id="path937" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.35426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL-3)"
+           d="m -173.3508,51.569457 c 0,-14.178739 0,-14.178739 0,-14.178739"
+           id="path937-6" />
+      </g>
+    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:0.666667;stroke:#000000;stroke-width:1.24998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.666667;paint-order:markers stroke fill"
+       id="rect895-0"
+       width="20.495544"
+       height="32.428368"
+       x="-34.687832"
+       y="82.893341" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.35426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL-2)"
+       d="m -24.44006,95.865418 c 0,14.178742 0,14.178742 0,14.178742"
+       id="path937-3" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.666667;stroke:#000000;stroke-width:1.65016;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.666667;paint-order:markers stroke fill"
+       id="rect895-0-8"
+       width="35.719543"
+       height="32.428368"
+       x="-25.366497"
+       y="135.81004" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.666667;stroke:#000000;stroke-width:1.24998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.666667;paint-order:markers stroke fill"
+       id="rect895-0-7"
+       width="20.495544"
+       height="32.428368"
+       x="1.0317107"
+       y="82.893341" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.35426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL-3-1-7)"
+       d="m 11.279483,102.34963 c 0,-14.178735 0,-14.178735 0,-14.178735"
+       id="path937-6-6-9" />
+    <text
+       xml:space="preserve"
+       id="text2389"
+       style="font-weight:bold;font-size:14.1111px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';white-space:pre;shape-inside:url(#rect2391);"><tspan
+         x="26.333984"
+         y="37.922516"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$E_2 = 2\epsilon_d + U$</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2389-4"
+       style="font-weight:bold;font-size:14.1111px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';white-space:pre;shape-inside:url(#rect2391-0);"
+       transform="translate(2.9756607,56.038157)"><tspan
+         x="26.333984"
+         y="37.922516"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$E_1 = \epsilon_d $</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2389-4-7"
+       style="font-weight:bold;font-size:14.1111px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';white-space:pre;shape-inside:url(#rect2391-0-4);"
+       transform="translate(2.0762595,109.52126)"><tspan
+         x="26.333984"
+         y="37.922516"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$E_0 = 0$ $</tspan></tspan></text>
+  </g>
+</svg>
