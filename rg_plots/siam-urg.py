@@ -1,6 +1,7 @@
 #!/bin/python
 
 
+import time
 import itertools
 from math import sqrt
 
@@ -17,8 +18,8 @@ matplotlib.rcParams['text.usetex'] = True
 
 
 def plot(gx,gy,title):
-    norm_gx = [gxi/max(gx) for gxi in gx]
-    norm_gy = [gyi/max(gy) for gyi in gy]
+    norm_gx = [gxi/abs(max(gx)) for gxi in gx]
+    norm_gy = [gyi/abs(max(gy)) for gyi in gy]
     plt.scatter(norm_gx, norm_gy)
     plt.scatter(norm_gx[-1], norm_gy[-1], color='r')
     plt.xlabel(r'J')
@@ -70,14 +71,14 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
     d_old = d
     d_new = den(w, D, U, V, J)
-    if all(delta == 0 for delta in deltas):
-        flags = [0] * len(flags)
-        print ("Changes are zero.")
-        return flags
-    if all(abs(delta) < 10**(-10) for delta in deltas):
-        flags = [0] * len(flags)
-        print ("Changes are too small.")
-        return flags
+    #if all(delta == 0 for delta in deltas):
+    #    flags = [0] * len(flags)
+    #    print ("Changes are zero.")
+    #    return flags
+    #if all(abs(delta) < 10**(-10) for delta in deltas):
+    #    flags = [0] * len(flags)
+    #    print ("Changes are too small.")
+    #    return flags
     for i in range(len(d_old)):
         if d_old[i] * d_new[i] <= 0:
             flags[i] = 0
@@ -88,26 +89,32 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    N = 10
-    w_0 = np.arange(-2, 2, 0.5)
+    N = 1000
+    w_0 = np.linspace(-1000,-100,1000,endpoint=True)
     D_0 = [1]
-    V_0 = [0]
-    J_0 = [0.5]
-    U_0 = [1]
-    for w, D0, U, V, J in itertools.product(w_0, D_0, U_0, V_0, J_0):
+    V_0 = [2]
+    J_0 = [1]
+    U_0 = [100]
+    flag = False
+    for w,D0,U,V,J in itertools.product(w_0,D_0,U_0,V_0,J_0):
         title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D0,U,V,J)
         U_arr, V_arr, J_arr = [U], [V], [J]
-        print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
+        #print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
         flags = init_check_fp(w, D0, U, V, J)
-        for D in np.linspace(D0,0,10):
+        for D in np.linspace(D0, 0, N):
             if not 1 in flags:
+                flag = True
+                if U_arr[-1] < U_arr[0]:
+                    print (w)
+                #print ("found")
                 break
             U, V, J, flags = rg(w ,D, U, V, J, flags)
             U_arr.append(U)
             V_arr.append(V)
             J_arr.append(J)
-        print ("End: U={}, V={}, J={}\n".format(U, V, J))
-        plot(J_arr, U_arr, title)
+        if flag:
+            #print ("End: U={}, V={}, J={}\n".format(U, V, J))
+            plot(J_arr, U_arr, title)
 
 all_flow()
 
