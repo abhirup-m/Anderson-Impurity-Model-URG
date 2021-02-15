@@ -3,18 +3,44 @@
 
 import itertools
 from math import sqrt
+
 import matplotlib
-from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib import pyplot as plt
+
 font = {'family' : 'normal',
-        'weight' : 'bold',
-        'size'   : 27}
+        #'weight' : 'bold',
+        'size'   : 15}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
 
 
-def den(w ,D, U, V, J):
+def plot(gx,gy,title):
+    norm_gx = [gxi/max(gx) for gxi in gx]
+    norm_gy = [gyi/max(gy) for gyi in gy]
+    plt.scatter(norm_gx, norm_gy)
+    plt.scatter(norm_gx[-1], norm_gy[-1], color='r')
+    plt.xlabel(r'J')
+    plt.ylabel(r'U')
+    plt.title(title)
+    plt.show()
+
+
+def init_check_fp(w, D, U, V, J):
+    ''' checks if any denominator is 0 at the 
+    beginning, meaning we are starting from a fixed 
+    point, and sets corresponding flag to 0.'''
+
+    d = den(w, D, U, V, J)
+    flags = [1 if di != 0 else 0 for di in d]
+    return flags
+
+
+def den(w, D, U, V, J):
+    ''' Defines and evaluates all the 
+    denominators in the problem.'''
+
     d1 = w - 0.5 * D + U/2 + J/4
     d2 = w - 0.5 * D - U/2
     d3 = w - 0.5 * D + U/2 - J/4
@@ -22,51 +48,71 @@ def den(w ,D, U, V, J):
 
 
 def rg(w, D, U, V, J, flags):
-    b = 0.9999
+    '''Evaluates the change in each coupling 
+    at a particular RG step. Also checks if 
+    any denominator changed sign.'''
+
+    b = 0.99
     d = den(w ,D, U, V, J)
+    d = [0.1 if flags[i] == 0 else d[i] for i in range(len(flags))]
     deltaU = 4 * V**2 * sqrt(D) * (flags[0]/d[0] - flags[1]/d[1]) - J**2 * D * (1/8) * (5*flags[0]/d[0] + flags[2]/d[2])
     deltaV = (-3/4) * J * sqrt(D) * V * flags[0]/d[0]
     deltaJ = -J**2 * sqrt(D) * flags[0]/d[0]
-    print (deltaU)
     U += deltaU
     V += deltaV
     J += deltaJ
     D *= b
-    flags = check_den(w, D, U, V, J, d, flags)
+    flags = check_fp(w, D, U, V, J, d, flags, [deltaU, deltaV, deltaJ])
     return D, U, V, J, flags
 
-def check_den(w, D, U, V, J, d, flags):
+def check_fp(w, D, U, V, J, d, flags, deltas):
+    ''' checks if any denominator has changed sign 
+    during the flow. It also sets all flags to 
+    0 if all renormalizations are 0. '''
+
     d_old = d
     d_new = den(w, D, U, V, J)
-    #print (d_new)
+    if all(delta == 0 for delta in deltas):
+        flags = [0] * len(flags)
+        print ("Changes are zero.")
+        return flags
+    if all(abs(delta) < 10**(-10) for delta in deltas):
+        flags = [0] * len(flags)
+        print ("Changes are too small.")
+        return flags
     for i in range(len(d_old)):
-        if d_old[i] * d_new[i] <= 0 or d_new[i] > 10**5:
+        if d_old[i] * d_new[i] <= 0:
             flags[i] = 0
+            #print ("Flag[{}] reached zero.".format(i))
     return flags
 
-
-def init_check_den(w, D, U, V, J):
-    d = den(w, D, U, V, J)
-    flags = [1 if di != 0 else 0 for di in d]
-    return flags
 
 
 def all_flow():
-    U_arr = V_arr = J_arr = []
-    w_0 = [0]
+    '''master function to call other functions'''
+
+    w_0 = np.arange(-2, 2, 0.5)
     D_0 = [1]
-    V_0 = [1]
-    J_0 = [2]
-    U_0 = [10]
+    V_0 = [0]
+    J_0 = [0.5]
+    U_0 = [1]
     for w, D, U, V, J in itertools.product(w_0, D_0, U_0, V_0, J_0):
+        title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D,U,V,J)
+        U_arr, V_arr, J_arr = [U], [V], [J]
         print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D, U, V, J))
-        flags = init_check_den(w, D, U, V, J)
+        flags = init_check_fp(w, D, U, V, J)
         while D > 0:
             if not 1 in flags:
                 break
             D, U, V, J, flags = rg(w ,D, U, V, J, flags)
-            #print (U)
-        print ("End: U={}, V={}, J={}".format(U, V, J))
+            U_arr.append(U)
+            V_arr.append(V)
+            J_arr.append(J)
+        print ("End: U={}, V={}, J={}\n".format(U, V, J))
+        #plot(J_arr, U_arr, title)
+
+all_flow()
+
 
 """
 
@@ -127,4 +173,3 @@ def all_flow():
     plt.show()
 
 """
-all_flow()
