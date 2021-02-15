@@ -52,7 +52,6 @@ def rg(w, D, U, V, J, flags):
     at a particular RG step. Also checks if 
     any denominator changed sign.'''
 
-    b = 0.99
     d = den(w ,D, U, V, J)
     d = [0.1 if flags[i] == 0 else d[i] for i in range(len(flags))]
     deltaU = 4 * V**2 * sqrt(D) * (flags[0]/d[0] - flags[1]/d[1]) - J**2 * D * (1/8) * (5*flags[0]/d[0] + flags[2]/d[2])
@@ -61,9 +60,8 @@ def rg(w, D, U, V, J, flags):
     U += deltaU
     V += deltaV
     J += deltaJ
-    D *= b
     flags = check_fp(w, D, U, V, J, d, flags, [deltaU, deltaV, deltaJ])
-    return D, U, V, J, flags
+    return U, V, J, flags
 
 def check_fp(w, D, U, V, J, d, flags, deltas):
     ''' checks if any denominator has changed sign 
@@ -90,26 +88,26 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-
+    N = 10
     w_0 = np.arange(-2, 2, 0.5)
     D_0 = [1]
     V_0 = [0]
     J_0 = [0.5]
     U_0 = [1]
-    for w, D, U, V, J in itertools.product(w_0, D_0, U_0, V_0, J_0):
-        title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D,U,V,J)
+    for w, D0, U, V, J in itertools.product(w_0, D_0, U_0, V_0, J_0):
+        title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D0,U,V,J)
         U_arr, V_arr, J_arr = [U], [V], [J]
-        print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D, U, V, J))
-        flags = init_check_fp(w, D, U, V, J)
-        while D > 0:
+        print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
+        flags = init_check_fp(w, D0, U, V, J)
+        for D in np.linspace(D0,0,10):
             if not 1 in flags:
                 break
-            D, U, V, J, flags = rg(w ,D, U, V, J, flags)
+            U, V, J, flags = rg(w ,D, U, V, J, flags)
             U_arr.append(U)
             V_arr.append(V)
             J_arr.append(J)
         print ("End: U={}, V={}, J={}\n".format(U, V, J))
-        #plot(J_arr, U_arr, title)
+        plot(J_arr, U_arr, title)
 
 all_flow()
 
