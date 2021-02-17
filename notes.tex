@@ -508,7 +508,7 @@ Thus, the singlet phase shift at \il{\epsilon_F} approaches \il{\fr{\pi}{2}} as 
 \end{itemize}
 
 \subsection{Derivation of the Kondo Hamiltonian}
-Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\ua} \neq \hat n_{d\da}\)) from the doublon and holon subspaces (\(\hat n_{d\ua} \neq \hat n_{d\da}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{Schrieffer_Wolff}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} iI decided to do my MSc thesis with Dr. Sunethra Ramanan, Indian Institute of Technology, Madras, on the application Similarity Renormalization group (SRG) method in quantum optics.s shown in \ref{SWT from PMS}.
+Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\ua} \neq \hat n_{d\da}\)) from the doublon and holon subspaces (\(\hat n_{d\ua} \neq \hat n_{d\da}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{Schrieffer_Wolff}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} is shown in \ref{SWT from URG}.
 \pb The space of the impurity electron can be divided into low energy and high energy subspaces:
 \beq
 \text{low energy (L)} \ra \begin{cases} \ket{\ua} \\ \ket{\da} \end{cases}\\
@@ -3175,9 +3175,17 @@ G = \tanh^{-1}\rr{\omega - \omega^\dagger}
 \eeq
 Applying that to the problem at hand gives
 \beq
- U_1^\dagger &= \ex{\tanh^{-1}\rr{\eta - \eta^\dagger}}\\
-	   &= \frac{1 + \eta - \eta^\dagger}{1 + \cc{\eta,\eta^\dagger}}\\
-	   &= \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger}
+ U_1^\dagger &= \ex{\tanh^{-1}\rr{\eta - \eta^\dagger}}
+ \eeq
+Let \(x = \tanh y\). Then,
+\beq
+x = \frac{e^{2y} + 1}{e^{2y} - 1} \implies y = \hf \log\fr{1+x}{1-x} \implies e^y = e^{\tanh^{-1}x} = \sqrt\frac{1+x}{1-x}
+\eeq
+Therefore,
+\beq
+ \ex{\tanh^{-1}\rr{\eta - \eta^\dagger}} &= \frac{1 + \eta - \eta^\dagger}{\sqrt{\rr{1 + \eta^\dagger - \eta}\rr{1 - \eta^\dagger + \eta}}}\\
+					 &= \frac{1 + \eta - \eta^\dagger}{\sqrt{1 + \cc{\eta,\eta^\dagger}}}\\
+&= \fr{1}{\sqrt 2}\rr{1 + \eta - \eta^\dagger}
 \eeq
 The \textit{unitary} operator that transforms the entangled eigenstate \il{\ket{\psi_1}} to the state \il{\ket{1}} is thus
 \beq[finalu]
@@ -3188,7 +3196,7 @@ It can also be written as \(\ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}}\) because
  \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} &= 1 + \rr{\eta^\dagger - \eta}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger - \eta}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger - \eta}^3\rr{\fr{\pi}{4}}^3 + ...\\
 &= 1 + \rr{\eta^\dagger - \eta}\fr{\pi}{4} - \frac{1}{2!}\rr{\fr{\pi}{4}}^2 - \frac{1}{3!}\rr{\eta^\dagger - \eta}\rr{\fr{\pi}{4}}^3 + \frac{1}{4!}\rr{\fr{\pi}{4}}^4 + ...\\
 &= \cos \frac{\pi}{4} + \rr{\eta^\dagger - \eta}\sin\fr{\pi}{4}\\
-&= 1 + \eta^\dagger - \eta
+&= \frac{1}{\sqrt 2}\rr{1 + \eta^\dagger - \eta}
 \eeq
 There we used
 \beq
@@ -3699,7 +3707,7 @@ To check that this indeed commutes with \il{\hat n_{q\beta}},
 			       &=c_{q\beta}^\dagger T \eta - c_{q\beta}^\dagger T \eta\\
 			 &=0
 \eeq
-\subsection{Fixed point condition}
+\subsection{Fixed point condition}\label{match}
 Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to either \(\omega_i^1 = \ham^d_1 \) or \(\omega_i^0 = \ham^d_0 \).
 This shows that at the fixed point, one of the eigenvalues of \(\hat \omega_i\) matches the corresponding eigenvalue of the diagonal blocks. This also leads to the vanishing of the off-diagonal block, because eqs.~\ref{changea} and \ref{changeb} gives
 \beq
@@ -3786,11 +3794,11 @@ These equations will now need to be simplified. For example, in the particle sec
 \section{Star Graph URG}
 The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
-\ham = \sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_i \vec{S}_0 \cdot \vec{S}_i
+\ham = \epsilon_0 S^z_0 + \sum_{i=1}^N\qq{\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i}
 \eeq
 By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
 \beq
-\ham = \sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_i\qq{S^z_0 S^z_i + \hf\rr{S_0^+ S^-_i + S_0^- S^+_i}}
+\ham = \epsilon_0 S^z_0 + \sum_{i=1}^N\qq{\epsilon_i S^z_i + J_i\rr{S^z_0 S^z_i + \hf\rr{S_0^+ S^-_i + S_0^- S^+_i}}}
 \eeq
 The diagonal terms are the ones that preserve the number or (in this case) spin.
 \beq
@@ -4915,7 +4923,7 @@ The \(\omega\) have to be determined self-consistently or numerically by searchi
 \omega_2 &= \omega + 2\epsilon_d + U 
 \eeq
 This gives
-\beq
+\beq[urg-siam]
 \Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
 \Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
 \Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
@@ -5467,7 +5475,8 @@ This is the familiar one-loop Kondo flow equation obtained from Poor man's scali
 \beq
 \dv{J}{\ln D} = -2J^2 \rho(D)
 \eeq
-\section{Connection between URG and Poor Man's Scaling}
+\section{Connection between URG and Other Canonical Transformations}
+\subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
 \ham\ket{\Psi} = E\ket{\Psi}
@@ -5659,8 +5668,8 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 	\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 %\comm{
-\section{Schrieffer-Wolff Transformation in context of URG}
-\subsection{Schrieffer-Wolff transformation as a limit of URG}
+\subsection{Schrieffer-Wolff transformation}
+\subsubsection{Formal Differences}
 We have a general Hamiltonian
 \beq
 \ham = \ham_0 + \ham_X
@@ -5687,36 +5696,6 @@ The second order decoupling condition is thus
 \beq[dec_cond]
 \qq{S,\ham_0} = -\ham_X
 \eeq
-In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
-\beq
--\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
-\eeq
-which gives
-\beq
-S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
-\eeq
-The remaining diagonal part constitutes the effective Hamiltonian.
-\beq
-U\ham U^\dagger = H_1 &= \ham_0 + \hf \cc{\ham_0, S^2} - S \ham_0 S + \qq{S,\ham_X}\\
-    &=\ham_0 + \hf \qq{\qq{\ham_0, S},S} + \qq{S,\ham_X}\\
-    &=\ham_0 + \hf \qq{\ham_X,S} + \qq{S,\ham_X}\\
-    &=\ham_0 + \hf \qq{S,\ham_X}
-\eeq
-For the SIAM (and noting that we are decoupling \(q\beta\)), the two parts are
-\beq
-\ham_0 &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da} + \sum_{k\sigma \neq q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}\\
-\ham_X &= c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} 
-\eeq
-The renormalization in the effective Hamiltonian from decoupling a high energy particle state is thus
-\beq
-\hf \qq{S,\ham_X} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\\
-		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
-\eeq
-In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state (at \(T=0\)). We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
-\beq
-\hf \qq{S,\ham_X} &=-\rr{1 - \hat n_{d\beta}}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U}}
-\eeq
-These two results - the renormalization in the particle and hole sectors - is \textit{identical to the result obtained from PMS} of the SIAM (see \cite{hewson}). 
 \pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\), where \(\eta\) and its conjugate are non-perturbative and Fermionic - they satisfy \(\eta^2 = {\eta^\dagger}^2 = 0\) and \(\cc{\eta,\eta^\dagger}=1\). We can then write
 \beq
 e^S &= \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} \\
@@ -5778,8 +5757,61 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-
-\subsection{Kondo model from PMS-type approach}\label{SWT from PMS}
+\subsubsection{SIAM URG vs SIAM SWT}
+The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
+\beq
+-\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
+\eeq
+which gives
+\beq
+S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+\eeq
+The remaining diagonal part constitutes the effective Hamiltonian.
+\beq
+U\ham U^\dagger = H_1 &= \ham_0 + \hf \cc{\ham_0, S^2} - S \ham_0 S + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{\qq{\ham_0, S},S} + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{\ham_X,S} + \qq{S,\ham_X}\\
+    &=\ham_0 + \hf \qq{S,\ham_X}
+\eeq
+For the SIAM (and noting that we are decoupling \(q\beta\)), the two parts are
+\beq
+\ham_0 &= \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da} + \sum_{k\sigma \neq q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}\\
+\ham_X &= c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} 
+\eeq
+The renormalization in the effective Hamiltonian from decoupling a high energy particle state is thus
+\beq
+\hf \qq{S,\ham_X}\bigg\vert_{\hat n_{q\beta}=0} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\\
+		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+\eeq
+In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state (at \(T=0\)). We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
+\beq
+\hf \qq{S,\ham_X}\bigg\vert_{\hat n_{q\beta}=1} &=-\rr{1 - \hat n_{d\beta}}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U}}
+\eeq
+These two results - the renormalization in the particle and hole sectors - is identical to the result (see \cite{hewson}) obtained from PMS of the SIAM. The renormalizations in the various energy levels of the impurity can be read off now, after summing over all states in the interval we are decoupling.
+\beq
+\Delta E_2 &= -2\sum_{q,\epsilon_q=+D}\frac{|V_q|^2}{\epsilon_q - \epsilon_d - U}\\
+\Delta E_1 &= -\sum_{q,\epsilon_q=+D}\frac{|V_q|^2}{\epsilon_q - \epsilon_d} - \sum_{q,\epsilon_q=-D}\frac{|V_q|^2}{\epsilon_q + \epsilon_d + U}\\
+\Delta E_0 &= -2\sum_{q,\epsilon_q=-D}\frac{|V_q|^2}{\epsilon_q + \epsilon_d}\\
+\eeq
+This can be compared with the URG result, eq.~\ref{urg-siam},
+\beq
+\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
+\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
+\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
+\eeq
+We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not such a fixed point structure.
+\subsection{Kondo model from a one-shot URG}\label{SWT from URG}
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is akin to a decoupling the whole band via URG. \pb To start, we note that since we are decoupling the whole band, the various parts of the Hamiltonian are
+\beq
+\ham^I = \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}}, &&\ham^d = \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\ua}\hat n_{d\da}
+\eeq
+The renormalization is
+\beq
+\Delta \ham &= \sum_{kq\sigma\alpha}V_kc^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\omega - \ham^d}V_q^* c^\dagger_{d\alpha}c_{q\alpha} + \sum_{kq\sigma\alpha}V_q^* c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{\omega - \ham^d}V_k c^\dagger_{k\sigma}c_{d\sigma}
+\eeq
+In order to connect with SWT, we now need to replace \(\omega\) with the energies of the initial states. Meanwhile, \(\ham^d\) is the energy of the intermediate state. The denominator \(\omega - \ham^d\) then gives the change in energy between the initial and final states.
+\comm{
+	\subsection{Kondo model from PMS-type approach}
 In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
 \pb First note that the goal of PMS here would be to decouple the single-occupied subspace of the impurity from the doublon and holon subspaces. To that end, we write the interaction part of the Hamiltonian as
 \beq
@@ -5891,8 +5923,9 @@ Combining the two terms, we get the total charge-Kondo contribution:
 \ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
 + \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
 \eeq
+}
 %}
-\section{Connection to CUT RG}
+\subsection{CUT RG}
 In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against some parameter \(\lambda\) of the Hamiltonian. Denoting the unitary transformation generator by \(Sd\lambda\) for a change \(d\lambda\), we can write
 \beq
 H (\lambda + d\lambda) = e^{Sd\lambda} \ham(\lambda) e^{-Sd\lambda} \approx \rr{1 + Sd\lambda}\ham(\lambda) \rr{1 - Sd\lambda}\\
