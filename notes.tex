@@ -5807,9 +5807,50 @@ Here we will show how we can obtain the spin-spin interaction of the Kondo model
 \eeq
 The renormalization is
 \beq
-\Delta \ham &= \sum_{kq\sigma\alpha}V_kc^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\omega - \ham^d}V_q^* c^\dagger_{d\alpha}c_{q\alpha} + \sum_{kq\sigma\alpha}V_q^* c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{\omega - \ham^d}V_k c^\dagger_{k\sigma}c_{d\sigma}
+\Delta \ham &= \sum_{kq\sigma\alpha}V_kc^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\omega_1 - \ham^d}V_q^* c^\dagger_{d\alpha}c_{q\alpha} + \sum_{kq\sigma\alpha}V_q^* c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{\omega_0 - \ham^d}V_k c^\dagger_{k\sigma}c_{d\sigma}
 \eeq
-In order to connect with SWT, we now need to replace \(\omega\) with the energies of the initial states. Meanwhile, \(\ham^d\) is the energy of the intermediate state. The denominator \(\omega - \ham^d\) then gives the change in energy between the initial and final states.
+In order to connect with SWT, we now need to replace \(\omega\) with the energies of the initial states. Meanwhile, \(\ham^d\) is the energy of the intermediate state. The denominator \(\omega - \ham^d\) then gives the change in energy between the initial and final states. For the first term, this energy difference is \(\omega_1 - \ham^d = \epsilon_q - \epsilon_d - U\hat n_{d\ol\alpha}\). For the second term, the difference is \(\omega_0 - \ham^d = -\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}\). The renormalization becomes
+\beq
+\Delta \ham &= \sum_{kq\sigma\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\alpha}} c^\dagger_{d\alpha}c_{q\alpha} +  c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
+&= \sum_{kq\sigma=\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\sigma}} c^\dagger_{d\sigma}c_{q\sigma} +  c^\dagger_{d\sigma}c_{q\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
+&+\sum_{kq\sigma=\ol\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\sigma}} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} +  c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
+&= \sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{q\sigma}\qq{\rr{1 - \hat n_{d\sigma}}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\sigma}} - \hat n_{d\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}}\\
+&+\sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \qq{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}
+\eeq
+At the last step, we converted \(c_q c^\dagger_k\) into \(-c^\dagger_k c_q\) by using their anticommutator and dropping a constant term. Also, in the last two terms, we substituted \(\hat n_{d\sigma} = 1\) and \(\hat n_{d\ol\sigma} = 0\) because of the \(c\) and \(c^\dagger\) in the numerator. We now need to write the first terms in terms of the impurity spin. First, if we go to the Kondo regime, it is clear that the presence of \(1- \hat n_{d\sigma}\) implies \(\hat n_{d\ol\sigma}=1\) and the presence of \(\hat n_{d\sigma}\) implies \(\hat n_{d\ol\sigma}=0\), because we must have \(\hat n_d=1\) in this regime. The first term can thus be written as
+\beq
+\Delta \ham = \sum_{kq\sigma}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{1 - \hat n_{d\sigma}}{\epsilon_q - \epsilon_d - U} + \frac{\hat n_{d\sigma}}{\epsilon_k - \epsilon_d }} + c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}}
+\eeq
+We can now use the two equations \(2\sigma S_d^z = \hat n_{d\sigma} - \hat n_{d\ol\sigma}, 1 = \hat n_{d\sigma} + \hat n_{d\ol\sigma}\) to write \(\hat n_{d\sigma} = \hf + \sigma S_d^z\).
+\beq
+\Delta \ham = \sum_{kq\sigma}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{\hf - \sigma S_d^z}{\epsilon_q - \epsilon_d - U} + \frac{\hf + \sigma S_d^z}{\epsilon_k - \epsilon_d }} + c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}}
+\eeq
+In making this substitution, we have projected on to the singly-occupied subspace. The terms with \(S_d^z\) can be written as
+\beq
+\sum_{kq\sigma} V_k V_q^*c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{\hf - \sigma S_d^z}{\epsilon_q - \epsilon_d - U} + \frac{\hf + \sigma S_d^z}{\epsilon_k - \epsilon_d }} &= \sum_{kq\sigma} c^\dagger_{k\sigma}c_{q\sigma}W_{kq} + \hf\sum_\sigma J_{kq}\sigma c^\dagger_{k\sigma}c_{q\sigma}S_d^z\\
+																			    &= \sum_{kq\sigma} W_{kq}c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq} J_{kq}S_d^z s^z_{kq}\\
+\eeq
+where
+\beq
+W_{kq} &= \hf\frac{V_k V_q^*}{\epsilon_q - \epsilon_d - U} + \hf\frac{V_k V_q^*}{\epsilon_k - \epsilon_d}
+\eeq
+is the coupling for the potential scattering and
+\beq
+J_{kq} &= -\frac{2V_k V_q^*}{\epsilon_q - \epsilon_d - U} + \frac{2V_k V_q^*}{\epsilon_k - \epsilon_d}
+\eeq
+is the coupling for the spin-spin scattering, and
+\beq
+\sum_\sigma \sigma \hf c^\dagger_{k\sigma}c_{q\sigma} = \hf c^\dagger_{k\ua}c_{q\ua} - \hf c^\dagger_{k\da}c_{q\da} = s^z_{kq}
+\eeq
+The last term can be written in terms of \(S_d^\pm\):
+\beq
+\sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}} &= \sum_{kq\sigma}J_{kq}\rr{c^\dagger_{k\ua}c_{q\da}c^\dagger_{d\da}c_{d\ua} + c^\dagger_{k\da}c_{q\ua}c^\dagger_{d\ua}c_{d\da}} \\
+																					   &= \sum_{kq\sigma}J_{kq}\rr{S_d^+ s^-_{kq} + S_d^- s^+_{kq}}
+\eeq
+The total renormalization is
+\beq
+\Delta \ham = \sum_{kq\sigma} W_{kq}c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq} J_{kq} \vec S_d \cdot \vec s_{kq}\\
+\eeq
 \comm{
 	\subsection{Kondo model from PMS-type approach}
 In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
