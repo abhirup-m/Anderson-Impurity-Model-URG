@@ -75,13 +75,13 @@ If I try to derive this using the result on the previous slide:
 Kondo URG coupling equation for \(J\) (equation 9.65):
 \begin{equation*}
 \begin{aligned}
-\Delta J^{(j)}=\frac{n_{j}(J^{(j)})^{2}\left[\omega- \frac{\epsilon_{j,l}}{2}\right]}{(\frac{\epsilon_{j,l}}{2}-\omega)^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}}~.
+	\Delta J^{(j)}=n_{j}(J^{(j)})^{2}\left[\omega- \frac{\epsilon_{j,l}}{2}\right]\left[(\frac{\epsilon_{j,l}}{2}-\omega)^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}\right]^{-1}
 \end{aligned}
 \end{equation*}
 One-loop form (after setting \(\omega = \epsilon_{j,l}\)):
 \begin{equation*}
 \begin{aligned}
-	\Delta J^{(j)}= \frac{n_{j}(J^{(j)})^{2}}{\omega-\frac{\epsilon_{j,l}}{2}} = 2\frac{n_{j}(J^{(j)})^{2}}{\epsilon_{j,l}} = \textcolor{blue}{\frac{\textcolor{red}{2} \rho |\Delta D| J^2}{D}}
+	\Delta J^{(j)}= \frac{n_{j}(J^{(j)})^{2}}{\omega-\frac{\epsilon_{j,l}}{2}} = 2\frac{n_{j}(J^{(j)})^{2}}{\epsilon_{j,l}} \rightarrow \textcolor{blue}{\frac{\textcolor{red}{2} \rho |\Delta D| J^2}{D}} && [n_j, \rho \rightarrow \text{DOS per spin}]
 \end{aligned}
 \end{equation*}
 One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)):
@@ -90,6 +90,7 @@ One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)
 	\Delta \tilde J = \frac{2 \rho |\Delta D| \tilde J^2}{D} \implies \Delta J = \textcolor{blue}{\frac{\rho |\Delta D| J^2}{D}}
 \end{aligned}
 \end{equation*}
+\qs{Is there any reason for this difference?}
 \end{frame}
 
 \begin{frame}{Question 5}
@@ -114,4 +115,29 @@ One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)
 	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2} S^z\sigma^{z}_{\alpha\alpha}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
 \end{equation*}}
 \end{frame}
+\begin{frame}{Question 7}
+In eq. 2.21 of thesis,
+\begin{equation*}
+	U H U^\dagger = \frac{1}{2}Tr(H) + \tau Tr(H \tau) + \textcolor{blue}{\tau\{c^\dagger T,\eta\}}
+\end{equation*}
+so the renormalization is
+\begin{equation*}
+	\tau\{c^\dagger T,\eta\} = \frac{1}{2}\left[\overbrace{c^\dagger T \eta}^\text{particle sector} - \underbrace{\eta c^\dagger T}_\text{hole sector}\right] = \text{difference of the 2 sectors}
+\end{equation*}
+\qs{Yet in most RG equations (\(\Delta H_F\) of 2d Hubbard, \(\Delta H_j\) of Kondo), you have \textit{added} the two sectors. How/Why?}
+\end{frame}
+\begin{frame}{Question 8}
+	In the Kondo URG, you simplify the \(\hat \omega\) as 
+\begin{equation*}
+	\pmb{\hat \omega = \textcolor{blue}{\omega \tau}}
+\end{equation*}
+What is the formal way of doing this? \\[10pt]
+\qs{Should not the more general thing be 
+\begin{equation*}
+	\pmb{\hat \omega = \omega_1 \hat n + \omega_1 (1 - \hat n)}
+\end{equation*}
+Is this just an assumption?
+}
+\end{frame}
+
 \end{document}
