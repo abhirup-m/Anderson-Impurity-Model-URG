@@ -5809,7 +5809,13 @@ This can be compared with the URG result, eq.~\ref{urg-siam},
 \eeq
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
 \subsection{Kondo model from a one-shot URG}\label{SWT from URG}
-Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is akin to a decoupling the whole band via URG. \pb To start, we note that since we are decoupling the whole band, the various parts of the Hamiltonian are
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is akin to a decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG.
+\begin{itemize}
+	\item We will be severing the connections of the impurity with all the mobile electrons in one-shot, and not iteratively.
+	\item We will have to trivialize the quantum fluctuation operator \(\hat \omega\) by replacing it with the diagonal part of the initial state energy.
+	\item We will finally have to project on to the singly-occupied subspace in order to obtain a purely spin-spin interaction.
+\end{itemize}
+Since we are decoupling the whole band, the various parts of the Hamiltonian are
 \beq
 \ham^I = \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}}, &&\ham^d = \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\ua}\hat n_{d\da}
 \eeq
