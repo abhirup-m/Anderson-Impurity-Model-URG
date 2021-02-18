@@ -3317,11 +3317,11 @@ The renormalizing in the Hamiltonian is
 \beq
 \Delta \ham = \tilde \ham - \ham^d - \ham^i = \qq{c^\dagger_{q\beta} T, \eta}
 \eeq
-Because of eq.~\ref{group B}, it can also be written as
+Because of eq.~\ref{group B}, (\textcolor{red}{\textbf{clear with AM}}) it can also be written as
 \beq[renurg]
-\Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham}
+\Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham_X} = \hf\qq{\eta^\dagger - \eta,\ham}
 \eeq
-This form will be useful later when we make the connection with CUT RG.
+This form will be useful later when we make the connection with one-shot Schrieffer-Wolff transformation and CUT RG.
 \comm{
 To begin, we choose an electron with a particular value of quantum numbers, which we label \(q\). It might be the electron with the highest momentum or that at the first lattice site. The goal is to obtain a unitary transformation \il{U_q} that diagonalizes this Hamiltonian in this particular electron's basis. Once this is done, we can choose another electron (the next highest momentum or the second lattice site) and diagonalize the Hamiltonian in this electron's basis.
 \pb \(U_q\) is defined by
@@ -5685,7 +5685,7 @@ We have a general Hamiltonian
 \(\ham_0\) is diagonal w.r.t a particular degree of freedom. \(V\) is off-diagonal w.r.t that same degree of freedom. Let \(S\) be an \textit{anti-Hermitian} and \textit{off-diagonal} operator. \(U = e^S\) is then a unitary transformation.
 \beq
 U \ham U^\dagger &= e^S \rr{\ham_0 + \ham_X}e^{-S}\\
-		 &= \rr{\cosh\rr{S} + \sinh\rr{S}}\rr{\ham_0 + \ham_X}\rr{\cosh\rr{S} + \sinh\rr{S}}\\
+		 &= \rr{\cosh\rr{S} + \sinh\rr{S}}\rr{\ham_0 + \ham_X}\rr{\cosh\rr{S} - \sinh\rr{S}}\\
 		 &= H_1 + H_2
 \eeq
 where \(H_1\) is diagonal and \(H_2\) is off-diagonal.
@@ -5704,7 +5704,16 @@ The second order decoupling condition is thus
 \beq[dec_cond]
 \qq{S,\ham_0} = -\ham_X
 \eeq
-\pb Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\), where \(\eta\) and its conjugate are non-perturbative and Fermionic - they satisfy \(\eta^2 = {\eta^\dagger}^2 = 0\) and \(\cc{\eta,\eta^\dagger}=1\). We can then write
+The effective Hamiltonian is what remains, \(H_1\). That becomes, at second order,
+\beq
+H_1 &= \rr{1 + \hf S^2} \ham_0 \rr{1 + \hf S^2} - S \ham_0 S -\rr{1 + \hf S^2} \ham_X S + S \ham_X \rr{1 + \hf S^2}\\
+    &= \ham_0 + \hf \cc{S^2, \ham_0} - S \ham_0 S - \ham_X S + S \ham_X + O(S^3)\\
+    &= \ham_0 + \hf S\qq{S, \ham_0} - \hf \qq{S, \ham_0}S  + \qq{S,\ham_X} + O(S^3)\\
+    &= \ham_0 + \hf \qq{S,\qq{S, \ham_0}} + \qq{S,\ham_X} + O(S^3)\\
+    &= \ham_0 + \hf \qq{S,-\ham_X} + \qq{S,\ham_X} + O(S^3)\\
+    &= \ham_0 + \hf\qq{S,\ham_X} + O(S^3)\\
+\eeq
+Avoiding the perturbative route, we can take \(S = \frac{\pi}{4}\rr{\eta^\dagger - \eta}\), where \(\eta\) and its conjugate are non-perturbative and Fermionic - they satisfy \(\eta^2 = {\eta^\dagger}^2 = 0\) and \(\cc{\eta,\eta^\dagger}=1\). We can then write
 \beq
 e^S &= \ex{\frac{\pi}{4}\rr{\eta^\dagger - \eta}} \\
     &= 1 + \rr{\eta^\dagger - \eta}\fr{\pi}{4} + \frac{1}{2!}\rr{\eta^\dagger - \eta}^2\rr{\fr{\pi}{4}}^2 + \frac{1}{3!}\rr{\eta^\dagger - \eta}^3\rr{\fr{\pi}{4}}^3 + ...\\
@@ -5808,18 +5817,92 @@ This can be compared with the URG result, eq.~\ref{urg-siam},
 \Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
 \eeq
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
+\pb Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity, and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
 \subsection{Kondo model from a one-shot URG}\label{SWT from URG}
-Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is akin to a decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG.
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to a decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG (or PMS).
 \begin{itemize}
 	\item We will be severing the connections of the impurity with all the mobile electrons in one-shot, and not iteratively.
 	\item We will have to trivialize the quantum fluctuation operator \(\hat \omega\) by replacing it with the diagonal part of the initial state energy.
-	\item We will finally have to project on to the singly-occupied subspace in order to obtain a purely spin-spin interaction.
 \end{itemize}
-Since we are decoupling the whole band, the various parts of the Hamiltonian are
+Since we are decoupling the whole band, the off-diagonal part that we want to remove is
 \beq
-\ham^I = \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}}, &&\ham^d = \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\ua}\hat n_{d\da}
+\ham^I = \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}+\text{h.c.}}
+\eeq
+The diagonal part is the rest of the Hamiltonian.
+\beq
+\ham^d &= \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\ua}\hat n_{d\da}\\
+&= \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\ua}\hat n_{d\da}\\
+\eeq
+Following eq.~\ref{renurg}, the renormalization is
+\beq
+\Delta \ham = \hf\qq{\eta^\dagger - \eta, \ham_X}
+\eeq
+The transition operator \(\eta\) is
+\beq
+\eta &= \fr{1}{\omega - \ham^d}\sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+     &= \sum_{k\sigma}\fr{1}{\omega + \hf\epsilon_k - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\sigma}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+     &= \sum_{k\sigma}\qq{\fr{\hat n_{d\ol\sigma}}{\omega_1 + \hf\epsilon_k - 2\epsilon_d - U} + \fr{1 - \hat n_{d\ol\sigma}}{\omega_0 + \hf\epsilon_k - \epsilon_d}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+     &= \sum_{k\sigma}\qq{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+\eeq
+where \(E_k^1 = \omega_1 + \hf\epsilon_k - 2\epsilon_d - U\) and \(E_k^0 = \omega_0 + \hf\epsilon_k - \epsilon_d\). The total generator is therefore
+\beq
+\eta^\dagger - \eta = \sum_{k\sigma}\qq{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}
 \eeq
 The renormalization is
+\beq
+\Delta \ham = \hf\sum_{kq\sigma\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\alpha}c_{d\alpha} + V_q^* c^\dagger_{d\alpha}c_{q\alpha}}
+\eeq
+The summation has two parts, \(\Delta_{1,2}\) - one where \(\sigma=\alpha\) and another where \(\sigma=\ol\alpha\). The first part \(\Delta_1\) gives
+\beq
+\Delta_1 &=\hf\sum_{kq\sigma=\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\sigma}c_{d\sigma} + V_q^* c^\dagger_{d\sigma}c_{q\sigma}}\\
+     &=\hf\sum_{kq\sigma}\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma},V_q c^\dagger_{q\sigma}c_{d\sigma} + V_q^* c^\dagger_{d\sigma}c_{q\sigma}}\\
+     &=\hf\sum_{kq\sigma}\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\cc{V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}, V_q^* c^\dagger_{d\sigma}c_{q\sigma}} - V^*_k V_q \qq{c^\dagger_{d\sigma}c_{k\sigma},c^\dagger_{q\sigma}c_{d\sigma}}}\\
+     &=\hf\sum_{kq\sigma}\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\cc{V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}, V_q^* c^\dagger_{d\sigma}c_{q\sigma}} + V^*_k V_q \qq{c^\dagger_{q\sigma}c_{d\sigma},c^\dagger_{d\sigma}c_{k\sigma}}}\\
+     &=\hf\sum_{kq\sigma}\qq{\hat n_{d\ol\sigma}\rr{\fr{1}{E_k^1} + \fr{1}{E_q^1}} + \rr{1 - \hat n_{d\ol\sigma}}\rr{\fr{1}{E_k^0} + \fr{1}{E_q^0}}}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}, c^\dagger_{d\sigma}c_{q\sigma}}\\
+     &=\sum_{kq\sigma}\qq{\hf V_k V_q^*\rr{\fr{1}{E_k^0} + \fr{1}{E_q^0}} + \hat n_{d\ol\sigma}\hf V_k V_q^*\rr{\fr{1}{E_k^1} + \fr{1}{E_q^1} - \fr{1}{E_k^0} - \fr{1}{E_q^0}}}\rr{c^\dagger_{k\sigma}c_{q\sigma} - c^\dagger_{d\sigma}c_{d\sigma}\delta_{kq}}\\
+\eeq
+We can now define two new energy scales:
+\beq
+W_{kq} = \hf V_k V_q^*\rr{\fr{1}{E_k^0} + \fr{1}{E_q^0}},&&&& J_{kq} = \hf V_k V_q^*\rr{\fr{1}{E_k^1} + \fr{1}{E_q^1} - \fr{1}{E_k^0} - \fr{1}{E_q^0}}
+\eeq
+The renormalization \(\Delta_1\) becomes
+\beq
+\Delta_1 &=\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}\rr{c^\dagger_{k\sigma}c_{q\sigma} - c^\dagger_{d\sigma}c_{d\sigma}\delta_{kq}}\\
+&=\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma}\\
+\eeq
+The second term in the summation comes from the choice \(\sigma = \ol\alpha\).
+\beq
+\Delta_2 &= \hf\sum_{kq\ol\sigma=\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + V_q^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}},V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + V_q^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\rr{V_q^*c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} - V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\\
+&\times\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+\eeq
+We now use the following trick to combine the first and fourth terms:
+\beq
+&\hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\times\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} - \hf\sum_{kq\sigma}V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} - \hf\sum_{qk\sigma}V^*_q V_k c^\dagger_{d\ol\sigma}c_{q\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}\rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}\\
+&=\sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\\
+\eeq
+In the penultimate step, we interchanged the dummy indices \(k\) and \(q\) and changed \(\sigma \leftrightarrow \ol\sigma\) in the second term. 
+Similarly, for the second term,
+\beq
+&\hf\sum_{kq\sigma}V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\ol\sigma}c_{d\ol\sigma} c^\dagger_{q\sigma}c_{d\sigma}}_{\sigma \leftrightarrow \ol\sigma}}\\
+&=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_q V_k \rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{q\ol\sigma}c_{d\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}}_{k \leftrightarrow q}}\\
+&=\sum_{kq\sigma}V_k V_q \frac{1}{4}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
+&=\hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
+\eeq
+The third term gives
+\beq
+\hf\sum_{kq\sigma}V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} = \hf\sum_{kq\sigma} J_{kq}c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}
+\eeq
+The total renormalization can thus be written as
+\beq
+\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma} + \sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + \hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.}
+\eeq
+\newpage
 \beq
 \Delta \ham &= \sum_{kq\sigma\alpha}V_kc^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\omega_1 - \ham^d}V_q^* c^\dagger_{d\alpha}c_{q\alpha} + \sum_{kq\sigma\alpha}V_q^* c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{\omega_0 - \ham^d}V_k c^\dagger_{k\sigma}c_{d\sigma}
 \eeq
