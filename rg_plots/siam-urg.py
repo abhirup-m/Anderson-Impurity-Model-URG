@@ -55,9 +55,12 @@ def rg(w, D, U, V, J, flags):
 
     d = den(w ,D, U, V, J)
     d = [0.1 if flags[i] == 0 else d[i] for i in range(len(flags))]
-    deltaU = 4 * V**2 * sqrt(D) * (flags[0]/d[0] - flags[1]/d[1]) - J**2 * D * (1/8) * (5*flags[0]/d[0] + flags[2]/d[2])
-    deltaV = (-3/4) * J * sqrt(D) * V * flags[0]/d[0]
-    deltaJ = -J**2 * sqrt(D) * flags[0]/d[0]
+    #deltaU = 4 * V**2 * sqrt(D) * (flags[0]/d[0] - flags[1]/d[1]) - J**2 * D * (1/8) * (5*flags[0]/d[0] + flags[2]/d[2])
+    #deltaV = (-3/4) * J * sqrt(D) * V * flags[0]/d[0]
+    #deltaJ = -J**2 * sqrt(D) * flags[0]/d[0]
+    deltaU = 4 * V**2 * sqrt(D) * (1/d[0] - 1/d[1]) - J**2 * D * (1/8) * (5*1/d[0] + 1/d[2])
+    deltaV = (-3/4) * J * sqrt(D) * V * 1/d[0]
+    deltaJ = -J**2 * sqrt(D) * 1/d[0]
     U += deltaU
     V += deltaV
     J += deltaJ
