@@ -5869,199 +5869,44 @@ The renormalization \(\Delta_1\) becomes
 \beq
 \Delta_1 &=\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}\rr{c^\dagger_{k\sigma}c_{q\sigma} - c^\dagger_{d\sigma}c_{d\sigma}\delta_{kq}}\\
 &=\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma}\\
+&=\sum_{kq\sigma}\qq{W_{kq} + \hf \hat n_d J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} - \sum_{kq\sigma}\sigma J_{kq} S_d^z c^\dagger_{k\sigma}c_{q\sigma}- \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma}
 \eeq
-The second term in the summation comes from the choice \(\sigma = \ol\alpha\).
+There we exchanged \(\hat n_{d\ol\sigma}\) for \(S_d^z\) and \(\hat n_d\), in the first term, by using the definitions \(\hat n_{d\sigma} + \hat n_{d\ol\sigma} = \hat n_{d\sigma}\) and \(\hat n_{d\sigma} - \hat n_{d\ol\sigma} = 2\sigma S_d^z\).
+\pb The second term in the summation comes from the choice \(\sigma = \ol\alpha\).
 \beq
 \Delta_2 &= \hf\sum_{kq\ol\sigma=\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + V_q^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma}}\\
-&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}},V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + V_q^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma}}\\
-&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\rr{V_q^*c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
-&= \hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} - V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\qq{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0},V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + V_q^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}}\rr{V_q^*c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V_q c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&= \hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} - V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\\
 &\times\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
 \eeq
 We now use the following trick to combine the first and fourth terms:
 \beq
-&\hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} - V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\times\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
-&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} - \hf\sum_{kq\sigma}V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
-&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} - \hf\sum_{qk\sigma}V^*_q V_k c^\dagger_{d\ol\sigma}c_{q\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}\rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}\\
-&=\sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\\
+&\hf\sum_{kq\sigma}\rr{V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}}\times\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} + \hf\sum_{kq\sigma}V^*_k V_q c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
+&=\hf\sum_{kq\sigma}V_k V_q^* c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} + \hf\sum_{qk\sigma}V^*_q V_k c^\dagger_{d\ol\sigma}c_{q\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}\rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}\\
+&=-\sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{q\ol\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma} \\
 \eeq
 In the penultimate step, we interchanged the dummy indices \(k\) and \(q\) and changed \(\sigma \leftrightarrow \ol\sigma\) in the second term. 
-Similarly, for the second term,
-\beq
+\pb Similarly, for the second term, we get
+\begin{flalign*}
 &\hf\sum_{kq\sigma}V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}\\
 &=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\ol\sigma}c_{d\ol\sigma} c^\dagger_{q\sigma}c_{d\sigma}}_{\sigma \leftrightarrow \ol\sigma}}\\
 &=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_q V_k \rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{q\ol\sigma}c_{d\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}}_{k \leftrightarrow q}}\\
 &=\sum_{kq\sigma}V_k V_q \frac{1}{4}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
-&=\hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
-\eeq
+&=\hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
+\end{flalign*}
 The third term gives
 \beq
 \hf\sum_{kq\sigma}V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} = \hf\sum_{kq\sigma} J_{kq}c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}
 \eeq
 The total renormalization can thus be written as
 \beq
-\sum_{kq\sigma}\qq{W_{kq} + \hat n_{d\ol\sigma}J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma} + \sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} + \hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.}
+\Delta \ham =& - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma} &&&& \qq{\text{renormalization in \(\epsilon_d, U\)}}\\
+	     &+ \sum_{kq\sigma}\qq{W_{kq} + \hf \hat n_d J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} &&&& \qq{\text{potential scattering}}\\
+	     &- \sum_{kq\sigma}J_{kq}\qq{S_d^z \sigma c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{q\ol\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma}}  &&&& \qq{\text{spin Kondo}}\\
+	     &+ \hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.} &&&& \qq{\text{charge Kondo}}\\
 \eeq
-\newpage
-\beq
-\Delta \ham &= \sum_{kq\sigma\alpha}V_kc^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\omega_1 - \ham^d}V_q^* c^\dagger_{d\alpha}c_{q\alpha} + \sum_{kq\sigma\alpha}V_q^* c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{\omega_0 - \ham^d}V_k c^\dagger_{k\sigma}c_{d\sigma}
-\eeq
-In order to connect with SWT, we now need to replace \(\omega\) with the energies of the initial states. Meanwhile, \(\ham^d\) is the energy of the intermediate state. The denominator \(\omega - \ham^d\) then gives the change in energy between the initial and final states. For the first term, this energy difference is \(\omega_1 - \ham^d = \epsilon_q - \epsilon_d - U\hat n_{d\ol\alpha}\). For the second term, the difference is \(\omega_0 - \ham^d = -\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}\). The renormalization becomes
-\beq
-\Delta \ham &= \sum_{kq\sigma\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\alpha}} c^\dagger_{d\alpha}c_{q\alpha} +  c^\dagger_{d\alpha}c_{q\alpha}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
-&= \sum_{kq\sigma=\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\sigma}} c^\dagger_{d\sigma}c_{q\sigma} +  c^\dagger_{d\sigma}c_{q\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
-&+\sum_{kq\sigma=\ol\alpha}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\sigma}} c^\dagger_{d\ol\sigma}c_{q\ol\sigma} +  c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}c^\dagger_{k\sigma}c_{d\sigma}}\\
-&= \sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{q\sigma}\qq{\rr{1 - \hat n_{d\sigma}}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\ol\sigma}} - \hat n_{d\sigma}\frac{1}{-\epsilon_k + \epsilon_d + U\hat n_{d\ol\sigma}}}\\
-&+\sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \qq{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}
-\eeq
-At the last step, we converted \(c_q c^\dagger_k\) into \(-c^\dagger_k c_q\) by using their anticommutator and dropping a constant term. Also, in the last two terms, we substituted \(\hat n_{d\sigma} = 1\) and \(\hat n_{d\ol\sigma} = 0\) because of the \(c\) and \(c^\dagger\) in the numerator. We now need to write the first terms in terms of the impurity spin. First, if we go to the Kondo regime, it is clear that the presence of \(1- \hat n_{d\sigma}\) implies \(\hat n_{d\ol\sigma}=1\) and the presence of \(\hat n_{d\sigma}\) implies \(\hat n_{d\ol\sigma}=0\), because we must have \(\hat n_d=1\) in this regime. The first term can thus be written as
-\beq
-\Delta \ham = \sum_{kq\sigma}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{1 - \hat n_{d\sigma}}{\epsilon_q - \epsilon_d - U} + \frac{\hat n_{d\sigma}}{\epsilon_k - \epsilon_d }} + c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}}
-\eeq
-We can now use the two equations \(2\sigma S_d^z = \hat n_{d\sigma} - \hat n_{d\ol\sigma}, 1 = \hat n_{d\sigma} + \hat n_{d\ol\sigma}\) to write \(\hat n_{d\sigma} = \hf + \sigma S_d^z\).
-\beq
-\Delta \ham = \sum_{kq\sigma}V_k V_q^*\qq{c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{\hf - \sigma S_d^z}{\epsilon_q - \epsilon_d - U} + \frac{\hf + \sigma S_d^z}{\epsilon_k - \epsilon_d }} + c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}}}
-\eeq
-In making this substitution, we have projected on to the singly-occupied subspace. The terms with \(S_d^z\) can be written as
-\beq
-\sum_{kq\sigma} V_k V_q^*c^\dagger_{k\sigma}c_{q\sigma}\rr{\frac{\hf - \sigma S_d^z}{\epsilon_q - \epsilon_d - U} + \frac{\hf + \sigma S_d^z}{\epsilon_k - \epsilon_d }} &= \sum_{kq\sigma} c^\dagger_{k\sigma}c_{q\sigma}W_{kq} + \hf\sum_\sigma J_{kq}\sigma c^\dagger_{k\sigma}c_{q\sigma}S_d^z\\
-																			    &= \sum_{kq\sigma} W_{kq}c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq} J_{kq}S_d^z s^z_{kq}\\
-\eeq
-where
-\beq
-W_{kq} &= \hf\frac{V_k V_q^*}{\epsilon_q - \epsilon_d - U} + \hf\frac{V_k V_q^*}{\epsilon_k - \epsilon_d}
-\eeq
-is the coupling for the potential scattering and
-\beq
-J_{kq} &= -\frac{2V_k V_q^*}{\epsilon_q - \epsilon_d - U} + \frac{2V_k V_q^*}{\epsilon_k - \epsilon_d}
-\eeq
-is the coupling for the spin-spin scattering, and
-\beq
-\sum_\sigma \sigma \hf c^\dagger_{k\sigma}c_{q\sigma} = \hf c^\dagger_{k\ua}c_{q\ua} - \hf c^\dagger_{k\da}c_{q\da} = s^z_{kq}
-\eeq
-The last term can be written in terms of \(S_d^\pm\):
-\beq
-\sum_{kq\sigma}V_k V_q^*c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{d\ol\sigma}c_{q\ol\sigma} \rr{\frac{1}{\epsilon_q - \epsilon_d - U} + \frac{1}{-\epsilon_k + \epsilon_d}} &= \sum_{kq\sigma}J_{kq}\rr{c^\dagger_{k\ua}c_{q\da}c^\dagger_{d\da}c_{d\ua} + c^\dagger_{k\da}c_{q\ua}c^\dagger_{d\ua}c_{d\da}} \\
-&= \sum_{kq\sigma}J_{kq}\rr{S_d^+ s^-_{kq} + S_d^- s^+_{kq}}
-\eeq
-The total renormalization is
-\beq
-\Delta \ham = \sum_{kq\sigma} W_{kq}c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq} J_{kq} \vec S_d \cdot \vec s_{kq}\\
-\eeq
-\comm{
-	\subsection{Kondo model from PMS-type approach}
-In the previous section, we saw that a step-by-step SWT gives the same effective Hamiltonian as the application of PMS. The converse is also true. That is, decoupling the whole band of mobile electrons using the formalism of PMS gives the same effective Hamiltonian as an SWT.
-\pb First note that the goal of PMS here would be to decouple the single-occupied subspace of the impurity from the doublon and holon subspaces. To that end, we write the interaction part of the Hamiltonian as
-\beq
-\sum_{k\sigma}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} &= \sum_{k\sigma}\qq{V_k c^\dagger_{k\sigma}c_{d\sigma}\cc{\hat n_{d\ol\sigma} + \rr{1 - \hat n_{d\ol\sigma}}} + \text{h.c.}}\\
-								    &= V_{2\to 1} + V_{1\to 0} + \text{h.c.}
-\eeq
-where 
-\beq
-V_{2\to 1} = \sum_{k\sigma}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}
-\eeq
-takes us from doublon to spinon while
-\beq
-V_{1\to 0} = \sum_{k\sigma}V_k c^\dagger_{k\sigma}c_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}}
-\eeq
-takes us from spinon to holon. The Hermitian conjugate involves \(V_{1\to 2} = \sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}\) and \(V_{0\to 1} = \sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\). Similarly, the diagonal part can be separated as follows:
-\beq
-\ham_D = \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\sum_\sigma\hat n_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}} + \rr{2\epsilon_d + U}\hat n_{d\ua}\hat n_{d\da} = \ham_\text{bath} + H_1 + H_2
-\eeq
-We can now separate the Hamiltonian into the three subspaces:
-\beq
-E\ket{\psi} &= \ham\ket{\psi} \\
-	    &= \rr{\ham_0 + V_{0\to 1}}\ket{\psi_0} + \rr{\ham_0 + H_1 + V_{1\to 2} + V_{1 \to 0}}\ket{\psi_1} + \rr{\ham_0 + H_2 + V_{2\to 1}}\ket{\psi_2}
-\eeq
-where \(\ket{\psi_i} = \ket{n_d = i}\bra{n_d = i}\ket{\psi}\). We can separate the entire equation into three individual equations for each of the three subspaces:
-\beq[sceq]
-E\ket{\psi_0} &= \ham_0\ket{\psi_0} + V_{1 \to 0}\ket{\psi_1}\\
-E\ket{\psi_1} &= \rr{\ham_0 + \epsilon_d}\ket{\psi_1} + V_{0\to 1}\ket{\psi_0} + V_{2\to 1}\ket{\psi_2}\\
-E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}}\ket{\psi_1}\\
-\eeq
-Eliminating \(\ket{\psi_0}\) and \(\ket{\psi_2}\) from the equations gives the effective Hamiltonian in the single-occupied subspace.
-\beq
-E\ket{\psi_1} &= \qq{\ham_0 + \epsilon_d + V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} + V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2}}\ket{\psi_1}\\
-	      &= \ham_\text{eff}\ket{\psi_1}
-\eeq
-We can evaluate the effective Hamiltonian.
-\beq
-\ham_\text{eff} &= \ham_0 + \epsilon_d + V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} + V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2}\\
-\eeq
-The first renormalization term gives
-\beq
-V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} = \sum_{kq\sigma\alpha}V_k^*V_qc^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\frac{1}{E - \ham_0} c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}
-\eeq
-We can \textit{approximate} \(E\) by replacing it with the bare energy of \(\ket{\psi_1}\): \(E = \ham_0 - \epsilon_q + \epsilon_d\).
-\beq
-V_{0 \to 1}\frac{1}{E - \ham_0}V_{1\to 0} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}\frac{1}{\epsilon_d - \epsilon_q}
-\eeq
-Similarly, the second term becomes
-\beq
-V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{q\gamma}c_{d\gamma}\hat n_{d\ol\gamma}\frac{1}{E - \ham_0 - 2\epsilon_d - U}c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}
-\eeq
-We again approximate \(E\): \(E = \ham_0 + \epsilon_k - \epsilon_d\):
-\beq
-V_{2 \to 1}\frac{1}{E - \ham_0 - 2\epsilon_d - U}V_{1\to 2} = \sum_{kq\sigma\gamma}V_k^*V_qc^\dagger_{q\gamma}c_{d\gamma}\hat n_{d\ol\gamma}c^\dagger_{d\sigma}c_{k\sigma}\hat n_{d\ol\sigma}\frac{1}{\epsilon_k - \epsilon_d - U}
-\eeq
-The sum of these two terms give the total renormalization. First we look at those terms where \(\gamma=\sigma\). The total renormalization from that part is
-\beq
-\sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}\rr{1 - \hat n_{d\ol\sigma}}c_{k\sigma}c^\dagger_{q\sigma}}{\epsilon_d - \epsilon_q} + \frac{\rr{1 - \hat n_{d\sigma}}\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}} &= \sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}c_{k\sigma}c^\dagger_{q\sigma}}{\epsilon_d - \epsilon_q} + \frac{\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}\\
-&= \sum_{kq\sigma}V_k^*V_q\qq{\frac{\hat n_{d\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\sigma}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}
-\eeq
-In the first step we used \(\hat n_{\sigma}\hat n_{d\ol\sigma}=0\) because we are in the single-occupied subspace and in the second step we used \(c_{k\sigma}c^\dagger_{q\sigma} = \delta_{kq} - c^\dagger_{q\sigma}c_{k\sigma}\) and dropped the constant \(\delta\) part. We can now write this this thing in terms of spin operator \(S_d^z = \hf\sigma\rr{\hat n_{d\sigma} - \hat n_{d\ol\sigma}}\) and also use \(\hat n_{\sigma} + \hat n_{\ol\sigma} = 1\). They give
-\beq
-&\sum_{kq\sigma}V_k^*V_q\qq{\frac{\rr{\hf + \sigma S_d^z}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_q - \epsilon_d} + \frac{\rr{\hf - \sigma S_d^z}c^\dagger_{q\sigma}c_{k\sigma}}{\epsilon_k - \epsilon_d - U}}\\
-&= \sum_{kq\sigma}V_k^*V_qS_d^z \sigma c^\dagger_{q\sigma}c_{k\sigma}\qq{\frac{1}{\epsilon_q - \epsilon_d} - \frac{1}{\epsilon_k - \epsilon_d - U}} + \hf\sum_{kq\sigma}V_k^*V_qc^\dagger_{q\sigma}c_{k\sigma}\qq{\frac{1}{\epsilon_q - \epsilon_d} + \frac{1}{\epsilon_k - \epsilon_d - U}}
-\eeq
-The latter term is a potential scattering term; it vanishes in the particle-hole symmetric case (\(\epsilon_d + U = -\epsilon_d\)) and we will ignore it from now. The first term is the gives rise to the spin-preserving scattering in the s-d model; we can write \(\sum_\sigma\sigma c^\dagger_{q\sigma}c_{k\sigma} = c^\dagger_{q\ua}c_{k\ua} - c^\dagger_{q\da}c_{k\da} \equiv 2s^z_{kq}\). Defining \(J_{kq} = V_k^*V_q\qq{\frac{1}{\epsilon_q - \epsilon_d} - \frac{1}{\epsilon_k - \epsilon_d - U}}\), gives us the first term in s-d model
-\beq
-2\sum_{kq}J_{kq} S_d^z s^z_{kq}
-\eeq
-Setting \(\gamma = \ol\sigma\) in the total renormalization gives the rest of the terms:
-\beq
-\sum_{kq\sigma}V_k^*V_qc^\dagger_{d\sigma}c_{d\ol\sigma}c^\dagger_{q\ol\sigma}c_{k\sigma}\qq{\frac{-1}{\epsilon_d - \epsilon_q} + \frac{-1}{\epsilon_k - \epsilon_d - U}} =\sum_{kq\sigma}J_{kq}c^\dagger_{d\sigma}c_{d\ol\sigma}c^\dagger_{q\ol\sigma}c_{k\sigma}
-\eeq
-We can define \(S_d^\sigma = c^\dagger_{d\sigma}c_{d\ol\sigma}\) where \(\sigma \in \cc{+,-}\) and \(s^{\ol\sigma}_{kq} = c^\dagger_{q\ol\sigma}c_{k\sigma}\). This gives
-\beq
-\sum_{kq\sigma}J_{kq}S_d^\sigma s_{kq}^{\ol\sigma} = \sum_{kq}J_{kq}\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}
-\eeq
-The total renormalization, minus the potential scattering and constant terms constitutes the spin-flip scattering part of the Kondo model:
-\beq
-\ham_{s-d} = 2\sum_{kq}J_{kq}\qq{S_d^z s^z_{kq} + \hf\rr{S_d^+ s_{kq}^- + S_d^- s_{kq}^+}} = 2\sum_{kq}J_{kq}\vec{S}_d\cdot\vec{s}_{kq}
-\eeq
-Note that when we wrote the entire Schrodinger equation in the subspace of \(\ket{\psi_1}\), we projected out all contributions of the Hamiltonian in the subspace of the doublon and holon. To recover those parts, we can look at eq.~\ref{sceq} by eliminating \(\ket{\psi_1}\). That gives
-\beq
-E\ket{\psi_0} &= \rr{\ham_0 + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}}\ket{\psi_0} + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}\psi_2\\
-E\ket{\psi_2} &= \rr{\ham_0 + 2\epsilon_d + U + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1}}\ket{\psi_2} + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1}\psi_0\\
-\eeq
-It can be represented in the matrix form:
-\beq
-\begin{pmatrix} \ham_0 + V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} & V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} \\\\ V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} & \ham_0 + 2\epsilon_d + U + V_{1\to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} \end{pmatrix} \begin{pmatrix} \psi_0 \\\\ \psi_2 \end{pmatrix} = E \begin{pmatrix} \psi_0 \\\\ \psi_2 \end{pmatrix}
-\eeq
-There are two scattering terms in each equation. The first scattering term (of the forms \(V_{1 \to 0}GV_{0\to 1}\) and \(V_{1 \to 2}GV_{2\to 1}\)) involve virtual excitations to the single-occupied subspace. They are diagonal in their respective subspaces. However, \textit{the second scattering term in each equation, of the form \(V_{1 \to 0}GV_{2\to 1}\) or \(V_{1 \to 2}GV_{0\to 1}\) scatter between the doublon and holon subspace.} The first one takes you from the doublon to the holon (\(2 \to 1 \to 0\)), the second one does the oppposte. Let us take a look at these terms. The first term becomes
-\beq
-V_{1 \to 0}\frac{1}{E - \ham_0 - \epsilon_d}V_{2\to 1} &= \sum_{kq\sigma\gamma}V_q c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}\frac{1}{E - \ham_0 - \epsilon_d}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}\\
-						       &=\sum_{kq\sigma\gamma}V_q c^\dagger_{q\gamma}c_{d\gamma}\rr{1 - \hat n_{d\ol\gamma}}V_k c^\dagger_{k\sigma}c_{d\sigma}\hat n_{d\ol\sigma}\frac{1}{\epsilon_d + U - \epsilon_k}
-\eeq
-where I put \(E = \ham_0 - \epsilon_k + 2\epsilon_d + U\) as the energy of the initial state \(\ket{\psi_2}\). Since the expression has \(c_{d\gamma}\) followed by \(c_{d\sigma}\) with only diagonal terms in between, we must have \(\gamma = \ol\sigma\). Hence it becomes
-\beq
-\sum_{kq\sigma}V_qV_k c^\dagger_{q\ol\sigma}c_{d\ol\sigma}c^\dagger_{k\sigma}c_{d\sigma}\frac{1}{\epsilon_d + U - \epsilon_k} &= \sum_{kq}V_q V_k\frac{1}{\epsilon_d + U - \epsilon_k}\qq{c^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua} + c^\dagger_{q\da}c^\dagger_{k\ua}c_{d\ua}c_{d\da}}\\
-&= \sum_{kq}V_q V_k\frac{1}{\epsilon_d + U - \epsilon_k}\qq{c^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua} + c^\dagger_{k\ua}c^\dagger_{q\da}c_{d\da}c_{d\ua}}\\
-&= \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}}
-\eeq
-In the last step, we relabeled \(k \leftrightarrow q\). The second scattering term similarly becomes
-\beq
-V_{1 \to 2}\frac{1}{E - \ham_0 - \epsilon_d}V_{0\to 1} &= \sum_{kq\sigma\gamma}V_q^* c^\dagger_{d\gamma}c_{q\gamma}\hat n_{d\ol\gamma}\frac{1}{E - \ham_0 - \epsilon_d}V_k^* c^\dagger_{d\sigma}c_{k\sigma}\rr{1 - \hat n_{d\ol\sigma}}\\
-						       &=\sum_{kq\sigma}V_q^*V_k^* c^\dagger_{d\ol\sigma}c_{q\ol\sigma} c^\dagger_{d\sigma}c_{k\sigma}\frac{1}{\epsilon_k - \epsilon_d}\\
-						       &=\sum_{kq}V_q^*V_k^* \rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}
-\eeq
-Combining the two terms, we get the total charge-Kondo contribution:
-\beq
-\ham_{ch} = \sum_{kq}V_q V_kc^\dagger_{q\ua}c^\dagger_{k\da}c_{d\da}c_{d\ua}\rr{\frac{1}{\epsilon_d + U - \epsilon_k} + \frac{1}{\epsilon_d + U - \epsilon_q}} \\
-+ \sum_{kq}V_q^*V_k^*c^\dagger_{d\ua}c^\dagger_{d\da}c_{k\da}c_{q\ua}\rr{\frac{1}{\epsilon_k - \epsilon_d} + \frac{1}{\epsilon_q - \epsilon_d}}
-\eeq
-}
 %}
 \subsection{CUT RG}
 In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against some parameter \(\lambda\) of the Hamiltonian. Denoting the unitary transformation generator by \(Sd\lambda\) for a change \(d\lambda\), we can write
