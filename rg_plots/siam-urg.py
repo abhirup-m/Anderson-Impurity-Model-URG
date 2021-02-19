@@ -10,7 +10,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 font = {'family' : 'normal',
-        #'weight' : 'bold',
         'size'   : 15}
 
 matplotlib.rc('font', **font)
@@ -18,8 +17,8 @@ matplotlib.rcParams['text.usetex'] = True
 
 
 def plot(gx,gy,title):
-    norm_gx = [gxi/abs(max(gx)) for gxi in gx]
-    norm_gy = [gyi/abs(max(gy)) for gyi in gy]
+    norm_gx = [gxi/abs(max(gx, key=abs)) for gxi in gx]
+    norm_gy = [gyi/abs(max(gy, key=abs)) for gyi in gy]
     plt.scatter(norm_gx, norm_gy)
     plt.scatter(norm_gx[-1], norm_gy[-1], color='r')
     plt.xlabel(r'J')
@@ -55,9 +54,6 @@ def rg(w, D, U, V, J, flags):
 
     d = den(w ,D, U, V, J)
     d = [0.1 if flags[i] == 0 else d[i] for i in range(len(flags))]
-    #deltaU = 4 * V**2 * sqrt(D) * (flags[0]/d[0] - flags[1]/d[1]) - J**2 * D * (1/8) * (5*flags[0]/d[0] + flags[2]/d[2])
-    #deltaV = (-3/4) * J * sqrt(D) * V * flags[0]/d[0]
-    #deltaJ = -J**2 * sqrt(D) * flags[0]/d[0]
     deltaU = 4 * V**2 * sqrt(D) * (1/d[0] - 1/d[1]) - J**2 * D * (1/8) * (5*1/d[0] + 1/d[2])
     deltaV = (-3/4) * J * sqrt(D) * V * 1/d[0]
     deltaJ = -J**2 * sqrt(D) * 1/d[0]
@@ -74,19 +70,9 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
     d_old = d
     d_new = den(w, D, U, V, J)
-    if all(delta == 0 for delta in deltas):
-        flags = [0] * len(flags)
-        print ("Changes are zero.",w)
-        input((U, V, J))
-        return flags
-    #if all(abs(delta) < 10**(-10) for delta in deltas):
-    #    flags = [0] * len(flags)
-    #    print ("Changes are too small.")
-    #    return flags
     for i in range(len(d_old)):
         if d_old[i] * d_new[i] <= 0:
             flags[i] = 0
-            #print ("Flag[{}] reached zero.".format(i))
     return flags
 
 
@@ -94,7 +80,7 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 def all_flow():
     '''master function to call other functions'''
     N = 1000
-    w_0 = np.linspace(-1000.1,-200,1000,endpoint=True)
+    w_0 = np.linspace(-100,-10,10,endpoint=True)
     D_0 = [1]
     V_0 = [2]
     J_0 = [1]
@@ -106,79 +92,15 @@ def all_flow():
         #print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
         flags = init_check_fp(w, D0, U, V, J)
         for D in np.linspace(D0, 0, N):
-            if not 1 in flags:
+            if flags[0] == 0:
                 flag = True
-                if U_arr[-1] < U_arr[0]:
-                    print (w)
-                #print ("found")
                 break
             U, V, J, flags = rg(w ,D, U, V, J, flags)
             U_arr.append(U)
             V_arr.append(V)
             J_arr.append(J)
         if flag:
-            #print ("End: U={}, V={}, J={}\n".format(U, V, J))
+            print ("End: U={}, V={}, J={}\n".format(U, V, J))
             plot(J_arr, U_arr, title)
 
 all_flow()
-
-
-"""
-
-    for D0 in [1,10,100,1000]:
-        for J0 in [0]:
-            D = D0
-            U = 1
-            V = 2
-            J = 0
-            sign1 = D - J/4
-            sign2 = D - U/2 - J/2
-            sign3 = D - 3*J/4
-            sign5 = U + J/2
-            flag = False
-            count = 0
-            print (V, U)
-            while D > 0:
-            #    print (D-J/4,D - U/2 - J/2,D - 3*J/4)
-            #    print (U)
-                if sign1 * (D - J/4) <= 0:
-                    break
-                elif sign2 * (D - U/2 - J/2) <= 0:
-                    #print ("found 2")
-                    break
-                elif sign3 * (D - 3*J/4) <= 0:
-                    #print ("found 3")
-                    break
-                elif sign5 * U <= 0 and J0 == 0:
-                    U = 0
-                    break
-                sign1 = D - J/4
-                sign2 = D - U/2 - J/2
-                sign3 = D - 3*J/4
-                sign5 = U + J/2
-                deltaU = V**2 * D**(1/2) * sign5 / (sign1 * sign2) + J**2 * D**(3/2) * (6 * D - 4 * J)/(sign1 * sign3)
-                deltaJ = J**2 * D**(1/2) / (4 * sign1)
-                deltaV = V * D**(1/2) * (3*J/4) / sign1
-                if flag == False:
-                    #count -= 1
-                    U += deltaU
-                J += deltaJ
-                V += deltaV
-                D *= b
-            #    x.append(U)
-            #    y.append(V)
-                count += 1
-            print (V,U)
-            x.append(D0)
-            y.append(U)
-            #plt.plot(x,y,marker='o')
-            if U < 0:
-                print (U)
-            ci += 1
-    plt.plot(np.log10(x),y,marker='o')
-    plt.xlabel(r'$\log_{10}D$')
-    plt.ylabel(r'$U^*$')
-    plt.title(r'Dependence of $U^*$ on $D$($V=0.1$)')
-    plt.show()
-
-"""
