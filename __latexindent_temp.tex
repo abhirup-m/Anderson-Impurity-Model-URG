@@ -5663,18 +5663,6 @@ In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = 
 \Delta E_2 &= -\fr{1}{\epsilon_q - \epsilon_d - U}\\
 \eeq
 These results are also obtained in ref.~\cite{hewson}. The complete process is depicted in fig.~\ref{pmsflow}.
-\pb Keeping in mind this prescription of substituting \(E\) in the denominator with the energy of the initial state, we can write down a more complete expression for the total renormalization brought about by PMS.
-\beq
-\Delta \ham\bigg\vert_{PMS} &= V_+ \frac{1}{E - V_0 - \ham_0^d} V_- + V_- \frac{1}{E - V_0 - \ham_1^d} V_+ \\
-			    &= c_{q\beta}^\dagger T \frac{1}{E - V_0 - \ham_0^d} T^\dagger c_{q\beta} + T^\dagger c_{q\beta} \frac{1}{E - V_0 - \ham_1^d} c_{q\beta}^\dagger T \\
-			    &= c_{q\beta}^\dagger T \frac{1}{E_1 - \ham_0^d} T^\dagger c_{q\beta} + T^\dagger c_{q\beta} \frac{1}{E_0 - \ham_1^d} c_{q\beta}^\dagger T \\
-			    &= \frac{1}{E_1 - E_0}\rr{ c_{q\beta}^\dagger T T^\dagger c_{q\beta} - T^\dagger c_{q\beta} c_{q\beta}^\dagger T} \\
-\eeq
-There I used the notation \(V_+ = c^\dagger T = V_-^\dagger\). Also, \(E\) in the first term was replaced by the energy \(E_1\) of the initial state on which \(T^\dagger c\) acts, which must be the state with \(\hat n_{q\beta}=1\). \(\ham_d^0\) on the other hand evaluates according to the intermediate state (\(\hat n_{q\beta}=0\)), hence it was replaced by \(E_0\). The final result is thus
-\beq[pmsren]
-\Delta \ham\bigg\vert_{PMS} = \frac{1}{E_1 - E_0}\qq{ \hat n_{q\beta} T T^\dagger  - \rr{1 - \hat n_{q\beta}}T^\dagger T} \\
-\eeq
-We will see later that Schrieffer-Wolff transformation gives the same renormalization.
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.35]{pms-flowchart.png}
@@ -5788,22 +5776,6 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-
-\subsubsection{Iterative SWT vs PMS}
-If one visualizes an iterative SWT where we decouple a single electron at each step, it is possible to write down a more precise expression for the renormalization. Let \(S\) be of the form \(c^\dagger_{q\beta}s - s^\dagger c_{q\beta}\). This form is of course chosen to make \(S\) anti-Hermitian. The part \(s\) can be determined from the decoupling condition:
-\beq
--\ham_X = \qq{S, \ham_0} = \qq{c^\dagger_{q\beta}s - s^\dagger c_{q\beta}, H_0}
-\eeq
-where \(\ham_X = c^\dagger_{q\beta} T + T^\dagger c_{q\beta}\). Multiplying with \(\bra{0}\) and \(\ket{1}\) from the left and right respectively gives
-\beq
--T &= \bra{0}\qq{c^\dagger_{q\beta}s - s^\dagger c_{q\beta}, H_0}\ket{1} = -s^\dagger \bra{1}H_0\ket{1} + \bra{0}H_0\ket{0}s^\dagger\\
-\implies s^\dagger &= \frac{1}{E_1 - E_0}T
-\eeq
-Hence, the total generator is \(S = \frac{1}{E_1 - E_0}\rr{c^\dagger_{q\beta}T - T^\dagger c_{q\beta}}\). The renormalization is thus
-\beq
-\Delta \ham \bigg \vert_{SWT} = \hf \frac{1}{E_1 - E_0}\qq{c^\dagger_{q\beta}T - T^\dagger c_{q\beta}, c^\dagger_{q\beta}T + T^\dagger c_{q\beta}} = \hf \frac{1}{E_1 - E_0}\rr{ c_{q\beta}^\dagger T T^\dagger c_{q\beta} - T^\dagger c_{q\beta} c_{q\beta}^\dagger T}
-\eeq
-This is identical to what was obtained from PMS, eq.~\ref{pmsren}. This proves that if we are decoupling one electronic state at each step, PMS and SWT will give the same effective Hamiltonian and RG equations.
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
 \beq
@@ -5831,6 +5803,9 @@ The renormalization in the effective Hamiltonian from decoupling a high energy p
 		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
 In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state (at \(T=0\)). We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
+\begin{equation*}
+	This is an equation.
+\end{equation*}
 \beq
 \hf \qq{S,\ham_X}\bigg\vert_{\hat n_{q\beta}=1} &=-\rr{1 - \hat n_{d\beta}}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q + \epsilon_d + U}}
 \eeq

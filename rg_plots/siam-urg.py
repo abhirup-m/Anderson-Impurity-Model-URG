@@ -1,8 +1,8 @@
 #!/bin/python
 
 
-import time
 import itertools
+import time
 from math import sqrt
 
 import matplotlib
