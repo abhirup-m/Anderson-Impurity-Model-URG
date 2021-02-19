@@ -5838,7 +5838,7 @@ Following eq.~\ref{renurg}, the renormalization is
 \Delta \ham = \hf\qq{\eta^\dagger - \eta, \ham_X}
 \eeq
 The transition operator \(\eta\) is
-\beq
+\beq[swturg]
 \eta &= \fr{1}{\omega - \ham^d}\sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
      &= \sum_{k\sigma}\fr{1}{\omega + \hf\epsilon_k - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\sigma}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
      &= \sum_{k\sigma}\qq{\fr{\hat n_{d\ol\sigma}}{\omega_1 + \hf\epsilon_k - 2\epsilon_d - U} + \fr{1 - \hat n_{d\ol\sigma}}{\omega_0 + \hf\epsilon_k - \epsilon_d}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
@@ -5850,7 +5850,7 @@ where \(E_k^1 = \omega_1 + \hf\epsilon_k - 2\epsilon_d - U\) and \(E_k^0 = \omeg
 \eeq
 The renormalization is
 \beq
-\Delta \ham = \hf\sum_{kq\sigma\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\alpha}c_{d\alpha} + V_q^* c^\dagger_{d\alpha}c_{q\alpha}}
+\Delta \ham(\omega_1,\omega_0) = \hf\sum_{kq\sigma\alpha}\qq{\rr{\fr{\hat n_{d\ol\sigma}}{E_k^1} + \fr{1 - \hat n_{d\ol\sigma}}{E_k^0}}\rr{V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}},V_q c^\dagger_{q\alpha}c_{d\alpha} + V_q^* c^\dagger_{d\alpha}c_{q\alpha}}
 \eeq
 The summation has two parts, \(\Delta_{1,2}\) - one where \(\sigma=\alpha\) and another where \(\sigma=\ol\alpha\). The first part \(\Delta_1\) gives
 \beq
@@ -5894,19 +5894,31 @@ In the penultimate step, we interchanged the dummy indices \(k\) and \(q\) and c
 &=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\ol\sigma}c_{d\ol\sigma} c^\dagger_{q\sigma}c_{d\sigma}}_{\sigma \leftrightarrow \ol\sigma}}\\
 &=\frac{1}{4}\sum_{kq\sigma}\qq{V_k V_q \rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \underbrace{V_q V_k \rr{\fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{q\ol\sigma}c_{d\ol\sigma} c^\dagger_{k\sigma}c_{d\sigma}}_{k \leftrightarrow q}}\\
 &=\sum_{kq\sigma}V_k V_q \frac{1}{4}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
-&=\hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
+&=\hf\sum_{kq\sigma}K_{kq}c^\dagger_{k\sigma}c_{d\sigma}c^\dagger_{q\ol\sigma}c_{d\ol\sigma}\\
 \end{flalign*}
+where \(K_{kq}\) is yet another energy scale.
+\beq
+K_{kq} = \frac{1}{4}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}
+\eeq
 The third term gives
 \beq
-\hf\sum_{kq\sigma}V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} = \hf\sum_{kq\sigma} J_{kq}c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}
+\hf\sum_{kq\sigma}V^*_k V_q^* c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0}} = \sum_{kq\sigma} K_{kq}c^\dagger_{d\sigma}c_{k\sigma} c^\dagger_{d\ol\sigma}c_{q\ol\sigma}
 \eeq
 The total renormalization can thus be written as
 \beq
-\Delta \ham =& - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma} &&&& \qq{\text{renormalization in \(\epsilon_d, U\)}}\\
+\Delta \ham(\omega_1,\omega_0) =& - \sum_{k\sigma}\qq{W_{kk} + \hat n_{d\ol\sigma}J_{kk}}\hat n_{d\sigma} &&&& \qq{\text{renormalization in \(\epsilon_d, U\)}}\\
 	     &+ \sum_{kq\sigma}\qq{W_{kq} + \hf \hat n_d J_{kq}}c^\dagger_{k\sigma}c_{q\sigma} &&&& \qq{\text{potential scattering}}\\
 	     &- \sum_{kq\sigma}J_{kq}\qq{S_d^z \sigma c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{q\ol\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma}}  &&&& \qq{\text{spin Kondo}}\\
-	     &+ \hf\sum_{kq\sigma}J_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.} &&&& \qq{\text{charge Kondo}}\\
+	     &+ \sum_{kq\sigma}K_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.} &&&& \qq{\text{charge Kondo}}\\
 \eeq
+Note that this renormalization is in a particular eigendirection of the total quantum fluctuation operator \(\hat \omega\). This is where the complexity has been transferred in going from the second-order SWT to the non-perturbative URG. The new energy scales are thus the non-perturbative variants of the ones generated in SWT.
+\beq
+W^{SWT}_{kq} &= \hf V_k V_q^*\rr{\fr{1}{\epsilon_k - \epsilon_d} + \fr{1}{\epsilon_q - \epsilon_d}}\\
+W^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_0 + \hf \epsilon_k - \epsilon_d} + \fr{1}{\omega_0 + \hf \epsilon_q - \epsilon_d}}\\
+J^{SWT}_{kq} &= \hf V_k V_q^*\rr{\fr{1}{\epsilon_k - \epsilon_d - U} + \fr{1}{\epsilon_q - \epsilon_d - U} - \fr{1}{\epsilon_k - \epsilon_d} - \fr{1}{\epsilon_q - \epsilon_d}}\\
+J^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_1 + \epsilon_k - \epsilon_d - U} + \fr{1}{\omega_1 +\epsilon_q - \epsilon_d - U} - \fr{1}{\omega_0 +\epsilon_k - \epsilon_d} - \fr{1}{\omega_0 +\epsilon_q - \epsilon_d}}\\
+\eeq
+To recover the SWT scales from the URG ones, we have to substitute each \(\omega_i\) by the energy of the initial state to which it corresponds. From eq.~\ref{swturg}, we note that \(\omega_1\) refers to the initial state in which \(\hat n_{k\sigma}=\hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_1 = \hf\epsilon_k + \epsilon_d\). Similarly, \(\omega_0\) refers to the initial state in which \(\hat n_{k\sigma}=1 - \hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_0 = \hf\epsilon_k\). Substituting these into the URG energy scales gives back the SWT scales.
 %}
 \subsection{CUT RG}
 In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against some parameter \(\lambda\) of the Hamiltonian. Denoting the unitary transformation generator by \(Sd\lambda\) for a change \(d\lambda\), we can write
@@ -5957,7 +5969,7 @@ where \(\ham^d = \ham^d_1 \hat n + \ham^d_0 \rr{1 - \hat n}\) and \(G = G_1 \hat
 \eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}G\qq{ \ham^d, \ham^I}\\
 \eeq
 The renormalization in the Hamiltonian under URG, which is a function of both the quantum fluctuation scale \(\omega\) and the running bandwidth \(D\), can thus be written as
-\beq
+\beq[dbrack]
 \Delta \ham (\omega,D) =  \frac{1}{\omega_1 - \omega_0}\qq{G\qq{ \ham^d, \ham^I},\ham}\\
 \eeq
 This can be compared to the analogous equation for CUT (eq.~\ref{cut}),
@@ -5973,13 +5985,14 @@ where we dropped \(\omega_1\) for small quantum fluctuations. Similarly,
 G T^\dagger c = G_0 T^\dagger c = T^\dagger c \fr{1}{\omega_1 - \ham^d_1}\approx -\fr{1}{\ham^d_1}T^\dagger c
 \eeq
 This gives
-\beq
+\beq[cuturg]
 \Delta \ham (\omega,D) =  \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}\qq{\qq{ \ham^d, \ham^I},\ham}
 \eeq
 We can thus make the connection,
 \beq
 \Delta \lambda \sim \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}
 \eeq
+Note that in going from the URG from eq.~\ref{dbrack} to the simplified form eq.~\ref{cuturg}, we had to drop all quantum fluctuations in the denominator and we lose the fixed point structure in the process. This results in the distinction that while URG can reach a fixed point theory in a finite number of steps, CUT cannot do so.
 
 \bibliographystyle{unsrt}
 \bibliography{notes}

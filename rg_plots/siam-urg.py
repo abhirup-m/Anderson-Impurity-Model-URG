@@ -74,10 +74,11 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
     d_old = d
     d_new = den(w, D, U, V, J)
-    #if all(delta == 0 for delta in deltas):
-    #    flags = [0] * len(flags)
-    #    print ("Changes are zero.")
-    #    return flags
+    if all(delta == 0 for delta in deltas):
+        flags = [0] * len(flags)
+        print ("Changes are zero.",w)
+        input((U, V, J))
+        return flags
     #if all(abs(delta) < 10**(-10) for delta in deltas):
     #    flags = [0] * len(flags)
     #    print ("Changes are too small.")
@@ -93,11 +94,11 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 def all_flow():
     '''master function to call other functions'''
     N = 1000
-    w_0 = np.linspace(-1000,-100,1000,endpoint=True)
+    w_0 = np.linspace(-1000.1,-200,1000,endpoint=True)
     D_0 = [1]
     V_0 = [2]
     J_0 = [1]
-    U_0 = [100]
+    U_0 = [1]
     flag = False
     for w,D0,U,V,J in itertools.product(w_0,D_0,U_0,V_0,J_0):
         title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D0,U,V,J)
