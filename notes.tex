@@ -5839,6 +5839,46 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
+\subsubsection{Renormalization from SWT and Comparison with SWT}
+Similar to the situation in Poor Man's scaling, one can visualize two set of states and let \(\ham_X = V_+ + V_-\) be the scattering that connects them and hence the one we want to kill. Let \(S\) be of the form 
+\beq
+S = \sum_{ij}\qq{s\ket{1_i}\bra{0_j} - s^\dagger\ket{0_j}\bra{1_i}}
+\eeq
+This form is of course chosen to make \(S\) anti-Hermitian and off-diagonal. The part \(s\) can be determined from the decoupling condition:
+\beq
+-\ham_X = \qq{S, H_0} = S H_0 - H_0 S
+\eeq
+Multiplying with \(\bra{0_a}\) and \(\ket{1_b}\) from the left and right respectively gives
+\beq
+-\bra{0_a}V + V^\dagger\ket{1_b} &= \bra{0_a}S H_0 - H_0 S\ket{1_b}\\
+\eeq
+Since \(V^\dagger\) acts on \(\ket{0}\), it will not affect the LHS. Also, \(\bra{0_a}V\ket{1_b} = V_{ab}\). If we now consider only the diagonal part of \(H_0\), we can write \(H_0 (\ket{0_a},\ket{1_b}) = (E_{0,a}\ket{0_a},E_{1,b}\ket{1_b}))\). We then get
+\beq
+-V_{ab} &= \bra{0_a}\sum_i\qq{S\ket{1_i}\bra{1_i} H_0 - H_0 \ket{0_i}\bra{0_i}S}\ket{1_b}\\
+	&= \sum_i\qq{S_{ai}E_1^i \delta_{bi} - E^i_0 \delta_{ai}S_{ib}}\\
+	&= S_{ab}E_1^b  - E^a_0 S_{ab}\\
+\implies S_{ab} &= \frac{V_{ab}}{E_0^a - E_1^b}
+\eeq
+where we defined \(\bra{0_x}S\ket{1_y} = S_{xy}\). The total generator is
+\beq
+S &= \sum_{ij}\qq{S_{ij}\ket{0_i}\bra{1_j} - S_{ij}^\dagger\ket{1_j}\bra{0_i}}\\
+  &= \sum_{ij}\frac{1}{E_0^i - E_1^j}\qq{V_{ij}\ket{0_i}\bra{1_j} - V^\dagger_{ij}\ket{1_j}\bra{0_i}}\\
+\eeq
+The renormalization is thus
+\beq
+\Delta \ham &= \hf \qq{S,\ham_X}\\
+			      &= \hf \sum_{ij,kl}\qq{\frac{1}{E_0^i - E_1^j}\rr{V_{ij}\ket{0_i}\bra{1_j} - V^\dagger_{ij}\ket{1_j}\bra{0_i}}, V_{kl} \ket{0_k}\bra{1_l}+ V^\dagger_{kl} \ket{1_l}\bra{0_k}}\\
+			      &= \hf \sum_{ij,kl}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kl}\ket{0_i}\bra{0_k}\delta_{jl} - V^\dagger_{ij}V_{kl}\ket{1_j}\bra{1_l}\delta_{ik}\right.\right.\\
+			      &\quad\left.\left.- V^\dagger_{kl}V_{ij}\ket{1_l}\bra{1_j}\delta_{ki} + V_{kl}V^\dagger_{ij}\ket{0_k}\bra{0_i}\delta_{lj}\right)\right]\\
+			      &= \hf \sum_{ijk}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}- V^\dagger_{ik}V_{ij}\ket{1_k}\bra{1_j} + V_{kj}V^\dagger_{ij}\ket{0_k}\bra{0_i}\right)\right]\\
+			      &= \hf \sum_{ijk}\left[\rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^k - E_1^j}}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^i - E_1^k}}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right]\\
+\eeq
+Comparing with the PMS result eq.~\ref{pmsren}, it is clear that this is not the same result. This expression appears to be more general because of the presence of four terms instead of the two in PMS. If we assume that all the energies in a particular subspace are equal (\(E_0^i = E_0^k\) and \( E_1^j= E_1^k\)), this expression becomes
+\beq
+\Delta \ham &= \hf \sum_{ijk}\left[\frac{2}{E_0^k - E_1^j}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \frac{2}{E_0^i - E_1^k}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right] \\
+	    &=\sum_{ijk}\frac{1}{E_0^k - E_1^j}\left[V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - V^\dagger_{ki}V_{kj}\ket{1_i}\bra{1_j}\right] \\
+\eeq
+This is identical to what was obtained from PMS, eq.~\ref{pmsren}. This proves that for the special case in which the energies in the subspace are all equal, SWT reduces to PMS.
 
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
