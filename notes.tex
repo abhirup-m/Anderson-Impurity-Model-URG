@@ -5503,24 +5503,24 @@ V_- \ket{1} \to \ket{0},&& V_- \ket{0} \to 0
 \eeq
 The Schrodinger equation can thus be split into
 \beq
-H_0 \ket{0,\phi_0} + V_-\ket{1,\phi_1} &= E \ket{0,\phi_0}\\
-H_0 \ket{1,\phi_1} + V_+\ket{0,\phi_0} &= E \ket{1,\phi_1}\\
+H_0 \ket{0,\phi_0} + V_-\ket{1,\phi_1} &= E_0 \ket{0,\phi_0}\\
+H_0 \ket{1,\phi_1} + V_+\ket{0,\phi_0} &= E_1 \ket{1,\phi_1}\\
 \eeq
 Eliminating \(\ket{1,\phi_1}\) gives
 \beq
-H_0 \ket{0,\phi_0} + V_-\frac{1}{E - H_0}V_+\ket{0,\phi_0} &= E \ket{0,\phi_0}\\
+H_0 \ket{0,\phi_0} + V_-\frac{1}{E_1 - H_0}V_+\ket{0,\phi_0} &= E_0 \ket{0,\phi_0}\\
 \eeq
 The effective Hamiltonian in this subspace is therefore
 \beq
-\tilde \ham_0 = H_0 + V_-\frac{1}{E - H_0}V_+
+\tilde \ham_0 = H_0 + V_-\frac{1}{E_1 - H_0}V_+
 \eeq
 Similarly, eliminating \(\ket{0,\phi_0}\) gives the effective Hamiltonian in the other subspace,
 \beq
-\tilde \ham_1 = H_0 + V_+\frac{1}{E - H_0}V_-
+\tilde \ham_1 = H_0 + V_+\frac{1}{E_0 - H_0}V_-
 \eeq
 The total effective Hamiltonian that does not scatter between the two subspaces is
 \beq
-\tilde \ham = H_0 + \underbrace{V_-\frac{1}{E - H_0}V_+ +  V_+\frac{1}{E - H_0}V_-}_\text{renormalization}
+\tilde \ham = H_0 + \underbrace{V_-\frac{1}{E_1 - H_0}V_+ +  V_+\frac{1}{E_0 - H_0}V_-}_\text{renormalization}
 \eeq
 The renormalization can be written in terms of the matrix elements. In the first term of the renormalization, \(E\) is the energy of the state on which \(V_+\) acts, hence it is the energy of the state \(\ket{0}\), which we call \(E_0\). In the same term, \(H_0\) in the denominator will act on the state \(V_+\ket{0}=\ket{1}\). We will keep only the diagonal part of \(H_0\), which means \(H_0 V_+\ket{0}=H_0 \ket{1}\) will be the energy of the state \(\ket{1}\) which we will call \(E_1\).
 \beq
@@ -5540,9 +5540,9 @@ V^\dagger\frac{1}{E_1 - E_0}V = \sum_{ijk}\ket{1_i}\bra{1_k}\frac{V^\dagger_{ji}
 \eeq
 The total renormalization becomes
 \beq
-\Delta \ham = \sum_{ijk}\frac{1}{E^k_0 - E^j_1}\rr{\ket{0_i}\bra{0_k}V_{ij}V^\dagger_{kj} - \ket{1_i}\bra{1_j}V^\dagger_{ki}V_{kj}}
+\Delta \ham = \sum_{ijk}\frac{1}{\Delta_{kj}}\rr{\ket{0_i}\bra{0_k}V_{ij}V^\dagger_{kj} - \ket{1_i}\bra{1_j}V^\dagger_{ki}V_{kj}}
 \eeq
-This is a general expression that would work irrespective of whether you are decoupling multiple electrons or a single electron. To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling.
+where \(\Delta_{kj} = E^k_0 - E^j_1\). This is a general expression that would work irrespective of whether you are decoupling multiple electrons or a single electron. To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling.
 \pb We want to decouple one electron at momentum \(q\). We can split the exact wavefunction as
 \beq[wf]
 \ket{\Psi} = \ket{\Psi_0} + \ket{\Psi_1}
@@ -5839,7 +5839,7 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-\subsubsection{Renormalization from SWT and Comparison with SWT}
+\subsubsection{Renormalization due to SWT and Comparison with PMS and URG}
 Similar to the situation in Poor Man's scaling, one can visualize two set of states and let \(\ham_X = V_+ + V_-\) be the scattering that connects them and hence the one we want to kill. Let \(S\) be of the form 
 \beq
 S = \sum_{ij}\qq{s\ket{1_i}\bra{0_j} - s^\dagger\ket{0_j}\bra{1_i}}
@@ -5872,13 +5872,28 @@ The renormalization is thus
 			      &\quad\left.\left.- V^\dagger_{kl}V_{ij}\ket{1_l}\bra{1_j}\delta_{ki} + V_{kl}V^\dagger_{ij}\ket{0_k}\bra{0_i}\delta_{lj}\right)\right]\\
 			      &= \hf \sum_{ijk}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}- V^\dagger_{ik}V_{ij}\ket{1_k}\bra{1_j} + V_{kj}V^\dagger_{ij}\ket{0_k}\bra{0_i}\right)\right]\\
 			      &= \hf \sum_{ijk}\left[\rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^k - E_1^j}}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^i - E_1^k}}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right]\\
+			      &= \hf \sum_{ijk}\left[\rr{\frac{1}{\Delta_{ij}} + \frac{1}{\Delta_{kj}}}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \rr{\frac{1}{\Delta_{ij}} + \frac{1}{\Delta_{ik}}}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right]\\
 \eeq
-Comparing with the PMS result eq.~\ref{pmsren}, it is clear that this is not the same result. This expression appears to be more general because of the presence of four terms instead of the two in PMS. If we assume that all the energies in a particular subspace are equal (\(E_0^i = E_0^k\) and \( E_1^j= E_1^k\)), this expression becomes
+where \(\Delta_{ij}= E_0^i - E_1^j\). Comparing with the PMS result eq.~\ref{pmsren}, it is clear that this is not the same result. This expression appears to be more general because of the presence of four terms instead of the two in PMS. If we assume that all the energies in a particular subspace are equal (\(E_0^i = E_0^k\) and \( E_1^j= E_1^k\)), this expression becomes
 \beq
-\Delta \ham &= \hf \sum_{ijk}\left[\frac{2}{E_0^k - E_1^j}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \frac{2}{E_0^i - E_1^k}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right] \\
-	    &=\sum_{ijk}\frac{1}{E_0^k - E_1^j}\left[V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - V^\dagger_{ki}V_{kj}\ket{1_i}\bra{1_j}\right] \\
+\Delta \ham &= \hf \sum_{ijk}\left[\frac{2}{\Delta_{kj}}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - \frac{2}{\Delta_{ik}}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k}\right] \\
+	    &=\sum_{ijk}\frac{1}{\Delta_{kj}}\left[V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k} - V^\dagger_{ki}V_{kj}\ket{1_i}\bra{1_j}\right] \\
 \eeq
 This is identical to what was obtained from PMS, eq.~\ref{pmsren}. This proves that for the special case in which the energies in the subspace are all equal, SWT reduces to PMS.
+\pb We can also make a comparison to the renormalization obtained from URG.
+\beq
+\Delta \ham &= \hf\qq{\eta^\dagger - \eta,\ham}
+\eeq
+where 
+\beq
+\eta &= \sum_{ij}\frac{1}{\omega^j - E_0^i}V_{ij}\ket{0_i}\bra{1_j}\\
+\implies \eta^\dagger - \eta &= \sum_{ij}\frac{1}{\omega^j - E_0^i}\rr{V^\dagger_{ij}\ket{1_j}\bra{0_i} - V_{ij}\ket{0_i}\bra{1_j}}
+\eeq
+Proceeding similarly, we get
+\beq
+\Delta \ham &= \hf \sum_{ijk}\left[\rr{\frac{1}{\omega^j - E_0^i} + \frac{1}{\omega^k - E_0^i}}V^\dagger_{ij}V_{ik}\ket{1_j}\bra{1_k} - \rr{\frac{1}{\omega^j - E_0^i} + \frac{1}{\omega^j - E_0^k}}V_{ij}V^\dagger_{kj}\ket{0_i}\bra{0_k}\right]\\
+\eeq
+This is the same as the SWT result after substituting \(\omega\) with the initial state energy \(E_1\).
 
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
