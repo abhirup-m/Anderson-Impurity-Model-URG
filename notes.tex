@@ -5563,8 +5563,8 @@ Therefore,
 \Delta \ham &= \hf\sum_{ijk}\rr{\frac{1}{E_0^k - E^j_1} + \frac{1}{E_0^i - E^j_1}}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj}\\
 	       &+\hf\sum_{ijk}\rr{\frac{1}{E_1^k - E^j_0}+ \frac{1}{E_1^i - E^j_0}}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}\\
 \eeq
-
-To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling.
+In summary, the prescription of replacing all \(\omega\) with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling a single-electron state - then the total renormalization is of the form \(c^\dagger T^\dagger c\) such that we start from an initial state, scatter to an intermediate state and then go back to the initial state so that the final state is the same as the initial state. However, if we are using PMS to decouple states in one-shot, each subspace will have multiple states and there might be terms where we do not end up at the initial state we started with. Then the correct prescription would be to use the mean of the initial and final state denominators.
+\pb To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling.
 \pb We want to decouple one electron at momentum \(q\). We can split the exact wavefunction as
 \beq[wf]
 \ket{\Psi} = \ket{\Psi_0} + \ket{\Psi_1}
