@@ -5774,8 +5774,8 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-\subsubsection{SIAM URG vs SIAM SWT}
-The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
+\subsubsection{SIAM URG vs SIAM SWT(Iterative)}
+In the following, we will perform an iterative SWT on the SIAM. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
 \beq
 -\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
 \eeq
@@ -5911,11 +5911,11 @@ The total renormalization can thus be written as
 	     &- \sum_{kq\sigma}J_{kq}\qq{S_d^z \sigma c^\dagger_{k\sigma}c_{q\sigma} + \sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{q\ol\sigma}c^\dagger_{d\ol\sigma}c_{d\sigma}}  &&&& \qq{\text{spin Kondo}}\\
 	     &+ \sum_{kq\sigma}K_{kq}c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\ol\sigma}c_{d\ol\sigma} + \text{h.c.} &&&& \qq{\text{charge Kondo}}\\
 \eeq
-Note that this renormalization is in a particular eigendirection of the total quantum fluctuation operator \(\hat \omega\). This is where the complexity has been transferred in going from the second-order SWT to the non-perturbative URG. The new energy scales are thus the non-perturbative variants of the ones generated in SWT.
+Note that this renormalization is in a particular eigendirection of the total quantum fluctuation operator \(\hat \omega\). In other words, the single perturbative \(J_{kq}\) has been replaced with \(2^N\) scales, each with its own value of \(\omega\). This is where the complexity has been transferred in going from the second-order SWT to the non-perturbative URG. The new energy scales are thus the non-perturbative variants of the ones generated in SWT.
 \beq
 W^{SWT}_{kq} &= \hf V_k V_q^*\rr{\fr{1}{\epsilon_k - \epsilon_d} + \fr{1}{\epsilon_q - \epsilon_d}}\\
-W^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_0 + \hf \epsilon_k - \epsilon_d} + \fr{1}{\omega_0 + \hf \epsilon_q - \epsilon_d}}\\
 J^{SWT}_{kq} &= \hf V_k V_q^*\rr{\fr{1}{\epsilon_k - \epsilon_d - U} + \fr{1}{\epsilon_q - \epsilon_d - U} - \fr{1}{\epsilon_k - \epsilon_d} - \fr{1}{\epsilon_q - \epsilon_d}}\\
+W^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_0 + \hf \epsilon_k - \epsilon_d} + \fr{1}{\omega_0 + \hf \epsilon_q - \epsilon_d}}\\
 J^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_1 + \epsilon_k - \epsilon_d - U} + \fr{1}{\omega_1 +\epsilon_q - \epsilon_d - U} - \fr{1}{\omega_0 +\epsilon_k - \epsilon_d} - \fr{1}{\omega_0 +\epsilon_q - \epsilon_d}}\\
 \eeq
 To recover the SWT scales from the URG ones, we have to substitute each \(\omega_i\) by the energy of the initial state to which it corresponds. From eq.~\ref{swturg}, we note that \(\omega_1\) refers to the initial state in which \(\hat n_{k\sigma}=\hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_1 = \hf\epsilon_k + \epsilon_d\). Similarly, \(\omega_0\) refers to the initial state in which \(\hat n_{k\sigma}=1 - \hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_0 = \hf\epsilon_k\). Substituting these into the URG energy scales gives back the SWT scales.

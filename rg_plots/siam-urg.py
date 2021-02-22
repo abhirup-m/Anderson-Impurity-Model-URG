@@ -19,8 +19,8 @@ matplotlib.rcParams['text.usetex'] = True
 def plot(gx,gy,title):
     norm_gx = [gxi/abs(max(gx, key=abs)) for gxi in gx]
     norm_gy = [gyi/abs(max(gy, key=abs)) for gyi in gy]
-    plt.scatter(norm_gx, norm_gy)
-    plt.scatter(norm_gx[-1], norm_gy[-1], color='r')
+    plt.scatter(gx, gy)
+    plt.scatter(gx[-1], gy[-1], color='r')
     plt.xlabel(r'J')
     plt.ylabel(r'U')
     plt.title(title)
@@ -79,8 +79,8 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    N = 1000
-    w_0 = np.linspace(-100,-10,10,endpoint=True)
+    N = 5000
+    w_0 = np.linspace(-2,2,20,endpoint=True)
     D_0 = [1]
     V_0 = [2]
     J_0 = [1]
@@ -89,7 +89,7 @@ def all_flow():
     for w,D0,U,V,J in itertools.product(w_0,D_0,U_0,V_0,J_0):
         title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D0,U,V,J)
         U_arr, V_arr, J_arr = [U], [V], [J]
-        #print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
+        print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
         flags = init_check_fp(w, D0, U, V, J)
         for D in np.linspace(D0, 0, N):
             if flags[0] == 0:
@@ -100,7 +100,7 @@ def all_flow():
             V_arr.append(V)
             J_arr.append(J)
         if flag:
-            print ("End: U={}, V={}, J={}\n".format(U, V, J))
-            plot(J_arr, U_arr, title)
+           print ("End: w={}, U={}, V={}, J={}\n".format(w,U, V, J))
+           plot(J_arr, U_arr, title)
 
 all_flow()
