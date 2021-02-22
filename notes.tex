@@ -74,7 +74,8 @@ The final Hamiltonians obtained at the fixed point are usually tractable and all
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{urgform} lays out the URG formalism and prescription. Section \ref{kondourg} solves the Kondo model using the URG method. Section \ref{siamurg} contains the URG analysis of the SIAM.
 \section{Preliminaries}\label{section1}
-\subsection{\il{T-}matrix and \il{S-}matrix}
+%\subsection{\il{T-}matrix and \il{S-}matrix}
+\subsection{T-matrix and S-matrix}
 \il{T-}matrix is defined as\cite{sakurai}
 \beq
 V\psi = T\phi
@@ -270,7 +271,7 @@ So, d-site is either up or down, hence magnetic.
 	\item \il{\Delta\gg U \gg \epsilon_d}: Hybridisation now fluctuates the up and down spins , leading to zero average magnetization.
 \end{itemize}
 
-\subsection{Atomic limit (\il{t=0})}
+\subsection{Atomic limit - no hopping:}
 \beq
 H_\text{atomic} = E_d + E_{CB} + U n_{d\ua}n_{d\da}
 \eeq
@@ -287,7 +288,7 @@ Assuming \il{\epsilon_d = -|\epsilon_d|}, this is equivalent to
 \epsilon_d > -U
 \eeq
 
-\subsection{Non-interacting limit (\il{U=0}):}
+\subsection{Non-interacting limit - no onsite repulsion:}
 \beq
 H_\text{non-int} = \epsilon_d n_d + \sum_k \epsilon_k n_k + \sum_{k\sigma} t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}}
 \eeq
@@ -3118,7 +3119,7 @@ wher \(G_j\) is the propagator \(\fr{1}{\omega_i^j- \ham^d}\). We can write this
 \beq[etadagdef]
 \eta(\hat \omega) = GT^\dagger c_{q\beta} = \fr{1}{\hat \omega_i- \ham^d}T^\dagger c_{q\beta}
 \eeq
-	where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta} = \begin{pmatrix} \omega_i^1 & \\ & \omega_i^0 \end{pmatrix}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\) and \(G = \rr{\hat \omega - \ham^d}^{-1}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
+where \(\hat \omega_i = \omega_i^0\rr{1 - \hat n_{q\beta}} + \omega_i^1\hat n_{q\beta} = \begin{pmatrix} \omega_i^1 & \\ & \omega_i^0 \end{pmatrix}\) is a 2x2 matrix and \(\ham^d = \ham^d_0\rr{1 - \hat n_{q\beta}} + \ham^d_1\hat n_{q\beta}\) and \(G = \rr{\hat \omega - \ham^d}^{-1}\). It is easy to check that this reproduces the previous forms of \(\eta_0\) and \(\eta_1^\dagger\).
 We will later find that it is important to demand that these two be Hermitian conjugates of each other; that constraint is imposed on the denominators:
 \beq[constraint]
 \eta^\dagger(\omega_i^0) = \eta^\dagger(\omega_i^1) \implies \fr{1}{\omega_i^1- \ham^d}c^\dagger_{q\beta}T = c^\dagger_{q\beta}T\fr{1}{\omega_i^0- \ham^d}
@@ -3138,7 +3139,7 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 \beq[Ui]
 	U_1 &= 1 + \eta
 \eeq
-\subsection{Properties of the many-body transition operator \(\eta\)}
+\subsection{Properties of the many-body transition operators}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
 \beq
 	\eta^2 = {\eta^\dagger}^2 = 0 &&\qq{{c^\dagger}^2 = c^2 = 0}\\
@@ -5444,6 +5445,7 @@ As discussed in the previous section, the particle-hole symmetry condition is \(
 	    &-\sum_{q,k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
 \eeq
 The asymmetry parameter \(\gamma = \epsilon_d + \hf U\) is thus invariant under the flow.
+ 
 \beq
 \implies \Delta \rr{\epsilon_d + \hf U} &= 0
 \eeq
@@ -5489,7 +5491,80 @@ We first motivate the formalism of PMS method. The problem is defined as
 \beq[problem]
 \ham\ket{\Psi} = E\ket{\Psi}
 \eeq
-\(\ham\) is the total Hamiltonian and \(\ket{\Psi}\) and \(E\) are the exact eigenstate and eigenvalue of \(\ham\). The problems we deal with typically have a bath of mobile electrons, with energies spanning from \(-D\) to \(D\). We are interested in finding effective Hamiltonians after "removing" the highest shell in the conduction bath. This will give us a Hamiltonian to which we can again apply the same procedure.
+\(\ham\) is the total Hamiltonian and \(\ket{\Psi}\) and \(E\) are the exact eigenstate and eigenvalue of \(\ham\). We imagine a separation of the total Hilbert space into two set of states, and we call these two states \(\ket{0}\) and \(\ket{1}\). This separation depends on which scattering term we want to kill by this transformation. For example, in the URG, we typically select a particular electron \(q\beta\) and then kill the  scattering terms that change the number of this state. In that case, \(\ket{0}\) will refer to the set of states \(\cc{\ket{\hat n_{q\beta}=0}\otimes\ket{\phi_0}}\) and \(\ket{1}\) will refer to the set of states \(\cc{\ket{\hat n_{q\beta}=1}\otimes\ket{\phi_1}}\). \(\ket{\phi_{0,1}}\) refer to the states of all the other electrons. As another example, if we wanted to separate the charge-Kondo and the spin-Kondo from the SIAM, we would want to kill the terms that scatter between the spin-full subspace \(\hat n_d=1\) to the spin-less subspace \(\hat{n_d}=0,2\). These two will then be the \(\ket{0}\) and \(\ket{1}\) sets. 
+\pb Keeping this separation in mind, the exact eigenstate \(\ket{\Psi}\) can be split as 
+\beq
+\ket{\Psi} = \sum_i \ket{\phi_0^i} + \sum \ket{\phi_1^i}
+\eeq
+The Hamiltonian can also be split as 
+\beq
+\ham = H_0 + V_+ + V_-
+\eeq
+\(H_0\) does not scatter between \(\cc{\ket{0}}\) and \(\cc{\ket{1}}\). It contains the diagonal parts as well as scatterings inside the subspaces. \(V_\pm\) scatter between the subspaces:
+\beq
+V_+ \cc{\ket{0}} \mapsto \cc{\ket{1}},&& V_+ \ket{1} \to 0\\
+V_- \cc{\ket{1}} \mapsto \cc{\ket{0}},&& V_- \ket{0} \to 0
+\eeq
+The Schrodinger equation can thus be split into
+\beq
+H_0 \sum_i \ket{\phi^i_0} + V_-\sum_i \ket{\phi^i_1} &= E \sum_i \ket{\phi^i_0}\\
+H_0 \sum_i \ket{\phi^i_1} + V_+\sum_i \ket{\phi^i_0} &= E \sum_i \ket{\phi^i_1}\\
+\eeq
+Eliminating \(\sum_i \ket{\phi^i_1}\) gives
+\beq
+H_0 \sum_i \ket{\phi^i_0} + V_-\frac{1}{E_1 - H_0}V_+\sum_i \ket{\phi^i_0} &= E \sum_i \ket{\phi^i_0}\\
+\eeq
+The effective Hamiltonian in this subspace is therefore
+\beq
+\tilde \ham_0 = H_0 + V_-\frac{1}{E - H_0}V_+
+\eeq
+Similarly, eliminating \(\sum_i \ket{\phi^i_0}\) gives the effective Hamiltonian in the other subspace,
+\beq
+\tilde \ham_1 = H_0 + V_+\frac{1}{E - H_0}V_-
+\eeq
+The total effective Hamiltonian that does not scatter between the two subspaces is
+\beq
+\tilde \ham(E) = H_0 + \underbrace{V_-\frac{1}{E - H_0}V_+ +  V_+\frac{1}{E - H_0}V_-}_\text{renormalization}
+\eeq
+This is of course a function of whatever exact energy eigenvalue we chose, \(E\). Different choices will give different effective Hamiltonians. The renormalization will now be written in terms of the matrix elements. Since the entire \(\ham_X\) must be Hermitian, we must have \(V_- = V_+^\dagger \equiv V\).
+\beq
+\Delta \ham(E) = V\frac{1}{E - H_0}V^\dagger +  V^\dagger\frac{1}{E - H_0}V
+\eeq
+Now take the first term and insert complete bases on both sides of \(V\) and \(V^\dagger\).
+\beq
+V\frac{1}{E - H_0}V^\dagger &= \sum_{ijk}\ket{\phi_0^i}\bra{\phi_0^i}V\ket{\phi_1^j}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}\bra{\phi_1^j}V^\dagger\ket{\phi_0^k}\bra{\phi_0^k} \\
+			    &= \sum_{ijk}\ket{\phi_0^i}V_{ij}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}V^\dagger_{kj}\bra{\phi_0^k}\\
+\eeq
+where we defined \(\bra{\phi_0^i}V\ket{\phi_1^j} = V_{ij}\). We now approximate \(H_0\) by keeping just the diagonal part, and allowing the balance to redefine \(E\) into \(\omega\). Then, \(\rr{E - H_0} \ket{\phi_{0,1}^j} \equiv \rr{\omega_{0,1} - E_{0,1}^j} \ket{\phi_{0,1}^j}\). That gives
+\beq
+V\frac{1}{E - H_0}V^\dagger &= \sum_{ijk}\ket{\phi_0^i}\bra{\phi_0^k}\frac{V_{ij}V^\dagger_{kj}}{\omega_1 - E^j_1}
+\eeq
+The second term similarly gives
+\beq
+V^\dagger\frac{1}{E - H_0}V = \sum_{ijk}\ket{\phi_1^i}\bra{\phi_1^k}\frac{V^\dagger_{ji}V_{jk}}{\omega_0 - E^j_0}
+\eeq
+The total renormalization becomes
+\beq
+\Delta \ham(E) = \sum_{ijk}\rr{\frac{1}{\omega_1 - E^j_1}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \frac{1}{\omega_0 - E^j_0}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}}
+\eeq
+This is a general expression that would work irrespective of whether you are decoupling multiple electrons or a single electron. However, the \(\omega\) are unknown and we need some prescription for replacing them. Since the \(E\) is the eigenstate of the initial state on which the scattering terms act, it makes sense to replace them with the initial state energy.
+\beq
+\Delta \ham(E) = \sum_{ijk}\rr{\frac{1}{E_0^k - E^j_1}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \frac{1}{E_1^k - E^j_0}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}}
+\eeq
+However, closer inspection reveals that this choice makes the renormalization non-Hermitian. So the correct choice is to keep both the initial and final energies.
+\beq
+\Delta \ham &= \hf\sum_{ijk}\frac{1}{\omega_1 - E^j_1}\rr{\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}}\\
+	       &+\hf\sum_{ijk}\frac{1}{\omega_0 - E^j_0}\rr{\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} + \ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}}\\
+&= \hf\sum_{ijk}\rr{\frac{1}{E_0^k - E^j_1}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \frac{1}{E_0^k - E^j_1}\ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}}\\
+	       &+\hf\sum_{ijk}\rr{\frac{1}{E_1^k - E^j_0}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} + \frac{1}{E_1^k - E^j_0}\ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}}
+\eeq
+Therefore,
+\beq[pmsren]
+\Delta \ham &= \hf\sum_{ijk}\rr{\frac{1}{E_0^k - E^j_1} + \frac{1}{E_0^i - E^j_1}}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj}\\
+	       &+\hf\sum_{ijk}\rr{\frac{1}{E_1^k - E^j_0}+ \frac{1}{E_1^i - E^j_0}}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}\\
+\eeq
+In summary, the prescription of replacing all \(\omega\) with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling a single-electron state - then the total renormalization is of the form \(c^\dagger T^\dagger c\) such that we start from an initial state, scatter to an intermediate state and then go back to the initial state so that the final state is the same as the initial state. However, if we are using PMS to decouple states in one-shot, each subspace will have multiple states and there might be terms where we do not end up at the initial state we started with. Then the correct prescription would be to use the mean of the initial and final state denominators.
+\pb To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling.
 \pb We want to decouple one electron at momentum \(q\). We can split the exact wavefunction as
 \beq[wf]
 \ket{\Psi} = \ket{\Psi_0} + \ket{\Psi_1}
@@ -5588,7 +5663,7 @@ where \(\tilde \ham = U^\dagger \ham U\). We can now write down a new problem in
 \pb Summarizing, the general Hamiltonian is not diagonal in the Fock space basis.
 URG, in order to proceed, selects one non-Fock basis of states \(\ket{\Phi}\) such that \(q\) is decoupled in that Hamiltonian.
 Since there can be lots of such basis, there is a freedom in this choice.
-With this basis in mind, URG then finds a unitary operator which when operated on the Hamiltonian takes me to the form in which it is diagonal in the Fock space basis.
+With this basis in mind, URG then finds a unitary operator which when operated on the Hamiltonian takes us to the form in which it is diagonal in the Fock space basis.
 Note that this form is a function of the chosen \(\ket{\Phi}\).
 We then select the second degree of freedom and repeat the process.
 What PMS does is, it exploits the freedom of choice and selects the exact eigenstate \(\ket{\Psi}\) of the Hamiltonian as the non-Fock basis \(\ket{\Phi}\).
@@ -5604,7 +5679,7 @@ This means that one of the eigenvalues of \(\hat\omega\) matches with the eigenv
 \includegraphics[scale=0.42]{pms_vs_urg.png}
 \caption{Flows of PMS(green) and URG(blue)}
 \end{figure}
-To demonstrate the implementation, we can look at a specific model. For the SIAM,
+\pb To demonstrate the implementation, we can look at a specific model. For the SIAM,
 \beq
 \ham = \sum_{k\sigma}\rr{\epsilon_k \tau_{k\sigma} + V c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}}
 \eeq
@@ -5663,17 +5738,17 @@ In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = 
 These results are also obtained in ref.~\cite{hewson}. The complete process is depicted in fig.~\ref{pmsflow}.
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.35]{pms-flowchart.png}
+	\includegraphics[scale=0.34]{pms-flowchart.png}
 	\caption{Flow chart of "Poor Man's" scaling algorithm}
 	\label{pmsflow}
 \end{figure}
 \pb \textbf{Some conclusions}:
 \begin{itemize}
-	\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
-	\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
-	\item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
-	\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
-	\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
+\item The \it{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
+\item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
+\item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
+\item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
+\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 %\comm{
 \subsection{Schrieffer-Wolff transformation}
@@ -5774,14 +5849,67 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
+<<<<<<< HEAD
 \subsubsection{SIAM URG vs SIAM SWT(Iterative)}
 In the following, we will perform an iterative SWT on the SIAM. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
+=======
+\subsubsection{Renormalization due to SWT and Comparison with PMS and URG}
+Similar to the situation in Poor Man's scaling, one can visualize two set of states and let \(\ham_X = V_+ + V_-\) be the scattering that connects them and hence the one we want to kill. Let \(S\) be of the form 
+\beq
+S = \sum_{ij}\qq{s\ket{\phi_1^i}\bra{\phi_0^j} - s^\dagger\ket{\phi_0^j}\bra{\phi_1^i}}
+\eeq
+This form is of course chosen to make \(S\) anti-Hermitian and off-diagonal. The part \(s\) can be determined from the decoupling condition:
+\beq
+-\ham_X = \qq{S, H_0} = S H_0 - H_0 S
+\eeq
+Multiplying with \(\bra{\phi_0^a}\) and \(\ket{\phi_1^b}\) from the left and right respectively gives
+\beq
+-\bra{\phi_0^a}V + V^\dagger\ket{\phi_1^b} &= \bra{\phi_0^a}S H_0 - H_0 S\ket{\phi_1^b}\\
+\eeq
+Since \(V^\dagger\) acts on \(\ket{0}\), it will not affect the LHS. Also, \(\bra{\phi_0^a}V\ket{\phi_1^b} = V_{ab}\). If we now consider only the diagonal part of \(H_0\), we can write \(H_0 (\ket{\phi_0^a},\ket{\phi_1^b}) = (E_{0,a}\ket{\phi_0^a},E_{1,b}\ket{\phi_1^b}))\). We then get
+\beq
+-V_{ab} &= \bra{\phi_0^a}\sum_i\qq{S\ket{\phi_1^i}\bra{\phi_1^i} H_0 - H_0 \ket{\phi_0^i}\bra{\phi_0^i}S}\ket{\phi_1^b}\\
+	&= \sum_i\qq{S_{ai}E_1^i \delta_{bi} - E^i_0 \delta_{ai}S_{ib}}\\
+	&= S_{ab}E_1^b  - E^a_0 S_{ab}\\
+\implies S_{ab} &= \frac{V_{ab}}{E_0^a - E_1^b}
+\eeq
+where we defined \(\bra{\phi_0^x}S\ket{\phi_1^y} = S_{xy}\). The total generator is
+\beq[swtgen]
+S &= \sum_{ij}\qq{S_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - S_{ij}^\dagger\ket{\phi_1^j}\bra{\phi_0^i}}\\
+  &= \sum_{ij}\frac{1}{E_0^i - E_1^j}\qq{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}\\
+\eeq
+The renormalization is thus
+\beq
+\Delta \ham &= \hf \qq{S,\ham_X}\\
+			      &= \hf \sum_{ij,kl}\qq{\frac{1}{E_0^i - E_1^j}\rr{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}, V_{kl} \ket{\phi_0^k}\bra{\phi_1^l}+ V^\dagger_{kl} \ket{\phi_1^l}\bra{\phi_0^k}}\\
+			      &= \hf \sum_{ij,kl}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kl}\ket{\phi_0^i}\bra{\phi_0^k}\delta_{jl} - V^\dagger_{ij}V_{kl}\ket{\phi_1^j}\bra{\phi_1^l}\delta_{ik}\right.\right.\\
+			      &\quad\left.\left.- V^\dagger_{kl}V_{ij}\ket{\phi_1^l}\bra{\phi_1^j}\delta_{ki} + V_{kl}V^\dagger_{ij}\ket{\phi_0^k}\bra{\phi_0^i}\delta_{lj}\right)\right]\\
+			      &= \hf \sum_{ijk}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k} - V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}- V^\dagger_{ik}V_{ij}\ket{\phi_1^k}\bra{\phi_1^j} + V_{kj}V^\dagger_{ij}\ket{\phi_0^k}\bra{\phi_0^i}\right)\right]\\
+			      &= \hf \sum_{ijk}\left[\rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^k - E_1^j}}V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k} - \rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^i - E_1^k}}V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}\right]\\
+\eeq
+This is the same as the PMS result eq.~\ref{pmsren}
+\pb We can also make a comparison to the renormalization obtained from URG.
+\beq
+\Delta \ham &= \hf\qq{\eta^\dagger - \eta,\ham}
+\eeq
+where 
+\beq
+\eta &= \frac{1}{\omega_0 - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\\
+\eta^\dagger &= \frac{1}{\omega_1 - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} = \sum_{ij}\frac{1}{\omega - \ham^d}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\frac{1}{\omega_0 - \ham^d}\\
+\implies \eta^\dagger - \eta &= \sum_{ij}\frac{1}{\omega - E_0^i}\rr{V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i} - V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}}\\
+&= \sum_{ij}\frac{1}{E_0^i - \omega}\rr{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}\\
+\eeq
+Comparing with the \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega \to E_1^j\).
+
+\subsubsection{SIAM URG vs SIAM SWT}
+The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
+>>>>>>> 1508599bc7f0293cd4571ac79aa1d27b70350e02
 \beq
 -\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
 \eeq
 which gives
 \beq
-S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
+S = V\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})
 \eeq
 The remaining diagonal part constitutes the effective Hamiltonian.
 \beq
@@ -5797,7 +5925,7 @@ For the SIAM (and noting that we are decoupling \(q\beta\)), the two parts are
 \eeq
 The renormalization in the effective Hamiltonian from decoupling a high energy particle state is thus
 \beq
-\hf \qq{S,\ham_X}\bigg\vert_{\hat n_{q\beta}=0} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\\
+\hf \qq{S,\ham_X}\bigg\vert_{\hat n_{q\beta}=0} &= |V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}\qq{\hat n_{q\beta}\rr{1 - \hat n_{d\beta}} - \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}\bigg\vert_{\hat n_{q\beta}=0}\\
 		  &=-\hat n_{d\beta}|V|^2\qq{\frac{1 - \hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d} + \frac{\hat n_{d\ol\beta}}{\epsilon_q - \epsilon_d - U}}
 \eeq
 In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\epsilon_q>0\) and high energy virtual excitations above the Fermi surface must necessarily be vacant in the initial state (at \(T=0\)). We can obtain the renormalization from decoupling a high energy \textit{hole} state directly from this expression, just by choosing \(\hat n_{q\beta}=1\) and setting \(\epsilon_q \to -\epsilon_q\).
@@ -5921,19 +6049,39 @@ J^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_1 + \epsilon_k - \epsilon
 To recover the SWT scales from the URG ones, we have to substitute each \(\omega_i\) by the energy of the initial state to which it corresponds. From eq.~\ref{swturg}, we note that \(\omega_1\) refers to the initial state in which \(\hat n_{k\sigma}=\hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_1 = \hf\epsilon_k + \epsilon_d\). Similarly, \(\omega_0\) refers to the initial state in which \(\hat n_{k\sigma}=1 - \hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_0 = \hf\epsilon_k\). Substituting these into the URG energy scales gives back the SWT scales.
 %}
 \subsection{CUT RG}
-In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against some parameter \(\lambda\) of the Hamiltonian. Denoting the unitary transformation generator by \(Sd\lambda\) for a change \(d\lambda\), we can write
-\beq
-H (\lambda + d\lambda) = e^{Sd\lambda} \ham(\lambda) e^{-Sd\lambda} \approx \rr{1 + Sd\lambda}\ham(\lambda) \rr{1 - Sd\lambda}\\
-= \ham(\lambda) + d\lambda\qq{S,\ham(\lambda)} + O(d\lambda^2)
+The following equation generates a family of unitary Hamiltonians.
+\beq[flow]
+\dv{\ham(l)}{l} = \qq{\ham,\eta(l)}
 \eeq
-Formally taking the limit of \(d\lambda \to 0\) gives
+To prove the unitarity\cite{kehrein}, we construct the unitary operator \(U(l)\) that connects the Hamiltonians \(\ham(l)\) and \(\ham(l=0)\). Let \(\ham(l) = U(l)\ham(l=0)U^\dagger(l)\), where \(U(l)\) is defined by
 \beq
-\dv{\ham(\lambda)}{\lambda} = \qq{S,\ham(\lambda)}
+\eta(l) = \dv{U}{l}U^\dagger = -U\dv{U^\dagger}{l} &&\qq{UU^\dagger = 1 \implies \dv{\rr{U U^\dagger}}{l}=0}
 \eeq
-In CUT RG, we choose the generator as \(S = \qq{\ham_d,\ham_X}\), where \(\ham_d\) is the diagonal part of the Hamiltonian and \(\ham_X = \ham - \ham_d\) is the off-diagonal part of the Hamiltonian. Therefore,
+This will give
+\beq
+\dv{\ham(l)}{l} &= \dv{U}{l}\ham(0)U^\dagger(l) + U\ham(0)\dv{U^\dagger}{l}\\
+		&= \dv{U}{l}U^\dagger\ham(l) + \ham(l)U\dv{U(l)^\dagger}{l}\\
+		&= \eta(l)\ham(l) - \ham(l)\eta(l)\\
+		&=\qq{\eta(l),\ham(l)}
+\eeq
+This proves that the family of Hamiltonians \(\ham(l)\) satisfy the flow equation eq.~\ref{flow}. \(\eta(l)\) is referred to as the generator of the flow equation. It is chosen so as to reduce the off-diagonal part of the Hamiltonian, either progressively or in one shot. In Schrieffer-Wolff transformation, the transformation is one-shot, and the \(\eta\) there is the \(S\) that sits on top of the exponential in the unitary transformation. In URG, the generator to decouple one electron \(q\beta\) is \(\eta^\dagger_{q\beta} - \eta_{q\beta}\).
+\pb In CUT (continuous unitary transformation) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against the parameter \(l\). The canonical choice of the generator is \(\eta(l) = \qq{\ham_d,\ham_X}\), where \(\ham_d\) is the diagonal part of the Hamiltonian and \(\ham_X = \ham - \ham_d\) is the off-diagonal part of the Hamiltonian. Therefore,
 \beq[cut]
-\dv{\ham}{\lambda} = \qq{\qq{\ham_d,\ham_X},\ham}
+\dv{\ham}{l} = \qq{\qq{\ham_d(l),\ham_X(l)},\ham(l)}
 \eeq
+To get a feel for the method, we will apply it on the Fröhlick Hamiltonian to remove the electron-phonon coupling term. 
+\beq
+\ham = \ham_d + \ham_X
+\eeq
+where \(\ham_X\) is the electron-phonon coupling term
+\beq
+\sum_{kq}g_{kq}\rr{b^\dagger_q + b_q}c^\dagger_{k+q,\sigma}c_{k\sigma}
+\eeq
+and \(\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_q \hbar\omega_q \hat n_q\) is the kinetic energy of the electron and phonons. We choose
+\beq
+\eta(l) = \qq{\ham_d,\ham} = \qq{\ham_d,\ham_X} = 
+\eeq
+\subsubsection{CUT RG from URG}
 We will now see that the renormalization in URG can also be put into a similar form. From eq.~\ref{renurg}, we can write the URG renormalization as
 \beq
 \Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham}
@@ -5992,8 +6140,7 @@ We can thus make the connection,
 \beq
 \Delta \lambda \sim \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}
 \eeq
-Note that in going from the URG from eq.~\ref{dbrack} to the simplified form eq.~\ref{cuturg}, we had to drop all quantum fluctuations in the denominator and we lose the fixed point structure in the process. This results in the distinction that while URG can reach a fixed point theory in a finite number of steps, CUT cannot do so.
-
+Note that in going from eq.~\ref{dbrack} to the simplified form eq.~\ref{cuturg}, we had to drop all quantum fluctuations in the denominator and we lose the fixed point structure in the process. This results in the distinction that while URG can reach a fixed point theory in a finite number of steps, CUT cannot do so.
 \bibliographystyle{unsrt}
 \bibliography{notes}
 
