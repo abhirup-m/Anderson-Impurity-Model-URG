@@ -5849,10 +5849,6 @@ The differences between the perturbative and non-perturbative ways are summarize
 	\label{comparison}
 \end{table}
 There appear to be two differences between these decoupling conditions: (a)  a pre-factor of \(\frac{\pi}{4}\) for the first term on the right hand side, and (b) the altogether new second term on the right hand side. Both are outcomes of the non-perturbative nature of URG. This offers evidence that the physics captured by the effective Hamiltonian (and its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an expansion in a small parameter (say, $\frac{1}{U}$) in the Anderson impurity problem), followed by a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose the limit of \(U = \infty\) by hand. The URG flow never attains such a limit, thus suggesting that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never recover what is thrown away. This is again not the case with URG.
-<<<<<<< HEAD
-\subsubsection{SIAM URG vs SIAM SWT(Iterative)}
-In the following, we will perform an iterative SWT on the SIAM. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
-=======
 \subsubsection{Renormalization due to SWT and Comparison with PMS and URG}
 Similar to the situation in Poor Man's scaling, one can visualize two set of states and let \(\ham_X = V_+ + V_-\) be the scattering that connects them and hence the one we want to kill. Let \(S\) be of the form 
 \beq
@@ -5903,7 +5899,6 @@ Comparing with the \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to
 
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
->>>>>>> 1508599bc7f0293cd4571ac79aa1d27b70350e02
 \beq
 -\epsilon_q\rr{A + B\hat n_{d\ol\beta}} + \epsilon_d\rr{A + B\hat n_{d\ol\beta}} + U\rr{A + B}\hat n_{d\ol\beta} = -V
 \eeq
@@ -5945,9 +5940,9 @@ This can be compared with the URG result, eq.~\ref{urg-siam},
 \Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
 \eeq
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
-\pb Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity, and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
+\pb Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
 \subsection{Kondo model from a one-shot URG}\label{SWT from URG}
-Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to a decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG (or PMS).
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG (or PMS).
 \begin{itemize}
 	\item We will be severing the connections of the impurity with all the mobile electrons in one-shot, and not iteratively.
 	\item We will have to trivialize the quantum fluctuation operator \(\hat \omega\) by replacing it with the diagonal part of the initial state energy.
@@ -6049,6 +6044,7 @@ J^{URG}_{kq}(\omega) &= \hf V_k V_q^*\rr{\fr{1}{\omega_1 + \epsilon_k - \epsilon
 To recover the SWT scales from the URG ones, we have to substitute each \(\omega_i\) by the energy of the initial state to which it corresponds. From eq.~\ref{swturg}, we note that \(\omega_1\) refers to the initial state in which \(\hat n_{k\sigma}=\hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_1 = \hf\epsilon_k + \epsilon_d\). Similarly, \(\omega_0\) refers to the initial state in which \(\hat n_{k\sigma}=1 - \hat n_{d\ol\sigma} = 1 - \hat n_{d\sigma} = 1\). Therefore, \(\omega_0 = \hf\epsilon_k\). Substituting these into the URG energy scales gives back the SWT scales.
 %}
 \subsection{CUT RG}
+\subsubsection{FOrmalism}
 The following equation generates a family of unitary Hamiltonians.
 \beq[flow]
 \dv{\ham(l)}{l} = \qq{\ham,\eta(l)}
@@ -6075,12 +6071,38 @@ To get a feel for the method, we will apply it on the Fröhlick Hamiltonian to r
 \eeq
 where \(\ham_X\) is the electron-phonon coupling term
 \beq
-\sum_{kq}g_{kq}\rr{b^\dagger_q + b_q}c^\dagger_{k+q,\sigma}c_{k\sigma}
+\sum_{kq}g_{q}b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma} + \text{h.c.}
 \eeq
-and \(\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_q \hbar\omega_q \hat n_q\) is the kinetic energy of the electron and phonons. We choose
+and \(\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_q \hbar\omega_q b^\dagger_q b_q\) is the kinetic energy of the electron and phonons. We assume time-reversal invariance such that \(\omega_q = \omega_{-q}\). We choose
 \beq
-\eta(l) = \qq{\ham_d,\ham} = \qq{\ham_d,\ham_X} = 
+\eta(l) = \qq{\ham_d,\ham} = \qq{\ham_d,\ham_X}
 \eeq
+It is easy to compute the commutators.
+\beq
+\qq{\sum_{k\sigma}\epsilon_k \hat n_{k\sigma},\sum_{kq\sigma}b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma}}  &= \sum_{kq\sigma}g_q\rr{\epsilon_{k+q} - \epsilon_k}g_qb^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma}\\
+\qq{\sum_{q}\hbar \omega_q b^\dagger_q b_q,\sum_{kq}g_{q}b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma}}  &= \sum_{kq}g_q \hbar \omega_q b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma}
+\eeq
+Therefore,
+\beq
+\eta =\sum_{kq\sigma}g_q\rr{\epsilon_{k+q} - \epsilon_k + \hbar\omega_q}b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma} - \text{h.c.}
+\eeq
+We define \(\xi \equiv \epsilon_{k+q} - \epsilon_k + \hbar\omega_q\). The renormalization in the total Hamiltonian becomes
+\beq
+\dv{\ham}{l} = \qq{\eta,\ham}
+\eeq
+The flow equation for the electron-phonon coupling is
+\beq
+\dv{g_q}{l} = -\xi^2g_q \implies g_q(l) = g_q(0)\ex{-\xi^2 l} 
+\eeq
+A new electron-electron coupling \(V_{kk^ q}c^\dagger_{k+q}c^\dagger_{k^\prime -q}c_{k^\prime}c_k\) is also generated. For the Cooper channel (\(k^\prime = -k\)), the flow equation is
+\beq
+V_{k,-k,q}(\infty) = V_{k,-k,-q}(0) - \frac{g_q^2\omega_q}{\omega_q^2 + \rr{\epsilon_{k+q} - \epsilon_k}^2}
+\eeq
+\subsubsection{Comparison with URG}
+From the structure of the flow equations, it is clear that the off-diagonal terms connected by the largest energy difference decay the fastest. In this sense, it is like a continuous version of SWT. While SWT strives to remove an entire off-diagonal term in one-shot, CUT RG does this gradually by introducing a scale \(l\). This separation of scales is absent in SWT. This separation of scales does exist in URG and PMS in a different fashion. There, the separation of scale comes in when we decouple single electron states starting from the Brillouin zone boundary \(\Lambda_N\) and come down to the Fermi surface \(\Lambda_0\). Each \(\Lambda\) provides a natural energy scale for separating the high and low energy physics.
+\pb If one integrates the continuum generator \(\eta\) over all the scales, one should recover something analogous to the SWT generator. This generator is however necessarily perturbative in the off-diagonal term, since by definition \(\eta\) will only be of first order in \(\ham_X\). This is in contrast to the non-perturbative generators in URG and, at least in principle, PMS. This non-perturbative form is encapsulated in the presence of a second completely different set of energy scales \(\omega\) (or \(E\) in PMS). This second energy scale is absent in CUT RG because it takes care of at most the second order term.
+\pb Another point to note is that since SWT keeps the entire off-diagonal piece in the generator, new terms will almost certainly by generated at every step, and they have to be truncated. This is not the case with URG or PMS, becasue in those methods, we decouple just a single-electron at each step, and so those electrons become integrals of motion at that step, leading to their removal from the off-diagonal piece, and very often the Hamiltonian retains the same form as the bare model. This makes the philosophy of URG and PMS easier to work with. Tied to this is the fact that CUT RG often takes a certain type of interaction in the generator part, and not the entire off-diagonal piece. Hence, at the limit of the flow parameter going to \(\infty\), the chosen off-diagonal piece goes to zero but the remaining off-diagonal pieces still remain. As a result, the Hamiltonian is atmost block diagonal at this stage. On the other hand, URG progressively decouples single electrons, meaning all scattering terms corresponding to that electron vanish at each step. 
+\pb One last thing to note is that URG, being unitarily implemented with a well-defined generator, does not accomodate for spontaneous symmetry breaking (SSB). In order to see SSB, the symmetry-breaking term has to be added to the bare model explicitly; if this term grows under the RG, then the ground state will be symmetry-broken. CUT RG, however, does allow for SSB through the idea that the generator is not uniquely defined. If the generator commutes with a particular symmetry, then the family of Hamiltonians will also have the symmetry \cite{kehrein}. However, if the generator is replaced by something that is normal ordered w.r.t a particular expectation value, then the CUT RG flow will usually be towards either the symmetry-preserved state or the symmetry-broken state, depending on whichever is stable \cite{wegner_normal}.
 \subsubsection{CUT RG from URG}
 We will now see that the renormalization in URG can also be put into a similar form. From eq.~\ref{renurg}, we can write the URG renormalization as
 \beq
