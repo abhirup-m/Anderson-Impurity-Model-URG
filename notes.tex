@@ -5004,7 +5004,7 @@ The quantity \(\gamma = \epsilon_d + \hf U\) is thus an RG-invariant for the par
 \eeq
 If we start with a particle-hole symmetric model, we will have \(-\epsilon_d = \epsilon_d + U\). Substituting that gives \(\Delta E_2= \Delta E_0\). This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
 %\comm{
-\section{Anderson-Kondo model URG}
+\section{Anderson-Kondo (spin) model URG}
 In order to obtain a renormalization in \(V\), we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
 \subsection{Spin-spin interaction}
 We first consider a general four-Fermion interaction of the form
@@ -5048,7 +5048,7 @@ For the URG, we take two electrons on the shell \(\Lambda_N\), \(q\beta\) and \(
 & \sum_{k<\Lambda_N}\left[J_z S^z_d \beta \rr{c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{q\beta}c_{k\beta}} + J_t \rr{c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}}\right]\\
 & + J_t \rr{c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{q\ol\beta}}
 \eeq
-where \(s_q^z = \hf\rr{\hat n_{q\ua} - \hat n_{q\da}}\) and \il{H_{imp}} is the impurity-diagonal part of the Hamiltonian (\il{\epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da}}) and 
+where \(s_q^z = \hf\rr{\hat n_{q\ua} - \hat n_{q\da}}\) and \il{H_{imp}} is the impurity-diagonal part of the Hamiltonian (\(\epsilon_d \hat n_d + U\hat n_{d\ua}\hat n_{d\da}\)) and 
 \beq
 H_{N-1} = \sum_{k<\Lambda_N,\sigma}\qq{\rr{\epsilon_k +  \sigma J_z S^z_d}\hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}} + H_{I,N-1}
 \eeq
@@ -5485,6 +5485,38 @@ This is the familiar one-loop Kondo flow equation obtained from Poor man's scali
 \beq
 \dv{J}{\ln D} = -2J^2 \rho(D)
 \eeq
+\section{Anderson-Kondo (charge) model URG}
+Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu},\cite{anderson_superc}
+\beq
+\psi^k = \begin{pmatrix} c_{k\ua} \\ c^\dagger_{k\da} \end{pmatrix}
+\eeq
+and the charge isospin \cite{charge-kondo-Zitko} for the mobile electrons
+\beq
+\vec C = \sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
+\eeq
+The various components of the isospin are
+\begin{flalign}
+	C^z_{kk^\prime} &= \sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\alpha} \psi^{k^\prime}_\alpha = \rr{c^\dagger_{k\ua}c_{k^\prime \ua} - c_{k\da}c^\dagger_{k^\prime \da}} = c^\dagger_{k\ua}c_{k^\prime \ua} + c^\dagger_{k\da}c_{k^\prime \da} - \delta_{kk^\prime}\\
+	C^x_{kk^\prime} &= \sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = c^\dagger_{k\ua}c^\dagger_{k^\prime \da} + c_{k\ua}c_{k^\prime \da}\\
+	C^y_{kk^\prime} &= \sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = -i c^\dagger_{k\ua}c^\dagger_{k^\prime \da} - c_{k\ua}c_{k^\prime \da}\\
+\end{flalign}
+There are similar operators for the impurity electron:
+\beq
+\psi_d &= \begin{pmatrix} c_{d\ua} \\ c^\dagger_{d\da} \end{pmatrix}\\
+	C^z_d &= c^\dagger_{d\ua}c_{d \ua} + c^\dagger_{d\da}c_{d \da} - 1 = \hat n_d - 1\\
+	C^x_d &= c^\dagger_{d\ua}c^\dagger_{d \da} + c_{d\ua}c_{d \da}\\
+	C^y_d &= -i c^\dagger_{d\ua}c^\dagger_{d \da} - c_{d\ua}c_{d \da}\\
+\eeq
+The full charge Kondo interaction can now be written down in terms of these isospins:
+\beq
+K_z \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + K_t \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}}
+\eeq
+where \(C^\pm \equiv C^x \pm iC^y\). For \(K_z = 2K_t\), we get an \(SU(2)\)-charge symmetric model. 
+\pb To proceed with the URG, we start with the outermost shell \(\Lambda_N\) and consider an electron \(q\beta\) on that shell. The URG then involves decoupling this electron.
+\beq
+\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + H_{imp} + K_z 
+\eeq
+
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
@@ -5883,19 +5915,24 @@ The renormalization is thus
 			      &= \hf \sum_{ijk}\left[\frac{1}{E_0^i - E_1^j}\left(V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k} - V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}- V^\dagger_{ik}V_{ij}\ket{\phi_1^k}\bra{\phi_1^j} + V_{kj}V^\dagger_{ij}\ket{\phi_0^k}\bra{\phi_0^i}\right)\right]\\
 			      &= \hf \sum_{ijk}\left[\rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^k - E_1^j}}V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k} - \rr{\frac{1}{E_0^i - E_1^j} + \frac{1}{E_0^i - E_1^k}}V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}\right]\\
 \eeq
-This is the same as the PMS result eq.~\ref{pmsren}
+This is the same as the PMS result eq.~\ref{pmsren}. It is easy to see that since this transformation is unitary, it has zero trace so as to preserve the trace of the Hamiltonian:
+\beq
+\text{Tr}\qq{\ham} &= \sum_{l}\rr{\bra{\phi_0^l} + \bra{\phi_1^l}}\Delta \ham\rr{\ket{\phi_0^l} + \ket{\phi_1^l}}\\
+		&= \hf \sum_{jl}\frac{2}{E_0^l - E_1^j}V_{lj}V^\dagger_{lj} - \hf \sum_{ji}\frac{2}{E_0^i - E_1^l}V^\dagger_{il}V_{il}\\
+		&= 0
+\eeq
 \pb We can also make a comparison to the renormalization obtained from URG.
 \beq
 \Delta \ham &= \hf\qq{\eta^\dagger - \eta,\ham}
 \eeq
 where 
 \beq
-\eta &= \frac{1}{\omega_0 - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\\
-\eta^\dagger &= \frac{1}{\omega_1 - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} = \sum_{ij}\frac{1}{\omega - \ham^d}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\frac{1}{\omega_0 - \ham^d}\\
-\implies \eta^\dagger - \eta &= \sum_{ij}\frac{1}{\omega - E_0^i}\rr{V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i} - V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}}\\
-&= \sum_{ij}\frac{1}{E_0^i - \omega}\rr{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}\\
+\eta &= \frac{1}{\omega - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} = \sum_{ij}\frac{1}{\omega_1^j - E_0^i}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\\
+\implies \eta^\dagger &= \sum_{ij}\frac{1}{\omega_1^j - E_0^i}V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}\\
+\implies \eta^\dagger - \eta &= \sum_{ij}\frac{1}{\omega_1^j - E_0^i}\rr{V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i} - V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}}\\
+&= \sum_{ij}\frac{1}{E_0^i - \omega_1^j}\rr{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}\\
 \eeq
-Comparing with the \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega \to E_1^j\).
+This can be thought of as the generator for the unitary transformations of URG. Comparing with the generator \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega \to E_1^j\).
 
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives

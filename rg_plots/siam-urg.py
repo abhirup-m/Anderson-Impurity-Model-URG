@@ -9,8 +9,8 @@ import matplotlib
 import numpy as np
 from matplotlib import pyplot as plt
 
-font = {'family' : 'normal',
-        'size'   : 15}
+font = {'family' : 'Source Code Pro',
+        'size'   : 12}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -19,10 +19,12 @@ matplotlib.rcParams['text.usetex'] = True
 def plot(gx,gy,title):
     norm_gx = [gxi/abs(max(gx, key=abs)) for gxi in gx]
     norm_gy = [gyi/abs(max(gy, key=abs)) for gyi in gy]
-    plt.scatter(gx, gy)
-    plt.scatter(gx[-1], gy[-1], color='r')
+    plt.plot(gx, gy, ls="--")
+    plt.scatter(gx[0], gy[0], color='g', label="start") # marking start point
+    plt.scatter(gx[-1], gy[-1], color='r', label="end") # marking end point
     plt.xlabel(r'J')
     plt.ylabel(r'U')
+    plt.legend()
     plt.title(title)
     plt.show()
 
@@ -79,17 +81,17 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    N = 5000
-    w_0 = np.linspace(-2,2,20,endpoint=True)
+    N = 100
+    w_0 = np.round(np.linspace(-130,0,500,endpoint=True),2)
     D_0 = [1]
-    V_0 = [2]
+    V_0 = [1]
     J_0 = [1]
-    U_0 = [1]
-    flag = False
+    U_0 = [100]
     for w,D0,U,V,J in itertools.product(w_0,D_0,U_0,V_0,J_0):
-        title = r'$\omega={},D={},U={},V={},J={}$'.format(w,D0,U,V,J)
+        flag = False
+        title = r'$\omega={},D_0={},U_0={},V_0={},J_0={}$'.format(w,D0,U,V,J)
         U_arr, V_arr, J_arr = [U], [V], [J]
-        print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
+        #print ("Start: w={}, D={}, U={}, V={}, J={}".format(w, D0, U, V, J))
         flags = init_check_fp(w, D0, U, V, J)
         for D in np.linspace(D0, 0, N):
             if flags[0] == 0:
@@ -99,8 +101,9 @@ def all_flow():
             U_arr.append(U)
             V_arr.append(V)
             J_arr.append(J)
-        if flag:
-           print ("End: w={}, U={}, V={}, J={}\n".format(w,U, V, J))
-           plot(J_arr, U_arr, title)
+        if flag is True: 
+           print ("End: w={}, D={}, U={}, V={}, J={}".format(w, D, U, V, J))
+           title += "\n"r'$D={},U={},V={},J={}$'.format(round(D,1),round(U,4),round(V,4),round(J,4))
+           #plot(J_arr, U_arr, title)
 
 all_flow()
