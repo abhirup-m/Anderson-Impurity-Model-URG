@@ -5490,7 +5490,7 @@ Performing the Schrieffer-Wolff transformation on the SIAM generates four types 
 \beq
 \psi^k = \begin{pmatrix} c_{k\ua} \\ c^\dagger_{k\da} \end{pmatrix}
 \eeq
-and the charge isospin \cite{charge-kondo-Zitko} for the mobile electrons
+and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction electrons
 \beq
 \vec C = \sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
 \eeq
@@ -5509,14 +5509,37 @@ There are similar operators for the impurity electron:
 \eeq
 The full charge Kondo interaction can now be written down in terms of these isospins:
 \beq
-K_z \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + K_t \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}}
+2K_z \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + K_t \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}}
 \eeq
-where \(C^\pm \equiv C^x \pm iC^y\). For \(K_z = 2K_t\), we get an \(SU(2)\)-charge symmetric model. 
-\pb To proceed with the URG, we start with the outermost shell \(\Lambda_N\) and consider an electron \(q\beta\) on that shell. The URG then involves decoupling this electron.
+where \(C^\pm \equiv C^x \pm iC^y\). For \(2K_z = 2K_t=K\), we get an \(SU(2)\)-charge symmetric model:
 \beq
-\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + H_{imp} + K_z 
+K \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + \hf K \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}} = K \vec C_d \cdot \vec C
 \eeq
-
+To proceed with the URG, we start with the outermost shell \(\Lambda_N\) and consider an electron \(q\beta\) on that shell. The URG then involves decoupling this electron. In the subspace of \(q\beta\), the diagonal and off-diagonal parts are
+\beq
+	\ham_d &= \epsilon_q \tau_{q\beta} + H_{imp} + K_z \rr{\hat n_d -1}\rr{\hat n_{q\beta} - \hf}\\
+	\ham_X &= V_qc^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + 2 K_z \rr{\hat n_d -1}\sum_k \rr{c^\dagger_{q\beta}c_{k\beta} + \text{h.c.}} + K_t \sum_k \rr{c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} + \text{h.c.}} \\
+\eeq
+\subsection{Particle sector}
+This will involve terms which start from an empty state and go to an occupied state (\(\hat n_{q\beta}=0\to\hat n_{q\beta}=1\)). This renormalization is given by 
+\beq
+T^\dagger c_{q\beta}Gc^\dagger_{q\beta}T
+\eeq
+where
+\beq
+	Gc^\dagger_{q\beta}T &= \frac{1}{\omega - \ham_d}\qq{V_qc^\dagger_{q\beta}c_{d\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{q\beta}c_{k\beta} + K_t \sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta} }\\
+			     &=\frac{V_q}{\omega - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - K_z\rr{\hat n_{d\ol\beta}-1}}c^\dagger_{q\beta}c_{d\beta} + \frac{2 K_z \rr{\hat n_d -1}}{\omega - \hf\epsilon_q - H_{imp} - K_z\rr{\hat n_{d}-1}}\sum_k c^\dagger_{q\beta}c_{k\beta} \\
+			     &+\frac{K_t }{\omega - \hf\epsilon_q + K_z}\sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta}\\
+\eeq
+The renormalization is, therefore,
+\beq
+&\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}Gc^\dagger_{q\beta}T\\
+&=\frac{|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}{\omega - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - K_z\rr{\hat n_{d\ol\beta}-1}} + \frac{2V_q^*K_z c^\dagger_{d\beta}c_{k\beta}\rr{\hat n_{d\ol\beta}-1}\rr{\hat n_{q\beta}-1}}{\omega - \hf\epsilon_q - \epsilon_d\hat n_{d\ol\beta} + K_z} \\
+&- \frac{V_q^* K_t\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega - \hf\epsilon_q + K_z} + \frac{2K_z V_q\rr{\hat n_{d\ol\beta}-1}\rr{\hat n_{q\beta}-1}c^\dagger_{k\beta}c_{d\beta}}{\omega - \hf\epsilon_q + K_z} \\
+&+ \frac{4K_z^2 \rr{1 - \hat n_d}^2\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta}}{\omega - \hf\epsilon_q - H_{imp} - K_z\rr{\hat n_d - 1}} - \frac{2K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega - \hf\epsilon_q + K_z}\\
+&- \frac{K_t V_q \rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}}{\omega - \hf\epsilon_q + K_z} - \frac{2K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega - \hf\epsilon_q + K_z}\\
+&+ \frac{K_t^2 \hat n_{d\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega - \hf\epsilon_q + K_z}
+\eeq
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
