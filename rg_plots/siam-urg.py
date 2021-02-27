@@ -2,21 +2,20 @@
 
 
 import itertools
-import time
 from math import sqrt
 
 import matplotlib
 import numpy as np
 from matplotlib import pyplot as plt
 
-font = {'family' : 'normal',
-        'size'   : 15}
+font = {'family': 'normal',
+        'size': 15}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
 
 
-def plot(gx,gy,title):
+def plot(gx, gy, title):
     norm_gx = [gxi/abs(max(gx, key=abs)) for gxi in gx]
     norm_gy = [gyi/abs(max(gy, key=abs)) for gyi in gy]
     plt.scatter(norm_gx, norm_gy)
@@ -28,8 +27,8 @@ def plot(gx,gy,title):
 
 
 def init_check_fp(w, D, U, V, J):
-    ''' checks if any denominator is 0 at the 
-    beginning, meaning we are starting from a fixed 
+    ''' checks if any denominator is 0 at the
+    beginning, meaning we are starting from a fixed
     point, and sets corresponding flag to 0.'''
 
     d = den(w, D, U, V, J)
@@ -38,7 +37,7 @@ def init_check_fp(w, D, U, V, J):
 
 
 def den(w, D, U, V, J):
-    ''' Defines and evaluates all the 
+    ''' Defines and evaluates all the
     denominators in the problem.'''
 
     d1 = w - 0.5 * D + U/2 + J/4
