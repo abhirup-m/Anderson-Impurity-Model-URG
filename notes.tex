@@ -4843,7 +4843,7 @@ It is not possible to have a kinetic energy infinitesimally close to the Fermi s
 }
 %}
 \section{Anderson Model URG}\label{siamurg}
-\subsection{Setting up the terms in the URG}
+\subsection{Setting up the various terms in the URG}
 The model is the usual single-impurity Anderson model Hamiltonian.
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
@@ -5496,9 +5496,13 @@ and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction elect
 \eeq
 The various components of the isospin are
 \begin{flalign}
-	C^z_{kk^\prime} &= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\alpha} \psi^{k^\prime}_\alpha = \frac{1}{2}\rr{c^\dagger_{k\ua}c_{k^\prime \ua} - c_{k^\prime\da}c^\dagger_{k \da}} = \frac{1}{2}\left(c^\dagger_{k\ua}c_{k^\prime \ua} + c^\dagger_{k\da}c_{k^\prime \da} - \delta_{kk^\prime}\right)\\
-	C^x_{kk^\prime} &= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = \frac{1}{2}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} + c_{k\ua}c_{k^\prime \da} \right) \\
-	C^y_{kk^\prime} &= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = -i \frac{1}{2}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} - c_{k\ua}c_{k^\prime \da} \right) \\
+	C^z_{kk^\prime} 
+	&= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\alpha} \psi^{k^\prime}_\alpha = \frac{1}{2}\rr{c^\dagger_{k\ua}c_{k^\prime \ua} - c_{k^\prime\da}c^\dagger_{k \da}} = \frac{1}{2}\left(c^\dagger_{k\ua}c_{k^\prime \ua} + c^\dagger_{k\da}c_{k^\prime \da} - \delta_{kk^\prime}\right)\\
+	&= \frac{1}{2}\sum_\sigma\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
+	C^x_{kk^\prime} 
+	&= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = \frac{1}{2}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} + c_{k\ua}c_{k^\prime \da} \right) \\
+	C^y_{kk^\prime} 
+	&= \frac{1}{2}\sum_{\alpha} {\psi^k_\alpha}^\dagger \sigma^z_{\alpha\ol\alpha} \psi^{k^\prime}_{\ol\alpha} = -i \frac{1}{2}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} - c_{k\ua}c_{k^\prime \da} \right) \\
 \end{flalign}
 There are similar operators for the impurity electron:
 \begin{equation}\begin{aligned}
@@ -5508,18 +5512,24 @@ C^x_d &= \frac{1}{2}\left(  c^\dagger_{d\ua}c^\dagger_{d \da} + c_{d\ua}c_{d \da
 C^y_d &= -i \frac{1}{2}\left(  c^\dagger_{d\ua}c^\dagger_{d \da} - c_{d\ua}c_{d \da} \right)\\
 \end{aligned}\end{equation}
 The full charge Kondo interaction can now be written down in terms of these isospins:
-\beq
+\begin{equation}\begin{aligned}
 4K_z \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + K_t \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}}
-\eeq
+\end{aligned}\end{equation}
 where \(C^\pm \equiv C^x \pm iC^y\). For \(4K_z = 2K_t=K\), we get an \(SU(2)\)-charge symmetric model:
 \beq
 K \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + \hf K \sum_{kk^\prime}\rr{C_d^+ C^-_{kk^\prime}+ C_d^- C^+_{kk^\prime}} = K \vec C_d \cdot \vec C
 \eeq
 To proceed with the URG, we start with the outermost shell \(\Lambda_N\) and consider an electron \(q\beta\) on that shell. The URG then involves decoupling this electron. In the subspace of \(q\beta\), the diagonal and off-diagonal parts are
-\beq
+\begin{equation}\begin{aligned}
 	\ham_d &= \epsilon_q \tau_{q\beta} + H_{imp} + K_z \rr{\hat n_d -1}\rr{\hat n_{q\beta} - \hf}\\
-	\ham_X &= V_qc^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + 2 K_z \rr{\hat n_d -1}\sum_k \rr{c^\dagger_{q\beta}c_{k\beta} + \text{h.c.}} + K_t \sum_k \rr{c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} + \text{h.c.}} \\
-\eeq
+	\ham_X &= V_qc^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + K_z \rr{\hat n_d -1}\sum_k \rr{c^\dagger_{q\beta}c_{k\beta} + \text{h.c.}} + K_t \sum_k \rr{c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} + \text{h.c.}} \\
+\end{aligned}\end{equation}
+As usual, we have considered only one mobile electron on the shell we are decoupling, and we only keep the energy of that electron and the impurity in the diagonal part which comes down in the denominator. Note that the factors of half in \(C^z\) are cancelled by the factor of \(4\) in \(4K_z\). The last term in \(\ham_d\) is obtained by setting \(k=k^\prime=q\) and \(\sigma=\beta\) in eq.~\ref{diagonalCz}. The \(K_z\) part of \(\ham_X\) is obtained by noting that
+\begin{equation}\begin{aligned}
+	C^z_{q\neq k} &= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} - c_{k\da}c^\dagger_{q \da} - c_{q\da}c^\dagger_{k\da}} \\
+	&= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} + c^\dagger_{q \da}c_{k\da} + c^\dagger_{k\da}c_{q\da}}\\
+	&= \frac{1}{2}\sum_{\sigma}\left(c^\dagger_{q\sigma}c_{k\sigma} + \text{h.c.}\right)
+\end{aligned}\end{equation}
 \subsection{Hole sector}
 This will involve terms which start from an empty state (hole). This renormalization is given by 
 \beq
@@ -5528,17 +5538,17 @@ T^\dagger c_{q\beta}Gc^\dagger_{q\beta}T
 where
 \begin{flalign*}
 &Gc^\dagger_{q\beta}T\\
-&= \frac{1}{\omega_0 - \ham_d}\sum_{q\beta}\qq{V_qc^\dagger_{q\beta}c_{d\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{q\beta}c_{k\beta} + K_t \sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta} }\\
- 	     &=\sum_{q\beta}\left[\frac{V_q}{\omega_0 - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - \frac{1}{2}K_z\rr{\hat n_{d\ol\beta}-1}}c^\dagger_{q\beta}c_{d\beta} + \frac{2 K_z \rr{\hat n_d -1}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_{d}-1}}\sum_k c^\dagger_{q\beta}c_{k\beta} \right.\\
+&= \frac{1}{\omega_0 - \ham_d}\sum_{q\beta}\qq{V_qc^\dagger_{q\beta}c_{d\beta} + K_z \rr{\hat n_d -1}\sum_k c^\dagger_{q\beta}c_{k\beta} + K_t \sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta} }\\
+ 	     &=\sum_{q\beta}\left[\frac{V_q}{\omega_0 - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - \frac{1}{2}K_z\rr{\hat n_{d\ol\beta}-1}}c^\dagger_{q\beta}c_{d\beta} + \frac{K_z \rr{\hat n_d -1}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_{d}-1}}\sum_k c^\dagger_{q\beta}c_{k\beta} \right.\\
  	     &\left.+\frac{K_t }{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta}\right]\\
 \end{flalign*}
 The renormalization is, therefore,
 \begin{flalign*}
-	     &\sum_{q\beta}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}Gc^\dagger_{q\beta}T\\
-&=\sum_{q\beta}\left[\frac{|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - \frac{1}{2}K_z\rr{\hat n_{d\ol\beta}-1}} - \sum_k\frac{2V_q^*K_z c^\dagger_{d\beta}c_{k\beta}\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z} \right.\\
-&- \left.\sum_k\frac{V_q^* K_t\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + K_z} - \sum_k\frac{2K_z V_q\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{d\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right. \\
-&+\left. \sum_{kk^\prime}\frac{4K_z^2 \rr{1 - \hat n_d}^2\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}} - \sum_{kk^\prime}\frac{2K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right.\\
-&- \left.\sum_k\frac{K_t V_q \rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z} - \sum_{kk^\prime}\frac{2K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right.\\
+	     &\sum_{q\beta}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}Gc^\dagger_{q\beta}T\\
+&=\sum_{q\beta}\left[\frac{|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - \frac{1}{2}K_z\rr{\hat n_{d\ol\beta}-1}} - \sum_k\frac{V_q^*K_z c^\dagger_{d\beta}c_{k\beta}\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z} \right.\\
+&- \left.\sum_k\frac{V_q^* K_t\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + K_z} - \sum_k\frac{K_z V_q\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{d\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right. \\
+&+\left. \sum_{kk^\prime}\frac{K_z^2 \rr{1 - \hat n_d}^2\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}} - \sum_{kk^\prime}\frac{K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right.\\
+&- \left.\sum_k\frac{K_t V_q \rr{1 - \hat n_{q\beta}}\hat n_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z} - \sum_{kk^\prime}\frac{K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right.\\
 &+\left.\sum_{kk^\prime} \frac{K_t^2 \hat n_{d\beta}\hat n_{d\ol\beta}\rr{1 - \hat n_{q\beta}}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right]
 \end{flalign*}
 \subsection{Particle sector}
@@ -5548,30 +5558,40 @@ c_{q\beta}^\dagger TG T^\dagger c_{q\beta}
 \eeq
 where
 \beq
-	G T^\dagger c_{q\beta} &= \frac{1}{\omega - \ham_d}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} }\\
-			       &=\frac{V^*_q c^\dagger_{d\beta}c_{q\beta}}{\omega_1 - \hf\epsilon_q - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta} + \frac{1}{2}K_z\hat n_{d\ol\beta}} + \frac{2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta}}{\omega_1 - \hf\epsilon_q - H_{imp} + \frac{1}{2}K_z\rr{\hat n_{d}-1}} \\
-			     &+\frac{K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z}\\
+G T^\dagger c_{q\beta} &= \sum_{q\beta}\frac{1}{\omega - \ham_d}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} }\\
+			       &=\sum_{q\beta}\left[\frac{V^*_q c^\dagger_{d\beta}c_{q\beta}}{\omega_1 - \hf\epsilon_q - \epsilon_d - \rr{\epsilon_d + U}\hat n_{d\ol\beta} + \frac{1}{2}K_z\hat n_{d\ol\beta}} + \frac{K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta}}{\omega_1 - \hf\epsilon_q - H_{imp} + \frac{1}{2}K_z\rr{\hat n_{d}-1}} \right.\\
+			       &+\left.\frac{K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z}\right]\\
 \eeq
 The renormalization is, therefore,
 \begin{flalign*}
-&\qq{V_qc^\dagger_{q\beta}c_{d\beta} + 2 K_z \rr{\hat n_d -1}\sum_k c^\dagger_{q\beta}c_{k\beta} + K_t \sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta} }GT^\dagger c_{q\beta}\\
-&=\frac{|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}}{\omega_1 - \hf\epsilon_q - \epsilon_d - \left( \epsilon_d + U - \frac{1}{2}K_z \right) \hat n_{d\overline\beta}} - \frac{2V_qK_z c^\dagger_{k\beta}c_{d\beta}\hat n_{d\ol\beta}\hat n_{q\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}\\
-&- \frac{V_q K_t\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z} - \frac{2K_z V_q^*\hat n_{d\ol\beta}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z} \\
-&+ \frac{4K_z^2 \rr{\hat n_d - 1}^2\hat n_{q\beta}c_{k\beta}c^\dagger_{k^\prime\beta}}{\omega_1 - \hf\epsilon_q - H_{imp} + \frac{1}{2}K_z\rr{\hat n_d - 1}} - \frac{2K_z K_t \hat n_{q\beta}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z}\\
-&- \frac{K_t V^*_q \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z} - \frac{2K_z K_t \hat n_{q\beta}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_1 - \frac{1}{2}\epsilon_q - 2\epsilon_q - U + \frac{1}{2}K_z}\\
-& + \frac{K_t^2 \left(1 - \hat n_{d\beta}\right) \left(1 - \hat n_{d\ol\beta}\right) \hat n_{q\beta}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}
+&\sum_{q\beta}\qq{V_qc^\dagger_{q\beta}c_{d\beta} + K_z \rr{\hat n_d -1}\sum_k c^\dagger_{q\beta}c_{k\beta} + K_t \sum_k c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta} }GT^\dagger c_{q\beta}\\
+&=\sum_{q\beta}\left[\frac{|V_q|^2 \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}}{\omega_1 - \hf\epsilon_q - \epsilon_d - \left( \epsilon_d + U - \frac{1}{2}K_z \right) \hat n_{d\overline\beta}} - \sum_k\frac{V_qK_z c^\dagger_{k\beta}c_{d\beta}\hat n_{d\ol\beta}\hat n_{q\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}\right.\\
+&-\left. \sum_k\frac{V_q K_t\hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{d\ol\beta}c_{k\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z} - \sum_k\frac{K_z V_q^*\hat n_{d\ol\beta}\hat n_{q\beta}c^\dagger_{d\beta}c_{k\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z} \right.\\
+&+\left. \sum_{kk^\prime}\frac{K_z^2 \rr{\hat n_d - 1}^2\hat n_{q\beta}c_{k\beta}c^\dagger_{k^\prime\beta}}{\omega_1 - \hf\epsilon_q - H_{imp} + \frac{1}{2}K_z\rr{\hat n_d - 1}} - \sum_{kk^\prime}\frac{K_z K_t \hat n_{q\beta}c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z}\right.\\
+&- \left.\sum_k\frac{K_t V^*_q \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z} - \sum_{kk^\prime}\frac{K_z K_t \hat n_{q\beta}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_1 - \frac{1}{2}\epsilon_q - 2\epsilon_q - U + \frac{1}{2}K_z}\right.\\
+& +\left. \sum_{kk^\prime}\frac{K_t^2 \left(1 - \hat n_{d\beta}\right) \left(1 - \hat n_{d\ol\beta}\right) \hat n_{q\beta}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}\right]
 \end{flalign*}
 \subsection{Scaling Equations}
-To get the scaling equations, we perform similar steps as in the spin-Kondo URG. First of all, in the RG equations that involve  \(\hat n_{d\ol\beta}\) in the denominator, we replace the quantum fluctuations will \(E_j + \omega\), where \(E_j\) is the impurity part of the energy of the initial state and \(\omega\) is a redefined quantum fluctuation scale. Secondly, by using the constraint \(\eta = \left( \eta^\dagger \right) ^\dagger\), we can relate the denominators of the RG equations of the \(V\)s and \(K\)s. The term with \(K_z^2\) in either sector mostly cancel each other, leaving a renormalization of \(\epsilon_d\) and \(U\) at \(K^2\) order. The penultimate term in the hole sector, gets canceled by a piece from the final term in particle sector, and the remaining piece gives the renormalization in \(K_z\).
+To get the scaling equations, we perform similar steps as in the spin-Kondo URG. First of all, we substitute \(\hat n_{q\beta}\) with \(1\) and \(0\) in the particle and hole sectors respectively. Secondly, in the RG equations that involve  \(\hat n_{d\ol\beta}\) in the denominator, we replace the quantum fluctuations with \(E_j + \omega\), where \(E_j\) is the impurity part of the energy of the initial state and \(\omega\) is a redefined quantum fluctuation scale. Thirdly, by using the constraint \(\eta = \left( \eta^\dagger \right) ^\dagger\), we can relate the denominators of the RG equations of the \(V\)s and \(K\)s. The term with \(K_z^2\) in either sector mostly cancel each other, leaving a renormalization of \(\epsilon_d\) and \(U\) at \(K^2\) order.
 \begin{equation}\begin{aligned}
+	\sum_{kk^\prime q\beta}\frac{K_z^2 \rr{1 - \hat n_d}^2\left[c^\dagger_{k\beta}c_{k^\prime\beta} + c_{k^\prime\beta}c^\dagger_{k\beta}\right]}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}} = \sum_{kk^\prime q\beta}\frac{K_z^2 \rr{1 - \hat n_d}^2\delta_{kk^\prime}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}}
+\end{aligned}\end{equation}
+Since \(\left(1 - \hat n_d\right)^2 = \left(1 - \hat n_{d\ua}\right)\left(1 - \hat n_{d\da}\right) + \hat n_{d\ua}\hat n_{d\da}\), we can write down the renormalization in \(\Delta E_0\) and \(\Delta E_2\) and hence in \(\epsilon_d\) and \(U\).
+\begin{equation}\begin{aligned}
+\Delta E_0 = \sum_{k q\beta}\frac{K_z^2}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\\
+\Delta E_2 = \sum_{kk^\prime q\beta}\frac{K_z^2}{\omega_0 - \hf\epsilon_q - 2\epsilon_d - U - \frac{1}{2}K_z}\\
+\end{aligned}\end{equation}
+Making the substitution \(\omega_0 = \omega \)
+The penultimate term in the hole sector, gets canceled by a piece from the final term in particle sector, and the remaining piece gives the renormalization in \(K_z\).
+\begin{flalign}
 	\Delta \epsilon_d &= \sum_q \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + \frac{1}{2}K_z} + \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U + \frac{1}{2}K_z} - \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - \frac{1}{2}K_z}\\
 			  &+ \frac{8K_z^2}{\omega - \frac{1}{2}\epsilon_q }\\
 	\Delta U &= \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U -\frac{1}{2}K_z} + \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - \frac{1}{2}K_z} - \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U + \frac{1}{2}K_z} \\
 		 &- \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d +  \frac{1}{2}K_z} - \frac{16 K_z^2}{\omega - \frac{1}{2}\epsilon_q }\\
-	\Delta V &= \frac{-V_q^* K_t + 2 V_q K_z}{\omega - \frac{1}{2}\epsilon_q + \frac{1}{2}K_z}\\
+	\Delta V &= \frac{-V_q^* K_t + V_q K_z}{\omega - \frac{1}{2}\epsilon_q + \frac{1}{2}K_z}\\
 	\Delta K_z &= \frac{-K_t^2}{\omega - \hf \epsilon_q + \frac{1}{2}K_z}\\
 	\Delta K_t &= \frac{-2K_zK_t}{\omega - \hf \epsilon_q + \frac{1}{2}K_z}\\
-\end{aligned}\end{equation}
+\end{flalign}
 
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
