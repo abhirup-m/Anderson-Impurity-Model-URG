@@ -5432,9 +5432,9 @@ Just as in the previous section, we replace \(\omega^\pm_j\) with \(\omega + E_j
 \Delta U &=  \sum_{\epsilon_q = D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d + U + \hf {J_z}} - \sum_{\epsilon_q = D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d}\\
        &+\sum_{\epsilon_q = -D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf {J_z}} - \sum_{\epsilon_q = -D}2|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d - U}\\
        &-\sum_{\epsilon_q=-D,\atop{k<q}}2\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
-\Delta V &= -\rr{\hf J_z + J_t}\sum_{|\epsilon_q|=D}V_q\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
-\Delta J_t &= -J_z J_t\sum_{|\epsilon_q|=D}\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
-\Delta J_z &= -J_t^2 \sum_{|\epsilon_q|=D}\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\Delta V &= -\rr{\hf J_z + J_t}\left(\sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D}\right)V_q\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\Delta J_t &= -J_z J_t\left(\sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D}\right)\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
+\Delta J_z &= -J_t^2 \left(\sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D}\right)\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
 \eeq
 \subsection{Particle-Hole symmetry}
 As discussed in the previous section, the particle-hole symmetry condition is \(\epsilon_d + U = -\epsilon_d\). We henceforth also assume that \(\sum_{D} = \sum_{-D}\) and drop the indices on the summations. The RG equations for \(\epsilon_d\) and \(U\)  then look like,
@@ -5521,10 +5521,10 @@ K \sum_{kk^\prime}C_d^z C^z_{kk^\prime} + \hf K \sum_{kk^\prime}\rr{C_d^+ C^-_{k
 \eeq
 To proceed with the URG, we start with the outermost shell \(\Lambda_N\) and consider an electron \(q\beta\) on that shell. The URG then involves decoupling this electron. In the subspace of \(q\beta\), the diagonal and off-diagonal parts are
 \begin{equation}\begin{aligned}
-	\ham_d &= \epsilon_q \tau_{q\beta} + H_{imp} + K_z \rr{\hat n_d -1}\rr{\hat n_{q\beta} - \hf}\\
+	\ham_d &= \epsilon_q \tau_{q\beta} + H_{imp} + K_z \rr{\hat n_d -1}\tau_{q\beta}\\
 	\ham_X &= V_qc^\dagger_{q\beta}c_{d\beta} + \text{h.c.} + K_z \rr{\hat n_d -1}\sum_k \rr{c^\dagger_{q\beta}c_{k\beta} + \text{h.c.}} + K_t \sum_k \rr{c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta} + \text{h.c.}} \\
 \end{aligned}\end{equation}
-As usual, we have considered only one mobile electron on the shell we are decoupling, and we only keep the energy of that electron and the impurity in the diagonal part which comes down in the denominator. Note that the factors of half in \(C^z\) are cancelled by the factor of \(4\) in \(4K_z\). The last term in \(\ham_d\) is obtained by setting \(k=k^\prime=q\) and \(\sigma=\beta\) in eq.~\ref{diagonalCz}. The \(K_z\) part of \(\ham_X\) is obtained by noting that
+As usual, we have considered only one mobile electron on the shell we are decoupling, and we only keep the energy of that electron and the impurity in the diagonal part which comes down in the denominator. Note that the factors of half in \(C^z\) are cancelled by the factor of \(4\) in \(4K_z\). The last term in \(\ham_d\) is obtained by setting \(k=k^\prime=q\) and \(\sigma=\beta\) in eq.~\ref{diagonalCz}, and then recognizing that \(\hat n_{q\beta} - \frac{1}{2} = \tau_{q\beta}\). The \(K_z\) part of \(\ham_X\) is obtained by noting that
 \begin{equation}\begin{aligned}
 	C^z_{q\neq k} &= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} - c_{k\da}c^\dagger_{q \da} - c_{q\da}c^\dagger_{k\da}} \\
 	&= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} + c^\dagger_{q \da}c_{k\da} + c^\dagger_{k\da}c_{q\da}}\\
@@ -5544,7 +5544,7 @@ where
 \end{flalign*}
 The renormalization is, therefore,
 \begin{flalign*}
-	     &\sum_{q\beta}\qq{V_q^*c^\dagger_{d\beta}c_{q\beta} + K_z \rr{\hat n_d -1}\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}Gc^\dagger_{q\beta}T\\
+	     &\sum_{q\beta}\qq{V_1^*c^\dagger_{d\beta}\hat n_{d\ol\beta}c_{q\beta} + V_0^*c^\dagger_{d\beta}\rr{1 - \hat n_{d\ol\beta}}c_{q\beta} + K_z^+ \hat n_{d\beta}\hat n_{d\ol\beta}\sum_k c^\dagger_{k\beta}c_{q\beta} - K_z^- \left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\sum_k c^\dagger_{k\beta}c_{q\beta} + K_t \sum_k c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{q\beta}c_{k\ol\beta}}Gc^\dagger_{q\beta}T\\
 &=\sum_{q\beta}\left[\frac{|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q - \epsilon_d \hat n_{d\ol\beta} - \frac{1}{2}K_z\rr{\hat n_{d\ol\beta}-1}} - \sum_k\frac{V_q^*K_z c^\dagger_{d\beta}c_{k\beta}\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z} \right.\\
 &- \left.\sum_k\frac{V_q^* K_t\hat n_{d\beta}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + K_z} - \sum_k\frac{K_z V_q\rr{1 - \hat n_{d\ol\beta}}\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{d\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right. \\
 &+\left. \sum_{kk^\prime}\frac{K_z^2 \rr{1 - \hat n_d}^2\rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c_{k^\prime\beta}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}} - \sum_{kk^\prime}\frac{K_z K_t \rr{1 - \hat n_{q\beta}}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\right.\\
