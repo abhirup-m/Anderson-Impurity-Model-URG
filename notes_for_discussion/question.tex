@@ -1,0 +1,48 @@
+\documentclass[14pt]{extarticle}
+\usepackage{common}
+\begin{document}
+Wherever you have derived the URG formalism, you have written down the expression for the renormalization as
+\begin{equation}
+	\label{eq1}
+	\Delta H = \pmb{\tau \left\{c^\dagger T, \eta\right\}}
+\end{equation}
+This can be written as
+\begin{equation}
+	\label{eq2}
+	\Delta H = \frac{1}{2}\left(c^\dagger T \eta - \eta c^\dagger T\right) =\pmb{ \frac{1}{2}\left(c^\dagger T \frac{1}{\omega - H_d}T^\dagger c - \frac{1}{\omega - H_d} T^\dagger c c^\dagger T\right)}
+\end{equation}
+There are two features here.
+\begin{itemize}
+	\item This is a \textcolor{blue}{difference} between a particle-type term (\(c^\dagger c\)) and a hole-type term (\(c c^\dagger\)).
+	\item The Greens function is to the left in one of the terms (\textcolor{blue}{NOT sandwiched} between the off-diagonal terms).
+\end{itemize}
+However, when I look at the various RG equations in your thesis and other published works, \textcolor{blue}{they seem to be a \textcolor{blue}{sum} of terms, instead of a difference, and the Greens function is usually \textcolor{blue}{sandwiched in between} the off-diagonal terms} (for eg., in your thesis, eq. 4.56 \(\Delta H^F_{(j)}\) Hubbard, or eq. 8.130 BCS instab., or eq. 9.61 Kondo).
+\\\\
+In reference to these apparent differences, I have the following questions:
+\begin{itemize}
+	\item Is eq.~\ref{eq1} (and hence eq.~\ref{eq2}) the one you use for calculating all renormalizations, or \textcolor{blue}{is there some other operational equation that you use}?
+	\item If yes, \textcolor{blue}{how do you convert} the difference form to a sum? Is it by absorbing the sign change into a new \(\omega\), in the following manner?
+\begin{equation}
+	c^\dagger T \frac{1}{\pmb{\omega} - H_d}T^\dagger c - \frac{1}{\pmb{\omega} - H_d} T^\dagger c c^\dagger T = c^\dagger T \frac{1}{\pmb{\omega} - H_d}T^\dagger c + \frac{1}{\pmb{\omega^\prime} - H_d} T^\dagger c c^\dagger T
+\end{equation}
+	\item If so, how do you relate the new \(\omega^\prime\) with the old \(\omega\)?
+	\item Is eq.~\ref{eq1} a complete equation by which I can get both particle and hole sector contributions, simply by choosing appropriate configurations of the number operators of the electrons I am decoupling?
+		\begin{equation}\begin{aligned}
+			\text{particle sector contribution }&=\frac{1}{2}c^\dagger T \frac{1}{\omega - H_d}T^\dagger c\\
+			\text{particle sector contribution }&=-\frac{1}{2} \frac{1}{\omega - H_d} T^\dagger c c^\dagger T
+\end{aligned}\end{equation}
+Or \textcolor{blue}{is it that eq.~\ref{eq1} gives the contributions only from the particle sector, and we require a separate formula for calculating the hole contributions} (possibly by switching \(\eta\) and \(\eta^\dagger\) in the expression)?
+\\\\ To illustrate my confusion in an actual problem, if I take the stargraph Hamiltonian \(H = \sum_i \epsilon_i S_i^z + J \sum_{i=1}^N \vec S_0 \cdot \vec S_i\). The RG equation I get by following eq.~\ref{eq2} is
+		\begin{equation}\begin{aligned}
+		\Delta H &=\frac{J^2}{4}S_N^+ S_0^- \frac{1}{\omega - H_d}S_N^- S_0^+ - \frac{J^2}{4}\frac{1}{\omega - H_d}S_N^- S_0^+ S_N^+ S_0^-\\
+				 &= \underbrace{\frac{J^2}{4}S_N^+ S_0^- \frac{1}{\omega + \frac{1}{2}\epsilon_N - \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^- S_0^+}_\text{particle sector} \underbrace{- \frac{1}{\omega + \frac{1}{2}\epsilon_N - \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^- S_0^+ S_N^+ S_0^-}_\text{hole sector}\\
+	\end{aligned}\end{equation}
+Meanwhile, Siddhartha da writes
+		\begin{equation}\begin{aligned}
+			\label{sid}
+			\text{particle sector} &= \frac{J^2}{4}S_N^+ S_0^- \frac{1}{\omega - H_d}S_N^- S_0^+ = \frac{J^2}{4}S_N^+ S_0^- \frac{1}{\omega + \frac{1}{2}\epsilon_N - \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^- S_0^+\\
+			\text{hole sector} &= \frac{J^2}{4}S_N^- S_0^+  \frac{1}{\omega - H_d}S_N^+ S_0^- = \frac{J^2}{4}S_N^+ S_0^- \frac{1}{\omega - \frac{1}{2}\epsilon_N + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^- S_0^+
+		\end{aligned}\end{equation}
+		Here, Siddhartha da \textcolor{blue}{always keeps the Greens function sandwiched between the two off-diagonal terms and keeps the same sign for both the sectors} - both these facts are at conflict with what I am getting.
+\end{itemize}
+\end{document}
