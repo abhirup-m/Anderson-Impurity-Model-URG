@@ -3865,8 +3865,13 @@ Define \(\tilde\omega = \omega + \frac{1}{2}\epsilon + \frac{1}{4}J\).
 	\Delta \epsilon_0 &= -\frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
 \end{aligned}\end{equation}
 Our goal here is to look for a fixed-point condition such that the denominator vanishes at some point of the RG. If we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 > 0\), the denominator will be positive and the RG equation will be irrelevant. This means that \(\epsilon_0\) will keep on decreasing, and the denominator will keep on becoming more and more positive, meaning there cannot be a fixed point in this situation.
-\pb If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either.
-\pb Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
+\pb If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in figure \ref{star1}
+\begin{center}
+	\includegraphics[scale=0.5]{star}
+	\label{star1}
+	\captionof{figure}{RG flow for the two cases. The green line is the distance between the bare values of the two couplings, and hence also the magnitude of the denominator. The red arrow denotes the direction in which \(\epsilon_0\) will flow. Upward flow is increase. In both cases, the flow is such that the distance between the two quantities (and hence the magnitude of the denominator) increases. The RG fixed point occurs when the magnitude of the denominator goes to 0. This happens if the distance vanishes. Since the distance necessarily increases, we cannot get a fixed point in this way.}
+\end{center}
+Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
 \begin{equation}
 	\eta^\dagger = \frac{1}{\omega^\prime - \ham_d}S_N^+ S_0^- = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^+ S_0^-
 \end{equation}
@@ -3878,12 +3883,17 @@ Substituting this in eq.~\ref{stareq} gives
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_0 = -\frac{1}{4}J^2 \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}
 \end{aligned}\end{equation}
-We again define \(\tilde \omega^\prime = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\).
+We again define \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\).
 \begin{equation}\begin{aligned}
-	\Delta \epsilon_0 = -\frac{1}{4}J^2 \frac{1}{\tilde \omega^\prime + \frac{1}{2}\epsilon_0}
+	\Delta \epsilon_0 = \frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
 \end{aligned}\end{equation}
-If we now start with a bare \(\epsilon_0\) such that \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 > 0\), then the denominator is positive so the renormalization will be irrelevant. \(\epsilon_0\) will decrease until we reach \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 = 0\). This will be a fixed point.
-\pb If we start with a bare \(\epsilon_0\) such that \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 < 0\), then the denominator is negative so the renormalization will be relevant. \(\epsilon_0\) will increase until we reach \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 = 0\). This will again be a fixed point.
+We now repeat the exercise of determining the relevance of the flows under various regime. If we start with a bare \(\epsilon_0\) such that \(\tilde \omega + \frac{1}{2}\epsilon_0 > 0\), then the denominator is positive so the renormalization will be irrelevant. \(\epsilon_0\) will decrease until we reach \(\tilde \omega + \frac{1}{2}\epsilon_0 = 0\). This will be a fixed point. However, if we start with a bare \(\epsilon_0\) such that \(\tilde \omega + \frac{1}{2}\epsilon_0 < 0\), then the denominator is negative so the renormalization will be relevant. \(\epsilon_0\) will increase until we reach \(\tilde \omega + \frac{1}{2}\epsilon_0 = 0\). This will again be a fixed point. This new situation is depicted in figure \ref{star3}.
+\begin{center}
+	\includegraphics[scale=0.5]{star3}
+	\label{star3}
+	\captionof{figure}{RG flow for the two cases with the new \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\). Now we can see that in both cases, the flow is such that the distance (green dotted line) between the couplings decreases. A fixed point is reached when this distance vanishes.}
+\end{center}
+
 \comm{
 \subsection{Particle sector}
 This sector consists of the renormalization caused due to particle excitations in the intermediate state. In the spin language, this translates to looking at those terms where the node that is being decoupled, \(N\), is upwards in the excited state. 
@@ -6072,9 +6082,13 @@ where
 \eta &= \frac{1}{\omega - \ham^d}\sum_{ij}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} = \sum_{ij}\frac{1}{\omega_1^j - E_0^i}V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}\\
 \implies \eta^\dagger &= \sum_{ij}\frac{1}{\omega_1^j - E_0^i}V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}\\
 \implies \eta^\dagger - \eta &= \sum_{ij}\frac{1}{\omega_1^j - E_0^i}\rr{V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i} - V_{ij}\ket{\phi_0^i}\bra{\phi_1^j}}\\
-&= \sum_{ij}\frac{1}{E_0^i - \omega_1^j}\rr{V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}}\\
 \eeq
-This can be thought of as the generator for the unitary transformations of URG. Comparing with the generator \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega \to E_1^j\).
+This can be thought of as the generator for the unitary transformations of URG. Comparing with the generator \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega_1^j \to E_1^j\). Doing a similar calculation gives
+\begin{equation}\begin{aligned}
+	\Delta \ham_{URG} = \hf \sum_{ijk}\left[\left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^k - \omega_1^j}\right)V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k}\right.\\
+	- \left.\left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^i - \omega_1^k}\right)V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}\right]\\
+\end{aligned}\end{equation}
+
 
 \subsubsection{SIAM URG vs SIAM SWT}
 The SWT for the single-impurity Anderson model is briefly sketched below. In order to decouple a state \(q\beta\) from the SIAM (\(\epsilon_q > 0\)) , we take an ansatz \(S = (A + B\hat n_{d\ol\beta})(c^\dagger_{q\beta}c_{d\beta} - \text{h.c.})\). Plugging this into the decoupling condition gives
