@@ -3752,7 +3752,7 @@ This is the constraint that ensures that both unitaries give the same effective 
 Therefore, the trace of the rotated Hamiltonian is \(t_\text{new} = E_1 + E_0 \). The trace of the LHS in the final equation of \ref{trace} is \(\text{tr}\rr{\tilde H_1 + \tilde H_0} = \text{tr}\rr{E_1 \otimes I + E_0 \otimes I} = 2\rr{E_1 + E_0} = 2t_\text{new}\). The trace of the RHS in final equation of \ref{trace} is \(2\times\text{tr}\rr{\ham_0} = 2t_\text{old}\) where \(t_\text{old} = \text{tr}\rr{\ham_0}\) is the trace of the old Hamiltonian. Equating the LHS and RHS gives \(t_\text{new} = t_\text{old}\).
 \subsection{A note on the various quantum fluctuation scales \(\pmb\omega_i^j\)}
 At a particular step of the URG, there are two quantum fluctuation energy scales associated with each sector. If we rotate \(\ket{\psi_1}\) to \(\ket{1}\) (particle/occupied sector), the corresponding unitary will be a function of \(\omega_1^{0,1}\). If we, on the other hand, rotate \(\ket{\psi_0}\) to \(\ket{0}\) (hole/unoccupied sector), the unitary will be a function of \(\omega_0^{0,1}\). The superscript \(j\) signifies whether this particular \(\omega_i^j\) is an eigenvalue corresponding to \(\ket{1,\phi_i}\) or \(\ket{0,\phi_i}\). \(\omega^0_i\) occurs in the many-body transition operator \(\eta\), because \(\eta\) is preceded by \(c\) and hence it picks out the eigenstate \(\ket{0,\phi_i}\). On the other hand, \(\omega^1_i\) occurs in the many-body transition operator \(\eta^\dagger\), because that is preceded by \(c^\dagger\). This constrains these two values, because we must have \(\eta(\omega_i^0) = \rr{\eta^\dagger(\omega_i^1)}^\dagger\) (eq.~\ref{constraint}), for each value of \(i\), giving us two constraints in total. The subscript \(i\) signifies whether \(\omega_i^j\) is a part of the particle sector unitary \(U_1(\omega_1^j)\) or the hole sector unitary \(U_0(\omega_0^j)\). As mentioned in the previous section, since both ways are equivalent, we must have \(U_1 = U_0\) which leads to the constraints \(\eta(\omega_0^j) = -\eta(\omega_1^j)\). All the independent constraints are listed below.
-\beq
+\beq[omegarel]
 \omega_1^0 - \omega_1^1 &=\ham_d^0 - \ham_d^1\\
 \omega_0^0 - \omega_0^1 &= \ham_d^0 - \ham_d^1\\
 \omega_1^0 + \omega_0^0 &= 2\ham_d^0
@@ -3811,14 +3811,80 @@ By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamilto
 \eeq
 The diagonal terms are the ones that preserve the number or (in this case) spin.
 \beq
-\ham^D =\sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_iS^z_0 S^z_i 
+\ham^d =\sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_iS^z_0 S^z_i 
 \eeq
 This is the piece that comes in the denominator. The off-diagonal terms are the ones that change the number or spin. For this problem, they are the last two terms, \(S_0^+ S_i^-\) and \(S_0^- S_i^+\).
 \pb The RG involves decoupling the nodes \(N\) through 1, and looking at the resultant renormalization in \(\epsilon_i\) and \(J_i\). As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node \(N\). Since node \(0\) is connected to node \(N\), we will keep node \(0\) in the denominator as well. Making this simplification gives
 \beq[stardiag]
 \ham^D =\epsilon_0 S^z_0 + \epsilon_N S^z_N + J_NS^z_0 S^z_N 
 \eeq
-
+The off-diagonal part in the subspace of the node \(N\) is
+\beq
+\ham_X = \frac{1}{2}J_N \left(S_N^+ S_0^- + S_N^- S_0^+\right)
+\eeq
+\subsection{Calculation of Renormalization}
+The renormalization on doing one step of the URG is given by
+\begin{equation}
+	\Delta \ham = \left[c^\dagger_{q\beta}T,\eta\right]
+\end{equation}
+There, \(q\beta\) refers to the electron being decoupled. Here, since we are decoupling the spin \(N\), the formula becomes
+\begin{equation}
+	\Delta \ham = \left[S_N^+T,\eta\right]
+\end{equation}
+where \(S_N^+T\) is the  off-diagonal term in the Hamiltonian and hence \(T\) is  \(S_0^-\). \(\eta\) is of course given by
+\begin{equation}
+	\eta = \frac{1}{\omega - \ham^d}T^\dagger c_{q\beta} \to \frac{1}{\omega - \ham^d}\frac{1}{2}J_N S_0^+ S_N^-
+\end{equation}
+Substituting the expression for the diagonal part \(\ham_d\), we get
+\begin{equation}
+	\label{stareta}
+	\eta  = \frac{1}{\omega - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}\frac{1}{2}J_NS_0^+ S_N^- = \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\frac{1}{2}J_NS_0^+ S_N^-
+\end{equation}
+In the final step, I substituted \(S_N^z = -\frac{1}{2}\) and \(S_0^z = \frac{1}{2}\) in the denominator, because there is \(S_0^+ S_N^-\) in front of the Greens function. The renormalization thus becomes
+\begin{equation}
+	\Delta \ham = \frac{1}{4}J_N^2 S_N^+S_0^- \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^- - \frac{1}{4}J_N^2\frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^-S_N^+S_0^-
+\end{equation}
+Using the relations \(S^+ S^- = \frac{1}{2} + S^z\) and \(S^- S^+ = \frac{1}{2} - S^z\), we can write this as
+\begin{equation}\begin{aligned}
+	\Delta \ham &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[\left(\frac{1}{2} + S_N^z\right)\left(\frac{1}{2} - S_0^z\right) - \left(\frac{1}{2} - S_N^z\right)\left(\frac{1}{2} + S_0^z\right)\right]\\
+		    &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[S_N^z - S_0^z\right]
+\end{aligned}\end{equation}
+We can now read off the renormalizations in \(\epsilon_N\) and \(\epsilon_0\).
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_N &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\\
+	\Delta \epsilon_0 &= -\frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}
+\end{aligned}\end{equation}
+\subsection{Nature of flows}
+We are interested in looking at the renormalization of the central node energy \(\epsilon_0\), upon removing the nodes \(N\) through 1. We will hence concentrate on the second RG equation. We first make some simplifying assumptions: \(J_i = J, \epsilon_i = \epsilon\) for all \(i\in\{1,N\}\).
+\begin{equation}\begin{aligned}
+	\label{stareq}
+	\Delta \epsilon_0 &= -\frac{1}{4}J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon + \frac{1}{4}J}
+\end{aligned}\end{equation}
+Define \(\tilde\omega = \omega + \frac{1}{2}\epsilon + \frac{1}{4}J\).
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_0 &= -\frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
+\end{aligned}\end{equation}
+Our goal here is to look for a fixed-point condition such that the denominator vanishes at some point of the RG. If we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 > 0\), the denominator will be positive and the RG equation will be irrelevant. This means that \(\epsilon_0\) will keep on decreasing, and the denominator will keep on becoming more and more positive, meaning there cannot be a fixed point in this situation.
+\pb If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either.
+\pb Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
+\begin{equation}
+	\eta^\dagger = \frac{1}{\omega^\prime - \ham_d}S_N^+ S_0^- = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^+ S_0^-
+\end{equation}
+Comparing with eq.~\ref{stareta}, and requiring \(\left(\eta\right)^\dagger = \eta^\dagger\), we get the following equation relating \(\omega\) and \(\omega^\prime\):
+\begin{equation}
+	\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J = \omega + \frac{1}{2}\epsilon - \frac{1}{2}\epsilon_0 + \frac{1}{4}J \implies \omega = \omega^\prime - \epsilon + \epsilon_0
+\end{equation}
+Substituting this in eq.~\ref{stareq} gives
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_0 = -\frac{1}{4}J^2 \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}
+\end{aligned}\end{equation}
+We again define \(\tilde \omega^\prime = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\).
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_0 = -\frac{1}{4}J^2 \frac{1}{\tilde \omega^\prime + \frac{1}{2}\epsilon_0}
+\end{aligned}\end{equation}
+If we now start with a bare \(\epsilon_0\) such that \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 > 0\), then the denominator is positive so the renormalization will be irrelevant. \(\epsilon_0\) will decrease until we reach \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 = 0\). This will be a fixed point.
+\pb If we start with a bare \(\epsilon_0\) such that \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 < 0\), then the denominator is negative so the renormalization will be relevant. \(\epsilon_0\) will increase until we reach \(\tilde \omega^\prime + \frac{1}{2}\epsilon_0 = 0\). This will again be a fixed point.
+\comm{
 \subsection{Particle sector}
 This sector consists of the renormalization caused due to particle excitations in the intermediate state. In the spin language, this translates to looking at those terms where the node that is being decoupled, \(N\), is upwards in the excited state. 
 \beq
@@ -3921,7 +3987,7 @@ For the particle sector, \(\Delta^+\epsilon_0\) is positive when \(\omega^+_N + 
     \item When \(\omega^+_N + \hf\epsilon_0>0\), \(\epsilon_0\) will grow. Since \(\omega^+_N\) also grows, the expression \(\omega^+_N + \hf\epsilon_0\) will become more and more positive as the RG progresses and there is no possibility of the denominator becoming zero. We cannot reach a fixed point in this regime, so ignore this regime.
     \item When \(\omega^+_N + \hf\epsilon_0<0\), \(\epsilon_0\) will shrink. Here it is possible to reach a fixed point, but in this case, both \(\epsilon_i\) as well as \(\epsilon_0\) are decreasing, so this is like an overall scaling of the Hamiltonian. It is unlikely that it contains interesting physics, so we ignore this case as well and move on to the hole sector.
 \end{itemize}
-
+}
 
 %\comm{
 \section{Kondo Model URG}\label{kondourg}
