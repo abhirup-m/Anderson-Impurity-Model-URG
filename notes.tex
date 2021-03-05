@@ -3714,6 +3714,30 @@ This shows that at the fixed point, one of the eigenvalues of \(\hat \omega_i\) 
 \beq
 c^\dagger_{q\beta}T\ket{0}\ket{\phi_0^i} = \rr{\omega_i^1 - \ham^d_1}\ket{1}\ket{\phi_1^i} = 0 \implies c^\dagger_{q\beta}T = 0
 \eeq
+\subsection{Multiple off-diagonal terms}
+There is a subtle assumption in the definitions eq.~\ref{etadefine}. In order for \(\eta\) to be the Hermitian conjugate of \(\eta^\dagger\), \(\ham_d\) cannot have any information that relates to the structure of \(T\). To see why, say the total off-diagonal term is composed of two parts: \(T = T_1 + T_2\).
+\begin{equation}\begin{aligned}
+	\eta &= \frac{1}{\omega_0 - \ham_d}\left(T_1^\dagger + T_2^\dagger\right)c = \left[\frac{1}{\omega^0 - E^0_1} T_1^\dagger c+ \frac{1}{\omega^0 - E^0_2}T_2^\dagger c\right]\\
+	\eta^\dagger &= \frac{1}{\omega^1 - \ham_d}c^\dagger\left(T_1 + T_2\right) = \left[\frac{1}{\omega^1 - E^1_1}c^\dagger T_1 + \frac{1}{\omega^1 - E^1_2} c^\dagger T_2\right]\\
+\end{aligned}\end{equation}
+where \(\ham_d T_i^\dagger c = E^0_i T_i^\dagger c\) and \(\ham_d  c^\dagger T_i = E^1_i  c^\dagger T_i\). We can now see that in order for \(\eta = \left(\eta^\dagger\right)^\dagger\) to hold, two conditions must be met:
+\begin{equation}\begin{aligned}
+	\omega^0 - E_1^0 = \omega^1 - E_1^1, && \omega^0 - E_2^0 = \omega^1 - E_2^1
+\end{aligned}\end{equation}
+This will not hold generally. The correct solution is to realize that each such off-diagonal term \(T_i\) will come with its own quantum fluctuation scale \(\omega_i\).
+\begin{equation}\begin{aligned}
+	\eta &= \sum_i \frac{1}{\omega^0_i - E^0_i} T_i^\dagger c\\
+	\eta^\dagger &= \sum_i \frac{1}{\omega^1_i - E^1_1}c^\dagger T_i
+\end{aligned}\end{equation}
+The expression for the renormalization will not be just \(\left[c^\dagger T, \eta \right]\) in this case. That form will be non-Hermitian. The correct form is obtained from the more general form \(\left[\eta^\dagger - \eta, \ham_X \right]\):
+\begin{equation}\begin{aligned}
+	\eta^\dagger - \eta &= \sum_i \frac{1}{\omega^0_i - E^0_i}\left(c^\dagger T_i - T_i^\dagger c\right)\\
+	\Delta \ham &= \frac{1}{2}\left[\eta^\dagger - \eta, c^\dagger T + T^\dagger c\right]\\
+		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[c^\dagger T_i - T_i^\dagger c, c^\dagger T_j + T_j^\dagger c\right]\\
+		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[\hat n \left(T_i T_j^\dagger + T_j T_i^\dagger \right) - \left(1 - \hat n\right)\left(T_i^\dagger T_j + T_j^\dagger T_i\right)\right]\\
+		    &= \frac{1}{2}\sum_{ij} \left(\frac{1}{\omega^0_i - E^0_i} + \frac{1}{\omega^0_j - E^0_j}\right)\left[\hat n T_i T_j^\dagger - \left(1 - \hat n\right)T_i^\dagger T_j\right]\\ 
+\end{aligned}\end{equation}
+
 \subsection{Equivalence of the two unitaries and preservation of partial trace}
 In the subsection \ref{unitary-form}, we determined the form of the operator \(U_1\) that unitarily decouples the node \(q\beta\) from the other degrees of freedom. Eq.~\ref{finalu} was derived by reading off the transformation of \(\ket{1}\) to \(\ket{\psi_1}\), the first equation in \ref{trans}. We could easily have chosen the other equation in the same equation set,
 \begin{gather*}
@@ -4924,10 +4948,11 @@ The model is the usual single-impurity Anderson model Hamiltonian.
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
-To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\), where \(\tau = \hat n - \frac{1}{2}\) and drop the extra constant part. We will also write the impurity energy part as \(2\epsilon_d\sum_\sigma \tau_{d\sigma} + 4U \tau_{d\ua}\tau_{d\da}\).
-\beq
-\ham = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}
-\eeq
+To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\), where \(\tau = \hat n - \frac{1}{2}\) and drop the extra constant part.
+\begin{equation}
+	\label{model:siam}
+\ham = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\end{equation}
 The renormalization is
 \begin{equation}\begin{aligned}
 \label{newh}
@@ -4936,124 +4961,87 @@ The renormalization is
 We will be decoupling an electron \(q\beta\) at the energy shell \(\epsilon_q\). The diagonal part (that comes down in the denominator) is
 \begin{equation}\begin{aligned}
 	\label{term1}
-\ham_d = \epsilon_q \tau_{q\beta} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}
+\ham_d = \epsilon_q \tau_{q\beta} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \end{aligned}\end{equation}
 Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \il{\Lambda_N}.
 \subsection{Calculation of renormalization}
 The \(\eta\) is
 \begin{equation}\begin{aligned}
-	\eta = \frac{1}{\omega - \ham_d}T^\dagger c_{q\beta} &= \frac{1}{\omega - \epsilon_q \tau_{q\beta} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
-							     &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \epsilon_{d} \tau_{d\ol\beta} - 2U \tau_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
+	\eta = \frac{1}{\omega - \ham_d}T^\dagger c_{q\beta} &= \frac{1}{\omega - \epsilon_q \tau_{q\beta} - \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} -  U \hat n_{d\ua} \hat n_{d\da}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
+							     &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
 \end{aligned}\end{equation}
-We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\tau_{d\beta} = \frac{1}{2}\) because of the off-diagonal terms in the numerator.
-\pb In order to evaluate the remaining operator in the denominator (\(d\ol\beta\)), we will need to split the off-diagonal term into two parts:
+We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\hat n_{d\beta} = 1\) because of the off-diagonal terms in the numerator.
+\comm{
+	\pb In order to evaluate the remaining operator in the denominator (\(d\ol\beta\)), we will need to split the off-diagonal term into two parts:
 \begin{equation}\begin{aligned}
 V_q^* c^\dagger_{d\beta}c_{q\beta} = V_q^* c^\dagger_{d\beta}c_{q\beta}\left[ \hat n_{d\ol\beta} + 1 - \hat n_{d\ol\beta} \right] = V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
 \end{aligned}\end{equation}
 This gives
 \begin{equation}\begin{aligned}
-\eta &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \epsilon_{d} \tau_{d\ol\beta} - 2U \tau_{d\ol\beta}}\left[V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)\right]\\
+	\eta &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - 2\left(\epsilon_d + U\right) \tau_{d\ol\beta}}\left[V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)\right]\\
      &= \frac{1}{\omega_1 + \frac{1}{2}\epsilon_q - 2\epsilon_d - U }V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + \frac{1}{\omega_0 + \frac{1}{2}\epsilon_q + U}V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
 \end{aligned}\end{equation}
-We have allowed for multiple \(\omega\) in the denominator because the two scattering terms act on different states. The renormalization is
+We have allowed for multiple \(\omega\) in the denominator because the two scattering terms act on different states.
+}
+The renormalization is
 \begin{equation}\begin{aligned}
-	c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T &= \left[\frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_1 + \frac{1}{2}\epsilon_q - 2\epsilon_d - U } + \frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{\omega_0 + \frac{1}{2}\epsilon_q + U}\right]\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
+\Delta \ham = c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T &= \frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} \left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
 \end{aligned}\end{equation}
-
-
-\subsection{Particle Sector}
-The particle sector involves only particle excitations. The state \(q\beta\) is occupied in the intermediate (excited) state. This means that the state must be vacant in the initial state, so we must have \(\epsilon_q > 0\). This contribution will be given by the second term inside the summation of eq.~\ref{newh}.
-\beq
-\Delta^+ \ham = \sum_{q\beta} \text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\fr{1}{\omega_e - \ham^d_1}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
-\eeq
-We have labeled \(\omega_0^1 = \omega_e\). We now compute this term.
-\begin{equation*}
-\begin{gathered}
-\text{Tr}_{q\beta}\rr{\ham c_{q\beta}} = \sum_{k\sigma} V_k \text{Tr}_{q\beta}\rr{c^\dagger_{k\sigma}c_{d\sigma}c_{q\beta}} = \sum_{k\sigma} V_k c_{d\sigma}\delta_{\sigma\beta}\delta_{kq} = V_q c_{d\beta}\\
-\text{Tr}_{q\beta}\rr{c_{q\beta}^\dagger \ham } = V^*_q c^\dagger_{d\beta}
-\end{gathered}
-\end{equation*}
-\beq[dham]
-\ham^d &= \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
-\eeq
-\beq
-\ham^d_1 &= \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}} = \sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q
-\eeq
-There is a more straightforward way of getting these expressions. Some thought reveals that \(c_{q\beta}^\dagger\text{Tr}_{q\beta}\rr{\ham c_{q\beta}}\) is, by definition, the part of the Hamiltonian that scatters from electrons \textit{not at} \(q\beta\) to \(q\beta\). In other words,\textbf{ it is that off-diagonal part of the Hamiltonian that involves a \(c_{q\beta}^\dagger\)}. That part is, of course, \(V_q c^\dagger_{q\beta}c_{d\beta}\). Similarly, \(\text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\) is the off-diagonal part that has a \(c_{q\beta}\), \(V_q^* c^\dagger_{d\beta}c_{q\beta}\). Finally, the term in the denominator of \(\eta\) is simply the diagonal part of the Hamiltonian, which in our case is the kinetic energies of all the electrons and the impurity diagonal part. The point of this paragraph is that one can write down these terms simply by looking at the Hamiltonian and without carrying out any trace.
-\pb Substituting these into the expression for \(\Delta^+\ham\) gives
-\beq
-\Delta^+ \ham &=\sum_{q\beta}\text{Tr}_{q\beta}\rr{c^\dagger_{q\beta}\ham}c_{q\beta}\fr{1}{\omega_e - \text{Tr}_{q\beta}\rr{\ham^D \hat n_{q\beta}}\hat n_{q\beta}}c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\\
-          &=\sum_{q\beta}V^*_q c^\dagger_{d\beta}c_{q\beta}\fr{1}{\omega_e - \rr{\sum_{k<\Lambda_N,\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da} + \hf\epsilon_q}\hat n_{q\beta}}V_q c_{q\beta}^\dagger c_{d\beta}\\
-          &=\sum_{q\beta}|V_q|^2 c^\dagger_{d\beta}c_{q\beta}c_{q\beta}^\dagger c_{d\beta}\fr{1}{\omega_e - \rr{\epsilon_{d}\sum_\sigma \hat n_{d\sigma} + U \hat n_{d\ua}\hat n_{d\da} + \hf\epsilon_q}}\\
-\eeq
-At the last step, I dropped the lower shell electrons from the denominator to simplify the calculation. I also replaced \(\hat n_{q\beta}\) with 1 because the propagator has a \(c_{q\beta}\) to the left. Note that since this term has a \il{c^\dagger_{d\beta}}, it will survive only when acting on a state with \il{\hat n_{d\beta} = 0}.
-Hence we can drop the terms \il{\hat n_{d\ua}\hat n_{d\da}} and \il{\epsilon_{d\beta}\hat n_{d\beta}} in the denominator.
-\beq
-\Delta^+ \ham &= \sum_{q\beta}|V_q|^2 c^\dagger_{d\beta}c_{q\beta}c_{q\beta}^\dagger c_{d\beta}\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}} \\
-        &= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\rr{1 - \hat n_{q\beta}}\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}}\\
-        &= \sum_{q\beta}|V_q|^2 \hat n_{d\beta}\qq{\fr{\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q - \epsilon_{d}} + \fr{1 -\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q }}
-\eeq
-In the last step, we replaced \(\hat n_{q\beta}=0\) because we are working with \(\epsilon_q > 0\). Also, we used 
-\beq
-\fr{1}{\omega_e - \hf\epsilon_q - \epsilon_{d}\hat n_{d\ol\beta}} &= \fr{\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q - \epsilon_{d}} + \fr{1 -\hat n_{d\ol\beta}}{\omega_e - \hf\epsilon_q }\\
-\eeq
-From the expression of \(\Delta^+ \ham\), we see two terms: the first term renormalizes the energy of the doubly-occupied state \(E_2\), while the other term renormalizes the singly-occupied state \(E_1\):
-\beq
-\Delta^+ E_1 &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q}\\
-\Delta^+ E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega_e - \hf \epsilon_q - \epsilon_d}
-\eeq
-\subsection{Hole Sector}
-The hole sector consists of those excitations where the state is occupied in the initial state but vacant in the final state (\(\epsilon_q < 0\)). Again from the prescription, we have
-\beq
-\Delta^- \ham &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_{q\beta}\\
-          &= \sum_{q\beta} c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\fr{1}{\omega_h - \ham^d_0}\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\\
-\eeq
-where we have labeled \(\omega_1^0 = \omega_h\). In this sector, the diagonal part \(\ham^d_0\) is obtained by changing eq.~\ref{dham}: \(\epsilon_q \to -\epsilon_q\) and \(\tau_{q\beta} = -\hf\):
-\beq
-\ham^d_0 = \hf\epsilon_q + \epsilon_d\sum_\sigma\hat n_{d\sigma} + U\hat n_{d\ua}\hat n_{d\da}
-\eeq
-Therefore,
-\beq
-\Delta^- \ham &= \sum_{q\beta}V_q c^\dagger_{q\beta}c_{d\beta} \fr{1}{\omega_h - \hf\epsilon_q - \sum_{\sigma}\epsilon_{d}\hat n_{d\sigma} - U\hat n_{d\ua}\hat n_{d\da}}V^*_q c^\dagger_{d\beta}c_{q\beta}\\
-          &= \sum_{q\beta}|V_q|^2 c^\dagger_{q\beta}c_{d\beta} \fr{1}{\omega_h - \hf\epsilon_q - \epsilon_d - \rr{\epsilon_d + U}\hat \hat n_{d\ol\beta}}c^\dagger_{d\beta}c_{q\beta}\\
-          &= \sum_{q\beta}|V_q|^2 \rr{1 - \hat n_{d\beta}} \qq{\fr{\hat n_{d\ol\beta}}{\omega_h - \hf\epsilon_q - 2\epsilon_d - U} + \fr{1 - \hat n_{d\ol\beta}}{\omega_h - \hf\epsilon_q - \epsilon_d}}
-\eeq
-We replaced \(\hat n_{q\beta}=1\) because \(\epsilon_q<0\). The renormalizations in this sector are
-\beq
-\Delta^- E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - \epsilon_d}\\
-\Delta^- E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega_h - \hf \epsilon_q - 2\epsilon_d - U}
-\eeq
-\(E_0\) is the energy of the vacant state.
-\subsection{Flow Equations}
-The \(\omega\) have to be determined self-consistently or numerically by searching for fixed points where they become identical to the energy eigenvalues. Since \(\omega\) is defined as \(\omega \equiv \tilde \ham - \ham^i\), we can replace the diagonal part of \(\tilde \ham\) with the renormalized initial energy of the state, and the extra renormalization by a new \(\omega\). This is necessary because while the denominator depends on the value of \(\hat n_{d\ol\beta}\), the numerator (\(T,T^\dagger\)) does not, and this affects the \(U \hat n_{d\beta}\hat n_{d\ol\beta}\) term in the denominator. This is also in line with the fact that each term, in principle, has a separate \(\omega\). Denoting the \(\omega\) in the denominator of \(\Delta E_j\) by \(\omega_j\), we then write \(\omega_j = E_j + \omega\), \(E_j\) being the initial energy of that state.
-\beq
-\omega_0 &= \omega\\
-\omega_1 &= \omega + \epsilon_d\\
-\omega_2 &= \omega + 2\epsilon_d + U 
-\eeq
-This gives
-\beq[urg-siam]
-\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
-\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
-\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
-\eeq
-The above equations are just the total renormalizations obtained by adding the particle and hole sector contributions. This is the total change in the Hamiltonian on decoupling the states at the upper and lower edges of the bandwidth. They can be translated into the renormalizations of the quantities \(\epsilon_d\) and \(U\) by using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\).
-\beq
-\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
-\Delta U &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U} + 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} \\
-     &\quad - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}
-\eeq
+\comm{
+	To relate \(\omega_1\) and \(\omega_0\), we can use a symmetry of the model. Looking at eq.~\ref{model:siam}, we can say that the Hamiltonian is invariant under the following transformation:
+\begin{equation}\begin{aligned}
+	\epsilon_k \to -\epsilon_k, && c_k \to c^\dagger_k, && c_d \to -c^\dagger_d, && \epsilon_d \to -\epsilon_d
+\end{aligned}\end{equation}
+We should then expect the renormalization to also be invariant under such a transformation. The renormalization transformations as follows under the above-mentioned operation:
+\begin{equation}
+	c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T \to \left[\frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{\omega_1 - \frac{1}{2}\epsilon_q + \epsilon_d - U } + \frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_0 - \frac{1}{2}\epsilon_q  + \epsilon_d + U}\right]\left[\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta} - \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta}\right] 
+\end{equation}
+Comparing with the original form, we get the following constraint:
+\begin{equation}
+	\omega_1 + \frac{1}{2}\epsilon_q  - \epsilon_d - U = -\omega_0 + \frac{1}{2}\epsilon_q - \epsilon_d - U \implies \omega_0 = -\omega_1
+\end{equation}
+Using this, the renormalization at an energy \(\epsilon_q\) becomes
+\begin{equation}
+\Delta \ham = \left[\frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_1 + \frac{1}{2}\epsilon_q - \epsilon_d - U } + \frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{-\omega_1 + \frac{1}{2}\epsilon_q  - \epsilon_d + U}\right]\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
+\end{equation}
+}
+Similarly, the renormalization at an energy \(-\epsilon_q\) is obtained simply by replacing \(\epsilon_q \to -\epsilon_q\):
+\begin{equation}
+\Delta \ham = \frac{|V_q|^2}{\omega^\prime - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right]
+\end{equation}
+Therefore, the total renormalization obtained from decoupling a particle state (\(\hat n_{q\beta}=1\)) at \(-\epsilon_q\) and a hole state (\(\hat n_{q\beta}=0\)) at \(\epsilon_q\) is
+\begin{equation}\begin{aligned}
+	\Delta \ham = -\frac{|V_q|^2  \hat n_{d\beta}}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} - \frac{|V_q|^2 \left(1 - \hat n_{d\beta}\right)}{-\omega^\prime + \frac{1}{2}\epsilon_q + \epsilon_d + \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}
+\end{aligned}\end{equation}
+\textit{As an ansatz}, we assume \(\omega = -\omega^\prime\).
+\begin{equation}\begin{aligned}
+	\label{vanilla:siam:ren}
+	\Delta \ham = -\frac{|V_q|^2  \hat n_{d\beta}}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} - \frac{|V_q|^2 \left(1 - \hat n_{d\beta}\right)}{\omega + \frac{1}{2}\epsilon_q + \epsilon_d + \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}
+\end{aligned}\end{equation}
+\subsection{Scaling equations}
+Once we have the renormalization for decoupling one electronic or hole state, we can just sum over the spins and momenta to get the total renormalization upon decoupling the entire shells \(\pm \epsilon_q\). From the structure of \(\Delta \ham\) in eq.~\ref{vanilla:siam:ren}, we can see that there are renormalizations to all three configuration energies of the impurity: the doublon energy \(E_2\) corresponding to the state  \(\hat n_{d\beta}\hat n_{d\ol\beta}\), the single energy \(E_1\) corresponding to (\(\hat n_{d\beta}(1 - \hat n_{d\ol\beta}) + \hat n_{d\ol\beta}(1 - \hat n_{d\beta})\), and the holon energy \(E_0\) corresponding to \((1 - \hat n_{d\beta})(1 - \hat n_{d\ol\beta}) + \hat n_{d\ol\beta}(1 - \hat n_{d\beta})\).
+\begin{equation}\begin{aligned}
+	\label{urg-siam}
+	\Delta E_2 &= -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q - 2\epsilon_d - U }\\
+	\Delta E_1 &= -\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} - \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\\
+	\Delta E_0 &= -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q}
+\end{aligned}\end{equation}
+Using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\), we can write
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= -\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} - \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d} + 2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q}\\
+	\Delta U &= -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q - 2\epsilon_d - U } -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\\
+\end{aligned}\end{equation}
 \subsection{Connection to Poor Man's scaling}\label{pms}
 To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
 \beq
-\Delta \epsilon_d &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
-\Delta U &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}
+\Delta \epsilon_d &= \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
+\Delta U &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q}
 \eeq
 Assuming the upper and lower band edges are symmetrical such that \(\sum_{-D} = \sum_D\), we get \(\Delta \epsilon_d = \Delta U = 0\). 
 \pb In the regime \(U \gg \epsilon_q \gg \epsilon_d\), the doubly-occupied state is far above the bandwidth. We can now ignore the terms that have \(U\) in the denominator. We get
 \beq
-\Delta \epsilon_d &= \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
-\Delta U &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q}  - 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q} 
+\Delta \epsilon_d &= \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
+\Delta U &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q}  - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} 
 \eeq
 Again assuming symmetrical upper and lower edges, and isotropic dispersion \(\epsilon_q=D\) and \(\sum_q |V|^2 = \frac{\Delta}{\pi}|\delta D|\), we get
 \beq
@@ -5065,7 +5053,7 @@ There we replaced the difference symbol \(\Delta\) with \(\delta\) to avoid conf
 \delta \epsilon_d &= \frac{\Delta}{\pi}\fr{\delta D}{D}
 \eeq
 This is the one-loop scaling equation.
-\subsubsection{Particle-Hole symmetry}
+\subsection{Particle-Hole symmetry}
 The Anderson model Hamiltonian, eq.~\ref{andham}, has an impurity particle-hole symmetry for a certain condition of the couplings. To see this, we apply the particle-hole transformation \(c_k \to c^\dagger_k, c_d \to -c^\dagger_d\) to the Hamiltonian. Since we are looking at the impurity symmetry, we will only look at the terms involving the impurity. The particle-hole symmetry of the conduction bath is a separate thing and that requires a specific lattice. Hence we will not consider kinetic energy term in this discussion. The rest of the terms transform as
 \begin{gather}
     \epsilon_d \sum_\sigma \hat n_{d\sigma} \to 2\epsilon_d - \epsilon_d \sum_\sigma \hat n_{d\sigma}\label{imp1}\\
@@ -5142,7 +5130,7 @@ For the special case of \(2J_z = 2J_t = J\), we get the SU(2) symmetric Heisenbe
 \beq
 \ham_{I} = J \qq{S^z_d s^z + \hf\rr{S^+_d s^- + S^-_d s^+}} = J \mb{S_d} \cdot \mb{s}
 \eeq
-For the URG, we take two electrons on the shell \(\Lambda_N\), \(q\beta\) and \(q\ol\beta\), then decouple the electron \(q\beta\). The reason for taking two electrons is to allow the symmetries to be preserved. For simplicity, we will only consider those diagonal terms in the denominator that either have both \(q\beta\) and \(q\ol\beta\)or  both \(q\beta\) and \(d\) or both \(q\ol\beta\) and \(d\). Terms that have purely \(q\ol\beta\) will not be considered. Also, the scattering between just \(d\) and \(q\ol\beta\) can be ignored since it is diagonal in \(q\beta\). The Hamiltonian for such a system is
+For the URG, we take two electrons on the shell \(\Lambda_N\), \(q\beta\) and \(q\ol\beta\), then decouple the electron \(q\beta\). The reason for taking two electrons is to allow the symmetries to be preserved. For simplicity, we will only consider those diagonal terms in the denominator that either have both \(q\beta\) and \(q\ol\beta\) or  both \(q\beta\) and \(d\) or both \(q\ol\beta\) and \(d\). Terms that have purely \(q\ol\beta\) will not be considered. Also, the scattering between just \(d\) and \(q\ol\beta\) can be ignored since it is diagonal in \(q\beta\). The Hamiltonian for such a system is
 \beq
 \ham_N &= H_{N-1} + H_\text{imp} + \epsilon_q\hat n_{q\beta} + 2J_z S^z_d s^z_q + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} +\\
 & \sum_{k<\Lambda_N}\left[J_z S^z_d \beta \rr{c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{q\beta}c_{k\beta}} + J_t \rr{c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}}\right]\\
@@ -5168,6 +5156,59 @@ where \(\tau \equiv \hat n - \hf\) and \(\mc{C}\) is non-dynamic and will hence 
 \beq
 \ham_D = \epsilon_q \tau_{q\beta} + 2J_z S^z_d s^z_q  + H_{imp}\\
 \eeq
+The entire off-diagonal piece can be split into 6 parts:
+\begin{equation}\begin{aligned}
+	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T_1} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T_2} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T_3} \\
+	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T_4} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T_5} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T_6} + \text{h.c.}
+\end{aligned}\end{equation}
+\subsection{Calculation of renormalization}
+We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The generator will have five parts:
+\begin{equation}
+	\eta = \sum_{i=1}^5\frac{1}{\omega_i^0 - E_i^0}T^\dagger_i c_{q\beta}
+\end{equation}
+where
+\begin{equation}\begin{aligned}
+	T_1 &= V_1^* c^\dagger_{d\beta}\hat n_{d\ol\beta}\\
+	T_2 &= V_0^* c^\dagger_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
+	T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}\\
+	T_4 &= \sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}\\
+	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}
+\end{aligned}\end{equation}
+\comm{
+	Looking at the operators \(T_i\), we can write
+\begin{equation}\begin{aligned}
+	E^0_1 &= - \frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
+	E^0_2 = E^0_3 = E^0_5 &= - \frac{1}{2}\epsilon_q + \epsilon_d - \frac{1}{2}J_z \hat n_{q\ol\beta}\\
+	E^0_4 &= - \frac{1}{2}\epsilon_q + \epsilon_d + \frac{1}{2}J_z \hat n_{q\ol\beta}
+\end{aligned}\end{equation}
+The renormalization in the particle sector can be written as
+\begin{equation}\begin{aligned}
+		    \frac{1}{2}\sum_{ij} \left(\frac{1}{\omega - E^0_i} + \frac{1}{\omega - E^0_j}\right)\hat n T_i T_j^\dagger\\ 
+\end{aligned}\end{equation}
+We have assumed \(\omega_i^0 = \omega\). Now,
+\begin{equation}\begin{aligned}
+	\sum_{j} T_1 T_j^\dagger &= T_1 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
+	\sum_{j} T_2 T_j^\dagger &= T_2 T_2^\dagger\\
+	\sum_{j} T_3 T_j^\dagger &= T_3 T_3^\dagger\\
+	\sum_{j} T_4 T_j^\dagger &= T_4 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
+	\sum_{j} T_5 T_j^\dagger &= T_5 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
+\end{aligned}\end{equation}
+}
+Therefore,
+\begin{flalign}
+		    &\sum_{ij} \left(\frac{1}{\omega - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
+		    &= \quad\left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_1}\right)T_1 T_1^\dagger+ \left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_4}\right)T_1 T_4^\dagger + \left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_5}\right)T_1 T_5^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_2} + \frac{1}{\omega - E^0_2}\right)T_2 T_2^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_3} + \frac{1}{\omega - E^0_3}\right)T_3 T_3^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_1}\right)T_4 T_1^\dagger+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_4}\right)T_4 T_4^\dagger + \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_5}\right)T_4 T_5^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_1}\right)T_5 T_1^\dagger+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_4}\right)T_5 T_4^\dagger + \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_5}\right)T_5 T_5^\dagger\\
+		    &=\quad \frac{2}{\xi_1}|V_1|^2 \hat n_{d\beta}\hat n_{d\ol\beta} + \left(\frac{1}{\xi_1} + \frac{1}{\xi_4}\right)\sum_k V_1^* J_1^z c^\dagger_{d\beta}c_{k\beta}\hat n_{d\ol\beta}\\
+		    &\quad+ \left(\frac{1}{\xi_1} + \frac{1}{\xi_5}\right)\sum_k V_1^* J^t \hat n_{d\beta}c_{k\ol\beta}c^\dagger_{d\ol\beta}\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_2} + \frac{1}{\omega - E^0_2}\right)T_2 T_2^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_3} + \frac{1}{\omega - E^0_3}\right)T_3 T_3^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_1}\right)T_4 T_1^\dagger+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_4}\right)T_4 T_4^\dagger + \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_5}\right)T_4 T_5^\dagger\\
+		    &\quad+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_1}\right)T_5 T_1^\dagger+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_4}\right)T_5 T_4^\dagger + \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_5}\right)T_5 T_5^\dagger\\
+\end{flalign}
 
 \subsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
@@ -6146,15 +6187,15 @@ In the last step, we put \(\hat n_{q\beta}=0\) because previously we assumed \(\
 \eeq
 These two results - the renormalization in the particle and hole sectors - is identical to the result (see \cite{hewson}) obtained from PMS of the SIAM. The renormalizations in the various energy levels of the impurity can be read off now, after summing over all states in the interval we are decoupling.
 \beq
-\Delta E_2 &= -2\sum_{q,\epsilon_q=+D}\frac{|V_q|^2}{\epsilon_q - \epsilon_d - U}\\
-\Delta E_1 &= -\sum_{q,\epsilon_q=+D}\frac{|V_q|^2}{\epsilon_q - \epsilon_d} - \sum_{q,\epsilon_q=-D}\frac{|V_q|^2}{\epsilon_q + \epsilon_d + U}\\
-\Delta E_0 &= -2\sum_{q,\epsilon_q=-D}\frac{|V_q|^2}{\epsilon_q + \epsilon_d}\\
+\Delta E_2 &= -2\sum_{q}\frac{|V_q|^2}{\epsilon_q - \epsilon_d - U}\\
+\Delta E_1 &= -\sum_{q}\frac{|V_q|^2}{\epsilon_q - \epsilon_d} - \sum_{q}\frac{|V_q|^2}{\epsilon_q + \epsilon_d + U}\\
+\Delta E_0 &= -2\sum_{q}\frac{|V_q|^2}{\epsilon_q + \epsilon_d}\\
 \eeq
 This can be compared with the URG result, eq.~\ref{urg-siam},
 \beq
-\Delta E_2 &= 2\sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
-\Delta E_1 &= \sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q,\epsilon_q=+D}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
-\Delta E_0 &= 2\sum_{q,\epsilon_q=-D}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
+\Delta E_2 &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d + U}\\
+\Delta E_1 &= \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d - U} + \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q + \epsilon_d}\\
+\Delta E_0 &= 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q - \epsilon_d}\\
 \eeq
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
 \pb Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
