@@ -4924,19 +4924,43 @@ The model is the usual single-impurity Anderson model Hamiltonian.
 \beq
 \ham = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
 \eeq
-To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\) and drop the extra constant part.
+To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\), where \(\tau = \hat n - \frac{1}{2}\) and drop the extra constant part. We will also write the impurity energy part as \(2\epsilon_d\sum_\sigma \tau_{d\sigma} + 4U \tau_{d\ua}\tau_{d\da}\).
 \beq
-\ham = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
+\ham = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}
 \eeq
-From eq.~\ref{delta}, the renormalized Hamiltonian is
-\beq[newh]
-\tilde\ham = \ham_0 + \sum_{q\beta}\qq{c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\frac{1}{\omega_1^0 - \ham^d_0} \text{Tr}\rr{c_{q\beta}^\dagger\ham} c_{q\beta} + \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta}\frac{1}{\omega_0^1 - \ham^d_1} c_{q\beta}^\dagger\text{Tr}\rr{\ham c_{q\beta}}}
-\eeq
-\(\ham_0\) is the part of the Hamiltonian that conserves the operator \(\hat n_{q\beta}\).
-\beq[term1]
-\ham_0 = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k<\Lambda_N,\sigma} \rr{V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\ua} \hat n_{d\da}
-\eeq
+The renormalization is
+\begin{equation}\begin{aligned}
+\label{newh}
+\left[c^\dagger_{q\beta}T, \eta\right]
+\end{aligned}\end{equation}
+We will be decoupling an electron \(q\beta\) at the energy shell \(\epsilon_q\). The diagonal part (that comes down in the denominator) is
+\begin{equation}\begin{aligned}
+	\label{term1}
+\ham_d = \epsilon_q \tau_{q\beta} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}
+\end{aligned}\end{equation}
 Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \il{\Lambda_N}.
+\subsection{Calculation of renormalization}
+The \(\eta\) is
+\begin{equation}\begin{aligned}
+	\eta = \frac{1}{\omega - \ham_d}T^\dagger c_{q\beta} &= \frac{1}{\omega - \epsilon_q \tau_{q\beta} + 2\epsilon_{d}\sum_\sigma  \tau_{d\sigma} +  4U \tau_{d\ua} \tau_{d\da}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
+							     &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \epsilon_{d} \tau_{d\ol\beta} - 2U \tau_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
+\end{aligned}\end{equation}
+We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\tau_{d\beta} = \frac{1}{2}\) because of the off-diagonal terms in the numerator.
+\pb In order to evaluate the remaining operator in the denominator (\(d\ol\beta\)), we will need to split the off-diagonal term into two parts:
+\begin{equation}\begin{aligned}
+V_q^* c^\dagger_{d\beta}c_{q\beta} = V_q^* c^\dagger_{d\beta}c_{q\beta}\left[ \hat n_{d\ol\beta} + 1 - \hat n_{d\ol\beta} \right] = V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
+\end{aligned}\end{equation}
+This gives
+\begin{equation}\begin{aligned}
+\eta &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \epsilon_{d} \tau_{d\ol\beta} - 2U \tau_{d\ol\beta}}\left[V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)\right]\\
+     &= \frac{1}{\omega_1 + \frac{1}{2}\epsilon_q - 2\epsilon_d - U }V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + \frac{1}{\omega_0 + \frac{1}{2}\epsilon_q + U}V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
+\end{aligned}\end{equation}
+We have allowed for multiple \(\omega\) in the denominator because the two scattering terms act on different states. The renormalization is
+\begin{equation}\begin{aligned}
+	c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T &= \left[\frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_1 + \frac{1}{2}\epsilon_q - 2\epsilon_d - U } + \frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{\omega_0 + \frac{1}{2}\epsilon_q + U}\right]\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
+\end{aligned}\end{equation}
+
+
 \subsection{Particle Sector}
 The particle sector involves only particle excitations. The state \(q\beta\) is occupied in the intermediate (excited) state. This means that the state must be vacant in the initial state, so we must have \(\epsilon_q > 0\). This contribution will be given by the second term inside the summation of eq.~\ref{newh}.
 \beq
