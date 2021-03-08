@@ -8,13 +8,8 @@ import matplotlib
 import numpy as np
 from matplotlib import pyplot as plt
 
-<<<<<<< HEAD
-font = {'family': 'normal',
-        'size': 15}
-=======
 font = {'family' : 'Source Code Pro',
-        'size'   : 12}
->>>>>>> 88c220801dd232e525f81a5fc5fc4c8c6d3b3601
+        'size'   : 15}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True

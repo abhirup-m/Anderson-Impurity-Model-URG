@@ -4037,15 +4037,15 @@ There we used \(\sum_\beta \ol\beta \sum_{kk^\prime}c^\dagger_{k\ol\beta}c_{k^\p
 	\Delta J_z &= - 2J_t^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
 	\Delta J_t &= -2J_z J_t \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
 \end{aligned}\end{equation}
-Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\). If we set \(J_z = J_t\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
+Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\). If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
 
 \begin{equation}\begin{aligned}
 	\label{kondosym}
-	\Delta J = - 2J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J}
+	\Delta J = - J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J}
 \end{aligned}\end{equation}
 To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\frac{1}{2}\epsilon_q\) and ignore the \(J\) in the denominator (small \(J\)).
 \begin{equation}\begin{aligned}
-	\Delta J \approx 2J^2 \frac{1}{\epsilon_q}
+	\Delta J \approx J^2 \frac{1}{\epsilon_q}
 \end{aligned}\end{equation}
 
 \subsection{Numerical Solutions}
@@ -4145,7 +4145,7 @@ Using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\), we 
 	\Delta \epsilon_d &= -\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} - \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d} + 2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q}\\
 	\Delta U &= -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q - 2\epsilon_d - U } -2\sum_{q}\frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\\
 \end{aligned}\end{equation}
-\subsection{Connection to Poor Man's scaling}\label{pms}
+\subsection{Connection to Poor Man's scaling}\label{urg2pms}
 To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
 \beq
 \Delta \epsilon_d &= \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} + \sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q} - 2\sum_{q}\fr{|V_q|^2}{\omega - \hf\epsilon_q}\\
@@ -4850,42 +4850,37 @@ As discussed in the previous section, the particle-hole symmetry condition for t
 	&\epsilon_d \hat n_d + U \hat n_{d\ua}\hat n_{d\da} + J_z \left(\hat n_{d\ua} - \hat n_{d\da}\right)\left(\hat n_{q\ua} - \hat n_{q\da}\right)\\
 &	\rightarrow 2\epsilon_d + U  -\left(\epsilon_d + U\right)\hat n_d + U \hat n_{d\ua}\hat n_{d\da} + J_z \left(\hat n_{d\da} - \hat n_{d\ua}\right)\left(\hat n_{q\da} - \hat n_{q\ua}\right)\\
 \end{aligned}\end{equation}
-This gives us the same condition as in the \(J=0\) cases.
+This gives us the same condition as in the \(J=0\) case. The p-h symmetry condition implies that \(2\epsilon_d + U\) must be an RG-invariant. The RG equation for \(2\epsilon_d + U\) is
+\begin{equation}\begin{aligned}
+	\Delta \left(2\epsilon_d + U\right) = \frac{|V_1|^2}{\xi_1^\prime} - \frac{|V_1|^2}{\xi_2}
+\end{aligned}\end{equation}
+For \(2\epsilon_d + U=0\) in the bare model, we can write \(\xi_2 = \xi_1^\prime\), which means \(\Delta \left(2\epsilon_d + U\right) = 0\).
 \subsection{"Poor Man's" one-loop form for asymmetric Anderson model}
-In the limit of \(\epsilon_d, J \ll D \ll U \), the equation for \(\epsilon_d\) becomes, up to lowest order in \(J\),
-\beq
-\delta \epsilon_d = -\sum_q \fr{|V_q|^2 }{\omega^+ - \hf\epsilon_q}
-\eeq
-This is the same form that we had in the pure SIAM, and we can again repeat what we did in \ref{pms}.
+In the limit of \(\epsilon_d, J \ll D \ll U \), we can ignore the \(J^2\) terms in \(\epsilon_d\) and \(U\), and the remaining terms simplify:
+\begin{equation}\begin{aligned}
+	\frac{1}{\xi_1} &= \frac{1}{\xi_1^\prime} \approx 0\\
+	\xi_2 &= \xi_2^\prime \approx \omega - \frac{\epsilon_q}{2}
+\end{aligned}\end{equation}
+These give
+\begin{equation}\begin{aligned}
+	\Delta U &\approx 0 \\
+	\Delta \epsilon_d &\approx - \frac{|V_0|^2}{\xi_2} \approx -\frac{|V_0|^2}{\omega - \frac{\epsilon_q}{2}}
+\end{aligned}\end{equation}
+This is the same form that we had in the pure SIAM, and we can again repeat what we did in subsection \ref{urg2pms}.
 \subsection{SU(2) invariance and Kondo model one-loop form}
 Setting \(J_z = J_t = \hf J\) makes the interaction \(SU(2)\) symmetric; the last two RG equations can then be written in the common form:
 \beq
-2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{|\epsilon_q| = D}\fr{1}{\omega - \hf\epsilon_q - \epsilon_d + \fr{1}{4}J}
+\Delta J = -\frac{1}{\xi_3}J^2 = -J^2}\frac{1}{\omega - \frac{\epsilon_q}{2} -\frac{J_z}{2}}
 \eeq
-In order to reach the Kondo RG equations, we need to make the appropriate physical change; the difference between the Anderson model and the Kondo model is that the impurity charge fluctuations are frozen at single occupation in the latter. This means that the ground state of the impurity is now at \(\epsilon_d\). We can take account of this change by now measuring \(\omega\) from the single occupation energy itself, \(\epsilon_d\). Hence we should redefine \(\omega - \epsilon_d \to \tilde \omega\). 
-\beq[and2kondo]
-2\Delta J_z = 2 \Delta J_t = \Delta J &= - J^2 \sum_{|\epsilon_q|=D}\fr{1}{\tilde \omega - \hf\epsilon_q + \fr{1}{4}J}
-\eeq
-For low quantum fluctuations we can ignore the renormalization and replace \(\tilde \omega\) with the bare initial energy value \(-\hf\epsilon_q\).
+For low quantum fluctuations we can ignore the renormalization and replace \(\omega\) with the bare initial energy value \(-\hf\epsilon_q\).
 \beq
-\Delta J = - J^2 \sum_{|\epsilon_q|=D}\fr{1}{-\epsilon_q + \fr{1}{4}J}
+\Delta J = - J^2 \fr{1}{-\epsilon_q + \fr{1}{4}J}
 \eeq
 We can now expand the denominator in powers of \(J\) and keep only the lowest order, we get
 \beq
-\Delta J = -J^2 \sum_{|\epsilon_q|=D} \fr{1}{-\epsilon_q}
+\Delta J = J^2 \fr{1}{\epsilon_q}
 \eeq
-For an isotropic dispersion, we can use \(\epsilon_q = D\). The sum can then be evaluated as
-\beq
-\sum_{|\epsilon_q|=D} = \sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D} = 2\rho(D)|\Delta D|
-\eeq
-The flow equation of \(J\) becomes
-\beq
-\Delta J = 2J^2 \rho(D)\fr{|\Delta D|}{D}
-\eeq
-This is the familiar one-loop Kondo flow equation obtained from Poor man's scaling. To get the continuum version, we must note that since we are decreasing the bandwidth, we have to set \(\Delta D = -|\Delta D|\). Therefore,
-\beq
-\dv{J}{\ln D} = -2J^2 \rho(D)
-\eeq
+This is the Kondo model one-loop form.
 \section{Anderson-Kondo (charge) model URG}
 Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu},\cite{anderson_superc}
 \beq
@@ -4931,6 +4926,7 @@ As usual, we have considered only one mobile electron on the shell we are decoup
 	&= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} + c^\dagger_{q \da}c_{k\da} + c^\dagger_{k\da}c_{q\da}}\\
 	&= \frac{1}{2}\sum_{\sigma}\left(c^\dagger_{q\sigma}c_{k\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
+The calculation of renormalization will proceed similar to the spin-Kondo Anderson URG.
 \subsection{Hole sector}
 This will involve terms which start from an empty state (hole). This renormalization is given by 
 \beq
