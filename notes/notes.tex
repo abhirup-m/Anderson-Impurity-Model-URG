@@ -4413,8 +4413,8 @@ We next look at the \(J_z V\) terms:
 \end{aligned}\end{equation}
 The first term in the box bracket renormalizes \(V_0 c^\dagger_{k\beta}c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\), while the second term renormalizes \(V_1 c^\dagger_{k\beta}c_{d\beta}\hat n_{d\ol\beta}\). Because this renormalizes only one spin component (\(\beta\)), the other spin component will get renormalized when we decouple \(\ol\beta\), and so we attribute only half of this to the total renormalization.
 \begin{equation}\begin{aligned}
-	\Delta V_0 &= -\frac{1}{2}\frac{J_z}{4}V_0\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
-	\Delta V_1 &= -\frac{1}{2}\frac{J_z}{4}V_1\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
+	\Delta V_0 &= -\frac{1}{2}\frac{J_z}{2}V_0\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
+	\Delta V_1 &= -\frac{1}{2}\frac{J_z}{2}V_1\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
 \end{aligned}\end{equation}
 where we used \(\xi_4^\prime = \xi_3\). The terms with \(J_t V\) also renormalize the same terms. Combining this with the previous renormalization gives the total renormalization of \(V_0\) and \(V_1\):
 \begin{equation}\begin{aligned}
@@ -4456,8 +4456,8 @@ Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} + \sum_k \left(\frac{1}{\xi_3}J_t^2  + \frac{1}{2\xi_3}J_z^2\right)\\
 	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} - 2\frac{|V_1|^2}{\xi_1} - 2\frac{|V_0|^2}{\xi_2^\prime} - \sum_k \left[\frac{2}{\xi_3}J_t^2 + \frac{1}{\xi_3}J_z^2\right]\\
-	\Delta V_0 &= -V_0\left(\frac{J_z}{4} + J_t \right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
-	\Delta V_1 &= -V_1\left(\frac{J_z}{4} + J_t \right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)\\
+	\Delta V_0 &= -V_0\left(\frac{J_z}{2} + J_t \right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
+	\Delta V_1 &= -V_1\left(\frac{J_z}{2} + J_t \right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)\\
 	\Delta J_z &= -\frac{2}{\xi_3}J_t^2\\
 	\Delta J_t &= -\frac{2}{\xi_3}J_t J^z_0
 \end{aligned}\end{equation}
@@ -4881,6 +4881,13 @@ We can now expand the denominator in powers of \(J\) and keep only the lowest or
 \Delta J = J^2 \fr{1}{\epsilon_q}
 \eeq
 This is the Kondo model one-loop form.
+\subsection{Symmetric Anderson-Kondo}
+We can look at a special case of the RG equations: \(\epsilon_d = -\frac{U}{2}, V_0 = V_1, J_z = J_t = \frac{J}{2}\).
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d - \frac{J}{4}} + \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d} - \frac{2|V|^2}{\omega - \frac{\epsilon_q}{2} - \epsilon_d} + \frac{3J^2}{8}\sum_k \frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\\
+	\Delta V &= -\frac{3J}{4}V\left(\frac{1}{\omega - \frac{\epsilon_q}{2} - \epsilon_d} + \frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\right)\\
+	\Delta J &= -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\\
+\end{aligned}\end{equation}
 \section{Anderson-Kondo (charge) model URG}
 Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu},\cite{anderson_superc}
 \beq

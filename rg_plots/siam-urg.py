@@ -38,14 +38,16 @@ def init_check_fp(w, D, U, V, J):
     return flags
 
 
-def den(w, D, U, V, J):
+def den(w, D, ed, J):
     ''' Defines and evaluates all the
     denominators in the problem.'''
 
-    d1 = w - 0.5 * D + U/2 + J/4
-    d2 = w - 0.5 * D - U/2
-    d3 = w - 0.5 * D + U/2 - J/4
-    return d1, d2, d3
+    d1 = w - 0.5 * D + ed - J/4
+    d2 = w - 0.5 * D + ed
+    d3 = w - 0.5 * D - ed
+    d4 = w - 0.5 * D - J/4
+
+    return d1, d2, d3, d4
 
 
 def rg(w, D, U, V, J, flags):
@@ -53,7 +55,7 @@ def rg(w, D, U, V, J, flags):
     at a particular RG step. Also checks if 
     any denominator changed sign.'''
 
-    d = den(w ,D, U, V, J)
+    d = den(w, D, ed, J)
     d = [0.1 if flags[i] == 0 else d[i] for i in range(len(flags))]
     deltaU = 4 * V**2 * sqrt(D) * (1/d[0] - 1/d[1]) - J**2 * D * (1/8) * (5*1/d[0] + 1/d[2])
     deltaV = (-3/4) * J * sqrt(D) * V * 1/d[0]
