@@ -5,7 +5,7 @@
 \usepackage[affil-it]{authblk}
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
-%\usepackage[allfiguresdraft]{draftfigure}
+\usepackage[allfiguresdraft]{draftfigure}
 \allowdisplaybreaks
 \begin{document}
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
@@ -4275,8 +4275,12 @@ The entire off-diagonal piece can be split into 6 parts:
 	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T^\dagger_1 c_{q\beta}} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T^\dagger_2 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3 c_{q\beta}} \\
 	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
 \end{aligned}\end{equation}
-\subsection{Calculation of renormalization}
-We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The generator will have five parts:
+\subsection{Calculation of renormalization in particle sector}
+We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The renormalization in the particle sector (\(\hat n_{q\beta}=1\)) is of the form
+\begin{equation}\begin{aligned}
+	c^\dagger_{q\beta}T \eta
+\end{aligned}\end{equation}
+Since we have \(\hat n_{q\beta}=1\) in the initial state, this will be at energy \(-\epsilon_q\). The generator \(\eta\) will have five parts:
 \begin{equation}
 	\eta = \sum_{i=1}^5\frac{1}{\omega_i - E_i^0}T^\dagger_i c_{q\beta}
 \end{equation}
@@ -4289,31 +4293,189 @@ where
 	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta}
 \end{aligned}\end{equation}
 Therefore,
-\begin{flalign}
+\begin{flalign*}
 	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
 	&=\frac{1}{\omega_1 - E^0_1}T_1 T_1^\dagger + \frac{1}{\omega_2 - E^0_2}T_2 T_2^\dagger+\frac{1}{\omega_3 - E^0_3}T_3 T_3^\dagger+\frac{1}{\omega_4 - E^0_4}T_4 T_4^\dagger+\frac{1}{\omega_5 - E^0_5}T_5 T_5^\dagger \\
 	&+\left(\frac{1}{\omega_2 - E^0_2} + \frac{1}{\omega_5 - E^0_5}\right)\left(T_2 T_5^\dagger + T_5 T_2^\dagger \right) +\left(\frac{1}{\omega_2 - E^0_2} + \frac{1}{\omega_3 - E^0_3}\right)\left(T_2 T_3^\dagger + T_3 T_2^\dagger \right) \\
 	&+\left(\frac{1}{\omega_3 - E^0_3} + \frac{1}{\omega_5 - E^0_5}\right)\left(T_3 T_5^\dagger + T_5 T_3^\dagger \right)
-\end{flalign}
+\end{flalign*}
 The diagonal parts \(E_i^0\) are
 \begin{equation}\begin{aligned}
-	E_1 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U \\
-	E_2 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2} \\
-	E_3 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2} \\
-	E_4 &= -\frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2} \\
-	E_5 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}
+	E^0_1 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
+	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
+	E^0_3 = E^0_4 &= \frac{\epsilon_q}{2} + \epsilon_d\\
+	E^0_5 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
+Note that in writing these diagonal parts, we have considered the effect of \(c^\dagger_k\) on the \(J_z\) part. For example, if there is a \(\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)c^\dagger_{k\beta}\) in front of the propagator, that means the intermediate state has \(\hat n_{d\beta} - \hat n_{d\ol\beta} = 1 = \hat n_{k\beta}\) and that will contribute a term \(\frac{J_z}{2} \left(\hat n_{d\beta} - \hat n_{d\ol\beta}\right)\hat n_{k\beta} = \frac{J_z}{2}\) to \(E^0\). Also, while calculating \(E_5\), we have ignored the presence of \(\hat n_{q\ol\beta}\), because it violates the spin reversal symmetry for this term.
+\pb Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
 \begin{equation}\begin{aligned}
 	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
 	&=\frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\ol\beta} \right) \\
-	&+ \frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi_3} + {J_1^z}^2\frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi_4} \right]c_{k^\prime\beta}c^\dagger_{k\beta} + \frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} c_{k^\prime\beta}c^\dagger_{k\beta} \\
+	&+ \frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi_3} + {J_1^z}^2\frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi_4} \right]c_{k^\prime\beta}c^\dagger_{k\beta} + \frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} \\
 	&- \frac{1}{2} \left(\frac{1}{\xi_2} + \frac{1}{\xi_5}\right)J_t\left( 1 - \hat n_{d\beta}\right) \left(V_0 c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\frac{J^z_0}{2}\left(1 - \hat n_{d\ol\beta}\right)\left(V_0 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
-	&+\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}\left(c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta} + \text{h.c.}\right)
+	&-\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}\left(c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+The indices \(k\) and \(k^\prime\) are being summed over, wherever they appear.
+\subsection{Calculation of renormalization in hole sector}
+The renormalization in the particle sector (\(\hat n_{q\beta}=0\)) is of the form
+\begin{equation}\begin{aligned}
+	T^\dagger_{q\beta}c \eta_0^\dagger
+\end{aligned}\end{equation}
+where \(\eta_0^\dagger\) is of the form
+\begin{equation}
+	\eta_0^\dagger = \sum_{i=1}^5\frac{1}{\omega^\prime_i - E_i^1}c^\dagger_{q\beta} T_i
+\end{equation}
+This will be at an energy \(+\epsilon_q\), because the state is occupied. The scattering terms \(T_i\) are already written down in the previous subsection. The diagonal parts are
+\begin{equation}\begin{aligned}
+	E^1_1 = E^1_4 = E^1_5 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
+	E^1_2 &= \frac{\epsilon_q}{2}\\
+	E^1_3 &= \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2} \\
 \end{aligned}\end{equation}
 
+The renormalization can be computed by calculating \(\sum_{ij} T_i^\dagger T_j\).
+\begin{flalign*}
+	&\sum_{ij} \left(\frac{1}{\omega^\prime_i - E^1_i} + \frac{1}{\omega^\prime - E^1_j}\right) T_i^\dagger T_j\\ 
+	&=\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\ol\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
+	&+\frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi^\prime_3} + {J_1^z}^2\frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi^\prime_4} \right]c^\dagger_{k\beta}c_{k^\prime\beta} + \frac{1}{\xi^\prime_5}J_t^2 \left( 1 - \hat n_{d\ol\beta} \right) \hat n_{d\beta} c^\dagger_{k\ol\beta} c_{k^\prime\ol\beta}\\
+	&-\frac{1}{2} \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\frac{J_1^z}{2}\hat n_{d\ol\beta} \left(V_1 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi^\prime_5}\right)J_t \left\hat n_{d\beta}\left(V_1 c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right) \\
+	&-\frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)\frac{J_t J^z_1}{2}\left(c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta} + \text{h.c.}\right) 
+\end{flalign*}
+where \(\xi^\prime_i\) is defined similar to the particle sector: \(\xi^\prime_i = \omega_i^\prime - E_i^1\). The indices \(k\) and \(k^\prime\) are being summed over, wherever they appear.
+\subsection{Relating the \(\omega_i\) and \(\omega_i^\prime\)}
+To relate the \(\omega_i\) and their primed counterparts, we will look at their bare non-interacting values:
+\begin{equation}\begin{aligned}
+	\omega_1 &= \omega_3 = \omega_4 = -\frac{1}{2}\epsilon_q + \epsilon_d \\
+	\omega_2 &= -\frac{1}{2}\epsilon_q\\
+	\omega_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
+\end{aligned}\end{equation}
+We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} + \frac{1}{2}J_z\).
+\begin{equation}\begin{aligned}
+	\omega_1 &= \omega_3 = \omega_4 = \omega + \epsilon_d - \frac{J_z}{2}\\
+	\omega_2 &= \omega - \frac{J_z}{2}\\
+	\omega_5 &= \omega + \epsilon_d - J_z
+\end{aligned}\end{equation}
+The denominators can now be written in terms of the single \(\omega\):
+\begin{equation}\begin{aligned}
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U - \frac{J_z}{2}\\
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
+	\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2}\\
+\end{aligned}\end{equation}
+Similarly, for the \(\omega_i^\prime\) of the hole sector, we have
+\begin{equation}\begin{aligned}
+	\omega^\prime_1 &= -\frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
+	\omega^\prime_2 = \omega^\prime_3 &= -\frac{1}{2}\epsilon_q + \epsilon_d + \frac{J_z}{2}\\
+	\omega^\prime_4 = \omega^\prime_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
+\end{aligned}\end{equation}
+Writing these in terms of \(\omega = -\frac{\epsilon_q}{2} + \frac{J_z}{2}\) gives
+\begin{equation}\begin{aligned}
+	\omega^\prime_1 &= \omega + 2\epsilon_d + U - \frac{J_z}{2}\\
+	\omega^\prime_2 &= \omega^\prime_3 = \omega + \epsilon_d\\
+	\omega^\prime_4 &= \omega^\prime_5 = \omega + \epsilon_d - J_z\\
+\end{aligned}\end{equation}
+The denominators are therefore
+\begin{equation}\begin{aligned}
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d\\
+	\xi_3^\prime = \xi_4^\prime = \xi_5^\prime &= \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2} = \xi_3 = \xi_4 = \xi_5\\
+\end{aligned}\end{equation}
+\subsection{Making sense of the various terms}
+We will now look at each of the renormalizations separately. Note that the indices \(k\) and \(k^\prime\) are being summed over, wherever they appear. The first two terms in each sector form a part of the renormalization in \(\epsilon_d\) and \(U\).
+\begin{equation}\begin{aligned}
+\frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\ol\beta} \right) + \frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\ol\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)
+\end{aligned}\end{equation}
+We can read off the renormalizations in the doublon, spin and holon states. Note that the spin (\(\hat n_{d}=1\)) are only renormalizedby half, because the other half of the renormalization comes when you decouple the other spin \(\ol\beta\).
+\begin{equation}\begin{aligned}
+	\Delta E_2 = \frac{|V_1|^2}{\xi^\prime_1}, && \Delta E_1 =\frac{|V_1|^2}{2\xi_1} + \frac{|V_0|^2}{2\xi_2^\prime}, && \Delta E_0 = \frac{|V_0|^2}{\xi_2}
+\end{aligned}\end{equation}
+Using \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\), we can write
+\begin{equation}\begin{aligned}
+	\label{edU}
+	\Delta \epsilon_d &= \frac{|V_1|^2}{2\xi_1} + \frac{|V_0|^2}{2\xi_2^\prime} - \frac{|V_0|^2}{\xi_2}\\
+	\Delta U &= \frac{|V_1|^2}{\xi_1^\prime} + \frac{|V_0|^2}{\xi_2} - \frac{|V_1|^2}{\xi_1} - \frac{|V_0|^2}{\xi_2^\prime}
+\end{aligned}\end{equation}
+The \(J_z^2\) terms, together, give
+\begin{equation}\begin{aligned}
+\frac{J_z^2}{4}\left[\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi_3} + \frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi_4} \right]c_{k^\prime\beta}c^\dagger_{k\beta} +\frac{1}{4}\left[ \frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi^\prime_3} + \frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi^\prime_4} \right]c^\dagger_{k\beta}c_{k^\prime\beta}
+\end{aligned}\end{equation}
+There we used \(J_0^z = J_1^z = J_z\). From the expressions of \(\xi_i\) and \(\xi_i^\prime\), we know that \(\xi_3 = \xi_4 = \xi_3^\prime = \xi_4^\prime\). Therefore, the terms in the box brackets are identical, and we can simplify this to
+\begin{equation}\begin{aligned}
+	\frac{J_z^2}{4\xi_3}\left[\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) + \hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right) \right]\left(c_{k^\prime\beta}c^\dagger_{k\beta} + c^\dagger_{k\beta}c_{k^\prime\beta}\right) = \frac{J_z^2}{4\xi_3}\left[\hat n_{d} - 2\hat n_{d\beta}\hat n_{d\ol\beta} \right]\delta_{kk^\prime}
+\end{aligned}\end{equation}
+This will further renormalize \(\epsilon_d \hat n_d\) and \(U\hat n_{d\beta}\hat n_{d\ol\beta}\), now at \(J^2\) order:
+\begin{equation}\begin{aligned}
+	\label{edU2}
+	\Delta \epsilon_d &= \frac{J_z^2}{4\xi_3}\delta_{kk^\prime}\\
+	\Delta U &= -2\frac{J_z^2}{4\xi_3}\delta_{kk^\prime}
+\end{aligned}\end{equation}
+We next look at the \(J_z V\) terms:
+\begin{equation}\begin{aligned}
+	-\frac{J_z}{4}\left[\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\left(1 - \hat n_{d\ol\beta}\right)V_0 c^\dagger_{k\beta}c_{d\beta} + \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\hat n_{d\ol\beta} V_1 c^\dagger_{k\beta}c_{d\beta}\right] + \text{h.c.}
+\end{aligned}\end{equation}
+The first term in the box bracket renormalizes \(V_0 c^\dagger_{k\beta}c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\), while the second term renormalizes \(V_1 c^\dagger_{k\beta}c_{d\beta}\hat n_{d\ol\beta}\). Because this renormalizes only one spin component (\(\beta\)), the other spin component will get renormalized when we decouple \(\ol\beta\), and so we attribute only half of this to the total renormalization.
+\begin{equation}\begin{aligned}
+	\Delta V_0 &= -\frac{1}{2}\frac{J_z}{4}V_0\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
+	\Delta V_1 &= -\frac{1}{2}\frac{J_z}{4}V_1\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
+\end{aligned}\end{equation}
+where we used \(\xi_4^\prime = \xi_3\). The terms with \(J_t V\) also renormalize the same terms. Combining this with the previous renormalization gives the total renormalization of \(V_0\) and \(V_1\):
+\begin{equation}\begin{aligned}
+	\label{V}
+	\Delta V_0 &= -\left(\frac{J_z}{4}V_0 + J_t V_0\right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
+	\Delta V_1 &= -\left(\frac{J_z}{4}V_1 + J_t V_1\right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
+\end{aligned}\end{equation}
+There we used \(\xi_5^\prime = \xi_5 = \xi_3\).
+\pb The remaining terms are all of order \(J^2\). First we look at the \(J_t^2\) terms:
+\begin{equation}\begin{aligned}
+&\frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} + \frac{1}{\xi^\prime_5}J_t^2 \left( 1 - \hat n_{d\ol\beta} \right) \hat n_{d\beta} c^\dagger_{k\ol\beta} c_{k^\prime\ol\beta}\\
+&=\frac{1}{\xi_3}J_t^2 c^\dagger_{k\ol\beta} c_{k^\prime\ol\beta}\left[\left( 1 - \hat n_{d\ol\beta} \right) \hat n_{d\beta} - \left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta}\right]  + \delta_{kk^\prime} \frac{1}{\xi_3}J_t^2\left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta}\\
+&=-\frac{1}{\xi_3}2J_t^2 c^\dagger_{k\ol\beta} c_{k^\prime\ol\beta}\frac{\hat n_{d\ol\beta} - \hat n_{d\beta}}{2}  + \delta_{kk^\prime} \frac{1}{\xi_3}J_t^2\left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta}
+\end{aligned}\end{equation}
+In the second step, we used \(\xi_5^\prime = \xi_5 = \xi_3\) and \(c_k c^\dagger_{k^\prime} = \delta_{kk^\prime} - c^\dagger_{k^\prime}c_k\). The first term in the final expression renormalizes half of the Ising Kondo coupling \(J_z S^z_d s^z\), the other half will be renormalized when we decouple \(q\ol\beta\).
+\begin{equation}\begin{aligned}
+	\label{Jz}
+	\Delta J_z = -\frac{1}{2\xi_3}2J_t^2
+\end{aligned}\end{equation}
+The other term in the final expression renormalizes \(U\) and half of \(\epsilon_d\) (only \(\ol\beta\)).
+\begin{equation}\begin{aligned}
+	\label{edU3}
+	\Delta \epsilon_d = \frac{1}{2\xi_3}J_t^2 \delta_{kk^\prime}\\
+	\Delta U = -\frac{1}{\xi_3}J_t^2\delta_{kk^\prime}\\
+\end{aligned}\end{equation}
+The remaining terms are those with \(J_z J_t\):
+\begin{equation}\begin{aligned}
+	\left[-\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta}-\frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)\frac{J_t J^z_1}{2}c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta}\right] + \text{h.c.}
+\end{aligned}\end{equation}
+They renormalize the transverse Kondo coupling. Noting that \(\xi_5 = \xi_4^\prime = \xi_5^\prime = \xi_3\), we get
+\begin{equation}\begin{aligned}
+	\label{Jt}
+	\Delta J_t = -\frac{1}{\xi_3}J_t J^z_0
+\end{aligned}\end{equation}
 
+\subsection{Scaling equations}
+Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt}, and summing over \(\beta\), we can write down the scaling equations for the Anderson-Kondo model.
+\pb \begin{minipage}{320pt}
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} + \sum_k \left(\frac{1}{\xi_3}J_t^2  + \frac{1}{2\xi_3}J_z^2\right)\\
+	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} - 2\frac{|V_1|^2}{\xi_1} - 2\frac{|V_0|^2}{\xi_2^\prime} - \sum_k \left[\frac{2}{\xi_3}J_t^2 + \frac{1}{\xi_3}J_z^2\right]\\
+	\Delta V_0 &= -V_0\left(\frac{J_z}{4} + J_t \right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
+	\Delta V_1 &= -V_1\left(\frac{J_z}{4} + J_t \right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)\\
+	\Delta J_z &= -\frac{2}{\xi_3}J_t^2\\
+	\Delta J_t &= -\frac{2}{\xi_3}J_t J^z_0
+\end{aligned}\end{equation}
+\end{minipage}
+\vline
+\begin{minipage}{150pt}
+\begin{equation*}\begin{aligned}
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U - \frac{J_z}{2}\\[5pt]
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\[5pt]
+\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2}\\[5pt]
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\[5pt]
+\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d\\[5pt]
+\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2} \\[5pt]
+		     &= \xi_3 = \xi_4 = \xi_5\\[5pt]
+\end{aligned*}\end{equation}
+\end{minipage}
 
+\comm{
 \subsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
 \beq
@@ -4681,20 +4843,14 @@ Just as in the previous section, we replace \(\omega^\pm_j\) with \(\omega + E_j
 \Delta J_t &= -J_z J_t\left(\sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D}\right)\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
 \Delta J_z &= -J_t^2 \left(\sum_{\epsilon_q=D} + \sum_{\epsilon_q=-D}\right)\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf J_z}\\
 \eeq
+}
 \subsection{Particle-Hole symmetry}
-As discussed in the previous section, the particle-hole symmetry condition is \(\epsilon_d + U = -\epsilon_d\). We henceforth also assume that \(\sum_{D} = \sum_{-D}\) and drop the indices on the summations. The RG equations for \(\epsilon_d\) and \(U\)  then look like,
-\beq
-\Delta \epsilon_d &=  2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d} - 2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf\epsilon_q - \epsilon_d + \hf  J_z} \\
-          &\quad+ \sum_{q,k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
-\hf\Delta U &=  2\sum_{q}|V(q)|^2\fr{1}{\omega - \hf \epsilon_q - \epsilon_d + \hf {J_z}} - 2\sum_{q} |V(q)|^2\fr{1}{\omega - \hf \epsilon_q + \epsilon_d}\\
-        &-\sum_{q,k}\qq{\fr{\fr{1}{4}J_z^2 + J_t^2}{\omega - \hf\epsilon_q - \epsilon_d + \hf J_z} + \fr{\fr{1}{4}J_z^2}{\omega - \hf\epsilon_q - \epsilon_d - \hf J_z}}\\
-\eeq
-The asymmetry parameter \(\gamma = \epsilon_d + \hf U\) is thus invariant under the flow.
- 
-\beq
-\implies \Delta \rr{\epsilon_d + \hf U} &= 0
-\eeq
-Starting from a particle-hole symmetric model keeps you on a symmetric flow.
+As discussed in the previous section, the particle-hole symmetry condition for the basic SIAM (\(J=0\)) is \(\epsilon_d + U = -\epsilon_d\). With the inclusion of \(J\), we will need to see what the new condition is. We will first write the impurity part of the Hamiltonian and see how it transforms under a particle-hole transformation.
+\begin{equation}\begin{aligned}
+	&\epsilon_d \hat n_d + U \hat n_{d\ua}\hat n_{d\da} + J_z \left(\hat n_{d\ua} - \hat n_{d\da}\right)\left(\hat n_{q\ua} - \hat n_{q\da}\right)\\
+&	\rightarrow 2\epsilon_d + U  -\left(\epsilon_d + U\right)\hat n_d + U \hat n_{d\ua}\hat n_{d\da} + J_z \left(\hat n_{d\da} - \hat n_{d\ua}\right)\left(\hat n_{q\da} - \hat n_{q\ua}\right)\\
+\end{aligned}\end{equation}
+This gives us the same condition as in the \(J=0\) cases.
 \subsection{"Poor Man's" one-loop form for asymmetric Anderson model}
 In the limit of \(\epsilon_d, J \ll D \ll U \), the equation for \(\epsilon_d\) becomes, up to lowest order in \(J\),
 \beq
