@@ -5,7 +5,7 @@
 \usepackage[affil-it]{authblk}
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
-\usepackage[allfiguresdraft]{draftfigure}
+%\usepackage[allfiguresdraft]{draftfigure}
 \allowdisplaybreaks
 \begin{document}
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
@@ -4337,7 +4337,7 @@ The renormalization can be computed by calculating \(\sum_{ij} T_i^\dagger T_j\)
 	&\sum_{ij} \left(\frac{1}{\omega^\prime_i - E^1_i} + \frac{1}{\omega^\prime - E^1_j}\right) T_i^\dagger T_j\\ 
 	&=\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\ol\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
 	&+\frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi^\prime_3} + {J_1^z}^2\frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi^\prime_4} \right]c^\dagger_{k\beta}c_{k^\prime\beta} + \frac{1}{\xi^\prime_5}J_t^2 \left( 1 - \hat n_{d\ol\beta} \right) \hat n_{d\beta} c^\dagger_{k\ol\beta} c_{k^\prime\ol\beta}\\
-	&-\frac{1}{2} \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\frac{J_1^z}{2}\hat n_{d\ol\beta} \left(V_1 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi^\prime_5}\right)J_t \left\hat n_{d\beta}\left(V_1 c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right) \\
+	&-\frac{1}{2} \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\frac{J_1^z}{2}\hat n_{d\ol\beta} \left(V_1 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi^\prime_5}\right)J_t \hat n_{d\beta}\left(V_1 c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right)\\
 	&-\frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)\frac{J_t J^z_1}{2}\left(c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta} + \text{h.c.}\right) 
 \end{flalign*}
 where \(\xi^\prime_i\) is defined similar to the particle sector: \(\xi^\prime_i = \omega_i^\prime - E_i^1\). The indices \(k\) and \(k^\prime\) are being summed over, wherever they appear.
@@ -4348,17 +4348,17 @@ To relate the \(\omega_i\) and their primed counterparts, we will look at their 
 	\omega_2 &= -\frac{1}{2}\epsilon_q\\
 	\omega_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} + \frac{1}{2}J_z\).
+We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\).
 \begin{equation}\begin{aligned}
-	\omega_1 &= \omega_3 = \omega_4 = \omega + \epsilon_d - \frac{J_z}{2}\\
-	\omega_2 &= \omega - \frac{J_z}{2}\\
-	\omega_5 &= \omega + \epsilon_d - J_z
+	\omega_1 &= \omega_3 = \omega_4 = \omega + \epsilon_d + \frac{J_z}{2}\\
+	\omega_2 &= \omega + \frac{J_z}{2}\\
+	\omega_5 &= \omega + \epsilon_d
 \end{aligned}\end{equation}
 The denominators can now be written in terms of the single \(\omega\):
 \begin{equation}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U - \frac{J_z}{2}\\
-	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
-	\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2}\\
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
+	\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\
 \end{aligned}\end{equation}
 Similarly, for the \(\omega_i^\prime\) of the hole sector, we have
 \begin{equation}\begin{aligned}
@@ -4366,17 +4366,17 @@ Similarly, for the \(\omega_i^\prime\) of the hole sector, we have
 	\omega^\prime_2 = \omega^\prime_3 &= -\frac{1}{2}\epsilon_q + \epsilon_d + \frac{J_z}{2}\\
 	\omega^\prime_4 = \omega^\prime_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-Writing these in terms of \(\omega = -\frac{\epsilon_q}{2} + \frac{J_z}{2}\) gives
+Writing these in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{J_z}{2}\) gives
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 &= \omega + 2\epsilon_d + U - \frac{J_z}{2}\\
-	\omega^\prime_2 &= \omega^\prime_3 = \omega + \epsilon_d\\
-	\omega^\prime_4 &= \omega^\prime_5 = \omega + \epsilon_d - J_z\\
+	\omega^\prime_1 &= \omega + 2\epsilon_d + U\\
+	\omega^\prime_2 &= \omega^\prime_3 = \omega + \epsilon_d + J_z\\
+	\omega^\prime_4 &= \omega^\prime_5 = \omega + \epsilon_d \\
 \end{aligned}\end{equation}
 The denominators are therefore
 \begin{equation}\begin{aligned}
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
-	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d\\
-	\xi_3^\prime = \xi_4^\prime = \xi_5^\prime &= \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2} = \xi_3 = \xi_4 = \xi_5\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + J_z\\
+	\xi_3^\prime = \xi_4^\prime = \xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2} = \xi_3 = \xi_4 = \xi_5\\
 \end{aligned}\end{equation}
 \subsection{Making sense of the various terms}
 We will now look at each of the renormalizations separately. Note that the indices \(k\) and \(k^\prime\) are being summed over, wherever they appear. The first two terms in each sector form a part of the renormalization in \(\epsilon_d\) and \(U\).
@@ -4465,14 +4465,14 @@ Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt
 \vline
 \begin{minipage}{150pt}
 \begin{equation*}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U - \frac{J_z}{2}\\[5pt]
-	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\[5pt]
-\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2}\\[5pt]
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\[5pt]
-\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d\\[5pt]
-\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \omega - \frac{\epsilon_q}{2} - \frac{J_z}{2} \\[5pt]
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\[5pt]
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\[5pt]
+\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\[5pt]
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\[5pt]
+\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + J_z\\[5pt]
+\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2} \\[5pt]
 		     &= \xi_3 = \xi_4 = \xi_5\\[5pt]
-\end{aligned*}\end{equation}
+\end{aligned}\end{equation*}
 \end{minipage}
 
 \comm{
@@ -4870,7 +4870,7 @@ This is the same form that we had in the pure SIAM, and we can again repeat what
 \subsection{SU(2) invariance and Kondo model one-loop form}
 Setting \(J_z = J_t = \hf J\) makes the interaction \(SU(2)\) symmetric; the last two RG equations can then be written in the common form:
 \beq
-\Delta J = -\frac{1}{\xi_3}J^2 = -J^2}\frac{1}{\omega - \frac{\epsilon_q}{2} -\frac{J_z}{2}}
+\Delta J = -\frac{1}{\xi_3}J^2 = -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}}
 \eeq
 For low quantum fluctuations we can ignore the renormalization and replace \(\omega\) with the bare initial energy value \(-\hf\epsilon_q\).
 \beq
@@ -4884,9 +4884,9 @@ This is the Kondo model one-loop form.
 \subsection{Symmetric Anderson-Kondo}
 We can look at a special case of the RG equations: \(\epsilon_d = -\frac{U}{2}, V_0 = V_1, J_z = J_t = \frac{J}{2}\).
 \begin{equation}\begin{aligned}
-	\Delta \epsilon_d &= \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d - \frac{J}{4}} + \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d} - \frac{2|V|^2}{\omega - \frac{\epsilon_q}{2} - \epsilon_d} + \frac{3J^2}{8}\sum_k \frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\\
-	\Delta V &= -\frac{3J}{4}V\left(\frac{1}{\omega - \frac{\epsilon_q}{2} - \epsilon_d} + \frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\right)\\
-	\Delta J &= -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{J}{4}}\\
+	\Delta \epsilon_d &= \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{J}{4}} + \frac{|V|^2}{\omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{J}{2}} - \frac{2|V|^2}{\omega - \frac{\epsilon_q}{2} - \epsilon_d + \frac{J}{2}} + \frac{3J^2}{8}\sum_k \frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J}{4}}\\
+	\Delta V &= -\frac{3J}{4}V\left(\frac{1}{\omega - \frac{\epsilon_q}{2} - \epsilon_d + \frac{J}{2}} + \frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J}{4}}\right)\\
+	\Delta J &= -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J}{4}}\\
 \end{aligned}\end{equation}
 \section{Anderson-Kondo (charge) model URG}
 Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu},\cite{anderson_superc}

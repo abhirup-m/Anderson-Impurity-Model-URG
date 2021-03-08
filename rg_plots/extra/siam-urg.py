@@ -60,18 +60,13 @@ def rg(w, D, ed, V, J):
     deltaV = (-3/4) * J * V * (1/dens[2] + 1/dens[3])
     deltaJ = -J**2 * 1/dens[3]
 
-    if (ed + deltaed) * ed <= 0:
-        ed = 0
-    else:
-        ed += deltaed
-    if (V + deltaV) * V <= 0:
-        V = 0
-    else:
-        V += deltaV
-    if (J + deltaJ) * J <= 0:
-        J = 0
-    else:
-        J += deltaJ
+    ed += deltaed
+    V += deltaV
+    J += deltaJ
+    
+    if (ed + deltaed) * ed <= 0:    ed = 0
+    if (V + deltaV) * V <= 0:       V = 0
+    if (J + deltaJ) * J <= 0:       J = 0
 
     return ed, V, J
 
@@ -91,22 +86,16 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    for Dmax in [10]:
+    for Dmax in [1,10,100,1000,10000,100000,1000000]:
         for w in [-0.1]:
-            N = 10 * Dmax
+            N = 5 * Dmax
             V = 1
             J = 0.1
-            ed = 4
-            plt.title(r'Bare values: $V={}, J={}, \epsilon_d={}, \omega={}, D = {}$'.format(V, J, ed, w, Dmax))
+            ed = -1
+            plt.title(r'Bare values: $V={}, J={}, \epsilon_d={}, \omega={}$'.format(V, J, ed, w))
             old_den = den(w, Dmax, ed, J)[3]
             flag = False
-            X = []
-            Y = []
-            Z = []
             for D in np.linspace(Dmax, 0, N):
-                X.append(D)
-                Y.append(np.log10(J))
-                Z.append(ed)
                 new_den = den(w, D, ed, J)[3]
                 if old_den * new_den <= 0: 
                     flag = True
@@ -115,19 +104,12 @@ def all_flow():
                     old_den = new_den
 
                 ed, V, J = rg(w, D, ed, V, J)
-                print ("ed is",ed)
 
             if flag is True: 
                print ("End: Dmax={}, D*={}, J*={}".format(Dmax, D, J))
-               plt.plot(X, Y, label=r'$J$')
-               plt.scatter(X[0], Y[0], color="g", label="start")
-               plt.scatter(X[-1], Y[-1], color="r", label="end")
-               plt.plot(X, Z, label=r'$\epsilon_d$')
-               plt.scatter(X[0], Z[0], color="g")
-               plt.scatter(X[-1], Z[-1], color="r")
-               plt.legend()
-               plt.xlabel(r'$D$')
-               plt.ylabel(r'$\epsilon_d, \log_{10}J$')
+               plt.scatter(np.log10(Dmax), np.log10(J))
+               plt.xlabel(r'$\log_{10} \Lambda_0$')
+               plt.ylabel(r'$\log_{10} J^*$')
 
     plt.show()
 
