@@ -3891,13 +3891,18 @@ Define \(\tilde\omega = \omega + \frac{1}{2}\epsilon + \frac{1}{4}J\).
 	\Delta \epsilon_0 &= -\frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
 \end{aligned}\end{equation}
 Our goal here is to look for a fixed-point condition such that the denominator vanishes at some point of the RG. If we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 > 0\), the denominator will be positive and the RG equation will be irrelevant. This means that \(\epsilon_0\) will keep on decreasing, and the denominator will keep on becoming more and more positive, meaning there cannot be a fixed point in this situation.
-\pb If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in figure \ref{star1}
-\begin{center}
+\pb If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in figure \ref{star1}.
+\begin{figure}
+	\centering
 	\includegraphics[scale=0.5]{star}
-	\label{star1}
 	\captionof{figure}{RG flow for the two cases. The green line is the distance between the bare values of the two couplings, and hence also the magnitude of the denominator. The red arrow denotes the direction in which \(\epsilon_0\) will flow. Upward flow is increase. In both cases, the flow is such that the distance between the two quantities (and hence the magnitude of the denominator) increases. The RG fixed point occurs when the magnitude of the denominator goes to 0. This happens if the distance vanishes. Since the distance necessarily increases, we cannot get a fixed point in this way.}
-\end{center}
-Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
+	\label{star1}
+	\vspace*{\fill}
+	\includegraphics[scale=0.5]{star3}
+	\label{star3}
+	\captionof{figure}{RG flow for the two cases with the new \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\). Now we can see that in both cases, the flow is such that the distance (green dotted line) between the couplings decreases. A fixed point is reached when this distance vanishes.}
+\end{figure}
+\pb Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
 \begin{equation}
 	\eta^\dagger = \frac{1}{\omega^\prime - \ham_d}S_N^+ S_0^- = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^+ S_0^-
 \end{equation}
@@ -3914,11 +3919,8 @@ We again define \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1
 	\Delta \epsilon_0 = \frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
 \end{aligned}\end{equation}
 We now repeat the exercise of determining the relevance of the flows under various regime. If we start with a bare \(\epsilon_0\) such that \(\tilde \omega + \frac{1}{2}\epsilon_0 > 0\), then the denominator is positive so the renormalization will be irrelevant. \(\epsilon_0\) will decrease until we reach \(\tilde \omega + \frac{1}{2}\epsilon_0 = 0\). This will be a fixed point. However, if we start with a bare \(\epsilon_0\) such that \(\tilde \omega + \frac{1}{2}\epsilon_0 < 0\), then the denominator is negative so the renormalization will be relevant. \(\epsilon_0\) will increase until we reach \(\tilde \omega + \frac{1}{2}\epsilon_0 = 0\). This will again be a fixed point. This new situation is depicted in figure \ref{star3}.
-\begin{center}
-	\includegraphics[scale=0.5]{star3}
-	\label{star3}
-	\captionof{figure}{RG flow for the two cases with the new \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\). Now we can see that in both cases, the flow is such that the distance (green dotted line) between the couplings decreases. A fixed point is reached when this distance vanishes.}
-\end{center}
+%\begin{center}
+%\end{center}
 \subsection{Effective Hamiltonians}
 If \(\tilde\omega\) and \(\epsilon_0\) are of the same sign at the bare level, then it is easy to see that since the fixed point is defined by \(\tilde\omega = \frac{1}{2}\epsilon_0^*\) (* denotes value at fixed point), the effective Hamiltonian at the fixed point will be
 \begin{equation}\begin{aligned}
@@ -3937,16 +3939,18 @@ Things get much more simpler if we assume the onsite energies of the surrounding
 The fixed points are obtained numerically by solving the RG equation. As mentioned before, there are two types of solutions: The first kind is those in which \(\epsilon_0\) and \(\tilde \omega\) are of the same sign, and the former flows to the latter without crossing the 0 axis. These flows are shown (obtained numerically) in fig.~\ref{plot1}. The second kind are those where the two couplings have different signs, and so \(\epsilon_0\) flows to 0. These are shown in fig.~\ref{plot2}.
 \begin{figure}[tbh!]
 \begin{center}
-	\includegraphics[scale=0.5]{../stargraph_num/not_zero1.png}
-	\includegraphics[scale=0.5]{../stargraph_num/not_zero2.png}
+	\includegraphics[scale=0.54]{../stargraph_num/notzero1.png}
+	\hspace*{\fill}
+	\includegraphics[scale=0.54]{../stargraph_num/notzero2.png}
 	\caption{Flows where \(\epsilon_0\) and \(\tilde\omega\) have same sign. The left and right panels show flows starting from negative and positive values respectively. The two plots in each panel correspond to different values of \(\tilde \omega\), one greater than the bare \(\epsilon_0\), the other less than that. The fixed point value is \(2\tilde\omega\).}
 	\label{plot1}
 \end{center}
 \end{figure}
 \begin{figure}[tbh!]
 \begin{center}
-	\includegraphics[scale=0.5]{../stargraph_num/zero2.png}
-	\includegraphics[scale=0.5]{../stargraph_num/zero1.png}
+	\includegraphics[scale=0.54]{../stargraph_num/zero2.png}
+	\hspace*{\fill}
+	\includegraphics[scale=0.54]{../stargraph_num/zero1.png}
 	\caption{Flows where \(\epsilon_0\) and \(\tilde\omega\) have opposite sign. The left and right panels show flows starting from negative and positive values respectively. The two plots in each panel correspond to different values of \(\tilde \omega\), one greater than the bare \(\epsilon_0\), the other less than that. The fixed point value is 0.}
 	\label{plot2}
 \end{center}
@@ -4033,7 +4037,8 @@ There we used \(\sum_\beta \ol\beta \sum_{kk^\prime}c^\dagger_{k\ol\beta}c_{k^\p
 	\Delta J_z &= - 2J_t^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
 	\Delta J_t &= -2J_z J_t \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
 \end{aligned}\end{equation}
-If we set \(J_z = J_t\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
+Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\). If we set \(J_z = J_t\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
+
 \begin{equation}\begin{aligned}
 	\label{kondosym}
 	\Delta J = - 2J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J}
@@ -4042,13 +4047,14 @@ To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\
 \begin{equation}\begin{aligned}
 	\Delta J \approx 2J^2 \frac{1}{\epsilon_q}
 \end{aligned}\end{equation}
-Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\).
+
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\).
 \begin{center}
-	\includegraphics[scale=0.47]{../kondo_num/rel.png}
-	\includegraphics[scale=0.47]{../kondo_num/rel2.png}
-	\captionof{figure}{Flow of the Kondo coupling \(J\) towards the strong-coupling fixed point (right panel) and the weak coupling saddle-point (left panel). Both plots are for the choice \(\omega = -\frac{1}{2}\epsilon_q\).}
+	\includegraphics[scale=0.55]{../kondo_num/rel.png}
+	\hspace*{\fill}
+	\includegraphics[scale=0.55]{../kondo_num/rel2.png}
+	\captionof{figure}{Flow of \(J\) towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left).  The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).}
 \end{center}
 \section{Anderson Model URG}\label{siamurg}
 \subsection{Setting up the various terms in the URG}
@@ -4266,13 +4272,13 @@ where \(\tau \equiv \hat n - \hf\) and \(\mc{C}\) is non-dynamic and will hence 
 \eeq
 The entire off-diagonal piece can be split into 6 parts:
 \begin{equation}\begin{aligned}
-	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T^\dagger_1} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T^\dagger_2} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3} \\
-	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6} + \text{h.c.}
+	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T^\dagger_1 c_{q\beta}} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T^\dagger_2 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3 c_{q\beta}} \\
+	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
 \end{aligned}\end{equation}
 \subsection{Calculation of renormalization}
 We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The generator will have five parts:
 \begin{equation}
-	\eta = \sum_{i=1}^5\frac{1}{\omega_i^0 - E_i^0}T^\dagger_i c_{q\beta}
+	\eta = \sum_{i=1}^5\frac{1}{\omega_i - E_i^0}T^\dagger_i c_{q\beta}
 \end{equation}
 where
 \begin{equation}\begin{aligned}
@@ -4282,41 +4288,31 @@ where
 	T_4 &= \sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
 	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta}
 \end{aligned}\end{equation}
-\comm{
-	Looking at the operators \(T_i\), we can write
-\begin{equation}\begin{aligned}
-	E^0_1 &= - \frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
-	E^0_2 = E^0_3 = E^0_5 &= - \frac{1}{2}\epsilon_q + \epsilon_d - \frac{1}{2}J_z \hat n_{q\ol\beta}\\
-	E^0_4 &= - \frac{1}{2}\epsilon_q + \epsilon_d + \frac{1}{2}J_z \hat n_{q\ol\beta}
-\end{aligned}\end{equation}
-The renormalization in the particle sector can be written as
-\begin{equation}\begin{aligned}
-		    \frac{1}{2}\sum_{ij} \left(\frac{1}{\omega - E^0_i} + \frac{1}{\omega - E^0_j}\right)\hat n T_i T_j^\dagger\\ 
-\end{aligned}\end{equation}
-We have assumed \(\omega_i^0 = \omega\). Now,
-\begin{equation}\begin{aligned}
-	\sum_{j} T_1 T_j^\dagger &= T_1 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
-	\sum_{j} T_2 T_j^\dagger &= T_2 T_2^\dagger\\
-	\sum_{j} T_3 T_j^\dagger &= T_3 T_3^\dagger\\
-	\sum_{j} T_4 T_j^\dagger &= T_4 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
-	\sum_{j} T_5 T_j^\dagger &= T_5 \left(T_1^\dagger+ T_4^\dagger + T_5^\dagger\right)\\
-\end{aligned}\end{equation}
-}
 Therefore,
 \begin{flalign}
-		    &\sum_{ij} \left(\frac{1}{\omega - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
-		    &= \quad\left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_1}\right)T_1 T_1^\dagger+ \left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_4}\right)T_1 T_4^\dagger + \left(\frac{1}{\omega - E^0_1} + \frac{1}{\omega - E^0_5}\right)T_1 T_5^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_2} + \frac{1}{\omega - E^0_2}\right)T_2 T_2^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_3} + \frac{1}{\omega - E^0_3}\right)T_3 T_3^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_1}\right)T_4 T_1^\dagger+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_4}\right)T_4 T_4^\dagger + \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_5}\right)T_4 T_5^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_1}\right)T_5 T_1^\dagger+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_4}\right)T_5 T_4^\dagger + \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_5}\right)T_5 T_5^\dagger\\
-		    &=\quad \frac{2}{\xi_1}|V_1|^2 \hat n_{d\beta}\hat n_{d\ol\beta} + \left(\frac{1}{\xi_1} + \frac{1}{\xi_4}\right)\sum_k V_1^* J_1^z c^\dagger_{d\beta}c_{k\beta}\hat n_{d\ol\beta}\\
-		    &\quad+ \left(\frac{1}{\xi_1} + \frac{1}{\xi_5}\right)\sum_k V_1^* J^t \hat n_{d\beta}c_{k\ol\beta}c^\dagger_{d\ol\beta}\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_2} + \frac{1}{\omega - E^0_2}\right)T_2 T_2^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_3} + \frac{1}{\omega - E^0_3}\right)T_3 T_3^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_1}\right)T_4 T_1^\dagger+ \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_4}\right)T_4 T_4^\dagger + \left(\frac{1}{\omega - E^0_4} + \frac{1}{\omega - E^0_5}\right)T_4 T_5^\dagger\\
-		    &\quad+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_1}\right)T_5 T_1^\dagger+ \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_4}\right)T_5 T_4^\dagger + \left(\frac{1}{\omega - E^0_5} + \frac{1}{\omega - E^0_5}\right)T_5 T_5^\dagger\\
+	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
+	&=\frac{1}{\omega_1 - E^0_1}T_1 T_1^\dagger + \frac{1}{\omega_2 - E^0_2}T_2 T_2^\dagger+\frac{1}{\omega_3 - E^0_3}T_3 T_3^\dagger+\frac{1}{\omega_4 - E^0_4}T_4 T_4^\dagger+\frac{1}{\omega_5 - E^0_5}T_5 T_5^\dagger \\
+	&+\left(\frac{1}{\omega_2 - E^0_2} + \frac{1}{\omega_5 - E^0_5}\right)\left(T_2 T_5^\dagger + T_5 T_2^\dagger \right) +\left(\frac{1}{\omega_2 - E^0_2} + \frac{1}{\omega_3 - E^0_3}\right)\left(T_2 T_3^\dagger + T_3 T_2^\dagger \right) \\
+	&+\left(\frac{1}{\omega_3 - E^0_3} + \frac{1}{\omega_5 - E^0_5}\right)\left(T_3 T_5^\dagger + T_5 T_3^\dagger \right)
 \end{flalign}
+The diagonal parts \(E_i^0\) are
+\begin{equation}\begin{aligned}
+	E_1 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U \\
+	E_2 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2} \\
+	E_3 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2} \\
+	E_4 &= -\frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2} \\
+	E_5 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}
+\end{aligned}\end{equation}
+Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
+\begin{equation}\begin{aligned}
+	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
+	&=\frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\ol\beta} \right) \\
+	&+ \frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) }{\xi_3} + {J_1^z}^2\frac{\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi_4} \right]c_{k^\prime\beta}c^\dagger_{k\beta} + \frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\ol\beta} c_{k^\prime\beta}c^\dagger_{k\beta} \\
+	&- \frac{1}{2} \left(\frac{1}{\xi_2} + \frac{1}{\xi_5}\right)J_t\left( 1 - \hat n_{d\beta}\right) \left(V_0 c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\frac{J^z_0}{2}\left(1 - \hat n_{d\ol\beta}\right)\left(V_0 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
+	&+\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}\left(c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{k^\prime\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+
+
 
 \subsection{Particle sector}
 The renormalization in the Hamiltonian in the particle sector is
