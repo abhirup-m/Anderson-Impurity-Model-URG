@@ -4945,7 +4945,7 @@ The calculation of renormalization will proceed similar to the spin-Kondo Anders
 \subsection{Particle sector}
 The renormalization in this sector is
 \begin{equation}\begin{aligned}
-	c^\dagger T \eta
+	c^\dagger_{q\beta} T \eta
 \end{aligned}\end{equation}
 Using the expressions of the \(T_i\), this becomes
 \begin{equation}\begin{aligned}
@@ -4960,6 +4960,18 @@ The indices \(k,k^\prime\) are summed over. \(\xi_i\) is defined exactly as befo
 	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d \\
 	E^0_4 &= \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
 \end{flalign*}
+\subsection{Hole sector}
+The renormalization in the hole sector is given by
+\begin{equation}\begin{aligned}
+	T^\dagger c_{q\beta}\eta_0^\dagger
+\end{aligned}\end{equation}
+That comes out to be
+\begin{equation}\begin{aligned}
+&\frac{|V_1|^2}{\xi_1}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c^\dagger_{k\beta}c_{k^\prime\beta}\\
+&+\frac{K_t^2}{\xi_5}\hat n_{d\beta}\hat n_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_4}\right)V_0 K_z^0\left(1 - \hat n_{d\ol\beta}\right)\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
+&- \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_5}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi_4} + \frac{1}{\xi_5}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\beta}c_{k^\prime\beta}c_{k\ol\beta} + \text{h.c.}\right) 
+\end{aligned}\end{equation}
+
 \comm{
 \subsection{Hole sector}
 This will involve terms which start from an empty state (hole). This renormalization is given by 
