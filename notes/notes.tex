@@ -4947,7 +4947,7 @@ The renormalization in this sector is
 \begin{equation}\begin{aligned}
 	c^\dagger_{q\beta} T \eta
 \end{aligned}\end{equation}
-Using the expressions of the \(T_i\), this becomes
+This is at energy \(-\epsilon_q\). Using the expressions of the \(T_i\), this becomes
 \begin{equation}\begin{aligned}
 	&\left(1 - \hat n_{d\beta}\right)\left[\frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2}\right] + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c_{k^\prime\beta}c^\dagger_{k\beta} \\
 	&+ \frac{K_t^2}{\xi_5}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_3} \right)V_1 K_z^1 \hat n_{d\ol\beta}\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
@@ -4965,11 +4965,17 @@ The renormalization in the hole sector is given by
 \begin{equation}\begin{aligned}
 	T^\dagger c_{q\beta}\eta_0^\dagger
 \end{aligned}\end{equation}
-That comes out to be
+at energy \(\epsilon_q\). That comes out to be
 \begin{equation}\begin{aligned}
-&\frac{|V_1|^2}{\xi_1}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c^\dagger_{k\beta}c_{k^\prime\beta}\\
-&+\frac{K_t^2}{\xi_5}\hat n_{d\beta}\hat n_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_4}\right)V_0 K_z^0\left(1 - \hat n_{d\ol\beta}\right)\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
-&- \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_5}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi_4} + \frac{1}{\xi_5}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\beta}c_{k^\prime\beta}c_{k\ol\beta} + \text{h.c.}\right) 
+&\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) + \left[\frac{{K_z^1}^2}{\xi^\prime_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi^\prime_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c^\dagger_{k\beta}c_{k^\prime\beta}\\
+&+\frac{K_t^2}{\xi^\prime_5}\hat n_{d\beta}\hat n_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_4}\right)V_0 K_z^0\left(1 - \hat n_{d\ol\beta}\right)\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
+&- \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_5}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\beta}c_{k^\prime\beta}c_{k\ol\beta} + \text{h.c.}\right) 
+\end{aligned}\end{equation}
+where \(\xi^\prime = \omega^\prime = E_i^1\). The intermediate energies in this sector are
+\begin{equation}\begin{aligned}
+	E^1_1 &= \frac{\epsilon_q}{2} + \epsilon_d\\
+	E^1_2 = E_4^1 = E_5^1 &= \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	E^1_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}
 \end{aligned}\end{equation}
 
 \comm{
@@ -5015,6 +5021,48 @@ The renormalization is, therefore,
 & +\left. \sum_{kk^\prime}\frac{K_t^2 \left(1 - \hat n_{d\beta}\right) \left(1 - \hat n_{d\ol\beta}\right) \hat n_{q\beta}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}\right]
 \end{flalign*}
 }
+\subsection{Relating the \(\omega\)}
+Just as in the previous subsection, we relate the \(\omega_i\) using their diagonal values. First the particle sector \(\omega_i\):
+\begin{equation}\begin{aligned}
+	\omega_1 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
+	\omega_2 &= \omega_4 = \omega_5 = -\frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	\omega_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
+\end{aligned}\end{equation}
+Rewriting everything in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{K_z}{2}\) gives
+\begin{equation}\begin{aligned}
+	\omega_1 &= \omega + \epsilon_d + \frac{K_z}{2}\\
+	\omega_2 &= \omega_4 = \omega_5 = \omega\\
+	\omega_3 &= \omega + 2\epsilon_d + U + K_z
+\end{aligned}\end{equation}
+For the hole sector, we get
+\begin{equation}\begin{aligned}
+	\omega^\prime_1 &= \omega^\prime_3 = \omega^\prime_5 = -\frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	\omega^\prime_2 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{K_z}{2}\\
+	\omega^\prime_4 &= -\frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+\end{aligned}\end{equation}
+and, in terms of \(\omega\),
+\begin{equation}\begin{aligned}
+	\omega^\prime_1 &= \omega^\prime_3 = \omega^\prime_5 = \omega + 2\epsilon_d + U\\
+	\omega^\prime_2 &= \omega + \epsilon_d\\
+	\omega^\prime_4 &= \omega
+\end{aligned}\end{equation}
+The denominators can thus be written as
+\begin{equation}\begin{aligned}
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
+	\xi_3 &= \omega - \frac{\epsilon_q}{2} + \frac{3K_z}{2}\\
+	\xi_4 &= \omega - \frac{\epsilon_q}{2} - K_z\\
+	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2}\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{K_z}{2}\\
+	\xi_3^\prime &= \omega - \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	\xi_4^\prime &= \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+	\xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
+\end{aligned}\end{equation}
+
+
+
+
 \subsection{Scaling Equations}
 To get the scaling equations, we perform similar steps as in the spin-Kondo URG. First of all, we substitute \(\hat n_{q\beta}\) with \(1\) and \(0\) in the particle and hole sectors respectively. Secondly, in the RG equations that involve  \(\hat n_{d\ol\beta}\) in the denominator, we replace the quantum fluctuations with \(E_j + \omega\), where \(E_j\) is the impurity part of the energy of the initial state and \(\omega\) is a redefined quantum fluctuation scale. Thirdly, by using the constraint \(\eta = \left( \eta^\dagger \right) ^\dagger\), we can relate the denominators of the RG equations of the \(V\)s and \(K\)s. The term with \(K_z^2\) in either sector mostly cancel each other, leaving a renormalization of \(\epsilon_d\) and \(U\) at \(K^2\) order.
 \begin{equation}\begin{aligned}
