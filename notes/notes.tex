@@ -42,7 +42,7 @@ This showed how the couplings would flow as we went to low temperatures, but it 
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
 In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
-Later calculations with Bethe ansatz in 1980 by Andrei and Weigmann \cite{Andrei},\cite{wiegmann} corroborated Wilson's findings.
+Later calculations with Bethe ansatz in 1980 by Andrei and Weigmann \cite{Andrei,wiegmann} corroborated Wilson's findings.
 \pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Weigman and Tsvelick\cite{Tsvelick}.
 \pb The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one mobile electron at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
 \pb Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
@@ -3814,7 +3814,7 @@ We can make one more manipulation: using eq.~\ref{constraint}, we get
 \beq
 \Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\eta_1 + \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta}\eta^\dagger_0 
 \eeq
-This form of the total renormalization is identical to the one we use in the "Poor Man's scaling"-type of renormalization that was used to get the scaling equations in the Kondo and Anderson models \cite{Anderson},\cite{haldane}. Writing down the forms of \(\eta\) and \(\eta^\dagger\) explicitly, we get
+This form of the total renormalization is identical to the one we use in the "Poor Man's scaling"-type of renormalization that was used to get the scaling equations in the Kondo and Anderson models \cite{Anderson,haldane}. Writing down the forms of \(\eta\) and \(\eta^\dagger\) explicitly, we get
 \beq
 \Delta \ham = c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\frac{1}{\omega_1^0 - \ham^d_0} \text{Tr}\rr{c_{q\beta}^\dagger\ham} c_{q\beta}+ \text{Tr}\rr{c_{q\beta}^\dagger \ham} c_{q\beta} \frac{1}{\omega_0^1 - \ham^d_1}c_{q\beta}^\dagger\text{Tr}\rr{\ham c_{q\beta}}
 \eeq
@@ -4275,6 +4275,14 @@ The entire off-diagonal piece can be split into 6 parts:
 	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T^\dagger_1 c_{q\beta}} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T^\dagger_2 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3 c_{q\beta}} \\
 	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
 \end{aligned}\end{equation}
+The various parts of the off-diagonal piece are
+\begin{equation}\begin{aligned}
+	T_1 &= V_1 c_{d\beta}\hat n_{d\ol\beta}\\
+	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
+	T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c_{k\beta}\\
+	T_4 &= \sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
+	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta}
+\end{aligned}\end{equation}
 \subsection{Calculation of renormalization in particle sector}
 We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The renormalization in the particle sector (\(\hat n_{q\beta}=1\)) is of the form
 \begin{equation}\begin{aligned}
@@ -4284,15 +4292,7 @@ Since we have \(\hat n_{q\beta}=1\) in the initial state, this will be at energy
 \begin{equation}
 	\eta = \sum_{i=1}^5\frac{1}{\omega_i - E_i^0}T^\dagger_i c_{q\beta}
 \end{equation}
-where
-\begin{equation}\begin{aligned}
-	T_1 &= V_1 c_{d\beta}\hat n_{d\ol\beta}\\
-	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
-	T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c_{k\beta}\\
-	T_4 &= \sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
-	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta}
-\end{aligned}\end{equation}
-Therefore,
+We need to compute a quantity of the form
 \begin{flalign*}
 	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
 	&=\frac{1}{\omega_1 - E^0_1}T_1 T_1^\dagger + \frac{1}{\omega_2 - E^0_2}T_2 T_2^\dagger+\frac{1}{\omega_3 - E^0_3}T_3 T_3^\dagger+\frac{1}{\omega_4 - E^0_4}T_4 T_4^\dagger+\frac{1}{\omega_5 - E^0_5}T_5 T_5^\dagger \\
@@ -4348,7 +4348,7 @@ To relate the \(\omega_i\) and their primed counterparts, we will look at their 
 	\omega_2 &= -\frac{1}{2}\epsilon_q\\
 	\omega_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\).
+We will \textit{assume} that the relations between these values of \(\omega_i\) will hold for the URG \(\omega_i\) along the flow as well. We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\).
 \begin{equation}\begin{aligned}
 	\omega_1 &= \omega_3 = \omega_4 = \omega + \epsilon_d + \frac{J_z}{2}\\
 	\omega_2 &= \omega + \frac{J_z}{2}\\
@@ -4889,10 +4889,10 @@ We can look at a special case of the RG equations: \(\epsilon_d = -\frac{U}{2}, 
 	\Delta J &= -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J}{4}}\\
 \end{aligned}\end{equation}
 \section{Anderson-Kondo (charge) model URG}
-Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu},\cite{anderson_superc}
-\beq
+Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms. The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\). The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \hf\rr{\hat n_{d\ua} - \hat n_{d\da}}\) and the global spin of the mobile electrons \(\hf\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\). The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\ol\alpha}c_{d\alpha}c_{d\ol\alpha}\). We will be considering the last kind of terms in this section. For that, we define the Nambu spinor \cite{nambu,anderson_superc}.
+\begin{equation}\begin{aligned}
 \psi^k = \begin{pmatrix} c_{k\ua} \\ c^\dagger_{k\da} \end{pmatrix}
-\eeq
+\end{aligned}\end{equation}
 and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction electrons
 \beq
 \vec C = \frac{1}{2}\sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
@@ -4933,7 +4933,34 @@ As usual, we have considered only one mobile electron on the shell we are decoup
 	&= \frac{1}{2}\rr{c^\dagger_{q\ua}c_{k \ua} + c^\dagger_{k\ua}c_{q \ua} + c^\dagger_{q \da}c_{k\da} + c^\dagger_{k\da}c_{q\da}}\\
 	&= \frac{1}{2}\sum_{\sigma}\left(c^\dagger_{q\sigma}c_{k\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
-The calculation of renormalization will proceed similar to the spin-Kondo Anderson URG.
+The calculation of renormalization will proceed similar to the spin-Kondo Anderson URG. We will again separate the off-diagonal piece \(\ham_d^X\) into separate parts \(T_i\), calculate the renormalization in particle and hole sectors, and then finally relate the \(\omega_i\) using their bare values.
+\pb The off-diagonal parts for this problem are
+\begin{equation}\begin{aligned}
+	T_1 &= V_1 c_{d\beta}\hat n_{d\ol\beta}\\
+	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
+	T_3 &= K_z^1 \hat n_{d\beta}\hat n_{d\ol\beta}c_{k\beta}\\
+	T_4 &= -K_z^0 \left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)c_{k\beta}\\
+	T_5 &= K_t c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta}\\
+\end{aligned}\end{equation}
+\subsection{Particle sector}
+The renormalization in this sector is
+\begin{equation}\begin{aligned}
+	c^\dagger T \eta
+\end{aligned}\end{equation}
+Using the expressions of the \(T_i\), this becomes
+\begin{equation}\begin{aligned}
+	&\left(1 - \hat n_{d\beta}\right)\left[\frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2}\right] + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c_{k^\prime\beta}c^\dagger_{k\beta} \\
+	&+ \frac{K_t^2}{\xi_5}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_3} \right)V_1 K_z^1 \hat n_{d\ol\beta}\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
+	&- \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_5} \right)V_1 K_t \left(1 - \hat n_{d\beta}\right)\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right)- \frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5} \right)K_z^1 K_t \left(c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+The indices \(k,k^\prime\) are summed over. \(\xi_i\) is defined exactly as before, \(\omega_i - E_i^0\). 
+\pb The intermediate energies, \(E_i^0\), are
+\begin{flalign*}
+	E^0_1 &= E^0_3 = E^0_5 = \frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d \\
+	E^0_4 &= \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+\end{flalign*}
+\comm{
 \subsection{Hole sector}
 This will involve terms which start from an empty state (hole). This renormalization is given by 
 \beq
@@ -4975,6 +5002,7 @@ The renormalization is, therefore,
 &- \left.\sum_k\frac{K_t V^*_q \hat n_{q\beta}\rr{1 - \hat n_{d\beta}}c^\dagger_{k\ol\beta}c_{d\ol\beta}}{\omega_1 - \hf\epsilon_q -2\epsilon_d - U + \frac{1}{2}K_z} - \sum_{kk^\prime}\frac{K_z K_t \hat n_{q\beta}c^\dagger_{k\beta}c^\dagger_{k^\prime\ol\beta}c_{d\beta}c_{d\ol\beta}}{\omega_1 - \frac{1}{2}\epsilon_q - 2\epsilon_q - U + \frac{1}{2}K_z}\right.\\
 & +\left. \sum_{kk^\prime}\frac{K_t^2 \left(1 - \hat n_{d\beta}\right) \left(1 - \hat n_{d\ol\beta}\right) \hat n_{q\beta}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega_1 - \hf\epsilon_q - 2\epsilon_d - U + \frac{1}{2}K_z}\right]
 \end{flalign*}
+}
 \subsection{Scaling Equations}
 To get the scaling equations, we perform similar steps as in the spin-Kondo URG. First of all, we substitute \(\hat n_{q\beta}\) with \(1\) and \(0\) in the particle and hole sectors respectively. Secondly, in the RG equations that involve  \(\hat n_{d\ol\beta}\) in the denominator, we replace the quantum fluctuations with \(E_j + \omega\), where \(E_j\) is the impurity part of the energy of the initial state and \(\omega\) is a redefined quantum fluctuation scale. Thirdly, by using the constraint \(\eta = \left( \eta^\dagger \right) ^\dagger\), we can relate the denominators of the RG equations of the \(V\)s and \(K\)s. The term with \(K_z^2\) in either sector mostly cancel each other, leaving a renormalization of \(\epsilon_d\) and \(U\) at \(K^2\) order.
 \begin{equation}\begin{aligned}
