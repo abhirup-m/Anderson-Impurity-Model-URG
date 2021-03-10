@@ -4521,8 +4521,8 @@ We can look at a special case of the RG equations: \(\epsilon_q = D, \epsilon_d 
 \end{aligned}\end{equation}
 For a given set of bare values of the couplings, there are two broad classes of RG flows. The first class is the one in which the Kondo coupling \(J\) flows to a large positive value. These flows are characterized by the condition \(\frac{D}{2} - \omega - \frac{J}{4} > 0\). The fixed point here is the strong-coupling one, in which the impurity spin gets screened from the mobile electrons. The othe class is in which \(J\) flows to zero. This occurs when  \(\frac{D}{2} - \omega - \frac{J}{4} < 0\), and the impurity is decoupled from the mobile electrons in this case. Both class of flows are depicted in figure ~\ref{flows}. The phase diagram is shown in figure ~\ref{phases-siam-kondo}.
 \begin{center}
-	\includegraphics[scale=0.52]{../rg_plots/af.png}
-	\includegraphics[scale=0.52]{../rg_plots/ferro.png}
+	\includegraphics[scale=0.52]{../siam-spin-num/af.png}
+	\includegraphics[scale=0.52]{../siam-spin-num/ferro.png}
 	\captionof{figure}{Left: Flow to the strong-coupling fixed point \(J^* > 0\). Right: Flow to the strong-coupling fixed point \(J^* = 0\)}
 	\label{flows}
 \end{center}
@@ -4534,14 +4534,14 @@ For a given set of bare values of the couplings, there are two broad classes of 
 Within the strong-coupling class of flows, their are two kinds of flows, depending on the behaviour of \(|\epsilon_d|\). If the bare value of \(|epsilon_d|\) is greater than a certain value (determined by the bare values of \(\omega, D, \text{ and }J\), it will flow to large values. In other words, such a fixed point will be characterized by large \(J\) and large \(|\epsilon_d|\). If we have \(\epsilon_d = -|\epsilon_d|\), such a flow leads to an enhancement of the onsite repulsion \(U\). Such flows are shown in fig.~\ref{flowup}.
 \pb If, on the other hand, the bare value of \(|\epsilon_d|\) is lower than a value, it will decay to zero under the RG, resulting in a non-interacting impurity. This is shown in fig.~\ref{flowdown}.
 \begin{center}
-	\includegraphics[scale=0.38]{../rg_plots/ed_to_large1.png}
-	\includegraphics[scale=0.38]{../rg_plots/ed_to_large2.png}
+	\includegraphics[scale=0.38]{../siam-spin-num/ed_to_large1.png}
+	\includegraphics[scale=0.38]{../siam-spin-num/ed_to_large2.png}
 	\captionof{figure}{Flows to large values of \(|\epsilon_d|\), starting from both positive (right) and negative (left) values of \(\epsilon_d\).}
 	\label{flowup}
 \end{center}
 \begin{center}
-	\includegraphics[scale=0.38]{../rg_plots/ed_to_zero1.png}
-	\includegraphics[scale=0.38]{../rg_plots/ed_to_zero2.png}
+	\includegraphics[scale=0.38]{../siam-spin-num/ed_to_zero1.png}
+	\includegraphics[scale=0.38]{../siam-spin-num/ed_to_zero2.png}
 	\captionof{figure}{Flows in which \(|\epsilon_d|\) decays to zero, starting from both positive (right) and negative (left) values of \(\epsilon_d\).}
 	\label{flowdown}
 \end{center}
@@ -4551,7 +4551,7 @@ The fixed-point value of the Kondo coupling, \(J^*\), is a function of the bare 
 \hspace*{20pt}
 \begin{minipage}{260pt}
 \begin{center}
-	\includegraphics[scale=0.6]{../rg_plots/J_vs_D_finite_w_both_log.png}
+	\includegraphics[scale=0.6]{../siam-spin-num/J_vs_D_finite_w_both_log.png}
 	\captionof{figure}{Variation of the fixed point value \(J^*\) against the bare bandwidth \(D\).}
 	\label{JvsD}
 \end{center}
@@ -4768,6 +4768,7 @@ An important distinction between the SIAM charge Kondo and the SIAM spin-Kondo m
 \end{equation}
 The charge isospin reversal here corresponds to the transformation \(c_d \to c^\dagger_d\) and \(c_k \to c^\dagger_k\), because then \(2C^z_d = \hat n_d - 1 \to 1 - \hat n_d = -2C^z_d\). But this transformation is just the impurity particle-hole transformation we encountered earlier. As a result, the total constraint for SU(2)-charge symmetry and impurity particle-hole symmetry is
 \begin{equation}\begin{aligned}
+	\label{symm-charge}
 	\epsilon_d = -\epsilon_d - U, && V_1 = V_0, &\& & 2K_z = K_t = \frac{K}{2} 
 \end{aligned}\end{equation}
 With these conditions, we get \(\xi_1 = \xi_2^\prime, \xi_1^\prime = \xi_2, \text{ and }\xi_3 = \xi_4 = \xi_5 = \xi_3^\prime = \xi_4^\prime = \xi_5^\prime\), and
@@ -4776,6 +4777,33 @@ With these conditions, we get \(\xi_1 = \xi_2^\prime, \xi_1^\prime = \xi_2, \tex
 	\Delta V_1 &= \Delta V_0 \\
 	\Delta K &= K^2 \frac{1}{\xi_5}
 \end{aligned}\end{equation}
+\subsection{Numerical analysis of symmetric charge-Kondo model}
+For the special case of eq.~\ref{symm-charge}, the RG equations simplify to
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= 2|V|^2\left(\frac{1}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} - \frac{1}{\omega - \frac{D}{2} - \epsilon_d}\right) - \frac{3K^2}{8}\sum_k\frac{1}{\omega - \frac{D}{2} + \frac{K}{8}}\\
+	\Delta V &= -\frac{3 K V}{8}\left(\frac{1}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} + \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}\right)\\
+	\Delta K &= -\frac{K^2}{4}\frac{1}{\omega - \frac{D}{2} + \frac{K}{8}}
+\end{aligned}\end{equation}
+The numerical solutions are identical to the ones obtained in the spin-Kondo, with \(K\) playing the role of \(J\) here.
+\begin{center}
+	\includegraphics[scale=0.5]{../siam-charge-num/K_grow.png}
+	\includegraphics[scale=0.5]{../siam-charge-num/K_decay.png}
+	\captionof{figure}{Flows of the charge-Kondo coupling \(K\) to the strong-coupling fixed point (left) as well as the weak-coupling critical fixed point (right).}
+\end{center}
+\begin{center}
+	\includegraphics[scale=0.46]{../siam-charge-num/ed_grow1.png}
+	\includegraphics[scale=0.46]{../siam-charge-num/ed_grow2.png}
+	\captionof{figure}{Flow of \(|\epsilon_d|\) to large values, starting from positive (right) and negative values (left). The impurity becomes highly interacting at this fixed point, owing to either a large \(U\) (large repulsion, favouring single occupation) or large \(\epsilon_d\) (large onsite energy, favouring non-single occupation).}
+\end{center}
+\begin{center}
+	\includegraphics[scale=0.46]{../siam-charge-num/ed_decay1.png}
+	\includegraphics[scale=0.46]{../siam-charge-num/ed_decay2.png}
+	\captionof{figure}{Flow of \(|\epsilon_d|\) to zero, starting from positive (right) and negative values (left). The impurity becomes non-interacting (free orbital) at this fixed point such that all four levels become degenerate in the atomic limit.}
+\end{center}
+\begin{center}
+	\includegraphics[scale=0.5]{../siam-charge-num/K_vs_D.png}
+	\captionof{figure}{Variation of the fixed-point value of \(K\) with the bare bandwidth, in log scale. Increasing system size (larger \(D\)) results in larger values of \(K^*\).}
+\end{center}
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
