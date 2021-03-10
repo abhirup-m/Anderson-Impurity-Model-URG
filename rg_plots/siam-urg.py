@@ -91,22 +91,24 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    for Dmax in [50]:
-        for w in [-0.1]:
-            N = 1000
-            V = 0.1
-            J = 0.8
-            ed = -6
-            plt.title(r'Bare values: $V={}, J={}, \epsilon_d={}, \omega={}, D = {}$'.format(V, J, ed, w, Dmax))
+    for Dmax in [10, 100, 1000, 10000, 100000, 1000000]:
+        for ed in [4]:
+            w = -Dmax/2
+            N = 10*Dmax
+            V = 1
+            J = Dmax/5
+            #ed = -5
+            plt.title(r'Bare values: $V={}, J=D/5, \epsilon_d={}, \omega=-D/2$'.format(V, ed ))
             old_den = den(w, Dmax, ed, J)[3]
             flag = False
             X = []
             Y = []
             Z = []
+            step = N
             for D in np.linspace(Dmax, 0, N):
-                X.append(D)
+                X.append(step)
                 Y.append(J)
-                Z.append(V)
+                Z.append(ed)
                 new_den = den(w, D, ed, J)[3]
                 if old_den * new_den <= 0: 
                     flag = True
@@ -115,19 +117,38 @@ def all_flow():
                     old_den = new_den
 
                 ed, V, J = rg(w, D, ed, V, J)
+                step -= 1
 
             if flag is True: 
-               #print ("End: Dmax={}, D*={}, J*={}".format(Dmax, D, J))
-               #plt.plot(X, Y, label=r'$J$')
-               #plt.scatter(X[0], Y[0], color="g", label="start")
-               #plt.scatter(X[-1], Y[-1], color="r", label="end")
-               print (V)
-               plt.plot(X, Z, label=r'$V$')
-               plt.plot(X, Y, label=r'$J$')
-               #plt.scatter(X[0], Z[0], color="g")
-               #plt.scatter(X[-1], Z[-1], color="r")
-               plt.legend()
-               plt.xlabel(r'$D$')
-               plt.ylabel(r'$V$')
-    plt.show()
+                x.append(np.log10(D))
+                y.append(np.log10(J))
+                #print ("End: Dmax={}, D*={}, J*={}".format(Dmax, D, J))
+                #plt.plot(X, Y, label=r'$J$')
+                #plt.scatter(X[0], Y[0], color="g", label="start")
+                #plt.scatter(X[-1], Y[-1], color="r", label="end")
+                #plt.plot(X, Z, label=r'$V$')
+                #ax.plot(X, Y, color="darkgreen")
+                #ax.set_ylabel(r'$J$', color='darkgreen')
+                #ax2.plot(X,Z, color='brown')
+                #ax2.set_ylabel(r'$\epsilon_d$',color='brown')
+                #ax.set_xlabel(r'$\leftarrow$ RG step')
+                #ax.scatter(X[0], Y[0], color="b", label="start")
+                #ax.scatter(X[-1], Y[-1], color="gold", label="end")
+                #ax.legend()
+                #plt.show()
+                #plt.savefig('ed_to_large2.png',bbox_inches='tight', transparent="True", pad_inches=0)
+
+fig,ax = plt.subplots()
+#ax2 = ax.twinx()
+x,y = [], []
 all_flow()
+ax.scatter(x,y, label="fixed points")
+ax.set_xlabel(r'$\log_{10}D$')
+ax.set_ylabel(r'$\log_{10}J$')
+linear_model=np.polyfit(x,y,1)
+linear_model_fn=np.poly1d(linear_model)
+print (x[0])
+x_s=np.arange(1,7,1)
+plt.plot(x_s,linear_model_fn(x_s),label="best fit", color="green")
+plt.legend()
+plt.show()
