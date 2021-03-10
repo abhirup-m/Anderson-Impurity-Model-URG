@@ -4454,8 +4454,8 @@ They renormalize the transverse Kondo coupling. Noting that \(\xi_5 = \xi_4^\pri
 Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt}, and summing over \(\beta\), we can write down the scaling equations for the Anderson-Kondo model.
 \pb \begin{minipage}{320pt}
 \begin{equation}\begin{aligned}
-	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} + \sum_k \left(\frac{1}{\xi_3}J_t^2  + \frac{1}{2\xi_3}J_z^2\right)\\
-	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} - 2\frac{|V_1|^2}{\xi_1} - 2\frac{|V_0|^2}{\xi_2^\prime} - \sum_k \left[\frac{2}{\xi_3}J_t^2 + \frac{1}{\xi_3}J_z^2\right]\\
+	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} + \sum_k \frac{1}{\xi_3}\left(J_t^2  + \frac{1}{2}J_z^2\right)\\
+	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} - 2\frac{|V_1|^2}{\xi_1} - 2\frac{|V_0|^2}{\xi_2^\prime} - \sum_k \frac{1}{\xi_3}\left(2J_t^2 + J_z^2\right)\\
 	\Delta V_0 &= -V_0\left(\frac{J_z}{2} + J_t \right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
 	\Delta V_1 &= -V_1\left(\frac{J_z}{2} + J_t \right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)\\
 	\Delta J_z &= -\frac{2}{\xi_3}J_t^2\\
@@ -4949,9 +4949,9 @@ The renormalization in this sector is
 \end{aligned}\end{equation}
 This is at energy \(-\epsilon_q\). Using the expressions of the \(T_i\), this becomes
 \begin{equation}\begin{aligned}
-	&\left(1 - \hat n_{d\beta}\right)\left[\frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2}\right] + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c_{k^\prime\beta}c^\dagger_{k\beta} \\
+	&\left(1 - \hat n_{d\beta}\right)\left[\hat n_{d\ol\beta}\frac{|V_1|^2}{\xi_1} + \left(1 - \hat n_{d\ol\beta}\right)\frac{|V_0|^2}{\xi_2}\right] + \left[\frac{{K_z^1}^2}{\xi_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c_{k^\prime\beta}c^\dagger_{k\beta} \\
 	&+ \frac{K_t^2}{\xi_5}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_3} \right)V_1 K_z^1 \hat n_{d\ol\beta}\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
-	&- \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_5} \right)V_1 K_t \left(1 - \hat n_{d\beta}\right)\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right)- \frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5} \right)K_z^1 K_t \left(c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right)
+	&- \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_5} \right)V_1 K_t \left(1 - \hat n_{d\beta}\right)\left(c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right)- \frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5} \right)K_z^1 K_t \left(c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right)
 \end{aligned}\end{equation}
 The indices \(k,k^\prime\) are summed over. \(\xi_i\) is defined exactly as before, \(\omega_i - E_i^0\). 
 \pb The intermediate energies, \(E_i^0\), are
@@ -4971,7 +4971,7 @@ at energy \(\epsilon_q\). That comes out to be
 \begin{equation}\begin{aligned}
 &\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) + \left[\frac{{K_z^1}^2}{\xi^\prime_3}\hat n_{d\beta}\hat n_{d\ol\beta} + \frac{{K_z^0}^2}{\xi^\prime_4}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)\right]c^\dagger_{k\beta}c_{k^\prime\beta}\\
 &+\frac{K_t^2}{\xi^\prime_5}\hat n_{d\beta}\hat n_{d\ol\beta}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta} - \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_4}\right)V_0 K_z^0\left(1 - \hat n_{d\ol\beta}\right)\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
-&- \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_5}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{d\ol\beta}c_{k\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\beta}c_{k^\prime\beta}c_{k\ol\beta} + \text{h.c.}\right) 
+&- \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_5}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{k\ol\beta}c_{d\ol\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k^\prime\beta}c_{k\ol\beta} + \text{h.c.}\right) 
 \end{aligned}\end{equation}
 where \(\xi^\prime = \omega^\prime = E_i^1\). The intermediate energies in this sector are
 \begin{equation}\begin{aligned}
@@ -5046,7 +5046,7 @@ Rewriting everything in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{K_z}{2
 For the hole sector, we get
 \begin{equation}\begin{aligned}
 	\omega^\prime_1 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
-	\omega^\prime_2 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{K_z}{2}\\
+	\omega^\prime_2 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
 	\omega^\prime_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U \\
 	\omega^\prime_4 &= -\frac{\epsilon_q}{2}\\
 	\omega^\prime_5 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
@@ -5054,47 +5054,45 @@ For the hole sector, we get
 and, in terms of \(\omega\),
 \begin{equation}\begin{aligned}
 	\omega^\prime_1 &= \omega + 2\epsilon_d + U\\
-	\omega^\prime_2 &= \omega + \epsilon_d\\
+	\omega^\prime_2 &= \omega + \epsilon_d + \frac{K_z}{2}\\
 	\omega^\prime_3 &= \omega + 2\epsilon_d + U + \frac{K_z}{2}\\
 	\omega^\prime_4 &= \omega + \frac{K_z}{2}\\
 	\omega^\prime_5 &= \omega + 2\epsilon_d + U - \frac{K_z}{2}\\
 \end{aligned}\end{equation}
 The denominators can thus be written as
-\begin{equation}\begin{aligned}
+\begin{flalign*}
 	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
 	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
 	\xi_3 &= \xi_4 = \xi_3^\prime = \xi_4^\prime = \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
 	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2}\\
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
-	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{K_z}{2}\\
 	\xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
-\end{aligned}\end{equation}
-
-
-
-
+\end{flalign*}
 \subsection{Scaling Equations}
-To get the scaling equations, we perform similar steps as in the spin-Kondo URG. First of all, we substitute \(\hat n_{q\beta}\) with \(1\) and \(0\) in the particle and hole sectors respectively. Secondly, in the RG equations that involve  \(\hat n_{d\ol\beta}\) in the denominator, we replace the quantum fluctuations with \(E_j + \omega\), where \(E_j\) is the impurity part of the energy of the initial state and \(\omega\) is a redefined quantum fluctuation scale. Thirdly, by using the constraint \(\eta = \left( \eta^\dagger \right) ^\dagger\), we can relate the denominators of the RG equations of the \(V\)s and \(K\)s. The term with \(K_z^2\) in either sector mostly cancel each other, leaving a renormalization of \(\epsilon_d\) and \(U\) at \(K^2\) order.
+\begin{minipage}{310pt}
 \begin{equation}\begin{aligned}
-	\sum_{kk^\prime q\beta}\frac{K_z^2 \rr{1 - \hat n_d}^2\left[c^\dagger_{k\beta}c_{k^\prime\beta} + c_{k^\prime\beta}c^\dagger_{k\beta}\right]}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}} = \sum_{kk^\prime q\beta}\frac{K_z^2 \rr{1 - \hat n_d}^2\delta_{kk^\prime}}{\omega_0 - \hf\epsilon_q - H_{imp} - \frac{1}{2}K_z\rr{\hat n_d - 1}}
+	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} - \sum_k\left(2\frac{K_z^2}{\xi_3} + \frac{K_t^2}{\xi_5}\right)\\
+	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} -\frac{|V_1|^2}{\xi_1} - \frac{|V_0|^2}{\xi_2^\prime} + 2\sum_k\left(2\frac{K_z^2}{\xi_3} + \frac{K_t^2}{\xi_5}\right) \\
+	\Delta V_1 &= -\frac{1}{4}\left[V_1 K_z \left(\frac{1}{\xi_1} + \frac{1}{\xi_3}\right) + V_0 K_t \left(\frac{1}{\xi_2^\prime} + \frac{1}{\xi_5^\prime}\right)\right]\\
+	\Delta V_0 &= -\frac{1}{4}\left[V_1 K_t \left(\frac{1}{\xi_1} + \frac{1}{\xi_5}\right) + V_0 K_z \left(\frac{1}{\xi_2^\prime} + \frac{1}{\xi_4^\prime}\right)\right]\\
+	\Delta K_z &= -K_t^2\frac{1}{\xi_5}\\
+	\Delta K_t &= -K_z K_t\left(\frac{1}{\xi_3} + \frac{1}{\xi_5} +\frac{1}{\xi_4^\prime} +\frac{1}{\xi_5^\prime}\right)
 \end{aligned}\end{equation}
-Since \(\left(1 - \hat n_d\right)^2 = \left(1 - \hat n_{d\ua}\right)\left(1 - \hat n_{d\da}\right) + \hat n_{d\ua}\hat n_{d\da}\), we can write down the renormalization in \(\Delta E_0\) and \(\Delta E_2\) and hence in \(\epsilon_d\) and \(U\).
-\begin{equation}\begin{aligned}
-\Delta E_0 = \sum_{k q\beta}\frac{K_z^2}{\omega_0 - \hf\epsilon_q + \frac{1}{2}K_z}\\
-\Delta E_2 = \sum_{kk^\prime q\beta}\frac{K_z^2}{\omega_0 - \hf\epsilon_q - 2\epsilon_d - U - \frac{1}{2}K_z}\\
-\end{aligned}\end{equation}
-Making the substitution \(\omega_0 = \omega \)
-The penultimate term in the hole sector, gets canceled by a piece from the final term in particle sector, and the remaining piece gives the renormalization in \(K_z\).
-\begin{flalign}
-	\Delta \epsilon_d &= \sum_q \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + \frac{1}{2}K_z} + \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U + \frac{1}{2}K_z} - \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - \frac{1}{2}K_z}\\
-			  &+ \frac{8K_z^2}{\omega - \frac{1}{2}\epsilon_q }\\
-	\Delta U &= \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U -\frac{1}{2}K_z} + \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - \frac{1}{2}K_z} - \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U + \frac{1}{2}K_z} \\
-		 &- \frac{|V|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d +  \frac{1}{2}K_z} - \frac{16 K_z^2}{\omega - \frac{1}{2}\epsilon_q }\\
-	\Delta V &= \frac{-V_q^* K_t + V_q K_z}{\omega - \frac{1}{2}\epsilon_q + \frac{1}{2}K_z}\\
-	\Delta K_z &= \frac{-K_t^2}{\omega - \hf \epsilon_q + \frac{1}{2}K_z}\\
-	\Delta K_t &= \frac{-2K_zK_t}{\omega - \hf \epsilon_q + \frac{1}{2}K_z}\\
-\end{flalign}
-
+\end{minipage}
+\vline
+\begin{minipage}{160pt}
+\begin{equation*}\begin{aligned}
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
+	\xi_3 &= \xi_4 = \xi_3^\prime = \xi_4^\prime\\
+	      &= \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2}\\
+	\xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
+\end{aligned}\end{equation*}
+\end{minipage}
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
