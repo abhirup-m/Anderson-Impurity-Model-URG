@@ -4956,9 +4956,11 @@ This is at energy \(-\epsilon_q\). Using the expressions of the \(T_i\), this be
 The indices \(k,k^\prime\) are summed over. \(\xi_i\) is defined exactly as before, \(\omega_i - E_i^0\). 
 \pb The intermediate energies, \(E_i^0\), are
 \begin{flalign*}
-	E^0_1 &= E^0_3 = E^0_5 = \frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	E^0_1 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
 	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d \\
-	E^0_4 &= \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+	E^0_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
+	E^0_4 &= \frac{\epsilon_q}{2}\\
+	E^0_5 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
 \end{flalign*}
 \subsection{Hole sector}
 The renormalization in the hole sector is given by
@@ -4974,8 +4976,10 @@ at energy \(\epsilon_q\). That comes out to be
 where \(\xi^\prime = \omega^\prime = E_i^1\). The intermediate energies in this sector are
 \begin{equation}\begin{aligned}
 	E^1_1 &= \frac{\epsilon_q}{2} + \epsilon_d\\
-	E^1_2 = E_4^1 = E_5^1 &= \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
-	E^1_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}
+	E^1_2 &= \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	E^1_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
+	E_4^1 &= \frac{\epsilon_q}{2}\\
+	E_5^1 &= \frac{\epsilon_q}{2} - K_z\\
 \end{aligned}\end{equation}
 
 \comm{
@@ -5022,41 +5026,47 @@ The renormalization is, therefore,
 \end{flalign*}
 }
 \subsection{Relating the \(\omega\)}
-Just as in the previous subsection, we relate the \(\omega_i\) using their diagonal values. First the particle sector \(\omega_i\):
-\begin{equation}\begin{aligned}
+Just as in the previous subsection, we relate the \(\omega_i\) using their diagonal values.
+\pb First the particle sector \(\omega_i\):
+\begin{flalign*}
 	\omega_1 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
-	\omega_2 &= \omega_4 = \omega_5 = -\frac{\epsilon_q}{2} - \frac{K_z}{2}\\
-	\omega_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
-\end{aligned}\end{equation}
+	\omega_2 &= -\frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	\omega_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U\\
+	\omega_4 &= -\frac{\epsilon_q}{2}\\
+	\omega_5 &= -\frac{\epsilon_q}{2} - K_z\\
+\end{flalign*}
 Rewriting everything in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{K_z}{2}\) gives
 \begin{equation}\begin{aligned}
 	\omega_1 &= \omega + \epsilon_d + \frac{K_z}{2}\\
-	\omega_2 &= \omega_4 = \omega_5 = \omega\\
-	\omega_3 &= \omega + 2\epsilon_d + U + K_z
+	\omega_2 &= \omega\\
+	\omega_3 &= \omega + 2\epsilon_d + U + \frac{K_z}{2}\\
+	\omega_4 &= \omega + \frac{K_z}{2}\\
+	\omega_5 &= \omega - \frac{K_z}{2}\\
 \end{aligned}\end{equation}
 For the hole sector, we get
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 &= \omega^\prime_3 = \omega^\prime_5 = -\frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	\omega^\prime_1 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
 	\omega^\prime_2 &= -\frac{\epsilon_q}{2} + \epsilon_d - \frac{K_z}{2}\\
-	\omega^\prime_4 &= -\frac{\epsilon_q}{2} + \frac{K_z}{2}\\
+	\omega^\prime_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U \\
+	\omega^\prime_4 &= -\frac{\epsilon_q}{2}\\
+	\omega^\prime_5 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
 \end{aligned}\end{equation}
 and, in terms of \(\omega\),
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 &= \omega^\prime_3 = \omega^\prime_5 = \omega + 2\epsilon_d + U\\
+	\omega^\prime_1 &= \omega + 2\epsilon_d + U\\
 	\omega^\prime_2 &= \omega + \epsilon_d\\
-	\omega^\prime_4 &= \omega
+	\omega^\prime_3 &= \omega + 2\epsilon_d + U + \frac{K_z}{2}\\
+	\omega^\prime_4 &= \omega + \frac{K_z}{2}\\
+	\omega^\prime_5 &= \omega + 2\epsilon_d + U - \frac{K_z}{2}\\
 \end{aligned}\end{equation}
 The denominators can thus be written as
 \begin{equation}\begin{aligned}
 	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
 	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d\\
-	\xi_3 &= \omega - \frac{\epsilon_q}{2} + \frac{3K_z}{2}\\
-	\xi_4 &= \omega - \frac{\epsilon_q}{2} - K_z\\
+	\xi_3 &= \xi_4 = \xi_3^\prime = \xi_4^\prime = \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
 	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2}\\
 	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
 	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{K_z}{2}\\
-	\xi_3^\prime &= \omega - \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
-	\xi_4^\prime &= \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
 	\xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
 \end{aligned}\end{equation}
 
