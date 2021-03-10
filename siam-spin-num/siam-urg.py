@@ -91,8 +91,8 @@ def check_fp(w, D, U, V, J, d, flags, deltas):
 
 def all_flow():
     '''master function to call other functions'''
-    for Dmax in [10, 100, 1000, 10000, 100000, 1000000]:
-        for ed in [4]:
+    for Dmax in [10]:
+        for ed in [1]:
             w = -Dmax/2
             N = 10*Dmax
             V = 1
@@ -147,7 +147,6 @@ ax.set_xlabel(r'$\log_{10}D$')
 ax.set_ylabel(r'$\log_{10}J$')
 linear_model=np.polyfit(x,y,1)
 linear_model_fn=np.poly1d(linear_model)
-print (x[0])
 x_s=np.arange(1,7,1)
 plt.plot(x_s,linear_model_fn(x_s),label="best fit", color="green")
 plt.legend()
