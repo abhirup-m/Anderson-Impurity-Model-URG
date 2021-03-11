@@ -47,12 +47,12 @@ def rg(w, D, ed, V, J):
 def all_flow():
     '''master function to call other functions'''
     for Dmax in [10]:
-        w = -0.1
+        w = 1
         N = 100
-        V = 0.1
+        V = 1
         J = 0.1
-        ed = 4
-        plt.title(r'Bare values: $V = {}, J = {}, \epsilon_d = {}, \omega = {}$'.format(V, J, ed, w))
+        ed = -1
+        plt.title(r'$D = {}, V = {}, J = {}, \epsilon_d = {}, \omega = {}$'.format(Dmax, V, J, ed, w))
         old_den = den(w, Dmax, ed, J)[3]
         X = []
         Y = []
@@ -71,18 +71,18 @@ def all_flow():
             ed, V, J = rg(w, D, ed, V, J)
             step -= 1
 
-        print ("End: D*={}, J*={}".format(Dmax, D, J))
-        ax.plot(X, Y, color="red")
-        ax.set_ylabel(r'$J$', color="red")
+        print ("End: J*={}".format(J))
+        ax.plot(X, Y, marker=".")
+        ax.set_ylabel(r'$J$')
         ax.scatter(X[0], Y[0], color="green", label="start")
-        ax.scatter(X[-1], Y[-1], color="blue", label="end")
-        ax2.plot(X, Z, color="orange")
-        ax2.scatter(X[0], Z[0], color="green")
-        ax2.scatter(X[-1], Z[-1], color="blue")
-        ax2.set_ylabel(r'$\epsilon_d$', color="orange")
+        ax.scatter(X[-1], Y[-1], color="red", label="end")
+        #ax2.plot(X, Z, color="orange")
+        #ax2.scatter(X[0], Z[0], color="green")
+        #ax2.scatter(X[-1], Z[-1], color="blue")
+        #ax2.set_ylabel(r'$\epsilon_d$', color="orange")
         ax.legend()
         plt.show()
 
 fig,ax = plt.subplots()
-ax2 = ax.twinx()
+#ax2 = ax.twinx()
 all_flow()
