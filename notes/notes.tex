@@ -7,6 +7,7 @@
 \graphicspath{{../figures/}}
 %\usepackage[allfiguresdraft]{draftfigure}
 \allowdisplaybreaks
+\newcommand{\sectionbreak}{\clearpage}
 \begin{document}
 \title{Unitary Renormalization Group Approach to Single-Impurity Anderson Model}
 \author{Abhirup Mukherjee\\[5pt]{Supervisor: Dr. Siddhartha Lal}}
@@ -3956,11 +3957,12 @@ The fixed points are obtained numerically by solving the RG equation. As mention
 \end{center}
 \end{figure}
 
-\section{Kondo Model URG}\label{kondourg}
+\section{Kondo Model URG}
+\label{kondourg}
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + J_z\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + J_t\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
 \eeq
-The goal is to disentangle an electron \(q\beta\) from the Hamiltonian, \(q\) being the momentum and \(\beta\) the spin. We take a pair of electrons \(q\beta,q\\ol\beta\) on the shell to preserve SU(2) symmetry of the Hamiltonian. The diagonal part of the Hamiltonian is
+The goal is to disentangle an electron \(q\beta\) from the Hamiltonian, \(q\) being the momentum and \(\beta\) the spin. We take a pair of electrons \(q\beta,q\ol\beta\) on the shell to preserve SU(2) symmetry of the Hamiltonian. The diagonal part of the Hamiltonian is
 \beq
 \ham_d = \epsilon_q \hat n_{q\beta} + J_z S_d^z \beta\rr{\hat n_{q\beta} - \hat n_{q\ol\beta}}
 \eeq
@@ -3981,6 +3983,7 @@ The particle sector involves integrating out those states which are occupied.
 \end{aligned}\end{equation}
 where
 \begin{equation}\begin{aligned}
+	\label{partomega}
 	\eta &= \frac{1}{\omega - \ham_d} \left[ J_z\sum_k \beta S_d^z c^\dagger_{k\beta}c_{q\beta} + J_t \sum_k c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta} \right]\\
 	     &=\sum_k \left[\frac{1}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) \hat n_{q\ol\beta}} J_z S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + \frac{1}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}}J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right] 
 \end{aligned}\end{equation}
@@ -4012,6 +4015,7 @@ For the hole sector, we will take the configuration where \(\hat n_{q\beta} = \h
 \end{aligned}\end{equation}
 where \(\eta_0\) is defined in eq.~\ref{eta0}.
 \begin{equation}\begin{aligned}
+	\label{holeomega}
 	\eta_0^\dagger = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q - \frac{1}{2}J_z \beta S_d^z}\frac{1}{2}J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta} + \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z}J_tc^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k^\prime\ol\beta}
 \end{aligned}\end{equation}
 Evaluating the terms similarly gives
@@ -4024,7 +4028,7 @@ Adding the two sectors, we get
 	\Delta \ham = -\frac{1}{2}J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) \left( \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } \right) \\
 	- J_t^2 S_d^z\sum_{kk^\prime} \left( \frac{\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } \right)
 \end{aligned}\end{equation}
-There we changed \(c c^\dagger\) into \(c^\dagger c\) and dropped the constant piece generated in the process. We also dropped the impurity-free \(\frac{1}{2}\) in \(\frac{1}{2}+S_d^z\). At this point, we choose \(\omega^\prime = \omega\). 
+There we changed \(c c^\dagger\) into \(c^\dagger c\) and dropped the constant piece generated in the process. We also dropped the impurity-free \(\frac{1}{2}\) in \(\frac{1}{2}+S_d^z\). At this point, we \textit{choose} \(\omega^\prime = \omega\) (see subsection \ref{reason for choice of omega}). 
 \begin{equation}\begin{aligned}
 	\Delta \ham = -J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } - 2J_t^2 S_d^z \sum_{kk^\prime}\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}
 \end{aligned}\end{equation}
@@ -4047,15 +4051,23 @@ To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\
 \begin{equation}\begin{aligned}
 	\Delta J \approx J^2 \frac{1}{\epsilon_q}
 \end{aligned}\end{equation}
-
+\subsection{Reason for the choice \(\omega = \omega^\prime\)}
+\label{reason for choice of omega}
+In general, it is difficult to relate the quantum fluctuation scales corresponding to different states. Here, the \(\omega\) in particle sector relates to a state \(\ket{\hat n_{q\beta} = \hat n_{q\ol\beta}=1}\) at energy \(-\epsilon_q\), and the \(\omega^\prime\) in hole sector relates to a state \(\ket{\hat n_{q\beta} = \hat n_{q\ol\beta}=0}\) at energy \(\epsilon_q\). Formally, there is no relation between them, so we have to use some physical argument to relate them, or we can just keep them as separate independent parameters in the problem and compute them numerically by searching for fixed points. Here we take the former route, in the following manner: It can be shown that URG can be transformed into Poor Man's scaling (PMS) by replacing \(\omega\) with the parameter \(E\) in Poor Man's scaling, which is essentially the energy of the initial state from which the scattering starts. If one looks at eq.~\ref{partomega}, it is clear that the scatterer \(\eta\) acts on states characterized by \(\hat n_{q\beta} = \hat n_{q\ol\beta} = 1\), and the energy of such a state is \(-\frac{1}{2}\epsilon_q\). There is no \(J\) part because \(s_q^z \sim \hat n_{q\beta} - \hat n_{q\ol\beta} = 0\). So, at the level of PMS, we can estimate \(\omega = -\frac{1}{2}\epsilon_q\). Similarly, from eq.~\ref{holeomega}, it is easily seen that \(\eta^\dagger\) acts on a state whose energy is also \(-\frac{1}{2}\epsilon_q\), such that we can again estimate \(\omega^\prime = -\frac{1}{2}\epsilon_q\). From these two estimates, we take the \textit{ansatz} \(\omega = \omega^\prime\).
 \subsection{Numerical Solutions}
-The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\).
+The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
 \begin{center}
 	\includegraphics[scale=0.55]{../kondo_num/rel.png}
 	\hspace*{\fill}
 	\includegraphics[scale=0.55]{../kondo_num/rel2.png}
 	\captionof{figure}{Flow of \(J\) towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left).  The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).}
 \end{center}
+\begin{center}
+	\includegraphics[scale=0.5]{../kondo_num/JvsD.png}
+	\captionof{figure}{Variation of the fixed point value \(J^*\) against the bare bandwidth, in log scale. The straight line is a fit.}
+	\label{JvsD-kondo}
+\end{center}
+
 \section{Anderson Model URG}\label{siamurg}
 \subsection{Setting up the various terms in the URG}
 The model is the usual single-impurity Anderson model Hamiltonian.
