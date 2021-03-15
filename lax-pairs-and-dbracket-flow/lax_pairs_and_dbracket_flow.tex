@@ -73,8 +73,48 @@ The double bracket flow
 	\frac{\:\mathrm{d}A}{\:\mathrm{d}t} = \left[  \left[ A, C \right], A  \right] 
 \end{aligned}\end{equation}
 is thus a flow towards the minima of the function \( \chi = \text{tr}\left( \left( A - C \right) ^2 \right)  \) .
-
-
-
+\section{URG as a double-bracket flow}
+The difference RG equation for URG can be written in the form
+\begin{equation}
+	\Delta \mathcal{H} (\omega,D) =  \frac{1}{\omega_1 - \omega_0}\left[G\left[ \mathcal{H}^d, \mathcal{H}^I\right],\mathcal{H}\right]\\
+\end{equation}
+This is not in the standard double-bracket form, primarily because it takes into account the off-diagonal terms in the Hamiltonian inside the generator of the unitary transformation. 
+It can be given a double-bracket form by taking some approximations, as was shown in eq.~\ref{cuturg}.
+\\\\
+Just like the standard double-bracket flow equation, the URG equation acts as an optimizer - it minimizes the function
+\begin{equation}
+	\chi_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
+\end{equation}
+The definition of this function first requires a scheme to be defined. We can order the energy of the electrons as \(\epsilon_1 < \epsilon_2 < ... < \epsilon_j < ... < \epsilon_N\). The URG consists of sequentially decoupling the states \(\epsilon_N\), then \(\epsilon_{N-1}\), and so on. At the \(j^\text{th}\) step, the Hamiltonian can be partitioned in the subspace of the electron being decoupled; the partitioning looks like
+\begin{equation}
+	\mathcal{H}^0_j + c_j^\dagger T_j + T_j^\dagger c_j
+\end{equation}
+\(\mathcal{H}^0_j\) is the part that \textit{does not} scatter between \(\ket{\hat n_j} = 0,1\), while \(\mathcal{H}^I_j = c_j^\dagger T_j + T_j^\dagger c_j\) is the part that \textit{does} scatter between states with a definite value of \(\hat n_j\).
+\\\\
+The first observation that we make is that \(\chi_j\) is semi-positive definite. This is because it can be expressed as the norm-squared of a state vector.
+\begin{equation}
+	\chi_j = \sum_{i=1}^N \bra{\psi_i}\left(\mathcal{H}^I_j\right)^2\ket{\psi_i} = \sum_{i=1}^N \langle\phi_i | \phi_i \rangle \geq 0, \left[\text{where }\ket{\phi_i} = \mathcal{H}^I_j\ket{\psi_i}\right]
+\end{equation}
+The difference equation for \(\chi_j\) is
+\begin{equation}\begin{aligned}
+	\Delta \chi_j = 2\text{Tr}\left[\mathcal{H}^I_j\Delta \mathcal{H}^I_j\right] = 2\text{Tr}\left[\mathcal{H}^I_j\left(\mathcal{H}^I_{j-1} - \mathcal{H}^I_j\right)\right]\\
+\end{aligned}\end{equation}
+The first part of the trace is zero. To see why, note that from the nature of URG, once \(j\) has been decoupled, it is diagonal in all the subsequent Hamiltonians. Hence, \(\mathcal{H}_{j-1}^I\) will be diagonal in \(j\), while \(\mathcal{H}_j^I\) is, by definition, off-diagonal in \(j\). The product \(\mathcal{H}_j^I\mathcal{H}_{j-1}^I\) will hence be off-diagonal and will change \(\hat n_j\). Hence, it will vanish when taken inside a trace. What remains is
+\begin{equation}\begin{aligned}
+	\Delta \chi_j = -2\text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right] = -2 \chi_j\leq 0\\
+\end{aligned}\end{equation}
+At the fixed point \(j^*\) of URG, the off-diagonal part of the Hamiltonian vanishes, so we can write \(\mathcal{H}_{j^*}^I = 0 \implies \Delta \chi^* = 0\).
+Combining the three points:
+\begin{equation}\begin{aligned}
+\chi_j \geq 0, && \Delta \chi_j \leq 0, && \Delta \chi_{j^*} = 0
+\end{aligned}\end{equation}
+we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point.
+\\\\
+This minimization has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:\(\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}\).
+\begin{center}
+	\includegraphics[scale=0.35]{decay1.png}
+	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
+	\label{minim}
+\end{center}
 \end{document}
 
