@@ -5491,11 +5491,11 @@ G T^\dagger c = G_0 T^\dagger c = T^\dagger c \fr{1}{\omega_1 - \ham^d_1}\approx
 \eeq
 This gives
 \beq[cuturg]
-\Delta \ham (\omega,D) =  \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}\qq{\qq{ \ham^d, \ham^I},\ham}
+\frac{\Delta \ham (\omega,D)}{\left[\ham^d_1\left(\omega_0 - \omega_1\right)\right]^{-1}} =  \qq{\qq{\ham^d,\ham^I},\ham}
 \eeq
 We can thus make the connection,
 \beq
-\Delta \lambda \sim \frac{1}{\ham^d_1}\frac{1}{\omega_0 - \omega_1}
+\Delta \lambda \sim \left[\ham^d_1\left(\omega_0 - \omega_1\right)\right]^{-1}
 \eeq
 Note that in going from eq.~\ref{dbrack} to the simplified form eq.~\ref{cuturg}, we had to drop all quantum fluctuations in the denominator and we lose the fixed point structure in the process. This results in the distinction that while URG can reach a fixed point theory in a finite number of steps, CUT cannot do so.
 \subsection{Comparison of the Canonical Transformations}
@@ -5506,7 +5506,8 @@ We have considered three canonical transformations in this section: the Poor Man
 \pb Another point to note is that since SWT keeps the entire off-diagonal piece in the generator, new terms will almost certainly by generated at every step, and they have to be truncated. This is not the case with URG or PMS, becasue in those methods, we decouple just a single-electron at each step, and so those electrons become integrals of motion at that step, leading to their removal from the off-diagonal piece, and very often the Hamiltonian retains the same form as the bare model. This makes the philosophy of URG and PMS easier to work with. Tied to this is the fact that CUT RG often takes a certain type of interaction in the generator part, and not the entire off-diagonal piece. Hence, at the limit of the flow parameter going to \(\infty\), the chosen off-diagonal piece goes to zero but the remaining off-diagonal pieces still remain. As a result, the Hamiltonian is atmost block diagonal at this stage. On the other hand, URG progressively decouples single electrons, meaning all scattering terms corresponding to that electron vanish at each step. 
 \pb One last thing to note is that URG, being unitarily implemented with a well-defined generator, does not accomodate for spontaneous symmetry breaking (SSB). In order to see SSB, the symmetry-breaking term has to be added to the bare model explicitly; if this term grows under the RG, then the ground state will be symmetry-broken. CUT RG, however, does allow for SSB through the idea that the generator is not uniquely defined. If the generator commutes with a particular symmetry, then the family of Hamiltonians will also have the symmetry \cite{kehrein}. However, if the generator is replaced by something that is normal ordered w.r.t a particular expectation value, then the CUT RG flow will usually be towards either the symmetry-preserved state or the symmetry-broken state, depending on whichever is stable \cite{wegner_normal}.
 \begin{center}
-	\includegraphics[scale=0.23]{../figures/unitaries.png}
+	\includegraphics[scale=0.22]{../figures/unitaries.png}
+	\captionof{figure}{Comparison of the various unitary transformations, depicting how each of them are related to one another.}
 \end{center}
 \bibliographystyle{unsrt}
 \bibliography{notes}
