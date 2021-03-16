@@ -4056,14 +4056,14 @@ In general, it is difficult to relate the quantum fluctuation scales correspondi
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
 \begin{center}
-	\includegraphics[scale=0.55]{../kondo_num/rel.png}
+	\includegraphics[scale=0.5]{../kondo_num/relJ.png}
 	\hspace*{\fill}
-	\includegraphics[scale=0.55]{../kondo_num/rel2.png}
+	\includegraphics[scale=0.5]{../kondo_num/rel2J.png}
 	\captionof{figure}{Flow of \(J\) towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left).  The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).}
 \end{center}
 \begin{center}
 	\includegraphics[scale=0.5]{../kondo_num/JvsD.png}
-	\captionof{figure}{Variation of the fixed point value \(J^*\) against the bare bandwidth, in log scale. The straight line is a fit.}
+	\captionof{figure}{Variation of the fixed point value \(J^*\) against the bare bandwidth, in log scale.}
 	\label{JvsD-kondo}
 \end{center}
 
@@ -4212,11 +4212,13 @@ We dropped some constant terms in the transformed Hamiltonian. For particle-hole
 \eeq
 The quantity \(\gamma = \epsilon_d + \hf U\) is thus an RG-invariant for the particle-hole symmetric model; it does not change under the RG flow. It is often referred to as the asymmetry parameter; it quantifies the asymmetry in the model. We need to check if our equations satisfy this. Looking at the RG equations for \(\epsilon_d\) and \(U\), we can find the RG equation for the asymmetry parameter. The slightly easier way is to just note that the renormalization in \(E_2\) should be equal to the renormalization in \(E_0\), in order for p-h symmetry to hold.
 \beq
-\Delta E_2 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D + \epsilon_d + U}\\
-\Delta E_0 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D - \epsilon_d}\\
+\Delta E_2 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D + \epsilon_d + U}, \Delta E_0 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D - \epsilon_d}
 \eeq
 If we start with a particle-hole symmetric model, we will have \(-\epsilon_d = \epsilon_d + U\). Substituting that gives \(\Delta E_2= \Delta E_0\). This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
-%\comm{
+\subsection{Numerical analysis of symmetric SIAM}
+\begin{center}
+	\includegraphics[scale=0.6]{../siam-symmetrical/irr.png}
+\end{center}
 \section{Anderson-Kondo (spin) model URG}
 In order to obtain a renormalization in \(V\), we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
 \subsection{Spin-spin interaction}
@@ -5412,7 +5414,7 @@ where \(\ham_X\) is the electron-phonon coupling term
 \beq
 \sum_{kq}g_{q}b^\dagger_{-q}c^\dagger_{k+q,\sigma}c_{k\sigma} + \text{h.c.}
 \eeq
-and \(\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_q \hbar\omega_q b^\dagger_q b_q\) is the kinetic energy of the electron and phonons. We assume time-reversal invariance such that \(\omega_q = \omega_{-q}\). We choose
+and-1 \(\ham_d = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_q \hbar\omega_q b^\dagger_q b_q\) is the kinetic energy of the electron and phonons. We assume time-reversal invariance such that \(\omega_q = \omega_{-q}\). We choose
 \beq
 \eta(l) = \qq{\ham_d,\ham} = \qq{\ham_d,\ham_X}
 \eeq
@@ -5439,11 +5441,11 @@ V_{k,-k,q}(\infty) = V_{k,-k,-q}(0) - \frac{g_q^2\omega_q}{\omega_q^2 + \rr{\eps
 \eeq
 Off-diagonal terms that connect larger energy differences \(\xi\) decay the fastest.
 \subsubsection{CUT RG from URG}
-We will now see that the renormalization in URG can also be put into a similar form. From eq.~\ref{renurg}, we can write the URG renormalization as
+We will now see that the renormalization in URG can also be put into a similar form. From eq.~\ref{renurg}, we can write the URG renormalization in the diagonal part as
 \beq
-\Delta \ham = \hf\qq{\eta^\dagger - \eta,\ham}
+\Delta \ham^0 = \hf\qq{\eta^\dagger - \eta,\ham}
 \eeq
-The URG generator can be recast (starting from the definitions of \(\eta\), eqs.~\ref{etadefine}) as
+where \(\ham^0 = \ham^d + \ham^i\). The URG generator can be recast (starting from the definitions of \(\eta\), eqs.~\ref{etadefine}) as
 \beq
 \eta^\dagger - \eta &= G_1 c^\dagger T - G_0 T^\dagger c\\
             &= \frac{1}{\omega_1 - \omega_0}\qq{G_1 \rr{\omega_1 - \omega_0}c^\dagger T - G_0 \rr{\omega_1 - \omega_0}T^\dagger c}\\
@@ -5471,28 +5473,24 @@ In the last step, we again used the constraint \(G_1 c^\dagger T = c^\dagger T G
 \eeq
 where \(\ham^d = \ham^d_1 \hat n + \ham^d_0 \rr{1 - \hat n}\) and \(G = G_1 \hat n + G_0 \rr{1 -\hat n} = \rr{\hat \omega - \ham^d}^{-1}\). For URG, the relevant off-diagonal part of the Hamiltonian for the current node is \(\ham^I = c^\dagger T + T^\dagger c\). Therefore,
 \beq
-\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}G\qq{ \ham^d, \ham^I}\\
+\eta^\dagger - \eta = \frac{1}{\omega_1 - \omega_0}G\qq{ \ham^d, \ham^I} = \qq{ \ham^d, \frac{1}{\omega_1 - \omega_0}G\ham^I}\\
 \eeq
-The renormalization in the Hamiltonian under URG, which is a function of both the quantum fluctuation scale \(\omega\) and the running bandwidth \(D\), can thus be written as
+The last equality comes about because both \(G\) and \(\ham^d\) are completely diagonal and hence commute. The renormalization in the Hamiltonian under URG, which is a function of both the quantum fluctuation scale \(\omega\) and the running bandwidth \(D\), can thus be written as
 \beq[dbrack]
-\Delta \ham (\omega,D) =  \frac{1}{\omega_1 - \omega_0}\qq{G\qq{ \ham^d, \ham^I},\ham}\\
+\Delta \ham^0 (\omega,D) =  \qq{\qq{\ham^d,\tilde\ham^I},\ham}\\
 \eeq
-This can be compared to the analogous equation for CUT (eq.~\ref{cut}),
+where \(\tilde \ham^I = \frac{1}{\omega_1 - \omega_0}G\ham^I\). This can be compared to the analogous equation for CUT (eq.~\ref{cut}),
 \beq
 \Delta{\ham}(\lambda) = \Delta{\lambda}\qq{\qq{\ham_d,\ham_X},\ham}
 \eeq
 Leaving aside the obvious differences in the philosophies (the presence of \(\omega\) in URG or the fact that while URG decouples as a flow in the bandwidth, CUT uses a general parameter \(\lambda\) or the algorithmic difference that while URG decouples one specific node, CUT tries to make the Hamiltonian band-diagonal), the major physical difference is the presence of the total Green's function in the URG equation. It must be noted that while CUT employs the entire off-diagonal part in \(\ham_X\), the \(\ham^I\) of URG contains only those parts that are off-diagonal with respect to the node being decoupled at this step.
 \pb To bring the URG form closer to CUT, we can make some approximations. 
-\beq
-G c^\dagger T = G_1 c^\dagger T = \fr{1}{\omega_1 - \ham^d_1}c^\dagger T \approx -\fr{1}{\ham^d_1}c^\dagger T
-\eeq
-where we dropped \(\omega_1\) for small quantum fluctuations. Similarly,
-\beq
-G T^\dagger c = G_0 T^\dagger c = T^\dagger c \fr{1}{\omega_1 - \ham^d_1}\approx -\fr{1}{\ham^d_1}T^\dagger c
-\eeq
-This gives
+\begin{equation}
+G = \left(\hat \omega - \ham^d\right)^{-1} \approx -\left(\ham^d\right)^{-1}
+\end{equation}
+where we assumed that the quantum fluctuations are small and can be ignored w.r.t the diagonal contribution \(\ham^d\). This gives
 \beq[cuturg]
-\frac{\Delta \ham (\omega,D)}{\left[\ham^d_1\left(\omega_0 - \omega_1\right)\right]^{-1}} =  \qq{\qq{\ham^d,\ham^I},\ham}
+\frac{\Delta \ham^0(\omega,D)}{\left[\ham^d_1\left(\omega_0 - \omega_1\right)\right]^{-1}} =  \qq{\qq{\ham^d,\ham^I},\ham}
 \eeq
 We can thus make the connection,
 \beq
@@ -5567,8 +5565,8 @@ In other words, \textbf{the lax pair evolution of \(A(t)\) against \(\left[A(t),
 	\item Change A as follows: A = A + C*A - A*c
 \end{itemize}
 \begin{center}
-	\includegraphics[scale=0.5]{../figures/Svsi.png}
-	\captionof{figure}{Variation of the function \( \frac{\:\mathrm{d}\chi}{\:\mathrm{d}t}\) for an arbitrary choice of \(A\) and \(C\). The convergence of \(A\) towards a diagonal form is clear.}
+	\includegraphics[scale=0.37]{../figures/Svsi.png}
+	\captionof{figure}{Variation of the function \( \frac{\:\mathrm{d}\chi}{\:\mathrm{d}t}\) for an arbitrary choice of \(A\) and \(C\). The flow of \(A\) towards a diagonal form is clear.}
 \end{center}
 The double bracket flow
 \begin{equation}\begin{aligned}
@@ -5578,16 +5576,13 @@ is thus a flow towards the minima of the function \( \chi = \text{tr}\left( \lef
 \subsection{URG as a double-bracket flow}
 The difference RG equation for URG can be written in the form
 \begin{equation}
-	\Delta \mathcal{H} (\omega,D) =  \frac{1}{\omega_1 - \omega_0}\left[G\left[ \mathcal{H}^d, \mathcal{H}^I\right],\mathcal{H}\right]\\
+	\Delta \mathcal{H} (\omega,D) =  \left[\left[ \mathcal{H}^d, \frac{1}{\omega_1 - \omega_0}G\mathcal{H}^I\right],\mathcal{H}\right] - \ham^I\\
 \end{equation}
-This is not in the standard double-bracket form, primarily because it takes into account the off-diagonal terms in the Hamiltonian inside the generator of the unitary transformation. 
-It can be given a double-bracket form by taking some approximations, as was shown in eq.~\ref{cuturg}.
-\\\\
-Just like the standard double-bracket flow equation, the URG equation acts as an optimizer - it minimizes the function
+The URG equation acts as an optimizer - it minimizes the function
 \begin{equation}
 	\chi_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
 \end{equation}
-The definition of this function first requires a scheme to be defined. We can order the energy of the electrons as \(\epsilon_1 < \epsilon_2 < ... < \epsilon_j < ... < \epsilon_N\). The URG consists of sequentially decoupling the states \(\epsilon_N\), then \(\epsilon_{N-1}\), and so on. At the \(j^\text{th}\) step, the Hamiltonian can be partitioned in the subspace of the electron being decoupled; the partitioning looks like
+The definition of this function first requires a scheme to be defined. We can order the energy of the electrons as \(\epsilon_1 < \epsilon_2 < ... < \epsilon_j < ... < \epsilon_N\). The URG scheme consists of sequentially decoupling the states \(\epsilon_N\), then \(\epsilon_{N-1}\), and so on. At the \(j^\text{th}\) step, the Hamiltonian can be partitioned in the subspace of the electron being decoupled; the partitioning looks like
 \begin{equation}
 	\mathcal{H}^0_j + c_j^\dagger T_j + T_j^\dagger c_j
 \end{equation}
@@ -5614,7 +5609,7 @@ we can say that URG starts from a non-minimal value of \(\chi\) and flows to its
 \\\\
 This minimization has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:\(\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}\).
 \begin{center}
-	\includegraphics[scale=0.35]{../figures/decay1.png}
+	\includegraphics[scale=0.6]{../figures/pot_scatt_dbrack.png}
 	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
 	\label{minim}
 \end{center}
