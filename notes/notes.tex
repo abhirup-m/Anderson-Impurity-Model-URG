@@ -4096,43 +4096,13 @@ The \(\eta\) is
 							     &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
 \end{aligned}\end{equation}
 We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\hat n_{d\beta} = 1\) because of the off-diagonal terms in the numerator.
-\comm{
-	\pb In order to evaluate the remaining operator in the denominator (\(d\ol\beta\)), we will need to split the off-diagonal term into two parts:
+The renormalization in the particle sector (\(\hat n_{q\beta} = \hat n_{q\ol\beta} = 1\)), at an energy \(-\epsilon_q\) is
 \begin{equation}\begin{aligned}
-V_q^* c^\dagger_{d\beta}c_{q\beta} = V_q^* c^\dagger_{d\beta}c_{q\beta}\left[ \hat n_{d\ol\beta} + 1 - \hat n_{d\ol\beta} \right] = V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
+\Delta \ham = c^\dagger_{q\beta} T \eta= \frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} 
 \end{aligned}\end{equation}
-This gives
-\begin{equation}\begin{aligned}
-	\eta &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - 2\left(\epsilon_d + U\right) \tau_{d\ol\beta}}\left[V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)\right]\\
-     &= \frac{1}{\omega_1 + \frac{1}{2}\epsilon_q - 2\epsilon_d - U }V_q^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta} + \frac{1}{\omega_0 + \frac{1}{2}\epsilon_q + U}V_q^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)
-\end{aligned}\end{equation}
-We have allowed for multiple \(\omega\) in the denominator because the two scattering terms act on different states.
-}
-The renormalization is
-\begin{equation}\begin{aligned}
-\Delta \ham = c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T &= \frac{|V_q|^2}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} \left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
-\end{aligned}\end{equation}
-\comm{
-	To relate \(\omega_1\) and \(\omega_0\), we can use a symmetry of the model. Looking at eq.~\ref{model:siam}, we can say that the Hamiltonian is invariant under the following transformation:
-\begin{equation}\begin{aligned}
-	\epsilon_k \to -\epsilon_k, && c_k \to c^\dagger_k, && c_d \to -c^\dagger_d, && \epsilon_d \to -\epsilon_d
-\end{aligned}\end{equation}
-We should then expect the renormalization to also be invariant under such a transformation. The renormalization transformations as follows under the above-mentioned operation:
+Similarly, the renormalization in the hole sector (\(\hat n_{q\beta} = \hat n_{q\ol\beta} = 0\)), at an energy \(\epsilon_q\) is:
 \begin{equation}
-	c^\dagger_{q\beta} T \eta - \eta c^\dagger_{q\beta}T \to \left[\frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{\omega_1 - \frac{1}{2}\epsilon_q + \epsilon_d - U } + \frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_0 - \frac{1}{2}\epsilon_q  + \epsilon_d + U}\right]\left[\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta} - \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta}\right] 
-\end{equation}
-Comparing with the original form, we get the following constraint:
-\begin{equation}
-	\omega_1 + \frac{1}{2}\epsilon_q  - \epsilon_d - U = -\omega_0 + \frac{1}{2}\epsilon_q - \epsilon_d - U \implies \omega_0 = -\omega_1
-\end{equation}
-Using this, the renormalization at an energy \(\epsilon_q\) becomes
-\begin{equation}
-\Delta \ham = \left[\frac{|V_q|^2 \hat n_{d\ol\beta}}{\omega_1 + \frac{1}{2}\epsilon_q - \epsilon_d - U } + \frac{|V_q|^2 \left(1 - \hat n_{d\ol\beta}\right)}{-\omega_1 + \frac{1}{2}\epsilon_q  - \epsilon_d + U}\right]\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right] 
-\end{equation}
-}
-Similarly, the renormalization at an energy \(-\epsilon_q\) is obtained simply by replacing \(\epsilon_q \to -\epsilon_q\):
-\begin{equation}
-\Delta \ham = \frac{|V_q|^2}{\omega^\prime - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}\left[ \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} - \left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}\right]
+	\Delta \ham = T^\dagger c \eta^\dagger = \frac{|V_q|^2}{\omega^\prime - \frac{1}{2}\epsilon_q - \epsilon_d\hat n_{d\ol\beta}}\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}
 \end{equation}
 Therefore, the total renormalization obtained from decoupling a particle state (\(\hat n_{q\beta}=1\)) at \(-\epsilon_q\) and a hole state (\(\hat n_{q\beta}=0\)) at \(\epsilon_q\) is
 \begin{equation}\begin{aligned}
