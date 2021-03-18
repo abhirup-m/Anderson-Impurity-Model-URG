@@ -4285,9 +4285,8 @@ We need to compute a quantity of the form
 The diagonal parts \(E_i^0\) are
 \begin{equation}\begin{aligned}
 	E^0_1 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
-	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
-	E^0_3 = E^0_4 &= \frac{\epsilon_q}{2} + \epsilon_d\\
-	E^0_5 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
+	E^0_2 = E^0_5 = E^0_4 &= \frac{\epsilon_q}{2} + \epsilon_d - \frac{J_z}{2}\\
+	E^0_3 &= \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2}\\
 \end{aligned}\end{equation}
 Note that in writing these diagonal parts, we have considered the effect of \(c^\dagger_k\) on the \(J_z\) part. For example, if there is a \(\hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)c^\dagger_{k\beta}\) in front of the propagator, that means the intermediate state has \(\hat n_{d\beta} - \hat n_{d\ol\beta} = 1 = \hat n_{k\beta}\) and that will contribute a term \(\frac{J_z}{2} \left(\hat n_{d\beta} - \hat n_{d\ol\beta}\right)\hat n_{k\beta} = \frac{J_z}{2}\) to \(E^0\). Also, while calculating \(E_5\), we have ignored the presence of \(\hat n_{q\ol\beta}\), because it violates the spin reversal symmetry for this term.
 \pb Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
@@ -4327,38 +4326,42 @@ where \(\xi^\prime_i\) is defined similar to the particle sector: \(\xi^\prime_i
 \subsection{Relating the \(\omega_i\) and \(\omega_i^\prime\)}
 To relate the \(\omega_i\) and their primed counterparts, we will look at their bare non-interacting values:
 \begin{equation}\begin{aligned}
-	\omega_1 &= \omega_3 = \omega_4 = -\frac{1}{2}\epsilon_q + \epsilon_d \\
+	\omega_1 &= -\frac{1}{2}\epsilon_q + \epsilon_d \\
 	\omega_2 &= -\frac{1}{2}\epsilon_q\\
-	\omega_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
+	\omega_3 &= -\frac{1}{2}\epsilon_q + \epsilon_d + \frac{J_z}{2}\\
+	\omega_5 = \omega_4 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-We will \textit{assume} that the relations between these values of \(\omega_i\) will hold for the URG \(\omega_i\) along the flow as well. We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\).
+We will \textit{assume} that the relations between these values of \(\omega_i\) will hold for the URG \(\omega_i\) along the flow as well. We want to write all the \(\omega_i\) in terms of a single \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\). %-\frac{\epsilon_q}{2} - \frac{1}{2}J_z\).
 \begin{equation}\begin{aligned}
-	\omega_1 &= \omega_3 = \omega_4 = \omega + \epsilon_d + \frac{J_z}{2}\\
+	\omega_1 &= \omega + \frac{J_z}{2} + \epsilon_d \\
 	\omega_2 &= \omega + \frac{J_z}{2}\\
-	\omega_5 &= \omega + \epsilon_d
+	\omega_3 &= \omega + J_z+ \epsilon_d \\
+	\omega_5 = \omega_4 &= \omega+ \epsilon_d 
 \end{aligned}\end{equation}
 The denominators can now be written in terms of the single \(\omega\):
 \begin{equation}\begin{aligned}
 	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\
 	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
-	\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\
+	\xi_3 = \xi_4 = \xi_5 &= \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\
 \end{aligned}\end{equation}
 Similarly, for the \(\omega_i^\prime\) of the hole sector, we have
 \begin{equation}\begin{aligned}
 	\omega^\prime_1 &= -\frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
-	\omega^\prime_2 = \omega^\prime_3 &= -\frac{1}{2}\epsilon_q + \epsilon_d + \frac{J_z}{2}\\
+	\omega^\prime_2 &= -\frac{1}{2}\epsilon_q + \epsilon_d\\
+	\omega^\prime_3 &= -\frac{1}{2}\epsilon_q + \epsilon_d + \frac{J_z}{2}\\
 	\omega^\prime_4 = \omega^\prime_5 &= -\frac{1}{2}\epsilon_q + \epsilon_d - \frac{J_z}{2}\\
 \end{aligned}\end{equation}
-Writing these in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{J_z}{2}\) gives
+Writing these in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{1}{2}J_z\) gives
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 &= \omega + 2\epsilon_d + U\\
-	\omega^\prime_2 &= \omega^\prime_3 = \omega + \epsilon_d + J_z\\
-	\omega^\prime_4 &= \omega^\prime_5 = \omega + \epsilon_d \\
+	\omega^\prime_1 &= \omega + U + \frac{J_z}{2}\\
+	\omega^\prime_2 &= \omega + \epsilon_d + \frac{J_z}{2}\\
+	\omega^\prime_3 &= \omega + \epsilon_d + J_z\\
+	\omega^\prime_4 &= \omega^\prime_5 = \omega + \epsilon_d 
 \end{aligned}\end{equation}
 The denominators are therefore
 \begin{equation}\begin{aligned}
 	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\
-	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + J_z\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2}\\
 	\xi_3^\prime = \xi_4^\prime = \xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2} = \xi_3 = \xi_4 = \xi_5\\
 \end{aligned}\end{equation}
 \subsection{Making sense of the various terms}
@@ -4448,13 +4451,13 @@ Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt
 \vline
 \begin{minipage}{150pt}
 \begin{equation*}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\[5pt]
-	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\[5pt]
-\xi_3 &= \xi_4 = \xi_5 = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\[5pt]
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\[5pt]
-\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + J_z\\[5pt]
-\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2} \\[5pt]
-		     &= \xi_3 = \xi_4 = \xi_5\\[5pt]
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\
+	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\
+	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2}\\
+	\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime \\
+		     &= \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}\\
+		     &= \xi_3 = \xi_4 = \xi_5\\
 \end{aligned}\end{equation*}
 \end{minipage}
 
@@ -4498,7 +4501,7 @@ This is the Kondo model one-loop form.
 \subsection{Numerical analysis of symmetric Anderson-Kondo model}
 We can look at a special case of the RG equations: \(\epsilon_q = D, \epsilon_d = -\frac{U}{2}, V_0 = V_1, J_z = J_t = \frac{J}{2}\).
 \begin{equation}\begin{aligned}
-	\Delta \epsilon_d &= \frac{|V|^2}{\omega - \frac{D}{2} + \epsilon_d + \frac{J}{4}} + \frac{|V|^2}{\omega - \frac{D}{2} + \epsilon_d + \frac{J}{2}} - \frac{2|V|^2}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{2}} + \frac{3J^2}{8}\sum_k \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}\\
+	\Delta \epsilon_d &= \frac{2|V|^2}{\omega - \frac{D}{2} + \epsilon_d + \frac{J}{4}} - \frac{2|V|^2}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{2}} + \frac{3J^2}{8}\sum_k \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}\\
 	\Delta V &= -\frac{3J}{4}V\left(\frac{1}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{2}} + \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}\right)\\
 	\Delta J &= -J^2\frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}\\
 \end{aligned}\end{equation}
