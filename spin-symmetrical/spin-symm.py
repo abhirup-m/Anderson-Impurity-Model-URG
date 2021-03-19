@@ -32,8 +32,7 @@ def rg(w, D, U, V, J):
 
 
     dens = den(w, D, U, J)
-
-    deltaU = 2 * V**2 * (1/dens[0] - 1/dens[1]) + (3 * J**2 / 8) * D / dens[2]
+    deltaU = -4 * V**2 * (1/dens[0] - 1/dens[1]) - (3 * J**2 / 4) * D / dens[2]
     deltaV = -(3/4) * J * V * (1/dens[1] + 1/dens[2])
     deltaJ = - 2 * J**2 / dens[2]
 
@@ -47,11 +46,11 @@ def rg(w, D, U, V, J):
 def all_flow():
     '''master function to call other functions'''
     #fig, ax = plt.subplots(2)
-    for w in [-5]:
-        for U0 in [2]:
-            Dmax = 1
+    for w in np.arange(-1,1,0.1):
+        for U0 in [0.1]:
+            Dmax = 10
             N = 100
-            V = 0.01
+            V = 0
             J = 0.1
             U = U0
             #plt.title(r'$D = {}, V = {}, J = {}, \epsilon_d = {}, \omega = {}$'.format(Dmax, V, J, ed, w))
@@ -59,18 +58,21 @@ def all_flow():
             X = []
             Y = []
             Z = []
+            W = []
             step = N
             for D in np.linspace(Dmax, 0, N):
                 X.append(step)
                 Y.append(J)
                 Z.append(U)
+                W.append(V)
                 new_den = den(w, D, U, J)[2]
                 #print (np.round(old_den,4), np.round(new_den,4))
-                if old_den * new_den <= 0 and U < U0:
-                    plt.plot(X, Z, label="J")
-                    plt.legend()
+                if old_den * new_den <= 0:
+                    print (step, U, J)
+                    plt.plot(X, Y)
                     plt.show()
-                    #print ("w = {}, U={}, U*={}".format(w, U0, U))
+                    plt.plot(X, Z)
+                    plt.show()
                     break
                 old_den = new_den
                 U, V, J = rg(w, D, U, V, J)

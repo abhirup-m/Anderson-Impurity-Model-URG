@@ -15,44 +15,44 @@ matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
 
 
-def den(w, D, ed, K):
+def den(w, D, U, K):
     ''' Defines and evaluates all the
     denominators in the problem.'''
 
-    d1 = w - 0.5 * D + ed + K/4
-    d2 = w - 0.5 * D - ed
+    d1 = w - 0.5 * D + U/2
+    d2 = w - 0.5 * D - U/2 + K/4
     d3 = w - 0.5 * D + K/8
 
     return d1, d2, d3
 
 
-def rg(w, D, ed, V, K):
+def rg(w, D, U, V, K):
     '''Evaluates the change in each coupling 
     at a particular RG step.'''
 
-    dens = den(w, D, ed, K)
+    dens = den(w, D, U, K)
 
-    deltaed = 2 * V**2 * (1/dens[0] - 1/dens[1]) - (3 * K**2 / 8) * D * (1 / dens[2])
+    deltaU = 4 * V**2 * (1/dens[0] - 1/dens[1]) + (3 * K**2 / 4) * D * (1 / dens[2])
     deltaV = (-3/8) * K * V * (1/dens[0] + 1/dens[2])
     deltaK = -K**4 * 1/dens[2]
 
-    ed = 0 if (ed + deltaed) * ed <= 0 else ed + deltaed
+    U = 0 if (U + deltaU) * U <= 0 else U + deltaU
     V = 0 if (V + deltaV) * V <= 0 else V + deltaV
     K = 0 if (K + deltaK) * K <= 0 else K + deltaK
 
-    return ed, V, K
+    return U, V, K
 
 
 def all_flow():
     '''master function to call other functions'''
-    for Dmax in [10,100,1000,10000,100000,1000000]:
-        for ed in [4]:
+    for Dmax in [10]:
+        for U in [1]:
             w = -Dmax/5
             N = 10*Dmax
             V = 1
             K = Dmax/2
-            plt.title(r'Bare values: $V={}, K = Dmax/2, \epsilon_d={}, \omega=-Dmax/5$'.format(V, ed))
-            old_den = den(w, Dmax, ed, K)[2]
+            plt.title(r'Bare values: $V={}, K = Dmax/2, U={}, \omega=-Dmax/5$'.format(V, U))
+            old_den = den(w, Dmax, U, K)[2]
             flag = False
             X = []
             Y = []
@@ -61,14 +61,13 @@ def all_flow():
             for D in np.linspace(Dmax, 0, N):
                 X.append(step)
                 Y.append(K)
-                Z.append(ed)
-                new_den = den(w, D, ed, K)[2]
+                Z.append(U)
+                new_den = den(w, D, U, K)[2]
                 if old_den * new_den <= 0: 
                     break
-                else:
-                    old_den = new_den
+                old_den = new_den
 
-                ed, V, K = rg(w, D, ed, V, K)
+                U, V, K = rg(w, D, U, V, K)
                 step -= 1
             x.append(np.log10(Dmax))
             y.append(np.log10(K))
