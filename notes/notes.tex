@@ -4256,14 +4256,14 @@ where \(\tau \equiv \hat n - \hf\) and \(\mc{C}\) is non-dynamic and will hence 
 The entire off-diagonal piece can be split into 6 parts:
 \begin{equation}\begin{aligned}
 	\ham_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\ol\beta}}_{T^\dagger_1 c_{q\beta}} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\ol\beta}\right)}^{T^\dagger_2 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3 c_{q\beta}} \\
-	       &+ \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
+	       &- \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{q\ol\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
 \end{aligned}\end{equation}
 The various parts of the off-diagonal piece are
 \begin{equation}\begin{aligned}
 	T_1 &= V_1 c_{d\beta}\hat n_{d\ol\beta}\\
 	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
 	T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c_{k\beta}\\
-	T_4 &= \sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
+	T_4 &= -\sum_{k<\Lambda_N}J^z_1 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
 	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\ol\beta}c_{d\beta}c_{k\ol\beta}
 \end{aligned}\end{equation}
 \subsection{Calculation of renormalization in particle sector}
@@ -4597,7 +4597,7 @@ The calculation of renormalization will proceed similar to the spin-Kondo Anders
 	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
 	T_3 &= K_z^1 \hat n_{d\beta}\hat n_{d\ol\beta}c_{k\beta}\\
 	T_4 &= -K_z^0 \left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\ol\beta}\right)c_{k\beta}\\
-	T_5 &= K_t c^\dagger_{k\ol\beta}c_{d\beta}c_{d\ol\beta}\\
+	T_5 &= K_t c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{d\beta}\\
 \end{aligned}\end{equation}
 \subsection{Particle sector}
 The renormalization in this sector is
@@ -4613,12 +4613,12 @@ This is at energy \(-\epsilon_q\). Using the expressions of the \(T_i\), this be
 The indices \(k,k^\prime\) are summed over. \(\xi_i\) is defined exactly as before, \(\omega_i - E_i^0\). 
 \pb The intermediate energies, \(E_i^0\), are
 \begin{equation}\begin{aligned}
-	E^0_1 = E_5^0 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	E^0_1 = E_3^0 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
 	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d \\
-	E^0_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
 	E^0_4 &= \frac{\epsilon_q}{2}\\
+	E_5^0 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
 \end{aligned}\end{equation}
-The contribution of \(k\ol\beta\) in the denominator for the last three terms has been considered.
+The contribution of \(k\ol\beta\) in the denominators of \(E^0_{3,4,5}\) has been considered.
 \subsection{Hole sector}
 The renormalization in the hole sector is given by
 \begin{equation}\begin{aligned}
@@ -4633,9 +4633,9 @@ at energy \(\epsilon_q\). That comes out to be
 where \(\xi^\prime = \omega^\prime = E_i^1\). The intermediate energies in this sector are
 \begin{equation}\begin{aligned}
 	E^1_1 &= \frac{\epsilon_q}{2} + \epsilon_d\\
-	E^1_2 = E_5^1 &= \frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	E^1_2 = E_4^1 &= \frac{\epsilon_q}{2}\\
 	E^1_3 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
-	E^1_4 &= \frac{\epsilon_q}{2}\\
+	E_5^1 &= \frac{\epsilon_q}{2} - K_z\\
 \end{aligned}\end{equation}
 
 \comm{
@@ -4686,41 +4686,40 @@ Just as in the previous subsection, we relate the \(\omega_i\) using their diago
 \pb First the particle sector \(\omega_i\):
 \begin{equation}\begin{aligned}
 	\omega_1 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
-	\omega_2 = \omega_5 &= -\frac{\epsilon_q}{2} - \frac{K_z}{2}\\
+	\omega_2 &= \omega_5 = -\frac{\epsilon_q}{2} - K_z\\
 	\omega_3 &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U\\
 	\omega_4 &= -\frac{\epsilon_q}{2}\\
 \end{aligned}\end{equation}
-Rewriting everything in terms of \(\omega = -\frac{\epsilon_q}{2} - \frac{K_z}{2}\) gives
+Rewriting everything in terms of \(\omega = -\frac{\epsilon_q}{2} - K_z\) gives
 \begin{equation}\begin{aligned}
-	\omega_1 &= \omega + \epsilon_d + \frac{K_z}{2}\\
-	\omega_2 = \omega_5 &= \omega\\
-	\omega_4 &= \omega + \frac{K_z}{2}\\
-	\omega_3 &= \omega + 2\epsilon_d + U + \frac{K_z}{2}\\
+	\omega_1 &= \omega + \epsilon_d + K_z\\
+	\omega_2 &= \omega_5 = \omega\\
+	\omega_3 &= \omega + 2\epsilon_d + U + K_z\\
+	\omega_4 &= \omega + K_z\\
 \end{aligned}\end{equation}
 For the hole sector, we get
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 = \omega_5^\prime &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{K_z}{2}\\
+	\omega^\prime_1 &= \omega_5^\prime = -\frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
 	\omega^\prime_2 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
 	\omega_3^\prime &= -\frac{\epsilon_q}{2} + 2\epsilon_d + U\\
 	\omega^\prime_4 &= -\frac{\epsilon_q}{2}\\
 \end{aligned}\end{equation}
 and, in terms of \(\omega\),
 \begin{equation}\begin{aligned}
-	\omega^\prime_1 = \omega_5^\prime &= \omega + 2\epsilon_d + U\\
-	\omega_3^\prime &= \omega + 2\epsilon_d + U + \frac{K_z}{2}\\
-	\omega^\prime_2 &= \omega + \epsilon_d + \frac{K_z}{2}\\
-	\omega^\prime_4 &= \omega + \frac{K_z}{2}\\
+	\omega^\prime_1 &= \omega_5^\prime = \omega + 2\epsilon_d + U\\
+	\omega^\prime_2 &= \omega + \epsilon_d + K_z\\
+	\omega_3^\prime &= \omega + 2\epsilon_d + U + K_z\\
+	\omega^\prime_4 &= \omega + K_z\\
 \end{aligned}\end{equation}
 The denominators can thus be written as
 \begin{equation}\begin{aligned}
 	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z,&& \xi_1^\prime = \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
 	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d, && \xi_2^\prime = \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
-	\xi_3 &= \xi_4 = \xi_3^\prime = \xi_4^\prime = \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
-	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2}, && \xi_5^\prime = \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
+	\xi_3 &= \xi_4 = \omega - \frac{\epsilon_q}{2} + K_z, && \xi_3^\prime = \xi_4^\prime = \omega - \frac{\epsilon_q}{2} + K_z\\
+	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + K_z, && \xi_5^\prime = \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + K_z\\
 \end{aligned}\end{equation}
 
 \subsection{Scaling Equations}
-\begin{minipage}{310pt}
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} - \sum_k\left(2\frac{K_z^2}{\xi_3} + \frac{K_t^2}{\xi_5}\right)\\
 	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} -\frac{2|V_1|^2}{\xi_1} - \frac{2|V_0|^2}{\xi_2^\prime} + 2\sum_k\left(2\frac{K_z^2}{\xi_3} + \frac{K_t^2}{\xi_5}\right) \\
@@ -4729,20 +4728,6 @@ The denominators can thus be written as
 	\Delta K_z &= -K_t^2\frac{1}{\xi_5}\\
 	\Delta K_t &= -K_z K_t\left(\frac{1}{\xi_3} + \frac{1}{\xi_5} +\frac{1}{\xi_4^\prime} +\frac{1}{\xi_5^\prime}\right)
 \end{aligned}\end{equation}
-\end{minipage}
-\vline
-\begin{minipage}{160pt}
-\begin{equation*}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U\\
-	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d \\
-	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
-	\xi_3 &= \xi_4 = \xi_3^\prime = \xi_4^\prime\\
-	      &= \omega - \frac{\epsilon_q}{2} + \frac{K_z}{2}\\
-	\xi_5 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{K_z}{2} \\
-	\xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{K_z}{2}\\
-\end{aligned}\end{equation*}
-\end{minipage}
 \subsection{Particle-hole symmetry and charge SU(2) invariance}
 An important distinction between the SIAM charge Kondo and the SIAM spin-Kondo models is that, unlike the charge Kondo model where we had independent spin-rotation invariance (obtained by setting \(J_z = J_t\)) and impurity particle-hole symmetry (obtained by setting \(\epsilon_d = -\epsilon_d - U\)), this model has a composite particle-hole symmetry and SU(2)-charge symmetry. To see this, consider the impurity part of the model:
 \begin{equation}
@@ -4762,9 +4747,9 @@ With these conditions, we get \(\xi_1 = \xi_2^\prime, \xi_1^\prime = \xi_2, \tex
 \subsection{Numerical analysis of symmetric Anderson-Kondo (charge) model}
 For the special case of eq.~\ref{symm-charge}, the RG equations simplify to
 \begin{equation}\begin{aligned}
-	\Delta U &= 4|V|^2\frac{1}{\omega - \frac{D}{2} + \frac{U}{2}} - 4|V|^2\frac{1}{\omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}} + \frac{3K^2}{4}\sum_k\frac{1}{\omega - \frac{D}{2} + \frac{K}{8}}\\
+	\Delta U &= 4|V|^2\frac{1}{\omega - \frac{D}{2} + \frac{U}{2}} - 4|V|^2\frac{1}{\omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}} + \frac{3K^2}{4}\sum_k\frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}\\
 	\Delta V &= 0 \\
-	\Delta K &= -\frac{K^2}{4}\frac{1}{\omega - \frac{D}{2} + \frac{K}{8}}
+	\Delta K &= -\frac{K^2}{4}\frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}
 \end{aligned}\end{equation}
 The numerical solutions are identical to the ones obtained in the spin-Kondo, with \(K\) playing the role of \(J\) here.
 \begin{center}
