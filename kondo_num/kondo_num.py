@@ -18,22 +18,20 @@ def rg1(D,J):
         return J+delta
 
 def rg2(w,D,J):
-    delta = -2 * J**2 /(w - D/2 + J/2)
+    delta = -J**2 /(w - D/2 + J/4)
     if J * (J + delta) <= 0:
         return 0
     else:
         return J+delta
 
-X = []
-Y = []
-flag = False
 #fig,ax = plt.subplots(1,2)
 nr = 0
 nc = 0
-for Dmax in [10]:
-    for J in [-0.1]:
+for w in np.arange(-10,10,0.1):
+    for J0 in np.arange(0.1,10,0.1):
+        J = J0
+        Dmax = 20
         x, y = [], []
-        w = 0.1
         N = 100
         den = w - Dmax/2 + J/2
         count = N
@@ -41,19 +39,21 @@ for Dmax in [10]:
         for D in np.linspace(Dmax,0.1,N):
             x.append(count)
             y.append(J)
-            if den * (w - D/2 + J/2) <= 0:
-                print (count)
-                plt.plot(x,y)
+            if den * (w - D/2 + J/4) <= 0 and J >= 0.1:
+                if np.round(2 * D / J, 3) == 0.413:
+                    print (w, J0, 2*D/J)
+                    plt.plot(x,y)
+                    plt.show()
                 break
             den = w - D/2 + J/2
             J = rg2(w, D, J)
             count -= 1
     
-plt.xlabel(r'RG step')
-plt.ylabel(r'$J$')
-plt.tight_layout()
+#plt.xlabel(r'RG step')
+#plt.ylabel(r'$J$')
+#plt.tight_layout()
 #plt.show()
-plt.savefig('/home/abhirup/IPhD-Project-II/kondo_num/rel2J.png')
+#plt.savefig('/home/abhirup/IPhD-Project-II/kondo_num/rel2J.png')
 
 #plt.scatter(np.log10(X), np.log10(Y), label="data")
 #plt.xlabel(r'$\log_{10}D$')
