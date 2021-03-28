@@ -46,25 +46,26 @@ def rg(w, D, U, V, J, K):
 
 def plot_all(X, Y, Y2, Z, W):
     '''plots U, J, K, V in separate plots'''
-    plt.plot(X, Y)
-    plt.ylabel("J")
-    plt.show()
-    plt.plot(X, Y2)
-    plt.ylabel("K")
-    plt.show()
-    plt.plot(X, Z)
-    plt.ylabel("U")
+    fig, ax = plt.subplots(nrows=3)
+    ax[0].plot(X, Y)
+    ax[0].set_ylabel("J")
+    ax[1].plot(X, Y2)
+    ax[1].set_ylabel("K")
+    ax[2].plot(X, Z)
+    ax[2].set_ylabel("U")
+    plt.tight_layout(pad=0,w_pad=0, h_pad=0)
     plt.show()
 
 
 def all_flow():
     '''master function to call other functions'''
-    for w in np.arange(-1,0,0.2):
-        for U0 in [5]:
+    for w in [4.7]:
+        for J, K in [[1,1]]:
+            U0 = 1
             Dmax = 10
-            N = 100
-            V = 1
-            J = 0.03
+            N = 1000
+            V = 0.01
+            J = 0.01
             K = 0.01
             U = U0
             #plt.title(r'$D = {}, V = {}, J = {}, \epsilon_d = {}, \omega = {}$'.format(Dmax, V, J, ed, w))
@@ -83,7 +84,7 @@ def all_flow():
                 W.append(V)
                 new_den = den(w, D, U, J, K)[2]
                 #print (np.round(old_den,4), np.round(new_den,4))
-                if old_den * new_den <= 0 and U == 0 and J > 0.03:
+                if old_den * new_den <= 0:
                     print (w, U, J)
                     plot_all(X, Y, Y2, Z, W)
                     break
