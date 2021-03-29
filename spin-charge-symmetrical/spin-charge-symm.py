@@ -9,7 +9,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 font = {'family' : 'Source Code Pro',
-        'size'   : 20}
+        'size'   : 30}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -19,11 +19,11 @@ def den(w, D, U, J, K):
     ''' Defines and evaluates all the
     denominators in the problem.'''
 
-    d1 = w - 0.5 * D - U/2 + K/2
-    d2 = w - 0.5 * D + U/2 + J/2
-    d3 = w - 0.5 * D + J/4 + K/4
+    d0 = w - 0.5 * D - U/2 + K/2
+    d1 = w - 0.5 * D + U/2 + J/2
+    d2 = w - 0.5 * D + J/4 + K/4
 
-    return d1, d2, d3
+    return d0, d1, d2
 
 
 def rg(w, D, U, V, J, K):
@@ -44,31 +44,34 @@ def rg(w, D, U, V, J, K):
 
     return U, V, J, K
 
-def plot_all(X, Y, Y2, Z, W):
+def plot_all(X, Y, xl="", yl=[], title=[], name=[]):
     '''plots U, J, K, V in separate plots'''
-    fig, ax = plt.subplots(nrows=3)
-    ax[0].plot(X, Y)
-    ax[0].set_ylabel("J")
-    ax[1].plot(X, Y2)
-    ax[1].set_ylabel("K")
-    ax[2].plot(X, Z)
-    ax[2].set_ylabel("U")
-    plt.tight_layout(pad=0,w_pad=0, h_pad=0)
-    plt.show()
+    #fig, ax = plt.subplots(nrows=3)
+    #plt.gca().set_aspect('equal')
+    for i in range(len(Y)):
+        plt.figure(figsize=(9,10))
+        plt.title(title[i])
+        plt.plot(X, Y[i], lw=3)
+        plt.ylabel(yl[i])
+        plt.xlabel(xl)
+        plt.subplots_adjust(top=0.908, bottom=0.098, left=0.115, right=0.993, hspace=0.2, wspace=0.2)
+        plt.tight_layout()
+        #plt.show()
+        #exit()
+        plt.savefig(name[i])
 
 
 def all_flow():
     '''master function to call other functions'''
     for w in [4.7]:
-        for J, K in [[1,1]]:
-            U0 = 1
-            Dmax = 10
-            N = 1000
-            V = 0.01
+        for U0 in [12]:
+            Dmax = 20
+            N = 100
+            V = 0.1
             J = 0.01
-            K = 0.01
+            K = 0.009
             U = U0
-            #plt.title(r'$D = {}, V = {}, J = {}, \epsilon_d = {}, \omega = {}$'.format(Dmax, V, J, ed, w))
+            title = r'$D_0 = {}, J_0 = {}, U_0 = {}, \omega = {}$'.format(Dmax, J, U0, w)
             old_den = den(w, Dmax, U, J, K)[2]
             X = []
             Y = []
@@ -78,20 +81,21 @@ def all_flow():
             step = N
             for D in np.linspace(Dmax, 0, N):
                 X.append(step)
-                Y.append(J)
-                Y2.append(K)
-                Z.append(U)
+                Y.append(J/0.01)
+                Y2.append(K/0.01)
+                Z.append(U/0.1)
                 W.append(V)
                 new_den = den(w, D, U, J, K)[2]
                 #print (np.round(old_den,4), np.round(new_den,4))
                 if old_den * new_den <= 0:
-                    print (w, U, J)
-                    plot_all(X, Y, Y2, Z, W)
+                    plot_all(X, [Y, Y2, Z], r'RG steps', [r'$\frac{J}{J_0}$', r'$\frac{K}{K_0}$', r'$\frac{U}{U_0}$'], [title]*3, ["J.png", "K.png", "U.png"])
                     break
                 old_den = new_den
                 U, V, J, K = rg(w, D, U, V, J, K)
                 step -= 1
 
+            #print (w, J, U)
+            #plot_all(X, [Y, Y2, Z], r'RG steps', [r'$\frac{J}{J_0}$', r'$\frac{K}{K_0}$', r'$\frac{U}{U_0}$'], [title]*3, ["J.png", "K.png", "U.png"])
             #ax.plot(X, Z, marker=".")
             #ax.set_ylabel(r'$J$')
             #ax.set_xlabel(r'$D$')
