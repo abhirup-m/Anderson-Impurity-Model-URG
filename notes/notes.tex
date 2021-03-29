@@ -5011,25 +5011,37 @@ With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_
 	\Delta J &= - \frac{J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
 	\Delta K &= - \frac{K^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
 \end{aligned}\end{equation}
-For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For small bare values of \(U\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For \(U\) above a critical value, there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\).
+For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For sufficiently small values of \(\frac{J}{K}\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For larger values of \(\frac{J}{K}\), there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\). Both these classes of flows of \(U\) are depicted in fig.~\ref{U_flow}.
 \begin{center}
-	\includegraphics[scale=0.35]{../figures/J.png}
-	\includegraphics[scale=0.35]{../figures/U.png}
+	\includegraphics[scale=0.25]{../figures/J.png}
+	\includegraphics[scale=0.25]{../figures/U.png}
 	\captionof{figure}{\(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\). Left: Decay of \(J\) towards zero under RG. Right: Flow of \(U\) under the same RG. Titles of plots show bare values.}
 	\label{Jdecay}
 \end{center}
 \begin{center}
-	\includegraphics[scale=0.35]{../figures/sc_J.png}
-	\includegraphics[scale=0.35]{../figures/sc_K.png}
+	\includegraphics[scale=0.26]{../figures/sc_J.png}
+	\includegraphics[scale=0.26]{../figures/sc_K.png}
 	\captionof{figure}{\(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K < 0\). Flow of \(J\) and \(K\) to large values, signalling a strong-coupling fixed point.}
 	\label{J_sc}
 \end{center}
 \begin{center}
-	\includegraphics[scale=0.35]{../figures/zero_U.png}
-	\includegraphics[scale=0.35]{../figures/large_U.png}
+	\includegraphics[scale=0.26]{../figures/zero_U.png}
+	\includegraphics[scale=0.32]{../figures/large_U.png}
 	\captionof{figure}{Left: Flow of \(U\) to zero, implying a four-fold degenerate impurity. Right: Flow of \(U\) to large value, making the impurity singly-occupied.}
-	%\label{J_sc}
+	\label{U_flow}
 \end{center}
+From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
+\begin{equation}\begin{aligned}
+	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
+\end{aligned}\end{equation}
+where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
+\begin{center}
+	\includegraphics[scale=0.35]{../figures/JvsK.png}
+	\captionof{figure}{RG flows in \(K\) vs \(J\) plane. Legend indicates relation of bare values.}
+	\label{JvsK}
+\end{center}
+
+
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as

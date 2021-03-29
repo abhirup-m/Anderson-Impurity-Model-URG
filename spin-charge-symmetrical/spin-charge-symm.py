@@ -49,16 +49,16 @@ def plot_all(X, Y, xl="", yl=[], title=[], name=[]):
     #fig, ax = plt.subplots(nrows=3)
     #plt.gca().set_aspect('equal')
     for i in range(len(Y)):
-        plt.figure(figsize=(9,10))
+        plt.figure(figsize=(10,11))
         plt.title(title[i])
-        plt.plot(X, Y[i], lw=3)
+        plt.plot(X, Y[i], lw=4)
         plt.ylabel(yl[i])
         plt.xlabel(xl)
-        plt.subplots_adjust(top=0.908, bottom=0.098, left=0.115, right=0.993, hspace=0.2, wspace=0.2)
+        plt.subplots_adjust(top=0.908, bottom=0.098, left=1.000, right=1.393, hspace=0.2, wspace=0.2)
         plt.tight_layout()
-        #plt.show()
-        #exit()
         plt.savefig(name[i])
+        #plt.show()
+    exit()
 
 
 def all_flow():
@@ -68,10 +68,12 @@ def all_flow():
             Dmax = 20
             N = 100
             V = 0.1
-            J = 0.01
-            K = 0.009
+            J0 = 0.01
+            K0 = 0.01
+            J = J0
+            K = K0
             U = U0
-            title = r'$D_0 = {}, J_0 = {}, U_0 = {}, \omega = {}$'.format(Dmax, J, U0, w)
+            title = r'$[D_0,J_0,K_0,U_0,\omega] = {},{},{},{},{}$'.format(Dmax, J0, K0, U0, w)
             old_den = den(w, Dmax, U, J, K)[2]
             X = []
             Y = []
@@ -81,14 +83,14 @@ def all_flow():
             step = N
             for D in np.linspace(Dmax, 0, N):
                 X.append(step)
-                Y.append(J/0.01)
-                Y2.append(K/0.01)
-                Z.append(U/0.1)
+                Y.append(J/J0)
+                Y2.append(K/K0)
+                Z.append(U/U0)
                 W.append(V)
                 new_den = den(w, D, U, J, K)[2]
                 #print (np.round(old_den,4), np.round(new_den,4))
                 if old_den * new_den <= 0:
-                    plot_all(X, [Y, Y2, Z], r'RG steps', [r'$\frac{J}{J_0}$', r'$\frac{K}{K_0}$', r'$\frac{U}{U_0}$'], [title]*3, ["J.png", "K.png", "U.png"])
+                    plot_all(X, [Z], r'RG steps', [r'$\frac{U}{U_0}$'], [title], ["large_U.png"])
                     break
                 old_den = new_den
                 U, V, J, K = rg(w, D, U, V, J, K)
