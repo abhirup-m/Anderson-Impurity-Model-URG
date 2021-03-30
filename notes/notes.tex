@@ -5032,6 +5032,7 @@ For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flo
 \end{center}
 From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 \begin{equation}\begin{aligned}
+	\label{rginv}
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
@@ -5040,7 +5041,7 @@ where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is t
 	\captionof{figure}{RG flows in \(K\) vs \(J\) plane. Legend indicates relation of bare values.}
 	\label{JvsK}
 \end{center}
-\subsection{Eigenstates at \(V=0\)}
+\subsection{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
 \begin{equation}\begin{aligned}
 	\Delta U &= 2\sum_k \frac{3}{8}\frac{K^2 - J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \\
@@ -5054,22 +5055,57 @@ The strong-coupling fixed points is reached for \(\omega - \frac{\epsilon_q}{2} 
 		< 0, & J< K
 	\end{cases}
 \end{aligned}\end{equation}
-This implies that for \(J>K\), the flow is towards an impurity which is singly-occupied, while \(J < K\) will mean the impurity will be four-fold degenerate with all four levels at the Fermi surface. The effective Hamiltonian is
+This implies that for \(J>K\), the flow is towards an impurity which is singly-occupied, while \(J < K\) will mean the impurity will be four-fold degenerate with all four levels at the Fermi surface. 
+\pb The effective Hamiltonian is
 \begin{equation}\begin{aligned}
-	\ham^* = \sum_k \epsilon_k \hat n_{k\sigma} - \frac{1}{2} U \left( \hat n_{d\uparrow} - \hat n_{d \downarrow} \right) ^2 + \sum_{kk^\prime < \Lambda^*}\left[J^* \vec{S_d}\cdot\vec{s_{kk^\prime}} + K^* \vec{C_d}\cdot\vec{C_{kk^\prime}}\right] + \sum_{q > \Lambda^*}\left[J_q S_d^z s^z_{q} + K_q C_d^z C^z_{q}\right]
+	\ham^* = \sum_{k\sigma} \epsilon_k \hat n_{k\sigma} - 2 U^* \left(S_d^z\right)^2 + \sum_{kk^\prime < \Lambda^*}\left[J^* \vec{S_d}\cdot\vec{s_{kk^\prime}} + K^* \vec{C_d}\cdot\vec{C_{kk^\prime}}\right] + \sum_{q > \Lambda^*}\left[J_q S_d^z s^z_{q} + K_q C_d^z C^z_{q}\right]
 \end{aligned}\end{equation}
-Since the interaction terms do not couple the \(\hat n_{d}=1\) and \(\hat n_{d}=0,2\) subspaces, we can diagonalize the Hamiltonian separately in these subspaces. In the singly-occupied subspace, the Hamiltonian is
+where \(S_d^z = \frac{1}{2}\left( \hat n_{d\uparrow} - \hat n_{d \downarrow} \right) \). Since the interaction terms do not couple the \(\hat n_{d}=1\) and \(\hat n_{d}=0,2\) subspaces, we can diagonalize the Hamiltonian separately in these subspaces. 
+\pb In the singly-occupied subspace, the Hamiltonian is
 \begin{equation}\begin{aligned}
-	\ham^*\vert_{n_d=1} = \sum_k \epsilon_k \hat n_{k\sigma} - \frac{1}{2} U + \sum_{kk^\prime < \Lambda^*}J^* \vec{S_d}\cdot\vec{s_{kk^\prime}}+ \sum_{q > \Lambda^*}J^{**} S_d^z s^z_{q}
+	\ham^*_{1} = \sum_k \epsilon_k \hat n_{k\sigma} - \frac{1}{2} U^* + \sum_{kk^\prime < \Lambda^*}J^* \vec{S_d}\cdot\vec{s_{kk^\prime}}+ \sum_{q > \Lambda^*}J^{**} S_d^z s^z_{q}
 \end{aligned}\end{equation}
 The ground state in this subspace is
 \begin{equation}\begin{aligned}
-	\ket{\Psi}^*\vert_{n_d=1}= \frac{1}{\mathcal{N}}\sum_{kk^\prime < \Lambda^*\atop{q>\Lambda^*}}\left[\ket{S_d^z= \frac{1}{2}}\ket{s^z_{kk^\prime}= - \frac{1}{2}}\ket{s^z_{q}= - \frac{1}{2}} - \ket{S_d^z=- \frac{1}{2}}\ket{s^z_{kk^\prime}=  \frac{1}{2}}\ket{s^z_{q}=  \frac{1}{2}}\right]
+	\ket{\Psi}^*_{1}= \frac{1}{\mathcal{N}}\sum_{kk^\prime < \Lambda^*\atop{q>\Lambda^*}}\left[\ket{S_d^z= \frac{1}{2}}\ket{s^z_{kk^\prime}= - \frac{1}{2}}\ket{s^z_{q}= - \frac{1}{2}} - \ket{S_d^z=- \frac{1}{2}}\ket{s^z_{kk^\prime}=  \frac{1}{2}}\ket{s^z_{q}=  \frac{1}{2}}\right]
 \end{aligned}\end{equation}
 with an eigenvalue (besides the energy of the bath)
 \begin{equation}\begin{aligned}
-	E = - \frac{U}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}
+	E_{1} = - \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}
 \end{aligned}\end{equation}
+In the complementary subspace, the Hamiltonian is
+\begin{equation}\begin{aligned}
+	\ham^*_{0,2} = \sum_k \epsilon_k \hat n_{k\sigma} + \sum_{kk^\prime < \Lambda^*}K^* \vec{C_d}\cdot\vec{C_{kk^\prime}}+ \sum_{q > \Lambda^*}K^{**} C_d^z C^z_{q}
+\end{aligned}\end{equation}
+The ground state in this subspace is
+\begin{equation}\begin{aligned}
+	\ket{\Psi}^*_{0,2}= \frac{1}{\mathcal{N^\prime}}\sum_{kk^\prime < \Lambda^*\atop{q>\Lambda^*}}\left[\ket{C_d^z= \frac{1}{2}}\ket{C^z_{kk^\prime}= - \frac{1}{2}}\ket{C^z_{q}= - \frac{1}{2}} - \ket{C_d^z=- \frac{1}{2}}\ket{C^z_{kk^\prime}=  \frac{1}{2}}\ket{C^z_{q}=  \frac{1}{2}}\right]
+\end{aligned}\end{equation}
+with an eigenvalue (besides the energy of the bath)
+\begin{equation}\begin{aligned}
+	E_{0,2} = - \frac{3}{4}K^* - \frac{1}{4}K^{**}
+\end{aligned}\end{equation}
+Depending on the bare values of \(J,K\) and \(U\), we can have the following fixed point situations:
+\begin{table}[htpb]
+\renewcommand\arraystretch{1.6}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\(U \) & \(J,K \) & \(U^*\) &\(J^*,K^*\) & class & ground state & ground state energy\\
+\hline
+\(>0\)& \(J > K\)& \(\gg 0\)&\(J^*>K^*\) & screened spin & \(\ket{\Psi}^*_1\)& \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
+\(>0\)& \(J < K\)& \(0\) &\(J^*<K^*\) & resonant level & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
+\(<0\)& \(J > K\)& \(0\) &\(J^*>K^*\) & resonant level & \(\ket{\Psi}^*_1\)& \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
+\(<0\)& \(J < K\)& \(\ll 0\)&\(J^*<K^*\) & screened charge & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
+\hline
+\end{tabular}
+\caption{Classification of fixed points for various bare values, at \(V=0\)}
+\label{classes}
+\end{table}
+\begin{center}
+	\includegraphics[scale=0.3]{../figures/phases.png}
+	\captionof{figure}{Fixed point phases in the plane of bare couplings, at \(V=0\).}
+\end{center}
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
