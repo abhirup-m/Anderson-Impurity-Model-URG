@@ -67,23 +67,24 @@ def all_flow():
     sign = 1
     J0 = 0.6
     ratio = []
-    for Dmax in [10,12, 14]:
-        ratio.append([])
+    for Dmax in range(5,11,1):
+        print (Dmax)
+        #color = ['r', 'g', 'b'][int((Dmax - 10)/2)]
+        #ratio.append([])
     #for J0,sign in itertools.product([0.6],[1]):
         name += 1
         K0 = 0.5
-        plt.clf()
-        for V0 in np.arange(0.00,1,0.05):
-            print (V0)
+        for V0 in [0.6]:
+        #for V0 in np.arange(0.00,1,0.05):
             count = [0,0,0]
             plt.title(r'sign$(U)={},J={}, K={}$'.format(sign, J0, K0))
-            for U0 in np.arange(sign*0.11, sign*10.1, sign*0.05):
-                for w in np.arange(-5,5,0.05):
+            for U0 in np.arange(0.1, 5.1, 0.5):
+                for w in [Dmax/100]:
                     #Dmax = 11
                     N = Dmax*10
                     V = V0
-                    J = J0
-                    K = K0
+                    J = Dmax/50
+                    K = Dmax/50
                     U = U0
                     title = r'$[D_0,J_0,K_0,U_0,\omega] = {},{},{},{},{}$'.format(Dmax, J0, K0, U0, w)
                     old_den = den(w, Dmax, U, J, K)[2]
@@ -105,6 +106,9 @@ def all_flow():
                             if U > U0:
                                 count[0] += 1
                             elif U < U0:
+                                if U != 0:
+                                    print (w, U0, U)
+                                ratio.append([U0, U, Dmax])
                                 count[1] += 1
                             else:
                                 count[2] += 1
@@ -117,18 +121,17 @@ def all_flow():
             #count = np.log10([c+1 for c in count])
             #plt.scatter(V0, count[0], marker='.', color='r')
             #plt.scatter(V0, count[1], marker='.', color='b')
-            ratio[-1].append(count[1]/count[0])
+            #ratio[-1].append(count[1]/count[0])
         #plt.scatter(V0, count[0], marker='.', color='r', label=r'$U>U_0$')
         #plt.scatter(V0, count[1], marker='.', color='b', label=r'$U<U_0$')
     #plt.legend()
         
-    for i in range(3):
-        plt.plot(np.arange(0.00,1,0.05), ratio[i], label=r'$D_0={}$'.format(10+i), color=['r','g','b'][i])
-    
-    plt.xlabel(r'$V_0$')
-    plt.ylabel(r'ratio of number of fixed points')
-    plt.legend()
-    plt.show()
+#    for i in range(3):
+#        plt.plot(np.arange(0.00,1,0.05), ratio[i], label=r'$D_0={}$'.format(10+i), color=['r','g','b'][i])
+#    
+#    plt.xlabel(r'$V_0$')
+#    plt.ylabel(r'ratio of number of fixed points')
+    #plt.legend()
         #plt.savefig(str(name)+".png")
 
         #print ("V={:.2f}".format(V0),"\t U>U0 {:3d}".format(count[0]),"\t U<U0 {:3d}".format(count[1]), "\t U=U0 {:3d}".format(count[2]))
