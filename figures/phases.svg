@@ -584,7 +584,9 @@
      transform="translate(-7.8316624,-50.493655)">
     <g
        id="g1067"
-       style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <path
          style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL)"
          d="m 264.85284,195.56717 c -125.66973,0 -125.66973,0 -125.66973,0"
@@ -597,7 +599,9 @@
     <g
        inkscape:label=""
        transform="matrix(1.7111111,0,0,1.7111111,-22.643834,-67.513862)"
-       id="g930">
+       id="g930"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g8137"
          transform="translate(0,-6.185065)">
@@ -617,7 +621,9 @@
     <g
        inkscape:label=""
        transform="matrix(1.7111111,0,0,1.7111111,106.35625,60.755609)"
-       id="g977">
+       id="g977"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g123"
          transform="translate(3.0925325)">
@@ -662,33 +668,45 @@
        width="111.89407"
        height="111.89406"
        x="139.18311"
-       y="83.673119" />
+       y="83.673119"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="opacity:0.500868;fill:#c6c800;fill-opacity:1;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1003-3-5"
        width="111.89407"
        height="111.89406"
        x="27.289036"
-       y="83.673111" />
+       y="83.673111"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="opacity:0.500868;fill:#480053;fill-opacity:1;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect1003-3-5-6"
        width="111.89407"
        height="111.89406"
        x="27.289032"
-       y="195.56717" />
+       y="195.56717"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1480)"
        d="m 139.18311,321.2369 c 0,-125.66973 0,-125.66973 0,-125.66973"
-       id="path10-6-7-9" />
+       id="path10-6-7-9"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1440)"
        d="m 139.18311,195.56717 c 0,-125.669728 0,-125.669728 0,-125.669728"
-       id="path10-6-7-5-1" />
+       id="path10-6-7-5-1"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        inkscape:label=""
        transform="translate(74.522975,59.752324)"
-       id="g1662">
+       id="g1662"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g6191"
          transform="matrix(1.5643739,0,0,1.5643739,-67.940258,-47.642918)">
@@ -1037,11 +1055,15 @@
        width="111.89407"
        height="111.89406"
        x="139.18311"
-       y="195.56717" />
+       y="195.56717"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        inkscape:label=""
        transform="matrix(1.7111111,0,0,1.7111111,5.6323079,111.66812)"
-       id="g2723">
+       id="g2723"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g3076"
          transform="translate(-10.51461)">

@@ -9,7 +9,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 font = {'family' : 'Source Code Pro',
-        'size'   : 30}
+        'size'   : 20}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -63,39 +63,75 @@ def plot_all(X, Y, xl="", yl=[], title=[], name=[]):
 
 def all_flow():
     '''master function to call other functions'''
-    for w in [4.7]:
-        for U0 in [12]:
-            Dmax = 20
-            N = 100
-            V = 0.1
-            J0 = 0.01
-            K0 = 0.01
-            J = J0
-            K = K0
-            U = U0
-            title = r'$[D_0,J_0,K_0,U_0,\omega] = {},{},{},{},{}$'.format(Dmax, J0, K0, U0, w)
-            old_den = den(w, Dmax, U, J, K)[2]
-            X = []
-            Y = []
-            Y2 = []
-            Z = []
-            W = []
-            step = N
-            for D in np.linspace(Dmax, 0, N):
-                X.append(step)
-                Y.append(J/J0)
-                Y2.append(K/K0)
-                Z.append(U/U0)
-                W.append(V)
-                new_den = den(w, D, U, J, K)[2]
-                #print (np.round(old_den,4), np.round(new_den,4))
-                if old_den * new_den <= 0:
-                    plot_all(X, [Z], r'RG steps', [r'$\frac{U}{U_0}$'], [title], ["large_U.png"])
-                    break
-                old_den = new_den
-                U, V, J, K = rg(w, D, U, V, J, K)
-                step -= 1
+    name=0
+    sign = 1
+    J0 = 0.6
+    ratio = []
+    for Dmax in [10,12, 14]:
+        ratio.append([])
+    #for J0,sign in itertools.product([0.6],[1]):
+        name += 1
+        K0 = 0.5
+        plt.clf()
+        for V0 in np.arange(0.00,1,0.05):
+            print (V0)
+            count = [0,0,0]
+            plt.title(r'sign$(U)={},J={}, K={}$'.format(sign, J0, K0))
+            for U0 in np.arange(sign*0.11, sign*10.1, sign*0.05):
+                for w in np.arange(-5,5,0.05):
+                    #Dmax = 11
+                    N = Dmax*10
+                    V = V0
+                    J = J0
+                    K = K0
+                    U = U0
+                    title = r'$[D_0,J_0,K_0,U_0,\omega] = {},{},{},{},{}$'.format(Dmax, J0, K0, U0, w)
+                    old_den = den(w, Dmax, U, J, K)[2]
+                    X = []
+                    Y = []
+                    Y2 = []
+                    Z = []
+                    W = []
+                    step = N
+                    for D in np.linspace(Dmax, 0, N):
+                        X.append(step)
+                        Y.append(J/J0)
+                        Y2.append(K/K0)
+                        Z.append(U/U0)
+                        W.append(V)
+                        new_den = den(w, D, U, J, K)[2]
+                        #print (np.round(old_den,4), np.round(new_den,4))       
+                        if old_den * new_den <= 0:
+                            if U > U0:
+                                count[0] += 1
+                            elif U < U0:
+                                count[1] += 1
+                            else:
+                                count[2] += 1
 
+                            #plot_all(X, [Z], r'RG steps', [r'$\frac{U}{U_0}$'], [title], ["large_U.png"])
+                            break
+                        old_den = new_den
+                        U, V, J, K = rg(w, D, U, V, J, K)
+                        step -= 1
+            #count = np.log10([c+1 for c in count])
+            #plt.scatter(V0, count[0], marker='.', color='r')
+            #plt.scatter(V0, count[1], marker='.', color='b')
+            ratio[-1].append(count[1]/count[0])
+        #plt.scatter(V0, count[0], marker='.', color='r', label=r'$U>U_0$')
+        #plt.scatter(V0, count[1], marker='.', color='b', label=r'$U<U_0$')
+    #plt.legend()
+        
+    for i in range(3):
+        plt.plot(np.arange(0.00,1,0.05), ratio[i], label=r'$D_0={}$'.format(10+i), color=['r','g','b'][i])
+    
+    plt.xlabel(r'$V_0$')
+    plt.ylabel(r'ratio of number of fixed points')
+    plt.legend()
+    plt.show()
+        #plt.savefig(str(name)+".png")
+
+        #print ("V={:.2f}".format(V0),"\t U>U0 {:3d}".format(count[0]),"\t U<U0 {:3d}".format(count[1]), "\t U=U0 {:3d}".format(count[2]))
             #print (w, J, U)
             #plot_all(X, [Y, Y2, Z], r'RG steps', [r'$\frac{J}{J_0}$', r'$\frac{K}{K_0}$', r'$\frac{U}{U_0}$'], [title]*3, ["J.png", "K.png", "U.png"])
             #ax.plot(X, Z, marker=".")
