@@ -3,13 +3,18 @@
 
 import itertools
 from math import sqrt
+import multiprocessing as mp
+from multiprocessing import Pool
+#mp.set_start_method('spawn')
 
 import matplotlib
-import numpy as np
+#matplotlib.use('agg')
 from matplotlib import pyplot as plt
 
+import numpy as np
+
 font = {'family' : 'Source Code Pro',
-        'size'   : 20}
+        'size'   : 10}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -60,97 +65,74 @@ def plot_all(X, Y, xl="", yl=[], title=[], name=[]):
         #plt.show()
     exit()
 
+def get_fp(args):
+    (w, Dmax, U0, V0, J0, K0) = args
+    N = int(Dmax*10)
+    V = V0
+    J = J0
+    K = K0
+    U = U0
+    count = np.zeros(3)
+    old_den = den(w, Dmax, U, J, K)[2]
+    for D in np.linspace(Dmax, 0, N):
+        new_den = den(w, D, U, J, K)[2]
+        if old_den * new_den <= 0:
+            if U > U0:
+                count[0] += 1
+            elif U < U0:
+                if U != 0:
+                    count[1] += 1
+                else:
+                    count[2] += 1
+            break
+        old_den = new_den
+        U, V, J, K = rg(w, D, U, V, J, K)
+    return [V0, count]
+
 
 def all_flow():
     '''master function to call other functions'''
-    name=0
     sign = 1
-    J0 = 0.6
-    ratio = []
-    for Dmax in range(5,11,1):
-        print (Dmax)
-        #color = ['r', 'g', 'b'][int((Dmax - 10)/2)]
-        #ratio.append([])
-    #for J0,sign in itertools.product([0.6],[1]):
-        name += 1
-        K0 = 0.5
-        for V0 in [0.6]:
-        #for V0 in np.arange(0.00,1,0.05):
-            count = [0,0,0]
-            plt.title(r'sign$(U)={},J={}, K={}$'.format(sign, J0, K0))
-            for U0 in np.arange(0.1, 5.1, 0.5):
-                for w in [Dmax/100]:
-                    #Dmax = 11
-                    N = Dmax*10
-                    V = V0
-                    J = Dmax/50
-                    K = Dmax/50
-                    U = U0
-                    title = r'$[D_0,J_0,K_0,U_0,\omega] = {},{},{},{},{}$'.format(Dmax, J0, K0, U0, w)
-                    old_den = den(w, Dmax, U, J, K)[2]
-                    X = []
-                    Y = []
-                    Y2 = []
-                    Z = []
-                    W = []
-                    step = N
-                    for D in np.linspace(Dmax, 0, N):
-                        X.append(step)
-                        Y.append(J/J0)
-                        Y2.append(K/K0)
-                        Z.append(U/U0)
-                        W.append(V)
-                        new_den = den(w, D, U, J, K)[2]
-                        #print (np.round(old_den,4), np.round(new_den,4))       
-                        if old_den * new_den <= 0:
-                            if U > U0:
-                                count[0] += 1
-                            elif U < U0:
-                                if U != 0:
-                                    print (w, U0, U)
-                                ratio.append([U0, U, Dmax])
-                                count[1] += 1
-                            else:
-                                count[2] += 1
+    J0 = 0.3
+    K0 = 0
+    V0 = 0.5
+    V0_range = np.arange(0.01,0.5,0.01)
+    Dmax = 10
 
-                            #plot_all(X, [Z], r'RG steps', [r'$\frac{U}{U_0}$'], [title], ["large_U.png"])
-                            break
-                        old_den = new_den
-                        U, V, J, K = rg(w, D, U, V, J, K)
-                        step -= 1
-            #count = np.log10([c+1 for c in count])
-            #plt.scatter(V0, count[0], marker='.', color='r')
-            #plt.scatter(V0, count[1], marker='.', color='b')
-            #ratio[-1].append(count[1]/count[0])
-        #plt.scatter(V0, count[0], marker='.', color='r', label=r'$U>U_0$')
-        #plt.scatter(V0, count[1], marker='.', color='b', label=r'$U<U_0$')
-    #plt.legend()
-        
-#    for i in range(3):
-#        plt.plot(np.arange(0.00,1,0.05), ratio[i], label=r'$D_0={}$'.format(10+i), color=['r','g','b'][i])
-#    
-#    plt.xlabel(r'$V_0$')
-#    plt.ylabel(r'ratio of number of fixed points')
-    #plt.legend()
-        #plt.savefig(str(name)+".png")
+    data = itertools.product(np.arange(-Dmax/1, Dmax/1, 0.05), [Dmax], np.arange(0.05, 10.05, 0.05), V0_range, [J0], [K0])
 
-        #print ("V={:.2f}".format(V0),"\t U>U0 {:3d}".format(count[0]),"\t U<U0 {:3d}".format(count[1]), "\t U=U0 {:3d}".format(count[2]))
-            #print (w, J, U)
-            #plot_all(X, [Y, Y2, Z], r'RG steps', [r'$\frac{J}{J_0}$', r'$\frac{K}{K_0}$', r'$\frac{U}{U_0}$'], [title]*3, ["J.png", "K.png", "U.png"])
-            #ax.plot(X, Z, marker=".")
-            #ax.set_ylabel(r'$J$')
-            #ax.set_xlabel(r'$D$')
-            #ax.scatter(X[0], Z[0], color="green", label="start")
-            #ax.scatter(X[-1], Z[-1], color="red", label="end")
-            ##ax2.plot(X, Z, color="orange")
-            ##ax2.scatter(X[0], Z[0], color="green")
-            ##ax2.scatter(X[-1], Z[-1], color="blue")
-            ##ax2.set_ylabel(r'$\epsilon_d$', color="orange")
-            #ax.legend()
-            #plt.show()
+    with Pool(processes=40) as pool:
+        outp = pool.map(get_fp, data)
+    
+    plot_data = [np.zeros(3) for V0 in V0_range]
+    for o in outp:
+        plot_data[np.where(V0_range == o[0])[0][0]] += o[1]
 
-#fig,ax = plt.subplots()
-#ax2 = ax.twinx()
+    print ("1")
+    for i in range(len(V0_range)):
+        plt.scatter(V0_range[i], plot_data[i][0], marker='.')
+        plt.scatter(V0_range[i], plot_data[i][2], marker='.')
+
+    print ("2")
+    plt.show()
+    
+
+        #plt.scatter(V0,tot_count[0],color='r',marker='.')
+        #plt.scatter(V0,tot_count[1],color='g',marker='.')
+        #plt.scatter(V0,tot_count[2],color='b',marker='.')
+        #y.append(tot_count[0]/tot_count[2])
+
+#    plt.plot(0,0,color='r',label=r'$U>U0$')
+#    plt.plot(0,0,color='g',label=r'$U<U0$')
+#    plt.plot(0,0,color='b',label=r'$U=0$')
+#    plt.legend()
+#    plt.title(r'$V_0 = {:.2f}, J_0 = {:.2f}, K_0 = {:.2f}, sign(U)={}$'.format(V0, J0, K0, sign))
+#    name = "sign_U={}:J={}:K={}V={}:Dvscount_log.png".format(sign, J0, K0, V0)
+#    plt.plot(range(1,6), y, marker='.')
+#    plt.ylabel(r'fraction of relevant fixed points')
+#    plt.xlabel(r'$\log_{10}D$')
+#    plt.savefig(name, dpi=400)
+    #plt.show()
+
+
 all_flow()
-#plt.tight_layout()
-#plt.savefig("af.png")
