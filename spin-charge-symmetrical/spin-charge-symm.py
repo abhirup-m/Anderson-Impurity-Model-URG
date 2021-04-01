@@ -8,7 +8,7 @@ from multiprocessing import Pool
 #mp.set_start_method('spawn')
 
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 import numpy as np
@@ -156,5 +156,43 @@ def all_flow():
 #    plt.savefig(name, dpi=400)
     #plt.show()
 
+def flow():
+    irr, rel = 0, 0
+    V0, J0, K0 = 0.1, 0.3, 0.1
+    for Dmax in [10, 11]:
+        N = int(Dmax*10)
+        x, yrel, yirr = [], [], []
+        for w in np.arange(-Dmax, Dmax, 0.1):
+            print (w)
+            for U0 in  np.arange(0,10,0.1):
+                J = J0
+                K = K0
+                V = V0
+                U = U0
+                old_den = den(w, Dmax, U, J, K)[2]
+                for D in np.linspace(Dmax, 0, N):
+                    new_den = den(w, D, U, J, K)[2]
+                    if old_den * new_den <= 0:
+                        if V < V0:
+                            rel += 1
+                        else:
+                            irr += 1
+                        break
+                    old_den = new_den
+                    U, V, J, K = rg(w, D, U, V, J, K)
+            if not (rel == 0 and irr == 0):
+                x.append(w)
+                yrel.append(rel)
+                yirr.append(irr)
 
-all_flow()
+
+        ratio = np.array(yrel)/np.array(yirr)
+        plt.plot(x, ratio, label=r'$D={}$'.format(Dmax))
+        #plt.plot(np.arange(-10, 10, 0.1), yrel, color='r', label="relevant")
+        #plt.plot(np.arange(-10, 10, 0.1), yirr, color='b', label="irrelevant")
+        plt.ylabel(r'ratio of no. of fixed points')
+        plt.xlabel(r'$\omega$')
+    plt.legend()
+    plt.show()
+
+flow()
