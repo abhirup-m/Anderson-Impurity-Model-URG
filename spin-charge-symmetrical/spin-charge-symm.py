@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 font = {'family' : 'Source Code Pro',
-        'size'   : 10}
+        'size'   : 22}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -87,7 +87,7 @@ def get_fp(args):
             break
         old_den = new_den
         U, V, J, K = rg(w, D, U, V, J, K)
-    return [V0, count]
+    return count
 
 
 def all_flow():
@@ -95,25 +95,29 @@ def all_flow():
     sign = 1
     J0 = 0.3
     K0 = 0
-    V0 = 0.5
-    V0_range = np.arange(0.01,0.5,0.01)
-    Dmax = 10
+    V_crit = []
+    V0_range = np.arange(0.001,1,0.0001)
+    Dmax_range = np.arange(10,50,5)
+    for Dmax in Dmax_range:
+        diff = 0
+        for V0 in V0_range:
+            print (V0)
+            w_range = np.arange(-Dmax/2, Dmax/2, 0.01)
+            U_range = np.arange(0.01, 5.01, 0.01)
+            data = itertools.product(w_range, [Dmax], U_range, [V0], [J0], [K0])
 
-    data = itertools.product(np.arange(-Dmax/1, Dmax/1, 0.05), [Dmax], np.arange(0.05, 10.05, 0.05), V0_range, [J0], [K0])
+            count = sum(Pool(processes=40).map(get_fp, data))
+            if diff == 0:
+                diff = np.sign(count[0] - count[2])
+            elif diff * (count[0] - count[2]) <= 0:
+                print (Dmax)
+                plt.scatter(Dmax, V0)
+                break
 
-    with Pool(processes=40) as pool:
-        outp = pool.map(get_fp, data)
-    
-    plot_data = [np.zeros(3) for V0 in V0_range]
-    for o in outp:
-        plot_data[np.where(V0_range == o[0])[0][0]] += o[1]
-
-    print ("1")
-    for i in range(len(V0_range)):
-        plt.scatter(V0_range[i], plot_data[i][0], marker='.')
-        plt.scatter(V0_range[i], plot_data[i][2], marker='.')
-
-    print ("2")
+    plt.title(r'$sign(U)={}, J_0 = {}, K_0 = {}$'.format(sign, J0, K0))
+    plt.xlabel(r'$D$')
+    plt.ylabel(r'$V_c$')
+    plt.savefig("test.png", dpi=300)
     plt.show()
     
 
