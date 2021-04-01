@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 font = {'family' : 'Source Code Pro',
-        'size'   : 15}
+        'size'   : 22}
 
 matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
@@ -77,14 +77,13 @@ def get_fp(args):
     for D in np.linspace(Dmax, 0, N):
         new_den = den(w, D, U, J, K)[2]
         if old_den * new_den <= 0:
-            if U < U0:
+            if U > U0:
                 count[0] += 1
-            elif U > U0:
-                count[2] += 1
-                #if U != 0:
-                #    count[1] += 1
-                #else:
-                #    count[2] += 1
+            elif U < U0:
+                if U != 0:
+                    count[1] += 1
+                else:
+                    count[2] += 1
             break
         old_den = new_den
         U, V, J, K = rg(w, D, U, V, J, K)
@@ -94,47 +93,36 @@ def get_fp(args):
 def all_flow():
     '''master function to call other functions'''
     sign = 1
+    J0 = 0.3
+    K0 = 0
     V_crit = []
-    V0_range = np.arange(0.01,0.5,0.01)
-    J0 = 0.0
-    K0 = 0.01
-    Dmax_range = np.arange(10,50,10)
-    c0, c2 = [], []
-    V0 = 0.017
+    V0_range = np.arange(0.01,0.4,0.01)
+    Dmax_range = [10]
     for Dmax in Dmax_range:
-        diff = 0
-        print (Dmax)
-        V0 += 0.002
-        while True:
-            V0 -= 0.001
+        #diff = 0
+        for V0 in V0_range:
             print (V0)
-            w_range = np.arange(-Dmax/2, Dmax/2, 0.2)
-            U_range = np.arange(sign*0.2, sign*5.2, sign*.2)
+            w_range = np.arange(-Dmax/2, Dmax/2, 0.1)
+            U_range = np.arange(0.1, 5.1, 0.1)
             data = itertools.product(w_range, [Dmax], U_range, [V0], [J0], [K0])
 
-            count = sum(Pool(processes=5).map(get_fp, data))
-            #c0.append(count[0])
-            #c2.append(count[2])
-            #plt.plot(V0,np.log10(count[0]),color='r',marker='.')
-            #plt.plot(V0,np.log10(count[2]),color='b',marker='.')
-            if diff == 0:
-                diff = np.sign(count[0] - count[2])
-            elif diff * (count[0] - count[2]) <= 0:
-                print (Dmax)
-                V_crit.append(V0)
-                break
+            count = sum(Pool(processes=10).map(get_fp, data))
+            plt.plot(V0,np.log10(count[0]),color='r',marker='.')
+            plt.plot(V0,np.log10(count[2]),color='b',marker='.')
+            #if diff == 0:
+            #    diff = np.sign(count[0] - count[2])
+            #elif diff * (count[0] - count[2]) <= 0:
+            #    print (Dmax)
+            #    plt.scatter(Dmax, V0)
+            #    break
 
-        #plt.plot(V0_range,np.log10(c0),color='r',marker='.',label=r'$U^*<U_0$')
-        #plt.plot(V0_range,np.log10(c2),color='b',marker='.',label=r'$U^*=0$')
-    plt.plot(Dmax_range, V_crit, lw=2)
-    plt.scatter(Dmax_range, V_crit, marker="o", color='r')
-    #plt.scatter(Dmax_range, np.array(c2)/np.array(c0), marker='.', color='r')
-    plt.title(r'$sign(U)={}, J_0 = {}, K_0 = {}$'.format(sign, J0, K0))
-    plt.xlabel(r'$D_0$')
-    plt.ylabel(r'$V_c$')
-    plt.tight_layout()
-    #plt.legend(loc='lower right')
-    plt.savefig("Vc_q3", dpi=300)
+        plt.plot(V0,np.log10(count[0]),color='r',marker='.',label=r'$U^*>U_0$')
+        plt.plot(V0,np.log10(count[2]),color='b',marker='.',label=r'$U^*=0$')
+        plt.title(r'$sign(U)={}, D_0 = {},J_0 = {}, K_0 = {}$'.format(sign, Dmax, J0, K0))
+        plt.xlabel(r'$V_0$')
+        plt.ylabel(r'$number of fixed points (log scale)$')
+        plt.tight_layout()
+        plt.savefig("1.png", dpi=300)
     #plt.savefig("test.svg", dpi=300)
     #plt.show()
     

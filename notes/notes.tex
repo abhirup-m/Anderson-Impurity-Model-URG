@@ -5094,8 +5094,8 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \(U \) & \(J,K \) & \(U^*\) &\(J^*,K^*\) & class & ground state & ground state energy\\
 \hline
 \(>0\)& \(J > K\)& \(\gg 0\)&\(J^*>K^*\) & screened spin & \(\ket{\Psi}^*_1\)& \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
-\(>0\)& \(J < K\)& \(0\) &\(J^*<K^*\) & resonant level & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
-\(<0\)& \(J > K\)& \(0\) &\(J^*>K^*\) & resonant level & \(\ket{\Psi}^*_1\)& \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
+\(>0\)& \(J < K\)& \(0\) &\(J^*<K^*\) & screened charge & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
+\(<0\)& \(J > K\)& \(0\) &\(J^*>K^*\) & screened spin & \(\ket{\Psi}^*_1\)& \(- \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
 \(<0\)& \(J < K\)& \(\ll 0\)&\(J^*<K^*\) & screened charge & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
 \hline
 \end{tabular}
@@ -5105,7 +5105,53 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \begin{center}
 	\includegraphics[scale=0.3]{../figures/phases.png}
 	\captionof{figure}{Fixed point phases in the plane of bare couplings, at \(V=0\).}
+	\label{siamphases}
 \end{center}
+\subsection{Effect of \(V\) on the fixed points}
+The introduction of \(V\) into the RG equations has drastic effects on the first and third quadrants of the phase diagram shown just above. The minimal change is the presence of fixed points with \(U^* = 0\) in the first and third quadrants, and the presence of fixed points with \(U^* \neq 0\) in the second and fourth quadrants. The changes in the second and fourth quadrants die off for larger bandwidths, so the results in fig.~\ref{siamphases}, for the second and fourth quadrants, would survive for a thermodynamically large system.
+\pb However, even for even a modest bare value of \(V\), the dominant behaviour flips in the first and third quadrants. Fixed points with \(U*=0\) form the majority of these phases, the \(U* \neq 0\) forming a much smaller subset. This difference becomes amplified as the bandwidth increases, and the only fixed point that survives at the thermodynamic limit is \(U^*=0\). 
+\pb The number of relevant and irrelevant fixed points as a function of the bare \(V\) are shown in fig.~\ref{Veffect}. These plots show that for \(V\) above some critical value, the dominant fixed point in all quadrants is \(U^*=0\).
+\begin{center}
+	\begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[scale=0.5]{../figures/0q2.png}
+\end{minipage}
+\hspace{0.02\textwidth}
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[scale=0.5]{../figures/0q1.png}
+\end{minipage}
+
+  \medskip
+
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[scale=0.5]{../figures/0q3.png}
+\end{minipage}
+\hspace{0.02\textwidth}
+  \begin{minipage}{.48\textwidth}
+    \centering
+    \includegraphics[scale=0.4]{../figures/0q4.png}
+\end{minipage}
+\label{Veffect}
+\captionof{figure}{Change in number of fixed points as a function of \(V\). Each quadrant represents the corresponding quadrant in the phase diagram. First and third quadrants show the transition. Bare values are mentioned in plot titles. Calculations were performed for \(\omega \in \left[ - \frac{D_0}{2}, \frac{D_0}{2} \right] \) and \(U \in \left[ 0, 5 \right] \).}
+\end{center}
+To show that for a thermodynamically large system, the only fixed point is the \(U^*=0\) one, we plotted the ratio of the number of fixed points for \(U^*=0\) and \(U^* \neq 0\) as a function of the bare bandwidth. The ratio increases almost linearly with the bandwidth, implying that for large enough bandwidths, the fraction of fixed points with \(U^* \neq 0\) is effectively zero.
+\begin{center}
+	\includegraphics[scale=0.4]{../figures/Dvscount_q1.png}
+	\includegraphics[scale=0.4]{../figures/Dvscount_q3.png}
+	\captionof{figure}{Increase in the ratio (in the stable region, \(V \sim D_0/5\)) of irrelevant fixed points to relevant fixed points with the bare bandwidth, for the first quadrant (left pane) and the third quadrant (right pane).}
+\end{center}
+From the figs.~\ref{Veffect}, we can see that the transition to \(U^*=0\) happens at a critical \(V\) which depends on the values of \(J\) and \(K\). By defining the critical coupling \(V_c\) as that value of \(V\) at which the number of irrelevant and relevant fixed points are equal,we can see how this \(V_c\) varies with the bandwidth.
+\begin{center}
+	\includegraphics[scale=0.5]{../figures/Vc_q1.png}
+	\includegraphics[scale=0.5]{../figures/Vc_q3.png}
+	\captionof{figure}{Variation of the critical value \(V_c\) with bandwidth. In first quadrant (left), it vanishes as the bandwidth increases. For the third quadrant (right) however, it increases.}
+\end{center}
+For the fixed point in the first quadrant, it is clear that the critical \(V\) shrinks as the bandwidth increases, implying that for a large system, the only pertinent phase is the one at \(U^*=0\), because any infinitesimal \(V\) will be able to make \(U\) irrelevant. However, in the third quadrant, it becomes harder for the \(V\) to make \(U\) irrelevant as the bandwidth increases. 
+\pb We can hence conclude that the only \(V\) has on the fixed point values, in the thermodynamic limit, is that it changes the value of \(U^*\) in the first quadrant of fig.~\ref{phases} to zero. The rest of the values of \(U^*\) remain unchanged.
+
+
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
