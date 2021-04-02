@@ -4569,6 +4569,14 @@ The various components of the isospin are
 	C^y 
 	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^y_{\sigma\ol\sigma} \psi^{k^\prime}_{\ol\sigma} = - \frac{i}{2}\sum_{kk^\prime}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} - c_{k\da}c_{k^\prime \ua} \right) = \sum_{kk^\prime\sigma} - \frac{i\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\ol\sigma} - \text{h.c.} \right)\\
 \end{flalign}
+It is easy to verify that these operators satisfy the SU(2) commutation algebra. For example, if we write \(C^x = A + A^\dagger\) and \(C^y = B + B^\dagger\), then \(\left[ C^x, C^y \right] = \left[ A, B^\dagger \right] - \text{h.c.}\), where
+\begin{equation}\begin{aligned}
+	\left[ A, B^\dagger \right] = \frac{1}{4}\sum_{kk^\prime,qq^\prime}\left[ c^\dagger_{k\uparrow}c^\dagger_{k^\prime \downarrow}, i c_{q^\prime \downarrow}c_{q \uparrow} \right] = \frac{i}{4}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right)
+\end{aligned}\end{equation}
+and therefore
+\begin{equation}\begin{aligned}
+	\implies \left[ C^x, C^y \right] = \frac{i}{2}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right) = i C^z
+\end{aligned}\end{equation}
 There are similar operators for the impurity electron:
 \begin{equation}\begin{aligned}
 \psi_d &= \begin{pmatrix} c_{d\ua} \\ c^\dagger_{d\da} \end{pmatrix}\\

@@ -157,19 +157,19 @@ def all_flow():
     #plt.show()
 
 def flow():
-    irr, rel = 0, 0
-    V0, J0, K0 = 0.1, 0.3, 0.1
-    for Dmax in [10, 11]:
+    V0, J0, K0 = 0.1, 0.0, 0.1
+    for Dmax in [20]:
         N = int(Dmax*10)
         x, yrel, yirr = [], [], []
-        for w in np.arange(-Dmax, Dmax, 0.1):
-            print (w)
-            for U0 in  np.arange(0,10,0.1):
+        w = 0.01
+        for U0 in np.arange(0, 5, 1):
+            for J0 in np.arange(0, 5, 1):
                 J = J0
                 K = K0
                 V = V0
                 U = U0
                 old_den = den(w, Dmax, U, J, K)[2]
+                irr, rel = 0, 0
                 for D in np.linspace(Dmax, 0, N):
                     new_den = den(w, D, U, J, K)[2]
                     if old_den * new_den <= 0:
@@ -180,11 +180,13 @@ def flow():
                         break
                     old_den = new_den
                     U, V, J, K = rg(w, D, U, V, J, K)
-            if not (rel == 0 and irr == 0):
-                x.append(w)
-                yrel.append(rel)
-                yirr.append(irr)
+            #if not (rel == 0 and irr == 0):
+            #    x.append(w)
+            #    yrel.append(rel)
+            #    yirr.append(irr)
+                print (rel,irr)
 
+        return
 
         ratio = np.array(yrel)/np.array(yirr)
         plt.plot(x, ratio, label=r'$D={}$'.format(Dmax))
