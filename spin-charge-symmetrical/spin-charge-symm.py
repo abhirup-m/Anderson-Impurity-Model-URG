@@ -96,47 +96,37 @@ def all_flow():
     sign = 1
     V_crit = []
     V0_range = np.arange(0.01,0.5,0.01)
-    J0 = 0.0
-    K0 = 0.01
-    Dmax_range = np.arange(10,50,10)
+    J0 = 0.4
+    K0 = 0.3
+    Dmax_range = [10,30,50,70,90]
     c0, c2 = [], []
     V0 = 0.017
     for Dmax in Dmax_range:
-        diff = 0
         print (Dmax)
-        V0 += 0.002
-        while True:
-            V0 -= 0.001
-            print (V0)
-            w_range = np.arange(-Dmax/2, Dmax/2, 0.2)
-            U_range = np.arange(sign*0.2, sign*5.2, sign*.2)
+        for V0 in [Dmax/5]:
+            w_range = np.arange(-Dmax/2, Dmax/2, 0.05)
+            U_range = np.arange(sign*0.05, sign*5.05, sign*.05)
             data = itertools.product(w_range, [Dmax], U_range, [V0], [J0], [K0])
 
             count = sum(Pool(processes=5).map(get_fp, data))
-            #c0.append(count[0])
-            #c2.append(count[2])
+            c0.append(count[0])
+            c2.append(count[2])
             #plt.plot(V0,np.log10(count[0]),color='r',marker='.')
             #plt.plot(V0,np.log10(count[2]),color='b',marker='.')
-            if diff == 0:
-                diff = np.sign(count[0] - count[2])
-            elif diff * (count[0] - count[2]) <= 0:
-                print (Dmax)
-                V_crit.append(V0)
-                break
 
         #plt.plot(V0_range,np.log10(c0),color='r',marker='.',label=r'$U^*<U_0$')
         #plt.plot(V0_range,np.log10(c2),color='b',marker='.',label=r'$U^*=0$')
-    plt.plot(Dmax_range, V_crit, lw=2)
-    plt.scatter(Dmax_range, V_crit, marker="o", color='r')
-    #plt.scatter(Dmax_range, np.array(c2)/np.array(c0), marker='.', color='r')
-    plt.title(r'$sign(U)={}, J_0 = {}, K_0 = {}$'.format(sign, J0, K0))
-    plt.xlabel(r'$D_0$')
-    plt.ylabel(r'$V_c$')
-    plt.tight_layout()
+    #plt.plot(Dmax_range, V_crit, lw=2)
+    #plt.scatter(Dmax_range, V_crit, marker="o", color='r')
+    plt.scatter(Dmax_range, np.array(c2)/np.array(c0), marker='.', color='r')
+    #plt.title(r'$sign(U)={}, J_0 = {}, K_0 = {}$'.format(sign, J0, K0))
+    #plt.xlabel(r'$D_0$')
+    #plt.ylabel(r'$V_c$')
+    #plt.tight_layout()
     #plt.legend(loc='lower right')
-    plt.savefig("Vc_q3", dpi=300)
+    #plt.savefig("Vc_q3", dpi=300)
     #plt.savefig("test.svg", dpi=300)
-    #plt.show()
+    plt.show()
     
 
         #plt.scatter(V0,tot_count[0],color='r',marker='.')
@@ -197,4 +187,4 @@ def flow():
     plt.legend()
     plt.show()
 
-flow()
+all_flow()

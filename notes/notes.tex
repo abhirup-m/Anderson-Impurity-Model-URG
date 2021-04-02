@@ -5008,7 +5008,7 @@ The RG equations are
 	\Delta J_z &= - 2 \frac{J_t^2}{\xi_3}\\
 	\Delta J_t &= - 2 \frac{J_z J_t}{\xi_3}\\
 	\Delta K_z &= - 2 \frac{K_t^2}{\xi_8}\\
-	\Delta K_t &= - \frac{K_z J_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
+	\Delta K_t &= - \frac{K_z K_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
 \end{aligned}\end{equation}
 \subsection{Numerical Analysis of Symmetric model}
 With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_0 = V_1, K_z = K_t = \frac{1}{2}K\),
@@ -5101,10 +5101,10 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \hline
 \(U \) & \(J,K \) & \(U^*\) &\(J^*,K^*\) & class & ground state & ground state energy\\
 \hline
-\(>0\)& \(J > K\)& \(\gg 0\)&\(J^*>K^*\) & screened spin & \(\ket{\Psi}^*_1\)& \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
-\(>0\)& \(J < K\)& \(0\) &\(J^*<K^*\) & screened charge & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
-\(<0\)& \(J > K\)& \(0\) &\(J^*>K^*\) & screened spin & \(\ket{\Psi}^*_1\)& \(- \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
-\(<0\)& \(J < K\)& \(\ll 0\)&\(J^*<K^*\) & screened charge & \(\ket{\Psi}^*_{0,2}\)& \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
+\(>0\)& \(J > K\)& \(\gg 0\)&\(J^*>K^*\) & screened spin & spin singlet & \(- \frac{U^*}{2} - \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
+\(>0\)& \(J < K\)& \(0\) &\(J^*<K^*\) & screened charge & charge singlet & \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
+\(<0\)& \(J > K\)& \(0\) &\(J^*>K^*\) & screened spin & spin singlet& \(- \frac{3}{4}J^* - \frac{1}{4}J^{**}\)\\
+\(<0\)& \(J < K\)& \(\ll 0\)&\(J^*<K^*\) & screened charge & charge singlet & \(- \frac{3}{4}K^* - \frac{1}{4}K^{**}\)\\
 \hline
 \end{tabular}
 \caption{Classification of fixed points for various bare values, at \(V=0\)}
@@ -5117,7 +5117,7 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \end{center}
 \subsection{Effect of \(V\) on the fixed points}
 The introduction of \(V\) into the RG equations has drastic effects on the first and third quadrants of the phase diagram shown just above. The minimal change is the presence of fixed points with \(U^* = 0\) in the first and third quadrants, and the presence of fixed points with \(U^* \neq 0\) in the second and fourth quadrants. The changes in the second and fourth quadrants die off for larger bandwidths, so the results in fig.~\ref{siamphases}, for the second and fourth quadrants, would survive for a thermodynamically large system.
-\pb However, even for even a modest bare value of \(V\), the dominant behaviour flips in the first and third quadrants. Fixed points with \(U*=0\) form the majority of these phases, the \(U* \neq 0\) forming a much smaller subset. This difference becomes amplified as the bandwidth increases, and the only fixed point that survives at the thermodynamic limit is \(U^*=0\). 
+\pb However, for even a modest bare value of \(V\), the dominant behaviour flips in the first and third quadrants. Fixed points with \(U*=0\) form the majority of these phases, the \(U* \neq 0\) forming a much smaller subset. This difference becomes amplified in the first quadrant as the bandwidth increases, and gets stunted in the third quadrant. 
 \pb The number of relevant and irrelevant fixed points as a function of the bare \(V\) are shown in fig.~\ref{Veffect}. These plots show that for \(V\) above some critical value, the dominant fixed point in all quadrants is \(U^*=0\).
 \begin{center}
 	\begin{minipage}{.48\textwidth}
