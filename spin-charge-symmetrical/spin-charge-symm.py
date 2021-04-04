@@ -42,10 +42,10 @@ def rg(w, D, U, V, J, K):
     deltaJ = - J**2 / dens[2]
     deltaK = - K**2 / dens[2]
 
-    U = 0 if (U + deltaU) * U <= 0 else U + deltaU
-    V = 0 if (V + deltaV) * V <= 0 else V + deltaV
-    J = 0 if (J + deltaJ) * J <= 0 else J + deltaJ
-    K = 0 if (K + deltaK) * K <= 0 else K + deltaK
+    U = 0 if (U + (D**0.5)*deltaU) * U <= 0 else U + (D**0.5)*deltaU
+    V = 0 if (V + (D**0.5)*deltaV) * V <= 0 else V + (D**0.5)*deltaV
+    J = 0 if (J + (D**0.5)*deltaJ) * J <= 0 else J + (D**0.5)*deltaJ
+    K = 0 if (K + (D**0.5)*deltaK) * K <= 0 else K + (D**0.5)*deltaK
 
     return U, V, J, K
 
@@ -77,9 +77,9 @@ def get_fp(args):
     for D in np.linspace(Dmax, 0, N):
         new_den = den(w, D, U, J, K)[2]
         if old_den * new_den <= 0:
-            if U < U0:
+            if U == 0:
                 count[0] += 1
-            elif U > U0:
+            else:
                 count[2] += 1
                 #if U != 0:
                 #    count[1] += 1
@@ -95,7 +95,7 @@ def all_flow():
     '''master function to call other functions'''
     sign = 1
     V_crit = []
-    V0_range = np.arange(0.01,0.5,0.01)
+    V0_range = np.arange(0.01,0.5,0.005)
     J0 = 0.4
     K0 = 0.3
     Dmax_range = [10,30,50,70,90]
@@ -103,29 +103,34 @@ def all_flow():
     V0 = 0.017
     for Dmax in Dmax_range:
         print (Dmax)
-        for V0 in [Dmax/5]:
-            w_range = np.arange(-Dmax/2, Dmax/2, 0.05)
-            U_range = np.arange(sign*0.05, sign*5.05, sign*.05)
+        diff = 0
+        for V0 in V0_range:
+            w_range = np.arange(-Dmax/2, Dmax/2, 0.1)
+            U_range = np.arange(sign*0.1, sign*10.1, sign*.1)
             data = itertools.product(w_range, [Dmax], U_range, [V0], [J0], [K0])
-
-            count = sum(Pool(processes=5).map(get_fp, data))
-            c0.append(count[0])
-            c2.append(count[2])
+            count = sum(Pool(processes=15).map(get_fp, data))
+            if diff == 0:
+                diff = np.sign(count[0]-count[2])
+            elif diff * np.sign(count[0]-count[2]) <= 0:
+                V_crit.append(V0)
+                break
+            #c0.append(count[0])
+            #c2.append(count[2])
             #plt.plot(V0,np.log10(count[0]),color='r',marker='.')
             #plt.plot(V0,np.log10(count[2]),color='b',marker='.')
 
         #plt.plot(V0_range,np.log10(c0),color='r',marker='.',label=r'$U^*<U_0$')
         #plt.plot(V0_range,np.log10(c2),color='b',marker='.',label=r'$U^*=0$')
     #plt.plot(Dmax_range, V_crit, lw=2)
-    #plt.scatter(Dmax_range, V_crit, marker="o", color='r')
-    plt.scatter(Dmax_range, np.array(c2)/np.array(c0), marker='.', color='r')
+    plt.scatter(Dmax_range, V_crit, marker="o", color='r')
+    #plt.scatter(Dmax_range, np.array(c2)/np.array(c0), marker='.', color='r')
     #plt.title(r'$sign(U)={}, J_0 = {}, K_0 = {}$'.format(sign, J0, K0))
     #plt.xlabel(r'$D_0$')
     #plt.ylabel(r'$V_c$')
     #plt.tight_layout()
     #plt.legend(loc='lower right')
     #plt.savefig("Vc_q3", dpi=300)
-    #plt.savefig("test.svg", dpi=300)
+    #plt.savefig("test.png", dpi=300)
     plt.show()
     
 
