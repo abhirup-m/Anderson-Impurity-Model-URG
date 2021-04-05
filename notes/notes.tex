@@ -3961,22 +3961,22 @@ The fixed points are obtained numerically by solving the RG equation. As mention
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + J_z\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + J_t\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
 \eeq
-The goal is to disentangle an electron \(q\beta\) from the Hamiltonian, \(q\) being the momentum and \(\beta\) the spin. We take a pair of electrons \(q\beta,q\ol\beta\) on the shell to preserve SU(2) symmetry of the Hamiltonian. The diagonal part of the Hamiltonian is
+The goal is to disentangle an electron \(q\beta\) from the Hamiltonian, \(q\) being the momentum and \(\beta\) the spin. The diagonal part of the Hamiltonian is
 \beq
 \ham_d = \epsilon_q \hat n_{q\beta} + J_z S_d^z \beta\rr{\hat n_{q\beta} - \hat n_{q\ol\beta}}
 \eeq
 Note that we keep only those terms in the diagonal part that relate to either the impurity or the electron we are disentangling-\(q\beta\). This piece \(\ham_d\) is the one that comes in the denominator. Note that in this form, the hole energy comes out to be zero, because the Hamiltonian is written only in terms of \(\hat n_{q\beta}\). To remedy this, we write the Hamiltonian in terms of \(\tau_{q\beta} = \hat n_{q\beta} - \hf\).
 \beq[kondodiag]
-\ham_d = \epsilon_q \tau_{q\beta} + 2J_z S_d^z s_q^z
+\ham_d = \epsilon_q \tau_{q\beta} + J_z S_d^z \beta \hat n_{q\beta}
 \eeq
-where \(s_q^z = \hf \rr{\tau_{q\ua} - \tau_{q\da}}\). A constant \(\hf \epsilon_q\) has been dropped while transforming the first term. The second term transforms exactly because we can just write the bare Hamiltonian term \(S_d^z\rr{\hat n_{q\ua} - \hat n_{q\da}}\) as \(S_d^z\rr{\tau_{q\ua} - \tau_{q\da}}\).
+A constant \(\hf \epsilon_q\) has been dropped while transforming the first term.
 \pb The off-diagonal part involving the electron on the shell is
 \beq
 \ham^I = J_z\sum_{k}S^z_d\beta\rr{c^\dagger_{k\beta}c_{q\beta} +  c^\dagger_{q\beta}c_{k\beta}} + J_t \sum_{k}\rr{c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta} + c^\dagger_{b\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k\ol\beta}}
 \eeq
 These are the terms that come in the numerator.
 \subsection{Particle sector}
-The particle sector involves integrating out those states which are occupied.
+The particle sector involves integrating out those states which are occupied (\(\hat n_{q\beta}=1\)). We will work at a shell with energy \(-\epsilon_q\).
 \begin{equation}\begin{aligned}
 	c^\dagger_{q\beta}T \eta
 \end{aligned}\end{equation}
@@ -3984,25 +3984,49 @@ where
 \begin{equation}\begin{aligned}
 	\label{partomega}
 	\eta &= \frac{1}{\omega - \ham_d} \left[ J_z\sum_k \beta S_d^z c^\dagger_{k\beta}c_{q\beta} + J_t \sum_k c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta} \right]\\
-	     &=\sum_k \left[\frac{1}{\omega_1 + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) \hat n_{q\ol\beta}} J_z S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + \frac{1}{\omega_2 + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}}J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right] 
+	     &=\sum_k \left[\frac{1}{\hat \omega_1 - \hat E_1 } J_z S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + \frac{1}{\omega_3 - E_3}J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right] 
 \end{aligned}\end{equation}
-To relate \(\omega_1\) and \(\omega_2\), we will use their diagonal values. By replacing them with the initial state energies, we can write
+Noting that \(\beta S_d^z = \frac{1}{2}\left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) = \frac{1}{2}\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) - \frac{1}{2}\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right)\), we can write the \(\eta\) as
 \begin{equation}\begin{aligned}
-	\omega_1 = 
+	     \sum_k \left[\frac{ J_z \frac{1}{2}\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) c^\dagger_{k\beta}c_{q\beta}}{\omega_1 - E_1} - \frac{J_z \frac{1}{2}\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right) c^\dagger_{k\beta}c_{q\beta}}{\omega_2 - E_2} + \frac{J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}}{\omega_3 - E_3}\right] 
 \end{aligned}\end{equation}
-
+The energies \(E_i\) now need to be determined. For the last term, it is obvious:
+\begin{equation}\begin{aligned}
+	E_3 = \frac{1}{2}\epsilon_q - \frac{1}{2}J_z
+\end{aligned}\end{equation}
+For the first two term, note that these terms do not flip the spin; hence, the denominator should reflect that. The total magnetization for the spin \(\beta\) in the initial state is \(\hat n_\beta = \hat n_{q\beta} = 1\), because of the \(q\beta\). It is also \(1\) in the intermediate state, because of the spin \(k\beta\): \(\hat n_\beta = \hat n_{k\beta} = 1\). This holds for both \(E_1\) and \(E_2\). The impurity magnetization is however \(1\) in the first term but \(-1\) in the second term. Hence,
+\begin{equation}\begin{aligned}
+	E_1 &= \frac{1}{2}\epsilon_q + \frac{1}{2}J_z\\
+	E_2 &= \frac{1}{2}\epsilon_q - \frac{1}{2}J_z = E_3\\
+\end{aligned}\end{equation}
+To relate the \(\omega_i\), we will use their diagonal values. By replacing them with the initial state energies, we can write
+\begin{equation}\begin{aligned}
+	\omega_1 = - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z\\
+	\omega_2 = \omega_3 = - \frac{1}{2}\epsilon_q - \frac{1}{2}J_z\\
+\end{aligned}\end{equation}
+Defining \(\omega \equiv \omega_3\), we can write \(\omega_1 = \omega + J_z\) and \(\omega_2 = \omega\). Therefore,
+\begin{equation}\begin{aligned}
+	\eta = \sum_k \left[\frac{ J_z \frac{1}{2}\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) c^\dagger_{k\beta}c_{q\beta}}{\xi_1} - \frac{J_z \frac{1}{2}\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right) c^\dagger_{k\beta}c_{q\beta}}{\xi_2} + \frac{J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}}{\xi_3}\right] 
+\end{aligned}\end{equation}
+where \(\xi_i \equiv \omega_i - E_i\), hence
+\begin{equation}\begin{aligned}
+	\xi_1 = \xi_2 = \xi_3 = \omega - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z \equiv \xi
+\end{aligned}\end{equation}
+Therefore,
+\begin{equation}\begin{aligned}
+	\eta &= \frac{1}{\xi}\sum_k \left[ J_z \frac{1}{2}\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) c^\dagger_{k\beta}c_{q\beta} - J_z \frac{1}{2}\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right) c^\dagger_{k\beta}c_{q\beta} + J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right] \\
+	     &= \frac{1}{\xi}\sum_k \left[ J_z \frac{1}{2}\left(\hat n_{d\beta} - \hat n_{d\ol\beta}\right) c^\dagger_{k\beta}c_{q\beta} + J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right]\\
+	     &= \frac{1}{\xi}\sum_k \left[ J_z \beta S_d^z c^\dagger_{k\beta}c_{q\beta} + J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right]
+\end{aligned}\end{equation}
 The renormalization is therefore
 \begin{equation}\begin{aligned}
-	\sum_{kk^\prime} J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta}\frac{J_z \beta S_d^z c^\dagger_{k\beta}c_{q\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) \hat n_{q\ol\beta}}  + \sum_{kk^\prime}J_t  c^\dagger_{d\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k^\prime\ol\beta}\frac{J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}}\\
-	+\sum_{kk^\prime} J_t  c^\dagger_{d\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k^\prime\ol\beta}\frac{J_z \beta S_d^z c^\dagger_{k\beta}c_{q\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) \hat n_{q\ol\beta}}  + \sum_{kk^\prime} J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta}\frac{J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}}
+	\frac{1}{\xi}\sum_{kk^\prime} \left[J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta}\times J_z \beta S_d^z c^\dagger_{k\beta}c_{q\beta} + J_t  c^\dagger_{d\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k^\prime\ol\beta} \times J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right.\\
+	+\left. J_t  c^\dagger_{d\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k^\prime\ol\beta}\times J_z \beta S_d^z c^\dagger_{k\beta}c_{q\beta} + J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta}\times J_t  c^\dagger_{d\beta}c_{d\ol\beta} c^\dagger_{k\ol\beta}c_{q\beta}\right]
 \end{aligned}\end{equation}
-The total renormalization will have three types of terms: \(J_z^2, J_t^2\) and \(J_z J_t\).
+We can see that the total renormalization will have three types of terms: \(J_z^2, J_t^2\) and \(J_z J_t\). We can ignore the \(J_z^2\) term because it has no impurity operator (\({S_d^z}^2 = \frac{1}{4}\)). The remaining terms give
 \begin{equation}\begin{aligned}
-	\sum_{kk^\prime} \hat n_{q\beta}\left[\frac{\frac{1}{4} J_z^2  c_{k^\prime\beta} c^\dagger_{k\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \left( \hat n_{d\beta} - \hat n_{d\ol\beta} \right) \hat n_{q\ol\beta}} + \frac{ \frac{1}{2} J_z J_t  \left( c^\dagger_{d\ol\beta}c_{d\beta}c_{k^\prime\ol\beta}c^\dagger_{k\beta} + \text{h.c.}\right)}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}} + \frac{J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}}{\omega + \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z \hat n_{q\ol\beta}}\right]
-\end{aligned}\end{equation}
-We choose the configuration \(\hat n_{q\beta} = \hat n_{q\ol\beta}=1\). This means we must be below the Fermi energy, so we choose \(-\epsilon_q\).
-\begin{equation}\begin{aligned}
-	\sum_{kk^\prime} \left[\frac{ \frac{1}{2} J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c_{k^\prime\ol\beta}c^\dagger_{k\beta} + \text{h.c.}\right)}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }\right]
+	\label{kondo_part}
+	\frac{1}{\xi}\sum_{kk^\prime} \left[\frac{1}{2} J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c_{k^\prime\ol\beta}c^\dagger_{k\beta} + \text{h.c.}\right) + J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\right]
 \end{aligned}\end{equation}
 For the Kondo problem, we are in the subspace of \(\hat n_d= 1\), so we can write
 \begin{equation}\begin{aligned}
@@ -4012,40 +4036,60 @@ and
 \begin{equation}\begin{aligned}
 	\sum_{kk^\prime}\left( c^\dagger_{d\ol\beta}c_{d\beta}c_{k^\prime\ol\beta}c^\dagger_{k\beta} + \text{h.c.}\right) = -\sum_{kk^\prime}\left( c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right) = -\left(S_d^+ s^- + S_d^- s^+\right)
 \end{aligned}\end{equation}
+The renormalization then becomes
+\begin{equation}\begin{aligned}
+	\frac{1}{\xi} \left[-\frac{1}{2} J_z J_t\left(S_d^+ s^- + S_d^- s^+\right) + J_t^2 \left(\frac{1}{2} +  \ol\beta S_d^z \right) \sum_{kk^\prime}c_{k^\prime\ol\beta}c^\dagger_{k\ol\beta}\right]
+\end{aligned}\end{equation}
+
 \subsection{Hole sector}
-For the hole sector, we will take the configuration where \(\hat n_{q\beta} = \hat n_{q\ol\beta} = 0\) and hence the energy \(\epsilon_q\). The renormalization here is
+For the hole sector, we will take the configuration where \(\hat n_{q\beta} = 0\) and hence the energy \(\epsilon_q\). The renormalization here is
 \begin{equation}\begin{aligned}
 	T^\dagger c_{q\beta}\eta^\dagger_0 = T^\dagger c_{q\beta}\frac{1}{\omega^\prime - \ham_d}c^\dagger_{q\beta} T
 \end{aligned}\end{equation}
 where \(\eta_0\) is defined in eq.~\ref{eta0}.
 \begin{equation}\begin{aligned}
 	\label{holeomega}
-	\eta_0^\dagger = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q - \frac{1}{2}J_z \beta S_d^z}\frac{1}{2}J_z \beta S_d^z c^\dagger_{q\beta}c_{k^\prime\beta} + \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z}J_tc^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k^\prime\ol\beta}
+	\eta_0^\dagger = \frac{1}{\hat \omega^\prime - \hat E_1}\frac{1}{2}J_z \beta S_d^z c^\dagger_{q\beta}c_{k\beta} + \frac{1}{\omega^\prime - E_3}J_tc^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}
 \end{aligned}\end{equation}
-Evaluating the terms similarly gives
+We once again split the \(S_d^z\) term into two parts, and get
 \begin{equation}\begin{aligned}
-	\sum_{kk^\prime} \left[\frac{ -\frac{1}{2} J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right)}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{J_t^2 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }\right]
+	\eta^\dagger_0 = \sum_k \left[\frac{ J_z \frac{1}{2}\hat n_{d\beta}\left( 1 - \hat n_{d\ol\beta} \right) c^\dagger_{q\beta}c_{k\beta}}{\xi^\prime_1} - \frac{J_z \frac{1}{2}\hat n_{d\ol\beta}\left( 1 - \hat n_{d\beta} \right) c^\dagger_{q\beta}c_{k\beta}}{\xi^\prime_2} + \frac{J_t  c^\dagger_{d\ol\beta}c_{d\beta} c^\dagger_{q\beta}c_{k\ol\beta}}{\xi^\prime_3}\right] 
+\end{aligned}\end{equation}
+Calculating the energies gives
+\begin{equation}\begin{aligned}
+	E^\prime_1 &= \frac{1}{2}\epsilon_q + \frac{1}{2}J_z\\
+	E^\prime_2 &= \frac{1}{2}\epsilon_q - \frac{1}{2}J_z = E^\prime_3\\
+	\omega^\prime_1 &= - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z = \omega + J_z\\
+	\omega^\prime_2 = \omega^\prime_3 &= - \frac{1}{2}\epsilon_q - \frac{1}{2}J_z = \omega\\
+	\xi_i^\prime &= \omega - \frac{1}{2}\epsilon_q + \frac{1}{2}J_z = \xi
+\end{aligned}\end{equation}
+Evaluating the terms similar to the particle sector gives
+\begin{equation}\begin{aligned}
+	\label{kondo_hole}
+	\frac{1}{\xi}\sum_{kk^\prime} \left[ -\frac{1}{2} J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right) + J_t^2 \hat n_{d\beta}\left(1 - \hat n_{d\ol\beta}\right) c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\right]
 \end{aligned}\end{equation}
 \subsection{Scaling equations}
-Adding the two sectors, we get
+Adding the two sectors (eqs.~\ref{kondo_part} and \ref{kondo_hole}) gives
 \begin{equation}\begin{aligned}
-	\Delta \ham = -\frac{1}{2}J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) \left( \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{1}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } \right) \\
-	- J_t^2 S_d^z\sum_{kk^\prime} \left( \frac{\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } + \frac{\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}}{\omega^\prime - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } \right)
-\end{aligned}\end{equation}
-There we changed \(c c^\dagger\) into \(c^\dagger c\) and dropped the constant piece generated in the process. We also dropped the impurity-free \(\frac{1}{2}\) in \(\frac{1}{2}+S_d^z\). At this point, we \textit{choose} \(\omega^\prime = \omega\) (see subsection \ref{reason for choice of omega}). 
-\begin{equation}\begin{aligned}
-	\Delta \ham = -J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } - 2J_t^2 S_d^z \sum_{kk^\prime}\ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta}\frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}
+	\Delta \ham &= \frac{1}{\xi}\sum_{kk^\prime} \left[ - J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right) + J_t^2 \left(\hat n_{d\beta} - \hat n_{d\ol\beta}\right) c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} + J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \delta_{kk^\prime}\right]\\
+		    &= -\frac{1}{\xi}\left[ J_z J_t\left(S_d^+ s^- + S_d^- s^+\right) + \sum_{kk^\prime} J_t^2 S_d^z \ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} - J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} \right]\\
 \end{aligned}\end{equation}
 Summing over \(\beta\) gives
 \begin{equation}\begin{aligned}
-	\sum_\beta \Delta \ham = -2J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z } - 2J_t^2 S_d^z s^z\frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}
+	\sum_\beta \Delta \ham = - \frac{1}{\xi} \left[2J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) + 2J_t^2 S_d^z s^z\right] + \hat O
 \end{aligned}\end{equation}
-There we used \(\sum_\beta \ol\beta \sum_{kk^\prime}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} = \sum_{kk^\prime}\left(c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}\right)  = s^z\). We can now write down the flow equations for \(J_z\) and \(J_t\):
+There we used \(\sum_\beta \ol\beta \sum_{kk^\prime}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} = \sum_{kk^\prime}\left(c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}\right)  = 2s^z\). The operator \(\hat O\) is
+\begin{equation}\begin{aligned}
+	\sum_\beta \frac{1}{\xi} J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} = \frac{1}{\xi} J_t^2 \left(\hat n_d - \hat n_{d \uparrow} \hat n_{d \downarrow}\right) \sum_k = \frac{1}{\xi} J_t^2 \sum_k
+\end{aligned}\end{equation}
+where we used \(\hat n_d = 1\) and \(\hat n_{d \uparrow} \hat n_{d \downarrow} = 0\) in the singly-occupied subspace. This is a spin-independent impurity-independent potential scattering  within the bath, and we will not consider it further, because it will be irrelevant at low \(\omega\), where the \(J\) is relevant and there is a flow to a strong-coupling fixed point.
+\pb We can now write down the flow equations for \(J_z\) and \(J_t\):
 \begin{equation}\begin{aligned}
 	\Delta J_z &= - 2J_t^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
 	\Delta J_t &= -2J_z J_t \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
 \end{aligned}\end{equation}
-Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\). If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
+Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\).
+\pb If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
 
 \begin{equation}\begin{aligned}
 	\label{kondosym}
@@ -4055,9 +4099,6 @@ To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\
 \begin{equation}\begin{aligned}
 	\Delta J \approx J^2 \frac{1}{\epsilon_q}
 \end{aligned}\end{equation}
-\subsection{Reason for the choice \(\omega = \omega^\prime\)}
-\label{reason for choice of omega}
-In general, it is difficult to relate the quantum fluctuation scales corresponding to different states. Here, the \(\omega\) in particle sector relates to a state \(\ket{\hat n_{q\beta} = \hat n_{q\ol\beta}=1}\) at energy \(-\epsilon_q\), and the \(\omega^\prime\) in hole sector relates to a state \(\ket{\hat n_{q\beta} = \hat n_{q\ol\beta}=0}\) at energy \(\epsilon_q\). Formally, there is no relation between them, so we have to use some physical argument to relate them, or we can just keep them as separate independent parameters in the problem and compute them numerically by searching for fixed points. Here we take the former route, in the following manner: It can be shown that URG can be transformed into Poor Man's scaling (PMS) by replacing \(\omega\) with the parameter \(E\) in Poor Man's scaling, which is essentially the energy of the initial state from which the scattering starts. If one looks at eq.~\ref{partomega}, it is clear that the scatterer \(\eta\) acts on states characterized by \(\hat n_{q\beta} = \hat n_{q\ol\beta} = 1\), and the energy of such a state is \(-\frac{1}{2}\epsilon_q\). There is no \(J\) part because \(s_q^z \sim \hat n_{q\beta} - \hat n_{q\ol\beta} = 0\). So, at the level of PMS, we can estimate \(\omega = -\frac{1}{2}\epsilon_q\). Similarly, from eq.~\ref{holeomega}, it is easily seen that \(\eta^\dagger\) acts on a state whose energy is also \(-\frac{1}{2}\epsilon_q\), such that we can again estimate \(\omega^\prime = -\frac{1}{2}\epsilon_q\). From these two estimates, we take the \textit{ansatz} \(\omega = \omega^\prime\).
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
 \begin{center}

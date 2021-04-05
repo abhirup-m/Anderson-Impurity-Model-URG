@@ -79,6 +79,47 @@ One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)
 	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2} S^z\sigma^{z}_{\alpha\alpha}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
 \end{equation*}}
 \end{frame}
+
+\begin{frame}
+	In the Kondo URG, you simplify the \(\hat \omega\) as 
+\begin{equation*}
+	\pmb{\hat \omega = \textcolor{blue}{\omega \tau}}
+\end{equation*}
+\qs{What is the formal way of doing this?} Shouldn't it be 
+\begin{equation*}
+	\pmb{\hat \omega = \omega_1 \hat n + \omega_1 (1 - \hat n)}
+\end{equation*}
+Is this just an assumption?\\[10pt]
+In the RG equation for BCS instability (eq. 8.130 of thesis), you use 
+\begin{equation*}
+	\pmb{G^{-1} = \omega - \epsilon_1 \tau_1 - \epsilon_2 \tau_2}
+\end{equation*}
+\qs{How is this choice of \(\hat \omega\) consistent with what was done in Kondo URG?}
+\end{frame}
+
+\begin{frame}
+While calculating the impurity susceptibility of the Kondo model, you took the following Hamiltonian and definition of susceptibility:
+\begin{equation*}
+	H = J \vec{S_d}\cdot\vec{s}
+\end{equation*}
+\begin{equation*}
+	H(B) = J \vec{S_d}\cdot\vec{s} + B S_d^z,
+\end{equation*}
+\begin{equation*}
+	\chi_\text{imp} = \lim_{B \to 0} \frac{\partial{\ln Z(B)}}{\partial{B}}
+\end{equation*}
+Wilson's definition was
+\begin{equation*}
+	\chi_\text{imp} = \chi(J) - \chi(J=0) + \frac{1}{4}
+\end{equation*}
+which would require
+\begin{equation*}
+	H(B) = \sum_k \epsilon_k \hat n_{k\sigma} + J \vec{S_d}\cdot\vec{s} + J^\prime S_d^z s^z + B S_d^z + B \mu_B \left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right) 	
+\end{equation*}
+
+
+
+\end{frame}
 \begin{frame}
 	Section 2.2, Equation \textcolor{blue}{2.18} of thesis
 \begin{equation*}
@@ -125,23 +166,6 @@ so the renormalization is
 	\tau\{c^\dagger T,\eta\} = \frac{1}{2}\left[\overbrace{c^\dagger T \eta}^\text{particle sector} - \underbrace{\eta c^\dagger T}_\text{hole sector}\right] = \text{difference of the 2 sectors}
 \end{equation*}
 \qs{Yet in most RG equations (\(\Delta H_F\) of 2d Hubbard, \(\Delta H_j\) of Kondo), you have \textit{added} the two sectors. How/Why?}
-\end{frame}
-\begin{frame}
-	In the Kondo URG, you simplify the \(\hat \omega\) as 
-\begin{equation*}
-	\pmb{\hat \omega = \textcolor{blue}{\omega \tau}}
-\end{equation*}
-\qs{What is the formal way of doing this?} Shouldn't it be 
-\begin{equation*}
-	\pmb{\hat \omega = \omega_1 \hat n + \omega_1 (1 - \hat n)}
-\end{equation*}
-Is this just an assumption?\\[10pt]
-In the RG equation for BCS instability (eq. 8.130 of thesis), you use 
-\begin{equation*}
-	\pmb{G^{-1} = \omega - \epsilon_1 \tau_1 - \epsilon_2 \tau_2}
-\end{equation*}
-\qs{How is this choice of \(\hat \omega\) consistent with what was done in Kondo URG?}
-
 \end{frame}
 
 \end{document}

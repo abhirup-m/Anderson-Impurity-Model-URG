@@ -6,7 +6,7 @@
 \usepackage{parskip}
 
 \usepackage[bookmarksnumbered=true]{hyperref}
-\definecolor{lc}{rgb}{0,0.2,0.6} %requires xcolor
+\definecolor{lc}{rgb}{0.0,0.0,0.9} %requires xcolor
 \hypersetup{colorlinks, breaklinks, urlcolor=lc, linkcolor=lc}
 
 \usepackage{amsmath}
@@ -28,7 +28,9 @@
 \begin{itemize}
 	\item \hyperlink{q1}{ What is the motivation behind the choice of the initial condition $\tau_{q \uparrow} = -\tau_{q\downarrow} = \frac{1}{2}$? Does that choice not violate the SU(2) symmetry of the model? Why not take a more symmetric choice like $\tau_{q\beta} =  \tau_{q\bar{\beta}} = \frac{1}{2}$ for $q\beta$ below fermi level and $-1/2$ for above it?}\\[10pt]
 	\item \hyperlink{field}{If we follow your notes and try to derive the equations with just the initial configuration $\tau_{q \uparrow} = -\tau_{q\downarrow} = \frac{1}{2}$, we end up with a field-like term \(\alpha S_d^z\) in \(\Delta H\), which violates SU(2). However, if we also add the \(\Delta H\) from the initial state with \(\uparrow\) and \(\downarrow\) flipped, then we lose the field term.}\\[10pt]
-	\item \hyperlink{q3}{On setting \(J_z=J_t\), we do not get \(\Delta J_z = \Delta J_t\).}
+	\item \hyperlink{q3}{On setting \(J_z=J_t\), we do not get \(\Delta J_z = \Delta J_t\). The RG equations appear to not respect the SU(2) symmetry. How do we resolve this?}\\[10pt]
+	\item \hyperlink{q4}{\(\Delta J_t\) obtained without summing over \(\beta\) is half of what you get. Why is this so?}\\[10pt]
+	\item Is there a general prescription for choosing what part of the Hamiltonian comes down in the denominator?
 \end{itemize}
 
 \newpage
@@ -143,6 +145,11 @@ We consider the decoupling for the initial condition $\tau_{q\beta} = - \tau_{q\
 \begin{equation}\begin{aligned}
 \frac{1}{4} J_z^2 \frac{\hypertarget{field}{\beta J_z S_d^z}}{\left( \omega -\frac{1}{2}\epsilon_q  \right)^2 - \left( \frac{1}{2}J_z \right)^2} \sum\limits_{k\ne q} 1
 \end{aligned}\end{equation}
+Putting \(J_z = J_t = \frac{J}{2}\) in \(\Delta J_t\), we get
+\hypertarget{q4}{\begin{align}
+	\label{q4}
+	\color{red}{\Delta J = \frac{1}{2}J^2 \frac{\left( \omega - \frac{1}{2}\epsilon_q \right)}{\left( \omega - \frac{1}{2}\epsilon_q \right)^2 - \left( \frac{1}{4} J \right)^2}}
+\end{align}}
 \paragraph{On summing over $\beta$}
 \begin{align}
   \Delta J_t  &= 2 J_zJ_t \frac{\left( \omega - \frac{1}{2}\epsilon_q \right)}{\left( \omega - \frac{1}{2}\epsilon_q \right)^2 - \left( \frac{1}{2} J_z \right)^2}   \label{eq:21} \\
