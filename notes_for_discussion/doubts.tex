@@ -19,45 +19,6 @@
 \begin{document}
 
 \begin{frame}
-	\only<1>{Kondo Model appendix, Equation \textcolor{blue}{9.61} of thesis}
-\begin{equation*}
-\begin{aligned}
-&\Delta\hat{H}_{(j)} = \sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^2}{\textcolor{red}{2}}\frac{\textcolor{red}{\tau_{j,\hat{s}_{m},\beta}}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\nonumber\\
-&\times\bigg[S^{a}S^{b}\sigma^{a}_{\alpha\beta}\sigma^{b}_{\beta\gamma} \sum_{\substack{(j_{1},j_{2}< j),\\ n,o}}c^{\dagger}_{j_{1},\hat{s}_{n},\alpha}c_{j_{2},\hat{s}_{o},\gamma}(1-\hat{n}_{j,\hat{s}_{m},\beta})+...%S^{b}S^{a}\sigma^{b}_{\beta\gamma}\sigma^{a}_{\alpha\beta} \sum_{\substack{(j_{1},j_{2}<j),\\ n,o}}c_{j_{2},\hat{s}_{o},\gamma}c^{\dagger}_{j_{1},\hat{s}_{n},\alpha}\hat{n}_{j,\hat{s}_{m},\beta}\bigg]\nonumber
-\\
-&+\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{2(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})} \bigg[S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}\nonumber + ...%S^{y}S^{x}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\beta}...%c_{j,\hat{s}_{m},\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}\bigg]~.
-\end{aligned}
-\end{equation*}
-\only<2-5>{\begin{itemize}
-		\only<2>{\item \qs{The \(\tau\) should \textcolor{red}{not} be there in numerator i presume?}}
-		\only<3>{\item \qs{Since coupling is \(\pmb{\frac{J}{2}}\), shouldn't the thing be \textcolor{red}{\(\pmb{\frac{J^2}{4}}\)} instead of \textcolor{red}{\(\pmb{\frac{J^2}{2}}\)}?}}
-		\only<4>{\item \qs{You mentioned the following in the google document- "\textit{interchange sigma\_a and sigma\_b (you get -1 sign)}". But these are matrix elements (numbers). So \textcolor{red}{why the minus sign}?}}
-		\only<5>{\item \qs{How do you combine the product of two sigmas ( \textcolor{red}{\(\pmb{\sigma^a_{\alpha\beta}\sigma^b_{\beta\gamma}}\)} ) into a single \textcolor{red}{\(\pmb{\sigma^c_{\alpha\gamma}}\)}?}}
-\end{itemize}}
-\end{frame}
-\begin{frame}
-Kondo URG coupling equation for \(J\) (equation 9.65):
-\begin{equation*}
-\begin{aligned}
-	\Delta J^{(j)}=n_{j}(J^{(j)})^{2}\left[\omega- \frac{\epsilon_{j,l}}{2}\right]\left[(\frac{\epsilon_{j,l}}{2}-\omega)^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}\right]^{-1}
-\end{aligned}
-\end{equation*}
-One-loop form (after setting \(\omega = \epsilon_{j,l}\)):
-\begin{equation*}
-\begin{aligned}
-	\Delta J^{(j)}= \frac{n_{j}(J^{(j)})^{2}}{\omega-\frac{\epsilon_{j,l}}{2}} = 2\frac{n_{j}(J^{(j)})^{2}}{\epsilon_{j,l}} \rightarrow \textcolor{blue}{\frac{\textcolor{red}{2} \rho |\Delta D| J^2}{D}} && [n_j, \rho \rightarrow \text{DOS per spin}]
-\end{aligned}
-\end{equation*}
-One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)):
-\begin{equation*}
-\begin{aligned}
-	\Delta \tilde J = \frac{2 \rho |\Delta D| \tilde J^2}{D} \implies \Delta J = \textcolor{blue}{\frac{\rho |\Delta D| J^2}{D}}
-\end{aligned}
-\end{equation*}
-\qs{Is there any reason for this difference?}
-\end{frame}
-
-\begin{frame}
 	\begin{itemize}
 		\item In the Kondo URG, are you considering \textcolor{red}{two electrons} on the shell \(\Lambda_N\), one that we are decoupling (\(q\beta\)) and another with the same momentum but \textcolor{red}{opposite spin} (\(q\overline\beta\))? \\[30pt]
 		\item If so, why does that kinetic energy piece (\(\epsilon_q \tau_{q\overline\beta}\)) not come down in the denominator?\\[30pt]
@@ -70,14 +31,17 @@ One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)
 \begin{aligned}
 	\Delta H^{2}_{(j)}&=\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\bigg[\textcolor{blue}{S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}}\nonumber\\
 				   &+S^{y}S^{x}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}\bigg]\nonumber\\
-				   &=\sum_{\substack{m=1,\\ \beta}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\textcolor{blue}{S^{z}\frac{\sigma^{z}_{\alpha\alpha}}{2}\bigg[\hat{n}_{j,\hat{s}_{m},\alpha}(1-\hat{n}_{j,\hat{s}_{m},\beta})}-\only<2>{...}
-	\only<1>{\\&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\hat{n}_{j,\hat{s}_{m},\beta}(1-\hat{n}_{j,\hat{s}_{m},\alpha})\bigg]\nonumber\\}
+				   &=\sum_{\substack{m=1,\\ \beta}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\textcolor{blue}{S^{z}\frac{\sigma^{z}_{\alpha\alpha}}{2}\bigg[\hat{n}_{j,\hat{s}_{m},\alpha}(1-\hat{n}_{j,\hat{s}_{m},\beta})}-...
 \end{aligned}
 \end{equation*}
-\only<2>{\qs{What I got:}
+\qs{What you used:}
 \begin{equation*}
-	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2} S^z\sigma^{z}_{\alpha\alpha}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
-\end{equation*}}
+	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
+\end{equation*}
+\qs{What I got:}
+\begin{equation*}
+	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2}S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
+\end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -103,21 +67,19 @@ While calculating the impurity susceptibility of the Kondo model, you took the f
 	H = J \vec{S_d}\cdot\vec{s}
 \end{equation*}
 \begin{equation*}
-	H(B) = J \vec{S_d}\cdot\vec{s} + B S_d^z,
+	H(B, J) = J \vec{S_d}\cdot\vec{s} + B S_d^z,
 \end{equation*}
 \begin{equation*}
 	\chi_\text{imp} = \lim_{B \to 0} \frac{\partial{\ln Z(B)}}{\partial{B}}
 \end{equation*}
 Wilson's definition was
 \begin{equation*}
-	\chi_\text{imp} = \chi(J) - \chi(J=0) + \frac{1}{4}
+	\chi_\text{imp} = \chi(J) - \chi(J=0) + \frac{1}{4} = \lim_{B \to 0} \frac{\partial{}}{\partial{B}}\ln \frac{Z(B,J)}{Z(B, J=0)} + \frac{1}{4}
 \end{equation*}
 which would require
 \begin{equation*}
-	H(B) = \sum_k \epsilon_k \hat n_{k\sigma} + J \vec{S_d}\cdot\vec{s} + J^\prime S_d^z s^z + B S_d^z + B \mu_B \left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right) 	
+	H(B) = \sum_k \epsilon_k \hat n_{k\sigma} + J \vec{S_d}\cdot\vec{s} + \tilde{J} S_d^z s^z + B S_d^z + B \mu_B \left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right) 	
 \end{equation*}
-
-
 
 \end{frame}
 \begin{frame}
@@ -166,6 +128,61 @@ so the renormalization is
 	\tau\{c^\dagger T,\eta\} = \frac{1}{2}\left[\overbrace{c^\dagger T \eta}^\text{particle sector} - \underbrace{\eta c^\dagger T}_\text{hole sector}\right] = \text{difference of the 2 sectors}
 \end{equation*}
 \qs{Yet in most RG equations (\(\Delta H_F\) of 2d Hubbard, \(\Delta H_j\) of Kondo), you have \textit{added} the two sectors. How/Why?}
+\end{frame}
+
+\begin{frame}
+Say we have a Hamiltonian (with circular isoenergetic shells)
+\begin{equation*}
+	\color{blue}{H = \sum_k \epsilon_k S^z_k - V\sum_{k \neq k^\prime} \left[S_k^+ S_{k^\prime}^- + \text{h.c.}\right] + U \sum_{k \neq k^\prime} S_k^z S_{k^\prime}^z}
+\end{equation*}
+\textit{This is a simplified form of reduced BCS (courtesy of Siddhartha da).} We are decoupling \(q \in \Lambda_N\). To include \(U\) in the denominator, we also consider another spin \(q^\prime \in \Lambda_N\). Then,
+\begin{equation*}
+	\color{red}{\Delta H \sim \sum_{kk^\prime} S_k^+ S_q^- \frac{V^2}{\omega - \epsilon_q S^z_q - U S_q^z S_{q^\prime}^z}S_q^+ S_{k^\prime}^-}
+\end{equation*}
+\begin{itemize}
+	\item Should we or should we not include \(\epsilon_{q^\prime}\) in the denominator? \\[10pt]
+	\item Suppose we take the initial configuration \(S_{q}^z = S_{q^\prime}^z = -\frac{1}{2}\). Should the intermediate configuration be \(S_{q^\prime}^z = -\frac{1}{2}\) or \(S_{q^\prime}^z = +\frac{1}{2}\)?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+Kondo Model appendix, Equation \textcolor{blue}{9.61} of thesis
+\begin{equation*}
+\begin{aligned}
+&\Delta\hat{H}_{(j)} = \sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^2}{\textcolor{red}{2}}\frac{\textcolor{red}{\tau_{j,\hat{s}_{m},\beta}}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\nonumber\\
+&\times\bigg[S^{a}S^{b}\sigma^{a}_{\alpha\beta}\sigma^{b}_{\beta\gamma} \sum_{\substack{(j_{1},j_{2}< j),\\ n,o}}c^{\dagger}_{j_{1},\hat{s}_{n},\alpha}c_{j_{2},\hat{s}_{o},\gamma}(1-\hat{n}_{j,\hat{s}_{m},\beta})+...
+\\
+&+\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{2(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})} \bigg[S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}\nonumber + ...
+\end{aligned}
+\end{equation*}
+\only<1-4>{\begin{itemize}
+		\only<1>{\item \qs{The \(\tau\) should \textcolor{red}{not} be there in numerator i presume?}}
+		\only<2>{\item \qs{Since coupling is \(\pmb{\frac{J}{2}}\), shouldn't the thing be \textcolor{red}{\(\pmb{\frac{J^2}{4}}\)} instead of \textcolor{red}{\(\pmb{\frac{J^2}{2}}\)}?}}
+		\only<3>{\item \qs{You mentioned the following in the google document- "\textit{interchange sigma\_a and sigma\_b (you get -1 sign)}". But these are matrix elements (numbers). So \textcolor{red}{why the minus sign}?}}
+		\only<4>{\item \qs{How do you combine the product of two sigmas ( \textcolor{red}{\(\pmb{\sigma^a_{\alpha\beta}\sigma^b_{\beta\gamma}}\)} ) into a single \textcolor{red}{\(\pmb{\sigma^c_{\alpha\gamma}}\)}?}}
+\end{itemize}}
+\end{frame}
+\begin{frame}
+Kondo URG coupling equation for \(J\) (equation 9.65):
+\begin{equation*}
+\begin{aligned}
+	\Delta J^{(j)}=n_{j}(J^{(j)})^{2}\left[\omega- \frac{\epsilon_{j,l}}{2}\right]\left[(\frac{\epsilon_{j,l}}{2}-\omega)^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}\right]^{-1}
+\end{aligned}
+\end{equation*}
+One-loop form (after setting \(\omega = \epsilon_{j,l}\)):
+\begin{equation*}
+\begin{aligned}
+	\Delta J^{(j)}= \frac{n_{j}(J^{(j)})^{2}}{\omega-\frac{\epsilon_{j,l}}{2}} = 2\frac{n_{j}(J^{(j)})^{2}}{\epsilon_{j,l}} \rightarrow \textcolor{blue}{\frac{\textcolor{red}{2} \rho |\Delta D| J^2}{D}} && [n_j, \rho \rightarrow \text{DOS per spin}]
+\end{aligned}
+\end{equation*}
+One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)):
+\begin{equation*}
+\begin{aligned}
+	\Delta \tilde J = \frac{2 \rho |\Delta D| \tilde J^2}{D} \implies \Delta J = \textcolor{blue}{\frac{\rho |\Delta D| J^2}{D}}
+\end{aligned}
+\end{equation*}
+\qs{Is there any reason for this difference?}
 \end{frame}
 
 \end{document}

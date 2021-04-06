@@ -1,7 +1,8 @@
 \documentclass[14pt]{extarticle}
 
-\newcommand{\qs}[1]{\textbf{{\textcolor{red}{#1}}}}
 \usepackage[dvipsnames]{xcolor}
+\definecolor{botgreen}{rgb}{0,0.3,0}
+\newcommand{\qs}[1]{\textbf{{\textcolor{botgreen}{#1}}}}
 \usepackage[margin=0.8in]{geometry}
 \usepackage{parskip}
 
@@ -25,16 +26,19 @@
 \tableofcontents
 \newpage
 \section{Questions}
+Most of the questions are hyperlinks, so you can click them and go to relevant portions (the targets are colored green).
 \begin{itemize}
 	\item \hyperlink{q1}{ What is the motivation behind the choice of the initial condition $\tau_{q \uparrow} = -\tau_{q\downarrow} = \frac{1}{2}$? Does that choice not violate the SU(2) symmetry of the model? Why not take a more symmetric choice like $\tau_{q\beta} =  \tau_{q\bar{\beta}} = \frac{1}{2}$ for $q\beta$ below fermi level and $-1/2$ for above it?}\\[10pt]
-	\item \hyperlink{field}{If we follow your notes and try to derive the equations with just the initial configuration $\tau_{q \uparrow} = -\tau_{q\downarrow} = \frac{1}{2}$, we end up with a field-like term \(\alpha S_d^z\) in \(\Delta H\), which violates SU(2). However, if we also add the \(\Delta H\) from the initial state with \(\uparrow\) and \(\downarrow\) flipped, then we lose the field term.}\\[10pt]
+	\item \hyperlink{field}{If we follow your notes and try to derive the equations with just the initial configuration $\tau_{q \uparrow} = -\tau_{q\downarrow} = \frac{1}{2}$, we end up with a field-like term \(\alpha S_d^z\) in \(\Delta H\), which violates SU(2). However, if we consider anothe initial configuration with \(\uparrow\) and \(\downarrow\) flipped, and add the \(\Delta H\) arising from such a configuration, we can get rid of the field term.}\\[10pt]
 	\item \hyperlink{q3}{On setting \(J_z=J_t\), we do not get \(\Delta J_z = \Delta J_t\). The RG equations appear to not respect the SU(2) symmetry. How do we resolve this?}\\[10pt]
-	\item \hyperlink{q4}{\(\Delta J_t\) obtained without summing over \(\beta\) is half of what you get. Why is this so?}\\[10pt]
+	\item \hyperlink{q4}{The \(\Delta J_t\) that we obtained without summing over \(\beta\) is half of what you get. Why is this so?}\\[10pt]
 	\item Is there a general prescription for choosing what part of the Hamiltonian comes down in the denominator?
 \end{itemize}
 
 \newpage
-\section{Formulation}
+\section{Calculations}
+These subsections contain the calculations which back up the questions mentioned above.
+\subsection{Formulation}
 
 \begin{align}
  H &= \sum\limits_{k \alpha} \epsilon_k \tau_{k\alpha} + J_z S_d^z \sum\limits_{kk^{\prime}} \left( c^{\dag}_{k\uparrow}c_{k^{\prime}\uparrow} - c^{\dag}_{k\downarrow}c_{k^{\prime}\downarrow} \right) \nonumber\\
@@ -61,11 +65,11 @@ The transformed hamiltonian is
 \end{equation}
 where $\eta_0 = -\eta$ 
 
-\section{Particle, hole sectors (Left GFs)}
 For simpler calculations, take $H^D$ in the green's functions of $\eta$, $\eta_0$ as
 \begin{equation}
  H^D = \epsilon_q\tau_{q\beta} + \beta J_zS^z_d \left( \tau_{q\beta} - \tau_{q\bar{\beta}} \right)  \label{eq:20} 
 \end{equation}
+
 \subsection{Particle Sector}
 \begin{align}
  c^{\dag}_{q\beta}T_{q\beta}\eta &=  \frac{1}{\omega-H^D} c^{\dag}_{q\beta}T_{q\beta}  T_{q\beta}^{\dag}c_{q\beta}  \nonumber\\
@@ -104,10 +108,10 @@ For simpler calculations, take $H^D$ in the green's functions of $\eta$, $\eta_0
 \end{align}
 \end{subequations}
 
-\section{Decoupling $q\beta$, $q\bar{\beta}$}
+\subsection{Decoupling $q\beta$, $q\bar{\beta}$}
 We consider the decoupling for the initial condition $\tau_{q\beta} = - \tau_{q\bar{\beta}} = \frac{1}{2}$ with the ansatz $\omega = -\omega^{\prime}$
 
-\hypertarget{q1}{{\color{red} What is the motivation behind the initial condition $\tau_{q\beta} = - \tau_{q\bar{\beta}} = \frac{1}{2}$? Can't we take $\tau_{q\beta} =  \tau_{q\bar{\beta}} = \frac{1}{2}$ for $q\beta$ below fermi level and $-1/2$ for above it?}}
+\paragraph{Question 1}: \hypertarget{q1}{\qs{ What is the motivation behind the initial condition $\tau_{q\beta} = - \tau_{q\bar{\beta}} = \frac{1}{2}$? Can't we take $\tau_{q\beta} =  \tau_{q\bar{\beta}} = \frac{1}{2}$ for $q\beta$ below fermi level and $-1/2$ for above it?}}
 
 \begin{align}
   c^{\dag}_{q\beta}T_{q\beta}\eta  &=  \frac{1}{4} J_z^2 \frac{1}{\omega - \frac{1}{2} \epsilon_q - \beta J_zS_d^z}  \sum\limits_{kk^{\prime}\ne q} c_{k\beta}c^{\dag}_{k^{\prime}\beta} \nonumber\\
@@ -132,7 +136,7 @@ We consider the decoupling for the initial condition $\tau_{q\beta} = - \tau_{q\
                                                                                          &\hspace{30pt} + J_t^2 \frac{\left( \omega + \frac{1}{2}\epsilon_q - \frac{1}{2} J_z \right)}{\left( \omega -\frac{1}{2}\epsilon_q  \right)^2 - \left( \frac{1}{2}J_z \right)^2} \sum\limits_{k\ne q} 1 \label{eq:19} 
 \end{align}
 \end{subequations}
-\hypertarget{q2}{\qs{Field terms arise in $U HU^{\dag}$ if we don't sum Eqs. \eqref{eq:22} over $\beta$}}
+\paragraph{Question 2:}\hypertarget{q2}{\qs{A magnetic field-like term (eq.~\eqref{eq:16}) arises in $\Delta H$ if we don't sum Eqs.~\eqref{eq:22}  over $\beta$}.}
 
 \subsection{Scaling Equations}
 \paragraph{Without summing over \(\beta\)}
@@ -141,7 +145,7 @@ We consider the decoupling for the initial condition $\tau_{q\beta} = - \tau_{q\
 	\Delta J_{z \downarrow} &= -\frac{J_t^2 \left( \omega - \frac{1}{2}\epsilon_q \right) - \frac{1}{2} J_z \left( J_t^2 - \frac{1}{2}J_z^2 \right)}{\left( \omega -\frac{1}{2}\epsilon_q  \right)^2 - \left( \frac{1}{2}J_z \right)^2}\\
 	\Delta J_t &= J_zJ_t \frac{\left( \omega -\frac{1}{2}\epsilon_q  \right)}{\left( \omega -\frac{1}{2}\epsilon_q  \right)^2 - \left( \frac{1}{2}J_z \right)^2}
 \end{aligned}\end{equation}
-{\color{red}Field term:}
+{\color{red}The field-like term mentioned in question 2:}
 \begin{equation}\begin{aligned}
 \frac{1}{4} J_z^2 \frac{\hypertarget{field}{\beta J_z S_d^z}}{\left( \omega -\frac{1}{2}\epsilon_q  \right)^2 - \left( \frac{1}{2}J_z \right)^2} \sum\limits_{k\ne q} 1
 \end{aligned}\end{equation}
@@ -150,12 +154,13 @@ Putting \(J_z = J_t = \frac{J}{2}\) in \(\Delta J_t\), we get
 	\label{q4}
 	\color{red}{\Delta J = \frac{1}{2}J^2 \frac{\left( \omega - \frac{1}{2}\epsilon_q \right)}{\left( \omega - \frac{1}{2}\epsilon_q \right)^2 - \left( \frac{1}{4} J \right)^2}}
 \end{align}}
+\paragraph{Question 4:}\qs{This is double of what you get.}
 \paragraph{On summing over $\beta$}
 \begin{align}
   \Delta J_t  &= 2 J_zJ_t \frac{\left( \omega - \frac{1}{2}\epsilon_q \right)}{\left( \omega - \frac{1}{2}\epsilon_q \right)^2 - \left( \frac{1}{2} J_z \right)^2}   \label{eq:21} \\
 \Delta J_z  &= \frac{J_z \left( J_t^2 - \frac{1}{2} J_z^2 \right)}{\left( \omega - \frac{1}{2}\epsilon_q \right)^2 - \left( \frac{1}{2} J_z \right)^2}
 \end{align}
-\hypertarget{qs3}{\qs{$\Delta J_z$ doesn't have the same form as $\Delta J_t$}}.
+\paragraph{Question 3:}\hypertarget{qs3}{\qs{$\Delta J_z$ doesn't have the same form as $\Delta J_t$}}.
 
 %{\color{red} The denominators of the scaling equations have $\frac{1}{2}J_z$ instead of $\frac{1}{4} J_z$}
 \end{document}
