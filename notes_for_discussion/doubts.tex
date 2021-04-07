@@ -27,31 +27,13 @@
 \end{frame}
 
 \begin{frame}
-\begin{equation*}
-\begin{aligned}
-	\Delta H^{2}_{(j)}&=\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\bigg[\textcolor{blue}{S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}}\nonumber\\
-				   &+S^{y}S^{x}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}\bigg]\nonumber\\
-				   &=\sum_{\substack{m=1,\\ \beta}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\textcolor{blue}{S^{z}\frac{\sigma^{z}_{\alpha\alpha}}{2}\bigg[\hat{n}_{j,\hat{s}_{m},\alpha}(1-\hat{n}_{j,\hat{s}_{m},\beta})}-...
-\end{aligned}
-\end{equation*}
-\qs{What you used:}
-\begin{equation*}
-	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
-\end{equation*}
-\qs{What I got:}
-\begin{equation*}
-	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2}S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
-\end{equation*}
-\end{frame}
-
-\begin{frame}
 	In the Kondo URG, you simplify the \(\hat \omega\) as 
 \begin{equation*}
-	\pmb{\hat \omega = \textcolor{blue}{\omega \tau}}
+	\pmb{\hat \omega = \textcolor{blue}{2\omega \tau}}
 \end{equation*}
 \qs{What is the formal way of doing this?} Shouldn't it be 
 \begin{equation*}
-	\pmb{\hat \omega = \omega_1 \hat n + \omega_1 (1 - \hat n)}
+	\pmb{\hat \omega = \omega_1 \hat n + \omega_0 (1 - \hat n)}
 \end{equation*}
 Is this just an assumption?\\[10pt]
 In the RG equation for BCS instability (eq. 8.130 of thesis), you use 
@@ -184,5 +166,24 @@ One-loop form in Coleman (Introduction to Many-Body Physics) (\(\tilde J = J/2\)
 \end{equation*}
 \qs{Is there any reason for this difference?}
 \end{frame}
+
+\begin{frame}
+\begin{equation*}
+\begin{aligned}
+	\Delta H^{2}_{(j)}&=\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\bigg[\textcolor{blue}{S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}}\nonumber\\
+				   &+S^{y}S^{x}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}\bigg]\nonumber\\
+				   &=\sum_{\substack{m=1,\\ \beta}}^{n_{j}}\frac{(J^{(j)})^{2}}{(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-J^{(j)}S^{z}s^{z}_{j,\hat{s}_{m}})}\textcolor{blue}{S^{z}\frac{\sigma^{z}_{\alpha\alpha}}{2}\bigg[\hat{n}_{j,\hat{s}_{m},\alpha}(1-\hat{n}_{j,\hat{s}_{m},\beta})}-...
+\end{aligned}
+\end{equation*}
+\qs{What you used:}
+\begin{equation*}
+	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
+\end{equation*}
+\qs{What I got:}
+\begin{equation*}
+	S^{x}S^{y}\sigma^{x}_{\alpha\beta}\sigma^{y}_{\beta\alpha}c^{\dagger}_{j,\hat{s}_{m},\alpha}c_{j,\hat{s}_{m},\beta}c^{\dagger}_{j,\hat{s}_{m},\beta}c_{j,\hat{s}_{m},\alpha} = \textcolor{red}{i^2}S^z\frac{\sigma^{z}_{\alpha\alpha}}{2}\hat n_{j,\hat{s}_{m},\alpha}\left(1 - \hat n_{j,\hat{s}_{m},\beta}\right)
+\end{equation*}
+\end{frame}
+
 
 \end{document}
