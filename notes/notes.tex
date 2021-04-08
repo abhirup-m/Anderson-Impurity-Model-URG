@@ -5967,6 +5967,7 @@ Looking at the definition of a lax pair, we can now make the connection
 \subsection{Double Bracket Flow}
 The double bracket flows correspond to a special choice of the operator \(B(t)\): \(B(t) \equiv \left[A(t), C\right]\). A consequence of this choice is that the lax pair evolution then serves to minimize the commutator \(\left[A(t), C\right]\). To see how, we first write down a function
 \begin{equation}
+	\label{minfunc}
 	\chi \equiv \text{Tr}\left(\left[A(t) - C\right]^2\right) = \text{Tr}\left[A(t)^2 + C^2 - A(t) C - C A(t)\right]
 \end{equation}
 Since \(A^2(t) = U A^2 U^\dagger\), we get \(\text{Tr}(A^2(t)) = \text{Tr}(A)\). Also, from the cyclic nature of trace, we can write \(\text{Tr}(A(t)C)=\text{Tr}(CA(t))\). These considerations (and the fact that \(C\) does not depend on \(t\)) allows us to write
@@ -6054,7 +6055,11 @@ And the gradient equation in terms of \(H\) is
 	\dot H = \dot{Q^T}H_0 Q + Q^T H_0 \dot Q =  \left[ N, H \right] Q^T H_0 Q +  Q^T H_0 Q \left[ H, N \right] = \left[ N, H \right] H -  H \left[ N, H \right]\\
 	= \left[\left[ N, H \right], H\right] 
 \end{aligned}\end{equation}
-This is identical to the double-bracket flow equation \ref{dbflow}, with the indetification \(A = H\) and \(C = -N\).
+This is identical to the double-bracket flow equation \ref{dbflow}, with the indetification \(A = H\) and \(C = -N\). We thus see that starting from the equation of motion along the path of steepest descent of a function \(f(Q)\) in the space of orthogonal matrices, we end up with exactly the same double bracket flow equation. The function that we are minimizing (\(f(Q)\)), in terms of \(H(Q)\), is 
+\begin{equation}\begin{aligned}
+	g(H(Q)) = \text{Tr}\left[ H^2 \right] + \text{Tr}\left[ N^2 \right] - 2\text{Tr}\left[ Q^THQN \right] = \text{Tr}\left[ H^2 + N^2  - 2 H N \right] 
+\end{aligned}\end{equation}
+which is identical to the function in eq.~\ref{minfunc}.
 
 \subsection{URG as a double-bracket flow}
 The difference RG equation for URG can be written in the form
@@ -6088,9 +6093,13 @@ Combining the three points:
 \begin{equation}\begin{aligned}
 \chi_j \geq 0, && \Delta \chi_j \leq 0, && \Delta \chi_{j^*} = 0
 \end{aligned}\end{equation}
-we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point.
-\\\\
-This minimization has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:
+we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point. 
+\pb However, the difficulty with such a function definition is that it depends on a particular state \(\ket{\Psi_{j^*}}\) which we do not know \textit{a priori}. For a more universal definition, we can work with
+\begin{equation}\begin{aligned}
+	\Gamma_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
+\end{aligned}\end{equation}
+This function is also postive semi-definite (because it is a sum of inner products), and its derivative is alwayas negative meaning it monotonically decreases (can be proved exactly as we proved it for \(\chi_j\)), but it is not necessary that it will be 0 at the fixed point. If the choice of URG \(\omega\) is one such that at the fixed point, the interaction coupling vanishes, then \(\Gamma_j\) will vanish and it will have flown to its minima. Otherwise, it will stop at a non-zero value, which can be considered to be  its minima, given that particular value of \(\omega\).
+\pb This minimization (for \(\Gamma_j(\omega)\)) has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:
 \begin{equation}
 	\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}
 \end{equation}
