@@ -4089,7 +4089,6 @@ where we used \(\hat n_d = 1\) and \(\hat n_{d \uparrow} \hat n_{d \downarrow} =
 \end{aligned}\end{equation}
 Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\).
 \pb If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
-
 \begin{equation}\begin{aligned}
 	\label{kondosym}
 	\Delta J = - J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{4}J}
@@ -5794,7 +5793,49 @@ This proves that the family of Hamiltonians \(\ham(l)\) satisfy the flow equatio
 \beq[cut]
 \dv{\ham}{l} = \qq{\qq{\ham_d(l),\ham_X(l)},\ham(l)}
 \eeq
-To get a feel for the method, we will apply it on the Fröhlick Hamiltonian to remove the electron-phonon coupling term. 
+To see how this choice of the generator results in a decay of the off-diagonal terms, we can consider a simple 2-particle Hamiltonian:
+\begin{equation}
+	\ham = \sum_i \epsilon_i \hat n_i + \sum_{i\neq j} g_{ij}c^\dagger_i c_j
+\end{equation}
+where \(g_{ij}^* = g_ji\). The canonical generator then turns out to be 
+\begin{equation}
+	\eta = \left[\sum_i \epsilon_i \hat n_i, \sum_{j\neq k} g_{jk}c^\dagger_j c_k\right] = \sum_{k\neq i} \epsilon_i\left[g_{ik}c^\dagger_i c_k - g_{ki}c^\dagger_k c_i\right] = \sum_{k\neq i} g_{ik}c^\dagger_i c_k \left(\epsilon_i - \epsilon_k\right)
+\end{equation}
+and the renormalisation in the Hamiltonian is
+\begin{equation}
+	\frac{d\ham}{dl} = \left[\eta, \ham\right] = \left[\sum_{k\neq i} g_{ik}c^\dagger_i c_k \left(\epsilon_i - \epsilon_k\right), \sum_i \epsilon_i \hat n_i + \sum_{i\neq j} g_{ij}c^\dagger_i c_j\right]
+\end{equation}
+The  first commutator gives 
+\begin{equation}
+	-\sum_{i\neq k} g_{ik}\left(\epsilon_i - \epsilon_k\right)^2 c^\dagger_i c_k
+\end{equation}
+The second commutator gives
+\begin{equation}
+	\sum_{k\neq i\atop{j}}\left[g_{kj}g_{ik}\left(\epsilon_i - \epsilon_k\right) c^\dagger_i c_j + g_{ji}g_{ik}\left( \epsilon_k - \epsilon_i \right) c^\dagger_j c_k\right] = \sum_{k\neq i\atop{j}}g_{ik}g_{kj}\left( \epsilon_i + \epsilon_j - 2\epsilon_k \right) c^\dagger_i c_j
+\end{equation}
+The total renormalisation is
+\begin{equation}
+	\frac{d\ham}{dl} = -\sum_{i\neq j} g_{ij}\left(\epsilon_i - \epsilon_j\right)^2 c^\dagger_i c_j + \sum_{k\neq i\atop{j}}g_{ik}g_{kj}\left( \epsilon_i + \epsilon_j - 2\epsilon_k \right) c^\dagger_i c_j
+\end{equation}
+The couplings renormalize as
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}\epsilon_i}{\:\mathrm{d}l} &= \sum_{k \neq i} 2|g_{ik}|^2\left( \epsilon_i - \epsilon_k \right)\\
+	\frac{\:\mathrm{d}g_{ij}}{\:\mathrm{d}l} &= - g_{ij}\left(\epsilon_i - \epsilon_j\right)^2 + \sum_{k \neq i}g_{ik}g_{kj}\left( \epsilon_i + \epsilon_j - 2\epsilon_k \right)
+\end{aligned}\end{equation}
+To see the decay of the off-diagonal terms, first we will relate the off-diagonal flow to the diagonal flow using the invarince of the trace under a unitary transformation:
+\begin{equation}\begin{aligned}
+	0 = \frac{\:\mathrm{d}\text{Tr}\left( \ham \right) ^2}{\:\mathrm{d}l} = \frac{\:\mathrm{d}\text{Tr}\left( \ham \right) ^2}{\:\mathrm{d}l} = \sum_i \frac{\:\mathrm{d} \epsilon_i^2 }{\:\mathrm{d}l} + \sum_{i\neq j}\frac{\:\mathrm{d}|g_{ij}|^2}{\:\mathrm{d}l} \implies \sum_{i\neq j}\frac{\:\mathrm{d}|g_{ij}|^2}{\:\mathrm{d}l} = -\sum_i \frac{\:\mathrm{d} \epsilon_i^2 }{\:\mathrm{d}l}
+\end{aligned}\end{equation}
+From the flow equation, we can see that
+\begin{equation}\begin{aligned}
+	\sum_i \frac{\:\mathrm{d} \epsilon_i^2 }{\:\mathrm{d}l} = 2\sum_{i \neq k} \epsilon_i \frac{\:\mathrm{d} \epsilon_i }{\:\mathrm{d}l} = 2 \sum_i |g_{ik}|^2 \left( \epsilon_i - \epsilon_k \right) ^2 \geq 0
+\end{aligned}\end{equation}
+Therefore,
+\begin{equation}\begin{aligned}
+	\sum_{i\neq j}\frac{\:\mathrm{d}|g_{ij}|^2}{\:\mathrm{d}l} \leq 0
+\end{aligned}\end{equation}
+This implies that at \(l \to \infty\), the only off-diagonal terms that survive are those with \(g_{ij}\) that scatter between degenerate states, that is, those with \(\epsilon_i - \epsilon_j = 0\).
+\pb To get a feel for the method, we will apply it on the Fröhlick Hamiltonian to remove the electron-phonon coupling term. 
 \beq
 \ham = \ham_d + \ham_X
 \eeq
@@ -5925,6 +5966,7 @@ Looking at the definition of a lax pair, we can now make the connection
 \subsection{Double Bracket Flow}
 The double bracket flows correspond to a special choice of the operator \(B(t)\): \(B(t) \equiv \left[A(t), C\right]\). A consequence of this choice is that the lax pair evolution then serves to minimize the commutator \(\left[A(t), C\right]\). To see how, we first write down a function
 \begin{equation}
+	\label{minfunc}
 	\chi \equiv \text{Tr}\left(\left[A(t) - C\right]^2\right) = \text{Tr}\left[A(t)^2 + C^2 - A(t) C - C A(t)\right]
 \end{equation}
 Since \(A^2(t) = U A^2 U^\dagger\), we get \(\text{Tr}(A^2(t)) = \text{Tr}(A)\). Also, from the cyclic nature of trace, we can write \(\text{Tr}(A(t)C)=\text{Tr}(CA(t))\). These considerations (and the fact that \(C\) does not depend on \(t\)) allows us to write
@@ -5945,7 +5987,12 @@ Since \(\chi\), the way it is defined, must necessarily be positive semi-definit
 \begin{equation}
 	\lim_{t\to \infty}\frac{\mathrm{d} \chi}{\mathrm{d}t} = -2 \lim_{t\to \infty}\text{Tr}\left(\left[A(t), C\right]^2\right) = 0 \implies \lim_{t\to \infty}\left[A(t), C\right] = 0
 \end{equation}
-In other words, \textbf{the lax pair evolution of \(A(t)\) against \(\left[A(t),C\right]\) leads to the diagonalization of \(A(t)\) with respect to \(C\).} This can be used as an iterative algorithm to diagonalize a general matrix with respect to another matrix:
+In other words, \textbf{the lax pair evolution of \(A(t)\) against \(\left[A(t),C\right]\),
+\begin{equation}\begin{aligned}
+	\label{dbflow}
+	\frac{\mathrm{d}A(t)}{\mathrm{d}t} = \left[\left[A(t),C\right], A(t)\right]
+\end{aligned}\end{equation}
+leads to the diagonalization of \(A(t)\) with respect to \(C\).} This can be used as an iterative algorithm to diagonalize a general matrix with respect to another matrix:
 \begin{itemize}
 	\item Define matrices A and B, A being the one we want to diagonalize w.r.t B
 	\item Iteratively run the next two steps until a desired accuracy is reached
@@ -5961,41 +6008,100 @@ The double bracket flow
 	\frac{\:\mathrm{d}A}{\:\mathrm{d}t} = \left[  \left[ A, C \right], A  \right] 
 \end{aligned}\end{equation}
 is thus a flow towards the minima of the function \( \chi = \text{tr}\left( \left( A - C \right) ^2 \right)  \) .
+\subsection{Double-Bracket flow as a descent equation}
+The double-bracket flow equation for a symmetric matrix also arises naturally as the equation of motion of a matrix \(X\) (in the space of \(X \in Q X_0 Q^T\)) along that path which minimizes the function
+\begin{equation}\begin{aligned}
+	f(X) =  ||X - P(X)||^2
+\end{aligned}\end{equation}
+That is, starting with a matrix \(X_0\) and a transformation \(P\) which takes \(X\) to a subspace \( {P(X)}\), we have a family of matrices \(X(Q) = Q^T X_0 Q\) parameterise by the similarity transformation \(Q\), and we want to find the \(X^*\) (and hence the \(U^*\)) which is closest to the above mentioned subspace. If we choose \(P(X) = \text{diag}(X)\), this is like finding the similarity transformation which takes \(X\) closest to its diagonal form. 
+\pb Choosing \(P(X) = N\) where \(N\) is diagonal and identifying \(X_0\) as a Hamiltonian \(H\), the function can be written as
+\begin{equation}\begin{aligned}
+	f(Q) = ||Q^T H Q - N ||^2
+\end{aligned}\end{equation}
+The norm-squared is defined as
+\begin{equation}\begin{aligned}
+	f(Q) = \langle \left(Q^T H Q - N\right) \left(Q^T H Q - N\right)\rangle = \text{Tr}\left[\left(Q^T H Q - N\right)^T \left(Q^T H Q - N\right)\right]
+\end{aligned}\end{equation}
+which means that the function to minimize is
+\begin{equation}\begin{aligned}
+	f(Q) = \text{Tr}\left[ H^2 \right] + \text{Tr}\left[ N^2 \right] - 2\text{Tr}\left[ Q^THQN \right] \sim - 2\text{Tr}\left[ Q^THQN \right]
+\end{aligned}\end{equation}
+where we used \(H^T = H, N^T = N\) and ignored the \(Q-\)independent terms at the final step. Expanding \(Q\) in a Taylor-series about \(Q_0\) gives
+\begin{equation}\begin{aligned}
+	Q = Q_0 e^\delta = Q_0 + Q_0 \delta + Q_0 \frac{\delta^2}{2} + ..
+\end{aligned}\end{equation}
+where, in order to make \(Q\) orthogonal, we must have \(\delta = -\delta^T\). The variation on \(F\), upto first order, is then
+\begin{equation}\begin{aligned}
+	\Delta f(Q_0) &= f(Q_0(1+\delta)) - f(Q_0)\\
+		      &= - 2\text{Tr}\left[\left(1-\delta\right)Q^T_0HQ_0\left(1+\delta\right)N \right] + 2\text{Tr}\left[ Q_0^THQ_0N \right]\\
+		      &= 2\text{Tr}\left[\delta Q_0^T H Q_0 N \right] - 2\text{Tr}\left[Q^T_0 HQ_0\delta N \right]\\
+		      &= 2\text{Tr}\left[Q_0^T H Q_0 N Q_0^T Q\delta\right] - 2\text{Tr}\left[ N Q^T_0 HQ_0\delta\right]\\
+		      &= 2\text{Tr}\left[\left(Q_0 N Q_0^T H Q_0 - H Q_0 N\right)^T Q_0 \delta\right]\\
+		      &= 2\langle Q_0 N Q_0^T H Q_0 - H Q_0 N, Q_0 \delta\rangle\\
+	\implies \nabla f(Q) \cdot Q\delta &= 2\langle Q_0 N Q_0^T H Q_0 - H Q_0 N, Q_0 \delta\rangle\\
+	\implies \nabla f(Q) &= Q_0 N Q_0^T H Q_0 - H Q_0 N
+\end{aligned}\end{equation}
+Since a descent equation is defined as \(\dot x = -\nabla f(x)\), the equation for \(Q\) is 
+\begin{equation}\begin{aligned}
+	\dot Q = H Q N - Q N Q^T H Q
+\end{aligned}\end{equation}
+Defining a family of similarity-connected Hamiltonians \(H(Q) = Q^T H_0 Q\) (we have relabelled \(H\) as \(H_0\)), the equation for \(Q\) can be written as
+\begin{equation}\begin{aligned}
+	\dot Q = H_0 Q N - Q N Q^T H_0 Q = Q H N - Q N H = Q \left[ H, N \right] 
+\end{aligned}\end{equation}
+And the gradient equation in terms of \(H\) is
+\begin{equation}\begin{aligned}
+	\dot H = \dot{Q^T}H_0 Q + Q^T H_0 \dot Q =  \left[ N, H \right] Q^T H_0 Q +  Q^T H_0 Q \left[ H, N \right] = \left[ N, H \right] H -  H \left[ N, H \right]\\
+	= \left[\left[ N, H \right], H\right] 
+\end{aligned}\end{equation}
+This is identical to the double-bracket flow equation \ref{dbflow}, with the indetification \(A = H\) and \(C = -N\). We thus see that starting from the equation of motion along the path of steepest descent of a function \(f(Q)\) in the space of orthogonal matrices, we end up with exactly the same double bracket flow equation. The function that we are minimizing (\(f(Q)\)), in terms of \(H(Q)\), is 
+\begin{equation}\begin{aligned}
+	g(H(Q)) = \text{Tr}\left[ H^2 \right] + \text{Tr}\left[ N^2 \right] - 2\text{Tr}\left[ Q^THQN \right] = \text{Tr}\left[ H^2 + N^2  - 2 H N \right] 
+\end{aligned}\end{equation}
+which is identical to the function in eq.~\ref{minfunc}.
+
 \subsection{URG as a double-bracket flow}
 The difference RG equation for URG can be written in the form
 \begin{equation}
 	\Delta \mathcal{H} (\omega,D) =  \left[\left[ \mathcal{H}^d, \frac{1}{\omega_1 - \omega_0}G\mathcal{H}^I\right],\mathcal{H}\right] - \ham^I\\
 \end{equation}
-The URG equation acts as an optimizer - it minimizes the function
+Assuming a fixed point is reached, the URG equation acts as an optimizer - it minimizes the function
 \begin{equation}
-	\chi_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
+\chi_j = \bra{\Psi^i_{j^*}}\left(\mathcal{H}^I_j\right)^2\ket{\Psi^i_{j^*}}
 \end{equation}
-The definition of this function first requires a scheme to be defined. We can order the energy of the electrons as \(\epsilon_1 < \epsilon_2 < ... < \epsilon_j < ... < \epsilon_N\). The URG scheme consists of sequentially decoupling the states \(\epsilon_N\), then \(\epsilon_{N-1}\), and so on. At the \(j^\text{th}\) step, the Hamiltonian can be partitioned in the subspace of the electron being decoupled; the partitioning looks like
+The definition of this function and the explanation of the symbols requires that a UV-IR scheme be defined. We can order the energy of the electrons as \(\epsilon_1 < \epsilon_2 < ... < \epsilon_j < ... < \epsilon_N\). The URG scheme consists of sequentially decoupling the states \(\epsilon_N\), then \(\epsilon_{N-1}\), and so on. At the \(j^\text{th}\) step, the Hamiltonian can be partitioned in the subspace of the electron being decoupled; the partitioning looks like
 \begin{equation}
 	\mathcal{H}^0_j + c_j^\dagger T_j + T_j^\dagger c_j
 \end{equation}
-\(\mathcal{H}^0_j\) is the part that \textit{does not} scatter between \(\ket{\hat n_j} = 0,1\), while \(\mathcal{H}^I_j = c_j^\dagger T_j + T_j^\dagger c_j\) is the part that \textit{does} scatter between states with a definite value of \(\hat n_j\).
-\\\\
-The first observation that we make is that \(\chi_j\) is semi-positive definite. This is because it can be expressed as the norm-squared of a state vector.
+\(\mathcal{H}^0_j\) is the part that \textit{does not} scatter between \(\ket{\hat n_j} = 0,1\), while \(\mathcal{H}^I_j = c_j^\dagger T_j + T_j^\dagger c_j\) is the part that \textit{does} scatter between states with a definite value of \(\hat n_j\). If, at some value of \(j\) which we call \(j^*\), the denominator of the Green's function in \(\Delta \ham\) vanishes, we call this a fixed point. From the discussion in subsection \ref{match}, we know that if we split \(\ket{\Psi_{j^*}}\) as \(\ket{\Psi_{j^*}} =\ket{\Psi^1_{j^*}}+\ket{\Psi^0_{j^*}}\), then at the fixed point we will have \(\ham^I \ket{\Psi^i_{j^*}} = 0\) for \(i\) either 0 or 1. We define \(i\) to be that component which vanishes at the fixed point. This completes the definition of \(\ket{\Psi^i_{j^*}}\).
+\pb The first observation that we will make is that \(\chi_j\) is semi-positive definite. This is because it can be expressed as the norm-squared of a state vector.
 \begin{equation}
-	\chi_j = \sum_{i=1}^N \bra{\psi_i}\left(\mathcal{H}^I_j\right)^2\ket{\psi_i} = \sum_{i=1}^N \langle\phi_i | \phi_i \rangle \geq 0, \left[\text{where }\ket{\phi_i} = \mathcal{H}^I_j\ket{\psi_i}\right]
+	\chi_j = \bra{\Psi^i_{j^*}}\left(\mathcal{H}^I_j\right)^2\ket{\Psi^i_{j^*}} = \langle\phi | \phi \rangle \geq 0, \left[\text{where }\ket{\phi} = \mathcal{H}^I_j\ket{\Psi^i_{j^*}}\right]
 \end{equation}
 The difference equation for \(\chi_j\) is
 \begin{equation}\begin{aligned}
-	\Delta \chi_j = 2\text{Tr}\left[\mathcal{H}^I_j\Delta \mathcal{H}^I_j\right] = 2\text{Tr}\left[\mathcal{H}^I_j\left(\mathcal{H}^I_{j-1} - \mathcal{H}^I_j\right)\right]\\
+	\Delta \chi_j = 2\bra{\Psi^i_{j^*}}\mathcal{H}^I_j\Delta \mathcal{H}^I_j \ket{\Psi^i_{j^*}}= 2\bra{\Psi^i_{j^*}}\mathcal{H}^I_j\left(\mathcal{H}^I_{j-1} - \mathcal{H}^I_j\right)\ket{\Psi^i_{j^*}}\\
 \end{aligned}\end{equation}
-The first part of the trace is zero. To see why, note that from the nature of URG, once \(j\) has been decoupled, it is diagonal in all the subsequent Hamiltonians. Hence, \(\mathcal{H}_{j-1}^I\) will be diagonal in \(j\), while \(\mathcal{H}_j^I\) is, by definition, off-diagonal in \(j\). The product \(\mathcal{H}_j^I\mathcal{H}_{j-1}^I\) will hence be off-diagonal and will change \(\hat n_j\). Hence, it will vanish when taken inside a trace. What remains is
+The first part of the inner product is zero. To see why, note that from the nature of URG, once \(j\) has been decoupled, it is diagonal in all the subsequent Hamiltonians. Hence, \(\mathcal{H}_{j-1}^I\) will be diagonal in \(j\), while \(\mathcal{H}_j^I\) is, by definition, off-diagonal in \(j\). The product \(\mathcal{H}_j^I\mathcal{H}_{j-1}^I\) will hence be off-diagonal and will change \(\hat n_j\). Hence, it will vanish when taken inside an inner product.
+\pb What remains is
 \begin{equation}\begin{aligned}
-	\Delta \chi_j = -2\text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right] = -2 \chi_j\leq 0\\
+	\Delta \chi_j = -2\bra{\Psi^i_{j^*}}\left(\mathcal{H}^I_j\right)^2\ket{\Psi^i_{j^*}} = -2 \chi_j\leq 0\\
 \end{aligned}\end{equation}
-At the fixed point \(j^*\) of URG, the off-diagonal part of the Hamiltonian vanishes, so we can write \(\mathcal{H}_{j^*}^I = 0 \implies \Delta \chi^* = 0\).
+At the fixed point \(j^*\) of URG, \(\ham^I \ket{\Psi^i_{j^*}} = 0\), so \(\Delta \chi_{j^*} = 0\).
 Combining the three points:
 \begin{equation}\begin{aligned}
 \chi_j \geq 0, && \Delta \chi_j \leq 0, && \Delta \chi_{j^*} = 0
 \end{aligned}\end{equation}
-we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point.
-\\\\
-This minimization has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:\(\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}\).
+we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point. 
+\pb However, the difficulty with such a function definition is that it depends on a particular state \(\ket{\Psi_{j^*}}\) which we do not know \textit{a priori}. For a more universal definition, we can work with
+\begin{equation}\begin{aligned}
+	\Gamma_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
+\end{aligned}\end{equation}
+This function is also postive semi-definite (because it is a sum of inner products), and its derivative is alwayas negative meaning it monotonically decreases (can be proved exactly as we proved it for \(\chi_j\)), but it is not necessary that it will be 0 at the fixed point. If the choice of URG \(\omega\) is one such that at the fixed point, the interaction coupling vanishes, then \(\Gamma_j\) will vanish and it will have flown to its minima. Otherwise, it will stop at a non-zero value, which can be considered to be  its minima, given that particular value of \(\omega\).
+\pb This minimization (for \(\Gamma_j(\omega)\)) has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:
+\begin{equation}
+	\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}
+\end{equation}
 \begin{center}
 	\includegraphics[scale=0.6]{../figures/pot_scatt_dbrack.png}
 	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
