@@ -11,6 +11,7 @@ matplotlib.rc('font', **font)
 matplotlib.rcParams['text.usetex'] = True
 #plt.style.use('ggplot')
 
+
 def rg(w,e,j,E):
     deltaE = -(j**2/4)*1/(w - e/2 + E/2 + j/4)
     if E * (E + deltaE) <= 0:
@@ -18,12 +19,14 @@ def rg(w,e,j,E):
     else:
         return E+deltaE
 
+
 def rg2(w,E,j):
     deltaE = (j**2/4)*1/(w - E/2)
     if E * (E + deltaE) <= 0:
         return 0
     else:
         return E+deltaE
+
 
 for w in [2,1]:
     N = 200
