@@ -3826,11 +3826,20 @@ These equations will now need to be simplified. For example, in the particle sec
 %}
 %\comm{
 \section{Star Graph URG}
-The star graph problem consists of \(N\) spin-like degrees of freedom (lablled 1 through N) individually talking to a spin at the center (labelled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+\begin{minipage}{260pt}
+The star graph problem consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
 \ham = \epsilon_0 S^z_0 + \sum_{i=1}^N\qq{\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i}
 \eeq
-By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
+\end{minipage}
+\hspace*{20pt}
+\begin{minipage}{200pt}
+\begin{center}
+\includegraphics[scale=0.2]{../figures/stargraph_.png}
+\captionof{figure}{Star Graph model}
+\end{center}
+\end{minipage}
+\pb By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
 \beq
 \ham = \epsilon_0 S^z_0 + \sum_{i=1}^N\qq{\epsilon_i S^z_i + J_i\rr{S^z_0 S^z_i + \hf\rr{S_0^+ S^-_i + S_0^- S^+_i}}}
 \eeq
@@ -3850,7 +3859,7 @@ The off-diagonal part in the subspace of the node \(N\) is
 \subsection{Calculation of Renormalization}
 The renormalization on doing one step of the URG is given by
 \begin{equation}
-	\Delta \ham = \left[c^\dagger_{q\beta}T,\eta\right]
+	\Delta \ham = c_{q\beta}^\dagger T \eta + T^\dagger c_{q\beta} \eta_0^\dagger
 \end{equation}
 There, \(q\beta\) refers to the electron being decoupled. Here, since we are decoupling the spin \(N\), the formula becomes
 \begin{equation}
@@ -3860,14 +3869,31 @@ where \(S_N^+T\) is the  off-diagonal term in the Hamiltonian and hence \(T\) is
 \begin{equation}
 	\eta = \frac{1}{\omega - \ham^d}T^\dagger c_{q\beta} \to \frac{1}{\omega - \ham^d}\frac{1}{2}J_N S_0^+ S_N^-
 \end{equation}
+and
+\begin{equation}
+	\eta_0^\dagger = \frac{1}{\omega^\prime - \ham^d}\frac{1}{2}J_N S_N^+ S_0^-
+\end{equation}
 Substituting the expression for the diagonal part \(\ham_d\), we get
 \begin{equation}
 	\label{stareta}
 	\eta  = \frac{1}{\omega - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}\frac{1}{2}J_NS_0^+ S_N^- = \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\frac{1}{2}J_NS_0^+ S_N^-
 \end{equation}
-In the final step, I substituted \(S_N^z = -\frac{1}{2}\) and \(S_0^z = \frac{1}{2}\) in the denominator, because there is \(S_0^+ S_N^-\) in front of the Greens function. The renormalization thus becomes
+and
 \begin{equation}
-	\Delta \ham = \frac{1}{4}J_N^2 S_N^+S_0^- \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^- - \frac{1}{4}J_N^2\frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^-S_N^+S_0^-
+	\eta_0^\dagger = \frac{1}{\omega^\prime - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}\frac{1}{2}J_NS_N^+ S_0^- = \frac{1}{\omega + \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\frac{1}{2}J_NS_N^+ S_0^-
+\end{equation}
+In the final steps, I substituted \(S_N^z = -\frac{1}{2}\) and \(S_0^z = \frac{1}{2}\) in the denominator of \(\eta\), and the opposite values in the denominator of \(\eta_0^\dagger\), because there is \(S_0^+ S_N^-\)(\(S_N^+ S_0^-\)) in front of the Greens function of \(\eta\) (\(\eta_0^\dagger\)). The renormalization thus becomes
+\begin{equation}
+	\Delta \ham = \frac{1}{4}J_N^2 S_N^+S_0^- \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^- + \frac{1}{4}J_N^2S_0^+ S_N^- \frac{1}{\omega^\prime + \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N + \frac{1}{4}J_N} S_N^+S_0^-
+\end{equation}
+To compare \(\omega\) and \(\omega^\prime\), we will write down their Poor Man' Scaling counterparts.
+\begin{equation}\begin{aligned}
+	\omega &= \frac{1}{2}\epsilon_N - \frac{1}{2}\epsilon_0 - \frac{1}{4}J_N\\
+	\omega^\prime &= \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N - \frac{1}{4}J_N = -\omega - \frac{1}{2}J_N
+\end{aligned}\end{equation}
+So, the renormalization becomes
+\begin{equation}
+	\Delta \ham = \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[S_N^+S_0^- S_0^+ S_N^- + S_0^+ S_N^- S_N^+S_0^-\right]
 \end{equation}
 Using the relations \(S^+ S^- = \frac{1}{2} + S^z\) and \(S^- S^+ = \frac{1}{2} - S^z\), we can write this as
 \begin{equation}\begin{aligned}
@@ -4136,26 +4162,39 @@ Since this is the first step of the RG, the shell being decoupled is the highest
 \subsection{Calculation of renormalization}
 The \(\eta\) is
 \begin{equation}\begin{aligned}
-	\eta = \frac{1}{\omega - \ham_d}T^\dagger c_{q\beta} &= \frac{1}{\omega - \epsilon_q \tau_{q\beta} - \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} -  U \hat n_{d\ua} \hat n_{d\da}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
-							     &= \frac{1}{\omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
+	\eta = \frac{1}{\hat \omega - \ham_d}T^\dagger c_{q\beta} &= \frac{1}{\hat \omega - \epsilon_q \tau_{q\beta} - \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} -  U \hat n_{d\ua} \hat n_{d\da}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
+							     &= \frac{1}{\hat \omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
 \end{aligned}\end{equation}
 We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\hat n_{d\beta} = 1\) because of the off-diagonal terms in the numerator.
 The renormalization in the particle sector (\(\hat n_{q\beta} = \hat n_{q\ol\beta} = 1\)), at an energy \(-\epsilon_q\) is
 \begin{equation}\begin{aligned}
-\Delta \ham = c^\dagger_{q\beta} T \eta= \frac{|V_q|^2}{\omega_1 - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} 
+\Delta \ham = c^\dagger_{q\beta} T \eta= \frac{|V_q|^2}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} 
 \end{aligned}\end{equation}
 Similarly, the renormalization in the hole sector (\(\hat n_{q\beta} = \hat n_{q\ol\beta} = 0\)), at an energy \(\epsilon_q\) is:
 \begin{equation}
-	\Delta \ham = T^\dagger c \eta_0^\dagger = \frac{|V_q|^2}{\omega_2 - \frac{1}{2}\epsilon_q - \epsilon_d\hat n_{d\ol\beta}}\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}
+	\Delta \ham = T^\dagger c \eta_0^\dagger = \frac{|V_q|^2}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d\hat n_{d\ol\beta}}\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}
 \end{equation}
 Therefore, the total renormalization obtained from decoupling a particle state (\(\hat n_{q\beta}=1\)) at \(-\epsilon_q\) and a hole state (\(\hat n_{q\beta}=0\)) at \(\epsilon_q\) is
 \begin{equation}\begin{aligned}
-	\Delta \ham = \frac{|V_q|^2 \left(1 - \hat n_{d\beta}\right)}{\omega_1 - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} + \frac{|V_q|^2\hat n_{d\beta}}{\omega_2 - \frac{1}{2}\epsilon_q - \epsilon_d \hat n_{d\ol\beta}}
+	\Delta \ham &= \frac{|V_q|^2 \left(1 - \hat n_{d\beta}\right)}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\ol\beta}} + \frac{|V_q|^2\hat n_{d\beta}}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d \hat n_{d\ol\beta}}\\
+		    &=|V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\ol\beta}}{\omega_1 - \frac{1}{2}\epsilon_q - 2\epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\ol\beta} \right)}{\omega_2 - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\ol\beta}}{\omega_3 - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\ol\beta}\right) }{\omega_4 - \frac{1}{2}\epsilon_q}\right]\\
 \end{aligned}\end{equation}
-\textit{As an ansatz}, we assume \(\omega_1 = \omega + \epsilon_d \hat n_{d\ol\beta},\omega_2 = \omega + \epsilon_d + \left( \epsilon_d + U \right) \hat n_{d\ol\beta}\).
+To relate the \(\omega_i\), we look at the their values obtained by substituting the energies of the initial states:
+\begin{equation}\begin{aligned}
+	\omega_1 = \omega_4 &= -\frac{1}{2}\epsilon_q + \epsilon_d\\
+	\omega_2 &= -\frac{1}{2}\epsilon_q\\
+	\omega_3 &= -\frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
+\end{aligned}\end{equation}
+Defining \(\omega \equiv \omega_2\) (because \(\omega_2\) has the simplest form), we can write
+\begin{equation}\begin{aligned}
+	\omega_1 = \omega_4 &= \omega + \epsilon_d\\
+	\omega_2 &= \omega\\
+	\omega_3 &= \omega + 2\epsilon_d + U\\
+\end{aligned}\end{equation}
+The renormalization then becomes
 \begin{equation}\begin{aligned}
 	\label{vanilla:siam:ren}
-	\Delta \ham = \frac{|V_q|^2\left(1 - \hat n_{d\beta}\right)}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U \hat n_{d\ol\beta}} + \frac{|V_q|^2\hat n_{d\beta}}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U \hat n_{d\ol\beta}}
+	\Delta \ham = |V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\ol\beta}}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\ol\beta} \right)}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\ol\beta}}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\ol\beta}\right) }{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\right]
 \end{aligned}\end{equation}
 \subsection{Scaling equations}
 Once we have the renormalization for decoupling one electronic or hole state, we can just sum over the spins and momenta to get the total renormalization upon decoupling the entire shells \(\pm \epsilon_q\). From the structure of \(\Delta \ham\) in eq.~\ref{vanilla:siam:ren}, we can see that there are renormalizations to all three configuration energies of the impurity: the doublon energy \(E_2\) corresponding to the state  \(\hat n_{d\beta}\hat n_{d\ol\beta}\), the single energy \(E_1\) corresponding to (\(\hat n_{d\beta}(1 - \hat n_{d\ol\beta}) + \hat n_{d\ol\beta}(1 - \hat n_{d\beta})\), and the holon energy \(E_0\) corresponding to \((1 - \hat n_{d\beta})(1 - \hat n_{d\ol\beta}) + \hat n_{d\ol\beta}(1 - \hat n_{d\beta})\).
@@ -4230,9 +4269,30 @@ The quantity \(\gamma = \epsilon_d + \hf U\) is thus an RG-invariant for the par
 \eeq
 If we start with a particle-hole symmetric model, we will have \(-\epsilon_d = \epsilon_d + U\). Substituting that gives \(\Delta E_2= \Delta E_0\). This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
 \subsection{Numerical analysis of symmetric SIAM}
+We will specialize to the particle-hole symmetric case, \(2\epsilon_d + U = 0\), and a symmetric energy shell \(\epsilon_q = D\), and look at the scaling behavior of \(\epsilon_d\).
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d = -4|V|^2 \frac{\epsilon_d}{\left( \omega - \frac{1}{2}D \right)^2 - \epsilon_d^2}
+\end{aligned}\end{equation}
+Since the equation is symmetric under \(\epsilon_d \to -\epsilon_d\), we might as well work with the magnitude of the onsite energy:
+\begin{equation}\begin{aligned}
+	\Delta |\epsilon_d| = -4|V|^2 \frac{|\epsilon_d|}{\left( \omega - \frac{1}{2}D \right)^2 - \epsilon_d^2}
+\end{aligned}\end{equation}
+Depending on the signature of the denominator, the flows will be either relevant or irrelevant.
 \begin{center}
-	\includegraphics[scale=0.6]{../siam-symmetrical/irr.png}
+	\includegraphics[scale=0.25]{../siam-symmetrical/irr.png}
+	\includegraphics[scale=0.25]{../siam-symmetrical/rel.png}
+	\captionof{figure}{Left: Irrelevant flow towards \(|\epsilon_d|=0\), at low \(\omega\). Right: Relevant flow towards large \(|\epsilon_d|\), at large \(\omega\). The former can be thought of as the projection of the strong-coupling flow on to the \(\epsilon_d-D\) plane. The latter is the flow towards the local moment fixed point, if we start from a negative \(\epsilon_d\).}
 \end{center}
+\begin{minipage}{150pt}
+	For the flow to the local moment fixed point, the fixed point value of \(|\epsilon_d|\) grows as we increase the bandwidth. This implies that for a thermodynamically large system, the local moment fixed point will be at \(-\epsilon_d \to \infty\). This behavior is shown in fig.~\ref{edvsD}.
+\end{minipage}
+\begin{minipage}{350pt}
+\begin{center}
+	\includegraphics[scale=0.3]{../siam-symmetrical/edvsD.png}
+	\captionof{figure}{Change in fixed point value of \(|\epsilon_d|\) with $D$.}
+	\label{edvsD}
+\end{center}
+\end{minipage}
 \section{Anderson-Kondo (spin) model URG}
 In order to obtain a renormalization in \(V\), we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
 \subsection{Spin-spin interaction}
