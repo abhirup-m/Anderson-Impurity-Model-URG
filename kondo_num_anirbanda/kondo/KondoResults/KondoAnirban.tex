@@ -1,0 +1,212 @@
+%% ****** Start of file apstemplate.tex ****** %
+%%
+%%
+%%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%%   Version 4.2a of REVTeX, January, 2015
+%%
+%%
+%%   Copyright (c) 2015 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+%
+% This is a template for producing manuscripts for use with REVTEX 4.2
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+%
+% Group addresses by affiliation; use superscriptaddress for long
+% author lists, or if there are many overlapping affiliations.
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% Choose pra, prb, prc, prd, pre, prl, prstab, prstper, or rmp for journal
+%  Add 'draft' option to mark overfull boxes with black boxes
+%  Add 'showkeys' option to make keywords appear
+\documentclass[aps,prl,preprint,groupedaddress]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{amsmath}
+%\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-2}
+%\documentclass[aps,prl,reprint,groupedaddress]{revtex4-2}
+% You should use BibTeX and apsrev.bst for references
+% Choosing a journal automatically selects the correct APS
+% BibTeX style file (bst file), so only uncomment the line
+% below if necessary.
+%\bibliographystyle{apsrev4-2}
+
+\begin{document}
+
+% Use the \preprint command to place your local institutional report
+% number in the upper righthand corner of the title page in preprint mode.
+% Multiple \preprint commands are allowed.
+% Use the 'preprintnumbers' class option to override journal defaults
+% to display numbers if necessary
+%\preprint{}
+
+%Title of paper
+\title{Entanglement features of the Kondo cloud and the local metal}
+%Holographic distillation of topological order in a correlated quantum liquid}
+
+% repeat the \author .. \affiliation  etc. as needed
+% \email, \thanks, \homepage, \altaffiliation all apply to the current
+% author. Explanatory text should go in the []'s, actual e-mail
+% address or url should go in the {}'s for \email and \homepage.
+% Please use the appropriate macro foreach each type of information
+
+% \affiliation command applies to all authors since the last
+% \affiliation command. The \affiliation command should follow the
+% other information
+% \affiliation can be followed by \email, \homepage, \thanks as well.
+\author{Anirban Mukherjee}
+\email[]{am14rs016@iiserkol.ac.in}
+\author{N.S. Vidhyadhiraja}
+\email[]{}
+\author{Siddhartha Lal}
+\email[]{slal@iiserkol.ac.in}
+
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Department of Physical Sciences, IISER Kolkata}
+
+%Collaboration name if desired (requires use of superscriptaddress
+%option in \documentclass). \noaffiliation is required (may also be
+%used with the \author command).
+%\collaboration can be followed by \email, \homepage, \thanks as well.
+%\collaboration{}
+%\noaffiliation
+
+\date{\today}
+
+\begin{abstract}
+To be written...
+% insert abstract here
+\end{abstract}
+
+% insert suggested keywords - APS authors don't need to do this
+%\keywords{}
+
+%\maketitle must follow title, authors, abstract, and keywords
+\maketitle
+
+% body of paper here - Use proper section commands
+% References should be done using the \cite, \ref, and \label commands
+\section{Motivation}
+The key feature of the Kondo screening cloud is the entanglement content between a magnetic impurity and conduction electrons in the vicinity of the Fermi surface. A recent work Phys. Rev. Lett. 120, 146801 (2018) shows that the entanglement content is related to electronic conductivity. In many body systems entanglement entropy scaling shows distinct features for gapped as against gapless phases Phys. Rev. Lett. (2007), arxiv:2003.06118 (2020).  Are there any observable entanglement RG scaling features with regards to formation of the Kondo cloud? Our  URG procedure mitigates fermion exchange signatures , i.e. it functions as a decoder circuit comprising a error correcting code leading to an emergent subspace where an electronic cloud entangles with the Kondo spin. In this work we want to study the interplay fermion exchange signatures, many particle entanglement, and quantum transport observables like conductivity, shot noise, spectral function etc.\\
+\par\noindent
+\textbf{List of things we can do}
+\par\noindent
+\begin{enumerate}
+\item[1.]We can start with the Heisenberg Kondo Hamiltonian with isotropic Fermi surface of the Fermi liquid and obtain the URG flow in the space of Hamiltonians arranged from UV to IR. From the IR fixed points obtained in the antiferromagnetic side of the Kondo model we can compute the effective Hamiltonian and the eigenstates.
+\item[2.]Our experience suggests that the effective Hamiltonian in the strong coupling regime on the antiferromagnetic side will be of the pseudospin kind. By reversing the RG flow we can tomographically create the many body states at UV, by re-entangling the high energy electronic states with their IR counterparts. This allows realization of an entanglement renormalization group and altogether comprise the construction of the EHM tensor network.
+\item[3.]In the construction of the entanglement RG flow we can study the effect of fermion exchange signatures in the entanglement entropy, mutual information (MI) flow. We can also study the Ryu-Takayanagi entropy bound, emergent holographic spacetime generated from MI. Can this entanglement features witness the entanglement phase transition between the ferromagnetic and antiferromagnetic side of the Kondo model?
+\item[4.]We can extract the reduced density matrix comprising the HIlbert space associated with the Fermi surface (FS) and the Kondo Impurity (KI). We can study the RG dynamics of MI content between the FS and the KI, does this show the formation of the Kondo cloud? Does the fermion exchange signs have observable effects in the entanglement scaling flow towards the Kondo cloud?
+\item[5.]In the case when the Kondo cloud is formed can we confirm Martin’s sum rule, i.e. the reduction in Luttinger’s sum by the no. of electronic states added to the KI. This implies that the ferromagnetic to antiferromagnetic transition is a topological transition. How does this coincide with our understanding of the entanglement phase transition?
+\item[6.]Finally we can study the holographic renormalization of the quantum geometric tensor for the Fermi surface and KI HIlbert space, this will surely be a witness to the formation of the Kondo cloud.
+\item[7.]Show quantum advantage in the kondo cloud for error correction. But it requires a bit more study of the current plan. Especially the entanglement scaling features fermion sign issues. Then we can understand how they get error corrected upon scaling, and eventually form the cloud, i.e., How fermion sign issues are resolved resulting in the formation of Kondo cloud. This could be used in a proposal for quantum error correction and an equivalent machine learning protocol.
+\item[8.]Can we perform a gauge theoretic construction of the local quantum liquid generated by isolating the Kondo impurity via tracing out its degree of freedom?
+\end{enumerate}
+\section{Kondo Model}
+\begin{eqnarray}
+\hat{H} = \sum_{\mathbf{k}\sigma}\epsilon_{\mathbf{k}}\hat{n}_{\mathbf{k}\sigma}+\frac{J}{2}\sum_{\mathbf{k},\mathbf{k}'}\mathbf{S}\cdot c^{\dagger}_{\mathbf{k}\alpha}\boldsymbol{\sigma}_{\alpha\beta}c_{\mathbf{k}'\beta}
+\end{eqnarray}
+\section{Unitary renormalization group method}
+\begin{eqnarray}
+\mathbf{k}_{\Lambda\hat{s}}=\mathbf{k}_{F}(\hat{s})+\Lambda\hat{s}, \hat{s}=\frac{\nabla\epsilon_{\mathbf{k}}}{|\nabla\epsilon_{\mathbf{k}}|}|_{\epsilon_{\mathbf{k}}=E_{F}}
+\end{eqnarray}
+\begin{eqnarray}
+|j,l,\sigma\rangle = |\mathbf{k}_{\Lambda_{j}\hat{s}},\sigma\rangle, l:=(\hat{s}_{m},\sigma)
+\end{eqnarray}
+No. of normal directions at distance $\Lambda_{j}$ = $n_{j}$. No. of states= $2n_{j}$~(2 for spin multipiclity). $1<l<2n_{j}$: $1=(\hat{s}_{1},\uparrow)$, $2=(\hat{s}_{1},\downarrow)$, $3=(\hat{s}_{2},\uparrow)$, $\ldots$. 
+\begin{equation}
+\centering
+H_{(j-1)}=U_{(j)}H_{(j)}U^{\dagger}_{(j)}
+\end{equation}
+\begin{equation}
+\centering
+U_{(j)}=\prod_{l}U_{j,l}, U_{j,l}=\frac{1}{\sqrt{2}}[1+\eta_{j,l}-\eta^{\dagger}_{j,l}]
+\end{equation}
+\begin{equation}
+\lbrace\eta_{j,l},\eta_{j,l}^{\dagger}\rbrace=1, \left[\eta_{j,l},\eta_{j,l}^{\dagger}\right]=1
+\end{equation}
+\begin{eqnarray}
+\eta_{j,l}=Tr_{j,l}(c^{\dagger}_{j,l}H_{j,l})c_{j,l}\frac{1}{\hat{\omega}_{j,l}-Tr_{j,l}(H_{j,l}^{D}\hat{n}_{j,l})\hat{n}_{j,l}},~~\label{e-TransOp}\\
+\hat{\omega}_{j,l}=H^{D}_{j,l}+H^{X}_{j,l}-H^{X}_{j,l-1}\label{qfOp}
+\end{eqnarray}
+\begin{eqnarray}
+H_{j,l}=\prod_{m=1}^{l}U_{j,m}H_{(j)}[\prod_{m=1}^{l}U_{j,l}]^{\dagger}
+\end{eqnarray}
+Note $H_{j,2n_{j}+1}=H_{(j-1)}$.
+\begin{equation}
+H_{j,l+1}=Tr_{j,l}(H_{(j,l)})+\lbrace c^{\dagger}_{j,l}Tr_{j,l}(H_{(j,l)}c_{j,l}),\eta_{j,l}\rbrace\tau_{j,l}, \tau_{j,l}=\hat{n}_{j,l}-\frac{1}{2} 
+\end{equation}
+\begin{eqnarray}
+H_{j,l+2}&=&Tr_{j,l+1}(Tr_{j,l}(H_{(j,l)}))+Tr_{j,l+1}(\lbrace c^{\dagger}_{j,l}Tr_{j,l}(H_{(j,l)}c_{j,l}),\eta_{j,l}\rbrace\tau_{j,l})\nonumber\\
+&+&\lbrace c^{\dagger}_{j,l+1}Tr_{j,l+1}(Tr_{j,l}(H_{(j,l)})c_{j,l+1}),\eta_{j,l+1}\rbrace\tau_{j,l+1}\nonumber\\
+&+&\lbrace c^{\dagger}_{j,l+1}Tr_{j,l+1}(\lbrace c^{\dagger}_{j,l}Tr_{j,l}(H_{(j,l)}c_{j,l}),\eta_{j,l}\rbrace c_{j,l+1}),\eta_{j,l+1}\rbrace\tau_{j,l}\tau_{j,l+1}\label{2ndDisentanglement}
+\end{eqnarray}
+Disentangling multiple qubits succesively in a given momentum shell at distance $\Lambda_{j}$ from FS leads to renormalized contribution from one and higher  particle correlated tangential scattering process. Note that in eq.\eqref{2ndDisentanglement} the last term shows the contribution due to two electron correlated tangential scattering process. Similarly higher order correlated tangential scattering processes are generated in $H_{j,l+3}$, $\ldots$, $H_{j,2n_{j}+1}$. Keeping only the leading scattering processes we attain the following renormalized Hamiltonian,
+\begin{eqnarray}
+H_{(j-1)}&=&Tr_{j,(1,\ldots,2n_{j})}(H_{(j)})+\sum_{l=1}^{2n_{j}}\lbrace c^{\dagger}_{j,l}Tr_{j,l}(H_{(j)}c_{j,l}),\eta_{j,l}\rbrace\tau_{j,l}
+\end{eqnarray}
+\section{Results}
+We will now explore the RG dynamics for eigenvalue $\omega_{(j)}$ of $\hat{omega}_{(j)}$, 
+\begin{eqnarray}
+\hat{H}_{(j-1)}(\omega_{(j)}) = \sum_{j,l,\sigma}\epsilon_{j,l}\hat{n}_{j,l}+\frac{J^{(j)}(\omega_{(j)})}{2}\sum_{\substack{j_{1},j_{2}<j-1,\\ m,m'}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\beta}c_{j_{2},\hat{s}_{m'},\beta}(1+
+\sum^{j,2n_{j}}_{j'=N,l=1}\tau_{j',l}+\sum_{j',j''=N,l}^{j}\tau_{j',l}\tau_{j'',l}+\ldots)~.~~~~~~
+\end{eqnarray}
+The renormalization of the Hamiltonian within the entangled subspace,
+\begin{eqnarray}
+\Delta H_{(j)}(\omega_{(j)}) = Tr_{N,\ldots, j}(H_{(j-1)}(\omega_{(j-1)}))-Tr_{N,\ldots, j}(H_{(j)}(\omega_{(j)}))
+\end{eqnarray}
+\begin{eqnarray}
+\Delta H_{(j)}(\omega)&=&\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}\tau_{j,\hat{s}_{m},\beta}}{2(2\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-\frac{J^{(j)}}{2}S^{z}(\tau_{j,\hat{s}_{m},\uparrow}-\tau_{j,\hat{s}_{m},\downarrow}))}S^{a}S^{b}\sigma^{a}_{\alpha\beta}\sigma^{b}_{\beta\gamma} c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}c_{j_{2},\hat{s}_{m},\gamma}~,~~~~~~\nonumber\\
+&=&\sum_{\substack{m=1,\\ \beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}\tau_{j,\hat{s}_{m},\beta}}{2(\omega\tau_{j,\hat{s}_{m},\beta} - \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-\frac{J^{(j)}}{2}S^{z}(\tau_{j,\hat{s}_{m},\uparrow}-\tau_{j,\hat{s}_{m},\downarrow}))}S^{c}\sigma^{c}_{\alpha\gamma} c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}c_{j_{2},\hat{s}_{m},\gamma}\nonumber\\
+&=&\sum_{\substack{m=1,\\~\beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}\tau_{j,\hat{s}_{m},\beta}}{2(2\omega\tau_{j,\hat{s}_{m},\beta}- \epsilon_{j,l}\tau_{j,\hat{s}_{m},\beta}-\frac{J^{(j)}}{2}S^{z}(\tau_{j,\hat{s}_{m},\uparrow}-\tau_{j,\hat{s}_{m},\downarrow}))}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\gamma} c_{j_{2},\hat{s}_{m},\gamma}\nonumber\\
+&=&\frac{1}{2}\sum_{\substack{m=1,\\~\beta=\uparrow/\downarrow}}^{n_{j}}\frac{(J^{(j)})^{2}\left[(\frac{\omega}{2} - \frac{\epsilon_{j,l}}{4})+\frac{J^{(j)}}{2}S^{z}\tau_{j,\hat{s}_{m},\beta}(\tau_{j,\hat{s}_{m},\uparrow}-\tau_{j,\hat{s}_{m},\downarrow}))\right]}{(\omega - \frac{\epsilon_{j,l}}{2})^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\gamma}c_{j_{2},\hat{s}_{m},\gamma}\nonumber\\
+&=&\frac{1}{2}\sum_{m=1}^{n_{j}}\frac{(J^{(j)})^{2}\left[(\omega - \frac{\epsilon_{j,l}}{2})\right]}{(\omega - \frac{\epsilon_{j,l}}{2})^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\gamma}c_{j_{2},\hat{s}_{m},\gamma}\nonumber\\\label{renH}
+\end{eqnarray}
+In obtaining the above RG equation we have replaced  $\hat{\omega}_{(j)}=2\omega\tau_{j,\hat{s}_{m},\beta}$. We set the electronic configuration $\tau_{j,\hat{s}_{m},\uparrow}=-\tau_{j,\hat{s}_{m},\downarrow}=\frac{1}{2}$ to account for the spin scattering between the Kondo impurity and the fermionic bath.  The operator $\hat{\omega}_{(j)}$ (eq.\eqref{qfOp}) for RG step $j$ is determined by the occupation number diagonal piece of the Hamiltonian  $H^{D}_{(j-1)}$ attained at the next RG step $j-1$, this demands a self consistents treatment of the RG equation to determine the $\omega$. In this fashion two particle and higher order quantum fluctuations autamatically get  encoded into the RG dynamics of $\hat{\omega}$. In the present work we restrict our study by ignoring the RG contribution in $\omega$. The electron/hole configuration ($|1_{j,\hat{s}_{m},\beta}\rangle$/$|0_{j,\hat{s}_{m},\beta}\rangle$)  of the disentangled electronic state and associated with $\pm \epsilon_{j,l}$ energy is accounted by $\pm\omega$ fluctuation energy scales. To proceed further we assume a circular Fermi surface such that $\epsilon_{j,l}=\epsilon_{j}-E_{F}\approx\hbar v_{F}\Lambda_{j}$ for $0\leq\Lambda_{j}\leq\Lambda_{0}$. This leads to the RG equation,
+\begin{eqnarray}
+\frac{\Delta J^{(j)}(\omega)}{\Delta\log\frac{\Lambda{j}}{\Lambda_{0}}}=\frac{n_{j}(J^{(j)})^{2}\left[(\omega - \frac{\hbar v_{F}\Lambda_{j}}{2})\right]}{(\omega - \frac{\hbar v_{F}\Lambda_{j}}{2})^{2}-\frac{\left(J^{(j)}\right)^{2}}{16}}\label{RGeqn}
+\end{eqnarray}
+Note the denominator $\Delta\log\frac{\Lambda{j}}{\Lambda_{0}} =1$ for the RG scale parameterization $\Lambda_{j}=\Lambda_{0}\exp(-j)$. We redefine Kondo coupling as a dimensionless parameter,
+\begin{eqnarray}
+\bar{K}^{(j)}=\frac{J^{(j)}}{\omega-\frac{\hbar v_{F}}{2}\Lambda_{j}}~,\label{reparametrization}
+\end{eqnarray} 
+We operate in the regime $\omega>\frac{\hbar v_{F}}{2}\Lambda_{j}$. 
+With the above parametrization eq.\eqref{reparametrization} we can convert the difference RG eq.\eqref{RGeqn} to continuum RG equation,
+\begin{eqnarray}
+\frac{d K}{d\log\frac{\Lambda}{\Lambda_{0}}}=\left(1-\frac{\omega}{\omega-\hbar v_{F}\Lambda}\right)K+\frac{n(\Lambda)K^{2}}{1-\frac{K^{2}}{16}}
+\end{eqnarray}
+Upon approaching the Ferm surface $\Lambda_{j}\to 0$ therefore $\left(1-\frac{\omega}{\omega-\hbar v_{F}\Lambda}\right)\to 0$ and $n(\Lambda)$ can be replaced by no. of states on the Fermi surface $n(0)$.
+\begin{eqnarray}
+\frac{d K}{d\log\frac{\Lambda}{\Lambda_{0}}}=\frac{n(0)K^{2}}{1-\frac{K^{2}}{16}}
+\end{eqnarray}
+We observe two important aspects of the RG equation: for $K<<1$ the RG equation reduces to the one loop form, $\frac{d K}{d\log\frac{\Lambda}{\Lambda_{0}}}=K^{2}$ and the presence of intermediate coupling fixed points $K^{*}=4$ in the antiferromagnetic regime $K>0$.
+\par\noindent
+At the IR fixed point in the AF regime the effective Hamiltonian is given by,
+\begin{eqnarray}
+H^{*}=\sum_{|\Lambda|<\Lambda^{*}}\hbar v_{F}\Lambda\hat{n}_{\Lambda,\hat{s},\sigma}+\frac{J^{*}(\omega)}{2}\sum_{\substack{j_{1},j_{2}<j^{*},\\ m,m'}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\beta}c_{j_{2},\hat{s}_{m'},\beta}
+\end{eqnarray} 
+We can now extract a zero mode from the above Hamiltonian,
+\begin{eqnarray}
+H_{coll}&=&\frac{1}{N}\sum_{|\Lambda|<\Lambda^{*}}\hbar v_{F}\Lambda\sum_{|\Lambda|<\Lambda^{*}}\hat{n}_{\Lambda,\hat{s},\sigma}+\frac{J^{*}(\omega)}{2}\sum_{\substack{j_{1},j_{2}<j^{*},\\ m,m'}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\beta}c_{j_{2},\hat{s}_{m'},\beta}\nonumber\\
+		&=&\frac{J^{*}(\omega)}{2}\sum_{\substack{j_{1},j_{2}<j^{*},\\ m,m'}}\mathbf{S}\cdot c^{\dagger}_{j_{1},\hat{s}_{m},\alpha}\boldsymbol{\sigma}_{\alpha\beta}c_{j_{2},\hat{s}_{m'},\beta}
+\end{eqnarray}
+The ground state wavefunction at the IR fixed point for $H_{coll}$ is the singlet state.
+\begin{equation}
+|\Psi*\rangle=\frac{1}{\sqrt{2}}\left[|\uparrow\rangle\sum_{\Lambda,\hat{s}}|1_{\Lambda,\hat{s},\downarrow}\rangle\otimes_{\Lambda'\neq\Lambda,\hat{s}'\neq \hat{s}}|\Lambda',\hat{s}'\rangle-|\downarrow\rangle\sum_{\Lambda,\hat{s}}|1_{\Lambda,\hat{s},\uparrow}\rangle\otimes_{\Lambda'\neq\Lambda,\hat{s}'\neq \hat{s}}|\Lambda',\hat{s}'\rangle\right]
+\end{equation}
+From here we can perform reverse RG using $U^{\dagger}$ to generate the eigenstates at UV.
+%
+
+% If you have acknowledgments, this puts in the proper section head.
+%\begin{acknowledgments}
+% put your acknowledgments here.
+%\end{acknowledgments}
+
+% Create the reference section using BibTeX:
+\bibliography{Bibliography}
+
+\end{document}
+%
+% ****** End of file apstemplate.tex ******
+
