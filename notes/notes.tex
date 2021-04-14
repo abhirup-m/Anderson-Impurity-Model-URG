@@ -6153,11 +6153,11 @@ Combining the three points:
 \chi_j \geq 0, && \Delta \chi_j \leq 0, && \Delta \chi_{j^*} = 0
 \end{aligned}\end{equation}
 we can say that URG starts from a non-minimal value of \(\chi\) and flows to its minimum \(\chi^* = 0\) at the fixed point. 
-\pb However, the difficulty with such a function definition is that it depends on a particular state \(\ket{\Psi_{j^*}}\) which we do not know \textit{a priori}. For a more universal definition, we can work with
+\pb However, the difficulty with such a function definition is that it depends on a particular state \(\ket{\Psi_{j^*}}\) which we do not know \textit{a prior}. For a more universal definition, we can work with
 \begin{equation}\begin{aligned}
 	\Gamma_j = \text{Tr}\left[\left(\mathcal{H}^I_j\right)^2\right]
 \end{aligned}\end{equation}
-This function is also postive semi-definite (because it is a sum of inner products), and its derivative is alwayas negative meaning it monotonically decreases (can be proved exactly as we proved it for \(\chi_j\)), but it is not necessary that it will be 0 at the fixed point. If the choice of URG \(\omega\) is one such that at the fixed point, the interaction coupling vanishes, then \(\Gamma_j\) will vanish and it will have flown to its minima. Otherwise, it will stop at a non-zero value, which can be considered to be  its minima, given that particular value of \(\omega\).
+This function is also positive semi-definite (because it is a sum of inner products), and its derivative is always negative meaning it monotonically decreases (can be proved exactly as we proved it for \(\chi_j\)), but it is not necessary that it will be 0 at the fixed point. If the choice of URG \(\omega\) is one such that at the fixed point, the interaction coupling vanishes, then \(\Gamma_j\) will vanish and it will have flown to its minima. Otherwise, it will stop at a non-zero value, which can be considered to be  its minima, given that particular value of \(\omega\).
 \pb This minimization (for \(\Gamma_j(\omega)\)) has been demonstrated numerically in fig.~\ref{minim}, where URG has been performed on a very simple model of potential scatter:
 \begin{equation}
 	\mathcal{H} = \sum_k \epsilon_k \hat n_k + J \sum_{k \neq k^\prime} c^\dagger_k c_{k^\prime}
@@ -6167,6 +6167,38 @@ This function is also postive semi-definite (because it is a sum of inner produc
 	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
 	\label{minim}
 \end{center}
+
+\newpage
+\section*{Entanglement Entropy of non-interacting state}
+For an (effectively) \textit{non-interacting system of \(N\) spin-less Fermions}, the momenta are good quantum numbers, and the ground state wavefunction can be labeled as
+\begin{equation}\begin{aligned}
+	\ket{k_1, k_2, ..., k_N}
+\end{aligned}\end{equation}
+The set \(k_1\) through \(k_N\) is the set of momenta values that are occupied. For a metal, \(k_N\) would be the Fermi momentum. The ground state, when written in terms of single-particle states, would have to be antisymmetrised. Let \(\ket{k_a}_1\ket{k_b}_2...\ket{k_q}_N\) represent the state in which the first electron has momentum \(k_a\), the second one has momentum \(k_b\), and so on and the last one has momentum \(k_q\). The antisymmetrised form is
+\begin{equation}\begin{aligned}
+	\label{slater}
+	\ket{k_1, k_2, ..., k_N} = \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
+\end{aligned}\end{equation}
+\(S_N\) is the set of all permutations of the set \(\left\{1,2, ..., N \right\} \). \(p\) runs through all such permutations. \(p(i)\) then refers to the \(i^{th}\) element of such a permutation. The sign factor \(\left( -1 \right) ^p\) will be \(+1\) for all even permutations and \(-1\) for the odd ones. For brevity, we can drop the index \(i\) that labels the particle and understand that the first ket in the product denotes the state of the first particle, the second that of the second particle and so on. For two particles, this looks like
+\begin{equation}\begin{aligned}
+	\ket{k_1, k_2} = \frac{1}{\sqrt{2!}}\left[\ket{k_1}\ket{k_2} - \ket{k_2}\ket{k_2}\right] 
+\end{aligned}\end{equation}
+For three particles, it looks like
+\begin{equation}\begin{aligned}
+	\ket{k_1, k_2, k_3} = \frac{1}{\sqrt{3!}}\left[\ket{k_1}\ket{k_2}\ket{k_3} + \ket{k_3}\ket{k_1}\ket{k_2} + \ket{k_2}\ket{k_3}\ket{k_1} - \ket{k_2}\ket{k_1}\ket{k_3} - \ket{k_1}\ket{k_3}\ket{k_2} \right.\\
+\left.- \ket{k_3}\ket{k_2}\ket{k_1}\right] 
+\end{aligned}\end{equation}
+The goal is to calculate the von-Neumann entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
+\begin{equation}\begin{aligned}
+	\ket{k_1, k_2, ..., k_N} &= \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p_2 =1\atop{p_2 \neq p_1}}^N ... \sum_{p_N =1\atop{p_N \neq p_1,p_2,...,p_{N-1}}}^N \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p^\prime_1 \in S_N^{p_1}} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+\end{aligned}\end{equation}
+
+
+
+
+
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
