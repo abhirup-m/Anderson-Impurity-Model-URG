@@ -15,7 +15,7 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-%\comm{
+\comm{
 %\subfile{../intro.tex}
 \section{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
@@ -6167,38 +6167,184 @@ This function is also positive semi-definite (because it is a sum of inner produ
 	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
 	\label{minim}
 \end{center}
-
+}
 \newpage
-\section*{Entanglement Entropy of non-interacting state}
+\section*{Sensing Fermi volume from entanglement entropy of non-interacting ground state}
 For an (effectively) \textit{non-interacting system of \(N\) spin-less Fermions}, the momenta are good quantum numbers, and the ground state wavefunction can be labeled as
 \begin{equation}\begin{aligned}
 	\ket{k_1, k_2, ..., k_N}
 \end{aligned}\end{equation}
-The set \(k_1\) through \(k_N\) is the set of momenta values that are occupied. For a metal, \(k_N\) would be the Fermi momentum. The ground state, when written in terms of single-particle states, would have to be antisymmetrised. Let \(\ket{k_a}_1\ket{k_b}_2...\ket{k_q}_N\) represent the state in which the first electron has momentum \(k_a\), the second one has momentum \(k_b\), and so on and the last one has momentum \(k_q\). The antisymmetrised form is
+The set \(k_1\) through \(k_N\) is the set of momenta values that are occupied. It is understood that all other momenta are unoccupied. For a metallic ground state, \(k_N\) would be the Fermi momentum. The ground state, when written in terms of single-particle states, would have to be antisymmetrised. Let \(\ket{k_a}_1\ket{k_b}_2...\ket{k_q}_N\) represent the state in which the first electron has momentum \(k_a\), the second one has momentum \(k_b\), and so on and the last one has momentum \(k_q\). The antisymmetrised form is
 \begin{equation}\begin{aligned}
 	\label{slater}
-	\ket{k_1, k_2, ..., k_N} = \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
+	\ket{\Psi^N} = \ket{k_1, k_2, ..., k_N} = \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
 \end{aligned}\end{equation}
-\(S_N\) is the set of all permutations of the set \(\left\{1,2, ..., N \right\} \). \(p\) runs through all such permutations. \(p(i)\) then refers to the \(i^{th}\) element of such a permutation. The sign factor \(\left( -1 \right) ^p\) will be \(+1\) for all even permutations and \(-1\) for the odd ones. For brevity, we can drop the index \(i\) that labels the particle and understand that the first ket in the product denotes the state of the first particle, the second that of the second particle and so on. For two particles, this looks like
-\begin{equation}\begin{aligned}
-	\ket{k_1, k_2} = \frac{1}{\sqrt{2!}}\left[\ket{k_1}\ket{k_2} - \ket{k_2}\ket{k_2}\right] 
-\end{aligned}\end{equation}
-For three particles, it looks like
+\(S_N\) is the set of all permutations of the set \(\left\{1,2, ..., N \right\} \). \(p\) is a string of numbers \(p_1 p_2 ... p_N\), and runs through all such permutations. \(p(i)\) then refers to the \(i^{th}\) element of such a permutation. The sign factor \(\left( -1 \right) ^p\) will be \(+1\) for all even permutations and \(-1\) for the odd ones. For brevity, we can drop the index \(i\) that labels the particle and understand that the first ket in the product denotes the state of the first particle, the second that of the second particle and so on. For three particles, it looks like
 \begin{equation}\begin{aligned}
 	\ket{k_1, k_2, k_3} = \frac{1}{\sqrt{3!}}\left[\ket{k_1}\ket{k_2}\ket{k_3} + \ket{k_3}\ket{k_1}\ket{k_2} + \ket{k_2}\ket{k_3}\ket{k_1} - \ket{k_2}\ket{k_1}\ket{k_3} - \ket{k_1}\ket{k_3}\ket{k_2} \right.\\
 \left.- \ket{k_3}\ket{k_2}\ket{k_1}\right] 
 \end{aligned}\end{equation}
-The goal is to calculate the von-Neumann entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
+
+\subsection{von-Neumann entropy of total state}
+Since the total state is a pure state, it can be represented by a density matrix \(\rho = \ket{\Psi}\bra{\Psi}\), so it will have a single non-zero eigenvalue \(1\), and the VNE will be 0.
+
+\subsection{von-Neumann entropy of intermediate reduced state}
+If we trace out \(m\) particles from the total density matrix \(\rho^N\), the von-Neumann entropy \(S_m\) of the remaining density matrix \(\rho^{N-m}\) is
 \begin{equation}\begin{aligned}
-	\ket{k_1, k_2, ..., k_N} &= \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
-				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p_2 =1\atop{p_2 \neq p_1}}^N ... \sum_{p_N =1\atop{p_N \neq p_1,p_2,...,p_{N-1}}}^N \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
-				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p^\prime_1 \in S_N^{p_1}} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+	S_m = \ln \frac{N(N-1)...(N-m+1)}{m!} = \ln {}^N C_m
+\end{aligned}\end{equation}
+This has the property \(S_{N-m} = \ln {}^N C_{N-m} = \ln {}^N C_{m} = S_m\)
+\subsection{von-Neumann entropy of final reduced state}
+If we trace out \(N-1\) particles from the total density matrix \(\rho^N\), the von-Neumann entropy \(S_{N-1}\) of the remaining density matrix \(\rho^{N-1}\) is
+\begin{equation}\begin{aligned}
+	S_m = \ln N
+\end{aligned}\end{equation}
+
+\subsection{Fermi gases and Fermi liquids}
+\begin{equation}\begin{aligned}
+	N_0 &= \text{number of particles on Fermi surface}\\
+	N_< &= \text{number of particles inside Fermi surface}\\
+	N &= N_0 + N_<
+\end{aligned}\end{equation}
+Trace out all particles \textit{on and above} Fermi surface.
+\begin{equation}\begin{aligned}
+	S_{FL} = \ln \left[{}^{N}C_{N_0}\right] = \ln \left[{}^{N}C_{N_<}\right]
+\end{aligned}\end{equation}
+
+\subsection{Marginal Fermi liquid}
+\begin{equation}\begin{aligned}
+	N_> &= \text{number of particles outside Fermi surface}\\
+	N_0 &= \text{number of particles on Fermi surface}\\
+	N_< &= \text{number of particles inside Fermi surface}\\
+	N &= N_0 + N_< + N_>
+\end{aligned}\end{equation}
+Trace out all particles \textit{on and above} Fermi surface.
+\begin{equation}\begin{aligned}
+	S_{MFL} = \ln \left[{}^{N}C_{N_0 + N_>}\right] = \ln \left[{}^{N}C_{N_<}\right]
+\end{aligned}\end{equation}
+The change from FL is
+\begin{equation}\begin{aligned}
+	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} \approx \ln \frac{ N^{MFL}_<!}{N^{FL}_<!} &&\left[ \text{ using }N - m \approx N \right] 
 \end{aligned}\end{equation}
 
 
+\subsection{Derivations-I}
+The goal is to calculate the von-Newman entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
+\begin{equation}\begin{aligned}
+	\ket{\Psi^N} &= \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+			&=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p_2 =1\atop{p_2 \neq p_1}}^N ... \sum_{p_N =1\atop{p_N \neq p_1,p_2,...,p_{N-1}}}^N \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p^1 \in S_N^{p_1}} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
+\end{aligned}\end{equation}
+\(S_N^{p_1}\) is the set of permutations of the set \(\left\{1, 2, ..., \hat p_1, ..., N \right\} \), where the hat on \(p_1\) means it is absent. The index which runs over the set \(S_N^{p_1}\) is \(p^1\). The factor of \(\left(-1\right)^p\) is equal to \(\left(-1\right)^{p^1}\), for the following reason. If, for some value of \(p\) with a given \(p_1\), the signature of the permutation \(p\) is negative, we can reorder the set \(S_N^{p_1}\) such that the signature of \(p^1\) is also negative. With this observation, we can write
+\begin{equation}\begin{aligned}
+	\label{sumofless}
+	\ket{\Psi^N} &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \ket{k_{p_1}} \sum_{p^1 \in S_N^{p_1}} \left( -1 \right)^{p^1} \prod_{i=2}^N \ket{k_{p^1_i}}\\
+		     &=\frac{1}{\sqrt{N}}\sum_{p_1=1}^N \ket{k_{p_1}} \ket{\Psi^{N-1}(\hat p_1)}
+\end{aligned}\end{equation}
+The ket 
+\begin{equation}\begin{aligned}
+	\ket{\Psi^{N-1}(\hat p_1)} = \frac{1}{\sqrt{(N-1)!}}\sum_{p^1 \in S_N^{p_1}} \left( -1 \right)^{p^1} \prod_{i=2}^N \ket{k_{p^1_i}}
+\end{aligned}\end{equation}
+is the antisymmetrised state of \(N-1\) particles, with momenta ranging from \(1\) to \(N\) excluding \(k_{p_1}\). When expanded, the equation \ref{sumofless} looks like
+\begin{equation}\begin{aligned}
+	\ket{\Psi^N} &=\frac{1}{\sqrt{N!}}\left[\ket{k_1} \ket{\Psi^{N-1}(\hat k_1)} + \ket{k_2} \ket{\Psi^{N-1}(\hat k_2)} + \ket{k_3} \ket{\Psi^{N-1}(\hat k_3)} + ... + \ket{k_N} \ket{\Psi^{N-1}(\hat k_N)}\right]
+\end{aligned}\end{equation}
+We can now trace out the 1st particle from the density matrix \(\rho^N = \ket{\Psi^N}\bra{\Psi^N}\).
+\begin{equation}\begin{aligned}
+	\rho^{N-1} = \sum_{i}\bra{k_i}\ket{\Psi^N}\bra{\Psi^N}\ket{k_i} = \frac{1}{N}\sum_{p_1=1}^N \ket{\Psi^{N-1}(\hat p_1)}\bra{\Psi^{N-1}(\hat p_1)}
+\end{aligned}\end{equation}
+We can again write the states \(\ket{\Psi^{N-1}(\hat p_1)}\) in terms of the smaller kets.
+\begin{equation}\begin{aligned}
+	\ket{\Psi^{N-1}(\hat p_1)} = \frac{1}{\sqrt{N-1}}\sum_{p_2=1\atop{p_2 \neq p_1}}^N \ket{k_{p_2}} \ket{\Psi^{N-2}(\hat p_1 \hat p_2)}
+\end{aligned}\end{equation}
+so that the next reduced density matrix would be
+\begin{equation}\begin{aligned}
+	\label{intdenmat}
+	\rho^{N-2} = \sum_{j\neq p_1}\bra{k_j}\rho^{N-1}\ket{k_j} = \frac{1}{N(N-1)}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N \ket{\Psi^{N-2}(\hat p_1 \hat p_2)}\bra{\Psi^{N-2}(\hat p_1 \hat p_2)}
+\end{aligned}\end{equation}
+Continuing this procedure, if we trace out exactly \(N-1\) particles, we will get
+\begin{equation}\begin{aligned}
+	\rho^{1} = \frac{1}{N(N-1)...3.2}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\bra{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}
+\end{aligned}\end{equation}
+Note that since, out of \(N\) momenta, \(N-1\) are being excluded, the get \(\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\) has just one momentum state; it will be of the form
+\begin{equation}\begin{aligned}
+	\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})} = \ket{k}, \text{ such that }k \neq k_{p_i},  \forall \; i \in [1,N-1]
+\end{aligned}\end{equation}
+\(p_1\) can take \(N\) values, so \(p_2\) can take \(N-2\). We can thus replace the complicated nested summations with a single sum over all ordered strings in which we pick out \(N-1\) numbers from the list \(\left[ 1, N \right] \). We can label such a string as \(C(p_1,p_2,...,p_{N-1})\).
+\begin{equation}\begin{aligned}
+	\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N
+\end{aligned}\end{equation}
+Now, we can also label the string by the index it is missing. For example, if the string \(p_1,p_2,...,p_{N-1}\) is excluding the number \(j\), then we can label the string as \(C_j\), and a sum over \(C_j\) would then mean a sum over all the permutations which exclude \(j\). We would then have to finally sum over \(j\).
+\begin{equation}\begin{aligned}
+	\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N = \sum_{j=1}^N \sum_{C_j}
+\end{aligned}\end{equation}
+Since the ket \(\ket{\Psi^1}\) is determined completely by \(j\) (it does not depend on \(C_j\)), we can write
+\begin{equation}\begin{aligned}
+	\rho^{1} = \frac{1}{N!}\sum_{j=1}^N \ket{\Psi^{1}(k_j)}\bra{\Psi^{1}(k_j)}\sum_{C_j}
+\end{aligned}\end{equation}
+The number of \(C_j\) for a particular \(j\) is the number of possible permutations of the \(N-1\) \(p_i\), hence
+\begin{equation}\begin{aligned}
+	\sum_{C_j} = (N-1)!
+\end{aligned}\end{equation}
+so
+\begin{equation}\begin{aligned}
+	\rho^{1} = \frac{1}{N}\sum_{j=1}^N \ket{\Psi^{1}(k_j)}\bra{\Psi^{1}(k_j)} = \frac{1}{N}\sum_{j=1}^N \ket{k_j}\bra{k_j}
+\end{aligned}\end{equation}
+The von-Neumann entropy of this density matrix is
+\begin{equation}\begin{aligned}
+	S = \text{Tr}\left( \rho \ln \rho \right) = \sum_{i=1}^N \bra{k_i} \rho \ln \rho  \ket{k_i} = \ln N
+\end{aligned}\end{equation}
 
+\subsection{Derivation-II}
+If we trace out \(m\) particles from the total density matrix  \(\rho^N\), we will end up with (extrapolating from eq.~\ref{intdenmat})
+\begin{equation}\begin{aligned}
+	\rho^{N-m} = \frac{1}{N(N-1)...(N-m+1)}\sum_{p_1,p_2,...p_m=1\atop{p_2 \neq p_1,... p_m\neq p_1,p_2,...,p_{m-1}}}^N\ket{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}\bra{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}
+\end{aligned}\end{equation}
+Each unordered set \(\left\{ p_1, ..., p_m \right\} \) occurs \(m!\) times, and can be designated by a label \(s\).
+\begin{equation}\begin{aligned}
+	\rho^{N-m} = \frac{m!}{N(N-1)...(N-m+1)}\sum_{s}\ket{\Psi^{N-m}(s)}\bra{\Psi^{N-m}(s)}
+\end{aligned}\end{equation}
+The kets \(\ket{\Psi^{N-m}(s)}\) and \(\ket{\Psi^{N-m}(s^\prime)}\) for \(s \neq s^\prime\) are orthogonal, because they will involve atleast one uncommon momentum. There are \({}^NC_m\) such states in the summation over \(s\). This means we can write \(\rho\) in the basis of these states. We can therefore write the density matrix \(\rho^{N-m}\) in this basis, and it will be diagonal, with all eigenvalues equal to
+\begin{equation}\begin{aligned}
+	\rho^{N-m}_s = \frac{m!}{N(N-1)...(N-m+1)}
+\end{aligned}\end{equation}
+The von-Neumann entropy of \(\rho^{N-m}\) is thus
+\begin{equation}\begin{aligned}
+	-\sum_s \rho_s \ln \rho_s &= -{}^N C_m \frac{m!}{N(N-1)...(N-m+1)} \ln \frac{m!}{N(N-1)...(N-m+1)}\\
+				 &= \ln \frac{N(N-1)...(N-m+1)}{m!}\\
+				 &= \ln {}^N C_m
+\end{aligned}\end{equation}
+\subsection{Derivation-III}
+Each of the product states in eq.~\ref{slater},
+\begin{equation}\begin{aligned}
+	 \prod_{i=1}^N \ket{k_{p_i}}_i
+\end{aligned}\end{equation}
+are orthogonal to each other. That is, if \(p\) and \(q\), both members of \(S_N\) are two distinct permutations, then
+\begin{equation}\begin{aligned}
+	\left(\left( -1 \right)^q\prod_{j=1}^N \bra{k_{q_j}}_j\right)\left(\left( -1 \right)^p\prod_{i=1}^N \ket{k_{p_i}}_i\right) = 0, \text{ and }\left(\left( -1 \right)^p\prod_{j=1}^N \bra{k_{p_j}}_j\right)\left(\left( -1 \right)^p\prod_{i=1}^N \ket{k_{p_i}}_i\right)=1
+\end{aligned}\end{equation}
+This is because the two products have atleast one momentum state different. There will be \(N!\) such product states and they form a part of a particular basis of the Hilbert space.  If we label such product states as
+\begin{equation}\begin{aligned}
+	\ket{\Phi_p} = \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
+\end{aligned}\end{equation}
+then
+\begin{equation}\begin{aligned}
+	\rho^N = \ket{\Psi^N}\ket{\Psi^N} &= \frac{1}{N!}\sum_{p,q \in S_N} \ket{\Phi_p} \bra{\Phi_q}
+\end{aligned}\end{equation}
+To find the von-Neumann entropy of this state, first note that the density matrix has an eigenstate
+\begin{equation}\begin{aligned}
+	\ket{\chi} = \sum_{r\in S_N}\ket{\Phi_r}
+\end{aligned}\end{equation}
+because
+\begin{equation}\begin{aligned}
+	\rho\ket{\chi} = \frac{1}{N!}\sum_{r\in S_N}\sum_{p,q \in S_N} \ket{\Phi_p} \bra{\Phi_q} \ket{\Phi_r}= \frac{1}{N!}\sum_{r\in S_N}\sum_{p,q \in S_N} \ket{\Phi_p} \delta_{qr} = \ket{\chi}
+\end{aligned}\end{equation}
+Thus, \(\rho\) has an eigenvalue \(1\), which implies that the other eigenvalues must be 0 because the trace of \(\rho\) must be 1, and all the eigenvalues must be positve-semi-definite. Therefore, the von-Neumann entropy is zero:
+\begin{equation}\begin{aligned}
+	S = \sum_i \rho_i \ln \rho_i = 0 + 1\times\ln 1 = 0
+\end{aligned}\end{equation}
 
-
+\cite{Anderson}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
