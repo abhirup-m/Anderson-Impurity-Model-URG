@@ -6179,14 +6179,17 @@ The set \(k_1\) through \(k_N\) is the set of momenta values that are occupied. 
 	\label{slater}
 	\ket{\Psi^N} = \ket{k_1, k_2, ..., k_N} = \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
 \end{aligned}\end{equation}
-\(S_N\) is the set of all permutations of the set \(\left\{1,2, ..., N \right\} \). \(p\) is a string of numbers \(p_1 p_2 ... p_N\), and runs through all such permutations. \(p(i)\) then refers to the \(i^{th}\) element of such a permutation. The sign factor \(\left( -1 \right) ^p\) will be \(+1\) for all even permutations and \(-1\) for the odd ones. For brevity, we can drop the index \(i\) that labels the particle and understand that the first ket in the product denotes the state of the first particle, the second that of the second particle and so on. For three particles, it looks like
+\(S_N\) is the set of all permutations of the set \(\left\{1,2, ..., N \right\} \). \(p\) is a string of numbers \(p_1 p_2 ... p_N\), and runs through all such permutations. \(p(i)\) then refers to the \(i^{th}\) element of such a permutation. One permutation can thus be represented as
+\begin{equation}\begin{aligned}
+	\begin{pmatrix} 1 & 2 & 3 & ... & N \\
+			p_1 & p_2 & p_3 & ... & p_N
+	\end{pmatrix} 
+\end{aligned}\end{equation}
+which means that \(1\) goes to \(p_1\), \(2\) goes to \(p_2\), and so on. The odd or even nature of permutations are determined by comparing a particular permutation with the zeroth permutation of the set. For this set \(S_N\), the zeroth permutation is chosen to be \(1,2,...,N\). Even (odd) permutations will then be those which can be reached from the zeroth permutation via an even (odd) number of permutations. The sign factor \(\left( -1 \right) ^p\) will be \(+1\) for all even permutations and \(-1\) for the odd ones. For brevity, we can drop the index \(i\) that labels the particle by defining the following notation: the first ket in the product denotes the state of the first particle, the second that of the second particle and so on. For three particles, it looks like
 \begin{equation}\begin{aligned}
 	\ket{k_1, k_2, k_3} = \frac{1}{\sqrt{3!}}\left[\ket{k_1}\ket{k_2}\ket{k_3} + \ket{k_3}\ket{k_1}\ket{k_2} + \ket{k_2}\ket{k_3}\ket{k_1} - \ket{k_2}\ket{k_1}\ket{k_3} - \ket{k_1}\ket{k_3}\ket{k_2} \right.\\
 \left.- \ket{k_3}\ket{k_2}\ket{k_1}\right] 
 \end{aligned}\end{equation}
-
-\subsection{von-Neumann entropy of total state}
-Since the total state is a pure state, it can be represented by a density matrix \(\rho = \ket{\Psi}\bra{\Psi}\), so it will have a single non-zero eigenvalue \(1\), and the VNE will be 0.
 
 \subsection{von-Neumann entropy of intermediate reduced state}
 If we trace out \(m\) particles from the total density matrix \(\rho^N\), the von-Neumann entropy \(S_m\) of the remaining density matrix \(\rho^{N-m}\) is
@@ -6199,6 +6202,26 @@ If we trace out \(N-1\) particles from the total density matrix \(\rho^N\), the 
 \begin{equation}\begin{aligned}
 	S_m = \ln N
 \end{aligned}\end{equation}
+
+\subsection{Large system approximation}
+For a total number \(N\), let \(N_0\) be the number of momentum states on the Fermi surface and \(N_<\) the number of momentum states inside. Then, \(N_0 \sim L^{d-1}\) and \(N_< \sim L^d\), so
+\begin{equation}\begin{aligned}
+	\frac{N_0}{N_<} \sim \frac{1}{L} \to 0 \text{ as }L \to \infty
+\end{aligned}\end{equation}
+The entanglement entropy on tracing out \(N_0\) states will be given by
+\begin{equation}\begin{aligned}
+	S &= \ln \frac{N!}{N_< ! N_0 !}\\
+	  &\approx N\ln N - N - N_<\ln N_< + N_< - N_0\ln N_0 + N_0 && \left[ \ln N! \approx N\ln N - N \right] \\
+	  &= N_<\ln \frac{N_0 + N_<}{N_<} + N_0 \ln \frac{N_0 + N_<}{N_0} && \left[ N = N_0 + N_< \right] \\
+	  &= N_<\ln \left(1 + \frac{N_0}{N_<}\right) + N_0 \ln \left(\frac{N_<}{N_0}+1\right)\\
+	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}+1\right) && \left[ \ln (1+x) \approx x \text{ for } x \to 0\right] \\
+	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right] \\
+	  &= N_0\left[1 + \ln \left(\frac{N_<}{N_0}\right)\right]\\
+	  &\approx N_0\ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right]\\
+	  &\sim cL^{d-1}\ln L
+\end{aligned}\end{equation}
+
+
 
 \subsection{Fermi gases and Fermi liquids}
 \begin{equation}\begin{aligned}
@@ -6226,7 +6249,7 @@ The change from FL is
 \begin{equation}\begin{aligned}
 	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} \approx \ln \frac{ N^{MFL}_<!}{N^{FL}_<!} &&\left[ \text{ using }N - m \approx N \right] 
 \end{aligned}\end{equation}
-
+\comm{
 \subsection{modified von-Neumann entropy of final reduced state}
 If we define a modified von-Neumann entropy
 \begin{equation}\begin{aligned}
@@ -6236,8 +6259,7 @@ which traces over only the states \text{on and above} the Fermi surface, the fin
 \begin{equation}\begin{aligned}
 	\rho^{1} = \frac{1}{N}\sum_{j=1}^N \ket{k_j}\bra{k_j} \implies S^1_> = \left( N_0 + N_> \right) \times \left( -\frac{1}{N}\ln \frac{1}{N} \right) = \frac{N_0 + N_>}{N}\ln N
 \end{aligned}\end{equation}
-
-
+}
 
 \subsection{Derivations-I}
 The goal is to calculate the von-Newman entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
@@ -6246,7 +6268,25 @@ The goal is to calculate the von-Newman entropy of the reduced density matrix of
 			&=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p_2 =1\atop{p_2 \neq p_1}}^N ... \sum_{p_N =1\atop{p_N \neq p_1,p_2,...,p_{N-1}}}^N \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
 				 &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \sum_{p^1 \in S_N^{p_1}} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
 \end{aligned}\end{equation}
-\(S_N^{p_1}\) is the set of permutations of the set \(\left\{1, 2, ..., \hat p_1, ..., N \right\} \), where the hat on \(p_1\) means it is absent. The index which runs over the set \(S_N^{p_1}\) is \(p^1\). The factor of \(\left(-1\right)^p\) is equal to \(\left(-1\right)^{p^1}\), for the following reason. If, for some value of \(p\) with a given \(p_1\), the signature of the permutation \(p\) is negative, we can reorder the set \(S_N^{p_1}\) such that the signature of \(p^1\) is also negative. With this observation, we can write
+\(S_N^{p_1}\) is the set of permutations of the set \(\left\{1, 2, ..., \hat p_1, ..., N \right\} \), where the hat on \(p_1\) means it is absent. The index which runs over the set \(S_N^{p_1}\) is \(p^1\).
+\pb The factor of \(\left(-1\right)^p\) can be made independent of \(p_1\), in the following fashion. Consider a particular value of \(p_1\) and hence the unique sequence \(s_\text{unique}=p_1 p_2 p_3 ... p_N, \;p_2>p_3>...>p_N\). There are two possibilities.
+\begin{itemize}
+	\item \(p_1\)'s value is such that \(s_\text{unique}\) is even and \(\left( -1 \right) ^p\) is \(+1\)
+	\item \(p_1\)'s value is such that \(s_\text{unique}\) is odd and \(\left( -1 \right) ^p\) is \(-1\)
+\end{itemize}
+For the first case, we will define the sequence \(s^1_\text{zeroth}=p_2 p_3 ... p_N, \;p_2>p_3>...>p_N\) as the zeroth sequence of \(S_N^{p_1} = \left\{ p^1 \right\} \). Then, all even permutations of \(s_\text{unique}\) (which implies \(\left( -1 \right) ^p = +1\)) will essentially be even permutations of \(s^1_\text{zeroth}\) (because \(p_1\) is fixed at the front), and hence will imply 
+\begin{equation}\begin{aligned}
+	\left( -1 \right)^{p^1} = +1 = \left( -1 \right)^{p} \forall\;p=\text{even} \text{ and }s_\text{unique}=\text{even}
+\end{aligned}\end{equation}
+The odd permutations of \(s_\text{unique}\) will be odd permutations of \(s^1_\text{zeroth}\) and we will have
+\begin{equation}\begin{aligned}
+	\left( -1 \right)^{p^1} = -1 = \left( -1 \right)^{p} \forall\;p=\text{odd} \text{ and }s_\text{unique}=\text{even}
+\end{aligned}\end{equation}
+\pb For the second case, we will define the other unique sequence \({s^1}^\prime_\text{zeroth}=p_2 p_3 ... p_N, \;p_2<p_3<...<p_N\) as the zeroth sequence of \(S_N^{p_1} = \left\{ p^1 \right\} \), such that \(s_\text{unique}\) would be an odd permutation. Using similar arguments in the previous case, we can again show that the odd(even) permutations of this zeroth sequence would be the odd(even) permutations of \(s_\text{unique}\). Combining both cases, we can write
+\begin{equation}\begin{aligned}
+	\left( -1 \right)^{p^1} = \left( -1 \right)^{p} \forall\;p
+\end{aligned}\end{equation}
+\pb With this observation, we can write
 \begin{equation}\begin{aligned}
 	\label{sumofless}
 	\ket{\Psi^N} &=\frac{1}{\sqrt{N!}}\sum_{p_1=1}^N \ket{k_{p_1}} \sum_{p^1 \in S_N^{p_1}} \left( -1 \right)^{p^1} \prod_{i=2}^N \ket{k_{p^1_i}}\\
@@ -6256,7 +6296,8 @@ The ket
 \begin{equation}\begin{aligned}
 	\ket{\Psi^{N-1}(\hat p_1)} = \frac{1}{\sqrt{(N-1)!}}\sum_{p^1 \in S_N^{p_1}} \left( -1 \right)^{p^1} \prod_{i=2}^N \ket{k_{p^1_i}}
 \end{aligned}\end{equation}
-is the antisymmetrised state of \(N-1\) particles, with momenta ranging from \(1\) to \(N\) excluding \(k_{p_1}\). When expanded, the equation \ref{sumofless} looks like
+is the antisymmetrised state of \(N-1\) particles, with momenta ranging from \(1\) to \(N\) excluding \(k_{p_1}\). The set \(S_N^{p_1}\) has a zeroth sequence determined by the value of \(p_1\), hence it is a function of \(p_1\). 
+\pb Equation \ref{sumofless}, when expanded, looks like
 \begin{equation}\begin{aligned}
 	\ket{\Psi^N} &=\frac{1}{\sqrt{N!}}\left[\ket{k_1} \ket{\Psi^{N-1}(\hat k_1)} + \ket{k_2} \ket{\Psi^{N-1}(\hat k_2)} + \ket{k_3} \ket{\Psi^{N-1}(\hat k_3)} + ... + \ket{k_N} \ket{\Psi^{N-1}(\hat k_N)}\right]
 \end{aligned}\end{equation}
@@ -6273,13 +6314,13 @@ so that the next reduced density matrix would be
 	\label{intdenmat}
 	\rho^{N-2} = \sum_{j\neq p_1}\bra{k_j}\rho^{N-1}\ket{k_j} = \frac{1}{N(N-1)}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N \ket{\Psi^{N-2}(\hat p_1 \hat p_2)}\bra{\Psi^{N-2}(\hat p_1 \hat p_2)}
 \end{aligned}\end{equation}
-Continuing this procedure, if we trace out exactly \(N-1\) particles, we will get
+\comm{Continuing this procedure, if we trace out exactly \(N-1\) particles, we will get
 \begin{equation}\begin{aligned}
 	\rho^{1} = \frac{1}{N(N-1)...3.2}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\bra{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}
 \end{aligned}\end{equation}
 Note that since, out of \(N\) momenta, \(N-1\) are being excluded, the get \(\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\) has just one momentum state; it will be of the form
 \begin{equation}\begin{aligned}
-	\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})} = \ket{k}, \text{ such that }k \neq k_{p_i},  \forall \; i \in [1,N-1]
+	\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\bra{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})} =  \ket{k}\bra{k}, \text{ such that }k \neq k_{p_i},  \forall \; i \in [1,N-1]
 \end{aligned}\end{equation}
 \(p_1\) can take \(N\) values, so \(p_2\) can take \(N-2\). We can thus replace the complicated nested summations with a single sum over all ordered strings in which we pick out \(N-1\) numbers from the list \(\left[ 1, N \right] \). We can label such a string as \(C(p_1,p_2,...,p_{N-1})\).
 \begin{equation}\begin{aligned}
@@ -6307,6 +6348,7 @@ The von-Neumann entropy of this density matrix is
 \end{aligned}\end{equation}
 
 \subsection{Derivation-II}
+}
 If we trace out \(m\) particles from the total density matrix  \(\rho^N\), we will end up with (extrapolating from eq.~\ref{intdenmat})
 \begin{equation}\begin{aligned}
 	\rho^{N-m} = \frac{1}{N(N-1)...(N-m+1)}\sum_{p_1,p_2,...p_m=1\atop{p_2 \neq p_1,... p_m\neq p_1,p_2,...,p_{m-1}}}^N\ket{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}\bra{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}
@@ -6315,15 +6357,21 @@ Each unordered set \(\left\{ p_1, ..., p_m \right\} \) occurs \(m!\) times, and 
 \begin{equation}\begin{aligned}
 	\rho^{N-m} = \frac{m!}{N(N-1)...(N-m+1)}\sum_{s}\ket{\Psi^{N-m}(s)}\bra{\Psi^{N-m}(s)}
 \end{aligned}\end{equation}
-The kets \(\ket{\Psi^{N-m}(s)}\) and \(\ket{\Psi^{N-m}(s^\prime)}\) for \(s \neq s^\prime\) are orthogonal, because they will involve atleast one uncommon momentum. There are \({}^NC_m\) such states in the summation over \(s\). This means we can write \(\rho\) in the basis of these states. We can therefore write the density matrix \(\rho^{N-m}\) in this basis, and it will be diagonal, with all eigenvalues equal to
+The kets \(\ket{\Psi^{N-m}(s)}\) and \(\ket{\Psi^{N-m}(s^\prime)}\) for \(s \neq s^\prime\) are orthogonal, because they will involve atleast one uncommon momentum. These states form a Schmidt basis for the density matrix; the density matrix is diagonal in this basis. Since there are \({}^NC_m\) such states in the summation over \(s\), the dimension \(d^m\) of the density matrix is 
 \begin{equation}\begin{aligned}
-	\rho^{N-m}_s = \frac{m!}{N(N-1)...(N-m+1)}
+	d^m = {}^NC_m
+\end{aligned}\end{equation}
+The Schmidt coefficients (whose squares are the diagonal entries) are given by
+\begin{equation}\begin{aligned}
+	K^2_{sm} = \frac{m!}{N(N-1)...(N-m+1)} = \frac{1}{{}^NC_m} = \frac{1}{{d^m}}
+\end{aligned}\end{equation}
+Therefore
+\begin{equation}\begin{aligned}
+	\rho^{N-m} = \sum_{s=1}^{d^m} K^2_{sm}\ket{\Psi^{N-m}(s)}\bra{\Psi^{N-m}(s)} = \frac{1}{{d^m}}\sum_{s=1}^{d^m}\ket{\Psi^{N-m}(s)}\bra{\Psi^{N-m}(s)}
 \end{aligned}\end{equation}
 The von-Neumann entropy of \(\rho^{N-m}\) is thus
 \begin{equation}\begin{aligned}
-	-\sum_s \rho_s \ln \rho_s &= -{}^N C_m \frac{m!}{N(N-1)...(N-m+1)} \ln \frac{m!}{N(N-1)...(N-m+1)}\\
-				 &= \ln \frac{N(N-1)...(N-m+1)}{m!}\\
-				 &= \ln {}^N C_m
+	S^{N-m} = \text{Tr}\left[\rho^{N-m} \ln \rho^{N-m}\right] &= - \frac{1}{{d^m}} \ln \frac{1}{{d^m}} \sum_{s=1}^{d^m} = \ln {d^m} = \ln {}^N C_m
 \end{aligned}\end{equation}
 \subsection{Derivation-III}
 Each of the product states in eq.~\ref{slater},
