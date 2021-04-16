@@ -6227,6 +6227,17 @@ The change from FL is
 	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} \approx \ln \frac{ N^{MFL}_<!}{N^{FL}_<!} &&\left[ \text{ using }N - m \approx N \right] 
 \end{aligned}\end{equation}
 
+\subsection{modified von-Neumann entropy of final reduced state}
+If we define a modified von-Neumann entropy
+\begin{equation}\begin{aligned}
+	S_> = \text{Tr}_{k\geq k_F}\left[ \rho \ln \rho \right] = \sum_{k \geq k_F}\bra{k}\rho \ln \rho\ket{k}
+\end{aligned}\end{equation}
+which traces over only the states \text{on and above} the Fermi surface, the final reduced state will give
+\begin{equation}\begin{aligned}
+	\rho^{1} = \frac{1}{N}\sum_{j=1}^N \ket{k_j}\bra{k_j} \implies S^1_> = \left( N_0 + N_> \right) \times \left( -\frac{1}{N}\ln \frac{1}{N} \right) = \frac{N_0 + N_>}{N}\ln N
+\end{aligned}\end{equation}
+
+
 
 \subsection{Derivations-I}
 The goal is to calculate the von-Newman entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
