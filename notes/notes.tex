@@ -6170,6 +6170,7 @@ This function is also positive semi-definite (because it is a sum of inner produ
 }
 \newpage
 \section*{Sensing Fermi volume from entanglement entropy of non-interacting ground state}
+\subsection{Description of the ground state wavefunction}
 For an (effectively) \textit{non-interacting system of \(N\) spin-less Fermions}, the momenta are good quantum numbers, and the ground state wavefunction can be labeled as
 \begin{equation}\begin{aligned}
 	\ket{k_1, k_2, ..., k_N}
@@ -6189,6 +6190,35 @@ which means that \(1\) goes to \(p_1\), \(2\) goes to \(p_2\), and so on. The od
 \begin{equation}\begin{aligned}
 	\ket{k_1, k_2, k_3} = \frac{1}{\sqrt{3!}}\left[\ket{k_1}\ket{k_2}\ket{k_3} + \ket{k_3}\ket{k_1}\ket{k_2} + \ket{k_2}\ket{k_3}\ket{k_1} - \ket{k_2}\ket{k_1}\ket{k_3} - \ket{k_1}\ket{k_3}\ket{k_2} \right.\\
 \left.- \ket{k_3}\ket{k_2}\ket{k_1}\right] 
+\end{aligned}\end{equation}
+\subsection{Entanglement entropy of two-particle Fermi sea}
+The ground state wavefunction for a two-particle Fermi sea (with momenta \(k_\pm\) is
+\begin{equation}\begin{aligned}
+	\ket{\Psi}_{12} = \frac{1}{\sqrt 2}\left( \ket{k_+}_1\ket{k_-}_2 - \ket{k_-}_1\ket{k_+}_2 \right) 
+\end{aligned}\end{equation}
+The notation \(\ket{k_\pm}_i\) means it is a state of the \(i^\text{th}\) particle, in a momentum \(k_\pm\). The total two-particle density matrix is
+\begin{equation}\begin{aligned}
+	\rho_{12} = \ket{\Psi}_{12}\bra{\Psi}_{12}
+\end{aligned}\end{equation}
+The reduced density matrix for the first particle is obtained by tracing over all states of the second particle:
+\begin{equation}\begin{aligned}
+	\rho_1 = \sum_{j=\pm}\bra{k_j}_2 \rho_{12}\ket{k_j}_2 = \sum_{j=\pm}\bra{k_j}_2 \ket{\Psi}_{12}\bra{\Psi}_{12}\ket{k_j}_2
+\end{aligned}\end{equation}
+The inner product evaluates as follows:
+\begin{equation}\begin{aligned}
+	\bra{k_\pm}_2 \ket{\Psi}_{12}= \frac{1}{\sqrt 2} \mp \ket{k_\mp}_1
+\end{aligned}\end{equation}
+such that
+\begin{equation}\begin{aligned}
+\bra{k_j}_2 \ket{\Psi}_{12}\bra{\Psi}_{12}\ket{k_j}_2 = \frac{1}{2}\ket{k_\mp}_1\bra{k_\mp}_1
+\end{aligned}\end{equation}
+and
+\begin{equation}\begin{aligned}
+	\rho_1 = \frac{1}{2}\left( \ket{k_+}_1\bra{k_+}_1 + \ket{k_-}_1\bra{k_-}_1 \right) = \begin{pmatrix} \frac{1}{2} & \\ &  \frac{1}{2}\end{pmatrix} 
+\end{aligned}\end{equation}
+The von-Neumann entropy of \(\rho_1\) is obtained by finally tracing \(-\rho_1 \ln \rho_1\) over all the momentum states of particle 1.
+\begin{equation}\begin{aligned}
+	S_1 = -\sum_{j=\pm}\bra{k_j}_1 \rho_1 \ln \rho_1 \ket{k_j}_1 = \ln 2
 \end{aligned}\end{equation}
 
 \subsection{von-Neumann entropy of intermediate reduced state}
@@ -6231,7 +6261,12 @@ The entanglement entropy on tracing out \(N_0\) states will be given by
 \end{aligned}\end{equation}
 Trace out all particles \textit{on and above} Fermi surface.
 \begin{equation}\begin{aligned}
-	S_{FL} = \ln \left[{}^{N}C_{N_0}\right] = \ln \left[{}^{N}C_{N_<}\right]
+	S_{FL} = \ln \left[{}^{N}C_{N_0}\right] = \ln \left[{}^{N}C_{N_<}\right] = \ln \frac{\left(N_0 + N_<\right)!}{N_<!}
+\end{aligned}\end{equation}
+Both the numbers \(N_0\) and \(N_<\) have topological stability. The entanglement entropy \(S_{FL}\) is thus a topological quantity.
+\pb Using the previous approximations, this turns out to be
+\begin{equation}\begin{aligned}
+	S_{FL} = N_0\ln \left(\frac{N_<}{N_0}\right) \sim cL^{d-1}\ln L
 \end{aligned}\end{equation}
 
 \subsection{Marginal Fermi liquid}
@@ -6247,8 +6282,25 @@ Trace out all particles \textit{on and above} Fermi surface.
 \end{aligned}\end{equation}
 The change from FL is
 \begin{equation}\begin{aligned}
-	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} \approx \ln \frac{ N^{MFL}_<!}{N^{FL}_<!} &&\left[ \text{ using }N - m \approx N \right] 
+	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}}
 \end{aligned}\end{equation}
+Assuming \(N^\text{FL} = N^\text{MFL}\), the fraction simplifies to
+\begin{equation}\begin{aligned}
+	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = \frac{N^{MFL}_< ! \left( N_0^{MFL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!}
+\end{aligned}\end{equation}
+If the extra states outside the Fermi volume have come solely from the Fermi surface, we can also assume \(N_<^{MFL} = N_<^{FL}\) and \(N_0^{FL} = N_0^{MFL} + N_>^{MFL}\), such that
+\begin{equation}\begin{aligned}
+	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = 1
+\end{aligned}\end{equation}
+and \(S_{FL} = S_{MFL}\), which essentially means that since the particle exchanges have happened completely inside the subsystem we are tracing out (Fermi surface and beyond), the connectivities between the two subsystems haven't changed and so the entanglement entropy is unchanged. 
+\pb If, however, the extra states have come from inside the Fermi volume, then
+\begin{equation}\begin{aligned}
+	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = \frac{N^{MFL}_< ! \left( N_0^{FL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!} \approx \frac{N^{MFL}_< !}{N_<^{FL}!} && \left[N_0^{FL} \gg N_>^{MFL}\right] 
+\end{aligned}\end{equation}
+
+\subsection{Gapped states}
+
+
 \comm{
 \subsection{modified von-Neumann entropy of final reduced state}
 If we define a modified von-Neumann entropy
