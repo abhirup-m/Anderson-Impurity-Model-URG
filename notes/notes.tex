@@ -15,7 +15,6 @@
 \pagebreak
 \tableofcontents
 \pagebreak
-\comm{
 %\subfile{../intro.tex}
 \section{Introduction}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
@@ -6167,9 +6166,7 @@ This function is also positive semi-definite (because it is a sum of inner produ
 	\captionof{figure}{Variation of $J$ and $\chi$ for the potential scattering problem.}
 	\label{minim}
 \end{center}
-}
-\newpage
-\section*{Sensing Fermi volume from entanglement entropy of non-interacting ground state}
+\section{Sensing Fermi volume from entanglement entropy of non-interacting ground state}
 \subsection{Description of the ground state wavefunction}
 For an (effectively) \textit{non-interacting system of \(N\) spin-less Fermions}, the momenta are good quantum numbers, and the ground state wavefunction can be labeled as
 \begin{equation}\begin{aligned}
@@ -6221,99 +6218,58 @@ The von-Neumann entropy of \(\rho_1\) is obtained by finally tracing \(-\rho_1 \
 	S_1 = -\sum_{j=\pm}\bra{k_j}_1 \rho_1 \ln \rho_1 \ket{k_j}_1 = \ln 2
 \end{aligned}\end{equation}
 
-\subsection{von-Neumann entropy of intermediate reduced state}
-If we trace out \(m\) particles from the total density matrix \(\rho^N\), the von-Neumann entropy \(S_m\) of the remaining density matrix \(\rho^{N-m}\) is
+\subsection{Entanglement entropy of three-particle Fermi sea}
+The ground state wavefunction will have \(3!\) number of terms, because that is the number of ways we can distribute three momenta among three particles.
 \begin{equation}\begin{aligned}
-	S_m = \ln \frac{N(N-1)...(N-m+1)}{m!} = \ln {}^N C_m
+	\ket{\Psi_{123}} = \frac{1}{\sqrt 6}\left[\ket{1}_1\ket{2}_2\ket{3}_3 + \ket{3}_1\ket{1}_2\ket{2}_3 + \ket{2}_1\ket{3}_2\ket{1}_3 - \ket{2}_1\ket{1}_2\ket{3}_3 - \ket{1}_1\ket{3}_2\ket{2}_3 \right.\\
+	- \left.\ket{3}_1\ket{2}_2\ket{1}_3\right]
 \end{aligned}\end{equation}
-This has the property \(S_{N-m} = \ln {}^N C_{N-m} = \ln {}^N C_{m} = S_m\)
-\subsection{von-Neumann entropy of final reduced state}
-If we trace out \(N-1\) particles from the total density matrix \(\rho^N\), the von-Neumann entropy \(S_{N-1}\) of the remaining density matrix \(\rho^{N-1}\) is
+The notation \(\ket{3}_1\ket{1}_2\ket{2}_3\) means particle 1 is in momentum 3, particle 2 is in momenta 1 and particle 3 is in momenta 2.We now trace out all states of particle 1 from the density matrix:
 \begin{equation}\begin{aligned}
-	S_m = \ln N
+	\rho_{23} = \bra{1}_1\ket{\Psi_{123}}\bra{\Psi_{123}}\ket{1}_1 + \bra{2}_1\ket{\Psi_{123}}\bra{\Psi_{123}}\ket{2}_1 + \bra{3}_1\ket{\Psi_{123}}\bra{\Psi_{123}}\ket{3}_1
 \end{aligned}\end{equation}
-
-\subsection{Large system approximation}
-For a total number \(N\), let \(N_0\) be the number of momentum states on the Fermi surface and \(N_<\) the number of momentum states inside. Then, \(N_0 \sim L^{d-1}\) and \(N_< \sim L^d\), so
+where
 \begin{equation}\begin{aligned}
-	\frac{N_0}{N_<} \sim \frac{1}{L} \to 0 \text{ as }L \to \infty
+	\bra{1}_1\ket{\Psi_{123}} &= \frac{1}{\sqrt 6}\left[\ket{2}_2\ket{3}_3 - \ket{3}_2\ket{2}_3\right] \\
+	\bra{2}_1\ket{\Psi_{123}} &= \frac{1}{\sqrt 6}\left[\ket{3}_2\ket{1}_3 - \ket{1}_2\ket{3}_3\right] \\
+	\bra{3}_1\ket{\Psi_{123}} &= \frac{1}{\sqrt 6}\left[\ket{1}_2\ket{2}_3 - \ket{2}_2\ket{1}_3\right] \\
 \end{aligned}\end{equation}
-The entanglement entropy on tracing out \(N_0\) states will be given by
+and so,
 \begin{equation}\begin{aligned}
-	S &= \ln \frac{N!}{N_< ! N_0 !}\\
-	  &\approx N\ln N - N - N_<\ln N_< + N_< - N_0\ln N_0 + N_0 && \left[ \ln N! \approx N\ln N - N \right] \\
-	  &= N_<\ln \frac{N_0 + N_<}{N_<} + N_0 \ln \frac{N_0 + N_<}{N_0} && \left[ N = N_0 + N_< \right] \\
-	  &= N_<\ln \left(1 + \frac{N_0}{N_<}\right) + N_0 \ln \left(\frac{N_<}{N_0}+1\right)\\
-	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}+1\right) && \left[ \ln (1+x) \approx x \text{ for } x \to 0\right] \\
-	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right] \\
-	  &= N_0\left[1 + \ln \left(\frac{N_<}{N_0}\right)\right]\\
-	  &\approx N_0\ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right]\\
-	  &\sim cL^{d-1}\ln L
+	\rho_{23} = &\frac{1}{6}\bigg[\ket{2}_2\ket{3}_3 - \ket{3}_2\ket{2}_3\bigg]\times\bigg[\bra{3}_3\bra{2}_2 - \bra{2}_3\bra{3}_2\bigg] \\
+	+ &\frac{1}{6}\bigg[\ket{3}_2\ket{1}_3 - \ket{1}_2\ket{3}_3\bigg]\times\bigg[\bra{1}_3\bra{3}_2 - \bra{3}_3\bra{1}_2\bigg] \\
+	+ &\frac{1}{6}\bigg[\ket{1}_2\ket{2}_3 - \ket{2}_2\ket{1}_3\bigg]\times\bigg[\bra{2}_3\bra{1}_2 - \bra{1}_3\bra{2}_2\bigg]
 \end{aligned}\end{equation}
-
-
-
-\subsection{Fermi gases and Fermi liquids}
+If we wanted to calculate the VNE at this stage, we can think of the set of states
 \begin{equation}\begin{aligned}
-	N_0 &= \text{number of particles on Fermi surface}\\
-	N_< &= \text{number of particles inside Fermi surface}\\
-	N &= N_0 + N_<
+	\ket{\Phi_{23}} &= \frac{1}{\sqrt 2}\left(\ket{2}_2\ket{3}_3 - \ket{3}_2\ket{2}_3\right)\\
+	\ket{\Phi_{12}} &= \frac{1}{\sqrt 2}\left(\ket{1}_2\ket{3}_3 - \ket{2}_2\ket{1}_3\right)\\
+	\ket{\Phi_{31}} &= \frac{1}{\sqrt 2}\left(\ket{3}_2\ket{1}_3 - \ket{1}_2\ket{3}_3\right)
 \end{aligned}\end{equation}
-Trace out all particles \textit{on and above} Fermi surface.
+as an orthonormal basis for \(\rho_{23}\):
 \begin{equation}\begin{aligned}
-	S_{FL} = \ln \left[{}^{N}C_{N_0}\right] = \ln \left[{}^{N}C_{N_<}\right] = \ln \frac{\left(N_0 + N_<\right)!}{N_<!}
+	\rho_{23} = \frac{1}{3}\left[\ket{\Phi_{23}}\bra{\Phi_{23}} + \ket{\Phi_{31}}\bra{\Phi_{31}} + \ket{\Phi_{12}}\bra{\Phi_{12}}\right]
 \end{aligned}\end{equation}
-Both the numbers \(N_0\) and \(N_<\) have topological stability. The entanglement entropy \(S_{FL}\) is thus a topological quantity.
-\pb Using the previous approximations, this turns out to be
+which enables us to conclude that \(\rho_{23}\) has three non-zero eigenvalues, all equal to \(\frac{1}{3}\), so the VNE is
 \begin{equation}\begin{aligned}
-	S_{FL} = N_0\ln \left(\frac{N_<}{N_0}\right) \sim cL^{d-1}\ln L
+	S(\rho_{23}) = -3 \times \frac{1}{3}\ln \frac{1}{3} = \ln 3 &&(= \ln {}^3 C_1)
 \end{aligned}\end{equation}
-
-\subsection{Marginal Fermi liquid}
+We can also trace out the second particle from \(\rho_{23}\):
 \begin{equation}\begin{aligned}
-	N_> &= \text{number of particles outside Fermi surface}\\
-	N_0 &= \text{number of particles on Fermi surface}\\
-	N_< &= \text{number of particles inside Fermi surface}\\
-	N &= N_0 + N_< + N_>
+	\rho_3 = \bra{1}_2\rho_{23}\ket{1}_2 + \bra{2}_2\rho_{23}\ket{2}_2 + \bra{3}_2\rho_{23}\ket{3}_2 = \frac{1}{3}\left[\ket{1}\bra{1} + \ket{2}\bra{2} + \ket{3}\bra{3}\right] = \frac{1}{3}\begin{pmatrix} 1 & & \\ & 1 & \\ & & 1 \end{pmatrix} 
 \end{aligned}\end{equation}
-Trace out all particles \textit{on and above} Fermi surface.
+where we used
 \begin{equation}\begin{aligned}
-	S_{MFL} = \ln \left[{}^{N}C_{N_0 + N_>}\right] = \ln \left[{}^{N}C_{N_<}\right]
+	\bra{1}_2\rho_{23}\ket{1}_2 = \frac{1}{6}\left(\ket{3}_3\bra{3}_3+\ket{2}_3\bra{2}_3\right)\\
+	\bra{2}_2\rho_{23}\ket{2}_2 = \frac{1}{6}\left(\ket{3}_3\bra{3}_3+\ket{1}_3\bra{1}_3\right)\\
+	\bra{3}_2\rho_{23}\ket{3}_2 = \frac{1}{6}\left(\ket{1}_3\bra{1}_3+\ket{2}_3\bra{2}_3\right)\\
 \end{aligned}\end{equation}
-The change from FL is
+The final VNE is thus
 \begin{equation}\begin{aligned}
-	S_{FL} - S_{MFL} = \ln \frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}}
-\end{aligned}\end{equation}
-Assuming \(N^\text{FL} = N^\text{MFL}\), the fraction simplifies to
-\begin{equation}\begin{aligned}
-	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = \frac{N^{MFL}_< ! \left( N_0^{MFL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!}
-\end{aligned}\end{equation}
-If the extra states outside the Fermi volume have come solely from the Fermi surface, we can also assume \(N_<^{MFL} = N_<^{FL}\) and \(N_0^{FL} = N_0^{MFL} + N_>^{MFL}\), such that
-\begin{equation}\begin{aligned}
-	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = 1
-\end{aligned}\end{equation}
-and \(S_{FL} = S_{MFL}\), which essentially means that since the particle exchanges have happened completely inside the subsystem we are tracing out (Fermi surface and beyond), the connectivities between the two subsystems haven't changed and so the entanglement entropy is unchanged. 
-\pb If, however, the extra states have come from inside the Fermi volume, then
-\begin{equation}\begin{aligned}
-	\frac{{}^{N}C_{N^{FL}_<}}{{}^{N}C_{N^{MFL}_<}} = \frac{N^{MFL}_< ! \left( N_0^{FL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!} \approx \frac{N^{MFL}_< !}{N_<^{FL}!} && \left[N_0^{FL} \gg N_>^{MFL}\right] 
+S(\rho_{3}) = -3 \times \frac{1}{3}\ln \frac{1}{3} = \ln 3 && (=\ln {}^3 C_2)
 \end{aligned}\end{equation}
 
-\subsection{Gapped states}
-
-
-\comm{
-\subsection{modified von-Neumann entropy of final reduced state}
-If we define a modified von-Neumann entropy
-\begin{equation}\begin{aligned}
-	S_> = \text{Tr}_{k\geq k_F}\left[ \rho \ln \rho \right] = \sum_{k \geq k_F}\bra{k}\rho \ln \rho\ket{k}
-\end{aligned}\end{equation}
-which traces over only the states \text{on and above} the Fermi surface, the final reduced state will give
-\begin{equation}\begin{aligned}
-	\rho^{1} = \frac{1}{N}\sum_{j=1}^N \ket{k_j}\bra{k_j} \implies S^1_> = \left( N_0 + N_> \right) \times \left( -\frac{1}{N}\ln \frac{1}{N} \right) = \frac{N_0 + N_>}{N}\ln N
-\end{aligned}\end{equation}
-}
-
-\subsection{Derivations-I}
+\subsection{Entanglement entropy of general \(N-\)particle ground state on reducing \(m\) particles}
 The goal is to calculate the von-Newman entropy of the reduced density matrix of the general state eq.~\ref{slater}. To that end, we try to rewrite it in terms of the Slater determinants of \(N-1\) particles.
 \begin{equation}\begin{aligned}
 	\ket{\Psi^N} &= \frac{1}{\sqrt{N!}}\sum_{p \in S_N} \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i\\
@@ -6366,41 +6322,6 @@ so that the next reduced density matrix would be
 	\label{intdenmat}
 	\rho^{N-2} = \sum_{j\neq p_1}\bra{k_j}\rho^{N-1}\ket{k_j} = \frac{1}{N(N-1)}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N \ket{\Psi^{N-2}(\hat p_1 \hat p_2)}\bra{\Psi^{N-2}(\hat p_1 \hat p_2)}
 \end{aligned}\end{equation}
-\comm{Continuing this procedure, if we trace out exactly \(N-1\) particles, we will get
-\begin{equation}\begin{aligned}
-	\rho^{1} = \frac{1}{N(N-1)...3.2}\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\bra{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}
-\end{aligned}\end{equation}
-Note that since, out of \(N\) momenta, \(N-1\) are being excluded, the get \(\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\) has just one momentum state; it will be of the form
-\begin{equation}\begin{aligned}
-	\ket{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})}\bra{\Psi^{1}(\hat p_1 \hat p_2...\hat p_{N-1})} =  \ket{k}\bra{k}, \text{ such that }k \neq k_{p_i},  \forall \; i \in [1,N-1]
-\end{aligned}\end{equation}
-\(p_1\) can take \(N\) values, so \(p_2\) can take \(N-2\). We can thus replace the complicated nested summations with a single sum over all ordered strings in which we pick out \(N-1\) numbers from the list \(\left[ 1, N \right] \). We can label such a string as \(C(p_1,p_2,...,p_{N-1})\).
-\begin{equation}\begin{aligned}
-	\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N
-\end{aligned}\end{equation}
-Now, we can also label the string by the index it is missing. For example, if the string \(p_1,p_2,...,p_{N-1}\) is excluding the number \(j\), then we can label the string as \(C_j\), and a sum over \(C_j\) would then mean a sum over all the permutations which exclude \(j\). We would then have to finally sum over \(j\).
-\begin{equation}\begin{aligned}
-	\sum_{p_1=1}^N\sum_{p_2=1\atop{p_2 \neq p_1}}^N... \sum_{p_{N-1}=1\atop{p_{N-1} \neq p_1, p_2,...,p_{N-2}}}^N = \sum_{j=1}^N \sum_{C_j}
-\end{aligned}\end{equation}
-Since the ket \(\ket{\Psi^1}\) is determined completely by \(j\) (it does not depend on \(C_j\)), we can write
-\begin{equation}\begin{aligned}
-	\rho^{1} = \frac{1}{N!}\sum_{j=1}^N \ket{\Psi^{1}(k_j)}\bra{\Psi^{1}(k_j)}\sum_{C_j}
-\end{aligned}\end{equation}
-The number of \(C_j\) for a particular \(j\) is the number of possible permutations of the \(N-1\) \(p_i\), hence
-\begin{equation}\begin{aligned}
-	\sum_{C_j} = (N-1)!
-\end{aligned}\end{equation}
-so
-\begin{equation}\begin{aligned}
-	\rho^{1} = \frac{1}{N}\sum_{j=1}^N \ket{\Psi^{1}(k_j)}\bra{\Psi^{1}(k_j)} = \frac{1}{N}\sum_{j=1}^N \ket{k_j}\bra{k_j}
-\end{aligned}\end{equation}
-The von-Neumann entropy of this density matrix is
-\begin{equation}\begin{aligned}
-	S = \text{Tr}\left( \rho \ln \rho \right) = \sum_{i=1}^N \bra{k_i} \rho \ln \rho  \ket{k_i} = \ln N
-\end{aligned}\end{equation}
-
-\subsection{Derivation-II}
-}
 If we trace out \(m\) particles from the total density matrix  \(\rho^N\), we will end up with (extrapolating from eq.~\ref{intdenmat})
 \begin{equation}\begin{aligned}
 	\rho^{N-m} = \frac{1}{N(N-1)...(N-m+1)}\sum_{p_1,p_2,...p_m=1\atop{p_2 \neq p_1,... p_m\neq p_1,p_2,...,p_{m-1}}}^N\ket{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}\bra{\Psi^{N-m}(\hat p_1 \hat p_2...\hat p_m)}
@@ -6423,38 +6344,64 @@ Therefore
 \end{aligned}\end{equation}
 The von-Neumann entropy of \(\rho^{N-m}\) is thus
 \begin{equation}\begin{aligned}
-	S^{N-m} = \text{Tr}\left[\rho^{N-m} \ln \rho^{N-m}\right] &= - \frac{1}{{d^m}} \ln \frac{1}{{d^m}} \sum_{s=1}^{d^m} = \ln {d^m} = \ln {}^N C_m
+	S_{N-m} = \text{Tr}\left[\rho^{N-m} \ln \rho^{N-m}\right] &= - \frac{1}{{d^m}} \ln \frac{1}{{d^m}} \sum_{s=1}^{d^m} = \ln {d^m} = \ln {}^N C_m
 \end{aligned}\end{equation}
-\subsection{Derivation-III}
-Each of the product states in eq.~\ref{slater},
+This has the property \(S_{N-m} = \ln {}^N C_{N-m} = \ln {}^N C_{m} = S_m\)
+
+\subsection{Large system approximation}
+For a total number \(N\), let \(N_0\) be the number of momentum states on the Fermi surface and \(N_<\) the number of momentum states inside. Then, \(N_0 \sim L^{d-1}\) and \(N_< \sim L^d\), so
 \begin{equation}\begin{aligned}
-	 \prod_{i=1}^N \ket{k_{p_i}}_i
+	\frac{N_0}{N_<} \sim \frac{1}{L} \to 0 \text{ as }L \to \infty
 \end{aligned}\end{equation}
-are orthogonal to each other. That is, if \(p\) and \(q\), both members of \(S_N\) are two distinct permutations, then
+The entanglement entropy on tracing out \(N_0\) states will be given by
 \begin{equation}\begin{aligned}
-	\left(\left( -1 \right)^q\prod_{j=1}^N \bra{k_{q_j}}_j\right)\left(\left( -1 \right)^p\prod_{i=1}^N \ket{k_{p_i}}_i\right) = 0, \text{ and }\left(\left( -1 \right)^p\prod_{j=1}^N \bra{k_{p_j}}_j\right)\left(\left( -1 \right)^p\prod_{i=1}^N \ket{k_{p_i}}_i\right)=1
-\end{aligned}\end{equation}
-This is because the two products have atleast one momentum state different. There will be \(N!\) such product states and they form a part of a particular basis of the Hilbert space.  If we label such product states as
-\begin{equation}\begin{aligned}
-	\ket{\Phi_p} = \left( -1 \right) ^p \prod_{i=1}^N \ket{k_{p_i}}_i
-\end{aligned}\end{equation}
-then
-\begin{equation}\begin{aligned}
-	\rho^N = \ket{\Psi^N}\ket{\Psi^N} &= \frac{1}{N!}\sum_{p,q \in S_N} \ket{\Phi_p} \bra{\Phi_q}
-\end{aligned}\end{equation}
-To find the von-Neumann entropy of this state, first note that the density matrix has an eigenstate
-\begin{equation}\begin{aligned}
-	\ket{\chi} = \sum_{r\in S_N}\ket{\Phi_r}
-\end{aligned}\end{equation}
-because
-\begin{equation}\begin{aligned}
-	\rho\ket{\chi} = \frac{1}{N!}\sum_{r\in S_N}\sum_{p,q \in S_N} \ket{\Phi_p} \bra{\Phi_q} \ket{\Phi_r}= \frac{1}{N!}\sum_{r\in S_N}\sum_{p,q \in S_N} \ket{\Phi_p} \delta_{qr} = \ket{\chi}
-\end{aligned}\end{equation}
-Thus, \(\rho\) has an eigenvalue \(1\), which implies that the other eigenvalues must be 0 because the trace of \(\rho\) must be 1, and all the eigenvalues must be positve-semi-definite. Therefore, the von-Neumann entropy is zero:
-\begin{equation}\begin{aligned}
-	S = \sum_i \rho_i \ln \rho_i = 0 + 1\times\ln 1 = 0
+	S &= \ln \frac{N!}{N_< ! N_0 !}\\
+	  &\approx N\ln N - N - N_<\ln N_< + N_< - N_0\ln N_0 + N_0 && \left[ \ln N! \approx N\ln N - N \right] \\
+	  &= N_<\ln \frac{N_0 + N_<}{N_<} + N_0 \ln \frac{N_0 + N_<}{N_0} && \left[ N = N_0 + N_< \right] \\
+	  &= N_<\ln \left(1 + \frac{N_0}{N_<}\right) + N_0 \ln \left(\frac{N_<}{N_0}+1\right)\\
+	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}+1\right) && \left[ \ln (1+x) \approx x \text{ for } x \to 0\right] \\
+	  &\approx N_< \frac{N_0}{N_<} + N_0 \ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right] \\
+	  &= N_0\left[1 + \ln \left(\frac{N_<}{N_0}\right)\right]\\
+	  &\approx N_0\ln \left(\frac{N_<}{N_0}\right) && \left[\frac{N_<}{N_0}\to \infty\right]\\
+	  &\sim cL^{d-1}\ln L
 \end{aligned}\end{equation}
 
+\subsection{EE for Various Phases}
+In what follows, we will define
+\begin{equation}\begin{aligned}
+	N_0 &= \text{number of states \textit{on} Fermi surface \(\left( |k| = |k_F| \right) \)}\\
+	N_< &= \text{number of states \textit{inside} Fermi surface \(\left( |k| < |k_F| \right) \)}\\
+	N_> &= \text{number of states \textit{above} Fermi surface \(\left( |k| > |k_F| \right) \)}\\
+	N &= \text{total number of states} = N_< + N_0 + N_>
+\end{aligned}\end{equation}
+Also, we will take \(m = N_0 + N_>\). That is, we will \textit{trace out the same number of particles as there are states on and above the Fermi surface}. The EE from such a process is
+\begin{equation}\begin{aligned}
+	S_{FL} = \ln \left[{}^{N}C_{N_0 + N_>}\right] = \ln \left[{}^{N}C_{N_<}\right] = \ln \frac{N!}{\left( N_0 + N_> \right) !\;N_<!}
+\end{aligned}\end{equation}
+
+\subsubsection{Fermi liquids}
+For Fermi liquids, \(N_> = 0\) in the ground state, so \(N = N_< + N_0\) and
+\begin{equation}\begin{aligned}
+	S_{FL} = \ln \frac{\left(N_0 + N_<\right)!}{N_0!\;N_<!}
+\end{aligned}\end{equation}
+Both the numbers \(N_0\) and \(N_<\) have topological stability\cite{seki}. The entanglement entropy \(S_{FL}\) is thus a topological quantity.
+
+\subsection{Marginal Fermi liquid}
+If we assume the total number of states is the same for FL and MFL (for eg., if the MFL is obtained by redistributing the same states), we can use \(N^{FL} = N^{MFL}\) to write
+\begin{equation}\begin{aligned}
+	S_{FL} - S_{MFL} = \ln \frac{\left( N^{MFL}_0 + N^{MFL}_> \right) !\;N^{MFL}_<!}{N^{FL}_0!\;N^{FL}_<!}
+\end{aligned}\end{equation}
+If the extra states outside the Fermi volume have come solely from the Fermi surface, we can also assume \(N_<^{MFL} = N_<^{FL}\) and \(N_0^{FL} = N_0^{MFL} + N_>^{MFL}\), such that
+\begin{equation}\begin{aligned}
+S_{FL} = S_{MFL}
+\end{aligned}\end{equation}
+which essentially means that since the particle exchanges have happened completely inside the subsystem we are tracing out (Fermi surface and beyond), the connectivities between the two subsystems haven't changed and so the entanglement entropy is unchanged. 
+\pb If, however, the extra states have come from inside the Fermi volume, then we can only make the following simplification:
+\begin{equation}\begin{aligned}
+	S_{FL} - S_{MFL} = \ln \frac{N^{MFL}_< ! \left( N_0^{FL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!} \approx \ln \frac{N^{MFL}_< !}{N_<^{FL}!} && \left[N_0^{FL} \gg N_>^{MFL}\right] 
+\end{aligned}\end{equation}
+
+\subsection{Gapped states}
 \cite{Anderson}
 \bibliographystyle{unsrt}
 \bibliography{notes}
