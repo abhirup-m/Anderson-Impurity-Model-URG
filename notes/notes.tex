@@ -5215,49 +5215,48 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 	\label{siamphases}
 \end{center}
 \subsection{Effect of \(V\) on the fixed points}
-The introduction of \(V\) into the RG equations has drastic effects on the first and third quadrants of the phase diagram shown just above. The minimal change is the presence of fixed points with \(U^* = 0\) in the first and third quadrants, and the presence of fixed points with \(U^* \neq 0\) in the second and fourth quadrants. The changes in the second and fourth quadrants die off for larger bandwidths, so the results in fig.~\ref{siamphases}, for the second and fourth quadrants, would survive for a thermodynamically large system.
-\pb However, for even a modest bare value of \(V\), the dominant behaviour flips in the first and third quadrants. Fixed points with \(U*=0\) form the majority of these phases, the \(U* \neq 0\) forming a much smaller subset. This difference becomes amplified in the first quadrant as the bandwidth increases, and gets stunted in the third quadrant. 
-\pb The number of relevant and irrelevant fixed points as a function of the bare \(V\) are shown in fig.~\ref{Veffect}. These plots show that for \(V\) above some critical value, the dominant fixed point in all quadrants is \(U^*=0\).
+The introduction of \(V\) into the RG equations make them analytically untractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. To show the presence of both types of fixed points, we have plotted the fraction of fixed points with \(U^* = 0, U^*>0\) and \(U^*<0\) for all four quadrants, as a function of the bare value of \(V_0\), in fig.~\ref{Veffect}.
 \begin{center}
-	\begin{minipage}{.48\textwidth}
+	\begin{minipage}{.49\textwidth}
     \centering
-    \includegraphics[scale=0.5]{../figures/0q2.png}
+    \includegraphics[scale=0.5]{../figures/quad2.png}
 \end{minipage}
-\hspace{0.02\textwidth}
-  \begin{minipage}{.48\textwidth}
+%\hspace{0.01\textwidth}
+  \begin{minipage}{.49\textwidth}
     \centering
-    \includegraphics[scale=0.5]{../figures/0q1.png}
+    \includegraphics[scale=0.5]{../figures/quad1.png}
 \end{minipage}
 
   \medskip
 
-  \begin{minipage}{.48\textwidth}
+  \begin{minipage}{.49\textwidth}
     \centering
-    \includegraphics[scale=0.5]{../figures/0q3.png}
+    \includegraphics[scale=0.5]{../figures/quad3.png}
 \end{minipage}
-\hspace{0.02\textwidth}
-  \begin{minipage}{.48\textwidth}
+%\hspace{0.02\textwidth}
+  \begin{minipage}{.49\textwidth}
     \centering
-    \includegraphics[scale=0.4]{../figures/0q4.png}
+    \includegraphics[scale=0.5]{../figures/quad4.png}
 \end{minipage}
 \label{Veffect}
-\captionof{figure}{Change in number of fixed points as a function of \(V\). Each quadrant represents the corresponding quadrant in the phase diagram. First and third quadrants show the transition. Bare values are mentioned in plot titles. Calculations were performed for \(\omega \in \left[ - \frac{D_0}{2}, \frac{D_0}{2} \right] \) and \(U \in \left[ 0, 5 \right] \).}
+\captionof{figure}{Fraction of fixed points with various values of \(U^*\), as a function of bare \(V\). Each quadrant represents the corresponding quadrant in the phase diagram fig.~\ref{siamphases}. First and third quadrants suffer a transition. Bare values are mentioned in plot titles. Calculations were performed for \(\omega \in \left[ - \frac{D_0}{2}, \frac{D_0}{2} \right] \) and \(U \in \left[ 0, 5 \right] \).}
 \end{center}
-To show that for a thermodynamically large system, the only fixed point is the \(U^*=0\) one, we plotted the ratio of the number of fixed points for \(U^*=0\) and \(U^* \neq 0\) as a function of the bare bandwidth. The ratio increases almost linearly with the bandwidth, implying that for large enough bandwidths, the fraction of fixed points with \(U^* \neq 0\) is effectively zero.
-\begin{center}
-	\includegraphics[scale=0.4]{../figures/Dvscount_q1.png}
-	\includegraphics[scale=0.4]{../figures/Dvscount_q3.png}
-	\captionof{figure}{Increase in the ratio (in the stable region, \(V \sim D_0/5\)) of irrelevant fixed points to relevant fixed points with the bare bandwidth, for the first quadrant (left pane) and the third quadrant (right pane).}
-\end{center}
-From the figs.~\ref{Veffect}, we can see that the transition to \(U^*=0\) happens at a critical \(V\) which depends on the values of \(J\) and \(K\). By defining the critical coupling \(V_c\) as that value of \(V\) at which the number of irrelevant and relevant fixed points are equal,we can see how this \(V_c\) varies with the bandwidth.
-\begin{center}
-	\includegraphics[scale=0.5]{../figures/Vc_q1.png}
-	\includegraphics[scale=0.5]{../figures/Vc_q32.png}
-	\captionof{figure}{Variation of the critical value \(V_c\) with bandwidth. In first quadrant (left), it vanishes as the bandwidth increases. For the third quadrant (right) however, it increases.}
-\end{center}
-For the fixed point in the first quadrant, it is clear that the critical \(V\) shrinks as the bandwidth increases, implying that for a large system, the only pertinent phase is the one at \(U^*=0\), because any infinitesimal \(V\) will be able to make \(U\) irrelevant. However, in the third quadrant, it becomes harder for the \(V\) to make \(U\) irrelevant as the bandwidth increases. 
-\pb We can hence conclude that the only \(V\) has on the fixed point values, in the thermodynamic limit, is that it changes the value of \(U^*\) in the first quadrant of fig.~\ref{phases} to zero. The rest of the values of \(U^*\) remain unchanged.
+To make progress, we will try to figure out how the system will behave at very large $D$ (that is, a thermodynamic ally large system). We will see that we will be able to make concrete statements in such a limit.
 
+\subsection{First quadrant}
+From the first quadrant of fig.~\ref{Veffect}, we can see that the there is a shift in the dominance of the fixed points at some value of $V$. That is, for $V$ less than a certain value, the more dominant fixed points are the ones on the blue line, with $U^* > U_0$. For $V$ larger than this value, the fixed points on the red line are more dominant. More specifically, the critical coupling \(V_c\) is that value of \(V\) at which the number of irrelevant \((U^* = 0)\) and relevant \((U^* > U_0)\) fixed points are equal. From our numerical studies, we conclude that \(V_c\) depends on the bare values of \(D\), \(J\) and \(K\). Changing \(J\) and \(K\) does not introduce any qualitatively new behaviour, so we focus on the effect of $D$.
+\pb The dependence of $V_c$ on $D$ is shown in fig.~\ref{Vc_vs_D}. It reaches a minima and then increases. The large $D$ behaviour is an increase in $V_c$. We can thus conclude that for very large $D$, this critical $V$ will also be very large, and the flip from the blue line to the red line will be very unfavourable, and the fixed point phase will be one with \(U^* > U_0\).
+\begin{center}
+	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
+	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
+	\captionof{figure}{Variation of the critical value \(V_c\) with bandwidth. The left panel zooms into a smaller range and clearly shows the minima. The right panel is for a larger range and shows the ultimate increase.}
+	\label{Vc_vs_D}
+\end{center}
+One also needs to check how the fractions of the number of relevant and irrelevant fixed points compare to each other. To that end, we have plotted the difference between the number of relevant and irrelevant fixed points at a particular value of $V$, as a function of $D$. The almost linear increase suggests that at large $D$, only the relevant fixed points will survive.
+\begin{center}
+	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
+	\captionof{figure}{}
+\end{center}
 
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
@@ -5992,6 +5991,7 @@ We have considered three canonical transformations in this section: the Poor Man
 	\includegraphics[scale=0.22]{../figures/unitaries.png}
 	\captionof{figure}{Comparison of the various unitary transformations, depicting how each of them are related to one another.}
 \end{center}
+\comm{
 \section{Lax Pairs and Double Bracket Flows}
 \subsection{Definition of a Lax Pair}
 Two operator \(A\) and \(B\) are said to form a lax pair if they satisfy the equation
@@ -6399,6 +6399,7 @@ which essentially means that since the particle exchanges have happened complete
 
 \subsection{Gapped states}
 \cite{Anderson}
+}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
