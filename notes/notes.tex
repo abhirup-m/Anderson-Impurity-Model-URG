@@ -77,29 +77,28 @@ The work is organized as follows. Section \ref{section1} goes over the available
 \subsection{T-matrix and S-matrix}
 \il{T-}matrix is defined as\cite{sakurai}
 \beq
-V\psi = T\phi
+V\ket{\Psi} = T\ket{\Phi}
 \eeq
-where \il{\psi} is the total scattered wavefunction and \il{\phi} is the incoming wavefunction.
-They satisfy the Schrodinger equations
+where \il{\ket{\Psi}} is the total scattered wavefunction and \il{\ket{\Phi}} is the incoming (non-interacting) wavefunction. They satisfy the Schrodinger equations
 \begin{gather}
-H_0 \phi = E \phi\\
-(H_0 + V)\psi = E \psi
+	H_0 \ket{\Phi} = E \ket{\Phi}\\
+(H_0 + V)\ket{\Psi} = E \ket{\Psi}
 \end{gather}
 Since we are assuming elastic scattering, both have the same energy.
-The Schrodinger equation for \il{\psi} can be rearranged into
+The Schrodinger equation for \il{\ket{\Psi}} can be rearranged into
 \beq[lse]
-\psi = \phi + G_0V\psi
+\ket{\Psi} = \ket{\Phi} + G_0V\ket{\Psi}
 \eeq
-where \il{G_0^{-1} = E - H_0}.
+where \il{G_0^{-1}(\omega) = \omega - H_0} is then on-interacting Greens function.
 This is also called the Lippmann-Schwinger equation.
 Using the definition of \il{T} gives
-\beq
-\psi &= \phi + G_0 T \phi \\
-\implies \psi &=(1+G_0T) \phi
-\eeq
+\begin{align}
+\ket{\Psi} &= \ket{\Phi} + G_0 T \ket{\Phi} \\
+\label{lsmod} \implies \ket{\Psi} &=(1+G_0T) \ket{\Phi}
+\end{align}
 Eq.~\ref{lse} can also be written as 
 \beq
-\psi = (1- G_0V)^{-1} \phi
+\ket{\Psi} = (1- G_0V)^{-1} \ket{\Phi}
 \eeq
 Comparing the last two equations gives
 \beq[tmat]
@@ -109,28 +108,88 @@ Comparing the last two equations gives
 The last equation allows us to perturbatively expand the \il{T-} matrix.
 \beq
 T = V + VG_0V + VG_0VG_0V + ...
+\label{tmatexp}
 \eeq
+We can relate this \(T-\)matrix with the total (interacting) Green's function
+\begin{equation}\begin{aligned}
+	G = \frac{1}{\omega - H_0 - V}
+\end{aligned}\end{equation}
+That definition can be massaged into the following identity:
+\begin{equation}\begin{aligned}
+	G^{-1} = G_0^{-1} - V \implies G_0 G^{-1} G = G_0 G_0^{-1} G - G_0 V G \implies G = G_0 + G_0 V G
+\end{aligned}\end{equation}
+By resubstituting \(G\) into the RHS, this can be made into a perturbative expansion:
+\begin{equation}\begin{aligned}
+	G = G_0 + G_0 V \left(G_0 + G_0 V G\right) = G_0 + G_0 V G_0 + G_0 V G_0 V G_0 + ... \\
+	= G_0 + G_0 \left( V + V G_0 V + ... \right) G_0
+\end{aligned}\end{equation}
+By comparing with eq.~\ref{tmatexp}, we can recognize the term piece inside the brackets as the \(T-\)matrix, and write
+\begin{equation}\begin{aligned}
+	G = G_0 + G_0 T G_0
+	\label{G_and_G0}
+\end{aligned}\end{equation}
+
+
+
+
+
+
 From scattering theory, we can write
 \beq
-\psi = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + f \fr{e^{ikr}}{r}}
+\ket{\Psi} = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + f \fr{e^{ikr}}{r}}
 \eeq
-where the wave amplitude \il{f(k^\prime,k) \sim \bra{k^\prime} V \ket{\psi}}.
+where the wave amplitude \il{f(k^\prime,k) \sim \bra{k^\prime} V \ket{\ket{\Psi}}}.
 Using the definition of \il{T}, we get
 \beq
 f(k^\prime,k) \sim \bra{k^\prime} T \ket{k}
 \eeq
-By definition, the \il{S-}matrix is
+By definition, the \il{S-}matrix is the unitary operator that relates the non-interacting eigenstate to the interacting one:
 \beq
-S(\omega) = e^{2i\pi\delta(\omega)} 
+\ket{\Psi} = S\ket{\Phi}
 \eeq
-Also,
+We can derive a relation between \(S\) and \(T\) starting from eq.~\ref{lsmod}:
 \beq
-S = 1-2 i \pi \rho T
+S\ket{\Phi} =\ket{\Psi} = \left(1 + G_0 T\right)\ket{\Phi} \implies  S = 1 + G_0 T
 \eeq
+This also leads to relation between the scattering matrix and the Greens functions. Continuing with the last equation, we can write
+\begin{equation}\begin{aligned}
+	S G_0 = G_0 + G_0 T G_0 = G  && \left[ \text{using eq.~\ref{G_and_G0}} \right]\implies S = G G_0^{-1} 
+\end{aligned}\end{equation}
+
 Therefore,
 \beq[tmatphase]
 T = \fr{1}{2i\pi \rho}\rr{1 - e^{2i\pi\delta(\omega)}} = -\fr{e^{i\delta}\sin \delta}{\pi \rho}
 \eeq
+
+\subsection{The Friedel sum-rule}
+This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localised scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
+\pb Consider a Hamiltonian
+\begin{equation}\begin{aligned}
+	\ham = H_0 + V
+\end{aligned}\end{equation}
+where \(H_0 = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma}\). We will define the number of states of the Hamiltonian by integrating over the density of states (dos), which is in turn defined using a retared Green's function. The retarded Green's function for the full Hamiltonian is defined as
+\begin{equation}\begin{aligned}
+	G(\omega) = \lim_{\eta \to 0}\frac{1}{\omega - \ham + i\eta} = \frac{1}{\omega - \ham} - i\pi\delta\left(\omega - \ham\right)
+\end{aligned}\end{equation}
+The non-interacting Greens's function is then
+\begin{equation}\begin{aligned}
+	G_0(\omega) = \frac{1}{\omega - H_0} - i\pi\delta\left(\omega - H_0\right)
+\end{aligned}\end{equation}
+The dos \(\rho(\omega)\) and total number of states \(N\) are then defined as
+\begin{equation}\begin{aligned}
+	\rho(\omega) &= \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \ham) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right], && \rho_0(\omega) =  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
+	N &= \int_{-\infty}^0 \rho(\omega) d\omega = - \int_{-\infty}^0 \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega, && N_0 = - \int_{-\infty}^0 \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
+\end{aligned}\end{equation}
+We also need to define the \(T-\)matrix and hence the scattering phase shifts. The \(T-\)matrix is defined as
+\begin{equation}\begin{aligned}
+	T = V + VG_0 T
+\end{aligned}\end{equation}
+which allows us to write
+\begin{equation}\begin{aligned}
+	T = V + VG_0 V + V G_0 V G_0 V + ... = V\left[ 1 + G_0 V + G_0 V G_0 V + ... \right] = V\left[ 1 - G_0 V \right] ^{-1}
+\end{aligned}\end{equation}
+
+
 
 \subsection{An identity}
 If, for some operator \il{A}, we have \il{\qq{H,A} = \lambda A}, where \il{\lambda} is some scalar, then we can write

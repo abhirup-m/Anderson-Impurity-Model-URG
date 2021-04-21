@@ -38,6 +38,11 @@ J.~J. Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
 \newblock Addison Wesley Publishing Company, 1994.
 
+\bibitem{hewson}
+A.~C. Hewson.
+\newblock {\em The Kondo Problem to Heavy Fermions}.
+\newblock Cambridge University Press, 1993.
+
 \bibitem{pethick}
 Jordon Baym and Christopher Pethick.
 \newblock {\em Landau Fermi-Liquid Theory}.
@@ -52,11 +57,6 @@ Piers Coleman.
 J.~R. Schrieffer and P.~A. Wolff.
 \newblock Relation between the anderson and kondo hamiltonians.
 \newblock {\em Phys. Rev.}, 149:491--492, Sep 1966.
-
-\bibitem{hewson}
-A.~C. Hewson.
-\newblock {\em The Kondo Problem to Heavy Fermions}.
-\newblock Cambridge University Press, 1993.
 
 \bibitem{phill}
 Philip Phillips.
