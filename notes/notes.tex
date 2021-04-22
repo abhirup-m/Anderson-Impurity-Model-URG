@@ -77,35 +77,37 @@ The work is organized as follows. Section \ref{section1} goes over the available
 \subsection{T-matrix and S-matrix}
 \il{T-}matrix is defined as\cite{sakurai}
 \beq
+\label{Tmatdef}
 V\ket{\Psi} = T\ket{\Phi}
 \eeq
-where \il{\ket{\Psi}} is the total scattered wavefunction and \il{\ket{\Phi}} is the incoming (non-interacting) wavefunction. They satisfy the Schrodinger equations
+where \il{\ket{\Psi}} is the total scattered wavefunction and \il{\ket{\Phi}} is the incoming (non-interacting) wavefunction. This equation is supposed to hold for all eigenkets \(\ket{\Phi}\) of the Hamiltonian \(H_0\). 
+\pb The kets \(\ket{\Psi}\) and \(\ket{\Phi}\) satisfy the Schrodinger equations
 \begin{gather}
 	H_0 \ket{\Phi} = E \ket{\Phi}\\
 (H_0 + V)\ket{\Psi} = E \ket{\Psi}
 \end{gather}
-Since we are assuming elastic scattering, both have the same energy.
+We will also define an \il{S-}matrix- it is the unitary operator that relates the non-interacting eigenstate to the interacting one:
+\beq
+\label{Smatdef}
+\ket{\Psi} = S\ket{\Phi}
+\eeq
+Since we are assuming elastic scattering, both \(\ket{\Psi}\) and \(\ket{\Phi}\) have the same energy.
 The Schrodinger equation for \il{\ket{\Psi}} can be rearranged into
 \beq[lse]
 \ket{\Psi} = \ket{\Phi} + G_0V\ket{\Psi}
 \eeq
 where \il{G_0^{-1}(\omega) = \omega - H_0} is then on-interacting Greens function.
 This is also called the Lippmann-Schwinger equation.
-Using the definition of \il{T} gives
-\begin{align}
-\ket{\Psi} &= \ket{\Phi} + G_0 T \ket{\Phi} \\
-\label{lsmod} \implies \ket{\Psi} &=(1+G_0T) \ket{\Phi}
-\end{align}
-Eq.~\ref{lse} can also be written as 
-\beq
-\ket{\Psi} = (1- G_0V)^{-1} \ket{\Phi}
-\eeq
-Comparing the last two equations gives
-\beq[tmat]
-1 &= (1-G_0 V)(1+G_0 T) \\
-\implies T &= V +VG_0 T
-\eeq
-The last equation allows us to perturbatively expand the \il{T-} matrix.
+Multiplying with the interacting operator \(V\) from the left gives
+\begin{equation}\begin{aligned}
+	V\ket{\Psi} &= V\ket{\Phi} + VG_0V\ket{\Psi}\\
+	\implies T\ket{\Phi} &= V\ket{\Phi} + VG_0 T\ket{\Phi} && \left[ \text{eq.~\ref{Tmatdef}} \right] 
+\end{aligned}\end{equation}
+Since the last equation should hold for all \(\ket{\Phi}\), and since the set of \(\ket{\Phi}\) form a complete set, we can extract the operator equation
+\begin{equation}\begin{aligned}
+	T = V + V G_0 T
+\end{aligned}\end{equation}
+The last equation allows us to perturbatively expand the \il{T-} matrix, by substituting the RHS into the \(T\) on the RHS:
 \beq
 T = V + VG_0V + VG_0VG_0V + ...
 \label{tmatexp}
@@ -123,44 +125,112 @@ By resubstituting \(G\) into the RHS, this can be made into a perturbative expan
 	G = G_0 + G_0 V \left(G_0 + G_0 V G\right) = G_0 + G_0 V G_0 + G_0 V G_0 V G_0 + ... \\
 	= G_0 + G_0 \left( V + V G_0 V + ... \right) G_0
 \end{aligned}\end{equation}
-By comparing with eq.~\ref{tmatexp}, we can recognize the term piece inside the brackets as the \(T-\)matrix, and write
+By comparing with eq.~\ref{tmatexp}, we can recognize the term inside the brackets as the \(T-\)matrix, and write
 \begin{equation}\begin{aligned}
 	G = G_0 + G_0 T G_0
 	\label{G_and_G0}
 \end{aligned}\end{equation}
-
-
-
-
-
-
-From scattering theory, we can write
+By substituting \(\ket{\Psi} = S\ket{\Phi}\) into the L-S equation, we can also extract a relation between \(S\) and \(T\), and hence between \(S\) and \(G\). Combining eqs.~\ref{Tmatdef},\ref{Smatdef} and \ref{lse}, we get
+\begin{align}
+	S\ket{\Phi} &= \ket{\Phi} + G_0 T\ket{\Phi}\\
+	\implies S &= 1 + G_0 T\\
+	\implies SG_0 &= G_0 + G_0 T G_0 = G && \left[\text{eq.~\ref{G_and_G0}}\right]\\
+	\implies S &= G  G_0^{-1} \label{SinG}
+\end{align}
+It is a standard result in scattering theory that the total scattered wavefunction can be written as the sum of the incoming plane wave and an outgoing spherical wave:
 \beq
-\ket{\Psi} = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + f \fr{e^{ikr}}{r}}
+\Psi(x) = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + f(k^\prime, k) \fr{e^{ikr}}{r}}
 \eeq
-where the wave amplitude \il{f(k^\prime,k) \sim \bra{k^\prime} V \ket{\ket{\Psi}}}.
+where the amplitude of the outgoing wave, \(f(k^\prime,k)\), quantifies the amount of scattering and is given by
+\begin{equation}\begin{aligned}
+	f(k^\prime, k) = - \frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}V\ket{\Psi}
+\end{aligned}\end{equation}
 Using the definition of \il{T}, we get
 \beq
-f(k^\prime,k) \sim \bra{k^\prime} T \ket{k}
+\label{f_in_T}
+f(k^\prime,k) = - \frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{\Phi} = -\frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{k}
 \eeq
-By definition, the \il{S-}matrix is the unitary operator that relates the non-interacting eigenstate to the interacting one:
-\beq
-\ket{\Psi} = S\ket{\Phi}
-\eeq
-We can derive a relation between \(S\) and \(T\) starting from eq.~\ref{lsmod}:
-\beq
-S\ket{\Phi} =\ket{\Psi} = \left(1 + G_0 T\right)\ket{\Phi} \implies  S = 1 + G_0 T
-\eeq
-This also leads to relation between the scattering matrix and the Greens functions. Continuing with the last equation, we can write
+where we chose the non-interacting eignkets to be the momentum eigenkets \(\left( \ket{\Phi} = \ket{k} \right) \). By expanding in terms of the eigenstates of \(L^2\) and \(L_z\), this can be written as
 \begin{equation}\begin{aligned}
-	S G_0 &= G_0 + G_0 T G_0 = G  && \left[ \text{using eq.~\ref{G_and_G0}} \right]\\
-	\implies S &= G G_0^{-1} \label{SinG}
+	f(k^\prime,k) = - \frac{\pi}{k}\sum_l (2l+1)P_l\left( \cos \theta \right) T_l(\epsilon_k) \equiv \sum_l (2l+1)P_l\left( \cos \theta \right) f_l\left( k \right) 
+\end{aligned}\end{equation}
+where we have chosen \(\vec k\) to be the z-direction and \(\theta\) is the angle between \(k\) and \(k^\prime\). The last part of the equation defines \(f_l(k)\):
+\begin{equation}\begin{aligned}
+	f_l(k) = - \frac{\pi}{k} T_l(\epsilon_k)
+\end{aligned}\end{equation}
+This enables us to write
+\begin{equation}\begin{aligned}
+	\Psi(x) = \rr{2\pi}^{-\fr{3}{2}}\qq{e^{ikx} + \sum_l (2l+1)P_l\left( \cos \theta \right) f_l\left(k\right) \frac{e^{ikr}}{r}}
+\end{aligned}\end{equation}
+Writing the plane wave in terms of incoming and outgoing spherical waves and expanding the spherical waves in terms of the spherical harmonics gives
+\begin{equation}\begin{aligned}
+	\Psi(x) = \rr{2\pi}^{-\fr{3}{2}}\sum_l (2l+1) \frac{1}{2ik}P_l\left[\left(1 + 2i k f_l \right) \frac{e^{ikr}}{r} - e^{-i\left( kr - l\pi \right) } \frac{1}{r}\right]
+\end{aligned}\end{equation}
+From conservation of probabilities, we know that the amplitude squared of the incoming and outgoing waves must be equal. \textit{Assuming a spherically symmetric scattering center means the probabilities will be consevred separately for each value of \(l\)}. This means that the coefficient 
+\begin{equation}\begin{aligned}
+	S_l(k) \equiv 1 + 2i k f_l (k)
+\end{aligned}\end{equation}
+can, at most, be a phase:
+\begin{equation}\begin{aligned}
+	S_l (k)\equiv 1 + 2i k f_l (k) = e^{2i\delta_l(k)}
+\end{aligned}\end{equation}
+From the definition of \(f_l\) in terms of \(T_l\), we can relate \(S(k)\) with the T-matrix \(T(\epsilon_k)\):
+\begin{equation}\begin{aligned}
+	S_l(k) &= 1 + 2i k f_l = 1 - 2 \pi i T_l(\epsilon_k)
+\end{aligned}\end{equation}
+We can express the LSH in terms of energy:
+\begin{equation}\begin{aligned}
+	S_l(\omega) &= \bra{\omega}S_l\ket{\omega} \\
+			   &= \int d\vec k \bra{\omega}\ket{\vec k}\bra{\vec k}S_l\ket{\vec k}\bra{\vec k}\ket{\omega}\\
+			   &= \int d\vec k \delta(\omega - \epsilon_k)S_l(\vec k)\\
+			   &= \int d\vec k \delta(\omega - \epsilon_k)\left[1 - 2 \pi i T_l(\epsilon_k)\right]\\
+			   &= 1 - 2 \pi i \int d\vec k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
+			   &= 1 - 2 \pi i \int g(k) d k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
+			   &= 1 - 2 \pi i \int g(\epsilon_k) d \epsilon_k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
+			   &= 1 - 2 \pi i g(\omega) T_l(\omega)
+\end{aligned}\end{equation}
+where \(g(k)\) is the density of states at momentum magnitude \(k = |\vec k|\) and \(g(\epsilon_k)\) is the density of states at that energy. Note that these are the non-interacting density of states: they count energy states that match with the kinetic energy \(\epsilon_k\) and do not take into account any self-energy term that may come from some interaction. The relation between \(S\) and \(T\) is thus
+\begin{equation}\begin{aligned}
+	\label{S_in_T}
+	S_l(\omega) = 1 - 2 \pi i g(\omega) T_l(\omega)
+\end{aligned}\end{equation}
+The scattering phase shifts can be expressed in terms of \(T\):
+\begin{equation}\begin{aligned}
+	T_l(\omega) &= \frac{1}{2\pi i g(\omega)}\left[ 1 - S_l(\omega) \right]\\
+		    &= \frac{1}{2\pi i g(\omega)}\left[1 - \exp\left( 2 i \delta_l(\omega) \right)\right]\\
+		    &=\frac{1}{2\pi i g(\omega)}\exp\left(i \delta_l(\omega) \right)\left[\exp\left( - i \delta_l(\omega) \right) - \exp\left(i \delta_l(\omega) \right)\right]
+\end{aligned}\end{equation}
+Converting the exponentials inside the box brackets to sines gives
+\begin{equation}\begin{aligned}
+	\label{tmatphase}
+	T_l(\omega) = -\frac{1}{\pi g(\omega)}\exp\left(i \delta_l(\omega) \right)\sin \delta_l(\omega)
+\end{aligned}\end{equation}
+If we define the argument of a complex number \(z(r,\phi) = r e^{i\phi}\) as \(arg(z) = \phi\), then we can write
+\begin{equation}\begin{aligned}
+	\delta_l(\omega) = arg\left[ T_l(\omega) \right] 
+\end{aligned}\end{equation}
+Since the total \(T-\)matrix will be 
+\begin{equation}\begin{aligned}
+	T(\omega) = \sum_l T_l(\omega)
+\end{aligned}\end{equation}
+the determinant of \(T(\omega)\) will be the product of the eigenvalues \(T_l(\omega)\), so we can write
+\begin{equation}\begin{aligned}
+	\text{Det}\left[ T(\omega) \right] = \prod_l T_l = \exp\left[ i\sum_l \delta_l(\omega) \right] \prod_l\left( -\frac{1}{\pi g(\omega)}\right)\sin \delta_l(\omega)
+\end{aligned}\end{equation}
+and the argument of this function will be the total scattering phase shift:
+\begin{equation}\begin{aligned}
+	\label{phase_in_T}
+	arg\left[\text{Det}\left[ T(\omega) \right]\right] = \sum_l \delta_l(\omega) \equiv \delta(\omega)
+\end{aligned}\end{equation}
+\(\delta(\omega)\) is the total scattering phase shift suffered by the scattering states due to scattering off the potential, at energy \(\omega\).
+\pb Summing equation \ref{S_in_T} over \(l\) also relates the total \(S\) with the total \(T\):
+\begin{equation}\begin{aligned}
+	S(\omega) = 1 - 2\pi i g(\omega) T(\omega)
 \end{aligned}\end{equation}
 
-Therefore,
-\beq[tmatphase]
-T = \fr{1}{2i\pi \rho}\rr{1 - e^{2i\pi\delta(\omega)}} = -\fr{e^{i\delta}\sin \delta}{\pi \rho}
-\eeq
+
+
+
 
 \subsection{The Friedel sum-rule}
 This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localised scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
@@ -183,7 +253,7 @@ The dos \(\rho(\omega)\) and total number of states \(N\) are then defined as
 	N &= \int_{-\infty}^{\epsilon_F} \rho(\omega) d\omega = - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega\\
 	N_0 &= - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
 \end{aligned}\end{equation}
-\textit{The quantity \(N\) counts the total number of states in the system below the Fermi surface.} The change in the density of states induced by the interaction term \(V\) is
+Note that \(\rho_0(\omega)\) is nothing but the \(g(\omega)\) that appears in eq.~\ref{S_in_T}. \textit{The quantity \(N\) counts the total number of states in the system below the Fermi surface.} The change in the density of states induced by the interaction term \(V\) is
 \begin{equation}\begin{aligned}
 	\label{doschange}
 	\Delta \rho\left( \omega \right)  = \rho\left( \omega \right) - \rho_0\left( \omega \right) = -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) - G_0(\omega) \right]
@@ -214,11 +284,11 @@ such that \(S\left( -\infty \right) = \mathbb{I}\), and we get
 \begin{equation}\begin{aligned}
 	\Delta N = \frac{1}{\pi}\text{Im}\ln \text{Det} \left[S\left( \epsilon_F \right)\right]
 \end{aligned}\end{equation}
-This tells us that the change in the number of available states below the Fermi surface is related to the scattering \(S-\)matrix at the Fermi energy.
-
-
-
-
+This is the generalized Friedel sum rule and it tells us that the change in the number of available states below the Fermi surface is related to the scattering \(S-\)matrix at the Fermi energy. For a spherically symmetric scatteror, we can use \(S(\epsilon_F) = \sum_l e^{2i\delta_l(\epsilon_F)}\), and get
+\begin{equation}\begin{aligned}
+	\Delta N = \frac{1}{\pi}\text{Im}\ln \exp\left[2i \sum_l g_l \delta_l(\epsilon_F)\right] = \frac{1}{\pi}\text{Im}\left[2i \sum_l  g_l\delta_l(\epsilon_F)\right] = \frac{2}{\pi}\delta(\epsilon_F)
+\end{aligned}\end{equation}
+\(g(l)\) is the degeneracy of \(l\) state and \(\delta = \sum_l  g_l\delta_l\) is the total change in phase due to the scattering.
 \subsection{An identity}
 If, for some operator \il{A}, we have \il{\qq{H,A} = \lambda A}, where \il{\lambda} is some scalar, then we can write
 \beq
@@ -422,8 +492,7 @@ The difference from \il{G^0_d} can be seen by computing the density of states fo
 \end{gather}
 The first density of states is delta function, because \il{\epsilon_d} is an eigenstate in that case, and the poles of the corresponding Green's function are real poles.
 But the presence of the hybridisation means that is no longer the case in the second density of states, so the delta function fades into a Lorentzian in that case, and the poles of the Greens function move off the real axis.
-
-The total number of d-electrons can be calculated as:
+\pb The total number of d-electrons can be calculated as:
 \beq[total]
 \avg{n_d} = 2\int d\epsilon \rho_d(\epsilon) = \fr{2\Delta}{\pi} \int \fr{d\epsilon}{(\epsilon-\epsilon_d)^2 + \Delta^2} = \fr{2}{\pi}\cot^{-1}\rr{\fr{\epsilon_d}{\Delta}}
 \eeq
@@ -5334,9 +5403,9 @@ To make progress, we will try to figure out how the system will behave at very l
 From the first quadrant of fig.~\ref{Veffect}, we can see that the there is a shift in the dominance of the fixed points at some value of $V$. That is, for $V$ less than a certain value, the more dominant fixed points are the ones on the blue line, with $U^* > U_0$. For $V$ larger than this value, the fixed points on the red line are more dominant. More specifically, the critical coupling \(V_c\) is that value of \(V\) at which the number of irrelevant \((U^* = 0)\) and relevant \((U^* > U_0)\) fixed points are equal. From our numerical studies, we conclude that \(V_c\) depends on the bare values of \(D\), \(J\) and \(K\). Changing \(J\) and \(K\) does not introduce any qualitatively new behaviour, so we focus on the effect of $D$.
 \pb The dependence of $V_c$ on $D$ is shown in fig.~\ref{Vc_vs_D}. It reaches a minima and then increases. The large $D$ behaviour is an increase in $V_c$. We can thus conclude that for very large $D$, this critical $V$ will also be very large, and the flip from the blue line to the red line will be very unfavourable, and the fixed point phase will be one with \(U^* > U_0\).
 \begin{center}
-	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
-	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
-	\captionof{figure}{Variation of the critical value \(V_c\) with bandwidth. The left panel zooms into a smaller range and clearly shows the minima. The right panel is for a larger range and shows the ultimate increase.}
+	\includegraphics[scale=0.45]{../figures/Vc_D_q11.png}
+	\includegraphics[scale=0.45]{../figures/Vc_D_q12.png}
+	\captionof{figure}{Variation of the critical value \(V_c\) with bandwidth. The left panel shows the lowering of $V_c$ just up to the minimum. The right panel shows the subsequent increase. They have been shown separately for clarity.}
 	\label{Vc_vs_D}
 \end{center}
 One also needs to check how the fractions of the number of relevant and irrelevant fixed points compare to each other. To that end, we have plotted the difference between the number of relevant and irrelevant fixed points at a particular value of $V$, as a function of $D$. The almost linear increase suggests that at large $D$, only the relevant fixed points will survive.
@@ -5344,6 +5413,8 @@ One also needs to check how the fractions of the number of relevant and irreleva
 	\includegraphics[scale=0.5]{../figures/frac_vs_D_quad1.png}
 	\captionof{figure}{}
 \end{center}
+
+\subsection{Second Quadrant}
 
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
