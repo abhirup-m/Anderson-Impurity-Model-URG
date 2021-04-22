@@ -153,7 +153,8 @@ S\ket{\Phi} =\ket{\Psi} = \left(1 + G_0 T\right)\ket{\Phi} \implies  S = 1 + G_0
 \eeq
 This also leads to relation between the scattering matrix and the Greens functions. Continuing with the last equation, we can write
 \begin{equation}\begin{aligned}
-	S G_0 = G_0 + G_0 T G_0 = G  && \left[ \text{using eq.~\ref{G_and_G0}} \right]\implies S = G G_0^{-1} 
+	S G_0 &= G_0 + G_0 T G_0 = G  && \left[ \text{using eq.~\ref{G_and_G0}} \right]\\
+	\implies S &= G G_0^{-1} \label{SinG}
 \end{aligned}\end{equation}
 
 Therefore,
@@ -167,27 +168,54 @@ This is a very general and important theorem that will come up  quite often thro
 \begin{equation}\begin{aligned}
 	\ham = H_0 + V
 \end{aligned}\end{equation}
-where \(H_0 = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma}\). We will define the number of states of the Hamiltonian by integrating over the density of states (dos), which is in turn defined using a retared Green's function. The retarded Green's function for the full Hamiltonian is defined as
+where \(H_0 = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma}\). We will define the number of states of the Hamiltonian by integrating over the density of states (dos), which is in turn defined using a retarded Green's function. The retarded Green's function for the full Hamiltonian is defined as
 \begin{equation}\begin{aligned}
 	G(\omega) = \lim_{\eta \to 0}\frac{1}{\omega - \ham + i\eta} = \frac{1}{\omega - \ham} - i\pi\delta\left(\omega - \ham\right)
 \end{aligned}\end{equation}
-The non-interacting Greens's function is then
+The non-interacting Greens function is then
 \begin{equation}\begin{aligned}
 	G_0(\omega) = \frac{1}{\omega - H_0} - i\pi\delta\left(\omega - H_0\right)
 \end{aligned}\end{equation}
 The dos \(\rho(\omega)\) and total number of states \(N\) are then defined as
 \begin{equation}\begin{aligned}
-	\rho(\omega) &= \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \ham) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right], && \rho_0(\omega) =  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
-	N &= \int_{-\infty}^0 \rho(\omega) d\omega = - \int_{-\infty}^0 \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega, && N_0 = - \int_{-\infty}^0 \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
+	\rho(\omega) &= \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \ham) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]\\
+	\rho_0(\omega) &=  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
+	N &= \int_{-\infty}^{\epsilon_F} \rho(\omega) d\omega = - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega\\
+	N_0 &= - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
 \end{aligned}\end{equation}
-We also need to define the \(T-\)matrix and hence the scattering phase shifts. The \(T-\)matrix is defined as
+\textit{The quantity \(N\) counts the total number of states in the system below the Fermi surface.} The change in the density of states induced by the interaction term \(V\) is
 \begin{equation}\begin{aligned}
-	T = V + VG_0 T
+	\label{doschange}
+	\Delta \rho\left( \omega \right)  = \rho\left( \omega \right) - \rho_0\left( \omega \right) = -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) - G_0(\omega) \right]
 \end{aligned}\end{equation}
-which allows us to write
+We can rewrite the trace of Green's function as
 \begin{equation}\begin{aligned}
-	T = V + VG_0 V + V G_0 V G_0 V + ... = V\left[ 1 + G_0 V + G_0 V G_0 V + ... \right] = V\left[ 1 - G_0 V \right] ^{-1}
+	\text{Tr}\left[G(\omega)\right] &= \sum_i \frac{1}{\omega - E_i} \\
+	&= \sum_i \frac{\partial{}}{\partial{\omega}} \ln \left(\omega - E_i\right) \\
+	&= \frac{\partial{}}{\partial{\omega}} \ln \prod_i\left(\omega - E_i\right) \\
+	&= -\frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[G(\omega)\right] 
 \end{aligned}\end{equation}
+such that
+\begin{equation}\begin{aligned}
+	-\text{Tr}\left[G(\omega) - G_0(\omega)\right] &= \frac{\partial{}}{\partial{\omega}} \ln \left\{\text{Det}\;\left[G\right]\left(\text{Det}\;\left[G_0\right]\right)^{-1}\right\}\\
+						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[G(\omega)G_0^{-1}(\omega)\right]\\
+						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] && \left[\text{using eq.~\ref{SinG}}\right] 
+\end{aligned}\end{equation}
+This is the main result, and we can substitute this in eq.~\ref{doschange}, to get
+\begin{equation}\begin{aligned}
+	\Delta \rho\left( \omega \right) &= \frac{1}{\pi}\text{Im}\frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] \\
+	\implies \Delta N &=  \frac{1}{\pi}\text{Im}\int_{-\infty}^{\epsilon_F} d\omega\frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] = \frac{1}{\pi}\text{Im}\ln \text{Det} \left[S\left( \epsilon_F \right)\left\{S\left( -\infty \right)\right\}^{-1}\right]
+\end{aligned}\end{equation}
+For \(\omega \to -\infty\), we can write
+\begin{equation}\begin{aligned}
+	\omega - H_0 - V = \omega - H_0 \implies G(-\infty) = G_0(-\infty)
+\end{aligned}\end{equation}
+such that \(S\left( -\infty \right) = \mathbb{I}\), and we get
+\begin{equation}\begin{aligned}
+	\Delta N = \frac{1}{\pi}\text{Im}\ln \text{Det} \left[S\left( \epsilon_F \right)\right]
+\end{aligned}\end{equation}
+This tells us that the change in the number of available states below the Fermi surface is related to the scattering \(S-\)matrix at the Fermi energy.
+
 
 
 
