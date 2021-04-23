@@ -105,6 +105,7 @@ Multiplying with the interacting operator \(V\) from the left gives
 \end{aligned}\end{equation}
 Since the last equation should hold for all \(\ket{\Phi}\), and since the set of \(\ket{\Phi}\) form a complete set, we can extract the operator equation
 \begin{equation}\begin{aligned}
+	\label{TinG}
 	T = V + V G_0 T
 \end{aligned}\end{equation}
 The last equation allows us to perturbatively expand the \il{T-} matrix, by substituting the RHS into the \(T\) on the RHS:
@@ -118,7 +119,10 @@ We can relate this \(T-\)matrix with the total (interacting) Green's function
 \end{aligned}\end{equation}
 That definition can be massaged into the following identity:
 \begin{equation}\begin{aligned}
-	G^{-1} = G_0^{-1} - V \implies G_0 G^{-1} G = G_0 G_0^{-1} G - G_0 V G \implies G = G_0 + G_0 V G
+	\label{GinVG}
+	G^{-1} &= G_0^{-1} - V\\
+	\implies G_0 G^{-1} G &= G_0 G_0^{-1} G - G_0 V G\\
+	\implies G &= G_0 + G_0 V G
 \end{aligned}\end{equation}
 By resubstituting \(G\) into the RHS, this can be made into a perturbative expansion:
 \begin{equation}\begin{aligned}
@@ -211,23 +215,22 @@ If we define the argument of a complex number \(z(r,\phi) = r e^{i\phi}\) as \(a
 \end{aligned}\end{equation}
 Since the total \(T-\)matrix will be 
 \begin{equation}\begin{aligned}
-	T(\omega) = \sum_l T_l(\omega)
+	T(\omega) = \sum_{lm\sigma} T_l(\omega)
 \end{aligned}\end{equation}
 the determinant of \(T(\omega)\) will be the product of the eigenvalues \(T_l(\omega)\), so we can write
 \begin{equation}\begin{aligned}
-	\text{Det}\left[ T(\omega) \right] = \prod_l T_l = \exp\left[ i\sum_l \delta_l(\omega) \right] \prod_l\left( -\frac{1}{\pi g(\omega)}\right)\sin \delta_l(\omega)
+	\text{Det}\left[ T(\omega) \right] = \prod_{lm\sigma} T_l = \exp\left[ i\sum_{lm\sigma} \delta_l(\omega) \right] \prod_{lm\sigma}\left( -\frac{1}{\pi g(\omega)}\right)\sin \delta_l(\omega)
 \end{aligned}\end{equation}
 and the argument of this function will be the total scattering phase shift:
 \begin{equation}\begin{aligned}
 	\label{phase_in_T}
-	arg\left[\text{Det}\left[ T(\omega) \right]\right] = \sum_l \delta_l(\omega) \equiv \delta(\omega)
+	arg\left[\text{Det}\left[ T(\omega) \right]\right] = \sum_{lm\sigma} \delta_l(\omega) \equiv \delta(\omega)
 \end{aligned}\end{equation}
 \(\delta(\omega)\) is the total scattering phase shift suffered by the scattering states due to scattering off the potential, at energy \(\omega\).
 \pb Summing equation \ref{S_in_T} over \(l\) also relates the total \(S\) with the total \(T\):
 \begin{equation}\begin{aligned}
 	S(\omega) = 1 - 2\pi i g(\omega) T(\omega)
 \end{aligned}\end{equation}
-
 
 
 
@@ -269,26 +272,51 @@ such that
 \begin{equation}\begin{aligned}
 	-\text{Tr}\left[G(\omega) - G_0(\omega)\right] &= \frac{\partial{}}{\partial{\omega}} \ln \left\{\text{Det}\;\left[G\right]\left(\text{Det}\;\left[G_0\right]\right)^{-1}\right\}\\
 						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[G(\omega)G_0^{-1}(\omega)\right]\\
-						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] && \left[\text{using eq.~\ref{SinG}}\right] 
+	&= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[G_0^{-1}(\omega)G(\omega)\right]
 \end{aligned}\end{equation}
-This is the main result, and we can substitute this in eq.~\ref{doschange}, to get
+which works because \(\text{Det}\left[ A B \right] = \text{Det}\left[BA\right]\). From eq.~\ref{G_and_G0}, we can write \(G_0^{-1}(\omega)G(\omega) = 1 + G_0T\), which means
 \begin{equation}\begin{aligned}
-	\Delta \rho\left( \omega \right) &= \frac{1}{\pi}\text{Im}\frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] \\
-	\implies \Delta N &=  \frac{1}{\pi}\text{Im}\int_{-\infty}^{\epsilon_F} d\omega\frac{\partial{}}{\partial{\omega}} \ln \text{Det} \left[S\right] = \frac{1}{\pi}\text{Im}\ln \text{Det} \left[S\left( \epsilon_F \right)\left\{S\left( -\infty \right)\right\}^{-1}\right]
+	-\text{Tr}\left[G(\omega) - G_0(\omega)\right] &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[1 + G_0T\right]\\
+						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[V^{-1}T\right] && \left[ \text{eq.~\ref{TinG}} \right] \\ 
+						       &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[V^{-1}\right]\text{Det}\left[T\right]\\ 
+						       &= \frac{\partial{}}{\partial{\omega}} \left(\ln \text{Det}\left[V^{-1}\right] + \ln \text{Det}\left[T\right]\right)\\ 
 \end{aligned}\end{equation}
-For \(\omega \to -\infty\), we can write
+Since \(V\) is independent of \(\omega\), the first term will vanish under the derivative.
 \begin{equation}\begin{aligned}
-	\omega - H_0 - V = \omega - H_0 \implies G(-\infty) = G_0(-\infty)
+	-\text{Tr}\left[G(\omega) - G_0(\omega)\right] &= \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[T\right]\\ 
 \end{aligned}\end{equation}
-such that \(S\left( -\infty \right) = \mathbb{I}\), and we get
+The change in the dos becomes
 \begin{equation}\begin{aligned}
-	\Delta N = \frac{1}{\pi}\text{Im}\ln \text{Det} \left[S\left( \epsilon_F \right)\right]
+	\Delta \rho(\omega) &= \frac{1}{\pi}\text{Im}\left( \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[T\right]\right)\\
+&= \frac{1}{\pi}\frac{\partial{}}{\partial{\omega}} \text{Im}\left( \ln \text{Det}\left[T\right]\right)\\
 \end{aligned}\end{equation}
-This is the generalized Friedel sum rule and it tells us that the change in the number of available states below the Fermi surface is related to the scattering \(S-\)matrix at the Fermi energy. For a spherically symmetric scatteror, we can use \(S(\epsilon_F) = \sum_l e^{2i\delta_l(\epsilon_F)}\), and get
+Note that while the \(\text{Det}\left[T\right]\) will have both an argument and an amplitude (as a general complex number), the \(\ln\) followed by the \(\text{Im}\left(  \right) \) will pick out just the argument:
 \begin{equation}\begin{aligned}
-	\Delta N = \frac{1}{\pi}\text{Im}\ln \exp\left[2i \sum_l g_l \delta_l(\epsilon_F)\right] = \frac{1}{\pi}\text{Im}\left[2i \sum_l  g_l\delta_l(\epsilon_F)\right] = \frac{2}{\pi}\delta(\epsilon_F)
+	\text{Im}\left(\ln (r e^{i\phi})\right) = \text{Im}\left( \ln r + i\phi \right) = \phi
 \end{aligned}\end{equation}
-\(g(l)\) is the degeneracy of \(l\) state and \(\delta = \sum_l  g_l\delta_l\) is the total change in phase due to the scattering.
+Hence,
+\begin{equation}\begin{aligned}
+\Delta \rho(\omega) &= \frac{1}{\pi}\frac{\partial{}}{\partial{\omega}} \text{arg} \text{Det}\left[T\right]\\
+\end{aligned}\end{equation}
+From eq.~\ref{phase_in_T}, we get
+\begin{equation}\begin{aligned}
+	\Delta \rho(\omega) &=\frac{1}{\pi}\frac{\partial{}}{\partial{\omega}}\delta(\omega)
+\end{aligned}\end{equation}
+The change in the total number of states is obtained simply by integrating the dos from \(-\infty\) to the chemical potential \(\epsilon_F\):
+\begin{equation}\begin{aligned}
+	\Delta N  &= \frac{1}{\pi}\int_{-\infty}^{\epsilon_F}\frac{\partial{}}{\partial{\omega}}\delta(\omega) d\omega\\
+		  &= \frac{1}{\pi}\left[ \delta(\epsilon_F) - \delta(-\infty) \right] 
+\end{aligned}\end{equation}
+For \(\omega \to -\infty\), we can write \(\omega - \ham \to \omega - H_0\) such that \(G(\omega) \to G_0(\omega)\) and hence \(S(\omega) \to 1\), which means that \(S(\omega)\) becomes real and \(\delta(\omega) \to 0\). Making this substitution, we get the spherically symmetric case of the Friedel sum rule
+\begin{equation}\begin{aligned}
+	\Delta N &= \frac{1}{\pi}\delta(\epsilon_F)
+\end{aligned}\end{equation}
+
+
+
+
+
+
 \subsection{An identity}
 If, for some operator \il{A}, we have \il{\qq{H,A} = \lambda A}, where \il{\lambda} is some scalar, then we can write
 \beq
