@@ -4159,7 +4159,6 @@ The fixed points are obtained numerically by solving the RG equation. As mention
 	\captionof{figure}{Flows where \(\epsilon_0\) and \(\tilde\omega\) have opposite sign. The left and right panels show flows starting from negative and positive values respectively. The two plots in each panel correspond to different values of \(\tilde \omega\), one greater than the bare \(\epsilon_0\), the other less than that. The fixed point value is 0.}
 	\label{plot2}
 \end{center}
-
 \section{Kondo Model URG}
 \label{kondourg}
 \beq
@@ -4278,29 +4277,28 @@ Adding the two sectors (eqs.~\ref{kondo_part} and \ref{kondo_hole}) gives
 	\Delta \ham &= \frac{1}{\xi}\sum_{kk^\prime} \left[ - J_z J_t\left(c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{k\beta}c_{k^\prime\ol\beta} + \text{h.c.}\right) + J_t^2 \left(\hat n_{d\beta} - \hat n_{d\ol\beta}\right) c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} + J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \delta_{kk^\prime}\right]\\
 		    &= -\frac{1}{\xi}\left[ J_z J_t\left(S_d^+ s^- + S_d^- s^+\right) + \sum_{kk^\prime} J_t^2 S_d^z \ol\beta c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} - J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} \right]\\
 \end{aligned}\end{equation}
-Summing over \(\beta\) gives
+Summing over \(\beta\) and \(q\) gives
 \begin{equation}\begin{aligned}
-	\sum_\beta \Delta \ham = - \frac{1}{\xi} \left[2J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) + 2J_t^2 S_d^z s^z\right] + \hat O
+	\sum_{q,\beta} \Delta \ham = - \sum_q \frac{1}{\xi} \left[2J_z J_t \left( S_d^+ s^- + S_d^- s^+ \right) + 2J_t^2 S_d^z s^z\right] + \hat O
 \end{aligned}\end{equation}
 There we used \(\sum_\beta \ol\beta \sum_{kk^\prime}c^\dagger_{k\ol\beta}c_{k^\prime\ol\beta} = \sum_{kk^\prime}\left(c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}\right)  = 2s^z\). The operator \(\hat O\) is
 \begin{equation}\begin{aligned}
-	\sum_\beta \frac{1}{\xi} J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} = \frac{1}{\xi} J_t^2 \left(\hat n_d - \hat n_{d \uparrow} \hat n_{d \downarrow}\right) \sum_k = \frac{1}{\xi} J_t^2 \sum_k
+	\sum_{q\beta} \frac{1}{\xi} J_t^2 \hat n_{d\ol\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} = \sum_q \frac{1}{\xi} J_t^2 \left(\hat n_d - \hat n_{d \uparrow} \hat n_{d \downarrow}\right) \sum_k = \sum_q\frac{1}{\xi} J_t^2 \sum_k
 \end{aligned}\end{equation}
 where we used \(\hat n_d = 1\) and \(\hat n_{d \uparrow} \hat n_{d \downarrow} = 0\) in the singly-occupied subspace. This is a spin-independent impurity-independent potential scattering  within the bath, and we will not consider it further, because it will be irrelevant at low \(\omega\), where the \(J\) is relevant and there is a flow to a strong-coupling fixed point.
 \pb We can now write down the flow equations for \(J_z\) and \(J_t\):
 \begin{equation}\begin{aligned}
-	\Delta J_z &= - 2J_t^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
-	\Delta J_t &= -2J_z J_t \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
+	\Delta J_z &= - 2J_t^2 \sum_q \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
+	\Delta J_t &= -2J_z J_t \sum_q\frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
 \end{aligned}\end{equation}
-Note that these scaling equations are for decoupling a pair of electrons \(q,\ua\da\). To decouple a shell of electrons, we need to sum over \(q\).
-\pb If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
+If we set \(J_z = J_t = \frac{J}{2}\), we end up with an SU(2)-symmetric model \(J \vec{S_d}\cdot\vec{s}\).
 \begin{equation}\begin{aligned}
 	\label{kondosym}
-	\Delta J = - J^2 \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{4}J}
+	\Delta J = - J^2 \sum_q \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{4}J}
 \end{aligned}\end{equation}
 To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\frac{1}{2}\epsilon_q\) and ignore the \(J\) in the denominator (small \(J\)).
 \begin{equation}\begin{aligned}
-	\Delta J \approx J^2 \frac{1}{\epsilon_q}
+	\Delta J \approx J^2 \sum_q \frac{1}{\epsilon_q}
 \end{aligned}\end{equation}
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
@@ -5439,9 +5437,9 @@ From the first quadrant of fig.~\ref{Veffect}, we can see that the there is a sh
 One also needs to check how the fractions of the number of relevant and irrelevant fixed points compare to each other. To that end, we have plotted the difference between the number of relevant and irrelevant fixed points at a particular value of $V$, as a function of $D$, in the left pane of fig.~\ref{frac_D}. The almost linear increase suggests that at large $D$, only the relevant fixed points will survive.
 \pb The variation of the fixed point value of the Kondo coupling \(J\) with the bare bandwidth $D$ is shown in the right pane of fig.~\ref{frac_D}. For a thermodynamically large system (where $D \to \infty$), the fixed point value \(J^*\) should go to infinity.
 \begin{figure}[htpb]
-	\centering
-\includegraphics[scale=0.39]{../figures/frac_vs_D_quad1-crop.pdf}
-\includegraphics[scale=0.39]{../figures/J_vs_D-crop.pdf}
+\centering
+\includegraphics[scale=0.65]{../figures/frac_vs_D_quad1.pdf}
+\includegraphics[scale=0.65]{../figures/J_vs_D.pdf}
 %\includegraphics[scale=0.39]{../figures/frac_vs_D_quad2.pdf}
 %\includegraphics[scale=0.39]{../figures/frac_vs_D_quad3.pdf}
 %\includegraphics[scale=0.39]{../figures/frac_vs_D_quad4.pdf}
@@ -5450,6 +5448,67 @@ One also needs to check how the fractions of the number of relevant and irreleva
 \end{figure}
 
 \subsection{Second Quadrant}
+
+\subsection{Effective Hamiltonian and ground state}
+The fixed point Hamiltonian can be written, in general, as
+\begin{equation}\begin{aligned}
+	\ham^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C} \\
+	+ \sum_{q > \Lambda^*}\left(J^z_q S^z_ds^z_q + K^z_q C^z_dC^z_q\right) 
+\end{aligned}\end{equation}
+The first term is the kinetic energy of all the electrons. The next two terms are the impurity-diagonal pieces, featuring the renormalised interaction \(U^*\). The next three terms are the residual interactions between the impurity and the metal, with the renormalised couplings \(V^*, J^*\) and \(K^*\). The summations in these terms extend from the fixed point momentum cutoff \(\Lambda^*\) to 0. This is the region of momentum space  which the URG was unable to decouple. The operators \(\vec s\) and \(\vec C\) represent the macroscopic magnetic and charge spins formed by the remaining electrons that are lying inside the window \(\left[ 0, \Lambda^* \right] \):
+\begin{equation}\begin{aligned}
+	\vec s = \sum_{kk^\prime<\Lambda^*\atop{\alpha\beta}} c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
+\end{aligned}\end{equation}
+The final two terms represent the diagonal pieces of the RG steps that have been completed. These survive because the URG removes only the number-off-diagonal terms; terms like \(S^d_z s_z\) and \(C^d_z C_z\) conserve the number of particles and hence survive. These will also be renormalised, and hence the subscript \(q\) on \(J^z_q\) signifies that it is has been renormalised up to a certain momentum.
+\pb Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
+\begin{equation}\begin{aligned}
+	\ham_{IR} = \sum_{\sigma, k<\Lambda^*}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
+\end{aligned}\end{equation}
+To make progress with the ground state, we will simplify the effective Hamiltonian by mapping it onto a two-site problem. One site is of course the impurity site. The other site will be formed by the centre of mass degree of freedom of the conduction electrons, which we define as
+\begin{equation}\begin{aligned}
+	c_{2\sigma} \equiv \sum_{k} c_{k\sigma}
+\end{aligned}\end{equation}
+This operator essentially creates a conduction electron at the zeroth lattice site. For our two-site problem, we will imagine this to be the annihilation operator for the site 2, for the spin sigma. The corresponding operator for the first site is of course just the impurity electron annihilation operator:
+\begin{equation}\begin{aligned}
+	c_{1\sigma} \equiv c_{d\sigma}
+\end{aligned}\end{equation}
+The various terms of the Hamiltonian can now be written in terms of these operators. We now make a simplifying assumption. We write the kinetic energy part of the Hamiltonian as
+\begin{equation}\begin{aligned}
+	\epsilon_1\left[\ket{\hat n_1 = 0}\bra{\hat n_1 = 0} + \ket{\hat n_1 = 2}\bra{\hat n_1 = 2}\right]
+\end{aligned}\end{equation}
+Here, \(\hat n_1\) is the number of electrons on the first site. This way of writing the kinetic energy piece implies that we take the singly-occupied configuration (\(\hat n_1=1\)) as the zero-energy configuration (\(\mu=0\)), and the states with 0 or 2 electrons are excitations on top of this ground state. \(\hat n_1 = 2\) is a 1-particle excitation and \(\hat n_1 = 0\) is a 1-hole excitation. Both these excitations have an energy \(\epsilon_1 - \mu = \epsilon_1\). A succint way of writing this term is
+\begin{equation}\begin{aligned}
+	\epsilon_1 \tau_1^2
+\end{aligned}\end{equation}
+where 
+\begin{equation}\begin{aligned}
+	\tau_1 &= \sum_\sigma \tau_{1\sigma} = \sum_\sigma \left( \hat n_{1\sigma} - \frac{1}{2} \right) = \hat n_1  - 1\\
+	\implies \tau_1^2 &= \begin{cases}
+		1 & \text{ when }\hat n_1 = 0,2\\
+		0 & \text{ when }\hat n_1 = 1\\
+	\end{cases}
+\end{aligned}\end{equation}
+The impurity diagonal part of \(\ham_{IR}\) will survive only when \(\hat n_2 = 1\). So we write it as
+\begin{equation}\begin{aligned}
+	- \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} = - \frac{U^*}{2}\left(\hat n_{d\uparrow} + \hat n_{d \downarrow} - 2\hat n_{d\ua}\hat n_{d\da}\right) = - \frac{U^*}{2} \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2 \equiv \epsilon_2 \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2
+\end{aligned}\end{equation}
+where \(\epsilon_2 = - \frac{U^*}{2}\) is the energy of site 2.  The off-diagonal terms can also be similarly transformed into a two-site problem:
+\begin{equation}\begin{aligned}
+	\vec S_d &\equiv \vec S_2\\
+	\vec s &= \sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} =\sum_{\alpha\beta}c^\dagger_{1\alpha}\vec \sigma_{\alpha\beta}c_{1\beta} \equiv \vec S_1\\
+\end{aligned}\end{equation}
+The charge isospins can be written down similarly. Combining these, the interaction part can be written as
+\begin{equation}\begin{aligned}
+V^* \sum_{\sigma}\left( c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^* \vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+\end{aligned}\end{equation}
+The total Hamiltonian for the two-site problem is
+\begin{equation}\begin{aligned}
+	\ham_{IR} = \epsilon_1 \tau_1^2 + \epsilon_2 \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2 +  V^* \sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^* \vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+\end{aligned}\end{equation}
+This Hamiltonian conserves the total number operator \(\hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n_1 + \hat n_2\) separately. 
+
+
+
 
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
