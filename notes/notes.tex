@@ -5474,39 +5474,70 @@ This operator essentially creates a conduction electron at the zeroth lattice si
 \end{aligned}\end{equation}
 The various terms of the Hamiltonian can now be written in terms of these operators. We now make a simplifying assumption. We write the kinetic energy part of the Hamiltonian as
 \begin{equation}\begin{aligned}
-	\epsilon_1\left[\ket{\hat n_1 = 0}\bra{\hat n_1 = 0} + \ket{\hat n_1 = 2}\bra{\hat n_1 = 2}\right]
+	\epsilon_2\left[\ket{\hat n_2 = 0}\bra{\hat n_2 = 0} + \ket{\hat n_2 = 2}\bra{\hat n_2 = 2}\right]
 \end{aligned}\end{equation}
-Here, \(\hat n_1\) is the number of electrons on the first site. This way of writing the kinetic energy piece implies that we take the singly-occupied configuration (\(\hat n_1=1\)) as the zero-energy configuration (\(\mu=0\)), and the states with 0 or 2 electrons are excitations on top of this ground state. \(\hat n_1 = 2\) is a 1-particle excitation and \(\hat n_1 = 0\) is a 1-hole excitation. Both these excitations have an energy \(\epsilon_1 - \mu = \epsilon_1\). A succint way of writing this term is
+Here, \(\hat n_2\) is the number of electrons on the first site. This way of writing the kinetic energy piece implies that we take the singly-occupied configuration (\(\hat n_2=1\)) as the zero-energy configuration (\(\mu=0\)), and the states with 0 or 2 electrons are excitations on top of this ground state. \(\hat n_2 = 2\) is a 1-particle excitation and \(\hat n_2 = 0\) is a 1-hole excitation. Both these excitations have an energy \(\epsilon_2 - \mu = \epsilon_2\). A succint way of writing this term is
 \begin{equation}\begin{aligned}
-	\epsilon_1 \tau_1^2
+	\epsilon_2 \tau_2^2
 \end{aligned}\end{equation}
 where 
 \begin{equation}\begin{aligned}
-	\tau_1 &= \sum_\sigma \tau_{1\sigma} = \sum_\sigma \left( \hat n_{1\sigma} - \frac{1}{2} \right) = \hat n_1  - 1\\
-	\implies \tau_1^2 &= \begin{cases}
-		1 & \text{ when }\hat n_1 = 0,2\\
-		0 & \text{ when }\hat n_1 = 1\\
+	\tau_2 &= \sum_\sigma \tau_{1\sigma} = \sum_\sigma \left( \hat n_{1\sigma} - \frac{1}{2} \right) = \hat n_2  - 1\\
+	\implies \tau_2^2 &= \begin{cases}
+		1 & \text{ when }\hat n_2 = 0,2\\
+		0 & \text{ when }\hat n_2 = 1\\
 	\end{cases}
 \end{aligned}\end{equation}
-The impurity diagonal part of \(\ham_{IR}\) will survive only when \(\hat n_2 = 1\). So we write it as
+The impurity diagonal part of \(\ham_{IR}\) will survive only when \(\hat n_d = \hat n_1 = 1\). So we write it as
 \begin{equation}\begin{aligned}
-	- \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} = - \frac{U^*}{2}\left(\hat n_{d\uparrow} + \hat n_{d \downarrow} - 2\hat n_{d\ua}\hat n_{d\da}\right) = - \frac{U^*}{2} \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2 \equiv \epsilon_2 \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2
+	- \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} = - \frac{U^*}{2}\left(\hat n_{d\uparrow} + \hat n_{d \downarrow} - 2\hat n_{d\ua}\hat n_{d\da}\right) = - \frac{U^*}{2} \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \equiv \epsilon_1 \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2
 \end{aligned}\end{equation}
 where \(\epsilon_2 = - \frac{U^*}{2}\) is the energy of site 2.  The off-diagonal terms can also be similarly transformed into a two-site problem:
 \begin{equation}\begin{aligned}
-	\vec S_d &\equiv \vec S_2\\
-	\vec s &= \sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} =\sum_{\alpha\beta}c^\dagger_{1\alpha}\vec \sigma_{\alpha\beta}c_{1\beta} \equiv \vec S_1\\
+	\vec S_d &\equiv \vec S_1\\
+	\vec s &= \sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} =\sum_{\alpha\beta}c^\dagger_{2\alpha}\vec \sigma_{\alpha\beta}c_{2\beta} \equiv \vec S_2\\
 \end{aligned}\end{equation}
 The charge isospins can be written down similarly. Combining these, the interaction part can be written as
 \begin{equation}\begin{aligned}
-V^* \sum_{\sigma}\left( c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^* \vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+-t\sum_{\sigma}\left( c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j \vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
-The total Hamiltonian for the two-site problem is
+where we can identity \(-t = V^*, j=J^*, k=K^*\). The total Hamiltonian for the two-site problem is
 \begin{equation}\begin{aligned}
-	\ham_{IR} = \epsilon_1 \tau_1^2 + \epsilon_2 \left(\hat n_{2 \uparrow} - \hat n_{2 \downarrow}\right)^2 +  V^* \sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^* \vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+	\ham_{IR} = \epsilon_2 \tau_2^2 + \epsilon_1 \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 +  -t\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
-This Hamiltonian conserves the total number operator \(\hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n_1 + \hat n_2\) separately. 
-
+We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
+\pb First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. Both the states have an energy of \(\epsilon_2\).
+\pb The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
+\begin{equation}\begin{aligned}
+	\ket{\uparrow,0}, \ket{0,\uparrow}, \ket{\downarrow,0}, \ket{0,\downarrow}
+\end{aligned}\end{equation}
+However, since the Hamiltonian conserves the total spin (both magnetic and charge), we can divide this Hilbert subspace into two smaller subspaces which do not talk to each other - one having the states \(\ket{\uparrow,0}, \ket{0,\uparrow}\) and hence a total spin magnetization of \(+\frac{1}{2}\), and the other having the remaining states and a total spin magnetization of \(-\frac{1}{2}\).
+The Hamiltonian in first subspace can be represented by the matrix
+\begin{equation}\begin{aligned}
+	\label{n1mat}
+	\bordermatrix{~&\ket{\uparrow,0} & \ket{0,\uparrow} \\
+		~&\epsilon_1 & -t \\
+		~& -t & 0 \\
+	}
+\end{aligned}\end{equation}
+The eigenstates (un-normalised) are
+\begin{equation}\begin{aligned}
+	4t\ket{\uparrow,0} + \left( 2\epsilon_1 \mp \Delta\left( \epsilon_1, t \right)  \right) \ket{0, \uparrow}, && E = \frac{\epsilon_1}{2} \pm \frac{\Delta\left( \epsilon_1, t \right) }{4}
+\end{aligned}\end{equation}
+where \(\Delta\left( \epsilon_1, t \right)  = \sqrt{4\epsilon_1^2 + 16t^2}\). The other two eigenstates (corresponding to magnetization \(- \frac{1}{2}\) need not be calculated separately; since the Hamiltonian is invariant under the transformation \( \uparrow \leftrightarrow \downarrow\), we can do a similar transformation on the eigenkets to get the eigenkets for the other subspace.
+\begin{equation}\begin{aligned}
+	4t\ket{\downarrow,0} + \left( 2\epsilon_1 \mp \Delta \right) \ket{0, \downarrow}, && E = \frac{\epsilon_1}{2} \pm \frac{\Delta}{4}
+\end{aligned}\end{equation}
+The \(\hat n = 3\) subspace is very similar. We can obtain the basis directly from the \(\hat n = 1\) case by substituting the holes with doubles:
+\begin{equation}\begin{aligned}
+	\ket{\uparrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\uparrow}, \ket{\downarrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\downarrow}
+\end{aligned}\end{equation}
+Since a double impurity has the same energy as a vacant impurity (because of p-h symmetry, both are zero), the energy of the first site will not change. However, a doubly-occupied second site will have energy of \(\epsilon_2\), so the diagonal element \(\epsilon_1\) in eq.~\ref{n1mat} will be replaced by \(\epsilon_1 + \epsilon_2\). We can then write down the eigenstates and eigenvalues directly from those of \(\hat n=1\), by changing the basis states and by replacing \(\epsilon_1 \to \epsilon_1 + \epsilon_2\).
+\begin{align}
+	\left.\begin{array}{l}
+	4t\ket{\uparrow, \uparrow \downarrow} + \left[ 2\left(\epsilon_1 + \epsilon_2\right) \mp \Delta\left(\epsilon_1 + \epsilon_2, t\right)\right] \ket{\uparrow \downarrow, \uparrow}\\
+4t\ket{\downarrow, \uparrow \downarrow} + \left[ 2\left(\epsilon_1 + \epsilon_2\right) \mp \Delta\left(\epsilon_1 + \epsilon_2, t\right)\right] \ket{\uparrow \downarrow, \downarrow}\end{array}\right\} E = \frac{1}{2}\left(\epsilon_1 + \epsilon_2\right) \pm \frac{\Delta\left(\epsilon_1 + \epsilon_2, t\right)}{4}
+\end{align}
 
 
 
