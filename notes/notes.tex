@@ -5535,7 +5535,7 @@ The Hamiltonian in first subspace can be represented by the matrix
 The eigenstates (un-normalised) are
 \begin{equation}\begin{aligned}
 \label{low}
-	-4v\ket{\uparrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \uparrow}, && E = \frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v\right)
+	-4v\ket{\uparrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \uparrow}, && E^1_\pm = \frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v\right)
 \end{aligned}\end{equation}
 where \(\Delta\left(\epsilon_d , v\right)  = \sqrt{\epsilon_d^2 + 4 v^2}\). The other two eigenstates (corresponding to magnetization \(- \frac{1}{2}\) need not be calculated separately; since the Hamiltonian is invariant under the transformation \( \uparrow \leftrightarrow \downarrow\), we can do a similar transformation on the eigenkets to get the eigenkets for the other subspace.
 \begin{equation}\begin{aligned}
@@ -5566,7 +5566,7 @@ The most interesting subspace is \(\hat n=2\). This is six dimensional. Since th
 \end{flalign}
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
 \begin{equation}\begin{aligned}
-	c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
+	c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
 \begin{equation}\begin{aligned}
@@ -5576,7 +5576,7 @@ and the coefficients \(c^{s,c}_\pm\) for the spin and charge singlets (the super
 \begin{equation}\begin{aligned}
 	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\pm
 \end{aligned}\end{equation}
-The ground state is of course \(E_-\). The probabilities for the spin and charge sectors for the ground state look simpler:
+The ground state is of course \(E^2_-\). The probabilities for the spin and charge sectors for the ground state look simpler:
 \begin{equation}\begin{aligned}
 	\left( c^s_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right)\\
 	\left( c^c_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)\\
@@ -5589,15 +5589,34 @@ The spin singlet becomes the all-important piece in this situation. Similarly, i
 \begin{equation}\begin{aligned}
 	\gamma \to -\infty \implies \left( c^s_- \right)^2 \to 0 \text{ and } \left( c^c_- \right)^2 \to 1
 \end{aligned}\end{equation}
-Although \(E_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviusly higher than \(E_-\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution compared to the positive triplet \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-\) and \(E_-^\prime\) is
+Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution compared to the positive triplet \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-^2\) and \(E_-^1\) is
 \begin{equation}\begin{aligned}
-	E_- - E_^\prime = - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
+	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
 \end{aligned}\end{equation}
-
-
-
-
-
+From the nature of the fixed point phases, we know that 
+\begin{equation}\begin{aligned}
+	J^* > K^* \implies \epsilon_d^* \leq 0
+\end{aligned}\end{equation}
+and
+\begin{equation}\begin{aligned}
+	J^* < K^* \implies \epsilon_d^* \geq 0
+\end{aligned}\end{equation}
+such that
+\begin{equation}\begin{aligned}
+	\epsilon_d\left( j-k \right) \leq 0
+\end{aligned}\end{equation}
+This result then very easily implies that
+\begin{equation}\begin{aligned}
+	4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) > \frac{1}{4}\epsilon_d^2 + v^2
+\end{aligned}\end{equation}
+and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is the overall ground state.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/gamma_N.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/gamma_N2.pdf}
+	\caption{Change of \(\gamma\) with system size, for two sets of values. Going to larger and large system sizes leads to large \(gamma\).}
+	\label{fig:}
+\end{figure}
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
