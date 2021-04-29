@@ -1732,7 +1732,7 @@ In a Fermi gas, the energy levels are separated by
 \beq
 \Delta \epsilon = \pd{\epsilon}{k}\Delta k
 \eeq
-With the condition that the wavefunction should vanish at the boundary, we have \il{\Delta k = k_n - k_{n-1} = \fr{\pi}{L}}.
+With the condition that the wavefunction should vanish at the boundary, we have \(\Delta k = k_n - k_{n-1} = \fr{\pi}{L}\).
 Hence,
 \beq
 \Delta \epsilon = \pd{\epsilon}{k}\fr{\pi}{L}
@@ -3912,9 +3912,16 @@ This will not hold generally. The correct solution is to realize that each such 
 	\eta &= \sum_i \frac{1}{\omega^0_i - E^0_i} T_i^\dagger c\\
 	\eta^\dagger &= \sum_i \frac{1}{\omega^1_i - E^1_1}c^\dagger T_i
 \end{aligned}\end{equation}
+If we now impose the condition that \(\eta =  \left( \eta^\dagger \right) ^\dagger\), we get the relations
+\begin{equation}\begin{aligned}
+	\omega^0_i - \omega^1_i = E^0_i - E^1_1
+\end{aligned}\end{equation}
+and so
+\begin{equation}\begin{aligned}
+	\eta^\dagger - \eta &= \sum_i \frac{1}{\omega^0_i - E^0_i}\left(c^\dagger T_i - T_i^\dagger c\right)
+\end{aligned}\end{equation}
 The expression for the renormalization will not be just \(\left[c^\dagger T, \eta \right]\) in this case. That form will be non-Hermitian. The correct form is obtained from the more general form \(\left[\eta^\dagger - \eta, \ham_X \right]\):
 \begin{equation}\begin{aligned}
-	\eta^\dagger - \eta &= \sum_i \frac{1}{\omega^0_i - E^0_i}\left(c^\dagger T_i - T_i^\dagger c\right)\\
 	\Delta \ham &= \frac{1}{2}\left[\eta^\dagger - \eta, c^\dagger T + T^\dagger c\right]\\
 		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[c^\dagger T_i - T_i^\dagger c, c^\dagger T_j + T_j^\dagger c\right]\\
 		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[\hat n \left(T_i T_j^\dagger + T_j T_i^\dagger \right) - \left(1 - \hat n\right)\left(T_i^\dagger T_j + T_j^\dagger T_i\right)\right]\\
@@ -5576,7 +5583,11 @@ and the coefficients \(c^{s,c}_\pm\) for the spin and charge singlets (the super
 \begin{equation}\begin{aligned}
 	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\pm
 \end{aligned}\end{equation}
-The ground state is of course \(E^2_-\). The probabilities for the spin and charge sectors for the ground state look simpler:
+The ground state is of course \(E^2_-\).
+\begin{equation}\begin{aligned}
+	E^2_- = v\left[ \gamma - \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J = 
+\end{aligned}\end{equation}
+The probabilities for the spin and charge sectors for the ground state look simpler:
 \begin{equation}\begin{aligned}
 	\left( c^s_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right)\\
 	\left( c^c_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)\\
@@ -5589,7 +5600,14 @@ The spin singlet becomes the all-important piece in this situation. Similarly, i
 \begin{equation}\begin{aligned}
 	\gamma \to -\infty \implies \left( c^s_- \right)^2 \to 0 \text{ and } \left( c^c_- \right)^2 \to 1
 \end{aligned}\end{equation}
-Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution compared to the positive triplet \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-^2\) and \(E_-^1\) is
+\begin{figure}[http]
+	\centering
+	\includegraphics[width=0.48\textwidth]{../figures/gamma_N.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/gamma_N2.pdf}
+	\caption{Change of \(\gamma\) with system size, for two sets of values. Going to larger and large system sizes leads to large \(gamma\).}
+	\label{fig:}
+\end{figure}
+Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-^2\) and \(E_-^1\) is
 \begin{equation}\begin{aligned}
 	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
 \end{aligned}\end{equation}
@@ -5610,13 +5628,6 @@ This result then very easily implies that
 	4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) > \frac{1}{4}\epsilon_d^2 + v^2
 \end{aligned}\end{equation}
 and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is the overall ground state.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.45\textwidth]{../figures/gamma_N.pdf}
-	\includegraphics[width=0.45\textwidth]{../figures/gamma_N2.pdf}
-	\caption{Change of \(\gamma\) with system size, for two sets of values. Going to larger and large system sizes leads to large \(gamma\).}
-	\label{fig:}
-\end{figure}
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
