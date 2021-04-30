@@ -4848,7 +4848,7 @@ and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction elect
 \vec C = \sum_{kk^\prime} {\psi^k}^\dagger \vec S \psi^{k^\prime} = \frac{1}{2}\sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
 \eeq
 The various components of the isospin are
-\begin{flalign}
+\begin{equation}\begin{aligned}
 	C^z 
 	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^z_{\sigma\sigma} \psi^{k^\prime}_\sigma = \frac{1}{2}\sum_{kk^\prime}\rr{c^\dagger_{k\ua}c_{k^\prime \ua} - c_{k^\prime\da}c^\dagger_{k \da}} = \frac{1}{2}\sum_{kk^\prime}\left(c^\dagger_{k\ua}c_{k^\prime \ua} + c^\dagger_{k\da}c_{k^\prime \da} - \delta_{kk^\prime}\right)\\
 	&= \frac{1}{2}\sum_{kk^\prime\sigma}\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
@@ -4856,7 +4856,7 @@ The various components of the isospin are
 	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^x_{\sigma\ol\sigma} \psi^{k^\prime}_{\ol\sigma} = \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} + c_{k\da}c_{k^\prime \ua} \right) = \sum_{kk^\prime\sigma} \frac{\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\ol\sigma} + \text{h.c.} \right) \\
 	C^y 
 	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^y_{\sigma\ol\sigma} \psi^{k^\prime}_{\ol\sigma} = - \frac{i}{2}\sum_{kk^\prime}\left( c^\dagger_{k\ua}c^\dagger_{k^\prime \da} - c_{k\da}c_{k^\prime \ua} \right) = \sum_{kk^\prime\sigma} - \frac{i\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\ol\sigma} - \text{h.c.} \right)\\
-\end{flalign}
+\end{aligned}\end{equation}
 It is easy to verify that these operators satisfy the SU(2) commutation algebra. For example, if we write \(C^x = A + A^\dagger\) and \(C^y = B + B^\dagger\), then \(\left[ C^x, C^y \right] = \left[ A, B^\dagger \right] - \text{h.c.}\), where
 \begin{equation}\begin{aligned}
 	\left[ A, B^\dagger \right] = \frac{1}{4}\sum_{kk^\prime,qq^\prime}\left[ c^\dagger_{k\uparrow}c^\dagger_{k^\prime \downarrow}, i c_{q^\prime \downarrow}c_{q \uparrow} \right] = \frac{i}{4}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right)
@@ -5512,7 +5512,16 @@ where \(\epsilon_d = - \frac{U^*}{2}\). The off-diagonal terms can also be simil
 	       &\equiv J^*N^* \vec S_2\\
 	       &\equiv j \vec S_2\\
 \end{aligned}\end{equation}
-where \(j \equiv J^* N^*\). The hybridisation term can be written as
+where \(j \equiv J^* N^*\). The charge isospins can also be rewritten similarly. From eq.~\ref{diagonalCz},
+\begin{equation}\begin{aligned}
+	K^* C^z &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \uparrow} - c_{2 \downarrow}c^\dagger_{2\downarrow} \right) = kC_2^z\\
+	K^* C^x &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow} + c_{k \downarrow}c^\dagger_{k^\prime \uparrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \downarrow} - c_{2 \downarrow}c^\dagger_{2\uparrow} \right) = kC_2^x\\
+\end{aligned}\end{equation}
+and similarly for \(C^y\). We defined \(k \equiv K^* N^*\). The diagonal component \(C^z\) can also be written as
+\begin{equation}\begin{aligned}
+	 C^z = \frac{1}{2}N^* \sum_\sigma\left(c^\dagger_{2\sigma}c_{2\sigma} - \frac{1}{2}\right) = \frac{1}{2}N^*\tau_2
+\end{aligned}\end{equation}
+where \(\tau_2 = \sum_\sigma \tau_{2\sigma} = \sum_\sigma \left( \hat n_{2\sigma} - \frac{1}{2} \right) \). The hybridisation term can be written as
 \begin{equation}\begin{aligned}
 	V\sum_k c^\dagger_{k\sigma} = V\sqrt{N^*} c^\dagger_{2\sigma} = vc^\dagger_{2\sigma}
 \end{aligned}\end{equation}
