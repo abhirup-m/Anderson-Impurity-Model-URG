@@ -5657,7 +5657,7 @@ The spin singlet becomes the all-important piece in this situation. Similarly, i
 	\centering
 	\includegraphics[scale=0.5]{../figures/gamma_q1.pdf}\\
 	\includegraphics[scale=0.5]{../figures/gamma_q3.pdf}
-	\caption{Change of \(\gamma\) with system size, for two sets of values. Going to larger and large system sizes leads to large \(\gamma\).}
+	\caption{Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. Left panel: \(J>K\). Right panel:\(K>J\)}
 	\label{fig:}
 \end{figure}
 Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-^2\) and \(E_-^1\) is
@@ -5682,55 +5682,70 @@ This result then very easily implies that
 \end{aligned}\end{equation}
 and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is the overall ground state.
 \subsection{Susceptibility}
+The thermal susceptibility is defined as
 \begin{equation}\begin{aligned}
-\hat n=0,4\rightarrow &\begin{cases}
-	\ket{0,0}\\
-	\ket{2,2}\\
-\end{cases}\rightarrow \begin{cases}
-	\ket{0,0, \uparrow}\\
-	\ket{2,2, \uparrow}\\
-	\ket{0,0, \downarrow}\\
-	\ket{2,2, \downarrow}\\
-	\ket{0,0, 2}\\
-	\ket{2,2, 2}\\
-	\ket{0,0, 0}\\
-	\ket{2,2, 0}\\
-\end{cases}\\
-\hat n=1,3 \rightarrow &\begin{cases}
-	\ket{\uparrow,0} + c_1\ket{0, \uparrow}\\
-	\ket{\uparrow,0} + c_2\ket{0, \uparrow}\\
-	\ket{\downarrow,0} + c_1\ket{0, \downarrow}\\
-	\ket{\downarrow,0} + c_2\ket{0, \downarrow}\\
-	\ket{\uparrow,2} + c_1\ket{2, \uparrow}\\
-	\ket{\uparrow,2} + c_2\ket{2, \uparrow}\\
-	\ket{\downarrow,2} + c_1\ket{2, \downarrow}\\
-	\ket{\downarrow,2} + c_2\ket{2, \downarrow}\\
-\end{cases}\rightarrow \begin{cases}
-	\ket{\uparrow,0} + c_1\ket{0, \uparrow}\\
-	\ket{\uparrow,0} + c_2\ket{0, \uparrow}\\
-	\ket{\downarrow,0} + c_1\ket{0, \downarrow}\\
-	\ket{\downarrow,0} + c_2\ket{0, \downarrow}\\
-	\ket{\uparrow,2} + c_1\ket{2, \uparrow}\\
-	\ket{\uparrow,2} + c_2\ket{2, \uparrow}\\
-	\ket{\downarrow,2} + c_1\ket{2, \downarrow}\\
-	\ket{\downarrow,2} + c_2\ket{2, \downarrow}\\
-	\ket{\uparrow,0} + c_1\ket{0, \uparrow}\\
-	\ket{\uparrow,0} + c_2\ket{0, \uparrow}\\
-	\ket{\downarrow,0} + c_1\ket{0, \downarrow}\\
-	\ket{\downarrow,0} + c_2\ket{0, \downarrow}\\
-	\ket{\uparrow,2} + c_1\ket{2, \uparrow}\\
-	\ket{\uparrow,2} + c_2\ket{2, \uparrow}\\
-	\ket{\downarrow,2} + c_1\ket{2, \downarrow}\\
-	\ket{\downarrow,2} + c_2\ket{2, \downarrow}\\
-\end{cases}\\
-\hat n=2 \rightarrow &\begin{cases}
-	\ket{\uparrow, \uparrow}\\
-	\ket{\downarrow,\downarrow}\\
-	\ket{ST}\\
-	\ket{CT}\\
-	\ket{SS+c_1 CS,0}\\
-	\ket{SS+c_2 CS,0}\\
+	\label{chi_def}
+	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right)
+\end{aligned}\end{equation}
+There is an alternate way of calculating this. We insert a fictitious magnetic field that couples only to the impurity site. The Hamiltonian in the presence of this field is
+\begin{equation}\begin{aligned}
+	\ham^\prime(B) = \ham + B S_d^z
+\end{aligned}\end{equation}
+The susceptibility is then given by
+\begin{equation}\begin{aligned}
+	\label{chi_exp}
+	\chi(\beta) &= \lim_{B \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B)} \frac{\partial^2{Z(B)}}{\partial{B^2}}-\frac{1}{Z(B)^2} \left(\frac{\partial{Z(B)}}{\partial{B}}\right)^2\right]
+\end{aligned}\end{equation}
+where \(Z(B)\) is the partition function of the Hamiltonian \(\ham^\prime(B)\). The following is to prove that the RHS of eqs.~\ref{chi_def} and \ref{chi_exp} are the same. We start with \ref{chi_exp}. The first derivative can be written as
+\begin{equation}\begin{aligned}
+	\frac{\partial{Z(B)}}{\partial{B}} = \text{Trace}\left[\frac{\partial{}}{\partial{B}} \exp\left\{-\beta\left( \ham + BS_d^z \right) \right\}\right] = \text{Trace}\left[-\beta S_d^z \exp\left\{-\beta\left( \ham + BS_d^z \right) \right\}\right]
+\end{aligned}\end{equation}
+which means the first term becomes
+\begin{equation}\begin{aligned}
+	\lim_{B \to 0}-\frac{1}{Z(B)^2} \left(\frac{\partial{Z(B)}}{\partial{B}}\right)^2 = -\left(\beta \frac{1}{\text{Trace}\left[\exp\left\{-\beta\ham\right\}\right]} \text{Trace}\left[S_d^z \exp\left\{-\beta\ham\right\}\right]\right)^2 = -\beta^2 \left<S_d^z\right>^2
+\end{aligned}\end{equation}
+The second derivative is
+\begin{equation}\begin{aligned}
+	\frac{\partial^2{Z(B)}}{\partial{B^2}} = \text{Trace}\left[-\beta S_d^z  \frac{\partial{}}{\partial{B}}\exp\left\{-\beta \left( \ham + BS_d^z \right) \right\}\right] = \text{Trace}\left[\beta^2 \left(S_d^z\right)^2 \exp\left\{-\beta \left( \ham + BS_d^z \right) \right\}\right]
+\end{aligned}\end{equation}
+so the second term becomes
+\begin{equation}\begin{aligned}
+	\lim_{B \to 0}\frac{1}{Z(B)} \frac{\partial^2{Z(B)}}{\partial{B^2}} = \beta^2 \frac{1}{\text{Trace}\left[\exp\left\{-\beta \ham\right\}\right]}\text{Trace}\left[\left(S_d^z\right)^2 \exp\left\{-\beta \ham\right\}\right] = \beta^2 \left<\left(S_d^z\right)^2 \right>
+\end{aligned}\end{equation}
+The full thing becomes
+\begin{equation}\begin{aligned}
+	\lim_{B \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B)} \frac{\partial^2{Z(B)}}{\partial{B^2}}-\frac{1}{Z(B)^2} \left(\frac{\partial{Z(B)}}{\partial{B}}\right)^2\right] = \frac{1}{\beta}\left(-\beta^2 \left<S_d^z\right>^2 + \beta^2 \left<\left(S_d^z\right)^2 \right>\right) \\
+	= \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) 
+\end{aligned}\end{equation}
+This completes the proof. 
+\pb In the presence of a magnetic field coupling term \(B S^z_1\), the eigenvalues become (setting \(v = 0\))
+\begin{equation}\begin{aligned}
+\hat n=0,4 &\rightarrow E^0 = \frac{1}{4}k\\
+\hat n=1,3 &\rightarrow \begin{cases}
+	E^1_{\pm, \uparrow} = \frac{1}{2} \left(\epsilon_d + \frac{1}{2}B\right) \pm \frac{1}{2}\Delta\left(\epsilon_d + \frac{1}{2}B, v\right)  = \epsilon_d + \frac{1}{2}B, 0\\ 
+	E^1_{\pm, \downarrow} = \frac{1}{2} \left(\epsilon_d - \frac{1}{2}B\right) \pm \frac{1}{2}\Delta\left(\epsilon_d - \frac{1}{2}B, v\right)  = \epsilon_d -\frac{1}{2}B, 0
+	\end{cases}\\
+	\hat n=2 &\rightarrow \begin{cases}
+	\epsilon_d + \frac{1}{2}j + \frac{1}{2}B\\
+	\epsilon_d + \frac{1}{2}j - \frac{1}{2}B\\
+	\frac{1}{4}k \\
+	-\frac{3}{4}k \\
+	-\frac{1}{4}j \pm  \Gamma \\
 \end{cases}
+\end{aligned}\end{equation}
+where we defined \(\Gamma = \sqrt{B^2 + \frac{1}{4}j^2}\). The partition function is
+\begin{equation}\begin{aligned}
+	Z(B) &= 2 \exp\left\{-\beta \frac{k}{4}\right\} + 2\left( \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2} B\right)\right\} + e^0\right) + 2\left( \exp\left\{-\beta\left(\epsilon_d - \frac{1}{2} B\right)\right\} + e^0\right) \\
+	     &+ \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2}j + \frac{1}{2} B\right)\right\} + \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2}j - \frac{1}{2} B\right)\right\} \\
+	     &+ \exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \exp\left\{-\beta\left( - \frac{1}{4}j + \Gamma\right)\right\} + \exp\left\{-\beta\left( - \frac{1}{4}j - \Gamma\right)\right\}\\
+	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d}\cosh \beta \frac{B}{2} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\cosh \beta \frac{B}{2}\\
+	     &+ 2e^{\beta \frac{j}{4}}\cosh \beta \Gamma\\
+	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right]\cosh \beta \frac{B}{2} + 2e^{\beta \frac{j}{4}}\cosh \beta \Gamma
+\end{aligned}\end{equation}
+We can compute the derivatives.
+\begin{equation}\begin{aligned}
+	\frac{\partial{Z}}{\partial{B}} = \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{\beta}{2}\sinh \beta \frac{B}{2} + 2e^{\beta \frac{j}{4}}\beta \sinh \beta \Gamma \frac{\partial{\Gamma}}{\partial{B}} \\
+	= \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{\beta}{2}\sinh \beta \frac{B}{2} + 2e^{\beta \frac{j}{4}}\beta \sinh \beta \Gamma \times \frac{B}{\Gamma}
 \end{aligned}\end{equation}
 
 \section{Connection between URG and Other Canonical Transformations}
