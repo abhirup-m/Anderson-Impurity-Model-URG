@@ -5762,8 +5762,8 @@ which are the final two eigenvalues.
 	     &+ \exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \exp\left\{-\beta\left(\epsilon_d - \frac{1}{4}j + \frac{1}{2}\Gamma\right)\right\} + \exp\left\{-\beta\left( \epsilon_d- \frac{1}{4}j - \frac{1}{2}\Gamma\right)\right\}\\
 	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d}\cosh \beta \frac{B}{2} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\cosh \beta \frac{B}{2}\\
 	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{1}{2}\Gamma\\
-	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right]\cosh \beta \frac{B}{2} \\
-	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{1}{2}\Gamma
+	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right]\cosh \left(\beta \frac{B}{2}\right) \\
+	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{1}{2}\Gamma\right)
 \end{aligned}\end{equation}
 We can compute the derivatives.
 \begin{equation}\begin{aligned}
@@ -5774,14 +5774,14 @@ We can compute the derivatives.
 \end{aligned}\end{equation}
 Taking the limit of \(B \to 0\) gives
 \begin{equation}\begin{aligned}
-	Z\vert_{B=0} &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{j}{2}\\
+	Z\vert_{B=0} &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)\\
 	Z^\prime\vert_{B=0} &= 0\\
 	Z^{\prime\prime}\vert_{B=0} &= \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}\\
 \end{aligned}\end{equation}
 The susceptibility is thus
 \begin{equation}\begin{aligned}
-	\chi(\beta) &= \frac{1}{\beta}\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{j}{2}}\\
-		    &=\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{1}{4}\beta + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{j}{2}}\\
+	\chi(\beta) &= \frac{1}{\beta}\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
+		    &=\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{1}{4}\beta + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
 \end{aligned}\end{equation}
 At high temperatures, we can write
 \begin{equation}\begin{aligned}
@@ -5789,15 +5789,23 @@ At high temperatures, we can write
 \end{aligned}\end{equation}
 At low temperatures,
 \begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{j}{2}}\\
+	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
 \end{aligned}\end{equation}
 If we choose the bare values of \(J\) and \(K\) such that \(J_0 >K_0\), then \(j \gg k\) such that we can ignore the \(e^{\beta \frac{3k}{4}}\) in the denominator compared to the \(\cosh \frac{1}{2}\beta j\). We then get
 \begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{j}{2}} \approx \frac{1}{2j} &&\left[\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\right] \\
+	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)} \approx \frac{1}{2j} &&\left[\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\right] \\
 \end{aligned}\end{equation}
-
-
-
+The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
+\begin{equation}\begin{aligned}
+	\chi(\beta) = \frac{\left[4 + 2e^{-\beta \frac{j}{2}}\right] \frac{1}{4}\beta + e^{\beta\frac{j}{4}} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{12 + 2e^{-\beta \frac{j}{2}} + 2e^{\beta\frac{j}{4}}\cosh \left(\beta \frac{j}{2}\right)}\\
+\end{aligned}\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{../figures/chi_T.pdf}
+	\includegraphics[width=0.9\textwidth]{../figures/chi.pdf}
+	\includegraphics[width=0.9\textwidth]{../figures/one_over_chi.pdf}
+\end{figure}
+\clearpage
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
 We first motivate the formalism of PMS method. The problem is defined as
