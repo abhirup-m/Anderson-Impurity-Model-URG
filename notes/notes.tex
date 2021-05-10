@@ -3882,7 +3882,7 @@ The final form of the rotated Hamiltonian is
 \wl \ham = U_q \ham U_q^\dagger =  \text{Tr}\qq{\ham\hat n_q}\hat n_q + \text{Tr}\qq{\ham(1- \hat n_q)}(1-\hat n_q) + 2\tau_q \cc{c_q^\dagger \text{Tr}\rr{\ham c_q},\eta_q}
 \eeq
 }
-To check that this indeed commutes with \il{\hat n_{q\beta}},
+To check that the renormalised Hamiltonian indeed commutes with \il{\hat n_{q\beta}},
 \beq
 \qq{\wl \ham, \hat n_{q\beta}} &= \qq{\qq{c_{q\beta}^\dagger T,\eta},\hat n_{q\beta}}\\
                    &=\qq{c_{q\beta}^\dagger T \eta,\hat n_{q\beta}} - \qq{\eta c_{q\beta}^\dagger T,\hat n_{q\beta}}\\
@@ -5550,13 +5550,17 @@ We now make a simplifying assumption: Guided by the observation that the importa
 where \(\epsilon_d = - \frac{U^*}{2}\). The off-diagonal terms can also be similarly transformed into a two-site problem. The bath spin can be written as
 \begin{equation}\begin{aligned}
 	\vec S_d &\equiv \vec S_1\\
-	J^*\vec s &= J^* \sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} \\
-	       &= J^*\sum_{\alpha\beta}c^\dagger_{2\alpha}\vec \sigma_{\alpha\beta}c_{2\beta} \\
-	       &= J^* N^* \hat z\left[c^\dagger_{2 \uparrow}c_{2 \uparrow} - c^\dagger_{2 \downarrow} c_{2 \downarrow} \right] + \hat x \left[c^\dagger_{2 \uparrow}c_{2 \downarrow} + c^\dagger_{2 \downarrow} c_{2 \uparrow} \right] -i \hat y \left[ c^\dagger_{2 \uparrow}c_{2 \downarrow} - c^\dagger_{2 \downarrow} c_{2 \uparrow} \right]\\
+	J^*\vec s &= J^* \frac{1}{2}\sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} \\
+	       &= J^*\frac{1}{2}\sum_{\alpha\beta}c^\dagger_{2\alpha}\vec \sigma_{\alpha\beta}c_{2\beta} \\
+	       &= J^* N^* \frac{1}{2}\left[\hat z\left(c^\dagger_{2 \uparrow}c_{2 \uparrow} - c^\dagger_{2 \downarrow} c_{2 \downarrow} \right) + \hat x \left(c^\dagger_{2 \uparrow}c_{2 \downarrow} + c^\dagger_{2 \downarrow} c_{2 \uparrow} \right) -i \hat y \left( c^\dagger_{2 \uparrow}c_{2 \downarrow} - c^\dagger_{2 \downarrow} c_{2 \uparrow} \right)\right]\\
 	       &\equiv J^*N^* \vec S_2\\
 	       &\equiv j \vec S_2\\
 \end{aligned}\end{equation}
-where \(j \equiv J^* N^*\). The charge isospins can also be rewritten similarly. From eq.~\ref{diagonalCz},
+where \(j \equiv J^* N^*\) and
+\begin{equation}\begin{aligned}
+	\vec S_2 = \frac{1}{2N^*}\sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
+\end{aligned}\end{equation}
+. The charge isospins can also be rewritten similarly. From eq.~\ref{diagonalCz},
 \begin{equation}\begin{aligned}
 	K^* C^z &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \uparrow} - c_{2 \downarrow}c^\dagger_{2\downarrow} \right) = kC_2^z\\
 	K^* C^x &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow} + c_{k \downarrow}c^\dagger_{k^\prime \uparrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \downarrow} - c_{2 \downarrow}c^\dagger_{2\uparrow} \right) = kC_2^x\\
@@ -5626,6 +5630,7 @@ The most interesting subspace is \(\hat n=2\). This is six dimensional. Since th
 \end{flalign}
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
 \begin{equation}\begin{aligned}
+	\label{gstate}
 	c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
@@ -5791,11 +5796,39 @@ At low temperatures,
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = \lim_{\beta \to \infty} \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)} =  \frac{1}{2j}\lim_{\beta \to \infty} \frac{1}{\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} + 1} \\
 \end{aligned}\end{equation}
-There we used \(\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\). If we are in the first quadrant, then the fixed point values are such that \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0\), so the exponential will go to 0 in that limit, and we can write
+There we used \(\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\). The exponential will take the following limiting values:
+\begin{equation}\begin{aligned}
+	\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} \to \begin{cases}
+		\infty, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\\
+		1, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} = 0\\
+		0, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0
+	\end{cases}
+\end{aligned}\end{equation}
+which means
+\begin{equation}\begin{aligned}
+	\left[\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} + 1\right]^{-1} \to \begin{cases}
+		0, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\\
+		\frac{1}{2}, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} = 0\\
+		1, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0
+	\end{cases} = \Theta\left(\frac{3j}{4} - \frac{3k}{4} - \epsilon_d\right) 
+\end{aligned}\end{equation}
+where the theta function (Heaviside function) is defined as 
+\begin{equation}\begin{aligned}
+	\Theta(x) = \begin{cases}
+		1, & \text{ if }x>0\\
+		\frac{1}{2}, & \text{ if }x=0\\
+		0, & \text{ if }x<0\\
+	\end{cases}
+\end{aligned}\end{equation}
+The thermal susceptibility at high temperatures is thus
+\begin{equation}\begin{aligned}
+	\chi\vert_{\beta \to \infty} = \frac{1}{2j}\Theta\left(\frac{3j}{4} - \frac{3k}{4} - \epsilon_d\right) 
+\end{aligned}\end{equation}
+If we are in the first quadrant, then the fixed point values are such that \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0\), so the theta function will evaluate to 1, and we can write
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = \frac{1}{2j}
 \end{aligned}\end{equation}
-On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and the exponential in the denominator will diverge.
+On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and the theta function will give 0.
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
@@ -5805,10 +5838,90 @@ The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
 \end{aligned}\end{equation}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.9\textwidth]{../figures/chi_T.pdf}
-	\includegraphics[width=0.9\textwidth]{../figures/chi.pdf}
-	\includegraphics[width=0.9\textwidth]{../figures/one_over_chi.pdf}
+	\includegraphics[scale=0.5]{../figures/chi_T.pdf}
+	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid, while at high temperatures we see the Curie-Weiss paramagnetic susceptibility resulting from the local moment.}
 \end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.5]{../figures/chi.pdf}
+	\caption{Variation of $\chi$ against temperature.}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.5]{../figures/one_over_chi.pdf}
+	\caption{Variation of $\chi^{-1}$ against temperature.}
+\end{figure}
+\subsection{Reverse RG}
+The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
+\begin{equation*}\begin{aligned}
+	U : \underbrace{\ket{1,2,...,N}}_\text{UV ground state} \rightarrow \ket{1,2,...,N-1}\ket{N} \rightarrow ... \rightarrow \underbrace{\ket{1,2,...,N^*}\ket{N^*+1}...\ket{N}}_\text{IR ground state}
+\end{aligned}\end{equation*}
+\begin{equation*}\begin{aligned}
+	U^\dagger : \underbrace{\ket{1,2,...,N^*}\ket{N^*+1}...\ket{N}}_\text{IR ground state} \rightarrow \ket{1,2,...,N^*+1}\ket{N^*+2}...\ket{N} \rightarrow ... \rightarrow\underbrace{\ket{1,,2,...,N}}_\text{UV ground state}
+\end{aligned}\end{equation*}
+The first process is the forward RG which we used to obtain the scaling equations. The second process is the reverse RG which we wil undertake now. The IR ground state we will start with will consist of two momenta states, \(k_{-1}\) and \(k_1\). \(k_1\) will be the state above the Fermi surface while \(k_{-1}\) wil be the one below it. We will choose \(c^s = c^c = \frac{1}{2}\) for simplicity, in eq.~\ref{gstate}.
+\begin{equation}\begin{aligned}
+	\ket{\text{cloud}} = \frac{1}{2}\left[ \ket{\uparrow^d, \downarrow} - \ket{\downarrow^d, \uparrow} + \ket{ \uparrow^d_c, \downarrow_c} - \ket{\downarrow^d_c, \uparrow_c} \right] 
+\end{aligned}\end{equation}
+where \(\uparrow_c\) represents a state with \(C^z= \frac{1}{2}\) and the \(d\) in the superscript indicates it is for the impurity. Cloud refers to the system of the still-entangled electrons and the impurity. To construct the states \(\ket{\uparrow}, \ket{\downarrow}, \ket{\uparrow_c}\) and \(\ket{\downarrow_c}\), we will look the two-site spin and charge operators. The impurity states are easy to construct. \(\uparrow\) and \(\downarrow\) consist of singly occupied impurities with the respective spins, while the charge versions involve double-occupied and vacant impurities respectively. For the conduction electrons, we have
+\begin{equation}\begin{aligned}
+	S_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left(c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right)
+\end{aligned}\end{equation}
+For our choice of a two-momenta Kondo cloud, this expands to
+\begin{equation}\begin{aligned}
+	S_2^z = \frac{1}{4}\left[c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow} - c^\dagger_{k_{1}\downarrow}c_{k_{-1} \downarrow} + c^\dagger_{k_{-1}\uparrow}c_{k_{1} \uparrow} - c^\dagger_{k_{-1}\downarrow}c_{k_{1} \downarrow}+ \hat n_\uparrow - \hat n_\downarrow\right]
+\end{aligned}\end{equation}
+The eigenstate for this operator, with an eigenvalue of \(+ \frac{1}{2}\), is
+\begin{equation}\begin{aligned}
+	\ket{\uparrow} \equiv \frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right)
+\end{aligned}\end{equation}
+The notation is as follows: only particle states will be explicitly mentioned. In other words, all states \(\ket{k\sigma}\) that are explicitly depicted inside the ket will be particle states (\(\hat n_{k\sigma}=1\)). All states that are \textit{not} explicitly mentioned will be vacant. Hence, the state \(\ket{k_1 \uparrow}\) actually means \(\ket{\hat n_{k_1 \uparrow} = 1, \hat n_{k_{-1} \uparrow} = \hat n_{k_{-1} \downarrow} = \hat n_{k_1 \downarrow} = 0}\) and \(\ket{k_{-1} \uparrow}\) means \(\ket{\hat n_{k_1 \uparrow} = \hat n_{k_1 \downarrow} = \hat n_{k_{-1} \downarrow} = 0, \hat n_{k_{-1} \uparrow} = 1}\). 
+\pb The action of \(S_2^z\) on this state is
+\begin{equation}\begin{aligned}
+	S_2^z \ket{\uparrow} &=\frac{1}{4}\left[\hat n_\uparrow - \hat n_\downarrow\right]\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{4}c^\dagger_{k_{-1}\uparrow}c_{k_{1} \uparrow} \frac{1}{\sqrt 2}\ket{k_1 \uparrow}+ \frac{1}{4}c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow}\frac{1}{\sqrt 2}\ket{k_{-1} \uparrow}\\
+			     &= \frac{1}{4}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{4} \frac{1}{\sqrt 2}\ket{k_{-1}\uparrow} + \frac{1}{4}\frac{1}{\sqrt 2}\ket{k_{1} \uparrow}\\
+			     &= \frac{1}{2}\ket{\uparrow}
+\end{aligned}\end{equation}
+Similarly, the \(- \frac{1}{2}\) eigenstate is
+\begin{equation}\begin{aligned}
+	\ket{\downarrow} \equiv \frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right)
+\end{aligned}\end{equation}
+Now we turn to the eigenstates of \(C_2^z\). That operator is defined as
+\begin{equation}\begin{aligned}
+	C_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right) = \frac{1}{4}\left(c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow} - c_{k_{-1} \downarrow}c^\dagger_{k_{1}\downarrow} + c^\dagger_{k_{-1} \uparrow}c_{k_1 \uparrow} - c_{k_1 \downarrow}c^\dagger_{k_{-1} \downarrow} + \hat n - 2\right)
+\end{aligned}\end{equation}
+The eigenstate for \(C_2^z = + \frac{1}{2}\) will be 
+\begin{equation}\begin{aligned}
+	\ket{ \uparrow_c} \equiv \ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+\end{aligned}\end{equation}
+which means all four states are filled. The action of \(C_2^z\) on this state is
+\begin{equation}\begin{aligned}
+	C_2^z\ket{ \uparrow_c} = \frac{\hat n -2}{4}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow} = \frac{1}{2}\ket{ \uparrow_c}
+\end{aligned}\end{equation}
+The down eigenstate is
+\begin{equation}\begin{aligned}
+	\ket{ \downarrow_c} \equiv \ket{0}
+\end{aligned}\end{equation}
+which is the state with all states empty. We can thus write down the singlet part of the ground state wavefunction:
+\begin{equation}\begin{aligned}
+	\ket{\text{cloud}} = \frac{1}{4}\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \frac{1}{4}\ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) + \frac{1}{4}\ket{2^d}\ket{0} \\
+	+ \frac{1}{4}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+\end{aligned}\end{equation}
+This state will of course be in direct product with the disentangled electronic states (integrals of motions, IOMS) outside the emergent window. If we assume there are two such momenta (hence four momenta+spin) states on either side of the emergent window (which we label as \(k_{\pm 2}\sigma, k_{\pm 3}\sigma\)), and if we recall that we had used the configuration \(\hat n=0\) for the IOMS above the FS and \(\hat n =1\) for the ones below, the total state becomes
+\begin{equation}\begin{aligned}
+	\ket{\text{IR}} = \frac{1}{4}\bigg[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) + \ket{2^d}\ket{0} \\
+	+ \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\bigg]\ket{k_{-2} \uparrow} \ket{k_{-2} \downarrow} \ket{k_{-3} \uparrow} \ket{k_{-3} \downarrow} 
+\end{aligned}\end{equation}
+The states above the FS - \(k_2 \text{ and } k_3\) - do not appear because they are empty.
+
+
+
+
+
+
+
+
+
 \clearpage
 \section{Connection between URG and Other Canonical Transformations}
 \subsection{Poor Man's Scaling}
