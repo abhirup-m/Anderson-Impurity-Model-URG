@@ -5789,11 +5789,15 @@ At high temperatures, we can write
 \end{aligned}\end{equation}
 At low temperatures,
 \begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
+	\chi\vert_{\beta \to \infty} = \lim_{\beta \to \infty} \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)} =  \frac{1}{2j}\lim_{\beta \to \infty} \frac{1}{\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} + 1} \\
 \end{aligned}\end{equation}
-If we choose the bare values of \(J\) and \(K\) such that \(J_0 >K_0\), then \(j \gg k\) such that we can ignore the \(e^{\beta \frac{3k}{4}}\) in the denominator compared to the \(\cosh \frac{1}{2}\beta j\). We then get
+There we used \(\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\). If we are in the first quadrant, then the fixed point values are such that \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0\), so the exponential will go to 0 in that limit, and we can write
 \begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} \approx \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)} \approx \frac{1}{2j} &&\left[\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\right] \\
+	\chi\vert_{\beta \to \infty} = \frac{1}{2j}
+\end{aligned}\end{equation}
+On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and the exponential in the denominator will diverge.
+\begin{equation}\begin{aligned}
+	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
 The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
 \begin{equation}\begin{aligned}
