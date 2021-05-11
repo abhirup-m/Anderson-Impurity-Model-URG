@@ -5581,7 +5581,7 @@ with \(k = K^* N^*\). The total Hamiltonian for the two-site problem is
 \begin{equation}\begin{aligned}
 	\ham_{IR} = \epsilon_d \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
-where we have dropped the \(*\) on the couplings for berivity. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
+where we have dropped the \(*\) on the couplings for brevity. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
 \pb First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. These states have energy eigenvalues \( \frac{1}{4}k\)
 \pb The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
 \begin{equation}\begin{aligned}
@@ -5665,7 +5665,7 @@ The spin singlet becomes the all-important piece in this situation. Similarly, i
 	\caption{Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. Left panel: \(J>K\). Right panel:\(K>J\)}
 	\label{fig:}
 \end{figure}
-Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^\prime\). The difference between \(E_-^2\) and \(E_-^1\) is
+Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). The difference between \(E_-^2\) and \(E_-^1\) is
 \begin{equation}\begin{aligned}
 	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
 \end{aligned}\end{equation}
@@ -5839,7 +5839,7 @@ The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.5]{../figures/chi_T.pdf}
-	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid, while at high temperatures we see the Curie-Weiss paramagnetic susceptibility resulting from the local moment.}
+	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
@@ -5912,7 +5912,27 @@ This state will of course be in direct product with the disentangled electronic 
 	\ket{\text{IR}} = \frac{1}{4}\bigg[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) + \ket{2^d}\ket{0} \\
 	+ \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\bigg]\ket{k_{-2} \uparrow} \ket{k_{-2} \downarrow} \ket{k_{-3} \uparrow} \ket{k_{-3} \downarrow} 
 \end{aligned}\end{equation}
-The states above the FS - \(k_2 \text{ and } k_3\) - do not appear because they are empty.
+The states above the FS - \(k_2 \text{ and } k_3\) - do not appear because they are empty. The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
+\begin{equation}\begin{aligned}
+	U_0 = \frac{1}{2}\left[ 1 + \eta_0^\dagger \right] \\
+	U_1 = \frac{1}{2}\left[ 1 + \eta_1 \right] 
+\end{aligned}\end{equation}
+where the subscripts \(0\) and \(1\) indicate it decouples an electron from the hole and particle sectors respectively. The inverse transformations for re-entangling \(q\beta\), therefore, are
+\begin{equation}\begin{aligned}
+	U_0^\dagger = \frac{1}{2}\left[ 1 + \eta_0 \right] \\
+	U_1^\dagger = \frac{1}{2}\left[ 1 + \eta_1^\dagger \right] 
+\end{aligned}\end{equation}
+The \(\eta\)-s are
+\begin{equation}\begin{aligned}
+	\eta_1^\dagger = V \left[\lambda_1 \hat n_{d\ol\beta} + \lambda_2 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{q\beta}c_{d\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}\right) \right.\\
+	+ \left.\frac{K}{2}\left( C^z_d c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{d\beta} \right) \right\} \\
+\end{aligned}\end{equation}
+\begin{equation}\begin{aligned}
+	\eta_1^\dagger = V^* \left[\lambda_2 \hat n_{d\ol\beta} + \lambda_1 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{d\beta}c_{q\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}\right) \right.\\
+	+ \left.\frac{K}{2}\left( C^z_d c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{q\beta} \right) \right\} \\
+\end{aligned}\end{equation}
+
+
 
 
 
