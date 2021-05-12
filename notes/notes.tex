@@ -2294,6 +2294,7 @@ Since the impurity singlet ground state is rotationally invariant, we have \il{\
 \implies \delta(0) &= \fr{\pi}{2}\wl N = -\fr{\pi}{2}\Delta V_L
 \eeq
 \beq
+\label{wilson_luttinger}
 R &= 1 + \sin^2 \rr{\fr{\pi}{2}\wl N}\\
   &= 1 + \sin^2 \rr{\fr{\pi}{2}\Delta V_L}
 \eeq
@@ -5828,29 +5829,107 @@ If we are in the first quadrant, then the fixed point values are such that \(\fr
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = \frac{1}{2j}
 \end{aligned}\end{equation}
-On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and the theta function will give 0.
+On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and \(\Theta\) gives
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
-The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
+%The susceptibility takes a simpler form for the case of \(\epsilon_d = k =0\):
+%\begin{equation}\begin{aligned}
+%	\chi(\beta) = \frac{\left[4 + 2e^{-\beta \frac{j}{2}}\right] \frac{1}{4}\beta + e^{\beta\frac{j}{4}} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{12 + 2e^{-\beta \frac{j}{2}} + 2e^{\beta\frac{j}{4}}\cosh \left(\beta \frac{j}{2}\right)}\\
+%\end{aligned}\end{equation}
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[scale=0.39]{../figures/chi_T.pdf}
+	\includegraphics[scale=0.39]{../figures/one_over_chi.pdf}
+	\caption{\textit{Left}:Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment. \textit{Right}: Variation of \(\chi^{-1}\) with temperature.}
+\end{figure}
+%\begin{figure}[htpb]
+%	\centering
+%	\includegraphics[scale=0.38]{../figures/chi.pdf}
+%	\caption{Variation of $\chi$ against temperature.}
+%\end{figure}
+%\begin{figure}[htpb]
+%	\centering
+%	\includegraphics[scale=0.5]{../figures/one_over_chi.pdf}
+%	\caption{Variation of $\chi^{-1}$ against temperature.}
+%\end{figure}
+\subsection{Luttinger's sum and Friedel's sum rules}
+The subsequent discussions are for the first quadrant where \(U^* = 0\) and \(J^* > K^*\). At high temperatures, we see that the impurity susceptibility attains the value of
 \begin{equation}\begin{aligned}
-	\chi(\beta) = \frac{\left[4 + 2e^{-\beta \frac{j}{2}}\right] \frac{1}{4}\beta + e^{\beta\frac{j}{4}} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{12 + 2e^{-\beta \frac{j}{2}} + 2e^{\beta\frac{j}{4}}\cosh \left(\beta \frac{j}{2}\right)}\\
+	\frac{1}{8k_B T}
 \end{aligned}\end{equation}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.5]{../figures/chi_T.pdf}
-	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.5]{../figures/chi.pdf}
-	\caption{Variation of $\chi$ against temperature.}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.5]{../figures/one_over_chi.pdf}
-	\caption{Variation of $\chi^{-1}$ against temperature.}
-\end{figure}
+which implies that the impurity behaves as a free orbital in this limit, having no coupling with the bath. We can write down the following effective Hamiltonian for such a limit:
+\begin{equation}\begin{aligned}
+	\ham_\text{high-T} = \tilde \epsilon_d \hat n_d + \sum_{k\sigma} \epsilon_k\hat n_{k\sigma}
+\end{aligned}\end{equation}
+Since the impurity is decoupled from the bath, we can immediately write down the Hamiltonian just for the impurity:
+\begin{equation}\begin{aligned}
+	\ham_\text{high-T, imp} = \tilde \epsilon_d \hat n_d
+\end{aligned}\end{equation}
+The impurity-Green's function for such a Hamiltonian is
+\begin{equation}\begin{aligned}
+	G_{dd}^\sigma = \lim_{\eta \to 0}\bra{d\sigma}\frac{1}{\omega - \ham_\text{high-T, imp} + i \eta} \ket{d\sigma} = \lim_{\eta \to 0}\frac{1}{\omega - \epsilon_d + i\eta}
+\end{aligned}\end{equation}
+This Green's function has only a real pole, so the state will be infinitely long-lived, signalled by a dirac-delta density of states:
+\begin{equation}\begin{aligned}
+	\rho = -\frac{1}{\pi}\text{Im}G_{dd}^\sigma = \delta \left( \omega - \epsilon_d \right) 
+\end{aligned}\end{equation}
+\textbf{This means that the electron on the impurity will always be localised, and will not be able to tunnel into the conduction band, thereby adding no state to the Fermi volume.}
+\begin{equation}\begin{aligned}
+	\frac{\mathcal{V}}{\left( 2\pi \right) ^3}\left(\text{Fermi volume}\right) = \frac{V}{\left( 2\pi \right) ^3}v_F = N_{CB}
+\end{aligned}\end{equation}
+where \(N_{CB}\) is the number (per spin) of conduction electrons and \(\mathcal{V}\) is the real space volume. At the low temperature strong-coupling fixed point, we have \(\epsilon_d^* = -\frac{U^*}{2} = 0\), so the effective Hamiltonian is
+\begin{equation}\begin{aligned}
+	\ham_\text{low-T} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
+\end{aligned}\end{equation}
+Since we are in the first quadrant, we will have \(j \gg k\). Also, we typically have \(v \sim 10 j\) such that we can keep just the \(v\) as a first approximation.
+\begin{equation}\begin{aligned}
+	\ham_\text{low-T} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right)
+\end{aligned}\end{equation}
+This is a \textit{resonant level model} with zero onsite energy. The site-diagonal Greens function is
+\begin{equation}\begin{aligned}
+	G_{dd}^\sigma = \lim_{\eta \to 0}\frac{1}{\omega -\Sigma + i\eta }
+\end{aligned}\end{equation}
+where \(\Sigma\) is the (complex) self-energy of the impurity site induced by virtual fluctuations into the conduction bath. We can split that into a real and an imaginary part \(\Sigma = \Sigma_0 - i\Delta\), where \(\Delta \sim \rho V^2\). Since the self-energy has an imaginary part, the poles of the Green's function will now be complex, and the states will have a finite lifetime, which is encoded in the fact that the dirac delta dos now broadens into a Lorentzian :
+\begin{equation}\begin{aligned}
+	\rho (\omega) = \frac{1}{\pi}\frac{\Delta}{\left( \omega - \Sigma_0 \right) ^2 + \Delta^2}
+\end{aligned}\end{equation}
+\textbf{Since this impurity state is delocalised over long time scales compared to \(\tau \sim \frac{1}{\Delta}\), it gets added to the Fermi volume. Exactly one state gets added because there is only one such excitation corresponding to \(\omega = \Sigma_0\).} The Luttinger sum becomes
+\begin{equation}\begin{aligned}
+	\frac{V}{\left( 2\pi \right) ^3}v_F = N_{CB} + 1
+\end{aligned}\end{equation}
+This single-occupancy also constrains the phase shift \(\delta(\epsilon_F)\) suffered by the conduction electrons at the Fermi surface as they scatter off the impurity site; from Friedel's sum rule, we can write
+\begin{equation}\begin{aligned}
+	\frac{2}{\pi}\delta(\epsilon_F) = \Delta N_v
+\end{aligned}\end{equation}
+where \(\Delta N_v\) is the change in Luttinger's volume. For this case, it is 1. The phase shift is thus
+%
+%\(n_d\) is the impurity occupancy which we have already argued to be 1, but which can also be calculated directly from the d.o.s.
+%\begin{equation}\begin{aligned}
+%	n_d = 2\int_{-\infty}^0 \frac{1}{\pi}\frac{\Delta}{\left(\omega - \Sigma_0 \right)^2 + \Delta^2} = \frac{2}{\pi} \cot^{-1} \left(\frac{\Sigma_0}{\Delta} \right)
+%\end{aligned}\end{equation}
+%The factor of 2 is the spin-degeneracy. At the strong-coupling fixed point, we have \(V \gg 1 \implies \Delta \gg 1 \implies n_d \approx 1\). Substituting this into the Friedel sum rule gives
+\begin{equation}\begin{aligned}
+	\delta(\epsilon_F) = \frac{\pi}{2}
+\end{aligned}\end{equation}
+The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
+\begin{equation}\begin{aligned}
+	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
+\end{aligned}\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Reverse RG}
 The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
 \begin{equation*}\begin{aligned}
