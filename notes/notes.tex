@@ -5894,21 +5894,20 @@ where \(\Sigma\) is the (complex) self-energy of the impurity site induced by vi
 \begin{equation}\begin{aligned}
 	\rho (\omega) = \frac{1}{\pi}\frac{\Delta}{\left( \omega - \Sigma_0 \right) ^2 + \Delta^2}
 \end{aligned}\end{equation}
-\textbf{Since this impurity state is delocalised over long time scales compared to \(\tau \sim \frac{1}{\Delta}\), it gets added to the Fermi volume. Exactly one state gets added because there is only one such excitation corresponding to \(\omega = \Sigma_0\).} The Luttinger sum becomes
+\textbf{Since this impurity state is delocalised over long time scales compared to \(\tau \sim \frac{1}{\Delta}\), it gets added to the Fermi volume.} The total number of states added will be the impurity occupancy \(n_d\), which can be calculated from the d.o.s. 
+\begin{equation}\begin{aligned}
+	n_d = 2\int_{-\infty}^0 \frac{1}{\pi}\frac{\Delta}{\left(\omega - \Sigma_0 \right)^2 + \Delta^2} = \frac{2}{\pi} \cot^{-1} \left(\frac{\Sigma_0}{\Delta} \right)
+\end{aligned}\end{equation}
+The factor of 2 is the spin-degeneracy. At the strong-coupling fixed point, we have \(V \gg 1 \implies \Delta \gg 1 \implies n_d \approx 1\). The Luttinger sum becomes
 \begin{equation}\begin{aligned}
 	\frac{V}{\left( 2\pi \right) ^3}v_F = N_{CB} + 1
 \end{aligned}\end{equation}
 This single-occupancy also constrains the phase shift \(\delta(\epsilon_F)\) suffered by the conduction electrons at the Fermi surface as they scatter off the impurity site; from Friedel's sum rule, we can write
 \begin{equation}\begin{aligned}
-	\frac{2}{\pi}\delta(\epsilon_F) = \Delta N_v
+	\frac{2}{\pi}\delta(\epsilon_F) = \Delta N_L
 \end{aligned}\end{equation}
-where \(\Delta N_v\) is the change in Luttinger's volume. For this case, it is 1. The phase shift is thus
+where \(\Delta N_L\) is the change in Luttinger's volume. For this case, it is 1. The phase shift is thus
 %
-%\(n_d\) is the impurity occupancy which we have already argued to be 1, but which can also be calculated directly from the d.o.s.
-%\begin{equation}\begin{aligned}
-%	n_d = 2\int_{-\infty}^0 \frac{1}{\pi}\frac{\Delta}{\left(\omega - \Sigma_0 \right)^2 + \Delta^2} = \frac{2}{\pi} \cot^{-1} \left(\frac{\Sigma_0}{\Delta} \right)
-%\end{aligned}\end{equation}
-%The factor of 2 is the spin-degeneracy. At the strong-coupling fixed point, we have \(V \gg 1 \implies \Delta \gg 1 \implies n_d \approx 1\). Substituting this into the Friedel sum rule gives
 \begin{equation}\begin{aligned}
 	\delta(\epsilon_F) = \frac{\pi}{2}
 \end{aligned}\end{equation}
@@ -5983,32 +5982,40 @@ The down eigenstate is
 \end{aligned}\end{equation}
 which is the state with all states empty. We can thus write down the singlet part of the ground state wavefunction:
 \begin{equation}\begin{aligned}
-	\ket{\text{cloud}} = \frac{1}{4}\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \frac{1}{4}\ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) + \frac{1}{4}\ket{2^d}\ket{0} \\
-	+ \frac{1}{4}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+	\ket{\text{cloud}} = \frac{1}{2}\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) - \frac{1}{2}\ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{2}\ket{2^d}\ket{0} \\
+	- \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
 \end{aligned}\end{equation}
 This state will of course be in direct product with the disentangled electronic states (integrals of motions, IOMS) outside the emergent window. If we assume there are two such momenta (hence four momenta+spin) states on either side of the emergent window (which we label as \(k_{\pm 2}\sigma, k_{\pm 3}\sigma\)), and if we recall that we had used the configuration \(\hat n=0\) for the IOMS above the FS and \(\hat n =1\) for the ones below, the total state becomes
 \begin{equation}\begin{aligned}
-	\ket{\text{IR}} = \frac{1}{4}\bigg[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) + \ket{2^d}\ket{0} \\
-	+ \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\bigg]\ket{k_{-2} \uparrow} \ket{k_{-2} \downarrow} \ket{k_{-3} \uparrow} \ket{k_{-3} \downarrow} 
+	\ket{\text{IR}} \equiv \ket{\Psi_0} = \frac{1}{2}\bigg[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) \\
+		+ \ket{2^d}\ket{0} - \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\bigg]\ket{k_{-2} \uparrow} \ket{k_{-2} \downarrow} \ket{k_{-3} \uparrow} \ket{k_{-3} \downarrow} 
 \end{aligned}\end{equation}
 The states above the FS - \(k_2 \text{ and } k_3\) - do not appear because they are empty. The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
 \begin{equation}\begin{aligned}
-	U_0 = \frac{1}{2}\left[ 1 + \eta_0^\dagger \right] \\
-	U_1 = \frac{1}{2}\left[ 1 + \eta_1 \right] 
+	U_{0\beta} = \frac{1}{\sqrt 2}\left[1 - \eta_{0\beta}^\dagger + \eta_{0\beta} \right] \\
+	U_{1\beta} = \frac{1}{\sqrt 2}\left[1 + \eta_{1\beta}^\dagger - \eta_{1\beta} \right] \\
 \end{aligned}\end{equation}
-where the subscripts \(0\) and \(1\) indicate it decouples an electron from the hole and particle sectors respectively. The inverse transformations for re-entangling \(q\beta\), therefore, are
+where the subscripts \(0\) and \(1\) indicate it decouples an electron above and below the Fermi surface respectively, and the subscript \(\beta\) indicates the spin of that electron. The inverse transformations for re-entangling \(q\beta\), therefore, are
 \begin{equation}\begin{aligned}
-	U_0^\dagger = \frac{1}{2}\left[ 1 + \eta_0 \right] \\
-	U_1^\dagger = \frac{1}{2}\left[ 1 + \eta_1^\dagger \right] 
+	U^\dagger_{0\beta} = \frac{1}{\sqrt 2}\left[1 - \eta_{0\beta} + \eta_{0\beta}^\dagger \right] \\
+	U^\dagger_{1\beta} = \frac{1}{\sqrt 2}\left[1 + \eta_{1\beta} - \eta_{1\beta}^\dagger \right] \\
 \end{aligned}\end{equation}
-The \(\eta\)-s are
+Here, \(U^\dagger_{0\beta}\) recouples an electron \(q\beta\) above the Fermi surface. The \(\eta\)-s are
 \begin{equation}\begin{aligned}
-	\eta_1^\dagger = V \left[\lambda_1 \hat n_{d\ol\beta} + \lambda_2 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{q\beta}c_{d\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}\right) \right.\\
+	\eta_{0\beta}^\dagger = V \left[\lambda_2 \hat n_{d\ol\beta} + \lambda_1 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{q\beta}c_{d\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}\right) \right.\\
 	+ \left.\frac{K}{2}\left( C^z_d c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{d\beta} \right) \right\} \\
 \end{aligned}\end{equation}
 \begin{equation}\begin{aligned}
-	\eta_1^\dagger = V^* \left[\lambda_2 \hat n_{d\ol\beta} + \lambda_1 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{d\beta}c_{q\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}\right) \right.\\
+	\eta_{1\beta} = V^* \left[\lambda_1 \hat n_{d\ol\beta} + \lambda_2 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{d\beta}c_{q\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\ol\beta}c^\dagger_{k\ol\beta}c_{q\beta}\right) \right.\\
 	+ \left.\frac{K}{2}\left( C^z_d c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c^\dagger_{d\ol\beta}c_{k\ol\beta}c_{q\beta} \right) \right\} \\
+\end{aligned}\end{equation}
+with
+\begin{equation}\begin{aligned}
+	\lambda_1 = \frac{1}{\omega - \frac{1}{2}D + \epsilon_d + \frac{1}{2}K}, && \lambda_2 = \frac{1}{\omega - \frac{1}{2}D - \epsilon_d + \frac{1}{2}J}, && \lambda_3 = \frac{1}{\omega - \frac{1}{2}D + \frac{1}{4}\left(J + K\right)} 
+\end{aligned}\end{equation}
+The wavefunction after reversing one step of the RG will thus be
+\begin{equation}\begin{aligned}
+	\ket{\Psi_1} = U^\dagger_{0 \uparrow}U^\dagger_{0 \downarrow}U^\dagger_{1 \uparrow}U^\dagger_{1 \downarrow}\ket{\Psi_0}
 \end{aligned}\end{equation}
 
 
