@@ -5915,20 +5915,43 @@ The change in Luttinger's number also allows us to calculate the Wilson ratio of
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
+\newpage
+The impurity Green's function at the free orbital and the strong-coupling fixed points can be collectively written as
+\begin{equation}\begin{aligned}
+	G_d(z) = \frac{1}{z - \epsilon_d - \Sigma(z)}
+\end{aligned}\end{equation}
+where \(\Sigma(z)\) is in general complex and is zero at the free orbital fixed point. Following Seki and Yunoki, we can define a winding number for this Green's function, \textit{at the Fermi surface}:
+\begin{equation}\begin{aligned}
+	n_{\text{Det }G_d^{-1}(\Gamma_0)} = \oint_{\Gamma_0} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }G_d^{-1}(z)}}{\partial{z}} = \oint_{\text{Det }G_d^{-1}(\Gamma_0)} \frac{\mathrm{d} \text{Det }G_d^{-1}}{\text{Det }G_d^{-1}}
+\end{aligned}\end{equation}
+Since \(n_{\text{Det }G_d^{-1}(\Gamma_0)}\) counts the number of times the curve \(\text{Det }G_d^{-1}(\Gamma_0)\) winds around the origin, it is integer-valued and topological. Seki and Yunoki also show that the this number is given by
+\begin{equation}\begin{aligned}
+	n_{\text{Det }G_d^{-1}(\Gamma_0)} = P(0) - Z(0)
+\end{aligned}\end{equation}
+which is the number of poles of \(G_d\) at the Fermi surface minus the number of zeros of \(G_d\) at the Fermi surface.
+\pb At the FO fixed point, \(G_d\) looks like
+\begin{equation}\begin{aligned}
+	G_d = \frac{1}{\omega - \epsilon_d}
+\end{aligned}\end{equation}
+which is a pole at \(\epsilon_d\). Also, at this fixed point, \(\epsilon_d=0\) so that the pole is actually at the FS. Since there are no zeros, we can write
+\begin{equation}\begin{aligned}
+	n_{\text{Det }G_d^{-1}(\Gamma_0)}\vert_\text{FO} = 1
+\end{aligned}\end{equation}
+At the SC fixed point, the Green's function takes the general form. However, we have the following expressions for the real and imaginary parts of the self-energy
+\begin{equation}\begin{aligned}
+\Sigma(z) = \frac{\Delta}{\pi}\ln \left| \frac{z + D}{z - D} \right| - i\Delta
+\end{aligned}\end{equation}
+Close to the Fermi surface (\(z \to 0\)), the real part drops out. We can therefore write
+\begin{equation}\begin{aligned}
+	G_d(z) &= \frac{1}{z - \epsilon_d - i\Delta}, &&\forall z \in \Gamma_0\\
+	       &=\frac{\frac{1}{\Delta}}{ \frac{z - \epsilon_d}{\Delta} - i}
+\end{aligned}\end{equation}
+For a thermodynamically large system, \(\Delta \to \infty\), which means the numerator now becomes zero, while the denominator becomes \(-i\)(non-zero). This means, we have one zero and no poles:
+\begin{equation}\begin{aligned}
+	n_{\text{Det }G_d^{-1}(\Gamma_0)}\vert_\text{SC} = -1
+\end{aligned}\end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\newpage
 \subsection{Reverse RG}
 The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
 \begin{equation*}\begin{aligned}
