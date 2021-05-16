@@ -5870,7 +5870,7 @@ The impurity-Green's function for such a Hamiltonian is
 \begin{equation}\begin{aligned}
 	G_{dd}^\sigma = \lim_{\eta \to 0}\bra{d\sigma}\frac{1}{\omega - \ham_\text{high-T, imp} + i \eta} \ket{d\sigma} = \lim_{\eta \to 0}\frac{1}{\omega - \epsilon_d + i\eta}
 \end{aligned}\end{equation}
-This Green's function has only a real pole, so the state will be infinitely long-lived, signalled by a dirac-delta density of states:
+This Green's function has only a real pole, so the state will be infinitely long-lived, signaled by a Dirac-delta density of states:
 \begin{equation}\begin{aligned}
 	\rho = -\frac{1}{\pi}\text{Im}G_{dd}^\sigma = \delta \left( \omega - \epsilon_d \right) 
 \end{aligned}\end{equation}
@@ -5920,11 +5920,33 @@ The impurity Green's function at the free orbital and the strong-coupling fixed 
 \begin{equation}\begin{aligned}
 	G_d(z) = \frac{1}{z - \epsilon_d - \Sigma(z)}
 \end{aligned}\end{equation}
-where \(\Sigma(z)\) is in general complex and is zero at the free orbital fixed point. Following Seki and Yunoki, we can define a winding number for this Green's function, \textit{at the Fermi surface}:
+where \(\Sigma(z)\) is in general complex and is zero at the free orbital fixed point. The conduction electron Green's function is 
 \begin{equation}\begin{aligned}
-	n_{\text{Det }G_d^{-1}(\Gamma_0)} = \oint_{\Gamma_0} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }G_d^{-1}(z)}}{\partial{z}} = \oint_{\text{Det }G_d^{-1}(\Gamma_0)} \frac{\mathrm{d} \text{Det }G_d^{-1}}{\text{Det }G_d^{-1}}
+	G_k(z) &= G_k^0(z) + G_k^0(z)V_k G_d(z) V_k G_k^0(z)\\
+	G_c(z) &\equiv \sum_k G_k^0(z)
 \end{aligned}\end{equation}
-Since \(n_{\text{Det }G_d^{-1}(\Gamma_0)}\) counts the number of times the curve \(\text{Det }G_d^{-1}(\Gamma_0)\) winds around the origin, it is integer-valued and topological. Seki and Yunoki also show that the this number is given by
+The total number of electrons is given by
+\begin{equation}\begin{aligned}
+	N &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_d(z) + \sum_k G_k(z)\right] \\
+	  &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)G^{-1}_c(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \text{Tr}\sum_k\left( V_k G_k^0 \right) ^2 G_d(z)\right]
+\end{aligned}\end{equation}
+For the resonant-level model, we have
+\begin{equation}\begin{aligned}
+	\Sigma_d = \sum_k V^2_k G^0_k
+\end{aligned}\end{equation}
+such that
+\begin{equation}\begin{aligned}
+	\text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) = -\text{Tr} \left( G_d(z) \sum_k \left( V_k G_k^0 \right) ^2 \right)
+\end{aligned}\end{equation}
+which allows us to write
+\begin{equation}\begin{aligned}
+	N &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{\tilde G^{-1}(z)\right\}\right]
+\end{aligned}\end{equation}
+where \(\tilde G(z) = G_d(z) G_c(z)\). We can define a winding number for this Green's function, \textit{at the Fermi surface}:
+\begin{equation}\begin{aligned}
+	n_{\text{Det} \tilde G^{-1}}(C) = \oint_{C} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }\tilde G^{-1}(z)}}{\partial{z}} = \oint_{\text{Det} \tilde G^{-1}(C)} \frac{\mathrm{d}\; \text{Det }\tilde G^{-1}}{\text{Det }\tilde G^{-1}}
+\end{aligned}\end{equation}
+Since \(n_{\text{Det }\tilde G^{-1}(C)}\) counts the number of times the curve \(\text{Det }\tilde G^{-1}(C)\) winds around the origin, it is integer-valued and topological. Seki and Yunoki also show that the this number is given by
 \begin{equation}\begin{aligned}
 	n_{\text{Det }G_d^{-1}(\Gamma_0)} = P(0) - Z(0)
 \end{aligned}\end{equation}
