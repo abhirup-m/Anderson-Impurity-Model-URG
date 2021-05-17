@@ -5632,7 +5632,7 @@ The most interesting subspace is \(\hat n=2\). This is six dimensional. Since th
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
 \begin{equation}\begin{aligned}
 	\label{gstate}
-	c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
+	\ket{\pm} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
 \begin{equation}\begin{aligned}
@@ -5866,7 +5866,8 @@ Since the impurity is decoupled from the bath, we can immediately write down the
 \begin{equation}\begin{aligned}
 	\ham_\text{high-T, imp} = \tilde \epsilon_d \hat n_d
 \end{aligned}\end{equation}
-The impurity-Green's function for such a Hamiltonian is
+\comm{
+	The impurity-Green's function for such a Hamiltonian is
 \begin{equation}\begin{aligned}
 	G_{dd}^\sigma = \lim_{\eta \to 0}\bra{d\sigma}\frac{1}{\omega - \ham_\text{high-T, imp} + i \eta} \ket{d\sigma} = \lim_{\eta \to 0}\frac{1}{\omega - \epsilon_d + i\eta}
 \end{aligned}\end{equation}
@@ -5915,43 +5916,155 @@ The change in Luttinger's number also allows us to calculate the Wilson ratio of
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
-\newpage
-The impurity Green's function at the free orbital and the strong-coupling fixed points can be collectively written as
+}
+We consider the resonant-level model:
 \begin{equation}\begin{aligned}
-	G_d(z) = \frac{1}{z - \epsilon_d - \Sigma(z)}
+	\ham_\text{res} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d n_d + \sum_{k\sigma}\left(V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
-where \(\Sigma(z)\) is in general complex and is zero at the free orbital fixed point. The conduction electron Green's function is 
+The total Green's function is 
 \begin{equation}\begin{aligned}
-	G_k(z) &= G_k^0(z) + G_k^0(z)V_k G_d(z) V_k G_k^0(z)\\
-	G_c(z) &\equiv \sum_k G_k^0(z)
+	G(z) = \frac{1}{z - \ham_\text{res}}
+\end{aligned}\end{equation}
+The impurity diagonal Green's function is
+\begin{equation}\begin{aligned}
+	G_{dd}(z) &= \frac{1}{z - \epsilon_d - \Sigma_d(z)}, &&	G_d(z) = G_{dd}\ket{d}\bra{d}
+\end{aligned}\end{equation}
+where \(\Sigma_d(z)\) is in general complex and is zero at the free orbital fixed point. The conduction electron Green's function is 
+\begin{equation}\begin{aligned}
+	&G_{kk}(z) = G_k^0(z) + \left[G_k^0(z)V_k\right]^2 G_{dd}(z), & G_c(z) \equiv \sum_k \ket{k}\bra{k}G_{kk}(z), && G_{c0}(z) \equiv \sum_k G_{kk}^0(z)\ket{k}\bra{k}
+\end{aligned}\end{equation}
+The total Green's function can be written as
+\begin{equation}\begin{aligned}
+	G(z) &= \left(\sum_{k}\ket{k}\bra{k} + \ket{d}\bra{d}\right) G \left(\sum_{k}\ket{k}\bra{k} + \ket{d}\bra{d}\right)\\
+	     &= \sum_{k} \ket{k}\bra{k}G_{kk}(z) + G_{dd}(z)\ket{d}\bra{d} + \text{off-diagonal terms}\\
+	     &= G_c(z) + G_{d}(z) + \text{off-diagonal terms}
 \end{aligned}\end{equation}
 The total number of electrons is given by
 \begin{equation}\begin{aligned}
-	N &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_d(z) + \sum_k G_k(z)\right] \\
-	  &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)G^{-1}_c(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \text{Tr}\sum_k\left( V_k G_k^0 \right) ^2 G_d(z)\right]
+	N &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G(z) \right]\\
+	  &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_{d}(z) + G_c(z)\right]
+\end{aligned}\end{equation}
+The contour \(\Gamma\) counts all the singularities of \(\text{Tr} G(z)\), and thus encloses only the real axis of the complex plane (since \(G(z)\) comes from a Hermitian matrix \(\ham_\text{res}\), all its singularities are real).
+At this point, we can use an identity:
+\begin{equation}\begin{aligned}
+	\text{Tr}\left[G_{d}(z)\right] &= \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \epsilon_d - \Sigma_d(z)}\right]\\
+				       &= \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \epsilon_d - \Sigma_d(z)}\frac{\partial{\left(z - \epsilon_d\right)}}{\partial{z}} \right]\\
+				       &= \text{Tr}\left[ \ket{d}\bra{d}G_{dd}\frac{\partial{\left\{G_{dd}^{-1}(z) + \Sigma_d(z)\right\}}}{\partial{z}} \right]\\
+				       &= \text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
+				       &= \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{d}^{-1}(z)\right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
+\end{aligned}\end{equation}
+Substituting this into the total number of particles gives
+\begin{equation}\begin{aligned}
+	N  &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \text{Tr}G_c(z)\right]
+\end{aligned}\end{equation}
+The conduction electron part can also be simplified:
+\begin{equation}\begin{aligned}
+	\text{Tr}G_c(z) &= \text{Tr}\left[G_{c0}(z) + \sum_k \left\{G_k^0(z)V_k\right\}^2 G_{dd}(z)\ket{k}\bra{k}\right]\\
+			&=\text{Tr}\left[G_{c0}(z)\right] + \sum_k\left[G_k^0(z)V_k\right]^2 G_{dd}(z)\\
+\end{aligned}\end{equation}
+Since \(G_{c0}^{-1}(z) = z - \sum_k \epsilon_k \hat n_k\), we can write \(\text{Tr}\left[G_{c0}(z)\right] = \text{Tr}\left[G_{c0}(z) \frac{\partial{}}{\partial{z}}G_{c0}^{-1}\right]\) and hence
+\begin{equation}\begin{aligned}
+	\text{Tr}G_c(z) &=\frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{c0}^{-1}(z)\right] + \sum_k\left[G_k^0(z)V_k\right]^2 G_{dd}(z)
+\end{aligned}\end{equation}
+Updating the total particles with this leads to
+\begin{equation}\begin{aligned}
+	N  = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) \right.\\
+	+ \left.\sum_k\left( V_k G_k^0 \right)^2 G_{dd}(z)\right]
 \end{aligned}\end{equation}
 For the resonant-level model, we have
 \begin{equation}\begin{aligned}
-	\Sigma_d = \sum_k V^2_k G^0_k
+	\Sigma_d = \sum_k V^2_k G^0_k = \sum_k \frac{V_k^2}{z - \epsilon_k}
 \end{aligned}\end{equation}
 such that
 \begin{equation}\begin{aligned}
-	\text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) = -\text{Tr} \left( G_d(z) \sum_k \left( V_k G_k^0 \right) ^2 \right)
+	\text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) = -G_{dd}(z) \sum_k \left( V_k G_k^0 \right)^2
 \end{aligned}\end{equation}
 which allows us to write
 \begin{equation}\begin{aligned}
-	N &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{\tilde G^{-1}(z)\right\}\right]
+	N  = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} \right]
 \end{aligned}\end{equation}
-where \(\tilde G(z) = G_d(z) G_c(z)\). We can define a winding number for this Green's function, \textit{at the Fermi surface}:
+At \(T=0\), \(n_F\) is defined as 1 below the FS, \(\frac{1}{2}\) at the FS and 0 above it.
 \begin{equation}\begin{aligned}
-	n_{\text{Det} \tilde G^{-1}}(C) = \oint_{C} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }\tilde G^{-1}(z)}}{\partial{z}} = \oint_{\text{Det} \tilde G^{-1}(C)} \frac{\mathrm{d}\; \text{Det }\tilde G^{-1}}{\text{Det }\tilde G^{-1}}
+	N  = \left[\oint_{\Gamma_<} + \frac{1}{2}\oint_{\Gamma_0}\right]\frac{dz}{2\pi i}\left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} \right]
 \end{aligned}\end{equation}
-Since \(n_{\text{Det }\tilde G^{-1}(C)}\) counts the number of times the curve \(\text{Det }\tilde G^{-1}(C)\) winds around the origin, it is integer-valued and topological. Seki and Yunoki also show that the this number is given by
+Following Seki and Yunoki, we can define a winding number for a Green's function \(G(z)\):
 \begin{equation}\begin{aligned}
-	n_{\text{Det }G_d^{-1}(\Gamma_0)} = P(0) - Z(0)
+	n_{\text{Det} G^{-1}}(C) = \oint_{C} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }G^{-1}(z)}}{\partial{z}} = \oint_{\text{Det} G^{-1}(C)} \frac{\mathrm{d}\; \text{Det }G^{-1}}{\text{Det }G^{-1}}
 \end{aligned}\end{equation}
-which is the number of poles of \(G_d\) at the Fermi surface minus the number of zeros of \(G_d\) at the Fermi surface.
-\pb At the FO fixed point, \(G_d\) looks like
+Since \(n_{\text{Det } G^{-1}(C)}\) counts the number of times the curve \(\text{Det } G^{-1}(C)\) winds around the origin, it is integer-valued and topological. Seki and Yunoki also show that the this number is given by
+\begin{equation}\begin{aligned}
+n_{\text{Det }G^{-1}(C)} = P_{\text{Det }G}(C) - Z_{\text{Det }G}(C)
+\end{aligned}\end{equation}
+where \(P_{f(z)}(C)\) is the number of poles of \(f(z)\) enclosed by the contour \(C\), and \(Z\) is the corresponding number of zeros. The total number of particles in the resonant level model can thus be written as
+\begin{equation}\begin{aligned}
+	N = P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right] \\
+		+ P_{\text{Det }G_{c0}}(\Gamma_<) - Z_{\text{Det }G_{c0}}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_{c0}}(\Gamma_0) - Z_{\text{Det }G_{c0}}(\Gamma_0)\right]
+\end{aligned}\end{equation}
+The average number of particles can thus be expressed purely in terms of the number of poles and zeros of the impurity and the conduction electron Green's functions. As shown by Seki and Yunoki, the second line gives the Luttinger volume \(V_L\):
+\begin{equation}\begin{aligned}
+	N = P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right] + V_L
+\end{aligned}\end{equation}
+If we start from a non-interacting model (\(V_k = 0\)), we can write
+\begin{equation}\begin{aligned}
+	N = \mathcal{N}^0_{imp} + V_L^0
+\end{aligned}\end{equation}
+where \(\mathcal{N}^0_{imp}\) is simply the number of singularities of \(G_d\) on the real axis, for the non-interacting case. We now turn up the interaction \(V_k\), keeping the total number of particles conserved at \(N\). With a non-zero \(V_k\), the impurity self-energy can be written (assuming a constant density of states) as
+\begin{equation}\begin{aligned}
+	\Sigma_d(z) = \Sigma_d^\text{real}(z) - i \Delta
+\end{aligned}\end{equation}
+so that the impurity Greens function becomes
+\begin{equation}\begin{aligned}
+	G_d(z) = \frac{1}{z - \epsilon_d - \Sigma_d^\text{real}(z) + i \Delta}
+\end{aligned}\end{equation}
+We can see that the presence of an imaginary part lifts the pole of \(G_d(z)\) off the real axis, and since the contour \(\Gamma_0\) encloses only the real axis, this will count as a loss in the number of poles of \(G_d(z)\). Also, if we specialize to the case where the renormalized impurity site energy \(\epsilon_d^* = \epsilon_d + \Sigma_d^\text{real} = 0\), this loss will happen at the Fermi surface, and will hence be multiplied by a factor of half. We can therefore write
+\begin{equation}\begin{aligned}
+	N &= \mathcal{N}_{imp} + V_L = \mathcal{N}^0_{imp} - \frac{1}{2} + V_L\\
+	\implies V_L &= V_L^0 + \frac{1}{2}
+\end{aligned}\end{equation}
+If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Luttinger volume for both momentum and spin degrees of freedom, we get
+\begin{equation}\begin{aligned}
+	\label{luttinger_change}
+	V_L = V_L^0 + 1
+\end{aligned}\end{equation}
+One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\ref{luttinger_change} would still hold.
+\pb From the ground state wavefunction, we can calculate the average number of particles on the impurity:
+\begin{equation}\begin{aligned}
+	\left<n_d \right> = \bra{GS}\sum_\sigma \hat n_{d\sigma} \ket{GS}
+\end{aligned}\end{equation}
+\(\ket{GS}\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
+\begin{equation}\begin{aligned}
+	\left<n_d \right> = \left( c_s^- \right)^2 + \left( c_c^- \right)^2 = 1
+\end{aligned}\end{equation}
+The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, is thus (from the FSR)
+\begin{equation}\begin{aligned}
+	\frac{1}{\pi}\sum_\sigma \delta_\sigma(0) = \left<n_d \right> \implies \delta_\sigma(0) = \frac{\pi}{2}
+\end{aligned}\end{equation}
+There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)-symmetric.
+\pb The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
+\begin{equation}\begin{aligned}
+	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
+\end{aligned}\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
+\end{figure}
+\comm{
+We can also obtain the Friedel sum rule from here. The number of electrons before adding the impurity is
+\begin{equation}\begin{aligned}
+	N^0  = \oint \frac{dz}{2\pi i}n_F(z) \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\}
+\end{aligned}\end{equation}
+The number of electrons after adding the impurity is
+\begin{equation}\begin{aligned}
+	N  = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} \right]
+\end{aligned}\end{equation}
+The change is
+\begin{equation}\begin{aligned}
+	\Delta N &= \oint \frac{dz}{2\pi i}n_F(z) \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\}\\
+		 &= \oint \frac{dz}{2\pi i}n_F(z) \frac{\partial{}}{\partial{z}} \ln \left\{\text{Det} G_d(z)\right\}^{-1}\\
+		 &= -\oint \frac{dz}{2\pi i}n_F(z) \frac{\partial{}}{\partial{z}} \ln \left\{\text{Det} G_d(z)\right\}\\
+		 &= -\oint \frac{dz}{2\pi i}n_F(z) \frac{\partial{}}{\partial{z}} \ln \left\{\text{Det} G_d(z)\right\}\\
+\end{aligned}\end{equation}
+	At the FO fixed point, \(G_d\) looks like
 \begin{equation}\begin{aligned}
 	G_d = \frac{1}{\omega - \epsilon_d}
 \end{aligned}\end{equation}
@@ -5972,8 +6085,8 @@ For a thermodynamically large system, \(\Delta \to \infty\), which means the num
 \begin{equation}\begin{aligned}
 	n_{\text{Det }G_d^{-1}(\Gamma_0)}\vert_\text{SC} = -1
 \end{aligned}\end{equation}
+}
 
-\newpage
 \subsection{Reverse RG}
 The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
 \begin{equation*}\begin{aligned}
