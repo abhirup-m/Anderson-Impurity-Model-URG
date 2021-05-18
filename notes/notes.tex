@@ -5953,7 +5953,11 @@ At this point, we can use an identity:
 				       &= \text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
 				       &= \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{d}^{-1}(z)\right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
 \end{aligned}\end{equation}
-Substituting this into the total number of particles gives
+In the last step, we converted the trace to a determinant using
+\begin{equation}\begin{aligned}
+	\text{Tr}\left[A \frac{\partial{A^{-1}}}{\partial{z}}\right] = \frac{\partial{}}{\partial{z}}\text{Tr}\ln A^{-1} =\frac{\partial{}}{\partial{z}}\sum_i \ln \lambda_i = \frac{\partial{}}{\partial{z}}\ln \prod_i \lambda_i = \frac{\partial{}}{\partial{z}}\ln \text{Det}A^{-1}
+\end{aligned}\end{equation}
+where \(\lambda_i\) are the eigenvalues of \(A^{-1}\). Substituting \(\text{Tr}\left[G_d(z)\right] \) into the total number of particles gives
 \begin{equation}\begin{aligned}
 	N  &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \text{Tr}G_c(z)\right]
 \end{aligned}\end{equation}
@@ -6002,6 +6006,7 @@ where \(P_{f(z)}(C)\) is the number of poles of \(f(z)\) enclosed by the contour
 \end{aligned}\end{equation}
 The average number of particles can thus be expressed purely in terms of the number of poles and zeros of the impurity and the conduction electron Green's functions. As shown by Seki and Yunoki, the second line gives the Luttinger volume \(V_L\):
 \begin{equation}\begin{aligned}
+	\label{total_lutt}
 	N = P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right] + V_L
 \end{aligned}\end{equation}
 If we start from a non-interacting model (\(V_k = 0\)), we can write
@@ -6026,8 +6031,76 @@ If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Lut
 	\label{luttinger_change}
 	V_L = V_L^0 + 1
 \end{aligned}\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
+\end{figure}
 One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\ref{luttinger_change} would still hold.
-\pb From the ground state wavefunction, we can calculate the average number of particles on the impurity:
+\pb We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
+\begin{equation}\begin{aligned}
+	\ham_\text{LM} = \epsilon_d \hat n_d + U \hat n_{d \uparrow} \hat n_{d \downarrow}
+\end{aligned}\end{equation}
+It can be shown that the single-particle Green's function for this effective Hamiltonian is similar to the one at the free-orbital fixed point. We will use the equation of motion technique to solve for the Green's function. The time-domain retarded Green's function is defined as
+\begin{equation}\begin{aligned}
+	G_{d\sigma}(t, t^\prime) = -i\theta(t-t^\prime) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(t^\prime) \right\} \right>
+\end{aligned}\end{equation}
+Since the Hamiltonian is time-translation invariant, we can drop one of the instants:
+\begin{equation}\begin{aligned}
+	G_{d\sigma}(t, 0) = -i\theta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
+\end{aligned}\end{equation}
+The time derivative is
+\begin{equation}\begin{aligned}
+	\partial_t G_{d\sigma} &= -i \left[\partial_t \theta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> + \theta(t) \partial_t \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\right] \\
+			       &= -i \left[\delta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> + \theta(t) \left<\left\{ \partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\right]\\
+			       &= -i \delta(t) -i\theta(t) \left<\left\{ \partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
+\end{aligned}\end{equation}
+From the Heisenberg equations of motion, we get
+\begin{equation}\begin{aligned}
+	i \partial_t c_{d\sigma}(t) = \left[c_{d\sigma}(t), \ham_{LM}(t)\right] = \left[\epsilon_d + U \hat n_{d\ol\sigma}(t)\right]c_{d\sigma}(t)
+\end{aligned}\end{equation}
+Substituting this into the time-derivative gives
+\begin{equation}\begin{aligned}
+	\partial_t G_{d\sigma} &= -i \delta(t) -i \theta(t) \left<\left\{ -i\left[\epsilon_d + U \hat n_{d\ol\sigma}(t)\right]c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\\
+			       &= -i \delta(t) - i\epsilon_d G_{d\sigma} - U \theta(t) \left<\hat n_{d\ol\sigma}(t)\left\{c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\\
+\end{aligned}\end{equation}
+We define another Greens function
+\begin{equation}\begin{aligned}
+	G^\prime = -i \theta(t) \left<\hat n_{d\ol\sigma}(t)\left\{c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
+\end{aligned}\end{equation}
+which satisfies the equation of motion
+\begin{equation}\begin{aligned}
+	\partial_t G^\prime = -i \delta(t) -i\theta(t) \left<\left\{\partial_t \hat n_{d\ol\sigma}(t)c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> -i\theta(t) \left<\left\{\hat n_{d\ol\sigma}(t)\partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
+\end{aligned}\end{equation}
+The second term vanishes because \(\left[\hat n_{d\ol\sigma}, \ham_{LM}\right] = 0\) and hence \(\partial_t \hat n_{d\ol\sigma} = 0\). Also,
+\begin{equation}\begin{aligned}
+	\hat n_{d\ol\sigma}(t)\partial_t c_{d\sigma}(t) = -i\hat n_{d\ol\sigma}(t)\left[\epsilon_d + U \hat n_{d\ol\sigma}(t)\right]c_{d\sigma}(t) = -i\left[\epsilon_d + U\right]\hat n_{d\ol\sigma}(t)c_{d\sigma}(t)
+\end{aligned}\end{equation}
+Therefore,
+\begin{equation}\begin{aligned}
+	\partial_t G^\prime = -i \delta(t) \left< \hat n_{d\ol\sigma}(0)\right>- \left[\epsilon_d + U\right]\theta(t) \left<\left\{\hat n_{d\ol\sigma}(t)c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> = -i \delta(t) -i \left( \epsilon_d + U \right) G^\prime
+\end{aligned}\end{equation}
+Changing all quantities to frequency-domain:
+\begin{equation}\begin{aligned}
+	G^\prime(t) &= \int_{-\infty}^\infty d\omega e^{-i\omega t} G^\prime(\omega)\\
+	\partial_t G^\prime(t) &= -\int_{-\infty}^\infty d\omega i \omega e^{-i\omega t} G^\prime(\omega)\\
+	\delta(t) &= \int_{-\infty}^\infty d\omega e^{-i\omega t}
+\end{aligned}\end{equation}
+Substituting these forms in the equation and comparing the coefficients of \(e^{i\omega t}\) gives
+\begin{equation}\begin{aligned}
+	 \omega G^\prime(\omega) =  \left< \hat n_{d\ol\sigma}(0)\right> + \left( \epsilon_d + U \right) G^\prime(\omega)\implies G^\prime(\omega) = \frac{\left< \hat n_{d\ol\sigma}(0)\right>}{\omega - \epsilon_d - U}
+\end{aligned}\end{equation}
+The equation of motion \(G_{d\sigma}\) can now be solved
+\begin{equation}\begin{aligned}
+	\partial_t G_{d\sigma}(t) &= -i \delta(t) - i\epsilon_d G_{d\sigma}(t) - iU G^\prime_{d\sigma}(t)\\
+	\implies \omega G_{d\sigma}(\omega) &= 1 + \epsilon_d G_{d\sigma}(\omega) + U\frac{\left< \hat n_{d\ol\sigma}(0)\right>}{\omega - \epsilon_d - U}\\
+	\implies G_{d\sigma}(\omega) &= \frac{1}{\omega - \epsilon_d} + \frac{U\left< \hat n_{d\ol\sigma}(0)\right>}{\left( \omega - \epsilon_d \right) \left(\omega - \epsilon_d - U\right)}
+\end{aligned}\end{equation}
+For a particle-hole symmetric system, we can substitute \(\epsilon_d = -|\epsilon_d|\) and \(\epsilon_d + U = |\epsilon_d|\).
+\begin{equation}\begin{aligned}
+	G_{d\sigma}(\omega) &= \frac{1}{\omega + |\epsilon_d|} + \frac{U\left< \hat n_{d\ol\sigma}(0)\right>}{\left( \omega + |\epsilon_d| \right) \left(\omega - |\epsilon_d|\right)}
+\end{aligned}\end{equation}
+which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fermi surface. Since the RHS of eq.~\ref{total_lutt} counts the number of poles on or below the FS, we will still count one pole for \(G_{d\sigma}\). Thus, this Green's function is topological similar to the free-orbital one at \(T=0\).
+\pb The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \bra{GS}\sum_\sigma \hat n_{d\sigma} \ket{GS}
 \end{aligned}\end{equation}
@@ -6035,7 +6108,7 @@ One can now ask what happens to this result once we also incorporate the spin-ex
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \left( c_s^- \right)^2 + \left( c_c^- \right)^2 = 1
 \end{aligned}\end{equation}
-The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, is thus (from the FSR)
+The phase shift is thus
 \begin{equation}\begin{aligned}
 	\frac{1}{\pi}\sum_\sigma \delta_\sigma(0) = \left<n_d \right> \implies \delta_\sigma(0) = \frac{\pi}{2}
 \end{aligned}\end{equation}
@@ -6044,10 +6117,6 @@ There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
-\end{figure}
 \comm{
 We can also obtain the Friedel sum rule from here. The number of electrons before adding the impurity is
 \begin{equation}\begin{aligned}
