@@ -5580,15 +5580,24 @@ v\sum_{\sigma}\left( c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\ve
 \end{aligned}\end{equation}
 with \(k = K^* N^*\). The total Hamiltonian for the two-site problem is
 \begin{equation}\begin{aligned}
-	\ham_{IR} = \epsilon_d \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
+	\ham_{IR} = \epsilon_d m_1^2 + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
-where we have dropped the \(*\) on the couplings for brevity. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
+where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}=m_1\) is the magnetization on the first site. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
+\pb We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
+\begin{equation}\begin{aligned}
+	\ket{1101} = c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}c^\dagger_{2 \downarrow}\ket{-}
+\end{aligned}\end{equation}
+\(\ket{-}\) is the vacuum state.
 \pb First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. These states have energy eigenvalues \( \frac{1}{4}k\)
 \pb The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
 \begin{equation}\begin{aligned}
 	\ket{\uparrow,0}, \ket{0,\uparrow}, \ket{\downarrow,0}, \ket{0,\downarrow}
 \end{aligned}\end{equation}
-However, since the Hamiltonian conserves the total spin (both magnetic and charge), we can divide this Hilbert subspace into two smaller subspaces which do not talk to each other - one having the states \(\ket{\uparrow,0}, \ket{0,\uparrow}\) and hence a total spin magnetization of \(+\frac{1}{2}\), and the other having the remaining states and a total spin magnetization of \(-\frac{1}{2}\).
+However, since the Hamiltonian conserves the total spin (both magnetic and charge), we can divide this Hilbert subspace into two smaller subspaces which do not talk to each other - one having the states \(\ket{\uparrow,0}, \ket{0,\uparrow}\) and hence a total spin magnetization of \(+\frac{1}{2}\), and the other having the remaining states and a total spin magnetization of \(-\frac{1}{2}\). The action of the Hamiltonian on this subspace is
+\begin{equation}\begin{aligned}
+	\ham_{IR} \ket{1000} &= \left[\epsilon_d m_1^2 + vc^\dagger_{2 \uparrow}c_{1 \uparrow}\right] c^\dagger_{1 \uparrow}\ket{-} = \epsilon_d\ket{1000} + v\ket{0010}\\
+	\ham_{IR} \ket{0010} &= \left[\epsilon_d m_1^2 + vc^\dagger_{1 \uparrow}c_{2 \uparrow}\right] c^\dagger_{2 \uparrow}\ket{-} = v\ket{1000}\\
+\end{aligned}\end{equation}
 The Hamiltonian in first subspace can be represented by the matrix
 \begin{equation}\begin{aligned}
 	\label{n1mat}
@@ -5620,27 +5629,34 @@ Since a double impurity has the same energy as a vacant impurity (because of p-h
 	\right\}
 	E = \frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v \right)
 \end{align}
-The most interesting subspace is \(\hat n=2\). This is six dimensional. Since the Hamiltonian conserves both the total spins \(S^2\) and \(C^2\) as well the z-components \(S^z = S_1^z + S^z_2\) and \(C^z = C_1^z + C^z_2\), it would be prudent to choose our basis with this in mind. A suitable basis (with the action of the Hamiltonian) is
+The most interesting subspace is \(\hat n=2\). This is six dimensional. Since the Hamiltonian conserves both the total spins \(S^2\) and \(C^2\) as well the z-components \(S^z = S_1^z + S^z_2\) and \(C^z = C_1^z + C^z_2\), it would be prudent to choose our basis with this in mind. The action of the hybridisation term on the various states are
+\begin{equation}\begin{aligned}
+	&v\left( c^\dagger_{1 \downarrow} c_{2 \downarrow} +  c^\dagger_{2 \uparrow} c_{1 \uparrow}\right) c^\dagger_{1 \uparrow}c^\dagger_{2 \downarrow}\ket{-} = v\left(c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow} c_{2 \downarrow}  c^\dagger_{2 \downarrow}+  c^\dagger_{2 \uparrow} c^\dagger_{2 \downarrow}c_{1 \uparrow} c^\dagger_{1 \uparrow}\right)\ket{-} = v \ket{\uparrow \downarrow,0}  + v \ket{0, \uparrow \downarrow}\\
+	&v\left( c^\dagger_{1 \uparrow} c_{2 \uparrow} +  c^\dagger_{2 \downarrow} c_{1 \downarrow}\right) c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow}\ket{-} = v\left(-c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow} c_{2 \uparrow}  c^\dagger_{2 \uparrow} - c^\dagger_{2 \uparrow} c^\dagger_{2 \downarrow}c_{1 \downarrow} c^\dagger_{1 \downarrow}\right)\ket{-} = -v \ket{\uparrow \downarrow,0} -v \ket{0, \uparrow \downarrow}\\
+	&v\left( c^\dagger_{2 \uparrow} c_{1 \uparrow} +  c^\dagger_{2 \downarrow} c_{1 \downarrow}\right) c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}\ket{-} = v\left(-c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow} c_{1 \uparrow}  c^\dagger_{1 \uparrow} + c^\dagger_{1 \uparrow} c^\dagger_{2 \downarrow}c_{1 \downarrow} c^\dagger_{1 \downarrow}\right)\ket{-} = v \ket{\uparrow, \downarrow} -v \ket{\downarrow, \uparrow}\\
+	&v\left( c^\dagger_{1 \uparrow} c_{2 \uparrow} +  c^\dagger_{1 \downarrow} c_{2 \downarrow}\right) c^\dagger_{2 \uparrow}c^\dagger_{2 \downarrow}\ket{-} = v\left(c^\dagger_{1 \uparrow} c^\dagger_{2 \downarrow}c_{2 \uparrow} c^\dagger_{2 \uparrow}-c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow} c_{2 \downarrow}  c^\dagger_{2 \downarrow}\right)\ket{-} = v \ket{\uparrow, \downarrow} -v \ket{\downarrow, \uparrow}\\
+\end{aligned}\end{equation}
 \begin{flalign}
-	\ket{\uparrow, \uparrow} &\mapsto \left(\epsilon_d + \frac{1}{4}j\right)\ket{\uparrow, \uparrow} \label{1}\\
-	\ket{\downarrow, \downarrow} &\mapsto \left(\epsilon_d + \frac{1}{4}j\right)\ket{\downarrow, \downarrow}\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &\mapsto \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\label{2}\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d - \frac{3}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) - 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &\mapsto - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) - 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\\
+	\ham_{IR}\ket{\uparrow, \uparrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\uparrow, \uparrow} \label{1}\\
+	\ham_{IR}\ket{\downarrow, \downarrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\downarrow, \downarrow}\\
+	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\\
+\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &= - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
+\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &= \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\label{2}\\
+	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) &= \left( \epsilon_d - \frac{3}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)
 \end{flalign}
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
 \begin{equation}\begin{aligned}
 	\label{gstate}
-	\ket{\pm} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right), && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}J 
+	\ket{\pm} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
+	E^2_\pm &= v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
 \begin{equation}\begin{aligned}
-	\gamma = \frac{1}{2v}\left[ \frac{3}{4}\left( j - k \right) - \epsilon_d \right] 
+	\gamma = \frac{1}{2v}\left[ \frac{1}{4}\left( 3j + k \right) - \epsilon_d \right] 
 \end{aligned}\end{equation}
 and the coefficients \(c^{s,c}_\pm\) for the spin and charge singlets (the superscripts \(s,c\) designate which singlet the coefficient sticks to) are
 \begin{equation}\begin{aligned}
-	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\pm
+	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\mp
 \end{aligned}\end{equation}
 The ground state is of course \(E^2_-\).
 \begin{equation}\begin{aligned}
@@ -5661,8 +5677,8 @@ The spin singlet becomes the all-important piece in this situation. Similarly, i
 \end{aligned}\end{equation}
 \begin{figure}[http]
 	\centering
+	\includegraphics[scale=0.6]{../figures/cscc_q1.pdf}\\
 	\includegraphics[scale=0.5]{../figures/gamma_q1.pdf}\\
-	\includegraphics[scale=0.5]{../figures/gamma_q3.pdf}
 	\caption{Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. Left panel: \(J>K\). Right panel:\(K>J\)}
 	\label{fig:}
 \end{figure}
