@@ -5307,35 +5307,44 @@ With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_
 	\Delta K &= - \frac{K^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
 \end{aligned}\end{equation}
 For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For sufficiently small values of \(\frac{J}{K}\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For larger values of \(\frac{J}{K}\), there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\). Both these classes of flows of \(U\) are depicted in fig.~\ref{U_flow}.
-\begin{center}
-	\includegraphics[scale=0.25]{../figures/J.png}
-	\includegraphics[scale=0.25]{../figures/U.png}
-	\captionof{figure}{\(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\). Left: Decay of \(J\) towards zero under RG. Right: Flow of \(U\) under the same RG. Titles of plots show bare values.}
+\begin{figure}[htpb]
+	\centering
+%	\includegraphics[scale=0.25]{../figures/J.png}
+%	\includegraphics[scale=0.25]{../figures/U.png}
+	\includegraphics[width=\textwidth]{../figures/large_w.pdf}
+	\caption{\(\omega > 0\). Left: Decay of \(J\) towards zero under RG. Right: Flow of \(U\) under the same RG. Titles of plots show bare values.}
 	\label{Jdecay}
-\end{center}
-\begin{center}
-	\includegraphics[scale=0.26]{../figures/sc_J.png}
-	\includegraphics[scale=0.26]{../figures/sc_K.png}
-	\captionof{figure}{\(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K < 0\). Flow of \(J\) and \(K\) to large values, signalling a strong-coupling fixed point.}
+\end{figure}
+
+\begin{figure}[htpb!]
+	\centering
+	%\includegraphics[scale=0.26]{../figures/sc_J.png}
+	%\includegraphics[scale=0.26]{../figures/sc_K.png}
+	\includegraphics[width=\textwidth]{../figures/low_w_JK.pdf}
+	\caption{\(\omega < 0\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
 	\label{J_sc}
-\end{center}
-\begin{center}
-	\includegraphics[scale=0.26]{../figures/zero_U.png}
-	\includegraphics[scale=0.32]{../figures/large_U.png}
-	\captionof{figure}{Left: Flow of \(U\) to zero, implying a four-fold degenerate impurity. Right: Flow of \(U\) to large value, making the impurity singly-occupied.}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.48\textwidth]{../figures/U_irr.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/U_rel.pdf}
+	\caption{Left: Flow of \(U\) to zero, implying a four-fold degenerate impurity. Right: Flow of \(U\) to large value, making the impurity singly-occupied, leading to the formation of a local moment.}
 	\label{U_flow}
-\end{center}
+\end{figure}
 From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 \begin{equation}\begin{aligned}
 	\label{rginv}
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
-\begin{center}
-	\includegraphics[scale=0.35]{../figures/JvsK.png}
-	\captionof{figure}{RG flows in \(K\) vs \(J\) plane. Legend indicates relation of bare values.}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.4]{../figures/JvsK.pdf}
+	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
 	\label{JvsK}
-\end{center}
+\end{figure}
+
 \subsection{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
 \begin{equation}\begin{aligned}
@@ -5397,13 +5406,21 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \caption{Classification of fixed points for various bare values, at \(V=0\)}
 \label{classes}
 \end{table}
-\begin{center}
-	\includegraphics[scale=0.3]{../figures/phases.png}
-	\captionof{figure}{Fixed point phases in the plane of bare couplings, at \(V=0\).}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.3]{../figures/phases.pdf}
+	\caption{Fixed point phases in the plane of bare couplings, at \(V=0\).}
 	\label{siamphases}
-\end{center}
+\end{figure}
 \subsection{Effect of \(V\) on the fixed points}
-The introduction of \(V\) into the RG equations make them analytically untractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. To show the presence of both types of fixed points, we have plotted the fraction of fixed points with \(U^* = 0, U^*>0\) and \(U^*<0\) for all four quadrants, as a function of the bare value of \(V_0\), in fig.~\ref{Veffect}.
+The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}.
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=\textwidth]{../figures/with_V.pdf}
+	\caption{Flows of the couplings for bare values in the first quadrant: \(J-K,U>0\).}
+	\label{Veffect}
+\end{figure}
+\comm{
 \begin{center}
 \begin{minipage}{.49\textwidth}
     \centering
@@ -5429,41 +5446,26 @@ The introduction of \(V\) into the RG equations make them analytically untractab
 \label{Veffect}
 \captionof{figure}{Fraction of fixed points with various values of \(U^*\), as a function of bare \(V\). Each quadrant represents the corresponding quadrant in the phase diagram fig.~\ref{siamphases}. First and third quadrants suffer a transition. Bare values are mentioned in plot titles. Calculations were performed for \(\omega \in \left[ - \frac{D_0}{2}, \frac{D_0}{2} \right] \) and \(U \in \left[ 0, 5 \right] \).}
 \end{center}
-To make progress, we will try to figure out how the system will behave at progressively larger system sizes (that is, a thermodynamic ally large system). We will see that we will be able to make concrete statements in such a limit.
+}
 
 \subsection{First quadrant}
-From the first quadrant of fig.~\ref{Veffect}, we can see that the there is a shift in the dominance of the fixed points at some value of $V$. That is, for $V$ less than a certain value, the more dominant fixed points are the ones on the blue line, with $U^* > U_0$. For $V$ larger than this value, the fixed points on the red line are more dominant. More specifically, the critical coupling \(V_c\) is that value of \(V\) at which the number of irrelevant \((U^* = 0)\) and relevant \((U^* > U_0)\) fixed points are equal. From our numerical studies, we conclude that \(V_c\) depends on the bare values of \(D\), \(J\) and \(K\). Changing \(J\) and \(K\) does not introduce any qualitatively new behaviour, so we focus on the effect of $D$ and system size.
-\pb The dependence of $V_c$ on the system size is shown in fig.~\ref{Vc_vs_D}. The critical value goes on decreasing as we go to larger system sizes, meaning the switch from \(U^* > U_0\) to \(U^*=0\) will become progressively easier. This enables us to conclude that the fixed point phase will be one with \(U^* > U_0\).
-\begin{figure}[htbp]
+The first quadrant shows the flow from a free orbital fixed point near \(V=U=J=0\) to an intermediate local moment phase with large \(U\) with a final crossover to a stable fixed point at \(J^* \gg J_0, U^*=0\). The initial free orbital fixed point involves four degenerate impurity states at the impurity, and hence no local moment. The intermediate phase involves a local moment because of the large \(U\). The final stable phase involves an impurity which is strongly-coupled to the impurity because of the large \(V\) and \(J\). This crossover is depicted in fig.~\ref{crossover}.
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.39]{../figures/Vc_q1.pdf}
-	\caption{Variation of the critical value \(V_c\) with bandwidth. }
-	\label{Vc_vs_D}
+	\includegraphics[width=\textwidth]{../figures/crossovers.pdf}
+	\caption{\(U-J\) and \(U-V\) RG flows.}
+	\label{crossover}
 \end{figure}
-\pb We also conclude from our numerical studies that the hybdrisation \(V\) goes to a fixed point value \(V^* > V_0\) for an infinitesimally positive bare value. This behaviour is shown in fig.~\ref{V_frac}, where, for a very small bare value of \(V\), the fixed point nature switches from the irrelevant \(V^*=0\) value at \(V=0\) to the relevant \(V^* > V_0\) at \(V>0\).
-\begin{figure}[htbp!]
+\pb We have also checked that the fixed point values of \(J\) and \(V\) go on increasing as we increase the system size.
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.39]{../figures/quad1V.pdf}
-	\caption{Variation of the number of fixed points for various fixed point values of \(V\), as a function of the bare value of \(V\).}
-	\label{V_frac}
-\end{figure}
-\pb One also needs to check how the fractions of the number of relevant and irrelevant fixed points compare to each other, for various system sizes. To that end, we have plotted the difference between the number of relevant and irrelevant fixed points at a particular value of $V$, as a function of $D$, in fig.~\ref{frac_D}. The two panes show the competition between the fixed points with respect to both \(U^*\) and \(V^*\). The two figures show that \(U^*=0\) and \(V^*>V_0\) will win out at large system size. The almost linear increase suggests that at large $D$, only these fixed points will survive.
-\pb The variation of the fixed point values of the Kondo coupling \(J\) and the hybridisation \(J^*\), with the bare bandwidth $D$ is shown in fig.~\ref{frac_D}. For a thermodynamically large system (where $D \to \infty$), the fixed point value \(J^*\) should go to infinity. This behaviour is also seen in NRG where the fixed point value of \(J^* = \infty\) is reached asymptotically.
-\begin{figure}[htbp!]
-\centering
-\includegraphics[scale=0.37]{../figures/frac_vs_D_quad1.pdf}
-\includegraphics[scale=0.37]{../figures/frac_vs_D_quad11.pdf}
-\caption{Variation of the difference between number of fixed points with increase in bandwidth, for the first quadrant. The left panel shows the difference between the \(U^*=0\) and \(U^*>U_0\) fixed points, while the right panel shows the difference between the \(V^*>V_0\) and \(V^*=0\) fixed points.}
+	\includegraphics[width=0.49\textwidth]{../figures/J_vs_D_q1.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/V_vs_D_q1.pdf}
+	\caption{Increase in the fixed point values of \(J\) and \(V\) with system size.}
+	\label{JV-system-size}
 \end{figure}
 
-\begin{figure}[htpb!]
-\centering
-\includegraphics[scale=0.37]{../figures/J_vs_D.pdf}
-\includegraphics[scale=0.37]{../figures/V_vs_D.pdf}
-\caption{Variation of the fixed point values $J^*$ (left panel) and \(V^*\) (right panel), with the system size, for the first quadrant. All axes are in log scale.}
-\label{frac_D}
-\end{figure}
-
+\comm{
 \subsection{Second and fourth quadrants}
 The second and fourth quadrants - \( J<K, U>0 \) and \(J>K, U<0 \) respectively - are quite simple. They do not feauture any change in the fixed point nature of \(U\). \(U^*=0\)  remains the dominant nature, just as it was for \(V=0\). The fixed point value of \(V\) switches to \(V^*>V_0\) for an infinitesimal value, same as in the first quadrant. The competition between the relevant and irrelevant fixed point values of \(U^*\) and \(V^*\) is shown in figs.~\ref{q2_frac} and \ref{q4_frac}. The linear increase in the proportions of the \(U^*=0, V^*>V_0\) fixed points in the second quadrant, and of the \(U^* < U_0 < 0, V^*>V_0\) fixed points in the third quadrant signify that those are the ones that survive at large system size.
 \pb We have also confirmed from our numerical studies that the fixed point value \(J^*\) for these two quadrants goes on increasing with the system size, suggesting that it flows to \(\infty\) in the thermodynamic limit, same as in the first quadrant. This is shown in fig.~\ref{J_D_q24}. The asymptotic behavior of \(V^*\) is, however, not so clear. These two quadrants are thus characterized by \(U^*=0\) and \(J,V\) relevant.
@@ -5488,20 +5490,21 @@ The second and fourth quadrants - \( J<K, U>0 \) and \(J>K, U<0 \) respectively 
 \caption{Variation of the fixed point value of $J^*$  with the system size, for the second (left panel) and fourth (right panel) quadrants. All axes are in log scale.}
 \label{J_D_q24}
 \end{figure}
+}
+
 \subsection{Third quadrant}
-In the third quadrant, there is a flip from irrelevance \(U^*=0\) to relevance \(U^*<U_0\) at a non-zero \(V_c\), similar to the first quadrant. There isn't a similar trend in the \(V_c\) though. We have however analyzed the variation in the proportions of the relevant and irrelevant fixed points at various system sizes, and noted that with increase in system size, it is the relevant fixed point \(U^*<U_0<0\) that becomes more and more dominant. Same can be said about the fixed point \(V^*>V_0\). These are shown in fig.~\ref{frac_q3}.
+In the third quadrant (\(U_0 < 0, K_0 > J_0\)), we see the flow to large negative value of \(U\), leading to a large contribution of the holon-doublon sectors of the impurity subspace, and a large value of \(K^*\) which means that the impurity charge sector couples very strongly with the bath charge sector.
 \begin{figure}[htpb!]
 \centering
-\includegraphics[scale=0.39]{../figures/frac_vs_D_quad3.pdf}
-\includegraphics[scale=0.39]{../figures/frac_vs_D_quad33.pdf}
-\caption{Difference in the number of fixed points for $U^*$ (left panel) and \(V^*\) (right panel), with the system size, for the third quadrant. All axes are in log scale.}
+\includegraphics[width=\textwidth]{../figures/with_V_q3.pdf}
+\caption{Flow of \(U\) to large negative value and \(K\) to large positive value in the third quadrant.}
 \label{frac_q3}
 \end{figure}
-
-\begin{figure}[htpb]
+\subsection{Phase diagram for \(V > 0\)}
+\begin{figure}[htpb!]
 	\centering
-	\includegraphics[scale=0.3]{../figures/phases_V.png}
-	\caption{}
+	\includegraphics[scale=0.29]{../figures/phases_V.pdf}
+	\caption{Low \(\omega\) fixed point phases for the SIAM with \(V>0\).}
 \end{figure}
 \subsection{Effective Hamiltonian and ground state}
 The fixed point Hamiltonian can be written, in general, as
@@ -5639,9 +5642,9 @@ The most interesting subspace is \(\hat n=2\). This is six dimensional. Since th
 \begin{flalign}
 	\ham_{IR}\ket{\uparrow, \uparrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\uparrow, \uparrow} \label{1}\\
 	\ham_{IR}\ket{\downarrow, \downarrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\downarrow, \downarrow}\\
-	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\\
-\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &= - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
-\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &= \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\label{2}\\
+	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\label{2}\\
+	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &= - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\label{hikari}\\
+\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &= \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\\
 	\ham_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) &= \left( \epsilon_d - \frac{3}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)
 \end{flalign}
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
@@ -5671,18 +5674,42 @@ In the first quadrant, we will have \(J^* > K^*\). As we increase the system siz
 \begin{equation}\begin{aligned}
 	\gamma \to \infty \implies \left( c^s_- \right)^2 \to 1 \text{ and } \left( c^c_- \right)^2 \to 0
 \end{aligned}\end{equation}
-The spin singlet becomes the all-important piece in this situation. Similarly, in the third quadrant, the opposite happends. \(k-j\) will large, so the charge sector will now become  dominant.
-\begin{equation}\begin{aligned}
-	\gamma \to -\infty \implies \left( c^s_- \right)^2 \to 0 \text{ and } \left( c^c_- \right)^2 \to 1
-\end{aligned}\end{equation}
-\begin{figure}[http]
+The spin singlet becomes the all-important piece in this situation.
+This change is shown in fig.~\ref{gamma}. We have the variation of the probabilities and of \(\gamma\) for the first quadrant. \(\gamma\) increases with system size, and so does the spin probability \(\left( c_s^- \right)^2\). 
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.52\textwidth]{../figures/cscc_q1.pdf}
-	\includegraphics[width=0.47\textwidth]{../figures/gamma_q1.pdf}
-	\caption{Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. Left panel: \(J>K\). Right panel:\(K>J\)}
-	\label{fig:}
+	\includegraphics[width=0.46\textwidth]{../figures/gamma_q1.pdf}
+%	\includegraphics[width=0.52\textwidth]{../figures/cscc_q3.pdf}
+%	\includegraphics[width=0.46\textwidth]{../figures/gamma_q3.pdf}
+	%\includegraphics[width=0.47\textwidth]{../figures/gamma_q1.pdf}
+	\caption{\textit{Left}:Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. \textit{Right}: Variation of \(\gamma\) with system size.}
+	\label{gamma}
 \end{figure}
-Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet shown that it is the ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitor is the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). The difference between \(E_-^2\) and \(E_-^1\) is
+\pb The full list of eigenstates is
+\begin{table}[htpb!]
+	\centering
+	\renewcommand*{\arraystretch}{1.6}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\(\hat n\) & \(S^z\) & eigenstate & eigenvalue\\
+		\hline
+		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}k\)\\
+		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}k\)\\
+		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \uparrow}\) & \multirow{4}{*}{\(\frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v\right)\)}\\
+		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \downarrow}\)  &\\
+		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,2} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{2, \uparrow}\) &\\
+		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,2} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{2, \downarrow}\)  &\\
+		\multirow{5}{*}{2} & 1,-1 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\) & \multirow{2}{*}{\(\epsilon_d + \frac{1}{4}j\)}\\
+		& \multirow{3}{*}{0} & \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & \\
+		& & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}k\)\\
+		& & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\) & \(v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j\)\\
+		\hline
+	\end{tabular}
+	\caption{caption}
+	\label{tab:label}
+\end{table}
+\pb Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet checked what is the true ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitors are the one in eq.~\ref{hikari} which we call \(E_c^2\), and the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). We first shown that \(E_-^1 > E_-^2\). The difference between \(E_-^2\) and \(E_-^1\) is
 \begin{equation}\begin{aligned}
 	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
 \end{aligned}\end{equation}
@@ -5702,7 +5729,22 @@ This result then very easily implies that
 \begin{equation}\begin{aligned}
 	4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) > \frac{1}{4}\epsilon_d^2 + v^2
 \end{aligned}\end{equation}
-and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is the overall ground state.
+and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is greater that \(E_-^1\).
+\pb We now compare \(E_-^2\) and \(E_c^2\):
+\begin{equation}\begin{aligned}
+	\Delta E_g \equiv E_-^2 - E_c^2 = \frac{1}{2}\epsilon_d - \frac{3j + k}{8} + k - \sqrt{4v^2 + \left(\frac{3j+k}{8} -\frac{1}{2} \epsilon_d\right) ^2}
+\end{aligned}\end{equation}
+Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
+\pb \begin{minipage}{0.40\textwidth}
+These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
+\end{minipage}
+\hspace{0.05\textwidth}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{../figures/gstate.pdf}
+	\captionof{figure}{Shift in the ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
+	\label{fig_gstate}
+\end{minipage}
 \subsection{Susceptibility}
 The thermal susceptibility is defined as
 \begin{equation}\begin{aligned}
