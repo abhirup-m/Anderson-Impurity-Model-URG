@@ -5790,8 +5790,8 @@ This completes the proof.
 	E^1_{\pm, \downarrow} = \frac{1}{2} \left(\epsilon_d - \frac{1}{2}B\right) \pm \frac{1}{2}\Delta\left(\epsilon_d - \frac{1}{2}B, v\right)  = \epsilon_d -\frac{1}{2}B, 0
 	\end{cases}\\
 	\hat n=2 &\rightarrow \begin{cases}
-	\epsilon_d + \frac{1}{2}j + \frac{1}{2}B\\
-	\epsilon_d + \frac{1}{2}j - \frac{1}{2}B\\
+	\epsilon_d + \frac{1}{4}j + \frac{1}{2}B\\
+	\epsilon_d + \frac{1}{4}j - \frac{1}{2}B\\
 	\frac{1}{4}k \\
 	-\frac{3}{4}k \\
 	\epsilon_d -\frac{1}{4}j \pm \frac{1}{2} \Gamma \\
@@ -5822,30 +5822,30 @@ which are the final two eigenvalues.
 \pb The partition function is
 \begin{equation}\begin{aligned}
 	Z(B) &= 2 \exp\left\{-\beta \frac{k}{4}\right\} + 2\left( \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2} B\right)\right\} + e^0\right) + 2\left( \exp\left\{-\beta\left(\epsilon_d - \frac{1}{2} B\right)\right\} + e^0\right) \\
-	     &+ \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2}j + \frac{1}{2} B\right)\right\} + \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2}j - \frac{1}{2} B\right)\right\} \\
+	     &+ \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j + \frac{1}{2} B\right)\right\} + \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j - \frac{1}{2} B\right)\right\} \\
 	     &+ \exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \exp\left\{-\beta\left(\epsilon_d - \frac{1}{4}j + \frac{1}{2}\Gamma\right)\right\} + \exp\left\{-\beta\left( \epsilon_d- \frac{1}{4}j - \frac{1}{2}\Gamma\right)\right\}\\
-	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d}\cosh \beta \frac{B}{2} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\cosh \beta \frac{B}{2}\\
+	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d}\cosh \beta \frac{B}{2} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\cosh \beta \frac{B}{2}\\
 	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{1}{2}\Gamma\\
-	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right]\cosh \left(\beta \frac{B}{2}\right) \\
+	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right]\cosh \left(\beta \frac{B}{2}\right) \\
 	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{1}{2}\Gamma\right)
 \end{aligned}\end{equation}
-We can compute the derivatives.
+We can now compute the derivatives.
 \begin{equation}\begin{aligned}
-	Z^\prime \equiv \frac{\partial{Z}}{\partial{B}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\frac{1}{2}\beta \sinh \left(\frac{1}{2}\beta \Gamma\right) \frac{\partial{\Gamma}}{\partial{B}} \\
-	=& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\frac{1}{2}\beta \Gamma \right) \frac{B}{\Gamma}\\
-	Z^{\prime\prime} \equiv \frac{\partial^2{Z}}{\partial{B^2}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 \cosh \left(\beta \frac{B}{2}\right) \\
+	Z^\prime \equiv \frac{\partial{Z}}{\partial{B}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\frac{1}{2}\beta \sinh \left(\frac{1}{2}\beta \Gamma\right) \frac{\partial{\Gamma}}{\partial{B}} \\
+	=& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\frac{1}{2}\beta \Gamma \right) \frac{B}{\Gamma}\\
+	Z^{\prime\prime} \equiv \frac{\partial^2{Z}}{\partial{B^2}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 \cosh \left(\beta \frac{B}{2}\right) \\
 								     &+ e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \left[\cosh \left(\frac{1}{2}\beta \Gamma \right) \times \frac{1}{2}\beta \left(\frac{B}{\Gamma}\right)^2 + \sinh \left(\frac{1}{2}\beta \Gamma \right) \left(-\frac{B}{\Gamma^2}\times \frac{B}{\Gamma} + \frac{1}{\Gamma} \right)\right]
 \end{aligned}\end{equation}
 Taking the limit of \(B \to 0\) gives
 \begin{equation}\begin{aligned}
-	Z\vert_{B=0} &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)\\
+	Z\vert_{B=0} &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)\\
 	Z^\prime\vert_{B=0} &= 0\\
-	Z^{\prime\prime}\vert_{B=0} &= \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}\\
+	Z^{\prime\prime}\vert_{B=0} &= \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}\\
 \end{aligned}\end{equation}
 The susceptibility is thus
 \begin{equation}\begin{aligned}
-	\chi(\beta) &= \frac{1}{\beta}\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
-		    &=\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)}\right] \frac{1}{4}\beta + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{2}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
+	\chi(\beta) &= \frac{1}{\beta}\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
+		    &=\frac{\left[2e^{-\beta \epsilon_d} + e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{1}{2}\beta + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
 \end{aligned}\end{equation}
 At high temperatures, we can write
 \begin{equation}\begin{aligned}
@@ -5911,6 +5911,148 @@ On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - 
 %	\includegraphics[scale=0.5]{../figures/one_over_chi.pdf}
 %	\caption{Variation of $\chi^{-1}$ against temperature.}
 %\end{figure}
+\pb If we do not ignore the hybridisation \(v\), then finding the eigenvalues in the presence of a magnetic field boils down to diagonalizing a \(3\times3\) subspace involving the three eigenstates \(\ket{\pm}\) and the spin triplet. We will represent these states and their eigenvalues by the following shorthand notation:
+\begin{equation}\begin{aligned}
+	\ket{ST} &\equiv \frac{1}{\sqrt 2}\left( \ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow} \right), &&E_{ST}  = \epsilon_d + \frac{1}{4}j\equiv E_0\\
+	\ket{\pm} &= c_\pm^s \ket{SS} + c^c_\pm \ket{CT}, && E^2_\pm = v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j \equiv E_\pm
+\end{aligned}\end{equation}
+where \(\ket{SS}\) and \(\ket{CT}\) are the normalized spin singlet and charge triplets, and we just dropped the superscript 2 on \(E^2_\pm\). It turns out to be almost impossible to to do this, so we look for an alternative route. Since we will be anyway taking the limit of \(B \to 0\), it seems sensible to try a perturbative approach. We calculate the shift in the energy eigenvalues of these three states by treating the term \(B S_d^z\) as a perturbation. 
+\begin{equation}\begin{aligned}
+	V = B S_d^z
+\end{aligned}\end{equation}
+We will denote the \(n^\text{th}\)-order shift in the energy by \(\Delta^{(n)}\). The first order shifts are 0.
+\begin{equation}\begin{aligned}
+	\Delta^{(1)} E_{ST} &= \langle ST \vert V \vert ST \rangle \\
+			    &= \frac{B}{2} \langle ST \vert S_d^z \vert ST \rangle \\
+			    &= \frac{B}{2} \langle ST \vert SS \rangle = 0
+\end{aligned}\end{equation}
+There we used the fact that the spin singlet is orthogonal to the spin triplet. The other two first order shifts are
+\begin{equation}\begin{aligned}
+	\Delta^{(1)} E_{\pm} &= \langle \pm \vert V \vert \pm \rangle\\
+			     &= \frac{B}{2} \langle \pm \vert S_d^z \vert \pm \rangle\\ 
+			     &= \frac{B}{2} c^s_\pm \langle \pm \vert ST \rangle = 0\\
+\end{aligned}\end{equation}
+The \(V\), when acting on \(\ket{\pm}\), acts only on the spin part, and hence on the SS part, changing it to ST. This ST is in inner product with \(\ket{\pm}\) and hence with SS, giving 0. We now turn to the second order shifts.
+\begin{equation}\begin{aligned}
+	\Delta^{(2)} E_{ST} &= \sum_\pm \frac{ |\langle \pm \vert V \vert ST \rangle|^2 }{E_{ST} - E_\pm} \\
+	&= \frac{B^2}{4}\sum_\pm \frac{ |\langle \pm \vert SS \rangle|^2 }{E_{ST} - E_\pm} \\
+	&= \frac{B^2}{4}\sum_\pm \frac{(c^s_\pm)^2}{E_{ST} - E_\pm} \\
+	&= \frac{B^2}{4}\left(A_+ + A_-\right)
+\end{aligned}\end{equation}
+where we defined
+\begin{equation}\begin{aligned}
+	A_\pm = \frac{\left( c^s_\pm \right)^2}{E_{ST} - E_\pm} = \frac{\left( c^s_\pm \right)^2}{j - v\gamma \mp v\sqrt{4 + \gamma^2}}
+\end{aligned}\end{equation}
+The other second order shifts are
+\begin{equation}\begin{aligned}
+	\Delta^{(2)} E_\pm &= \frac{ |\langle ST \vert V \vert \pm \rangle|^2 }{E_{\pm} - E_{ST}} + \frac{ |\langle \mp \vert V \vert \pm \rangle|^2 }{E_\pm - E_\mp} \\
+	&= \frac{B^2}{4}\left( c^s_\pm \right) ^2\frac{ |\langle ST \vert ST \rangle|^2 }{E_{\pm} - E_{ST}} + \frac{B^2}{4}\left( c^s_\pm \right) ^2\frac{ |\langle \mp \vert ST \rangle|^2 }{E_\pm - E_\mp} \\
+	&= \frac{B^2}{4}\frac{\left( c^s_\pm \right) ^2}{E_{\pm} - E_{ST}} \\
+	&= -\frac{B^2}{4} A_\pm
+\end{aligned}\end{equation}
+We can now list the second order shifts in all three eigenvalues:
+\begin{equation}\begin{aligned}
+	E_{ST} &\to E_0 + \frac{B^2}{4}\left(A_+ + A_-\right)\\
+	E^2_\pm &\to E_\pm - \frac{B^2}{4} A_\pm\\
+\end{aligned}\end{equation}
+The full spectrum in the presence of the magnetic field is thus
+\pb \begin{table}[htpb]
+	\centering
+	\renewcommand*{\arraystretch}{1.6}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\(\hat n\) & \(S^z\) & eigenstate & eigenvalue\\
+		\hline
+		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}k\)\\
+		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}k\)\\
+		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,0} +2 \left[ \alpha_+ \mp \Delta_+\right] \ket{0, \uparrow}\) & \(\frac{1}{2} \alpha_+\pm \frac{1}{2}\Delta_+\)\\
+		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,0} + 2 \left[ \alpha_- \mp \Delta_-\right] \ket{0, \downarrow}\)  &\(\frac{1}{2} \alpha_-\pm \frac{1}{2}\Delta_-\)\\
+		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,2} +2 \left[ \alpha_+\mp \Delta_+\right] \ket{2, \uparrow}\) &\(\frac{1}{2} \alpha_+\pm \frac{1}{2}\Delta_+\)\\
+		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,2} +2 \left[ \alpha_- \mp \Delta_-\right] \ket{2, \downarrow}\)  &\(\frac{1}{2} \alpha_-\pm \frac{1}{2}\Delta_-\)\\
+		\multirow{6}{*}{2} & 1 & \(\ket{\uparrow,\uparrow}\) & \(\epsilon_d + \frac{1}{4}j + \frac{B}{2}\)\\
+		& -1 & \(\ket{\downarrow,\downarrow}\) & \(\epsilon_d + \frac{1}{4}j - \frac{B}{2}\)\\
+		& \multirow{3}{*}{0} & \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & \(E_0 + \frac{B^2}{4}\left(A_+ + A_-\right)\)\\
+		& & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}k\)\\
+		& & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\) & \(E_\pm - \frac{B^2}{4} A_\pm\)\\
+		\hline
+	\end{tabular}
+\end{table}
+\pb There, we defined
+\begin{equation}\begin{aligned}
+	\alpha_\sigma = \epsilon_d + \left(\sigma\right) \frac{B}{2}, && \Delta_\sigma = \Delta\left(\alpha_\sigma, v\right) = \sqrt{4v^2 + \alpha_\sigma^2}, && \sigma = \left\{+, -\right\}
+\end{aligned}\end{equation}
+We can now write down the partition function:
+\begin{equation}\begin{aligned}
+	Z(B) =& 2 e^{-\beta \frac{k}{4}} + e^{\beta \frac{3k}{4}} + 2\left[e^{-\frac{1}{2}\beta\alpha_+}2\cosh{\frac{1}{2}\beta \Delta_+} + e^{-\frac{1}{2}\beta\alpha_-}2\cosh{\frac{1}{2}\beta \Delta_-}\right] \\
+	     &+ e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }2\cosh{\frac{1}{2}\beta B} + e^{-\beta E_0}e^{-\frac{1}{4}\beta B^2\left(A_+ + A_-\right)} + e^{-\beta E_+}e^{\frac{1}{4}\beta B^2 A_+} + e^{-\beta E_-}e^{\frac{1}{4}\beta B^2 A_-}
+\end{aligned}\end{equation}
+The reason for splitting some of the exponentials into products is to separate out the parts which do and do not depend on \(B\). We now compute some derivatives which will make it easier to calculate the derivatives of the partition function:
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}\alpha_{\sigma}}{\:\mathrm{d}B} = \sigma \frac{1}{2}, && \frac{\:\mathrm{d}\Delta_{\sigma}}{\:\mathrm{d}B} = \sigma \frac{1}{2} \frac{\alpha_{\sigma}}{\Delta_{\sigma}}, && \sigma = \left\{+, -\right\}
+\end{aligned}\end{equation}
+The first derivative of the partition function is
+\begin{equation}\begin{aligned}
+	Z^\prime&(B)\\
+	=& 4\left[e^{-\frac{1}{2}\beta\alpha_+}\sinh{\frac{1}{2}\beta \Delta_+} \frac{1}{2} \frac{\alpha_{+}}{\Delta_{+}} + e^{-\frac{1}{2}\beta\alpha_-}\sinh{\frac{1}{2}\beta \Delta_-}\left(-\frac{1}{2}\frac{\alpha_{-}}{\Delta_{-}}\right)\right]\frac{1}{2}\beta \\
+		     &+4\left[e^{-\frac{1}{2}\beta\alpha_+}\left( \frac{1}{2} \right) \cosh{\frac{1}{2}\beta \Delta_+} + e^{-\frac{1}{2}\beta\alpha_-}\left(-\frac{1}{2} \right)\cosh{\frac{1}{2}\beta \Delta_-}\right]\left(-\frac{1}{2}\beta\right)\\
+		     &+ e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }2\sinh{\frac{1}{2}\beta B}\frac{1}{2}\beta + e^{-\beta E_0}e^{-\frac{1}{4}\beta B^2\left(A_+ + A_-\right)}\left(-\frac{1}{2}\beta B\left(A_+ + A_-\right)\right) \\
+		     &+ e^{-\beta E_+}e^{\frac{1}{4}\beta B^2 A_+}\frac{1}{2}\beta B A_+ + e^{-\beta E_-}e^{\frac{1}{4}\beta B^2 A_-}\frac{1}{2}\beta B A_-\\
+	=& \beta\sum_{\sigma=\pm}(\sigma)e^{-\frac{1}{2}\beta \alpha_\sigma} \left[\frac{\alpha_\sigma}{\Delta_\sigma} \sinh( \frac{\beta}{2} \Delta_\sigma ) - \cosh ( \frac{\beta}{2} \Delta_\sigma )\right]+ e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }\beta\sinh( \frac{1}{2}\beta B ) \\
+	 &-\frac{1}{2}\beta\left(A_+ + A_-\right)e^{-\beta E_0}e^{-\frac{1}{4}\beta B^2\left(A_+ + A_-\right)}B + \frac{1}{2}\beta\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma} B e^{\frac{1}{4}\beta B^2 A_\sigma}
+\end{aligned}\end{equation}
+The second derivative is
+\begin{equation}\begin{aligned}
+	&Z^{\prime\prime}(B)\\
+	=& \beta \sum_{\sigma=\pm}\sigma  e^{-\frac{1}{2} \beta \alpha_\sigma} \left(-\frac{1}{2}\beta  \frac{\sigma}{2} \right)\left[\frac{\alpha_\sigma}{\Delta_\sigma} \sinh( \frac{\beta}{2} \Delta_\sigma ) - \cosh ( \frac{\beta}{2} \Delta_\sigma )\right]\\
+			     +& \beta \sum_{\sigma=\pm}\sigma  e^{-\frac{1}{2} \beta \alpha_\sigma}\left[\frac{\alpha_\sigma}{\Delta_\sigma} \cosh( \frac{\beta}{2} \Delta_\sigma ) \frac{\beta}{2} \frac{\sigma \alpha_\sigma}{2\Delta_\sigma} + \sinh( \frac{\beta}{2} \Delta_\sigma )\left( \frac{\sigma}{2\Delta_\sigma} - \frac{\alpha_\sigma}{\Delta_\sigma^2}\frac{\sigma\alpha_\sigma}{2\Delta_\sigma} \right) - \sinh ( \frac{\beta}{2} \Delta_\sigma ) \frac{\beta\sigma\alpha_\sigma}{2\Delta_\sigma}\right]\\
+		     +& e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }\frac{\beta^2}{2}\cosh( \frac{1}{2}\beta B ) - \frac{1}{2}\beta\left(A_+ + A_-\right)e^{-\beta E_0}e^{-\frac{1}{4}\beta B^2\left(A_+ + A_-\right)}\left[1 -\frac{1}{4}\beta B^2\left(A_+ + A_-\right)\right] \\
+		     +& \frac{1}{2}\beta\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma}e^{\frac{1}{4}\beta B^2 A_\sigma}\left[1 + \frac{1}{4}\beta B^2 A_\sigma\right] \\
+		     =& - \frac{\beta^2}{4} \sum_{\sigma=\pm}\sigma^2  e^{-\frac{1}{2} \beta \alpha_\sigma} \left[\frac{\alpha_\sigma}{\Delta_\sigma} \sinh( \frac{\beta}{2} \Delta_\sigma ) - \cosh ( \frac{\beta}{2} \Delta_\sigma )\right]\\
+		     +& \beta \sum_{\sigma=\pm} \frac{\sigma^2}{2\Delta_\sigma} e^{-\frac{1}{2} \beta \alpha_\sigma}\left[\frac{\alpha_\sigma}{\Delta_\sigma} \cosh( \frac{\beta}{2} \Delta_\sigma ) \frac{\beta\alpha_\sigma}{2} + \sinh( \frac{\beta}{2} \Delta_\sigma )\left( 1 - \frac{\alpha_\sigma^2}{\Delta_\sigma^2} - \beta\alpha_\sigma \right)\right]\\
+		     +& e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }\frac{\beta^2}{2}\cosh( \frac{1}{2}\beta B ) - \frac{1}{2}\beta\left(A_+ + A_-\right)e^{-\beta E_0}e^{-\frac{1}{4}\beta B^2\left(A_+ + A_-\right)}\left[1 -\frac{1}{4}\beta B^2\left(A_+ + A_-\right)\right] \\
+		     +& \frac{1}{2}\beta\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma}e^{\frac{1}{4}\beta B^2 A_\sigma}\left[1 + \frac{1}{4}\beta B^2 A_\sigma\right]
+\end{aligned}\end{equation}
+We will now take the limit of \(B \to 0\) for these three quantities. In doing so, we will use the result that for \(B=0\), we have \(\alpha_+ = \alpha_- = \alpha = \epsilon_d\) and \(\Delta_+ = \Delta_- = \Delta(\epsilon_d, v)\).
+\begin{equation}\begin{aligned}
+	\lim_{B \to 0}Z &= 2 e^{-\beta \frac{k}{4}} + e^{\beta \frac{3k}{4}} + 8e^{-\frac{1}{2}\beta\alpha}\cosh{\frac{1}{2}\beta \Delta} + 2e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) } + e^{-\beta E_0} + e^{-\beta E_+} + e^{-\beta E_-}\\
+	\lim_{B \to 0}Z^\prime &=\beta e^{-\frac{1}{2}\beta \alpha} \left[\frac{\alpha}{\Delta} \sinh(\frac{\beta}{2} \Delta) - \cosh ( \frac{\beta}{2} \Delta )\right]\sum_{\sigma=\pm}(\sigma)+ e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }\beta\sinh(0) = 0\\
+	\lim_{B \to 0}Z^{\prime \prime} &= - \frac{\beta^2}{2} e^{-\frac{1}{2} \beta \alpha} \left[\frac{\alpha}{\Delta} \sinh( \frac{\beta}{2} \Delta ) - \cosh ( \frac{\beta}{2} \Delta )\right]\\
+		     +& \frac{\beta }{\Delta} e^{-\frac{1}{2} \beta \alpha}\left[\frac{\alpha}{\Delta} \cosh( \frac{\beta}{2} \Delta ) \frac{\beta\alpha}{2} + \sinh( \frac{\beta}{2} \Delta )\left( 1 - \frac{\alpha^2}{\Delta^2} - \beta\alpha \right)\right]\\
+		     +& e^{-\beta\left( \epsilon_d + \frac{1}{4}j \right) }\frac{\beta^2}{2} - \frac{1}{2}\beta\left(A_+ + A_-\right)e^{-\beta E_0} + \frac{1}{2}\beta\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma}
+\end{aligned}\end{equation}
+We will simplify this for the first quadrant. There, we have \(\epsilon_d = \alpha = 0, \Delta = 2v\). Hence,
+\begin{equation}\begin{aligned}
+	\lim_{B \to 0}Z &= 2 e^{-\beta \frac{k}{4}} + e^{\beta \frac{3k}{4}} + 8\cosh{\beta v} + 2e^{-\beta\frac{1}{4}j } + e^{-\beta E_0} + e^{-\beta E_+} + e^{-\beta E_-}\\
+	\lim_{B \to 0}Z^{\prime \prime} &= \frac{\beta^2}{2} \cosh (\beta v) + \frac{\beta}{2v} \sinh(\beta v) + e^{-\beta\frac{1}{4}j}\frac{\beta^2}{2} - \frac{1}{2}\beta\left(A_+ + A_-\right)e^{-\beta E_0} + \frac{1}{2}\beta\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma}
+\end{aligned}\end{equation}
+The susceptibility in the first quadrant is thus
+\begin{equation}\begin{aligned}
+	\chi &= \frac{1}{\beta}\left[\frac{1}{Z}Z^{\prime\prime} - \left( \frac{Z^\prime}{Z} \right) ^2\right]\\
+	     &= \frac{\frac{\beta}{2} \cosh (\beta v) + \frac{1}{2v} \sinh(\beta v) + e^{-\beta\frac{1}{4}j}\frac{\beta}{2} - \frac{1}{2}\left(A_+ + A_-\right)e^{-\beta E_0} + \frac{1}{2}\sum_{\sigma=\pm}A_\sigma e^{-\beta E_\sigma}}{2 e^{-\beta \frac{k}{4}} + e^{\beta \frac{3k}{4}} + 8\cosh{\beta v} + 2e^{-\beta\frac{1}{4}j } + e^{-\beta E_0} + e^{-\beta E_+} + e^{-\beta E_-}}
+\end{aligned}\end{equation}
+We will first look at the low temperature limit \(\beta \to \infty\). In this limit, the negative exponentials will drop out, and we are left with
+\begin{equation}\begin{aligned}
+	\chi\big\vert_{\beta \to \infty} &= \frac{\frac{\beta}{4} e^{\beta v} + \frac{1}{4v} e^{\beta v} + \frac{1}{2}A_- e^{-\beta E_-}}{e^{\beta \frac{3k}{4}} + 8e^{\beta v} + e^{-\beta E_-}} && [E_0 > 0, E_+ > 0, E_-<0]\\
+					 &= \frac{\frac{\beta}{4}  + \frac{1}{4v}  + \frac{1}{2}A_- e^{-\beta \left(E_- + v\right)}}{e^{\beta \left(\frac{3k}{4} - v\right)} + 8 + e^{-\beta \left(E_- + v\right)}}\\
+					 &= \frac{\frac{\beta}{4}  + \frac{1}{4v}  + \frac{1}{2}A_- e^{-\beta \left(E_- + v\right)}}{8 + e^{-\beta \left(E_- + v\right)}} && \left[k \ll v\right] \\
+					 &= \frac{\frac{1}{2}A_- e^{-\beta \left(E_- + v\right)}}{e^{-\beta \left(E_- + v\right)}} && \left[E_-+v < 0, \text{ proved below}\right] \\
+					 &= \frac{1}{2}A_-\\
+					 &= \frac{\left( c^s_- \right)^2}{2j - 2v\gamma + v\sqrt{4 + \gamma^2}}
+\end{aligned}\end{equation}
+We will now show that \(E_- + v\) is negative:
+\begin{equation}\begin{aligned}
+	&E_- + v\\
+	&= v\left[ \gamma - \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j + v\\
+		&= v - \frac{1}{8}\left( 3j-k \right) - \sqrt{4v^2 + \left( \frac{3j+k}{8} \right) ^2} &\left[v\gamma = \frac{1}{8}\left( 3j + k \right) \text{ when }\epsilon_d=0\right]\\
+		&= v - \frac{1}{8}\left( 3j-k \right) - \sqrt{v^2 + \left( \frac{3j-k}{8} \right)^2 + \frac{3jk}{16} + 3v^2}\\
+	&= x_1 - x_2 - \sqrt{x_1^2 + x_2^2 + x_3}\\
+	&\left[x_1 = v, x_2 = \frac{1}{8}\left( 3j-k \right), x_3 = \frac{3jk}{16} + 3v^2\right]\\
+		&= (x_1 - x_2) - \sqrt{\left(x_1 - x_2\right)^2 + 2x_1x_2 + x_3}\\
+		&<0
+\end{aligned}\end{equation}
+
+
+
 \subsection{Luttinger's sum and Friedel's sum rules}
 The subsequent discussions are for the first quadrant where \(U^* = 0\) and \(J^* > K^*\). At high temperatures, we see that the impurity susceptibility attains the value of
 \begin{equation}\begin{aligned}
@@ -6236,18 +6378,16 @@ For our choice of a two-momenta Kondo cloud, this expands to
 \end{aligned}\end{equation}
 The eigenstate for this operator, with an eigenvalue of \(+ \frac{1}{2}\), is
 \begin{equation}\begin{aligned}
-	\ket{\uparrow} \equiv \frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right)
+	\ket{\uparrow} \equiv \ket{k_1 \uparrow, k_{-1} \uparrow} = \ket{\hat n_{k_1 \uparrow} = \hat n_{k_{-1} \uparrow} = 1, \hat n_{k_{-1} \downarrow} = \hat n_{k_1 \downarrow} = 0}
 \end{aligned}\end{equation}
 The notation is as follows: only particle states will be explicitly mentioned. In other words, all states \(\ket{k\sigma}\) that are explicitly depicted inside the ket will be particle states (\(\hat n_{k\sigma}=1\)). All states that are \textit{not} explicitly mentioned will be vacant. Hence, the state \(\ket{k_1 \uparrow}\) actually means \(\ket{\hat n_{k_1 \uparrow} = 1, \hat n_{k_{-1} \uparrow} = \hat n_{k_{-1} \downarrow} = \hat n_{k_1 \downarrow} = 0}\) and \(\ket{k_{-1} \uparrow}\) means \(\ket{\hat n_{k_1 \uparrow} = \hat n_{k_1 \downarrow} = \hat n_{k_{-1} \downarrow} = 0, \hat n_{k_{-1} \uparrow} = 1}\). 
 \pb The action of \(S_2^z\) on this state is
 \begin{equation}\begin{aligned}
-	S_2^z \ket{\uparrow} &=\frac{1}{4}\left[\hat n_\uparrow - \hat n_\downarrow\right]\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{4}c^\dagger_{k_{-1}\uparrow}c_{k_{1} \uparrow} \frac{1}{\sqrt 2}\ket{k_1 \uparrow}+ \frac{1}{4}c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow}\frac{1}{\sqrt 2}\ket{k_{-1} \uparrow}\\
-			     &= \frac{1}{4}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{4} \frac{1}{\sqrt 2}\ket{k_{-1}\uparrow} + \frac{1}{4}\frac{1}{\sqrt 2}\ket{k_{1} \uparrow}\\
-			     &= \frac{1}{2}\ket{\uparrow}
+	S_2^z \ket{\uparrow} = \frac{1}{4}\left[\hat n_\uparrow - \hat n_\downarrow\right]\ket{k_1 \uparrow, k_{-1} \uparrow} = \frac{1}{2}\ket{\uparrow}
 \end{aligned}\end{equation}
 Similarly, the \(- \frac{1}{2}\) eigenstate is
 \begin{equation}\begin{aligned}
-	\ket{\downarrow} \equiv \frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right)
+	\ket{\downarrow} \equiv \ket{k_1 \downarrow, k_{-1} \downarrow}
 \end{aligned}\end{equation}
 Now we turn to the eigenstates of \(C_2^z\). That operator is defined as
 \begin{equation}\begin{aligned}
@@ -6267,25 +6407,40 @@ The down eigenstate is
 \end{aligned}\end{equation}
 which is the state with all states empty. We can thus write down the singlet part of the ground state wavefunction:
 \begin{equation}\begin{aligned}
-	\ket{\text{cloud}} = \frac{1}{2}\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) - \frac{1}{2}\ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) + \frac{1}{2}\ket{2^d}\ket{0} \\
-	- \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+	\ket{\text{cloud}} = \frac{1}{2}\ket{\uparrow^d}\ket{k_1 \downarrow, k_{-1} \downarrow} - \frac{1}{2}\ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} + \frac{1}{2}\ket{2^d}\ket{0} - \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
 \end{aligned}\end{equation}
 This state will of course be in direct product with the disentangled electronic states (integrals of motions, IOMS) outside the emergent window. If we assume there are two such momenta (hence four momenta+spin) states on either side of the emergent window (which we label as \(k_{\pm 2}\sigma, k_{\pm 3}\sigma\)), and if we recall that we had used the configuration \(\hat n=0\) for the IOMS above the FS and \(\hat n =1\) for the ones below, the total state becomes
 \begin{equation}\begin{aligned}
-	\ket{\text{IR}} \equiv \ket{\Psi_0} = \frac{1}{2}\bigg[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{k_{-1} \uparrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{k_{-1} \downarrow}\right) \\
-		+ \ket{2^d}\ket{0} - \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\bigg]\ket{k_{-2} \uparrow} \ket{k_{-2} \downarrow} \ket{k_{-3} \uparrow} \ket{k_{-3} \downarrow} 
+	\ket{\text{IR}} \equiv \ket{\Psi_0} =& \ket{\hat n_{k_{-2}} = \hat n_{k_{-3}} = 2} \otimes \left[\frac{1}{2}\ket{\uparrow^d}\ket{k_1 \downarrow, k_{-1} \downarrow} - \frac{1}{2}\ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} + \frac{1}{2}\ket{2^d}\ket{0} \right.\\
+					     &\left.- \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\right] \otimes \ket{\hat n_{k_{2}} = \hat n_{k_{3}} = 0}
 \end{aligned}\end{equation}
-The states above the FS - \(k_2 \text{ and } k_3\) - do not appear because they are empty. The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
+In order to allow a numerical implementation of the reverse RG, we need to write this wavefunction completely as sums of Fock states. We will use the following notation:
+\begin{equation}\begin{aligned}
+	\big\vert\underbrace{n_{k_{3} \uparrow}n_{k_{3} \downarrow}n_{k_{2} \uparrow} n_{k_{2} \downarrow}}_\text{unoccupied IOMS}\quad \overbrace{n_{d \uparrow} n_{d \downarrow}}^\text{impurity} \quad \underbrace{n_{k_{1} \uparrow}n_{k_{1} \downarrow}n_{k_{-1} \uparrow}n_{k_{-1} \downarrow}}_\text{cloud} \quad \overbrace{n_{k_{-2} \uparrow}n_{k_{-2} \downarrow}n_{k_{-3} \uparrow}n_{k_{-3} \downarrow}}^\text{occupied IOMS}\big\rangle
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+	\ket{\Psi_0} =
+	 \frac{1}{2}&\ket{0000} \otimes \ket{\uparrow^d}\ket{k_1 \downarrow, k_{-1} \downarrow} \otimes \ket{1111}\\
+	 - \frac{1}{2}&\ket{0000} \otimes \ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} \otimes \ket{1111}\\
+	 \frac{1}{2}&\ket{0000} \otimes \ket{2^d}\ket{0} \otimes \ket{1111}\\
+	 - \frac{1}{2}&\ket{0000} \otimes \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow} \otimes \ket{1111}\\
+	 =\frac{1}{2}&\ket{0000} \otimes \left[\ket{10}\ket{0101} - \ket{01}\ket{1010} + \ket{11}\ket{0000} - \ket{00}\ket{1111}\right] \otimes \ket{1111}\\
+\end{aligned}\end{equation}
+The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
 \begin{equation}\begin{aligned}
 	U_{0\beta} = \frac{1}{\sqrt 2}\left[1 - \eta_{0\beta}^\dagger + \eta_{0\beta} \right] \\
 	U_{1\beta} = \frac{1}{\sqrt 2}\left[1 + \eta_{1\beta}^\dagger - \eta_{1\beta} \right] \\
 \end{aligned}\end{equation}
-where the subscripts \(0\) and \(1\) indicate it decouples an electron above and below the Fermi surface respectively, and the subscript \(\beta\) indicates the spin of that electron. The inverse transformations for re-entangling \(q\beta\), therefore, are
+where the subscripts \(0\) and \(1\) indicate it decouples an electron above and below the Fermi surface respectively, and the subscript \(\beta\) indicates the spin of that electron. The total unitary is
 \begin{equation}\begin{aligned}
-	U^\dagger_{0\beta} = \frac{1}{\sqrt 2}\left[1 - \eta_{0\beta} + \eta_{0\beta}^\dagger \right] \\
-	U^\dagger_{1\beta} = \frac{1}{\sqrt 2}\left[1 + \eta_{1\beta} - \eta_{1\beta}^\dagger \right] \\
+	U = \frac{1}{4}\left[1 + \eta_{1 \uparrow}^\dagger + \eta_{0\uparrow} + \eta_{1\downarrow}^\dagger + \eta_{0 \downarrow}\right] \\
 \end{aligned}\end{equation}
-Here, \(U^\dagger_{0\beta}\) recouples an electron \(q\beta\) above the Fermi surface. The \(\eta\)-s are
+The inverse transformation for re-entangling \(q\beta\) is
+\begin{equation}\begin{aligned}
+	U^\dagger = \frac{1}{2}\left[1 + \eta_{1 \uparrow} + \eta^\dagger_{0 \uparrow} + \eta_{1 \downarrow} + \eta^\dagger_{0 \downarrow}\right] \\
+\end{aligned}\end{equation}
+Here, \(U^\dagger_{0\beta}\) re-couples an electron \(q\beta\) above the Fermi surface. The \(\eta\)-s are
 \begin{equation}\begin{aligned}
 	\eta_{0\beta}^\dagger = V \left[\lambda_2 \hat n_{d\ol\beta} + \lambda_1 \left( 1 - \hat n_{d\ol\beta} \right)  \right]c^\dagger_{q\beta}c_{d\beta} + \lambda_3 \sum_{k} \left\{ \frac{J}{2}\left( S_d^z \beta c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{d\ol\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\ol\beta}\right) \right.\\
 	+ \left.\frac{K}{2}\left( C^z_d c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{q\beta}c^\dagger_{k\ol\beta}c_{d\ol\beta}c_{d\beta} \right) \right\} \\
@@ -7452,6 +7607,8 @@ which essentially means that since the particle exchanges have happened complete
 \begin{equation}\begin{aligned}
 	S_{FL} - S_{MFL} = \ln \frac{N^{MFL}_< ! \left( N_0^{FL} + N_>^{MFL} \right)!}{N_<^{FL}!\; N_0^{FL}!} \approx \ln \frac{N^{MFL}_< !}{N_<^{FL}!} && \left[N_0^{FL} \gg N_>^{MFL}\right] 
 \end{aligned}\end{equation}
+
+ \ket{\hat n_{k_{2} \uparrow} = \hat n_{k_{2} \downarrow} = \hat n_{k_{3} \uparrow} = \hat n_{k_{3} \downarrow} = 0}
 
 \subsection{Gapped states}
 \cite{Anderson}
