@@ -6416,7 +6416,7 @@ This state will of course be in direct product with the disentangled electronic 
 \end{aligned}\end{equation}
 In order to allow a numerical implementation of the reverse RG, we need to write this wavefunction completely as sums of Fock states. We will use the following notation:
 \begin{equation}\begin{aligned}
-	\big\vert\underbrace{n_{k_{3} \uparrow}n_{k_{3} \downarrow}n_{k_{2} \uparrow} n_{k_{2} \downarrow}}_\text{unoccupied IOMS}\quad \overbrace{n_{d \uparrow} n_{d \downarrow}}^\text{impurity} \quad \underbrace{n_{k_{1} \uparrow}n_{k_{1} \downarrow}n_{k_{-1} \uparrow}n_{k_{-1} \downarrow}}_\text{cloud} \quad \overbrace{n_{k_{-2} \uparrow}n_{k_{-2} \downarrow}n_{k_{-3} \uparrow}n_{k_{-3} \downarrow}}^\text{occupied IOMS}\big\rangle
+	\big\vert\overbrace{n_{k_{3} \uparrow}n_{k_{3} \downarrow}n_{k_{2} \uparrow} n_{k_{2} \downarrow}}^\text{unoccupied IOMS}\quad \quad \underbrace{n_{k_{1} \uparrow}n_{k_{1} \downarrow}}_\text{cloud above FS}\quad\overbrace{n_{d \uparrow} n_{d \downarrow}}^\text{impurity} \quad\underbrace{n_{k_{-1} \uparrow}n_{k_{-1} \downarrow}}_\text{cloud below FS} \quad \overbrace{n_{k_{-2} \uparrow}n_{k_{-2} \downarrow}n_{k_{-3} \uparrow}n_{k_{-3} \downarrow}}^\text{occupied IOMS}\big\rangle
 \end{aligned}\end{equation}
 
 \begin{equation}\begin{aligned}
@@ -6425,7 +6425,7 @@ In order to allow a numerical implementation of the reverse RG, we need to write
 	 - \frac{1}{2}&\ket{0000} \otimes \ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} \otimes \ket{1111}\\
 	 \frac{1}{2}&\ket{0000} \otimes \ket{2^d}\ket{0} \otimes \ket{1111}\\
 	 - \frac{1}{2}&\ket{0000} \otimes \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow} \otimes \ket{1111}\\
-	 =\frac{1}{2}&\ket{0000} \otimes \left[\ket{10}\ket{0101} - \ket{01}\ket{1010} + \ket{11}\ket{0000} - \ket{00}\ket{1111}\right] \otimes \ket{1111}\\
+	 =\frac{1}{2}&\ket{0000} \otimes \left[\ket{01} \underbrace{\ket{10}}_\text{imp}\ket{01} - \ket{10}\underbrace{\ket{01}}_\text{imp}\ket{10} + \ket{00}\underbrace{\ket{11}}_\text{imp}\ket{00} - \ket{11}\underbrace{\ket{00}}_\text{imp}\ket{11}\right] \otimes \ket{1111}\\
 \end{aligned}\end{equation}
 The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
 \begin{equation}\begin{aligned}
