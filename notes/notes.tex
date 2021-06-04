@@ -5650,7 +5650,7 @@ The most interesting subspace is \(\hat n=2\). This is six dimensional. Since th
 The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
 \begin{equation}\begin{aligned}
 	\label{gstate}
-	\ket{\pm} &= c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
+	\ket{\pm} &= c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\\
 	E^2_\pm &= v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
@@ -5703,7 +5703,7 @@ This change is shown in fig.~\ref{gamma}. We have the variation of the probabili
 		\multirow{5}{*}{2} & 1,-1 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\) & \multirow{2}{*}{\(\epsilon_d + \frac{1}{4}j\)}\\
 		& \multirow{3}{*}{0} & \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & \\
 		& & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}k\)\\
-		& & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\) & \(v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j\)\\
+		& & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \(v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j\)\\
 		\hline
 	\end{tabular}
 	\caption{caption}
@@ -6051,6 +6051,131 @@ We will now show that \(E_- + v\) is negative:
 		&<0
 \end{aligned}\end{equation}
 
+\subsection{Effective Hamiltonian for excitations of the Kondo cloud}
+To find an effective Hamiltonian for the excitations of the Kondo cloud, we will integrate out the impurity part of the wavefunction. The Schrodinger equation for the \(J > K\) ground state is
+\begin{equation}\begin{aligned}
+	E_g &\left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \\
+	    &= \ham \left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right]\\
+	    &= \ham_0^* \left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right]\\
+	    &+V\sum_{\beta}\left[c^\dagger_{2\beta}c_{1\beta} - c_{2\beta}c^\dagger_{1\beta}\right]\left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right]\\
+	    &+ J \vec{S_d}\cdot\vec{s}\left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right]\\
+	    &+ K \vec{C_d}\cdot\vec{c}\left[c_-^s \left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right]
+\end{aligned}\end{equation}
+The last two lines gives
+\begin{equation}\begin{aligned}
+\frac{1}{2}Jc_-^s \left[s^z \left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) +  s^+ \ket{\downarrow, \downarrow} - s^-\ket{\uparrow, \uparrow}\right] + \frac{1}{2}Kc^c_- \left[c^z\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) + c^+\ket{0, 0} \right.\\
++ \left.c^-\ket{2, 2}\right]
+\end{aligned}\end{equation}
+The second line gives
+\begin{equation}\begin{aligned}
+	V c^\dagger_{2\uparrow}\left[c_-^s \left(\ket{0, \downarrow}\right) + c^c_- \left(\ket{\downarrow, 0}\right)\right] + V c^\dagger_{2 \downarrow}\left[c_-^s \left(- \ket{0, \uparrow}\right) + c^c_- \left(\ket{\uparrow, 0}\right)\right] \\
+	- Vc_{2 \uparrow}\left[c_-^s \left(- \ket{ \uparrow\downarrow, \uparrow}\right) + c^c_- \left(\ket{\uparrow, \uparrow\downarrow}\right)\right] - V c_{2 \downarrow}\left[c_-^s \left(-\ket{ \uparrow\downarrow, \downarrow}\right) + c^c_- \left(\ket{ \downarrow, \uparrow\downarrow}\right)\right]
+\end{aligned}\end{equation}
+We will now write down four equations by comparing the coefficients of \(\ket{ \uparrow}, \ket{ \downarrow}, \ket{0}\) and \(\ket{2}\) of the impurity sector:
+\begin{equation}\begin{aligned}
+	\left( E_g - H_0^* \right) c_-^s \ket{\downarrow} &= V c^c_- \left( c^\dagger_{2 \downarrow}\ket{0} - c_{2 \uparrow}\ket{2} \right) + \frac{1}{2}J c^s_-\left( s^z\ket{ \downarrow} - s^-\ket{\uparrow} \right) && \left[\text{eq. from }\ket{\uparrow}\right] \\
+	\left( -E_g + H_0^* \right) c_-^s \ket{\uparrow} &= V c^c_- \left( c^\dagger_{2 \uparrow}\ket{0} - c^\dagger_{2 \downarrow}\ket{2} \right) + \frac{1}{2}J c^s_-\left( s^z\ket{\uparrow} + s^+\ket{ \downarrow} \right)&& \left[\text{eq. from }\ket{\downarrow}\right] \\
+	\left( E_g - H_0^* \right) c_-^c \ket{2} &= V c^s_- \left( c^\dagger_{2 \uparrow}\ket{ \downarrow} - c^\dagger_{2 \downarrow}\ket{ \uparrow} \right) + \frac{1}{2}K c^c_-\left( -c^z\ket{2} + c^+\ket{0} \right) && \left[\text{eq. from }\ket{0}\right] \\
+	\left( E_g - H_0^* \right) c_-^c \ket{0} &= V c^s_- \left( c_{2 \uparrow}\ket{ \uparrow} + c_{2 \downarrow}\ket{ \downarrow} \right) + \frac{1}{2}K c^c_-\left( c^z\ket{0} + c^-\ket{2} \right) && \left[\text{eq. from }\ket{2}\right]
+\end{aligned}\end{equation}
+These can be rearranged into
+\begin{equation}\begin{aligned}
+	\left( E_g - H_0^* - \frac{1}{2}J s^z\right) \ket{\downarrow} &= V \lambda^{-1} \left( c^\dagger_{2 \downarrow}\ket{0} - c_{2 \uparrow}\ket{2} \right) - \frac{1}{2}J s^-\ket{\uparrow} \\
+	\left( E_g - H_0^*  + \frac{1}{2}J s^z\right) \ket{\uparrow} &= V \lambda^{-1} \left( c_{2 \downarrow}\ket{2} - c^\dagger_{2 \uparrow}\ket{0}\right) - \frac{1}{2}J s^+\ket{ \downarrow} \\
+	\left( E_g - H_0^*  + \frac{1}{2}K c^z\right)  \ket{2} &= V \lambda \left( c^\dagger_{2 \uparrow}\ket{ \downarrow} - c^\dagger_{2 \downarrow}\ket{ \uparrow} \right) + \frac{1}{2}K c^+\ket{0}  \\
+	\left( E_g - H_0^* - \frac{1}{2}K c^z\right)  \ket{0} &= V \lambda \left( c_{2 \uparrow}\ket{ \uparrow} + c_{2 \downarrow}\ket{ \downarrow} \right) + \frac{1}{2}K c^-\ket{2} 
+\end{aligned}\end{equation}
+where \(\lambda = \frac{c^s_-}{c^c_-}\). We want to find the effective Hamiltonian in the subspace of \(\ket{\downarrow}\). We first eliminate the charge sector from these equations:
+\begin{equation}\begin{aligned}
+	\ket{0} =& V\lambda\left[\frac{1}{A^K_-}c_{2 \uparrow} + \frac{K}{2}\frac{1}{A^K_-}c^- \frac{1}{A^K_+ - \left( \frac{K}{2} \right) ^2 c^+ \frac{1}{A^K_-}c^-}\left(\frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \uparrow}- c^\dagger_{2 \downarrow}\right)\right]\ket{ \uparrow} \\
+		 &+V\lambda\left[\frac{1}{A^K_-}c_{2 \downarrow} + \frac{K}{2}\frac{1}{A^K_-}c^- \frac{1}{A^K_+ - \left( \frac{K}{2} \right) ^2 c^+ \frac{1}{A^K_-}c^-}\left(c^\dagger_{2 \uparrow} + \frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \downarrow}\right)\right]\ket{ \downarrow}\\
+	\ket{2} &= \frac{V\lambda}{A^K_+ - \left( \frac{K}{2} \right) ^2 c^+ \frac{1}{A^K_-}c^-}\left[\left(c^\dagger_{2 \uparrow} + \frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \downarrow}\right)\ket{ \downarrow} + \left(\frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \uparrow}- c^\dagger_{2 \downarrow}\right)\ket{ \uparrow}\right] 
+\end{aligned}\end{equation}
+where
+\begin{equation}\begin{aligned}
+	A^K_\pm = E_g - H_0^* \pm \frac{1}{2}Kc^z
+\end{aligned}\end{equation}
+For ease of labeling, we will think of these equations as
+\begin{equation}\begin{aligned}
+	\ket{0} = a_0^\uparrow \ket{ \uparrow} + a_0^\downarrow\ket{ \downarrow}, \ket{2} = a_2^\uparrow \ket{ \uparrow} + a_2^\downarrow\ket{ \downarrow}
+\end{aligned}\end{equation}
+The remaining two equations can then be written as
+\begin{equation}\begin{aligned}
+	A^J_-\ket{ \downarrow} &= \frac{V}{\lambda}\left[ c^\dagger_{2 \downarrow}\left(a_0^\uparrow \ket{ \uparrow} + a_0^\downarrow\ket{ \downarrow}\right) - c_{2 \uparrow}\left(a_2^\uparrow \ket{ \uparrow} + a_2^\downarrow\ket{ \downarrow}\right) \right] - \frac{J}{2}s^- \ket{ \uparrow}\\
+	A^J_+\ket{\uparrow} &= \frac{V}{\lambda}\left[ c_{2 \downarrow}\left(a_2^\uparrow \ket{ \uparrow} + a_2^\downarrow\ket{ \downarrow}\right) - c^\dagger_{2 \uparrow}\left(a_0^\uparrow \ket{ \uparrow} + a_0^\downarrow\ket{ \downarrow}\right) \right]  - \frac{J}{2}s^+ \ket{ \downarrow}\\
+\end{aligned}\end{equation}
+where 
+\begin{equation}\begin{aligned}
+	A^J_\pm = E_g - H_0^* \pm \frac{1}{2}Js^z
+\end{aligned}\end{equation}
+Eliminating \(\ket{\downarrow}\) and solving for \(\ket{\uparrow}\) gives
+\begin{equation}\begin{aligned}
+	A^J_+ \ket{\uparrow} =&  \frac{V}{\lambda}\left( c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow \right) \ket{\uparrow} + \left( \frac{V}{\lambda}c_{2 \downarrow}a_2^\downarrow - \frac{V}{\lambda}c^\dagger_{2 \uparrow}a_0^\downarrow - \frac{J}{2}s^+ \right) \ket{\downarrow}\\
+			     =& \frac{V}{\lambda}\left( c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow \right) \ket{\uparrow} \\
+			     +& \left[ \frac{V}{\lambda}\left(c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow\right) - \frac{J}{2}s^+ \right] \frac{1}{A^J_- - \frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\downarrow - c_{2 \uparrow}a_2^\downarrow \right) }\left[\frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow\right) - \frac{J}{2}s^-\right] \ket{\uparrow}
+\end{aligned}\end{equation}
+The effective Hamiltonian for the \(\ket{\uparrow}\) state is
+\begin{equation}\begin{aligned}
+	\label{full_ham}
+	H_0^* - \frac{J}{2}s^z + \frac{V}{\lambda}\left(c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow \right) + \left[ \frac{V}{\lambda}\left(c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow\right) - \frac{J}{2}s^+ \right] \frac{1}{A^J_- - \frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\downarrow - c_{2 \uparrow}a_2^\downarrow \right) }\\
+	\times\left[\frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow\right) - \frac{J}{2}s^-\right]
+\end{aligned}\end{equation}
+To get a clearer picture of this effective Hamiltonian, we will keep up to two-particle interactions. We first write down the full forms of \(a_{0,2}^\sigma\):
+\begin{equation}\begin{aligned}
+	a_0^\sigma &= V\lambda\left[\frac{1}{A^K_-}c_{2 \sigma} + \frac{K}{2}\frac{1}{A^K_-}c^- \frac{1}{A^K_+ - \left( \frac{K}{2} \right) ^2 c^+ \frac{1}{A^K_-}c^-}\left(\frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \sigma}- \sigma c^\dagger_{2 \sigma}\right)\right]\\
+	a_2^\sigma &= \frac{V\lambda}{A^K_+ - \left( \frac{K}{2} \right) ^2 c^+ \frac{1}{A^K_-}c^-}\left(-\sigma c^\dagger_{2 -\sigma} + \frac{K}{2}c^+ \frac{1}{A^K_-}c_{2 \sigma}\right)
+\end{aligned}\end{equation}
+We will first look at the special case of \(K = 0\). There, the above expressions simplify to
+\begin{equation}\begin{aligned}
+	a_0^\sigma &= V\lambda\frac{1}{A^K_-}c_{2 \sigma} = \frac{V \lambda}{E_g}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c_{2\sigma} + \mathcal{O}({H_0^*}^3)\\
+	a_2^\sigma &= -\sigma V\lambda\frac{1}{A^K_+}c^\dagger_{2 -\sigma} = -\sigma\frac{V \lambda}{E_g}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2 -\sigma} + \mathcal{O}({H_0^*}^3)\\
+\end{aligned}\end{equation}
+We will make use of the following commutators:
+\begin{equation}\begin{aligned}
+	&\left[\left(H_0^*\right)^m, c_{2\sigma}\right] = - \sum_k \frac{\epsilon^m_k}{\sqrt{N^*}}c_{k\sigma}, && \left[\left(H_0^*\right)^m, c^\dagger_{2\sigma}\right] = \sum_k \frac{\epsilon_k^m}{\sqrt{N^*}}c^\dagger_{k\sigma}, && m = 1, 2\\
+	&\left[\left(s^z\right)^m, c_{2\sigma}\right] = - \left(\frac{\sigma}{2}\right)^mc_{2\sigma}, && \left[\left(s^z\right)^m, c^\dagger_{2\sigma}\right] = \left(\frac{\sigma}{2}\right)^mc^\dagger_{2\sigma}, && m = 1, 2\\
+	&\left[\left(c^z\right)^m, c_{2\sigma}\right] = - \left(\frac{1}{2}\right)^mc_{2\sigma}, && \left[\left(c^z\right)^m, c^\dagger_{2\sigma}\right] = \left(\frac{1}{2}\right)^mc^\dagger_{2\sigma}, && m = 1, 2\\
+\end{aligned}\end{equation}
+Now we evaluate the various terms in the effective Hamiltonian.
+\begin{equation}\begin{aligned}
+	\textcolor{red}{c_{2 \downarrow}a_2^\uparrow} &= -\frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\downarrow}\\
+				     &= -\frac{V \lambda}{E_g}\left[c_{2 \downarrow} + \frac{1}{E_g}\left(H_0^* \right)c_{2 \downarrow} + \sum_k \frac{\epsilon_k}{\sqrt{N^*}}c_{k\downarrow} + \frac{1}{E_g^2}\left(H_0^* \right)^2c_{2 \downarrow} + \sum_k \frac{\epsilon^2_k}{\sqrt{N^*}}c_{k\downarrow}\right]c^\dagger_{2\downarrow}\\
+				     &= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c_{2 \downarrow}c^\dagger_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\\
+	\textcolor{green}{c_{2 \uparrow}a_2^\downarrow }&= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c_{2 \uparrow}c^\dagger_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c_{k\uparrow}c^\dagger_{k^\prime\uparrow}\\
+	\textcolor{red}{c^\dagger_{2 \uparrow}a_0^\uparrow} &= c^\dagger_{2 \uparrow} \frac{V \lambda}{E_g}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c_{2 \uparrow}\\
+					   &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c^\dagger_{2 \uparrow}c_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c^\dagger_{k\uparrow}c_{k^\prime\uparrow}\\
+	\textcolor{green}{c^\dagger_{2 \downarrow}a_0^\downarrow} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c^\dagger_{2 \downarrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\\
+	\textcolor{blue}{c_{2 \downarrow}a_2^\downarrow }&= \frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\uparrow}\\
+				       &=\frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \downarrow}c^\dagger_{2\uparrow} + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon^2_k\right)c_{k\downarrow}c^\dagger_{k^\prime\uparrow}\\
+	\textcolor{yellow}{c_{2 \uparrow}a_2^\uparrow} &=-\frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \uparrow}c^\dagger_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon^2_k\right)c_{k\uparrow}c^\dagger_{k^\prime\downarrow}\\
+	\textcolor{blue}{c^\dagger_{2 \uparrow}a_0^\downarrow }&= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \uparrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\\
+	\textcolor{yellow}{c^\dagger_{2 \downarrow}a_0^\uparrow} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \downarrow}c_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
+\textcolor{red}{c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow} &= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]\times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right)\\
+\textcolor{blue}{c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow }&= \frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \downarrow}c^\dagger_{2\uparrow} \times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\downarrow}c^\dagger_{k^\prime\uparrow} + c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right)\\
+\textcolor{green}{c^\dagger_{2 \downarrow}a_0^\downarrow - c_{2 \uparrow}a_2^\downarrow} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right)\\
+\textcolor{yellow}{c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)
+\end{aligned}\end{equation}
+In all the expressions, we have dropped terms that have more than 4 operators in product. Also, in the last four equations, we have substituted \(\hat n_{2 \uparrow} - \hat n_{2 \downarrow} = 1\), because this is the effective Hamiltonian for the state with \(s^z = \frac{1}{2}\). We now substitute these expressions into the effective Hamiltonian:
+\begin{equation}\begin{aligned}
+	&H_0^* - \frac{J}{2}s^z -\frac{2V^2}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right] + \frac{V^2 }{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right) \\
+	&+ \left[ \frac{V}{\lambda}\left(c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow\right)\right] \frac{1}{A^J_- - \frac{V^2}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) }\left[\frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow\right)\right]\\
+	&+ \left[ \frac{V}{\lambda}\left(c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow\right) \right] \frac{1}{A^J_- - \frac{V^2}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) }\left[ - \frac{J}{2}s^-\right]\\
+	&+ \left[- \frac{J}{2}s^+ \right] \frac{1}{A^J_- - \frac{V^2}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) }\left[\frac{V}{\lambda}\left( c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow\right)\right]\\
+	&+ \frac{J^2}{4}\left[s^+ \right] \frac{1}{A^J_- - \frac{V^2}{E_g N^*}\sum_{kk^\prime} \left(\epsilon_k + \epsilon_k^2\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) }\left[s^-\right]\\
+\end{aligned}\end{equation}
+We first consider only zeroth order terms of the central propagator. Defining \(\xi_k = \epsilon_k + \epsilon_k^2\), we get
+\begin{equation}\begin{aligned}
+	&H_0^* - \frac{J}{2}s^z -\frac{2V^2}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right] + \frac{V^2 }{E_g N^*}\sum_{kk^\prime} \left(\xi_k \right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right) \\
+	&+ \frac{V^4}{E^2_g {N^*}^2 \left( E_g + \frac{J}{4} \right) }\sum_{kk^\prime}\left[\left(2 + \xi_k \right) c_{k \downarrow}c^\dagger_{k^\prime\uparrow} + \left(\xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right]\sum_{kk^\prime} \left(\xi_k \right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)\\
+	&- \frac{V^2 J}{2E_g \left( E_g + \frac{J}{4} \right){N^*}}\sum_{kk^\prime}\left[\left(2 + \xi_k \right) c_{k \downarrow}c^\dagger_{k^\prime\uparrow} + \left(\xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right]\sum_{kk^\prime}c^\dagger_{k \downarrow}c_{k^\prime \uparrow}\\
+	&- \frac{JV^2}{2E_g \left( E_g + \frac{J}{4} \right)N^*} \sum_{kk^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}\sum_{kk^\prime} \left(\xi_k \right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)\\
+	&+ \frac{J^2}{4\left( E_g + \frac{J}{4} \right)}\sum_{kk^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow} \sum_{kk^\prime}c^\dagger_{k \downarrow}c_{k^\prime \uparrow}\\
+\end{aligned}\end{equation}
+We have set \(s^z = -\frac{1}{2}\) in the denominator, hence the \(E_g = \frac{J}{4}\). If we also consider the first order terms from the central propagator,
+\begin{equation}\begin{aligned}
+\end{aligned}\end{equation}
+
+
 
 
 \subsection{Luttinger's sum and Friedel's sum rules}
@@ -6372,48 +6497,67 @@ where \(\uparrow_c\) represents a state with \(C^z= \frac{1}{2}\) and the \(d\) 
 \begin{equation}\begin{aligned}
 	S_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left(c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right)
 \end{aligned}\end{equation}
-For our choice of a two-momenta Kondo cloud, this expands to
-\begin{equation}\begin{aligned}
-	S_2^z = \frac{1}{4}\left[c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow} - c^\dagger_{k_{1}\downarrow}c_{k_{-1} \downarrow} + c^\dagger_{k_{-1}\uparrow}c_{k_{1} \uparrow} - c^\dagger_{k_{-1}\downarrow}c_{k_{1} \downarrow}+ \hat n_\uparrow - \hat n_\downarrow\right]
-\end{aligned}\end{equation}
 The eigenstate for this operator, with an eigenvalue of \(+ \frac{1}{2}\), is
 \begin{equation}\begin{aligned}
-	\ket{\uparrow} \equiv \ket{k_1 \uparrow, k_{-1} \uparrow} = \ket{\hat n_{k_1 \uparrow} = \hat n_{k_{-1} \uparrow} = 1, \hat n_{k_{-1} \downarrow} = \hat n_{k_1 \downarrow} = 0}
+\ket{\uparrow} \equiv \frac{1}{N^*}\sum_{k \in \left[-\Lambda^*, \Lambda^*\right]} \ket{k \uparrow} = \frac{1}{N^*}\sum_{k \in \left[-\Lambda^*, \Lambda^*\right]}\ket{\hat n_{k \uparrow} = 1, \hat n_{q\sigma \neq k \uparrow} = 0}
 \end{aligned}\end{equation}
-The notation is as follows: only particle states will be explicitly mentioned. In other words, all states \(\ket{k\sigma}\) that are explicitly depicted inside the ket will be particle states (\(\hat n_{k\sigma}=1\)). All states that are \textit{not} explicitly mentioned will be vacant. Hence, the state \(\ket{k_1 \uparrow}\) actually means \(\ket{\hat n_{k_1 \uparrow} = 1, \hat n_{k_{-1} \uparrow} = \hat n_{k_{-1} \downarrow} = \hat n_{k_1 \downarrow} = 0}\) and \(\ket{k_{-1} \uparrow}\) means \(\ket{\hat n_{k_1 \uparrow} = \hat n_{k_1 \downarrow} = \hat n_{k_{-1} \downarrow} = 0, \hat n_{k_{-1} \uparrow} = 1}\). 
-\pb The action of \(S_2^z\) on this state is
+The state \(\ket{k \uparrow}\) is formally \(c^\dagger_{k \uparrow} \ket{0}\), \(\ket{0}\) being the state with no particles. In other words, the state \(\ket{\uparrow}\) is simply the equal superposition of all states with a single up electron.
+\pb To show that this is indeed the eigenstate of \(S^z_2\), we compute the action of \(S_2^z\) on this state:
 \begin{equation}\begin{aligned}
-	S_2^z \ket{\uparrow} = \frac{1}{4}\left[\hat n_\uparrow - \hat n_\downarrow\right]\ket{k_1 \uparrow, k_{-1} \uparrow} = \frac{1}{2}\ket{\uparrow}
+	S_2^z \ket{\uparrow} = \frac{1}{2{N^*}^2}\sum_{kk^\prime q}\left(c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right)\ket{q \uparrow}
 \end{aligned}\end{equation}
-Similarly, the \(- \frac{1}{2}\) eigenstate is
+We have dropped the regime of the summation because it is understood that all momenta are summed inside the fixed point window. We can drop the second part \(c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\) because there is no down spin electron to annihilate.
 \begin{equation}\begin{aligned}
-	\ket{\downarrow} \equiv \ket{k_1 \downarrow, k_{-1} \downarrow}
+	S_2^z \ket{\uparrow} &= \frac{1}{2{N^*}^2}\sum_{kk^\prime q}c^\dagger_{k \uparrow}c_{k^\prime \uparrow}\ket{q \uparrow}\\
+			     &=\frac{1}{2{N^*}^2}\sum_{kk^\prime q}c^\dagger_{k \uparrow}c_{k^\prime \uparrow}\delta_{k^\prime q}\ket{q \uparrow}\\
+			     &=\frac{1}{2{N^*}^2}\sum_{kk^\prime}c^\dagger_{k \uparrow}\ket{0}\\
+			     &=\frac{1}{2{N^*}}\sum_{k}c^\dagger_{k \uparrow}\ket{0} && \left[\sum_{k^\prime} = N^*\right] \\
+			     &=\frac{1}{2}\ket{ \uparrow}
+\end{aligned}\end{equation}
+We can find the other eigenstate by applying on this state with \(S^-_2\):
+\begin{equation}\begin{aligned}
+	S^-_2 \ket{ \uparrow} &= \frac{1}{{N^*}^2}\sum_{kk^\prime q}c^\dagger_{k \downarrow}c_{k^\prime \uparrow} \ket{q \uparrow}\\
+			      &= \frac{1}{{N^*}}\sum_{k}c^\dagger_{k \downarrow}\ket{0}\\
+			      &= \frac{1}{{N^*}}\sum_{k}\ket{k \downarrow}\\
+\end{aligned}\end{equation}
+Thus, the eigenstate for \(S^z_2 = -\frac{1}{2}\) is
+\begin{equation}\begin{aligned}
+	\ket{ \downarrow} = \frac{1}{{N^*}}\sum_{k}\ket{k \downarrow}
 \end{aligned}\end{equation}
 Now we turn to the eigenstates of \(C_2^z\). That operator is defined as
 \begin{equation}\begin{aligned}
-	C_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right) = \frac{1}{4}\left(c^\dagger_{k_{1}\uparrow}c_{k_{-1} \uparrow} - c_{k_{-1} \downarrow}c^\dagger_{k_{1}\downarrow} + c^\dagger_{k_{-1} \uparrow}c_{k_1 \uparrow} - c_{k_1 \downarrow}c^\dagger_{k_{-1} \downarrow} + \hat n - 2\right)
+	C_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right)
 \end{aligned}\end{equation}
 The eigenstate for \(C_2^z = + \frac{1}{2}\) will be 
 \begin{equation}\begin{aligned}
-	\ket{ \uparrow_c} \equiv \ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+	\ket{ \uparrow_c} \equiv \frac{1}{{N^*}^2}\sum_{kk^\prime}\ket{k \uparrow, k^\prime \downarrow}
 \end{aligned}\end{equation}
-which means all four states are filled. The action of \(C_2^z\) on this state is
+which means you consider all pairs of momenta and place an up electron on one of them and a down on the other. The action of \(C_2^z\) on this state is
 \begin{equation}\begin{aligned}
-	C_2^z\ket{ \uparrow_c} = \frac{\hat n -2}{4}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow} = \frac{1}{2}\ket{ \uparrow_c}
+	C_2^z\ket{ \uparrow_c} &= \frac{1}{2{N^*}^3}\sum_{kk^\prime q q^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right)\ket{q \uparrow, q^\prime \downarrow}\\
+			       &= \frac{1}{2{N^*}^3}\sum_{kk^\prime q q^\prime}\left[ c^\dagger_{k \uparrow}c_{k^\prime \uparrow} \ket{q \uparrow, q^\prime \downarrow} - \left(\delta_{k^\prime k} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right) \ket{q \uparrow, q^\prime \downarrow}\right]\\
+			       &= \frac{1}{2{N^*}^3}\sum_{kk^\prime q q^\prime}\left[ \delta_{k^\prime q}\ket{k \uparrow, q^\prime \downarrow} - \delta_{k^\prime k} \ket{q \uparrow, q^\prime \downarrow} + \delta_{k^\prime q^\prime} \ket{q \uparrow, k \downarrow}\right]\\
+\end{aligned}\end{equation}
+Since all the momenta labels are dummy indices, we exchange the labels \(k\) and \(q^\prime\) in the third term. The second and third terms then cancel out, and we are left with
+\begin{equation}\begin{aligned}
+	C_2^z\ket{ \uparrow_c} &= \frac{1}{2{N^*}^2}\sum_{kk^\prime q q^\prime}\ket{k \uparrow, q^\prime \downarrow}\\
+			       &= \frac{1}{2}\ket{ \uparrow_c}
 \end{aligned}\end{equation}
 The down eigenstate is
 \begin{equation}\begin{aligned}
-	\ket{ \downarrow_c} \equiv \ket{0}
+	C^-_2 \ket{ \uparrow_c} &= \frac{1}{{N^*}^3}\sum_{kk^\prime q q^\prime}c_{k \downarrow}c_{k^\prime \uparrow}\ket{q \uparrow, q^\prime \downarrow}\\
+				&= \ket{0}
 \end{aligned}\end{equation}
 which is the state with all states empty. We can thus write down the singlet part of the ground state wavefunction:
 \begin{equation}\begin{aligned}
-	\ket{\text{cloud}} = \frac{1}{2}\ket{\uparrow^d}\ket{k_1 \downarrow, k_{-1} \downarrow} - \frac{1}{2}\ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} + \frac{1}{2}\ket{2^d}\ket{0} - \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}
+	\ket{\text{cloud}} = c_1\left[\ket{\uparrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \downarrow} + \ket{ k_{-1} \downarrow}\right) - \ket{\downarrow^d}\frac{1}{\sqrt 2}\left(\ket{k_1 \uparrow} + \ket{ k_{-1} \uparrow}\right)\right] + c_2\left[\ket{2^d}\ket{0}\right.\\
+	- \left.\ket{0^d}\frac{1}{{N^*}}\sum_{kk^\prime}\ket{k \uparrow, k^\prime \downarrow}\right]
 \end{aligned}\end{equation}
 This state will of course be in direct product with the disentangled electronic states (integrals of motions, IOMS) outside the emergent window. If we assume there are two such momenta (hence four momenta+spin) states on either side of the emergent window (which we label as \(k_{\pm 2}\sigma, k_{\pm 3}\sigma\)), and if we recall that we had used the configuration \(\hat n=0\) for the IOMS above the FS and \(\hat n =1\) for the ones below, the total state becomes
 \begin{equation}\begin{aligned}
-	\ket{\text{IR}} \equiv \ket{\Psi_0} =& \ket{\hat n_{k_{-2}} = \hat n_{k_{-3}} = 2} \otimes \left[\frac{1}{2}\ket{\uparrow^d}\ket{k_1 \downarrow, k_{-1} \downarrow} - \frac{1}{2}\ket{\downarrow^d}\ket{k_1 \uparrow, k_{-1} \uparrow} + \frac{1}{2}\ket{2^d}\ket{0} \right.\\
-					     &\left.- \frac{1}{2}\ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow}\right] \otimes \ket{\hat n_{k_{2}} = \hat n_{k_{3}} = 0}
+	\ket{\text{IR}} \equiv \ket{\Psi_0} =& \ket{\hat n_{k_{-2}} = \hat n_{k_{-3}} = 2} \otimes \ket{\text{cloud}} \otimes \ket{\hat n_{k_{2}} = \hat n_{k_{3}} = 0}
 \end{aligned}\end{equation}
+\comm{
 In order to allow a numerical implementation of the reverse RG, we need to write this wavefunction completely as sums of Fock states. We will use the following notation:
 \begin{equation}\begin{aligned}
 	\big\vert\overbrace{n_{k_{3} \uparrow}n_{k_{3} \downarrow}n_{k_{2} \uparrow} n_{k_{2} \downarrow}}^\text{unoccupied IOMS}\quad \quad \underbrace{n_{k_{1} \uparrow}n_{k_{1} \downarrow}}_\text{cloud above FS}\quad\overbrace{n_{d \uparrow} n_{d \downarrow}}^\text{impurity} \quad\underbrace{n_{k_{-1} \uparrow}n_{k_{-1} \downarrow}}_\text{cloud below FS} \quad \overbrace{n_{k_{-2} \uparrow}n_{k_{-2} \downarrow}n_{k_{-3} \uparrow}n_{k_{-3} \downarrow}}^\text{occupied IOMS}\big\rangle
@@ -6427,6 +6571,7 @@ In order to allow a numerical implementation of the reverse RG, we need to write
 	 - \frac{1}{2}&\ket{0000} \otimes \ket{0^d}\ket{k_1 \uparrow, k_1 \downarrow,k_{-1} \uparrow,k_{-1} \downarrow} \otimes \ket{1111}\\
 	 =\frac{1}{2}&\ket{0000} \otimes \left[\ket{01} \underbrace{\ket{10}}_\text{imp}\ket{01} - \ket{10}\underbrace{\ket{01}}_\text{imp}\ket{10} + \ket{00}\underbrace{\ket{11}}_\text{imp}\ket{00} - \ket{11}\underbrace{\ket{00}}_\text{imp}\ket{11}\right] \otimes \ket{1111}\\
 \end{aligned}\end{equation}
+}
 The next step is to write down the unitaries that will take us from the IR ground state to the UV ground state. In the forward RG, we used the following unitaries for decoupling an electron \(q\beta\):
 \begin{equation}\begin{aligned}
 	U_{0\beta} = \frac{1}{\sqrt 2}\left[1 - \eta_{0\beta}^\dagger + \eta_{0\beta} \right] \\
