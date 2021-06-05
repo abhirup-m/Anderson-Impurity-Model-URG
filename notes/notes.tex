@@ -6133,6 +6133,7 @@ We will first look at the special case of \(K = 0\). There, the above expression
 We will make use of the following commutators:
 \begin{equation}\begin{aligned}
 	&\left[\left(H_0^*\right)^m, c_{2\sigma}\right] = - \sum_k \frac{\epsilon^m_k}{\sqrt{N^*}}c_{k\sigma}, && \left[\left(H_0^*\right)^m, c^\dagger_{2\sigma}\right] = \sum_k \frac{\epsilon_k^m}{\sqrt{N^*}}c^\dagger_{k\sigma}, && m = 1, 2\\
+	&\left[\left(H_0^*\right)^m, s^+\right] = \sum_{kk^\prime}\left(\epsilon_k - \epsilon_{k^\prime}\right)^mc^\dagger_{k\beta}c_{k^\prime \ol \beta} , &&&& m = 1, 2\\
 	&\left[\left(s^z\right)^m, c_{2\sigma}\right] = - \left(\frac{\sigma}{2}\right)^mc_{2\sigma}, && \left[\left(s^z\right)^m, c^\dagger_{2\sigma}\right] = \left(\frac{\sigma}{2}\right)^mc^\dagger_{2\sigma}, && m = 1, 2\\
 	&\left[\left(c^z\right)^m, c_{2\sigma}\right] = - \left(\frac{1}{2}\right)^mc_{2\sigma}, && \left[\left(c^z\right)^m, c^\dagger_{2\sigma}\right] = \left(\frac{1}{2}\right)^mc^\dagger_{2\sigma}, && m = 1, 2\\
 \end{aligned}\end{equation}
@@ -6165,14 +6166,29 @@ In all the expressions, we have dropped terms that have more than 4 operators in
 \end{aligned}\end{equation}
 We first consider only zeroth order terms of the central propagator. Defining \(\xi_k = \epsilon_k + \epsilon_k^2\), we get
 \begin{equation}\begin{aligned}
-	&H_0^* - \frac{J}{2}s^z -\frac{2V^2}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right] + \frac{V^2 }{E_g N^*}\sum_{kk^\prime} \left(\xi_k \right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right) \\
-	&+ \frac{V^4}{E^2_g {N^*}^2 \left( E_g + \frac{J}{4} \right) }\sum_{kk^\prime}\left[\left(2 + \xi_k \right) c_{k \downarrow}c^\dagger_{k^\prime\uparrow} + \left(\xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right]\sum_{kk^\prime} \left(\xi_k \right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)\\
-	&- \frac{V^2 J}{2E_g \left( E_g + \frac{J}{4} \right){N^*}}\sum_{kk^\prime}\left[\left(2 + \xi_k \right) c_{k \downarrow}c^\dagger_{k^\prime\uparrow} + \left(\xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right]\sum_{kk^\prime}c^\dagger_{k \downarrow}c_{k^\prime \uparrow}\\
-	&- \frac{JV^2}{2E_g \left( E_g + \frac{J}{4} \right)N^*} \sum_{kk^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}\sum_{kk^\prime} \left(\xi_k \right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)\\
-	&+ \frac{J^2}{4\left( E_g + \frac{J}{4} \right)}\sum_{kk^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow} \sum_{kk^\prime}c^\dagger_{k \downarrow}c_{k^\prime \uparrow}\\
+	&H_0^* - \frac{J}{2}\underbrace{s^z}_{\frac{1}{2}} -\frac{2V^2}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right] + \frac{V^2 }{E_g N^*}\sum_{kk^\prime} \left(\xi_k \right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right) \\
+	&+ \frac{V^4}{E^2_g {N^*}^2 \left( E_g + \frac{J}{4} \right) }\sum_{kk^\prime}\left(\xi_{k^\prime} + 2 - \xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\sum_{kk^\prime} \left(\xi_k + \xi_{k^\prime}\right)c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
+	&+ \frac{V^2 J}{2E_g \left( E_g + \frac{J}{4} \right){N^*}}\sum_{kk^\prime}\left(\xi_{k^\prime} + 2 - \xi_k \right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\sum_{kk^\prime}c^\dagger_{k \downarrow}c_{k^\prime \uparrow}\\
+	&+ \frac{JV^2}{2E_g \left( E_g + \frac{J}{4} \right)N^*} \sum_{kk^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}\sum_{kk^\prime} \left(\xi_k + \xi_{k^\prime}\right)c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
+	&+ \frac{J^2}{4\left( E_g + \frac{J}{4} \right)}\underbrace{s^+ s^-}_{s^z + \frac{1}{2}= 1}
 \end{aligned}\end{equation}
-We have set \(s^z = -\frac{1}{2}\) in the denominator, hence the \(E_g = \frac{J}{4}\). If we also consider the first order terms from the central propagator,
+We have set \(s^z = -\frac{1}{2}\) in the denominator, hence the \(E_g = \frac{J}{4}\). If we also consider the first and second order terms from the central propagator, note that they will produce terms of more than quartic interactions in the first three terms. For the last term, we get
 \begin{equation}\begin{aligned}
+	\frac{J^2}{4\left( E_g + \frac{J}{4} \right)}s^+\left[\frac{H_0^*}{E_g + \frac{J}{4}} + \left(\frac{H_0^*}{E_g + \frac{J}{4}}\right)^2\right]s^-
+\end{aligned}\end{equation}
+Using the commutator of \(H_0^*\) with \(s^+\) to bring \(H_0^*\) to the left, and using \(s^+ s^- = s^z + \frac{1}{2} = 1\), we get
+\begin{equation}\begin{aligned}
+	\frac{J^2}{4\left( E_g + \frac{J}{4} \right)}\left[\frac{H_0^*}{E_g + \frac{J}{4}} + \left(\frac{H_0^*}{E_g + \frac{J}{4}}\right)^2 - \sum_{kk^\prime qq^\prime} \left\{\frac{\epsilon_k - \epsilon_{k^\prime}}{E_g + \frac{J}{4}} + \left(\frac{\epsilon_k - \epsilon_{k^\prime}}{E_g + \frac{J}{4}}\right)^2\right\} c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}\right] 
+\end{aligned}\end{equation}
+The full effective Hamiltonian, for \(K=0\), up to quartic interactions, is
+\begin{equation}\begin{aligned}
+	H_0^* + \frac{J}{4}\left(\frac{J}{E_g + \frac{J}{4}} - 1\right) - \frac{2V^2}{E_g} -\frac{2V^2}{E_g}\left[\frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right] + \frac{J^2}{4\left( E_g + \frac{J}{4} \right) }\left[\frac{H_0^*}{E_g + \frac{J}{4}} + \left(  \frac{H_0^*}{E_g + \frac{J}{4}}\right)^2 \right] \\
+	+ \sum_{kk^\prime q q^\prime} F_{kk^\prime qq^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}
+\end{aligned}\end{equation}
+The coefficient \(F_{kk^\prime qq^\prime}\) is
+\begin{equation}\begin{aligned}
+	F_{kk^\prime qq^\prime} = \frac{V^2}{E_g N^* (E_g + \frac{J}{4})}\left[\frac{V^2}{E_g N^*}\left( \xi_{k^\prime} + 2 - \xi_k \right)\left( \xi_q + \xi_{q^\prime} \right) + \frac{J}{2}\left( \xi_{k^\prime} + 2 - \xi_k + \xi_q + \xi_{q^\prime} \right)  \right] \\
+	- \frac{J^2}{4\left( E_g + \frac{J}{4} \right)} \left[\frac{\epsilon_k - \epsilon_{k^\prime}}{E_g + \frac{J}{4}} + \left(\frac{\epsilon_k - \epsilon_{k^\prime}}{E_g + \frac{J}{4}}\right)^2\right]
 \end{aligned}\end{equation}
 
 
