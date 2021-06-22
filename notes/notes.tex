@@ -6354,7 +6354,7 @@ where the Landau parameter is given by
 \end{aligned}\end{equation}
 Since we are working with a spin eigenstate, \(\hat n_{k\sigma}\hat n_{k^\prime\sigma}\) will be 0. The quasiparticle energy then simplifies to
 \begin{equation}\begin{aligned}
-	\epsilon_{k\sigma} = \epsilon_{k}^0 + \sum_{k}f_{kk^\prime}\hat n_{k^\prime\overline\sigma}
+	\epsilon_{k\sigma} = \epsilon_{k}^0 + \sum_{k^\prime}f_{kk^\prime}\hat n_{k^\prime\overline\sigma}
 \end{aligned}\end{equation}
 Due to the absence of a spin-parallel term, we can write
 \begin{equation}\begin{aligned}
@@ -6375,15 +6375,89 @@ This interaction arises from the enhanced entanglement between the impurity and 
 	\label{Fkkqq}
 \end{figure}
 \section{Calculation of Wilson ratio from effective Fermi liquid Hamiltonian}
-At \(T=0\), we can ignore the two-particle scattering interaction and focus on the Fermi liquid part of the effective Hamiltonian. The Wilson ratio for a general Fermi liquid is given, up to leading order in the Landau parameter \(F_0^a\), as
+We will need the following equations:
 \begin{equation}\begin{aligned}
-	R = \frac{1}{1 + F_0^a} \approx 1 - F_0^a
+	dn_{k\sigma} &= \frac{\partial{n}}{\partial{\epsilon_{k\sigma}}}\left( d\epsilon_{k\sigma} - d\mu \right) &&\left[\text{follows from differentiating FD distribution}\right] \\
+	C_v &= \frac{\:\mathrm{d}\epsilon}{\:\mathrm{d}T}\\
+	\chi^{s,c} &= \frac{\:\mathrm{d}}{\:\mathrm{d}(B, \mu)}\left(n_\uparrow \mp n_\downarrow\right) \\
+	2f_0^{s,a} &= \sum_k\left(f_{kk^\prime \uparrow \uparrow} \pm f_{kk^\prime \uparrow \downarrow}\right)\\
+	F_0^{s,a} &= \rho(0) f_0^{s,a}
 \end{aligned}\end{equation}
-while the charge susceptibility is 
+\subsection{Specific heat}
 \begin{equation}\begin{aligned}
-	\chi_c = \frac{\rho(\epsilon_F)}{1 + F_0^s} \approx \rho\left(\epsilon_F\right) \left(1 - F_0^s\right)
+	C &= \frac{\:\mathrm{d}}{\:\mathrm{d}T}\sum_{k\sigma}\epsilon_{k\sigma}n_{k\sigma} \\
+	    &\approx \sum_{k\sigma}\epsilon^0_{k\sigma} \frac{\:\mathrm{d}n_{k\sigma}}{\:\mathrm{d}T} && \left[\text{no quasiparticles at ground state}\right] \\
+	    &\approx \sum_{k\sigma}\epsilon^0_{k\sigma} \frac{\:\mathrm{d}n_{k\sigma}}{\:\mathrm{d}T} && \left[\text{same expression as Fermi gas but with modified distribution function}\right] \\
+	    &= \rho(0) T
 \end{aligned}\end{equation}
-These Landau parameters are defined as follows:
+where \(\rho = \rho_0 + \rho_{imp}\) is the total quasiparticle DOS with contributions from conduction bath and impurity.
+\begin{equation}\begin{aligned}
+	C_{imp} = \rho_{imp}T
+\end{aligned}\end{equation}
+
+\subsection{Charge susceptibility}
+\begin{equation}\begin{aligned}
+	\chi^c &= \frac{\:\mathrm{d}N}{\:\mathrm{d}\mu}\\
+\end{aligned}\end{equation}
+Due to change in chemical potential, change in \(\epsilon_{k\sigma}\) should be isotropic and SU(2)-symmetric. Hence
+\begin{equation}\begin{aligned}
+	d\epsilon_{k\sigma} &= \sum_{k^\prime\sigma^\prime}f_{kk^\prime\sigma\sigma^\prime}d n_{k^\prime\sigma^\prime}\\
+			    &= d n\sum_{k^\prime}\left(f_{kk^\prime\uparrow \uparrow} + f_{kk^\prime \uparrow \downarrow}\right) && \left[dn = dn_{k^\prime \uparrow} = dn_{k \downarrow}\right] \\
+			    &= 2dn f_0^s
+\end{aligned}\end{equation}
+Therefore,
+\begin{equation}\begin{aligned}
+	dN &= \sum_{k\sigma}dn_{k\sigma} \\
+	   &= \sum_{k\sigma}\frac{\partial{n}}{\partial{\epsilon_{k\sigma}}}\left( d\epsilon_{k\sigma} - d\mu \right) \\
+	   &= \sum_{k\sigma}-\frac{1}{2}\rho\left(2dn f_0^s - d\mu \right) \\
+	   &= -\rho(0) d N f_0^s + d\mu \rho(0) \\
+	   &\approx d\mu \rho(0) - \rho(0) f_0^s d\mu \rho(0) \left[\text{substitute \(dN\) back into itself}\right] \\
+	\implies \frac{\:\mathrm{d}N}{\:\mathrm{d}\mu} &= \rho(0)\left( 1 - \rho(0)f_0^s \right) \\
+	\implies \chi^c_{imp} &= \rho(0)_{imp} - \rho(0)f_0^s \\
+\end{aligned}\end{equation}
+From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero, so we can write down the following relation:
+\begin{equation}\begin{aligned}
+	\label{fp_constraint}
+	f_0^s = \frac{\rho(0)_{imp}}{\rho(0)}
+\end{aligned}\end{equation}
+
+\subsection{Spin susceptibility}
+\begin{equation}\begin{aligned}
+	\chi^s &= \frac{\:\mathrm{d}m}{\:\mathrm{d}\mu}\\
+\end{aligned}\end{equation}
+Due to change in magnetic field, change in \(\epsilon_{k\sigma}\) should be isotropic and SU(2)-\text{anti}symmetric. Hence
+\begin{equation}\begin{aligned}
+	d\epsilon_{k\sigma} &= -\frac{1}{2}dB \sigma + \sum_{k^\prime\sigma^\prime}f_{kk^\prime\sigma\sigma^\prime}d n_{k^\prime\sigma^\prime}\\
+			    &= -\frac{1}{2}dB \sigma + d n_{\sigma}\sum_{k^\prime}\left(f_{kk^\prime\uparrow \uparrow} - f_{kk^\prime \uparrow \downarrow}\right) && \left[dn_{k^\prime \uparrow} = -dn_{k \downarrow}\right] \\
+			    &= -\frac{1}{2}dB \sigma + 2dn_\sigma f_0^a
+\end{aligned}\end{equation}
+Since the total number remains constant, \(\mu=0\). Therefore,
+\begin{equation}\begin{aligned}
+	dm &= \sum_{k}\left(dn_{k \uparrow} - dn_{k \downarrow}\right) \\
+	   &= -\frac{1}{2}\sum_{k}\rho\left( d\epsilon_{k \uparrow} - d\epsilon_{k \downarrow} \right) \\
+	   &= -\frac{1}{2}\sum_{k}\rho\left(-dB + 2f_0^a \left(dn_{k \uparrow} - dn_{k \downarrow}\right)\right) \\
+	   &= dB\rho(0) - dm \rho(0)f_0^a \\
+	   &\approx dB\rho(0) - \rho(0)f_0^aB\rho(0) \\
+	\implies \frac{\:\mathrm{d}m}{\:\mathrm{d}B} &= \rho(0)\left( 1 - \rho(0)f_0^a \right) \\
+	\implies \chi^s_{imp} &= \rho(0)_{imp} - \rho(0)f_0^a \\
+\end{aligned}\end{equation}
+
+\subsection{Wilson ratio}
+The Wilson ratio for the impurity is defined as
+\begin{equation}\begin{aligned}
+	R = \frac{\chi^s_{imp}}{\frac{C_{imp}}{T}}
+\end{aligned}\end{equation}
+From eq.~\ref{rel_landau}, we have \(f_0^s = -f_0^a\), which, when combined with eq.~\ref{fp_constraint}, gives
+\begin{equation}\begin{aligned}
+	\chi^s_{imp} &= 2\rho(0)_{imp}
+\end{aligned}\end{equation}
+The Wilson ratio becomes
+\begin{equation}\begin{aligned}
+	R = \frac{2\rho(0)_{imp}}{\rho(0)_{imp}} = 2
+\end{aligned}\end{equation}
+
+\comm{
+The Landau parameters are defined as follows:
 \begin{equation}\begin{aligned}
 	F_0^a &= \frac{1}{2}\int_{-1}^1 dx P_0(x)\frac{1}{2}\left( f_{kk^\prime \uparrow \uparrow} - f_{kk^\prime \uparrow \downarrow} \right) \\
 	F_0^s &= \frac{1}{2}\int_{-1}^1 dx P_0(x)\frac{1}{2}\left( f_{kk^\prime \uparrow \uparrow} + f_{kk^\prime \uparrow \downarrow} \right) \\
@@ -6400,7 +6474,7 @@ Substituting this into the Wilson ratio then gives
 \begin{equation}\begin{aligned}
 	R = 2
 \end{aligned}\end{equation}
-
+}
 \section{Luttinger's and Friedel's sum rules}
 The subsequent discussions are for the first quadrant where \(U^* = 0\) and \(J^* > K^*\). At high temperatures, we see that the impurity susceptibility attains the value of
 \begin{equation}\begin{aligned}
