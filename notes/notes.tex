@@ -1,4 +1,6 @@
 \documentclass[12pt,twoside]{report}
+% \usepackage{charter}
+\usepackage{booktabs}
 \usepackage{tocbibind}
 \setcounter{tocdepth}{1}
 \raggedbottom
@@ -114,7 +116,7 @@ Since the RG transformations are unitary, all eigenvalues and eigenstates are ke
 The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
 \end{itemize}
 The work is organized as follows. Section \ref{section1} goes over the available work on the Anderson and Kondo model. Section \ref{urgform} lays out the URG formalism and prescription. Section \ref{kondourg} solves the Kondo model using the URG method. Section \ref{siamurg} contains the URG analysis of the SIAM.
-\chapter{Preliminaries}\label{section1}
+\chapter{Preliminaries and Existing Results}\label{section1}
 %\subsection{\il{T-}matrix and \il{S-}matrix}
 \section{Some important results of scattering theory}
 \subsection{T-matrix and S-matrix}
@@ -5609,6 +5611,7 @@ The first term is the kinetic energy of all the electrons. The next two terms ar
 The final two terms represent the diagonal pieces of the RG steps that have been completed. These survive because the URG removes only the number-off-diagonal terms; terms like \(S^d_z s_z\) and \(C^d_z C_z\) conserve the number of particles and hence survive. These will also be renormalised, and hence the subscript \(q\) on \(J^z_q\) signifies that it is has been renormalised up to a certain momentum.
 \pb Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
 \begin{equation}\begin{aligned}
+	\label{fixed_point_ham}
 	\ham_{IR} = \sum_{\sigma, k<\Lambda^*}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\ua}\hat n_{d\da} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
 \end{aligned}\end{equation}
 To make progress with the ground state, we will simplify the effective Hamiltonian by mapping it onto a two-site problem. One site is of course the impurity site. The other site will be formed by the centre of mass degree of freedom of the conduction electrons, which we define as
@@ -5749,6 +5752,7 @@ The first four states are eigenstates. The last two are not, but they form a two
 \end{aligned}\end{equation}
 The symbol \(\gamma\) stands for the quantity
 \begin{equation}\begin{aligned}
+	\label{gamma_def}
 	\gamma = \frac{1}{2v}\left[ \frac{1}{4}\left( 3j + k \right) - \epsilon_d \right] 
 \end{aligned}\end{equation}
 and the coefficients \(c^{s,c}_\pm\) for the spin and charge singlets (the superscripts \(s,c\) designate which singlet the coefficient sticks to) are
@@ -6352,15 +6356,6 @@ where the Landau parameter is given by
 	\label{fermiliq}
 	f_{kk^\prime} = \left[\frac{J^2}{4\left( E_g + \frac{J}{4} \right)^2} - \frac{2V^2}{E_g^2}\right]^{-1}\left[\frac{J^2}{4\left( E_g + \frac{J}{4} \right) ^3} - \frac{2V^2}{E_g^3}\right]\epsilon_k \epsilon_{k^\prime}
 \end{aligned}\end{equation}
-Since we are working with a spin eigenstate, \(\hat n_{k\sigma}\hat n_{k^\prime\sigma}\) will be 0. The quasiparticle energy then simplifies to
-\begin{equation}\begin{aligned}
-	\epsilon_{k\sigma} = \epsilon_{k}^0 + \sum_{k^\prime}f_{kk^\prime}\hat n_{k^\prime\overline\sigma}
-\end{aligned}\end{equation}
-Due to the absence of a spin-parallel term, we can write
-\begin{equation}\begin{aligned}
-	\label{rel_landau}
-	f_{kk^\prime\sigma\sigma} = 0,  f_{kk^\prime\sigma\overline\sigma} = f_{kk^\prime}
-\end{aligned}\end{equation}
 The more interesting interaction is the off-diagonal term
 \begin{equation}\begin{aligned}
 	 \sum_{kk^\prime q q^\prime} F_{kk^\prime qq^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}
@@ -6374,8 +6369,137 @@ This interaction arises from the enhanced entanglement between the impurity and 
 	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\ref{off_diag_coeff} along the RG flow.}
 	\label{Fkkqq}
 \end{figure}
-\section{Calculation of Wilson ratio from effective Fermi liquid Hamiltonian}
-We will need the following equations:
+\section{Calculation of Wilson ratio from effective Hamiltonian}
+In this section, we will calculate the zero temperature Wilson ratio of the impurity in the Kondo regime of the SIAM. Since this is a low energy property, our starting point will be the fixed point Hamiltonian of eq.~\ref{fixed_point_ham}, after substituting \(U^*=K^*=0\) (because we are in the first quadrant):
+\begin{equation}\begin{aligned}
+	\ham^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
+\end{aligned}\end{equation}
+We also convert \(\tau\) to \(\hat n\), ignoring the constant part, and write the kinetic energy part as a nearest-neighbor hopping problem:
+\begin{equation}\begin{aligned}
+	\ham^* = t\sum_{\sigma\left<i,j \right>}\left(c^\dagger_{i\sigma}c_{j\sigma} + \text{h.c.}\right) + \sum_{\sigma}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
+\end{aligned}\end{equation}
+We know that the ground state for the interacting part is predominantly the spin-singlet, so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
+\begin{equation}\begin{aligned}
+	t\sum_{\sigma} c^\dagger_{0\sigma}c_{1\sigma} +\text{h.c.}
+\end{aligned}\end{equation}
+as a weak perturbation. 1 here stands for the sites that are adjacent to the origin. Once that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. The goal here is to see whether the effect of the perturbation is to lower the energy of the singly-occupied state \(\ket{\hat n_1 = 1}\) compared to the doubly-occupied state \(\ket{\hat n_1 = 2}\) or to raise it. If the perturbation shifts the energy of the singly-occupied state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled  by a repulsive term \(|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\). If, on the other hand, the effect is to raise the energy of the singly-occupied state with respect to the \(\hat n_1 = 2\) state, then that effect is equivalent to an attractive term \(-|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\).
+\pb To be precise, we will compare the energy shifts corresponding to the two states
+\begin{equation}\begin{aligned}
+	\ket{\phi^{(0)}_1} &= \underbrace{\ket{\uparrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) \\
+	\ket{\phi^{(0)}_2} &= \underbrace{\ket{\uparrow, \downarrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) 
+\end{aligned}\end{equation}
+In the singlet part, the first entry is the configuration of the zeroth site while the second entry is the configuration of the impurity site. Choosing the \(\uparrow\) configuration for the site 1 is not a problem because both the non-perturbative and the perturbative interactions are SU(2)-symmetric. The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
+\begin{equation}\begin{aligned}
+	E_1^{(0)} = E_2^{(0)} = -\frac{3J^*}{4}
+\end{aligned}\end{equation}
+The full list of unperturbed eigenstates are 
+\begin{equation}\begin{aligned}
+	\left\{\ket{\hat n_1 = 0}, \ket{\hat n_1=1}, \ket{\hat n_1 = 2}\right\} \otimes \left\{ \ket{S=0}, \ket{S=1, S^z=-1,0,1}, \ket{S_0^z \times S_d^z = 0}\right\} 
+\end{aligned}\end{equation}
+The perturbation is
+\begin{equation}\begin{aligned}
+	V = t\sum_\sigma \left(c^\dagger_{0\sigma}c_{1\sigma} + c^\dagger_{1\sigma}c_{0\sigma}\right)
+\end{aligned}\end{equation}
+Since \(V\) takes \(\ket{\phi_{1,2}^{(0)}}\) to completely orthogonal states, the first order corrections are 0:
+\begin{equation}\begin{aligned}
+	E_1^{(1)} = \bra{\phi_1^{(0)}} V \ket{\phi_1^{(0)}} = \bra{\phi_1^{(0)}}\frac{t}{\sqrt 2}\left(-\ket{0, 2 ,\uparrow} - \ket{2, 0, \uparrow}\right)  = 0\\
+	E_2^{(1)} = \bra{\phi_2^{(0)}} V \ket{\phi_2^{(0)}} = \bra{\phi_1^{(0)}}\frac{t}{\sqrt 2}\left(\ket{\downarrow, 2 ,\uparrow} - \ket{\uparrow, 2, \downarrow}\right)  = 0
+\end{aligned}\end{equation}
+The second order correction for a general unperturbed state \(\ket{\phi^{(0)}}\) is given by the formula
+\begin{equation}\begin{aligned}
+	E^{(2)} = \sum_{m^{(0)}\neq\phi^{(0)}}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{E^{(0)}_\phi - E^{(0)}_m}
+\end{aligned}\end{equation}
+The index m sums over all unperturbed eigenstates not equal to \(\ket{\phi^{(0)}}\), and \(E^{(0)}_\phi, E^{(0)}_m\) are the unperturbed energies for the states \(\ket{\phi^{(0)}}\) and \(\ket{m^{(0)}}\). If we look at the forms of \(V\ket{\phi_{1,2}^{(0)}}\) that we calculated above, the only eigenstates \(\ket{m^{(0)}}\) that give non-zero numerators are
+\begin{equation}\begin{aligned}
+	\left\{\ket{m^{(0)}}\right\} = \begin{cases}
+		\ket{0, 2 ,\uparrow}, \ket{2, 0, \uparrow} & \text{ if }\ket{\phi^{(0)}} = \ket{\phi_1^{(0)}} \\
+		\ket{\downarrow, 2 ,\uparrow}, \ket{\uparrow, 2, \downarrow} & \text{ if }\ket{\phi^{(0)}} = \ket{\phi_2^{(0)}}\\
+	\end{cases}
+\end{aligned}\end{equation}
+which then means that the only non-zero value of the numerator is
+\begin{equation}\begin{aligned}
+	\left( \pm \frac{t}{\sqrt 2} \right) ^2 = \frac{t^2}{2}
+\end{aligned}\end{equation}
+Also, because all the states in \(\left\{ \ket{m^{(0)}} \right\} \) involve \(S_0^z = 0\), those states will have zero energy, so all the denominators will have the value
+\begin{equation}\begin{aligned}
+	E_{\phi_{1,2}}^{(0)} - E_m^{(0)} = E_{\phi_{1,2}}^{(0)} = -\frac{3J^*}{4}
+\end{aligned}\end{equation}
+The upshot of all this is that the second order shift will be same for both the single and doubly-occupied states, so we will ignore that correction as it can be absorbed into the zero-point energy.
+\pb The third order correction is given by
+\begin{equation}\begin{aligned}
+	E^{(3)} = \sum_{i^{(0)}, j^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_i\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)} - E_\phi^{(1)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
+\end{aligned}\end{equation}
+This correction can also be argued to be zero, as follows. The second term is of course trivially zero because \(E_\phi^{(1)}\) itself is 0. For the first term, note that \(\ket{i^{(0)}}\) must have \(\hat n_0 = 0,2\) in order to give non-zero inner product with \(V\ket{\phi^{(0)}}\). If we continue this, \(V\ket{i^{(0)}}\) will have \(\hat n_0 = 1\), so \(\ket{j^{(0)}}\) must also have the same. Then, \(V\ket{j^{(0)}}\) will have \(\hat n_0 = 0, 2\) and hence the inner product \(\bra{\phi^{(0)}}V\ket{j^{(0)}}\) will be 0. The third order corrections for both the single and doubly occupied states are thus 0.
+\pb We move on to the fourth order correction. The general formula is quite formidable, so we only write down the terms that aren't outright zero for this problem:
+\begin{equation}\begin{aligned}
+	E^{(4)} = \sum_{i^{(0)}, j^{(0)}, k^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{k^{(0)}}\bra{k^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_k\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)\left(E^{(0)}_\phi - E^{(0)}_i\right)} - E_\phi^{(2)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
+\end{aligned}\end{equation}
+For the singly-occupied state, the calculation pans out as follows:
+\begin{equation}\begin{aligned}
+	\left\{ \ket{i^{(0)}} \right\} = \begin{cases}
+		\ket{0, 2, \uparrow} &\implies \left\{ \ket{j^{(0)}}\right\} = \begin{cases}
+			\ket{\uparrow}\otimes\ket{S=1,S^z=0} &\implies \left\{\ket{k^{(0)}}\right\} = \begin{cases}
+		\ket{0, 2, \uparrow}	\\
+		\ket{2, 0, \uparrow}
+		\end{cases}\\
+				\ket{\downarrow}\otimes\ket{\uparrow,\uparrow} &\implies \left\{\ket{k^{(0)}}\right\} = \ket{0, 2, \uparrow}\\
+	\end{cases} \\
+			\ket{2, 0, \uparrow}&\implies \left\{ \ket{j^{(0)}}\right\} = \begin{cases}
+			\ket{\uparrow}\otimes\ket{S=1,S^z=0} &\implies \left\{\ket{k^{(0)}}\right\} = \begin{cases}
+		\ket{0, 2, \uparrow}	\\
+		\ket{2, 0, \uparrow}
+		\end{cases}\\
+				\ket{\downarrow}\otimes\ket{\uparrow,\uparrow} &\implies \left\{\ket{k^{(0)}}\right\} = \ket{0, 2, \uparrow}\\
+	\end{cases} \\
+	\end{cases}\\
+\end{aligned}\end{equation}
+The inner products in the numerators can be calculated from these states. The energies of the intermediate states are
+\begin{equation}\begin{aligned}
+	E^{(0)}_i &=0, &E^{(0)}_j &= \frac{J^*}{4}, &E^{(0)}_k &= 0
+\end{aligned}\end{equation}
+which allow calculating the denominators. The total fourth order change for the singly-occupied state is
+\begin{equation}\begin{aligned}
+E_1^{(4)} = -\frac{16t^4}{3{J^*}^3}
+\end{aligned}\end{equation}
+Carrying out a similar calculation for the doubly-occupied state gives
+\begin{equation}\begin{aligned}
+	E_2^{(4)} = -\frac{16t^4}{9{J^*}^3}
+\end{aligned}\end{equation}
+The last two equations together mean that the effect of the perturbation is to raise the energy of the doubly-occupied state by an amount
+\begin{equation}\begin{aligned}
+	u \sim \frac{t^4}{{J^*}^3}
+\end{aligned}\end{equation}
+and we can replace the perturbative term \(V\) by an effective repulsive term
+\begin{equation}\begin{aligned}
+	u\hat n_{1 \uparrow}\hat n_{1 \downarrow}
+\end{aligned}\end{equation}
+The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
+\begin{equation}\begin{aligned}
+	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
+\end{aligned}\end{equation}
+% When written in momentum space, this takes the form
+% \begin{equation}\begin{aligned}
+% 	\sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{kk^\prime qq^\prime}f_{kk^\prime qq^\prime}c^\dagger_{k \uparrow}c_{k^\prime \uparrow}c^\dagger_{q \downarrow}c_{q^\prime \downarrow}
+% \end{aligned}\end{equation}
+% where \(f_{kk^\prime qq^\prime} = ue^{i\vec{r_1}\cdot\left(\vec{k} - \vec{k^\prime} + \vec{q} - \vec{q^\prime}\right)}\). 
+We will now invoke the mean-field approximation in simplifying this term. We will be dealing with thermodynamic quantities soon, so the operators will be replaced by their thermodynamic values, that is, the values that minimize the free energy functional.
+\begin{equation}\begin{aligned}
+	\hat n_{1 \uparrow} \hat n_{1 \downarrow} \to \langle\hat n_{1 \uparrow} \hat n_{1 \downarrow}\rangle = \langle \delta n_{1 \uparrow} \delta n_{1 \downarrow}\rangle + \langle n_{1 \uparrow}\rangle\langle n_{1 \downarrow}\rangle
+\end{aligned}\end{equation}
+where \(\delta n_{1\sigma} \equiv n_{1 \sigma} - \langle n_{1\sigma} \rangle\) is the fluctuation of the particle number above the ground state. The mean-field approximation then involves dropping the first term which is a quadratic fluctuation - since we are interested in values of quantities at \( T \to 0\), this quadratic fluctuation is very small. The interaction we are left with is 
+\begin{equation}\begin{aligned}
+	u\langle n_{1 \uparrow}\rangle\langle n_{1 \downarrow}\rangle = \sum_{kq\sigma}f_{kq}\langle n_{k \sigma}\rangle\langle n_{q \overline\sigma}\rangle
+\end{aligned}\end{equation}
+This interaction converts the problem to that of a Landau Fermi liquid, with the quasiparticle energy functional being given by
+\begin{equation}\begin{aligned}
+	\epsilon_{k\sigma} = \epsilon_k + \sum_{q}f_{kq}\left<\hat n_{q \overline\sigma}\right>
+\end{aligned}\end{equation}
+From the form of the quasiparticle energy functional, we can see that there is no spin-parallel term, so we can write
+\begin{equation}\begin{aligned}
+	\label{rel_landau}
+	f_{kk^\prime\sigma\sigma} = 0,  f_{kk^\prime\sigma\overline\sigma} = f_{kk^\prime}
+\end{aligned}\end{equation}
+We will now use this Fermi liquid form to extract the Wilson ratio. We will make use of the following definitions/results:
 \begin{equation}\begin{aligned}
 	dn_{k\sigma} &= \frac{\partial{n}}{\partial{\epsilon_{k\sigma}}}\left( d\epsilon_{k\sigma} - d\mu \right) &&\left[\text{follows from differentiating FD distribution}\right] \\
 	C_v &= \frac{\:\mathrm{d}\epsilon}{\:\mathrm{d}T}\\
@@ -6383,23 +6507,27 @@ We will need the following equations:
 	2f_0^{s,a} &= \sum_k\left(f_{kk^\prime \uparrow \uparrow} \pm f_{kk^\prime \uparrow \downarrow}\right)\\
 	F_0^{s,a} &= \rho(0) f_0^{s,a}
 \end{aligned}\end{equation}
-\subsection{Specific heat}
+\subsection{Low-\(T\) Specific heat}
 \begin{equation}\begin{aligned}
 	C &= \frac{\:\mathrm{d}}{\:\mathrm{d}T}\sum_{k\sigma}\epsilon_{k\sigma}n_{k\sigma} \\
 	    &\approx \sum_{k\sigma}\epsilon^0_{k\sigma} \frac{\:\mathrm{d}n_{k\sigma}}{\:\mathrm{d}T} && \left[\text{no quasiparticles at ground state}\right] \\
 	    &\approx \sum_{k\sigma}\epsilon^0_{k\sigma} \frac{\:\mathrm{d}n_{k\sigma}}{\:\mathrm{d}T} && \left[\text{same expression as Fermi gas but with modified distribution function}\right] \\
 	    &= \rho(0) T
 \end{aligned}\end{equation}
-where \(\rho = \rho_0 + \rho_{imp}\) is the total quasiparticle DOS with contributions from conduction bath and impurity.
+where \(\rho\) is the total quasiparticle DOS with contributions from conduction bath and impurity.
 \begin{equation}\begin{aligned}
-	C_{imp} = \rho_{imp}T
+	\rho \sim \text{Im }\text{Trace}\left[G\right] = \text{Im}\sum_{d\sigma}G_{dd}^\sigma + \text{Im}\sum_{k\sigma}G_{kk}^\sigma = \rho_0 + \rho_\text{imp}
+\end{aligned}\end{equation}
+which gives
+\begin{equation}\begin{aligned}
+	C_{imp} \equiv C - C_0 = \rho_{imp}(0)T
 \end{aligned}\end{equation}
 
-\subsection{Charge susceptibility}
+\subsection{Low-\(T\) Charge Susceptibility}
 \begin{equation}\begin{aligned}
 	\chi^c &= \frac{\:\mathrm{d}N}{\:\mathrm{d}\mu}\\
 \end{aligned}\end{equation}
-Due to change in chemical potential, change in \(\epsilon_{k\sigma}\) should be isotropic and SU(2)-symmetric. Hence
+Due to change in chemical potential, \(\delta\epsilon_{k\sigma}\) is isotropic and SU(2)-symmetric. Hence
 \begin{equation}\begin{aligned}
 	d\epsilon_{k\sigma} &= \sum_{k^\prime\sigma^\prime}f_{kk^\prime\sigma\sigma^\prime}d n_{k^\prime\sigma^\prime}\\
 			    &= d n\sum_{k^\prime}\left(f_{kk^\prime\uparrow \uparrow} + f_{kk^\prime \uparrow \downarrow}\right) && \left[dn = dn_{k^\prime \uparrow} = dn_{k \downarrow}\right] \\
@@ -6415,13 +6543,14 @@ Therefore,
 	\implies \frac{\:\mathrm{d}N}{\:\mathrm{d}\mu} &= \rho(0)\left( 1 - \rho(0)f_0^s \right) \\
 	\implies \chi^c_{imp} &= \rho(0)_{imp} - \rho(0)f_0^s \\
 \end{aligned}\end{equation}
-From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero, so we can write down the following relation:
+At an intermediate state, we substituted \(dN\) back into itself and kept only the leading order term. This is justified because \(f_{kk^\prime}\) goes as \(\frac{1}{N J}\). At the fixed point and for a thermodynamically large system, both \(J\) and \(N\) are very large, so keeping only the leading order suffices.
+\pb From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero, so we can write down the following relation:
 \begin{equation}\begin{aligned}
 	\label{fp_constraint}
 	f_0^s = \frac{\rho(0)_{imp}}{\rho(0)}
 \end{aligned}\end{equation}
 
-\subsection{Spin susceptibility}
+\subsection{Low-\(T\) Spin Susceptibility}
 \begin{equation}\begin{aligned}
 	\chi^s &= \frac{\:\mathrm{d}m}{\:\mathrm{d}\mu}\\
 \end{aligned}\end{equation}
@@ -6437,7 +6566,7 @@ Since the total number remains constant, \(\mu=0\). Therefore,
 	   &= -\frac{1}{2}\sum_{k}\rho\left( d\epsilon_{k \uparrow} - d\epsilon_{k \downarrow} \right) \\
 	   &= -\frac{1}{2}\sum_{k}\rho\left(-dB + 2f_0^a \left(dn_{k \uparrow} - dn_{k \downarrow}\right)\right) \\
 	   &= dB\rho(0) - dm \rho(0)f_0^a \\
-	   &\approx dB\rho(0) - \rho(0)f_0^aB\rho(0) \\
+	   &\approx dB\rho(0) - \rho(0)f_0^aB\rho(0) && \left[\text{substitute \(dm\) back into itself}\right] \\
 	\implies \frac{\:\mathrm{d}m}{\:\mathrm{d}B} &= \rho(0)\left( 1 - \rho(0)f_0^a \right) \\
 	\implies \chi^s_{imp} &= \rho(0)_{imp} - \rho(0)f_0^a \\
 \end{aligned}\end{equation}
