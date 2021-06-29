@@ -33,6 +33,17 @@ A.M. Tsvelick and P.B. Wiegmann.
 \newblock Exact results in the theory of magnetic alloys.
 \newblock {\em Advances in Physics}, 32(4):453--713, 1983.
 
+\bibitem{nozieres}
+P.~Nozières.
+\newblock A fermi-liquid description of the kondo problem at low temperatures.
+\newblock {\em Journal of Low Temperature Physics}, 17, 1974.
+
+\bibitem{am_thesis}
+Anirban Mukherjee.
+\newblock {\em {Unitary renormalization group for correlated electrons}}.
+\newblock PhD thesis, {Indian Institute of Science Education and Research
+  Kolkata}, 2020.
+
 \bibitem{sakurai}
 J.~J. Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
@@ -74,11 +85,6 @@ V.~N. Popov and S.~A. Fedotov.
 \newblock The functional-integration method and diagram technique for spin
   systems.
 \newblock {\em J. Exp. Theor. Phys.}, 67, 1968.
-
-\bibitem{nozieres}
-P.~Nozières.
-\newblock A fermi-liquid description of the kondo problem at low temperatures.
-\newblock {\em Journal of Low Temperature Physics}, 17, 1974.
 
 \bibitem{wilson}
 k.~G.~Wilson.
