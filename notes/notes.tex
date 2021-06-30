@@ -53,7 +53,7 @@
 	\Large{To you, 5 years from now}
 \end{center}
 \chapter*{Abstract}
-This thesis reports renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume.
+This thesis reports a renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume.
 \listoffigures
 \listoftables
 \tableofcontents
@@ -6239,13 +6239,13 @@ We again work in the simpler case of \(v=0\). The energy eigenvalues for this Ha
 \end{aligned}\end{equation}
 where \(\Gamma \equiv \sqrt{k^2 + B^2}\). We will again use eq.~\ref{chi_exp} to calculate the susceptibility. The partition function and its derivatives are
 \begin{equation}\begin{aligned}
-	\lim_{B \to 0} Z &= 2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 4e^{-\beta\left( \epsilon_d + \frac{j}{4} \right)}\cosh \beta \frac{j}{4} + 2e^{\beta \frac{k}{4}}\cosh \beta \frac{k}{2}\\
+	\lim_{B \to 0} Z &= 2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 3e^{-\beta\left( \epsilon_d + \frac{j}{4} \right) } + e^{\beta\left( 3\frac{j}{4} - \epsilon_d \right)} + 2e^{\beta \left(\frac{k}{4} - \epsilon_d\right)}\cosh \beta \frac{k}{2}\\
 	\lim_{B \to 0} \frac{\partial{Z}}{\partial{B}} &= 0 \\
-	\lim_{B \to 0} \frac{\partial{^2Z}}{\partial{B^2}} &= \frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta \frac{k}{4}}\cosh \beta\frac{k}{4}
+	\lim_{B \to 0} \frac{\partial{^2Z}}{\partial{B^2}} &= \frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta\left(\frac{k}{4} - \epsilon_d\right)}\sinh \beta\frac{k}{2}
 \end{aligned}\end{equation}
 The charge susceptibility is thus
 \begin{equation}\begin{aligned}
-	\chi_c = \frac{\frac{\beta}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{1}{k}e^{\beta \frac{k}{4}}\cosh \beta\frac{k}{4}}{2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 4e^{-\beta\left( \epsilon_d + \frac{j}{4} \right)}\cosh \beta \frac{j}{4} + 2e^{\beta \frac{k}{4}}\cosh \beta \frac{k}{2}}
+	\chi_c = \frac{1}{\beta}\frac{\frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta\left(\frac{k}{4} - \epsilon_d\right)}\sinh \beta\frac{k}{2}}{2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 3e^{-\beta\left( \epsilon_d + \frac{j}{4} \right) } + e^{\beta\left( 3\frac{j}{4} - \epsilon_d \right)} + 2e^{\beta \left(\frac{k}{4} - \epsilon_d\right)}\cosh \beta \frac{k}{2}}
 \end{aligned}\end{equation}
 An important result that we will use later is the value at \(T=0\).
 \begin{equation}\begin{aligned}
@@ -6255,6 +6255,21 @@ There we used the observation that near the fixed point, \(\epsilon_d\) is eithe
 \begin{equation}\begin{aligned}
 	\chi_c(T=0)\bigg\vert_{j \gg k} = 0
 \end{aligned}\end{equation}
+The charge susceptibility at large temperatures becomes
+\begin{equation}\begin{aligned}
+	\chi_c(T \to \infty)\times T = \frac{1}{8}
+\end{aligned}\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{../figures/chi_c.pdf}
+	\caption{Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo regime (\(J>K\)).}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{../figures/T_chi_c.pdf}
+	\caption{Behavior of \(\chi_c\times T\) for the charge-Kondo regime. It is qualitatively very similar to the behavior of the magnetic susceptibility in the spin-Kondo regime.}
+\end{figure}
+
 
 
 \section{Effective Hamiltonian for excitations of the Kondo cloud}

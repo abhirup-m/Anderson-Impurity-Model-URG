@@ -42,8 +42,10 @@
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.\relax }}{188}{figure.caption.62}%
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Variation of \(\left (T_k \times \chi \right )^{-1}\) with temperature.\relax }}{189}{figure.caption.63}%
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Variation of $\chi $ against temperature. It saturates to a value close to \(\left ( 2\pi T_K \right ) ^{-1}\)\relax }}{189}{figure.caption.64}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.\nobreakspace {}\ref {off_diag_coeff} along the RG flow.\relax }}{197}{figure.caption.65}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces \textit {Left}: Mutual information between two conduction electrons inside the cloud. \textit {Right}: Mutual information between a conduction electron inside the cloud and an impurity electron.\relax }}{215}{figure.caption.67}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Diagonal correlation functions between cloud electrons\relax }}{215}{figure.caption.68}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces off-diagonal correlation function\relax }}{216}{figure.caption.69}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo regime (\(J>K\)).\relax }}{191}{figure.caption.65}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Behavior of \(\chi _c\times T\) for the charge-Kondo regime. It is qualitatively very similar to the behavior of the magnetic susceptibility in the spin-Kondo regime.\relax }}{191}{figure.caption.66}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.\nobreakspace {}\ref {off_diag_coeff} along the RG flow.\relax }}{198}{figure.caption.67}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \textit {Left}: Mutual information between two conduction electrons inside the cloud. \textit {Right}: Mutual information between a conduction electron inside the cloud and an impurity electron.\relax }}{216}{figure.caption.69}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Diagonal correlation functions between cloud electrons\relax }}{216}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces off-diagonal correlation function\relax }}{217}{figure.caption.71}%
 \addvspace {10\p@ }
