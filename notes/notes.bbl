@@ -44,6 +44,12 @@ Anirban Mukherjee.
 \newblock PhD thesis, {Indian Institute of Science Education and Research
   Kolkata}, 2020.
 
+\bibitem{Brockett1991}
+R.~Brockett.
+\newblock Dynamical systems that sort lists, diagonalize matrices, and solve
+  linear programming problems.
+\newblock {\em Linear Algebra and its Applications}, 146:79--91, 1991.
+
 \bibitem{sakurai}
 J.~J. Sakurai.
 \newblock {\em Modern Quantum Mechanics}.
@@ -196,5 +202,10 @@ Masaki Oshikawa.
 \newblock Topological approach to luttinger's theorem and the fermi surface of
   a kondo lattice.
 \newblock {\em Phys. Rev. Lett.}, 84:3370--3373, Apr 2000.
+
+\bibitem{gulacsi}
+Miklos Gulacsi.
+\newblock The kondo lattice model.
+\newblock {\em Philosophical Magazine}, 86(13-14):1907--1946, 2006.
 
 \end{thebibliography}
