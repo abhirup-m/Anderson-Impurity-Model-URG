@@ -1,0 +1,80 @@
+%% Creator: Inkscape 1.0.1 (3bc2e813f5, 2020-09-07), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'rotation.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{718.93791619bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.37899773)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{rotation.pdf}}%
+    \put(-0.46991328,-1.08354825){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}unoccupied\\component\end{tabular}}}}%
+    \put(-0.62963159,-0.92285724){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}occupied \\component\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{rotation.pdf}}%
+    \put(-0.51705294,-0.91680787){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}particle-hole \\fluctuation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{rotation.pdf}}%
+    \put(0.42978144,0.24781321){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\Large rotation\\\end{tabular}}}}%
+    \put(0.44194947,0.17099986){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\Large $U\mathcal{H}U^\dagger$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{rotation.pdf}}%
+    \put(0.92174115,-0.82530206){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}kinetic energy\end{tabular}}}}%
+    \put(1.99724169,-0.83270906){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity-bath hopping\end{tabular}}}}%
+    \put(4.35865347,-0.8210944){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity repulsion\end{tabular}}}}%
+    \put(3.09156065,-0.82852787){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity-site  energy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{rotation.pdf}}%
+    \put(0.94875132,-1.04142713){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\scalebox{1.3}{$\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left[V(k)c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + \epsilon_d \sum_\sigma \hat n_{d\sigma} + U\hat n_{d\uparrow}\hat n_{d\downarrow}$}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{rotation.pdf}}%
+    \put(0.85482649,-1.32918746){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U=0$\end{tabular}}}}%
+    \put(1.0477072,-1.32518664){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U=U^*$\end{tabular}}}}%
+    \put(0.82787936,-1.32932439){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}FO\end{tabular}}}}%
+    \put(1.10804271,-1.32611387){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}LM\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{rotation.pdf}}%
+    \put(0.08572962,0.0030244){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\Large $[\mathcal{H},\hat n]\neq 0$\end{tabular}}}}%
+    \put(0.71842412,0.00718164){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\Large $[\mathcal{H},\hat n] = 0$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

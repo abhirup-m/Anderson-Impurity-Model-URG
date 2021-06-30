@@ -503,6 +503,12 @@ The SIAM consists of a single localized impurity site talking to a conduction ba
 \beq[model]
 H = \epsilon_d \hat n_d + \sum_{k} \epsilon_k \hat n_k + \sum_{k\sigma}t\rr{c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}} + U\hat n_{d\ua}\hat n_{d\da}
 \eeq
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{model_scheme.png}
+	\caption{model-scheme.png}
+	\label{fig:model_scheme-png}
+\end{figure}
 The SIAM involves the following energy scales:
 \begin{itemize}
     \item the onsite energy: \il{\epsilon_d}
@@ -3271,7 +3277,7 @@ This gives us \il{D \gg |\epsilon_d|}.
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 %}
 \chapter{Unitary Renormalization Group Method}\label{urgform}
-This section is adapted from ref.\cite{holography1} and expanded wherever required.
+% This section is adapted from ref.\cite{holography1} and expanded wherever required.
 \section{Formalism and Results}
 \subsection{Description of the problem}
 We are given a Hamiltonian \il{\ham} which is not completely diagonal in the occupation number basis of the electrons, \il{\hat n_k}: \il{\qq{\ham,n_k} \neq 0}. \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
@@ -3366,6 +3372,26 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 \beq[Ui]
     U_1 &= 1 + \eta
 \eeq
+
+\begin{figure}[htpb]
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{../figures/matrix.png}
+\end{center}
+\begin{center}
+\def\svgwidth{0.8\columnwidth}
+\input{../figures/rotation.pdf_tex}
+\end{center}
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{../figures/repeat.png}
+\end{center}
+\caption{Three steps of the URG: Decompose the Hamiltonian in a \(2\times 2\) matrix, apply the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.}
+\end{figure}
+% \begin{figure}
+% \def\svgwidth{0.8\columnwidth}
+% \centering
+% \input{../figures/repeat.pdf_tex}
+% \end{figure}
+
 \subsection{Properties of the many-body transition operators}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
 \beq
@@ -3551,7 +3577,6 @@ The expression for the renormalization will not be just \(\left[c^\dagger T, \et
 		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[\hat n \left(T_i T_j^\dagger + T_j T_i^\dagger \right) - \left(1 - \hat n\right)\left(T_i^\dagger T_j + T_j^\dagger T_i\right)\right]\\
 		    &= \frac{1}{2}\sum_{ij} \left(\frac{1}{\omega^0_i - E^0_i} + \frac{1}{\omega^0_j - E^0_j}\right)\left[\hat n T_i T_j^\dagger - \left(1 - \hat n\right)T_i^\dagger T_j\right]\\ 
 \end{aligned}\end{equation}
-
 \subsection{Equivalence of the two unitaries and preservation of partial trace}
 In the subsection \ref{unitary-form}, we determined the form of the operator \(U_1\) that unitarily decouples the node \(q\beta\) from the other degrees of freedom. Eq.~\ref{finalu} was derived by reading off the transformation of \(\ket{1}\) to \(\ket{\psi_1}\), the first equation in \ref{trans}. We could easily have chosen the other equation in the same equation set,
 \begin{gather*}
