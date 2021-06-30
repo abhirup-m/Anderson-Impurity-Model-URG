@@ -5728,7 +5728,7 @@ with \(k = K^* N^*\). The total Hamiltonian for the two-site problem is
 where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}=m_1\) is the magnetization on the first site. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/two_site_problem.png}
+	\includegraphics[width=0.6\textwidth]{../figures/two_site_problem.png}
 	\caption{Two-site effective problem of fixed point Hamiltonian}
 	\label{twosite}
 
@@ -6257,7 +6257,7 @@ There we used the observation that near the fixed point, \(\epsilon_d\) is eithe
 \end{aligned}\end{equation}
 The charge susceptibility at large temperatures becomes
 \begin{equation}\begin{aligned}
-	\chi_c(T \to \infty)\times T = \frac{1}{8}
+	\left(\chi_c\times T\right) (T \to \infty) = \frac{1}{8}
 \end{aligned}\end{equation}
 \begin{figure}[htpb]
 	\centering
@@ -6893,11 +6893,26 @@ The goal here is to chart the journey starting from the IR fixed point towards t
 \begin{equation*}\begin{aligned}
 	U^\dagger : \underbrace{\ket{1,2,...,N^*}\ket{N^*+1}...\ket{N}}_\text{IR ground state} \rightarrow \ket{1,2,...,N^*+1}\ket{N^*+2}...\ket{N} \rightarrow ... \rightarrow\underbrace{\ket{1,,2,...,N}}_\text{UV ground state}
 \end{aligned}\end{equation*}
-The first process is the forward RG which we used to obtain the scaling equations. The second process is the reverse RG which we wil undertake now. \textit{The IR ground state we will start with will consist of four momenta states, \(k_{-2, -1, 1 ,2}\). \(k_{1,2}\) will be the states above the Fermi surface while \(k_{-1, -2}\) will be the ones below it.} For the purpose of illustrating how we will construct the many-body ground state however, we will work with just two momenta states instead of four, one above and one below.
+The first process is the forward RG which we used to obtain the scaling equations. The second process is the reverse RG which we wil undertake now. \textit{The IR ground state we will start with will consist of four momenta states, \(k_{-2, -1, 1 ,2}\). \(k_{1,2}\) will be the states above the Fermi surface while \(k_{-1, -2}\) will be the ones below it.} The algorithm of reverse RG is shown in fig.~\ref{rev-rg}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../figures/reverse_rg.png}
+	\caption{Algorithm of reverse RG. We start with a Hamiltonian with an impurity site (red) coupled with two conduction electrons (dark green), with four other decoupled electrons (bright green). The dotted rectangle represents the emergent window \(\left( -\Lambda_j, \Lambda_j \right) \) at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from the IOMS (hence four dark green circles in the second step), leading to an enlargement of the emergent window.}
+	\label{rev-rg}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{../figures/rev-rg-bonds.png}
+	\caption{Increase in the number of coupled elements under reverse RG. We start with the impurity coupled with two electrons, which increases at each step of the reverse RG.}
+\end{figure}
+For the purpose of illustrating how we will construct the many-body ground state however, we will work with just two momenta states instead of four, one above and one below.
 \begin{equation}\begin{aligned}
 	\ket{\text{cloud}} = c^s_- \left( \ket{\uparrow^d, \downarrow} - \ket{\downarrow^d, \uparrow}\right) + c^c_- \left(\ket{ \uparrow^d_c, \downarrow_c} + \ket{\downarrow^d_c, \uparrow_c} \right)
 \end{aligned}\end{equation}
-where \(\uparrow_c\) represents a state with \(C^z= \frac{1}{2}\) and the \(d\) in the superscript indicates it is for the impurity. Cloud refers to the system of the still-entangled electrons and the impurity. To construct the states \(\ket{\uparrow}, \ket{\downarrow}, \ket{\uparrow_c}\) and \(\ket{\downarrow_c}\), we will look the two-site spin and charge operators. The impurity states are easy to construct. \(\uparrow\) and \(\downarrow\) consist of singly occupied impurities with the respective spins, while the charge versions involve double-occupied and vacant impurities respectively. For the conduction electrons, we have
+where \(\uparrow_c\) represents a state with \(C^z= \frac{1}{2}\) and the \(d\) in the superscript indicates it is for the impurity. Cloud refers to the system of the still-entangled electrons and the impurity. To construct the states \(\ket{\uparrow}, \ket{\downarrow}, \ket{\uparrow_c}\) and \(\ket{\downarrow_c}\), we will look the two-site spin and charge operators. The impurity states are easy to construct. \(\uparrow\) and \(\downarrow\) consist of singly occupied impurities with the respective spins, while the charge versions involve double-occupied and vacant impurities respectively.
+
+For the conduction electrons, we have
 \begin{equation}\begin{aligned}
 	S_2^z = \frac{1}{2N^*}\sum_{kk^\prime}\left(c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right)
 \end{aligned}\end{equation}
