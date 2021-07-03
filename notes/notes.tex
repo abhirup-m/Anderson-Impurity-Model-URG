@@ -6271,7 +6271,20 @@ The charge susceptibility at large temperatures becomes
 \end{figure}
 
 \section{Specific heat}
-The specific heat is calculated by diagonalizing the fixed point Hamiltonian, numerically.
+The specific heat is calculated by diagonalizing the fixed point Hamiltonian, numerically. The obtained spectrum is denoted by \(\left\{ \mathcal{E}_i \right\} \). The total average energy of the impurity+cloud at temperature \(T\) is then
+\begin{equation}\begin{aligned}
+	\left<\mathcal{E} \right> = \frac{1}{Z}\sum_{i} \mathcal{E}_i e^{-\beta \mathcal{E}_i}
+\end{aligned}\end{equation}
+where \(Z = \sum_{i} e^{-\beta E_i}\) is the partition function. The specific heat of this system is thus
+\begin{equation}\begin{aligned}
+	C_v &= \frac{\partial{\left<\mathcal{E} \right>}}{\partial{T}} \\
+	    &= -\frac{1}{k_B T^2} \frac{\partial{\left<\mathcal{E} \right>}}{\partial{\beta}} \\
+	    &= \frac{1}{k_B T^2}\left[\frac{1}{Z}\sum_i \mathcal{E}_i^2 e^{-\beta \mathcal{E}_i} - \left(\frac{1}{Z}\sum_i \mathcal{E}_i e^{-\beta \mathcal{E}_i}\right)^2 \right] 
+\end{aligned}\end{equation}
+The specific heat of just the conduction bath (in absence of impurty) is
+\begin{equation}\begin{aligned}
+\end{aligned}\end{equation}
+
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../figures/Cv.pdf}
