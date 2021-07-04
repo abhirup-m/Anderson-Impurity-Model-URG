@@ -6292,6 +6292,111 @@ The specific heat of just the conduction bath (in absence of impurty) is
 	\label{fig:-figures-Cv-pdf}
 \end{figure}
 
+\section{Impurity Spectral function}
+In this section we will obtain the impurity spectral function, which is defined in terms of the impurity Green's function as
+\begin{equation}\begin{aligned}
+	\mathcal{A(\omega)} = -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] 
+\end{aligned}\end{equation}
+The impurity retarded Green's function (assuming the Hamiltonian to be time-independent, which it is) is defined as
+\begin{equation}\begin{aligned}
+	G_{dd}^\sigma(t) = -i\theta(t) \left<\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\}  \right>
+\end{aligned}\end{equation}
+where the average \(\left< \right>\) is over a canonical ensemble at temperature \(T\). What follows is a standard calculation where we write the Green's function in the Lehmann representation. We will write the ensemble average in terms of the exact eigenstates of the fixed point Hamiltonian:
+\begin{equation}\begin{aligned}
+	H^* \ket{n} &= E_n^* \ket{n}\\
+	\left<\hat O \right> &\equiv \frac{1}{Z}\sum_n \bra{n} \hat O \ket{n} e^{-\beta E_n^*}
+\end{aligned}\end{equation}
+where \(Z = \sum_n e^{-\beta E_n^*}\) is the fixed point partition function and \(\left\{ \ket{n} \right\} \) is the set of eigenfunctions of the fixed point Hamiltonian. We can therefore write
+\begin{equation}\begin{aligned}
+	&\left<\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\}  \right> \\
+	&= \sum_{m}e^{-\beta E_m}\bra{m}\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\} \ket{m}\\
+	&= \sum_{m,n}e^{-\beta E_m}\bra{m}\left( c_{d\sigma}(t)\ket{n}\bra{n}c^\dagger_{d\sigma} + c^\dagger_{d\sigma}\ket{n}\bra{n}c_{d\sigma}(t)\right) \ket{m} && \left[\sum_n \ket{n}\bra{n} = 1\right]  \\
+	&= \sum_{m,n}e^{-\beta E_m}\bra{m}\left( e^{iH^* t}c_{d\sigma}e^{-iH^* t}\ket{n}\bra{n}c^\dagger_{d\sigma} + c^\dagger_{d\sigma}\ket{n}\bra{n}e^{iH^* t}c_{d\sigma}e^{-iH^* t}\right) \ket{m}\\
+	&= \sum_{m,n}e^{-\beta E_m}\left( e^{i\left( E_m - E_n \right)  t}\bra{m}c_{d\sigma}\ket{n}\bra{n}c^\dagger_{d\sigma} \ket{m} + e^{i\left( E_n - E_m \right)  t}\bra{m}c^\dagger_{d\sigma}\ket{n}\bra{n}c_{d\sigma} \ket{m}\right)\\
+	&= \sum_{m,n}e^{i\left( E_m - E_n \right)  t}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\\
+\end{aligned}\end{equation}
+The time-domain impurity Green's function can thus be written as (this is the so-called Lehmann representation)
+\begin{equation}\begin{aligned}
+	G_{dd}^\sigma = -i\theta(t)\sum_{m,n}e^{i\left( E_m - E_n \right)  t}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\\
+\end{aligned}\end{equation}
+We are interested in the frequency domain form.
+\begin{equation}\begin{aligned}
+	G_{d d}^\sigma(\omega) &= \int_{-\infty}^\infty dt e^{i \omega t}G_{d d}^\sigma(t) \\
+			       &= \sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\left(-i\right)\int_{-\infty}^\infty dt \theta(t)e^{i\left( \omega + E_m - E_n \right)t}
+\end{aligned}\end{equation}
+To evaluate the time-integral, we will use the integral representation of the Heaviside function:
+\begin{equation}\begin{aligned}
+	\theta(t) = \frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty \frac{1}{x- i\eta}e^{ixt}dx
+\end{aligned}\end{equation}
+With this definition, the integral in \(G_{dd}^\sigma(\omega)\) becomes
+\begin{equation}\begin{aligned}
+	\left(-i\right)\int_{-\infty}^\infty dt \theta(t)e^{i\left( \omega + E_m - E_n \right)t} &= \left(-i\right)\frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty dx\frac{1}{x- i\eta}\int_{-\infty}^\infty dt e^{i\left( \omega + E_m - E_n + x\right)t} \\
+									     &=\left(-i\right)\frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty dx\frac{1}{x- i\eta} 2\pi \delta\left( \omega + E_m - E_n + x\right) \\
+									     &=\left(-i\right)\frac{1}{i}\lim_{\eta \to 0^+} \frac{-1}{\omega + E_m - E_n- i\eta} \\
+									     &=\frac{1}{\omega + E_m - E_n} \\
+\end{aligned}\end{equation}
+The frequency-domain Green's function is thus
+\begin{equation}\begin{aligned}
+	G_{d d}^\sigma(\omega) = \sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\frac{1}{\omega + E_m - E_n}
+\end{aligned}\end{equation}
+The zero temperature Green's function is obtained by taking the limit of \(\beta\ to \infty\):
+\begin{equation}\begin{aligned}
+	G_{d d}^\sigma(\omega, \beta \to \infty) &= \sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left(\delta(E_m) + \delta(E_n)\right)\frac{1}{\omega + E_m - E_n}\\
+						 &=\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega - E_n} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{\omega + E_m}\right]\\
+\end{aligned}\end{equation}
+The label 0 sums over all states with zero energy eigenvalue. The spectral function is the imaginary part of this Green's function. To extract the imaginary part, we insert an infinitesimal imaginary part in the denominator:
+\begin{equation}\begin{aligned}
+	G_{d d}^\sigma(\omega, T = 0, \eta) = \lim_{\eta \to 0^-}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega - E_n + i\eta} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{\omega + E_m + i\eta}\right]\\
+\end{aligned}\end{equation}
+The spectral function can then be written as
+\begin{equation}\begin{aligned}
+	\mathcal{A(\omega)} &= -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] \\
+			    &= -\frac{1}{\pi}\text{ Im }\left[\lim_{\eta \to 0^-}\sum_{m,0}\left(||\bra{0}c_{d\sigma}\ket{n}||^2\frac{-i\eta}{\left(\omega - E_n\right)^2 + \eta^2} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{-i\eta}{\left(\omega + E_m\right)^2 + \eta^2}\right)\right]\\
+			    &= \frac{1}{\pi}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega - E_n\right) + ||\bra{m}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega + E_m\right)\right]\\
+			    &= \sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega - E_n\right) + ||\bra{m}c_{d\sigma}\ket{0}||^2\delta\left(\omega + E_m\right)\right]\\
+\end{aligned}\end{equation}
+Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions by Gaussian functions:
+\begin{equation}\begin{aligned}
+	\delta(\omega - E_n) \to \frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega - E_n \right)^2}
+\end{aligned}\end{equation}
+where the width \(w\) will be set to the fixed-point bandwidth: \(w = D^*\). So the function that we will numerically compute and plot is
+\begin{equation}\begin{aligned}
+	\mathcal{A(\omega)} &= \sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega - E_n \right)^2} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega + E_m \right)^2}\right]\\
+\end{aligned}\end{equation}
+The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_m, \ket{m}\right\}\). The spectral function is plotted for three sets of bare values in fig.~\ref{spec_func}. For low values of \(U\), the profile is that of a single peak at zero frequency. As \(U\) increases, shoulder-like structures appear on either side of the peak, which finally, at larger \(U\), develop into two side-peaks.
+\pb The physics of the three peaks can now be looked into. Since the central peak is at zero energy, it has to do with excitations that do not cost any energy. There are two such excitations: excitations within the spin sector and within the charge sector.
+\begin{equation}\begin{aligned}
+	\ket{\uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{J S_d^-}_{JS_d^+}}}\ket{\downarrow}, &&&&\ket{\Uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{K C_d^-}_{K C_d^+}}}\ket{\Downarrow}\\
+\end{aligned}\end{equation}
+The thick arrow \(\Uparrow\) represents the charge isospin. At particle-hole symmetry, both the spin configurations has energy of \(\epsilon_d\), while the charge configurations have energy of \(2\epsilon_d + U=0\) and 0. Hence, no energy is required for these excitations, which is why see a macroscopic number of cloud electrons resonating with the impurity at the Fermi surface. Also note that if \(\hat S_i\) and \(\hat C_j\) are two operators of the spin and charge sector (\(i,j \in \left\{ x,y,z \right\} \)), then
+\begin{equation}\begin{aligned}
+	\hat S_i \hat C_j = \hat C_j \hat S_i = 0
+\end{aligned}\end{equation}
+We can see this by applying that operator on a basis state. Since the set of four states 
+\begin{equation}\begin{aligned}
+	\ket{\hat S_i = \pm \frac{1}{2}, \hat C_j = 0}, \ket{\hat S_i = 0, \hat C_j = \pm\frac{1}{2}}
+\end{aligned}\end{equation}
+are all independent, they form a basis. If we apply the operator on these states:
+\begin{equation}\begin{aligned}
+	\hat S_i \hat C_j \ket{\hat S_i} &= 0, &&&&\hat C_j \hat S_i \ket{S_i} = S_i \hat C_j \ket{S_i} = 0\\
+	\hat C_j \hat S_i \ket{C_j} &= 0, &&&&\hat S_i \hat C_j \ket{\hat C_j} = C_j \hat S_i \ket{\hat C_j} = 0 \\
+\end{aligned}\end{equation}
+This shows that each operator acts only on its own subspace. \(S_i\) does not act on the charge sector, and vice-versa. There is no single-particle excitation here.
+\pb The physics of the side-peaks is that of single number fluctuations on the impurity. These are brought about by the term \(Vc^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.}\).
+\begin{equation}\begin{aligned}
+	\left( \epsilon_d  \right) \ket{\sigma} & \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{V c^\dagger_{d\overline\sigma}/V c_{d\sigma}}_{V c_{d\overline\sigma}/V c^\dagger_{d\sigma}}}} &\ket{n_d=2,0} \left( 0 \right) \\
+\end{aligned}\end{equation}
+These transitions involve energy transfer of the order of \(\epsilon_d\). This is why, at very small \(U\), they remain absorbed inside the central peak. These transitions do not involve any spin or charge-flip, rather they take the impurity between the spin and charge sectors.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.58\textwidth]{../figures/spec_func_1.pdf}
+	\includegraphics[width=0.58\textwidth]{../figures/spec_func_2.pdf}
+	\includegraphics[width=0.58\textwidth]{../figures/spec_func_3.pdf}
+	\caption{Impurity spectral function for three sets of bare values. The increase in value of \(U\) is accompanied by the appearance of the side-peaks. For all the plots, \(V=0.001\) and \(D=1\).}
+	\label{spec_func}
+\end{figure}
+
+
 \section{Effective Hamiltonian for excitations of the Kondo cloud}
 To find an effective Hamiltonian for the excitations of the Kondo cloud, we will integrate out the impurity part of the wavefunction. The Schrodinger equation for the \(J > K\) ground state is
 \begin{equation}\begin{aligned}
