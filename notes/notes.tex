@@ -6395,7 +6395,16 @@ These transitions involve energy transfer of the order of \(\epsilon_d\). This i
 	\caption{Impurity spectral function for three sets of bare values. The increase in value of \(U\) is accompanied by the appearance of the side-peaks. For all the plots, \(V=0.001\) and \(D=1\).}
 	\label{spec_func}
 \end{figure}
-
+\pb Another interesting study that we conducted is the change in the spectral function under revere-RG. Doing the actual reverse RG would require diagonalizing a huge matrix. Instead, we mimic the reverse journey by starting from the fixed point and then increasing the \(U\) (it was irrelevant in the forward RG) and decreasing \(J\) (it was relevant in the forward RG). The spectral function is then calculated at these points. The result is shown in fig.~\ref{spec_rev}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{../figures/spec_func_journey_1.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/spec_func_journey_2.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/spec_func_journey_3.pdf}
+	\caption{Variation of the spectral function as we move away from the strong-coupling fixed point (top) towards the local moment fixed point (bottom).}
+	\label{spec_rev}
+\end{figure}
+At the strong-coupling fixed-point, we have a screened-local moment which only has a zero-energy excitation at the Fermi energy. As we move away from the fixed-point, the resonance at the Fermi surface disappears, and is replaced by two side peaks which are indicative of the two orientations of a local moment.
 
 \section{Effective Hamiltonian for excitations of the Kondo cloud}
 To find an effective Hamiltonian for the excitations of the Kondo cloud, we will integrate out the impurity part of the wavefunction. The Schrodinger equation for the \(J > K\) ground state is
