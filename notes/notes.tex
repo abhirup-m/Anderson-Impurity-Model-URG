@@ -17,8 +17,8 @@
 	\rule{\textwidth}{3pt}\\
 	\vspace*{25pt}
 	\textcolor{black}{ % Red font color
-		\textbf{\Huge Unitary Renormalization Group Approach}\\[10pt]
-		\textbf{\Huge to The Single-Impurity Anderson Model}
+		\textbf{\Huge Unitary Renormalization Group Solution}\\[10pt]
+		\textbf{\Huge of The Single-Impurity Anderson Model}
 	\vspace*{25pt}
 	}
 	\rule{\textwidth}{3pt} % Thick horizontal rule
@@ -45,8 +45,24 @@
 \textbf{\LARGE Research, Kolkata}
 \end{titlepage}
 \chapter*{Declaration by the student}
+I, \textbf{Abhirup Mukherjee}, hereby declare that this thesis titled \textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
+\pb
+Signed:\\[5pt]
+\rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
+\pb
+Date:
+\today
+
 \chapter*{Certificate from the supervisor}
+This is to certify that the thesis titled \textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model} which is submitted by \textbf{Abhirup Mukherjee} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this thesis is original and has not been submitted for the award of any other degree.
+\pb
+Signed:\\[5pt]
+\rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
+\pb
+Date:
+\today
 \chapter*{Acknowledgments}
+I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. Finally, I must acknowledge all the love and support I received from my family - it helped my see this work through to the end.
 \chapter*{}
 \begin{center}
 	\vspace*{100pt}
@@ -84,8 +100,8 @@ This showed how the couplings would flow as we went to low temperatures, but it 
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
 In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
-Later calculations with Bethe ansatz in 1980 by Andrei and Weigmann \cite{Andrei,wiegmann} corroborated Wilson's findings.
-\pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Weigman and Tsvelick\cite{Tsvelick}.
+Later calculations with Bethe ansatz in 1980 by Andrei and Wiegmann \cite{Andrei,wiegmann} corroborated Wilson's findings.
+\pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
 \pb The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
 \section{Some outstanding questions}
 Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
@@ -134,7 +150,6 @@ The first of the main results in this work is the connection between URG and oth
 \pb We then extract the effective Hamiltonian for the Kondo cloud, up to two particle interactions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian has both a Fermi liquid piece of the form \(\hat n_{k\sigma}\hat n_{q\sigma^\prime}\) and a two-particle off-diagonal scattering piece of the form \(c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow}c_{q \uparrow}c_{q^\prime \downarrow}\). It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures and correlations. The mutual information between the impurity and a cloud electron, as well as that between two cloud electrons increases as we go from the UV towards the IR fixed point. The off-diagonal correlation also increases from the UV towards the IR, which shows that the growth of the off-diagonal term is concomitant with the screening.
 \pb We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from the fixed point Hamiltonian. Using the zero charge susceptibility at \(T=0\) in the Kondo regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We also calculate the change in Luttinger's volume along the RG flow. At the free orbital or local moment fixed points, the Luttinger's volume is measured purely by the number of conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger's volume is given by the total number of electrons in the conduction bath as well as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
 \chapter{Preliminaries and Existing Results}\label{prelims}
-%\subsection{\il{T-}matrix and \il{S-}matrix}
 \section{Some important results of scattering theory}
 \subsection{T-matrix and S-matrix}
 \il{T-}matrix is defined as\cite{sakurai}
@@ -186,7 +201,7 @@ That definition can be massaged into the following identity:
 	\implies G_0 G^{-1} G &= G_0 G_0^{-1} G - G_0 V G\\
 	\implies G &= G_0 + G_0 V G
 \end{aligned}\end{equation}
-By resubstituting \(G\) into the RHS, this can be made into a perturbative expansion:
+By re-substituting \(G\) into the RHS, this can be made into a perturbative expansion:
 \begin{equation}\begin{aligned}
 	G = G_0 + G_0 V \left(G_0 + G_0 V G\right) = G_0 + G_0 V G_0 + G_0 V G_0 V G_0 + ... \\
 	= G_0 + G_0 \left( V + V G_0 V + ... \right) G_0
@@ -216,7 +231,7 @@ Using the definition of \il{T}, we get
 \label{f_in_T}
 f(k^\prime,k) = - \frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{\Phi} = -\frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{k}
 \eeq
-where we chose the non-interacting eignkets to be the momentum eigenkets \(\left( \ket{\Phi} = \ket{k} \right) \). By expanding in terms of the eigenstates of \(L^2\) and \(L_z\), this can be written as
+where we chose the non-interacting eigenkets to be the momentum eigenkets \(\left( \ket{\Phi} = \ket{k} \right) \). By expanding in terms of the eigenstates of \(L^2\) and \(L_z\), this can be written as
 \begin{equation}\begin{aligned}
 	f(k^\prime,k) = - \frac{\pi}{k}\sum_l (2l+1)P_l\left( \cos \theta \right) T_l(\epsilon_k) \equiv \sum_l (2l+1)P_l\left( \cos \theta \right) f_l\left( k \right) 
 \end{aligned}\end{equation}
@@ -232,7 +247,7 @@ Writing the plane wave in terms of incoming and outgoing spherical waves and exp
 \begin{equation}\begin{aligned}
 	\Psi(x) = \rr{2\pi}^{-\fr{3}{2}}\sum_l (2l+1) \frac{1}{2ik}P_l\left[\left(1 + 2i k f_l \right) \frac{e^{ikr}}{r} - e^{-i\left( kr - l\pi \right) } \frac{1}{r}\right]
 \end{aligned}\end{equation}
-From conservation of probabilities, we know that the amplitude squared of the incoming and outgoing waves must be equal. \textit{Assuming a spherically symmetric scattering center means the probabilities will be consevred separately for each value of \(l\)}. This means that the coefficient 
+From conservation of probabilities, we know that the amplitude squared of the incoming and outgoing waves must be equal. \textit{Assuming a spherically symmetric scattering center means the probabilities will be conserved separately for each value of \(l\)}. This means that the coefficient 
 \begin{equation}\begin{aligned}
 	S_l(k) \equiv 1 + 2i k f_l (k)
 \end{aligned}\end{equation}
@@ -244,7 +259,7 @@ From the definition of \(f_l\) in terms of \(T_l\), we can relate \(S(k)\) with 
 \begin{equation}\begin{aligned}
 	S_l(k) &= 1 + 2i k f_l = 1 - 2 \pi i T_l(\epsilon_k)
 \end{aligned}\end{equation}
-We can express the LSH in terms of energy:
+We can express the LHS in terms of energy:
 \begin{equation}\begin{aligned}
 	S_l(\omega) &= \bra{\omega}S_l\ket{\omega} \\
 			   &= \int d\vec k \bra{\omega}\ket{\vec k}\bra{\vec k}S_l\ket{\vec k}\bra{\vec k}\ket{\omega}\\
@@ -298,7 +313,7 @@ and the argument of this function will be the total scattering phase shift:
 
 
 \subsection{The Friedel sum-rule}
-This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localised scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
+This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localized scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
 \pb Consider a Hamiltonian
 \begin{equation}\begin{aligned}
 	\ham = H_0 + V
@@ -409,11 +424,11 @@ Alternatively, there exists a sufficiently slow rate of turning off the interact
 \Psi^* \xrightarrow{\text{turn interactions off}} \Phi \\
 \Phi^* \xrightarrow{\text{turn interactions off}} \Psi
 \end{gather}
-If some state \il{\Gamma^*}, instead of flowing into an ideal excited state, gets lost while the interactions are being turned off, then we arent considering that system.
+If some state \il{\Gamma^*}, instead of flowing into an ideal excited state, gets lost while the interactions are being turned off, then we are not considering that system.
 All excited states must flow into some ideal state and vice-versa.
-This means that the interacting excited states can be labelled by the same good quantum numbers \il{\vec k} and \il{\sigma}.That is, if some eigenstate of the interacting system flows into the ideal eigenstate \il{\{n_{k\sigma}\}}, we can just as well use the distribution \il{\{n_{k\sigma}\}} to label the interacting eigenstate.
+This means that the interacting excited states can be labeled by the same good quantum numbers \il{\vec k} and \il{\sigma}.That is, if some eigenstate of the interacting system flows into the ideal eigenstate \il{\{n_{k\sigma}\}}, we can just as well use the distribution \il{\{n_{k\sigma}\}} to label the interacting eigenstate.
 \textit{The particle and hole excitations of the ideal system might flow into some very complicated state of the interacting system, which we call a quasiparticle/quasihole}.
-In other words, a system (ideal ground state + particle of momentum \il{k}) goes to (interacting ground state + quasip of momentum \il{k}).
+In other words, a system (ideal ground state + particle of momentum \il{k}) goes to (interacting ground state + quasiparticle of momentum \il{k}).
 If an interacting eigenstate corresponds to the state \il{\{n_{k\sigma}\}}, then \il{\{n_{k\sigma}\}} is said to be the quasiparticle distribution function for that interacting state.
 Just as we denote eigenstates of the total ideal system using the collection of particles and holes, similarly we use the quasiparticle and quasiholes to describe eigenstates of the interacting system.
 Let \il{k_+>k_F} and \il{k_- < k_F}.
@@ -422,8 +437,8 @@ Then,
     \ket{IGS}\otimes\ket{k_+} \xrightarrow{\text{turn interactions on}} \ket{RGS}\otimes\ket{k_+}^* \\
     \ket{IGS}\otimes\ket{k_-} \xrightarrow{\text{turn interactions on}} \ket{RGS}\otimes\ket{k_-}^* \\
 \end{gather}
-\il{\ket{}^*} denotes a quasiket.
-IGS and RGS are ideal and real(interacting) ground states.
+\il{\ket{}^*} denotes a quasi-ket.
+"IGS" and "RGS" are ideal and real(interacting) ground states.
 Another way of putting this is
 \begin{gather}
 c^\dagger_{k_+}\ket{IGS} \xrightarrow{\text{turn interactions on}} \eta^\dagger_{k_+}\ket{RGS}\\
@@ -441,7 +456,7 @@ For the ideal system, this function is very simple.
 \mathcal{E}^0[n_k] = \sum_k n_k \epsilon_k
 \eeq
 The functional in case of the interacting system might be very complex.
-Upto first order in the functional, we can write
+Up to first order in the functional, we can write
 \beq
 \mathcal{E}[n_k] = \mathcal{E}[n^0_k] + \sum_k \pd{\mathcal{E}}{n_k}\delta n_k
 \eeq
@@ -463,7 +478,7 @@ This shows that the effect of adding a quasiparticle of momentum \il{q} is to ra
 It is thus sensible to call that the energy of the quasiparticle.
 \il{\xi_k} itself might depend on whether other quasiparticles are present; there might be interactions among them.
 This effectively means that \il{xi_k} itself is, in general, a functional of \il{n_k}.
-Consequently, we expand it upto first order.
+Consequently, we expand it up to first order.
 \beq[quasienergy]
 \xi_k = \xi_k^0 + \sum_q \pd{\xi_k}{n_q} \delta n_q
 \eeq
@@ -476,7 +491,7 @@ The first term is the self energy of the quasiparticles, the other they would ha
 Its sort of like their kinetic energy.
 The second term is the interaction energy between all the quasiparticles.
 Hence, the term \il{f(k_1,k_2)} comes into play only when \il{\delta n_{k_1} \neq 0} and \il{\delta n_{k_2} \neq 0}, that is when both the quasiparticles are present.\\\\
-Since the quasiparticles are in direct correspondence with the fermionic particles, they must also be fermions.
+Since the quasiparticles are in direct correspondence with the Fermionic particles, they must also be fermions.
 This allows us to write down the probability of finding a quasiparticle at energy \il{\xi},
 \beq
 f(\xi) = \qq{e^{(\xi - \mu)\beta} + 1}^{-1}
@@ -649,7 +664,7 @@ This is an example of the Friedel sum rule which states that the total number of
 In other words, the impurity will be singly occupied when \il{\delta(0) = \fr{\pi}{2}}.
 
 \subsubsection{Coulomb blockade}
-This section follows the discussion in reference \cite{piers}. A quantum dot is a set of electrons that are localised in a sufficiently small region so that their spectrum is quantised.
+This section follows the discussion in reference \cite{piers}. A quantum dot is a set of electrons that are localized in a sufficiently small region so that their spectrum is quantized.
 The localization means that double occupation will come at a cost of \il{U}.
 \beq
 H_\text{dot} = \sum_{m\sigma} \epsilon_m n_{m\sigma} + U\fr{N(N+1)}{2}
@@ -740,9 +755,9 @@ We get two Lorentzian peaks at \il{E = \pm \fr{Um}{2}}, depending on whichever p
     \item At low temperatures, the resistivity is found to reach a minimum and then vary as \il{\ln T}. This behavior stops at some very low temperature \il{T_K}. The temperature \il{T_K} is also that at which the magnetization vanishes, and the susceptibility becomes constant, suggesting that the impurity spin has condensed into a singlet.
     \item Since the disappearance of the \il{\ln T} behavior is coincident with the condensation of the spin degree of freedom, it is natural to hope that the resistivity minimum is a result of the interaction between the impurity and the conduction spins.
     \item To describe such an interaction, the way to proceed is to strip the model of the charge excitations (via a \it{Schrieffer-Wolff transformation}).
-The resultant Hamiltonian consists of an antiferromagnetic interaction between the itinerant spins and the impurity spin, and is called the Kondo model.
+The resultant Hamiltonian consists of an anti-ferromagnetic interaction between the itinerant spins and the impurity spin, and is called the Kondo model.
     \item Calculating the scattering rate up to second order using the Kondo model produces a logarithmic term, which explains the log-dependence. Since this perturbative treatment will fail at small temperatures (where the log term diverges), we need some other technique to find out the fate of the model at low temperatures.
-    \item Anderson's poor man's scaling wraps the effects of high energy scatterings into the low energy model, showing that the antiferromagnetic coupling diverges at low temperatures, producing a singlet.
+    \item Anderson's poor man's scaling wraps the effects of high energy scatterings into the low energy model, showing that the anti-ferromagnetic coupling diverges at low temperatures, producing a singlet.
     \item There are two routes that one can follow to note the changes in the system; one is by reducing the temperature which is equivalent to folding in the high energy fluctuations, aka scaling.
 The other is to reduce the onsite interaction \il{U} and note the changes in state.
     \item Reducing the temperature or performing the RG takes the model from the Anderson model (\il{T>0}) to the Fermi liquid state (\il{T \sim T_K}).
@@ -854,7 +869,7 @@ Hence,
 &- \sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\fr{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}\ket{d\ol{\sigma_2},e_{k_2\sigma_2}}\bra{d\ol{\sigma_2},e_{k_2\sigma_2}}}{\epsilon_d+U}\\
 &=\sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\qq{\fr{c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1}}{\epsilon_d} - \fr{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}}{\epsilon_d+U}}P_{n_d=1}
 \eeq
-Using Fierz indentity \il{\delta_{\sigma_1\sigma_3}\delta_{\sigma_4\sigma_2} = \hf\delta_{\sigma_1\sigma_2}\delta_{\sigma_3\sigma_4} + \hf\vec\sigma_{\sigma_1\sigma_2}\cdot\vec\sigma_{\sigma_3\sigma_4}}, we can write
+Using the Fierz identity \il{\delta_{\sigma_1\sigma_3}\delta_{\sigma_4\sigma_2} = \hf\delta_{\sigma_1\sigma_2}\delta_{\sigma_3\sigma_4} + \hf\vec\sigma_{\sigma_1\sigma_2}\cdot\vec\sigma_{\sigma_3\sigma_4}}, we can write
 \beq
 c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_1} &= \sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_4}\delta_{\sigma_1\sigma_3}\delta_{\sigma_4\sigma_2}\\
 &=\hf\sum_{\sigma_3,\sigma_4}c^\dagger_{d\sigma_3} c_{k_2 \sigma_2}c^\dagger_{k_1\sigma_1} c_{d \sigma_4}\rr{\delta_{\sigma_1\sigma_2}\delta_{\sigma_3\sigma_4} + \vec\sigma_{\sigma_1\sigma_2}\cdot\vec\sigma_{\sigma_3\sigma_4}}\\
@@ -931,7 +946,7 @@ $\left.\begin{tabular}{@{}l@{}}
 \end{center}
 For non-flip, the matrix elements for the \il{T-}matrix is
 \beq
-T^{(1)}_\text{nonflip} = T_{k_\ua,d_{\sigma} \ra q_\ua,d_{\sigma}} = \bra{q_\ua,d_{\sigma}}V\ket{k_\ua,d_{\sigma}} = m_d J
+T^{(1)}_\text{non-flip} = T_{k_\ua,d_{\sigma} \ra q_\ua,d_{\sigma}} = \bra{q_\ua,d_{\sigma}}V\ket{k_\ua,d_{\sigma}} = m_d J
 \eeq
 where \il{m_d \in \{-s_d, s_d\}} is the spin of the impurity electron.
 The probability for this scattering is
