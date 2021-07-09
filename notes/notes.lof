@@ -1,11 +1,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces model-scheme.png\relax }}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces model-scheme.png\relax }}{16}{figure.caption.8}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Subcaption 1}}}{69}{subfigure.2.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Subcaption 1}}}{69}{subfigure.2.2}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Renormalization in the energy levels when \({\epsilon _d^* \gg \Delta }\)\relax }}{73}{figure.caption.28}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Renormalization in energy levels when \({|\epsilon _d^*| \lesssim \Delta }\)\relax }}{77}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Renormalization in energy levels when \({\epsilon _d^* \ll -\Delta }\)\relax }}{78}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Renormalization in the energy levels when \({\epsilon _d^* \gg \Delta }\)\relax }}{73}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Renormalization in energy levels when \({|\epsilon _d^*| \lesssim \Delta }\)\relax }}{77}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Renormalization in energy levels when \({\epsilon _d^* \ll -\Delta }\)\relax }}{78}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Schematic diagram of RG flows and fixed points of the symmetric SIAM, as obtained by ref.\cite {hrk-nrg}. The y-axis is the impurity site repulsion \(U = -\frac {1}{2}\epsilon _d\) while the x-axis is the hybridisation parameter \(\Delta \sim \rho V^2\). The abbreviations mark the three fixed-points: FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are described in the text.\relax }}{85}{figure.caption.31}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Three steps of the URG: Decompose the Hamiltonian in a \(2\times 2\) matrix, apply the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.\relax }}{89}{figure.caption.32}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Star Graph model\relax }}{99}{figure.3.2}%

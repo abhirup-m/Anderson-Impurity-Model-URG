@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{hrk-nrg}
+H.~R. Krishna-murthy, K.~G. Wilson, and J.~W. Wilkins.
+\newblock Temperature-dependent susceptibility of the symmetric anderson model:
+  Connection to the kondo model.
+\newblock {\em Phys. Rev. Lett.}, 35:1101--1104, October 1975.
+
 \bibitem{Friedel}
 J.~Friedel.
 \newblock Metallic alloys.
@@ -93,14 +99,13 @@ V.~N. Popov and S.~A. Fedotov.
 \newblock {\em J. Exp. Theor. Phys.}, 67, 1968.
 
 \bibitem{wilson}
-k.~G.~Wilson.
-\newblock The renorriialization group: Critical phenomena and the kondo
-  problem.
+K.~G. Wilson.
+\newblock The renormalization group: Critical phenomena and the kondo problem.
 \newblock {\em Reviews of Modern Physics}, 47, 1975.
 
 \bibitem{hewsonp}
 A.~C. Hewson.
-\newblock Renorriialization group and fermi liquid theory.
+\newblock Renormalization group and fermi liquid theory.
 \newblock {\em Advances in Physics}, 43, 1994.
 
 \bibitem{langer}
@@ -135,6 +140,10 @@ Kenji Suzuki.
 F.~D.~M. Haldane.
 \newblock Scaling theory of the asymmetric anderson model.
 \newblock {\em Phys. Rev. Lett.}, 40:416--419, Feb 1978.
+
+\bibitem{spa_star}
+Siddhartha Patra.
+\newblock {\em unpublished}, 2021.
 
 \bibitem{tatha}
 Mengxing Cheng, Tathagata Chowdhury, Aaron Mohammed, and Kevin Ingersent.
@@ -190,7 +199,7 @@ Rok \ifmmode~\check{Z}\else \v{Z}\fi{}itko and Janez Bon\ifmmode~\check{c}\else
 \bibitem{taraphder}
 A.~Taraphder and P.~Coleman.
 \newblock Heavy-fermion behavior in a negative-u anderson model.
-\newblock {\em Phys. Rev. Lett.}, 66:2814--2817, May 1991.
+\newblock {\em Phys. Rev. Lett.}, 66:2814--2817, 5 1991.
 
 \bibitem{okiji_kawakami}
 Ayao {Okiji} and Norio {Kawakami}.

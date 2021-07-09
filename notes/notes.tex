@@ -39,13 +39,13 @@
 	{\LARGE \textbf{Dr. Siddhartha Lal}}
 }
 	\vfill
-	\includegraphics[scale=0.1]{../logo.png}\\
+	\includegraphics[scale=0.15]{../logo.png}\\
 	\vspace{0.01\textheight}
 	\textbf{\LARGE Indian Institute of Science Education and \\[10pt]}
 \textbf{\LARGE Research, Kolkata}
 \end{titlepage}
 \chapter*{Declaration by the student}
-I, \textbf{Abhirup Mukherjee}, hereby declare that this thesis titled \textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
+I, {\large\textbf{Abhirup Mukherjee}}, hereby declare that this thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
 \pb
 Signed:\\[5pt]
 \rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
@@ -54,7 +54,7 @@ Date:
 \today
 
 \chapter*{Certificate from the supervisor}
-This is to certify that the thesis titled \textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model} which is submitted by \textbf{Abhirup Mukherjee} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this thesis is original and has not been submitted for the award of any other degree.
+This is to certify that the thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} which is submitted by {\large\textbf{Abhirup Mukherjee}} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this thesis is original and has not been submitted for the award of any other degree.
 \pb
 Signed:\\[5pt]
 \rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
@@ -63,11 +63,11 @@ Date:
 \today
 \chapter*{Acknowledgments}
 I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. Finally, I must acknowledge all the love and support I received from my family - it helped my see this work through to the end.
-\chapter*{}
-\begin{center}
-	\vspace*{100pt}
-	\Large{To you, 5 years from now}
-\end{center}
+% \chapter*{}
+% \begin{center}
+% 	\vspace*{100pt}
+% 	\Large{To you, 5 years from now}
+% \end{center}
 \chapter*{Abstract}
 This thesis reports a renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume. The impurity spectral is tracked between the fixed points and shows the emergence of a central peak at the strong-coupling fixed point.
 \listoffigures
@@ -101,7 +101,7 @@ Anderson found that the exchange coupling increased as we go to lower temperatur
 In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
 Later calculations with Bethe ansatz in 1980 by Andrei and Wiegmann \cite{Andrei,wiegmann} corroborated Wilson's findings.
-\pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
+\pb A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility \cite{hrk-nrg}. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
 \pb The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
 \section{Some outstanding questions}
 Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
@@ -119,7 +119,7 @@ Even though the problem of the SIAM has been essentially solved, some questions 
     \item \textit{How does NRG obtain the local moment in the \textbf{absence of hybridisation}?}
     For the symmetric mode, NRG results show that in the absence of any interaction between the bath and the impurity, the value of the onsite repulsion flows to a large value and we end up with a local moment. The obvious question is, how does the impurity coupling renormalize when there is no term connecting the bath with the impurity?
     \item \textit{Are there any interesting \textbf{topological aspects} of the fixed points?}
-	    We also intend to search for the existence of and possible changes in topological quantities at the fixed points. Since this is a zero-dimensional phenomenon, there will not be any change in the topology of the Fermi surface, but there might be changes in the analyticity of the Green's function when the due to the presence of the coupling between the bath and the impurity. A strong indication of this is the change in the Wilson ratio from the non-interacting value of \(R=1\) to the local-Fermi liquid fixed point value of \(R=2\) obtained by Nozières\cite{nozieres}. 
+	    We also intend to search for the existence of and possible changes in topological quantities at the fixed points. Since this is a zero-dimensional phenomenon, there will not be any gapping out of the Fermi surface, but there might be changes in topological quantities related to the Fermi surface or in the analyticity of the Green's function due to the presence of the coupling between the bath and the impurity. A strong indication of this is the change in the Wilson ratio from the non-interacting value of \(R=1\) to the local-Fermi liquid fixed point value of \(R=2\) obtained by Nozières\cite{nozieres}. 
     \item \textit{What is the nature of the Kondo cloud that screens the spin(charge) of the impurity?} We do not yet have a theory for the excitations of the cloud of electrons at the zeroth site that couple to the impurity at the fixed point. The local Fermi liquid sits just outside the cloud and is able to "feel" its effects and gauge certain gross quantities like the Wilson ratio, but it does not have the excitations of the cloud because that part, along with the impurity, has been assumed to be "frozen" into the singlet configuration. A recent result in this context \cite{am_thesis} is the effective Hamiltonian of the Kondo model cloud, also obtained using the same method that has been used in this thesis. The goal here is to do something similar for the SIAM as well.
     \item \textit{How do entanglement measures respond to the RG flow?} Can we find a reflection of the screening mechanism in something like the mutual information or correlations? This requires a knowledge of the wavefunctions at the fixed point. Does the enhanced scattering of the electrons off the impurity lead to an increase in the entanglement between various electrons of the bath? It will also be interesting to check how various correlation functions vary across the RG flow.
 \end{itemize}
@@ -3292,6 +3292,16 @@ This gives us \il{D \gg |\epsilon_d|}.
 \end{itemize}
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 %}
+\section{Numerical Renormalization Group Calculation of the symmetric SIAM}
+NRG calculations of the symmetric SIAM were carried out by H. R. Krishnamurthy, Wilkins and Wilson in ref.~\cite{hrk-nrg}. They identified three fixed points in the phase diagram. Two of them, the free-orbital and the local moment, are unstable while the strong-coupling fixed point is stable. These fixed points along with typical RG flows are marked in fig.~\ref{nrg_fp}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../figures/nrg_fpoints.png}
+	\caption{Schematic diagram of RG flows and fixed points of the symmetric SIAM, as obtained by ref.\cite{hrk-nrg}. The y-axis is the impurity site repulsion \(U = -\frac{1}{2}\epsilon_d\) while the x-axis is the hybridisation parameter \(\Delta \sim \rho V^2\). The abbreviations mark the three fixed-points: FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are described in the text.}
+	\label{nrg_fp}
+\end{figure}
+The free-orbital fixed point is described by \(U=V=0\). The local moment fixed point is described by \(U \to \infty, V=0\). The strong-coupling fixed point is described by \(U=\text{finite}, V \to \infty\). The temperature-dependent susceptibility is found to be very similar to that obtained from the Kondo model, with a suitably-defined \(T_K\). It starts from a constant value at low-temperatures to a Curie-Weiss like form at high temperatures, with the Curie-Weiss constant at very large temperatures being equal to \(\frac{1}{8}\).
+
 \chapter{Unitary Renormalization Group Method}\label{urgform}
 % This section is adapted from ref.\cite{holography1} and expanded wherever required.
 \section{Formalism and Results}
@@ -3680,7 +3690,7 @@ These equations will now need to be simplified. For example, in the particle sec
 \pb At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \ham\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\rr{c^\dagger_{q\beta}\ham }c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\rr{\ham c_{q\beta}}\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\ham^D\) is just the diagonal part of the Hamiltonian.
 \section{Star Graph URG}
 \begin{minipage}{260pt}
-The star graph problem consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+The first URG solution of the star graph problem is in ref.~\cite{spa_star}. The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \qq{0,N}\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \qq{1,N}\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\qq{N-1,1}\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \beq
 \ham = \epsilon_0 S^z_0 + \sum_{i=1}^N\qq{\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i}
 \eeq
@@ -3831,6 +3841,7 @@ The fixed points are obtained numerically by solving the RG equation. As mention
 \end{center}
 \section{Kondo Model URG}
 \label{kondourg}
+The Kondo model URG analysis is first carried out in ref.~\cite{am_thesis}. The model is of course described by the Hamiltonian
 \beq
 \ham = \sum_{k\alpha}\epsilon_{k}\hat n_{k\alpha} + J_z\sum_{k,k^\prime} S_d^z\rr{c^\dagger_{k\ua}c_{k^\prime\ua} - c^\dagger_{k\da}c_{k^\prime\da}} + J_t\sum_{k,k^\prime}\rr{S_d^+ c^\dagger_{k\da}c_{k^\prime\ua} + S_d^- c^\dagger_{k\ua}c_{k^\prime\da}}
 \eeq
@@ -5585,8 +5596,7 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 	\label{siamphases}
 \end{figure}
 \subsection{Effect of non-zero \(V\) on the RG flows}
-The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}.
-
+The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}. It is very similar to that obtained from NRG, as was shown in fig.~\ref{nrg_fp}.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../figures/UvsJ.pdf}
@@ -7061,7 +7071,7 @@ The first process is the forward RG which we used to obtain the scaling equation
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{../figures/reverse_rg.png}
+	\includegraphics[width=0.7\textwidth]{../figures/reverse-rg.png}
 	\caption{Algorithm of reverse RG. We start with a Hamiltonian with an impurity site (red) coupled with two conduction electrons (dark green), with four other decoupled electrons (bright green). The dotted rectangle represents the emergent window \(\left( -\Lambda_j, \Lambda_j \right) \) at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from the IOMS (hence four dark green circles in the second step), leading to an enlargement of the emergent window. The unitary varies for each step, hence the notation \(U_j\).}
 	\label{rev-rg}
 \end{figure}
@@ -7212,14 +7222,15 @@ where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obt
 In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity degree of freedom. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. 
 %TODO discuss about Cv
 We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
-\pb This work still leaves some problems untouched. Some new questions have also emerged. We discuss them now.
+\pb This work still leaves some problems untouched. Some new questions and interesting prospects have also emerged. We discuss them now.
 \begin{itemize}
 	\item Can we obtain an analytical expression for the finite temperature Wilson ratio? The zero temperature value was obtained using low temperature approximations, so a finite temperature calculation would need to be non-perturbative. In other words, the full effect of the conduction bath will most probably come into play.
 	\item The spectral function of the impurity is another interesting quantity to explore. It is not yet completely certain which parts of the effective Hamiltonian for the cloud lead to which features of the spectral function. It would be interesting to check whether the Fermi liquid part gives the central peak and the non-Fermi liquid the side humps, or something else altogether. We also intend to explore the bath spectral function and its variation under the RG.
 	\item In Chapter \ref{urg_canonical}, we find that the URG renormalization in Hamiltonian has a form similar to that of URG - a generalized double-bracket form. This suggests that URG might have uses in linear algebra as well. It is well-known that transformations of the double-bracket form are unitary and can be used in minimization and sorting problems \cite{Brockett1991}. It has also been shown that the unitary flows correspond to motion along a geodesic if a suitable manifold is defined. This suggests that we can look for a quantity which is minimized by URG in the journey towards the fixed point and see if it can be used to provide a faster and more robust algorithm for optimization problems.
 	\item One can also look into the lattice versions of these models - the Kondo lattice and the Anderson lattice problems which involve two interacting bands - one for the impurity and the other for the conduction electrons \cite{gulacsi}. Since there is a macroscopic number of impurity electrons, such a model shows phase transitions. One big project for the future can be to look into such models, map the phase diagram and search for superconducting phases or non-Fermi liquid phases.
+	\item We have seen that the zero-mode of the low-energy effective Hamiltonian is essentially a two-site Anderson model(a.k.a Anderson dimer), which can be solved exactly. An interesting endeavor in this context could be to see if there is a unitary transformation that converts the Anderson dimer to a two-site Hubbard model (Hubbard dimer). The point of this exercise would be to shed some light on the inner workings of DMFT. The imposition of the self-consistency requirement in DMFT introduces a translational invariance into the Anderson model and converts it into the Hubbard model. If we could figure out a transformation that does the same (albeit, between dimers and not the full-fledged models), it might lead to new insights into DMFT).
+	\item It is known from DMFT calculations that the spectral function of the bath changes under a change of \(U\), leading to a metal-insulator transition. An interesting project could be to redo the URG of the SIAM with more complicated baths (by inserting non-trivial self-energies into the bath), and see if the phase-diagram changes. As it stands now, there is no provision for a phase transition in the SIAM because there is only one stable phase. If the inclusion of a non-trivial bath brings about a phase-transition in the impurity phase diagram, that is essentially a mirror of the phase transition happening in the Hubbard model. The importance of this potential discovery is that the self-energies that we wish to insert into the bath have been obtained from a URG treatment of the Hubbard model, and the appearance of the phase transition would then show that URG can be used to do much of the work that DMFT does, and it provides an avenue of improving/remodeling DMFT.
 \end{itemize}
-% \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{unsrt}
 \bibliography{notes}
 \end{document}
