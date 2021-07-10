@@ -23,10 +23,10 @@ Jun Kondo.
 \newblock {Resistance Minimum in Dilute Magnetic Alloys}.
 \newblock {\em Progress of Theoretical Physics}, 32(1):37--49, 07 1964.
 
-\bibitem{Andrei}
-N.~Andrei.
-\newblock Calculation of the magnetoresistance in the kondo model.
-\newblock {\em Physics Letters A}, 87(6):299--302, 1982.
+\bibitem{andrei_kondo}
+N.~Andrei, K.~Furuya, and J.~H. Lowenstein.
+\newblock Solution of the kondo problem.
+\newblock {\em Rev. Mod. Phys.}, 55:331--402, Apr 1983.
 
 \bibitem{wiegmann}
 P~B Wiegmann.
@@ -191,8 +191,7 @@ P.~W. Anderson.
 \newblock {\em Phys. Rev.}, 112:1900--1916, Dec 1958.
 
 \bibitem{charge-kondo-Zitko}
-Rok \ifmmode~\check{Z}\else \v{Z}\fi{}itko and Janez Bon\ifmmode~\check{c}\else
-  \v{c}\fi{}a.
+Rok Zitko and Janez Bonca.
 \newblock Spin-charge separation and simultaneous spin and charge kondo effect.
 \newblock {\em Phys. Rev. B}, 74:224411, Dec 2006.
 
