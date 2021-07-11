@@ -62,12 +62,14 @@ Signed:\\[5pt]
 Date:
 \today
 \chapter*{Acknowledgments}
-I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. Finally, I must acknowledge all the love and support I received from my family - it helped my see this work through to the end.
-% \chapter*{}
-% \begin{center}
-% 	\vspace*{100pt}
-% 	\Large{To you, 5 years from now}
-% \end{center}
+I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. The support of IISER Kolkata in the form of a junior research fellowship is gratefully acknowledged.
+
+\chapter*{}
+\begin{center}
+	\vspace*{100pt}
+	\Large{\textit{To you, 5 years from now}}
+\end{center}
+
 \chapter*{Abstract}
 This thesis reports a renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume. The impurity spectral is tracked between the fixed points and shows the emergence of a central peak at the strong-coupling fixed point.
 \listoffigures
@@ -5389,6 +5391,11 @@ In this section, we will consider the SIAM with both spin and charge fluctuation
 	\ham =& \sum_{k\sigma}\tau_{k\sigma} + \epsilon_d \hat n_d + U \hat n_{d\uparrow}\hat n_{d \downarrow} + \sum_{k\sigma}\left( V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.} \right) + J_z S_d^z\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow} \right) \\
 	      &+ J_t \sum_{kk^\prime\sigma}c^\dagger_{d\sigma}c_{d\ol\sigma}c^\dagger_{k\ol\sigma}c_{k^\prime\sigma} + K_z C_d^z \sum_{kk^\prime}\left( c^\dagger_{k\sigma}c_{k^\prime\sigma} - \frac{1}{2}\delta_{kk^\prime} \right) + K_t \sum_{kk^\prime\sigma}\left(c^\dagger_{d\sigma}c^\dagger_{d\ol\sigma}c_{k\ol\sigma}c_{k^\prime\sigma}+\text{h.c.}\right)
 \end{aligned}\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{../figures/gen_siam.png}
+	\caption{Schematic diagram of the generalized SIAM model.}
+\end{figure}
  There are eight different type of scattering terms:
 \begin{equation}\begin{aligned}
 	c^\dagger_{q\beta}T_1 &= V_1 c^\dagger_{q\beta}c_{d\beta}\hat n_{d\ol\beta}, &c^\dagger_{q\beta}T_2 &= V_0 c^\dagger_{q\beta}c_{d\beta}\left(1 - \hat n_{d\ol\beta}\right)\\
