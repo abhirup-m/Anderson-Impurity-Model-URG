@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{1759.36400625bp}%
+    \setlength{\unitlength}{1523.17933879bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.55571964)%
+  \begin{picture}(1,0.5798043)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{phases_V_pres.pdf}}%
-    \put(0.81328527,0.54328901){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity spin is screened\end{tabular}}}}%
-    \put(0.81314053,0.46451485){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}groundstate is singlet\end{tabular}}}}%
-    \put(0.81557649,0.38534664){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}charge susceptibility is 0\end{tabular}}}}%
-    \put(0.00381086,0.16165963){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}impurity isospin is screened\end{tabular}}}}%
-    \put(-0.00059681,0.08288546){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}groundstate is charge singlet\end{tabular}}}}%
-    \put(0.05640437,0.00371725){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}spinsusceptibility is 0\end{tabular}}}}%
+    \put(0.56726062,0.43248259){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 \leq U^* \ll U_0$\\\\$0 \leq J_0 \ll J^*$\end{tabular}}}}%
+    \put(0.87247098,0.49093578){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}screened spin\\\\ground state is\\spin singlet\end{tabular}}}}%
+    \put(0.08265814,0.04642783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}screened \\isospin\end{tabular}}}}%
+    \put(-0.00068935,0.17929836){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}groundstate is \\isospin singlet\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{phases_V_pres.pdf}}%
+    \put(0.83924606,0.28660596){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$J-K$\end{tabular}}}}%
+    \put(0.55282926,0.56463865){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U$\end{tabular}}}}%
+    \put(0.31005086,0.17807396){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 \leq U^* \ll U_0$\\\\$0 \leq K_0 \ll K^*$\end{tabular}}}}%
+    \put(0.31005089,0.43229748){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 \leq U^* \ll U_0$\\\\$0 \leq K_0 \ll K^*$\end{tabular}}}}%
+    \put(0.56994605,0.17807391){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 \leq U^* \ll U_0$\\\\$0 \leq J_0 \ll J^*$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -1,24 +1,33 @@
+% !TEX TS-program = xelatex
 \documentclass[12pt,twoside]{report}
-% \usepackage{charter}
+
+\usepackage[draft]{graphicx}
+
+\usepackage{anyfontsize}
 \usepackage{booktabs}
 \usepackage{tocbibind}
 \setcounter{tocdepth}{1}
 \raggedbottom
 \usepackage{common}
+
+\usepackage{noto-mono}
+\usepackage{notomath}
+
 \usepackage[affil-it]{authblk}
 \pagenumbering{roman}
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
-%\usepackage[allfiguresdraft]{draftfigure}
 \allowdisplaybreaks
+
+
 \begin{document}
-\begin{titlepage} % Suppresses headers and footers on the title page
+\begin{titlepage}
 	\centering
 	\rule{\textwidth}{3pt}\\
 	\vspace*{25pt}
 	\textcolor{black}{ % Red font color
-		\textbf{\Huge Unitary Renormalization Group Solution}\\[10pt]
-		\textbf{\Huge of The Single-Impurity Anderson Model}
+		\textbf{\LARGE Unitary Renormalization Group Solution}\\[10pt]
+		\textbf{\LARGE of The Single-Impurity Anderson Model}
 	\vspace*{25pt}
 	}
 	\rule{\textwidth}{3pt} % Thick horizontal rule
@@ -30,19 +39,19 @@
 	\vspace*{15pt}
 	\textit{\large by \\}
 	\vspace*{15pt}
-	{\LARGE \textbf{Abhirup Mukherjee \\}}
+	{\Large \textbf{Abhirup Mukherjee \\}}
 	\vspace*{5pt}
 	{\Large \textbf{(18IP014)\\}}
 	\vspace*{15pt}
 	\textit{\large under the supervision of \\}
 	\vspace*{15pt}
-	{\LARGE \textbf{Dr. Siddhartha Lal}}
+	{\Large \textbf{Dr. Siddhartha Lal}}
 }
 	\vfill
 	\includegraphics[scale=0.15]{../logo.png}\\
 	\vspace{0.01\textheight}
-	\textbf{\LARGE Indian Institute of Science Education and \\[10pt]}
-\textbf{\LARGE Research, Kolkata}
+	\textbf{\Large Indian Institute of Science Education and \\[10pt]}
+\textbf{\Large Research, Kolkata}
 \end{titlepage}
 \chapter*{Declaration by the student}
 I, {\large\textbf{Abhirup Mukherjee}}, hereby declare that this thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
@@ -523,9 +532,8 @@ H = \epsilon_d \hat n_d + \sum_{k} \epsilon_k \hat n_k + \sum_{k\sigma}t\rr{c^\d
 \eeq
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{model_scheme.png}
-	\caption{model-scheme.png}
-	\label{fig:model_scheme-png}
+	\includegraphics[width=0.5\textwidth]{model_scheme.png}
+	\caption{The single-impurity Anderson model Hamiltonian}
 \end{figure}
 The SIAM involves the following energy scales:
 \begin{itemize}
@@ -5515,7 +5523,6 @@ For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flo
 	\caption{\(\omega < 0\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
 	\label{J_sc}
 \end{figure}
-
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.48\textwidth]{../figures/U_irr.pdf}
@@ -5529,12 +5536,6 @@ From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.4]{../figures/JvsK.pdf}
-	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
-	\label{JvsK}
-\end{figure}
 
 \subsection{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
@@ -5670,7 +5671,8 @@ We can now summarize the various fixed point phases. The physically relevant one
 
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[scale=0.29]{../figures/phases_V.pdf}
+	\def\svgwidth{0.8\columnwidth}
+	\input{../figures/phases_V_pres.pdf_tex}
 	\caption{Low \(\omega\) fixed point phases for the SIAM with \(V>0\).}
 \end{figure}
 
@@ -5856,15 +5858,17 @@ In the first quadrant, we will have \(J^* > K^*\). As we increase the system siz
 	\gamma \to \infty \implies \left( c^s_- \right)^2 \to 1 \text{ and } \left( c^c_- \right)^2 \to 0
 \end{aligned}\end{equation}
 The spin singlet becomes the all-important piece in this situation.
-This change is shown in fig.~\ref{gamma}. We have the variation of the probabilities and of \(\gamma\) for the first quadrant. \(\gamma\) increases with system size, and so does the spin probability \(\left( c_s^- \right)^2\). 
+This change is shown in fig.~\ref{gamma}. We have the variation of the probabilities and of \(\gamma\) for the first quadrant. \(\gamma\) increases with system size, and so does the spin probability \(\left( c_s^- \right)^2\). The ground state in such a limit becomes purely a singlet:
+\begin{equation}\begin{aligned}
+	\label{gstate_kondo}
+	\ket{\Psi}_\text{gs} &\approx \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) \\
+	E_\text{gs} &\approx \epsilon_d - \frac{3j}{4}
+\end{aligned}\end{equation}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.52\textwidth]{../figures/cscc_q1.pdf}
 	\includegraphics[width=0.46\textwidth]{../figures/gamma_q1.pdf}
-%	\includegraphics[width=0.52\textwidth]{../figures/cscc_q3.pdf}
-%	\includegraphics[width=0.46\textwidth]{../figures/gamma_q3.pdf}
-	%\includegraphics[width=0.47\textwidth]{../figures/gamma_q1.pdf}
-	\caption{\textit{Left}:Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. \textit{Right}: Variation of \(\gamma\) with system size.}
+	\caption{\textit{Left}: Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. \textit{Right}: Variation of \(\gamma\) with system size.}
 	\label{gamma}
 \end{figure}
 \pb The full list of eigenstates is
@@ -5915,16 +5919,16 @@ and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1
 	\Delta E_g \equiv E_-^2 - E_c^2 = \frac{1}{2}\epsilon_d - \frac{3j + k}{8} + k - \sqrt{4v^2 + \left(\frac{3j+k}{8} -\frac{1}{2} \epsilon_d\right) ^2}
 \end{aligned}\end{equation}
 Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
-\pb \begin{minipage}{0.40\textwidth}
-These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
-\end{minipage}
-\hspace{0.05\textwidth}
-\begin{minipage}{0.5\textwidth}
+\pb These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
+\pb One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions.
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/gstate.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/gstate.pdf}
 	\captionof{figure}{Shift in the ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
 	\label{fig_gstate}
-\end{minipage}
+\end{figure}
+\vspace{\fill}
+
 \chapter{Results and Features of the Low-Energy Theory}
 \label{results}
 \section{Effective Kondo temperature}
@@ -6427,9 +6431,9 @@ This shows that each operator acts only on its own subspace. \(S_i\) does not ac
 These transitions involve energy transfer of the order of \(\epsilon_d\). This is why, at very small \(U\), they remain absorbed inside the central peak. These transitions do not involve any spin or charge-flip, rather they take the impurity between the spin and charge sectors.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.58\textwidth]{../figures/spec_func_1.pdf}
-	\includegraphics[width=0.58\textwidth]{../figures/spec_func_2.pdf}
-	\includegraphics[width=0.58\textwidth]{../figures/spec_func_3.pdf}
+	\includegraphics[width=0.55\textwidth]{../figures/spec_func_1.pdf}
+	\includegraphics[width=0.55\textwidth]{../figures/spec_func_2.pdf}
+	\includegraphics[width=0.55\textwidth]{../figures/spec_func_3.pdf}
 	\caption{Impurity spectral function for three sets of bare values. The increase in value of \(U\) is accompanied by the appearance of the side-peaks. For all the plots, \(V=0.001\) and \(D=1\).}
 	\label{spec_func}
 \end{figure}
@@ -6616,7 +6620,7 @@ This interaction arises from the enhanced entanglement between the impurity and 
 	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\ref{off_diag_coeff} along the RG flow.}
 	\label{Fkkqq}
 \end{figure}
-\section{Calculation of Wilson ratio from effective Hamiltonian}
+\section{Calculation of Wilson ratio from effective local Fermi liquid}
 In this section, we will calculate the zero temperature Wilson ratio of the impurity in the Kondo regime of the SIAM. Since this is a low energy property, our starting point will be the fixed point Hamiltonian of eq.~\ref{fixed_point_ham}, after substituting \(U^*=K^*=0\) (because we are in the first quadrant):
 \begin{equation}\begin{aligned}
 	\ham^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
@@ -6625,27 +6629,44 @@ We also convert \(\tau\) to \(\hat n\), ignoring the constant part, and write th
 \begin{equation}\begin{aligned}
 	\ham^* = t\sum_{\sigma\left<i,j \right>}\left(c^\dagger_{i\sigma}c_{j\sigma} + \text{h.c.}\right) + \sum_{\sigma}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
 \end{aligned}\end{equation}
-We know that the ground state for the interacting part is predominantly the spin-singlet, so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
+We know that the ground state for the interacting part is predominantly the spin-singlet (it was shown while calculating the ground states of the effective zero-mode Hamiltonian that the ground state is a mixture of singlet and triplet, and the triplet part dies out at large system sizes, see eq.~\ref{gstate_kondo}), so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
 \begin{equation}\begin{aligned}
-	t\sum_{\sigma} c^\dagger_{0\sigma}c_{1\sigma} +\text{h.c.}
+	V = t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.}
 \end{aligned}\end{equation}
-as a weak perturbation. 1 here stands for the sites that are adjacent to the origin. Once that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. The goal here is to see whether the effect of the perturbation is to lower the energy of the singly-occupied state \(\ket{\hat n_1 = 1}\) compared to the doubly-occupied state \(\ket{\hat n_1 = 2}\) or to raise it. If the perturbation shifts the energy of the singly-occupied state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled  by a repulsive term \(|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\). If, on the other hand, the effect is to raise the energy of the singly-occupied state with respect to the \(\hat n_1 = 2\) state, then that effect is equivalent to an attractive term \(-|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\).
+as a weak perturbation. \(\vec r_1\) here sums over the sites that are nearest to the origin. Once that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. The goal here is to see whether the effect of the perturbation is to lower the energy of the singly-occupied state \(\ket{\hat n_1 = 1}\) compared to the doubly-occupied state \(\ket{\hat n_1 = 2}\) or to raise it. If the perturbation shifts the energy of the singly-occupied state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled  by a repulsive term \(|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\). If, on the other hand, the effect is to raise the energy of the singly-occupied state with respect to the \(\hat n_1 = 2\) state, then that effect is equivalent to an attractive term \(-|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\).
 \pb To be precise, we will compare the energy shifts corresponding to the two states
 \begin{equation}\begin{aligned}
 	\ket{\phi^{(0)}_1} &= \underbrace{\ket{\uparrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) \\
 	\ket{\phi^{(0)}_2} &= \underbrace{\ket{\uparrow, \downarrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) 
 \end{aligned}\end{equation}
-In the singlet part, the first entry is the configuration of the zeroth site while the second entry is the configuration of the impurity site. Choosing the \(\uparrow\) configuration for the site 1 is not a problem because both the non-perturbative and the perturbative interactions are SU(2)-symmetric. The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
+In the singlet part, the first entry is the configuration of the zeroth site while the second entry is the configuration of the impurity site. Choosing the \(\uparrow\) configuration for the site 1 is not a problem because both the non-perturbative and the perturbative interactions are SU(2)-symmetric. To demonstrate this, note that all energy shifts will depend on the unperturbed states \(\ket{\phi^{(0)}}\) in two ways: through the energies in the denominator and through the matrix element in the numerator. The unperturbed energy goes not depend on the configuration of the \(\vec r_1\) site, because the energy is dominated by the singlet. The matrix element is also independent of the sigma:
+\begin{equation}\begin{aligned}
+	V\ket{\sigma}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) &= \left(t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.}\right) \ket{\sigma}\otimes\frac{1}{\sqrt 2}\sum_\alpha\alpha\ket{\alpha, \overline\alpha}\\
+														   &=t\frac{1}{\sqrt 2}\left(\ket{2}\ket{0,\overline\sigma} - \ket{0}\ket{2,\sigma}\right)
+\end{aligned}\end{equation}
+The first order correction will be zero as we will see shortly, but the short version is that \(V\ket{\phi^{(0)}}\) is obviously orthogonal to \(\ket{\phi^{(0)}}\). All higher energy shifts can be represented as
+\begin{equation}\begin{aligned}
+	\bra{\phi^{(0)}} V X V \ket{\phi^{(0)}}
+\end{aligned}\end{equation}
+where \(X\), for example, is 
+\begin{equation}\begin{aligned}
+	\sum_{m^{(0)}}\frac{|\bra{m^{(0)}}\ket{\phi^{(0)}}|^2}{E^{(0)}_\phi - E^{(0)}_m}
+\end{aligned}\end{equation}
+for the second order shift, and does not operate on the impurity. Since \(X\) does not operate on the impurity, the shift can be written as
+\begin{equation}\begin{aligned}
+	\bra{\phi^{(0)}} V X V \ket{\phi^{(0)}} &= \frac{t^2}{2}\left(\bra{2}\bra{0,\overline\sigma} - \bra{0}\bra{2,\sigma}\right)X\left(\ket{2}\ket{0,\overline\sigma} - \ket{0}\ket{2,\sigma}\right)\\
+		 &= \frac{t^2}{2}\bra{2}\bra{0,\overline\sigma} X\ket{2}\ket{0,\overline\sigma} + \frac{t^2}{2}\bra{0}\bra{2,\sigma}X \ket{0}\ket{2,\sigma}\\
+		 &= \frac{t^2}{2}\bra{2}\bra{0} X\ket{2}\ket{0}\bra{\overline\sigma}\ket{\overline\sigma} + \frac{t^2}{2}\bra{0}\bra{2}X \ket{0}\ket{2}\bra{\sigma}\ket{\sigma}\\
+		 &= \frac{t^2}{2}\bra{2}\bra{0} X\ket{2}\ket{0} + \frac{t^2}{2}\bra{0}\bra{2}X \ket{0}\ket{2}
+\end{aligned}\end{equation}
+This proves that the shift is independent of \(\sigma\). The reason we could shift the bra \(\bra{\sigma}\) across the \(X\) without any sign change is that \(X\) will have even number of operators in product, because it operates on \(0\) and \(1\).
+\pb The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
 \begin{equation}\begin{aligned}
 	E_1^{(0)} = E_2^{(0)} = -\frac{3J^*}{4}
 \end{aligned}\end{equation}
 The full list of unperturbed eigenstates are 
 \begin{equation}\begin{aligned}
 	\left\{\ket{\hat n_1 = 0}, \ket{\hat n_1=1}, \ket{\hat n_1 = 2}\right\} \otimes \left\{ \ket{S=0}, \ket{S=1, S^z=-1,0,1}, \ket{S_0^z \times S_d^z = 0}\right\} 
-\end{aligned}\end{equation}
-The perturbation is
-\begin{equation}\begin{aligned}
-	V = t\sum_\sigma \left(c^\dagger_{0\sigma}c_{1\sigma} + c^\dagger_{1\sigma}c_{0\sigma}\right)
 \end{aligned}\end{equation}
 Since \(V\) takes \(\ket{\phi_{1,2}^{(0)}}\) to completely orthogonal states, the first order corrections are 0:
 \begin{equation}\begin{aligned}
@@ -6716,7 +6737,7 @@ The last two equations together mean that the effect of the perturbation is to r
 \begin{equation}\begin{aligned}
 	u \sim \frac{t^4}{{J^*}^3}
 \end{aligned}\end{equation}
-and we can replace the perturbative term \(V\) by an effective repulsive term
+and we can replace the perturbative term \(V\) by an effective repulsive term on the first site (a.k.a, the "local Fermi liquid", \cite{nozieres}):
 \begin{equation}\begin{aligned}
 	u\hat n_{1 \uparrow}\hat n_{1 \downarrow}
 \end{aligned}\end{equation}
@@ -6724,11 +6745,11 @@ The total system now consists of two decoupled parts - the singlet composed of t
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
 \end{aligned}\end{equation}
-% When written in momentum space, this takes the form
-% \begin{equation}\begin{aligned}
-% 	\sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{kk^\prime qq^\prime}f_{kk^\prime qq^\prime}c^\dagger_{k \uparrow}c_{k^\prime \uparrow}c^\dagger_{q \downarrow}c_{q^\prime \downarrow}
-% \end{aligned}\end{equation}
-% where \(f_{kk^\prime qq^\prime} = ue^{i\vec{r_1}\cdot\left(\vec{k} - \vec{k^\prime} + \vec{q} - \vec{q^\prime}\right)}\). 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.99\textwidth]{../figures/lattice_eff.png}
+	\caption{\textit{Left}: The nearest-neighbor hopping described by the effective Hamiltonian. The red circle at the center is the impurity at the origin. The black cloud at the center demarcates the collection of electrons at the origin of the lattice (which couple to the impurity). The green circles represent lattice sites that are nearest to the origin. The blue circles represent next-nearest sites. \textit{Right}: After treating the hopping between origin and its nearest neighbors as perturbation, we get a system consisting of two decoupled parts: one part is the impurity+cloud singlet, the other part is the rest of the lattice sites. The effect of the hopping between the origin and the green sites is a repulsion term on the green sites.}
+\end{figure}
 We will now invoke the mean-field approximation in simplifying this term. We will be dealing with thermodynamic quantities soon, so the operators will be replaced by their thermodynamic values, that is, the values that minimize the free energy functional.
 \begin{equation}\begin{aligned}
 	\hat n_{1 \uparrow} \hat n_{1 \downarrow} \to \langle\hat n_{1 \uparrow} \hat n_{1 \downarrow}\rangle = \langle \delta n_{1 \uparrow} \delta n_{1 \downarrow}\rangle + \langle n_{1 \uparrow}\rangle\langle n_{1 \downarrow}\rangle
@@ -7226,9 +7247,9 @@ where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obt
 \end{figure}
 
 \chapter{Conclusions and Future Directions}
-In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity degree of freedom. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. 
+In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. 
 %TODO discuss about Cv
-We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
+\pb We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
 \pb This work still leaves some problems untouched. Some new questions and interesting prospects have also emerged. We discuss them now.
 \begin{itemize}
 	\item Can we obtain an analytical expression for the finite temperature Wilson ratio? The zero temperature value was obtained using low temperature approximations, so a finite temperature calculation would need to be non-perturbative. In other words, the full effect of the conduction bath will most probably come into play.
