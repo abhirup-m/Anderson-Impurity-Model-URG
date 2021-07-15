@@ -5536,7 +5536,21 @@ From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
-
+\pb For the case when \(\omega + \frac{J}{4} \gg \frac{1}{2}\epsilon_q - \frac{K}{4}\), we can integrate the equation for \(J\):
+\begin{equation}\begin{aligned}
+	\Delta J \approx -\rho(0) J^2 \frac{1}{\omega + \frac{J}{4}}  \implies -\frac{\:\mathrm{d}J}{\:\mathrm{d}\ln \frac{D}{D_0}} \approx-\rho(0) J^2 \frac{1}{\omega + \frac{J}{4}} \implies dJ\left( \frac{\omega}{J^2} + \frac{1}{4J} \right) \approx -\rho(0) d\ln \frac{D}{D_0}
+\end{aligned}\end{equation}
+We replaced the density of states by that at the Fermi surface. Integrating this equation from \(J_0\) to \(J^*\) on the left hand side and from \(D_0\) to \(D^*\) on the right hand side gives
+\begin{equation}\begin{aligned}
+	\omega\left( \frac{1}{J^*} - \frac{1}{J_0}\right) + \frac{1}{4}\ln \frac{J_0}{J^*} = \rho(0)\ln\frac{D^*}{D_0} \implies D^* \approx \left( \frac{J_0}{J^*} \right) ^\frac{1}{4\rho(0)} \exp\left\{-\frac{1}{\rho(0)}\left( \frac{1}{4} + \frac{\omega}{J_0} \right)\right\}
+\end{aligned}\end{equation}
+This gives an estimate of the bandwidth of the emergent window:
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.4]{../figures/JvsK.pdf}
+	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
+	\label{JvsK}
+\end{figure}
 \subsection{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
 \begin{equation}\begin{aligned}
