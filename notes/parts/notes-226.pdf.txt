@@ -1,0 +1,2657 @@
+Chapter 7. Results and Features of the Low-Energy Theory
+
+7.8
+
+Calculation of Wilson ratio from effective local Fermi
+liquid
+
+In this section, we will calculate the zero temperature Wilson ratio of the impurity in the
+Kondo regime of the SIAM. Since this is a low energy property, our starting point will be
+the fixed point Hamiltonian of eq. 6.4.3, after substituting 𝑈 ∗ = 𝐾 ∗ = 0 (because we are in
+the first quadrant):
+
+Õ
+Õ 
+∗
+∗ †
+𝜖𝑘 𝜏𝑘𝜎 +
+𝑉 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠®
+H =
+(7.8.1)
+𝜎,𝑘<Λ∗
+
+𝜎,𝑘
+
+ˆ ignoring the constant part, and write the kinetic energy part as a
+We also convert 𝜏 to 𝑛,
+nearest-neighbor hopping problem:
+ Õ
+
+Õ 
+†
+∗ †
+∗
+H =𝑡
+𝑐𝑖𝜎 𝑐 𝑗𝜎 + h.c. +
+𝑉 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠®
+(7.8.2)
+𝜎
+𝜎 h𝑖, 𝑗 i
+
+We know that the ground state for the interacting part is predominantly the spin-singlet
+(it was shown while calculating the ground states of the effective zero-mode Hamiltonian
+that the ground state is a mixture of singlet and triplet, and the triplet part dies out at
+large system sizes, see eq. 6.4.40), so we will take that as our reference state and treat the
+hopping part that connects the origin to the first site,
+Õ
+𝑐0†𝜎 𝑐𝑟®1 ,𝜎 + h.c.
+𝑉 =𝑡
+(7.8.3)
+𝑟®1 ,𝜎
+
+as a weak perturbation. 𝑟®1 here sums over the sites that are nearest to the origin. Once
+that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by 𝑁 −1 sites along with the interaction induced
+by the perturbation. The goal here is to see whether the effect of the perturbation is to
+lower the energy of the singly-occupied state | 𝑛ˆ 1 = 1i compared to the doubly-occupied
+state | 𝑛ˆ 1 = 2i or to raise it. If the perturbation shifts the energy of the singly-occupied
+state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled
+by a repulsive term |𝑈 | 𝑛ˆ 1↑ 𝑛ˆ 1↓. If, on the other hand, the effect is to raise the energy of the
+singly-occupied state with respect to the 𝑛ˆ 1 = 2 state, then that effect is equivalent to an
+attractive term −|𝑈 | 𝑛ˆ 1↑ 𝑛ˆ 1↓.
+To be precise, we will compare the energy shifts corresponding to the two states
+1
+
+|𝜙1(0) i = |↑i ⊗ √ |↑, ↓i − |↓, ↑i
+|{z}
+2
+site 1
+
+( 0)
+
+1
+
+|𝜙2 i = |↑, ↓i ⊗ √ |↑, ↓i − |↓, ↑i
+|{z}
+2
+site 1
+
+213
+
+
+
+
+(7.8.4)
+
+7.8. CALCULATION OF WILSON RATIO FROM EFFECTIVE LOCAL FERMI LIQUID
+In the singlet part, the first entry is the configuration of the zeroth site while the second
+entry is the configuration of the impurity site. Choosing the ↑ configuration for the site
+1 is not a problem because both the non-perturbative and the perturbative interactions
+are SU(2)-symmetric. To demonstrate this, note that all energy shifts will depend on
+the unperturbed states |𝜙 (0) i in two ways: through the energies in the denominator and
+through the matrix element in the numerator. The unperturbed energy goes not depend
+on the configuration of the 𝑟®1 site, because the energy is dominated by the singlet. The
+matrix element is also independent of the sigma:
+ª
+ © Õ †
+1 Õ
+|↑, ↓i − |↓, ↑i = ­­𝑡
+𝑐0𝜎 𝑐𝑟®1 ,𝜎 + h.c.®® |𝜎i ⊗ √
+𝛼 |𝛼, 𝛼i
+2
+2
+𝛼
+®
+𝑟 ,𝜎
+« 1
+¬
+
+1 
+= 𝑡 √ | 2i | 0, 𝜎i − | 0i | 2, 𝜎i
+
+1
+
+𝑉 |𝜎i ⊗ √
+
+(7.8.5)
+
+2
+
+The first order correction will be zero as we will see shortly, but the short version is that
+𝑉 |𝜙 (0) i is obviously orthogonal to |𝜙 (0) i. All higher energy shifts can be represented as
+where 𝑋, for example, is
+
+h𝜙 (0) | 𝑉 𝑋𝑉 |𝜙 (0) i
+
+(7.8.6)
+
+Õ | h𝑚 (0) | |𝜙 (0) i | 2
+
+(7.8.7)
+
+𝑚 ( 0)
+
+( 0)
+𝐸𝜙(0) − 𝐸𝑚
+
+for the second order shift, and does not operate on the impurity. Since 𝑋 does not operate
+on the impurity, the shift can be written as
+ 
+
+𝑡2 
+h𝜙 (0) | 𝑉 𝑋𝑉 |𝜙 (0) i =
+h2 | h0, 𝜎| − h0 | h2, 𝜎| 𝑋 | 2i | 0, 𝜎i − | 0i | 2, 𝜎i
+2
+
+=
+
+=
+=
+
+𝑡2
+
+𝑡2
+
+2
+
+h2 | h0, 𝜎| 𝑋 | 2i | 0, 𝜎i +
+
+2
+
+h2 | h0 | 𝑋 | 2i | 0i h𝜎| |𝜎i +
+
+2
+
+h2 | h0 | 𝑋 | 2i | 0i +
+
+𝑡2
+𝑡2
+
+𝑡2
+2
+
+2
+
+h0 | h2, 𝜎| 𝑋 | 0i | 2, 𝜎i
+
+𝑡2
+2
+
+(7.8.8)
+
+h0 | h2 | 𝑋 | 0i | 2i h𝜎| |𝜎i
+
+h0 | h2 | 𝑋 | 0i | 2i
+
+This proves that the shift is independent of 𝜎. The reason we could shift the bra h𝜎| across
+the 𝑋 without any sign change is that 𝑋 will have even number of operators in product,
+because it operates on 0 and 1.
+The energy corresponding to this singlet state (for both 𝑛ˆ 1 = 1 and 𝑛ˆ 1 = 2) is
+( 0)
+
+( 0)
+
+𝐸1 = 𝐸2 = −
+
+3𝐽∗
+4
+
+The full list of unperturbed eigenstates are
+n
+o
+
+| 𝑛ˆ 1 = 0i , | 𝑛ˆ 1 = 1i , | 𝑛ˆ 1 = 2i ⊗ |𝑆 = 0i , |𝑆 = 1, 𝑆 𝑧 = −1, 0, 1i , |𝑆0𝑧 × 𝑆𝑑𝑧 = 0i
+214
+
+(7.8.9)
+
+(7.8.10)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+Since 𝑉 takes |𝜙1(0,2) i to completely orthogonal states, the first order corrections are 0:
+𝑡
+𝐸1(1) = h𝜙1(0) | 𝑉 |𝜙1(0) i = h𝜙1(0) | √
+
+2
+
+( 1)
+
+( 0)
+
+( 0)
+
+( 0)
+
+𝐸2 = h𝜙2 | 𝑉 |𝜙2 i = h𝜙1
+
+𝑡
+|√
+
+
+− | 0, 2, ↑i − | 2, 0, ↑i = 0
+
+2
+
+
+
+|↓, 2, ↑i − |↑, 2, ↓i = 0
+
+(7.8.11)
+
+The second order correction for a general unperturbed state |𝜙 (0) i is given by the formula
+𝐸 ( 2) =
+
+Õ
+
+| h𝑚 (0) | 𝑉 |𝜙 (0) i | 2
+( 0)
+𝐸𝜙(0) − 𝐸𝑚
+
+𝑚 ( 0) ≠𝜙 ( 0)
+
+(7.8.12)
+
+( 0)
+The index m sums over all unperturbed eigenstates not equal to |𝜙 (0) i, and 𝐸𝜙(0) , 𝐸𝑚
+are
+
+the unperturbed energies for the states |𝜙 (0) i and |𝑚 (0) i. If we look at the forms of 𝑉 |𝜙1(0,2) i
+that we calculated above, the only eigenstates |𝑚 (0) i that give non-zero numerators are
+n
+
+|𝑚
+
+( 0)
+
+o
+
+i =
+
+
+
+ | 0, 2, ↑i , | 2, 0, ↑i
+
+
+if |𝜙 (0) i = |𝜙1(0) i
+if |𝜙 (0) i = |𝜙2(0) i
+
+
+ |↓, 2, ↑i , |↑, 2, ↓i
+
+
+(7.8.13)
+
+which then means that the only non-zero value of the numerator is
+𝑡
+±√
+
+2
+
+!2
+
+=
+
+𝑡2
+
+(7.8.14)
+
+2
+
+n
+o
+Also, because all the states in |𝑚 (0) i involve 𝑆0𝑧 = 0, those states will have zero energy,
+so all the denominators will have the value
+( 0)
+𝐸𝜙(01),2 − 𝐸𝑚
+= 𝐸𝜙(01),2 = −
+
+3𝐽∗
+4
+
+(7.8.15)
+
+The upshot of all this is that the second order shift will be same for both the single and
+doubly-occupied states, so we will ignore that correction as it can be absorbed into the
+zero-point energy.
+The third order correction is given by
+𝐸 ( 3) =
+
+Õ
+
+𝑖 ( 0) , 𝑗 ( 0) ≠𝜙
+
+Õ | h𝑚 (0) | 𝑉 |𝜙 (0) i | 2
+h𝜙 (0) | 𝑉 | 𝑗 (0) i h 𝑗 (0) | 𝑉 |𝑖 (0) i h𝑖 (0) | 𝑉 |𝜙 (0) i
+
+
+
+− 𝐸𝜙(1)
+
+2
+( 0)
+𝐸𝜙(0) − 𝐸𝑖(0) 𝐸𝜙(0) − 𝐸 (𝑗 0)
+𝑚 ( 0) ≠𝜙
+𝐸𝜙(0) − 𝐸𝑚
+
+(7.8.16)
+
+This correction can also be argued to be zero, as follows. The second term is of course
+trivially zero because 𝐸𝜙(1) itself is 0. For the first term, note that |𝑖 (0) i must have 𝑛ˆ 0 = 0, 2
+in order to give non-zero inner product with 𝑉 |𝜙 (0) i. If we continue this, 𝑉 |𝑖 (0) i will have
+𝑛ˆ 0 = 1, so | 𝑗 (0) i must also have the same. Then, 𝑉 | 𝑗 (0) i will have 𝑛ˆ 0 = 0, 2 and hence the
+215
+
+7.8. CALCULATION OF WILSON RATIO FROM EFFECTIVE LOCAL FERMI LIQUID
+inner product h𝜙 (0) | 𝑉 | 𝑗 (0) i will be 0. The third order corrections for both the single and
+doubly occupied states are thus 0.
+We move on to the fourth order correction. The general formula is quite formidable,
+so we only write down the terms that aren’t outright zero for this problem:
+Õ
+
+Õ | h𝑚 (0) | 𝑉 |𝜙 (0) i | 2
+h𝜙 (0) | 𝑉 |𝑘 (0) i h𝑘 (0) | 𝑉 | 𝑗 (0) i h 𝑗 (0) | 𝑉 |𝑖 (0) i h𝑖 (0) | 𝑉 |𝜙 (0) i
+
+
+
+
+− 𝐸𝜙(2)
+
+2
+( 0)
+( 0)
+( 0)
+( 0)
+( 0)
+( 0)
+( 0)
+( 0)
+(
+0
+)
+(
+0
+)
+(
+0
+)
+(
+0
+)
+𝐸
+−
+𝐸
+𝐸
+−
+𝐸
+𝐸
+−
+𝐸
+𝑖 , 𝑗 ,𝑘 ≠𝜙
+𝑚 ≠𝜙
+𝐸𝜙 − 𝐸 𝑚
+𝜙
+𝑘
+𝜙
+𝑗
+𝜙
+𝑖
+(7.8.17)
+For the singly-occupied state, the calculation pans out as follows:
+𝐸 ( 4) =
+
+n
+
+|𝑖
+
+( 0)
+
+o
+
+i =
+
+
+
+
+
+
+
+
+
+
+
+| 0, 2, ↑i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 2, 0, ↑i
+
+
+
+
+
+
+
+
+
+
+
+=⇒
+
+=⇒
+
+n
+n
+
+o
+| 𝑗 (0) i =
+
+| 𝑗 (0) i
+
+o
+
+=
+
+
+
+
+
+
+
+ |↑i ⊗ |𝑆 = 1, 𝑆 𝑧 = 0i
+
+
+
+
+
+
+
+ |↓i ⊗ |↑, ↑i
+
+
+
+
+
+
+
+ |↑i ⊗ |𝑆 = 1, 𝑆 𝑧 = 0i
+
+
+
+
+
+
+ |↓i ⊗ |↑, ↑i
+
+
+=⇒
+=⇒
+=⇒
+=⇒
+
+n
+
+n
+
+n
+n
+
+=
+
+
+
+ | 0, 2, ↑i
+
+
+|𝑘 (0) i =
+
+
+
+ | 0, 2, ↑i
+
+
+|𝑘 (0) i
+
+o
+
+
+ | 2, 0, ↑i
+
+|𝑘 (0) i = | 0, 2, ↑i
+o
+
+o
+
+(7.8.18)
+
+
+ | 2, 0, ↑i
+
+|𝑘 (0) i = | 0, 2, ↑i
+o
+
+The inner products in the numerators can be calculated from these states. The energies
+of the intermediate states are
+𝐸𝑖(0) = 0, 𝐸 (𝑗 0) =
+
+𝐽∗
+4
+
+, 𝐸𝑘(0) = 0
+
+(7.8.19)
+
+which allow calculating the denominators. The total fourth order change for the singlyoccupied state is
+16𝑡 4
+( 4)
+(7.8.20)
+𝐸1 = − ∗ 3
+3𝐽
+Carrying out a similar calculation for the doubly-occupied state gives
+𝐸2(4) = −
+
+16𝑡 4
+9 𝐽 ∗3
+
+(7.8.21)
+
+The last two equations together mean that the effect of the perturbation is to raise the
+energy of the doubly-occupied state by an amount
+𝑢∼
+
+𝑡4
+𝐽 ∗3
+
+(7.8.22)
+
+and we can replace the perturbative term 𝑉 by an effective repulsive term on the first
+site (a.k.a, the ”local Fermi liquid”, [8]):
+𝑢𝑛ˆ 1↑ 𝑛ˆ 1↓
+216
+
+(7.8.23)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tightbinding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for
+the remaining lattice is
+∞
+
+
+Õ
+†
+†
++ 𝑢𝑛ˆ 1↑ 𝑛ˆ 1↓
+𝑐
+𝑡 𝑐𝑖𝜎
+𝑐𝑖+1𝜎 + 𝑐𝑖+
+(7.8.24)
+1𝜎 𝑖𝜎
+𝑖=1
+𝜎
+
+We will now invoke the mean-field approximation in simplifying this term. We will be
+
+Figure 7.10: Left: The nearest-neighbor hopping described by the effective Hamiltonian.
+The red circle at the center is the impurity at the origin. The black cloud at the center
+demarcates the collection of electrons at the origin of the lattice (which couple to the
+impurity). The green circles represent lattice sites that are nearest to the origin. The blue
+circles represent next-nearest sites. Right: After treating the hopping between origin and
+its nearest neighbors as perturbation, we get a system consisting of two decoupled parts:
+one part is the impurity+cloud singlet, the other part is the rest of the lattice sites. The
+effect of the hopping between the origin and the green sites is a repulsion term on the
+green sites.
+dealing with thermodynamic quantities soon, so the operators will be replaced by their
+thermodynamic values, that is, the values that minimize the free energy functional.
+𝑛ˆ 1↑ 𝑛ˆ 1↓ → h𝑛ˆ 1↑ 𝑛ˆ 1↓i = h𝛿𝑛1↑𝛿𝑛1↓i + h𝑛1↑ih𝑛1↓i
+
+(7.8.25)
+
+where 𝛿𝑛1𝜎 ≡ 𝑛1𝜎 − h𝑛1𝜎 i is the fluctuation of the particle number above the ground state.
+The mean-field approximation then involves dropping the first term which is a quadratic
+fluctuation - since we are interested in values of quantities at 𝑇 → 0, this quadratic fluctuation is very small. The interaction we are left with is
+Õ
+𝑢h𝑛1↑ih𝑛1↓i =
+𝑓𝑘𝑞 h𝑛𝑘𝜎 ih𝑛𝑞𝜎 i
+(7.8.26)
+𝑘𝑞𝜎
+
+217
+
+7.8. CALCULATION OF WILSON RATIO FROM EFFECTIVE LOCAL FERMI LIQUID
+This interaction converts the problem to that of a Landau Fermi liquid, with the quasiparticle energy functional being given by
+D E
+Õ
+𝜖𝑘𝜎 = 𝜖𝑘 +
+𝑓𝑘𝑞 𝑛ˆ 𝑞𝜎
+(7.8.27)
+𝑞
+
+From the form of the quasiparticle energy functional, we can see that there is no spinparallel term, so we can write
+(7.8.28)
+
+𝑓𝑘𝑘 0𝜎𝜎 = 0, 𝑓𝑘𝑘 0𝜎𝜎 = 𝑓𝑘𝑘 0
+
+We will now use this Fermi liquid form to extract the Wilson ratio. We will make use of
+the following definitions/results:
+
+𝜕𝑛
+𝑑𝜖𝑘𝜎 − 𝑑𝜇
+𝜕𝜖𝑘𝜎
+d𝜖
+𝐶𝑣 =
+d𝑇
+
+
+d
+𝜒 𝑠,𝑐 =
+𝑛↑ ∓ 𝑛↓
+d (𝐵, 𝜇)
+
+Õ
+𝑠,𝑎
+𝑓𝑘𝑘 0↑↑ ± 𝑓𝑘𝑘 0↑↓
+2 𝑓0 =
+𝑑𝑛𝑘𝜎 =
+
+
+
+follows from differentiating FD distribution
+
+
+(7.8.29)
+
+𝑘
+
+𝑠,𝑎
+
+𝐹0 = 𝜌( 0) 𝑓0𝑠,𝑎
+
+7.8.1
+𝐶=
+≈
+≈
+
+Low-𝑇 Specific heat
+
+d Õ
+
+d𝑇
+
+Õ
+
+Õ
+
+𝜖𝑘𝜎 𝑛𝑘𝜎
+
+𝑘𝜎
+
+𝜖0𝑘𝜎
+
+𝑘𝜎
+
+𝜖0𝑘𝜎
+
+𝑘𝜎
+
+d𝑛𝑘𝜎
+d𝑇
+d𝑛𝑘𝜎
+d𝑇
+
+= 𝜌( 0)𝑇
+
+
+
+
+no quasiparticles at ground state
+
+
+
+same expression as Fermi gas but with modified distribution function
+
+(7.8.30)
+where 𝜌 is the total quasiparticle DOS with contributions from conduction bath and impurity.
+Õ
+Õ
+ 
+𝜎
+𝜎
+𝜌 ∼ Im Trace 𝐺 = Im
+𝐺𝑑𝑑
++ Im
+𝐺𝑘𝑘
+= 𝜌0 + 𝜌imp
+(7.8.31)
+𝑑𝜎
+
+which gives
+
+𝑘𝜎
+
+𝐶𝑖𝑚𝑝 ≡ 𝐶 − 𝐶0 = 𝜌𝑖𝑚𝑝 ( 0)𝑇
+
+218
+
+(7.8.32)
+
+
+
+Chapter 7. Results and Features of the Low-Energy Theory
+
+7.8.2
+
+Low-𝑇 Charge Susceptibility
+𝜒𝑐 =
+
+d𝑁
+
+(7.8.33)
+
+d𝜇
+
+Due to change in chemical potential, 𝛿𝜖𝑘𝜎 is isotropic and SU(2)-symmetric. Hence
+Õ
+𝑑𝜖𝑘𝜎 =
+𝑓𝑘𝑘 0𝜎𝜎 0 𝑑𝑛𝑘 0𝜎 0
+𝑘 0𝜎 0
+
+= 𝑑𝑛
+
+Õ
+𝑘0
+𝑠
+
+𝑓𝑘𝑘 0↑↑ + 𝑓𝑘𝑘 0↑↓
+
+= 2𝑑𝑛 𝑓0
+Therefore,
+𝑑𝑁 =
+
+Õ
+
+
+
+h
+
+𝑑𝑛 = 𝑑𝑛𝑘 0↑ = 𝑑𝑛𝑘↓
+
+i
+
+(7.8.34)
+
+𝑑𝑛𝑘𝜎
+
+Õ 𝜕𝑛
+
+𝑑𝜖𝑘𝜎 − 𝑑𝜇
+𝜕𝜖𝑘𝜎
+𝑘𝜎
+
+Õ 1 
+𝑠
+=
+− 𝜌 2𝑑𝑛 𝑓0 − 𝑑𝜇
+𝑘𝜎
+
+=
+
+𝑘𝜎
+
+2
+
+(7.8.35)
+
+𝑠
+
+= −𝜌( 0)𝑑𝑁 𝑓0 + 𝑑𝜇𝜌( 0)
+
+
+
+≈ 𝑑𝜇𝜌( 0) − 𝜌( 0) 𝑓0𝑠 𝑑𝜇𝜌( 0) substitute 𝑑𝑁 back into itself
+
+
+d𝑁
+𝑠
+= 𝜌( 0) 1 − 𝜌( 0) 𝑓0
+=⇒
+d𝜇
+𝑐
+=⇒ 𝜒𝑖𝑚𝑝
+= 𝜌( 0)𝑖𝑚𝑝 − 𝜌( 0) 𝑓0𝑠
+At an intermediate state, we substituted 𝑑𝑁 back into itself and kept only the leading
+order term. This is justified because 𝑓𝑘𝑘 0 goes as 𝑁1𝐽 . At the fixed point and for a thermodynamically large system, both 𝐽 and 𝑁 are very large, so keeping only the leading order
+suffices.
+From a previous calculation, we know that the charge susceptibility at 𝑇 = 0 is zero,
+so we can write down the following relation:
+𝑓0𝑠 =
+
+7.8.3
+
+𝜌( 0)𝑖𝑚𝑝
+𝜌( 0)
+
+(7.8.36)
+
+Low-𝑇 Spin Susceptibility
+𝜒𝑠 =
+
+d𝑚
+d𝜇
+
+219
+
+(7.8.37)
+
+7.9. LUTTINGER’S AND FRIEDEL’S SUM RULES
+Due to change in magnetic field, change in 𝜖𝑘𝜎 should be isotropic and SU(2)-antisymmetric.
+Hence
+Õ
+1
+𝑑𝜖𝑘𝜎 = − 𝑑𝐵𝜎 +
+𝑓𝑘𝑘 0𝜎𝜎 0 𝑑𝑛𝑘 0𝜎 0
+2
+
+𝑘 0𝜎 0
+
+1
+
+= − 𝑑𝐵𝜎 + 𝑑𝑛𝜎
+2
+1
+
+Õ
+𝑘0
+
+𝑓𝑘𝑘 0↑↑ − 𝑓𝑘𝑘 0↑↓
+
+
+
+h
+
+𝑑𝑛𝑘 0↑ = −𝑑𝑛𝑘↓
+
+i
+
+(7.8.38)
+
+= − 𝑑𝐵𝜎 + 2𝑑𝑛𝜎 𝑓0𝑎
+2
+
+Since the total number remains constant, 𝜇 = 0. Therefore,
+
+Õ
+𝑑𝑚 =
+𝑑𝑛𝑘↑ − 𝑑𝑛𝑘↓
+1Õ
+
+𝑘
+
+=−
+
+2
+
+
+
+𝜌 𝑑𝜖𝑘↑ − 𝑑𝜖𝑘↓
+
+𝑘
+
+
+
+Õ
+1
+𝑎
+=−
+𝜌 −𝑑𝐵 + 2 𝑓0 𝑑𝑛𝑘↑ − 𝑑𝑛𝑘↓
+
+2
+
+𝑎
+
+= 𝑑𝐵𝜌( 0) − 𝑑𝑚𝜌( 0) 𝑓0
+
+≈ 𝑑𝐵𝜌( 0) − 𝜌( 0) 𝑓0𝑎 𝐵𝜌( 0)
+
+
+d𝑚
+= 𝜌( 0) 1 − 𝜌( 0) 𝑓0𝑎
+=⇒
+d𝐵
+𝑠
+=⇒ 𝜒𝑖𝑚𝑝
+= 𝜌( 0)𝑖𝑚𝑝 − 𝜌( 0) 𝑓0𝑎
+
+7.8.4
+
+(7.8.39)
+
+𝑘
+
+
+
+substitute 𝑑𝑚 back into itself
+
+
+
+Wilson ratio
+
+The Wilson ratio for the impurity is defined as
+𝑅=
+
+𝑠
+𝜒𝑖𝑚𝑝
+
+(7.8.40)
+
+𝐶𝑖𝑚𝑝
+𝑇
+
+From eq. 7.8.28, we have 𝑓0𝑠 = − 𝑓0𝑎 , which, when combined with eq. 7.8.36, gives
+The Wilson ratio becomes
+
+𝑠
+𝜒𝑖𝑚𝑝
+= 2 𝜌( 0)𝑖𝑚𝑝
+
+𝑅=
+
+7.9
+
+2 𝜌( 0)𝑖𝑚𝑝
+
+𝜌( 0)𝑖𝑚𝑝
+
+=2
+
+(7.8.41)
+(7.8.42)
+
+Luttinger’s and Friedel’s sum rules
+
+The subsequent discussions are for the first quadrant where 𝑈 ∗ = 0 and 𝐽 ∗ > 𝐾 ∗ . At high
+temperatures, we see that the impurity susceptibility attains the value of
+1
+8𝑘 𝐵 𝑇
+
+220
+
+(7.9.1)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+which implies that the impurity behaves as a free orbital in this limit, having no coupling
+with the bath. We can write down the following effective Hamiltonian for such a limit:
+Õ
+Hhigh-T = 𝜖˜𝑑 𝑛ˆ 𝑑 +
+𝜖𝑘 𝑛ˆ 𝑘𝜎
+(7.9.2)
+𝑘𝜎
+
+Since the impurity is decoupled from the bath, we can immediately write down the
+Hamiltonian just for the impurity:
+(7.9.3)
+
+Hhigh-T, imp = 𝜖˜𝑑 𝑛ˆ 𝑑
+We consider the resonant-level model:
+
+Õ
+Õ
+†
+Hres =
+𝜖𝑘 𝑛ˆ 𝑘𝜎 + 𝜖𝑑 𝑛𝑑 +
+𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c.
+𝑘𝜎
+
+The total Green’s function is
+𝐺(𝑧) =
+The impurity diagonal Green’s function is
+𝐺𝑑𝑑 (𝑧) =
+
+(7.9.4)
+
+𝑘𝜎
+
+1
+
+(7.9.5)
+
+𝑧 − Hres
+
+1
+
+𝑧 − 𝜖𝑑 − Σ𝑑 (𝑧)
+
+(7.9.6)
+
+, 𝐺𝑑 (𝑧) = 𝐺𝑑𝑑 |𝑑i h𝑑|
+
+where Σ𝑑 (𝑧) is in general complex and is zero at the free orbital fixed point. The conduction electron Green’s function is
+i2
+h
+Õ
+Õ
+0
+0
+0
+|𝑘i h𝑘| 𝐺𝑘𝑘 (𝑧), 𝐺 𝑐0 (𝑧) ≡
+𝐺𝑘𝑘
+(𝑧) |𝑘i h𝑘|
+𝐺𝑘𝑘 (𝑧) = 𝐺𝑘 (𝑧) + 𝐺𝑘 (𝑧)𝑉𝑘 𝐺𝑑𝑑 (𝑧), 𝐺 𝑐 (𝑧) ≡
+𝑘
+
+𝑘
+
+The total Green’s function can be written as
+©Õ
+ª
+ª ©Õ
+𝐺(𝑧) = ­
+|𝑘i h𝑘| + |𝑑i h𝑑| ® 𝐺 ­
+|𝑘i h𝑘| + |𝑑i h𝑑| ®
+«Õ𝑘
+¬
+¬ « 𝑘
+=
+|𝑘i h𝑘| 𝐺𝑘𝑘 (𝑧) + 𝐺𝑑𝑑 (𝑧) |𝑑i h𝑑| + off-diagonal terms
+
+(7.9.7)
+
+(7.9.8)
+
+𝑘
+
+= 𝐺 𝑐 (𝑧) + 𝐺𝑑 (𝑧) + off-diagonal terms
+
+The total number of electrons is given by
+∮
+
+
+𝑑𝑧
+𝑁=
+𝑛𝐹 (𝑧)Tr 𝐺(𝑧)
+∮ 2𝜋𝑖
+
+
+𝑑𝑧
+𝑛𝐹 (𝑧)Tr 𝐺𝑑 (𝑧) + 𝐺 𝑐 (𝑧)
+=
+2𝜋𝑖
+
+(7.9.9)
+
+The contour Γ counts all the singularities of Tr𝐺(𝑧), and thus encloses only the real axis
+of the complex plane (since 𝐺(𝑧) comes from a Hermitian matrix Hres , all its singularities
+221
+
+7.9. LUTTINGER’S AND FRIEDEL’S SUM RULES
+are real). At this point, we can use an identity:
+"
+#
+
+
+|𝑑i h𝑑|
+Tr 𝐺𝑑 (𝑧) = Tr
+𝑧 − 𝜖𝑑 − Σ𝑑 (𝑧)
+"
+#
+𝜕 𝑧 − 𝜖𝑑
+|𝑑i h𝑑|
+= Tr
+𝑧 − 𝜖𝑑 − Σ𝑑 (𝑧)
+𝜕𝑧
+n
+o
+
+−
+1
+
+𝜕 𝐺𝑑𝑑 (𝑧) + Σ𝑑 (𝑧) 
+
+
+= Tr  |𝑑i h𝑑| 𝐺𝑑𝑑
+
+
+
+𝜕𝑧
+
+
+"
+
+#
+"
+#
+−
+1
+𝜕𝐺𝑑 (𝑧)
+𝜕Σ𝑑 (𝑧)
++ Tr 𝐺𝑑 (𝑧)
+= Tr 𝐺𝑑 (𝑧)
+𝜕𝑧
+𝜕𝑧
+"
+#
+i
+𝜕Σ𝑑 (𝑧)
+𝜕 h
+−1
+=
+ln Det𝐺 𝑑 (𝑧) + Tr 𝐺 𝑑 (𝑧)
+𝜕𝑧
+𝜕𝑧
+
+(7.9.10)
+
+In the last step, we converted the trace to a determinant using
+"
+#
+Ö
+𝜕𝐴−1
+𝜕
+𝜕 Õ
+𝜕
+𝜕
+Tr 𝐴
+= Tr ln 𝐴−1 =
+ln 𝜆 𝑖 =
+ln
+𝜆𝑖 =
+ln Det𝐴−1
+(7.9.11)
+𝜕𝑧
+𝜕𝑧
+𝜕𝑧 𝑖
+𝜕𝑧
+𝜕𝑧
+𝑖
+
+
+−
+1
+where 𝜆 𝑖 are the eigenvalues of 𝐴 . Substituting Tr 𝐺𝑑 (𝑧) into the total number of particles gives
+"
+#
+
+
+∮
+n
+o
+𝜕
+𝑑𝑧
+𝜕
+𝑁=
+𝑛𝐹 (𝑧)
+ln Det 𝐺 𝑑−1 (𝑧) + Tr 𝐺 𝑑 (𝑧) Σ𝑑 (𝑧) + Tr𝐺 𝑐 (𝑧)
+(7.9.12)
+2𝜋𝑖
+𝜕𝑧
+𝜕𝑧
+
+The conduction electron part can also be simplified:
+
+
+o2
+Õn
+
+
+0
+Tr𝐺 𝑐 (𝑧) = Tr 𝐺 𝑐0 (𝑧) +
+𝐺𝑘 (𝑧)𝑉𝑘 𝐺𝑑𝑑 (𝑧) |𝑘i h𝑘| 
+
+
+𝑘
+
+
+i2
+
+ Õh 0
+= Tr 𝐺 𝑐0 (𝑧) +
+𝐺𝑘 (𝑧)𝑉𝑘 𝐺𝑑𝑑 (𝑧)
+Since 𝐺 𝑐−01 (𝑧) = 𝑧 −
+
+(7.9.13)
+
+h
+i
+
+𝜕 −1
+ˆ
+𝜖
+𝑛
+,
+we
+can
+write
+Tr
+𝐺
+(𝑧)
+=
+Tr
+𝐺
+(𝑧)
+𝐺
+𝑐0
+𝑐0
+𝑘 𝑘 𝑘
+𝜕𝑧 𝑐0 and hence
+i Õh
+i2
+𝜕 h
+ln Det𝐺 𝑐−01 (𝑧) +
+𝐺𝑘0 (𝑧)𝑉𝑘 𝐺𝑑𝑑 (𝑧)
+Tr𝐺 𝑐 (𝑧) =
+(7.9.14)
+𝜕𝑧
+𝑘
+
+Í
+
+
+
+𝑘
+
+Updating the total particles with this leads to
+"
+
+
+∮
+n
+o 𝜕
+n
+o
+𝑑𝑧
+𝜕
+𝜕
+−1
+−1
+𝑁=
+𝑛𝐹 (𝑧)
+ln Det 𝐺 𝑑 (𝑧) +
+ln Det 𝐺 𝑐0 (𝑧) + Tr 𝐺 𝑑 (𝑧) Σ𝑑 (𝑧)
+2𝜋𝑖
+𝜕𝑧
+𝜕𝑧
+𝜕𝑧
+
+2
+Õ
+
+0
++
+𝑉𝑘 𝐺𝑘 𝐺𝑑𝑑 (𝑧) 
+
+𝑘
+
+222
+
+(7.9.15)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+For the resonant-level model, we have
+Σ𝑑 =
+
+Õ
+
+𝑉𝑘2 𝐺𝑘0 =
+
+𝑘
+
+such that
+
+
+
+Õ 𝑉2
+𝑘
+𝑘
+
+𝑧 − 𝜖𝑘
+
+
+2
+Õ
+𝜕
+Tr 𝐺𝑑 (𝑧) Σ𝑑 (𝑧) = −𝐺𝑑𝑑 (𝑧)
+𝑉𝑘 𝐺𝑘0
+𝜕𝑧
+𝑘
+
+which allows us to write
+
+∮
+n
+o 𝜕
+n
+o
+𝜕
+𝑑𝑧
+−1
+−1
+𝑁=
+𝑛𝐹 (𝑧)
+ln Det 𝐺 𝑑 (𝑧) +
+ln Det 𝐺 𝑐0 (𝑧)
+2𝜋𝑖
+𝜕𝑧
+𝜕𝑧
+
+At 𝑇 = 0, 𝑛𝐹 is defined as 1 below the FS, 12 at the FS and 0 above it.
+"∮
+
+∮ #
+n
+o 𝜕
+n
+o
+1
+𝑑𝑧 𝜕
+−1
+−1
+𝑁=
++
+ln Det 𝐺 𝑑 (𝑧) +
+ln Det 𝐺 𝑐0 (𝑧)
+𝜕𝑧
+Γ< 2 Γ0 2𝜋𝑖 𝜕𝑧
+
+(7.9.16)
+
+(7.9.17)
+
+(7.9.18)
+
+(7.9.19)
+
+Following Seki and Yunoki, we can define a winding number for a Green’s function 𝐺(𝑧):
+∮
+∮
+𝑑𝑧 𝜕ln Det 𝐺 −1 (𝑧)
+d Det 𝐺 −1
+𝑛Det𝐺−1 (𝐶) =
+=
+(7.9.20)
+−1
+𝜕𝑧
+𝐶 2𝜋𝑖
+Det𝐺 −1 (𝐶) Det 𝐺
+Since 𝑛Det 𝐺−1 (𝐶) counts the number of times the curve Det 𝐺 −1 (𝐶) winds around the origin,
+it is integer-valued and topological. Seki and Yunoki also show that the this number is
+given by
+𝑛Det 𝐺−1 (𝐶) = 𝑃Det 𝐺 (𝐶) − 𝑍Det 𝐺 (𝐶)
+(7.9.21)
+
+where 𝑃 𝑓 (𝑧) (𝐶) is the number of poles of 𝑓 (𝑧) enclosed by the contour 𝐶, and 𝑍 is the corresponding number of zeros. The total number of particles in the resonant level model
+can thus be written as
+i
+1h
+𝑁 = 𝑃Det 𝐺𝑑 (Γ< ) − 𝑍Det 𝐺𝑑 (Γ< ) +
+𝑃Det 𝐺𝑑 (Γ0 ) − 𝑍Det 𝐺𝑑 (Γ0 )
+2
+(7.9.22)
+i
+1h
++𝑃Det 𝐺𝑐0 (Γ< ) − 𝑍Det 𝐺𝑐0 (Γ< ) +
+𝑃Det 𝐺𝑐0 (Γ0 ) − 𝑍Det 𝐺𝑐0 (Γ0 )
+2
+
+The average number of particles can thus be expressed purely in terms of the number of
+poles and zeros of the impurity and the conduction electron Green’s functions. As shown
+by Seki and Yunoki, the second line gives the Luttinger volume 𝑉𝐿 :
+𝑁 = 𝑃Det 𝐺𝑑 (Γ< ) − 𝑍Det 𝐺𝑑 (Γ< ) +
+
+1h
+2
+
+i
+𝑃Det 𝐺𝑑 (Γ0 ) − 𝑍Det 𝐺𝑑 (Γ0 ) + 𝑉𝐿
+
+(7.9.23)
+
+If we start from a non-interacting model (𝑉𝑘 = 0), we can write
+0
+𝑁 = N𝑖𝑚𝑝
++ 𝑉𝐿0
+
+223
+
+(7.9.24)
+
+7.9. LUTTINGER’S AND FRIEDEL’S SUM RULES
+0
+where N𝑖𝑚𝑝
+is simply the number of singularities of 𝐺𝑑 on the real axis, for the noninteracting case. We now turn up the interaction 𝑉𝑘 , keeping the total number of particles
+conserved at 𝑁. With a non-zero 𝑉𝑘 , the impurity self-energy can be written (assuming a
+constant density of states) as
+(7.9.25)
+Σ𝑑 (𝑧) = Σ𝑑real (𝑧) − 𝑖Δ
+
+so that the impurity Greens function becomes
+𝐺𝑑 (𝑧) =
+
+1
+
+𝑧 − 𝜖𝑑 − Σ𝑑real (𝑧) + 𝑖Δ
+
+(7.9.26)
+
+We can see that the presence of an imaginary part lifts the pole of 𝐺𝑑 (𝑧) off the real axis,
+and since the contour Γ0 encloses only the real axis, this will count as a loss in the number
+of poles of 𝐺𝑑 (𝑧). Also, if we specialize to the case where the renormalized impurity site
+energy 𝜖∗𝑑 = 𝜖𝑑 + Σ𝑑real = 0, this loss will happen at the Fermi surface, and will hence be
+multiplied by a factor of half. We can therefore write
+0
+𝑁 = N𝑖𝑚𝑝 + 𝑉𝐿 = N𝑖𝑚𝑝
+−
+0
+
+=⇒ 𝑉𝐿 = 𝑉𝐿 +
+
+1
+
+1
+2
+
++ 𝑉𝐿
+
+(7.9.27)
+
+2
+
+If we take into account the spin-degeneracy and redefine 𝑉𝐿 to mean the Luttinger volume for both momentum and spin degrees of freedom, we get
+𝑉𝐿 = 𝑉𝐿0 + 1
+
+(7.9.28)
+
+This is a specific case of the more general result for Kondo lattices obtained by Oshikawa
+
+224
+
+Chapter 7. Results and Features of the Low-Energy Theory
+using flux-insertion arguments in [40]. One can now ask what happens to this result once
+we also incorporate the spin-exchange interaction 𝐽 𝑆®𝑑 · 𝑠®; we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole,
+nor can it create a new singularity - to do so would require the self-energy to diverge, and
+we are working with finite systems here. This suggests that the eq. 7.9.28 would still hold.
+We have also not accounted for the RG flow from the local moment fixed point to the
+strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
+HLM = 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+(7.9.29)
+It can be shown that the single-particle Green’s function for this effective Hamiltonian
+is similar to the one at the free-orbital fixed point. We will use the equation of motion
+technique to solve for the Green’s function. The time-domain retarded Green’s function
+is defined as
+n
+o
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+(𝑡0)
+
+𝐺𝑑𝜎 (𝑡, 𝑡0) = −𝑖𝜃(𝑡 − 𝑡0)
+
+(7.9.30)
+
+Since the Hamiltonian is time-translation invariant, we can drop one of the instants:
+n
+o
+†
+𝐺𝑑𝜎 (𝑡, 0) = −𝑖𝜃(𝑡) 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎 ( 0)
+(7.9.31)
+
+The time derivative is
+
+"
+
+𝜕𝑡 𝐺𝑑𝜎 = −𝑖 𝜕𝑡 𝜃(𝑡)
+"
+
+= −𝑖 𝛿(𝑡)
+
+n
+
+n
+
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+= −𝑖𝛿(𝑡) − 𝑖𝜃(𝑡)
+
+n
+
+o
+
+o
+
++ 𝜃(𝑡)𝜕𝑡
+
++ 𝜃(𝑡)
+
+†
+𝜕𝑡 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+n
+
+o
+
+n
+
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+†
+𝜕𝑡 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+From the Heisenberg equations of motion, we get
+
+ 
+
+𝑖𝜕𝑡 𝑐𝑑𝜎 (𝑡) = 𝑐𝑑𝜎 (𝑡), H𝐿𝑀 (𝑡) = 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑𝜎 (𝑡) 𝑐𝑑𝜎 (𝑡)
+
+o
+
+o
+
+Substituting this into the time-derivative gives
+n
+o
+
+
+†
+𝜕𝑡 𝐺𝑑𝜎 = −𝑖𝛿(𝑡) − 𝑖𝜃(𝑡) −𝑖 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑𝜎 (𝑡) 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎 ( 0)
+
+n
+o
+†
+= −𝑖𝛿(𝑡) − 𝑖𝜖𝑑 𝐺𝑑𝜎 − 𝑈𝜃(𝑡) 𝑛ˆ 𝑑𝜎 (𝑡) 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎 ( 0)
+We define another Greens function
+0
+
+
+
+𝐺 = −𝑖𝜃(𝑡) 𝑛ˆ 𝑑𝜎 (𝑡)
+
+n
+
+225
+
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+o
+
+#
+
+#
+(7.9.32)
+
+(7.9.33)
+
+(7.9.34)
+
+(7.9.35)
+
+7.9. LUTTINGER’S AND FRIEDEL’S SUM RULES
+which satisfies the equation of motion
+n
+n
+o
+o
+†
+†
+0
+𝜕𝑡 𝐺 = −𝑖𝛿(𝑡) − 𝑖𝜃(𝑡) 𝜕𝑡 𝑛ˆ 𝑑𝜎 (𝑡)𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎 ( 0) − 𝑖𝜃(𝑡) 𝑛ˆ 𝑑𝜎 (𝑡)𝜕𝑡 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎 ( 0)
+
+
+
+The second term vanishes because 𝑛ˆ 𝑑𝜎 , H𝐿𝑀 = 0 and hence 𝜕𝑡 𝑛ˆ 𝑑𝜎 = 0. Also,
+
+
+
+
+𝑛ˆ 𝑑𝜎 (𝑡)𝜕𝑡 𝑐𝑑𝜎 (𝑡) = −𝑖 𝑛ˆ 𝑑𝜎 (𝑡) 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑𝜎 (𝑡) 𝑐𝑑𝜎 (𝑡) = −𝑖 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑𝜎 (𝑡)𝑐𝑑𝜎 (𝑡)
+Therefore,
+0
+
+
+
+
+
+𝜕𝑡 𝐺 = −𝑖𝛿(𝑡) 𝑛ˆ 𝑑𝜎 ( 0) − 𝜖𝑑 + 𝑈 𝜃(𝑡)
+
+n
+
+†
+𝑛ˆ 𝑑𝜎 (𝑡)𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+( 0)
+
+o
+
+
+= −𝑖𝛿(𝑡) − 𝑖 𝜖𝑑 + 𝑈 𝐺0
+
+Changing all quantities to frequency-domain:
+∫ ∞
+0
+𝐺 (𝑡) =
+𝑑𝜔𝑒−𝑖𝜔𝑡 𝐺0 (𝜔)
+−∞
+∫ ∞
+0
+𝑑𝜔𝑖𝜔𝑒−𝑖𝜔𝑡 𝐺0 (𝜔)
+𝜕𝑡 𝐺 (𝑡) = −
+∫ ∞−∞
+𝛿(𝑡) =
+𝑑𝜔𝑒−𝑖𝜔𝑡
+
+(7.9.36)
+
+(7.9.37)
+
+(7.9.38)
+
+(7.9.39)
+
+−∞
+
+Substituting these forms in the equation and comparing the coefficients of 𝑒𝑖𝜔𝑡 gives
+
+𝜔𝐺0 (𝜔) = 𝑛ˆ 𝑑𝜎 ( 0) + 𝜖𝑑 + 𝑈 𝐺0 (𝜔) =⇒ 𝐺0 (𝜔) =
+
+The equation of motion 𝐺𝑑𝜎 can now be solved
+
+𝑛ˆ 𝑑𝜎 ( 0)
+𝜔 − 𝜖𝑑 − 𝑈
+
+(7.9.40)
+
+𝜕𝑡 𝐺𝑑𝜎 (𝑡) = −𝑖𝛿(𝑡) − 𝑖𝜖𝑑 𝐺𝑑𝜎 (𝑡) − 𝑖𝑈𝐺0𝑑𝜎 (𝑡)
+
+𝑛ˆ 𝑑𝜎 ( 0)
+𝜔 − 𝜖𝑑 − 𝑈
+𝑈 𝑛ˆ 𝑑𝜎 ( 0)
+1
+
+
++
+=⇒ 𝐺𝑑𝜎 (𝜔) =
+𝜔 − 𝜖𝑑
+𝜔 − 𝜖𝑑 𝜔 − 𝜖𝑑 − 𝑈
+
+=⇒ 𝜔𝐺𝑑𝜎 (𝜔) = 1 + 𝜖𝑑 𝐺𝑑𝜎 (𝜔) + 𝑈
+
+(7.9.41)
+
+For a particle-hole symmetric system, we can substitute 𝜖𝑑 = −|𝜖𝑑 | and 𝜖𝑑 + 𝑈 = |𝜖𝑑 |.
+𝐺𝑑𝜎 (𝜔) =
+
+1
+
+𝜔 + |𝜖𝑑 |
+
++
+
+𝑈 𝑛ˆ 𝑑𝜎 ( 0)
+
+
+𝜔 + |𝜖𝑑 | 𝜔 − |𝜖𝑑 |
+
+(7.9.42)
+
+which reveals two poles at ±|𝜖𝑑 |, one above and one below the Fermi surface. Since the
+RHS of eq. 7.9.23 counts the number of poles on or below the FS, we will still count one
+pole for 𝐺𝑑𝜎 . Thus, this Green’s function is topological similar to the free-orbital one at
+𝑇 = 0.
+The scattering phase shift suffered by the conduction electrons at the Fermi surface, off
+226
+
+Chapter 7. Results and Features of the Low-Energy Theory
+the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule.
+From the ground state wavefunction, we can calculate the average number of particles
+on the impurity:
+Õ
+𝑛𝑑 = h𝐺𝑆|
+𝑛ˆ 𝑑𝜎 |𝐺𝑆i
+(7.9.43)
+𝜎
+
+|𝐺𝑆i is the lower energy state in eq. 6.4.34. Performing the inner product gives
+
+The phase shift is thus
+
+1Õ
+
+𝜋
+
+𝜎
+
+ 2  2
+𝑛𝑑 = 𝑐−𝑠 + 𝑐−𝑐 = 1
+
+𝛿𝜎 ( 0) = 𝑛𝑑
+
+(7.9.44)
+
+=⇒ 𝛿𝜎 ( 0) =
+
+𝜋
+
+(7.9.45)
+
+2
+
+There we used 𝛿↑ = 𝛿↓ because the model is SU(2)-symmetric. This line of arguments was
+first presented for the Kondo model in [24].
+The change in Luttinger’s number also allows us to calculate the Wilson ratio of the system, from eq. 2.7.7.
+
+
+𝜋
+2 𝜋
+Δ𝑁𝐿 = 1 + sin2 = 2
+(7.9.46)
+𝑅 = 1 + sin
+2
+
+7.10
+
+2
+
+Reverse RG analysis
+
+The goal here is to chart the journey starting from the IR fixed point towards the UV
+regime, by following one particular wavefunction. We will start with a very simple IR
+ground state wavefunction, and then go back towards the UV ground state by applying
+the inverse unitary operator 𝑈 † :
+𝑈 : | 1, 2, ..., 𝑁i → | 1, 2, ..., 𝑁 − 1i |𝑁i → ... → | 1, 2, ..., 𝑁 ∗ i |𝑁 ∗ + 1i ... |𝑁i
+| {z }
+|
+{z
+}
+UV ground state
+
+IR ground state
+
+𝑈 † : | 1, 2, ..., 𝑁 ∗ i |𝑁 ∗ + 1i ... |𝑁i → | 1, 2, ..., 𝑁 ∗ + 1i |𝑁 ∗ + 2i ... |𝑁i → ... → | 1, , 2, ..., 𝑁i
+|
+{z
+}
+| {z }
+IR ground state
+
+UV ground state
+
+The first process is the forward RG which we used to obtain the scaling equations. The
+second process is the reverse RG which we wil undertake now. The IR ground state we
+will start with will consist of four momenta states, 𝑘−2,−1,1,2 . 𝑘1,2 will be the states above the
+Fermi surface while 𝑘−1,−2 will be the ones below it. The algorithm of reverse RG is shown
+in fig. 7.11.
+For the purpose of illustrating how we will construct the many-body ground state
+however, we will work with just two momenta states instead of four, one above and one
+below.
+
+
+
+
+|cloudi = 𝑐−𝑠 |↑𝑑 , ↓i − |↓𝑑 , ↑i + 𝑐−𝑐 |↑𝑑𝑐 , ↓𝑐 i + |↓𝑑𝑐 , ↑𝑐 i
+(7.10.1)
+227
+
+7.10. REVERSE RG ANALYSIS
+
+Figure 7.11: Algorithm of reverse RG. We start with a Hamiltonian with an impurity
+site (red) coupled with two conduction electrons (dark green), with four other decoupled
+electrons
+(bright green). The dotted rectangle represents the emergent window
+
+
+−Λ 𝑗 , Λ 𝑗 at each step; the electrons inside that rectangle are still entangled with the im-
+
+purity, while the ones inside have been decoupled. The next step of reverse RG involves
+applying the inverse transformation on the Hamiltonian, which will couple two more
+electrons from the IOMS (hence four dark green circles in the second step), leading to
+an enlargement of the emergent window. The unitary varies for each step, hence the
+notation 𝑈 𝑗 .
+
+Figure 7.12: Increase in the number of coupled elements under reverse RG. We start with
+the impurity coupled with two electrons, which increases at each step of the reverse RG.
+The weight of the bonds changes at each step, and is described by the running couplings
+𝑉 𝑗 , 𝐽 𝑗 , 𝐾 𝑗 . The onsite energy of the impurity itself also varies at each step, which is essentially the renormalization in 𝜖𝑑 and 𝑈.
+228
+
+Chapter 7. Results and Features of the Low-Energy Theory
+where ↑𝑐 represents a state with 𝐶 𝑧 = 12 and the 𝑑 in the superscript indicates it is for
+the impurity. Cloud refers to the system of the still-entangled electrons and the impurity. To construct the states |↑i , |↓i , |↑𝑐 i and |↓𝑐 i, we will look the two-site spin and charge
+operators. The impurity states are easy to construct. ↑ and ↓ consist of singly occupied
+impurities with the respective spins, while the charge versions involve double-occupied
+and vacant impurities respectively.
+For the conduction electrons, we have
+
+1 Õ †
+†
+𝑧
+𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘↓ 𝑐𝑘 0↓
+𝑆2 =
+(7.10.2)
+2𝑁 ∗
+𝑘𝑘 0
+
+The eigenstate for this operator, with an eigenvalue of + 12 , is
+|↑i ≡
+
+1
+
+𝑁∗
+
+𝑘∈ [
+
+Õ
+
+−Λ∗ ,Λ∗
+
+]
+
+|𝑘 ↑i =
+
+1
+
+𝑁∗
+
+𝑘∈ [
+
+Õ
+
+−Λ∗ ,Λ∗
+
+]
+
+| 𝑛ˆ 𝑘↑ = 1, 𝑛ˆ 𝑞𝜎≠𝑘↑ = 0i
+
+(7.10.3)
+
+†
+The state |𝑘 ↑i is formally 𝑐𝑘↑
+| 0i, | 0i being the state with no particles. In other words, the
+state |↑i is simply the equal superposition of all states with a single up electron.
+
+To show that this is indeed the eigenstate of 𝑆2𝑧 , we compute the action of 𝑆2𝑧 on this state:
+𝑆2𝑧 |↑i =
+
+Õ
+
+1
+
+2𝑁 ∗ 2 𝑘𝑘 0𝑞
+
+
+†
+†
+𝑐𝑘 0↓ |𝑞 ↑i
+𝑐𝑘 0↑ − 𝑐𝑘↓
+𝑐𝑘↑
+
+(7.10.4)
+
+We have dropped the regime of the summation because it is understood that all momenta
+†
+𝑐𝑘 0↓ because
+are summed inside the fixed point window. We can drop the second part 𝑐𝑘↓
+there is no down spin electron to annihilate.
+𝑆2𝑧 |↑i =
+
+1
+2𝑁 ∗ 2
+1
+
+=
+
+Õ
+
+𝑘𝑘 0 𝑞
+
+Õ
+
+†
+𝑐𝑘 0↑ |𝑞 ↑i
+𝑐𝑘↑
+†
+
+𝑐 𝑐𝑘 0↑𝛿𝑘 0𝑞 |𝑞 ↑i
+2𝑁 ∗ 2 𝑘𝑘 0𝑞 𝑘↑
+1 Õ †
+=
+𝑐 | 0i
+2𝑁 ∗ 2 𝑘𝑘 0 𝑘↑
+=
+=
+
+1 Õ †
+
+2𝑁 ∗
+1
+2
+
+𝑘
+
+𝑐𝑘↑ | 0i
+
+|↑i
+
+229
+
+(7.10.5)
+Õ
+
+
+
+∗
+
+= 𝑁 
+
+ 𝑘0
+
+
+
+
+7.10. REVERSE RG ANALYSIS
+We can find the other eigenstate by applying on this state with 𝑆2− :
+1 Õ †
+𝑆2− |↑i = ∗ 2
+𝑐 𝑐𝑘 0↑ |𝑞 ↑i
+𝑁 𝑘𝑘 0𝑞 𝑘↓
+1 Õ †
+= ∗
+𝑐 | 0i
+𝑁 𝑘 𝑘↓
+1 Õ
+= ∗
+|𝑘 ↓i
+𝑁 𝑘
+Thus, the eigenstate for 𝑆2𝑧 = − 21 is
+
+|↓i =
+
+1 Õ
+
+𝑁∗
+
+𝑘
+
+|𝑘 ↓i
+
+Now we turn to the eigenstates of 𝐶2𝑧 . That operator is defined as
+
+1 Õ †
+†
+𝑧
+0
+0
+𝐶2 =
+𝑐 𝑐𝑘 ↑ − 𝑐𝑘 ↓ 𝑐𝑘↓
+2𝑁 ∗ 0 𝑘↑
+𝑘𝑘
+The eigenstate for 𝐶2𝑧 = + 12 will be
+
+|↑𝑐 i ≡
+
+1 Õ
+
+𝑁 ∗2
+
+𝑘𝑘 0
+
+|𝑘 ↑, 𝑘0 ↓i
+
+(7.10.6)
+
+(7.10.7)
+
+(7.10.8)
+
+(7.10.9)
+
+which means you consider all pairs of momenta and place an up electron on one of them
+and a down on the other. The action of 𝐶2𝑧 on this state is
+
+Õ 
+1
+†
+†
+0
+0
+0
+𝑐
+−
+𝑐
+𝑐
+𝐶2𝑧 |↑𝑐 i =
+𝑐
+𝑘↑
+𝑘 ↓ 𝑘↓ |𝑞 ↑, 𝑞 ↓i
+2𝑁 ∗ 3 𝑘𝑘 0𝑞𝑞0 𝑘↑
+
+
+
+Õ 
+1
+†
+†
+0
+0
+=
+𝑐 𝑐𝑘 0↑ |𝑞 ↑, 𝑞 ↓i − 𝛿𝑘 0𝑘 − 𝑐𝑘↓ 𝑐𝑘 0↓ |𝑞 ↑, 𝑞 ↓i
+(7.10.10)
+2𝑁 ∗ 3 𝑘𝑘 0𝑞𝑞0 𝑘↑
+i
+Õ h
+1
+0
+0
+0 𝑞 |𝑘 ↑, 𝑞 ↓i − 𝛿𝑘 0 𝑘 |𝑞 ↑, 𝑞 ↓i + 𝛿𝑘 0 𝑞 0 |𝑞 ↑, 𝑘 ↓i
+=
+𝛿
+𝑘
+2𝑁 ∗ 3 𝑘𝑘 0𝑞𝑞0
+Since all the momenta labels are dummy indices, we exchange the labels 𝑘 and 𝑞0 in the
+third term. The second and third terms then cancel out, and we are left with
+Õ
+1
+𝐶2𝑧 |↑𝑐 i =
+|𝑘 ↑, 𝑞0 ↓i
+2
+∗
+2𝑁 𝑘𝑘 0𝑞𝑞0
+(7.10.11)
+=
+The down eigenstate is
+𝐶2− |↑𝑐 i =
+
+1
+2
+
+1
+
+𝑁 ∗3
+
+= | 0i
+
+|↑𝑐 i
+Õ
+
+𝑘𝑘 0 𝑞𝑞0
+
+𝑐𝑘↓ 𝑐𝑘 0↑ |𝑞 ↑, 𝑞0 ↓i
+
+230
+
+(7.10.12)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+which is the state with all states empty. We can thus write down the still-entangled of
+the ground state wavefunction:
+"
+#
+h
+
+
+1
+1
+|cloudi = 𝑐−𝑠 |↑𝑑 i √ |𝑘1 ↓i + |𝑘−1 ↓i − |↓𝑑 i √ |𝑘1 ↑i + |𝑘−1 ↑i + 𝑐−𝑐 | 2𝑑 i | 0i
+2
+
+2
+
++ | 0𝑑 i
+
+1 Õ
+
+𝑁∗
+
+𝑘𝑘 0
+
+
+
+0
+|𝑘 ↑, 𝑘 ↓i 
+
+
+
+(7.10.13)
+
+This state will of course be in direct product with the disentangled electronic states (integrals of motions, IOMS) outside the emergent window. If we assume there are two
+such momenta (hence four momenta+spin) states on either side of the emergent window (which we label as 𝑘±2 𝜎, 𝑘±3 𝜎), and if we recall that we had used the configuration
+𝑛ˆ = 0 for the IOMS above the FS and 𝑛ˆ = 1 for the ones below, the total state becomes
+|IRi ≡ |Ψ0 i = | 𝑛ˆ 𝑘−2 = 𝑛ˆ 𝑘−3 = 2i ⊗ |cloudi ⊗ | 𝑛ˆ 𝑘2 = 𝑛ˆ 𝑘3 = 0i
+
+(7.10.14)
+
+In order to allow a numerical implementation of the reverse RG, we need to write this
+wavefunction completely as sums of Fock states. We will use the following notation:
+unoccupied IOMS
+
+z
+}|
+{
+𝑛𝑘3↑ 𝑛𝑘3↓ 𝑛𝑘2↑ 𝑛𝑘2↓
+
+impurity
+
+𝑛𝑘 1 ↑ 𝑛𝑘 1 ↓
+| {z }
+
+cloud above FS
+
+z }| {
+𝑛𝑑↑ 𝑛𝑑↓
+
+z
+}|
+{E
+𝑛𝑘−2↑ 𝑛𝑘−2↓ 𝑛𝑘−3↑ 𝑛𝑘−3↓
+occupied IOMS
+
+𝑛𝑘−1↑ 𝑛𝑘−1↓
+| {z }
+
+cloud below FS
+
+(7.10.15)
+
+𝑐𝑠
+𝑐𝑠
+|Ψ0 i = √− | 0000i ⊗ |↑𝑑 i |𝑘1 ↓, 𝑘−1 ↓i ⊗ | 1111i − √− | 0000i ⊗ |↓𝑑 i |𝑘1 ↑, 𝑘−1 ↑i ⊗ | 1111i
+2
+
+𝑐−𝑐
+
+2
+
+𝑐−𝑐
+
+√ | 0000i ⊗ | 2𝑑 i | 0i ⊗ | 1111i + √ | 0000i ⊗ | 0𝑑 i |𝑘1 ↑, 𝑘1 ↓, 𝑘−1 ↑, 𝑘−1 ↓i ⊗ | 1111i
+2
+
+2
+
+
+
+ 𝑐𝑠
+𝑐𝑠
+𝑐𝑐
+
+= | 0000i ⊗  √− | 01i | 10i | 01i − √− | 10i | 01i | 10i + √− | 00i | 11i | 00i
+ 2
+|{z}
+|{z}
+|{z}
+2
+2
+
+
+imp
+imp
+imp
+
+
+
+
+𝑐
+𝑐−
+
++ √ | 11i | 00i | 11i  ⊗ | 1111i
+
+|{z}
+2
+
+
+imp
+
+
+(7.10.16)
+The next step is to write down the unitaries that will take us from the IR ground state to
+the UV ground state. In the forward RG, we used the following unitaries for decoupling
+an electron 𝑞𝛽:
+i
+1 h
+𝑈0 𝛽 = √ 1 − 𝜂0† 𝛽 + 𝜂0 𝛽
+2
+(7.10.17)
+i
+1 h
+†
+𝑈1 𝛽 = √ 1 + 𝜂1 𝛽 − 𝜂1 𝛽
+2
+
+231
+
+7.10. REVERSE RG ANALYSIS
+where the subscripts 0 and 1 indicate it decouples an electron above and below the Fermi
+surface respectively, and the subscript 𝛽 indicates the spin of that electron. The total
+unitary is
+i
+1h
+†
+†
+(7.10.18)
+𝑈=
+1 + 𝜂1↑ + 𝜂0↑ + 𝜂1↓ + 𝜂0↓
+4
+
+The inverse transformation for re-entangling 𝑞𝛽 is
+†
+
+𝑈 =
+
+1h
+2
+
+1 + 𝜂1↑ +
+
+𝜂0†↑
+
++ 𝜂1↓ +
+
+𝜂0†↓
+
+i
+
+(7.10.19)
+
+Here, 𝑈0†𝛽 re-couples an electron 𝑞𝛽 above the Fermi surface. The 𝜂-s are
+
+
+†
+
+
+
+𝜂0 𝛽 = 𝑉 𝜆 2 𝑛ˆ 𝑑 𝛽 + 𝜆 1 1 − 𝑛ˆ 𝑑 𝛽
+
+
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
++ 𝜆3
+
+(
+Õ 𝐽 
+2
+
+𝑘
+
++
+
+𝜂1 𝛽 = 𝑉
+
+∗
+
+
+
+
+
+𝜆 1 𝑛ˆ 𝑑 𝛽 + 𝜆 2 1 − 𝑛ˆ 𝑑 𝛽
+
+
+
+𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
++ 𝜆3
+
+†
+𝑆𝑑𝑧 𝛽𝑐𝑞𝛽
+𝑐𝑘𝛽
+
+
+
+𝐾
+2
+
+†
+𝑐𝑘𝛽
+𝐶𝑑𝑧 𝑐𝑞𝛽
+
+(
+Õ 𝐽 
+2
+
+𝑘
+
++
+
+𝐾
+2
+
++
+
+†
+𝑆𝑑𝑧 𝛽𝑐𝑘𝛽
+𝑐𝑞𝛽
+
+
+
++
+
+†
+𝑐† 𝑐𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑘𝛽
+𝑑𝛽
+
+† †
+𝑐𝑞𝛽
+𝑐 𝑐𝑑 𝛽 𝑐𝑑 𝛽
+𝑘𝛽
+
++
+
+
+
+(7.10.20)
+
+
+
+(7.10.21)
+
+)
+
+𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑘𝛽
+
+†
+𝐶𝑑𝑧 𝑐𝑘𝛽
+𝑐𝑞𝛽 + 𝑐𝑑† 𝛽 𝑐† 𝑐𝑘𝛽 𝑐𝑞𝛽
+𝑑𝛽
+
+)
+
+with
+𝜆1 =
+
+1
+
+𝜔−
+
+1
+𝐷
+2
+
++ 𝜖𝑑 +
+
+1
+𝐾
+2
+
+, 𝜆2 =
+
+1
+
+𝜔−
+
+1
+𝐷
+2
+
+− 𝜖𝑑 +
+
+1
+𝐽
+2
+
+, 𝜆3 =
+
+1
+
+𝜔−
+
+1
+𝐷
+2
+
++
+
+The wavefunction after reversing one step of the RG will thus be
+|Ψ1 i = 𝑈0†↑𝑈0†↓𝑈1†↑𝑈1†↓ |Ψ0 i
+
+1
+4
+
+𝐽+𝐾
+
+
+
+(7.10.22)
+
+(7.10.23)
+
+The results of the reverse RG study are depicted in the following plots. We have used
+two types of quantities in the process - mutual information and correlation functions.
+The mutual information between two subsystems 𝐴 and 𝐵 in a wavefunction with many
+subsystems is defined as
+𝐼 (𝐴 : 𝐵) = 𝑆 𝐴 + 𝑆𝐵 − 𝑆 𝐴𝐵
+(7.10.24)
+where 𝑆𝑖 𝑗..𝑞 is the von-Neumann entropy of the reduced density matrix obtained after
+tracing out all degrees of freedom except those in the subscript of 𝑆.
+
+The mutual information between two electrons inside the entangled cloud increases as
+we go towards the IR fixed point. This can be understood in the following manner; as the
+wavefunction flows towards a smaller sized emergent cloud, the entanglement between
+those electrons gets distilled out.
+232
+
+Chapter 7. Results and Features of the Low-Energy Theory
+We have also computed some correlation functions. All Dof themE increase towards the
+IR fixed point. The increase in the correlation function 𝑛ˆ 𝑘1↑ 𝑛ˆ 𝑘2↓ arises from the crystallization
+of the spin singlet at the fixed point. The increase in the correlation function
+D
+E
+𝑛ˆ 𝑘↑ 𝑛ˆ 𝑘↓ arises from the charge triplet content of the wavefunction, showing the increase
+
+of the charge
+contribution
+on the momenta. The increase in the off-diagonal correlation
+D
+E
+†
+†
+function 𝑐𝑘↑ 𝑐𝑘 0↓ 𝑐𝑞↓ 𝑐𝑞0↑ shows that the there is a large and non-trivial interaction between
+
+the electrons of the cloud that is being mediated by the impurity electron. This interaction is not of the Fermi liquid type, but instead was obtained in the effective Hamiltonian
+for the Kondo cloud.
+
+Figure 7.13: Left: Mutual information between two conduction electrons inside the
+cloud. Right: Mutual information between a conduction electron inside the cloud and
+an impurity electron.
+
+233
+
+7.10. REVERSE RG ANALYSIS
+
+Figure 7.14: Diagonal correlation functions between cloud electrons
+
+Figure 7.15: off-diagonal correlation function
+234
+
+Chapter 8
+Conclusions and Future Directions
+In this work, we have seen that the fate of the SIAM at low temperatures is a growth
+in the spin, charge and hybridisation couplings 𝐽, 𝐾 and 𝑉 . This confirms the NRG and
+Bethe ansatz result that the low energy behavior is that of a screened impurity. We
+stress that the spin or the charge exchange coupling, 𝐽 or 𝐾, is necessary to screen the
+corresponding degree of freedom on the impurity. The ground state wavefunction for
+the low energy theory is primarily a spin-singlet with some charge-triplet content in the
+spin-Kondo regime. In the charge-Kondo regime, we find a charge-singlet instead. The
+susceptibility is seen to increase as we go to lower temperatures, signaling increased
+spin-flip scattering and providing a justification for the increase in resistivity after the
+Kondo temperature 𝑇𝐾 . At high temperatures the susceptibility saturates to 81 , mimicking
+a four-fold degenerate object because at high temperatures, the impurity energy scales
+become blurred.
+We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen
+the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal
+non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong
+entanglement between the impurity and the conduction electrons. This contribution is
+found to increase as we move towards the infrared fixed point. Higher order scattering
+processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and
+conduction electrons. They show that the conduction electrons become more stronglyentangled as we move towards the infrared fixed point. They also reveal an increase
+in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo
+cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo
+regime. Closely related to this is the result that the Luttinger’s volume at the fixed point
+accommodates the impurity site into the Fermi volume such that Luttinger’s count increases by 1 compared to the value at the free-orbital or local moment fixed points. The
+renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
+This work still leaves some problems untouched. Some new questions and interesting
+235
+
+prospects have also emerged. We discuss them now.
+• Can we obtain an analytical expression for the finite temperature Wilson ratio? The
+zero temperature value was obtained using low temperature approximations, so a
+finite temperature calculation would need to be non-perturbative. In other words,
+the full effect of the conduction bath will most probably come into play.
+• The spectral function of the impurity is another interesting quantity to explore.
+It is not yet completely certain which parts of the effective Hamiltonian for the
+cloud lead to which features of the spectral function. It would be interesting to
+check whether the Fermi liquid part gives the central peak and the non-Fermi liquid
+the side humps, or something else altogether. We also intend to explore the bath
+spectral function and its variation under the RG.
+• In Chapter 4, we find that the URG renormalization in Hamiltonian has a form similar to that of URG - a generalized double-bracket form. This suggests that URG
+might have uses in linear algebra as well. It is well-known that transformations of
+the double-bracket form are unitary and can be used in minimization and sorting
+problems [10]. It has also been shown that the unitary flows correspond to motion
+along a geodesic if a suitable manifold is defined. This suggests that we can look for
+a quantity which is minimized by URG in the journey towards the fixed point and
+see if it can be used to provide a faster and more robust algorithm for optimization
+problems.
+• One can also look into the lattice versions of these models - the Kondo lattice and
+the Anderson lattice problems which involve two interacting bands - one for the
+impurity and the other for the conduction electrons [41]. Since there is a macroscopic number of impurity electrons, such a model shows phase transitions. One
+big project for the future can be to look into such models, map the phase diagram
+and search for superconducting phases or non-Fermi liquid phases.
+• We have seen that the zero-mode of the low-energy effective Hamiltonian is essentially a two-site Anderson model(a.k.a Anderson dimer), which can be solved
+exactly. An interesting endeavor in this context could be to see if there is a unitary transformation that converts the Anderson dimer to a two-site Hubbard model
+(Hubbard dimer). The point of this exercise would be to shed some light on the inner workings of DMFT. The imposition of the self-consistency requirement in DMFT
+introduces a translational invariance into the Anderson model and converts it into
+the Hubbard model. If we could figure out a transformation that does the same (albeit, between dimers and not the full-fledged models), it might lead to new insights
+into DMFT). This might allows us to see a metal-insulator phase transition, specially
+because of the impurity spectral function morphing that we saw from the effective
+Hamiltonian, shown again in fig. 8.1.
+• It is known from DMFT calculations that the spectral function of the bath changes
+under a change of 𝑈, leading to a metal-insulator transition. An interesting project
+could be to redo the URG of the SIAM with more complicated baths (by inserting
+236
+
+Chapter 8. Conclusions and Future Directions
+×10−2
+0.175
+
+8
+
+6
+
+0.100
+
+A(ω)
+
+0.125
+
+A(ω)
+
+0.150
+
+4
+
+0.075
+0.050
+
+2
+
+0.025
+
+0
+
+0.000
+−0.3
+
+−0.2
+
+−0.1
+
+0.0
+ω
+
+0.1
+
+0.2
+
+−0.75
+
+0.3
+
+−0.50
+
+−0.25
+
+0.00
+ω
+
+0.25
+
+0.50
+
+0.75
+
+Figure 8.1: Change in the spectral function from single peak to double peak structure under increase of 𝑈. A similar change happens under DMFT for the bath spectral function
+of the Hubbard model.
+non-trivial self-energies into the bath), and see if the phase-diagram changes. As
+it stands now, there is no provision for a phase transition in the SIAM because
+there is only one stable phase. If the inclusion of a non-trivial bath brings about
+a phase-transition in the impurity phase diagram, that is essentially a mirror of the
+phase transition happening in the Hubbard model. The importance of this potential discovery is that the self-energies that we wish to insert into the bath have been
+obtained from a URG treatment of the Hubbard model, and the appearance of the
+phase transition would then show that URG can be used to do much of the work
+that DMFT does, and it provides an avenue of improving/remodeling DMFT.
+
+237
+
+Bibliography
+[1] H. R. Krishna-murthy, K. G. Wilson, and J. W. Wilkins. Temperature-dependent susceptibility of the symmetric anderson model: Connection to the kondo model. Phys.
+Rev. Lett., 35:1101–1104, October 1975.
+[2] J. Friedel. Metallic alloys. Il Nuovo Cimento (1955-1965), 7:287–311, 1958.
+[3] P W Anderson. A poor man's derivation of scaling laws for the kondo problem.
+Journal of Physics C: Solid State Physics, 3(12):2436–2441, dec 1970.
+[4] Jun Kondo. Resistance Minimum in Dilute Magnetic Alloys. Progress of Theoretical
+Physics, 32(1):37–49, 07 1964.
+[5] N. Andrei, K. Furuya, and J. H. Lowenstein. Solution of the kondo problem. Rev.
+Mod. Phys., 55:331–402, Apr 1983.
+[6] P B Wiegmann. Exact solution of the s-d exchange model (kondo problem). Journal
+of Physics C: Solid State Physics, 14(10):1463–1478, apr 1981.
+[7] A.M. Tsvelick and P.B. Wiegmann. Exact results in the theory of magnetic alloys.
+Advances in Physics, 32(4):453–713, 1983.
+[8] P. Nozières. A fermi-liquid description of the kondo problem at low temperatures.
+Journal of Low Temperature Physics, 17, 1974.
+[9] Anirban Mukherjee. Unitary renormalization group for correlated electrons. PhD
+thesis, Indian Institute of Science Education and Research Kolkata, 2020.
+[10] R. Brockett. Dynamical systems that sort lists, diagonalize matrices, and solve linear
+programming problems. Linear Algebra and its Applications, 146:79–91, 1991.
+[11] J. J. Sakurai. Modern Quantum Mechanics. Addison Wesley Publishing Company,
+1994.
+[12] A. C. Hewson. The Kondo Problem to Heavy Fermions. Cambridge University Press,
+1993.
+[13] Jordon Baym and Christopher Pethick. Landau Fermi-Liquid Theory. Wiley-VCH,
+1991.
+
+238
+
+

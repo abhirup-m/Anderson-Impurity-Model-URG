@@ -1,0 +1,3297 @@
+2.9. POOR MAN’S SCALING OF THE SIAM
+The total Hamiltonian can be written in the form
+Õ
+
+𝐻eff =
+𝜖𝑘𝜎 𝑛𝑘𝜎 + 𝜖𝑑 + 𝛿𝜖𝑑 𝑛𝑑
+
+
+
+
+
+Õ 
+†
+†
++
+−
++
+−
++
+𝑉𝑘 + 𝛿𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 + 𝑉𝑘 + 𝛿𝑉𝑘 𝑐𝑑𝜎 𝑐𝑘𝜎
+
+𝑘𝜎
+
+(2.9.108)
+
+𝑘𝜎
+
+We now evaluate the changes:
+2
+Õ− |𝑉𝑞 | 2 ª
+©Õ+ |𝑉𝑞 |
+𝛿𝜖𝑑 = ­
++2
+®
+𝜖
+−
+𝜖
+𝜖
+−
+𝜖
+𝑞
+𝑞
+𝑑
+𝑑
+𝑞
+« 𝑞
+¬
+
+
+1
+
+≈ |𝑉 | 2 𝜌|𝛿𝐷|
+
+𝜖𝑑 − 𝐷
+𝐷 − 3𝜖 𝑑
+= |𝑉 | 2 𝜌|𝛿𝐷| 2
+𝐷 − 𝜖2𝑑
+
++
+
+2
+
+(2.9.109)
+
+𝜖𝑑 + 𝐷
+
+I used the approximation
+𝐷
+Õ
+
+𝑞=𝐷−𝛿𝐷
+
+𝑓 (𝑞) =
+
+Also,
+𝛿𝑉𝑘+
+
+=
+
+∫
+
+𝐷
+
+𝐷−𝛿𝐷
+
+Õ+
+𝑞
+
+𝑑𝐸𝜌(𝐸) 𝑓 (𝐸) ≈ 𝜌 𝑓 (𝐷)𝛿𝐷
+
+(2.9.110)
+
+|𝑉𝑞 | 2
+(𝜖𝑞 − 𝜖𝑑 )(𝜖𝑘 − 𝜖𝑞 )
+1
+
+≈ |𝑉 | 2 𝜌|𝛿𝐷|
+Õ−
+
+𝛿𝑉𝑘− = 2
+
+𝑞
+
+(𝐷 − 𝜖𝑑 )(𝜖𝑘 − 𝐷)
+|𝑉𝑞 | 2
+(𝜖𝑞 − 𝜖𝑑 )(𝜖𝑘 − 𝜖𝑞 )
+
+≈ −|𝑉 | 2 𝜌|𝛿𝐷|
+We now make the following assumptions:
+
+(2.9.111)
+
+2
+
+(𝐷 + 𝜖𝑑 )(𝜖𝑘 + 𝐷)
+
+• 𝑘 is close to the Fermi level (𝜖𝑘 ≈ 0)
+• Because 𝑘 is close to the Fermi surface, we assume the potential is independent of
+momenta: 𝑉𝑘+ ≡ 𝑣+ , 𝑉𝑘− ≡ 𝑣−
+• Since we truncated at third order, we need 𝐷 − |𝜖𝑑 |  𝑣± . This gives us 𝐷  |𝜖𝑑 |.
+With these assumptions, we get the scaling equations similar to the ones obtained previously.
+
+88
+
+Chapter 2. Preliminaries and Existing Results
+
+2.10
+
+Numerical Renormalization Group Calculation of the
+symmetric SIAM
+
+NRG calculations of the symmetric SIAM were carried out by H. R. Krishnamurthy, Wilkins
+and Wilson in ref. [1]. They identified three fixed points in the phase diagram. Two of
+them, the free-orbital and the local moment, are unstable while the strong-coupling fixed
+point is stable. These fixed points along with typical RG flows are marked in fig. 2.5. The
+
+Figure 2.5: Schematic diagram of RG flows and fixed points of the symmetric SIAM, as
+obtained by ref.[1]. The y-axis is the impurity site repulsion 𝑈 = − 12 𝜖𝑑 while the x-axis
+is the hybridisation parameter Δ ∼ 𝜌𝑉 2 . The abbreviations mark the three fixed-points:
+FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are
+described in the text.
+free-orbital fixed point is described by 𝑈 = 𝑉 = 0. The local moment fixed point is described by 𝑈 → ∞, 𝑉 = 0. The strong-coupling fixed point is described by 𝑈 = finite, 𝑉 → ∞.
+The temperature-dependent susceptibility is found to be very similar to that obtained
+from the Kondo model, with a suitably-defined 𝑇𝐾 . It starts from a constant value at
+low-temperatures to a Curie-Weiss like form at high temperatures, with the Curie-Weiss
+constant at very large temperatures being equal to 81 .
+
+89
+
+Chapter 3
+Unitary Renormalization Group
+Method
+3.1
+
+Formalism and Results
+
+3.1.1
+
+Description of the problem
+
+We are given a Hamiltonian H
+ which
+ is not completely diagonal in the occupation number basis of the electrons, 𝑛ˆ 𝑘 : H , 𝑛𝑘 ≠ 0. 𝑘 labels any set of quantum numbers depending
+on the system. For spin-less Fermions it can be the momentum of the particle, while for
+spin-full Fermions it can be the set of momentum and spin. There are terms that scatter
+electrons from one quantum number 𝑘 to another quantum number 𝑘0.
+We take a general Hamiltonian,
+
+
+
+†
+H = 𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 + 𝑐𝑞𝛽
+𝑇 + 𝑇 † 𝑐𝑞𝛽
+
+(3.1.1)
+
+Formally, we can decompose the entire Hamiltonian in the subspace of the electron we
+want to decouple (𝑞𝛽).
+| 1i | 0i
+
+(3.1.2)
+𝑇 ª
+©𝐻
+H = ­ †1
+®
+𝑇
+𝐻0
+«
+¬
+The basis in which this matrix is written is | 1i , | 0i where |𝑖i is the set of all states where
+𝑛ˆ 𝑞𝛽 = 𝑖. The aim of one step of the URG is to find a unitary transformation 𝑈 such that the
+new Hamiltonian 𝑈H𝑈 † is diagonal in this already-chosen basis.
+| 1i
+
+𝑈𝑞 is defined by
+
+© 𝐻˜
+H̃ ≡ 𝑈H𝑈 † = ­ 1
+0
+«
+
+| 0i
+
+0 ª
+®
+𝐻˜ 0
+
+¬
+
+h
+i
+H̃ = 𝑈𝑞 H𝑈𝑞† such that H̃ , 𝑛𝑞 = 0
+90
+
+(3.1.3)
+
+(3.1.4)
+
+Chapter 3. Unitary Renormalization Group Method
+It is clear that 𝑈 is the diagonalizing matrix for H . Hence we can frame this problem as an
+eigenvalue equation as well. Let |𝜓1 i , |𝜓0 i be the basis in which the original Hamiltonian
+H has no off-diagonal terms corresponding to 𝑞𝛽. Hence, we can write
+
+H |𝜓𝑖 i = 𝐻˜ 𝑖 |𝜓𝑖 i , 𝑖 ∈ 0, 1
+(3.1.5)
+Since |𝜓𝑖 i is the set of eigenstates of H and |𝑖i is the set of eigenstates in which 𝑈H𝑈 †
+has no off-diagonal terms corresponding to 𝑞𝛽, we can relate |𝜓𝑖 i and |𝑖i by the same
+transformation : |𝜓𝑖 i = 𝑈 † |𝑖i. We can expand the state |𝜓𝑖 i in the subspace of 𝑞𝛽:
+Õ
+|𝜓𝑖 i =
+| 𝑗i h 𝑗| |𝜓𝑖 i ≡ | 1i |𝜙1𝑖 i + | 0i |𝜙0𝑖 i
+(3.1.6)
+𝑗=0,1
+
+where |𝜙𝑖𝑗 i = h 𝑗| |𝜓𝑖 i. If we substitute the expansion 3.1.2 into the eigenvalue equation
+3.1.5, we get
+
+
+
+
+†
+†
+𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 + 𝑐𝑞𝛽 𝑇 + 𝑇 𝑐𝑞𝛽 |𝜓𝑖 i = 𝐻˜ 𝑖 |𝜓𝑖 i
+(3.1.7)
+h
+
+i
+
+
+
+
+
+The diagonal parts 𝐻𝑒 = tr H 𝑛ˆ 𝑞𝛽 and 𝐻𝑒 = tr H 1 − 𝑛ˆ 𝑞𝛽
+
+
+
+can be separated into a purely
+
+diagonal part H 𝑑 that contains the single-particle energies and the multi-particle correlation energies or Hartree-like contributions, and an off-diagonal part H 𝑖 that scatters
+between the remaining degrees of freedom 𝑘𝜎 ≠ 𝑞𝛽. That is,
+
+
+𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 = H 𝑑 + H 𝑖
+This gives
+
+3.1.2
+
+h
+
+i
+
+
+†
+𝑐𝑞𝛽
+𝑇 + 𝑇 † 𝑐𝑞𝛽 |𝜓𝑖 i = 𝐻˜ 𝑖 − H 𝑖 − H 𝑑 |𝜓𝑖 i
+
+(3.1.8)
+
+Obtaining the decoupling transformation
+
+We now define a new operator 𝜔ˆ 𝑖 = 𝐻˜ 𝑖 − H 𝑖 , such that
+h
+i
+
+
+†
+𝑐𝑞𝛽
+𝑇 + 𝑇 † 𝑐𝑞𝛽 |𝜓𝑖 i = 𝜔ˆ 𝑖 − H 𝑑 |𝜓𝑖 i
+
+(3.1.9)
+
+From the definition of 𝜔ˆ 𝑖 , we can see that it is Hermitian and has no term that scatters
+in
+
+
+0
+1
+ˆ
+ˆ
+ˆ
+ˆ
+ˆ
+the subspace of 𝑞𝛽, so it is diagonal in 𝑞𝛽 and we can expand it as 𝜔𝑖 = 𝜔𝑖 𝑛𝑞𝛽 + 𝜔𝑖 1 − 𝑛𝑞𝛽 .
+Using the expansion 3.1.6, we can write
+𝜔ˆ 𝑖 |𝜓𝑖 i = 𝜔ˆ 𝑖1 | 1i |𝜙1𝑖 i + 𝜔ˆ 𝑖0 | 0i |𝜙0𝑖 i
+
+(3.1.10)
+
+Since the only requirement on |𝜓𝑖 i is that it diagonalize the Hamiltonian in the subspace
+of 𝑞𝛽, there is freedom in the choice of this state. We can exploit this freedom and choose
+the |𝜙0𝑖 , i to be an eigenstates of 𝜔ˆ 𝑖1,0 corresponding to real eigenvalues 𝜔𝑖1,0 :
+
+
+h
+i
+
+
+†
+(3.1.11)
+H 𝑑 + 𝑐𝑞𝛽
+𝑇 + 𝑇 † 𝑐𝑞𝛽 |𝜓𝑖 (𝜔𝑖 )i = 𝜔𝑖1 − H 𝑑 | 1i |𝜙1𝑖 i + 𝜔𝑖0 − H 𝑑 | 0i |𝜙0𝑖 i
+91
+
+3.1. FORMALISM AND RESULTS
+If we now substitue the expansion 3.1.6 and gather the terms that result in 𝑛ˆ 𝑞𝛽 = 1, we
+get
+
+
+†
+𝑐𝑞𝛽
+𝑇 | 0i |𝜙0𝑖 i = 𝜔𝑖1 − H 𝑑 | 1i |𝜙1𝑖 i
+(3.1.12)
+Similarly, gathering the terms that result in 𝑛ˆ 𝑞𝛽 = 0 gives
+
+
+𝑇 † 𝑐𝑞𝛽 | 1i |𝜙1𝑖 i = 𝜔𝑖0 − H 𝑑 | 0i |𝜙0𝑖 i
+
+(3.1.13)
+
+We now define two many-particle transition operators:
+𝜂† (𝜔𝑖1 ) =
+0
+
+𝜂(𝜔𝑖 ) =
+wher 𝐺 𝑗 is the propagator
+
+𝑗
+
+1
+
+𝜔𝑖 −H 𝑑
+
+1
+1
+
+𝜔𝑖 −
+1
+
+†
+𝑐𝑞𝛽
+𝑇
+𝑑
+H
+
+𝜔𝑖0 − H 𝑑
+
+†
+≡ 𝐺1 𝑐𝑞𝛽
+𝑇
+
+†
+
+(3.1.14)
+
+†
+
+𝑇 𝑐𝑞𝛽 ≡ 𝐺0𝑇 𝑐𝑞𝛽
+
+. We can write this compactly as
+
+ˆ = 𝐺𝑇 † 𝑐𝑞𝛽 =
+𝜂( 𝜔)
+
+1
+
+𝜔ˆ 𝑖 −
+
+H𝑑
+
+𝑇 † 𝑐𝑞𝛽
+
+(3.1.15)
+
+©𝜔 1
+ª
+
+
+­ 𝑖
+®
+­
+® is a 2x2 matrix and H 𝑑 = H 𝑑 1 − 𝑛ˆ 𝑞𝛽 + H 𝑑 𝑛ˆ 𝑞𝛽
+where 𝜔ˆ 𝑖 = 𝜔𝑖 1 − 𝑛ˆ 𝑞𝛽 + 𝜔𝑖 𝑛ˆ 𝑞𝛽 = ­
+1
+®
+0
+­
+𝜔𝑖0 ®
+«
+¬
+
+ −1
+𝑑
+and 𝐺 = 𝜔ˆ − H
+. It is easy to check that this reproduces the previous forms of 𝜂0
+0
+
+
+
+
+
+1
+
+and 𝜂1† . We will later find that it is important to demand that these two be Hermitian
+conjugates of each other; that constraint is imposed on the denominators:
+𝜂† (𝜔𝑖0 ) = 𝜂† (𝜔𝑖1 ) =⇒
+
+1
+1
+
+𝜔𝑖 − H
+
+†
+𝑐† 𝑇 = 𝑐𝑞𝛽
+𝑇
+𝑑 𝑞𝛽
+
+1
+0
+
+𝜔𝑖 − H 𝑑
+
+(3.1.16)
+
+Henceforth we will assume that this constraint has been imposed.
+In terms of these operators, eq. 3.1.13 becomes
+
+These allow us to write
+
+| 1i |𝜙1𝑖 i = 𝜂† | 0i |𝜙0𝑖 i
+
+(3.1.17)
+
+
+|𝜓1 i = | 1i |𝜙1𝑖 i + | 0i |𝜙0𝑖 i = 1 + 𝜂 | 1i |𝜙1𝑖 i
+
+
+†
+|𝜓0 i = 1 + 𝜂 | 0i |𝜙0𝑖 i
+
+(3.1.18)
+
+| 0i |𝜙0𝑖 i = 𝜂 | 1i |𝜙1𝑖 i
+
+Recalling that |𝜓𝑖 i = 𝑈 † |𝑖i, we can read off the required transformation:
+𝑈1 = 1 + 𝜂
+92
+
+(3.1.19)
+
+Chapter 3. Unitary Renormalization Group Method
+
+rotation
+𝑈H𝑈 †
+
+ˆ =0
+[H , 𝑛]
+
+ˆ ≠0
+[H , 𝑛]
+
+Figure 3.1: Three steps of the URG: Decompose the Hamiltonian in a 2 × 2 matrix, apply
+the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.
+
+93
+
+3.1. FORMALISM AND RESULTS
+
+3.1.3
+
+Properties of the many-body transition operators
+
+The operators 𝜂 have some important properties. First is the Fermionic nature:
+
+
+2
+†2
+†2
+2
+𝜂 =𝜂 =0 𝑐 =𝑐 =0
+(3.1.20)
+Second is:
+
+| 1i |𝜙1𝑖 i = 𝜂† | 0i |𝜙0𝑖 i = 𝜂† 𝜂 | 1i |𝜙1𝑖 i =⇒ 𝜂† 𝜂 = 𝑛ˆ 𝑞𝛽
+
+(3.1.21)
+
+| 0i |𝜙0𝑖 i = 𝜂 | 1i |𝜙1𝑖 i = 𝜂𝜂† |𝜙0𝑖 i =⇒ 𝜂𝜂† = 1 − 𝑛ˆ 𝑞𝛽
+
+and hence the anticommutator
+
+=⇒
+
+n
+
+o
+𝜂, 𝜂† = 1
+
+(3.1.22)
+
+Note that the three equations in 3.1.21 work only when applied on the eigenstate |𝜓𝑖 i and
+not any arbitrary state.
+𝜂† 𝜂 |𝜓𝑖 i = | 1i |𝜙1𝑖 i = 𝑛ˆ 𝑞𝛽 |𝜓𝑖 i
+
+
+†
+𝑖
+𝜂𝜂 |𝜓𝑖 i = | 0i |𝜙0 i = 1 − 𝑛ˆ 𝑞𝛽 |𝜓𝑖 i
+n
+o
+𝜂† , 𝜂 |𝜓𝑖 i = |𝜓𝑖 i
+
+3.1.4
+
+Form of the unitary operators
+
+Although we have found the correct similarity transformations 𝑈𝑖 (eqs. 3.1.19), we need
+to convert them into a unitary transformation. Say we are trying to rotate the eigenstate
+|𝜓1 i into the state | 1i. We can then work with the transformation
+(3.1.23)
+
+𝑈1 = 1 + 𝜂
+
+In this form, this transformation is not unitary. It can however be written in an exponential form:
+𝑈1 = 𝑒 𝜂
+(3.1.24)
+using the fact that 𝜂2 = 0. It is shown in ref. [25] that corresponding to a similarity transformation 𝑒𝜔 ,there exists a unitary transformation 𝑒𝐺 where
+
+
+𝐺 = tanh−1 𝜔 − 𝜔†
+(3.1.25)
+
+Applying that to the problem at hand gives
+
+
+
+†
+−1
+†
+𝑈1 = exp tanh 𝜂 − 𝜂
+Let 𝑥 = tanh 𝑦. Then,
+
+−1
+𝑒2 𝑦 + 1
+1+𝑥
+1
+𝑥 = 2𝑦
+=⇒ 𝑒 𝑦 = 𝑒tanh 𝑥 =
+=⇒ 𝑦 = log
+2
+1−𝑥
+𝑒 −1
+
+94
+
+(3.1.26)
+r
+
+1+𝑥
+
+1−𝑥
+
+(3.1.27)
+
+Chapter 3. Unitary Renormalization Group Method
+
+
+Therefore,
+
+
+
+−1
+
+exp tanh
+
+𝜂−𝜂
+
+†
+
+
+
+= r
+
+1 + 𝜂 − 𝜂†
+1 + 𝜂† − 𝜂
+
+1 + 𝜂 − 𝜂†
+
+=r
+
+1 + 𝜂, 𝜂†
+
+1 
+
+=√
+
+n
+
+2
+
+o
+
+
+
+1+𝜂−𝜂
+
+†
+
+1 − 𝜂† + 𝜂
+
+
+
+(3.1.28)
+
+
+
+The unitary operator that transforms the entangled eigenstate |𝜓1 i to the state | 1i is thus
+
+It can also be written as exp
+exp
+
+
+
+𝜋
+4
+
+†
+
+𝜂 −𝜂
+
+
+
+ 
+𝜋
+4
+
+1 
+
+𝑈1 = √
+𝜂†
+
+−𝜂
+
+
+
+2
+
+†
+
+1+𝜂 −𝜂
+
+
+
+(3.1.29)
+
+because
+
+2  𝜋 2 1 
+3  𝜋 3
+1  †
+†
++
++
++ ...
+=1+ 𝜂 −𝜂
+𝜂 −𝜂
+𝜂 −𝜂
+4 2!
+4
+3!
+4
+
+
+
+
+†
+
+†
+
+𝜋
+
+𝜋
+
+1
+
+ 2
+𝜋
+
+  𝜋 3 1  𝜋 4
+1  †
+−
++
++ ...
+𝜂 −𝜂
+3!
+4
+4! 4
+
+n
+
+o
+
+=1+ 𝜂 −𝜂
+−
+4 2! 4
+
+𝜋
+𝜋  †
+= cos + 𝜂 − 𝜂 sin
+4
+4
+
+1 
+†
+= √ 1+𝜂 −𝜂
+
+(3.1.30)
+
+2
+
+There we used
+
+and hence
+and so on.
+
+3.1.5
+
+
+
+†
+
+𝜂 −𝜂
+
+2
+
+=𝜂
+
+†2
+
+2
+
+†
+
++ 𝜂 − 𝜂 , 𝜂 = −1
+
+
+𝜂† − 𝜂
+
+3
+
+
+
+2
+
+∵𝜂 =𝜂
+
+
+
+= −1 𝜂† − 𝜂
+
+†2
+
+=0
+
+
+
+(3.1.31)
+(3.1.32)
+
+Effective Hamiltonian
+
+We can now compute the form of the effective Hamiltonian that comes about when we
+apply 𝑈1 - that is - when we rotate one exact eigenstate |𝜓1 i into the occupied Fock space
+
+95
+
+3.1. FORMALISM AND RESULTS
+basis | 1i. From eq. 3.1.29,
+ 
+
+1
+𝑈1 H𝑈1† =
+1 + 𝜂† − 𝜂 H 1 + 𝜂 − 𝜂†
+2
+
+
+1
+=
+1 + 𝜂† − 𝜂 H + H 𝜂 − H 𝜂†
+2
+
+1
+H + H 𝜂 − H 𝜂† + 𝜂† H + 𝜂† H 𝜂 − 𝜂† H 𝜂† − 𝜂H − 𝜂H 𝜂 + 𝜂H 𝜂†
+=
+2
+
+1 𝑑
+=
+H + H 𝑖 + H 𝐼 + H 𝜂 − H 𝜂† + 𝜂† H + 𝜂† H 𝜂 − 𝜂† H 𝜂† − 𝜂H − 𝜂H 𝜂 + 𝜂H 𝜂†
+2
+
+h
+i
+1
+𝑑
+𝑖
+𝐼
+†
+†
+†
+†
+†
+H + H + H + 𝜂 − 𝜂, H + 𝜂 H 𝜂 − 𝜂 H 𝜂 − 𝜂H 𝜂 + 𝜂H 𝜂
+=
+2
+
+In the last two lines, we expanded the Hamiltonian into the three parts H 𝑑 , H 𝑖
+†
+piece H 𝐼 ≡ 𝑐𝑞𝛽
+𝑇 + 𝑇 † 𝑐𝑞𝛽 .
+
+(3.1.33)
+and a third
+
+For reasons that will become apparent, we will split the terms into two groups:
+group 2
+©
+z
+}|
+{ª®
+­
+h
+i
+1­ 𝑑
+®
+H̃ = ­H + H 𝑖 + 𝜂† − 𝜂, H + 𝜂† H 𝜂 + 𝜂H 𝜂† + H 𝐼 − 𝜂† H 𝜂† − 𝜂H 𝜂®
+®
+2­
+{z
+}
+­|
+®
+group
+1
+«
+¬
+
+(3.1.34)
+
+Group 2 can be easily shown to be 0. Note that terms that have two 𝜂 or two 𝜂† sandwiching a H can only be nonzero if the intervening H has an odd number of creation or
+destruction operators.
+(3.1.35)
+𝜂H 𝜂 = 𝜂𝑐𝑞†𝑇 𝜂
+and
+
+(3.1.36)
+
+𝜂 † H 𝜂 † = 𝜂 †𝑇 † 𝑐 𝑞 𝜂 †
+
+Group 2 becomes
+
+group 2 = H 𝐼 − 𝜂†𝑇 † 𝑐𝑞 𝜂† − 𝜂𝑐𝑞†𝑇 𝜂 = 𝑐𝑞†𝑇 + 𝑇 † 𝑐𝑞 − 𝜂†𝑇 † 𝑐𝑞 𝜂† − 𝜂𝑐𝑞†𝑇 𝜂
+
+(3.1.37)
+
+To simplify this, we use the relation
+𝜂𝑐𝑞†𝑇 𝜂 =
+
+1
+0
+
+𝜔𝑖 − H 𝑑
+
+= 𝑇 † 𝑐𝑞
+
+𝑇 † 𝑐𝑞 𝑐𝑞†𝑇 𝜂
+
+1
+
+𝜔𝑖1 − H
+
+𝑐 †𝑇 𝜂
+𝑑 𝑞
+
+= 𝑇 † 𝑐𝑞 𝜂 † 𝜂
+
+
+
+
+†
+
+= 𝑇 𝑐𝑞 𝑛ˆ 𝑞
+which gives
+
+
+
+𝜂𝑐𝑞†𝑇 𝜂 = 𝑇 † 𝑐𝑞
+96
+
+eq. 3.1.16
+eq. 3.1.15
+eq. 3.1.21
+
+
+
+
+(3.1.38)
+
+
+(3.1.39)
+
+Chapter 3. Unitary Renormalization Group Method
+Taking the Hermitian conjugate of eq. 3.1.39 gives
+(3.1.40)
+
+𝜂†𝑇 † 𝑐𝑞 𝜂† = 𝑐𝑞†𝑇
+
+Substituting the expressions 3.1.39 and 3.1.40 into the expression for group 2, 3.1.37,
+shows that is vanishes. This leaves us only with group 1:
+group A
+©
+ª
+z
+}|
+{ h
+­
+®
+i
+1­ 𝑑
+®
+𝑖
+†
+†
+†
+e
+H = ­H + H + 𝜂 H 𝜂 + 𝜂H 𝜂 + 𝜂 − 𝜂, H ®
+(3.1.41)
+­
+®
+2
+| {z }®
+­
+𝑔𝑟𝑜𝑢𝑝𝐵
+«
+¬
+†
+𝐼
+Group A simplifies in the following way. First note that 𝜂 H 𝜂 = 𝜂† H 𝐼 𝜂 = 0 must be 0
+†
+because it will involve consecutive 𝑐𝑞𝛽 or consecutive 𝑐𝑞𝛽
+. We are therefore left with the
+
+
+diagonal part of H , which is 𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 .
+
+
+
+
+
+
+†
+𝜂 𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 𝜂 + 𝜂 𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 𝜂† = 𝜂† 𝐻ℎ 𝜂 + 𝜂𝐻𝑒 𝜂†
+(3.1.42)
+
+This can be shown to be equal to the diagonal part:
+
+
+
+group A = 𝜂† 𝐻ℎ 𝜂 + 𝜂𝐻𝑒 𝜂† = 𝐻𝑒 𝑛ˆ 𝑞𝛽 + 𝐻ℎ 1 − 𝑛ˆ 𝑞𝛽 = H 𝑑 + H 𝑖
+
+It can also be shown that
+Putting it all together,
+
+h
+i
+h
+i
+†
+group B = 𝜂† − 𝜂, H = 2 𝑐𝑞𝛽
+𝑇, 𝜂
+𝑑
+
+𝑖
+
+H̃ = H + H +
+
+The renormalizing in the Hamiltonian is
+
+h
+
+†
+𝑐𝑞𝛽
+𝑇, 𝜂
+
+i
+
+h
+i
+†
+ΔH = H̃ − H 𝑑 − H 𝑖 = 𝑐𝑞𝛽
+𝑇, 𝜂
+
+Because of eq. 3.1.44, it can also be written as
+i 1h
+i
+1h †
+†
+𝜂 − 𝜂, H𝑋 =
+𝜂 − 𝜂, H
+ΔH =
+2
+
+2
+
+(3.1.43)
+(3.1.44)
+(3.1.45)
+(3.1.46)
+
+(3.1.47)
+
+This form will be useful later when we make the connection with one-shot SchriefferWolff transformation and CUT RG.
+To check that the renormalised Hamiltonian indeed commutes with 𝑛ˆ 𝑞𝛽 ,
+
+i h
+h
+i
+†
+e, 𝑛ˆ 𝑞𝛽 = 𝑐 𝑇 , 𝜂 , 𝑛ˆ 𝑞𝛽
+H
+𝑞𝛽
+h
+i h
+i
+†
+†
+= 𝑐𝑞𝛽 𝑇 𝜂, 𝑛ˆ 𝑞𝛽 − 𝜂𝑐𝑞𝛽 𝑇 , 𝑛ˆ 𝑞𝛽
+h
+i
+(3.1.48)
+†
+†
+†
+= 𝑐𝑞𝛽
+𝑇 𝜂𝑛ˆ 𝑞𝛽 − 𝑛ˆ 𝑞𝛽 𝑐𝑞𝛽
+𝑇𝜂
+2nd [ . ] is 0, ∵ 𝑐𝑞𝛽
+𝑛ˆ 𝑞𝛽 = 𝑛ˆ 𝑞𝛽 𝜂 = 0
+†
+†
+= 𝑐𝑞𝛽
+𝑇 𝜂 − 𝑐𝑞𝛽
+𝑇𝜂
+
+=0
+
+97
+
+3.1. FORMALISM AND RESULTS
+
+3.1.6
+
+Fixed point condition
+
+Within the URG, it is a prescription that the fixed point is reached when the denominator
+of the RG equation vanishes. This is equivalent to either 𝜔𝑖1 = H1𝑑 or 𝜔𝑖0 = H0𝑑 . This shows
+that at the fixed point, one of the eigenvalues of 𝜔ˆ 𝑖 matches the corresponding eigenvalue
+of the diagonal blocks. This also leads to the vanishing of the off-diagonal block, because
+eqs. 3.1.12 and 3.1.13 gives
+
+
+†
+†
+𝑐𝑞𝛽
+𝑇 | 0i |𝜙0𝑖 i = 𝜔𝑖1 − H1𝑑 | 1i |𝜙1𝑖 i = 0 =⇒ 𝑐𝑞𝛽
+𝑇 =0
+(3.1.49)
+
+3.1.7
+
+Multiple off-diagonal terms
+
+There is a subtle assumption in the definitions eq. 3.1.14. In order for 𝜂 to be the Hermitian conjugate of 𝜂† , H𝑑 cannot have any information that relates to the structure of 𝑇 .
+To see why, say the total off-diagonal term is composed of two parts: 𝑇 = 𝑇1 + 𝑇2 .
+"
+#
+
+
+1
+1
+1
+𝑇 † + 𝑇2† 𝑐 =
+𝜂=
+𝑇 †𝑐 + 0
+𝑇 †𝑐
+𝜔0 − H𝑑 1
+𝜔0 − 𝐸10 1
+𝜔 − 𝐸20 2
+"
+#
+(3.1.50)
+
+1
+1
+1
+𝑐† 𝑇1 + 𝑇2 =
+𝜂† = 1
+𝑐†𝑇1 + 1
+𝑐†𝑇2
+𝜔 − H𝑑
+𝜔1 − 𝐸11
+𝜔 − 𝐸21
+
+ †
+where H𝑑 𝑇𝑖† 𝑐 = 𝐸𝑖0𝑇𝑖† 𝑐 and H𝑑 𝑐†𝑇𝑖 = 𝐸𝑖1 𝑐†𝑇𝑖 . We can now see that in order for 𝜂 = 𝜂† to
+hold, two conditions must be met:
+𝜔0 − 𝐸10 = 𝜔1 − 𝐸11 , 𝜔0 − 𝐸20 = 𝜔1 − 𝐸21
+
+(3.1.51)
+
+This will not hold generally. The correct solution is to realize that each such off-diagonal
+term 𝑇𝑖 will come with its own quantum fluctuation scale 𝜔𝑖 .
+𝜂=
+
+Õ
+
+𝜔𝑖 − 𝐸 𝑖
+
+𝑖
+
+𝜔𝑖1 − 𝐸11
+
+Õ
+𝑖
+
+†
+
+𝜂 =
+
+1
+0
+
+𝑇 †𝑐
+
+0 𝑖
+
+1
+
+(3.1.52)
+
+†
+
+𝑐 𝑇𝑖
+
+ †
+If we now impose the condition that 𝜂 = 𝜂† , we get the relations
+𝜔𝑖0 − 𝜔𝑖1 = 𝐸𝑖0 − 𝐸11
+
+and so
+𝜂† − 𝜂 =
+
+Õ
+𝑖
+
+1
+
+𝜔𝑖0 − 𝐸𝑖0
+
+98
+
+
+
+𝑐†𝑇𝑖 − 𝑇𝑖† 𝑐
+
+
+
+(3.1.53)
+
+(3.1.54)
+
+Chapter 3. Unitary Renormalization Group Method
+h
+i
+The expression for the renormalization will not be just 𝑐†𝑇 , 𝜂 in this case. That form will
+h
+i
+†
+be non-Hermitian. The correct form is obtained from the more general form 𝜂 − 𝜂, H𝑋 :
+i
+1h †
+†
+†
+ΔH =
+𝜂 − 𝜂, 𝑐 𝑇 + 𝑇 𝑐
+2
+i
+h
+1Õ
+1
+†
+†
+†
+†
+=
+𝑐 𝑇𝑖 − 𝑇𝑖 𝑐, 𝑐 𝑇 𝑗 + 𝑇 𝑗 𝑐
+2
+𝜔0 − 𝐸0
+𝑖
+
+𝑖𝑗
+
+=
+
+=
+
+3.1.8
+
+1Õ
+
+2
+
+𝑖𝑗
+
+1
+
+0
+
+𝑖𝑗
+
+0
+
+𝜔𝑖 − 𝐸 𝑖
+
+ 
+
+
+ †
+†
+†
+†
+𝑛ˆ 𝑇𝑖 𝑇 𝑗 + 𝑇 𝑗 𝑇𝑖 − 1 − 𝑛ˆ 𝑇𝑖 𝑇 𝑗 + 𝑇 𝑗 𝑇𝑖
+
+(3.1.55)
+
+h
+ † i
+ª
+†
+ˆ 𝑖 𝑇 𝑗 − 1 − 𝑛ˆ 𝑇𝑖 𝑇 𝑗
++
+­ 0
+® 𝑛𝑇
+𝜔𝑖 − 𝐸𝑖0 𝜔0𝑗 − 𝐸 0𝑗
+«
+¬
+
+1 Õ©
+
+2
+
+𝑖
+
+1
+
+1
+
+Equivalence of the two unitaries and preservation of partial
+trace
+
+In the subsection 3.1.4, we determined the form of the operator 𝑈1 that unitarily decouples the node 𝑞𝛽 from the other degrees of freedom. Eq. 3.1.29 was derived by reading off
+the transformation of | 1i to |𝜓1 i, the first equation in 3.1.18. We could easily have chosen
+the other equation in the same equation set,
+
+
+|𝜓0 i = 1 + 𝜂† | 0i |𝜙0𝑖 i
+which gives a similarity transformation 1 + 𝜂† and hence a unitary
+1 
+
+𝑈0 = √
+
+2
+
+1+𝜂−𝜂
+
+†
+
+
+
+(3.1.56)
+
+This 𝜂 will however be different from the 𝜂 in eq. 3.1.29. The reason is, in order to get
+𝑈1 , we must start from the eigenvalue equation H |𝜓1 i = 𝐻˜ 1 |𝜓1 i. This means that the
+corresponding 𝜔ˆ will be defined as 𝜔ˆ 1 = 𝐻˜ 1 − H 𝑖 . On the other hand, in order to get 𝑈0 we
+must start with H |𝜓0 i = 𝐻˜ 0 |𝜓0 i, and hence this 𝜔ˆ will be 𝜔ˆ 0 = 𝐻˜ 0 − H 𝑖 . This difference in
+the 𝜔ˆ will define two different sets of 𝜂:
+Starting from |𝜓1 i: 𝜂1 =
+Starting from |𝜓0 i: 𝜂0 =
+
+1
+
+𝜔10
+
+−
+
+1
+
+H𝑑
+
+𝜔00 − H 𝑑
+
+𝑇 † 𝑐𝑞𝛽 and 𝜂1† =
+†
+
+𝑇 𝑐𝑞𝛽 and 𝜂0 =
+†
+
+1
+
+𝜔11
+
+−
+
+1
+
+H𝑑
+
+𝜔01 − H 𝑑
+
+𝑇 † 𝑐𝑞𝛽
+†
+
+(3.1.57)
+
+𝑇 𝑐𝑞𝛽
+
+The 𝜔𝑖𝑗 eigenvalues have both upper and lower indices. The upper index 𝑖 signifies which
+eigenstate it relates to - 𝜔 𝑗 |𝑖i = 𝜔𝑖𝑗 |𝑖i. The lower index refers to the exact eigenstate we
+99
+
+3.1. FORMALISM AND RESULTS
+started with - starting with H |𝜓 𝑗 i = 𝐻˜ 𝑗 |𝜓 𝑗 i leads to 𝜔 𝑗 . The two unitaries are
+
+1 
+𝑈1 = √ 1 + 𝜂1† − 𝜂1
+2
+1 
+
+𝑈0 = √
+
+2
+
+†
+
+1 + 𝜂0 − 𝜂0
+
+
+
+(3.1.58)
+
+Since the two unitaries should give the same effective Hamiltonian, we require 𝑈1 = 𝑈0 .
+That requires 𝜂1 = −𝜂0 . Comparing the expressions of the 𝜂s, we get
+
+
+𝜔10 − H0𝑑 = − 𝜔00 − H0𝑑
+(3.1.59)
+
+This is the constraint that ensures that both unitaries give the same effective Hamiltonian. The condition 𝜂1 + 𝜂0 = 0, when expressed without resolving 𝜔ˆ into its eigenvalues
+can also be shown to be a statement of the preservation of the partial trace under the RG
+flow.
+1
+𝜂1 =
+𝑇 † 𝑐𝑞𝛽
+𝐻˜ 1 − H 𝑖 − H 𝑑
+𝜂0 =
+
+=⇒ 𝜂1 + 𝜂0 =
+
+1
+
+𝐻˜ 0 − H 𝑖 − H 𝑑
+
+"
+
+𝑇 † 𝑐𝑞𝛽
+
+1
+
+1
+
++
+
+𝐻˜ 1 − H 𝑖 − H 𝑑 𝐻˜ 0 − H 𝑖 − H 𝑑
+h
+i
+𝑖
+𝑑
+𝑖
+𝑑
+˜
+˜
+=⇒ 𝐻1 − H − H = − 𝐻0 − H − H
+
+#
+
+(3.1.60)
+
+𝑇 † 𝑐𝑞𝛽 = 0
+
+=⇒ 𝐻˜ 1 + 𝐻˜ 0 = 2H0
+
+H0 = H 𝑖 + H 𝑑 is the total diagonal part of the bare model. To match the dimensions, we
+must take 𝐻˜ 1 = 𝐸1 ⊗ 𝐼 and similarly 𝐻˜ 0 = 𝐸0 ⊗ 𝐼, where the rotated Hamiltonian is
+©𝐸
+­ 1
+
+𝐻˜ = ­­
+
+­
+0
+«
+
+ª
+®
+®
+𝐸0 ®
+¬
+0®
+
+(3.1.61)
+
+Therefore, the trace of the rotated Hamiltonian
+is 𝑡new = 𝐸1 + 𝐸0 . The trace of the LHS
+
+
+
+in the final equation of 3.1.60 is tr 𝐻˜ 1 + 𝐻˜ 0 = tr 𝐸1 ⊗ 𝐼 + 𝐸0 ⊗ 𝐼 = 2 𝐸1 + 𝐸0 = 2𝑡new . The
+
+
+trace of the RHS in final equation of 3.1.60 is 2 × tr H0 = 2𝑡old where 𝑡old = tr H0 is the
+trace of the old Hamiltonian. Equating the LHS and RHS gives 𝑡new = 𝑡old .
+
+3.1.9
+
+𝑗
+
+A note on the various quantum fluctuation scales 𝜔 𝑖
+
+At a particular step of the URG, there are two quantum fluctuation energy scales associated with each sector. If we rotate |𝜓1 i to | 1i (particle/occupied sector), the corresponding unitary will be a function of 𝜔10,1 . If we, on the other hand, rotate |𝜓0 i to | 0i
+100
+
+Chapter 3. Unitary Renormalization Group Method
+(hole/unoccupied sector), the unitary will be a function of 𝜔00,1 . The superscript 𝑗 sig𝑗
+nifies whether this particular 𝜔𝑖 is an eigenvalue corresponding to | 1, 𝜙𝑖 i or | 0, 𝜙𝑖 i. 𝜔𝑖0
+occurs in the many-body transition operator 𝜂, because 𝜂 is preceded by 𝑐 and hence it
+picks out the eigenstate | 0, 𝜙𝑖 i. On the other hand, 𝜔𝑖1 occurs in the many-body transition
+operator 𝜂† , because that is preceded by 𝑐† . This constrains these two values, because we
+
+†
+must have 𝜂(𝜔𝑖0 ) = 𝜂† (𝜔𝑖1 ) (eq. 3.1.16), for each value of 𝑖, giving us two constraints in
+𝑗
+
+𝑗
+
+total. The subscript 𝑖 signifies whether 𝜔𝑖 is a part of the particle sector unitary 𝑈1 (𝜔1 )
+𝑗
+or the hole sector unitary 𝑈0 (𝜔0 ). As mentioned in the previous section, since both ways
+𝑗
+𝑗
+are equivalent, we must have 𝑈1 = 𝑈0 which leads to the constraints 𝜂(𝜔0 ) = −𝜂(𝜔1 ). All
+the independent constraints are listed below.
+𝜔10 − 𝜔11 = H𝑑0 − H𝑑1
+𝜔00 − 𝜔01 = H𝑑0 − H𝑑1
+
+(3.1.62)
+
+𝜔10 + 𝜔00 = 2H𝑑0
+
+†
+𝑗
+𝑗
+The first two come from 𝜂(𝜔𝑖0 ) = 𝜂† (𝜔𝑖1 ) while the last comes from 𝜂(𝜔0 ) = −𝜂(𝜔1 ).
+
+These are the only independent relations. Other relations like the one between 𝜔10 and
+𝜔01 can be derived from these. This means that we have four 𝜔 and three constraints,
+such that each step of the URG is characterized by just a single independent quantum
+fluctuation scale.
+
+3.2
+
+Prescription
+
+Given a Hamiltonian
+
+H = H1 + H0 + 𝑐†𝑇 + 𝑇 † 𝑐
+
+(3.2.1)
+
+the goal is to look at the renormalization of the various couplings in the Hamiltonian
+as we decouple high energy electron states. Typically we have a shell of electrons at
+some energy 𝐷. During the process, we make one simplification. We assume that there
+is only one electron on that shell at a time, say with quantum numbers 𝑞, 𝜎, and calculate the renormalization of the various couplings due to this electron. We then sum the
+momentum 𝑞 over the shell and the spin 𝛽, and this gives the total renormalization due
+to decoupling the entire shell.
+From eq. 3.1.45, the first two terms in the rotated Hamiltonian are just the diagonal parts
+of the bare Hamiltonian; they are unchanged in that part. The renormalization comes
+from the third term. For one electron 𝑞𝛽 on the shell, the renormalization is
+
+
+ 
+
+
+
+
+†
+†
+†
+ΔH = 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽 , 𝜂 = 𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽 𝜂 − 𝜂𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽
+(3.2.2)
+
+Since this assumes we have obtained this from 𝑈1 , it is fair to tag the 𝜂 with a suitable
+label:
+
+
+
+
+†
+†
+ΔH = 𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽 𝜂1 − 𝜂1 𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽
+(3.2.3)
+101
+
+3.2. PRESCRIPTION
+It is clear that the first term takes into account virtual excitations that start from a filled
+state (𝑛ˆ 𝑞𝛽 = 1 initially) - such a term is said to be a part of the particle sector.
+
+
+†
+Δ1 H = 𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽 𝜂1
+(3.2.4)
+The second term, on the other hand, considers excitations that start from an empty state.
+They constitute the hole sector.
+
+
+†
+Δ0 H = −𝜂1 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽
+(3.2.5)
+To write the total renormalization in a particle-hole symmetric form, we can use the
+relation 𝜂0 = −𝜂1 , such that both the terms will now come with a positive sign:
+
+
+
+
+†
+†
+ΔH = 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽 𝜂1 + 𝜂0 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽
+(3.2.6)
+We can make one more manipulation: using eq. 3.1.16, we get
+
+
+
+
+†
+†
+ΔH = 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽 𝜂1 + Tr 𝑐𝑞𝛽 H 𝑐𝑞𝛽 𝜂0†
+
+(3.2.7)
+
+This form of the total renormalization is identical to the one we use in the ”Poor Man’s
+scaling”-type of renormalization that was used to get the scaling equations in the Kondo
+and Anderson models [3, 26]. Writing down the forms of 𝜂 and 𝜂† explicitly, we get
+
+
+
+
+
+
+
+
+1
+1
+†
+†
+†
+†
+Tr 𝑐𝑞𝛽 H 𝑐𝑞𝛽 + Tr 𝑐𝑞𝛽 H 𝑐𝑞𝛽 1
+𝑐 Tr H 𝑐𝑞𝛽
+ΔH = 𝑐𝑞𝛽 Tr H 𝑐𝑞𝛽
+(3.2.8)
+𝜔10 − H0𝑑
+𝜔0 − H1𝑑 𝑞𝛽
+
+The renormalization due to the entire shell is obtained by summing over all states on the
+shell.
+#
+"
+
+
+
+
+
+
+
+
+Õ
+1
+1
+†
+†
+†
+†
+𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽
+Tr 𝑐𝑞𝛽
+H 𝑐𝑞𝛽 + Tr 𝑐𝑞𝛽
+H 𝑐𝑞𝛽 1
+𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽
+ΔH =
+0
+𝑑
+𝑑
+𝜔
+−
+H
+𝜔
+−
+H
+1
+1
+0
+0
+𝑞𝛽
+(3.2.9)
+These equations will now need to be simplified. For example, in the particle sector, we
+can set 𝑛ˆ 𝑞𝛽 = 0 in the numerator, because there is no such excitation in the initial state.
+Similarly, in the hole sector, we can set 𝑛ˆ 𝑞𝛽 = 1 because that state was occupied in the
+initial state. Another simplification we typically employ is that H0𝑑,1 will, in general, have
+the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the
+remaining operators to determine which term in the Hamiltonian it renormalizes and
+what is the renormalization.
+At first sight, one might think that we must evaluate lots of traces to obtain the terms in
+ΔH . A little thought reveals that
+ the terms in the numerator are simply the off-diagonal
+†
+terms in the Hamiltonian; Tr 𝑐𝑞𝛽
+H 𝑐𝑞𝛽 is the off-diagonal term that has 𝑐𝑞𝛽 in it, and
+
+
+†
+†
+𝑐𝑞𝛽
+Tr H 𝑐𝑞𝛽 is the off-diagonal term that has 𝑐𝑞𝛽
+in it. H 𝐷 is just the diagonal part of the
+Hamiltonian.
+102
+
+Chapter 3. Unitary Renormalization Group Method
+
+3.3
+
+Star Graph URG
+
+The first URG solution of the star graph problem is in ref. [27]. The system consists of
+𝑁 spin-like degrees of freedom (labeled 1
+through N) individually talking to a spin
+
+at the
+center (labeled 0). Each spin 𝑖 (∈ 0, 𝑁 ) has
+an on-site energy 𝜖𝑖 . The
+ coupling strength between 0 and 𝑖 (∈ 1, 𝑁 ) is 𝐽𝑖 . We choose
+ the on
+site energies such that 𝜖𝑖+1 > 𝜖𝑖 , 𝑖 ∈ 𝑁 − 1, 1 .
+In this way, 𝜖1 is the infrared limit and 𝜖𝑁 is
+the ultraviolet limit.
+𝑧
+
+H = 𝜖0 𝑆0 +
+
+𝑁 h
+Õ
+𝑖=1
+
+𝜖𝑖 𝑆𝑖𝑧 + 𝐽𝑖 𝑆®0 · 𝑆®𝑖
+
+i
+
+(3.3.1)
+
+Figure 3.2: Star Graph model
+
+By converting the last term into 𝑆 𝑧 and 𝑆± , we can write the Hamiltonian as
+"
+#
+
+𝑁
+
+
+Õ
+1
+H = 𝜖0 𝑆0𝑧 +
+𝜖𝑖 𝑆𝑖𝑧 + 𝐽𝑖 𝑆0𝑧 𝑆𝑖𝑧 +
+𝑆0+ 𝑆𝑖− + 𝑆0− 𝑆𝑖+
+2
+
+𝑖=1
+
+(3.3.2)
+
+The diagonal terms are the ones that preserve the number or (in this case) spin.
+𝑑
+
+H =
+
+𝑁
+Õ
+𝑖=0
+
+𝜖𝑖 𝑆𝑖𝑧
+
++
+
+𝑁
+Õ
+𝑖=1
+
+𝐽𝑖 𝑆0𝑧 𝑆𝑖𝑧
+
+(3.3.3)
+
+This is the piece that comes in the denominator. The off-diagonal terms are the ones that
+change the number or spin. For this problem, they are the last two terms, 𝑆0+ 𝑆𝑖− and 𝑆0− 𝑆𝑖+ .
+The RG involves decoupling the nodes 𝑁 through 1, and looking at the resultant renormalization in 𝜖𝑖 and 𝐽𝑖 . As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node 𝑁. Since node 0
+is connected to node 𝑁, we will keep node 0 in the denominator as well. Making this
+simplification gives
+(3.3.4)
+H 𝐷 = 𝜖0 𝑆0𝑧 + 𝜖𝑁 𝑆𝑁𝑧 + 𝐽𝑁 𝑆0𝑧 𝑆𝑁𝑧
+
+The off-diagonal part in the subspace of the node 𝑁 is
+H𝑋 =
+
+3.3.1
+
+1
+2
+
+
+
+𝐽𝑁 𝑆𝑁+ 𝑆0− + 𝑆𝑁− 𝑆0+
+
+(3.3.5)
+
+Calculation of Renormalization
+
+The renormalization on doing one step of the URG is given by
+†
+ΔH = 𝑐𝑞𝛽
+𝑇 𝜂 + 𝑇 † 𝑐𝑞𝛽 𝜂0†
+
+103
+
+(3.3.6)
+
+3.3. STAR GRAPH URG
+There, 𝑞𝛽 refers to the electron being decoupled. Here, since we are decoupling the spin
+𝑁, the formula becomes
+h
+i
+ΔH = 𝑆𝑁+ 𝑇 , 𝜂
+(3.3.7)
+
+where 𝑆𝑁+ 𝑇 is the off-diagonal term in the Hamiltonian and hence 𝑇 is 𝑆0− . 𝜂 is of course
+given by
+𝜂=
+and
+
+1
+
+H𝑑
+
+𝜔−
+
+𝑇 † 𝑐𝑞𝛽 →
+
+𝜔−
+
+1
+
+H𝑑
+
+(3.3.8)
+
+𝐽𝑁 𝑆0+ 𝑆𝑁−
+
+2
+
+1
+
+1
+
+𝜂0† =
+
+1
+
+(3.3.9)
+
+𝐽𝑁 𝑆𝑁+ 𝑆0−
+2
+−
+Substituting the expression for the diagonal part H𝑑 , we get
+𝜂=
+and
+𝜂0† =
+
+1
+
+𝜔 − 𝜖0
+
+𝑆𝑧
+
+𝜔0
+
+𝑆𝑧
+
+0
+
+−
+
+1
+
+𝜖𝑁 𝑆𝑁𝑧
+
+−
+
+𝐽𝑁 𝑆0𝑧 𝑆𝑁𝑧
+
+−
+
+𝐽𝑁 𝑆0𝑧 𝑆𝑁𝑧
+
+1
+
+− 𝜖0
+
+0
+
+−
+
+𝜖𝑁 𝑆𝑁𝑧
+
+H𝑑
+
+𝐽𝑁 𝑆0+ 𝑆𝑁− =
+
+2
+
+1
+
+𝜔0
+
+2
+
+1
+
+𝜔−
+
+𝐽𝑁 𝑆𝑁+ 𝑆0− =
+
+1
+𝜖
+2 0
+
+1
+𝜖
+2 𝑁
+
++
+
+1
+
++
+
+1
+𝐽
+4 𝑁
+
+2
+
+1
+
+𝜔+
+
+1
+𝜖
+2 0
+
+−
+
+𝐽𝑁 𝑆0+ 𝑆𝑁−
+
+1
+
+1
+𝜖
+2 𝑁
+
++
+
+1
+𝐽
+4 𝑁
+
+2
+
+𝐽𝑁 𝑆𝑁+ 𝑆0−
+
+(3.3.10)
+
+(3.3.11)
+
+In the final steps, I substituted 𝑆𝑁𝑧 = − 12 and 𝑆0𝑧 = 12 in the denominator of 𝜂, and the opposite values in the denominator of 𝜂0† , because there is 𝑆0+ 𝑆𝑁− (𝑆𝑁+ 𝑆0− ) in front of the Greens
+function of 𝜂 (𝜂0† ). The renormalization thus becomes
+ΔH =
+
+1
+4
+
+𝐽𝑁2 𝑆𝑁+ 𝑆0−
+
+1
+
+𝜔−
+
+1
+𝜖
+2 0
+
++
+
+1
+
+1
+
+1
+𝜖
+2 𝑁
+
++
+
+1
+𝐽
+4 𝑁
+
+𝑆0+ 𝑆𝑁− + 𝐽𝑁2 𝑆0+ 𝑆𝑁−
+4
+
+𝜔0
+
++
+
+1
+𝜖
+2 0
+
+−
+
+1
+𝜖
+2 𝑁
+
++
+
+1
+𝐽
+4 𝑁
+
+𝑆𝑁+ 𝑆0−
+
+(3.3.12)
+
+To compare 𝜔 and 𝜔0, we will write down their Poor Man’ Scaling counterparts.
+1
+
+1
+
+1
+
+2
+1
+
+2
+1
+
+4
+1
+
+1
+
+2
+
+2
+
+4
+
+2
+
+𝜔 = 𝜖𝑁 − 𝜖0 − 𝐽𝑁
+0
+
+(3.3.13)
+
+𝜔 = 𝜖0 − 𝜖𝑁 − 𝐽𝑁 = −𝜔 − 𝐽𝑁
+
+So, the renormalization becomes
+ΔH =
+
+1
+
+1
+
+2
+
+𝐽
+4 𝑁 𝜔 − 1 𝜖0 + 1 𝜖 𝑁 + 1 𝐽 𝑁
+2
+2
+4
+1
+2
+
+h
+
+𝑆𝑁+ 𝑆0− 𝑆0+ 𝑆𝑁−
+
++ 𝑆0+ 𝑆𝑁− 𝑆𝑁+ 𝑆0−
+
+i
+
++ 𝑆 𝑧 and 𝑆− 𝑆+ = 12 − 𝑆 𝑧 , we can write this as
+"
+
+
+ 
+#
+1
+1
+1
+1
+1
+1 2
++ 𝑆𝑁𝑧
+− 𝑆0𝑧 −
+− 𝑆𝑁𝑧
++ 𝑆0𝑧
+ΔH = 𝐽𝑁
+4 𝜔 − 1 𝜖0 + 1 𝜖𝑁 + 1 𝐽𝑁
+2
+2
+2
+2
+2
+2
+4
+h
+i
+1 2
+1
+𝑧
+𝑧
+= 𝐽𝑁
+𝑆
+−
+𝑆
+0
+4 𝜔 − 1 𝜖0 + 1 𝜖𝑁 + 1 𝐽𝑁 𝑁
+2
+2
+4
+
+Using the relations 𝑆+ 𝑆− =
+
+(3.3.14)
+
+(3.3.15)
+
+We can now read off the renormalizations in 𝜖𝑁 and 𝜖0 .
+Δ𝜖𝑁 =
+
+1
+4
+
+𝐽𝑁2
+1
+
+1
+
+𝜔−
+
+2
+
+Δ𝜖0 = − 𝐽𝑁
+4
+
+1
+𝜖
+2 0
+
++ 21 𝜖𝑁 + 14 𝐽𝑁
+1
+
+𝜔 − 12 𝜖0 + 12 𝜖𝑁 + 41 𝐽𝑁
+104
+
+(3.3.16)
+
+Chapter 3. Unitary Renormalization Group Method
+
+3.3.2
+
+Nature of flows
+
+We are interested in looking at the renormalization of the central node energy 𝜖0 , upon
+removing the nodes 𝑁 through 1. We will hence concentrate on the second RG equation.
+We first make some simplifying assumptions: 𝐽𝑖 = 𝐽, 𝜖𝑖 = 𝜖 for all 𝑖 ∈ {1, 𝑁 }.
+1
+
+1
+
+4
+
+𝜔 − 12 𝜖0 + 21 𝜖 + 14 𝐽
+
+Δ𝜖0 = − 𝐽 2
+Define 𝜔˜ = 𝜔 + 21 𝜖 + 14 𝐽.
+
+1
+
+1
+
+4
+
+𝜔˜ − 12 𝜖0
+
+Δ𝜖0 = − 𝐽 2
+
+(3.3.17)
+
+(3.3.18)
+
+Our goal here is to look for a fixed-point condition such that the denominator vanishes at
+some point of the RG. If we start with a bare of 𝜖0 such that 𝜔˜ − 12 𝜖0 > 0, the denominator
+will be positive and the RG equation will be irrelevant. This means that 𝜖0 will keep on
+decreasing, and the denominator will keep on becoming more and more positive, meaning there cannot be a fixed point in this situation.
+If, on other hand, we start with a bare of 𝜖0 such that 𝜔˜ − 12 𝜖0 < 0, the denominator
+will be negative and the RG equation will be relevant. This means that 𝜖0 will keep on
+increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in
+figure 3.3.
+Since we cannot find a fixed point, we will use the other 𝜔 in the URG formalism. Recall that 𝜂 and 𝜂† will, in general, have different 𝜔, eq. 3.1.14.
+𝜂† =
+
+1
+
+𝜔0
+
+− H𝑑
+
+1
+
+𝑆𝑁+ 𝑆0− =
+
+𝜔0
+
+−
+
+1
+𝜖
+2
+
++
+
+1
+𝜖
+2 0
+
++
+
+1
+𝐽
+4
+
+𝑆𝑁+ 𝑆0−
+
+(3.3.19)
+
+†
+Comparing with eq. 3.3.10, and requiring 𝜂 = 𝜂† , we get the following equation relating
+𝜔 and 𝜔0:
+1
+1
+1
+1
+1
+1
+𝜔0 − 𝜖 + 𝜖0 + 𝐽 = 𝜔 + 𝜖 − 𝜖0 + 𝐽 =⇒ 𝜔 = 𝜔0 − 𝜖 + 𝜖0
+(3.3.20)
+2
+
+2
+
+4
+
+2
+
+Substituting this in eq. 3.3.17 gives
+
+2
+
+1
+
+1
+
+Δ𝜖0 = − 𝐽 2
+4
+
+4
+
+𝜔0
+
+−
+
+1
+𝜖
+2
+
++ 21 𝜖0 + 14 𝐽
+
+(3.3.21)
+
+We again define −𝜔˜ = 𝜔0 − 12 𝜖 + 14 𝐽.
+Δ𝜖0 =
+
+1
+4
+
+𝐽2
+
+1
+
+𝜔˜ − 12 𝜖0
+
+(3.3.22)
+
+We now repeat the exercise of determining the relevance of the flows under various
+regime. If we start with a bare 𝜖0 such that 𝜔˜ + 21 𝜖0 > 0, then the denominator is positive
+105
+
+3.3. STAR GRAPH URG
+
+Figure 3.3: RG flow for the two cases. The green line is the distance between the bare
+values of the two couplings, and hence also the magnitude of the denominator. The red
+arrow denotes the direction in which 𝜖0 will flow. Upward flow is increase. In both cases,
+the flow is such that the distance between the two quantities (and hence the magnitude
+of the denominator) increases. The RG fixed point occurs when the magnitude of the
+denominator goes to 0. This happens if the distance vanishes. Since the distance necessarily increases, we cannot get a fixed point in this way.
+
+Figure 3.4: RG flow for the two cases with the new −𝜔˜ = 𝜔0 − 12 𝜖 + 14 𝐽. Now we can see that
+in both cases, the flow is such that the distance (green dotted line) between the couplings
+decreases. A fixed point is reached when this distance vanishes.
+
+106
+
+Chapter 3. Unitary Renormalization Group Method
+so the renormalization will be irrelevant. 𝜖0 will decrease until we reach 𝜔˜ + 12 𝜖0 = 0. This
+will be a fixed point. However, if we start with a bare 𝜖0 such that 𝜔˜ + 12 𝜖0 < 0, then the
+denominator is negative so the renormalization will be relevant. 𝜖0 will increase until
+we reach 𝜔˜ + 21 𝜖0 = 0. This will again be a fixed point. This new situation is depicted in
+figure 3.3.
+
+3.3.3
+
+Effective Hamiltonians
+
+If 𝜔˜ and 𝜖0 are of the same sign at the bare level, then it is easy to see that since the fixed
+point is defined by 𝜔˜ = 12 𝜖∗0 (* denotes value at fixed point), the effective Hamiltonian at
+the fixed point will be
+Õ
+Õ
+˜ 0𝑧 + 𝜖
+˜ 0>0
+H ∗ = 2𝜔𝑆
+𝑆𝑖𝑧 + 𝐽
+𝑆®𝑖 · 𝑆®0 , if 𝜔𝜖
+(3.3.23)
+𝑖
+
+𝑖
+
+If, at the bare level, 𝜖0 and 𝜔˜ are of opposite signs, then 𝜖0 would undergo a change in
+˜ Since we do not expect a coupling to change
+sign at some point as it flows towards 𝜔.
+sign under RG, we will restrict it to 0 in such cases.
+Õ
+Õ
+˜ 0<0
+H∗ = 𝜖
+𝑆𝑖𝑧 + 𝐽
+𝑆®𝑖 · 𝑆®0 , if 𝜔𝜖
+(3.3.24)
+𝑖
+
+𝑖
+
+Things get much more simpler if we assume the onsite energies of the surrounding nodes
+are zero.
+Õ
+˜ 0𝑧 + 𝐽
+˜ 0>0
+H ∗ = 2𝜔𝑆
+𝑆®𝑖 · 𝑆®0 , if 𝜔𝜖
+∗
+
+H =𝐽
+
+3.3.4
+
+Õ
+𝑖
+
+𝑖
+
+𝑆®𝑖 · 𝑆®0 ,
+
+˜ 0<0
+if 𝜔𝜖
+
+(3.3.25)
+
+Fixed points
+
+The fixed points are obtained numerically by solving the RG equation. As mentioned
+before, there are two types of solutions: The first kind is those in which 𝜖0 and 𝜔˜ are of
+the same sign, and the former flows to the latter without crossing the 0 axis. These flows
+are shown (obtained numerically) in fig. 3.5. The second kind are those where the two
+couplings have different signs, and so 𝜖0 flows to 0. These are shown in fig. 3.6.
+
+107
+
+3.4. KONDO MODEL URG
+
+Figure 3.5: Flows where 𝜖0 and 𝜔˜ have same sign. The left and right panels show flows
+starting from negative and positive values respectively. The two plots in each panel cor˜ one greater than the bare 𝜖0 , the other less than that.
+respond to different values of 𝜔,
+˜
+The fixed point value is 2𝜔.
+
+Figure 3.6: Flows where 𝜖0 and 𝜔˜ have opposite sign. The left and right panels show
+flows starting from negative and positive values respectively. The two plots in each panel
+˜ one greater than the bare 𝜖0 , the other less than that.
+correspond to different values of 𝜔,
+The fixed point value is 0.
+
+3.4
+
+Kondo Model URG
+
+The Kondo model URG analysis is first carried out in ref. [9]. The model is of course
+described by the Hamiltonian
+
+
+Õ
+Õ 
+Õ
+†
+†
+†
+†
+H=
+𝜖𝑘 𝑛ˆ 𝑘𝛼 + 𝐽𝑧
+𝑆𝑑𝑧 𝑐𝑘↑
+𝑐𝑘 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓ + 𝐽𝑡
+𝑆𝑑+ 𝑐𝑘↓
+𝑐𝑘 0↑ + 𝑆𝑑− 𝑐𝑘↑
+𝑐𝑘 0↓
+(3.4.1)
+𝑘𝛼
+
+𝑘,𝑘 0
+
+𝑘,𝑘 0
+
+108
+
+Chapter 3. Unitary Renormalization Group Method
+The goal is to disentangle an electron 𝑞𝛽 from the Hamiltonian, 𝑞 being the momentum
+and 𝛽 the spin. The diagonal part of the Hamiltonian is
+
+
+H𝑑 = 𝜖𝑞 𝑛ˆ 𝑞𝛽 + 𝐽𝑧 𝑆𝑑𝑧 𝛽 𝑛ˆ 𝑞𝛽 − 𝑛ˆ 𝑞𝛽
+(3.4.2)
+Note that we keep only those terms in the diagonal part that relate to either the impurity or the electron we are disentangling-𝑞𝛽. This piece H𝑑 is the one that comes in the
+denominator. Note that in this form, the hole energy comes out to be zero, because the
+Hamiltonian is written only in terms of 𝑛ˆ 𝑞𝛽 . To remedy this, we write the Hamiltonian
+in terms of 𝜏𝑞𝛽 = 𝑛ˆ 𝑞𝛽 − 21 .
+H𝑑 = 𝜖𝑞 𝜏𝑞𝛽 + 𝐽𝑧 𝑆𝑑𝑧 𝛽 𝑛ˆ 𝑞𝛽
+(3.4.3)
+A constant 21 𝜖𝑞 has been dropped while transforming the first term.
+
+The off-diagonal part involving the electron on the shell is
+
+
+
+Õ
+Õ
+†
+†
+†
+†
+†
+†
+𝐼
+𝑧
+H = 𝐽𝑧
+𝑆𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽 + 𝑐𝑞𝛽 𝑐𝑘𝛽 + 𝐽𝑡
+𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑞𝛽 + 𝑐 𝑐𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘𝛽
+𝑘
+
+𝑘𝛽
+
+𝑘
+
+𝑏𝛽
+
+(3.4.4)
+
+These are the terms that come in the numerator.
+
+3.4.1
+
+Particle sector
+
+The particle sector involves integrating out those states which are occupied (𝑛ˆ 𝑞𝛽 = 1). We
+will work at a shell with energy −𝜖𝑞 .
+†
+𝑐𝑞𝛽
+𝑇𝜂
+(3.4.5)
+where
+
+ Õ
+
+Õ
+
+
+†
+†
+†
+𝑧
+ 𝐽𝑧
+
+𝛽𝑆
+𝑐
+𝑐
++
+𝐽
+𝑐
+𝑐
+𝑐
+𝜂=
+𝑐
+𝑡
+𝑞𝛽
+𝑞𝛽
+𝑑 𝑘𝛽
+
+𝑑 𝛽 𝑑 𝛽 𝑘𝛽
+𝜔 − H𝑑  𝑘
+
+𝑘
+
+ #
+(3.4.6)
+"
+Õ
+1
+1
+†
+𝐽𝑧 𝑆𝑑𝑧 𝛽𝑐𝑘𝛽
+𝑐𝑞𝛽 +
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+=
+𝑘𝛽
+𝜔3 − 𝐸 3
+𝜔ˆ 1 − 𝐸ˆ 1
+𝑘
+
+
+
+
+
+
+1
+1
+1
+𝑧
+Noting that 𝛽𝑆𝑑 = 2 𝑛ˆ 𝑑 𝛽 − 𝑛ˆ 𝑑 𝛽 = 2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 − 2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 , we can write the 𝜂 as
+1
+
+
+
+
+
+
+
+†
+†
+†
+†
+Õ  𝐽𝑧 12 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽 𝐽𝑧 12 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽 𝐽𝑡 𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽 
+−
++
+
+
+
+
+𝜔
+𝜔
+𝜔
+1 − 𝐸1
+2 − 𝐸2
+3 − 𝐸3
+𝑘 
+
+
+
+
+(3.4.7)
+
+The energies 𝐸𝑖 now need to be determined. For the last term, it is obvious:
+1
+
+1
+
+2
+
+2
+
+𝐸3 = 𝜖𝑞 − 𝐽𝑧
+
+(3.4.8)
+
+For the first two term, note that these terms do not flip the spin; hence, the denominator
+should reflect that. The total magnetization for the spin 𝛽 in the initial state is 𝑛ˆ 𝛽 = 𝑛ˆ 𝑞𝛽 = 1,
+109
+
+3.4. KONDO MODEL URG
+because of the 𝑞𝛽. It is also 1 in the intermediate state, because of the spin 𝑘𝛽: 𝑛ˆ 𝛽 = 𝑛ˆ 𝑘𝛽 = 1.
+This holds for both 𝐸1 and 𝐸2 . The impurity magnetization is however 1 in the first term
+but −1 in the second term. Hence,
+1
+
+1
+
+2
+1
+
+2
+1
+
+2
+
+2
+
+𝐸1 = 𝜖𝑞 + 𝐽𝑧
+
+(3.4.9)
+
+𝐸2 = 𝜖𝑞 − 𝐽𝑧 = 𝐸3
+To relate the 𝜔𝑖 , we will use their diagonal values. By replacing them with the initial state
+energies, we can write
+1
+
+1
+
+2
+1
+
+2
+1
+
+2
+
+2
+
+𝜔1 = − 𝜖𝑞 + 𝐽𝑧
+
+(3.4.10)
+
+𝜔2 = 𝜔3 = − 𝜖𝑞 − 𝐽𝑧
+Defining 𝜔 ≡ 𝜔3 , we can write 𝜔1 = 𝜔 + 𝐽𝑧 and 𝜔2 = 𝜔. Therefore,
+
+
+
+
+ 1
+
+†
+†
+1
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽 
+
+ˆ
+ˆ
+ˆ
+ˆ
+𝐽
+𝐽
+𝑛
+1
+−
+𝑛
+𝑐
+𝑐
+𝑛
+1
+−
+𝑛
+Õ  𝑧 2 𝑑𝛽
+𝑧 2 𝑑𝛽
+𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽
+𝑑𝛽
+𝑘𝛽 𝑞𝛽
+𝑘𝛽
+
+𝜂=
+−
++
+
+
+
+
+𝜉1
+𝜉2
+𝜉3
+𝑘 
+
+
+
+
+where 𝜉𝑖 ≡ 𝜔𝑖 − 𝐸𝑖 , hence
+Therefore,
+𝜂=
+=
+=
+
+1Õ
+
+𝜉
+
+𝑘
+
+1Õ
+
+𝜉
+
+𝑘
+
+1Õ
+
+𝜉
+
+𝑘
+
+
+
+
+
+1
+
+
+
+𝐽𝑧 𝑛ˆ 𝑑 𝛽 1 −
+2
+
+𝐽𝑧
+
+1
+2
+
+𝑛ˆ 𝑑 𝛽 −
+
+1
+
+1
+
+2
+
+2
+
+𝜉1 = 𝜉2 = 𝜉3 = 𝜔 − 𝜖𝑞 + 𝐽𝑧 ≡ 𝜉
+
+
+
+†
+𝑐𝑞𝛽
+𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+
+
+†
+𝑐𝑞𝛽
+𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+†
+𝐽𝑧 𝛽𝑆𝑑𝑧 𝑐𝑘𝛽
+𝑐𝑞𝛽
+
++
+
+1
+
+
+
+− 𝐽𝑧 𝑛ˆ 𝑑 𝛽 1 −
+
++
+
+2
+
+†
+𝑐𝑞𝛽
+𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑘𝛽
+
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑘𝛽
+
+
+
+
+
+
+
++
+
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑘𝛽
+
+(3.4.11)
+
+(3.4.12)
+
+
+(3.4.13)
+
+The renormalization is therefore
+
+1Õ
+†
+†
+†
+𝐽𝑧 𝛽𝑆𝑑𝑧 𝑐𝑞𝛽
+𝑐𝑘 0 𝛽 × 𝐽𝑧 𝛽𝑆𝑑𝑧 𝑐𝑘𝛽
+𝑐𝑘 0 𝛽 × 𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑐𝑞𝛽 + 𝐽𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑞𝛽
+𝑘𝛽
+𝑑𝛽
+𝜉 𝑘𝑘 0
+
+†
+†
+†
+†
+𝑧 †
+𝑧 †
++ 𝐽𝑡 𝑐 𝑐𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘 0 𝛽 × 𝐽𝑧 𝛽𝑆𝑑 𝑐𝑘𝛽 𝑐𝑞𝛽 + 𝐽𝑧 𝛽𝑆𝑑 𝑐𝑞𝛽 𝑐𝑘 0 𝛽 × 𝐽𝑡 𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑞𝛽
+
+(3.4.14)
+
+𝑘𝛽
+
+𝑑𝛽
+
+We can see that the total renormalization will have three types of terms: 𝐽𝑧2 , 𝐽𝑡2 and 𝐽𝑧 𝐽𝑡 .
+We can ignore the 𝐽𝑧2 term because it has no impurity operator (𝑆𝑑𝑧 2 = 14 ). The remaining
+terms give
+#
+"
+
+
+
+
+1Õ 1
+†
+𝐽𝑧 𝐽𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐𝑘𝛽
++ h.c. + 𝐽𝑡2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐†
+(3.4.15)
+𝑑𝛽
+𝑘𝛽
+𝜉 𝑘𝑘 0 2
+110
+
+Chapter 3. Unitary Renormalization Group Method
+For the Kondo problem, we are in the subspace of 𝑛ˆ 𝑑 = 1, so we can write
+
+
+ 1
+𝑧
+𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 =
++ 𝛽𝑆𝑑
+
+(3.4.16)
+
+
+
++ h.c. = − 𝑆𝑑+ 𝑠− + 𝑆𝑑− 𝑠+
+
+(3.4.17)
+
+2
+
+and
+
+Õ
+𝑘𝑘 0
+
+†
+𝑐† 𝑐𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐𝑘𝛽
+𝑑𝛽
+
+
+
++ h.c. = −
+
+Õ
+𝑘𝑘 0
+
+†
+𝑐† 𝑐𝑑 𝛽 𝑐𝑘𝛽
+𝑐𝑘 0 𝛽
+𝑑𝛽
+
+
+
+The renormalization then becomes
+
+
+
+Õ
+
+
+
+1
+1  1
+†
+2
+− +
+𝑧
++ −
+
+𝑠
++
+𝐽
+𝑠
++
+𝑆
+𝛽𝑆
+𝑐
+−
+𝐽
+𝐽
+𝑆
++
+𝑐
+0
+𝑧
+𝑡
+𝑡
+𝑑
+𝑑
+𝑑
+𝑘 𝛽 𝑘𝛽 
+𝜉  2
+2
+
+𝑘𝑘 0
+
+
+
+3.4.2
+
+(3.4.18)
+
+Hole sector
+
+For the hole sector, we will take the configuration where 𝑛ˆ 𝑞𝛽 = 0 and hence the energy
+𝜖𝑞 . The renormalization here is
+𝑇 † 𝑐𝑞𝛽 𝜂0† = 𝑇 † 𝑐𝑞𝛽
+
+1
+
+𝜔0
+
+where 𝜂0 is defined in eq. 3.1.57.
+𝜂0† =
+
+1
+
+𝜔ˆ 0
+
+1
+
+− 𝐸ˆ 1 2
+
+†
+𝐽𝑧 𝛽𝑆𝑑𝑧 𝑐𝑞𝛽
+𝑐𝑘𝛽 +
+
+− H𝑑
+
+†
+𝑐𝑞𝛽
+𝑇
+
+1
+
+𝜔0
+
+− 𝐸3
+
+†
+𝐽𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑘𝛽
+𝑑𝛽
+
+We once again split the 𝑆𝑑𝑧 term into two parts, and get
+
+
+
+
+
+ 1
+†
+†
+†
+†
+1
+Õ  𝐽𝑧 2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘𝛽 𝐽𝑧 2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘𝛽 𝐽𝑡 𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘𝛽 
+−
++
+𝜂0† =
+
+
+0
+0
+0
+
+
+𝜉
+𝜉
+𝜉
+1
+2
+3
+𝑘 
+
+
+
+Calculating the energies gives
+1
+
+1
+
+2
+1
+
+2
+1
+
+(3.4.19)
+
+(3.4.20)
+
+(3.4.21)
+
+𝐸01 = 𝜖𝑞 + 𝐽𝑧
+0
+
+𝐸2 = 𝜖𝑞 − 𝐽𝑧 = 𝐸03
+0
+
+2
+
+2
+
+1
+
+1
+
+𝜔1 = − 𝜖𝑞 + 𝐽𝑧 = 𝜔 + 𝐽𝑧
+2
+1
+
+2
+1
+
+(3.4.22)
+
+𝜔02 = 𝜔03 = − 𝜖𝑞 − 𝐽𝑧 = 𝜔
+2
+
+𝜉𝑖0
+
+1
+
+2
+
+1
+
+= 𝜔 − 𝜖𝑞 + 𝐽 𝑧 = 𝜉
+2
+
+2
+
+Evaluating the terms similar to the particle sector gives
+"
+#
+
+
+
+
+1Õ
+1
+†
+𝑐𝑘 0 𝛽 + h.c. + 𝐽𝑡2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐† 𝑐𝑘 0 𝛽
+− 𝐽𝑧 𝐽𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑘𝛽
+𝑑𝛽
+𝑘𝛽
+𝜉 𝑘𝑘 0
+2
+111
+
+(3.4.23)
+
+3.4. KONDO MODEL URG
+
+3.4.3
+
+Scaling equations
+
+Adding the two sectors (eqs. 3.4.15 and 3.4.23) gives
+#
+"
+
+
+
+
+
+
+1Õ
+†
+†
+†
+2
+2
+ΔH =
+−𝐽𝑧 𝐽𝑡 𝑐 𝑐𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑘 0 𝛽 + h.c. + 𝐽𝑡 𝑛ˆ 𝑑 𝛽 − 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 + 𝐽𝑡 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝛿𝑘𝑘 0
+𝑘𝛽
+𝑑𝛽
+𝜉 𝑘𝑘 0
+=−
+
+
+
+
+
+1 
+
++ −
+ 𝐽𝑧 𝐽𝑡 𝑆𝑑 𝑠
+
+𝜉 
+
+
++ 𝑆𝑑− 𝑠+
+
+
+
++
+
+Summing over 𝛽 and 𝑞 gives
+Õ
+𝑞,𝛽
+
+There we used
+
+Í
+
+𝛽
+
+𝛽
+
+†
+𝑘𝑘 0 𝑐𝑘𝛽 𝑐𝑘 0 𝛽
+
+𝑘𝑘 0
+
+2 𝑧
+
+Õ1 
+𝑞
+
+=
+
+𝜉
+
+Í
+
+2
+
+𝐽𝑡 𝑆𝑑 𝛽𝑐† 𝑐𝑘 0 𝛽
+𝑘𝛽
+
+𝑘𝑘 0
+
+
+
+2 𝐽𝑧 𝐽𝑡 𝑆𝑑+ 𝑠−
+
+
+
+†
+𝑐𝑘↑
+𝑐𝑘 0↑
+
+−
+
+− 𝐽𝑡 𝑛ˆ 𝑑 𝛽
+
++ 𝑆𝑑− 𝑠+
+
+†
+𝑐𝑘↓
+𝑐𝑘 0↓
+
+
+
+
+
+
+
+ Õ
+
+1 − 𝑛ˆ 𝑑 𝛽
+
+𝑘 
+2 𝑧 𝑧
+
++ 2 𝐽𝑡 𝑆 𝑑 𝑠
+
+
+
++ 𝑂ˆ
+
+(3.4.24)
+
+(3.4.25)
+
+= 2𝑠 𝑧 . The operator 𝑂ˆ is
+
+Õ Õ1 
+
+Õ Õ1 Õ
+=
+𝐽𝑡2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝐽𝑡2 𝑛ˆ 𝑑 − 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+=
+𝐽𝑡2
+𝜉
+𝜉
+𝜉
+𝑞
+𝑞
+𝑘
+𝑘
+𝑘
+
+Õ1
+𝑞𝛽
+
+Í
+
+ΔH = −
+
+Õ
+
+(3.4.26)
+
+where we used 𝑛ˆ 𝑑 = 1 and 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ = 0 in the singly-occupied subspace. This is a spinindependent impurity-independent potential scattering within the bath, and we will not
+consider it further, because it will be irrelevant at low 𝜔, where the 𝐽 is relevant and
+there is a flow to a strong-coupling fixed point.
+We can now write down the flow equations for 𝐽𝑧 and 𝐽𝑡 :
+Δ𝐽𝑧 = −2 𝐽𝑡2
+
+Õ
+
+1
+
+𝜔−
+Õ
+
+𝑞
+
+Δ𝐽𝑡 = −2 𝐽𝑧 𝐽𝑡
+
+𝑞
+
+1
+𝜖
+2 𝑞
+
++ 21 𝐽𝑧
+
+1
+
+(3.4.27)
+
+𝜔 − 12 𝜖𝑞 + 12 𝐽𝑧
+
+If we set 𝐽𝑧 = 𝐽𝑡 = 2𝐽 , we end up with an SU(2)-symmetric model 𝐽 𝑆®𝑑 · 𝑠®.
+Δ𝐽 = −𝐽 2
+
+Õ
+𝑞
+
+1
+
+𝜔 − 12 𝜖𝑞 + 41 𝐽
+
+(3.4.28)
+
+To recover the one-loop form, we can replace 𝜔 with the bare value − 12 𝜖𝑞 and ignore the
+𝐽 in the denominator (small 𝐽).
+Õ 1
+Δ𝐽 ≈ 𝐽 2
+(3.4.29)
+𝜖𝑞
+𝑞
+
+112
+
+Chapter 3. Unitary Renormalization Group Method
+
+3.4.4
+
+Numerical Solutions
+𝜖
+
+The symmetric scaling equation 3.4.28 was solved numerically with the choice 𝜔 = − 2𝑞 ,
+for both positive and negative bare values of 𝐽. For sufficiently low values of 𝜔, the
+Kondo coupling 𝐽 flows to the strong-coupling limit. This limit, as obtained from the
+URG, is of course finite. This can be reconciled with the NRG result 𝐽 ∗ = ∞ by noting the
+fact that increasing the bare bandwidth 𝐷 does increase the value of URG 𝐽 ∗ , such that in
+the thermodynamic limit 𝐷 → ∞, URG should give 𝐽 ∗ → ∞. This is shown in fig. 3.8
+
+Figure 3.7: Flow of 𝐽 towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left). The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).
+
+Figure 3.8: Variation of the fixed point value 𝐽 ∗ against the bare bandwidth, in log scale.
+
+113
+
+

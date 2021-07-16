@@ -1,0 +1,3303 @@
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+where 𝜉0 = 𝜔0 = 𝐸𝑖1 . The intermediate energies in this sector are
+
+5.3.3
+
+𝐸11 =
+
+𝜖𝑞
+
+𝐸21 = 𝐸41 =
+
+𝜖𝑞
+
+𝐸31 =
+
+𝜖𝑞
+
+𝐸51 =
+
+𝜖𝑞
+
+2
+
++ 𝜖𝑑
+
+2
+2
+
++ 2𝜖𝑑 + 𝑈
+
+2
+
+− 𝐾𝑧
+
+(5.3.18)
+
+Relating the 𝜔
+
+Just as in the previous subsection, we relate the 𝜔𝑖 using their diagonal values.
+First the particle sector 𝜔𝑖 :
+𝜔1 = −
+
+𝜖𝑞
+2
+
++ 𝜖𝑑
+
+𝜔2 = 𝜔5 = −
+𝜔3 = −
+𝜔4 = −
+
+𝜖𝑞
+2
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
+− 𝐾𝑧
+
++ 2𝜖 𝑑 + 𝑈
+
+(5.3.19)
+
+2
+
+𝜖𝑞
+
+Rewriting everything in terms of 𝜔 = − 2 − 𝐾𝑧 gives
+𝜔1
+𝜔2
+𝜔3
+𝜔4
+
+= 𝜔 + 𝜖𝑑 + 𝐾 𝑧
+= 𝜔5 = 𝜔
+= 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐾𝑧
+= 𝜔 + 𝐾𝑧
+
+For the hole sector, we get
+𝜔01 = 𝜔05 = −
+𝜔02 = −
+0
+
+𝜔3 = −
+𝜔04 = −
+and, in terms of 𝜔,
+
+𝜔01
+𝜔02
+𝜔03
+𝜔04
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
++ 2𝜖 𝑑 + 𝑈 − 𝐾 𝑧
+
+2
+
++ 𝜖𝑑
+
+2
+
++ 2𝜖 𝑑 + 𝑈
+
+𝜖𝑞
+𝜖𝑞
+
+(5.3.20)
+
+(5.3.21)
+
+2
+
+= 𝜔05 = 𝜔 + 2𝜖𝑑 + 𝑈
+= 𝜔 + 𝜖𝑑 + 𝐾 𝑧
+= 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐾𝑧
+= 𝜔 + 𝐾𝑧
+163
+
+(5.3.22)
+
+5.3. ANDERSON-KONDO (CHARGE) MODEL URG
+The denominators can thus be written as
+𝜖𝑞
+
+𝜉1 = 𝜔 −
+
+2
+
+− 𝜖𝑑 − 𝑈 + 𝐾 𝑧 ,
+
+𝜉10 = 𝜔 −
+
+2
+
+− 𝜖𝑑 ,
+
+𝜉20 = 𝜔 −
+
+𝜖𝑞
+
+𝜉2 = 𝜔 −
+
+𝜉3 = 𝜉4 = 𝜔 −
+𝜖𝑞
+
+𝜉5 = 𝜔 −
+
+5.3.4
+
+2
+
+𝜖𝑞
+
+2
+
++ 𝜖𝑑 + 𝑈
+
+2
+
++ 𝜖𝑑 + 𝐾 𝑧
+
+𝜖𝑞
+
+𝜖𝑞
+
+𝜉30 = 𝜉40 = 𝜔 −
+
++ 𝐾𝑧 ,
+
+2
+
+𝜖𝑞
+
+− 2𝜖𝑑 − 𝑈 + 𝐾𝑧 , 𝜉50 = 𝜔 −
+
+𝜖𝑞
+2
+
+2
+
++ 2𝜖 𝑑 + 𝑈 + 𝐾 𝑧
+
+Scaling Equations
+|𝑉1 | 2 |𝑉0 | 2 2 |𝑉0 | 2 Õ 𝐾𝑧2 𝐾𝑡2
+Δ𝜖𝑑 =
++ 0 −
+−
++
+2
+𝜉1
+𝜉2
+𝜉2
+𝜉3
+𝜉5
+𝑘
+Δ𝑈 =
+
+2 |𝑉1 | 2
+
+Δ𝑉1 = −
+Δ𝑉0 = −
+
+𝜉10
+
+1
+4
+1
+4
+
+
+
+𝑉1 𝐾𝑧
+
+
+
+
+
+𝑉0 𝐾𝑧
+
+
+
+
+Δ𝐾𝑧 = −𝐾𝑡2
+
+𝜉2
+
+
+
+1
+
+𝜉5
+
+Δ𝐾𝑡 = −𝐾𝑧 𝐾𝑡
+
+5.3.5
+
++
+
+2 |𝑉0 | 2
+
+1
+
+𝜉3
+
+−
+
+2 |𝑉1 | 2
+
+𝜉1
+
+−
+
+2 |𝑉0 | 2
+
+𝜉20
+
++2
+
++
+
+1
+
+𝜉5
+
++
+
+1
+
+𝜉40
+
++
+
+1
+
+𝜉50
+
+!
+
+Õ
+
+!
+1
+1
+1
+1 
++
+− 𝑉0 𝐾𝑡 0 + 0 
+𝜉1 𝜉3
+𝜉2 𝜉5 
+
+!
+
+
+1
+1
+1
+1 
++
+−
+𝑉
+𝐾
++
+1
+𝑡
+𝜉20 𝜉40
+𝜉1 𝜉5 
+
+
+
+(5.3.23)
+
++ 𝐾𝑧
+
+𝑘
+
+𝐾𝑧2 𝐾𝑡2
++
+2
+𝜉3
+𝜉5
+
+!
+
+(5.3.24)
+
+!
+
+Particle-hole symmetry and charge SU(2) invariance
+
+An important distinction between the SIAM charge Kondo and the SIAM spin-Kondo
+models is that, unlike the charge Kondo model where we had independent spin-rotation
+invariance (obtained by setting 𝐽𝑧 = 𝐽𝑡 ) and impurity particle-hole symmetry (obtained by
+setting 𝜖𝑑 = −𝜖𝑑 −𝑈), this model has a composite particle-hole symmetry and SU(2)-charge
+symmetry. To see this, consider the impurity part of the model:
+
+ 𝐾 
+ †
+𝑡
+† †
+†
+𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ + 𝐾𝑧 𝑛ˆ 𝑑 − 1 𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘 0↓ 𝑐𝑘↓ +
+𝑐𝑑 𝛽 𝑐 𝑐𝑘𝛽 𝑐𝑘 0 𝛽 + h.c.
+(5.3.25)
+2
+
+𝑑𝛽
+
+The charge isospin reversal here corresponds to the transformation 𝑐𝑑 → 𝑐𝑑† and 𝑐𝑘 → 𝑐𝑘† ,
+because then 2𝐶𝑑𝑧 = 𝑛ˆ 𝑑 − 1 → 1 − 𝑛ˆ 𝑑 = −2𝐶𝑑𝑧 . But this transformation is just the impurity
+particle-hole transformation we encountered earlier. As a result, the total constraint for
+
+164
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+SU(2)-charge symmetry and impurity particle-hole symmetry is
+𝜖𝑑 = −𝜖𝑑 − 𝑈, 𝑉1 = 𝑉0 ,& 2 𝐾𝑧 = 𝐾𝑡 =
+
+𝐾
+2
+
+(5.3.26)
+
+With these conditions, we get 𝜉1 = 𝜉20 , 𝜉10 = 𝜉2 , and 𝜉3 = 𝜉4 = 𝜉5 = 𝜉30 = 𝜉40 = 𝜉50 , and
+1
+
+Δ𝜖𝑑 = − Δ𝑈
+2
+
+Δ𝑉1 = Δ𝑉0 =
+Δ𝐾 = 𝐾 2
+
+1
+
+𝑉1 𝐾
+8
+
+𝜉5
+
+165
+
+
+
+1
+
+𝜉1
+
++
+
+1
+
+𝜉6
+
+
+
+(5.3.27)
+
+Chapter 6
+URG of Full Generalized SIAM
+6.1
+
+The spin-charge-SIAM Hamiltonian
+
+In this section, we will consider the SIAM with both spin and charge fluctuations. This
+will be a combination of the last two sections. The total Hamiltonian will be
+
+
+Õ
+Õ
+Õ
+†
+†
+†
+H=
+𝜏𝑘𝜎 + 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ +
+𝑉𝑘 𝑐𝑘𝜎
+𝑐𝑑𝜎 + h.c. + 𝐽𝑧 𝑆𝑑𝑧
+𝑐𝑘↑
+𝑐𝑘 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓
+𝑘𝜎
+
++ 𝐽𝑡
+
+Õ
+
+𝑘𝑘 0 𝜎
+
+𝑘𝜎
+
+†
+†
+𝑐𝑘 0𝜎 + 𝐾𝑧 𝐶𝑑𝑧
+𝑐𝑑𝜎
+𝑐𝑑𝜎 𝑐𝑘𝜎
+
+Õ
+𝑘𝑘 0
+
+
+
+1
+
+𝑘𝑘 0
+
+†
+𝑐𝑘𝜎
+𝑐𝑘 0𝜎 − 𝛿𝑘𝑘 0 + 𝐾𝑡
+
+2
+
+There are eight different type of scattering terms:
+
+Õ
+
+𝑘𝑘 0 𝜎
+
+† †
+𝑐𝑑𝜎
+𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑘 0𝜎 + h.c.
+
+
+
+(6.1.1)
+
+Figure 6.1: Schematic diagram of the generalized SIAM model.
+†
+𝑐𝑞𝛽
+𝑇1
+
+=
+
+†
+𝑐𝑞𝛽
+𝑇3 =
+
+†
+𝑉1 𝑐𝑞𝛽
+𝑐𝑑 𝛽 𝑛ˆ 𝑑 𝛽 ,
+
+Õ
+
+Õ
+
+𝑘<Λ𝑁
+†
+𝑐𝑞𝛽
+𝑇5
+
+=
+
+𝑘<Λ𝑁
+†
+𝑐𝑞𝛽
+𝑇7
+
+= −𝐾𝑧0
+
+
+
+†
+𝑐𝑞𝛽
+𝑇2
+
+
+
+=
+
+†
+𝑉0 𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+†
+𝐽0𝑧 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑘𝛽 ,
+
+†
+𝑐𝑞𝛽
+𝑇4 = −
+
+†
+𝑐𝑘𝛽 ,
+𝐽 𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑞𝛽
+𝑑𝛽
+
+†
+𝑐𝑞𝛽
+𝑇6
+
+Õ 
+
+𝑘<Λ𝑁
+
+1 − 𝑛ˆ 𝑑 𝛽
+
+
+
+1−
+
+
+
+Õ
+
+Õ
+
+𝑘<Λ𝑁
+1
+
+= 𝐾𝑧
+
+Õ
+
+
+
+1 − 𝑛ˆ 𝑑 𝛽
+
+
+
+
+
+†
+𝐽1𝑧 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑘𝛽
+†
+𝑐𝑘𝛽
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽
+
+𝑘<Λ𝑁
+
+†
+𝑛ˆ 𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑘𝛽 ,
+
+†
+𝑐𝑞𝛽
+𝑇8
+
+= 𝐾𝑡
+
+𝑘<Λ𝑁
+
+166
+
+† †
+𝑐𝑞𝛽
+𝑐 𝑐𝑑 𝛽 𝑐𝑑 𝛽
+𝑘𝛽
+
+(6.1.2)
+
+Chapter 6. URG of Full Generalized SIAM
+
+6.2
+
+Obtaining the RG equations
+
+6.2.1
+
+Particle Sector
+
+Renormalization is
+
+†
+†
+𝑇 𝜂 = 𝑐𝑞𝛽
+𝑐𝑞𝛽
+
+Õ
+
+𝑇𝑖 𝜂 𝑗
+
+(6.2.1)
+
+𝑖𝑗
+
+The terms that survive are
+†
+𝑐𝑞𝛽
+𝑇𝜂
+
++
++
+
+
+
+
+
+
+=
+
+8
+Õ
+
+𝑖=1
+
+1
+
+𝜔2 − 𝐸 2
+1
+
+𝜔1 − 𝐸 1
+1
+
+1
+
+𝜔𝑖 − 𝐸 𝑖
++
++
+
+𝑛ˆ 𝑞𝛽 𝑇𝑖 𝑇𝑖†
+
+1
+
+𝜔3 − 𝐸 3
+1
+
+𝜔6 − 𝐸 6
+1
+
+
+
+
+
+𝑛ˆ 𝑞𝛽
+𝑛ˆ 𝑞𝛽
+
++
+
+
+
+1
+
+𝜔2 − 𝐸 2
+
+
+
+1
+
++
+
+
+
+𝑛ˆ 𝑞𝛽 𝑇2𝑇5† + 𝑇5𝑇2†
+
+𝜔5 − 𝐸 5
+
+
+  1
+1
+†
+†
+𝑇2𝑇3 + 𝑇3𝑇2 +
++
+𝑛ˆ 𝑞𝛽
+𝜔3 − 𝐸 3 𝜔5 − 𝐸 5
+
+
+  1
+1
+†
+†
++
+𝑇1𝑇6 + 𝑇6𝑇1 +
+𝑛ˆ 𝑞𝛽
+𝜔1 − 𝐸 1 𝜔8 − 𝐸 8
+
+
+𝑇6𝑇8† + 𝑇8𝑇6†
+
+
+
+†
+†
+𝑇3𝑇5 + 𝑇5𝑇3
+
+
+𝑇1𝑇8† + 𝑇8𝑇1†
+
++
+𝑛ˆ 𝑞𝛽
+𝜔6 − 𝐸 6 𝜔8 − 𝐸 8
+
+
+
+ 1 
+|𝑉1 | 2 
+|𝑉0 | 2 
+†
+=
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 + 𝐽𝑡2 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐
+𝑘𝛽
+𝜉1
+𝜉2
+𝜉5
+
+
+
+
+
+
+
+ 
+
+
+1 − 𝑛ˆ 𝑑 𝛽 
+𝑛ˆ
+1  𝑧 2 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+1 1
+1
+ 0 †
+†
+𝑧2 𝑑 𝛽
++  𝐽0
++ 𝐽1
++
+𝐽𝑡 1 − 𝑛ˆ 𝑑 𝛽 𝑉0 𝑐 𝑐𝑑 𝛽 + h.c.
+ 𝑐𝑘 𝛽 𝑐𝑘𝛽 −
+𝑘𝛽
+
+4
+𝜉3
+𝜉4
+2 𝜉2 𝜉5
+
+
+
+
+ 𝑧
+
+
+𝑧 
+
+ 11
+1 1
+1 𝐽0 
+1 𝐽𝑡 𝐽0 †
+†
+†
+−
++
+1 − 𝑛ˆ 𝑑 𝛽 𝑉0 𝑐𝑘𝛽 𝑐𝑑 𝛽 + h.c. −
++
+𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 + h.c.
+𝑘𝛽
+2 𝜉2 𝜉3 2
+2 𝜉3 𝜉5
+2
+ 12
+2
+
+
+ 
+
+ 𝐾𝑧
+𝐾𝑡2 
+𝐾𝑧0 
+†
+†
+
++
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽  𝑐𝑘 0 𝛽 𝑐𝑘𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽
+𝑘𝛽
+𝜉
+𝜉
+𝜉
+7
+8
+ 6
+
+ 
+ 
+
+
+
+
+ 1 1
+
+
+1 1
+1
+1
+†
+†
+1
+−
++
+𝑉1 𝐾𝑧 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑑 𝛽 + h.c. +
++
+𝑉1 𝐾𝑡 1 − 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑑 𝛽 + h.c.
+𝑘𝛽
+2 𝜉1 𝜉6
+2 𝜉1 𝜉8
+
+
+
+
+1 1
+1
+−
++
+𝐾𝑧1 𝐾𝑡 𝑐𝑑† 𝛽 𝑐† 𝑐𝑘 0 𝛽 𝑐𝑘𝛽 + h.c.
+𝑑𝛽
+2 𝜉6 𝜉8
+(6.2.2)
+where 𝜉𝑖 = 𝜔𝑖 − 𝐸𝑖 and we substituted 𝑛ˆ 𝑞𝛽 = 1. The energies in the denominators are
++
+
+𝐸1 = 𝐸8 =
+𝐸3 =
+𝐸7 =
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
+1
+
++ 2𝜖𝑑 + 𝑈 − 𝐾𝑧 , 𝐸2 = 𝐸4 = 𝐸5 =
+1
+
+2
+
+2
+
++ 𝜖𝑑 + 𝐽 𝑧 ,
+
+𝐸6 =
+
+2
+
+− 𝐾𝑧 ,
+
+𝐸8 =
+
+𝜖𝑞
+
+1
+
+2
+
+2
+
+167
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
+1
+
++ 𝜖𝑑 − 𝐽 𝑧
+1
+
+2
+
++ 2𝜖𝑑 + 𝑈 + 𝐾𝑧
+
+2
+
++ 2𝜖𝑑 + 𝑈 − 𝐾𝑧
+
+𝜖𝑞
+
+2
+1
+2
+
+2
+
+(6.2.3)
+
+6.2. OBTAINING THE RG EQUATIONS
+The quantum fluctuation scales are
+1
+
+1
+
+𝜔 1 = 𝜔 + 𝜖𝑑 + 𝐾 𝑧 ,
+
+𝜔 3 = 𝜔 + 𝜖𝑑 + 𝐾 𝑧 + 𝐽 𝑧
+
+𝜔2 = 𝜔8 = 𝜔 + 𝐽 𝑧 ,
+
+𝜔 4 = 𝜔 5 = 𝜔 + 𝜖𝑑 + 𝐾 𝑧
+
+2
+1
+2
+
+2
+
+1
+
+1
+
+1
+
+2
+
+(6.2.4)
+
+𝜔6 = 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐽𝑧 + 𝐾𝑧 , 𝜔7 = 𝜔 + 𝐽𝑧
+2
+
+6.2.2
+
+2
+
+Hole sector
+
+Renormalization is
+
+!
+8
+
+ Õ
+
+1
+1
+1
+†
+†
+†
+†
+𝜂𝑐𝑞𝛽
+𝑇 = 1 − 𝑛ˆ 𝑞𝛽 
+𝑇
+𝑇
++
++
+𝑇
+𝑇
++
+𝑇
+𝑇
+1
+4
+𝑖
+0
+0
+4
+1
+𝑖
+𝜔01 − 𝐸01 𝜔04 − 𝐸04
+ 𝑖=1 𝜔𝑖 − 𝐸𝑖
+ !
+!
+
+
+
+
+1
+1
+1
+1
+†
+†
+†
+†
++
++ 0
++
+𝑇
+𝑇
++
+𝑇
+𝑇
+𝑇
+𝑇
++
+𝑇
+𝑇
++
+1
+5
+2
+7
+5
+1
+7
+2
+𝜔1 − 𝐸01 𝜔05 − 𝐸05
+𝜔02 − 𝐸02 𝜔07 − 𝐸07
+!
+!
+
+
+
+
+2
+1
+1
+1
+†
+†
+†
+†
++
+𝑇
+𝑇
++
+𝑇
+𝑇
++
++
+𝑇
+𝑇
++
+𝑇
+𝑇
++ 0
+2
+8
+4
+5
+5
+4
+8
+2
+𝜔2 − 𝐸02 𝜔08 − 𝐸08
+𝜔04 − 𝐸04 𝜔05 − 𝐸05
+!
+
+ 
+1
+1
+†
+† 
++ 0
+𝑛ˆ 𝑞𝛽 𝑇7𝑇8 + 𝑇8𝑇7 
++
+𝜔7 − 𝐸07 𝜔08 − 𝐸08
+
+
+
+
+
+
+
+
+ˆ
+ˆ
+ˆ
+ˆ
+
+
+1
+−
+𝑛
+𝑛
+𝑛
+1
+−
+𝑛
+2
+2
+𝑑𝛽
+𝑑𝛽 
+𝑑𝛽
+|𝑉1 |
+|𝑉0 |
+1
+ † 0
+𝑧2 𝑑 𝛽
+= 0 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 +  𝐽0𝑧 2
++
+𝐽
+ 𝑐𝑘𝛽 𝑐𝑘 𝛽
+1
+
+𝜉1
+𝜉2
+4
+𝜉30
+𝜉40
+
+
+!
+
+𝑧
+
+
+
+
+1
+1 1
+1 𝐽
+†
++ 0 𝐽𝑡2 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐† 𝑐𝑘 0 𝛽 −
+𝑐𝑑 𝛽 + h.c.
++ 0 1 𝑛ˆ 𝑑 𝛽 𝑉1 𝑐𝑘𝛽
+0
+𝑘𝛽
+𝜉5
+2 𝜉4 𝜉1 2
+!
+!
+
+
+
+
+𝐽𝑡 𝐽1𝑧 †
+1 1
+1
+1
+1
+1
+†
+†
+−
++
+𝐽𝑡 𝑛ˆ 𝑑 𝛽 𝑉1 𝑐 𝑐𝑑 𝛽 + h.c. −
++
+𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 + h.c.
+𝑘𝛽
+𝑘𝛽
+2 𝜉10 𝜉50
+2 𝜉40 𝜉50
+2
+ 12
+2
+ 
+
+ 𝐾𝑧
+𝐾2
+𝐾𝑧0 
+†
+
+𝑐𝑘 0 𝛽 + 0𝑡 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐†
++  0 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽  𝑐𝑘𝛽
+𝑘𝛽
+𝜉7
+𝜉8
+
+ 𝜉6
+
+
+!
+!
+
+
+
+ 1 1
+
+1 1
+1
+1
+†
+†
+0
+−
++
++
+𝑉0 𝐾𝑧 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽 𝑐𝑑 𝛽 + h.c. +
+𝑉0 𝐾𝑡 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑑 𝛽 + h.c.
+𝑘𝛽
+2 𝜉20 𝜉70
+2 𝜉20 𝜉80
+!
+
+
+1 1
+1
+† †
+0
+−
++
+𝐾𝑧 𝐾𝑡 𝑐𝑑 𝛽 𝑐 𝑐𝑘𝛽 𝑐𝑘 0 𝛽 + h.c.
+𝑑𝛽
+2 𝜉70 𝜉80
+
+
+168
+
+(6.2.5)
+
+Chapter 6. URG of Full Generalized SIAM
+The denominator energies are
+𝐸01 = 𝐸03 = 𝐸05 =
+𝜖𝑞
+
+𝐸02 =
+
+2
+
+1
+
+1
+
++ 𝜖𝑑 − 𝐽𝑧 , 𝐸04 =
+2
+
+𝐸07 =
+
+2
+
+− 𝐾𝑧 ,
+
+2
+
++ 2𝜖 𝑑 + 𝑈 − 𝐾 𝑧 ,
+
+𝜖𝑞
+
+𝐸06 =
+
+𝜖𝑞
+
+2
+
+1
+
+𝐸08 =
+
+2
+
+𝜖𝑞
+
+1
+
+2
+
++ 𝜖𝑑 + 𝐽 𝑧
+
+2
+
++ 𝐾𝑧
+
+2
+
++ 𝜖𝑑 − 𝐾 𝑧
+
+𝜖𝑞
+𝜖𝑞
+
+1
+
+2
+
+2
+
+(6.2.6)
+1
+2
+
+The quantum fluctuation scales are
+1
+
+𝜔01 = 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐽𝑧
+1
+
+𝜔02 = 𝜔 + 𝜖𝑑 + 𝐾𝑧
+2
+
+2
+
+1
+
+𝜔03 = 𝜔05 = 𝜔 + 𝜖𝑑 + 𝐾𝑧
+1
+
+2
+
+(6.2.7)
+
+𝜔04 = 𝜔 + 𝜖𝑑 + 𝐾𝑧 + 𝐽𝑧
+2
+
+1
+
+𝜔06 = 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐽𝑧
+2
+
+1
+
+𝜔07 = 𝜔 + 𝐽𝑧 + 𝐾𝑧
+2
+
+1
+
+𝜔08 = 𝜔 + 𝜖𝑑 + 𝐽𝑧
+2
+
+6.2.3
+
+Scaling equations
+
+The denominators 𝜉𝑖 , 𝜉𝑖0 are
+𝜉1 = 𝜔 −
+𝜉2 = 𝜔 −
+
+𝜖𝑞
+2
+
+− 𝜖𝑑 − 𝑈 + 𝐾 𝑧
+
+2
+
+− 𝜖𝑑 + 𝐽 𝑧
+
+𝜖𝑞
+
+𝜉3 = 𝜉4 = 𝜉5 = 𝜉6 = 𝜉7 = 𝜔 −
+𝜉8 = 𝜔 −
+0
+
+𝜉1 = 𝜔 −
+𝜉20 = 𝜔 −
+
+𝜖𝑞
+
+1
+
+𝜉8 = 𝜔 −
+
+2
+
+1
+
+1
+
+2
+
+2
+
++ 𝐽𝑧 + 𝐾𝑧
+
+1
+
+2
+
+− 2𝜖𝑑 − 𝑈 + 𝐽𝑧 + 𝐾𝑧
+
+2
+
++ 𝜖𝑑 + 𝑈 + 𝐽 𝑧
+
+2
+
++ 𝜖𝑑 + 𝐾 𝑧
+
+𝜖𝑞
+𝜖𝑞
+
+2
+
+𝜉30 = 𝜉40 = 𝜉50 = 𝜉60 = 𝜉70 = 𝜔 −
+0
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
+1
+
+2
+
+𝜖𝑞
+2
+
+1
+
+1
+
+2
+
+2
+
++ 𝐽𝑧 + 𝐾𝑧
+
+1
+
++ 2𝜖𝑑 + 𝑈 + 𝐽𝑧 + 𝐾𝑧
+2
+
+169
+
+(6.2.8)
+
+2
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+The RG equations are
+𝐽𝑡2
+𝐽𝑧2
+|𝑉1 | 2 |𝑉0 | 2
+|𝑉0 | 2 Õ 𝐾𝑧2 𝐾𝑡2
++ 0 −2
+−
++
+−
+−
+Δ𝜖𝑑 =
+𝜉1
+𝜉2
+𝜉2
+2𝜉6
+𝜉8 2𝜉3 𝜉3
+𝑘
+Δ𝑈 =
+
+Δ𝑉1
+
+Δ𝑉0
+Δ𝐽𝑧
+Δ𝐽𝑡
+Δ𝐾𝑧
+Δ𝐾𝑡
+
+6.3
+6.3.1
+
+2 |𝑉1 | 2
+
+𝜉10
+
++
+
+2 |𝑉0 | 2
+
+𝜉2
+
+−
+
+2 |𝑉1 | 2
+
+𝜉1
+
+−
+
+Õ 𝐾2
+𝑧
++
++2
+2𝜉6
+𝑘
+!
+
+1 
+𝐽𝑧
++ 0  − 𝑉1
+𝜉8 
+2
+
+
+
+1 
+𝐽𝑧
++
+−
+𝑉
+0
+𝜉8 
+2
+
+
+2 |𝑉0 | 2
+
+
+
+
+𝐾𝑧 1
+1
+= − 𝑉1
++
+− 𝑉0 𝐾𝑡
+4  2 𝜉1 𝜉6
+
+!
+
+1  𝐾𝑧 1
+1
+= − 𝑉0
++
+− 𝑉1 𝐾𝑡
+4  2 𝜉20 𝜉70
+
+𝐽2
+= −2 𝑡
+𝜉3
+𝐽𝑧 𝐽𝑡
+= −2
+𝜉3
+𝐾𝑡2
+= −2
+𝜉8
+!
+1
+1
+1
+𝐾 𝑧 𝐾𝑡 1
++ + +
+=−
+2
+𝜉6 𝜉8 𝜉70 𝜉80
+1 
+
+𝜉20
+
+1
+
+𝜉0
+
+
+2
+
+1
+
+𝜉1
+
+!
+
+!
+𝐾𝑡2
+𝐽𝑡2
+𝐽𝑧2
+−
+−
+𝜉8 2𝜉3 𝜉3
+!
+
+1
+
++ 𝐽𝑡
++ 𝐽𝑡
+
+𝜉0
+
+
+
+1
+
+1
+
+𝜉2
+
++
+
++
+
+1
+
+𝜉3
+1
+
+𝜉3
+
+
+
+(6.2.9)
+
+Numerical and analytical analysis of the symmetric
+model
+Nature of RG flows for the symmetric model at 𝑉 = 0
+
+With the conditions 𝜖𝑑 = −𝜖𝑑 − 𝑈, 𝐽𝑧 = 𝐽𝑡 = 21 𝐽, 𝑉0 = 𝑉1 , 𝐾𝑧 = 𝐾𝑡 = 12 𝐾,
+Δ𝑈 =
+
+Õ3
+𝑘
+
+Δ𝐽 = −
+Δ𝐾 = −
+
+𝐾2 − 𝐽2
+
+4 𝜔 − 𝜖𝑞 + 1 𝐽 + 1 𝐾
+2
+4
+4
+
+𝐽2
+
+𝜔−
+
+𝜖𝑞
+
+𝜔−
+
+𝜖𝑞
+
+2
+
+2
+
++ 14 𝐽 + 41 𝐾
+
+(6.3.1)
+
+𝐾2
+
++ 14 𝐽 + 41 𝐾
+
+𝜖
+
+For 𝜔 − 2𝑞 + 14 𝐽 + 14 𝐾 > 0, the flow is towards a weak coupling theory, but these are not
+URG fixed points. Such flows are shown in fig. 6.2. For the rest of the values of 𝜔, we
+get RG flows towards a strong-coupling fixed point, with large value of 𝐽 and 𝐾, fig. 6.3.
+For sufficiently small values of 𝐾𝐽 , the flow is towards zero 𝑈. All such flows characterise
+170
+
+Chapter 6. URG of Full Generalized SIAM
+a resonant-level strong coupling fixed point, where the four atomic impurity levels are
+degenerate and located exactly at the Fermi surface. For larger values of 𝐾𝐽 , there exist
+flows towards a large positive 𝑈. Such fixed points energetically favour an impurity
+occupation of 1. Both these classes of flows of 𝑈 are depicted in fig. 6.4.
+
+Figure 6.2: 𝜔 > 0. Left: Decay of 𝐽 towards zero under RG. Right: Flow of 𝑈 under the
+same RG. Titles of plots show bare values.
+From the RG equations for 𝐽 and 𝐾, we can write down an RG-invariant.
+Δ𝐽
+𝐽2
+1
+1
+1
+1
+= 2 =⇒ − = C =
+−
+Δ𝐾 𝐾
+𝐽 𝐾
+𝐽 0 𝐾0
+
+(6.3.2)
+
+where C is a constant. For the case of 𝐽0 = 𝐾0 (𝐽0 is the bare value of 𝐽), we must have
+𝐽 = 𝐾. The RG flows in the 𝐾 vs 𝐽 plane are shown in fig. 6.5.
+
+Δ𝐽 ≈ −𝜌( 0) 𝐽 2
+
+1
+
+𝜔+
+
+𝐽
+
+ 12 𝜖𝑞 − 𝐾4 , we can integrate the equation for 𝐽:
+!
+1
+𝐷
+d𝐽
+1
+𝜔
+2
+≈ −𝜌( 0) 𝐽
+≈ −𝜌( 0)𝑑 ln
+=⇒ −
+=⇒ 𝑑 𝐽 2 +
+𝐷
+𝐽
+4𝐽
+𝐷0
+𝐽
+d ln 𝐷
+𝜔+
+
+For the case when 𝜔 +
+𝐽
+
+4
+
+4
+
+(6.3.3)
+
+4
+
+0
+
+We replaced the density of states by that at the Fermi surface. Integrating this equation
+from 𝐽0 to 𝐽 ∗ on the left hand side and from 𝐷0 to 𝐷∗ on the right hand side gives
+𝜔
+
+1
+
+𝐽∗
+
+−
+
+1
+
+𝐽0
+
+!
+
+𝐽0
+𝐽0
+𝐷∗
++ ln ∗ = 𝜌( 0) ln
+=⇒ 𝐷∗ ≈ ∗
+4
+𝐽
+𝐷0
+𝐽
+1
+
+! 4𝜌(1 0)
+
+!
+
+
+𝜔 
++
+exp −
+
+
+ 𝜌( 0) 4 𝐽0 
+
+
+
+
+
+
+
+1
+
+This gives an estimate of the bandwidth of the emergent window:
+171
+
+1
+
+(6.3.4)
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+
+Figure 6.3: 𝜔 < 0. Flow of 𝐽 and 𝐾 to large values, signaling a strong-coupling fixed point.
+
+Figure 6.4: Left: Flow of 𝑈 to zero, implying a four-fold degenerate impurity. Right: Flow
+of 𝑈 to large value, making the impurity singly-occupied, leading to the formation of a
+local moment.
+
+172
+
+Chapter 6. URG of Full Generalized SIAM
+
+Figure 6.5: RG flows in 𝐾 vs 𝐽 plane. Legend indicates relations of bare values.
+
+6.3.2
+
+Eigenstates of symmetrical model at 𝑉 = 0
+
+For the case of 𝑉 = 0, the RG equations simplify considerably.
+Δ𝑈 = 2
+
+Õ3
+𝑘
+
+Δ𝐽 = −
+Δ𝐾 = −
+
+𝐾2 − 𝐽2
+
+8 𝜔 − 𝜖𝑞 + 1 𝐽 + 1 𝐾
+2
+4
+4
+
+𝐽2
+
+𝜔−
+
+𝜖𝑞
+
+𝜔−
+
+𝜖𝑞
+
+2
+
+2
+
+(6.3.5)
+
++ 14 𝐽 + 41 𝐾
+𝐾2
+
++ 14 𝐽 + 41 𝐾
+𝜖
+
+The strong-coupling fixed points is reached for 𝜔 − 2𝑞 + 14 𝐽 + 14 𝐾 < 0. Since the denominator
+is thus negative, we will have
+
+
+
+ > 0, 𝐽 > 𝐾
+Δ𝑈
+(6.3.6)
+
+ < 0, 𝐽 < 𝐾
+
+This implies that for 𝐽 > 𝐾, the flow is towards an impurity which is singly-occupied,
+while 𝐽 < 𝐾 will mean the impurity will be four-fold degenerate with all four levels at
+the Fermi surface.
+The effective Hamiltonian is
+ 2
+i Õ h
+i
+Õ
+Õ h
+∗
+∗
+𝑧
+∗®
+∗ ®
+𝑧 𝑧
+𝑧 𝑧
+®
+0
+0
+®
+H =
+𝜖𝑘 𝑛ˆ 𝑘𝜎 − 2𝑈 𝑆𝑑 +
+𝐽 𝑆𝑑 · 𝑠𝑘𝑘 + 𝐾 𝐶𝑑 · 𝐶𝑘𝑘 +
+𝐽 𝑞 𝑆 𝑑 𝑠 𝑞 + 𝐾𝑞 𝐶 𝑑 𝐶 𝑞
+𝑘𝜎
+
+𝑞>Λ∗
+
+𝑘𝑘 0 <Λ∗
+
+173
+
+(6.3.7)
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+
+
+where 𝑆𝑑𝑧 = 12 𝑛ˆ 𝑑↑ − 𝑛ˆ 𝑑↓ . Since the interaction terms do not couple the 𝑛ˆ 𝑑 = 1 and 𝑛ˆ 𝑑 = 0, 2
+subspaces, we can diagonalize the Hamiltonian separately in these subspaces.
+In the singly-occupied subspace, the Hamiltonian is
+H1∗ =
+
+Õ
+𝑘
+
+1
+
+𝜖𝑘 𝑛ˆ 𝑘𝜎 − 𝑈 ∗ +
+2
+
+Õ
+
+𝑘𝑘 0 <Λ∗
+
+®0+
+𝐽 ∗ 𝑆®𝑑 · 𝑠𝑘𝑘
+
+Õ
+
+𝑞>Λ∗
+
+𝐽 ∗∗ 𝑆𝑑𝑧 𝑠𝑞𝑧
+
+The ground state in this subspace is
+
+
+1 Õ
+1
+1
+1
+1
+1
+1
+∗
+𝑧
+𝑧
+𝑧
+𝑧
+𝑧
+𝑧
+|𝑆𝑑 = i |𝑠𝑘𝑘 0 = − i |𝑠𝑞 = − i − |𝑆𝑑 = − i |𝑠𝑘𝑘 0 = i |𝑠𝑞 = i
+|Ψi 1 =
+N 𝑘𝑘 0 <Λ∗
+2
+2
+2
+2
+2
+2
+
+(6.3.8)
+
+(6.3.9)
+
+𝑞>Λ∗
+
+with an eigenvalue (besides the energy of the bath)
+𝐸1 = −
+
+𝑈∗
+2
+
+3
+
+1
+
+4
+
+4
+
+(6.3.10)
+
+− 𝐽 ∗ − 𝐽 ∗∗
+
+In the complementary subspace, the Hamiltonian is
+Õ
+Õ
+Õ
+®0+
+H0∗,2 =
+𝜖𝑘 𝑛ˆ 𝑘𝜎 +
+𝐾 ∗ 𝐶®𝑑 · 𝐶𝑘𝑘
+𝐾 ∗∗ 𝐶𝑑𝑧 𝐶𝑞𝑧
+𝑘
+
+𝑞>Λ∗
+
+𝑘𝑘 0 <Λ∗
+
+The ground state in this subspace is
+
+
+1 Õ
+1
+1
+1
+1
+1
+1
+∗
+𝑧
+𝑧
+𝑧
+𝑧
+𝑧
+𝑧
+|Ψi 0,2 = 0
+|𝐶𝑑 = i |𝐶𝑘𝑘 0 = − i |𝐶𝑞 = − i − |𝐶𝑑 = − i |𝐶𝑘𝑘 0 = i |𝐶𝑞 = i
+N 𝑘𝑘 0 <Λ∗
+2
+2
+2
+2
+2
+2
+
+(6.3.11)
+
+(6.3.12)
+
+𝑞>Λ∗
+
+with an eigenvalue (besides the energy of the bath)
+3
+
+1
+
+4
+
+4
+
+𝐸0,2 = − 𝐾 ∗ − 𝐾 ∗∗
+
+(6.3.13)
+
+Depending on the bare values of 𝐽, 𝐾 and 𝑈, we can have the following fixed point situations:
+
+6.3.3
+
+Effect of non-zero 𝑉 on the RG flows
+
+The introduction of 𝑉 into the RG equations make them analytically intractable, and we
+have to solve them numerically. The general observation is that we now get both zero
+and non-zero values of 𝑈 ∗ in all the phases. The low quantum fluctuation scale behaviour
+in the first quadrant is shown in fig. 6.7. It is very similar to that obtained from NRG, as
+was shown in fig. 2.5.
+
+174
+
+Chapter 6. URG of Full Generalized SIAM
+
+𝑈
+
+𝐽, 𝐾
+
+𝑈∗
+
+𝐽 ∗, 𝐾 ∗
+
+class
+
+ground state
+
+ground state energy
+
+>0
+
+𝐽>𝐾
+
+0
+
+𝐽∗ > 𝐾∗
+
+screened spin
+
+spin singlet
+
+− 𝑈2 − 34 𝐽 ∗ − 14 𝐽 ∗∗
+
+>0
+
+𝐽<𝐾
+
+0
+
+𝐽∗ < 𝐾∗
+
+<0
+
+𝐽>𝐾
+
+0
+
+𝐽∗ > 𝐾∗
+
+<0
+
+𝐽<𝐾
+
+0
+
+𝐽∗ < 𝐾∗
+
+screened charge charge singlet
+screened spin
+
+spin singlet
+
+screened charge charge singlet
+
+∗
+
+− 34 𝐾 ∗ − 14 𝐾 ∗∗
+− 34 𝐽 ∗ − 14 𝐽 ∗∗
+− 34 𝐾 ∗ − 14 𝐾 ∗∗
+
+Table 6.1: Classification of fixed points for various bare values, at 𝑉 = 0
+
+Figure 6.6: Fixed point phases in the plane of bare couplings, at 𝑉 = 0.
+
+175
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+
+Figure 6.7: 𝑈 − 𝐽 multiple RG flows in first quadrant.
+
+176
+
+Chapter 6. URG of Full Generalized SIAM
+
+Figure 6.8: Flows of the couplings for bare values in the first quadrant: 𝐽 − 𝐾, 𝑈 > 0.
+
+177
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+First quadrant The first quadrant shows the flow from a free orbital fixed point near
+𝑉 = 𝑈 = 𝐽 = 0 to an intermediate local moment phase with large 𝑈 with a final crossover
+to a stable fixed point at 𝐽 ∗  𝐽0 , 𝑈 ∗ = 0. The initial free orbital fixed point involves four
+degenerate impurity states at the impurity, and hence no local moment. The intermediate phase involves a local moment because of the large 𝑈. The final stable phase involves
+an impurity which is strongly-coupled to the impurity because of the large 𝑉 and 𝐽. This
+crossover is depicted in fig. 6.9.
+
+Figure 6.9: 𝑈 − 𝐽 and 𝑈 − 𝑉 RG flows.
+We have also checked that the fixed point values of 𝐽 and 𝑉 go on increasing as we
+increase the system size.
+Third quadrant In the third quadrant (𝑈0 < 0, 𝐾0 > 𝐽0 ), we see the flow to large negative
+value of 𝑈, leading to a large contribution of the holon-doublon sectors of the impurity
+subspace, and a large value of 𝐾 ∗ which means that the impurity charge sector couples
+very strongly with the bath charge sector. This is essentially the charge analogue of the
+Kondo effect; the relevant transformation is
+|↑i → | 2i , |↓i → | 0i , 𝐽 → 𝐾, 𝑈 → −𝑈
+
+(6.3.14)
+
+The ground state in this sector will be a charge singlet, as shown in the next section. This
+was also reported by Taraphder and Coleman in [37].
+
+6.3.4
+
+Phase diagram for 𝑉 > 0
+
+We can now summarize the various fixed point phases. The physically relevant ones are
+the first and third quadrants. The first quadrant features a large spin-exchange coupling
+𝐽 and a positive 𝑈 in the bare model, and the stable flows are towards a large 𝐽 ∗ and a
+very small (≈ 0) 𝑈 ∗ . The fixed point state will be mostly a spin singlet, in which the impurity polarization gets quenched by the spin-flip scattering of the conduction electrons.
+178
+
+Chapter 6. URG of Full Generalized SIAM
+
+Figure 6.10: Increase in the fixed point values of 𝐽 and 𝑉 with system size.
+
+Figure 6.11: Flow of 𝑈 to large negative value and 𝐾 to large positive value in the third
+quadrant.
+
+179
+
+6.3. NUMERICAL AND ANALYTICAL ANALYSIS OF THE SYMMETRIC MODEL
+The third quadrant is the regime of the charge-Kondo effect, and involves a negative 𝑈
+at the bare level which physically motivates a large charge-Kondo coupling 𝐾. The fixed
+point again involves flow to a large 𝐾 ∗ , but the 𝑈 flows to large negative here, implying
+a state where the charge sectors dominate heavily and the ground state is primarily a
+charge-singlet in which the destruction or annihilation of the Cooper-pair like states becomes prohibited.
+These results are summarized in the table below.
+𝑈
+
+𝐽, 𝐾
+
+𝑈∗
+
+𝐽 ∗, 𝐾 ∗
+
+class
+
+ground state
+
+>0
+
+𝐽>𝐾
+
+≳0
+
+𝐽∗ > 𝐾∗
+
+screened spin
+
+spin singlet + charge triplet
+
+>0
+
+𝐽<𝐾
+
+≳0
+
+𝐽∗ < 𝐾∗
+
+screened charge
+
+charge singlet
+
+<0
+
+𝐽>𝐾
+
+≳0
+
+𝐽∗ > 𝐾∗
+
+screened spin
+
+spin singlet + charge triplet
+
+<0
+
+𝐽<𝐾
+
+0
+
+𝐽∗ < 𝐾∗
+
+screened charge
+
+charge singlet
+
+Table 6.2: Classification of fixed points for various bare values, at 𝑉 > 0
+𝑈
+screened spin
+0 ≤ 𝑈 ∗  𝑈0
+
+0 ≤ 𝑈 ∗  𝑈0
+
+ground state is
+
+groundstate is
+
+0 ≤ 𝐾0  𝐾 ∗
+
+0 ≤ 𝐽0  𝐽 ∗
+
+0 ≤ 𝑈 ∗  𝑈0
+
+0 ≤ 𝑈 ∗  𝑈0
+
+0 ≤ 𝐾0  𝐾 ∗
+
+0 ≤ 𝐽0  𝐽 ∗
+
+𝐽−𝐾
+spin singlet
+
+isospin singlet
+screened
+
+isospin
+Figure 6.12: Low 𝜔 fixed point phases for the SIAM with 𝑉 > 0.
+
+180
+
+Chapter 6. URG of Full Generalized SIAM
+
+6.4
+
+Effective Hamiltonian and ground state for the 𝑉 ≠ 0
+symmetric problem
+
+The fixed point Hamiltonian can be written, in general, as
+
+Õ
+Õ 
+𝑈∗
+†
+𝑉 ∗ 𝑐𝑘𝜎
+𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠® + 𝐾 ∗ 𝐶®𝑑 · 𝐶®
+𝜖𝑘 𝜏𝑘𝜎 −
+H∗ =
+𝑛ˆ 𝑑 + 𝑈 ∗ 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ +
+𝜎,𝑘
+
+2
+
+𝜎,𝑘<Λ∗
+
++
+
+Õ 
+
+𝑞>Λ∗
+
+𝐽𝑞𝑧 𝑆𝑑𝑧 𝑠𝑞𝑧
+
++
+
+𝐾𝑞𝑧 𝐶𝑑𝑧 𝐶𝑞𝑧
+
+
+
+(6.4.1)
+
+The first term is the kinetic energy of all the electrons. The next two terms are the
+impurity-diagonal pieces, featuring the renormalised interaction 𝑈 ∗ . The next three terms
+are the residual interactions between the impurity and the metal, with the renormalised
+couplings 𝑉 ∗ , 𝐽 ∗ and 𝐾 ∗ . The summations in these terms extend from the fixed point momentum cutoff Λ∗ to 0. This is the region of momentum space which the URG was unable
+to decouple. The operators 𝑠® and 𝐶® represent the macroscopic magnetic
+ and
+ charge spins
+∗
+formed by the remaining electrons that are lying inside the window 0, Λ :
+Õ
+†
+𝑠® =
+𝑐𝑘𝛼
+𝜎®𝛼𝛽 𝑐𝑘 0 𝛽
+(6.4.2)
+𝑘𝑘 0 <Λ∗
+𝛼𝛽
+
+The final two terms represent the diagonal pieces of the RG steps that have been completed. These survive because the URG removes only the number-off-diagonal terms;
+terms like 𝑆𝑧𝑑 𝑠𝑧 and 𝐶 𝑧𝑑 𝐶 𝑧 conserve the number of particles and hence survive. These will
+also be renormalised, and hence the subscript 𝑞 on 𝐽𝑞𝑧 signifies that it is has been renormalised up to a certain momentum.
+Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
+
+Õ
+Õ 
+𝑈∗
+†
+H𝐼𝑅 =
+𝜖𝑘 𝜏𝑘𝜎 −
+𝑛ˆ 𝑑 + 𝑈 ∗ 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ +
+𝑉 ∗ 𝑐𝑘𝜎
+𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠® + 𝐾 ∗ 𝐶®𝑑 · 𝐶®
+(6.4.3)
+2
+𝜎,𝑘<Λ∗
+
+𝜎,𝑘<Λ∗
+
+To make progress with the ground state, we will simplify the effective Hamiltonian by
+mapping it onto a two-site problem. One site is of course the impurity site. The other
+site will be formed by the centre of mass degree of freedom of the conduction electrons,
+which we define as
+
+
+1 Õ
+𝑐𝑘𝜎 = 𝑐𝜎 𝑟® = 0
+𝑐 2𝜎 ≡ √
+(6.4.4)
+𝑁∗ 𝑘
+
+
+where 𝑁 ∗ is the number of electrons inside the window −Λ∗ , Λ∗ . This operator essentially creates a conduction electron at the origin. It is easy to prove that this operator is
+Fermionic:
+n
+o
+o
+1 Õ
+1 Õn
+𝑐2𝜎 , 𝑐2†𝜎 = ∗
+𝑐𝑘𝜎 , 𝑐𝑘† 0𝜎 = ∗
+𝛿𝑘𝑘 0 = 1
+𝑁 𝑘𝑘 0
+𝑁 𝑘𝑘 0
+(6.4.5)
+
+1 Õ
+𝑐2𝜎 , 𝑐2𝜎 = ∗
+𝑐𝑘𝜎 , 𝑐𝑘 0𝜎 = 0
+𝑁 𝑘𝑘 0
+181
+
+6.4. EFFECTIVE HAMILTONIAN AND GROUND STATE FOR THE 𝑉 ≠ 0 SYMMETRIC
+PROBLEM
+The number operator corresponding to this degree of freedom is
+1 Õ †
+𝑐 𝑐𝑘 0 𝜎
+𝑛ˆ 2𝜎 = 𝑐2†𝜎 𝑐2𝜎 = ∗
+𝑁 𝑘𝑘 0 𝑘𝜎
+
+(6.4.6)
+
+Because of the anticommutation algebra in eq. 6.4.5, this operator behaves essentially
+like a Fermion: 𝑛ˆ 22𝜎 = 𝑛ˆ 2𝜎 . For our two-site problem, we will imagine this to be the annihilation operator for the site 2, for the spin sigma. The corresponding operator for the
+first site is of course just the impurity electron annihilation operator:
+(6.4.7)
+
+𝑐1𝜎 ≡ 𝑐𝑑𝜎
+
+The various terms of the Hamiltonian can now be written in terms of these operators.
+We write the Fourier decomposition of the dispersion of the conduction bath.
+1 Õ 𝑖 𝑘·®
+®
+𝑒 𝑟 𝜖( 𝑟®)
+𝜖𝑘® = ∗
+(6.4.8)
+𝑁
+𝑟®
+
+The inverse transformation is
+
+𝜖( 𝑟®) =
+
+Õ
+
+∗
+®
+| 𝑘|<Λ
+
+®
+
+𝑒−𝑖 𝑘·®𝑟 𝜖𝑘®
+
+(6.4.9)
+
+We now make a simplifying assumption: Guided by the observation that the important
+degree of freedom at the fixed point is the COM operator 𝑐2𝜎 , we keep only the 𝑟® = 0 mode
+of the decomposition:
+Õ
+1
+1 Õ
+1
+𝜖𝑘® ≈ ∗ 𝜖( 𝑟® = 0) = ∗
+𝜖𝑘 = ∗
+𝜖𝑘 = 𝜖𝐹
+(6.4.10)
+𝑁
+𝑁
+𝑁
+𝑘<Λ∗
+
+𝜖𝑘 ∈[𝜖𝐹 −𝐷∗ ,𝜖𝐹 +𝐷∗ ]
+
+𝜖𝐹 is the Fermi energy, which we henceforth set to 0. The energy term for the second site
+is thus simply zero. The impurity diagonal part of H𝐼𝑅 will survive only when 𝑛ˆ 𝑑 = 𝑛ˆ 1 = 1.
+So we write it as
+
+
+2
+2
+𝑈∗
+𝑈∗ 
+𝑈∗ 
+∗
+(6.4.11)
+− 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ = −
+𝑛ˆ 𝑑↑ + 𝑛ˆ 𝑑↓ − 2𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ = −
+𝑛ˆ 1↑ − 𝑛ˆ 1↓ ≡ 𝜖𝑑 𝑛ˆ 1↑ − 𝑛ˆ 1↓
+2
+
+2
+
+2
+
+𝑈∗
+
+where 𝜖𝑑 = − 2 . The off-diagonal terms can also be similarly transformed into a two-site
+problem. The bath spin can be written as
+𝑆®𝑑 ≡ 𝑆®1
+𝐽 ∗ 𝑠® = 𝐽 ∗
+
+1Õ †
+𝑐 𝜎®𝛼𝛽 𝑐𝑘 0 𝛽
+2 𝑘𝑘 0 𝑘𝛼
+1Õ
+𝛼𝛽
+
+= 𝐽∗
+
+2
+
+𝑐2†𝛼 𝜎®𝛼𝛽 𝑐2 𝛽
+
+ 
+
+
+
+
+
+†
+†
+†
+†
+†
+†
+∗ ∗1
+=𝐽 𝑁
+𝑧ˆ 𝑐2↑ 𝑐2↑ − 𝑐2↓ 𝑐2↓ + 𝑥ˆ 𝑐2↑ 𝑐2↓ + 𝑐2↓ 𝑐2↑ − 𝑖 𝑦ˆ 𝑐2↑ 𝑐2↓ − 𝑐2↓ 𝑐2↑
+𝛼𝛽
+
+2
+
+≡ 𝐽 ∗ 𝑁 ∗ 𝑆®2
+≡ 𝑗 𝑆®2
+
+182
+
+(6.4.12)
+
+Chapter 6. URG of Full Generalized SIAM
+where 𝑗 ≡ 𝐽 ∗ 𝑁 ∗ and
+
+1 Õ †
+𝑆®2 =
+𝑐 𝜎®𝛼𝛽 𝑐𝑘 0 𝛽
+2𝑁 ∗ 𝑘𝑘 0 𝑘𝛼
+
+(6.4.13)
+
+𝛼𝛽
+
+. The charge isospins can also be rewritten similarly. From eq. 5.3.3,
+𝐾 ∗𝐶 𝑧 = 𝐾 ∗
+
+ 1
+
+
+1Õ †
+†
+𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘 0↓ 𝑐𝑘↓
+= 𝑁 ∗ 𝐾 ∗ 𝑐2†↑ 𝑐2↑ − 𝑐2↓ 𝑐2†↓ = 𝑘𝐶2𝑧
+2 0
+2
+1Õ
+𝑘𝑘
+
+∗ 𝑥
+
+𝐾 𝐶 =𝐾
+
+∗
+
+2
+
+𝑘𝑘 0
+
+† †
+𝑐𝑘↑
+𝑐𝑘 0↓
+
++
+
+𝑐𝑘↓ 𝑐𝑘† 0↑
+
+
+
+=
+
+1
+2
+
+∗
+
+𝑁 𝐾
+
+∗
+
+
+
+𝑐2†↑ 𝑐2↓
+
+−
+
+𝑐2↓ 𝑐2†↑
+
+
+
+𝑥
+
+(6.4.14)
+
+= 𝑘𝐶2
+
+and similarly for 𝐶 𝑦 . We defined 𝑘 ≡ 𝐾 ∗ 𝑁 ∗ . The diagonal component 𝐶 𝑧 can also be
+written as
+
+
+1 ∗Õ †
+1
+1
+𝑧
+𝐶 = 𝑁
+𝑐2𝜎 𝑐2𝜎 −
+= 𝑁 ∗ 𝜏2
+(6.4.15)
+
+where 𝜏2 =
+
+Í
+
+𝜎 𝜏2𝜎 =
+
+Í 
+𝜎
+
+𝑛ˆ 2𝜎 −
+
+1
+2
+
+
+
+2
+
+2
+
+𝜎
+
+2
+
+. The hybridisation term can be written as
+𝑉
+
+Õ
+𝑘
+
+√
+†
+𝑐𝑘𝜎
+= 𝑉 𝑁 ∗ 𝑐2†𝜎 = 𝑣𝑐2†𝜎
+
+(6.4.16)
+
+√
+where 𝑣 ≡ 𝑉 𝑁 ∗ . The charge isospins can be written down similarly. Combining these,
+the interaction part can be written as
+
+Õ
+𝑣
+𝑐1†𝜎 𝑐2𝜎 + h.c. + 𝑗 𝑆®1 · 𝑆®2 + 𝑘𝐶®1 · 𝐶®2
+(6.4.17)
+𝜎
+
+with 𝑘 = 𝐾 ∗ 𝑁 ∗ . The total Hamiltonian for the two-site problem is
+
+Õ
+H𝐼𝑅 = 𝜖𝑑 𝑚21 + 𝑣
+𝑐1†𝜎 𝑐2𝜎 + h.c. + 𝑗 𝑆®1 · 𝑆®2 + 𝑘𝐶®1 · 𝐶®2
+𝜎
+
+(6.4.18)
+
+where we have dropped the ∗ on the couplings for brevity and 𝑛ˆ 1↑ − 𝑛ˆ 1↓ = 𝑚1 is the magnetization on the first site. We will use the following notation to represent kets of this
+two-site system: |𝑛1↑ 𝑛1↓ 𝑛2↑ 𝑛2↓i. For example, a state | 1001i represents a ket with an up
+electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total
+number operator 𝑛ˆ ≡ 𝑛ˆ 1 + 𝑛ˆ 2 , so we can analyse the various subspaces corresponding to
+particular values of 𝑛ˆ separately.
+We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as |𝑛1↑ 𝑛1↓ 𝑛2↑ 𝑛2↓i. For example,
+| 1101i = 𝑐1†↑ 𝑐1†↓ 𝑐2†↓ |−i
+|−i is the vacuum state.
+183
+
+(6.4.19)
+
+6.4. EFFECTIVE HAMILTONIAN AND GROUND STATE FOR THE 𝑉 ≠ 0 SYMMETRIC
+PROBLEM
+
+Figure 6.13: Two-site effective problem of fixed point Hamiltonian
+First lets get the trivial cases of 𝑛ˆ = 0, 4 out of the way. The only possible states are
+| 0000i and | 1111i respectively. Both these states are eigenstates because the first one has
+no electron to scatter, and the second one has no vacant state to scatter into. These states
+have energy eigenvalues 14 𝑘
+The subspaces 𝑛ˆ = 1, 3 are each four-dimensional. More precisely speaking, the 𝑛ˆ = 1
+subspace can have the following basis
+(6.4.20)
+
+|↑, 0i , | 0, ↑i , |↓, 0i , | 0, ↓i
+
+However, since the Hamiltonian conserves the total spin (both magnetic and charge), we
+can divide this Hilbert subspace into two smaller subspaces which do not talk to each
+other - one having the states |↑, 0i , | 0, ↑i and hence a total spin magnetization of + 12 , and
+the other having the remaining states and a total spin magnetization of − 12 . The action
+of the Hamiltonian on this subspace is
+i
+h
+†
+2
+H𝐼𝑅 | 1000i = 𝜖𝑑 𝑚1 + 𝑣𝑐2↑ 𝑐1↑ 𝑐1†↑ |−i = 𝜖𝑑 | 1000i + 𝑣 | 0010i
+i
+h
+(6.4.21)
+H𝐼𝑅 | 0010i = 𝜖𝑑 𝑚21 + 𝑣𝑐1†↑ 𝑐2↑ 𝑐2†↑ |−i = 𝑣 | 1000i
+The Hamiltonian in first subspace can be represented by the matrix
+|↑, 0i
+
+© 𝜖𝑑
+­
+𝑣
+«
+
+| 0, ↑i
+
+𝑣 ª
+®
+0
+¬
+
+(6.4.22)
+
+The eigenstates (un-normalised) are
+h
+i
+
+1
+1
+−4𝑣 |↑, 0i + 2 𝜖𝑑 ∓ Δ 𝜖𝑑 , 𝑣 | 0, ↑i , 𝐸±1 = 𝜖𝑑 ± Δ 𝜖𝑑 , 𝑣
+2
+
+2
+
+(6.4.23)
+
+ q
+where Δ 𝜖𝑑 , 𝑣 = 𝜖2𝑑 + 4𝑣2 . The other two eigenstates (corresponding to magnetization − 12
+need not be calculated separately; since the Hamiltonian is invariant under the transformation ↑↔↓, we can do a similar transformation on the eigenkets to get the eigenkets for
+184
+
+Chapter 6. URG of Full Generalized SIAM
+the other subspace.
+
+h
+i
+−4𝑣 |↓, 0i + 2 𝜖𝑑 ∓ Δ 𝜖𝑑 , 𝑣 | 0, ↓i
+
+(6.4.24)
+
+with exactly the same eigenvalue.
+
+The 𝑛ˆ = 3 subspace is very similar. We can obtain the basis directly from the 𝑛ˆ = 1
+case by substituting the holes with doubles:
+(6.4.25)
+
+|↑, ↑↓i , |↑↓, ↑i , |↓, ↑↓i , |↑↓, ↓i
+
+Since a double impurity has the same energy as a vacant impurity (because of p-h symmetry, both are zero), the diagonal part corresponding to the first site will not change.
+We can then write down the eigenstates and eigenvalues directly from those of 𝑛ˆ = 1,
+simply by making the transformation | 0i → |↑↓i.
+h
+
+i
+
+
+
+
+
+|↑↓, ↑i 
+
+
+
+−4𝑣 |↑, ↑↓i + 2 𝜖𝑑 ∓ Δ 𝜖𝑑 , 𝑣
+h
+i
+−4𝑣 |↓, ↑↓i + 2 𝜖𝑑 ∓ Δ 𝜖𝑑 , 𝑣 |↑↓, ↓i
+
+
+
+
+
+
+
+
+1
+
+1
+
+2
+
+2
+
+𝐸 = 𝜖𝑑 ± Δ 𝜖𝑑 , 𝑣
+
+
+
+(6.4.26)
+
+The most interesting subspace is 𝑛ˆ = 2. This is six dimensional. Since the Hamiltonian
+conserves both the total spins 𝑆2 and 𝐶 2 as well the z-components 𝑆 𝑧 = 𝑆1𝑧 + 𝑆2𝑧 and 𝐶 𝑧 =
+𝐶1𝑧 + 𝐶2𝑧 , it would be prudent to choose our basis with this in mind. The action of the
+hybridisation term on the various states are
+
+
+
+
+†
+† †
+†
+† †
+† †
+†
+†
+𝑣 𝑐1↓ 𝑐2↓ + 𝑐2↑ 𝑐1↑ 𝑐1↑ 𝑐2↓ |−i = 𝑣 𝑐1↑ 𝑐1↓ 𝑐2↓ 𝑐2↓ + 𝑐2↑ 𝑐2↓ 𝑐1↑ 𝑐1↑ |−i = 𝑣 |↑↓, 0i + 𝑣 | 0, ↑↓i
+
+
+
+
+𝑣 𝑐1†↑ 𝑐2↑ + 𝑐2†↓ 𝑐1↓ 𝑐1†↓ 𝑐2†↑ |−i = 𝑣 −𝑐1†↑ 𝑐1†↓ 𝑐2↑ 𝑐2†↑ − 𝑐2†↑ 𝑐2†↓ 𝑐1↓ 𝑐1†↓ |−i = −𝑣 |↑↓, 0i − 𝑣 | 0, ↑↓i
+
+
+
+
+(6.4.27)
+†
+† †
+†
+† †
+† †
+†
+†
+𝑣 𝑐2↑ 𝑐1↑ + 𝑐2↓ 𝑐1↓ 𝑐1↑ 𝑐1↓ |−i = 𝑣 −𝑐1↓ 𝑐2↑ 𝑐1↑ 𝑐1↑ + 𝑐1↑ 𝑐2↓ 𝑐1↓ 𝑐1↓ |−i = −𝑣 |↓, ↑i + 𝑣 |↑, ↓i
+
+
+
+
+𝑣 𝑐1†↑ 𝑐2↑ + 𝑐1†↓ 𝑐2↓ 𝑐2†↑ 𝑐2†↓ |−i = 𝑣 𝑐1†↑ 𝑐2†↓ 𝑐2↑ 𝑐2†↑ − 𝑐1†↓ 𝑐2†↑ 𝑐2↓ 𝑐2†↓ |−i = 𝑣 |↑, ↓i − 𝑣 |↓, ↑i
+
+
+1
+
+H𝐼𝑅 √
+1
+
+H𝐼𝑅 √
+
+2
+1
+
+2
+
+1
+
+
+
+(6.4.28)
+
+H𝐼𝑅 |↑, ↑i = 𝜖𝑑 + 𝑗 |↑, ↑i
+4
+
+
+1
+H𝐼𝑅 |↓, ↓i = 𝜖𝑑 + 𝑗 |↓, ↓i
+4
+
+
+
+
+1
+1
+|↑, ↓i + |↓, ↑i ↦→ 𝜖𝑑 + 𝑗 √ |↑, ↓i + |↓, ↑i
+
+
+3 1
+|↑↓, 0i − | 0, ↑↓i = − 𝑘 √
+4
+
+4
+
+2
+
+2
+
+|↑↓, 0i − | 0, ↑↓i
+
+(6.4.29)
+(6.4.30)
+
+
+
+(6.4.31)
+
+ 1 1
+
+
+1
+|↑↓, 0i + | 0, ↑↓i = 𝑘 √ |↑↓, 0i + | 0, ↑↓i + 2𝑣 √ |↑, ↓i − |↓, ↑i
+4
+2
+2
+2
+
+
+
+
+
+1
+3
+1
+1
+H𝐼𝑅 √ |↑, ↓i − |↓, ↑i = 𝜖𝑑 − 𝑗 √ |↑, ↓i − |↓, ↑i + 2𝑣 √ |↑↓, 0i + | 0, ↑↓i
+
+H𝐼𝑅 √
+
+2
+
+4
+
+2
+
+2
+
+185
+
+(6.4.32)
+(6.4.33)
+
+6.4. EFFECTIVE HAMILTONIAN AND GROUND STATE FOR THE 𝑉 ≠ 0 SYMMETRIC
+PROBLEM
+The first four states are eigenstates. The last two are not, but they form a two-dimensional
+subspace which can be easily diagonalized. The eigenstates of this subspace are
+
+1
+|↑, ↓i − |↓, ↑i + 𝑐±𝑐 √
+
+1
+
+|±i = 𝑐±𝑠 √
+2
+
+h
+
+2
+
+𝐸± = 𝑣 𝛾 ±
+
+p
+
+𝛾2
+
+i
+
++ 4 + 𝜖𝑑 −
+
+The symbol 𝛾 stands for the quantity
+𝛾=
+
+1
+
+
+
+3
+4
+
+2
+
+𝑗
+
+
+
+1
+
+|↑↓, 0i + | 0, ↑↓i
+
+3 𝑗 + 𝑘 − 𝜖𝑑
+
+2𝑣 4
+
+
+
+
+
+(6.4.34)
+
+(6.4.35)
+
+and the coefficients 𝑐±𝑠,𝑐 for the spin and charge singlets (the superscripts 𝑠, 𝑐 designate
+which singlet the coefficient sticks to) are
+qp
+1
+𝑠
+𝑐± = q p
+𝛾 2 + 4 ∓ 𝛾 = ∓𝑐∓𝑐
+(6.4.36)
+2 𝛾2 + 4
+The ground state is of course 𝐸−2 .
+
+h
+i
+p
+3
+𝐸−2 = 𝑣 𝛾 − 𝛾 2 + 4 + 𝜖𝑑 − 𝑗
+4
+
+(6.4.37)
+
+The probabilities for the spin and charge sectors for the ground state look simpler:
+
+
+
+
+𝑐−𝑠
+
+𝑐−𝑐
+
+2
+
+2
+
+p
+
+1
+
+= p
+
+2 𝛾2 + 4
+p
+1
+
+= p
+
+2 𝛾2 + 4
+
+𝛾2 + 4 + 𝛾
+
+𝛾2
+
++4−𝛾
+
+
+
+
+(6.4.38)
+
+In the first quadrant, we will have 𝐽 ∗ > 𝐾 ∗ . As we increase the system size, 𝐽 ∗ increases,
+which implies 𝑗 − 𝑘 will increase. In the limit of very large 𝑗 − 𝑘, we can write
+𝛾 → ∞ =⇒
+
+
+
+𝑐−𝑠
+
+2
+
+ 2
+→ 1 and 𝑐−𝑐 → 0
+
+(6.4.39)
+
+The spin singlet becomes the all-important piece in this situation. This change is shown
+in fig. 6.14. We have the variation of the probabilities and of 𝛾 for the first quadrant. 𝛾
+ 2
+increases with system size, and so does the spin probability 𝑐−𝑠 . The ground state in
+such a limit becomes purely a singlet:
+1
+
+|Ψi gs ≈ √
+
+2
+
+𝐸gs ≈ 𝜖𝑑 −
+
+|↑, ↓i − |↓, ↑i
+3𝑗
+4
+
+186
+
+
+
+(6.4.40)
+
+Chapter 6. URG of Full Generalized SIAM
+
+Figure 6.14: Left: Variation of the probabilities 𝑐 𝑠
+Variation of 𝛾 with system size.
+
+2
+
+and 𝑐 𝑐
+
+2
+
+with system size. Right:
+
+𝑛ˆ
+
+𝑆𝑧
+
+eigenstate
+
+eigenvalue
+
+0
+
+0
+
+| 0, 0i
+
+1
+𝑘
+4
+
+4
+
+0
+
+| 2, 2i
+
+1
+𝑘
+4
+
+h
+
+1
+2
+
+1
+-
+
+−4𝑣 |↑, 0i + 2 𝜖𝑑
+h
+−4𝑣 |↓, 0i + 2 𝜖𝑑
+h
+−4𝑣 |↑, 2i + 2 𝜖𝑑
+h
+−4𝑣 |↓, 2i + 2 𝜖𝑑
+
+1
+2
+1
+2
+
+3
+-
+
+1
+2
+
+1,-1
+
+∓ Δ 𝜖𝑑 , 𝑣
+∓ Δ 𝜖𝑑 , 𝑣
+∓ Δ 𝜖𝑑 , 𝑣
+∓ Δ 𝜖𝑑 , 𝑣
+
+|↑, ↑i, |↓, ↓i
+
+i
+i
+i
+i
+
+| 0, ↑i
+| 0, ↓i
+| 2, ↑i
+
+0
+
+
+
+𝜖𝑑 + 14 𝑗
+
+| 2, 0i − | 0, 2i
+
+
+
+𝑐±𝑠 √1 |↑, ↓i − |↓, ↑i + 𝑐±𝑐 √1 |↑↓, 0i + | 0, ↑↓i
+2
+
+± 12 Δ 𝜖𝑑 , 𝑣
+
+| 2, ↓i
+
+|↑, ↓i + |↓, ↑i
+2
+
+1
+𝜖
+2 𝑑
+
+2
+
+− 34 𝑘
+h
+i
+p
+𝑣 𝛾 ± 𝛾 2 + 4 + 𝜖𝑑 − 34 𝑗
+
+Table 6.3: Eigenstates for effective two-site Hamiltonian
+187
+
+6.4. EFFECTIVE HAMILTONIAN AND GROUND STATE FOR THE 𝑉 ≠ 0 SYMMETRIC
+PROBLEM
+
+The full list of eigenstates is
+Although 𝐸−2 is the ground state of this two-dimensional subspace, we haven’t yet checked
+what is the true ground state of the full Hilbert space. The eigenstates eq. 6.4.28 through
+6.4.30 are obviously higher than 𝐸−2 , because of the presence of the singlet − 43 𝑗 and the
+negative 𝛾 contribution in 𝐸−2 compared to the positive triplet contribution 41 𝑗 in those
+equations. The only other competitors are the one in eq. 6.4.31 which we call 𝐸 2𝑐 , and the
+low energy eigenstate in eq. 6.4.23, which we call 𝐸−1 . We first shown that 𝐸−1 > 𝐸−2 . The
+difference between 𝐸−2 and 𝐸−1 is
+s
+r
+𝜖2𝑑
+
+
+
+3
+9
+3
+1 2
+2
+1
+2
+(6.4.41)
+𝐸− − 𝐸− = − 𝑗 + 𝑘 − 4𝑣2 +
++
+𝑗 − 𝑘 − 𝜖𝑑 𝑗 − 𝑘 +
+𝜖𝑑 + 𝑣2
+4
+
+4
+
+64
+
+8
+
+4
+
+From the nature of the fixed point phases, we know that
+
+and
+such that
+
+𝐽 ∗ > 𝐾 ∗ =⇒ 𝜖∗𝑑 ≤ 0
+
+(6.4.42)
+
+𝐽 ∗ < 𝐾 ∗ =⇒ 𝜖∗𝑑 ≥ 0
+
+(6.4.43)
+
+
+𝜖𝑑 𝑗 − 𝑘 ≤ 0
+
+(6.4.44)
+
+This result then very easily implies that
+4𝑣2 +
+
+𝜖2𝑑
+4
+
++
+
+9
+64
+
+𝑗−𝑘
+
+2
+
+ 1
+3
+− 𝜖𝑑 𝑗 − 𝑘 > 𝜖2𝑑 + 𝑣2
+8
+
+(6.4.45)
+
+4
+
+and we can apply this inequality to the difference between 𝐸−2 and 𝐸−1 to see that 𝐸−2 is
+greater that 𝐸−1 .
+We now compare 𝐸−2 and 𝐸 2𝑐 :
+2
+
+2
+
+1
+
+Δ𝐸 𝑔 ≡ 𝐸− − 𝐸 𝑐 = 𝜖𝑑 −
+2
+
+3𝑗 + 𝑘
+8
+
++𝑘−
+
+s
+
+4𝑣2 +
+
+
+
+3𝑗 + 𝑘
+8
+
+1
+
+− 𝜖𝑑
+2
+
+2
+
+(6.4.46)
+
+Because of the presence of the large 𝑣 in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is 𝐸−2 . In the third quadrant, the
+large value of 𝑘 will make the difference positive and the true ground state will be the
+charge singlet.
+These conclusions have been checked numerically and shown in fig. 6.15, where we have
+plotted the sign of Δ𝐸 𝑔 as a function of 𝐾0 − 𝐽0 . For positive values of 𝐾0 − 𝐽0 , we are in
+the third quadrant, and the sign of Δ𝐸 𝑔 being +1 implies that 𝐸−2 > 𝐸 2𝑐 , and so the third
+quadrant ground state is the charge singlet (𝐸 2𝑐 ). On the other hand, as 𝐾0 − 𝐽0 becomes
+negative, we move into the first quadrant, and the sign of Δ𝐸 𝑔 also flips, implying that we
+188
+
+

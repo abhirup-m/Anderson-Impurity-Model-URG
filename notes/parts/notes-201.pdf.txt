@@ -1,0 +1,4292 @@
+6.4. EFFECTIVE HAMILTONIAN AND GROUND STATE FOR THE 𝑉 ≠ 0 SYMMETRIC
+PROBLEM
+
+The full list of eigenstates is
+Although 𝐸−2 is the ground state of this two-dimensional subspace, we haven’t yet checked
+what is the true ground state of the full Hilbert space. The eigenstates eq. 6.4.28 through
+6.4.30 are obviously higher than 𝐸−2 , because of the presence of the singlet − 43 𝑗 and the
+negative 𝛾 contribution in 𝐸−2 compared to the positive triplet contribution 41 𝑗 in those
+equations. The only other competitors are the one in eq. 6.4.31 which we call 𝐸 2𝑐 , and the
+low energy eigenstate in eq. 6.4.23, which we call 𝐸−1 . We first shown that 𝐸−1 > 𝐸−2 . The
+difference between 𝐸−2 and 𝐸−1 is
+s
+r
+𝜖2𝑑
+
+
+
+3
+9
+3
+1 2
+2
+1
+2
+(6.4.41)
+𝐸− − 𝐸− = − 𝑗 + 𝑘 − 4𝑣2 +
++
+𝑗 − 𝑘 − 𝜖𝑑 𝑗 − 𝑘 +
+𝜖𝑑 + 𝑣2
+4
+
+4
+
+64
+
+8
+
+4
+
+From the nature of the fixed point phases, we know that
+
+and
+such that
+
+𝐽 ∗ > 𝐾 ∗ =⇒ 𝜖∗𝑑 ≤ 0
+
+(6.4.42)
+
+𝐽 ∗ < 𝐾 ∗ =⇒ 𝜖∗𝑑 ≥ 0
+
+(6.4.43)
+
+
+𝜖𝑑 𝑗 − 𝑘 ≤ 0
+
+(6.4.44)
+
+This result then very easily implies that
+4𝑣2 +
+
+𝜖2𝑑
+4
+
++
+
+9
+64
+
+𝑗−𝑘
+
+2
+
+ 1
+3
+− 𝜖𝑑 𝑗 − 𝑘 > 𝜖2𝑑 + 𝑣2
+8
+
+(6.4.45)
+
+4
+
+and we can apply this inequality to the difference between 𝐸−2 and 𝐸−1 to see that 𝐸−2 is
+greater that 𝐸−1 .
+We now compare 𝐸−2 and 𝐸 2𝑐 :
+2
+
+2
+
+1
+
+Δ𝐸 𝑔 ≡ 𝐸− − 𝐸 𝑐 = 𝜖𝑑 −
+2
+
+3𝑗 + 𝑘
+8
+
++𝑘−
+
+s
+
+4𝑣2 +
+
+
+
+3𝑗 + 𝑘
+8
+
+1
+
+− 𝜖𝑑
+2
+
+2
+
+(6.4.46)
+
+Because of the presence of the large 𝑣 in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is 𝐸−2 . In the third quadrant, the
+large value of 𝑘 will make the difference positive and the true ground state will be the
+charge singlet.
+These conclusions have been checked numerically and shown in fig. 6.15, where we have
+plotted the sign of Δ𝐸 𝑔 as a function of 𝐾0 − 𝐽0 . For positive values of 𝐾0 − 𝐽0 , we are in
+the third quadrant, and the sign of Δ𝐸 𝑔 being +1 implies that 𝐸−2 > 𝐸 2𝑐 , and so the third
+quadrant ground state is the charge singlet (𝐸 2𝑐 ). On the other hand, as 𝐾0 − 𝐽0 becomes
+negative, we move into the first quadrant, and the sign of Δ𝐸 𝑔 also flips, implying that we
+188
+
+Chapter 6. URG of Full Generalized SIAM
+have a transition from the charge singlet to the (mostly) spin-singlet ground state.
+One of the most striking conclusions of this chapter is that the renormalized ground
+state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely
+with spin-sector contributions.
+
+Figure 6.15: Shift in the ground state in going from the first to third quadrant, depicted
+via the switch in sign of Δ𝐸 𝑔 .
+
+189
+
+Chapter 7
+Results and Features of the Low-Energy
+Theory
+7.1
+
+Effective Kondo temperature
+
+We now define an energy scale for the low energy fluctuations:
+
+2𝑁 ∗  ∗
+(7.1.1)
+𝑇𝐾 ≡
+𝐷 − 2𝜔
+𝜋
+The term in brackets, 𝐷∗ − 2𝜔, is the fluctuation energy at the fixed point. The factor
+of 2𝑁 ∗ is inserted to make the Kondo temperature intensive (we will see below that the
+𝑁 ∗ allows it to be written in terms of parameters of the two-site Hamiltonian) - 2𝑁 ∗ is
+the total number of momentum states in the fixed point theory. The factor of 𝜋1 is for
+aesthetic reasons. From the fixed-point condition 𝜔 − 𝐷2 + 𝐽+𝐾
+= 0, the Kondo temperature
+4
+can be written as
+ 1
+
+2𝑁 ∗ 1  ∗
+(7.1.2)
+𝑗+𝑘
+𝑇𝐾 =
+𝐽 + 𝐾∗ =
+𝜋 2
+𝜋
+
+7.2
+
+Magnetic susceptibility
+
+The thermal susceptibility is defined as
+
+   D E !
+2
+2
+𝜒( 𝛽) = 𝛽
+𝑆𝑑𝑧
+− 𝑆𝑑𝑧
+
+(7.2.1)
+
+H 0 (𝐵) = H + 𝐵𝑆𝑑𝑧
+
+(7.2.2)
+
+There is an alternate way of calculating this. We insert a fictitious magnetic field that
+couples only to the impurity site. The Hamiltonian in the presence of this field is
+The susceptibility is then given by
+
+
+
+1  1
+
+1
+𝜕𝑍(𝐵)
+𝜕2 𝑍(𝐵)
+−
+𝜒(𝛽) = lim 
+𝐵→0 𝛽  𝑍(𝐵) 𝜕𝐵2
+𝜕𝐵
+𝑍(𝐵) 2
+
+
+190
+
+! 2
+
+
+
+
+
+
+(7.2.3)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+where 𝑍(𝐵) is the partition function of the Hamiltonian H 0 (𝐵). The following is to prove
+that the RHS of eqs. 7.2.1 and 7.2.3 are the same. We start with 7.2.3. The first derivative
+can be written as
+"
+#
+"
+#
+
+
+
+
+
+
+𝜕𝑍(𝐵)
+𝜕
+= Trace
+exp −𝛽 H + 𝐵𝑆𝑑𝑧
+= Trace −𝛽𝑆𝑑𝑧 exp −𝛽 H + 𝐵𝑆𝑑𝑧
+(7.2.4)
+𝜕𝐵
+𝜕𝐵
+which means the first term becomes
+
+lim −
+
+𝐵→0
+
+1
+
+𝑍(𝐵) 2
+
+𝜕𝑍(𝐵)
+𝜕𝐵
+
+!2
+
+2
+
+©
+h
+iª
+D E2
+
+1
+­
+®
+𝑧
+2
+(7.2.5)
+h
+i
+= − ­𝛽
+Trace
+𝑆
+exp
+−𝛽H
+=
+−𝛽
+𝑆𝑑𝑧
+®
+𝑑
+­ Trace exp −𝛽H
+®
+«
+¬
+
+The second derivative is
+"
+"
+#
+#
+
+
+
+
+ 2
+
+
+𝜕2 𝑍(𝐵)
+𝜕
+= Trace −𝛽𝑆𝑑𝑧
+exp −𝛽 H + 𝐵𝑆𝑑𝑧
+= Trace 𝛽 2 𝑆𝑑𝑧 exp −𝛽 H + 𝐵𝑆𝑑𝑧
+(7.2.6)
+𝜕𝐵
+𝜕𝐵2
+so the second term becomes
+
+
+  
+ 
+2
+2
+
+𝜕2 𝑍(𝐵)
+1
+𝑧
+𝑧
+2
+2
+h
+i
+𝑆
+𝑆
+exp
+−𝛽H
+=
+𝛽
+Trace
+lim
+=
+𝛽
+
+𝑑
+𝑑
+𝐵→0 𝑍(𝐵) 𝜕𝐵2
+Trace exp −𝛽H
+1
+
+The full thing becomes
+
+
+1  1
+
+𝜕2 𝑍(𝐵)
+1
+𝜕𝑍(𝐵)
+lim 
+−
+𝐵→0 𝛽  𝑍(𝐵) 𝜕𝐵2
+𝜕𝐵
+𝑍(𝐵) 2
+
+
+! 2
+   !
+D E2
+2
+ 1
+𝑧
+2
+2
+=
+𝑆𝑑𝑧
+ 𝛽 −𝛽 𝑆𝑑 + 𝛽
+
+
+   D E !
+2
+2
+𝑆𝑑𝑧
+=𝛽
+− 𝑆𝑑𝑧
+
+This completes the proof.
+
+191
+
+(7.2.7)
+
+(7.2.8)
+
+7.2. MAGNETIC SUSCEPTIBILITY
+
+7.2.1
+
+For 𝑣 = 0
+
+In the presence of a magnetic field coupling term 𝐵𝑆1𝑧 , the eigenvalues become (setting
+𝑣 = 0)
+1
+
+𝑛ˆ = 0, 4 → 𝐸 0 = 𝑘
+4
+
+𝑛ˆ = 1, 3 →
+
+
+
+1
+
+=
+
+ 𝐸±,↑
+
+1
+2
+
+
+
+
+
+
+𝜖𝑑 + 21 𝐵 ± 12 Δ 𝜖𝑑 + 12 𝐵, 𝑣 = 𝜖𝑑 + 21 𝐵, 0
+
+
+
+
+𝜖𝑑 − 12 𝐵 ± 21 Δ 𝜖𝑑 − 21 𝐵, 𝑣 = 𝜖𝑑 − 21 𝐵, 0
+
+1
+1
+
+
+ 𝐸±,↓ = 2
+
+
+(7.2.9)
+
+1
+1
+
+𝑗
++
+𝐵
+𝜖
++
+𝑑
+
+4
+2
+
+
+
+
+𝜖 + 1 𝑗 − 12 𝐵
+
+
+ 𝑑 4
+𝑛ˆ = 2 → 14 𝑘
+
+
+
+− 43 𝑘
+
+
+
+
+
+ 𝜖𝑑 − 41 𝑗 ± 12 Γ
+
+p
+where we defined Γ = 𝐵2 + 𝑗 2 . The eigenvalues in 𝑛ˆ = 2 can be elaborated upon. The
+action of the total Hamiltonian H 0 (with 𝑣 = 0) is
+
+
+1
+1
+(7.2.10)
+|↑, ↑i ↦→ 𝜖𝑑 + 𝑗 + 𝐵 |↑, ↑i
+4
+2
+
+
+1
+1
+|↓, ↓i ↦→ 𝜖𝑑 + 𝑗 − 𝐵 |↓, ↓i
+(7.2.11)
+
+1
+
+√
+
+2
+1
+
+√
+
+
+
+4
+
+1
+
+1
+
+4
+
+2
+3 1
+
+|↑↓, 0i + | 0, ↑↓i ↦→ 𝑘 √
+
+2
+
+|↑↓, 0i + | 0, ↑↓i
+
+
+
+(7.2.12)
+
+
+
+|↑↓, 0i − | 0, ↑↓i →
+↦ − 𝑘 √ |↑↓, 0i − | 0, ↑↓i
+4
+2
+2
+
+
+
+ 1 1
+
+1
+1
+1
+√ |↑, ↓i + |↓, ↑i ↦→ 𝜖𝑑 + 𝑗 √ |↑, ↓i + |↓, ↑i + 𝐵 √ |↑, ↓i − |↓, ↑i
+4
+2
+2
+2
+2
+
+
+
+ 1 1
+
+1
+3
+1
+√ |↑, ↓i − |↓, ↑i ↦→ 𝜖𝑑 − 𝑗 √ |↑, ↓i − |↓, ↑i + 𝐵 √ |↑, ↓i + |↓, ↑i
+4
+
+2
+
+2
+
+2
+
+2
+
+(7.2.13)
+(7.2.14)
+(7.2.15)
+(7.2.16)
+
+The first four states directly give the first four eigenvalues in 𝑛ˆ = 2. The remaining two
+states form the matrix
+©𝜖 + 1 𝑗
+1
+𝐵 ª®
+­ 𝑑 4
+2
+­
+®
+­
+®
+­ 1
+3 ®
+𝐵
+𝜖
+−
+𝑗
+𝑑
+2
+4
+«
+¬
+The eigenvalues satisfy the equation
+
+
+0 = 𝐸 − 𝜖𝑑 +
+
+3
+4
+
+𝑗
+
+
+
+𝐸 − 𝜖𝑑 −
+
+1
+4
+
+
+
+1
+
+2
+
+
+
+𝑗 − 𝐵 = 𝐸 − 𝜖𝑑 −
+4
+
+192
+
+1
+4
+
+𝑗
+
+(7.2.17)
+
+2
+
+
+
++ 𝑗 𝐸 − 𝜖𝑑 −
+
+1
+4
+
+
+
+1
+
+𝑗 − 𝐵2
+4
+
+(7.2.18)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+The solutions are
+𝐸 = 𝜖𝑑 +
+
+1
+4
+
+𝑗+
+
+−𝑗 ±
+
+which are the final two eigenvalues.
+The partition function is
+
+
+(
+
+
+
+p
+
+𝑗 2 + 𝐵2
+
+= 𝜖𝑑 −
+
+2
+
+)
+
+
+
+1
+4
+
+(
+
+1
+
+(7.2.19)
+
+𝑗± Γ
+2
+
+
+
+1
+1
+©
+©
+ª
++ 2 ­exp −𝛽 𝜖𝑑 + 𝐵 + 𝑒0 ® + 2 ­exp −𝛽 𝜖𝑑 − 𝐵
+4
+2
+2
+«
+« )
+¬
+(
+)
+(
+
+
+
+
+1
+1
+1
+1
++ exp −𝛽 𝜖𝑑 + 𝑗 + 𝐵 + exp −𝛽 𝜖𝑑 + 𝑗 − 𝐵
+
+𝑍(𝐵) = 2 exp −𝛽
+
+
+
++ exp −𝛽
+
+𝑘
+4
+
+𝑘
+
+
+
+
+
+4
+
++ exp 𝛽
+
+= 4 + 3 exp −𝛽
++ 2𝑒
+
+
+
+𝑗
+
+−𝛽 𝜖𝑑 − 4
+
+
+
+
+
++ 2𝑒
+
+𝑗
+
+−𝛽 𝜖𝑑 − 4
+
+
+
+𝑘
+4
+
+
+
+3𝑘
+4
+
+𝑘
+4
+
+
+
+
+
+
+
+
+
++ exp 𝛽
+
+1
+cosh 𝛽 Γ
+2
+
+
+
+(
+
+4
+
+
+
++ exp −𝛽 𝜖𝑑 −
+
++ exp 𝛽
+
+1
+cosh 𝛽 Γ
+2
+
+= 4 + 3 exp −𝛽
+
+
+
+
+2
+
+3𝑘
+4
+
+3𝑘
+4
+
+
+
+
+1
+4
+
+2
+
+1
+
+𝑗+ Γ
+2
+
++ 4𝑒−𝛽𝜖𝑑 cosh 𝛽
+"
+
++ 4𝑒
+
+−𝛽𝜖𝑑
+
++ 2𝑒
+
+𝐵
+2
+
+)
+
++ 2𝑒
+
+(
+
+
+
+)
+
++ exp −𝛽 𝜖𝑑 −
+
+
+𝑗
+
+−𝛽 𝜖𝑑 + 4
+
+#
+
+𝑗
+−𝛽 𝜖𝑑 + 4
+
+
+
+
+
+cosh 𝛽
+
+cosh 𝛽
+
+𝐵
+2
+
+ª
++ 𝑒0 ®
+¬
+1
+4
+
+1
+
+𝑗− Γ
+2
+
+𝐵
+
+
+
+Taking the limit of 𝐵 → 0 gives
+
+
+
+
+ 
+
+
+
+
+𝑗
+𝑗
+𝑘
+3𝑘
+𝑗
+−𝛽 𝜖𝑑 + 4
+−𝛽 𝜖𝑑 − 4
+−𝛽𝜖𝑑
+𝑍| 𝐵=0 = 4 + 3 exp −𝛽
++ exp 𝛽
++ 4𝑒
++ 2𝑒
++ 2𝑒
+cosh 𝛽
+4
+
+𝑍 | 𝐵=0 = 0
+"
+
+𝑍00 | 𝐵=0 = 4𝑒−𝛽𝜖𝑑 + 2𝑒
+
+
+
+4
+
+𝑗
+
+−𝛽 𝜖𝑑 + 4
+
+#
+
+ 2
+𝛽
+2
+
++𝑒
+
+(7.2.20)
+
+2
+
+We can now compute the derivatives.
+"
+
+
+
+
+
+#
+
+
+𝑗
+𝑗
+𝜕𝑍
+𝛽
+𝐵
+1
+𝜕Γ
+−𝛽 𝜖𝑑 + 4
+−𝛽 𝜖𝑑 − 4 1
+0
+−𝛽𝜖𝑑
+𝑍 ≡
+= 4𝑒
++ 2𝑒
+sinh 𝛽
+𝛽 sinh 𝛽Γ
++ 2𝑒
+𝜕𝐵
+2
+2
+2
+2
+𝜕𝐵
+"
+#
+
+
+
+
+
+
+
+
+𝑗
+𝑗
+𝛽
+𝐵
+1
+𝐵
+−𝛽 𝜖𝑑 + 4
+−𝛽 𝜖𝑑 − 4
+−𝛽𝜖𝑑
+= 4𝑒
++ 2𝑒
+sinh 𝛽
++𝑒
+𝛽 sinh 𝛽Γ
+2
+2
+2
+Γ
+"
+#
+
+
+
+  2
+𝑗
+𝜕2 𝑍
+𝛽
+𝐵
+−𝛽 𝜖𝑑 + 4
+00
+−𝛽𝜖𝑑
++ 2𝑒
+cosh 𝛽
+𝑍 ≡ 2 = 4𝑒
+2
+2
+𝜕𝐵
+"
+
+
+ 2
+
+#
+
+
+
+𝑗
+1
+1
+𝐵
+𝐵 𝐵 1
+1
+−𝛽 𝜖𝑑 − 4
+𝛽 cosh 𝛽Γ × 𝛽
++𝑒
++ sinh 𝛽Γ − 2 × +
+2
+2
+Γ
+2
+Γ Γ
+Γ
+
+0
+
+)
+
+(7.2.21)
+
+2
+
+
+
+𝑗
+
+−𝛽 𝜖𝑑 − 4
+
+
+
+
+
+𝛽 sinh 𝛽
+
+193
+
+
+
+𝑗 1
+2 𝑗
+
+(7.2.22)
+
+7.2. MAGNETIC SUSCEPTIBILITY
+The susceptibility is thus
+"
+𝜒( 𝛽) =
+
+4𝑒−𝛽𝜖𝑑
+
+1
+
+𝛽
+
+n
+
+𝑘
+
+o
+
++ 2𝑒
+
+4 + 3 exp −𝛽 4 + exp
+
+n
+
+=
+
+"
+
+2𝑒−𝛽𝜖𝑑 + 𝑒
+
+𝑘
+
+o
+
+4 + 3 exp −𝛽 4 + exp
+
+n
+
+
+#
+𝑗
+−𝛽 𝜖𝑑 + 4
+
+n
+
+𝛽 34𝑘
+
+
+o
+
+𝑗
+
+−𝛽 𝜖𝑑 + 4
+
+𝛽 34𝑘
+
+o
+
++
+
++
+#
+
+ 2
+𝛽
+2
+
+4𝑒−𝛽𝜖𝑑
+1
+𝛽
+2
+
+𝜒| 𝛽→∞ = lim
+
+𝛽→∞
+
+exp
+
+n
+
+𝑒
+
+
+
+𝑗
+−𝛽 𝜖𝑑 − 4
+
+𝛽 34𝑘
+
+o
+
++ 2𝑒
+
+
+
+𝑗
+
+sinh 𝛽 2
+
+
+𝑗
+
+−𝛽 𝜖𝑑 − 4
+
+
+
+
+
++𝑒
+
++ 2𝑒
+
+2
+
+𝛽𝑗
+
+
+
+𝑗
+
+=
+
+
+
++
+
+16
+
+1
+2
+
++ 2𝑒
+
+
+𝑗
+
+sinh 𝛽 2
+
+
+
+𝑗
+−𝛽 𝜖𝑑 + 4
+
+3
+2
+
+ 
+𝛽 sinh 𝛽 2𝑗
+
+
+
+𝑗
+−𝛽 𝜖𝑑 + 4
+
+−𝛽 𝜖𝑑 − 4
+
+1
+
+𝑗
+
+
+
++ 2𝑒
+
+4𝑒−𝛽𝜖𝑑
+
+At high temperatures, we can write
+ 
+
+1 1
+4
++
+2
++
+lim
+sinh
+𝛽 2𝑗
+𝛽→
+0
+4
+2
+𝜒
+
+
+| 𝛽→0 =
+𝛽
+4+3+1+ 4+2 +2
+At low temperatures,
+
++𝑒
+
+
+
+𝑗
+−𝛽 𝜖𝑑 − 4
+
+=
+
+1
+
+lim
+ = 2 𝑗 𝛽→∞
+𝑗
+
+cosh 𝛽 2
+
++ 2𝑒
+
+1
+8
+
+𝑗
+
+
+
+𝑗
+−𝛽 𝜖𝑑 − 4
+
+
+
+
+
+lim
+
+𝑗
+
+cosh 𝛽 2
+
+1
+
+
+
+(7.2.23)
+
+𝑗
+
+
+
+𝑗
+−𝛽 𝜖𝑑 − 4
+
+
+
+1
+
+𝑥→0
+
+
+
+𝑗
+
+cosh 𝛽 2
+
+sinh 𝑥
+
+𝑥
+
+=1
+
+1
+
+ 
+exp 𝛽 34𝑘 + 𝜖𝑑 −
+
+3𝑗
+4
+
+
+
+
+
+
+
+(7.2.24)
+
+(7.2.25)
++1
+
+There we used sinh 𝑥 ≈ cosh 𝑥 ≈ 12 𝑒𝑥 for 𝑥 → ∞. The exponential will take the following
+limiting values:
+
+
+( 
+
+∞, if 34𝑘 + 𝜖𝑑 − 34𝑗 > 0
+)
+
+
+
+3𝑘
+3𝑗
+exp 𝛽
+(7.2.26)
++ 𝜖𝑑 −
+→ 1,
+if 34𝑘 + 𝜖𝑑 − 34𝑗 = 0
+
+4
+4
+
+3
+𝑗
+3
+𝑘
+
+if 4 + 𝜖𝑑 − 4 < 0
+ 0,
+
+which means
+
+3𝑗
+
+( 
+
+
+ −1
+0, if 34𝑘 + 𝜖𝑑 − 4 > 0
+)
+
+
+
+
+
+
+
+exp 𝛽 3𝑘 + 𝜖𝑑 − 3 𝑗 + 1 → 1 , if 3𝑘 + 𝜖𝑑 − 3 𝑗 = 0 = Θ 3 𝑗 − 3𝑘 − 𝜖𝑑
+(7.2.27)
+
+
+2
+4
+4
+
+4
+4
+4
+4
+
+
+
+3
+𝑗
+3
+𝑘
+
+ 1, if 4 + 𝜖𝑑 − 4 < 0
+
+
+
+where the theta function (Heaviside function) is defined as
+
+
+
+1,
+
+
+
+Θ(𝑥) = 12 ,
+
+
+
+ 0,
+
+
+if 𝑥 > 0
+if 𝑥 = 0
+if 𝑥 < 0
+
+The thermal susceptibility at high temperatures is thus
+
+
+1
+3 𝑗 3𝑘
+𝜒| 𝛽→∞ = Θ
+−
+− 𝜖𝑑
+2𝑗
+4
+4
+194
+
+(7.2.28)
+
+(7.2.29)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+If we are in the first quadrant, then the fixed point values are such that
+so the theta function will evaluate to 1, and we can write
+𝜒| 𝛽→∞ =
+
+3𝑘
+4
+
++ 𝜖𝑑 −
+
+1
+
+3𝑗
+4
+
+< 0,
+
+(7.2.30)
+
+2𝑗
+
+For sufficiently large values of 𝑗 compared to 𝑘, we can also approximate the Kondo
+temperature 𝑇𝐾 as 𝑇𝐾 ≈ 𝜋𝑗 . Then, the zero temperature value of 𝜒 deep in the first quadrant
+is
+ −1
+(7.2.31)
+𝜒(𝑇 = 0) ≈ 2𝜋𝑇𝐾
+
+This is in accordance with the results obtained from Bethe ansatz in [38].
+On the other hand, in the third quadrant, we have
+𝜒| 𝛽→∞ = 0
+
+3𝑘
+4
+
++ 𝜖𝑑 −
+
+3𝑗
+4
+
+> 0, and Θ gives
+(7.2.32)
+
+Figure 7.1: Variation of 𝜒 × 𝑇 over six decades of temperature. The low temperature
+behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at
+high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.
+
+7.3
+
+Charge Susceptibility
+
+We can also calculate the impurity contribution to the charge susceptibility of the system
+in a very similar fashion. We insert a magnetic field that couples to the impurity charge
+195
+
+7.3. CHARGE SUSCEPTIBILITY
+
+Figure 7.2: Variation of 𝑇𝑘 × 𝜒
+
+ −1
+
+with temperature.
+
+Figure 7.3: Variation of 𝜒 against temperature. It saturates to a value close to 2𝜋𝑇𝐾
+196
+
+ −1
+
+Chapter 7. Results and Features of the Low-Energy Theory
+isospin:
+
+(7.3.1)
+
+H 0 (𝐵) = H + 𝐵𝐶𝑑𝑧
+
+We again work in the simpler case of 𝑣 = 0. The energy eigenvalues for this Hamiltonian
+are
+1
+𝐵
+𝑛ˆ = 0 → 𝑘 −
+4
+1
+
+𝐵
+
+2
+
+4
+
+2
+
+𝑛ˆ = 4 → 𝑘 +
+
+
+
+ 𝜖𝑑 − 1 𝐵, 0
+
+2
+𝑛ˆ = 1, 3 →
+1
+(7.3.2)
+
+𝜖
++
+ 𝑑 2 𝐵, 0
+
+o
+
+
+1
+
+
+𝜖
++
+𝑗
+×3
+
+ 𝑑 4
+
+𝑛ˆ = 2 → 𝜖𝑑 − 3 𝑗
+4
+
+
+
+1
+1
+
+𝜖
+−
+ 𝑑 4𝑘 ± 2Γ
+
+√
+2
+2
+where Γ ≡ 𝑘 + 𝐵 . We will again use eq. 7.2.3 to calculate the susceptibility. The partition function and its derivatives are
+
+
+
+
+
+
+𝑗
+𝑗
+𝑘
+−𝛽 𝜖𝑑 + 4
+𝛽 3 4 −𝜖𝑑
+𝛽 𝑘4 −𝜖𝑑
+−𝛽 𝑘4
+−𝛽𝜖𝑑
+lim 𝑍 = 2𝑒
++ 4 + 4𝑒
++ 3𝑒
++𝑒
++ 2𝑒
+cosh 𝛽
+2
+
+𝐵→0
+
+𝜕𝑍
+lim
+=0
+𝐵→0 𝜕𝐵
+
+
+
+
+𝜕2 𝑍 𝛽 2 −𝛽 𝑘
+𝛽 𝛽 𝑘4 −𝜖𝑑
+𝑘
+−𝛽𝜖
+𝑑
+lim
+=
++ 𝑒
+𝑒 4 + 2𝑒
+sinh 𝛽
+2
+𝐵→0 𝜕𝐵
+2
+𝑘
+2
+
+The charge susceptibility is thus
+𝜒𝑐 =
+
+𝛽2
+
+1
+
+𝛽
+
+2
+
+𝑘
+
+h
+
+𝑘
+𝑒−𝛽 4
+
++
+
+2𝑒−𝛽𝜖𝑑
+
+2𝑒−𝛽 4 + 4 + 4𝑒−𝛽𝜖𝑑 + 3𝑒
+
+i
+
+
+
+𝑗
+−𝛽 𝜖𝑑 + 4
+
++
+
+
+
+𝑘
+𝛽 𝛽 4 −𝜖𝑑
+𝑘𝑒
+
+
+𝑗
+𝛽 3 4 −𝜖𝑑
+
++𝑒
+
+(7.3.3)
+
+sinh 𝛽 𝑘2
+
++ 2𝑒
+
+𝛽
+
+
+
+An important result that we will use later is the value at 𝑇 = 0.
+𝜒𝑐 (𝑇 = 0) =
+
+1
+
+1
+
+lim
+
+2𝑘 𝛽→∞ 1 + 𝑒 ( 𝑗−𝑘 )
+3𝛽
+4
+
+𝑘
+
+−𝜖𝑑
+4
+
+
+
+(7.3.4)
+cosh 𝛽 𝑘2
+
+(7.3.5)
+
+There we used the observation that near the fixed point, 𝜖𝑑 is either close to zero or large
+positive such that 𝑒−𝛽𝜖𝑑 does not affect the value of 𝜒𝑐 at 𝑇 = 0. In the Kondo regime of the
+SIAM ( 𝑗  𝑘), the denominator diverges and the charge susceptibility vanishes at 𝑇 = 0.
+𝜒𝑐 (𝑇 = 0)
+
+(7.3.6)
+
+=0
+𝑗𝑘
+
+The charge susceptibility at large temperatures becomes
+
+1
+𝜒𝑐 × 𝑇 (𝑇 → ∞) =
+8
+
+197
+
+(7.3.7)
+
+7.3. CHARGE SUSCEPTIBILITY
+
+Figure 7.4: Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo
+regime (𝐽 > 𝐾).
+
+Figure 7.5: Behavior of 𝜒𝑐 ×𝑇 for the charge-Kondo regime. It is qualitatively very similar
+to the behavior of the magnetic susceptibility in the spin-Kondo regime.
+198
+
+Chapter 7. Results and Features of the Low-Energy Theory
+
+7.4
+
+Specific heat
+
+The specific heat is calculated by diagonalizing
+the fixed point Hamiltonian, numeri
+cally. The obtained spectrum is denoted by E𝑖 . The total average energy of the impurity+cloud at temperature 𝑇 is then
+E =
+where 𝑍 =
+
+Í
+
+𝑖
+
+1Õ
+
+𝑍
+
+𝑖
+
+E𝑖 𝑒−𝛽E𝑖
+
+(7.4.1)
+
+𝑒−𝛽𝐸𝑖 is the partition function. The specific heat of this system is thus
+𝐶𝑣 =
+
+𝜕 E
+𝜕𝑇
+
+=−
+
+1
+
+𝑘𝐵
+
+𝑇2
+
+𝜕 E
+𝜕𝛽
+
+
+2
+
+
+1  1 Õ 2 −𝛽E𝑖 © 1 Õ
+ª
+−𝛽E𝑖 
+=
+E
+𝑒
+E
+𝑒
+−
+­
+®
+
+
+𝑖
+
+𝑍 𝑖
+𝑘 𝐵𝑇 2  𝑍 𝑖 𝑖
+
+
+«
+¬
+
+
+
+(7.4.2)
+
+n o
+In the absence of impurity, the eigenvalues of the Hamiltonian are E𝑖0 with a partition
+Í
+0
+function 𝑍 0 = 𝑖 𝑒−𝛽𝐸𝑖 , so the bath specific heat is
+
+2
+1 Õ
+
+Õ
+0
+0ª 
+1
+©
+
+2 −𝛽E𝑖
+0 −𝛽E𝑖
+𝐶𝑣0 =
+E
+𝑒
+−
+E
+𝑒
+­
+®
+
+
+
+𝑍0 𝑖 𝑖
+𝑘 𝐵𝑇 2  𝑍 0 𝑖 𝑖
+
+
+«
+¬
+
+
+1
+
+(7.4.3)
+
+The impurity specific heat is the difference.
+imp
+
+𝐶𝑣
+
+= 𝐶𝑣 − 𝐶𝑣0
+
+(7.4.4)
+
+These values were calculated numerically and plotted against temperature in fig. 7.6.
+
+7.5
+
+Impurity Spectral function
+
+In this section we will obtain the impurity spectral function, which is defined in terms
+of the impurity Green’s function as
+h
+i
+1
+𝜎
+(7.5.1)
+(𝜔)
+A (𝜔) = − Im 𝐺𝑑𝑑
+𝜋
+
+The impurity retarded Green’s function (assuming the Hamiltonian to be time-independent,
+which it is) is defined as
+n
+o
+†
+𝜎
+𝐺𝑑𝑑 (𝑡) = −𝑖𝜃(𝑡) 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+(7.5.2)
+199
+
+7.5. IMPURITY SPECTRAL FUNCTION
+
+Figure 7.6: Impurity specific heat
+where the average hi is over a canonical ensemble at temperature 𝑇 . What follows is a
+standard calculation where we write the Green’s function in the Lehmann representation. We will write the ensemble average in terms of the exact eigenstates of the fixed
+point Hamiltonian:
+𝐻 ∗ |𝑛i = 𝐸𝑛∗ |𝑛i
+D E 1Õ
+∗
+(7.5.3)
+h𝑛| 𝑂ˆ |𝑛i 𝑒−𝛽𝐸𝑛
+𝑂ˆ ≡
+𝑍 𝑛
+
+Í
+∗
+where 𝑍 = 𝑛 𝑒−𝛽𝐸𝑛 is the fixed point partition function and |𝑛i is the set of eigenfunctions of the fixed point Hamiltonian. We can therefore write
+n
+o
+†
+𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+o
+n
+Õ
+†
+|𝑚i
+=
+𝑒−𝛽𝐸𝑚 h𝑚| 𝑐𝑑𝜎 (𝑡), 𝑐𝑑𝜎
+𝑚
+
+=
+
+Õ
+
+
+
+†
+†
+𝑒−𝛽𝐸𝑚 𝑒𝑖 ( 𝐸𝑚 −𝐸𝑛 ) 𝑡 h𝑚| 𝑐𝑑𝜎 |𝑛i h𝑛| 𝑐𝑑𝜎
+|𝑚i + 𝑒𝑖 ( 𝐸𝑛 −𝐸𝑚 ) 𝑡 h𝑚| 𝑐𝑑𝜎
+|𝑛i h𝑛| 𝑐𝑑𝜎 |𝑚i
+
+Õ
+𝑚,𝑛
+
+=
+
+Õ
+𝑚,𝑛
+
+=
+
+
+
+𝑒
+
+𝑚,𝑛
+
+=
+
+
+
+Õ
+
+𝑚,𝑛
+
+−𝛽𝐸𝑚
+
+h𝑚| 𝑐𝑑𝜎 (𝑡) |𝑛i h𝑛|
+
+†
+𝑐𝑑𝜎
+
++
+
+†
+𝑐𝑑𝜎
+
+|𝑛i h𝑛| 𝑐𝑑𝜎 (𝑡) |𝑚i
+
+ ∗
+
+∗
+∗
+∗
+†
+†
+𝑒−𝛽𝐸𝑚 h𝑚| 𝑒𝑖𝐻 𝑡 𝑐𝑑𝜎 𝑒−𝑖𝐻 𝑡 |𝑛i h𝑛| 𝑐𝑑𝜎
++ 𝑐𝑑𝜎
+|𝑛i h𝑛| 𝑒𝑖𝐻 𝑡 𝑐𝑑𝜎 𝑒−𝑖𝐻 𝑡 |𝑚i
+
+𝑒
+
+𝑖 ( 𝐸𝑚 −𝐸𝑛 ) 𝑡
+
+|| h𝑚| 𝑐𝑑𝜎 |𝑛i ||
+
+2
+
+
+
+𝑒
+
+−𝛽𝐸𝑚
+
++𝑒
+
+−𝛽𝐸𝑛
+
+
+
+Õ
+
+
+
+
+
+|𝑛i
+h𝑛|
+=
+1
+
+
+ 𝑛
+
+
+
+
+(7.5.4)
+The time-domain impurity Green’s function can thus be written as (this is the so-called
+Lehmann representation)
+
+
+Õ
+𝜎
+𝐺𝑑𝑑
+= −𝑖𝜃(𝑡)
+𝑒𝑖 ( 𝐸𝑚 −𝐸𝑛 ) 𝑡 || h𝑚| 𝑐𝑑𝜎 |𝑛i || 2 𝑒−𝛽𝐸𝑚 + 𝑒−𝛽𝐸𝑛
+(7.5.5)
+𝑚,𝑛
+
+200
+
+Chapter 7. Results and Features of the Low-Energy Theory
+We are interested in the frequency domain form.
+∫ ∞
+𝜎
+𝜎
+𝐺𝑑𝑑 (𝜔) =
+𝑑𝑡𝑒𝑖𝜔𝑡 𝐺𝑑𝑑
+(𝑡)
+Õ
+
+−∞
+
+=
+
+𝑚,𝑛
+
+|| h𝑚| 𝑐𝑑𝜎 |𝑛i ||
+
+2
+
+
+
+𝑒
+
+−𝛽𝐸𝑚
+
++𝑒
+
+−𝛽𝐸𝑛
+
+
+
+−𝑖
+
+
+
+∫
+
+∞
+
+−∞
+
+𝑑𝑡𝜃(𝑡)𝑒𝑖 ( 𝜔+𝐸𝑚 −𝐸𝑛 ) 𝑡
+
+(7.5.6)
+
+To evaluate the time-integral, we will use the integral representation of the Heaviside
+function:
+∫ ∞
+1
+1
+𝜃(𝑡) =
+lim+
+𝑒𝑖𝑥𝑡 𝑑𝑥
+(7.5.7)
+2𝜋𝑖 𝜂→0 −∞ 𝑥 − 𝑖𝜂
+𝜎 (𝜔) becomes
+With this definition, the integral in 𝐺𝑑𝑑
+
+−𝑖
+
+
+
+∫
+
+∞
+
+−∞
+
+𝑑𝑡𝜃(𝑡)𝑒
+
+𝑖 ( 𝜔+𝐸𝑚 −𝐸𝑛 ) 𝑡
+
+∫ ∞
+∫ ∞
+ 1
+1
+= −𝑖
+lim+
+𝑑𝑥
+𝑑𝑡𝑒𝑖 ( 𝜔+𝐸𝑚 −𝐸𝑛 +𝑥 ) 𝑡
+𝜂→
+0
+2𝜋𝑖
+𝑥 − 𝑖𝜂 −∞
+∫−∞∞
+ 1
+
+1
+= −𝑖
+lim+
+𝑑𝑥
+2𝜋𝛿 𝜔 + 𝐸 𝑚 − 𝐸 𝑛 + 𝑥
+2𝜋𝑖 𝜂→0 −∞
+𝑥 − 𝑖𝜂
+1
+−1
+lim
+= −𝑖
+𝑖 𝜂→0+ 𝜔 + 𝐸𝑚 − 𝐸𝑛 − 𝑖𝜂
+=
+
+1
+
+𝜔 + 𝐸𝑚 − 𝐸𝑛
+
+The frequency-domain Green’s function is thus
+𝜎
+𝐺𝑑𝑑
+(𝜔)
+
+=
+
+Õ
+𝑚,𝑛
+
+(7.5.8)
+
+|| h𝑚| 𝑐𝑑𝜎 |𝑛i ||
+
+2
+
+
+
+𝑒
+
+−𝛽𝐸𝑚
+
++𝑒
+
+−𝛽𝐸𝑛
+
+
+
+1
+
+(7.5.9)
+
+𝜔 + 𝐸𝑚 − 𝐸𝑛
+
+The zero temperature Green’s function is obtained by taking the limit of 𝛽 𝑡𝑜∞:
+𝜎
+𝐺𝑑𝑑
+(𝜔, 𝛽 → ∞) =
+
+=
+
+Õ
+
+|| h𝑚| 𝑐𝑑𝜎 |𝑛i || 2 𝛿(𝐸𝑚 ) + 𝛿(𝐸𝑛 )
+
+Õ
+𝑚,𝑛
+
+𝑚,0
+
+|| h0 | 𝑐𝑑𝜎 |𝑛i ||
+
+2
+
+1
+
+𝜔 − 𝐸𝑛
+
+
+
+1
+
+𝜔 + 𝐸𝑚 − 𝐸𝑛
+
++ || h𝑚| 𝑐𝑑𝜎 | 0i ||
+
+2
+
+1
+
+𝜔 + 𝐸𝑚
+
+
+
+(7.5.10)
+
+The label 0 sums over all states with zero energy eigenvalue. The spectral function is
+the imaginary part of this Green’s function. To extract the imaginary part, we insert an
+infinitesimal imaginary part in the denominator:
+"
+#
+Õ
+1
+1
+𝜎
+𝐺𝑑𝑑
+(𝜔, 𝑇 = 0, 𝜂) = lim−
+|| h0 | 𝑐𝑑𝜎 |𝑛i || 2
++ || h𝑚| 𝑐𝑑𝜎 | 0i || 2
+(7.5.11)
+𝜂→0
+𝜔 − 𝐸𝑛 + 𝑖𝜂
+𝜔 + 𝐸𝑚 + 𝑖𝜂
+𝑚,0
+
+201
+
+7.5. IMPURITY SPECTRAL FUNCTION
+The spectral function can then be written as
+h
+i
+1
+𝜎
+A (𝜔) = − Im 𝐺𝑑𝑑 (𝜔)
+𝜋
+
+
+
+
+Õ©
+−𝑖𝜂
+−𝑖𝜂
+1
+ª
+
+
+2
+2
++ || h𝑚| 𝑐𝑑𝜎 | 0i ||
+= − Im  lim−
+­ || h0 | 𝑐𝑑𝜎 |𝑛i ||
+®
+
+
+2
+2
+𝜂→0
+𝜋
+𝜔 − 𝐸 𝑛 + 𝜂2
+𝜔 + 𝐸𝑚 + 𝜂2 
+𝑚,0 «
+
+¬
+
+i
+h
+Õ
+
+
+1
+=
+|| h0 | 𝑐𝑑𝜎 |𝑛i || 2 𝜋𝛿 𝜔 − 𝐸𝑛 + || h𝑚| 𝑐𝑑𝜎 | 0i || 2 𝜋𝛿 𝜔 + 𝐸𝑚
+𝜋 𝑚,0
+Õh
+
+i
+2
+2
+=
+|| h0 | 𝑐𝑑𝜎 |𝑛i || 𝛿 𝜔 − 𝐸𝑛 + || h𝑚| 𝑐𝑑𝜎 | 0i || 𝛿 𝜔 + 𝐸𝑚
+𝑚,0
+
+(7.5.12)
+Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In
+practice, we get a continuous distribution. To compare with experiment, we need to
+convert the discrete sum into a continuous function. Following [39], we replace the deltafunctions by Gaussian functions:
+𝛿(𝜔 − 𝐸𝑛 ) →
+
+1
+
+1
+
+√ 𝑒− 𝑤 ( 𝜔−𝐸𝑛 )
+𝑤 𝜋
+
+2
+
+(7.5.13)
+
+where the width 𝑤 will be set to the fixed-point bandwidth: 𝑤 = 𝐷∗ . So the function that
+we will numerically compute and plot is
+"
+#
+Õ
+2
+2
+1
+1
+1
+1
+A (𝜔) =
+|| h0 | 𝑐𝑑𝜎 |𝑛i || 2 √ 𝑒− 𝑤 ( 𝜔−𝐸𝑛 ) + || h𝑚| 𝑐𝑑𝜎 | 0i || 2 √ 𝑒− 𝑤 ( 𝜔+𝐸𝑚 )
+(7.5.14)
+𝑤
+𝜋
+𝑤
+𝜋
+𝑚,0
+
+The fixed-point Hamiltonian 𝐻 ∗ is diagonalized numerically to obtain 𝐸𝑚 , |𝑚i . The spectral function is plotted for three sets of bare values in fig. 7.7. For low values of 𝑈, the
+profile is that of a single peak at zero frequency. As 𝑈 increases, shoulder-like structures
+appear on either side of the peak, which finally, at larger 𝑈, develop into two side-peaks.
+The physics of the three peaks can now be looked into. Since the central peak is at zero
+energy, it has to do with excitations that do not cost any energy. There are two such
+excitations: excitations within the spin sector and within the charge sector.
+𝐾𝐶𝑑−
+
+𝐽𝑆𝑑−
+
+|↑i
+
+⇄ |↓i ,
+
+|⇑i
+
+𝐽𝑆𝑑+
+
+⇄
+
+𝐾𝐶𝑑+
+
+|⇓i
+
+(7.5.15)
+
+The thick arrow ⇑ represents the charge isospin. At particle-hole symmetry, both the spin
+configurations has energy of 𝜖𝑑 , while the charge configurations have energy of 2𝜖𝑑 +𝑈 = 0
+and 0. Hence, no energy is required for these excitations, which is why see a macroscopic
+number of cloud electrons resonating with the impurity at the Fermi surface. Also note
+that if 𝑆ˆ𝑖 and 𝐶ˆ 𝑗 are two operators of the spin and charge sector (𝑖, 𝑗 ∈ 𝑥, 𝑦, 𝑧 ), then
+𝑆ˆ𝑖 𝐶ˆ 𝑗 = 𝐶ˆ 𝑗 𝑆ˆ𝑖 = 0
+202
+
+(7.5.16)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+We can see this by applying that operator on a basis state. Since the set of four states
+1
+
+1
+
+2
+
+2
+
+| 𝑆ˆ𝑖 = ± , 𝐶ˆ 𝑗 = 0i , | 𝑆ˆ𝑖 = 0, 𝐶ˆ 𝑗 = ± i
+
+(7.5.17)
+
+are all independent, they form a basis. If we apply the operator on these states:
+𝑆ˆ𝑖 𝐶ˆ 𝑗 | 𝑆ˆ𝑖 i = 0,
+
+𝐶ˆ 𝑗 𝑆ˆ𝑖 |𝐶 𝑗 i = 0,
+
+𝐶ˆ 𝑗 𝑆ˆ𝑖 |𝑆𝑖 i = 𝑆𝑖 𝐶ˆ 𝑗 |𝑆𝑖 i = 0
+
+𝑆ˆ𝑖 𝐶ˆ 𝑗 | 𝐶ˆ 𝑗 i = 𝐶 𝑗 𝑆ˆ𝑖 |𝐶ˆ 𝑗 i = 0
+
+(7.5.18)
+
+This shows that each operator acts only on its own subspace. 𝑆𝑖 does not act on the charge
+sector, and vice-versa. There is no single-particle excitation here.
+The physics of the side-peaks is that of single number fluctuations on the impurity. These
+are brought about by the term 𝑉 𝑐0†𝜎 𝑐𝑑𝜎 + h.c..
+
+𝜖𝑑 |𝜎i
+
+†
+/𝑉 𝑐𝑑𝜎
+𝑉 𝑐𝑑𝜎
+
+⇄
+
+†
+𝑉 𝑐𝑑𝜎 /𝑉 𝑐𝑑𝜎
+
+|𝑛𝑑 = 2, 0i 0
+
+
+
+(7.5.19)
+
+These transitions involve energy transfer of the order of 𝜖𝑑 . This is why, at very small 𝑈,
+they remain absorbed inside the central peak. These transitions do not involve any spin
+or charge-flip, rather they take the impurity between the spin and charge sectors.
+
+7.6
+
+Renormalization of impurity spectral function
+
+Another interesting study that we conducted is the change in the spectral function under
+revere-RG. Doing the actual reverse RG would require diagonalizing a huge matrix. Instead, we mimic the reverse journey by starting from the fixed point and then increasing
+the 𝑈 (it was irrelevant in the forward RG) and decreasing 𝐽 (it was relevant in the forward RG). The spectral function is then calculated at these points. The result is shown in
+fig. 7.8. At the strong-coupling fixed-point, we have a screened-local moment which only
+has a zero-energy excitation at the Fermi energy. As we move away from the fixed-point,
+the resonance at the Fermi surface disappears, and is replaced by two side peaks which
+are indicative of the two orientations of a local moment.
+
+7.7
+
+Effective Hamiltonian for excitations of the Kondo
+cloud
+
+To find an effective Hamiltonian for the excitations of the Kondo cloud, we will integrate out the impurity part of the wavefunction. The Schrodinger equation for the 𝐽 > 𝐾
+
+203
+
+7.7. EFFECTIVE HAMILTONIAN FOR EXCITATIONS OF THE KONDO CLOUD
+
+Figure 7.7: Impurity spectral function for three sets of bare values. The increase in value
+of 𝑈 is accompanied by the appearance of the side-peaks. For all the plots, 𝑉 = 0.001 and
+𝐷 = 1.
+204
+
+Chapter 7. Results and Features of the Low-Energy Theory
+
+0.14
+
+UV
+mid
+IR
+
+0.12
+0.10
+A(ω)
+
+0.08
+0.06
+0.04
+0.02
+0.00
+−0.4
+
+−0.2
+
+0.0
+ω
+
+0.2
+
+0.4
+
+×10−2
+IR
+mid
+UV
+
+7
+6
+
+A(ω)
+
+5
+4
+3
+2
+1
+0
+−0.75
+
+−0.50
+
+−0.25
+
+0.00
+ω
+
+0.25
+
+0.50
+
+0.75
+
+Figure 7.8: Variation of the spectral function as we move away from the strong-coupling
+fixed point (top) towards the local moment fixed point (bottom).
+
+205
+
+7.7. EFFECTIVE HAMILTONIAN FOR EXCITATIONS OF THE KONDO CLOUD
+ground state is
+
+h
+
+i
+𝐸 𝑔 𝑐−𝑠 |↑, ↓i − |↓, ↑i + 𝑐−𝑐 |↑↓, 0i + | 0, ↑↓i
+h
+
+i
+𝑠
+𝑐
+= H 𝑐− |↑, ↓i − |↓, ↑i + 𝑐− |↑↓, 0i + | 0, ↑↓i
+h
+
+i
+= H0∗ 𝑐−𝑠 |↑, ↓i − |↓, ↑i + 𝑐−𝑐 |↑↓, 0i + | 0, ↑↓i
+ih
+Õh
+
+i
++𝑉
+𝑐2† 𝛽 𝑐1 𝛽 − 𝑐2 𝛽 𝑐1† 𝛽 𝑐−𝑠 |↑, ↓i − |↓, ↑i + 𝑐−𝑐 |↑↓, 0i + | 0, ↑↓i
+
+(7.7.1)
+
+h
+i
+
++ 𝐽 𝑆®𝑑 · 𝑠® 𝑐−𝑠 |↑, ↓i − |↓, ↑i + 𝑐−𝑐 |↑↓, 0i + | 0, ↑↓i
+h
+i
+
+𝑐
+𝑠
+®
+®
++ 𝐾 𝐶𝑑 · 𝑐 𝑐− |↑, ↓i − |↓, ↑i + 𝑐− |↑↓, 0i + | 0, ↑↓i
+𝛽
+
+The last two lines gives
+i 1
+h
+
+
+1 𝑠 h 𝑧
++
+−
+𝑐
+𝐽 𝑐− 𝑠 |↑, ↓i + |↓, ↑i + 𝑠 |↓, ↓i − 𝑠 |↑, ↑i + 𝐾𝑐− 𝑐 𝑧 |↑↓, 0i − | 0, ↑↓i + 𝑐+ | 0, 0i
+2
+2
+
++ 𝑐− | 2, 2i
+
+(7.7.2)
+
+The second line gives
+
+h
+h
+
+i
+
+i
+𝑉 𝑐2†↑ 𝑐−𝑠 | 0, ↓i + 𝑐−𝑐 |↓, 0i + 𝑉 𝑐2†↓ 𝑐−𝑠 − | 0, ↑i + 𝑐−𝑐 |↑, 0i
+h
+h
+
+i
+
+i
+−𝑉 𝑐2↑ 𝑐−𝑠 − |↑↓, ↑i + 𝑐−𝑐 |↑, ↑↓i − 𝑉 𝑐2↓ 𝑐−𝑠 − |↑↓, ↓i + 𝑐−𝑐 |↓, ↑↓i
+
+(7.7.3)
+
+We will now write down four equations by comparing the coefficients of |↑i , |↓i , | 0i and
+| 2i of the impurity sector:
+
+ 1
+
+
+
+
+
+
+eq. from |↑i
+𝐸 𝑔 − 𝐻0∗ 𝑐−𝑠 |↓i = 𝑉 𝑐−𝑐 𝑐2†↓ | 0i − 𝑐2↑ | 2i + 𝐽 𝑐−𝑠 𝑠 𝑧 |↓i − 𝑠− |↑i
+2
+ 1
+
+
+
+
+
+
+
+eq. from |↓i
+−𝐸 𝑔 + 𝐻0∗ 𝑐−𝑠 |↑i = 𝑉 𝑐−𝑐 𝑐2†↑ | 0i − 𝑐2†↓ | 2i + 𝐽 𝑐−𝑠 𝑠 𝑧 |↑i + 𝑠+ |↓i
+2
+(7.7.4)
+ 1
+
+
+
+
+ 
+
+†
+†
+∗
+𝑐
+𝑠
+𝑐
+𝑧
++
+𝐸 𝑔 − 𝐻0 𝑐− | 2i = 𝑉 𝑐− 𝑐2↑ |↓i − 𝑐2↓ |↑i + 𝐾𝑐− −𝑐 | 2i + 𝑐 | 0i
+eq. from | 0i
+2
+
+
+
+ 1
+
+
+
+
+𝐸 𝑔 − 𝐻0∗ 𝑐−𝑐 | 0i = 𝑉 𝑐−𝑠 𝑐2↑ |↑i + 𝑐2↓ |↓i + 𝐾𝑐−𝑐 𝑐 𝑧 | 0i + 𝑐− | 2i
+eq. from | 2i
+2
+
+These can be rearranged into
+
+
+1 𝑧
+∗
+𝐸 𝑔 − 𝐻0 − 𝐽 𝑠 |↓i
+2
+
+
+1 𝑧
+∗
+𝐸 𝑔 − 𝐻0 + 𝐽 𝑠 |↑i
+2
+
+
+1 𝑧
+∗
+𝐸 𝑔 − 𝐻0 + 𝐾𝑐 | 2i
+2
+
+
+1 𝑧
+∗
+𝐸 𝑔 − 𝐻0 − 𝐾𝑐 | 0i
+2
+
+
+ 1
+= 𝑉 𝜆 −1 𝑐2†↓ | 0i − 𝑐2↑ | 2i − 𝐽 𝑠− |↑i
+
+
+
+
+2
+
+1
+
+= 𝑉 𝜆 −1 𝑐2↓ | 2i − 𝑐2†↑ | 0i − 𝐽 𝑠+ |↓i
+= 𝑉𝜆
+
+
+
+
+𝑐2†↑
+
+|↓i −
+
+𝑐2†↓
+
+
+
+2
+
+1
+
++
+
+|↑i + 𝐾𝑐 | 0i
+
+
+2
+
+1
+
+= 𝑉 𝜆 𝑐2↑ |↑i + 𝑐2↓ |↓i + 𝐾𝑐− | 2i
+206
+
+2
+
+(7.7.5)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+𝑐𝑠
+
+where 𝜆 = 𝑐−𝑐 . We want to find the effective Hamiltonian in the subspace of |↓i. We first
+−
+eliminate the charge sector from these equations:
+
+where
+
+
+! 
+
+ 1
+
+𝐾 1 −
+1
+𝐾 + 1
+† 
+| 0i =𝑉 𝜆  𝐾 𝑐2↑ +
+𝑐
+𝑐
+𝑐
+−
+𝑐
+|↑i
+2
+↑
+
+
+2↓ 
+2
+2 𝐴−𝐾
+𝐴−𝐾
+𝐾 − 𝐾
+ 𝐴−
+
++ 1 𝑐− 2
+𝐴
+𝑐
++
+
+
+2
+𝐴−𝐾
+
+
+
+! 
+
+ 1
+
+1
+𝐾 1 −
+𝐾 + 1
+†
+ |↓i
+𝑐
+𝑐
+𝑐
++ 𝑉 𝜆  𝐾 𝑐2↓ +
+𝑐
++
+2
+↓
+
+
+
+2↑
+𝐾
+𝐾
+2
+2
+2
+𝐴
+𝐴
+𝐴
+ −
+
+−
+−
+𝐴+𝐾 − 𝐾2 𝑐+ 𝐴1𝐾 𝑐−
+
+
+−
+
+
+!
+! 
+
+ †
+
+𝐾
+𝑉𝜆
+𝐾
+1
+1
+†
++
+ 𝑐 + 𝑐+
+
+| 2i =
+ 2
+ 2↑ 2 𝐴 𝐾 𝑐2↓ |↓i + 2 𝑐 𝐴 𝐾 𝑐2↑ − 𝑐2↓ |↑i 
+𝐾
+1 − 
+𝐾
+
+−
+−
++
+𝐴+ − 2 𝑐 𝐴 𝐾 𝑐 
+
+
+(7.7.6)
+
+−
+
+1
+
+𝐴±𝐾 = 𝐸 𝑔 − 𝐻0∗ ± 𝐾𝑐 𝑧
+
+(7.7.7)
+
+| 0i = 𝑎↑0 |↑i + 𝑎↓0 |↓i , | 2i = 𝑎↑2 |↑i + 𝑎↓2 |↓i
+
+(7.7.8)
+
+2
+
+For ease of labeling, we will think of these equations as
+The remaining two equations can then be written as
+
+
+
+ 𝐽
+𝑉 †  ↑
+↓
+↑
+↓
+𝐽
+𝐴− |↓i =
+𝑐 𝑎 |↑i + 𝑎0 |↓i − 𝑐2↑ 𝑎2 |↑i + 𝑎2 |↓i − 𝑠− |↑i
+𝜆 2↓ 0
+2
+
+ 
+
+
+
+𝐽
+𝑉
+𝐽
+𝐴+ |↑i =
+𝑐2↓ 𝑎↑2 |↑i + 𝑎↓2 |↓i − 𝑐2†↑ 𝑎↑0 |↑i + 𝑎↓0 |↓i − 𝑠+ |↓i
+𝜆
+2
+
+where
+
+1
+
+𝐽
+
+𝐴± = 𝐸 𝑔 − 𝐻0∗ ± 𝐽 𝑠 𝑧
+2
+
+(7.7.9)
+
+(7.7.10)
+
+Eliminating |↓i and solving for |↑i gives
+
+
+
+𝑉
+𝑉 † ↓ 𝐽 +
+𝑉 
+𝐽
+↑
+↓
+† ↑
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0 |↑i +
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0 − 𝑠 |↓i
+𝐴+ |↑i =
+𝜆
+𝜆
+𝜆
+2
+
+𝑉 
+𝑐2↓ 𝑎↑2 − 𝑐2†↑ 𝑎↑0 |↑i
+=
+(7.7.11)
+𝜆
+ 
+
+
+
+
+
+𝑉
+𝑉 † ↑
+𝐽
+𝐽
+1
+
+
++
+𝑐2↓ 𝑎↓2 − 𝑐2†↑ 𝑎↓0 − 𝑠+
+𝑐2↓ 𝑎0 − 𝑐2↑ 𝑎↑2 − 𝑠− |↑i
+𝐽
+𝜆
+2
+2
+𝐴− − 𝑉𝜆 𝑐2†↓ 𝑎↓0 − 𝑐2↑ 𝑎↓2 𝜆
+
+The effective Hamiltonian for the |↑i state is
+ 𝑉 
+ 𝐽 
+𝐽 𝑧 𝑉 
+1
+↑
+↓
+† ↑
+† ↓
+∗
+
+
+𝐻0 − 𝑠 +
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0 +
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0 − 𝑠+
+𝐽
+†
+2
+𝜆
+𝜆
+2
+𝐴− − 𝑉𝜆 𝑐2↓ 𝑎↓0 − 𝑐2↑ 𝑎↓2
+ 
+ 𝐽 
+𝑉 † ↑
+↑
+×
+𝑐 𝑎 − 𝑐2↑ 𝑎2 − 𝑠−
+𝜆 2↓ 0
+2
+207
+
+(7.7.12)
+
+7.7. EFFECTIVE HAMILTONIAN FOR EXCITATIONS OF THE KONDO CLOUD
+To get a clearer picture of this effective Hamiltonian, we will keep up to two-particle
+interactions. We first write down the full forms of 𝑎𝜎0,2 :
+
+! 
+
+
+
+𝐾 1 −
+1
+𝐾 + 1
+1
+† 
+𝑐
+𝑐
+𝑐
+−
+𝜎𝑐
+𝑎𝜎0 = 𝑉 𝜆  𝐾 𝑐2𝜎 +
+2
+𝜎
+
+
+2𝜎 
+2
+2 𝐴−𝐾
+2 𝐴−𝐾
+
+ 𝐴−
+𝐴+𝐾 − 𝐾2 𝑐+ 𝐴1𝐾 𝑐−
+
+
+−
+
+
+!
+1
+𝑉𝜆
+𝐾
+𝑎𝜎2 =
+−𝜎𝑐2†−𝜎 + 𝑐+ 𝐾 𝑐2𝜎
+ 2
+2 𝐴−
+𝐴+𝐾 − 𝐾2 𝑐+ 𝐴1𝐾 𝑐−
+
+(7.7.13)
+
+−
+
+We will first look at the special case of 𝐾 = 0. There, the above expressions simplify to
+𝜎
+
+𝑎0 = 𝑉 𝜆
+
+1
+
+𝐴−𝐾
+
+𝑎𝜎2 = −𝜎𝑉 𝜆
+
+𝑐 2𝜎
+
+
+  1   2 
+
+1
+1 +
+𝐻0∗ + 2 𝐻0∗  𝑐2𝜎 + O (𝐻0∗ 3 )
+
+𝐸𝑔
+𝐸𝑔
+
+
+
+
+
+
+𝑉 𝜆 
+1  ∗
+1  ∗  2  †
+= −𝜎
+1+
+𝐻0 + 2 𝐻0  𝑐2−𝜎 + O (𝐻0∗ 3 )
+𝐸 𝑔 
+𝐸𝑔
+𝐸𝑔
+
+
+
+
+𝑉𝜆
+=
+𝐸𝑔
+
+1
+
+𝑐2†−𝜎
+𝐾
+𝐴+
+
+We will make use of the following commutators:
+
+ 
+ Õ 𝑚
+ 
+Õ 𝜖𝑚
+𝑚
+𝑚
+𝜖𝑘 †
+𝑘
+†
+∗
+∗
+𝐻0 , 𝑐2𝜎 = −
+𝐻0 , 𝑐2𝜎 =
+√ 𝑐𝑘𝜎 ,
+√ 𝑐𝑘𝜎 , 𝑚 = 1, 2
+𝑁∗
+𝑁∗
+𝑘
+𝑘
+ Õ
+ 
+
+𝑚
+†
++
+∗
+𝜖𝑘𝑚 − 𝜖𝑘𝑚0 𝑐𝑘𝛽
+𝑐𝑘 0 𝛽 ,
+𝐻0 , 𝑠 =
+𝑚 = 1, 2
+
+ 𝑚
+ 
+𝑚
+𝜎
+𝑧
+, 𝑐 2𝜎 = −
+𝑐2𝜎 ,
+𝑠
+2
+
+ 𝑚
+ 
+𝑚
+1
+𝑧
+, 𝑐2𝜎 = −
+𝑐
+𝑐 2𝜎 ,
+𝑘𝑘 0
+
+2
+
+  𝑚
+ 
+𝑚
+𝜎
+†
+𝑧
+, 𝑐 2𝜎 =
+𝑠
+𝑐2†𝜎 ,
+2
+  𝑚
+ 
+𝑚
+1
+†
+𝑧
+, 𝑐 2𝜎 =
+𝑐
+𝑐2†𝜎 ,
+2
+
+(7.7.14)
+
+(7.7.15)
+
+𝑚 = 1, 2
+𝑚 = 1, 2
+
+Now we evaluate the various terms in the effective Hamiltonian.
+
+
+
+𝑉𝜆
+1  ∗
+1  ∗  2  †
+↑
+
+c2↓ a2 = −
+𝑐2↓ 1 +
+𝐻0 + 2 𝐻0  𝑐2↓
+𝐸𝑔
+𝐸𝑔
+𝐸𝑔
+
+
+
+
+
+
+Õ 𝜖𝑘
+Õ 𝜖2
+ †
+𝑉 𝜆 
+1  ∗
+1  ∗2
+𝑘
+𝑐
+=−
+𝑐
++
+𝐻
+𝑐
++
+𝑐
++
+𝑐
+𝐻
+𝑐
++
+√
+√
+2
+↓
+2
+↓
+𝑘↓
+𝑘↓
+2
+↓
+0
+0
+ 2↓
+2
+2
+∗
+∗
+𝐸 𝑔 
+𝐸𝑔
+𝐸
+𝐸
+𝑁
+𝐸
+𝑁
+
+𝑔
+𝑔
+𝑔
+𝑘
+𝑘
+
+
+! 2
+
+2
+𝐻0∗ 
+𝐻0∗
+𝑉 𝜆 
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª
+†
+
+=−
+1+
++
+𝑐2↓ 𝑐2↓ −
+­ + 2 ® 𝑐𝑘↓ 𝑐𝑘† 0↓
+
+
+∗
+𝐸𝑔 
+𝐸𝑔
+𝐸𝑔 
+𝐸 𝑔 𝑁 𝑘𝑘 0 𝐸 𝑔 𝐸 𝑔
+«
+¬
+
+
+! 2
+
+Õ © 𝜖𝑘 𝜖2 ª
+𝐻0∗ 
+𝐻0∗
+𝑉 𝜆 
+↓
+ 𝑐2↑ 𝑐† − 𝑉 𝜆
+c2↑ a2 = −
+1
++
++
+­ + 𝑘 ® 𝑐𝑘↑ 𝑐𝑘† 0↑
+2↑
+𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔 
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+
+
+208
+
+Chapter 7. Results and Features of the Low-Energy Theory
+
+† ↑
+c2↑ a0
+
+†
+
+↓
+
+c2↓ a0
+↓
+
+c2↓ a2
+
+↑
+
+c2↑ a2
+†
+
+↓
+
+†
+
+↑
+
+↑
+
+†
+
+↑
+
+↓
+
+†
+
+↓
+
+c2↑ a0
+c2↓ a0
+c2↓ a2 − c2↑ a0
+c2↓ a2 − c2↑ a0
+†
+
+↓
+
+↓
+
+†
+
+↑
+
+↑
+
+c2↓ a0 − c2↑ a2
+c2↓ a0 − c2↑ a2
+
+
+  1   2 
+
+1
+1 +
+=
+𝐻0∗ + 2 𝐻0∗  𝑐2↑
+
+𝐸𝑔
+𝐸𝑔
+
+
+
+
+! 2
+
+Õ © 𝜖𝑘 𝜖2 ª
+𝐻0∗
+𝐻0∗  †
+𝑉 𝜆 
+ 𝑐 𝑐2↑ − 𝑉 𝜆
+=
+1
++
++
+­ + 𝑘 ® 𝑐 † 𝑐𝑘 0↑
+𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔  2↑
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔 𝑘↑
+«
+¬
+
+
+! 2
+
+Õ © 𝜖𝑘 𝜖2 ª
+𝐻0∗
+𝐻0∗  †
+𝑉 𝜆 
+ 𝑐 𝑐2↓ − 𝑉 𝜆
+=
+1
++
++
+­ + 𝑘 ® 𝑐 † 𝑐𝑘 0↓
+𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔  2↓
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔 𝑘↓
+«
+¬
+
+
+
+
+
+𝑉𝜆
+1  ∗
+1   2
+=
+𝑐2↓ 1 +
+𝐻0 + 2 𝐻0∗  𝑐2†↑
+𝐸𝑔
+𝐸𝑔
+𝐸𝑔
+
+
+
+
+"
+#
+2
+𝑉𝜆
+1  ∗
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª
+=
++
+1+
+𝐻0 𝑐2↓ 𝑐2†↑ +
+­
+® 𝑐𝑘↓ 𝑐𝑘† 0↑
+∗
+2
+𝐸𝑔
+𝐸𝑔
+𝐸 𝑔 𝑁 𝑘𝑘 0 𝐸 𝑔 𝐸 𝑔
+«
+¬
+"
+#
+2
+𝑉𝜆
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª
+1  ∗
+†
+=−
+1+
+𝐻0 𝑐2↑ 𝑐2↓ −
+­ + ® 𝑐𝑘↑ 𝑐𝑘† 0↓
+𝐸𝑔
+𝐸𝑔
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+"
+#
+2
+𝐻0∗ †
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª †
+𝑉𝜆
+1+
+𝑐2↑ 𝑐2↓ −
++
+=
+­
+® 𝑐 𝑐𝑘 0↓
+𝐸𝑔
+𝐸𝑔
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔 𝑘↑
+«
+¬
+"
+#
+2
+∗
+𝐻0 †
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª †
+𝑉𝜆
+1+
+𝑐2↓ 𝑐2↑ −
+=
+­ + ® 𝑐 𝑐𝑘 0↑
+𝐸𝑔
+𝐸𝑔
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔 𝑘↓
+«
+¬
+! 2
+
+
+Õ © 𝜖𝑘 𝜖2 ª 
+𝐻0∗
+𝐻0∗ 
+𝑉 𝜆 
+𝑘
+†
+†
+ × 2 + 𝑉𝜆
+0
+𝑐
+−
+𝑐
+𝑐
+𝑐
+=−
+1
++
++
++
+­
+®
+𝑘↓ 𝑘 0↓
+𝑘↑ 𝑘 ↑
+𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔 
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+
+
+#
+"
+2
+
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª 
+𝑉𝜆
+1  ∗
+†
+†
+0↓
+𝑐
+=
+1+
+𝐻0 𝑐2↓ 𝑐2†↑ × 2 +
++
+𝑐
+𝑐
++
+𝑐
+­
+®
+𝑘
+𝑘↓
+0
+𝑘↑
+𝑘↑
+𝐸𝑔
+𝐸𝑔
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+2
+
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª 
+†
+†
+0
+𝑐
+=
+𝑐
+𝑐
+−
+𝑐
++
+­
+® 𝑘↑ 𝑘 0↑
+𝑘↓ 𝑘 ↓
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+2
+
+𝑉 𝜆 Õ © 𝜖𝑘 𝜖𝑘 ª 
+†
+†
+0↑
++
+=
+𝑐
+𝑐
+−
+𝑐
+𝑐
+­
+®
+𝑘↑
+𝑘
+0
+𝑘↓
+𝑘↓
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0 𝐸 𝑔 𝐸 2𝑔
+«
+¬
+𝑉𝜆
+𝑐2†↑
+𝐸𝑔
+
+In all the expressions, we have dropped terms that have more than 4 operators in product. Also, in the last four equations, we have substituted 𝑛ˆ 2↑ − 𝑛ˆ 2↓ = 1, because this is the
+effective Hamiltonian for the state with 𝑠 𝑧 = 21 . We now substitute these expressions into
+
+209
+
+7.7. EFFECTIVE HAMILTONIAN FOR EXCITATIONS OF THE KONDO CLOUD
+the effective Hamiltonian:
+
+!
+∗
+∗ 2 
+
+
+2 Õ
+𝐻
+𝐻
+0
+0
+†
+†
++ 𝑉
+0↑ − 𝑐𝑘↓ 𝑐 0
+𝐻0∗ − 𝑠 𝑧 −
+1
++
++
+𝜉
+𝑐
+𝑐
+𝑘
+𝑘
+𝑘↑
+𝑘↓
+2
+𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔  𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0
+
+
+ 
+ 
+
+
+𝑉
+𝑉 † ↑
+1
+↓
+↑
+† ↓
+
+
++
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0
+𝑐2↓ 𝑎0 − 𝑐2↑ 𝑎2
+Í
+2
+𝐽
+†
+𝜆
+𝐴− − 𝐸𝑉𝑔 𝑁 ∗ 𝑘𝑘 0 𝜉𝑘 𝑐𝑘↑ 𝑐𝑘† 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓ 𝜆
+ 
+
+
+
+𝑉
+1
+𝐽 −
+↓
+† ↓
+
+ − 𝑠
++
+𝑐2↓ 𝑎2 − 𝑐2↑ 𝑎0
+𝐽
+†
+†
+𝜆
+2
+𝑉2 Í
+𝐴− − 𝐸𝑔 𝑁 ∗ 𝑘𝑘 0 𝜉𝑘 𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘↓ 𝑐𝑘 0↓
+
+
+ 
+
+𝐽 +
+1
+𝑉 † ↑
+↑
+
+
++ − 𝑠
+𝑐2↓ 𝑎0 − 𝑐2↑ 𝑎2
+Í
+2
+𝐽
+†
+2
+𝐴− − 𝐸𝑉𝑔 𝑁 ∗ 𝑘𝑘 0 𝜉𝑘 𝑐𝑘↑ 𝑐𝑘† 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓ 𝜆
+
+
+2𝑉 2 
+
+𝐽
+
++
+
+𝐽 2  +
+𝑠
+4
+
+𝜖𝑘
+𝐸𝑔
+
+where 𝜉𝑘 =
+
+𝐽
+
+𝐴− −
++
+
+𝜖2𝑘
+.
+𝐸 2𝑔
+
+𝑉2
+𝐸𝑔 𝑁 ∗
+
+Í
+
+1
+
+𝑘𝑘 0 𝜉𝑘
+
+
+
+†
+𝑐𝑘↑ 𝑐𝑘† 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓
+
+ 
+ 𝑠−
+
+We first consider only zeroth order terms of the central propagator.
+
+! 2
+
+𝐻0∗
+𝐻0∗ 
+𝑉2 Õ   †
+†
+
+𝐻0 −
+𝑠 −
+1+
++
++
+𝜉𝑘 𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘↓ 𝑐𝑘 0↓
+2 |{z} 𝐸 𝑔 
+𝐸𝑔
+𝐸 𝑔  𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0
+1
+
+
+2
+Õ
+Õ
+ †
+ †
+𝑉4
+
+
+𝑐𝑘 0↑
++
+𝑐𝑘 0↓
+𝜉𝑘 + 𝜉𝑘 0 𝑐𝑘↓
+𝜉𝑘 0 + 2 − 𝜉𝑘 𝑐𝑘↑
+𝐽
+2 ∗2
+0
+0
+𝐸 𝑔 + 4 𝑘𝑘
+𝐸𝑔 𝑁
+𝑘𝑘
+Õ
+Õ
+ †
+𝑉2𝐽
+†
+
+
++
+𝑐𝑘 0↑
+𝑐𝑘 0↓
+𝑐𝑘↓
+𝜉𝑘 0 + 2 − 𝜉𝑘 𝑐𝑘↑
+𝐽
+∗
+0
+0
+2𝐸 𝑔 𝐸 𝑔 + 4 𝑁 𝑘𝑘
+𝑘𝑘
+Õ
+Õ
+ †
+𝐽𝑉 2
+†
+
+
++
+𝑐𝑘 0↑
+𝑐𝑘 0↓
+𝜉𝑘 + 𝜉𝑘 0 𝑐𝑘↓
+𝑐𝑘↑
+𝐽
+0
+2𝐸 𝑔 𝐸 𝑔 + 4 𝑁 ∗ 𝑘𝑘 0
+𝑘𝑘
+𝐽
+
+∗
+
++
+
+
+
+𝑧
+
+𝐽2
+
+4 𝐸𝑔 +
+
+𝐽
+
+4
+
+(7.7.16)
+
+
+
+2𝑉 2 
+
+(7.7.17)
+
+ 𝑠+ 𝑠−
+|{z}
+
+𝑠 𝑧 + 12 =1
+
+We have set 𝑠 𝑧 = − 12 in the denominator, hence the 𝐸 𝑔 = 4𝐽 . If we also consider the first
+and second order terms from the central propagator, note that they will produce terms
+of more than quartic interactions in the first three terms. For the last term, we get
+
+2
+∗
+∗
+
+
+𝐻
+𝐻
+𝐽
+©
+0
+0 ª  −
++ 
+
+𝑠 
++­
+® 𝑠
+𝐽
+ 𝐸𝑔 + 𝐽
+𝐸 𝑔 + 4𝐽 
+4 𝐸𝑔 + 4
+
+4
+«
+¬ 
+
+2
+
+210
+
+(7.7.18)
+
+Chapter 7. Results and Features of the Low-Energy Theory
+Using the commutator of 𝐻0∗ with 𝑠+ to bring 𝐻0∗ to the left, and using 𝑠+ 𝑠− = 𝑠 𝑧 + 12 = 1, we
+get
+
+
+2
+∗
+
+ 𝐻∗
+
+Õ 
+𝐻
+𝐽2
+©
+ª
+
+
+𝐽
+𝐽
+0
+0
+†
+†
+0
+0
+
+ 
++
+−
+𝜉
+−
+𝜉
+𝑐
+𝑐
+𝑐
+𝑐
+(7.7.19)
+­
+®
+0
+𝑘 ↓ 𝑞↓ 𝑞 ↑ 
+𝑘
+𝑘
+𝑘↑
+𝐽
+𝐽
+𝐽 
+
+0
+0
+4 𝐸𝑔 + 4  𝐸𝑔 + 4 « 𝐸𝑔 + 4 ¬
+𝑘𝑘 𝑞𝑞
+
+
+
+𝐽
+
+where 𝜉𝑘 =
+tions, is
+
+𝜖𝑘
+𝐽
+𝐸𝑔 + 4
+
+𝐽© 𝐽
+𝐻0∗ + ­
+4 𝐸𝑔 +
+«
+
++
+
+
+
+𝜖2𝑘
+
+
+𝐽 2
+
+𝐸𝑔 + 4
+
+ª
+− 1® −
+𝐸𝑔
+¬
+
+2𝑉 2
+
+𝐽
+
+4
+
+𝑉
+𝐸𝑔
+
+2
+
+𝑁 ∗ (𝐸
+
+𝑔
+
+ 2𝑉 2
+𝑉2 Õ   †
+†
+0
+𝜉
+𝑐
+𝑐
+−
+𝑐
+𝑐
++
+𝑘
+𝑘↓ 𝑘 0↓ −
+𝑘↑ 𝑘 ↑
+𝐸 𝑔 𝑁 ∗ 𝑘𝑘 0
+𝐸𝑔
+
+! 2
+ ∗
+ 𝐻0
+𝐻0∗ 
+
+
+ 𝐸𝑔 + 𝐸𝑔 
+
+
+
+
+
+
+2
+∗
+ 𝐻∗
+ Õ
+𝐻
+𝐽
+©
+ª
+
+
+0
+0
+†
+†
+ 
++ 
++
+𝐹𝑘𝑘 0𝑞𝑞0 𝑐𝑘↑
+𝑐𝑘 0↓ 𝑐𝑞↓
+𝑐𝑞 0↑
+­
+®
++
+𝐽
+𝐽
+𝐽 𝐸 +
+
+4 𝐸 𝑔 + 4  𝑔 4 « 𝐸 𝑔 + 4 ¬  𝑘𝑘 0𝑞𝑞0
+
+
+
+The coefficient 𝐹𝑘𝑘 0𝑞𝑞0 is
+𝐹𝑘𝑘 0𝑞𝑞0 =
+
+. The full effective Hamiltonian, for 𝐾 = 0, up to quartic interac-
+
+"
+
+2
+
+2
+
+𝑉
+𝜉𝑘 0 + 2 − 𝜉𝑘
+∗
++ 4 ) 𝐸𝑔 𝑁
+𝐽
+
+
+
+
+
+𝜉𝑞 + 𝜉𝑞0 +
+
+𝐽 
+
+2
+
+𝜉𝑘 0 + 2 − 𝜉𝑘 + 𝜉𝑞 + 𝜉𝑞0
++ 
+
+𝐽2
+
+4 𝐸𝑔 +
+
+𝐽
+
+4
+
+
+
+
+
+𝐽
+𝜉𝑘 0
+
+−
+
+
+
+𝐽
+𝜉𝑘
+
+#
+
+
+
+(7.7.20)
+
+(7.7.21)
+
+There are two main types of interactions that gets generated upon integrating out the
+impurity. One is the Fermi liquid type interactions arising from the 𝐻0∗ 2 terms. The Fermi
+liquid part of the Hamiltonian is
+
+
+
+
+
+
+
+
+2
+2
+2
+2
+
+
+𝐽
+2
+𝑉
+𝐽
+2
+𝑉
+∗2
+∗
+ 
+ 2 − 2  𝐻0 +  
+ 2 − 3  𝐻0
+
+𝐸𝑔 
+𝐸𝑔 
+4 𝐸 + 𝐽
+4 𝐸 + 𝐽
+𝑔
+𝑔
+
+
+
+
+4
+4
+
+
+
+
+
+
+
+
+
+Õ
+
+
+𝐽2
+2𝑉 2   ∗
+
+= 
+𝑓𝑘𝑘 0 𝑛ˆ 𝑘𝜎 𝑛ˆ 𝑘 0𝜎 0 
+ 2 − 2  𝐻0 +
+𝐸𝑔  
+
+4 𝐸 + 𝐽
+𝑘𝑘 0 𝜎𝜎 0
+𝑔
+
+
+
+4
+
+
+
+(7.7.22)
+
+where the Landau parameter is given by
+
+𝑓𝑘𝑘 0
+
+
+ −1 
+
+
+ 
+
+2
+2
+2
+2
+
+ 
+
+𝐽
+2
+𝑉
+𝐽
+2
+𝑉
+=  
+ 2 − 2   
+ 3 − 3  𝜖𝑘 𝜖𝑘 0
+𝐸𝑔  
+𝐸𝑔 
+𝐽
+4 𝐸 + 𝐽
+𝑔
+
+  4 𝐸𝑔 + 4
+
+4
+
+ 
+
+211
+
+(7.7.23)
+
+7.7. EFFECTIVE HAMILTONIAN FOR EXCITATIONS OF THE KONDO CLOUD
+The more interesting interaction is the off-diagonal term
+Õ
+†
+†
+𝐹𝑘𝑘 0𝑞𝑞0 𝑐𝑘↑
+𝑐𝑘 0↓ 𝑐𝑞↓
+𝑐𝑞 0↑
+𝑘𝑘 0 𝑞𝑞0
+
+(7.7.24)
+
+This interaction arises from the enhanced entanglement between the impurity and the
+conduction electrons; removing the impurity from the singlet and the triplet generates
+these off-diagonal scatterings. As such, this is an indicator of the macroscopic entanglement of the singlet formed at the IR fixed point, and plotted in fig. 7.13.
+It is also very enlightening to note that this scattering is a signature of the change in
+Luttinger’s count in going from the free orbital or local moment fixed point to the strongcoupling fixed point, as shown in eq. 7.9.28. Both this off-diagonal scattering as well as
+the change in Luttinger’s count are a direct consequence of the non-number conserving
+term 𝑉 𝑐𝑘† 𝑐𝑑 in the full Hamiltonian. The topological change of Luttinger’s count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. Just the Fermi liquid piece in eq. 7.7.23 will give neither the enhanced mutual information nor the change in Luttinger’s count.
+We have shown the enhancement of this off-diagonal scattering during the flow towards
+the IR fixed point by computing it during the reverse RG program, in fig. 7.9. It is clear
+from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
+
+Figure 7.9: Variation of the coefficient of the two-particle off-diagonal scattering in the
+effective Hamiltonian, eq. 7.7.21 along the RG flow.
+
+212
+
+Chapter 7. Results and Features of the Low-Energy Theory
+
+7.8
+
+Calculation of Wilson ratio from effective local Fermi
+liquid
+
+In this section, we will calculate the zero temperature Wilson ratio of the impurity in the
+Kondo regime of the SIAM. Since this is a low energy property, our starting point will be
+the fixed point Hamiltonian of eq. 6.4.3, after substituting 𝑈 ∗ = 𝐾 ∗ = 0 (because we are in
+the first quadrant):
+
+Õ
+Õ 
+∗
+∗ †
+𝜖𝑘 𝜏𝑘𝜎 +
+𝑉 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠®
+H =
+(7.8.1)
+𝜎,𝑘<Λ∗
+
+𝜎,𝑘
+
+ˆ ignoring the constant part, and write the kinetic energy part as a
+We also convert 𝜏 to 𝑛,
+nearest-neighbor hopping problem:
+ Õ
+
+Õ 
+†
+∗ †
+∗
+H =𝑡
+𝑐𝑖𝜎 𝑐 𝑗𝜎 + h.c. +
+𝑉 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c. + 𝐽 ∗ 𝑆®𝑑 · 𝑠®
+(7.8.2)
+𝜎
+𝜎 h𝑖, 𝑗 i
+
+We know that the ground state for the interacting part is predominantly the spin-singlet
+(it was shown while calculating the ground states of the effective zero-mode Hamiltonian
+that the ground state is a mixture of singlet and triplet, and the triplet part dies out at
+large system sizes, see eq. 6.4.40), so we will take that as our reference state and treat the
+hopping part that connects the origin to the first site,
+Õ
+𝑐0†𝜎 𝑐𝑟®1 ,𝜎 + h.c.
+𝑉 =𝑡
+(7.8.3)
+𝑟®1 ,𝜎
+
+as a weak perturbation. 𝑟®1 here sums over the sites that are nearest to the origin. Once
+that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by 𝑁 −1 sites along with the interaction induced
+by the perturbation. The goal here is to see whether the effect of the perturbation is to
+lower the energy of the singly-occupied state | 𝑛ˆ 1 = 1i compared to the doubly-occupied
+state | 𝑛ˆ 1 = 2i or to raise it. If the perturbation shifts the energy of the singly-occupied
+state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled
+by a repulsive term |𝑈 | 𝑛ˆ 1↑ 𝑛ˆ 1↓. If, on the other hand, the effect is to raise the energy of the
+singly-occupied state with respect to the 𝑛ˆ 1 = 2 state, then that effect is equivalent to an
+attractive term −|𝑈 | 𝑛ˆ 1↑ 𝑛ˆ 1↓.
+To be precise, we will compare the energy shifts corresponding to the two states
+1
+
+|𝜙1(0) i = |↑i ⊗ √ |↑, ↓i − |↓, ↑i
+|{z}
+2
+site 1
+
+( 0)
+
+1
+
+|𝜙2 i = |↑, ↓i ⊗ √ |↑, ↓i − |↓, ↑i
+|{z}
+2
+site 1
+
+213
+
+
+
+
+(7.8.4)
+
+

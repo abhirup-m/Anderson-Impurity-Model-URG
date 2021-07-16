@@ -1,9 +1,8 @@
 % !TEX TS-program = xelatex
 \documentclass[12pt,twoside]{report}
+% \usepackage[draft]{graphicx}
 
-\usepackage[draft]{graphicx}
-
-\usepackage{anyfontsize}
+\usepackage{textpos}
 \usepackage{booktabs}
 \usepackage{tocbibind}
 \setcounter{tocdepth}{1}
@@ -56,17 +55,25 @@
 \chapter*{Declaration by the student}
 I, {\large\textbf{Abhirup Mukherjee}}, hereby declare that this thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
 \pb
-Signed:\\[5pt]
-\rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
+Signed:\\[20pt]
+\rule[1em]{0.5\linewidth}{0.5pt}\\  % This prints a line for the signature
+ABHIRUP MUKHERJEE
 \pb
 Date:
 \today
 
+\begin{textblock*}{2cm}(2.0cm,-3.4cm)
+	\includegraphics[width=150pt]{../figures/signature.jpg}
+\end{textblock*}
+
 \chapter*{Certificate from the supervisor}
 This is to certify that the thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} which is submitted by {\large\textbf{Abhirup Mukherjee}} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this thesis is original and has not been submitted for the award of any other degree.
 \pb
-Signed:\\[5pt]
-\rule[1em]{0.5\linewidth}{0.5pt}  % This prints a line for the signature
+Signed:\\[10pt]
+\rule[1em]{0.5\linewidth}{0.5pt}\\  % This prints a line for the signature
+DR. SIDDHARTHA LAL\\
+Associate Professor\\
+IISER Kolkata
 \pb
 Date:
 \today
@@ -4470,7 +4477,7 @@ This can be compared with the URG result, eq.~\ref{urg-siam},
 \eeq
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\ham^i\)) and replace it with the renormalised diagonal value of \(-\hf\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\ham^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
 \pb Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
-\subsection{Kondo model from a one-shot URG}\label{SWT from URG}
+\subsection{Obtaining the Kondo model from the SIAM via a one-shot URG}\label{SWT from URG}
 Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to decoupling the whole band via URG. \pb There are three departures from the conventional way of doing URG (or PMS).
 \begin{itemize}
     \item We will be severing the connections of the impurity with all the mobile electrons in one-shot, and not iteratively.
@@ -4550,7 +4557,7 @@ In the penultimate step, we interchanged the dummy indices \(k\) and \(q\) and c
 \end{flalign*}
 where \(K_{kq}\) is yet another energy scale.
 \beq
-K_{kq} = \frac{1}{4}\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}
+K_{kq} = \frac{1}{2}V_k V_q\rr{\fr{1}{E_k^1} - \fr{1}{E_k^0} + \fr{1}{E_q^1} - \fr{1}{E_q^0}}
 \eeq
 The third term gives
 \beq
@@ -7270,7 +7277,15 @@ In this work, we have seen that the fate of the SIAM at low temperatures is a gr
 	\item The spectral function of the impurity is another interesting quantity to explore. It is not yet completely certain which parts of the effective Hamiltonian for the cloud lead to which features of the spectral function. It would be interesting to check whether the Fermi liquid part gives the central peak and the non-Fermi liquid the side humps, or something else altogether. We also intend to explore the bath spectral function and its variation under the RG.
 	\item In Chapter \ref{urg_canonical}, we find that the URG renormalization in Hamiltonian has a form similar to that of URG - a generalized double-bracket form. This suggests that URG might have uses in linear algebra as well. It is well-known that transformations of the double-bracket form are unitary and can be used in minimization and sorting problems \cite{Brockett1991}. It has also been shown that the unitary flows correspond to motion along a geodesic if a suitable manifold is defined. This suggests that we can look for a quantity which is minimized by URG in the journey towards the fixed point and see if it can be used to provide a faster and more robust algorithm for optimization problems.
 	\item One can also look into the lattice versions of these models - the Kondo lattice and the Anderson lattice problems which involve two interacting bands - one for the impurity and the other for the conduction electrons \cite{gulacsi}. Since there is a macroscopic number of impurity electrons, such a model shows phase transitions. One big project for the future can be to look into such models, map the phase diagram and search for superconducting phases or non-Fermi liquid phases.
-	\item We have seen that the zero-mode of the low-energy effective Hamiltonian is essentially a two-site Anderson model(a.k.a Anderson dimer), which can be solved exactly. An interesting endeavor in this context could be to see if there is a unitary transformation that converts the Anderson dimer to a two-site Hubbard model (Hubbard dimer). The point of this exercise would be to shed some light on the inner workings of DMFT. The imposition of the self-consistency requirement in DMFT introduces a translational invariance into the Anderson model and converts it into the Hubbard model. If we could figure out a transformation that does the same (albeit, between dimers and not the full-fledged models), it might lead to new insights into DMFT).
+	\item We have seen that the zero-mode of the low-energy effective Hamiltonian is essentially a two-site Anderson model(a.k.a Anderson dimer), which can be solved exactly. An interesting endeavor in this context could be to see if there is a unitary transformation that converts the Anderson dimer to a two-site Hubbard model (Hubbard dimer). The point of this exercise would be to shed some light on the inner workings of DMFT. The imposition of the self-consistency requirement in DMFT introduces a translational invariance into the Anderson model and converts it into the Hubbard model. If we could figure out a transformation that does the same (albeit, between dimers and not the full-fledged models), it might lead to new insights into DMFT). This might allows us to see a metal-insulator phase transition, specially because of the impurity spectral function morphing that we saw from the effective Hamiltonian, shown again in fig.~\ref{spec_change}.
+		\begin{figure}[htpb]
+			\centering
+			\includegraphics[width=0.45\textwidth]{../figures/concl_ins.pdf}
+			\hspace{\fill}
+			\includegraphics[width=0.45\textwidth]{../figures/concl_metal.pdf}
+			\caption{Change in the spectral function from single peak to double peak structure under increase of \(U\). A similar change happens under DMFT for the bath spectral function of the Hubbard model.}
+			\label{spec_change}
+		\end{figure}
 	\item It is known from DMFT calculations that the spectral function of the bath changes under a change of \(U\), leading to a metal-insulator transition. An interesting project could be to redo the URG of the SIAM with more complicated baths (by inserting non-trivial self-energies into the bath), and see if the phase-diagram changes. As it stands now, there is no provision for a phase transition in the SIAM because there is only one stable phase. If the inclusion of a non-trivial bath brings about a phase-transition in the impurity phase diagram, that is essentially a mirror of the phase transition happening in the Hubbard model. The importance of this potential discovery is that the self-energies that we wish to insert into the bath have been obtained from a URG treatment of the Hubbard model, and the appearance of the phase transition would then show that URG can be used to do much of the work that DMFT does, and it provides an avenue of improving/remodeling DMFT.
 \end{itemize}
 \bibliographystyle{unsrt}

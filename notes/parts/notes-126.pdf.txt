@@ -1,0 +1,3788 @@
+Chapter 3. Unitary Renormalization Group Method
+
+3.4.4
+
+Numerical Solutions
+𝜖
+
+The symmetric scaling equation 3.4.28 was solved numerically with the choice 𝜔 = − 2𝑞 ,
+for both positive and negative bare values of 𝐽. For sufficiently low values of 𝜔, the
+Kondo coupling 𝐽 flows to the strong-coupling limit. This limit, as obtained from the
+URG, is of course finite. This can be reconciled with the NRG result 𝐽 ∗ = ∞ by noting the
+fact that increasing the bare bandwidth 𝐷 does increase the value of URG 𝐽 ∗ , such that in
+the thermodynamic limit 𝐷 → ∞, URG should give 𝐽 ∗ → ∞. This is shown in fig. 3.8
+
+Figure 3.7: Flow of 𝐽 towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left). The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).
+
+Figure 3.8: Variation of the fixed point value 𝐽 ∗ against the bare bandwidth, in log scale.
+
+113
+
+Chapter 4
+Connection between URG and Other
+Canonical Transformations
+4.1
+
+Poor Man’s Scaling
+
+We first motivate the formalism of PMS method. The problem is defined as
+H |Ψi = 𝐸 |Ψi
+
+(4.1.1)
+
+H is the total Hamiltonian and |Ψi and 𝐸 are the exact eigenstate and eigenvalue of H .
+We imagine a separation of the total Hilbert space into two set of states, and we call these
+two states | 0i and | 1i. This separation depends on which scattering term we want to kill
+by this transformation. For example, in the URG, we typically select a particular electron 𝑞𝛽 and then kill the scattering terms
+that change
+n
+o the number of this state. In that
+case, | 0i will refer to the set of states | 𝑛ˆ 𝑞𝛽 = 0i ⊗ |𝜙0 i and | 1i will refer to the set of states
+n
+o
+| 𝑛ˆ 𝑞𝛽 = 1i ⊗ |𝜙1 i . |𝜙0,1 i refer to the states of all the other electrons. As another example, if
+we wanted to separate the charge-Kondo and the spin-Kondo from the SIAM, we would
+want to kill the terms that scatter between the spin-full subspace 𝑛ˆ 𝑑 = 1 to the spin-less
+subspace 𝑛ˆ𝑑 = 0, 2. These two will then be the | 0i and | 1i sets.
+Keeping this separation in mind, the exact eigenstate |Ψi can be split as
+Õ
+Õ
+|Ψi =
+|𝜙0𝑖 i +
+|𝜙1𝑖 i
+𝑖
+
+(4.1.2)
+
+The Hamiltonian can also be split as
+
+H = 𝐻0 + 𝑉+ + 𝑉−
+(4.1.3)
+
+𝐻0 does not scatter between | 0i and | 1i . It contains the diagonal parts as well as
+scatterings inside the subspaces. 𝑉± scatter between the subspaces:
+
+
+𝑉+ | 0i ↦→ | 1i , 𝑉+ | 1i → 0
+
+
+(4.1.4)
+𝑉− | 1i ↦→ | 0i , 𝑉− | 0i → 0
+
+
+114
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+The Schrodinger equation can thus be split into
+Õ
+Õ
+Õ
+𝐻0
+|𝜙0𝑖 i + 𝑉−
+|𝜙1𝑖 i = 𝐸
+|𝜙0𝑖 i
+𝐻0
+
+Eliminating
+
+Í
+
+𝑖
+Õ
+𝑖
+
+𝑖
+
+|𝜙1𝑖 i gives
+𝐻0
+
+Õ
+𝑖
+
+|𝜙1𝑖 i + 𝑉+
+
+|𝜙0𝑖 i + 𝑉−
+
+𝑖
+Õ
+𝑖
+
+1
+
+𝐸1 − 𝐻0
+
+|𝜙0𝑖 i = 𝐸
+
+𝑉+
+
+Õ
+𝑖
+
+𝑖
+Õ
+𝑖
+
+|𝜙0𝑖 i = 𝐸
+
+The effective Hamiltonian in this subspace is therefore
+
+Similarly, eliminating
+
+Í
+
+𝑖
+
+H̃0 = 𝐻0 + 𝑉−
+
+1
+
+𝐸 − 𝐻0
+
+(4.1.5)
+
+|𝜙1𝑖 i
+Õ
+𝑖
+
+|𝜙0𝑖 i
+
+(4.1.6)
+
+(4.1.7)
+
+𝑉+
+
+|𝜙0𝑖 i gives the effective Hamiltonian in the other subspace,
+H̃1 = 𝐻0 + 𝑉+
+
+1
+
+𝐸 − 𝐻0
+
+(4.1.8)
+
+𝑉−
+
+The total effective Hamiltonian that does not scatter between the two subspaces is
+1
+
+1
+
+H̃ (𝐸) = 𝐻0 + 𝑉−
+𝑉+ + 𝑉+
+𝑉−
+𝐸 − 𝐻0
+𝐸 − 𝐻0
+|
+{z
+}
+
+(4.1.9)
+
+renormalization
+
+This is of course a function of whatever exact energy eigenvalue we chose, 𝐸. Different choices will give different effective Hamiltonians. The renormalization will now be
+written in terms of the matrix elements. Since the entire H𝑋 must be Hermitian, we must
+have 𝑉− = 𝑉+† ≡ 𝑉 .
+ΔH (𝐸) = 𝑉
+
+1
+
+𝐸 − 𝐻0
+
+𝑉† + 𝑉†
+
+1
+
+𝐸 − 𝐻0
+
+𝑉
+
+Now take the first term and insert complete bases on both sides of 𝑉 and 𝑉 † .
+Õ
+1
+1
+𝑗
+𝑗
+𝑗
+𝑗
+𝑉
+𝑉† =
+|𝜙0𝑖 i h𝜙0𝑖 | 𝑉 |𝜙1 i h𝜙1 |
+|𝜙1 i h𝜙1 | 𝑉 † |𝜙0𝑘 i h𝜙0𝑘 |
+𝐸 − 𝐻0
+𝐸
+−
+𝐻
+0
+𝑖 𝑗𝑘
+Õ
+1
+𝑗
+𝑗
+=
+|𝜙0𝑖 i 𝑉𝑖 𝑗 h𝜙1 |
+|𝜙1 i 𝑉𝑘†𝑗 h𝜙0𝑘 |
+𝐸 − 𝐻0
+𝑖 𝑗𝑘
+𝑗
+
+(4.1.10)
+
+(4.1.11)
+
+where we defined h𝜙0𝑖 | 𝑉 |𝜙1 i = 𝑉𝑖 𝑗 . We now approximate 𝐻0 by keeping just
+ the diagonal
+
+ 𝑗
+𝑗
+𝑗
+part, and allowing the balance to redefine 𝐸 into 𝜔. Then, 𝐸 − 𝐻0 |𝜙0,1 i ≡ 𝜔0,1 − 𝐸0,1 |𝜙0,1 i.
+That gives
+Õ
+𝑉𝑖 𝑗𝑉𝑘†𝑗
+1
+†
+𝑖
+𝑘
+𝑉 =
+𝑉
+|𝜙0 i h𝜙0 |
+(4.1.12)
+𝑗
+𝐸 − 𝐻0
+𝜔1 − 𝐸 1
+𝑖 𝑗𝑘
+115
+
+4.1. POOR MAN’S SCALING
+The second term similarly gives
+𝑉
+
+†
+
+1
+
+𝐸 − 𝐻0
+
+𝑉=
+
+Õ
+𝑖 𝑗𝑘
+
+𝑖
+
+𝑘
+
+|𝜙1 i h𝜙1 |
+
+𝑉 𝑗𝑖† 𝑉 𝑗𝑘
+
+(4.1.13)
+
+𝑗
+
+𝜔0 − 𝐸 0
+
+The total renormalization becomes
+ΔH (𝐸) =
+
+Õ© 1
+1
+ª
+|𝜙0𝑖 i h𝜙0𝑘 | 𝑉𝑖 𝑗𝑉𝑘†𝑗 +
+|𝜙1𝑖 i h𝜙1𝑘 | 𝑉 𝑗𝑖† 𝑉 𝑗𝑘 ®
+­
+𝑗
+𝑗
+𝜔0 − 𝐸 0
+𝑖 𝑗𝑘 « 𝜔1 − 𝐸1
+¬
+
+(4.1.14)
+
+This is a general expression that would work irrespective of whether you are decoupling
+multiple electrons or a single electron. However, the 𝜔 are unknown and we need some
+prescription for replacing them. Since the 𝐸 is the eigenstate of the initial state on which
+the scattering terms act, it makes sense to replace them with the initial state energy.
+ΔH (𝐸) =
+
+Õ© 1
+1
+ª
+|𝜙0𝑖 i h𝜙0𝑘 | 𝑉𝑖 𝑗𝑉𝑘†𝑗 +
+|𝜙1𝑖 i h𝜙1𝑘 | 𝑉 𝑗𝑖† 𝑉 𝑗𝑘 ®
+­
+𝑗
+𝑗
+𝑘
+𝐸1𝑘 − 𝐸0
+𝑖 𝑗𝑘 « 𝐸0 − 𝐸1
+¬
+
+(4.1.15)
+
+However, closer inspection reveals that this choice makes the renormalization non-Hermitian.
+So the correct choice is to keep both the initial and final energies.
+
+
+1Õ
+1
+†
+†
+𝑖
+𝑘
+𝑘
+𝑖
+ΔH =
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
++
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
+𝑖𝑗 𝑘𝑗
+𝑘𝑗 𝑖𝑗
+0
+0
+0
+0
+𝑗
+2
+𝑖 𝑗𝑘 𝜔1 − 𝐸1
+
+
+1
+1Õ
+†
+†
+𝑖
+𝑘
+𝑘
+𝑖
++
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
++
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
+1
+1
+1
+1
+𝑗𝑖 𝑗𝑘
+𝑗𝑘 𝑗𝑖
+𝑗
+2
+𝑖 𝑗𝑘 𝜔0 − 𝐸0
+=
+
++
+Therefore,
+
+1 Õ©
+
+2
+
+𝑖 𝑗𝑘
+
+1
+
+­
+𝐸 𝑘 − 𝐸1
+« 0
+
+|𝜙0 i h𝜙0 | 𝑉𝑖 𝑗𝑉𝑘†𝑗
+𝑗
+𝑖
+
+𝑘
+
+1 Õ©
+2
+
+𝑖 𝑗𝑘
+
++
+
+1
+
+ª
+|𝜙0 i h𝜙0 | 𝑉𝑘 𝑗𝑉𝑖†𝑗 ®
+𝑗
+𝑘
+
+𝑖
+
+𝐸0𝑘 − 𝐸1
+
+(4.1.16)
+
+¬
+
+1
+1
+ª
+†
+†
+𝑖
+𝑘
+𝑘
+𝑖
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
++
+|𝜙
+i
+h𝜙
+|
+𝑉
+𝑉
+­
+®
+𝑗𝑘
+𝑗𝑖
+1
+1
+1
+1
+𝑗𝑖
+𝑗𝑘
+𝑗
+𝑗
+𝐸1𝑘 − 𝐸0
+𝐸1𝑘 − 𝐸0
+«
+¬
+
+ΔH =
+
+1 Õ©
+2
+
+𝑖 𝑗𝑘
+
+1
+1
+ª 𝑖
++
+­
+® |𝜙0 i h𝜙0𝑘 | 𝑉𝑖 𝑗𝑉𝑘†𝑗
+𝑗
+𝑗
+𝑘
+𝑖
+𝐸 − 𝐸1 𝐸0 − 𝐸1
+« 0
+¬
+
+(4.1.17)
+Õ
+1
+1
+© 1
+ª 𝑖
++
++
+­
+® |𝜙1 i h𝜙1𝑘 | 𝑉 𝑗𝑖† 𝑉 𝑗𝑘
+𝑗
+𝑗
+𝑘
+𝑖
+2
+𝐸1 − 𝐸0
+𝑖 𝑗𝑘 « 𝐸1 − 𝐸0
+¬
+In summary, the prescription of replacing all 𝜔 with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling
+a single-electron state - then the total renormalization is of the form 𝑐†𝑇 † 𝑐 such that we
+start from an initial state, scatter to an intermediate state and then go back to the initial
+116
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+state so that the final state is the same as the initial state. However, if we are using PMS
+to decouple states in one-shot, each subspace will have multiple states and there might
+be terms where we do not end up at the initial state we started with. Then the correct
+prescription would be to use the mean of the initial and final state denominators.
+To make a better connection with URG, we next show how the PMS formalism works
+out for a single-electron decoupling.
+We want to decouple one electron at momentum 𝑞. We can split the exact wavefunction as
+|Ψi = |Ψ0 i + |Ψ1 i
+(4.1.18)
+
+
+where |Ψ0 i = 1 − 𝑛ˆ 𝑞 |Ψ 𝑁 i is that part of the wavefunction where the state 𝑞 is occupied.
+
+|Ψ1𝑁 i = 𝑛ˆ 𝑞 |Ψi is that part of the wavefunction where the state 𝑞 is occupied. We can also
+split the Hamiltonian as
+(4.1.19)
+H = H 𝑑 + 𝑉0 + 𝑉+ + 𝑉−
+
+H 𝑑 is the diagonal part; it has the purely energy terms as well as self-energies that may
+arise from the diagonal parts of interactions; 𝑉0 is the purely off-diagonal term that does
+not change 𝑛ˆ 𝑞 ; it is the scattering inside the low energy subspace. 𝑉+ and 𝑉− are the purely
+off-diagonal terms that do change 𝑛ˆ 𝑞 ; 𝑉+ takes you from 𝑛ˆ 𝑞 = 0 to 𝑛ˆ 𝑞 = 1 and 𝑉− does the
+opposite.
+Substituting eqs. 4.1.19 and 4.1.18 in eq. 4.1.1 gives
+
+
+
+
+H 𝑑 + 𝑉0 + 𝑉+ + 𝑉− |Ψ0 i + |Ψ1 i = 𝐸 |Ψ0 i + |Ψ1 i
+
+Gathering the kets with 𝑛ˆ 𝑞 = 0, 1 gives
+
+
+𝑑
+H0 + 𝑉0 |Ψ0 i + 𝑉− |Ψ1 i = 𝐸 |Ψ0 i
+
+
+H1𝑑 + 𝑉0 |Ψ1 i + 𝑉+ |Ψ0 i = 𝐸 |Ψ1 i
+
+(4.1.20)
+
+(4.1.21)
+
+The second equation can be written as
+
+(4.1.22)
+
+|Ψ1 i = 𝜂† |Ψ0 i
+where
+
+ 
+𝜂†
+
+PMS
+
+=
+
+1
+
+𝐸 − H1𝑑 − 𝑉0
+
+𝑉+
+
+Substituting this in the first equation gives
+
+
+𝑑
+†
+H0 + 𝑉0 + 𝑉− 𝜂 |Ψ0 i = 𝐸 |Ψ0 i
+
+This new Hamiltonian,
+
+H̃0 = H0𝑑 + 𝑉0 + 𝑉− 𝜂†
+117
+
+(4.1.23)
+
+(4.1.24)
+(4.1.25)
+
+4.1. POOR MAN’S SCALING
+has the high energy mode removed; the scattering terms start from the low energy subspace and end at the low energy subspace as well. The renormalization in the low energy
+subspace scatterings is
+(4.1.26)
+Δ𝑉0 = 𝑉− 𝜂†
+If we eliminate |Ψ0 i instead of |Ψ1 i, we get the renormalized equation in the high energy
+subspace:
+|Ψ0 i = 𝜂 |Ψ1 i
+(4.1.27)
+
+where
+
+𝜂
+,so
+
+
+
+
+
+PMS
+
+=
+
+1
+
+𝐸 − H0𝑑 − 𝑉0
+
+(4.1.28)
+
+𝑉−
+
+
+H1𝑑 + 𝑉0 + 𝑉+ 𝜂 |Ψ1 i = 𝐸 |Ψ1 i
+
+(4.1.29)
+
+H̃1 = H1𝑑 + 𝑉0 + 𝑉+ 𝜂
+
+(4.1.30)
+
+The renormalized Hamiltonian in the high energy subspace is thus
+
+If we want to keep both the high energy and low energy parts of the Hamiltonian, the
+new Hamiltonian is
+
+H̃ = H̃1 𝑛ˆ + H̃0 1 − 𝑛ˆ
+(4.1.31)
+= H0𝑑 + H1𝑑 + 𝑉0 + 𝑉+ 𝜂 + 𝑉− 𝜂†
+The total renormalization is
+
+ΔH
+
+
+
+PMS
+
+ 
+= 𝑉+ 𝜂 PMS + 𝑉− 𝜂†
+
+
+PMS
+
+(4.1.32)
+
+It can be shown that if we define a unitary operator 𝑈 = 1 − 𝜂 + 𝜂† , the transformed
+Hamiltonian 𝑈H𝑈 † is the same as eq. 4.1.31. This, along with the properties of 𝜂, have
+been shown in section 3. The important feature of eq. 4.1.31 is that there is no term in
+the transformed Hamiltonian which scatters between |Ψ0 i and |Ψ0 i- the two subspaces
+have been truly decoupled.
+h
+i
+𝑈H𝑈 † , 𝑛𝑞 = 0
+(4.1.33)
+We can write down the renormalized Schrodinger equation in the low energy subspace,
+from eq. 4.1.24,
+(4.1.34)
+H̃0 |Ψ0 i = 𝐸 |Ψ0 i
+
+and again repeat the entire process. H̃0 now takes the place of H and |Ψ0 i takes the place
+of |Ψi in eq. 4.1.1.
+
+The expression for URG is obtained in an almost identical way. The only difference is
+that instead of starting with the exact eigenpair (𝐸, |Ψi), we start with a more general
+0
+pair (H̃ , |Φi) where |Φi is not necessarily
+
+ an exact eigenstate of H . It is defined by H ,
+which is in turn defined as 𝑛ˆ 𝑞 H 0 1 − 𝑛ˆ 𝑞 = 0. |Φi is then defined by
+H |Φi = H 0 |Φi
+118
+
+(4.1.35)
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+This definition of H 0 is the very minimum that we must have in order to fulfill our goal
+(decouple 𝑞).
+The operators 𝜂 and its conjugate change accordingly:
+𝜂
+
+
+
+URG
+
+=
+=
+
+1
+
+H̃ − H0𝑑 − 𝑉0
+1
+
+𝜔ˆ − H0𝑑
+
+𝑉−
+
+(4.1.36)
+
+𝑉−
+
+where 𝜔ˆ ≡ H 0 − 𝑉0 now embodies the quantum fluctuations inherent in the Hamiltonian
+through the scattering term 𝑉0 . Similarly,
+ 
+𝜂†
+
+The renormalization is again
+ΔH
+
+
+
+URG
+
+URG
+
+1
+
+=
+
+𝜔ˆ − H1𝑑
+
+ 
+= 𝑉+ 𝜂 URG + 𝑉− 𝜂†
+
+
+(4.1.37)
+
+𝑉+
+
+URG
+
+(4.1.38)
+
+This again allows us to write down a unitary operator that decouples the entangled state:
+i
+h
+†
+†
+(4.1.39)
+𝑈 = 1 − 𝜂 + 𝜂 , 𝑛ˆ 𝑞 , 𝑈H𝑈 = 0
+
+where H̃ = 𝑈 † H𝑈. We can now write down a new problem in this decoupled space with
+0
+the rotated items and attempt to decouple another electron
+i will again choose some
+h 𝑞 . We
+0
+0
+0
+general eigenpair (H , |Φi) such that H̃ |Φi = H |Φi and H , 𝑛ˆ 𝑞0 = 0.
+
+Summarizing, the general Hamiltonian is not diagonal in the Fock space basis. URG,
+in order to proceed, selects one non-Fock basis of states |Φi such that 𝑞 is decoupled in
+that Hamiltonian. Since there can be lots of such basis, there is a freedom in this choice.
+With this basis in mind, URG then finds a unitary operator which when operated on the
+Hamiltonian takes us to the form in which it is diagonal in the Fock space basis. Note that
+this form is a function of the chosen |Φi. We then select the second degree of freedom
+and repeat the process. What PMS does is, it exploits the freedom of choice and selects
+the exact eigenstate |Ψi of the Hamiltonian as the non-Fock basis |Φi. Doing that returns
+a rotated Hamiltonian which is diagonal in 𝑞, and is a function of the chosen state, same
+as URG. The conclusion is that depending on which state we choose as our diagonal nonFock basis, URG and PMS will cause flows along different lines in general.
+ˆ Just at the fixed point,
+As the couplings flow, 𝑉0 will also flow, leading to a flow of 𝜔.
+the denominator of URG vanishes, giving the equation
+
+
+
+
+𝜔ˆ − H1𝑑 𝑉+ |Ψ0 i or 𝜔ˆ − H1𝑑 𝑉− |Ψ1 i
+(4.1.40)
+
+119
+
+4.1. POOR MAN’S SCALING
+
+Figure 4.1: Flows of PMS(green) and URG(blue)
+This means that one of the eigenvalues of 𝜔ˆ matches with the eigenvalue of the diagonal
+part H 𝑑 , either in the occupied sector (H1𝑑 ) or unoccupied sector (H1𝑑 ). Since the eigenvalues are unchanged during the unitary renormalization, this implies that 𝜔 takes up
+one of the eigenvalues of the whole Hamiltonian H . This will correspond to the fixed
+point obtained from PMS if we had started PMS with that eigenvalue.
+In short, while the PMS flow is parametrised by one of the exact energy eigenvalues
+𝐸, the URG flow is parametrised by a non-trivial operator 𝜔ˆ which incorporates both a
+diagonal part and an off-diagonal part and itself flows under the URG. At the fixed point,
+the off-diagonal part cancels out and the 𝜔ˆ finally flows to one of the energy eigenvalues
+and the URG fixed point matches with one of the PMS fixed points.
+To demonstrate the implementation, we can look at a specific model. For the SIAM,
+
+Õ
+†
+H=
+𝜖𝑘 𝜏𝑘𝜎 + 𝑉 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c.
+(4.1.41)
+𝑘𝜎
+
+where 𝜏 = 𝑛ˆ − 21 . We want to decouple the state 𝑞𝛽 from the rest of the electrons. We have
+Í
+Í
+†
+†
+𝑐𝑑𝜎 + h.c., 𝑉+ = 𝑉 𝑐𝑞𝛽
+𝑐𝑑 𝛽 and 𝑉− = 𝑉 𝑐𝑑† 𝛽 𝑐𝑞𝛽 . The
+Ĥ0 = 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛𝑑↓ + 𝑘𝜎 𝜖𝑘 𝑛ˆ 𝑘𝜎 , 𝑉0 = 𝑘<𝑞,𝜎 𝑐𝑘𝜎
+renormalization in particle sector
+Δ𝑉0 = 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+1
+
+
+
+𝐸 − 𝑉0 −
+120
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+𝑑
+Ĥ
+0
+
+(4.1.42)
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+The intermediate energy (at the propagator) is
+Õ
+Ĥ0𝑑 =
+𝜖𝑘 𝜏𝑘𝜎 + 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+
+(4.1.43)
+
+𝑘,𝜎
+
+This is because the 𝑐𝑑 𝛽 at the right of the propagator ensures that we must have 𝑛ˆ 𝑑 𝛽 = 0
+at the propagator.
+Δ𝑉0 = 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+
+
+𝐸 − 𝑉0 −
+
+Í
+
+1
+
+𝑘,𝜎 𝜖𝑘 𝜏𝑘𝜎
+
+− 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+(4.1.44)
+
+Since 𝐸 is the exact eigenvalue, we do not have an expression for it. Instead, we approximate 𝐸 − 𝑉0 by substituting it with the current diagonal part corresponding to the initial
+state on which this entire term will act. The intial state is characterized by 𝑛ˆ 𝑞𝛽 = 0 and
+𝑛ˆ 𝑑 𝛽 = 1, so
+Õ
+
+1
+𝐸 − 𝑉0 =
+𝜖𝑘 𝜏𝑘𝜎 − 𝜖𝑞 + 𝜖𝑑 + 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+(4.1.45)
+2
+𝑘<𝑞,𝜎
+
+The − 12 𝜖𝑞 comes from substituting 𝑛ˆ 𝑞𝛽 = 0 in 𝜖𝑞 𝜏𝑞𝛽 .
+Substituting this in Δ𝑉0 gives
+Δ𝑉0 = 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+= 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+1
+
+− 12 𝜖𝑞
+
+− 𝜖𝑞 𝜏𝑞𝛽 + 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+
+−𝜖𝑞 + 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+
+†
+= 𝑐𝑑† 𝛽 𝑐𝑞𝛽 𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+=
+
+1
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+1
+
+−𝜖𝑞 + 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+
+†
+−𝑐𝑑† 𝛽 𝑐𝑞𝛽 𝑐𝑞𝛽
+𝑐𝑑 𝛽
+𝜖𝑞
+
+1
+
+(4.1.46)
+
+− 𝜖𝑑 − 𝑈 𝑛ˆ 𝑑 𝛽
+
+
+
+ © −𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+−𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 ª
+­
+®
+= 1 − 𝑛ˆ 𝑞𝛽 ­
++
+®
+­ 𝜖𝑞 − 𝜖 𝑑 − 𝑈
+®
+𝜖𝑞 − 𝜖𝑑
+«
+¬
+
+
+On the second line, we substituted 𝜏𝑞𝛽 = 12 in the denominator, which is ensured by the
+†
+𝑐𝑞𝛽
+to the right of the propagator. The first term renormalizes the energy of the doublon
+state and the second term renormalizes that of the singly-occupied state:
+−1
+𝜖𝑞 − 𝜖 𝑑 − 𝑈
+−1
+Δ𝐸1 =
+𝜖𝑞 − 𝜖 𝑑
+Δ𝐸2 =
+
+121
+
+(4.1.47)
+
+4.1. POOR MAN’S SCALING
+The renormalization in the hole sector is
+†
+Δ𝑉0 = 𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+=
+
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+This time we substitute
+
+1
+
+
+
+𝐸 − 𝑉0 −
+
+𝑐𝑑† 𝛽 𝑐𝑞𝛽
+𝑑
+Ĥ
+0
+
+1
+
+ Í
+
+𝐸 − 𝑉0 − 𝑘,𝜎 𝜖𝑘 𝜏𝑘𝜎 − 𝜖𝑑 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+
+𝐸 − 𝑉0 =
+
+Õ
+
+𝑘<𝑞,𝜎
+
+=
+
+Õ
+
+𝑘<𝑞,𝜎
+
+𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+(4.1.48)
+
+𝜖𝑘 𝜏𝑘𝜎 + 𝜏𝑞𝛽 𝜖−𝑞 + 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+1
+
+𝜖𝑘 𝜏𝑘𝜎 + 𝜖−𝑞 + 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+
+(4.1.49)
+
+2
+
+In the last step we put 𝜏𝑞𝛽 = 21 because the state is occupied in the initial configuratin. Note
+that since the electron 𝑞𝛽 was occupied in the intial state, the energy 𝜖−𝑞 in this sector must
+be opposite to that of the particle sector, 𝜖𝑞 . Hence 𝜖−𝑞 = −𝜖𝑞 , which gives
+†
+Δ𝑉0 = 𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+1
+
+− 21 𝜖𝑞
+
+−
+
+𝜖−𝑞 𝜏𝑞𝛽
+
+− 𝜖𝑑 − 𝑈 𝑛ˆ 𝑑 𝛽
+
+𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+1
+
+†
+= 𝑐𝑞𝛽
+𝑐𝑑 𝛽 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+−𝜖𝑞 − 𝜖𝑑 − 𝑈 𝑛ˆ 𝑑 𝛽
+
+
+
+
+© − 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 − 1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 ª
+­
+®
++
+= 𝑛ˆ 𝑞𝛽 ­
+®
+­ 𝜖𝑞 + 𝜖 𝑑 + 𝑈
+®
+𝜖𝑞 + 𝜖𝑑
+«
+¬
+
+
+(4.1.50)
+
+In the second line, we put 𝜖−𝑞 = −𝜖𝑞 and 𝜏𝑞𝛽 = − 12 . The first term renormalizes the singlyoccupied state while the second term renormalizes the holon state. Combining with the
+particle sector results, the total renormalization in all the three impurity states (holon,
+single and doublon) are
+Δ𝐸0 = −
+Δ𝐸1 = −
+Δ𝐸2 = −
+
+1
+
+𝜖𝑞 + 𝜖𝑑
+1
+
+𝜖𝑞 + 𝜖𝑑 + 𝑈
+1
+
+−
+
+1
+
+𝜖𝑞 − 𝜖 𝑑
+
+(4.1.51)
+
+𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+These results are also obtained in ref. [12]. The complete process is depicted in fig. 4.2.
+Some conclusions:
+• The only difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue 𝐸 to parameterise the flow, URG uses a general intermediate
+decoupled Hamiltonian to do the same. Since the 𝐸 is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an
+URG but with a specific choice for the paramter.
+122
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+
+Figure 4.2: Flow chart of ”Poor Man’s” scaling algorithm
+• In practise, PMS replaces 𝐸 − 𝑉0 with the diagonal part of the initial state at the
+current step of the RG. We are talking about the energy of the initial state, not the
+intermediate state. This is because, from eq. 4.1.1, 𝐸 is the energy of the initial state
+on which 𝑉± act.
+• The ideal solution would have been to substitute the exact energy and the total scattering term 𝑉 , but since we do not know 𝐸 and keeping the 𝑉 would make the thing
+untractable, we use our current best guess (renormalised diagonal part). As the RG
+flows, both 𝐸 𝑗 and 𝑉 flow, such that at the fixed point, 𝑉 becomes zero (scattering
+terms get removed) and 𝐸 𝑗 morphs into the exact 𝐸.
+• In practise, URG replaces the 𝜔ˆ with a guess for the final energy 𝐸. This however
+ˆ A better approach would be to replace it with 𝐸 𝑗 ,
+ignores the renormalization of 𝜔.
+ˆ
+following PMS. That would act like the one-particle renormalization of 𝜔.
+• PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson [3] or that of the
+anisotropic power law Kondo model by Chenge et.al [28], they do not keep the term
+𝐽𝑧 𝑆𝑑𝑧 𝑠 𝑧 in the denominator although it is number(spin) conserving. Such terms are
+kept in the denominator of the URG though. It must be mentioned however that
+ref. [29] does bring a diagonal charge-charge interaction in the denominator in the
+PMS of the extended Anderson model.
+
+123
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+
+4.2
+
+Schrieffer-Wolff transformation
+
+Formal Differences
+We have a general Hamiltonian
+
+(4.2.1)
+
+H = H0 + H𝑋
+
+H0 is diagonal w.r.t a particular degree of freedom. 𝑉 is off-diagonal w.r.t that same
+degree of freedom. Let 𝑆 be an anti-Hermitian and off-diagonal operator. 𝑈 = 𝑒𝑆 is then a
+unitary transformation.
+
+𝑈H𝑈 † = 𝑒𝑆 H0 + H𝑋 𝑒−𝑆
+
+
+
+
+
+
+(4.2.2)
+= cosh 𝑆 + sinh 𝑆 H0 + H𝑋 cosh 𝑆 − sinh 𝑆
+= 𝐻1 + 𝐻2
+
+where 𝐻1 is diagonal and 𝐻2 is off-diagonal.
+
+
+
+
+𝐻1 = cosh 𝑆 H0 cosh 𝑆 − sinh 𝑆 H0 sinh 𝑆 − cosh
++ sinh
+
+
+
+
+𝐻2 = − cosh 𝑆 H0 sinh 𝑆 + sinh 𝑆 H0 cosh 𝑆 + cosh
+− sinh
+The decoupling condition is 𝐻2 = 0.
+
+
+𝑆 H𝑋 sinh
+
+𝑆 H𝑋 cosh
+
+𝑆 H𝑋 cosh
+
+𝑆 H𝑋 sinh
+
+
+𝑆
+
+𝑆
+
+𝑆
+
+𝑆
+
+(4.2.3)
+
+For small 𝑆, we have sinh 𝑆 ∼ 𝑆 and cosh 𝑆 ∼ 1 + 12 𝑆2 . Therefore, the off-diagonal part,
+up to second order, is
+
+
+(4.2.4)
+𝐻2 = −H0 𝑆 + 𝑆H0 + H𝑋 + 𝑂(𝑆3 ) = 𝑆, H0 + H𝑋
+The second order decoupling condition is thus
+
+
+𝑆, H0 = −H𝑋
+
+(4.2.5)
+
+The effective Hamiltonian is what remains, 𝐻1 . That becomes, at second order,
+
+
+
+
+
+
+
+
+1 2
+1 2
+1 2
+1 2
+𝐻1 = 1 + 𝑆 H0 1 + 𝑆 − 𝑆H0 𝑆 − 1 + 𝑆 H𝑋 𝑆 + 𝑆H𝑋 1 + 𝑆
+= H0 +
+
+2
+1n
+
+o
+
+2
+
+2
+
+𝑆2 , H0 − 𝑆H0 𝑆 − H𝑋 𝑆 + 𝑆H𝑋 + 𝑂(𝑆3 )
+
+2
+1 
+
+ 1
+
+
+
+𝑆, H0 𝑆 + 𝑆, H𝑋 + 𝑂(𝑆3 )
+= H0 + 𝑆 𝑆, H0 −
+2
+2
+i 
+
+1h 
+= H0 +
+𝑆, 𝑆, H0 + 𝑆, H𝑋 + 𝑂(𝑆3 )
+= H0 +
+
+= H0 +
+
+2
+1
+2
+1
+2
+
+2
+
+ 
+
+𝑆, −H𝑋 + 𝑆, H𝑋 + 𝑂(𝑆3 )
+
+𝑆, H𝑋 + 𝑂(𝑆3 )
+
+124
+
+(4.2.6)
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+
+† − 𝜂 , where 𝜂 and its conjugate are
+𝜂
+4
+o
+n
+2
+2
+†
+†
+non-perturbative and Fermionic - they satisfy 𝜂 = 𝜂 = 0 and 𝜂, 𝜂 = 1. We can then
+write
+ 
+
+𝜋 †
+𝑆
+𝑒 = exp
+𝜂 −𝜂
+
+Avoiding the perturbative route, we can take 𝑆 =
+
+4
+
+𝜋
+
+
+
+2  𝜋 2 1 
+3  𝜋 3
+1  †
+†
+𝜂 −𝜂
++
+𝜂 −𝜂
++ ...
+=1+ 𝜂 −𝜂
++
+4 2!
+4
+3!
+4
+
+
+
+
+𝜋
+
+†
+
+𝜋
+
+†
+
+1
+
+ 2
+𝜋
+
+=1+ 𝜂 −𝜂
+−
+4 2! 4
+
+𝜋  †
+𝜋
+= cos + 𝜂 − 𝜂 sin
+4
+4
+
+1 
+†
+= √ 1+𝜂 −𝜂
+
+  𝜋 3 1  𝜋 4
+1  †
+−
+𝜂 −𝜂
++
++ ...
+3!
+4
+4! 4
+
+2
+
+There we used
+
+and hence
+
+
+
+†
+
+𝜂 −𝜂
+
+2
+
+=𝜂
+
+†2
+
+2
+
+n
+
+†
+
+o
+
++ 𝜂 − 𝜂 , 𝜂 = −1
+
+
+†
+
+𝜂 −𝜂
+
+3
+
+
+
+†
+
+
+
+= −1 𝜂 − 𝜂
+
+and so on. This simplification allows us to write
+
+2
+
+∵𝜂 =𝜂
+
+†2
+
+=0
+
+
+
+
+
+sinh 𝑆 =
+
+(4.2.8)
+(4.2.9)
+
+i
+
+1h 𝑆
+1 
+1
+−𝑆
+†
+†
+cosh 𝑆 =
+𝑒 +𝑒
+= √ 1+𝜂 −𝜂+1−𝜂 +𝜂 = √
+2
+2 2
+2
+
+and
+
+(4.2.7)
+
+
+
+i
+1h 𝑆
+1 
+1 
+𝑒 − 𝑒−𝑆 = √ 1 + 𝜂† − 𝜂 − 1 + 𝜂† − 𝜂 = √ 𝜂† − 𝜂
+2
+2 2
+2
+
+The off-diagonal part now becomes
+
+h
+i
+1
+†
+†
+†
+𝐻2 =
+H𝑋 − 𝜂 H𝑋 𝜂 − 𝜂H𝑋 𝜂 + 𝜂 − 𝜂, H0
+2
+
+(4.2.10)
+
+(4.2.11)
+
+(4.2.12)
+
+The vanishing of this quantity is now the decoupling condition, and is also given in eq
+16 of ref. [22].
+To look for a decoupling condition similar to eq. 4.2.5, we can re-express the cosh and
+sinh in eq. 4.2.10 in terms of 𝑆, by substituting 𝜂† − 𝜂 = 𝜋4 𝑆:
+1
+4
+cosh 𝑆 = √ , and sinh 𝑆 = √ 𝑆
+2
+2𝜋
+
+That gives
+𝐻2 =
+
+
+
+1 4 
+2 𝜋
+
+
+
+𝑆, H0 + H𝑋 −
+125
+
+16
+
+𝜋2
+
+𝑆H𝑋 𝑆
+
+(4.2.13)
+
+
+(4.2.14)
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+
+renormalization
+SWT
+
+1
+2
+
+URG
+
+𝜋
+
+2
+
+
+
+𝑆, H𝑋
+
+
+
+𝑆, H𝑋
+
+
+
+
+
+decoupling condition
+
+
+
+
+
+𝑆, H0 = −H𝑋
+
+
+𝑆, H0 = − 𝜋4 H𝑋 + 𝜋4 𝑆H𝑋 𝑆
+
+Table 4.1: Comparison of perturbative and non-perturbative canonical transformations
+The decoupling condition becomes
+
+
+
+𝜋
+4
+(4.2.15)
+𝑆, H0 = − H𝑋 + 𝑆H𝑋 𝑆
+4
+𝜋
+
+
+This can be compared to the second order condition: 𝑆, H0 = −H𝑋 . We can also write
+the effective Hamiltonian for this non-perturbative case.
+1
+
+4
+
+2
+
+𝜋
+
+𝑈H𝑈 † = 𝐻1 = H0 −
+
+𝑆H0 𝑆 +
+2
+
+2 
+
+𝜋
+
+𝑆, H𝑋
+
+
+
+(4.2.16)
+
+The differences between the perturbative and non-perturbative ways are summarized
+in table 4.1. There appear to be two differences between these decoupling conditions:
+(a) a pre-factor of 𝜋4 for the first term on the right hand side, and (b) the altogether new
+second term on the right hand side. Both are outcomes of the non-perturbative nature
+of URG. This offers evidence that the physics captured by the effective Hamiltonian (and
+its associated low-energy many-particle Hilbert space) obtained from URG lies well beyond that obtained from SWT. Further, it shows that the SWT can only be justified as an
+expansion in a small parameter (say, 𝑈1 ) in the Anderson impurity problem), followed by
+a truncation of the BCH expansion and a projection onto a particular low-energy subspace. The truncation and projection are adopted simultaneously, and appear to impose
+the limit of 𝑈 = ∞ by hand. The URG flow never attains such a limit, thus suggesting
+that there exists a lot of interesting physics that could potentially be lost in the SWT procedure. Further, the projection finally applied within SWT means that we can never
+recover what is thrown away. This is again not the case with URG.
+Renormalization due to SWT and Comparison with PMS and URG
+Similar to the situation in Poor Man’s scaling, one can visualize two set of states and let
+H𝑋 = 𝑉+ + 𝑉− be the scattering that connects them and hence the one we want to kill. Let
+𝑆 be of the form
+i
+Õh
+𝑗
+𝑗
+𝑆=
+𝑠 |𝜙1𝑖 i h𝜙0 | − 𝑠† |𝜙0 i h𝜙1𝑖 |
+(4.2.17)
+𝑖𝑗
+
+This form is of course chosen to make 𝑆 anti-Hermitian and off-diagonal. The part 𝑠 can
+be determined from the decoupling condition:
+
+
+−H𝑋 = 𝑆, 𝐻0 = 𝑆𝐻0 − 𝐻0 𝑆
+(4.2.18)
+126
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+Multiplying with h𝜙0𝑎 | and |𝜙1𝑏 i from the left and right respectively gives
+− h𝜙0𝑎 | 𝑉 + 𝑉 † |𝜙1𝑏 i = h𝜙0𝑎 | 𝑆𝐻0 − 𝐻0 𝑆 |𝜙1𝑏 i
+
+(4.2.19)
+
+Since 𝑉 † acts on | 0i, it will not affect the LHS. Also, h𝜙0𝑎 | 𝑉 |𝜙1𝑏 i = 𝑉𝑎𝑏 . If we now consider
+only the diagonal part of 𝐻0 , we can write 𝐻0 (|𝜙0𝑎 i , |𝜙1𝑏 i) = (𝐸0,𝑎 |𝜙0𝑎 i , 𝐸1,𝑏 |𝜙1𝑏 i)). We then get
+i
+Õh
+−𝑉𝑎𝑏 = h𝜙0𝑎 |
+𝑆 |𝜙1𝑖 i h𝜙1𝑖 | 𝐻0 − 𝐻0 |𝜙0𝑖 i h𝜙0𝑖 | 𝑆 |𝜙1𝑏 i
+=
+
+Õh
+𝑖
+
+𝑖
+
+𝑆𝑎𝑖 𝐸1𝑖 𝛿𝑏𝑖 − 𝐸0𝑖 𝛿𝑎𝑖 𝑆𝑖𝑏
+
+𝑏
+
+=⇒ 𝑆𝑎𝑏
+
+𝑎
+
+= 𝑆𝑎𝑏 𝐸1 − 𝐸0 𝑆𝑎𝑏
+𝑉𝑎𝑏
+= 𝑎
+𝐸0 − 𝐸1𝑏
+
+i
+
+(4.2.20)
+
+𝑦
+
+where we defined h𝜙0𝑥 | 𝑆 |𝜙1 i = 𝑆𝑥 𝑦 . The total generator is
+i
+Õh
+𝑗
+𝑗
+𝑆=
+𝑆𝑖 𝑗 |𝜙0𝑖 i h𝜙1 | − 𝑆𝑖†𝑗 |𝜙1 i h𝜙0𝑖 |
+𝑖𝑗
+
+=
+
+Õ
+𝑖𝑗
+
+1
+
+𝑗
+
+𝐸0𝑖 − 𝐸1
+
+h
+i
+𝑗
+𝑗
+𝑉𝑖 𝑗 |𝜙0𝑖 i h𝜙1 | − 𝑉𝑖†𝑗 |𝜙1 i h𝜙0𝑖 |
+
+(4.2.21)
+
+The renormalization is thus
+ΔH =
+
+1
+2
+
+𝑆, H𝑋
+
+
+1 Õ 
+
+
+
+
+
+
+
+𝑗
+𝑗
+†
+†
+𝑖
+𝑖
+𝑘
+𝑙
+𝑙
+𝑘 
+𝑉
+|𝜙
+i
+h𝜙
+|
+−
+𝑉
+|𝜙
+i
+h𝜙
+|
+,
+𝑉
+|𝜙
+i
+h𝜙
+|
++
+𝑉
+|𝜙
+i
+h𝜙
+|
+=
+𝑖
+𝑗
+𝑘𝑙
+1
+1
+0
+0
+0
+0
+ 𝑖
+
+1
+1
+𝑖𝑗
+𝑘𝑙
+𝑗
+2
+
+𝑖 𝑗,𝑘𝑙  𝐸0 − 𝐸1
+
+
+
+1 Õ 
+1
+𝑗
+=
+𝑉𝑖 𝑗𝑉𝑘𝑙† |𝜙0𝑖 i h𝜙0𝑘 | 𝛿 𝑗𝑙 − 𝑉𝑖†𝑗𝑉𝑘𝑙 |𝜙1 i h𝜙1𝑙 | 𝛿𝑖𝑘
+ 𝑖
+𝑗
+2
+𝑖 𝑗,𝑘𝑙  𝐸0 − 𝐸1
+
+𝑗
+†
+†
+𝑙
+𝑘
+𝑖
+−𝑉𝑘𝑙𝑉𝑖 𝑗 |𝜙1 i h𝜙1 | 𝛿𝑘𝑖 + 𝑉𝑘𝑙𝑉𝑖 𝑗 |𝜙0 i h𝜙0 | 𝛿𝑙 𝑗
+1
+
+ 
+
+𝑗
+𝑗
+†
+†
+†
+†
+𝑘
+𝑖 
+𝑘
+𝑖
+𝑘
+𝑘
+=
+𝑉𝑖 𝑗𝑉𝑘 𝑗 |𝜙0 i h𝜙0 | − 𝑉𝑖 𝑗𝑉𝑖𝑘 |𝜙1 i h𝜙1 | − 𝑉𝑖𝑘𝑉𝑖 𝑗 |𝜙1 i h𝜙1 | + 𝑉𝑘 𝑗𝑉𝑖 𝑗 |𝜙0 i h𝜙0 | 
+ 𝑖
+𝑗
+2
+
+
+−
+𝐸
+𝐸
+𝑖 𝑗𝑘  0
+1
+
+
+
+
+
+1 Õ ©
+1
+1
+1
+© 1
+ª †
+ª
+𝑗
+†
+𝑘 
+𝑖
+𝑘
+=
++
++ 𝑖
+® 𝑉𝑖 𝑗𝑉𝑖𝑘 |𝜙1 i h𝜙1 | 
+® 𝑉𝑖 𝑗𝑉𝑘 𝑗 |𝜙0 i h𝜙0 | − ­
+­
+𝑗
+𝑗
+𝑗
+𝑘
+
+ 𝑖
+2
+𝐸0𝑘 − 𝐸1
+𝐸0𝑖 − 𝐸1 𝐸0 − 𝐸1
+𝑖 𝑗𝑘 « 𝐸0 − 𝐸1
+
+«
+¬
+¬
+
+
+(4.2.22)
+
+
+1 Õ 
+
+1
+
+127
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+This is the same as the PMS result eq. 4.1.17. It is easy to see that since this transformation
+is unitary, it has zero trace so as to preserve the trace of the Hamiltonian:
+
+
+
+  Õ 𝑙
+Tr H =
+h𝜙0 | + h𝜙1𝑙 | ΔH |𝜙0𝑙 i + |𝜙1𝑙 i
+1Õ
+𝑙
+
+=
+
+2
+
+𝑗𝑙
+
+2
+
+𝐸𝑙
+
+0
+
+=0
+
+𝑉 𝑉† −
+𝑗 𝑙𝑗 𝑙𝑗
+
+− 𝐸1
+
+1Õ
+
+2
+
+𝑗𝑖
+
+2
+
+𝐸𝑖
+
+0
+
+−
+
+𝐸𝑙
+
+1
+
+(4.2.23)
+
+𝑉𝑖𝑙†𝑉𝑖𝑙
+
+We can also make a comparison to the renormalization obtained from URG.
+i
+1h †
+ΔH =
+𝜂 − 𝜂, H
+2
+
+where
+𝜂=
+=⇒ 𝜂† =
+
+1
+
+𝜔−
+Õ
+𝑖𝑗
+
+=⇒ 𝜂† − 𝜂 =
+
+Õ
+𝑖𝑗
+
+H𝑑
+
+1
+
+Õ
+
+𝑗
+
+𝜔1 −
+1
+
+𝑗
+
+𝑖𝑗
+
+𝑗
+
+𝑉𝑖 𝑗 |𝜙0𝑖 i h𝜙1 | =
+
+(4.2.24)
+
+Õ
+𝑖𝑗
+
+1
+𝑗
+
+𝜔1 −
+
+𝑗
+
+𝐸𝑖
+
+0
+
+𝑉𝑖 𝑗 |𝜙0𝑖 i h𝜙1 |
+
+𝑗
+
+𝐸𝑖
+
+0
+
+𝜔1 − 𝐸0𝑖
+
+𝑉𝑖†𝑗 |𝜙1 i h𝜙0𝑖 |
+
+
+
+𝑗
+𝑗
+𝑉𝑖†𝑗 |𝜙1 i h𝜙0𝑖 | − 𝑉𝑖 𝑗 |𝜙0𝑖 i h𝜙1 |
+
+(4.2.25)
+
+This can be thought of as the generator for the unitary transformations of URG. Comparing with the generator 𝑆 of eq. 4.2.21, the prescription to go from URG to SWT is to replace
+𝑗
+𝑗
+𝜔1 → 𝐸1 . Doing a similar calculation gives
+ΔH𝑈𝑅𝐺
+
+SIAM URG vs SIAM SWT
+
+
+
+1
+1
+ª
+=
++
+® 𝑉 𝑉 † |𝜙𝑖 i h𝜙0𝑘 |
+­
+ 𝐸𝑖 − 𝜔 𝑗 𝐸𝑘 − 𝜔 𝑗 𝑖 𝑗 𝑘 𝑗 0
+2
+𝑖 𝑗𝑘 « 0
+1
+1¬
+0
+
+
+
+1
+© 1
+ª †
+𝑗
+𝑘 
+−­
++ 𝑖
+® 𝑉𝑖 𝑗𝑉𝑖𝑘 |𝜙1 i h𝜙1 | 
+𝑗
+𝑘
+
+𝐸0𝑖 − 𝜔1 𝐸0 − 𝜔1
+
+«
+¬
+
+1 Õ ©
+
+(4.2.26)
+
+The SWT for the single-impurity Anderson model is briefly sketched below. In order to
+†
+decouple a state 𝑞𝛽 from the SIAM (𝜖𝑞 > 0) , we take an ansatz 𝑆 = (𝐴 + 𝐵𝑛ˆ 𝑑 𝛽 )(𝑐𝑞𝛽
+𝑐𝑑 𝛽 − h.c.).
+Plugging this into the decoupling condition gives
+
+
+
+
+
+(4.2.27)
+−𝜖𝑞 𝐴 + 𝐵𝑛ˆ 𝑑 𝛽 + 𝜖𝑑 𝐴 + 𝐵𝑛ˆ 𝑑 𝛽 + 𝑈 𝐴 + 𝐵 𝑛ˆ 𝑑 𝛽 = −𝑉
+128
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+which gives
+𝑆 =𝑉
+
+"
+
+1 − 𝑛ˆ 𝑑 𝛽
+
+𝜖𝑞 − 𝜖𝑑
+
++
+
+𝑛ˆ 𝑑 𝛽
+𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+#
+
+†
+(𝑐𝑞𝛽
+𝑐𝑑 𝛽 − h.c.)
+
+(4.2.28)
+
+The remaining diagonal part constitutes the effective Hamiltonian.
+𝑈H𝑈 † = 𝐻1 = H0 +
+
+1n
+
+o
+
+
+H0 , 𝑆2 − 𝑆H0 𝑆 + 𝑆, H𝑋
+2
+ i 
+
+1 h
+= H0 +
+H0 , 𝑆 , 𝑆 + 𝑆, H𝑋
+= H0 +
+
+2
+1
+
+= H0 +
+
+2
+1
+2
+
+ 
+
+H𝑋 , 𝑆 + 𝑆, H𝑋
+
+𝑆, H𝑋
+
+
+
+For the SIAM (and noting that we are decoupling 𝑞𝛽), the two parts are
+
+Õ
+Õ 
+†
+H0 =
+𝜖𝑘 𝑛ˆ 𝑘𝜎 + 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ +
+𝑐𝑘𝜎
+𝑐𝑑𝜎 + h.c.
+H𝑋 =
+
+𝑘𝜎
+†
+𝑐𝑞𝛽
+𝑐𝑑 𝛽
+
+(4.2.29)
+
+𝑘𝜎≠𝑞𝛽
+
+(4.2.30)
+
++ h.c.
+
+The renormalization in the effective Hamiltonian from decoupling a high energy particle
+state is thus
+"
+#
+
+
+
+
+𝑛ˆ 𝑑 𝛽
+1 − 𝑛ˆ 𝑑 𝛽
+
+1
+2
++
+𝑆, H𝑋
+= |𝑉 |
+𝑛ˆ 𝑞𝛽 1 − 𝑛ˆ 𝑑 𝛽 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑞𝛽
+2
+𝜖𝑞 − 𝜖𝑑 𝜖𝑞 − 𝜖𝑑 − 𝑈
+𝑛ˆ 𝑞𝛽 =0
+𝑛ˆ 𝑞𝛽 =0
+"
+#
+(4.2.31)
+1 − 𝑛ˆ 𝑑 𝛽
+𝑛ˆ 𝑑 𝛽
+= −𝑛ˆ 𝑑 𝛽 |𝑉 | 2
++
+𝜖𝑞 − 𝜖𝑑 𝜖𝑞 − 𝜖𝑑 − 𝑈
+In the last step, we put 𝑛ˆ 𝑞𝛽 = 0 because previously we assumed 𝜖𝑞 > 0 and high energy
+virtual excitations above the Fermi surface must necessarily be vacant in the initial state
+(at 𝑇 = 0). We can obtain the renormalization from decoupling a high energy hole state
+directly from this expression, just by choosing 𝑛ˆ 𝑞𝛽 = 1 and setting 𝜖𝑞 → −𝜖𝑞 .
+"
+#
+
+
+1 − 𝑛ˆ 𝑑 𝛽
+𝑛ˆ 𝑑 𝛽
+
+1
+𝑆, H𝑋
+= − 1 − 𝑛ˆ 𝑑 𝛽 |𝑉 | 2
++
+(4.2.32)
+2
+𝜖𝑞 + 𝜖 𝑑 𝜖𝑞 + 𝜖 𝑑 + 𝑈
+𝑛ˆ 𝑞𝛽 =1
+
+These two results - the renormalization in the particle and hole sectors - is identical to
+the result (see [12]) obtained from PMS of the SIAM. The renormalizations in the various
+energy levels of the impurity can be read off now, after summing over all states in the
+
+129
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+interval we are decoupling.
+Δ𝐸2 = −2
+
+Õ
+𝑞
+
+|𝑉𝑞 | 2
+𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+Õ |𝑉𝑞 | 2
+Õ
+|𝑉𝑞 | 2
+Δ𝐸1 = −
+−
+𝜖𝑞 − 𝜖𝑑
+𝜖𝑞 + 𝜖𝑑 + 𝑈
+𝑞
+𝑞
+
+(4.2.33)
+
+Õ |𝑉𝑞 | 2
+Δ𝐸0 = −2
+𝜖𝑞 + 𝜖𝑑
+𝑞
+
+This can be compared with the URG result, eq. 5.1.12,
+Δ𝐸2 = 2
+
+Õ
+𝑞
+
+Δ𝐸1 =
+
+Õ
+
+|𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞 + 𝜖𝑑 + 𝑈
+|𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞 − 𝜖𝑑 − 𝑈
+Õ
+|𝑉𝑞 | 2
+
+𝑞
+
+Δ𝐸0 = 2
+
+𝑞
+
++
+
+Õ
+𝑞
+
+|𝑉𝑞 | 2
+
+𝜔 − 21 𝜖𝑞 + 𝜖𝑑
+
+(4.2.34)
+
+𝜔 − 12 𝜖𝑞 − 𝜖𝑑
+
+We can transform the URG result to the SWT result if we ignore the effect of the quantum
+fluctuations in 𝜔 (arising from the presence of the off-diagonal term H 𝑖 ) and replace it
+with the renormalised diagonal value of − 21 𝜖𝑞 . This means that SWT tracks the effect of
+the off-diagonal terms only in the numerator. Of course, all this assumes we are doing
+an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second
+difference is that URG has a Green’s function like structure in the renormalization such
+that a fixed point is reached when the diagonal part H 𝑑 matches one of the eigenvalues
+of 𝜔 (see 3.1.6). SWT does not have such a fixed point structure.
+Another point to note is that decoupling a single electron does not generate all the chargecharge or spin-spin interactions that come out when one performs a one-shot SWT. This
+implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove
+just the local interactions of the mobile electrons. Instead, if one performs a URG in
+which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices
+are generated. This is shown in the next subsection.
+
+4.2.1
+
+Obtaining the Kondo model from the SIAM via a one-shot URG
+
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by
+performing a one-shot URG on the SIAM. This should justify that the action of performing
+an SWT is analogous to decoupling the whole band via URG.
+There are three departures from the conventional way of doing URG (or PMS).
+130
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+• We will be severing the connections of the impurity with all the mobile electrons
+in one-shot, and not iteratively.
+• We will have to trivialize the quantum fluctuation operator 𝜔ˆ by replacing it with
+the diagonal part of the initial state energy.
+Since we are decoupling the whole band, the off-diagonal part that we want to remove
+is
+i
+Õh
+†
+𝑐𝑑𝜎 + h.c.
+H𝐼 =
+𝑉𝑘 𝑐𝑘𝜎
+(4.2.35)
+𝑘𝜎
+
+The diagonal part is the rest of the Hamiltonian.
+Õ
+H𝑑 =
+𝜖𝑘 𝑛ˆ 𝑘𝜎 + 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+=
+
+𝑘𝜎
+Õ
+𝑘𝜎
+
+𝜖𝑘 𝜏𝑘𝜎 + 𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+
+(4.2.36)
+
+Following eq. 3.1.47, the renormalization is
+ΔH =
+The transition operator 𝜂 is
+𝜂=
+=
+
+1
+
+𝜔 − H𝑑
+Õ
+𝜔+
+"
+
+Õ
+
+1
+
+
+
+− 𝜖𝑑 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑𝜎
+
+†
+𝑉𝑘∗ 𝑐𝑑𝜎
+𝑐𝑘𝜎
+
+#
+1 − 𝑛ˆ 𝑑𝜎
+𝑛ˆ 𝑑𝜎
+†
+𝑉𝑘∗ 𝑐𝑑𝜎
+𝑐𝑘𝜎
++
+=
+1
+1
+𝜔1 + 2 𝜖𝑘 − 2𝜖𝑑 − 𝑈 𝜔0 + 2 𝜖𝑘 − 𝜖𝑑
+𝑘𝜎
+"
+#
+Õ 𝑛ˆ
+ˆ
+1
+−
+𝑛
+𝑑𝜎
+𝑑𝜎
+†
+=
+𝑉𝑘∗ 𝑐𝑑𝜎
+𝑐𝑘𝜎
++
+1
+0
+𝐸
+𝐸
+𝑘
+𝑘
+𝑘𝜎
+𝑘𝜎
+
+Õ
+
+(4.2.37)
+
+†
+𝑉𝑘∗ 𝑐𝑑𝜎
+𝑐𝑘𝜎
+
+𝑘𝜎
+
+1
+𝜖
+2 𝑘
+
+i
+1h †
+𝜂 − 𝜂, H𝑋
+2
+
+(4.2.38)
+
+where 𝐸𝑘1 = 𝜔1 + 21 𝜖𝑘 − 2𝜖𝑑 − 𝑈 and 𝐸𝑘0 = 𝜔0 + 12 𝜖𝑘 − 𝜖𝑑 . The total generator is therefore
+"
+#
+
+
+Õ 𝑛ˆ
+ˆ
+1
+−
+𝑛
+𝑑𝜎
+𝑑𝜎
+†
+∗ †
+𝜂† − 𝜂 =
++
+𝑉
+𝑐
+𝑐
+−
+𝑉
+𝑐
+𝑐
+𝑘 𝑘𝜎 𝑑𝜎
+𝑘 𝑑𝜎 𝑘𝜎
+𝐸𝑘1
+𝐸𝑘0
+𝑘𝜎
+
+The renormalization is
+
+!
+
+
+
+
+
+1 Õ  𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎 
+†
+†
+∗ †
+∗ †
+
+ΔH (𝜔1 , 𝜔0 ) =
++
+𝑉
+𝑐
+𝑐
+−
+𝑉
+𝑐
+𝑐
+,
+𝑉
+𝑐
+𝑐
++
+𝑉
+𝑐
+𝑐
+𝑞
+𝑞𝛼
+𝑘
+𝑑𝜎
+𝑘𝜎
+𝑑𝛼
+𝑞𝛼
+𝑞 𝑑𝛼
+𝑘 𝑑𝜎
+ 𝐸1
+
+𝑘𝜎
+0
+2
+𝐸
+
+𝑘
+𝑘
+𝑘𝑞𝜎𝛼 
+
+131
+
+(4.2.39)
+
+(4.2.40)
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+The summation has two parts, Δ1,2 - one where 𝜎 = 𝛼 and another where 𝜎 = 𝛼. The first
+part Δ1 gives
+!
+
+
+
+
+
+†
+†
+∗ †
+∗ †
+𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 − 𝑉𝑘 𝑐𝑑𝜎 𝑐𝑘𝜎 , 𝑉𝑞 𝑐𝑞𝜎 𝑐𝑑𝜎 + 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑞𝜎 
+
+
+!
+i
+h
+Õ
+1
+𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎
+†
+†
+†
+†
+=
+𝑐𝑘𝜎 , 𝑉𝑞 𝑐𝑞𝜎
+𝑐𝑑𝜎 + 𝑉𝑞∗ 𝑐𝑑𝜎
+𝑐𝑞𝜎
++
+𝑐𝑑𝜎 − 𝑉𝑘∗ 𝑐𝑑𝜎
+𝑉𝑘 𝑐𝑘𝜎
+1
+0
+2
+𝐸
+𝐸
+𝑘
+𝑘
+𝑘𝑞𝜎
+!
+h
+i
+h
+i
+Õ
+1
+𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎
+†
+†
+†
+∗
+∗ †
+∗
+=
++
+𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 , 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑞𝜎 − 𝑉𝑘 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑘𝜎 , 𝑐𝑞𝜎 𝑐𝑑𝜎
+2
+𝐸𝑘1
+𝐸𝑘0
+𝑘𝑞𝜎
+!
+h
+i
+h
+i
+1 Õ 𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎
+†
+†
+†
+∗
+∗ †
+∗
+=
++
+𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 , 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑞𝜎 + 𝑉𝑘 𝑉𝑞 𝑐𝑞𝜎 𝑐𝑑𝜎 , 𝑐𝑑𝜎 𝑐𝑘𝜎
+1
+0
+2
+𝐸
+𝐸
+𝑘
+𝑘
+𝑘𝑞𝜎
+
+
+1 Õ  𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎
+Δ1 =
+ 𝐸1 + 𝐸0
+2
+𝑘
+𝑘
+𝑘𝑞𝜎=𝛼 
+
+(4.2.41)
+
+
+
+!
+
+
+h
+i
+© 1
+1
+1 ª
+1
+†
+†
+∗
+ˆ
+ˆ
+=
+𝑛𝑑𝜎 1 + 1 + 1 − 𝑛𝑑𝜎 ­ 0 + 0 ® 𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 , 𝑐𝑑𝜎 𝑐𝑞𝜎
+
+2
+𝐸𝑘 𝐸𝑞
+𝐸𝑘 𝐸𝑞 
+𝑘𝑞𝜎 
+«
+¬
+
+
+
+
+
+Õ  1
+1
+1
+1
+1
+1
+1
+1
+©
+©
+ª
+ª
+ †
+†
+=
+ 𝑉𝑘𝑉𝑞∗ ­ 0 + 0 ® + 𝑛ˆ 𝑑𝜎 𝑉𝑘𝑉𝑞∗ ­ 1 + 1 − 0 − 0 ® 𝑐𝑘𝜎 𝑐𝑞𝜎 − 𝑐𝑑𝜎 𝑐𝑑𝜎 𝛿𝑘𝑞
+2
+2
+𝐸𝑘 𝐸𝑞 𝐸𝑘 𝐸𝑞 
+𝐸𝑘 𝐸𝑞
+𝑘𝑞𝜎 
+«
+«
+¬
+¬
+
+1Õ
+
+We can now define two new energy scales:
+1ª
+1
+©1
+𝑊𝑘𝑞 = 𝑉𝑘𝑉𝑞∗ ­ 0 + 0 ® ,
+2
+𝐸
+𝐸𝑞
+« 𝑘
+¬
+
+1
+1
+1ª
+1
+©1
+𝐽𝑘𝑞 = 𝑉𝑘𝑉𝑞∗ ­ 1 + 1 − 0 − 0 ®
+2
+𝐸
+𝐸𝑞 𝐸𝑘 𝐸𝑞
+« 𝑘
+¬
+
+(4.2.42)
+
+The renormalization Δ1 becomes
+i
+
+Õh
+†
+†
+Δ1 =
+𝑊𝑘𝑞 + 𝑛ˆ 𝑑𝜎 𝐽𝑘𝑞 𝑐𝑘𝜎
+𝑐𝑞𝜎 − 𝑐𝑑𝜎
+𝑐𝑑𝜎 𝛿𝑘𝑞
+
+i
+Õh
+Õ
+
+†
+=
+𝑊𝑘𝑞 + 𝑛ˆ 𝑑𝜎 𝐽𝑘𝑞 𝑐𝑘𝜎
+𝑐𝑞𝜎 −
+𝑊𝑘𝑘 + 𝑛ˆ 𝑑𝜎 𝐽𝑘𝑘 𝑛ˆ 𝑑𝜎
+𝑘𝑞𝜎
+
+
+Õ
+Õ
+Õ
+
+1
+†
+†
+=
+𝑊𝑘𝑞 + 𝑛ˆ 𝑑 𝐽𝑘𝑞 𝑐𝑘𝜎
+𝑐𝑞𝜎 −
+𝜎 𝐽𝑘𝑞 𝑆𝑑𝑧 𝑐𝑘𝜎
+𝑐𝑞𝜎 −
+𝑊𝑘𝑘 + 𝑛ˆ 𝑑𝜎 𝐽𝑘𝑘 𝑛ˆ 𝑑𝜎
+𝑘𝑞𝜎
+
+𝑘𝑞𝜎
+
+𝑘𝜎
+
+2
+
+𝑘𝑞𝜎
+
+(4.2.43)
+
+𝑘𝜎
+
+There we exchanged 𝑛ˆ 𝑑𝜎 for 𝑆𝑑𝑧 and 𝑛ˆ 𝑑 , in the first term, by using the definitions 𝑛ˆ 𝑑𝜎 + 𝑛ˆ 𝑑𝜎 =
+𝑛ˆ 𝑑𝜎 and 𝑛ˆ 𝑑𝜎 − 𝑛ˆ 𝑑𝜎 = 2𝜎𝑆𝑑𝑧 .
+
+132
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+The second term in the summation comes from the choice 𝜎 = 𝛼.
+!
+
+
+
+
+1 Õ  𝑛ˆ 𝑑𝜎 1 − 𝑛ˆ 𝑑𝜎 
+†
+†
+†
+†
+∗
+∗
+
+Δ2 =
++
+𝑉
+𝑐
+𝑐
+−
+𝑉
+𝑐
+𝑐
+,
+𝑉
+𝑐
+𝑐
++
+𝑉
+𝑐
+𝑐
+𝑞
+𝑘
+𝑑𝜎
+𝑘𝜎
+𝑑𝜎
+𝑞𝜎
+𝑞 𝑑𝜎
+𝑘 𝑑𝜎
+ 𝐸1
+
+𝑘𝜎
+0
+𝑞𝜎
+2
+𝐸
+
+𝑘
+𝑘
+𝑘𝑞𝜎=𝛼 
+"
+# 
+ 𝑛ˆ
+1Õ
+1 − 𝑛ˆ 𝑑𝜎
+𝑑𝜎
+†
+†
+†
+∗ †
+𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 − 𝑉𝑘 𝑐𝑑𝜎 𝑐𝑘𝜎
+=
++
+, 𝑉𝑞 𝑐𝑞𝜎
+𝑐𝑑𝜎 + 𝑉𝑞∗ 𝑐𝑑𝜎
+𝑐𝑞𝜎
+1
+0
+2
+𝐸𝑘
+𝐸𝑘
+𝑘𝑞𝜎
+!
+
+
+1
+1Õ
+1
+†
+†
+†
+†
+𝑐𝑘𝜎 𝑉𝑞∗ 𝑐𝑑𝜎
+=
+𝑉𝑘 𝑐𝑘𝜎
+𝑐𝑑𝜎 − 𝑉𝑘∗ 𝑐𝑑𝜎
+𝑐𝑞𝜎 − 𝑉𝑞 𝑐𝑞𝜎
+𝑐𝑑𝜎
+− 0
+1
+2
+𝐸
+𝐸𝑘
+𝑘
+𝑘𝑞𝜎
+
+
+1Õ
+†
+†
+†
+†
+†
+†
+∗ †
+∗ ∗ †
+∗
+=
+𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 − 𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 − 𝑉𝑘 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 + 𝑉𝑘 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎
+2
+
+×
+
+𝑘𝑞𝜎
+
+1
+
+1
+
+𝐸𝑘
+
+−
+
+1
+
+𝐸𝑘0
+
+!
+
+We now use the following trick to combine the first and fourth terms:
+!
+
+
+1Õ
+1
+1
+†
+†
+†
+∗ †
+∗
+𝑉𝑘𝑉𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 + 𝑉𝑘 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 × 1 − 0
+2
+𝐸𝑘 𝐸𝑘
+𝑘𝑞𝜎
+!
+!
+Õ
+1Õ
+1
+1
+1
+1
+1
+†
+†
+†
+†
+=
+𝑉𝑘𝑉𝑞∗ 𝑐𝑘𝜎
+𝑐𝑞𝜎 1 − 0 +
+𝑉𝑘∗𝑉𝑞 𝑐𝑑𝜎
+𝑐𝑘𝜎 𝑐𝑞𝜎
+𝑐𝑑𝜎 1 − 0
+𝑐𝑑𝜎 𝑐𝑑𝜎
+2
+2
+𝐸
+𝐸𝑘 𝐸𝑘
+𝐸
+𝑘
+𝑘
+𝑘𝑞𝜎
+𝑘𝑞𝜎
+!
+1Õ
+1
+1Õ ∗
+1ª
+1
+©1
+†
+†
+†
+†
+=
+𝑉𝑘𝑉𝑞∗ 𝑐𝑘𝜎
+𝑐𝑑𝜎 𝑐𝑑𝜎
+𝑐𝑞𝜎 1 − 0 +
+𝑉𝑞 𝑉𝑘 𝑐𝑑𝜎
+𝑐𝑞𝜎 𝑐𝑘𝜎
+𝑐𝑑𝜎 ­ 1 − 0 ®
+2
+2
+𝐸𝑘 𝐸𝑘
+𝐸
+𝐸𝑞
+𝑘𝑞𝜎
+𝑞𝑘𝜎
+« 𝑞
+¬
+Õ
+†
+†
+=−
+𝐽𝑘𝑞 𝑐𝑘𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 𝑐𝑑𝜎
+
+(4.2.44)
+
+(4.2.45)
+
+𝑘𝑞𝜎
+
+In the penultimate step, we interchanged the dummy indices 𝑘 and 𝑞 and changed 𝜎 ↔ 𝜎
+in the second term.
+Similarly, for the second term, we get
+1Õ
+2
+
+𝑘𝑞𝜎
+
+†
+†
+𝑐𝑑𝜎
+𝑉𝑘𝑉𝑞 𝑐𝑘𝜎
+𝑐𝑑𝜎 𝑐𝑞𝜎
+
+1
+
+𝐸𝑘1
+
+−
+
+1
+
+𝐸𝑘0
+
+!
+
+
+
+
+
+
+
+!
+!
+
+
+Õ
+
+
+1
+1
+1
+1
+1
+†
+†
+†
+†
+
+𝑉𝑘𝑉𝑞
+−
+𝑐
++
+𝑉
+𝑉
+−
+𝑐
+𝑐
+𝑐
+=
+𝑐
+𝑐
+𝑐
+𝑐
+𝑞
+𝑘
+𝑑𝜎
+𝑑𝜎
+𝑑𝜎
+𝑑𝜎
+𝑞𝜎
+
+
+𝑘𝜎
+1
+1
+0
+0
+𝑞𝜎
+𝑘𝜎
+4
+𝐸
+𝐸
+𝐸
+𝐸
+
+𝑘
+𝑘
+𝑘
+𝑘
+𝑘𝑞𝜎 
+|
+{z
+}
+
+
+
+𝜎↔𝜎
+
+
+133
+
+4.2. SCHRIEFFER-WOLFF TRANSFORMATION
+
+
+
+
+
+
+
+
+!
+
+
+1
+1Õ
+1
+1ª †
+©1
+
+†
+†
+†
+=
+𝑉𝑘𝑉𝑞 1 − 0 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 + 𝑉𝑞𝑉𝑘 ­ 1 − 0 ® 𝑐𝑞𝜎 𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑑𝜎 
+
+
+4
+𝐸𝑘 𝐸𝑘
+𝐸
+𝐸𝑞
+𝑘𝑞𝜎 
+
+« 𝑞
+¬
+
+|
+{z
+}
+
+
+
+𝑘↔𝑞
+
+
+Õ
+1© 1
+1
+1ª †
+1
+†
+𝑐𝑑𝜎
+=
+𝑉𝑘𝑉𝑞 ­ 1 − 0 + 1 − 0 ® 𝑐𝑘𝜎
+𝑐𝑑𝜎 𝑐𝑞𝜎
+4 𝐸
+𝐸𝑘 𝐸𝑞 𝐸𝑞
+𝑘
+𝑘𝑞𝜎
+«
+¬
+1Õ
+†
+†
+=
+𝐾𝑘𝑞 𝑐𝑘𝜎
+𝑐𝑑𝜎 𝑐𝑞𝜎
+𝑐𝑑𝜎
+2
+
+𝑘𝑞𝜎
+
+where 𝐾𝑘𝑞 is yet another energy scale.
+
+The third term gives
+
+1
+1
+1
+1ª
+©1
+𝐾𝑘𝑞 = 𝑉𝑘𝑉𝑞 ­ 1 − 0 + 1 − 0 ®
+2
+𝐸
+𝐸𝑘 𝐸𝑞 𝐸𝑞
+« 𝑘
+¬
+
+1Õ ∗ ∗ †
+1
+1
+†
+𝑉𝑘 𝑉𝑞 𝑐𝑑𝜎 𝑐𝑘𝜎 𝑐𝑑𝜎
+𝑐𝑞𝜎 1 − 0
+2
+𝐸𝑘 𝐸𝑘
+𝑘𝑞𝜎
+
+!
+
+=
+
+Õ
+𝑘𝑞𝜎
+
+The total renormalization can thus be written as
+Õ
+
+ΔH (𝜔1 , 𝜔0 ) = −
+𝑊𝑘𝑘 + 𝑛ˆ 𝑑𝜎 𝐽𝑘𝑘 𝑛ˆ 𝑑𝜎
+
+Õ
+1
+†
++
+𝑊𝑘𝑞 + 𝑛ˆ 𝑑 𝐽𝑘𝑞 𝑐𝑘𝜎
+𝑐𝑞𝜎
+𝑘𝜎
+
+𝑘𝑞𝜎
+
+2
+
+
+
+Õ
+
+ 𝑧 †
+†
+†
+−
+𝐽𝑘𝑞 𝑆𝑑 𝜎𝑐𝑘𝜎 𝑐𝑞𝜎 +
+𝐽𝑘𝑞 𝑐𝑘𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 𝑐𝑑𝜎 
+
+
+𝑘𝑞𝜎
+𝑘𝑞𝜎
+
+
+Õ
+†
+†
++
+𝐾𝑘𝑞 𝑐𝑘𝜎 𝑐𝑑𝜎 𝑐𝑞𝜎 𝑐𝑑𝜎 + h.c.
+Õ
+
+𝑘𝑞𝜎
+
+(4.2.46)
+
+†
+†
+𝐾𝑘𝑞 𝑐𝑑𝜎
+𝑐𝑘𝜎 𝑐𝑑𝜎
+𝑐𝑞𝜎
+
+
+
+
+
+
+
+
+(4.2.47)
+
+renormalization in 𝜖𝑑 , 𝑈
+potential scattering
+spin Kondo
+
+
+
+charge Kondo
+
+
+
+
+
+
+
+(4.2.48)
+Note that this renormalization is in a particular eigendirection of the total quantum flucˆ In other words, the single perturbative 𝐽𝑘𝑞 has been replaced with 2𝑁
+tuation operator 𝜔.
+scales, each with its own value of 𝜔. This is where the complexity has been transferred
+in going from the second-order SWT to the non-perturbative URG. The new energy scales
+
+134
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+are thus the non-perturbative variants of the ones generated in SWT.
+!
+1
+
+1
+
+2
+
+𝜖𝑘 − 𝜖𝑑
+
+1
+
+1
+
+2
+
+𝜖𝑘 − 𝜖𝑑 − 𝑈
+
+𝑆𝑊𝑇
+𝑊𝑘𝑞
+= 𝑉𝑘𝑉𝑞∗
+𝑆𝑊𝑇
+𝐽𝑘𝑞
+= 𝑉𝑘𝑉𝑞∗
+
++
+
+1
+
+𝜖𝑞 − 𝜖𝑑
++
+
+1
+
+1
+
+2
+
+𝜔0 + 12 𝜖𝑘 − 𝜖𝑑
+
+𝑈𝑅𝐺
+𝑊𝑘𝑞
+(𝜔) = 𝑉𝑘𝑉𝑞∗
+
+1
+
+𝑈𝑅𝐺
+(𝜔) = 𝑉𝑘𝑉𝑞∗
+𝐽𝑘𝑞
+
+2
+
+1
+
+𝜖𝑞 − 𝜖𝑑 − 𝑈
++
+
+1
+
+−
+
+1
+
+1
+
+𝜖𝑘 − 𝜖𝑑
+!
+
+−
+
+1
+
+𝜖𝑞 − 𝜖𝑑
+
+𝜔0 + 12 𝜖𝑞 − 𝜖𝑑
+
+𝜔1 + 𝜖𝑘 − 𝜖𝑑 − 𝑈
+
++
+
+1
+
+𝜔1 + 𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+−
+
+!
+
+1
+
+𝜔0 + 𝜖𝑘 − 𝜖𝑑
+
+(4.2.49)
+
+−
+
+1
+
+𝜔0 + 𝜖𝑞 − 𝜖𝑑
+
+!
+
+To recover the SWT scales from the URG ones, we have to substitute each 𝜔𝑖 by the energy
+of the initial state to which it corresponds. From eq. 4.2.38, we note that 𝜔1 refers to the
+initial state in which 𝑛ˆ 𝑘𝜎 = 𝑛ˆ 𝑑𝜎 = 1 − 𝑛ˆ 𝑑𝜎 = 1. Therefore, 𝜔1 = 21 𝜖𝑘 + 𝜖𝑑 . Similarly, 𝜔0 refers
+to the initial state in which 𝑛ˆ 𝑘𝜎 = 1 − 𝑛ˆ 𝑑𝜎 = 1 − 𝑛ˆ 𝑑𝜎 = 1. Therefore, 𝜔0 = 21 𝜖𝑘 . Substituting
+these into the URG energy scales gives back the SWT scales.
+
+4.3
+
+CUT RG
+
+Formalism
+The following equation generates a family of unitary Hamiltonians.
+dH (𝑙)
+d𝑙
+
+
+
+= H , 𝜂(𝑙)
+
+(4.3.1)
+
+To prove the unitarity[30], we construct the unitary operator 𝑈 (𝑙) that connects the Hamiltonians H (𝑙) and H (𝑙 = 0). Let H (𝑙) = 𝑈 (𝑙)H (𝑙 = 0)𝑈 † (𝑙), where 𝑈 (𝑙) is defined by
+
+
+
+
+†
+
+
+d
+𝑈𝑈
+d𝑈 †
+d𝑈 † 
+
+†
+𝑈 = −𝑈
+= 0
+(4.3.2)
+𝜂(𝑙) =
+𝑈𝑈 = 1 =⇒
+
+
+d𝑙
+d𝑙
+d𝑙
+
+
+
+
+This will give
+
+dH (𝑙)
+d𝑙
+
+=
+
+d𝑈
+
+H ( 0)𝑈 † (𝑙) + 𝑈H ( 0)
+
+d𝑈 †
+
+d𝑙
+d𝑙
+d𝑈 †
+d𝑈 (𝑙) †
+=
+𝑈 H (𝑙) + H (𝑙)𝑈
+d𝑙
+d𝑙
+
+= 𝜂(𝑙)H (𝑙) − H (𝑙)𝜂(𝑙)
+
+
+= 𝜂(𝑙), H (𝑙)
+
+(4.3.3)
+
+This proves that the family of Hamiltonians H (𝑙) satisfy the flow equation eq. 4.3.1. 𝜂(𝑙)
+is referred to as the generator of the flow equation. It is chosen so as to reduce the offdiagonal part of the Hamiltonian, either progressively or in one shot. In Schrieffer-Wolff
+135
+
+4.3. CUT RG
+transformation, the transformation is one-shot, and the 𝜂 there is the 𝑆 that sits on top
+of the exponential in the unitary transformation. In URG, the generator to decouple one
+†
+electron 𝑞𝛽 is 𝜂𝑞𝛽
+− 𝜂𝑞𝛽 .
+In CUT (Continuous Unitary Transformation) RG [31], we progressively block-diagonalize
+the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal,
+through infinitesimal unitary transformations. The change is described
+
+ as a flow against
+the parameter 𝑙. The canonical choice of the generator is 𝜂(𝑙) = H𝑑 , H𝑋 , where H𝑑 is the
+diagonal part of the Hamiltonian and H𝑋 = H − H𝑑 is the off-diagonal part of the Hamiltonian. Therefore,
+i
+h
+
+dH
+(4.3.4)
+= H𝑑 (𝑙), H𝑋 (𝑙) , H (𝑙)
+d𝑙
+To see how this choice of the generator results in a decay of the off-diagonal terms, we
+can consider a simple 2-particle Hamiltonian:
+Õ
+Õ
+H=
+𝜖𝑖 𝑛ˆ 𝑖 +
+𝑔𝑖 𝑗 𝑐𝑖† 𝑐 𝑗
+(4.3.5)
+𝑖
+
+𝑖≠ 𝑗
+
+where 𝑔𝑖∗𝑗 = 𝑔 𝑗 𝑖. The canonical generator then turns out to be
+
+ Õ h
+Õ
+i Õ
+Õ
+
+
+
+† 
+
+𝜖𝑖 𝑔𝑖𝑘 𝑐𝑖† 𝑐𝑘 − 𝑔𝑘𝑖 𝑐𝑘† 𝑐𝑖 =
+𝑔𝑖𝑘 𝑐𝑖† 𝑐𝑘 𝜖𝑖 − 𝜖𝑘
+𝜂 =  𝜖𝑖 𝑛ˆ 𝑖 ,
+𝑔 𝑗𝑘 𝑐 𝑗 𝑐𝑘  =
+ 𝑘≠𝑖
+ 𝑖
+𝑘≠𝑖
+𝑗≠𝑘
+
+
+and the renormalization in the Hamiltonian is
+
+
+Õ
+
+ Õ
+ Õ
+𝑑H 
+†
+†
+= 𝜂, H = 
+𝑔𝑖𝑘 𝑐𝑖 𝑐𝑘 𝜖𝑖 − 𝜖𝑘 ,
+𝜖𝑖 𝑛ˆ 𝑖 +
+𝑔𝑖 𝑗 𝑐𝑖 𝑐 𝑗 
+𝑑𝑙
+
+ 𝑘≠𝑖
+𝑖
+𝑖≠ 𝑗
+
+
+The first commutator gives
+Õ
+2
+−
+𝑔𝑖𝑘 𝜖𝑖 − 𝜖𝑘 𝑐𝑖† 𝑐𝑘
+
+(4.3.6)
+
+(4.3.7)
+
+(4.3.8)
+
+𝑖≠𝑘
+
+The second commutator gives
+
+
+i Õ
+Õh
+
+
+𝑔𝑘 𝑗 𝑔𝑖𝑘 𝜖𝑖 − 𝜖𝑘 𝑐𝑖† 𝑐 𝑗 + 𝑔 𝑗𝑖 𝑔𝑖𝑘 𝜖𝑘 − 𝜖𝑖 𝑐†𝑗 𝑐𝑘 =
+𝑔𝑖𝑘 𝑔𝑘 𝑗 𝜖𝑖 + 𝜖 𝑗 − 2𝜖𝑘 𝑐𝑖† 𝑐 𝑗
+
+(4.3.9)
+
+𝑘≠𝑖
+𝑗
+
+𝑘≠𝑖
+𝑗
+
+The total renormalization is
+
+2
+
+
+Õ
+Õ
+𝑑H
+=−
+𝑔𝑖 𝑗 𝜖𝑖 − 𝜖 𝑗 𝑐𝑖† 𝑐 𝑗 +
+𝑔𝑖𝑘 𝑔𝑘 𝑗 𝜖𝑖 + 𝜖 𝑗 − 2𝜖𝑘 𝑐𝑖† 𝑐 𝑗
+𝑑𝑙
+𝑘≠𝑖
+𝑖≠ 𝑗
+
+(4.3.10)
+
+𝑗
+
+The couplings renormalize as
+
+d𝜖𝑖 Õ
+=
+2 |𝑔𝑖𝑘 | 2 𝜖𝑖 − 𝜖𝑘
+d𝑙
+𝑘≠𝑖
+
+2 Õ
+
+
+d 𝑔𝑖 𝑗
+= −𝑔𝑖 𝑗 𝜖𝑖 − 𝜖 𝑗 +
+𝑔𝑖𝑘 𝑔𝑘 𝑗 𝜖𝑖 + 𝜖 𝑗 − 2𝜖𝑘
+d𝑙
+𝑘≠𝑖
+136
+
+(4.3.11)
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+To see the decay of the off-diagonal terms, first we will relate the off-diagonal flow to the
+diagonal flow using the invariance of the trace under a unitary transformation:
+0=
+
+dTr H
+d𝑙
+
+2
+
+=
+
+dTr H
+d𝑙
+
+2
+
+=
+
+Õ d𝜖2
+𝑖
+d𝑙
+
+𝑖
+
++
+
+Õ d |𝑔𝑖 𝑗 | 2
+Õ d |𝑔𝑖 𝑗 | 2
+Õ d𝜖2
+𝑖
+=⇒
+=−
+d𝑙
+d𝑙
+d𝑙
+𝑖≠ 𝑗
+𝑖≠ 𝑗
+𝑖
+
+(4.3.12)
+
+From the flow equation, we can see that
+Õ d𝜖2
+𝑖
+𝑖
+
+d𝑙
+
+=2
+
+Õ
+
+𝜖𝑖
+
+d𝜖𝑖
+
+𝑖≠𝑘
+
+Therefore,
+
+d𝑙
+
+=2
+
+Õ
+𝑖
+
+|𝑔𝑖𝑘 | 2 𝜖𝑖 − 𝜖𝑘
+
+2
+
+≥0
+
+Õ d |𝑔𝑖 𝑗 | 2
+≤0
+d𝑙
+𝑖≠ 𝑗
+
+(4.3.13)
+
+(4.3.14)
+
+This implies that at 𝑙 → ∞, the only off-diagonal terms that survive are those with 𝑔𝑖 𝑗 that
+scatter between degenerate states, that is, those with 𝜖𝑖 − 𝜖 𝑗 = 0.
+To get a feel for the method, we will apply it on the Fröhlick Hamiltonian to remove
+the electron-phonon coupling term.
+H = H𝑑 + H𝑋
+where H𝑋 is the electron-phonon coupling term
+Õ
+†
+𝑔𝑞 𝑏†−𝑞 𝑐𝑘+𝑞,𝜎
+𝑐𝑘𝜎 + h.c.
+𝑘𝑞
+
+(4.3.15)
+
+(4.3.16)
+
+Í
+Í
+and-1 H𝑑 = 𝑘𝜎 𝜖𝑘 𝑛ˆ 𝑘𝜎 + 𝑞 ℏ𝜔𝑞 𝑏†𝑞 𝑏𝑞 is the kinetic energy of the electron and phonons. We
+assume time-reversal invariance such that 𝜔𝑞 = 𝜔−𝑞 . We choose
+
+ 
+
+𝜂(𝑙) = H𝑑 , H = H𝑑 , H𝑋
+(4.3.17)
+It is easy to compute the commutators.
+
+Therefore,
+
+ Õ 
+Õ
+
+Õ
+
+
+†
+†
+†
+ 𝜖𝑘 𝑛ˆ 𝑘𝜎 ,
+
+𝑏−𝑞 𝑐𝑘+𝑞,𝜎 𝑐𝑘𝜎  =
+𝑔𝑞 𝜖𝑘+𝑞 − 𝜖𝑘 𝑔𝑞 𝑏†−𝑞 𝑐𝑘+𝑞,𝜎
+𝑐𝑘𝜎
+
+ 𝑘𝜎
+ 𝑘𝑞𝜎
+𝑘𝑞𝜎
+
+
+ Õ
+Õ
+Õ
+
+
+†
+†
+†
+†
+ ℏ𝜔𝑞 𝑏𝑞 𝑏𝑞 ,
+𝑔𝑞 𝑏−𝑞 𝑐𝑘+𝑞,𝜎 𝑐𝑘𝜎  =
+𝑔𝑞 ℏ𝜔𝑞 𝑏†−𝑞 𝑐𝑘+𝑞,𝜎
+𝑐𝑘𝜎
+
+ 𝑞
+
+𝑘𝑞
+𝑘𝑞
+
+
+𝜂=
+
+Õ
+𝑘𝑞𝜎
+
+
+
+
+
+†
+𝑔𝑞 𝜖𝑘+𝑞 − 𝜖𝑘 + ℏ𝜔𝑞 𝑏†−𝑞 𝑐𝑘+𝑞,𝜎
+𝑐𝑘𝜎 − h.c.
+
+137
+
+(4.3.18)
+
+(4.3.19)
+
+4.3. CUT RG
+We define 𝜉 ≡ 𝜖𝑘+𝑞 − 𝜖𝑘 + ℏ𝜔𝑞 . The renormalization in the total Hamiltonian becomes
+
+
+= 𝜂, H
+
+(4.3.20)
+
+
+
+= −𝜉 2 𝑔𝑞 =⇒ 𝑔𝑞 (𝑙) = 𝑔𝑞 ( 0) exp −𝜉 2 𝑙
+
+(4.3.21)
+
+dH
+d𝑙
+
+The flow equation for the electron-phonon coupling is
+d 𝑔𝑞
+d𝑙
+
+†
+A new electron-electron coupling 𝑉𝑘𝑘𝑞 𝑐𝑘+𝑞
+𝑐𝑘† 0−𝑞 𝑐𝑘 0 𝑐𝑘 is also generated. For the Cooper channel (𝑘0 = −𝑘), the flow equation is
+
+𝑔𝑞2 𝜔𝑞
+𝑉𝑘,−𝑘,𝑞 (∞) = 𝑉𝑘,−𝑘,−𝑞 ( 0) −
+
+2
+2
+𝜔𝑞 + 𝜖𝑘+𝑞 − 𝜖𝑘
+
+(4.3.22)
+
+Off-diagonal terms that connect larger energy differences 𝜉 decay the fastest.
+CUT RG from URG
+We will now see that the renormalization in URG can also be put into a similar form.
+From eq. 3.1.47, we can write the URG renormalization in the diagonal part as
+i
+1h †
+(4.3.23)
+ΔH 0 =
+𝜂 − 𝜂, H
+2
+
+where H 0 = H 𝑑 + H 𝑖 . The URG generator can be recast (starting from the definitions of
+𝜂, eqs. 3.1.14) as
+𝜂 † − 𝜂 = 𝐺 1 𝑐 †𝑇 − 𝐺 0𝑇 † 𝑐
+h
+ †
+ † i
+1
+=
+𝐺 1 𝜔1 − 𝜔0 𝑐 𝑇 − 𝐺 0 𝜔1 − 𝜔0 𝑇 𝑐
+𝜔1 − 𝜔0
+h
+i
+1
+=
+𝐺1 𝜔1 𝑐†𝑇 − 𝑐†𝑇 𝜔0 𝐺0 − 𝑇 † 𝑐𝜔1 𝐺1 + 𝐺0 𝜔0𝑇 † 𝑐
+𝜔1 − 𝜔0
+
+(4.3.24)
+
+In the last step, we changed the second and fourth terms using the constraints 𝐺1 𝑐†𝑇 =
+𝑐†𝑇𝐺0 and 𝐺0𝑇 † 𝑐 = 𝑇 † 𝑐𝐺1 , eq. 3.1.16. We now add and subtract 𝐺1 𝐺1−1 𝑐†𝑇 = 𝑐†𝑇 and 𝐺0 𝐺0−1𝑇 † 𝑐 =
+𝑇 † 𝑐 for each term.
+ 
+
+
+
+1
+†
+𝐺1 𝜔1 − 𝐺1−1 𝑐†𝑇 + 𝑐†𝑇 − 𝑐†𝑇 𝜔0 − 𝐺0−1 𝐺0 − 𝑐†𝑇
+𝜂 −𝜂 =
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+†
+−1
+†
+†
+−𝑇 𝑐 𝜔1 − 𝐺1 𝐺1 − 𝑇 𝑐 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐 + 𝑇 𝑐
+ 
+(4.3.25)
+
+
+
+1
+−1
+†
+†
+−1
+=
+𝐺 1 𝜔1 − 𝐺 1 𝑐 𝑇 − 𝑐 𝑇 𝜔0 − 𝐺 0 𝐺 0
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+−1
+†
+−𝑇 𝑐 𝜔1 − 𝐺1 𝐺1 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐
+138
+
+

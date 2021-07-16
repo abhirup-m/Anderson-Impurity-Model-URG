@@ -1,0 +1,1622 @@
+Unitary Renormalization Group Solution
+of The Single-Impurity Anderson Model
+
+A thesis submitted in partial fulfillment of the requirements of the degree
+of
+
+Master of Science
+by
+
+Abhirup Mukherjee
+(18IP014)
+under the supervision of
+
+Dr. Siddhartha Lal
+
+Indian Institute of Science Education and
+Research, Kolkata
+
+Declaration by the student
+I, Abhirup Mukherjee, hereby declare that this thesis titled Unitary Renormalization Group Solution of The Single-Impurity Anderson Model is my
+own work and, to the best of my knowledge, contains no materials previously published
+or written by any other person, or substantial proportions of material which have been
+accepted for the award of any other degree or diploma at IISER Kolkata or any other
+educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the
+Indian Copyright (Amendment) Act, 2012 and that I have received written permission
+from the copyright owners for my use of their work, which is beyond the scope of the
+law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that
+may be asserted or that may arise from any copyright violation.
+Signed:
+
+Date: July 16, 2021
+
+ii
+
+Certificate from the supervisor
+This is to certify that the thesis titled Unitary Renormalization Group Solution
+of The Single-Impurity Anderson Model which is submitted by Abhirup
+Mukherjee in partial fulfillment of the requirement for the award of the degree of
+MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and
+Research Kolkata is a record of the candidates own work carried out by him under my
+supervision. The matter embodied in this thesis is original and has not been submitted
+for the award of any other degree.
+Signed:
+
+Date: July 16, 2021
+
+iii
+
+Acknowledgments
+I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very
+useful guidance and very crucial insights into the tough problems. This project would
+not have been possible without the help of my group senior Siddhartha Patra and former
+group member Dr. Anirban Mukherjee. Their experience with the method as well as
+work on similar projects paved the entire journey for me. A special shout out to my
+friend Mounica Mahankali for all the useful discussions. The support of IISER Kolkata
+in the form of a junior research fellowship is gratefully acknowledged.
+
+iv
+
+To you, 5 years from now
+
+v
+
+Abstract
+This thesis reports a renormalization group solution of the single-impurity Anderson
+model (SIAM) and its various (mostly low temperature) properties and features. The
+method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man’s scaling and continuous unitary transformation renormalization group. We then apply this
+method on a generalized version of the SIAM with explicit spin-exchange and isospinexchange couplings. We find strong-coupling fixed points for both the spin and isospin
+couplings. From the zero mode, we then calculate the ground state wavefunctions, which
+turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid
+and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio
+from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo
+regime of the SIAM. We also calculate the change in Luttinger’s volume as we move from
+the high energy fixed point to the low energy fixed point, and we find that it increases by
+1 because the impurity state also gets added to the Fermi volume. The impurity spectral
+is tracked between the fixed points and shows the emergence of a central peak at the
+strong-coupling fixed point.
+
+vi
+
+List of Figures
+2.1
+2.2
+2.3
+2.4
+2.5
+
+The single-impurity Anderson model Hamiltonian . . . . . . . . . . . . . . . .
+Renormalization in the energy levels when 𝜖∗𝑑  Δ . . . . . . . . . . . . . . . .
+Renormalization in energy levels when |𝜖∗𝑑 | ≲ Δ . . . . . . . . . . . . . . . . . .
+Renormalization in energy levels when 𝜖∗𝑑  −Δ . . . . . . . . . . . . . . . . .
+Schematic diagram of RG flows and fixed points of the symmetric SIAM,
+as obtained by ref.[1]. The y-axis is the impurity site repulsion 𝑈 = − 21 𝜖𝑑
+while the x-axis is the hybridisation parameter Δ ∼ 𝜌𝑉 2 . The abbreviations
+mark the three fixed-points: FO is free-orbital, LM is local moment and SC
+is strong-coupling. The fixed-points are described in the text. . . . . . . . . .
+
+18
+76
+81
+82
+
+89
+
+3.1 Three steps of the URG: Decompose the Hamiltonian in a 2 × 2 matrix, apply
+the unitary operator to rotate it, then repeat these steps with one of the
+rotated blocks. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+3.2 Star Graph model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 103
+3.3 RG flow for the two cases. The green line is the distance between the bare
+values of the two couplings, and hence also the magnitude of the denominator. The red arrow denotes the direction in which 𝜖0 will flow. Upward flow
+is increase. In both cases, the flow is such that the distance between the
+two quantities (and hence the magnitude of the denominator) increases.
+The RG fixed point occurs when the magnitude of the denominator goes
+to 0. This happens if the distance vanishes. Since the distance necessarily
+increases, we cannot get a fixed point in this way. . . . . . . . . . . . . . . . . 106
+3.4 RG flow for the two cases with the new −𝜔˜ = 𝜔0 − 12 𝜖+ 14 𝐽. Now we can see that
+in both cases, the flow is such that the distance (green dotted line) between
+the couplings decreases. A fixed point is reached when this distance vanishes.106
+3.5 Flows where 𝜖0 and 𝜔˜ have same sign. The left and right panels show flows
+starting from negative and positive values respectively. The two plots in
+˜ one greater than the bare
+each panel correspond to different values of 𝜔,
+˜ . . . . . . . . . . . . . 108
+𝜖0 , the other less than that. The fixed point value is 2𝜔.
+3.6 Flows where 𝜖0 and 𝜔˜ have opposite sign. The left and right panels show
+flows starting from negative and positive values respectively. The two plots
+˜ one greater than the bare
+in each panel correspond to different values of 𝜔,
+𝜖0 , the other less than that. The fixed point value is 0. . . . . . . . . . . . . . . 108
+
+vii
+
+LIST OF FIGURES
+3.7 Flow of 𝐽 towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left). The x-axis indicates the index of the energy shell
+being decoupled. The largest value (UV) is the first step, and we go towards
+the left (IR). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
+3.8 Variation of the fixed point value 𝐽 ∗ against the bare bandwidth, in log scale.113
+4.1 Flows of PMS(green) and URG(blue) . . . . . . . . . . . . . . . . . . . . . . . . . 120
+4.2 Flow chart of ”Poor Man’s” scaling algorithm . . . . . . . . . . . . . . . . . . . 123
+4.3 Comparison of the various unitary transformations, depicting how each of
+them are related to one another. . . . . . . . . . . . . . . . . . . . . . . . . . . . 142
+5.1 Particle and hole excitations of the impurity . . . . . . . . . . . . . . . . . . . 147
+5.2 Left: Irrelevant flow towards |𝜖𝑑 | = 0, at low 𝜔. Right: Relevant flow towards large |𝜖𝑑 |, at large 𝜔. The former can be thought of as the projection
+of the strong-coupling flow on to the 𝜖𝑑 − 𝐷 plane. The latter is the flow
+towards the local moment fixed point, if we start from a negative 𝜖𝑑 . . . . . 148
+5.3 Change in fixed point value of |𝜖𝑑 | with system size. . . . . . . . . . . . . . . . 149
+6.1 Schematic diagram of the generalized SIAM model. . . . . . . . . . . . . . . . 166
+6.2 𝜔 > 0. Left: Decay of 𝐽 towards zero under RG. Right: Flow of 𝑈 under the
+same RG. Titles of plots show bare values. . . . . . . . . . . . . . . . . . . . . . 171
+6.3 𝜔 < 0. Flow of 𝐽 and 𝐾 to large values, signaling a strong-coupling fixed point.172
+6.4 Left: Flow of 𝑈 to zero, implying a four-fold degenerate impurity. Right:
+Flow of 𝑈 to large value, making the impurity singly-occupied, leading to
+the formation of a local moment. . . . . . . . . . . . . . . . . . . . . . . . . . . . 172
+6.5 RG flows in 𝐾 vs 𝐽 plane. Legend indicates relations of bare values. . . . . . 173
+6.6 Fixed point phases in the plane of bare couplings, at 𝑉 = 0. . . . . . . . . . . . 175
+6.7 𝑈 − 𝐽 multiple RG flows in first quadrant. . . . . . . . . . . . . . . . . . . . . . . 176
+6.8 Flows of the couplings for bare values in the first quadrant: 𝐽 − 𝐾, 𝑈 > 0. . . 177
+6.9 𝑈 − 𝐽 and 𝑈 − 𝑉 RG flows. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 178
+6.10 Increase in the fixed point values of 𝐽 and 𝑉 with system size. . . . . . . . . . 179
+6.11 Flow of 𝑈 to large negative value and 𝐾 to large positive value in the third
+quadrant. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 179
+6.12 Low 𝜔 fixed point phases for the SIAM with 𝑉 > 0. . . . . . . . . . . . . . . . . 180
+6.13 Two-site effective problem of fixed point Hamiltonian . . . . . . . . . . . . . 184
+2
+2
+6.14 Left: Variation of the probabilities 𝑐 𝑠 and 𝑐 𝑐 with system size. Right:
+Variation of 𝛾 with system size. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 187
+6.15 Shift in the ground state in going from the first to third quadrant, depicted
+via the switch in sign of Δ𝐸 𝑔 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 189
+7.1 Variation of 𝜒 ×𝑇 over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility,
+while at high temperatures we see the Curie-Weiss susceptibility resulting
+from the local moment.
+ −1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 195
+7.2 Variation of 𝑇𝑘 × 𝜒
+with temperature. . . . . . . . . . . . . . . . . . . . . . . 196
+ −1
+7.3 Variation of 𝜒 against temperature. It saturates to a value close to 2𝜋𝑇𝐾
+. 196
+viii
+
+List of Figures
+7.4 Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo
+regime (𝐽 > 𝐾). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 198
+7.5 Behavior of 𝜒𝑐 × 𝑇 for the charge-Kondo regime. It is qualitatively very similar to the behavior of the magnetic susceptibility in the spin-Kondo regime. 198
+7.6 Impurity specific heat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 200
+7.7 Impurity spectral function for three sets of bare values. The increase in
+value of 𝑈 is accompanied by the appearance of the side-peaks. For all the
+plots, 𝑉 = 0.001 and 𝐷 = 1. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 204
+7.8 Variation of the spectral function as we move away from the strong-coupling
+fixed point (top) towards the local moment fixed point (bottom). . . . . . . . 205
+7.9 Variation of the coefficient of the two-particle off-diagonal scattering in the
+effective Hamiltonian, eq. 7.7.21 along the RG flow. . . . . . . . . . . . . . . . 212
+7.10 Left: The nearest-neighbor hopping described by the effective Hamiltonian. The red circle at the center is the impurity at the origin. The black
+cloud at the center demarcates the collection of electrons at the origin of
+the lattice (which couple to the impurity). The green circles represent lattice sites that are nearest to the origin. The blue circles represent nextnearest sites. Right: After treating the hopping between origin and its nearest neighbors as perturbation, we get a system consisting of two decoupled
+parts: one part is the impurity+cloud singlet, the other part is the rest of
+the lattice sites. The effect of the hopping between the origin and the green
+sites is a repulsion term on the green sites. . . . . . . . . . . . . . . . . . . . . 217
+7.11 Algorithm of reverse RG. We start with a Hamiltonian with an impurity
+site (red) coupled with two conduction electrons (dark green), with four
+other decoupled electrons
+green). The dotted rectangle represents
+
+ (bright
+the emergent window −Λ 𝑗 , Λ 𝑗 at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been
+decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from
+the IOMS (hence four dark green circles in the second step), leading to an
+enlargement of the emergent window. The unitary varies for each step,
+hence the notation 𝑈 𝑗 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 228
+7.12 Increase in the number of coupled elements under reverse RG. We start
+with the impurity coupled with two electrons, which increases at each step
+of the reverse RG. The weight of the bonds changes at each step, and is described by the running couplings 𝑉 𝑗 , 𝐽 𝑗 , 𝐾 𝑗 . The onsite energy of the impurity
+itself also varies at each step, which is essentially the renormalization in 𝜖𝑑
+and 𝑈. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 228
+7.13 Left: Mutual information between two conduction electrons inside the cloud.
+Right: Mutual information between a conduction electron inside the cloud
+and an impurity electron. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 233
+7.14 Diagonal correlation functions between cloud electrons . . . . . . . . . . . . 234
+7.15 off-diagonal correlation function . . . . . . . . . . . . . . . . . . . . . . . . . . . 234
+
+ix
+
+LIST OF FIGURES
+8.1 Change in the spectral function from single peak to double peak structure
+under increase of 𝑈. A similar change happens under DMFT for the bath
+spectral function of the Hubbard model. . . . . . . . . . . . . . . . . . . . . . . 237
+
+x
+
+List of Tables
+4.1 Comparison of perturbative and non-perturbative canonical transformations126
+6.1 Classification of fixed points for various bare values, at 𝑉 = 0 . . . . . . . . . 175
+6.2 Classification of fixed points for various bare values, at 𝑉 > 0 . . . . . . . . . 180
+6.3 Eigenstates for effective two-site Hamiltonian . . . . . . . . . . . . . . . . . . . 187
+
+xi
+
+Contents
+List of Figures
+
+vii
+
+List of Tables
+
+xi
+
+Contents
+1 Introduction
+1.1 Summary of the problem . . .
+1.2 Some outstanding questions . .
+1.3 Salient features of the method
+1.4 Layout of the thesis . . . . . . .
+1.5 Summary of main results . . .
+
+xii
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+2 Preliminaries and Existing Results
+2.1 Some important results of scattering theory . . . . . . . . . . . . . . . . . . . .
+2.2 Landau’s theory of Fermi liquids . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 The single-impurity Anderson model (SIAM) . . . . . . . . . . . . . . . . . . .
+2.4 The Kondo model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.5 Numerical renormalization group calculation . . . . . . . . . . . . . . . . . .
+2.6 Correspondence between the Kondo model fixed-point and a local Fermi
+liquid . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.7 Topological interpretation of Wilson ratio . . . . . . . . . . . . . . . . . . . . .
+2.8 Renormalized perturbation theory . . . . . . . . . . . . . . . . . . . . . . . . .
+2.9 Poor Man’s scaling of the SIAM . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.10 Numerical Renormalization Group Calculation of the symmetric SIAM . . .
+3 Unitary Renormalization Group Method
+3.1 Formalism and Results . . . . . . . . . .
+3.2 Prescription . . . . . . . . . . . . . . . . .
+3.3 Star Graph URG . . . . . . . . . . . . . .
+3.4 Kondo Model URG . . . . . . . . . . . . .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+1
+1
+3
+4
+4
+6
+8
+8
+14
+17
+24
+55
+58
+64
+66
+71
+89
+90
+90
+101
+103
+108
+
+4 Connection between URG and Other Canonical Transformations
+114
+4.1 Poor Man’s Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 114
+4.2 Schrieffer-Wolff transformation . . . . . . . . . . . . . . . . . . . . . . . . . . . 124
+xii
+
+Contents
+4.3 CUT RG . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 135
+4.4 Comparison of the Canonical Transformations . . . . . . . . . . . . . . . . . . 140
+5 URG of the SIAM and its Spin and Charge Generalizations
+5.1 URG of the SIAM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Anderson-Kondo (spin) model URG . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Anderson-Kondo (charge) model URG . . . . . . . . . . . . . . . . . . . . . . . .
+
+143
+143
+148
+159
+
+6 URG of Full Generalized SIAM
+6.1 The spin-charge-SIAM Hamiltonian . . . . . . . . . . . . . . . . . . . . . . . .
+6.2 Obtaining the RG equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.3 Numerical and analytical analysis of the symmetric model . . . . . . . . .
+6.4 Effective Hamiltonian and ground state for the 𝑉 ≠ 0 symmetric problem
+
+.
+.
+.
+.
+
+166
+166
+167
+170
+181
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+190
+190
+190
+195
+199
+199
+203
+203
+213
+220
+227
+
+7 Results and Features of the Low-Energy Theory
+7.1 Effective Kondo temperature . . . . . . . . . . . . . . . . . . .
+7.2 Magnetic susceptibility . . . . . . . . . . . . . . . . . . . . . . .
+7.3 Charge Susceptibility . . . . . . . . . . . . . . . . . . . . . . . .
+7.4 Specific heat . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7.5 Impurity Spectral function . . . . . . . . . . . . . . . . . . . . .
+7.6 Renormalization of impurity spectral function . . . . . . . .
+7.7 Effective Hamiltonian for excitations of the Kondo cloud . .
+7.8 Calculation of Wilson ratio from effective local Fermi liquid
+7.9 Luttinger’s and Friedel’s sum rules . . . . . . . . . . . . . . .
+7.10 Reverse RG analysis . . . . . . . . . . . . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+8 Conclusions and Future Directions
+
+235
+
+Bibliography
+
+238
+
+xiii
+
+Chapter 1
+Introduction
+1.1
+
+Summary of the problem
+
+The single-impurity Anderson model (SIAM) is one of the most well-studied models in
+condensed matter physics and is the prototypical model for magnetism. It shows how
+strong correlations between electrons give rise to a residual local moment. Friedel[2], in
+1958, gave a phenomenological theory in which a local impurity developed an effective
+repulsion which forced the formation of bound states; those bound states where the up
+and down states became non-degenerate would correspond to the local moment. Taking
+inspiration from this, P.W.Anderson[3] in 1961 designed a model for the formation of local moment in second quantization. The model consisted of a bath of mobile electrons
+which interacted with the local impurity. The engine of magnetism was the local onsite
+Coulomb repulsion on the impurity site. This repulsion favours the formation of local
+moments because it makes it harder for the impurity to be doubly-occupied.
+Mean-field calculations of the impurity occupation reveal a criterion for the formation
+of local moments; this criterion is similar to the Stoner criterion for ferromagnetism.
+This mean-field analysis is of course only valid at high temperatures where electroncorrelations are not so important. At low temperatures, it was found that the resistivity
+of the material reaches a minimum at some temperature, and then increases as ln 𝑇 as
+we further reduce the temperature. This is in contrast to the previews results. And that
+was not all; at a sufficiently low temperature, it was found that the ln 𝑇 -dependence disappears and the susceptibility became constant, implying the formation of a singlet state.
+The fact that this logarithmic dependence vanishes once the singlet is formed suggests
+that it arises from the local moment on the impurity; once the local moment disappears
+(singlet), the log dependence vanishes as well. This led people to design a model in which
+the impurity interacted with the conduction bath through a Heisenberg-like spin-spin
+interaction. This model can be related to the SIAM through a canonical transformation
+followed by a projection to the low energy subspace. In 1964, Jun Kondo[4] found that a
+perturbative calculation of the transition probability of electrons from scattering via the
+impurity, up to second order in the exchange coupling 𝐽, revealed a logarithmic depen1
+
+1.1. SUMMARY OF THE PROBLEM
+dence of the resistivity on temperature. The crucial scattering process was that in which
+the spin of the incoming electron flipped (the 𝑆+ 𝑠− and 𝑆− 𝑠+ terms). This explained the
+mystery of the resistivity minimum and the logarithmic dependence. But the mystery
+of the singlet state at very low temperatures still remained. The perturbative analysis
+would break down at low temperatures, so it was unreliable. The log term showed that
+the physics of the singlet involved all energy scales; one could not hope to capture it simply by taking the first few terms of a perturbative expansion. This problem came to be
+known as the Kondo problem.
+In 1970, Anderson attacked this problem by a renormalization group approach to account for all energy scales. In his ”Poor Man’s Scaling” approach, he progressively reduced the bandwidth while taking account of the eliminated states into the couplings
+via second order perturbation theory. This showed how the couplings would flow as we
+went to low temperatures, but it still could not remove the divergence as it was perturbative. Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where 𝐽 = ∞. In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method
+in which he iteratively diagonalized chains of increasing length to go to the low energy
+physics. He proved that Anderson’s guess was right and the low energy Hamiltonian was
+the same as that with 𝐽 = ∞. Later calculations with Bethe ansatz in 1980 by Andrei and
+Wiegmann [5, 6] corroborated Wilson’s findings.
+A similar sequence of events also happened in the context of the Anderson model. In
+1977 and 1978, Jefferson and Haldane independently calculated the ”Poor Man’s” scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion.
+They were unable to access the strong-coupling fixed point (analogous to the 𝐽 = ∞ fixed
+point in Kondo model), but their equations revealed which were the important regimes
+to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method
+to the symmetric Anderson model and obtained the non-perturbative fixed points and
+susceptibility [1]. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick[7].
+The physics of the Anderson model and the Kondo model has connotations with quantum
+field theory. The numerical renormalization group methods ushered in a revolution.
+The idea that physics on all length scales affect the low energy physics was very deep
+and has far-reaching consequences. The phenomenon in which the impurity electron
+strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is
+analogous to the phenomenon of quark confinement in which the quarks become bound
+at low energies. The high energy fixed point, 𝐽 = 0, corresponds to the phenomenon of
+asymptotic freedom in which the interactions between particles become asymptotically
+weaker at high temperatures.
+
+2
+
+Chapter 1. Introduction
+
+1.2
+
+Some outstanding questions
+
+Even though the problem of the SIAM has been essentially solved, some questions and
+clarifications still remain. In this work, we explore some of these questions.
+• Is it possible to get non-perturbative scaling equations for the whole journey? Neither NRG nor Bethe ansatz gives us scaling equations for the RG flows. Poor Man’s
+scaling only gives perturbative ones which are valid close to the high energy theories. In the absence of scaling equations that show the complete crossover from the
+high energy to the low energy theory, it is difficult to visualize how the Hamiltonian
+is precisely chaining.
+• Is it possible to show the transfer of spectral weight along the flow, possibly by
+tracking the spectral function? Such an exercise will requite the entire spectrum
+to be preserved along the flow. NRG, being projective will not work here. If the
+entire spectrum is available, computing the spectral function along the flow should
+indicate how the spectral weight is being distributed between the impurity and the
+conduction bath, or between various states of the impurity. It can also shed light
+on which terms or processes in the Hamiltonian contribute to which parts of the
+spectral function.
+• How does NRG obtain the local moment in the absence of hybridisation? For the
+symmetric mode, NRG results show that in the absence of any interaction between
+the bath and the impurity, the value of the onsite repulsion flows to a large value
+and we end up with a local moment. The obvious question is, how does the impurity
+coupling renormalize when there is no term connecting the bath with the impurity?
+• Are there any interesting topological aspects of the fixed points? We also intend
+to search for the existence of and possible changes in topological quantities at the
+fixed points. Since this is a zero-dimensional phenomenon, there will not be any
+gapping out of the Fermi surface, but there might be changes in topological quantities related to the Fermi surface or in the analyticity of the Green’s function due to
+the presence of the coupling between the bath and the impurity. A strong indication of this is the change in the Wilson ratio from the non-interacting value of 𝑅 = 1
+to the local-Fermi liquid fixed point value of 𝑅 = 2 obtained by Nozières[8].
+• What is the nature of the Kondo cloud that screens the spin(charge) of the impurity?
+We do not yet have a theory for the excitations of the cloud of electrons at the zeroth site that couple to the impurity at the fixed point. The local Fermi liquid sits
+just outside the cloud and is able to ”feel” its effects and gauge certain gross quantities like the Wilson ratio, but it does not have the excitations of the cloud because
+that part, along with the impurity, has been assumed to be ”frozen” into the singlet
+configuration. A recent result in this context [9] is the effective Hamiltonian of the
+Kondo model cloud, also obtained using the same method that has been used in this
+thesis. The goal here is to do something similar for the SIAM as well.
+
+3
+
+1.3. SALIENT FEATURES OF THE METHOD
+• How do entanglement measures respond to the RG flow? Can we find a reflection
+of the screening mechanism in something like the mutual information or correlations? This requires a knowledge of the wavefunctions at the fixed point. Does
+the enhanced scattering of the electrons off the impurity lead to an increase in the
+entanglement between various electrons of the bath? It will also be interesting to
+check how various correlation functions vary across the RG flow.
+
+1.3
+
+Salient features of the method
+
+The method employed in this work is a unitary renormalization group (URG) technique
+which progressively block-diagonalizes the Hamiltonian in the space of single high energy electrons. At each step of the process, the highest electron is decoupled from the
+system and it becomes an integral of motion, and the lower electronic system gets rotated to account for the decoupled electron. In this way, the RG goes on resolving the
+number fluctuations of the electrons. A fixed point is reached when the off-diagonal
+terms can no longer be removed. Since the method is unitary, it preserves the spectrum
+and allows calculating effective eigenvalues and eigenstates. It has some characteristic
+features:
+• Presence of a quantum fluctuation energy scale 𝜔: The URG process involves a parameter 𝜔 which contains the off-diagonal terms in the Hamiltonian. It quantifies
+the quantum fluctuation still unresolved in the system. Exactly at the fixed point,
+when the fluctuations are resolved, it assumes the value of one of the energies of
+the Hamiltonian. By probing the values of 𝜔, all regions of the spectrum can, at
+least in principle, be accessed.
+• Presence of finite-valued fixed points: The URG has a definite prescription for reaching the fixed point and it terminates after a finite number of steps (for a finite system). This leads to finite values of the fixed point couplings. This is also in accordance with our intuition that finite systems should not have diverging couplings.
+• Spectrum-preserving transformations: Since the RG transformations are unitary, all
+eigenvalues and eigenstates are kept track of the in the process. This allows us to
+calculate exact quantities for simple systems like the Kondo model.
+• Tractable low-energy effective Hamiltonians: The final Hamiltonians obtained at the
+fixed point are usually tractable and allow us to extract information.
+
+1.4
+
+Layout of the thesis
+
+Chapter 2 goes over the available work on the single-impurity Anderson model and its
+derivative - Kondo model. We go over the mean-field calculation of the Anderson model
+which gives a criteria for magnetism in terms of the onsite repulsion parameter 𝑈 and the
+hybridisation parameter Δ. We then derive the Kondo model from the SIAM by way of a
+4
+
+Chapter 1. Introduction
+Schrieffer-Wolff transformation, which we solve using NRG. We also spend some time on
+the Poor Man’s scaling approaches of both the SIAM and the Kondo model, and end the
+chapter with some discussions on the local Fermi liquid aspects of the fixed point theory.
+Chapter 3 lays out the URG formalism and prescription. We derive the URG effective
+Hamiltonian and the unitaries that perform the RG transformations. We discuss several
+important features of the method and provide a prescription for applying it on models.
+We also perform the URG explicitly on two models - the star graph model and the Kondo
+model. We discuss various subtleties, especially the quantum fluctuation parameter 𝜔
+and show that the URG actually diagonalizes the Hamiltonian. We derive many-body
+creation and annihilation operators 𝜂† and 𝜂 which rotate the full Hamiltonian into successively more block-diagonal form.
+Chapter 4 is closely tied to the formalism chapter and develops the connections between
+URG and other canonical transformations in the literature. We first define and setup
+each of the other transformations - the Schrieffer-Wolff transformation (SWT), Poor Man’s
+scaling (PMS) and the Continuous Unitary Transformation (CUT) RG. We show that all of
+these are in some sense perturbative derivatives of URG. A byproduct of the discussion
+is a demonstration of the fact that PMS and SWT are exactly identical and differ only in
+the contexts in which they are applied. We also discuss the differences between URG and
+CUT-RG, and show that URG behaves like a generalized double-bracket flow [10].
+Chapter 5 contains the URG analysis of the SIAM and its generalizations, obtained by
+adding spin-spin and charge-charge interactions to the SIAM. They lay out the foundation for the URG treatment on the full model with both charge and spin fluctuations. We
+derive the RG equations for these separate models in detail and briefly observe how the
+couplings flow in certain symmetric settings.
+Chapter 6 performs the URG on the full generalized SIAM, obtains the RG equations and
+writes down a low-energy effective Hamiltonian for the fixed point theory in the symmetric case. We study the flow of the couplings and identity various fixed points. We also
+determine how the fixed point values behave with system size. The low-energy effective
+zero-mode Hamiltonian is solved and the ground state wavefunctions are obtained for
+both the spin and charge-dominated regimes of the model. We show that a phase transition occurs at some critical value of the couplings, between the spin singlet and the
+charge singlet.
+Chapter 7 computes some important quantities from the fixed point theory like the specific heat, magnetic susceptibility, charge susceptibility, Wilson ratio, Kondo cloud Hamiltonian, entanglement and correlation measures of the Kondo cloud electrons and change
+in the Luttinger’s count of the bath. The Kondo cloud Hamiltonian is obtained by tracing
+out the impurity operators from the fixed point Hamiltonian. We compute the mutual
+information between between various members of the fixed point Hamiltonian, as well
+as some off-diagonal correlations. We extract a low temperature local Fermi liquid from
+the Hamiltonian which we then use to calculate the zero temperature Wilson ratio for the
+5
+
+1.5. SUMMARY OF MAIN RESULTS
+Kondo regime of the SIAM. We also calculate the change in Luttinger’s volume between
+the fixed points.
+
+1.5
+
+Summary of main results
+
+The first of the main results in this work is the connection between URG and other canonical transformations. It is shown that URG is a non-perturbative variation of the most
+general unitary transformation. Other unitary transformations like the Schrieffer-Wolff
+transformation and Poor Man’s scaling are simpler forms of URG, obtained by trivializing one of the terms in the Green’s function that comes up in the URG formalism. CUT-RG
+is still more different from URG, since it is not only perturbative but also philosophically
+different in that it gradually suppresses the off-diagonal terms rather than killing more
+and more terms progressively. URG is thus different in two major ways - it provides
+non-perturbative equations because of the specific denominator structure as well as accommodates, at least in principle, the feedback effects of the off-diagonal terms through
+a quantum fluctuation operator in the denominator.
+We next look at the results concerning the SIAM. In the absence of any spin-exchange or
+charge isospin-exchange scattering, we do not see any renormalization in the hybridisation and the only flow is towards a local moment fixed point with large impurity onsite
+energy 𝑈. In the presence of those additional exchange scattering terms, the corresponding couplings 𝐽(spin exchange) and 𝐾(isospin exchange) flow to large values for low values of 𝜔, signaling strong-coupling fixed points.
+At the spin-screened strong-coupling fixed point (𝐽 > 𝐾), the ground state wavefunction
+is a superposition of a spin singlet and a charge-isospin triplet. The ground state for the
+isospin-dominated fixed point (𝐾 > 𝐽) is an isospin singlet. Thermodynamic quantities
+are now calculated using zero-mode Hamiltonians of the low energy effective theories.
+The impurity susceptibility 𝜒imp goes to the Curie-Weiss value of a four-fold degenerate
+system at large temperatures, and becomes constant (paramagnetic) at very low temper −1
+atures. With 𝑇𝐾 defined suitably, 𝜒imp takes the zero temperature value of 2𝜋𝑇𝐾 . The
+impurity specific heat has also been calculated, and reveals a two-peak structure.
+The fixed-point Hamiltonian further allows us to calculate the impurity spectral function.
+For very small 𝑈 we obtain a single-peak structure corresponding to a single spin-spin
+or isospin-isospin excitation at the Fermi surface, while two other side-peaks emerge at
+large 𝑈 that correspond to excitations between the spin and charge sectors. By tweaking
+the values of the couplings in the fixed-point Hamiltonian, we can mimic the reverse RG
+flow and see how the impurity spectral function morphs along this journey. Both the
+single-peak and three-peak structures revert back to a two-peak spectral function corresponding to that of a local moment.
+We then extract the effective Hamiltonian for the Kondo cloud, up to two particle in6
+
+Chapter 1. Introduction
+teractions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian
+has both a Fermi liquid piece of the form 𝑛ˆ 𝑘𝜎 𝑛ˆ 𝑞𝜎 0 and a two-particle off-diagonal scattering
+† †
+piece of the form 𝑐𝑘↑
+𝑐𝑘 0↓ 𝑐𝑞↑ 𝑐𝑞0↓. It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures
+and correlations. The mutual information between the impurity and a cloud electron,
+as well as that between two cloud electrons increases as we go from the UV towards the
+IR fixed point. The off-diagonal correlation also increases from the UV towards the IR,
+which shows that the growth of the off-diagonal term is concomitant with the screening.
+We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from
+the fixed point Hamiltonian. Using the zero charge susceptibility at 𝑇 = 0 in the Kondo
+regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We
+also calculate the change in Luttinger’s volume along the RG flow. At the free orbital or
+local moment fixed points, the Luttinger’s volume is measured purely by the number of
+conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger’s volume is given by the total number of electrons in the conduction bath as well
+as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
+
+7
+
+Chapter 2
+Preliminaries and Existing Results
+2.1
+2.1.1
+
+Some important results of scattering theory
+T-matrix and S-matrix
+
+𝑇 −matrix is defined as[11]
+
+𝑉 |Ψi = 𝑇 |Φi
+
+(2.1.1)
+
+where |Ψi is the total scattered wavefunction and |Φi is the incoming (non-interacting)
+wavefunction. This equation is supposed to hold for all eigenkets |Φi of the Hamiltonian
+𝐻0 .
+The kets |Ψi and |Φi satisfy the Schrodinger equations
+𝐻0 |Φi = 𝐸 |Φi
+(𝐻0 + 𝑉 ) |Ψi = 𝐸 |Ψi
+
+(2.1.2)
+(2.1.3)
+
+We will also define an 𝑆−matrix- it is the unitary operator that relates the non-interacting
+eigenstate to the interacting one:
+|Ψi = 𝑆 |Φi
+(2.1.4)
+Since we are assuming elastic scattering, both |Ψi and |Φi have the same energy. The
+Schrodinger equation for |Ψi can be rearranged into
+|Ψi = |Φi + 𝐺0𝑉 |Ψi
+
+(2.1.5)
+
+where 𝐺0−1 (𝜔) = 𝜔 − 𝐻0 is then on-interacting Greens function. This is also called the
+Lippmann-Schwinger equation. Multiplying with the interacting operator 𝑉 from the
+left gives
+𝑉 |Ψi = 𝑉 |Φi + 𝑉𝐺0𝑉 |Ψi
+
+
+(2.1.6)
+=⇒ 𝑇 |Φi = 𝑉 |Φi + 𝑉𝐺0𝑇 |Φi
+eq. 2.1.1
+Since the last equation should hold for all |Φi, and since the set of |Φi form a complete
+set, we can extract the operator equation
+𝑇 = 𝑉 + 𝑉𝐺0𝑇
+8
+
+(2.1.7)
+
+Chapter 2. Preliminaries and Existing Results
+The last equation allows us to perturbatively expand the 𝑇 − matrix, by substituting the
+RHS into the 𝑇 on the RHS:
+(2.1.8)
+
+𝑇 = 𝑉 + 𝑉𝐺0𝑉 + 𝑉𝐺0𝑉𝐺0𝑉 + ...
+We can relate this 𝑇 −matrix with the total (interacting) Green’s function
+𝐺=
+
+1
+
+(2.1.9)
+
+𝜔 − 𝐻0 − 𝑉
+
+That definition can be massaged into the following identity:
+𝐺 −1 = 𝐺0−1 − 𝑉
+
+(2.1.10)
+
+=⇒ 𝐺0 𝐺 −1 𝐺 = 𝐺0 𝐺0−1 𝐺 − 𝐺0𝑉𝐺
+=⇒ 𝐺 = 𝐺0 + 𝐺0𝑉𝐺
+
+By re-substituting 𝐺 into the RHS, this can be made into a perturbative expansion:
+
+𝐺 = 𝐺0 + 𝐺0𝑉 𝐺0 + 𝐺0𝑉𝐺 = 𝐺0 + 𝐺0𝑉𝐺0 + 𝐺0𝑉𝐺0𝑉𝐺0 + ...
+
+(2.1.11)
+= 𝐺0 + 𝐺0 𝑉 + 𝑉𝐺0𝑉 + ... 𝐺0
+
+By comparing with eq. 2.1.8, we can recognize the term inside the brackets as the 𝑇 −matrix,
+and write
+𝐺 = 𝐺0 + 𝐺0𝑇𝐺0
+(2.1.12)
+By substituting |Ψi = 𝑆 |Φi into the L-S equation, we can also extract a relation between 𝑆
+and 𝑇 , and hence between 𝑆 and 𝐺. Combining eqs. 2.1.1,2.1.4 and 2.1.5, we get
+𝑆 |Φi = |Φi + 𝐺0𝑇 |Φi
+=⇒ 𝑆 = 1 + 𝐺0𝑇
+
+
+
+=⇒ 𝑆𝐺0 = 𝐺0 + 𝐺0𝑇𝐺0 = 𝐺
+=⇒ 𝑆 = 𝐺𝐺0−1
+
+eq. 2.1.12
+
+
+
+(2.1.13)
+(2.1.14)
+(2.1.15)
+(2.1.16)
+
+It is a standard result in scattering theory that the total scattered wavefunction can be
+written as the sum of the incoming plane wave and an outgoing spherical wave:
+#
+"
+𝑖𝑘𝑟
+ − 32 𝑖𝑘𝑥
+𝑒
+(2.1.17)
+Ψ(𝑥) = 2𝜋
+𝑒 + 𝑓 (𝑘0, 𝑘)
+𝑟
+where the amplitude of the outgoing wave, 𝑓 (𝑘0, 𝑘), quantifies the amount of scattering
+and is given by
+3
+2
+𝜋
+2𝑚 0
+(2.1.18)
+h𝑘 | 𝑉 |Ψi
+𝑓 (𝑘0, 𝑘) = −
+4𝜋 ℏ2
+Using the definition of 𝑇 , we get
+3
+3
+2
+𝜋
+2
+𝜋
+2
+𝑚
+2𝑚 0
+(2.1.19)
+h𝑘0 | 𝑇 |Φi = −
+h𝑘 | 𝑇 |𝑘i
+𝑓 (𝑘0, 𝑘) = −
+2
+4𝜋 ℏ
+4𝜋 ℏ2
+9
+
+2.1. SOME IMPORTANT RESULTS OF SCATTERING THEORY
+
+where we chose the non-interacting eigenkets to be the momentum eigenkets |Φi = |𝑘i .
+By expanding in terms of the eigenstates of 𝐿2 and 𝐿𝑧 , this can be written as
+Õ
+
+
+
+𝜋Õ
+𝑓 (𝑘0, 𝑘) = −
+( 2𝑙 + 1)𝑃𝑙 cos 𝜃 𝑇𝑙 (𝜖𝑘 ) ≡
+( 2𝑙 + 1)𝑃𝑙 cos 𝜃 𝑓𝑙 𝑘
+(2.1.20)
+𝑘 𝑙
+𝑙
+
+where we have chosen 𝑘® to be the z-direction and 𝜃 is the angle between 𝑘 and 𝑘0. The
+last part of the equation defines 𝑓𝑙 (𝑘):
+𝜋
+𝑓𝑙 (𝑘) = − 𝑇𝑙 (𝜖𝑘 )
+(2.1.21)
+𝑘
+This enables us to write
+
+
+ − 32  𝑖𝑘𝑥 Õ
+
+ 𝑒𝑖𝑘𝑟 
+
+
+Ψ(𝑥) = 2𝜋
+(2.1.22)
+( 2𝑙 + 1)𝑃𝑙 cos 𝜃 𝑓𝑙 𝑘
+
+𝑒 +
+𝑟
+
+
+𝑙
+
+
+Writing the plane wave in terms of incoming and outgoing spherical waves and expanding the spherical waves in terms of the spherical harmonics gives
+"
+#
+ 𝑒𝑖𝑘𝑟
+ − 23 Õ
+1
+1
+𝑃𝑙 1 + 2𝑖𝑘 𝑓𝑙
+− 𝑒−𝑖 ( 𝑘𝑟−𝑙𝜋)
+Ψ(𝑥) = 2𝜋
+( 2𝑙 + 1)
+(2.1.23)
+2𝑖𝑘
+𝑟
+𝑟
+𝑙
+From conservation of probabilities, we know that the amplitude squared of the incoming
+and outgoing waves must be equal. Assuming a spherically symmetric scattering center
+means the probabilities will be conserved separately for each value of 𝑙. This means that
+the coefficient
+𝑆𝑙 (𝑘) ≡ 1 + 2𝑖𝑘 𝑓𝑙 (𝑘)
+(2.1.24)
+can, at most, be a phase:
+
+(2.1.25)
+𝑆𝑙 (𝑘) ≡ 1 + 2𝑖𝑘 𝑓𝑙 (𝑘) = 𝑒2𝑖𝛿𝑙 (𝑘)
+From the definition of 𝑓𝑙 in terms of 𝑇𝑙 , we can relate 𝑆(𝑘) with the T-matrix 𝑇 (𝜖𝑘 ):
+𝑆𝑙 (𝑘) = 1 + 2𝑖𝑘 𝑓𝑙 = 1 − 2𝜋𝑖𝑇𝑙 (𝜖𝑘 )
+
+(2.1.26)
+
+We can express the LHS in terms of energy:
+
+𝑆𝑙 (𝜔) = h𝜔| 𝑆𝑙 |𝜔i
+∫
+® h𝑘|
+® 𝑆𝑙 | 𝑘i
+® h𝑘|
+® |𝜔i
+=
+𝑑 𝑘® h𝜔| | 𝑘i
+∫
+®
+®
+=
+𝑑 𝑘𝛿(𝜔
+− 𝜖𝑘 )𝑆𝑙 ( 𝑘)
+∫
+
+
+®
+=
+𝑑 𝑘𝛿(𝜔
+− 𝜖𝑘 ) 1 − 2𝜋𝑖𝑇𝑙 (𝜖𝑘 )
+∫
+®
+= 1 − 2𝜋𝑖
+𝑑 𝑘𝛿(𝜔
+− 𝜖𝑘 )𝑇𝑙 (𝜖𝑘 )
+∫
+= 1 − 2𝜋𝑖
+𝑔 (𝑘)𝑑𝑘𝛿(𝜔 − 𝜖𝑘 )𝑇𝑙 (𝜖𝑘 )
+∫
+= 1 − 2𝜋𝑖
+𝑔 (𝜖𝑘 )𝑑𝜖𝑘 𝛿(𝜔 − 𝜖𝑘 )𝑇𝑙 (𝜖𝑘 )
+= 1 − 2𝜋𝑖𝑔 (𝜔)𝑇𝑙 (𝜔)
+10
+
+(2.1.27)
+
+Chapter 2. Preliminaries and Existing Results
+® and 𝑔 (𝜖𝑘 ) is the density
+where 𝑔 (𝑘) is the density of states at momentum magnitude 𝑘 = | 𝑘|
+of states at that energy. Note that these are the non-interacting density of states: they
+count energy states that match with the kinetic energy 𝜖𝑘 and do not take into account
+any self-energy term that may come from some interaction. The relation between 𝑆 and
+𝑇 is thus
+𝑆𝑙 (𝜔) = 1 − 2𝜋𝑖𝑔 (𝜔)𝑇𝑙 (𝜔)
+(2.1.28)
+The scattering phase shifts can be expressed in terms of 𝑇 :
+𝑇𝑙 (𝜔) =
+=
+=
+
+1
+
+
+
+2𝜋𝑖𝑔 (𝜔)
+h
+1
+2𝜋𝑖𝑔 (𝜔)
+1
+2𝜋𝑖𝑔 (𝜔)
+
+1 − 𝑆𝑙 (𝜔)
+
+
+
+1 − exp 2𝑖𝛿𝑙 (𝜔)
+
+exp 𝑖𝛿𝑙 (𝜔)
+
+h
+
+i
+
+
+
+exp −𝑖𝛿𝑙 (𝜔) − exp 𝑖𝛿𝑙 (𝜔)
+
+Converting the exponentials inside the box brackets to sines gives
+𝑇𝑙 (𝜔) = −
+
+1
+
+𝜋𝑔 (𝜔)
+
+i
+
+
+
+exp 𝑖𝛿𝑙 (𝜔) sin 𝛿𝑙 (𝜔)
+
+(2.1.29)
+
+(2.1.30)
+
+If we define the argument of a complex number 𝑧(𝑟, 𝜙) = 𝑟𝑒𝑖𝜙 as 𝑎𝑟𝑔 (𝑧) = 𝜙, then we can
+write
+
+
+𝛿𝑙 (𝜔) = 𝑎𝑟𝑔 𝑇𝑙 (𝜔)
+(2.1.31)
+Since the total 𝑇 −matrix will be
+
+𝑇 (𝜔) =
+
+Õ
+𝑙𝑚𝜎
+
+𝑇𝑙 (𝜔)
+
+(2.1.32)
+
+the determinant of 𝑇 (𝜔) will be the product of the eigenvalues 𝑇𝑙 (𝜔), so we can write
+!
+ Õ
+Ö
+
+
+
+ Ö
+1
+−
+Det 𝑇 (𝜔) =
+𝑇𝑙 = exp 𝑖
+𝛿𝑙 (𝜔) 
+sin 𝛿𝑙 (𝜔)
+
+ 𝑙𝑚𝜎 𝜋𝑔 (𝜔)
+𝑙𝑚𝜎
+𝑙𝑚𝜎
+
+
+
+and the argument of this function will be the total scattering phase shift:
+h
+
+i Õ
+𝛿𝑙 (𝜔) ≡ 𝛿(𝜔)
+𝑎𝑟𝑔 Det 𝑇 (𝜔) =
+𝑙𝑚𝜎
+
+(2.1.33)
+
+(2.1.34)
+
+𝛿(𝜔) is the total scattering phase shift suffered by the scattering states due to scattering
+off the potential, at energy 𝜔.
+Summing equation 2.1.28 over 𝑙 also relates the total 𝑆 with the total 𝑇 :
+𝑆(𝜔) = 1 − 2𝜋𝑖𝑔 (𝜔)𝑇 (𝜔)
+
+11
+
+(2.1.35)
+
+2.1. SOME IMPORTANT RESULTS OF SCATTERING THEORY
+
+2.1.2
+
+The Friedel sum-rule
+
+This is a very general and important theorem that will come up quite often throughout
+the calculations. It states that the change in the number of states of a Hamiltonian on
+introduction of a localized scattering center is equal to the sum of the scattering phase
+shifts suffered by the conduction electrons at the Fermi surface as they scatter off the
+scattering center. We can obtain a clearer picture by looking at a simple derivation of
+this result [12].
+Consider a Hamiltonian
+
+(2.1.36)
+
+H = 𝐻0 + 𝑉
+
+Í
+
+where 𝐻0 = 𝑘𝜎 𝜖𝑘 𝑛ˆ 𝑘𝜎 . We will define the number of states of the Hamiltonian by integrating over the density of states (dos), which is in turn defined using a retarded Green’s
+function. The retarded Green’s function for the full Hamiltonian is defined as
+𝐺(𝜔) = lim
+
+𝜂→0
+
+1
+
+𝜔 − H + 𝑖𝜂
+
+=
+
+1
+
+𝜔−H
+
+− 𝑖𝜋𝛿 𝜔 − H
+
+The non-interacting Greens function is then
+𝐺0 (𝜔) =
+
+1
+
+𝜔 − 𝐻0
+
+− 𝑖𝜋𝛿 𝜔 − 𝐻0
+
+
+
+
+
+(2.1.37)
+
+(2.1.38)
+
+The dos 𝜌(𝜔) and total number of states 𝑁 are then defined as
+Õ
+
+
+
+
+
+1
+𝛿(𝜔 − 𝜖) = Tr 𝛿(𝜔 − H ) = − ImTr 𝐺(𝜔)
+𝜋
+𝜖
+
+
+1
+𝜌0 (𝜔) = − ImTr 𝐺0 (𝜔)
+∫ 𝜋𝜖𝐹
+∫ 𝜖𝐹
+
+
+1
+ImTr 𝐺(𝜔) 𝑑𝜔
+𝑁=
+𝜌(𝜔)𝑑𝜔 = −
+−∞
+−∞ 𝜋
+∫ 𝜖𝐹
+
+
+1
+𝑁0 = −
+ImTr 𝐺0 (𝜔) 𝑑𝜔
+−∞ 𝜋
+
+(2.1.39)
+
+
+
+1
+Δ𝜌 (𝜔) = 𝜌 (𝜔) − 𝜌0 (𝜔) = − ImTr 𝐺(𝜔) − 𝐺0 (𝜔)
+𝜋
+
+(2.1.40)
+
+𝜌(𝜔) =
+
+Note that 𝜌0 (𝜔) is nothing but the 𝑔 (𝜔) that appears in eq. 2.1.28. The quantity 𝑁 counts
+the total number of states in the system below the Fermi surface. The change in the density
+of states induced by the interaction term 𝑉 is
+
+12
+
+Chapter 2. Preliminaries and Existing Results
+We can rewrite the trace of Green’s function as
+
+ Õ 1
+Tr 𝐺(𝜔) =
+𝜔 − 𝐸𝑖
+𝑖
+Õ 𝜕
+
+=
+ln 𝜔 − 𝐸𝑖
+𝜕𝜔
+𝑖
+Ö
+
+𝜕
+=
+ln
+𝜔 − 𝐸𝑖
+𝜕𝜔
+𝑖
+
+
+𝜕
+=−
+ln Det 𝐺(𝜔)
+𝜕𝜔
+
+(2.1.41)
+
+
+
+ 
+   −1
+𝜕
+−Tr 𝐺(𝜔) − 𝐺0 (𝜔) =
+ln Det 𝐺 Det 𝐺0
+𝜕𝜔
+h
+i
+𝜕
+(2.1.42)
+=
+ln Det 𝐺(𝜔)𝐺0−1 (𝜔)
+𝜕𝜔
+h
+i
+𝜕
+ln Det 𝐺0−1 (𝜔)𝐺(𝜔)
+=
+𝜕𝜔
+ 
+ 
+which works because Det 𝐴𝐵 = Det 𝐵𝐴 . From eq. 2.1.12, we can write 𝐺0−1 (𝜔)𝐺(𝜔) =
+1 + 𝐺0𝑇 , which means
+such that
+
+
+
+
+
+
+
+
+
+𝜕
+−Tr 𝐺(𝜔) − 𝐺0 (𝜔) =
+ln Det 1 + 𝐺0𝑇
+𝜕𝜔
+h
+i
+𝜕
+−1
+ln Det 𝑉 𝑇
+=
+𝜕𝜔
+i
+h
+ 
+𝜕
+−1
+Det 𝑇
+=
+ln Det 𝑉
+𝜕𝜔 
+
+h
+i
+ 
+𝜕
+−1
+=
+ln Det 𝑉
++ ln Det 𝑇
+𝜕𝜔
+
+
+
+eq. 2.1.7
+
+
+
+(2.1.43)
+
+Since 𝑉 is independent of 𝜔, the first term will vanish under the derivative.
+
+
+ 
+𝜕
+−Tr 𝐺(𝜔) − 𝐺0 (𝜔) =
+ln Det 𝑇
+𝜕𝜔
+
+The change in the dos becomes
+
+
+ 
+𝜕
+Δ𝜌(𝜔) = Im
+ln Det 𝑇
+𝜋
+𝜕𝜔
+
+ 
+1 𝜕
+=
+Im ln Det 𝑇
+𝜋 𝜕𝜔
+1
+
+
+
+(2.1.44)
+
+(2.1.45)
+
+ 
+Note that while the Det 𝑇 will have both an argument and an amplitude (as a general
+complex number), the ln followed by the Im () will pick out just the argument:
+
+
+
+Im ln (𝑟𝑒𝑖𝜙 ) = Im ln 𝑟 + 𝑖𝜙 = 𝜙
+(2.1.46)
+13
+
+

@@ -1,0 +1,3576 @@
+4.3. CUT RG
+We define 𝜉 ≡ 𝜖𝑘+𝑞 − 𝜖𝑘 + ℏ𝜔𝑞 . The renormalization in the total Hamiltonian becomes
+
+
+= 𝜂, H
+
+(4.3.20)
+
+
+
+= −𝜉 2 𝑔𝑞 =⇒ 𝑔𝑞 (𝑙) = 𝑔𝑞 ( 0) exp −𝜉 2 𝑙
+
+(4.3.21)
+
+dH
+d𝑙
+
+The flow equation for the electron-phonon coupling is
+d 𝑔𝑞
+d𝑙
+
+†
+A new electron-electron coupling 𝑉𝑘𝑘𝑞 𝑐𝑘+𝑞
+𝑐𝑘† 0−𝑞 𝑐𝑘 0 𝑐𝑘 is also generated. For the Cooper channel (𝑘0 = −𝑘), the flow equation is
+
+𝑔𝑞2 𝜔𝑞
+𝑉𝑘,−𝑘,𝑞 (∞) = 𝑉𝑘,−𝑘,−𝑞 ( 0) −
+
+2
+2
+𝜔𝑞 + 𝜖𝑘+𝑞 − 𝜖𝑘
+
+(4.3.22)
+
+Off-diagonal terms that connect larger energy differences 𝜉 decay the fastest.
+CUT RG from URG
+We will now see that the renormalization in URG can also be put into a similar form.
+From eq. 3.1.47, we can write the URG renormalization in the diagonal part as
+i
+1h †
+(4.3.23)
+ΔH 0 =
+𝜂 − 𝜂, H
+2
+
+where H 0 = H 𝑑 + H 𝑖 . The URG generator can be recast (starting from the definitions of
+𝜂, eqs. 3.1.14) as
+𝜂 † − 𝜂 = 𝐺 1 𝑐 †𝑇 − 𝐺 0𝑇 † 𝑐
+h
+ †
+ † i
+1
+=
+𝐺 1 𝜔1 − 𝜔0 𝑐 𝑇 − 𝐺 0 𝜔1 − 𝜔0 𝑇 𝑐
+𝜔1 − 𝜔0
+h
+i
+1
+=
+𝐺1 𝜔1 𝑐†𝑇 − 𝑐†𝑇 𝜔0 𝐺0 − 𝑇 † 𝑐𝜔1 𝐺1 + 𝐺0 𝜔0𝑇 † 𝑐
+𝜔1 − 𝜔0
+
+(4.3.24)
+
+In the last step, we changed the second and fourth terms using the constraints 𝐺1 𝑐†𝑇 =
+𝑐†𝑇𝐺0 and 𝐺0𝑇 † 𝑐 = 𝑇 † 𝑐𝐺1 , eq. 3.1.16. We now add and subtract 𝐺1 𝐺1−1 𝑐†𝑇 = 𝑐†𝑇 and 𝐺0 𝐺0−1𝑇 † 𝑐 =
+𝑇 † 𝑐 for each term.
+ 
+
+
+
+1
+†
+𝐺1 𝜔1 − 𝐺1−1 𝑐†𝑇 + 𝑐†𝑇 − 𝑐†𝑇 𝜔0 − 𝐺0−1 𝐺0 − 𝑐†𝑇
+𝜂 −𝜂 =
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+†
+−1
+†
+†
+−𝑇 𝑐 𝜔1 − 𝐺1 𝐺1 − 𝑇 𝑐 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐 + 𝑇 𝑐
+ 
+(4.3.25)
+
+
+
+1
+−1
+†
+†
+−1
+=
+𝐺 1 𝜔1 − 𝐺 1 𝑐 𝑇 − 𝑐 𝑇 𝜔0 − 𝐺 0 𝐺 0
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+−1
+†
+−𝑇 𝑐 𝜔1 − 𝐺1 𝐺1 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐
+138
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+In the last step, the extra 𝑐†𝑇 and 𝑇 † 𝑐 terms canceled out. In the second andthird terms,
+
+we can bring the Greens function closer to the operators 𝑐†𝑇 and 𝑇 † 𝑐 because 𝜔 𝑗 − 𝐺 −𝑗 1 𝐺 𝑗 =
+
+
+−
+1
+𝐺𝑗 𝜔𝑗 − 𝐺𝑗 :
+ 
+
+
+
+1
+†
+𝜂 −𝜂 =
+𝐺1 𝜔1 − 𝐺1−1 𝑐†𝑇 − 𝑐†𝑇𝐺0 𝜔0 − 𝐺0−1
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+−1
+†
+−𝑇 𝑐𝐺1 𝜔1 − 𝐺1 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐
+ 
+(4.3.26)
+
+
+
+1
+−1
+†
+†
+−1
+=
+𝐺 1 𝜔1 − 𝐺 1 𝑐 𝑇 − 𝐺 1 𝑐 𝑇 𝜔0 − 𝐺 0
+𝜔1 − 𝜔0
+
+
+
+
+
+†
+−1
+−1
+†
+−𝐺0𝑇 𝑐 𝜔1 − 𝐺1 + 𝐺0 𝜔0 − 𝐺0 𝑇 𝑐
+In the last step, we again used the constraint 𝐺1 𝑐†𝑇 = 𝑐†𝑇𝐺0 and its partner. From the
+
+ −1
+definition of the Green’s function 𝐺 = 𝜔 − H 𝑑 , we can write 𝜔 𝑗 − 𝐺 −𝑗 1 = H 𝑗𝑑 . Therefore,
+
+i
+𝐺1 H1𝑑 𝑐†𝑇 − 𝐺1 𝑐†𝑇 H0𝑑 − 𝐺0𝑇 † 𝑐H1𝑑 + 𝐺0 H0𝑑 𝑇 † 𝑐
+𝜔1 − 𝜔0
+h
+i
+1
+𝑑 †
+†
+𝑑
+†
+𝑑
+𝑑 †
+=
+𝐺H 𝑐 𝑇 − 𝐺𝑐 𝑇 H − 𝐺𝑇 𝑐H + 𝐺H 𝑇 𝑐
+(4.3.27)
+𝜔1 − 𝜔0
+h
+i
+1
+𝐺 H 𝑑 , 𝑐 †𝑇 + 𝑇 † 𝑐
+=
+𝜔1 − 𝜔0
+ −1
+
+ 
+where H 𝑑 = H1𝑑 𝑛ˆ + H0𝑑 1 − 𝑛ˆ and 𝐺 = 𝐺1 𝑛ˆ + 𝐺0 1 − 𝑛ˆ = 𝜔ˆ − H 𝑑 . For URG, the relevant
+𝜂† − 𝜂 =
+
+1
+
+h
+
+off-diagonal part of the Hamiltonian for the current node is H 𝐼 = 𝑐†𝑇 + 𝑇 † 𝑐. Therefore,
+
+h
+i 
+1
+1
+†
+𝑑
+𝐼
+𝑑
+𝐼
+𝜂 −𝜂 =
+𝐺 H ,H = H ,
+𝐺H
+(4.3.28)
+𝜔1 − 𝜔0
+𝜔1 − 𝜔0
+
+The last equality comes about because both 𝐺 and H 𝑑 are completely diagonal and hence
+commute. The renormalization in the Hamiltonian under URG, which is a function of
+both the quantum fluctuation scale 𝜔 and the running bandwidth 𝐷, can thus be written
+as
+h
+
+i
+𝑑
+𝐼
+ΔH (𝜔, 𝐷) = H , H̃ , H − H𝑋
+(4.3.29)
+
+The most obvious difference with the CUT version is the presence of the off-diagonal
+piece −H𝑋 . This is a result of the philosophical difference between URG and CUT-RG while CUT-RG gradually suppresses the off-diagonal matrix elements, URG makes the
+off-diagonal components in each 2 × 2 block vanish completely. We can instead look at
+the renormalization in the diagonal part of the Hamiltonian under URG:
+h
+
+i
+0
+𝑑
+𝐼
+ΔH (𝜔, 𝐷) = H , H̃ , H
+(4.3.30)
+139
+
+4.4. COMPARISON OF THE CANONICAL TRANSFORMATIONS
+where H̃ 𝐼 =
+
+1
+
+𝜔1 −𝜔0 𝐺H
+
+𝐼.
+
+This can be compared to the analogous equation for CUT (eq. 4.3.4),
+ΔH (𝜆) = Δ𝜆
+
+h
+
+i
+
+H𝑑 , H𝑋 , H
+
+(4.3.31)
+
+Leaving aside the obvious differences in the philosophies (the presence of 𝜔 in URG or
+the fact that while URG decouples as a flow in the bandwidth, CUT uses a general parameter 𝜆 or the algorithmic difference that while URG decouples one specific node, CUT
+tries to make the Hamiltonian band-diagonal), the major physical difference is the presence of the total Green’s function in the URG equation. It must be noted that while CUT
+employs the entire off-diagonal part in H𝑋 , the H 𝐼 of URG contains only those parts that
+are off-diagonal with respect to the node being decoupled at this step.
+To bring the URG form closer to CUT, we can make some approximations.
+
+ −1
+  −1
+𝐺 = 𝜔ˆ − H 𝑑
+≈ − H𝑑
+
+(4.3.32)
+
+where we assumed that the quantum fluctuations are small and can be ignored w.r.t the
+diagonal contribution H 𝑑 . This gives
+h
+
+i
+ΔH 0 (𝜔, 𝐷)
+𝑑
+𝐼
+= H ,H ,H
+h
+(4.3.33)
+ i −1
+𝑑
+H1 𝜔0 − 𝜔1
+We can thus make the connection,
+
+h
+ i −1
+Δ𝜆 ∼ H1𝑑 𝜔0 − 𝜔1
+
+(4.3.34)
+
+Note that in going from eq. 4.3.30 to the simplified form eq. 4.3.33, we had to drop all
+quantum fluctuations in the denominator and we lose the fixed point structure in the
+process. This results in the distinction that while URG can reach a fixed point theory in
+a finite number of steps, CUT cannot do so.
+
+4.4
+
+Comparison of the Canonical Transformations
+
+We have considered three canonical transformations in this section: the Poor Man’s scaling (PMS), the Schrieffer-Wolff transformation (SWT) and the continuous unitary transformation renormalization group (CUT-RG). PMS and SWT are more or less identical;
+they differ in the context in which they are used. PMS is used when there is an entire
+spectrum of energies in the model, ranging from a low energy limit to a high energy; it
+is then employed to decouple the highest energy modes in an iterative fashion. SWT is
+used when the Hamiltonian can be split into one high and one low energy part, and we
+need to decouple these two modes. It is clear when seen from this perspective that SWT
+is like a one-shot PMS; it decouples the UV from the IR in one step, compared to the iterative approach of PMS. However, as has been shown in the previous subsections, both
+140
+
+Chapter 4. Connection between URG and Other Canonical Transformations
+PMS and SWT can be formalized in an identical fashion, so that one can be switched for
+the other in both contexts.
+Now that we have established that PMS and SWT are formally identical, we can relate
+them to URG. URG is similar in philosophy to PMS in the fact that URG also successively
+decouples high energy modes from the low energy ones. The difference is that URG takes
+care of the quantum fluctuations, at least in principle, by introducing a new set of energy scales 𝜔. These 𝜔 then parameterise the RG flows of URG, compared to the single RG
+flow of PMS. Since SWT is formally the same as PMS, these is also a comparison between
+SWT and URG. Both PMS and SWT trivialize the quantum fluctuation scales of URG by
+replacing it with the bare energy values.
+CUT-RG is philosophically different from the other transformations. Its goal is to gradually reduce the contributions of the off-diagonal terms by making them decay along
+a certain scale 𝑙. Off-diagonal terms that connect states with large energy differences
+decay faster. In this sense, there is no sequential dropping out of off-diagonal terms; all
+off-diagonal terms disappear at 𝑙 = ∞. In this sense, it is like a continuous version of SWT.
+While SWT strives to remove an entire off-diagonal term in one-shot, CUT RG does this
+gradually by introducing a scale 𝑙. This separation of scales is absent in SWT. It does exist
+in URG and PMS, albeit in a different fashion. There, the separation comes in when we
+decouple single electron states starting from the Brillouin zone boundary Λ𝑁 and come
+down to the Fermi surface Λ0 . Each Λ provides a natural energy scale for separating the
+high and low energy physics.
+If one integrates the continuum generator 𝜂 over all the scales, one should recover something analogous to the SWT generator. This generator is however necessarily perturbative in the off-diagonal term, since by definition 𝜂 will only be of first order in H𝑋 . This
+is in contrast to the non-perturbative generators in URG and, at least in principle, PMS.
+This non-perturbative form is encapsulated in the presence of a second completely different set of energy scales 𝜔 (or 𝐸 in PMS). This second energy scale is absent in CUT RG
+because it takes care of at most the second order term.
+Another point to note is that since SWT keeps the entire off-diagonal piece in the generator, new terms will almost certainly by generated at every step, and they have to be
+truncated. This is not the case with URG or PMS, becasue in those methods, we decouple
+just a single-electron at each step, and so those electrons become integrals of motion at
+that step, leading to their removal from the off-diagonal piece, and very often the Hamiltonian retains the same form as the bare model. This makes the philosophy of URG and
+PMS easier to work with. Tied to this is the fact that CUT RG often takes a certain type
+of interaction in the generator part, and not the entire off-diagonal piece. Hence, at the
+limit of the flow parameter going to ∞, the chosen off-diagonal piece goes to zero but the
+remaining off-diagonal pieces still remain. As a result, the Hamiltonian is atmost block
+diagonal at this stage. On the other hand, URG progressively decouples single electrons,
+meaning all scattering terms corresponding to that electron vanish at each step.
+141
+
+4.4. COMPARISON OF THE CANONICAL TRANSFORMATIONS
+One last thing to note is that URG, being unitarily implemented with a well-defined generator, does not accomodate for spontaneous symmetry breaking (SSB). In order to see
+SSB, the symmetry-breaking term has to be added to the bare model explicitly; if this
+term grows under the RG, then the ground state will be symmetry-broken. CUT RG, however, does allow for SSB through the idea that the generator is not uniquely defined. If
+the generator commutes with a particular symmetry, then the family of Hamiltonians
+will also have the symmetry [30]. However, if the generator is replaced by something
+that is normal ordered w.r.t a particular expectation value, then the CUT RG flow will
+usually be towards either the symmetry-preserved state or the symmetry-broken state,
+depending on whichever is stable [32].
+
+Figure 4.3: Comparison of the various unitary transformations, depicting how each of
+them are related to one another.
+
+142
+
+Chapter 5
+URG of the SIAM and its Spin and
+Charge Generalizations
+5.1
+
+URG of the SIAM
+
+5.1.1
+
+Setting up the various terms in the URG
+
+The model is the usual single-impurity Anderson model Hamiltonian.
+
+Õ
+Õ
+Õ
+†
+H=
+𝜖𝑘 𝑛ˆ 𝑘𝜎 +
+𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 + ℎ.𝑐. + 𝜖𝑑
+𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+𝑘𝜎
+
+𝜎
+
+𝑘𝜎
+
+(5.1.1)
+
+To allow the calculation of both particle and hole kinetic energies, we will write the kiÍ
+netic energy part as 𝑘𝜎 𝜖𝑘 𝜏𝑘𝜎 , where 𝜏 = 𝑛ˆ − 12 and drop the extra constant part.
+
+Õ
+Õ
+Õ
+†
+𝑉𝑘 𝑐𝑘𝜎
+𝑐𝑑𝜎 + ℎ.𝑐. + 𝜖𝑑
+𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+(5.1.2)
+H=
+𝜖𝑘 𝜏𝑘𝜎 +
+𝑘𝜎
+
+𝜎
+
+𝑘𝜎
+
+The renormalization is
+
+†
+𝑐𝑞𝛽
+𝑇 𝜂 + 𝑇 † 𝑐𝑞𝛽 𝜂0†
+
+(5.1.3)
+
+We will be decoing an electron 𝑞𝛽 at the energy shell 𝜖𝑞 . The diagonal part (that comes
+down in the denominator) is
+Õ
+H𝑑 = 𝜖𝑞 𝜏𝑞𝛽 + 𝜖𝑑
+𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+(5.1.4)
+𝜎
+
+Since this is the first step of the RG, the shell being decoupled is the highest one, which
+we call Λ𝑁 .
+
+5.1.2
+
+Calculation of renormalization
+
+The 𝜂 is
+𝜂=
+
+1
+
+𝜔ˆ − H𝑑
+
+𝑇 † 𝑐𝑞𝛽 =
+=
+
+1
+
+𝜔ˆ − 𝜖𝑞 𝜏𝑞𝛽 − 𝜖𝑑
+1
+
+Í
+
+ˆ 𝑑𝜎 − 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+𝜎𝑛
+
+
+
+𝜔ˆ + 12 𝜖𝑞 − 𝜖𝑑 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+143
+
+𝑉𝑞∗ 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+𝑉𝑞∗ 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+(5.1.5)
+
+5.1. URG OF THE SIAM
+We substituted 𝜏𝑞𝛽 = − 21 and 𝑛ˆ 𝑑 𝛽 = 1 because of the off-diagonal terms in the numerator.
+The renormalization in the particle sector (𝑛ˆ 𝑞𝛽 = 𝑛ˆ 𝑞𝛽 = 1), at an energy −𝜖𝑞 is
+†
+ΔH = 𝑐𝑞𝛽
+𝑇𝜂 =
+
+|𝑉𝑞 | 2
+
+
+
+𝜔ˆ − 12 𝜖𝑞 − 𝜖𝑑 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽
+
+
+
+
+
+(5.1.6)
+
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑞𝛽
+
+Similarly, the renormalization in the hole sector (𝑛ˆ 𝑞𝛽 = 𝑛ˆ 𝑞𝛽 = 0), at an energy 𝜖𝑞 is:
+ΔH = 𝑇 † 𝑐𝜂0† =
+
+|𝑉𝑞 | 2
+
+𝜔ˆ − 12 𝜖𝑞 − 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+
+
+
+
+
+1 − 𝑛ˆ 𝑞𝛽 𝑛ˆ 𝑑 𝛽
+
+(5.1.7)
+
+Therefore, the total renormalization obtained from decoupling a particle state (𝑛ˆ 𝑞𝛽 = 1)
+at −𝜖𝑞 and a hole state (𝑛ˆ 𝑞𝛽 = 0) at 𝜖𝑞 is
+
+
+|𝑉𝑞 | 2 1 − 𝑛ˆ 𝑑 𝛽
+|𝑉𝑞 | 2 𝑛ˆ 𝑑 𝛽
+ΔH =
++
+
+𝜔ˆ − 12 𝜖𝑞 − 𝜖𝑑 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 𝛽 𝜔ˆ − 12 𝜖𝑞 − 𝜖𝑑 𝑛ˆ 𝑑 𝛽
+
+  (5.1.8)
+
+
+
+
+ 
+
+
+ˆ
+ˆ
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝑛
+1
+−
+𝑛
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+𝑑𝛽
+𝑑𝛽 
+2 
+= |𝑉𝑞 | 
++
++
++
+
+ 𝜔1 − 1 𝜖𝑞 − 2𝜖𝑑 − 𝑈
+𝜔2 − 12 𝜖𝑞 − 𝜖𝑑
+𝜔3 − 12 𝜖𝑞 − 𝜖𝑑
+𝜔4 − 21 𝜖𝑞 
+2
+
+
+
+
+To relate the 𝜔𝑖 , we look at the their values obtained by substituting the energies of the
+initial states:
+1
+𝜔1 = 𝜔4 = − 𝜖𝑞 + 𝜖𝑑
+2
+1
+
+𝜔2 = − 𝜖𝑞
+2
+1
+
+(5.1.9)
+
+𝜔3 = − 𝜖𝑞 + 2𝜖𝑑 + 𝑈
+2
+
+Defining 𝜔 ≡ 𝜔2 (because 𝜔2 has the simplest form), we can write
+𝜔 1 = 𝜔 4 = 𝜔 + 𝜖𝑑
+𝜔2 = 𝜔
+𝜔3 = 𝜔 + 2𝜖𝑑 + 𝑈
+
+(5.1.10)
+
+The renormalization then becomes
+
+
+
+
+
+
+ 
+ 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+
+ˆ
+ˆ
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝑛
+1
+−
+𝑛
+ˆ
+ˆ
+𝑛
+𝑛
+𝑑
+𝛽
+𝑑𝛽 𝑑𝛽
+𝑑𝛽 
+
+ΔH = |𝑉𝑞 | 2 
++
++
++
+ (5.1.11)
+1
+1
+1
+ 𝜔 − 1 𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+𝜔
+−
+𝜔
+−
+𝜔
+−
+𝜖
+−
+𝜖
+𝜖
++
+𝜖
++
+𝑈
+𝜖
++
+𝜖
+𝑞
+𝑞
+𝑞
+𝑑
+𝑑
+𝑑
+2
+2
+2
+2
+
+
+
+
+
+5.1.3
+
+Scaling equations
+
+Once we have the renormalization for decoupling one electronic or hole state, we can
+just sum over the spins and momenta to get the total renormalization upon decoupling
+144
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+the entire shells ±𝜖𝑞 . From the structure of ΔH in eq. 5.1.11, we can see that there are
+renormalizations to all three configuration energies of the impurity: the doublon energy
+𝐸2 corresponding to the state 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 , the single energy 𝐸1 corresponding to (𝑛ˆ 𝑑 𝛽 ( 1 − 𝑛ˆ 𝑑 𝛽 ) +
+𝑛ˆ 𝑑 𝛽 ( 1 − 𝑛ˆ 𝑑 𝛽 ), and the holon energy 𝐸0 corresponding to ( 1 − 𝑛ˆ 𝑑 𝛽 )( 1 − 𝑛ˆ 𝑑 𝛽 ) + 𝑛ˆ 𝑑 𝛽 ( 1 − 𝑛ˆ 𝑑 𝛽 ).
+Δ𝐸2 = +2
+
+Õ
+
+|𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞 + 𝜖𝑑 + 𝑈
+Õ
+Õ
+|𝑉𝑞 | 2
+|𝑉𝑞 | 2
+Δ𝐸1 = +
++
+1
+1
+𝑞 𝜔 − 2 𝜖𝑞 + 𝜖𝑑
+𝑞 𝜔 − 2 𝜖𝑞 − 𝜖 𝑑 − 𝑈
+Õ
+|𝑉𝑞 | 2
+Δ𝐸0 = +2
+1
+𝑞 𝜔 − 2 𝜖𝑞 − 𝜖 𝑑
+𝑞
+
+(5.1.12)
+
+Using the relations 𝜖𝑑 = 𝐸1 − 𝐸0 and 𝑈 = 𝐸2 + 𝐸0 − 2𝐸1 , we can write
+Δ𝜖𝑑 = +
+
+Õ
+
+|𝑉𝑞 | 2
+
+Õ
+
+|𝑉𝑞 | 2
+
+−2
+
+Õ
+
+|𝑉𝑞 | 2
+
+1
+𝜔 − 12 𝜖𝑞 − 𝜖𝑑 − 𝑈
+𝑞 𝜔 − 2 𝜖𝑞 − 𝜖𝑑
+(5.1.13)
+Õ
+Õ
+Õ
+Õ
+2 |𝑉𝑞 | 2
+2 |𝑉𝑞 | 2
+2 |𝑉𝑞 | 2
+2 |𝑉𝑞 | 2
+Δ𝑈 =
++
+−
+−
+1
+1
+1
+1
+𝑞 𝜔 − 2 𝜖𝑞 + 𝜖𝑑 + 𝑈
+𝑞 𝜔 − 2 𝜖𝑞 − 𝜖𝑑
+𝑞 𝜔 − 2 𝜖𝑞 + 𝜖𝑑
+𝑞 𝜔 − 2 𝜖𝑞 − 𝜖𝑑 − 𝑈
+
+5.1.4
+
+𝑞
+
+𝜔 − 21 𝜖𝑞 + 𝜖𝑑
+
++
+
+𝑞
+
+Connection to Poor Man’s scaling
+
+To obtain the results of Poor Man’s scaling [26][33], we can look at various regimes. First
+we look at the case when both 𝜖𝑑 and 𝑈 are small such that both the singly-occupied
+and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth,
+𝑈, 𝜖𝑑  𝜖𝑞 . We can then ignore the 𝜖𝑑 and 𝑈 in the denominator compared to the 𝜖𝑞 .
+Δ𝜖𝑑 =
+
+Õ |𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞
+Õ |𝑉𝑞 | 2
+
+𝑞
+
+Δ𝑈 = 2
+
+𝑞
+
++
+
+𝜔 − 12 𝜖𝑞
+
+Õ |𝑉𝑞 | 2
+𝑞
+
++2
+
+−2
+
+𝜔 − 12 𝜖𝑞
+Õ |𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞
+
+𝑞
+
+Õ |𝑉𝑞 | 2
+𝑞
+
+−2
+
+𝜔 − 12 𝜖𝑞
+Õ |𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞
+
+𝑞
+
+−2
+
+Õ |𝑉𝑞 | 2
+𝑞
+
+𝜔 − 12 𝜖𝑞
+
+Assuming the upper and lower band edges are symmetrical such that
+Δ𝜖𝑑 = Δ𝑈 = 0.
+
+(5.1.14)
+Í
+
+−𝐷
+
+=
+
+Í
+
+𝐷,
+
+we get
+
+In the regime 𝑈  𝜖𝑞  𝜖𝑑 , the doubly-occupied state is far above the bandwidth. We
+can now ignore the terms that have 𝑈 in the denominator. We get
+Δ𝜖𝑑 =
+
+Õ |𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞
+Õ |𝑉𝑞 | 2
+
+𝑞
+
+Δ𝑈 = 2
+
+𝑞
+
+−2
+
+𝜔 − 12 𝜖𝑞
+145
+
+Õ |𝑉𝑞 | 2
+
+𝜔 − 12 𝜖𝑞
+Õ |𝑉𝑞 | 2
+
+𝑞
+
+−2
+
+𝑞
+
+𝜔 − 21 𝜖𝑞
+
+(5.1.15)
+
+5.1. URG OF THE SIAM
+Again assuming symmetrical upper and lower edges, and isotropic dispersion 𝜖𝑞 = 𝐷 and
+Í
+Δ
+2
+𝑞 |𝑉 | = 𝜋 |𝛿𝐷|, we get
+Δ𝑈 = 0
+Δ
+1
+(5.1.16)
+𝛿𝜖𝑑 = −
+1
+𝜋 𝜔 − 2𝐷
+
+There we replaced the difference symbol Δ with 𝛿 to avoid confusion with the hybridisÍ
+ation Δ ∼ 𝑉 2 . For low quantum fluctuations, we can ignore the renormalization in the
+couplings and replace 𝜔 with the initial conduction electron energy: 𝜔 = 𝜖𝑞 𝜏𝑞𝛽 = − 12 𝐷.
+𝛿𝜖𝑑 =
+
+Δ 𝛿𝐷
+𝜋 𝐷
+
+(5.1.17)
+
+This is the one-loop scaling equation.
+
+5.1.5
+
+Particle-Hole symmetry
+
+The Anderson model Hamiltonian, eq. 5.2.7, has an impurity particle-hole symmetry for a
+certain condition of the couplings. To see this, we apply the particle-hole transformation
+𝑐𝑘 → 𝑐𝑘† , 𝑐𝑑 → −𝑐𝑑† to the Hamiltonian. Since we are looking at the impurity symmetry,
+we will only look at the terms involving the impurity. The particle-hole symmetry of the
+conduction bath is a separate thing and that requires a specific lattice. Hence we will not
+consider kinetic energy term in this discussion. The rest of the terms transform as
+Õ
+Õ
+(5.1.18)
+𝜖𝑑
+𝑛ˆ 𝑑𝜎 → 2𝜖𝑑 − 𝜖𝑑
+𝑛ˆ 𝑑𝜎
+𝜎
+
+Õ
+𝑘𝜎
+
+𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ → 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ − 𝑈
+
+†
+𝑉 (𝑘)𝑐𝑘𝜎
+𝑐𝑑𝜎 + ℎ𝑐 →
+
+𝑆
+
+𝑧
+
+Õ
+
+Õ
+𝑘𝑞
+
+𝑆±
+
+𝑘𝑞
+
+Õ
+𝑘𝜎
+
+𝑧
+𝑠𝑘𝑞
+
+𝜎
+Õ
+𝜎
+
+†
+−𝑉 (𝑘)𝑐𝑘𝜎 𝑐𝑑𝜎
++ ℎ𝑐 =
+
+
+
+→ −𝑆
+
+𝑧
+
+Õ
+
+𝑧
+−𝑠𝑘𝑞
+
+
+
+(5.1.19)
+
+𝑛ˆ 𝑑𝜎 + 𝑈
+
+Õ
+𝑘𝜎
+
+=𝑆
+
+†
+𝑉 ∗ (𝑘)𝑐𝑘𝜎
+𝑐𝑑𝜎 + ℎ𝑐
+
+(5.1.20)
+
+𝑧
+
+(5.1.21)
+
+Õ
+
+𝑧
+𝑠𝑘𝑞
+
+
+Õ
+
+Õ
+∓
+∓
+∓
+𝑠𝑘𝑞
+→ −𝑆±
+−𝑠𝑘𝑞
+= 𝑆±
+𝑠𝑘𝑞
+𝑘𝑞
+
+𝑘𝑞
+
+𝑘𝑞
+
+(5.1.22)
+
+𝑘𝑞
+
+The transformation of the spin terms, eqs. 5.1.21 and 5.1.22, can be understood from the
+fact that since a spin degree of freedom can be written in terms of the number operator
+ˆ The spin terms
+as 𝑆ˆ = 𝑛ˆ − 21 , it must transform by flipping its sign: 𝑆ˆ = 𝑛ˆ − 12 → 12 − 𝑛ˆ = −𝑆.
+are thus invariant under the particle-hole transformation. The impurity-bath hopping
+term can be made symmetric by making 𝑉 (𝑘) real; then we would have, from eq. 5.1.20,
+
+
+
+
+†
+†
+†
+†
+𝑉 (𝑘) 𝑐𝑘𝜎 𝑐𝑑𝜎 + 𝑐𝑑𝜎 𝑐𝑘𝜎 → 𝑉 (𝑘) 𝑐𝑑𝜎 𝑐𝑘𝜎 + 𝑐𝑘𝜎 𝑐𝑑𝜎
+(5.1.23)
+The impurity diagonal terms, 𝜖𝑑 and 𝑈, require a specific condition. Combining eqs. 5.1.18
+and 5.1.19,
+
+𝜖𝑑 𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ → −𝜖𝑑 − 𝑈 𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓
+(5.1.24)
+146
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+We dropped some constant terms in the transformed Hamiltonian. For particle-hole
+symmetry, the left and right hand sides must be same. The required condition is thus
+1
+
+𝜖𝑑 = −𝜖𝑑 − 𝑈 =⇒ 𝜖𝑑 + 𝑈 = 0
+2
+
+This same condition can be obtained in a
+more physical way. If we consider the singlyoccupied state of the impurity as the reference
+state, the doubly-occupied state is the particleexcitation and the vacant state is the hole excitation. The energy of this particle state is
+𝐸2 = 2𝜖𝑑 + 𝑈 and that of the hole state is 𝐸0 = 0.
+Particle-hole symmetry then requires the particle and hole levels to be degenerate, which
+means 𝐸2 = 𝐸0 , and we recover the condition
+eq. 5.1.25.
+
+(5.1.25)
+
+Figure 5.1: Particle and hole excitations of the impurity
+
+Since the URG is unitary, if we start from a model that is particle-hole symmetric, the RG
+equations should uphold that symmetry. What this means is that if we have 𝜖𝑑 + 21 𝑈 = 0
+in the bare model, the new couplings should also satisfy 𝜖0𝑑 + 12 𝑈 0 = 0. This means we must
+have
+
+
+1
+Δ 𝜖𝑑 + 𝑈 = 0
+(5.1.26)
+2
+
+The quantity 𝛾 = 𝜖𝑑 + 12 𝑈 is thus an RG-invariant for the particle-hole symmetric model; it
+does not change under the RG flow. It is often referred to as the asymmetry parameter;
+it quantifies the asymmetry in the model. We need to check if our equations satisfy this.
+Looking at the RG equations for 𝜖𝑑 and 𝑈, we can find the RG equation for the asymmetry
+parameter. The slightly easier way is to just note that the renormalization in 𝐸2 should
+be equal to the renormalization in 𝐸0 , in order for p-h symmetry to hold.
+Δ𝐸2 = 2
+
+Δ
+1
+Δ
+1
+, Δ𝐸0 = 2
+𝜋 𝜔 − 𝐷 + 𝜖𝑑 + 𝑈
+𝜋 𝜔 − 𝐷 − 𝜖𝑑
+
+(5.1.27)
+
+If we start with a particle-hole symmetric model, we will have −𝜖𝑑 = 𝜖𝑑 + 𝑈. Substituting
+that gives Δ𝐸2 = Δ𝐸0 . This shows that the doublon and holon states remain equidistant
+from the single-particle level, thus maintaining particle-hole symmetry along the flow.
+
+5.1.6
+
+Numerical analysis of symmetric SIAM
+
+We will specialize to the particle-hole symmetric case, 2𝜖𝑑 +𝑈 = 0, and a symmetric energy
+shell 𝜖𝑞 = 𝐷, and look at the scaling behavior of 𝜖𝑑 .
+Δ𝜖𝑑 = −4 |𝑉 | 2 
+
+𝜖𝑑
+2
+1
+𝜔 − 2 𝐷 − 𝜖2𝑑
+
+147
+
+(5.1.28)
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+Since the equation is symmetric under 𝜖𝑑 → −𝜖𝑑 , we might as well work with the magnitude of the onsite energy:
+|𝜖𝑑 |
+Δ|𝜖𝑑 | = −4 |𝑉 | 2 
+2
+(5.1.29)
+𝜔 − 12 𝐷 − 𝜖2𝑑
+
+Depending on the signature of the denominator, the flows will be either relevant or irrelevant. For the flow to the local moment fixed point, the fixed point value of |𝜖𝑑 | grows
+
+Figure 5.2: Left: Irrelevant flow towards |𝜖𝑑 | = 0, at low 𝜔. Right: Relevant flow towards
+large |𝜖𝑑 |, at large 𝜔. The former can be thought of as the projection of the strong-coupling
+flow on to the 𝜖𝑑 − 𝐷 plane. The latter is the flow towards the local moment fixed point,
+if we start from a negative 𝜖𝑑 .
+as we increase the bandwidth. This implies that for a thermodynamically large system,
+the local moment fixed point will be at −𝜖𝑑 → ∞. This behavior is shown in fig. 5.3.
+
+5.2
+
+Anderson-Kondo (spin) model URG
+
+In order to obtain a renormalization in 𝑉 , we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does
+a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these
+terms in the bare model itself.
+
+5.2.1
+
+Spin-spin interaction
+
+We first consider a general four-Fermion interaction of the form
+Õ
+†
+†
+H𝐼 =
+𝑢𝑐𝑑𝜎
+𝑐𝑑𝜎4 𝑐𝑘 0𝜎3 𝑐𝑘𝜎
+𝛿
+2
+1 ( 𝜎1 +𝜎2 =𝜎3 +𝜎4 )
+𝑘,𝑘 0 ,𝜎𝑖
+
+148
+
+(5.2.1)
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+
+Figure 5.3: Change in fixed point value of |𝜖𝑑 | with system size.
+The 𝑢 in general depends on the spin and the momenta. Expanding the summation by
+using the delta gives
+
+H𝐼 =
+
+|
+
+Õ
+
+𝑘,𝑘 0 ,𝜎,𝜎 0
+
+spin-flip scattering
+
+†
+𝑢1 𝑛ˆ 𝑑𝜎 0 𝑐𝑘𝜎
+𝑐𝑘 0 𝜎
+
+{z
+
++
+
+}
+
+zÕ
+
+𝑘,𝑘 0 ,𝜎
+
+}|
+
+{
+
+†
+†
+𝑐𝑑𝜎 𝑐𝑘𝜎
+𝑐𝑘 0 𝜎
+𝑢2 𝑐𝑑𝜎
+
+(5.2.2)
+
+spin-preserving scattering
+
+At this point, we drop the dependence of 𝑢 on the momenta and assume it depends only
+on the spin transfer. The first term (attached with 𝑢1 ) involves no spin-flip between the
+scattering momenta or the scattering impurity electrons (𝑘𝜎 → 𝑘0𝜎, 𝑑𝜎0 → 𝑑𝜎0). We label
+this coupling as 𝑢𝑃 . The other coupling involves a spin-flip scattering, so we label that as
+𝑢𝐴 .
+Õ
+Õ
+†
+†
+†
+H𝐼,𝑁 =
+𝑢𝑃 𝑛ˆ 𝑑𝜎 0 𝑐𝑘𝜎
+𝑐𝑘 0 𝜎 +
+𝑢 𝐴 𝑐𝑑𝜎
+𝑐𝑑𝜎 𝑐𝑘𝜎
+𝑐𝑘 0 𝜎
+(5.2.3)
+𝑘,𝑘 0 ,𝜎,𝜎 0
+
+𝑘,𝑘 0 ,𝜎
+
+where the 𝑁 in the denominator means the sum is over all momenta up to |𝑘| = Λ𝑁 . The
+parallel scattering has two components, when expanded, is of the form
+†
+†
+†
+†
+𝑢↑↑ 𝑛ˆ 𝑑↑ 𝑐𝑘↑
+𝑐𝑘 0↑ + 𝑢↓↓ 𝑛ˆ 𝑑↓ 𝑐𝑘↓
+𝑐𝑘 0↑ + 𝑢↑↓ 𝑛ˆ 𝑑↑ 𝑐𝑘↓
+𝑐𝑘 0↓ + 𝑢↓↑ 𝑛ˆ 𝑑↓ 𝑐𝑘↑
+𝑐𝑘 0↑
+
+We define 𝐽𝑧 and 𝐽𝑡 such that this term can be written as
+
+i
+Õh
+𝑛ˆ 𝑑↑ − 𝑛ˆ 𝑑↓ Õ  †
+†
+†
+†
+†
+†
+H𝐼 = 𝐽𝑧
+𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘↓ 𝑐𝑘 0↓ + 𝐽𝑡
+𝑐𝑑↑ 𝑐𝑑↓ 𝑐𝑘↓ 𝑐𝑘 0↑ + 𝑐𝑑↓ 𝑐𝑑↑ 𝑐𝑘↑ 𝑐𝑘 0↓
+2
+
+𝑘𝑘
+
+= 2 𝐽𝑧 𝑆𝑑𝑧 𝑠 𝑧 + 𝐽𝑡 𝑆𝑑+ 𝑠− + 𝑆𝑑− 𝑠+
+0
+
+𝑘𝑘 0
+
+149
+
+(5.2.4)
+
+(5.2.5)
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+The spin-like operators are defined as
+
+1
+𝑆𝑑𝑧 ≡
+𝑛ˆ 𝑑↑ − 𝑛ˆ 𝑑↓
+2
+
+
+1
+†
+†
+𝑧
+𝑠𝑘𝑘
+𝑐𝑘↑
+𝑐𝑘 0↑ − 𝑐𝑘↓
+𝑐𝑘 0↓
+0 ≡
+2
+
+𝑠𝑎 ≡
+
+Õ
+𝑘𝑘 0
+
+†
+𝑆𝑑+ ≡ 𝑐𝑑↑
+𝑐𝑑↓
+
+†
+𝑆𝑑− ≡ 𝑐𝑑↓
+𝑐𝑑↑
+
+†
++
+𝑠𝑘𝑘
+0 ≡ 𝑐 𝑐𝑘 0↓
+𝑘↑
+
+†
+−
+𝑠𝑘𝑘
+0 ≡ 𝑐 𝑐𝑘 0↑
+𝑘↓
+
+(5.2.6)
+
+𝑎
+𝑠𝑘𝑘
+0
+
+This is the same interaction that constitutes the Kondo model and gives rise to the quenching of the local moment at low energies. The total Hamiltonian for this Anderson-Kondo
+model is thus
+
+
+
+Õ
+Õ
+†
+𝜖𝑘 𝑛ˆ 𝑘𝜎 + 𝑉𝑘 𝑐𝑘𝜎
+H=
+𝑐𝑑𝜎 + ℎ.𝑐. + 𝜖𝑑
+𝑛ˆ 𝑑𝜎 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ + 2 𝐽𝑧 𝑆𝑑𝑧 𝑠 𝑧 + 𝐽𝑡 𝑆𝑑+ 𝑠− + 𝑆𝑑− 𝑠+
+(5.2.7)
+𝜎
+
+𝑘𝜎
+
+For the special case of 2 𝐽𝑧 = 2 𝐽𝑡 = 𝐽, we get the SU(2) symmetric Heisenberg-like interaction
+
+
+1 + −
+𝑧 𝑧
+− +
+H𝐼 = 𝐽 𝑆𝑑 𝑠 +
+𝑆𝑑 𝑠 + 𝑆𝑑 𝑠
+= 𝐽 Sd · s
+(5.2.8)
+2
+
+For the URG, we take two electrons on the shell Λ𝑁 , 𝑞𝛽 and 𝑞𝛽, then decouple the electron
+𝑞𝛽. The reason for taking two electrons is to allow the symmetries to be preserved. For
+simplicity, we will only consider those diagonal terms in the denominator that either
+have both 𝑞𝛽 and 𝑞𝛽 or both 𝑞𝛽 and 𝑑 or both 𝑞𝛽 and 𝑑. Terms that have purely 𝑞𝛽 will
+not be considered. Also, the scattering between just 𝑑 and 𝑞𝛽 can be ignored since it is
+diagonal in 𝑞𝛽. The Hamiltonian for such a system is
+†
+H𝑁 = 𝐻𝑁−1 + 𝐻imp + 𝜖𝑞 𝑛ˆ 𝑞𝛽 + 2 𝐽𝑧 𝑆𝑑𝑧 𝑠𝑞𝑧 + 𝑉𝑞 𝑐𝑞𝛽
+𝑐𝑑 𝛽 + h.c.+
+"
+#
+
+
+
+Õ
+†
+†
+†
+†
+†
+†
+𝐽𝑧 𝑆𝑑𝑧 𝛽 𝑐𝑘𝛽 𝑐𝑞𝛽 + 𝑐𝑞𝛽 𝑐𝑘𝛽 + 𝐽𝑡 𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑞𝛽 + 𝑐 𝑐𝑑 𝛽 𝑐𝑞𝛽 𝑐𝑘𝛽
+
+
+
+𝑘<Λ𝑁
+
+1
+2
+
+
+
++
+
+𝐽𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑞𝛽
+
+
++
+
+†
+𝑐† 𝑐𝑑 𝛽 𝑐𝑞𝛽
+𝑐𝑞𝛽
+𝑑𝛽
+
+
+
+𝑘𝛽
+
+𝑑𝛽
+
+(5.2.9)
+
+where = 𝑛ˆ 𝑞↑ − 𝑛ˆ 𝑞↓ and 𝐻𝑖𝑚𝑝 is the impurity-diagonal part of the Hamiltonian (𝜖𝑑 𝑛ˆ 𝑑 +
+𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓) and
+
+
+Õ 
+†
+𝑧
+𝐻𝑁−1 =
+𝜖𝑘 + 𝜎 𝐽𝑧 𝑆𝑑 𝑛ˆ 𝑘𝜎 + 𝑉𝑘 𝑐𝑘𝜎 𝑐𝑑𝜎 + h.c. + 𝐻𝐼,𝑁−1
+(5.2.10)
+𝑠𝑞𝑧
+
+𝑘<Λ𝑁 ,𝜎
+
+The diagonal (number-preserving) part is
+
+
+𝐷
+𝑧 𝑧
+ˆ
+ˆ
+H𝐷 = 𝐻𝑁−
++
+𝜖
+𝑛
++
+𝑛
+𝑞
+𝑞𝛽
+1
+𝑞𝛽 + 2 𝐽𝑧 𝑆𝑑 𝑠𝑞 + 𝐻𝑖𝑚𝑝
+
+(5.2.11)
+
+In line with the simplifications mentioned above, we will work with the following terms:
+H𝐷 = 𝜖𝑞 𝑛ˆ 𝑞𝛽 + 2 𝐽𝑧 𝑆𝑑𝑧 𝑠𝑞𝑧 + 𝐻𝑖𝑚𝑝
+150
+
+(5.2.12)
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+To allow the calculation of hole and particle energies on an equal footing, we will make
+a transformation at the bare model itself:
+Õ
+Õ
+𝜖𝑘 𝑛ˆ 𝑘𝜎 =
+𝜖𝑘 𝜏ˆ𝑘𝜎 + C
+(5.2.13)
+𝑘𝜎
+
+𝑘𝜎
+
+where 𝜏 ≡ 𝑛ˆ − 12 and C is non-dynamic and will hence be dropped. This transforms the
+diagonal part H 𝐷 . Eq. 5.2.12 becomes
+(5.2.14)
+
+H𝐷 = 𝜖𝑞 𝜏𝑞𝛽 + 2 𝐽𝑧 𝑆𝑑𝑧 𝑠𝑞𝑧 + 𝐻𝑖𝑚𝑝
+The entire off-diagonal piece can be split into 6 parts:
+
+H𝑋 =
+
+−
+
+𝑉1∗ 𝑐𝑑† 𝛽 𝑐𝑞𝛽 𝑛ˆ 𝑑 𝛽
+|
+
+z
+Õ
+
+𝑘<Λ𝑁
+
+{z
+†
+
+𝑇1 𝑐𝑞𝛽
+
+𝑧
+
+}
+
+z
+
+}|
+
+
++ 𝑉0∗ 𝑐𝑑† 𝛽 𝑐𝑞𝛽
+
+𝑇4† 𝑐𝑞𝛽
+
+
+
+𝑇2† 𝑐𝑞𝛽
+
+}|
+
+𝐽1 𝑛ˆ 𝑑 𝛽 1 −
+
+
+
+{
+
+
+1 − 𝑛ˆ 𝑑 𝛽 +
+
+{
+
+†
+𝑐𝑞𝛽
+𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
++
+
+Õ
+
+|
+
+𝑘<Λ𝑁
+
+Õ
+
+|
+
+𝑘<Λ𝑁
+
+
+
+
+
+†
+𝐽0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+𝑐𝑞𝛽
+𝑧
+
+{z
+†
+
+𝑇3 𝑐𝑞𝛽
+
+𝐽 𝑡 𝑐𝑑† 𝛽 𝑐𝑑 𝛽 𝑐† 𝑐𝑞𝛽
+𝑘𝛽
+{z
+†
+
+𝑇5 𝑐𝑞𝛽
+
+The various parts of the off-diagonal piece are
+
+}
+
+𝑇6† 𝑐𝑞𝛽
+
+}
+
+z
+}|
+{
+†
+𝑡 †
++ 𝐽 𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑞𝛽 +h.c.
+𝑞𝛽
+
+𝑇1 = 𝑉1 𝑐𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+
+
+𝑇2 = 𝑉0 𝑐𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+
+
+Õ
+𝑧
+𝑇3 =
+𝐽0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+Õ
+
+
+
+𝑘<Λ𝑁
+
+𝑇4 = −
+𝑇5 =
+
+Õ
+
+𝑘<Λ𝑁
+
+𝑘<Λ𝑁
+
+5.2.2
+
+(5.2.15)
+
+
+
+(5.2.16)
+
+𝐽1𝑧 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+𝐽 𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑘𝛽
+𝑑𝛽
+
+Calculation of renormalization in particle sector
+
+We will first look at the renormalization of 𝜖𝑑 , 𝑈 and the interaction couplings for the
+lower shell electrons, so we can ignore 𝑇6 for the time-being. The renormalization in the
+particle sector (𝑛ˆ 𝑞𝛽 = 1) is of the form
+†
+𝑐𝑞𝛽
+𝑇𝜂
+(5.2.17)
+
+151
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+Since we have 𝑛ˆ 𝑞𝛽 = 1 in the initial state, this will be at energy −𝜖𝑞 . The generator 𝜂 will
+have five parts:
+5
+Õ
+1
+𝜂=
+𝑇 †𝑐
+(5.2.18)
+0 𝑖 𝑞𝛽
+𝜔
+−
+𝐸
+𝑖
+𝑖
+𝑖=1
+We need to compute a quantity of the form
+Õ© 1
+1 ª
++
+­
+® 𝑇𝑖 𝑇 𝑗†
+0
+0
+𝜔 − 𝐸𝑖 𝜔 − 𝐸 𝑗
+𝑖𝑗 « 𝑖
+¬
+=
+
++
++
+
+1
+
+𝜔1 −
+
+†
+
+𝑇1𝑇
+𝐸10 1
+
+1
+
+𝜔2 − 𝐸20
+1
+
+𝜔3 − 𝐸30
+
++
++
+
++
+
+1
+
+𝜔2 −
+!
+
+1
+
+𝜔5 − 𝐸50
+1
+
+𝜔5 − 𝐸50
+
+!
+
+†
+
+𝑇2𝑇
+𝐸20 2
+
++
+
+1
+
+†
+
+𝑇3𝑇
+𝐸30 3
+
+𝜔3 −
+
+
+𝑇2𝑇5† + 𝑇5𝑇2† +
+
+1
+
+1
+
+𝜔4 −
+
+𝜔2 − 𝐸20
+
+
+
+𝑇3𝑇5† + 𝑇5𝑇3†
+
+The diagonal parts 𝐸𝑖0 are
+
++
+
+𝐸10 =
+
+𝜖𝑞
+
+𝐸20 = 𝐸50 = 𝐸40 =
+
+𝜖𝑞
+
+𝐸30 =
+
+𝜖𝑞
+
++
+
+2
+
++ 2𝜖𝑑 + 𝑈
+
+2
+
++ 𝜖𝑑 −
+
+2
+
++ 𝜖𝑑 +
+
+𝐽𝑧
+2
+
+†
+
+𝑇4𝑇
+𝐸40 4
+1
+
+𝜔3 − 𝐸30
+
+!
+
++
+
+1
+
+𝜔5 −
+
+†
+
+𝑇5𝑇
+𝐸50 5
+
+
+
+𝑇2𝑇3† + 𝑇3𝑇2†
+
+(5.2.19)
+
+𝐽𝑧
+2
+
+Note that in writing these diagonal parts, we have considered the effect of 𝑐𝑘† on the 𝐽𝑧
+
+
+†
+part. For example, if there is a 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+in front of the propagator, that means the
+
+
+intermediate state has 𝑛ˆ 𝑑 𝛽 −𝑛ˆ 𝑑 𝛽 = 1 = 𝑛ˆ 𝑘𝛽 and that will contribute a term 𝐽2𝑧 𝑛ˆ 𝑑 𝛽 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑘𝛽 =
+𝐽𝑧
+
+to 𝐸 0 . Also, while calculating 𝐸5 , we have ignored the presence of 𝑛ˆ 𝑞𝛽 , because it violates the spin reversal symmetry for this term.
+2
+
+152
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+Defining 𝜉𝑖 ≡ 𝜔𝑖 − 𝐸𝑖0 and evaluating the terms 𝑇𝑖 𝑇 𝑗† gives
+Õ© 1
+1 ª
++
+­
+® 𝑇𝑖 𝑇 𝑗†
+0
+0
+𝜔
+−
+𝐸
+𝜔
+−
+𝐸
+𝑖
+𝑗¬
+𝑖𝑗 « 𝑖
+
+
+
+|𝑉1 | 2 
+|𝑉0 | 2 
+=
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝜉1
+𝜉2
+
+
+
+
+
+
+ˆ
+ˆ
+ˆ
+ˆ
+
+𝑛
+1
+−
+𝑛
+1
+−
+𝑛
+𝑛
+𝑑𝛽 
+𝑑𝛽
+1  𝑧2 𝑑 𝛽
+1 2
+ 0 †
+†
+𝑧2 𝑑 𝛽
++  𝐽0
++ 𝐽1
+ 𝑐𝑘 𝛽 𝑐𝑘𝛽 + 𝐽𝑡 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐
+𝑘𝛽
+
+4
+𝜉3
+𝜉4
+𝜉5
+
+
+
+
+ 
+
+
+ 𝑧
+
+
+
+1
+1 1
+1 𝐽0 
+1 1
+†
+†
++
+𝐽𝑡 1 − 𝑛ˆ 𝑑 𝛽 𝑉0 𝑐 𝑐𝑑 𝛽 + h.c. −
++
+1 − 𝑛ˆ 𝑑 𝛽 𝑉0 𝑐𝑘𝛽 𝑐𝑑 𝛽 + h.c.
+−
+𝑘𝛽
+2 𝜉2 𝜉5
+2 𝜉2 𝜉3 2
+
+
+
+𝑧 
+1 1
+1 𝐽𝑡 𝐽0 †
+†
+−
++
+𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 + h.c.
+𝑘𝛽
+2 𝜉3 𝜉5
+2
+(5.2.20)
+0
+The indices 𝑘 and 𝑘 are being summed over, wherever they appear.
+
+5.2.3
+
+Calculation of renormalization in hole sector
+
+The renormalization in the particle sector (𝑛ˆ 𝑞𝛽 = 0) is of the form
+†
+𝑇𝑞𝛽
+𝑐𝜂0†
+
+where 𝜂0† is of the form
+†
+
+𝜂0 =
+
+5
+Õ
+
+1
+
+𝜔0𝑖
+𝑖=1
+
+(5.2.21)
+
+†
+
+(5.2.22)
+
+𝑐 𝑇
+1 𝑞𝛽 𝑖
+
+− 𝐸𝑖
+
+This will be at an energy +𝜖𝑞 , because the state is occupied. The scattering terms 𝑇𝑖 are
+already written down in the previous subsection. The diagonal parts are
+𝐸11 = 𝐸41 = 𝐸51 =
+
+𝜖𝑞
+
+𝐸21 =
+
+𝜖𝑞
+
+𝐸31 =
+
+𝜖𝑞
+
+2
+
++ 𝜖𝑑 −
+
+2
+
+(5.2.23)
+
+2
+2
+
+𝐽𝑧
+
++ 𝜖𝑑 +
+
+𝐽𝑧
+2
+
+The renormalization can be computed by calculating
+Õ© 1
+1
+ª †
++ 0
+­ 0
+® 𝑇 𝑇𝑗
+1
+1
+𝜔 − 𝐸𝑖 𝜔 − 𝐸 𝑗 𝑖
+𝑖𝑗 « 𝑖
+¬
+
+
+2
+2
+|𝑉1 |
+|𝑉0 |
+= 0 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝜉1
+𝜉2
+153
+
+Í
+
+†
+𝑖 𝑗 𝑇𝑖 𝑇 𝑗 .
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+
+
+
+𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 
+1 2
+ † 0
+𝑧2
+ˆ
+1
+−
+𝑛
++
+𝐽
+𝑐
+𝑐
++
+𝐽
+𝑛ˆ 𝑑 𝛽 𝑐† 𝑐𝑘 0 𝛽
+ 𝑘𝛽 𝑘 𝛽
+𝑡
+1
+0
+0
+0
+𝑑
+𝛽
+𝑘𝛽
+
+𝜉3
+𝜉4
+𝜉5
+
+
+!
+!
+
+
+𝑧
+
+
+1
+1 1
+1 𝐽1
+1
+1
+†
+†
+𝑛ˆ
+𝑉1 𝑐𝑘𝛽 𝑐𝑑 𝛽 + h.c. −
+𝐽𝑡 𝑛ˆ 𝑑 𝛽 𝑉1 𝑐 𝑐𝑑 𝛽 + h.c.
+−
++
++
+𝑘𝛽
+2 𝜉40 𝜉10 2 𝑑 𝛽
+2 𝜉10 𝜉50
+!
+
+𝑧 
+1 1
+1 𝐽𝑡 𝐽1 †
+†
+−
++
+𝑐𝑑 𝛽 𝑐𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 + h.c.
+𝑘𝛽
+2 𝜉40 𝜉50
+2
+
+
+1  𝑧 2 𝑛ˆ 𝑑 𝛽
++  𝐽0
+4
+
+
+
+
+
+1 − 𝑛ˆ 𝑑 𝛽
+
+
+
+where 𝜉𝑖0 is defined similar to the particle sector: 𝜉𝑖0 = 𝜔0𝑖 − 𝐸𝑖1 . The indices 𝑘 and 𝑘0 are
+being summed over, wherever they appear.
+
+5.2.4
+
+Relating the 𝜔𝑖 and 𝜔0𝑖
+
+To relate the 𝜔𝑖 and their primed counterparts, we will look at their bare non-interacting
+values:
+1
+𝜔1 = − 𝜖𝑞 + 𝜖𝑑
+2
+1
+
+𝜔2 = − 𝜖𝑞
+2
+1
+
+𝐽𝑧
+
+2
+1
+
+𝐽𝑧
+
+2
+
+2
+
+𝜔3 = − 𝜖𝑞 + 𝜖𝑑 +
+𝜔5 = 𝜔4 = − 𝜖𝑞 + 𝜖𝑑 −
+
+(5.2.24)
+
+2
+
+We will assume that the relations between these values of 𝜔𝑖 will hold for the URG 𝜔𝑖
+𝜖
+along the flow as well. We want to write all the 𝜔𝑖 in terms of a single 𝜔 = − 2𝑞 − 12 𝐽𝑧 .
+𝜔1 = 𝜔 +
+𝜔2 = 𝜔 +
+
+𝐽𝑧
+2
+
+𝐽𝑧
+
++ 𝜖𝑑
+(5.2.25)
+
+2
+
+𝜔 3 = 𝜔 + 𝐽 𝑧 + 𝜖𝑑
+𝜔 5 = 𝜔 4 = 𝜔 + 𝜖𝑑
+The denominators can now be written in terms of the single 𝜔:
+𝜉1 = 𝜔 −
+𝜉2 = 𝜔 −
+𝜉3 = 𝜉4 = 𝜉5 = 𝜔 −
+
+𝜖𝑞
+2
+
+− 𝜖𝑑 − 𝑈 +
+
+2
+
+− 𝜖𝑑 + 𝐽 𝑧
+
+2
+
++
+
+𝜖𝑞
+𝜖𝑞
+
+154
+
+𝐽𝑧
+2
+
+𝐽𝑧
+2
+
+(5.2.26)
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+Similarly, for the 𝜔0𝑖 of the hole sector, we have
+1
+
+𝜔01 = − 𝜖𝑞 + 2𝜖𝑑 + 𝑈
+2
+1
+
+𝜔02 = − 𝜖𝑞 + 𝜖𝑑
+2
+1
+
+𝐽𝑧
+
+2
+1
+
+𝐽𝑧
+
+2
+
+2
+
+𝜔03 = − 𝜖𝑞 + 𝜖𝑑 +
+𝜔04 = 𝜔05 = − 𝜖𝑞 + 𝜖𝑑 −
+𝜖𝑞
+
+Writing these in terms of 𝜔 = − 2 − 21 𝐽𝑧 gives
+𝜔01 = 𝜔 + 𝑈 +
+𝜔 2 = 𝜔 + 𝜖𝑑 +
+
+2
+
+𝐽𝑧
+
+(5.2.28)
+
+2
+
+𝜔03 = 𝜔 + 𝜖𝑑 + 𝐽𝑧
+𝜔04 = 𝜔05 = 𝜔 + 𝜖𝑑
+𝜉10 = 𝜔 −
+𝜉20 = 𝜔 −
+
+𝜉30 = 𝜉40 = 𝜉50 = 𝜔 −
+
+5.2.5
+
+2
+
+𝐽𝑧
+
+0
+
+The denominators are therefore
+
+(5.2.27)
+
+𝜖𝑞
+2
+
++ 𝜖𝑑 + 𝑈 + 𝐽 𝑧
+
+2
+
++ 𝜖𝑑 +
+
+2
+
++
+
+𝜖𝑞
+𝜖𝑞
+
+𝐽𝑧
+2
+
+𝐽𝑧
+2
+
+(5.2.29)
+
+= 𝜉3 = 𝜉4 = 𝜉5
+
+Making sense of the various terms
+
+We will now look at each of the renormalizations separately. Note that the indices 𝑘 and
+𝑘0 are being summed over, wherever they appear. The first two terms in each sector
+form a part of the renormalization in 𝜖𝑑 and 𝑈.
+
+
+ |𝑉 | 2
+
+
+|𝑉1 | 2 
+|𝑉0 | 2 
+|𝑉0 | 2
+1
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 + 0 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+(5.2.30)
+𝜉1
+𝜉2
+𝜉1
+𝜉2
+We can read off the renormalizations in the doublon, spin and holon states. Note that the
+spin (𝑛ˆ 𝑑 = 1) are only renormalizedby half, because the other half of the renormalization
+comes when you decouple the other spin 𝛽.
+Δ𝐸2 =
+
+|𝑉1 | 2
+|𝑉1 | 2 |𝑉0 | 2
+|𝑉0 | 2
+,
+Δ𝐸
+=
++
+,
+Δ𝐸
+=
+1
+0
+𝜉10
+2𝜉1
+2𝜉20
+𝜉2
+
+(5.2.31)
+
+Using 𝜖𝑑 = 𝐸1 − 𝐸0 and 𝑈 = 𝐸2 + 𝐸0 − 2𝐸1 , we can write
+Δ𝜖𝑑 =
+
+|𝑉1 | 2 |𝑉0 | 2 |𝑉0 | 2
++
+−
+2𝜉1
+2𝜉20
+𝜉2
+
+|𝑉1 | 2 |𝑉0 | 2 |𝑉1 | 2 |𝑉0 | 2
+−
+− 0
+Δ𝑈 = 0 +
+𝜉1
+𝜉2
+𝜉1
+𝜉2
+155
+
+(5.2.32)
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+The 𝐽𝑧2 terms, together, give
+
+
+
+
+
+
+
+
+
+
+
+
+ˆ
+ˆ
+ˆ
+ˆ
+ˆ
+ˆ
+ˆ
+ˆ
+1
+−
+𝑛
+1
+−
+𝑛
+1
+−
+𝑛
+𝑛
+𝑛
+1
+−
+𝑛
+𝑛
+2 𝑛
+𝑑𝛽
+𝑑𝛽 
+𝑑𝛽
+𝑑𝛽
+𝑑𝛽
+𝑑𝛽
+𝐽𝑧  𝑑 𝛽
+1  𝑑𝛽
+ † 0
+ 0 †
++
++
+𝑐
+𝑐
++
+
+ 𝑘 𝛽 𝑘𝛽
+
+ 𝑐𝑘𝛽 𝑐𝑘 𝛽 (5.2.33)
+
+
+4 
+𝜉3
+𝜉4
+4
+𝜉30
+𝜉40
+
+
+
+
+
+
+
+
+
+There we used 𝐽0𝑧 = 𝐽1𝑧 = 𝐽𝑧 . From the expressions of 𝜉𝑖 and 𝜉𝑖0, we know that 𝜉3 = 𝜉4 = 𝜉30 = 𝜉40 .
+Therefore, the terms in the box brackets are identical, and we can simplify this to
+
+
+
+i
+ 
+
+
+𝐽𝑧2
+𝐽𝑧2 h
+†
+†
+0
+0
+(5.2.34)
+𝑛ˆ 𝑑 − 2𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝛿𝑘𝑘 0
+𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 + 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+𝑐𝑘 𝛽 𝑐𝑘𝛽 + 𝑐𝑘𝛽 𝑐𝑘 𝛽 =
+4𝜉3
+4𝜉3
+This will further renormalize 𝜖𝑑 𝑛ˆ 𝑑 and 𝑈 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 , now at 𝐽 2 order:
+𝐽𝑧2
+Δ𝜖𝑑 =
+𝛿𝑘𝑘 0
+4𝜉3
+𝐽2
+Δ𝑈 = −2 𝑧 𝛿𝑘𝑘 0
+4𝜉3
+
+(5.2.35)
+
+We next look at the 𝐽𝑧𝑉 terms:
+
+!
+
+
+
+
+
+𝐽𝑧  1
+1 
+1
+1
+†
+†
+− 
+1 − 𝑛ˆ 𝑑 𝛽 𝑉0 𝑐𝑘𝛽 𝑐𝑑 𝛽 + 0 + 0 𝑛ˆ 𝑑 𝛽𝑉1 𝑐𝑘𝛽 𝑐𝑑 𝛽  + h.c.
+(5.2.36)
++
+4  𝜉2 𝜉3
+𝜉4 𝜉1
+
+
+
+
+
+†
+The first term in the box bracket renormalizes 𝑉0 𝑐𝑘𝛽
+𝑐𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 , while the second term
+
+†
+renormalizes 𝑉1 𝑐𝑘𝛽
+𝑐𝑑 𝛽 𝑛ˆ 𝑑 𝛽 . Because this renormalizes only one spin component (𝛽), the
+
+other spin component will get renormalized when we decouple 𝛽, and so we attribute
+only half of this to the total renormalization.
+
+
+1 𝐽𝑧
+1
+1
+Δ𝑉0 = −
+𝑉0
++
+22
+𝜉2 𝜉3
+!
+(5.2.37)
+1
+1
+1 𝐽𝑧
+Δ𝑉1 = −
+𝑉1 0 +
+22
+𝜉1 𝜉3
+where we used 𝜉40 = 𝜉3 . The terms with 𝐽𝑡𝑉 also renormalize the same terms. Combining
+this with the previous renormalization gives the total renormalization of 𝑉0 and 𝑉1 :
+
+
+
+𝐽𝑧
+1
+1
+Δ𝑉0 = −
+𝑉0 + 𝐽𝑡𝑉0
++
+4
+𝜉2 𝜉3
+!
+
+
+(5.2.38)
+1
+𝐽𝑧
+1
+Δ𝑉1 = −
+𝑉1 + 𝐽𝑡𝑉1
++
+4
+𝜉10 𝜉3
+
+156
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+There we used 𝜉50 = 𝜉5 = 𝜉3 .
+The remaining terms are all of order 𝐽 2 . First we look at the 𝐽𝑡2 terms:
+1
+
+𝜉5
+
+2
+
+
+
+𝐽𝑡 1 −
+
+
+
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐†
+𝑘𝛽
+
+
+2
+
+𝐽
+𝜉0 𝑡
+
+2 †
+
+𝐽𝑡 𝑐 𝑐 𝑘 0 𝛽
+
+5
+
+
+
+
+
+
+
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐
+
+
+
+
+
+†
+𝑐 0
+𝑘𝛽 𝑘 𝛽
+
+
+
+1
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 − 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 𝛿𝑘𝑘 0 𝐽𝑡2 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+𝜉3 𝑘𝛽
+𝜉3
+
+
+𝑛ˆ 𝑑 𝛽 − 𝑛ˆ 𝑑 𝛽
+1
+1
+= − 2 𝐽𝑡2 𝑐† 𝑐𝑘 0 𝛽
++ 𝛿𝑘𝑘 0 𝐽𝑡2 1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+𝑘𝛽
+𝜉3
+2
+𝜉3
+
+=
+
+1
+
+
+
++
+
+1
+
+(5.2.39)
+
+In the second step, we used 𝜉50 = 𝜉5 = 𝜉3 and 𝑐𝑘 𝑐𝑘† 0 = 𝛿𝑘𝑘 0 − 𝑐𝑘† 0 𝑐𝑘 . The first term in the final
+expression renormalizes half of the Ising Kondo coupling 𝐽𝑧 𝑆𝑑𝑧 𝑠 𝑧 , the other half will be
+renormalized when we decouple 𝑞𝛽.
+Δ𝐽𝑧 = −
+
+1
+2𝜉3
+
+2 𝐽𝑡2
+
+(5.2.40)
+
+The other term in the final expression renormalizes 𝑈 and half of 𝜖𝑑 (only 𝛽).
+Δ𝜖𝑑 =
+
+1
+
+2
+
+𝐽 𝛿𝑘𝑘 0
+2𝜉3 𝑡
+1 2
+
+Δ𝑈 = −
+
+𝜉3
+
+(5.2.41)
+
+𝐽𝑡 𝛿𝑘𝑘 0
+
+The remaining terms are those with 𝐽𝑧 𝐽𝑡 :
+
+!
+
+
+
+
+ 1 1
+
+𝐽𝑡 𝐽0𝑧 †
+𝐽𝑡 𝐽1𝑧 †
+1
+1
+1
+1
+†
+†
+−
+0𝛽 −
+0 𝛽  + h.c.
++
+𝑐
+𝑐
+𝑐
+𝑐
++
+𝑐
+𝑐
+𝑐
+𝑐
+𝑘
+𝑘
+ 2 𝜉3 𝜉5 2 𝑑 𝛽 𝑑 𝛽 𝑘𝛽
+
+2 𝜉40 𝜉50
+2 𝑑 𝛽 𝑑 𝛽 𝑘𝛽
+
+
+
+
+
+(5.2.42)
+
+They renormalize the transverse Kondo coupling. Noting that 𝜉5 = 𝜉40 = 𝜉50 = 𝜉3 , we get
+Δ𝐽𝑡 = −
+
+5.2.6
+
+1
+
+𝜉3
+
+𝐽𝑡 𝐽0𝑧
+
+(5.2.43)
+
+Scaling equations
+
+Looking at eqs. 5.2.32, 5.2.35, 5.2.41, 5.2.38, 5.2.40 and 5.2.43, and summing over 𝛽, we
+can write down the scaling equations for the Anderson-Kondo model.
+
+157
+
+5.2. ANDERSON-KONDO (SPIN) MODEL URG
+
+
+|𝑉1 | 2 |𝑉0 | 2 2 |𝑉0 | 2 Õ 1 2 1 2
+Δ𝜖𝑑 =
++ 0 −
++
+𝐽𝑡 + 𝐽 𝑧
+𝜉1
+𝜉2
+𝜉2
+𝜉
+2
+3
+𝑘
+
+2 |𝑉1 | 2 2 |𝑉0 | 2 2 |𝑉1 | 2 2 |𝑉0 | 2 Õ 1  2
+2
+Δ𝑈 =
++
+−
+−
+−
+2 𝐽𝑡 + 𝐽𝑧
+𝜉10
+𝜉2
+𝜉1
+𝜉20
+𝜉3
+𝑘
+
+
+
+𝐽𝑧
+1
+1
+Δ𝑉0 = −𝑉0
++ 𝐽𝑡
++
+2
+𝜉2 𝜉3
+!
+
+
+𝐽𝑧
+1
+1
+Δ𝑉1 = −𝑉1
++ 𝐽𝑡
++
+2
+𝜉10 𝜉3
+2
+
+Δ𝐽𝑧 = −
+
+𝜉3
+
+Δ𝐽𝑡 = −
+
+𝜉3
+
+5.2.7
+
+2
+
+𝐽𝑡2
+
+𝜉1 = 𝜔 −
+𝜉2 = 𝜔 −
+𝜉10 = 𝜔 −
+𝜉20 = 𝜔 −
+
+𝜖𝑞
+
+𝐽𝑧
+
+2
+
+− 𝜖𝑑 − 𝑈 +
+
+2
+
+− 𝜖𝑑 + 𝐽 𝑧
+
+2
+
++ 𝜖𝑑 + 𝑈 + 𝐽 𝑧
+
+2
+
++ 𝜖𝑑 +
+
+2
+
+2
+
+𝜖𝑞
+𝜖𝑞
+𝜖𝑞
+
+𝜉30 = 𝜉40 = 𝜉50
+𝜖𝑞 𝐽𝑧
+=𝜔− +
+
+2
+
+𝐽𝑧
+2
+
+= 𝜉3 = 𝜉4 = 𝜉5
+
+𝐽𝑡 𝐽0𝑧
+(5.2.44)
+
+Particle-Hole symmetry
+
+As discussed in the previous section, the particle-hole symmetry condition for the basic
+SIAM (𝐽 = 0) is 𝜖𝑑 + 𝑈 = −𝜖𝑑 . With the inclusion of 𝐽, we will need to see what the new
+condition is. We will first write the impurity part of the Hamiltonian and see how it
+transforms under a particle-hole transformation.
+
+
+
+𝜖𝑑 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ + 𝐽𝑧 𝑛ˆ 𝑑↑ − 𝑛ˆ 𝑑↓ 𝑛ˆ 𝑞↑ − 𝑛ˆ 𝑞↓
+
+
+
+(5.2.45)
+
+→ 2𝜖𝑑 + 𝑈 − 𝜖𝑑 + 𝑈 𝑛ˆ 𝑑 + 𝑈 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑑↓ + 𝐽𝑧 𝑛ˆ 𝑑↓ − 𝑛ˆ 𝑑↑ 𝑛ˆ 𝑞↓ − 𝑛ˆ 𝑞↑
+This gives us the same condition as in the 𝐽 = 0 case. The p-h symmetry condition implies
+that 2𝜖𝑑 + 𝑈 must be an RG-invariant. The RG equation for 2𝜖𝑑 + 𝑈 is
+ |𝑉1 | 2 |𝑉1 | 2
+Δ 2𝜖 𝑑 + 𝑈 = 0 −
+𝜉1
+𝜉2
+
+(5.2.46)
+
+
+For 2𝜖𝑑 + 𝑈 = 0 in the bare model, we can write 𝜉2 = 𝜉10 , which means Δ 2𝜖𝑑 + 𝑈 = 0.
+
+5.2.8
+
+”Poor Man’s” one-loop form for asymmetric Anderson model
+
+In the limit of 𝜖𝑑 , 𝐽  𝐷  𝑈, we can ignore the 𝐽 2 terms in 𝜖𝑑 and 𝑈, and the remaining
+terms simplify:
+1
+
+𝜉1
+
+=
+
+1
+
+𝜉10
+
+≈0
+
+0
+
+𝜉2 = 𝜉2 ≈ 𝜔 −
+158
+
+𝜖𝑞
+2
+
+(5.2.47)
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+These give
+
+Δ𝑈 ≈ 0
+
+(5.2.48)
+
+|𝑉0 | 2
+|𝑉0 | 2
+Δ𝜖𝑑 ≈ −
+≈−
+𝜖
+𝜉2
+𝜔− 𝑞
+2
+
+This is the same form that we had in the pure SIAM, and we can again repeat what we
+did in subsection 5.1.4.
+
+5.2.9
+
+SU(2) invariance and Kondo model one-loop form
+
+Setting 𝐽𝑧 = 𝐽𝑡 = 12 𝐽 makes the interaction 𝑆𝑈 ( 2) symmetric; the last two RG equations can
+then be written in the common form:
+Δ𝐽 = −
+
+1
+
+𝜉3
+
+𝐽 2 = −𝐽 2
+
+1
+
+𝜔−
+
+𝜖𝑞
+2
+
++
+
+𝐽𝑧
+
+(5.2.49)
+
+2
+
+For low quantum fluctuations we can ignore the renormalization and replace 𝜔 with the
+bare initial energy value − 21 𝜖𝑞 .
+Δ𝐽 = −𝐽 2
+
+1
+
+−𝜖𝑞 + 41 𝐽
+
+(5.2.50)
+
+We can now expand the denominator in powers of 𝐽 and keep only the lowest order, we
+get
+Δ𝐽 = 𝐽 2
+
+1
+
+𝜖𝑞
+
+(5.2.51)
+
+This is the Kondo model one-loop form.
+
+5.3
+
+Anderson-Kondo (charge) model URG
+
+Performing the Schrieffer-Wolff transformation on the SIAM generates four types of
+terms. The simplest terms are ones that renormalize the impurity scales 𝜖𝑑 and 𝑈. The
+next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential. The third term is the
+familiar Kondo model interaction
+involve a Heisenberg-like interaction be terms that
+
+1
+𝑧
+tween the impurity spin 𝑆𝑑 = 2 𝑛ˆ 𝑑↑ − 𝑛ˆ 𝑑↓ and the global spin of the mobile electrons
+†
+1 Í
+®𝛼𝛽 𝑐𝑘 0 𝛽 . The fourth term is the interactions that modify the charge of either
+𝑘𝑘 0 𝛼𝛽 𝑐𝑘𝛼 𝜎
+2
+† †
+entity by 2, 𝑐𝑘𝛼
+𝑐𝑘 0𝛼 𝑐𝑑𝛼 𝑐𝑑𝛼 . We will be considering the last kind of terms in this section. For
+that, we define the Nambu spinor [34, 35].
+©𝑐 ª
+­ 𝑘↑®
+𝜓 = ­­ ®®
+­ † ®
+𝑐𝑘↓
+« ¬
+𝑘
+
+159
+
+(5.3.1)
+
+5.3. ANDERSON-KONDO (CHARGE) MODEL URG
+and the charge isospin [36] for the mobile conduction electrons
+𝐶® =
+
+Õ
+𝑘𝑘 0
+
+Õ
+0
+†
+†
+® 𝑘0 = 1
+𝜓𝑘 𝑆𝜓
+𝜓𝑘𝛼 𝜎®𝛼𝛽 𝜓𝑘𝛽
+2
+
+(5.3.2)
+
+𝑘𝑘 0 𝛼𝛽
+
+The various components of the isospin are
+𝐶𝑧 =
+
+Õ1
+
+𝑧
+𝜓𝑘𝜎 𝜎𝜎𝜎
+𝜓𝑘𝜎 =
+
+Õ1
+
+0
+† 𝑥
+𝜓𝑘𝜎
+𝜓𝑘𝜎 𝜎𝜎𝜎
+
+2
+
+†
+
+0
+
+
+
+1Õ †
+1
+=
+𝑐𝑘𝜎 𝑐𝑘 0𝜎 − 𝛿𝑘𝑘 0
+2 0
+2
+𝑘𝑘 0 𝜎
+
+𝑘𝑘
+
+𝑘𝑘 𝜎
+
+𝑥
+
+
+ 1Õ
+1Õ †
+†
+†
+†
+𝑐𝑘↑ 𝑐𝑘 0↑ − 𝑐𝑘 0↓ 𝑐𝑘↓
+=
+𝑐𝑘↑
+𝑐𝑘 0↑ + 𝑐𝑘↓
+𝑐𝑘 0↓ − 𝛿𝑘𝑘 0
+2 0
+2 0
+
+𝐶 =
+
+𝑘𝑘 0 𝜎
+
+𝐶𝑦 =
+
+2
+
+Õ1
+
+𝑘𝑘 0 𝜎
+
+2
+
+𝑘𝑘
+
+
+ Õ𝜎
+1Õ † †
+† †
+=
+𝑐𝑘↑ 𝑐𝑘 0↓ + 𝑐𝑘↓ 𝑐𝑘 0↑ =
+𝑐𝑘𝜎
+𝑐𝑘 0𝜎 + h.c.
+2 0
+4
+0
+𝑖 Õ
+
+
+
+𝑘𝑘
+
+0
+† 𝑦
+𝜓𝑘𝜎 𝜎𝜎𝜎 𝜓𝑘𝜎
+
+=−
+
+2
+
+𝑘𝑘 0
+
+(5.3.3)
+
+
+Õ 𝑖𝜎 
+† †
+𝑐𝑘𝜎
+𝑐𝑘 0𝜎 − h.c.
+−
+
+𝑘𝑘 𝜎
+
+† †
+𝑐𝑘↑
+𝑐𝑘 0↓ − 𝑐𝑘↓ 𝑐𝑘 0↑ =
+
+𝑘𝑘 0 𝜎
+
+4
+
+It is easy to verify that these operators satisfy the SU(2) commutation
+algebra. For examh
+i
+
+
+ple, if we write 𝐶 𝑥 = 𝐴 + 𝐴† and 𝐶 𝑦 = 𝐵 + 𝐵† , then 𝐶 𝑥 , 𝐶 𝑦 = 𝐴, 𝐵† − h.c., where
+h
+
+i 𝑖 Õ
+
+i 1 Õ h
+†
+† †
+†
+𝑐𝑘 0↓, 𝑖𝑐𝑞0↓ 𝑐𝑞↑ =
+𝑐𝑞↑ − 𝑐𝑘↓ 𝑐𝑞↓
+𝑐𝑘↑
+𝑐𝑘↑
+𝐴, 𝐵† =
+
+(5.3.4)
+
+
+
+ 𝑖 Õ †
+†
+=⇒ 𝐶 𝑥 , 𝐶 𝑦 =
+𝑐𝑘↑ 𝑐𝑞↑ − 𝑐𝑘↓ 𝑐𝑞↓
+= 𝑖𝐶 𝑧
+
+(5.3.5)
+
+4
+
+and therefore
+
+4
+
+𝑘𝑘 0 ,𝑞𝑞 0
+
+2
+
+𝑘𝑞
+
+𝑘𝑞
+
+There are similar operators for the impurity electron:
+
+©𝑐 ª
+­ 𝑑↑®
+𝜓𝑑 = ­­ ®®
+­ † ®
+𝑐𝑑↓
+« ¬
+ 1
+
+1 †
+†
+𝑧
+𝐶𝑑 =
+𝑐𝑑↑ 𝑐𝑑↑ + 𝑐𝑑↓ 𝑐𝑑↓ − 1 =
+𝑛ˆ 𝑑 − 1
+2
+2
+ Õ𝜎 
+
+1 † †
+† †
+𝑥
+𝐶𝑑 =
+𝑐𝑑↑ 𝑐𝑑↓ + 𝑐𝑑↓ 𝑐𝑑↑ =
+𝑐𝑑𝜎 𝑐𝑑𝜎 + h.c.
+2
+
+𝑦
+
+𝐶𝑑 = −𝑖
+
+1
+2
+
+
+
+𝜎
+
+4
+
+† †
+𝑐𝑑↑
+𝑐𝑑↓ − 𝑐𝑑↓ 𝑐𝑑↑ = −𝑖
+
+Õ𝜎 
+𝜎
+
+4
+
+† †
+𝑐𝑑𝜎
+𝑐𝑑𝜎 − h.c.
+
+(5.3.6)
+
+
+The full charge-Kondo interaction can now be written down in terms of these isospins:
+
+
+𝑧 𝑧
++ −
+− +
+4 𝐾 𝑧 𝐶 𝑑 𝐶 + 𝐾𝑡 𝐶 𝑑 𝐶 + 𝐶 𝑑 𝐶
+(5.3.7)
+160
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+where 𝐶 ± ≡ 𝐶 𝑥 ± 𝑖𝐶 𝑦 .
+
+𝐶+ =
+
+Õ
+𝑘𝑘 0
+
+† †
+𝑐𝑘 0↓ , 𝐶 − =
+𝑐𝑘↑
+
+Õ
+𝑘𝑘 0
+
+𝑐𝑘 0↓ 𝑐𝑘↑
+
+(5.3.8)
+
+For 4𝐾𝑧 = 2𝐾𝑡 = 𝐾, we get an 𝑆𝑈 ( 2)-charge symmetric model:
+
+1 
+𝐾𝐶𝑑𝑧 𝐶 𝑧 + 𝐾 𝐶𝑑+ 𝐶 − + 𝐶𝑑− 𝐶 + = 𝐾 𝐶®𝑑 · 𝐶®
+
+(5.3.9)
+
+2
+
+To proceed with the URG, we start with the outermost shell Λ𝑁 and consider an electron
+𝑞𝛽 on that shell. The URG then involves decoupling this electron. In the subspace of 𝑞𝛽,
+the diagonal and off-diagonal parts are
+
+H𝑑 = 𝜖𝑞 𝜏𝑞𝛽 + 𝐻𝑖𝑚𝑝 + 𝐾𝑧 𝑛ˆ 𝑑 − 1 𝜏𝑞𝛽
+
+
+Õ
+Õ †
+(5.3.10)
+†
+† †
+H𝑋 = 𝑉𝑞 𝑐𝑞𝛽 𝑐𝑑 𝛽 + h.c. + 𝐾𝑧 𝑛ˆ 𝑑 − 1
+𝑐𝑞𝛽 𝑐𝑘𝛽 + h.c. + 𝐾𝑡
+𝑐𝑑 𝛽 𝑐 𝑐𝑘𝛽 𝑐𝑞𝛽 + h.c.
+𝑘
+
+𝑘
+
+𝑑𝛽
+
+As usual, we have considered only one mobile electron on the shell we are decoupling,
+and we keep only the energy of that electron and the impurity in the diagonal part which
+comes down in the denominator. Note that the factors of half in 𝐶 𝑧 are cancelled by the
+factor of 4 in 4 𝐾𝑧 . The last term in H𝑑 is obtained by setting 𝑘 = 𝑘0 = 𝑞 and 𝜎 = 𝛽 in eq. 5.3.3,
+and then recognizing that 𝑛ˆ 𝑞𝛽 − 12 = 𝜏𝑞𝛽 . The 𝐾𝑧 part of H𝑋 is obtained by noting:
+
+1 †
+†
+†
+†
+𝑧
+𝐶𝑞≠𝑘 =
+𝑐 𝑐𝑘↑ + 𝑐𝑘↑ 𝑐𝑞↑ − 𝑐𝑘↓ 𝑐𝑞↓ − 𝑐𝑞↓ 𝑐𝑘↓
+2 𝑞↑
+
+
+1 †
+†
+†
+†
+=
+𝑐 𝑐𝑘↑ + 𝑐𝑘↑ 𝑐𝑞↑ + 𝑐𝑞↓ 𝑐𝑘↓ + 𝑐𝑘↓ 𝑐𝑞↓
+(5.3.11)
+2 𝑞↑
+
+
+1Õ †
+=
+𝑐𝑞𝜎 𝑐𝑘𝜎 + h.c.
+2 𝜎
+
+The calculation of renormalization will proceed similar to the spin-Kondo Anderson
+URG. We will again separate the off-diagonal piece H𝑑𝑋 into separate parts 𝑇𝑖 , calculate
+the renormalization in particle and hole sectors, and then finally relate the 𝜔𝑖 using their
+bare values. The off-diagonal parts for this problem are
+𝑇1 = 𝑉1 𝑐𝑑 𝛽 𝑛ˆ 𝑑 𝛽
+
+
+𝑇2 = 𝑉0 𝑐𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽
+
+𝑇3 = 𝐾𝑧1 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+
+
+0
+𝑇4 = −𝐾𝑧 1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+
+(5.3.12)
+
+𝑇5 = 𝐾𝑡 𝑐† 𝑐𝑑 𝛽 𝑐𝑑 𝛽
+𝑘𝛽
+
+5.3.1
+
+Calculation of renormalization in particle sector
+
+The renormalization in this sector is
+
+†
+𝑐𝑞𝛽
+𝑇𝜂
+
+161
+
+(5.3.13)
+
+5.3. ANDERSON-KONDO (CHARGE) MODEL URG
+This is at energy −𝜖𝑞 . Using the expressions of the 𝑇𝑖 , this becomes
+
+#  2
+ |𝑉 | 2
+ 
+
+02 
+ 𝐾𝑧1
+𝐾
+|𝑉1 | 2 
+0
+†
+𝑧
+1 − 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽
++ 1 − 𝑛ˆ 𝑑 𝛽
++ 
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 +
+1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽  𝑐𝑘 0 𝛽 𝑐𝑘𝛽
+𝜉1
+𝜉2
+𝜉4
+ 𝜉3
+
+
+
+
+
+2 
+
+
+
+
+
+𝐾
+1 1
+1
+(5.3.14)
+†
++ 𝑡 1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 𝑐† 𝑐𝑘 0 𝛽 −
++
+𝑉1 𝐾𝑧1 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+𝑐𝑑 𝛽 + h.c.
+𝑘𝛽
+𝜉5
+2 𝜉1 𝜉3
+
+
+
+
+
+
+
+
+
+
+1 1
+1
+1 1
+1
+†
+† †
+1
++
++
+𝑉1 𝐾𝑡 1 − 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑑 𝛽 + h.c. −
++
+𝐾𝑧 𝐾𝑡 𝑐𝑑 𝛽 𝑐 𝑐𝑘 0 𝛽 𝑐𝑘𝛽 + h.c.
+𝑘𝛽
+𝑑𝛽
+2 𝜉1 𝜉5
+2 𝜉3 𝜉5
+
+
+
+
+"
+
+The indices 𝑘, 𝑘0 are summed over. 𝜉𝑖 is defined exactly as before, 𝜔𝑖 − 𝐸𝑖0 .
+The intermediate energies, 𝐸𝑖0 , are
+𝐸10 = 𝐸30 =
+
+𝜖𝑞
+
+𝐸20 =
+
+𝜖𝑞
+
+𝐸40
+
+𝜖𝑞
+
+𝐸50
+
+=
+=
+
+2
+
++ 2𝜖 𝑑 + 𝑈
+
+2
+
++ 𝜖𝑑
+
+(5.3.15)
+
+2
+
+𝜖𝑞
+2
+
++ 2𝜖 𝑑 + 𝑈 − 𝐾 𝑧
+
+The contribution of 𝑘𝛽 in the denominators of 𝐸30,4,5 has been considered.
+
+5.3.2
+
+Calculation of renormalization in hole sector
+
+The renormalization in the hole sector is given by
+𝑇 † 𝑐𝑞𝛽 𝜂0†
+
+(5.3.16)
+
+at energy 𝜖𝑞 . That comes out to be
+2
+
+
+  𝐾 1 2
+ 
+𝐾𝑧0 
+|𝑉1 | 2
+|𝑉0 | 2
+†
+𝑧
+
+𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽 +  0 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 + 0 1 − 𝑛ˆ 𝑑 𝛽 1 − 𝑛ˆ 𝑑 𝛽  𝑐𝑘𝛽
+𝑐𝑘 0 𝛽
+𝜉10
+𝜉2
+𝜉
+𝜉
+ 3
+
+4
+
+! 
+2
+
+
+
+
+𝐾
+1 1
+1
+†
++ 0𝑡 𝑛ˆ 𝑑 𝛽 𝑛ˆ 𝑑 𝛽 𝑐𝑘 0 𝛽 𝑐† −
++ 0 𝑉0 𝐾𝑧0 1 − 𝑛ˆ 𝑑 𝛽 𝑐𝑘𝛽
+𝑐𝑑 𝛽 + h.c.
+0
+𝑘𝛽
+𝜉5
+2 𝜉2 𝜉4
+!
+!
+
+
+
+
+1
+1 1
+1
+1
+1
+†
+† †
+0
++
++
++
+𝑉0 𝐾𝑡 𝑛ˆ 𝑑 𝛽 𝑐 𝑐𝑑 𝛽 + h.c. −
+𝐾𝑧 𝐾𝑡 𝑐𝑑 𝛽 𝑐 𝑐𝑘𝛽 𝑐𝑘 0 𝛽 + h.c.
+𝑘𝛽
+𝑑𝛽
+2 𝜉20 𝜉50
+2 𝜉40 𝜉50
+
+162
+
+(5.3.17)
+
+Chapter 5. URG of the SIAM and its Spin and Charge Generalizations
+where 𝜉0 = 𝜔0 = 𝐸𝑖1 . The intermediate energies in this sector are
+
+5.3.3
+
+𝐸11 =
+
+𝜖𝑞
+
+𝐸21 = 𝐸41 =
+
+𝜖𝑞
+
+𝐸31 =
+
+𝜖𝑞
+
+𝐸51 =
+
+𝜖𝑞
+
+2
+
++ 𝜖𝑑
+
+2
+2
+
++ 2𝜖𝑑 + 𝑈
+
+2
+
+− 𝐾𝑧
+
+(5.3.18)
+
+Relating the 𝜔
+
+Just as in the previous subsection, we relate the 𝜔𝑖 using their diagonal values.
+First the particle sector 𝜔𝑖 :
+𝜔1 = −
+
+𝜖𝑞
+2
+
++ 𝜖𝑑
+
+𝜔2 = 𝜔5 = −
+𝜔3 = −
+𝜔4 = −
+
+𝜖𝑞
+2
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
+− 𝐾𝑧
+
++ 2𝜖 𝑑 + 𝑈
+
+(5.3.19)
+
+2
+
+𝜖𝑞
+
+Rewriting everything in terms of 𝜔 = − 2 − 𝐾𝑧 gives
+𝜔1
+𝜔2
+𝜔3
+𝜔4
+
+= 𝜔 + 𝜖𝑑 + 𝐾 𝑧
+= 𝜔5 = 𝜔
+= 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐾𝑧
+= 𝜔 + 𝐾𝑧
+
+For the hole sector, we get
+𝜔01 = 𝜔05 = −
+𝜔02 = −
+0
+
+𝜔3 = −
+𝜔04 = −
+and, in terms of 𝜔,
+
+𝜔01
+𝜔02
+𝜔03
+𝜔04
+
+𝜖𝑞
+
+𝜖𝑞
+2
+
++ 2𝜖 𝑑 + 𝑈 − 𝐾 𝑧
+
+2
+
++ 𝜖𝑑
+
+2
+
++ 2𝜖 𝑑 + 𝑈
+
+𝜖𝑞
+𝜖𝑞
+
+(5.3.20)
+
+(5.3.21)
+
+2
+
+= 𝜔05 = 𝜔 + 2𝜖𝑑 + 𝑈
+= 𝜔 + 𝜖𝑑 + 𝐾 𝑧
+= 𝜔 + 2𝜖𝑑 + 𝑈 + 𝐾𝑧
+= 𝜔 + 𝐾𝑧
+163
+
+(5.3.22)
+
+
