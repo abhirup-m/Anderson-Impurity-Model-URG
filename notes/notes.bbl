@@ -210,6 +210,12 @@ Ralf Bulla, Theo~A. Costi, and Thomas Pruschke.
 \newblock Numerical renormalization group method for quantum impurity systems.
 \newblock {\em Rev. Mod. Phys.}, 80:395--450, Apr 2008.
 
+\bibitem{Mukherjee_hubbard}
+Anirban Mukherjee and Siddhartha Lal.
+\newblock Scaling theory for mott{\textendash}hubbard transitions: I. t = 0
+  phase diagram of the 1/2-filled hubbard model.
+\newblock {\em New Journal of Physics}, 22(6):063007, jun 2020.
+
 \bibitem{oshikawa}
 Masaki Oshikawa.
 \newblock Topological approach to luttinger's theorem and the fermi surface of
