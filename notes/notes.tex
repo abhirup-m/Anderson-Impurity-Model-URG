@@ -5934,17 +5934,35 @@ Because of the presence of the large \(v\) in the first quadrant, this will nece
 	\label{fig_gstate}
 \end{figure}
 
+\section{Effective temperature scale at the fixed point}
+We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}J}{\:\mathrm{d}\ln D} = n(0)J^2 \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}
+\end{aligned}\end{equation}
+where we have replaced by the number of states at each shell with that at the Fermi surface (uniform DOS). We can define a dimensionless quantity \(g \equiv \frac{J}{\frac{D}{2}} - \omega\). In terms of \(g\), the continuum RG equation becomes
+\begin{equation}\begin{aligned}
+	-\frac{\:\mathrm{d}g}{\:\mathrm{d}\ln D} + \frac{D g}{2\omega - D} = \frac{n(0) g^2}{1 - \frac{g}{4}}
+\end{aligned}\end{equation}
+Now, for the specific case where \(D\) is small (\(D \to 0\)), we can simplify and integrate this equation:
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}g}{\:\mathrm{d}\ln D} &= \frac{n(0) g^2}{\frac{g}{4} - 1}\\
+	\implies \left[\frac{1}{g} + \frac{1}{4}\ln g\right]_{g_0}^{g^*} &= n(0)\ln D\big\vert_{D_0}^{D^*}
+\end{aligned}\end{equation}
+\(g^*(_0), D^*(_0)\) are the fixed point (bare) values of \(g, D\). From the denominator structure, the fixed-point value is \(g^* =  4\). This gives an estimate of the bandwidth of the emergent window:
+\begin{equation}\begin{aligned}
+	D^* = D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
+\end{aligned}\end{equation}
+We can now define a temperature scale for the fixed-point theory:
+\begin{equation}\begin{aligned}
+	T_K \equiv \frac{2N^*}{\pi}D^* = \frac{2N^*}{\pi}D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
+\end{aligned}\end{equation}
+The factor of \(2N^*\) is inserted to make the Kondo temperature intensive (we will see below that the \(N^*\) allows it to  be written in terms of parameters of the two-site Hamiltonian) - \(2N^*\) is the total number of momentum states in the fixed point theory. The factor of \(\frac{1}{\pi}\) is for aesthetic reasons. Since we have and will primarily work with \(\omega=0\), the fixed point condition can be used to write \(D^* = \frac{J^* + K^*}{2}\).
+\begin{equation}\begin{aligned}
+	T_K = \frac{2N^*}{\pi}\frac{1}{2}\left(J^* + K^*\right) = \frac{1}{\pi}\left(j + k\right)
+\end{aligned}\end{equation}
+
 \chapter{Results and Features of the Low-Energy Theory}
 \label{results}
-\section{Effective Kondo temperature}
-We now define an energy scale for the low energy fluctuations:
-\begin{equation}\begin{aligned}
-	T_K \equiv \frac{2N^*}{\pi}\left(D^* - 2\omega\right) 
-\end{aligned}\end{equation}
-The term in brackets, \(D^* - 2\omega\), is the fluctuation energy at the fixed point. The factor of \(2N^*\) is inserted to make the Kondo temperature intensive (we will see below that the \(N^*\) allows it to  be written in terms of parameters of the two-site Hamiltonian) - \(2N^*\) is the total number of momentum states in the fixed point theory. The factor of \(\frac{1}{\pi}\) is for aesthetic reasons. From the fixed-point condition \(\omega - \frac{D}{2} + \frac{J + K}{4} = 0\), the Kondo temperature can be written as
-\begin{equation}\begin{aligned}
-	T_K = \frac{2N^*}{\pi}\frac{1}{2}\left(J^* + K^*\right) = \frac{1}{\pi}\left( j + k \right) 
-\end{aligned}\end{equation}
 \section{Magnetic susceptibility}
 The thermal susceptibility is defined as
 \begin{equation}\begin{aligned}
