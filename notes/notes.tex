@@ -1,7 +1,6 @@
 % !TEX TS-program = xelatex
-\documentclass[12pt,twoside]{report}
+\documentclass[twoside]{report}
 % \usepackage[draft]{graphicx}
-
 \usepackage{textpos}
 \usepackage{booktabs}
 \usepackage{tocbibind}
@@ -9,15 +8,11 @@
 \raggedbottom
 \usepackage{common}
 
-\usepackage{noto-mono}
-\usepackage{notomath}
-
 \usepackage[affil-it]{authblk}
 \pagenumbering{roman}
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
 \allowdisplaybreaks
-
 
 \begin{document}
 \begin{titlepage}
@@ -55,16 +50,14 @@
 \chapter*{Declaration by the student}
 I, {\large\textbf{Abhirup Mukherjee}}, hereby declare that this thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the thesis. I certify that all copyrighted material incorporated into this thesis is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
 \pb
-Signed:\\[20pt]
+Signed:
+\hspace{30pt}\includegraphics[width=150pt]{../figures/signature_black.png}
+\\
 \rule[1em]{0.5\linewidth}{0.5pt}\\  % This prints a line for the signature
 ABHIRUP MUKHERJEE
 \pb
 Date:
 \today
-
-\begin{textblock*}{2cm}(2.0cm,-3.4cm)
-	\includegraphics[width=200pt]{../figures/signature_black.png}
-\end{textblock*}
 
 \chapter*{Certificate from the supervisor}
 This is to certify that the thesis titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} which is submitted by {\large\textbf{Abhirup Mukherjee}} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this thesis is original and has not been submitted for the award of any other degree.
@@ -93,6 +86,7 @@ This thesis reports a renormalization group solution of the single-impurity Ande
 \tableofcontents
 \pagebreak
 \pagenumbering{arabic}
+
 \chapter{Introduction}
 \section{Summary of the problem}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
@@ -5504,6 +5498,7 @@ The RG equations are
 	\Delta K_z &= - 2 \frac{K_t^2}{\xi_8}\\
 	\Delta K_t &= - \frac{K_z K_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
 \end{aligned}\end{equation}
+Note that these are the renormalizations are for each momentum state \(q\) on the isoenergetic shell - the total renormalization is obtained by summing over the \(q\).
 \section{Numerical and analytical analysis of the symmetric model}
 \subsection{Nature of RG flows for the symmetric model at \(V = 0\)}
 With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_0 = V_1, K_z = K_t = \frac{1}{2}K\),
@@ -5543,15 +5538,6 @@ From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
-\pb For the case when \(\omega + \frac{J}{4} \gg \frac{1}{2}\epsilon_q - \frac{K}{4}\), we can integrate the equation for \(J\):
-\begin{equation}\begin{aligned}
-	\Delta J \approx -\rho(0) J^2 \frac{1}{\omega + \frac{J}{4}}  \implies -\frac{\:\mathrm{d}J}{\:\mathrm{d}\ln \frac{D}{D_0}} \approx-\rho(0) J^2 \frac{1}{\omega + \frac{J}{4}} \implies dJ\left( \frac{\omega}{J^2} + \frac{1}{4J} \right) \approx -\rho(0) d\ln \frac{D}{D_0}
-\end{aligned}\end{equation}
-We replaced the density of states by that at the Fermi surface. Integrating this equation from \(J_0\) to \(J^*\) on the left hand side and from \(D_0\) to \(D^*\) on the right hand side gives
-\begin{equation}\begin{aligned}
-	\omega\left( \frac{1}{J^*} - \frac{1}{J_0}\right) + \frac{1}{4}\ln \frac{J_0}{J^*} = \rho(0)\ln\frac{D^*}{D_0} \implies D^* \approx \left( \frac{J_0}{J^*} \right) ^\frac{1}{4\rho(0)} \exp\left\{-\frac{1}{\rho(0)}\left( \frac{1}{4} + \frac{\omega}{J_0} \right)\right\}
-\end{aligned}\end{equation}
-This gives an estimate of the bandwidth of the emergent window:
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.4]{../figures/JvsK.pdf}
@@ -5620,7 +5606,7 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \end{table}
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[scale=0.3]{../figures/phases.pdf}
+	\includegraphics[scale=0.2]{../figures/phases.pdf}
 	\caption{Fixed point phases in the plane of bare couplings, at \(V=0\).}
 	\label{siamphases}
 \end{figure}
@@ -5628,14 +5614,14 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}. It is very similar to that obtained from NRG, as was shown in fig.~\ref{nrg_fp}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/UvsJ.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/UvsJ_new.pdf}
 	\caption{\(U-J\) multiple RG flows in first quadrant.}
 	\label{Veffect}
 \end{figure}
 
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/with_V.pdf}
+	\includegraphics[width=\textwidth]{../figures/with_V_new.pdf}
 	\caption{Flows of the couplings for bare values in the first quadrant: \(J-K,U>0\).}
 	% \label{Veffect}
 \end{figure}
@@ -5645,7 +5631,7 @@ The first quadrant shows the flow from a free orbital fixed point near \(V=U=J=0
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/crossovers.pdf}
+	\includegraphics[width=\textwidth]{../figures/crossovers_new.pdf}
 	\caption{\(U-J\) and \(U-V\) RG flows.}
 	\label{crossover}
 \end{figure}
@@ -5663,7 +5649,7 @@ We have also checked that the fixed point values of \(J\) and \(V\) go on increa
 In the third quadrant (\(U_0 < 0, K_0 > J_0\)), we see the flow to large negative value of \(U\), leading to a large contribution of the holon-doublon sectors of the impurity subspace, and a large value of \(K^*\) which means that the impurity charge sector couples very strongly with the bath charge sector.
 \begin{figure}[htpb!]
 \centering
-\includegraphics[width=\textwidth]{../figures/with_V_q3.pdf}
+\includegraphics[width=\textwidth]{../figures/with_V_q3_new.pdf}
 \caption{Flow of \(U\) to large negative value and \(K\) to large positive value in the third quadrant.}
 \label{frac_q3}
 \end{figure}
@@ -5692,8 +5678,7 @@ We can now summarize the various fixed point phases. The physically relevant one
 
 \begin{figure}[htpb!]
 	\centering
-	\def\svgwidth{0.8\columnwidth}
-	\input{../figures/phases_V_pres.pdf_tex}
+	\includegraphics[width=0.4\textwidth]{../figures/phases_V.png}
 	\caption{Low \(\omega\) fixed point phases for the SIAM with \(V>0\).}
 \end{figure}
 
@@ -5944,11 +5929,10 @@ Because of the presence of the large \(v\) in the first quadrant, this will nece
 \pb One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/gstate.pdf}
+	\includegraphics[width=0.5\textwidth]{../figures/gstate.pdf}
 	\captionof{figure}{Shift in the ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
 	\label{fig_gstate}
 \end{figure}
-\vspace{\fill}
 
 \chapter{Results and Features of the Low-Energy Theory}
 \label{results}
@@ -6115,17 +6099,17 @@ This is in accordance with the results obtained from Bethe ansatz in \cite{okiji
 \end{aligned}\end{equation}
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/chi_T.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/chi_T_new.pdf}
 	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.}
 \end{figure}
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/one_over_chi.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/one_over_chi_new.pdf}
 	\caption{Variation of \(\left(T_k \times \chi\right)^{-1}\) with temperature.}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/chi.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/chi_new.pdf}
 	\caption{Variation of $\chi$ against temperature. It saturates to a value close to \(\left( 2\pi T_K \right) ^{-1}\)}
 \end{figure}
 %\begin{figure}[htpb]
@@ -6305,27 +6289,42 @@ The charge susceptibility is thus
 \begin{equation}\begin{aligned}
 	\chi_c = \frac{1}{\beta}\frac{\frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta\left(\frac{k}{4} - \epsilon_d\right)}\sinh \beta\frac{k}{2}}{2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 3e^{-\beta\left( \epsilon_d + \frac{j}{4} \right) } + e^{\beta\left( 3\frac{j}{4} - \epsilon_d \right)} + 2e^{\beta \left(\frac{k}{4} - \epsilon_d\right)}\cosh \beta \frac{k}{2}}
 \end{aligned}\end{equation}
-An important result that we will use later is the value at \(T=0\).
-\begin{equation}\begin{aligned}
-	\chi_c(T=0) =  \frac{1}{2k}\lim_{\beta \to \infty} \frac{1}{1 + e^{\frac{3\beta}{4} \left(j-k\right) }}
-\end{aligned}\end{equation}
-There we used the observation that near the fixed point, \(\epsilon_d\) is either close to zero or large positive such that \(e^{-\beta \epsilon_d}\) does not affect the value of \(\chi_c\) at \(T=0\). In the Kondo regime of the SIAM \((j \gg k)\), the denominator diverges and the charge susceptibility vanishes at \(T=0\).
-\begin{equation}\begin{aligned}
-	\chi_c(T=0)\bigg\vert_{j \gg k} = 0
-\end{aligned}\end{equation}
-The charge susceptibility at large temperatures becomes
+This is plotted in fig.~\ref{charge_sus}. The charge susceptibility at large temperatures becomes
 \begin{equation}\begin{aligned}
 	\left(\chi_c\times T\right) (T \to \infty) = \frac{1}{8}
 \end{aligned}\end{equation}
+The variation of \(\chi_c \times T\) and \(\chi_c^{-1}\) against temperature is also shown in figs.~\ref{chcT},\ref{one_over_chic}.
+\pb An important result that we will use later is the value at \(T=0\).
+\begin{equation}\begin{aligned}
+	\chi_c(T=0) =  \frac{1}{2k}\lim_{\beta \to \infty} \frac{1}{1 + e^{\frac{3\beta}{4} \left(j-k\right) }}
+\end{aligned}\end{equation}
+There we used the observation that near the fixed point, \(\epsilon_d\) is either close to zero or large positive such that \(e^{-\beta \epsilon_d}\) does not affect the value of \(\chi_c\) at \(T=0\). In the Kondo regime of the SIAM \((j \gg k)\), the denominator diverges and the charge susceptibility vanishes at \(T=0\). This is shown in fig.~\ref{chi_c_zero}.
+\begin{equation}\begin{aligned}
+	\chi_c(T=0)\bigg\vert_{j \gg k} = 0
+\end{aligned}\end{equation}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{../figures/chi_c.pdf}
-	\caption{Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo regime (\(J>K\)).}
+	\includegraphics[height=0.27\textheight]{../figures/chi_c_new.pdf}
+	\caption{Variation of \(\chi_c\) over 5 decades of temperature, for the charge-Kondo regime. Similar to the spin susceptibility, it saturates to \(\left( 2\pi T_K \right)^{-1}\).}
+	\label{charge_sus}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{../figures/T_chi_c.pdf}
+	\includegraphics[height=0.27\textheight]{../figures/T_chi_c_new.pdf}
 	\caption{Behavior of \(\chi_c\times T\) for the charge-Kondo regime. It is qualitatively very similar to the behavior of the magnetic susceptibility in the spin-Kondo regime.}
+	\label{chcT}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[height=0.27\textheight]{../figures/one_over_chi_c_new.pdf}
+	\caption{Behavior of \(\left(T_K \chi_c\right)^{-1}\) for the charge-Kondo regime.}
+	\label{one_over_chic}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.4\textheight]{../figures/chi_c_zero_new.pdf}
+	\caption{Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo regime (\(J>K\)).}
+	\label{chi_c_zero}
 \end{figure}
 
 \section{Specific heat}
@@ -6350,7 +6349,7 @@ The impurity specific heat is the difference.
 These values were calculated numerically and plotted against temperature in fig.~\ref{cv}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.65\textwidth]{../figures/Cv.pdf}
+	\includegraphics[width=0.65\textwidth]{../figures/Cv_new.pdf}
 	\caption{Impurity specific heat}
 	\label{cv}
 \end{figure}
