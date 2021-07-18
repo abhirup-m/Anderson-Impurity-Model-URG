@@ -5926,13 +5926,18 @@ and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1
 \end{aligned}\end{equation}
 Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
 \pb These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
-\pb One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/gstate.pdf}
-	\captionof{figure}{Shift in the ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
+	\captionof{figure}{Shift of ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
 	\label{fig_gstate}
 \end{figure}
+\pb One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions. This is, as far as we can see, due to two reasons: 
+\begin{itemize}
+	\item a higher RG flow rate of \(J\) as compared to \(V\)
+	\item the fact that \(j \sim J N\) while \(v \sim V\sqrt N \)
+\end{itemize}
+These two factors help the s-d interaction term in becoming the most dominant term in the Hamiltonian, at the fixed point.
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
