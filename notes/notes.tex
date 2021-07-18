@@ -6115,31 +6115,25 @@ For sufficiently large values of \(j\) compared to \(k\), we can also approximat
 \begin{equation}\begin{aligned}
 	\chi(T = 0) \approx \left(2 \pi T_K\right)^{-1}
 \end{aligned}\end{equation}
-This is in accordance with the results obtained from Bethe ansatz in \cite{okiji_kawakami}.
+This is in accordance with the results obtained from Bethe ansatz in \cite{okiji_kawakami}. The variation of \(\chi \times T\) and \(\left(T_K \chi\right)^{-1}\) against temperature is shown in fig.~\ref{sus_spin}.
 \pb On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and \(\Theta\) gives
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
+The variation of \(\chi\) against \(T\) is shown in fig.~\ref{sus_T}. The susceptibility goes through a maximum at a certain temperature, and this maximum is not present in NRG or Bethe Ansatz calculations. We suspect that this peak is an artifact of the simplification suffered in restricting the calculation to just the zero mode of the conduction bath. We intend to investigate this by allowing for higher modes of the bath. The speculation that this is due to the zero mode is further strengthened by the fact that a similar maximum was observed in the Kondo model susceptibility as obtained from a URG treatment and zero-mode effective Hamiltonian, in \cite{am_thesis}.
 \begin{figure}[htpb!]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/chi_T_new.pdf}
-	\caption{Variation of $\chi \times T$ over six decades of temperature. The low temperature behaviour is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment.}
-\end{figure}
-\begin{figure}[htpb!]
-	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/one_over_chi_new.pdf}
-	\caption{Variation of \(\left(T_k \times \chi\right)^{-1}\) with temperature.}
+	\includegraphics[width=0.49\textwidth]{../figures/chi_T_new.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/one_over_chi_new.pdf}
+	\caption{\textit{Left}:Variation of $\chi \times T$ over six decades of temperature. The low temperature behavior is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment. \textit{Right}:Variation of \(\left(T_k \times \chi\right)^{-1}\) with temperature.}
+	\label{sus_spin}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/chi_new.pdf}
 	\caption{Variation of $\chi$ against temperature. It saturates to a value close to \(\left( 2\pi T_K \right) ^{-1}\)}
+	\label{sus_T}
 \end{figure}
-%\begin{figure}[htpb]
-%	\centering
-%	\includegraphics[scale=0.5]{../figures/one_over_chi.pdf}
-%	\caption{Variation of $\chi^{-1}$ against temperature.}
-%\end{figure}
 
 \comm{
 \subsection{For \(v\neq 0\)}
@@ -7291,7 +7285,7 @@ where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obt
 \end{figure}
 
 \chapter{Conclusions and Future Directions}
-In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. 
+In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. We encountered a maximum in the susceptibility vs temperature plot which is not present in NRG or Bethe Ansatz plots, and we believe it can be attributed to the approximation made in working with a zero mode Hamiltonian.
 %TODO discuss about Cv
 \pb We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
 \pb This work still leaves some problems untouched. Some new questions and interesting prospects have also emerged. We discuss them now.
