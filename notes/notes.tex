@@ -111,6 +111,83 @@ This thesis reports a renormalization group solution of the single-impurity Ande
 \tableofcontents
 \pagebreak
 \pagenumbering{arabic}
+\chapter{Introduction}
+\section{Summary of the problem}
+The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
+It shows how strong correlations between electrons give rise to a residual local moment. Friedel\cite{Friedel}, in 1958, gave a phenomenological theory in which a local impurity developed an effective repulsion which forced the formation of bound states; those bound states where the up and down states became non-degenerate would correspond to the local moment.
+Taking inspiration from this, P.W.Anderson\cite{Anderson} in 1961 designed a model for the formation of local moment in second quantization.
+The model consisted of a bath of mobile electrons which interacted with the local impurity.
+The engine of magnetism was the local onsite Coulomb repulsion on the impurity site.
+This repulsion favours the formation of local moments because it makes it harder for the impurity to be doubly-occupied.
+\\\\ Mean-field calculations of the impurity occupation reveal a criterion for the formation of local moments; this criterion is similar to the Stoner criterion for ferromagnetism. This mean-field analysis is of course only valid at high temperatures where electron-correlations are not so important. At low temperatures, it was found that the resistivity of the material reaches a minimum at some temperature, and then increases as \(\ln T\) as we further reduce the temperature. This is in contrast to the previews results. And that was not all; at a sufficiently low temperature, it was found that the \(\ln T\)-dependence disappears and the susceptibility became constant, implying the formation of a singlet state.
+\\\\ The fact that this logarithmic dependence vanishes once the singlet is formed suggests that it arises from the local moment on the impurity; once the local moment disappears (singlet), the log dependence vanishes as well.
+This led people to design a model in which the impurity interacted with the conduction bath through a Heisenberg-like spin-spin interaction.
+This model can be related to the SIAM through a canonical transformation followed by a projection to the low energy subspace.
+In 1964, Jun Kondo\cite{Kondo} found that a perturbative calculation of the transition probability of electrons from scattering via the impurity, up to second order in the exchange coupling \(J\), revealed a logarithmic dependence of the resistivity on temperature.
+The crucial scattering process was that in which the spin of the incoming electron flipped (the \(S^+ s^-\) and \(S^- s^+\) terms).
+This explained the mystery of the resistivity minimum and the logarithmic dependence.
+But the mystery of the singlet state at very low temperatures still remained.
+The perturbative analysis would break down at low temperatures, so it was unreliable.
+The log term showed that the physics of the singlet involved all energy scales; one could not hope to capture it simply by taking the first few terms of a perturbative expansion.
+This problem came to be known as the Kondo problem.
+\\\\ In 1970, Anderson attacked this problem by a renormalization group approach to account for all energy scales.
+In his "Poor Man's Scaling" approach, he progressively reduced the bandwidth while taking account of the eliminated states into the couplings via second order perturbation theory.
+This showed how the couplings would flow as we went to low temperatures, but it still could not remove the divergence as it was perturbative.
+Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
+In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
+He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
+Later calculations with Bethe ansatz in 1980 by Andrei and Wiegmann \cite{andrei_kondo,wiegmann} corroborated Wilson's findings.
+\\\\ A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility \cite{hrk-nrg}. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
+\\\\ The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
+\section{Some outstanding questions}
+Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
+\begin{itemize}
+    \item \textit{Is it possible to get \textbf{non-perturbative scaling equations} for the whole journey?}
+    Neither NRG nor Bethe ansatz gives us scaling equations for the RG flows. Poor Man's scaling only gives perturbative ones which are valid close to the high energy theories. In the absence of scaling equations that show the complete crossover from the high energy to the low energy theory, it is difficult to visualize how the Hamiltonian is precisely chaining.
+    % \item \textit{Can we get Hamiltonians and wavefunctions in the \textbf{crossover region} (\(T \sim T_K\))?}
+    %     NRG does give us some Hamiltonians, but those are valid very close to the fixed points. The harder challenge is to get Hamiltonians for all energy scales, possibly in the form of some running couplings. That would also show us exactly how the wavefunctions morph as we reduce the bandwidth. \(T_K\) is the temperature at which the crossover occurs, so that is the most interesting regime.
+    % \item \textit{What is the nature of the strong-coupling fixed point for a \textbf{finite system} (\(J \neq \infty\))? Will the results change if we introduce a \textbf{non-uniform density of states}?}
+    %     NRG and Bethe ansatz work very well for continuum systems where the bandwidth is essentially infinite. As a result, they get an infinite \(J\) strong-coupling fixed point. For a finite lattice, things are different. It would be interesting to know how the finite \(J\) fixed point looks like and whether the conclusions of NRG break down.
+    % \item \textit{Can we get \textbf{better estimates of thermodynamic quantities} in the crossover region?}
+    %     Calculation of thermodynamic quantities like magnetic susceptibility and specific heat require not just the ground state but the excited states as well. Since NRG projects out most of the states above the ground state, it is difficult to get very accurate estimates of such quantities far away from the fixed point. Bethe ansatz calculations also typically  employ approximations like \(T>>T_K\). Moreover, Bethe ansatz equations have to be solved numerically so they lack the transparency of analytical solutions.
+    \item \textit{Is it possible to show the \textbf{transfer of spectral weight} along the flow, possibly by tracking the spectral function?}
+    Such an exercise will requite the entire spectrum to be preserved along the flow. NRG, being projective will not work here. If the entire spectrum is available, computing the spectral function along the flow should indicate how the spectral weight is being distributed between the impurity and the conduction bath, or between various states of the impurity. It can also shed light on which terms or processes in the Hamiltonian contribute to which parts of the spectral function.
+    \item \textit{How does NRG obtain the local moment in the \textbf{absence of hybridisation}?}
+    For the symmetric mode, NRG results show that in the absence of any interaction between the bath and the impurity, the value of the onsite repulsion flows to a large value and we end up with a local moment. The obvious question is, how does the impurity coupling renormalize when there is no term connecting the bath with the impurity?
+    \item \textit{Are there any interesting \textbf{topological aspects} of the fixed points?}
+	    We also intend to search for the existence of and possible changes in topological quantities at the fixed points. Since this is a zero-dimensional phenomenon, there will not be any gapping out of the Fermi surface, but there might be changes in topological quantities related to the Fermi surface or in the analyticity of the Green's function due to the presence of the coupling between the bath and the impurity. A strong indication of this is the change in the Wilson ratio from the non-interacting value of \(R=1\) to the local-Fermi liquid fixed point value of \(R=2\) obtained by Nozières\cite{nozieres}. 
+    \item \textit{What is the nature of the Kondo cloud that screens the spin(charge) of the impurity?} We do not yet have a theory for the excitations of the cloud of electrons at the zeroth site that couple to the impurity at the fixed point. The local Fermi liquid sits just outside the cloud and is able to "feel" its effects and gauge certain gross quantities like the Wilson ratio, but it does not have the excitations of the cloud because that part, along with the impurity, has been assumed to be "frozen" into the singlet configuration. A recent result in this context \cite{am_thesis} is the effective Hamiltonian of the Kondo model cloud, also obtained using the same method that has been used in this thesis. The goal here is to do something similar for the SIAM as well.
+    \item \textit{How do entanglement measures respond to the RG flow?} Can we find a reflection of the screening mechanism in something like the mutual information or correlations? This requires a knowledge of the wavefunctions at the fixed point. Does the enhanced scattering of the electrons off the impurity lead to an increase in the entanglement between various electrons of the bath? It will also be interesting to check how various correlation functions vary across the RG flow.
+\end{itemize}
+\section{Salient features of the method}
+The method employed in this work is a unitary renormalization group (URG) technique which progressively block-diagonalizes the Hamiltonian in the space of single high energy electrons. At each step of the process, the highest electron is decoupled from the system and it becomes an integral of motion, and the lower electronic system gets rotated to account for the decoupled electron. In this way, the RG goes on resolving the number fluctuations of the electrons. A fixed point is reached when the off-diagonal terms can no longer be removed. Since the method is unitary, it preserves the spectrum and allows calculating effective eigenvalues and eigenstates. It has some characteristic features:
+\begin{itemize}
+    \item \textit{Presence of a quantum fluctuation energy scale \(\omega\)}: 
+The URG process involves a parameter \(\omega\) which contains the off-diagonal terms in the Hamiltonian. It quantifies the quantum fluctuation still unresolved in the system. Exactly at the fixed point, when the fluctuations are resolved, it assumes the value of one of the energies of the Hamiltonian. By probing the values of \(\omega\), all regions of the spectrum can, at least in principle, be accessed.
+    \item \textit{Presence of finite-valued fixed points}:
+The URG has a definite prescription for reaching the fixed point and it terminates after a finite number of steps (for a finite system). This leads to finite values of the fixed point  couplings. This is also in accordance with our intuition that finite systems should not have diverging couplings.
+    \item \textit{Spectrum-preserving transformations}:
+Since the RG transformations are unitary, all eigenvalues and eigenstates are kept track of the in the process. This allows us to calculate exact quantities for simple systems like the Kondo model.
+    \item \textit{Tractable low-energy effective Hamiltonians}:
+The final Hamiltonians obtained at the fixed point are usually tractable and allow us to extract information.
+\end{itemize}
+\section{Layout of the thesis}
+Chapter \ref{prelims} goes over the available work on the single-impurity Anderson model and its derivative - Kondo model. We go over the mean-field calculation of the Anderson model which gives a criteria for magnetism in terms of the onsite repulsion parameter \(U\) and the hybridisation parameter \(\Delta\). We then derive the Kondo model from the SIAM by way of a Schrieffer-Wolff transformation, which we solve using NRG. We also spend some time on the Poor Man's scaling approaches of both the SIAM and the Kondo model, and end the chapter with some discussions on the local Fermi liquid aspects of the fixed point theory.
+\\\\ Chapter \ref{urgform} lays out the URG formalism and prescription. We derive the URG effective Hamiltonian and the unitaries that perform the RG transformations. We discuss several important features of the method and provide a prescription for applying it on models. We also perform the URG explicitly on two models - the star graph model and the Kondo model. We discuss various subtleties, especially the quantum fluctuation parameter \(\omega\) and show that the URG actually diagonalizes the Hamiltonian. We derive many-body creation and annihilation operators \(\eta^\dagger\) and \(\eta\) which rotate the full Hamiltonian into successively more block-diagonal form.
+\\\\ Chapter \ref{urg_canonical} is closely tied to the formalism chapter and develops the connections between URG and other canonical transformations in the literature. We first define and setup each of the other transformations - the Schrieffer-Wolff transformation (SWT), Poor Man's scaling (PMS) and the Continuous Unitary Transformation (CUT) RG. We show that all of these are in some sense perturbative derivatives of URG. A byproduct of the discussion is a demonstration of the fact that PMS and SWT are exactly identical and differ only in the contexts in which they are applied. We also discuss the differences between URG and CUT-RG, and show that URG behaves like a generalized double-bracket flow \cite{Brockett1991}.
+\\\\ Chapter \ref{siamurg} contains the URG analysis of the SIAM and its generalizations, obtained by adding spin-spin and charge-charge interactions to the SIAM. They lay out the foundation for the URG treatment on the full model with both charge and spin fluctuations. We derive the RG equations for these separate models in detail and briefly observe how the couplings flow in certain symmetric settings. 
+\\\\ Chapter \ref{fullurg} performs the URG on the full generalized SIAM, obtains the RG equations and writes down a low-energy effective Hamiltonian for the fixed point theory in the symmetric case. We study the flow of the couplings and identity various fixed points. We also determine how the fixed point values behave with system size. The low-energy effective zero-mode Hamiltonian is solved and the ground state wavefunctions are obtained for both the spin and charge-dominated regimes of the model. We show that a phase transition occurs at some critical value of the couplings, between the spin singlet and the charge singlet.
+\\\\ Chapter \ref{results} computes some important quantities from the fixed point theory like the specific heat, magnetic susceptibility, charge susceptibility, Wilson ratio, Kondo cloud Hamiltonian, entanglement and correlation measures of the Kondo cloud electrons and change in the Luttinger's count of the bath.  The Kondo cloud Hamiltonian is obtained by tracing out the impurity operators from the fixed point Hamiltonian. We compute the mutual information between between various members of the fixed point Hamiltonian, as well as some off-diagonal correlations. We extract a low temperature local Fermi liquid from the Hamiltonian which we then use to calculate the zero temperature Wilson ratio for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume between the fixed points.
+\section{Summary of main results}
+The first of the main results in this work is the connection between URG and other canonical transformations. It is shown that URG is a non-perturbative variation of the most general unitary transformation. Other unitary transformations like the Schrieffer-Wolff transformation and Poor Man's scaling are simpler forms of URG, obtained by trivializing one of the terms in the Green's function that comes up in the URG formalism. CUT-RG is still more different from URG, since it is not only perturbative but also philosophically different in that it gradually suppresses the off-diagonal terms rather than killing more and more terms progressively. URG is thus different in two major ways - it provides non-perturbative equations because of the specific denominator structure as well as accommodates, at least in principle, the feedback effects of the off-diagonal terms through a quantum fluctuation operator in the denominator.
+\\\\We next look at the results concerning the SIAM. In the absence of any spin-exchange or charge isospin-exchange scattering, we do not see any renormalization in the hybridisation and the only flow is towards a local moment fixed point with large impurity onsite energy \(U\). In the presence of those additional exchange scattering terms, the corresponding couplings \(J\)(spin exchange) and \(K\)(isospin exchange) flow to large values for low values of \(\omega\), signaling strong-coupling fixed points.
+\\\\At the spin-screened strong-coupling fixed point (\(J>K\)), the ground state wavefunction is a superposition of a spin singlet and a charge-isospin triplet. The ground state for the isospin-dominated fixed point (\(K>J\)) is an isospin singlet. Thermodynamic quantities are now calculated using zero-mode Hamiltonians of the low energy effective theories. The impurity susceptibility \(\chi_\text{imp}\) goes to the Curie-Weiss value of a four-fold degenerate system at large temperatures, and becomes constant (paramagnetic) at very low temperatures. With \(T_K\) defined suitably, \(\chi_\text{imp}\) takes the zero temperature value of \(\left( 2\pi T_K \right) ^{-1}\). The impurity specific heat has also been calculated, and reveals a two-peak structure.
+\\\\The fixed-point Hamiltonian further allows us to calculate the impurity spectral function. For very small \(U\) we obtain a single-peak structure corresponding to a single spin-spin or isospin-isospin excitation at the Fermi surface, while two other side-peaks emerge at large \(U\) that correspond to excitations between the spin and charge sectors. By tweaking the values of the couplings in the fixed-point Hamiltonian, we can mimic the reverse RG flow and see how the impurity spectral function morphs along this journey. Both the single-peak and three-peak structures revert back to a two-peak spectral function corresponding to that of a local moment.
+\\\\We then extract the effective Hamiltonian for the Kondo cloud, up to two particle interactions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian has both a Fermi liquid piece of the form \(\hat n_{k\sigma}\hat n_{q\sigma^\prime}\) and a two-particle off-diagonal scattering piece of the form \(c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow}c_{q \uparrow}c_{q^\prime \downarrow}\). It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures and correlations. The mutual information between the impurity and a cloud electron, as well as that between two cloud electrons increases as we go from the UV towards the IR fixed point. The off-diagonal correlation also increases from the UV towards the IR, which shows that the growth of the off-diagonal term is concomitant with the screening.
+\\\\We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from the fixed point Hamiltonian. Using the zero charge susceptibility at \(T=0\) in the Kondo regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We also calculate the change in Luttinger's volume along the RG flow. At the free orbital or local moment fixed points, the Luttinger's volume is measured purely by the number of conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger's volume is given by the total number of electrons in the conduction bath as well as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
+\chapter{Preliminaries and Existing Results}\label{prelims}
+\section{Some important results of scattering theory}
+\subsection{T-matrix and S-matrix}
 \(T-\)matrix is defined as\cite{sakurai}
 \begin{equation}\begin{aligned}
 \label{Tmatdef}
@@ -2609,16 +2686,19 @@ The only remaining degree of freedom will be the spin fluctuations, and we can t
 On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth.
 So there wont be any renormalization of the impurity levels.
 From another perspective, it can be said that there won't be any renormalization because both the impurity levels \(\ket{0},\ket{1}\) will be able to hybridise with two states each: \(\ket{0}\) can hybridize with \(\ket{k\uparrow},\ket{k\downarrow}\) and \(\ket{1\sigma}\) can hybridize with \(\ket{0},\ket{2}\).
-\begin{minipage}{0.45\textwidth}
+
+\begin{minipage}{0.3\textwidth}
     \centering
     \includegraphics[width=\textwidth]{../figures/anderson.png}
     \label{and1}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
+\hspace*{\fill}
+\begin{minipage}{0.3\textwidth}
     \centering
     \includegraphics[width=\textwidth]{../figures/anderson2.png}
     \label{and2}
 \end{minipage}
+
 The limit where there will be some renormalization is the following.
 We are working with the asymmetric Anderson model, that is,\\ \(U + \epsilon_d \gg D \gg |\epsilon_d|,\Delta\).
 The total Hamiltonian is
@@ -4906,14 +4986,13 @@ Since the equation is symmetric under \(\epsilon_d \to -\epsilon_d\), we might a
 Depending on the signature of the denominator, the flows will be either relevant or irrelevant.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.37]{../figures/ed_irr.pdf}
-	\includegraphics[scale=0.37]{../figures/ed_rel.pdf}
+	\includegraphics[width=0.99\textwidth]{../figures/ed_pure_siam.pdf}
 	\caption{Left: Irrelevant flow towards \(|\epsilon_d|=0\), at low \(\omega\). Right: Relevant flow towards large \(|\epsilon_d|\), at large \(\omega\). The former can be thought of as the projection of the strong-coupling flow on to the \(\epsilon_d-D\) plane. The latter is the flow towards the local moment fixed point, if we start from a negative \(\epsilon_d\).}
 \end{figure}
 For the flow to the local moment fixed point, the fixed point value of \(|\epsilon_d|\) grows as we increase the bandwidth. This implies that for a thermodynamically large system, the local moment fixed point will be at \(-\epsilon_d \to \infty\). This behavior is shown in fig.~\ref{edvsD}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{../figures/ed_vs_size.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/ed_vs_size.pdf}
 	\caption{Change in fixed point value of \(|\epsilon_d|\) with system size.}
 	\label{edvsD}
 \end{figure}
@@ -5531,25 +5610,20 @@ With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_
 For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For sufficiently small values of \(\frac{J}{K}\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For larger values of \(\frac{J}{K}\), there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\). Both these classes of flows of \(U\) are depicted in fig.~\ref{U_flow}.
 \begin{figure}[htpb]
 	\centering
-%	\includegraphics[scale=0.25]{../figures/J.png}
-%	\includegraphics[scale=0.25]{../figures/U.png}
 	\includegraphics[width=\textwidth]{../figures/large_w.pdf}
-	\caption{\(\omega > 0\). Left: Decay of \(J\) towards zero under RG. Right: Flow of \(U\) under the same RG. Titles of plots show bare values.}
+	\caption{Large \(\omega\). Right Decay of \(J\) towards zero under RG. Left Flow of \(U\) under the same RG. Titles of plots show bare values.}
 	\label{Jdecay}
 \end{figure}
-
 \begin{figure}[htpb!]
 	\centering
-	%\includegraphics[scale=0.26]{../figures/sc_J.png}
-	%\includegraphics[scale=0.26]{../figures/sc_K.png}
 	\includegraphics[width=\textwidth]{../figures/low_w_JK.pdf}
-	\caption{\(\omega < 0\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
+	\caption{Small \(\omega\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
 	\label{J_sc}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.48\textwidth]{../figures/U_irr.pdf}
-	\includegraphics[width=0.48\textwidth]{../figures/U_rel.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/U_irr.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/U_rel.pdf}
 	\caption{Left: Flow of \(U\) to zero, implying a four-fold degenerate impurity. Right: Flow of \(U\) to large value, making the impurity singly-occupied, leading to the formation of a local moment.}
 	\label{U_flow}
 \end{figure}
@@ -5561,7 +5635,7 @@ From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{../figures/JvsK.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/JvsK.pdf}
 	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
 	\label{JvsK}
 \end{figure}
