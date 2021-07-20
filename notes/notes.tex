@@ -2678,26 +2678,21 @@ From eq.~\ref{jaeger},
 
 \section{Poor Man's scaling of the SIAM}
 First consider the case in which \(\epsilon_d \ll -D, U+\epsilon_d \gg D\).
-The situation is such that both the impurity levels are fat outside the bandwidth, as shown in fig.~\ref{and1}.
+The situation is such that both the impurity levels are far outside the bandwidth, as shown in the left of fig.~\ref{and}.
 The maximum energy scale at which scattering with conduction electrons can take place is of the order of the bandwidth \(D\).
 Since the impurity energies are much higher than the bandwidth, no charge fluctuation can take place.
 The impurity state will be fixed at \(\epsilon_d\).
 The only remaining degree of freedom will be the spin fluctuations, and we can then do the S-W transformation.\\\\
-On the other hand, if we take the situation in fig.~\ref{and2} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth.
+On the other hand, if we take the situation in the right of fig.~\ref{and} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth.
 So there wont be any renormalization of the impurity levels.
-From another perspective, it can be said that there won't be any renormalization because both the impurity levels \(\ket{0},\ket{1}\) will be able to hybridise with two states each: \(\ket{0}\) can hybridize with \(\ket{k\uparrow},\ket{k\downarrow}\) and \(\ket{1\sigma}\) can hybridize with \(\ket{0},\ket{2}\).
+From another perspective, it can be said that there won't be any renormalization because both the impurity levels \(\ket{0},\ket{1}\) will be able to hybridize with two states each: \(\ket{0}\) can hybridize with \(\ket{k\uparrow},\ket{k\downarrow}\) and \(\ket{1\sigma}\) can hybridize with \(\ket{0},\ket{2}\).
 
-\begin{minipage}{0.3\textwidth}
+\begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{../figures/anderson.png}
-    \label{and1}
-\end{minipage}
-\hspace*{\fill}
-\begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../figures/anderson2.png}
-    \label{and2}
-\end{minipage}
+    \includegraphics[width=0.6\textwidth]{../figures/anderson.png}
+    \caption{\textit{Left}: Both impurity levels far outside the bandwidth. \textit{Right}: Both impurity levels comfortably inside the bandwidth.}
+    \label{and}
+\end{figure}
 
 The limit where there will be some renormalization is the following.
 We are working with the asymmetric Anderson model, that is,\\ \(U + \epsilon_d \gg D \gg |\epsilon_d|,\Delta\).
@@ -2839,7 +2834,7 @@ T_K \sim D \sqrt{\widetilde J N(0)^2} \exp\left\{-\frac{1}{2 \widetilde J N(0)^2
 \sim D\sqrt{\frac{\Delta}{D}}\exp\left\{\frac{\epsilon_d}{2\Delta}\right\}
 \end{aligned}\end{equation}
 A different result is obtained if one is in the regime of \(\epsilon_d < -D\).
-This is the situation mentioned at the very beginning of the discussion, fig.~\ref{and1}.
+This is the situation mentioned at the very beginning of the discussion, left of fig.~\ref{and}.
 Assuming \(U \rightarrow \infty\) and \(\epsilon_d\) outside the conduction band, we can do a SWT and the \(T_K\) obtained is q.~\ref{sol},
 \begin{gather}
     J = -\frac{V^2}{\epsilon_d}\\
@@ -2856,7 +2851,11 @@ During the renormalization, \(D\) will keep on decreasing and \(\epsilon_d\) wil
 At some value of \(D\), they will become equal and the impurity level will go outside the Fermi surface.
 At this point, none of the impurity levels can renormalize any more, because the relevant energy scales are greater than the cutoff.
 Hence the renormalization stops at this point.
-\begin{figure} \centering \includegraphics[scale=0.29]{../figures/full.png}\caption{Renormalization in the energy levels when \(\epsilon_d^* \gg \Delta\)}\end{figure}
+\begin{figure} 
+	\centering 
+	\includegraphics[width=0.6\textwidth]{../figures/full.png}
+	\caption{Renormalization in the energy levels when \(\epsilon_d^* \gg \Delta\)}
+\end{figure}
 This point is given by \(\overline D = a\epsilon_d(\overline D) \equiv \overline \epsilon_d\) where \(a\) is a constant of order unity.
 It satisfies the equation
 \begin{equation}\begin{aligned}
@@ -3030,7 +3029,11 @@ If \(\epsilon_d > 0\), then the impurity level is far above the Fermi level and 
 Similarly, if \(\epsilon_d < 0\), then the impurity level is far below the Fermi level and the average occupation will be close to 1.
 The regime of mixed valence is one in which these two contributions are comparable.
 \\\\
-\begin{figure} \centering \includegraphics[scale=0.29]{../figures/mixed.png}\caption{Renormalization in energy levels when \(|\epsilon_d^*| \lesssim \Delta\)} \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{../figures/mixed.png}
+	\caption{Renormalization in energy levels when \(|\epsilon_d^*| \lesssim \Delta\)}
+\end{figure}
 Since we have \(|\epsilon_d^*| \lesssim \Delta\), as we renormalize, the decreasing cutoff will first match \(\Delta\) or \(k_B T\), whichever is greater.
 From eq.~\ref{mirai2}, we know that if \(D\) comes close to \(\Delta\), our analysis will break down because we can no longer ignore that term.
 Since that term represents the broadening of the impurity level, this same broadening can also be brought about by the thermal fluctuations which are of the scale \(k_B T\).
@@ -3095,7 +3098,9 @@ To go to lower temperatures, we can do a Poor Man's scaling which suggests that 
 \end{minipage}
 \end{center}
 \begin{figure}
-	\centering \includegraphics[scale=0.29]{../figures/empty.png}\caption{Renormalization in energy levels when \(\epsilon_d^* \ll -\Delta\)}
+	\centering 
+	\includegraphics[width=0.6\textwidth]{../figures/empty.png}
+	\caption{Renormalization in energy levels when \(\epsilon_d^* \ll -\Delta\)}
 \end{figure}
 
 \subsubsection*{Jefferson's calculation}
@@ -3919,16 +3924,16 @@ Things get much more simpler if we assume the onsite energies of the surrounding
 \subsection{Fixed points}
 The fixed points are obtained numerically by solving the RG equation. As mentioned before, there are two types of solutions: The first kind is those in which \(\epsilon_0\) and \(\tilde \omega\) are of the same sign, and the former flows to the latter without crossing the 0 axis. These flows are shown (obtained numerically) in fig.~\ref{plot1}. The second kind are those where the two couplings have different signs, and so \(\epsilon_0\) flows to 0. These are shown in fig.~\ref{plot2}.
 \begin{center}
-	\includegraphics[scale=0.54]{../figures/notzero1.png}
+	\includegraphics[width=0.45\textwidth]{../figures/notzero1.pdf}
 	\hspace*{\fill}
-	\includegraphics[scale=0.54]{../figures/notzero2.png}
+	\includegraphics[width=0.45\textwidth]{../figures/notzero2.pdf}
 	\captionof{figure}{Flows where \(\epsilon_0\) and \(\tilde\omega\) have same sign. The left and right panels show flows starting from negative and positive values respectively. The two plots in each panel correspond to different values of \(\tilde \omega\), one greater than the bare \(\epsilon_0\), the other less than that. The fixed point value is \(2\tilde\omega\).}
 	\label{plot1}
 \end{center}
 \begin{center}
-	\includegraphics[scale=0.54]{../figures/zero2.png}
+	\includegraphics[width=0.45\textwidth]{../figures/zero2.pdf}
 	\hspace*{\fill}
-	\includegraphics[scale=0.54]{../figures/zero1.png}
+	\includegraphics[width=0.45\textwidth]{../figures/zero1.pdf}
 	\captionof{figure}{Flows where \(\epsilon_0\) and \(\tilde\omega\) have opposite sign. The left and right panels show flows starting from negative and positive values respectively. The two plots in each panel correspond to different values of \(\tilde \omega\), one greater than the bare \(\epsilon_0\), the other less than that. The fixed point value is 0.}
 	\label{plot2}
 \end{center}
@@ -4078,13 +4083,13 @@ To recover the one-loop form, we can replace \(\omega\) with the bare value \(-\
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
 \begin{center}
-	\includegraphics[scale=0.5]{../kondo_num/relJ.png}
+	\includegraphics[width=0.45\textwidth]{../figures/relJ.pdf}
 	\hspace*{\fill}
-	\includegraphics[scale=0.5]{../kondo_num/rel2J.png}
+	\includegraphics[width=0.45\textwidth]{../figures/rel2J.pdf}
 	\captionof{figure}{Flow of \(J\) towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left).  The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).}
 \end{center}
 \begin{center}
-	\includegraphics[scale=0.5]{../kondo_num/JvsD.png}
+	\includegraphics[scale=0.5]{../figures/JvsD_kondo.pdf}
 	\captionof{figure}{Variation of the fixed point value \(J^*\) against the bare bandwidth, in log scale.}
 	\label{JvsD-kondo}
 \end{center}
