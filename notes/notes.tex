@@ -1,5 +1,5 @@
 % !TEX TS-program = xelatex
-\documentclass[twoside]{report}
+\documentclass[twoside,12pt]{report}
 
 % \usepackage[draft]{graphicx}
 \usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption,fancyhdr,relsize,textpos,booktabs,tocbibind,titlesec}
@@ -6329,7 +6329,7 @@ These values were calculated numerically and plotted against temperature in fig.
 	\label{cv}
 \end{figure}
 
-\section{Impurity Spectral function}
+\section{Renormalization of impurity spectral function}
 In this section we will obtain the impurity spectral function, which is defined in terms of the impurity Green's function as
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} = -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] 
@@ -6376,31 +6376,49 @@ The frequency-domain Green's function is thus
 \begin{equation}\begin{aligned}
 	G_{d d}^\sigma(\omega) = \frac{1}{Z}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\frac{1}{\omega + E_m - E_n}
 \end{aligned}\end{equation}
-The zero temperature Green's function is obtained by taking the limit of \(\beta \to \infty\):
+The zero temperature Green's function is obtained by taking the limit of \(\beta \to \infty\). In both the partition function as well as inside the summation, the only term that will survive is the exponential of the ground state energy \(E_0\).
+\begin{equation*}\begin{aligned}
+	Z \equiv \sum_m e^{-\beta E_m} \implies \lim_{\beta \to \infty}Z = d_0 e^{-\beta E_0}, && E_0 \equiv \text{min}\left\{ E_n \right\} 
+\end{aligned}\end{equation*}
+where \(d_0\) is the degeneracy of the ground state. The Greens function then simplifies to
 \begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega, \beta \to \infty) &= \frac{1}{d_0}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left(\delta(E_m) + \delta(E_n)\right)\frac{1}{\omega + E_m - E_n}\\
-						 &= \frac{1}{d_0}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega - E_n} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{\omega + E_m}\right]\\
+	G_{d d}^\sigma(\omega, \beta \to \infty) &= \frac{1}{d_0e^{-\beta E_0}}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left[e^{-\beta E_m}\delta_{E_m, E_0} + e^{-\beta E_n}\delta_{E_n, E_0}\right]\frac{1}{\omega + E_m - E_n}\\
+						 &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega + E_0 - E_n} + ||\bra{n}c_{d\sigma}\ket{0}||^2\frac{1}{\omega - E_0 + E_n}\right]\\
 \end{aligned}\end{equation}
-The label 0 sums over all states with zero energy eigenvalue, and $d_0$ is the degeneracy of the zero energy state. The spectral function is the imaginary part of this Green's function. To extract the imaginary part, we insert an infinitesimal imaginary part in the denominator:
+The label 0 sums over all states \(\ket{0}\) with energy \(E_0\). The spectral function is the imaginary part of this Green's function. To extract the imaginary part, we insert an infinitesimal imaginary part in the denominator:
 \begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega, T = 0, \eta) = \frac{1}{d_0}\lim_{\eta \to 0^-}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega - E_n + i\eta} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{\omega + E_m + i\eta}\right]\\
+	G_{d d}^\sigma(\omega, \eta) = \frac{1}{d_0}\lim_{\eta \to 0^-}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega + E_0 - E_n + i\eta} + ||\bra{n}c_{d\sigma}\ket{0}||^2\frac{1}{\omega - E_0 + E_n + i\eta}\right]\\
 \end{aligned}\end{equation}
-The spectral function can then be written as
+The spectral function at zero temperature can then be written as
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} &= -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] \\
-			    &= \frac{1}{d_0}-\frac{1}{\pi}\text{ Im }\left[\lim_{\eta \to 0^-}\sum_{m,0}\left(||\bra{0}c_{d\sigma}\ket{n}||^2\frac{-i\eta}{\left(\omega - E_n\right)^2 + \eta^2} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{-i\eta}{\left(\omega + E_m\right)^2 + \eta^2}\right)\right]\\
-			    &= \frac{1}{d_0}\frac{1}{\pi}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega - E_n\right) + ||\bra{m}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega + E_m\right)\right]\\
-			    &= \frac{1}{d_0}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega - E_n\right) + ||\bra{m}c_{d\sigma}\ket{0}||^2\delta\left(\omega + E_m\right)\right]\\
+			    &= \frac{1}{d_0}\frac{1}{\pi}\text{ Im }\left[\lim_{\eta \to 0^-}\sum_{n,0}\left(\frac{-i\eta ||\bra{0}c_{d\sigma}\ket{n}||^2}{\left(\omega + E_0 - E_n\right)^2 + \eta^2} + \frac{-i\eta ||\bra{n}c_{d\sigma}\ket{0}||^2}{\left(\omega - E_0 + E_n\right)^2 + \eta^2}\right)\right]\\
+			    &= \frac{1}{d_0}\frac{1}{\pi}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega - E_0 + E_n\right)\right]\\
+			    &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\delta\left(\omega - E_0 + E_n\right)\right]\\
 \end{aligned}\end{equation}
-Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions by Gaussian functions:
+Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalised Gaussian functions
 \begin{equation}\begin{aligned}
-	\delta(\omega - E_n) \to \frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega - E_n \right)^2}
+	\delta(\omega \pm x_n) \to \frac{1}{\eta_n\sqrt \pi}e^{-\left(\frac{\omega \pm x_n}{\eta_n}\right)^2}
 \end{aligned}\end{equation}
-where the width \(w\) will be set to the fixed-point bandwidth: \(w = D^*\). So the function that we will numerically compute and plot is
+The parameter \(\eta_n\) determines the height and width of the Gaussian, and is chosen such that the higher energy poles are broader than the lower energy ones:
 \begin{equation}\begin{aligned}
-	\mathcal{A(\omega)} &= \frac{1}{d_0}\sum_{m,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega - E_n \right)^2} + ||\bra{m}c_{d\sigma}\ket{0}||^2\frac{1}{w\sqrt \pi}e^{-\frac{1}{w}\left( \omega + E_m \right)^2}\right]\\
+	\eta_n = \frac{V^2}{t} + \frac{1}{2}|x_n| 
 \end{aligned}\end{equation}
-The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_m, \ket{m}\right\}\). The spectral function is plotted for three sets of bare values in fig.~\ref{spec_func}. For low values of \(U\), the profile is that of a single peak at zero frequency. As \(U\) increases, shoulder-like structures appear on either side of the peak, which finally, at larger \(U\), develop into two side-peaks.
+\(t\) is the tight-binding hopping parameter of the conduction bath. As a result, the function that we will numerically compute and plot is
+\begin{equation}\begin{aligned}
+	\mathcal{A(\omega)} &= \sum_{n,0}\frac{1}{d_0 \sqrt \pi \eta_n}\left[||\bra{0}c_{d\sigma}\ket{n}||^2e^{-\left(\frac{\omega - x_n}{\eta_n}\right)^2} + ||\bra{n}c_{d\sigma}\ket{0}||^2e^{-\left(\frac{\omega + x_n}{\eta_n}\right)^2}\right]\\
+\end{aligned}\end{equation}
+The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_n, \ket{n}\right\}\), for various values of the couplings. The intention here is to get an idea of how the spectral function morphs under the RG. Doing an actual reverse RG (described in \ref{rev_rg}) would require us to diagonalize a huge Hamiltonian. We take the simpler route of tuning the \(U\) from zero to soem large value. This should mimic the journey from the IR theory \((U=0)\) to the UV theory \((U \gg 0)\).
+
+\subsection{Pure SIAM: No separate spin, charge interactions}
+The spectral function is plotted for three sets of values in fig.~\ref{spec_func}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../figures/siam_specfunc_all.pdf}
+	\caption{Impurity spectral function for three sets of bare values. The increase in value of \(U\) is accompanied by the appearance of the side-peaks. For all the plots, \(V=0.001\) and \(D=1\).}
+	\label{spec_func}
+\end{figure}
+For low values of \(U\), the profile is that of a single peak at zero frequency. This is expected because at the low energy effective theory, the high energy Hubbard side bands have been integrated out. As \(U\) increases, shoulder-like structures appear on either side of the peak, which finally, at larger \(U\), develop into two side-peaks. This is the microscopic theory, where high energy features are also relevant.
 \\\\The physics of the three peaks can now be looked into. Since the central peak is at zero energy, it has to do with excitations that do not cost any energy. There are two such excitations: excitations within the spin sector and within the charge sector.
 \begin{equation}\begin{aligned}
 	\ket{\uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{J S_d^-}_{JS_d^+}}}\ket{\downarrow}, &&&&\ket{\Uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{K C_d^-}_{K C_d^+}}}\ket{\Downarrow}\\
@@ -6424,34 +6442,6 @@ This shows that each operator acts only on its own subspace. \(S_i\) does not ac
 	\left( \epsilon_d  \right) \ket{\sigma} & \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{V c^\dagger_{d\overline\sigma}/V c_{d\sigma}}_{V c_{d\overline\sigma}/V c^\dagger_{d\sigma}}}} &\ket{n_d=2,0} \left( 0 \right) \\
 \end{aligned}\end{equation}
 These transitions involve energy transfer of the order of \(\epsilon_d\). This is why, at very small \(U\), they remain absorbed inside the central peak. These transitions do not involve any spin or charge-flip, rather they take the impurity between the spin and charge sectors.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/spec_func_1.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/spec_func_2.pdf}
-	\includegraphics[width=0.5\textwidth]{../figures/spec_func_3.pdf}
-	\caption{Impurity spectral function for three sets of bare values. The increase in value of \(U\) is accompanied by the appearance of the side-peaks. For all the plots, \(V=0.001\) and \(D=1\).}
-	\label{spec_func}
-\end{figure}
-
-\section{Renormalization of impurity spectral function}
-Another interesting study that we conducted is the change in the spectral function under revere-RG. Doing the actual reverse RG would require diagonalizing a huge matrix. Instead, we mimic the reverse journey by starting from the fixed point and then increasing the \(U\) (it was irrelevant in the forward RG) and decreasing \(J\) (it was relevant in the forward RG). The spectral function is then calculated at these points. The result is shown in fig.~\ref{spec_rev}.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/spec_func_journey_one.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/spec_func_journey_three.pdf}
-	\caption{Variation of the spectral function as we move away from the strong-coupling fixed point (top) towards the local moment fixed point (bottom).}
-	\label{spec_rev}
-\end{figure}
-\\\\At the strong-coupling fixed-point, we have a screened-local moment which only has a zero-energy excitation at the Fermi energy. As we move away from the fixed-point, the resonance at the Fermi surface disappears, and is replaced by two side peaks which are indicative of the two orientations of a local moment.
-\\\\If the impurity onsite repulsion is increased to sufficiently large values, a gap appears in the spectral function symmetrically about \(\omega=0\). This is also understood analytically in the following sense: at the atomic limit (\(V=0\)), the impurity Green's function is just a pair of Dirac delta functions at \(\omega = \epsilon_d, \epsilon_d + U\), which is a gap of width \(U\). A similar change in the spectral function was observed in a URG treatment of the Hubbard model in ref.~\cite{Mukherjee_hubbard}, see fig.~\ref{gap_A}.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.45\textwidth]{../figures/metal3.pdf}
-	\hspace{\fill}
-	\includegraphics[width=0.45\textwidth]{../figures/ins3.pdf}
-	\caption{Appearance of gap in the spectral function under increase of \(U\) and decrease in \(J,V\).}
-	\label{gap_A}
-\end{figure}
 
 \section{Effective Hamiltonian for excitations of the Kondo cloud}
 To find an effective Hamiltonian for the excitations of the Kondo cloud, we will integrate out the impurity part of the wavefunction. The Schrodinger equation for the \(J > K\) ground state is
@@ -7064,7 +7054,7 @@ There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
-\section{Reverse RG analysis}
+\section{Reverse RG analysis}\label{rev_rg}
 The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
 \begin{equation*}\begin{aligned}
 	U : \underbrace{\ket{1,2,...,N}}_\text{UV ground state} \rightarrow \ket{1,2,...,N-1}\ket{N} \rightarrow ... \rightarrow \underbrace{\ket{1,2,...,N^*}\ket{N^*+1}...\ket{N}}_\text{IR ground state}
