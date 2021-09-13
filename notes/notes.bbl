@@ -210,6 +210,11 @@ Ralf Bulla, Theo~A. Costi, and Thomas Pruschke.
 \newblock Numerical renormalization group method for quantum impurity systems.
 \newblock {\em Rev. Mod. Phys.}, 80:395--450, Apr 2008.
 
+\bibitem{langreth}
+David~C. Langreth.
+\newblock Friedel sum rule for anderson's model of localized impurity states.
+\newblock {\em Phys. Rev.}, 150:516--518, Oct 1966.
+
 \bibitem{oshikawa}
 Masaki Oshikawa.
 \newblock Topological approach to luttinger's theorem and the fermi surface of
