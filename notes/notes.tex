@@ -1,4 +1,3 @@
-% !TEX TS-program = xelatex
 \documentclass[twoside,12pt]{report}
 
 % \usepackage[draft]{graphicx}
@@ -16,7 +15,7 @@
 \fancyhf{}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
-\fancyhead[OL]{\nouppercase\leftmark}    
+\fancyhead[OL]{\nouppercase\leftmark}
 \fancyhead[ER]{\rightmark}
 
 \setlength{\headheight}{52pt}
@@ -6396,15 +6395,15 @@ The spectral function at zero temperature can then be written as
 			    &= \frac{1}{d_0}\frac{1}{\pi}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega - E_0 + E_n\right)\right]\\
 			    &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\delta\left(\omega - E_0 + E_n\right)\right]\\
 \end{aligned}\end{equation}
-Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalised Gaussian functions
+Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalized Gaussian functions
 \begin{equation}\begin{aligned}
 	\delta(\omega \pm x_n) \to \frac{1}{\eta_n\sqrt \pi}e^{-\left(\frac{\omega \pm x_n}{\eta_n}\right)^2}
 \end{aligned}\end{equation}
 The parameter \(\eta_n\) determines the height and width of the Gaussian, and is chosen such that the higher energy poles are broader than the lower energy ones:
 \begin{equation}\begin{aligned}
-	\eta_n = \frac{V^2}{t} + \frac{1}{2}|x_n| 
+	\eta_n = 4\Delta + \frac{1}{2}|x_n| 
 \end{aligned}\end{equation}
-\(t\) is the tight-binding hopping parameter of the conduction bath. As a result, the function that we will numerically compute and plot is
+\(\Delta = \pi \rho(0)V^2\) is the relevant energy scale for the non-interacting \((U=0)\) problem, \(\rho(0)\) being the density of states of the conduction bath at the Fermi energy. As a result, the function that we will numerically compute and plot is
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} &= \sum_{n,0}\frac{1}{d_0 \sqrt \pi \eta_n}\left[||\bra{0}c_{d\sigma}\ket{n}||^2e^{-\left(\frac{\omega - x_n}{\eta_n}\right)^2} + ||\bra{n}c_{d\sigma}\ket{0}||^2e^{-\left(\frac{\omega + x_n}{\eta_n}\right)^2}\right]
 \end{aligned}\end{equation}
@@ -6414,8 +6413,8 @@ From the results of Langreth \cite{langreth}, we know that the spectral function
 The spectral function is plotted for three sets of values in fig.~\ref{spec_func}.
 For low values of \(U\), the profile is that of a single peak at zero frequency. This is expected because at the low energy effective theory, the high energy Hubbard side bands have been integrated out. As \(U\) increases, shoulder-like structures appear on either side of the peak, which finally, at larger \(U\), develop into two side-peaks. This is the microscopic theory, where high energy features are also relevant.
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{../figures/siam_specfunc_all.pdf}
-	\captionof{figure}{Impurity spectral function for three sets values of \(U\). The increase in value of \(U\) is accompanied by the appearance of the side-peaks. The inset shows a close up of the central portion of the spectral function for the largest \(U\).}
+	\includegraphics[width=0.8\textwidth]{../figures/siam_specfunc.pdf}
+	\captionof{figure}{Impurity spectral function for multiple values of \(U\). The increase in value of \(U\) is accompanied by the appearance of the side-peaks.}
 	\label{spec_func}
 \end{center}
 The physics of the three peaks can now be looked into. Since the central peak is at zero energy, it has to do with excitations that do not cost any energy. There are two such excitations: excitations within the spin sector and within the charge sector.
