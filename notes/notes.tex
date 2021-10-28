@@ -4175,6 +4175,18 @@ Therefore,
 			   &+\frac{1}{2}\sum_{ijk}\left(\frac{1}{E_1^k - E^j_0}+ \frac{1}{E_1^i - E^j_0}\right)\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}\\
 \end{aligned}\end{equation}
 In summary, the prescription of replacing all \(\omega\) with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling a single-electron state - then the total renormalization is of the form \(c^\dagger T^\dagger c\) such that we start from an initial state, scatter to an intermediate state and then go back to the initial state so that the final state is the same as the initial state. However, if we are using PMS to decouple states in one-shot, each subspace will have multiple states and there might be terms where we do not end up at the initial state we started with. Then the correct prescription would be to use the mean of the initial and final state denominators.
+
+One might wonder how we can generate higher order terms in this method. Eq.~\ref{pmsren}, as it stands, has only \(\mathcal{O}(V^2)\) terms. The higher order terms were actually dropped when we replaced \(H_0\) with its diagonal part in eq.~\ref{pms_dropV}. To see the higher order term, we do not drop the off-diagonal part in the denominator, but split the total \(H_0\) into a diagonal and an off-diagonal part: \(H_0 = H_d + X\). The total effective Hamiltonian becomes
+\begin{equation}\begin{aligned}
+	\tilde{\mathcal{H}}(E) = H_0 + V_-\frac{1}{G_0(E)^{-1} - X}V_+ +  V_+\frac{1}{G_0(E)^{-1} - X}V_-
+\end{aligned}\end{equation}
+where \(G_0(E)^{-1} = E - H_d\) is the inverse of the non-interacting Greens function. To allow computation, we can expand the denominator in powers of \(XG_0(E)^{-1}\):
+\begin{equation}\begin{aligned}
+	\tilde{\mathcal{H}}(E) =& H_0 + V_-G_0(E)\left[1 + XG_0(E) + XG_0(E)XG_0(E) + ...\right] V_+ +  V_+\frac{1}{G_0(E)^{-1} - X}V_-\\
+			       =& H_0 + \underbrace{V_- G_0(E) V_+ + V_+ G_0(E) V_-}_\text{two vertex or one loop correction} + \underbrace{V_-G_0(E)XG_0(E)V_+ + V_+G_0(E)XG_0(E)V_- +}_\text{three vertex or two loop correction} \\
+			       &+ \text{higher loop corrections}
+\end{aligned}\end{equation}
+
 \section{"poor man's scaling" in the language of the URG - obtaining the \(\eta\) operators}
 To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling. The corresponding problem can be phrased in the following manner. We want to decouple one electron at momentum \(q\) from the full Hamiltonian. We can split the exact wavefunction as
 \begin{equation}\begin{aligned}
