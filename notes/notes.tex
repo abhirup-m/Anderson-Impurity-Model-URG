@@ -1,4 +1,4 @@
-\documentclass[twoside,12pt]{report}
+\documentclass[twoside,11pt]{report}
 
 \usepackage[draft]{graphicx}
 \usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption,fancyhdr,relsize,textpos,booktabs,tocbibind,titlesec}
@@ -4183,9 +4183,67 @@ One might wonder how we can generate higher order terms in this method. Eq.~\ref
 where \(G_0(E)^{-1} = E - H_d\) is the inverse of the non-interacting Greens function. To allow computation, we can expand the denominator in powers of \(XG_0(E)^{-1}\):
 \begin{equation}\begin{aligned}
 	\tilde{\mathcal{H}}(E) =& H_0 + V_-G_0(E)\left[1 + XG_0(E) + XG_0(E)XG_0(E) + ...\right] V_+ +  V_+\frac{1}{G_0(E)^{-1} - X}V_-\\
-			       =& H_0 + \underbrace{V_- G_0(E) V_+ + V_+ G_0(E) V_-}_\text{two vertex or one loop correction} + \underbrace{V_-G_0(E)XG_0(E)V_+ + V_+G_0(E)XG_0(E)V_- +}_\text{three vertex or two loop correction} \\
+			       =& H_0 + \underbrace{V_- G_0(E) V_+ + V_+ G_0(E) V_-}_\text{two vertex or one loop correction} + \underbrace{V_-G_0(E)XG_0(E)V_+ + V_+G_0(E)XG_0(E)V_-}_\text{three vertex or two loop correction} \\
 			       &+ \text{higher loop corrections}
 \end{aligned}\end{equation}
+To see the third order terms in action, we will calculate the multi-channel Kondo model RG equations to third order. The model is
+\begin{equation}\begin{aligned}
+	H = \sum_{k\sigma,\gamma}\epsilon_{k\sigma}^{(\gamma)}c^\dagger_{k\sigma}c^{(\gamma)}_{k\sigma} + J\sum_{k\alpha,k^\prime \alpha^\prime,\gamma}\vec{S_d}\cdot\vec{\sigma}_{\alpha\alpha^\prime}{c^{(\gamma)}_{k\alpha}}^\dagger c^{(\gamma)}_{k^\prime\alpha^\prime}
+\end{aligned}\end{equation}
+The labels \(k\alpha\) and \(k^\prime\alpha^\prime\) sum over the conduction electrons, while the index \(\gamma\) represents the channel. The second three vertex term, \(V_+G_0(E)XG_0(E)V_-\), is of the form
+\begin{equation}\begin{aligned}
+	\sum_{q,k_1,k_2,k,\atop{\alpha,\alpha_1,\alpha_2,\beta,\atop{\gamma_1,\gamma_2}}}{c^{(\gamma_1)}_{q\beta}}^\dagger {c^{(\gamma_1)}_{k\alpha}}\vec{S_d}\cdot\vec{\sigma}_{\beta \alpha} \frac{1}{E - H_d} {c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c_{k_2 \alpha_2}^{(\gamma_2)}\vec{S_d}\cdot\vec{\sigma}_{\alpha_1 \alpha_2} \frac{1}{E - H_d} {c^{(\gamma_1)}_{k\alpha}}^\dagger {c^{(\gamma_1)}_{q\beta}}\vec{S_d}\cdot\vec{\sigma}_{\alpha \beta}
+\end{aligned}\end{equation}
+This particular term is the virtual hole term. The other term among the two third order terms is the virtual particle term. The labels \(q,k,k_1,k_2\) run over the momentum states, \(\alpha,\alpha_1,\alpha_2,\beta\) run over the spin indices and \(\gamma_1,\gamma_2\) run over the channel indices. \(q,\beta\) are the labels of the momentum states that are being decoupled. \(\epsilon_q\) therefore lies in the range \(\left[-D, -D + \delta D\right] \). The rest of the labels \((k,\alpha),(k_1,\alpha_1),(k_2,\alpha_2)\) lie in the compliment range and represent electrons that are not being decoupled at this step.
+
+The denominator of the right-most Greens function measures the energy difference between the initial state and the state reached after the first excitation. This difference is \(\epsilon_q - \epsilon_k\). Similarly, the second Greens function has the energy difference between the initial state and the one obtained after two subsequent excitations. This difference is \(\epsilon_q - \epsilon_k + \epsilon_{k_2} - \epsilon_{k_1}\). With this substitution, we get 
+\begin{equation}\begin{aligned}
+	V_+G_0(E)XG_0(E)V_- = \sum_{\gamma_1,\gamma_2}\sum_{q,k_1,k_2,k}\sum_{\alpha,\alpha_1,\alpha_2,\beta}\frac{{c^{(\gamma_1)}_{q\beta}}^\dagger {c^{(\gamma_1)}_{k\alpha}}\vec{S_d}\cdot\vec{\sigma}_{\beta \alpha} {c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger{c^{(\gamma_2)}_{k_2 \alpha_2}}\vec{S_d}\cdot\vec{\sigma}_{\alpha_1 \alpha_2} {c^{(\gamma_1)}_{k\alpha}}^\dagger {c^{(\gamma_1)}_{q\beta}}\vec{S_d}\cdot\vec{\sigma}_{\alpha \beta}}{\left(\epsilon_q - \epsilon_k + \epsilon_{k_2} - \epsilon_{k_1}\right)\left(\epsilon_q - \epsilon_k\right)}
+\end{aligned}\end{equation}
+The sum over \(q\) can be performed in the usual manner.
+\begin{equation}\begin{aligned}
+	\sum_q \frac{c^\dagger_{q\beta}c_{q\beta}}{\left(\epsilon - \epsilon_k + \epsilon_{k_2} - \epsilon_{k_1}\right)\left(\epsilon_q - \epsilon_k\right)} = \int_{-D}^{-D + \delta D} \frac{d\epsilon \rho(\epsilon)\hat n(\epsilon)}{\left(\epsilon - \epsilon_k + \epsilon_{k_2} - \epsilon_{k_1}\right)\left(\epsilon_q - \epsilon_k\right) } = \frac{\rho(0) |\delta D|}{D^2}
+\end{aligned}\end{equation}
+where we have taken \(\rho(\epsilon) = \rho(0)\), \(\hat n(\epsilon) = \theta(-\epsilon)\), \(\epsilon_q \simeq -D\) and \(|\epsilon_{k}|,|\epsilon_{k_1}|, |\epsilon_{k_2}| \ll D\). 
+For the next step, note that \(\vec{S_d}\cdot\vec{\sigma}_{x,y} = \sum_{a}S_d^a \sigma^a_{x,y}\). Substituting this, we get
+\begin{equation}\begin{aligned}
+	V_+G_0(E)XG_0(E)V_- &=\sum_{\gamma_1,\gamma_2}\sum_{k_1,k_2,k}\sum_{\alpha,\alpha_1,\alpha_2,\beta} \sum_{a,b,c}\frac{\rho(0) |\delta D|}{D^2} S_d^a\sigma^a_{\beta \alpha}S_d^b\sigma^b_{\alpha_1 \alpha_2}S_d^c \sigma^c_{\alpha \beta} c^{(\gamma_1)}_{k\alpha}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2} {c^{(\gamma_1)}_{k\alpha}}^\dagger\\
+			    &=\sum_{\gamma_1,\gamma_2}\sum_{k_1,k_2,k}\sum_{\alpha,\alpha_1,\alpha_2,\beta} \sum_{a,b,c}\frac{\rho(0) |\delta D|}{D^2} S_d^a\sigma^a_{\beta \alpha}S_d^b\sigma^b_{\alpha_1 \alpha_2}S_d^c \sigma^c_{\alpha \beta} {c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2}c^{(\gamma_1)}_{k\alpha}{c^{(\gamma_1)}_{k\alpha}}^\dagger \\
+			    &=\sum_{\gamma_2}\sum_{k_1,k_2}\sum_{\alpha,\alpha_1,\alpha_2,\beta} \sum_{a,b,c}\frac{\rho^2(0) |\delta D|}{D^2} S_d^a\sigma^a_{\beta \alpha}S_d^b\sigma^b_{\alpha_1 \alpha_2}S_d^c\sigma^c_{\alpha \beta}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2} \sum_{\gamma_1}\int_{0}^{D - |\delta D|}d \epsilon \\
+			    &=\frac{K \rho^2(0) |\delta D|}{D} \sum_{\alpha,\beta} \sum_{a,c,b}\sum_{\alpha_1,\alpha_2}S_d^a S_d^b S_d^c\sigma^a_{\beta \alpha} \sigma^b_{\alpha_1 \alpha_2} \sigma^c_{\alpha \beta} \sum_{k_1,k_2,\gamma_2}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2}\\
+\end{aligned}\end{equation}
+\(K = \sum_{\gamma_1}\) is the total number of channels. The spin products can be simplified using the identity 
+\begin{equation}\begin{aligned}
+	\sum_{\alpha\beta}\sigma^a_{\beta \alpha} \sigma^c_{\alpha \beta} = \text{Trace}\left[\sigma^a \sigma^c\right] = \delta_{ac}~.
+\end{aligned}\end{equation}
+Using this identity, we get
+\begin{equation}\begin{aligned}
+	V_+G_0(E)XG_0(E)V_- &=\frac{K \rho^2(0) |\delta D|}{D} \sum_{a,b}\sum_{\alpha_1,\alpha_2}S_d^a S_d^b S_d^a \sigma^b_{\alpha_1 \alpha_2} \sum_{k_1,k_2,\gamma_2}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2}\\
+\end{aligned}\end{equation}
+The products of the impurity spin operators can now be simplified:
+\begin{equation}\begin{aligned}
+	\sum_a S_d^a S_d^b S_d^a &= \sum_a \left[S_d^b S_d^a + i\sum_c \epsilon^{abc}S_d^c\right] S_d^a\\
+				 &= \frac{3}{4}S_d^b + i\sum_{a,c}  \epsilon^{abc}S_d^c S_d^a\\
+				 &= \frac{3}{4}S_d^b + i^2\sum_{a,c,e}  \epsilon^{abc}  \epsilon^{aec}S_d^e\\
+				 &= \left(-2 + \frac{3}{4}\right)S_d^b
+\end{aligned}\end{equation}
+
+\(\sigma^x \sigma^y = \delta_{xy} + \sum_z \epsilon^{xyz}\sigma^z\):
+\begin{equation}\begin{aligned}
+	\sum_{a,c} S_d^aS_d^c\sum_{\alpha,\beta}\sigma^a_{\beta \alpha}\sigma^c_{\alpha \beta} &= \sum_{a,c} \left[\frac{1}{4}\delta_{ac} + \frac{1}{2}\sum_e \epsilon^{ace}S_d^e\right] \mathrm{Trace}\left(\sigma^a \sigma^c\right)\\
+											       &= \sum_{a,c} \left[\frac{1}{4}\delta_{ac} + \frac{1}{2}\sum_e \epsilon^{ace}S_d^e\right] 2\delta_{ac}\\
+											       &= \frac{3}{2}
+\end{aligned}\end{equation}
+Substituting this result in the renormalization gives
+\begin{equation}\begin{aligned}
+	V_+G_0(E)XG_0(E)V_- &= \frac{3K\rho(0) |\delta D|}{2D} \sum_{k_1,k_2,\alpha_1,\alpha_2,b,\gamma_2}S_d^b\sigma^b_{\alpha_1 \alpha_2}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2}\\
+			    &= \frac{3K\rho(0) |\delta D|}{2D} \sum_{k_1\alpha_1,k_2 \alpha_2,\gamma_2}\vec{S_d}\cdot\vec{\sigma}_{\alpha_1\alpha_2}{c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c^{(\gamma_2)}_{k_2 \alpha_2}
+\end{aligned}\end{equation}
+The other term (virtual particle term) gives an equal contribution. The total renormalization is
+\begin{equation}\begin{aligned}
+	\delta J = \frac{3K\rho(0) |\delta D|}{D}
+\end{aligned}\end{equation}
+
 
 \section{"poor man's scaling" in the language of the URG - obtaining the \(\eta\) operators}
 To make a better connection with URG, we next show how the PMS formalism works out for a single-electron decoupling. The corresponding problem can be phrased in the following manner. We want to decouple one electron at momentum \(q\) from the full Hamiltonian. We can split the exact wavefunction as
