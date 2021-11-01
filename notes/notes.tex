@@ -1,4 +1,4 @@
-\documentclass[twoside,11pt]{report}
+\documentclass[twoside,11pt]{book}
 
 \usepackage[draft]{graphicx}
 \usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption,fancyhdr,relsize,textpos,booktabs,tocbibind,titlesec}
@@ -21,11 +21,7 @@
 
 \setcounter{tocdepth}{1}
 
-\DeclareMathOperator{\sech}{sech}
-
 \raggedbottom
-
-\pagenumbering{roman}
 
 \numberwithin{equation}{section}
 
@@ -70,45 +66,28 @@
 	\textbf{\Large Indian Institute of Science Education and \\[10pt]}
 	\textbf{\Large Research, Kolkata}\
 \end{titlepage}
-\chapter*{Declaration by the student}
-I, {\large\textbf{Abhirup Mukherjee}}, hereby declare that this MS project report titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} is my own work and, to the best of my knowledge, contains no materials previously published or written by any other person, or substantial proportions of material which have been accepted for the award of any other degree or diploma at IISER Kolkata or any other educational institution, except where due acknowledgment is made in the report. I certify that all copyrighted material incorporated into this report is in compliance with the Indian Copyright (Amendment) Act, 2012 and that I have received written permission from the copyright owners for my use of their work, which is beyond the scope of the law. I agree to indemnify and save harmless IISER Kolkata from any and all claims that may be asserted or that may arise from any copyright violation.
-\\\\
-Signed:
-\hspace{30pt}\includegraphics[width=150pt]{../figures/signature_black.png}
-\\
-\rule[1em]{0.5\linewidth}{0.5pt}\\  % This prints a line for the signature
-ABHIRUP MUKHERJEE
-\\\\
-Date:
-\today
 
-\chapter*{Certificate from the supervisor}
-This is to certify that the MS project report titled {\large\textbf{Unitary Renormalization Group Solution of The Single-Impurity Anderson Model}} which is submitted by {\large\textbf{Abhirup Mukherjee}} in partial fulfillment of the requirement for the award of the degree of MS in Integrated PhD in Physical Sciences to Indian Institute of Science Education and Research Kolkata is a record of the candidates own work carried out by him under my supervision. The matter embodied in this report is original and has not been submitted for the award of any other degree.
-\\\\
-Signed:\\[10pt]
-\rule[1em]{0.5\linewidth}{0.5pt}\\  % This prints a line for the signature
-DR. SIDDHARTHA LAL\\
-Associate Professor\\
-IISER Kolkata
-\\\\
-Date:
-\today
-\chapter*{Acknowledgments}
+\frontmatter
+
+\chapter{Acknowledgments}
 I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. The support of IISER Kolkata in the form of a junior research fellowship is gratefully acknowledged.
 
-\chapter*{}
+\chapter{}
 \begin{center}
 	\vspace*{100pt}
 	\Large{\textit{To you, 5 years from now}}
 \end{center}
 
-\chapter*{Abstract}
+\chapter{Abstract}
 This thesis reports a renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume. The impurity spectral is tracked between the fixed points and shows the emergence of a central peak at the strong-coupling fixed point.
+
 \listoffigures
 \listoftables
 \tableofcontents
 \pagebreak
-\pagenumbering{arabic}
+
+\mainmatter
+
 \chapter{Introduction}
 \section{Summary of the problem}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
