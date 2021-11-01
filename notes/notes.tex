@@ -4094,7 +4094,7 @@ The symmetric scaling equation \ref{kondosym} was solved numerically with the ch
 
 \chapter{Connection between URG and Other Canonical Transformations}
 \label{urg_canonical}
-\section{Anderson's "poor man's scaling" - Formalism}
+\section{Anderson's "poor man's scaling" - formalism}
 We first describe the formalism of the poor man's scaling (PMS) method, first formulated by Anderson \cite{Anderson}. The problem is defined as
 \begin{equation}\begin{aligned}
 	\label{problem}
@@ -4176,14 +4176,14 @@ Therefore,
 \end{aligned}\end{equation}
 In summary, the prescription of replacing all \(\omega\) with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling a single-electron state - then the total renormalization is of the form \(c^\dagger T^\dagger c\) such that we start from an initial state, scatter to an intermediate state and then go back to the initial state so that the final state is the same as the initial state. However, if we are using PMS to decouple states in one-shot, each subspace will have multiple states and there might be terms where we do not end up at the initial state we started with. Then the correct prescription would be to use the mean of the initial and final state denominators.
 
-One might wonder how we can generate higher order terms in this method. Eq.~\ref{pmsren}, as it stands, has only \(\mathcal{O}(V^2)\) terms. The higher order terms were actually dropped when we replaced \(H_0\) with its diagonal part in eq.~\ref{pms_dropV}. To see the higher order term, we do not drop the off-diagonal part in the denominator, but split the total \(H_0\) into a diagonal and an off-diagonal part: \(H_0 = H_d + X\). The total effective Hamiltonian becomes
+One might wonder how we can generate higher order terms in this method. Eq.~\ref{pmsren}, as it stands, has only \(\mathcal{O}(V^2)\) terms. The higher order terms were actually dropped when we replaced \(H_0\) with its diagonal part in eq.~\ref{pms_dropV}. To see the higher order term, we do not drop the off-diagonal part in the denominator, but split the total \(H_0\) into a diagonal and an off-diagonal part: \(H_0 = H_d + X\). Note that \(X\) is off-diagonal in the subspace of the states that have not been decoupled yet but will be decoupled later. They represent scattering between the lower energy states. \(X\) is still diagonal with respect to the states that we \text{are} decoupling presently. The total effective Hamiltonian becomes
 \begin{equation}\begin{aligned}
-	\tilde{\mathcal{H}}(E) = H_0 + V_-\frac{1}{G_0(E)^{-1} - X}V_+ +  V_+\frac{1}{G_0(E)^{-1} - X}V_-
+	\tilde{\mathcal{H}}(E) = H_0 + V\frac{1}{G_0(E)^{-1} - X}V^\dagger +  V^\dagger\frac{1}{G_0(E)^{-1} - X}V
 \end{aligned}\end{equation}
 where \(G_0(E)^{-1} = E - H_d\) is the inverse of the non-interacting Greens function. To allow computation, we can expand the denominator in powers of \(XG_0(E)^{-1}\):
 \begin{equation}\begin{aligned}
-	\tilde{\mathcal{H}}(E) =& H_0 + V_-G_0(E)\left[1 + XG_0(E) + XG_0(E)XG_0(E) + ...\right] V_+ +  V_+\frac{1}{G_0(E)^{-1} - X}V_-\\
-			       =& H_0 + \underbrace{V_- G_0(E) V_+ + V_+ G_0(E) V_-}_\text{two vertex or one loop correction} + \underbrace{V_-G_0(E)XG_0(E)V_+ + V_+G_0(E)XG_0(E)V_- +}_\text{three vertex or two loop correction} \\
+	\tilde{\mathcal{H}}(E) =& H_0 + VG_0(E)\left[1 + XG_0(E) + XG_0(E)XG_0(E) + ...\right] V^\dagger +  V^\dagger\frac{1}{G_0(E)^{-1} - X}V\\
+			       =& H_0 + \underbrace{V G_0(E) V^\dagger + V^\dagger G_0(E) V}_\text{two vertex or one loop correction} + \underbrace{VG_0(E)XG_0(E)V^\dagger + V^\dagger G_0(E)XG_0(E)V}_\text{three vertex or two loop correction} \\
 			       &+ \text{higher loop corrections}
 \end{aligned}\end{equation}
 
