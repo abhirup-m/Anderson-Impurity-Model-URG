@@ -1,40 +1,27 @@
-\documentclass[twoside,11pt]{book}
-
-\usepackage[draft]{graphicx}
-\usepackage{amsthm,amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs,tcolorbox,wrapfig,cancel,caption,fancyhdr,relsize,textpos,booktabs,tocbibind,titlesec}
-\usepackage[margin=0.8in, bottom=1.5in, top=0.5in]{geometry}
+\documentclass[openany]{book}
+% \usepackage[draft]{graphicx}
+\usepackage{amsthm,amsmath,amssymb,braket,graphicx,multirow,caption,relsize,tocbibind}
+\usepackage[margin=0.8in,top=0.3in,bottom=1.2in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[hidelinks,pdfusetitle]{hyperref}
-\usepackage[stable]{footmisc}
-
 \renewcommand{\arraystretch}{2}
 \setlength\delimitershortfall{-2pt}
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\fancyfoot[C]{\thepage}
-\fancyhead[OL]{\nouppercase\leftmark}
-\fancyhead[ER]{\rightmark}
-
+\pagestyle{headings}
 \setlength{\headheight}{52pt}
-
 \setcounter{tocdepth}{1}
-
-\raggedbottom
-
 \numberwithin{equation}{section}
-
 \graphicspath{{../figures/}}
-
 \allowdisplaybreaks
 
+
 \begin{document}
+
+\frontmatter
 \begin{titlepage}
 	\centering
 	\rule{\textwidth}{3pt}\\
 	\vspace*{25pt}
-	\textcolor{black}{ % Red font color
+	{
 		\textbf{\LARGE Unitary Renormalization Group Solution}\\[10pt]
 		\textbf{\LARGE of The Single-Impurity Anderson Model}
 	\vspace*{25pt}
@@ -67,18 +54,16 @@
 	\textbf{\Large Research, Kolkata}\
 \end{titlepage}
 
-\frontmatter
-
-\chapter{Acknowledgments}
+\chapter*{Acknowledgments}
 I express my heartfelt gratitude to my supervisor Dr. Siddhartha Lal for providing very useful guidance and very crucial insights into the tough problems. This project would not have been possible without the help of my group senior Siddhartha Patra and former group member Dr. Anirban Mukherjee. Their experience with the method as well as work on similar projects paved the entire journey for me. A special shout out to my friend Mounica Mahankali for all the useful discussions. The support of IISER Kolkata in the form of a junior research fellowship is gratefully acknowledged.
 
-\chapter{}
+\chapter*{}
 \begin{center}
 	\vspace*{100pt}
 	\Large{\textit{To you, 5 years from now}}
 \end{center}
 
-\chapter{Abstract}
+\chapter*{Abstract}
 This thesis reports a renormalization group solution of the single-impurity Anderson model (SIAM) and its various (mostly low temperature) properties and features. The method used is a unitary renormalization group technique introduced in Anirban Mukherjee and Siddhartha Lal, Nuclear Physics B, 960, 2020, which block-diagonalizes the Hamiltonian at each step. We first bring out the relation between this method and other unitary methods in the literature like the Schrieffer-Wolff transformation, poor man's scaling and continuous unitary transformation renormalization group. We then apply this method on a generalized version of the SIAM with explicit spin-exchange and isospin-exchange couplings. We find strong-coupling fixed points for both the spin and isospin couplings. From the zero mode, we then calculate the ground state wavefunctions, which turnout to be spin singlet and isospin singlet. We also calculate the magnetic susceptibility and the specific heat, and extract an effective Hamiltonian for the cloud of electrons that screen the impurity. This Hamiltonian is found to contain both Fermi liquid and non-Fermi liquid type interactions. We calculate the zero temperature Wilson ratio from the local Fermi liquid formulation of Nozières, which turns out to be 2 for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume as we move from the high energy fixed point to the low energy fixed point, and we find that it increases by 1 because the impurity state also gets added to the Fermi volume. The impurity spectral is tracked between the fixed points and shows the emergence of a central peak at the strong-coupling fixed point.
 
 \listoffigures
@@ -6621,22 +6606,22 @@ We will make use of the following commutators:
 \end{aligned}\end{equation}
 Now we evaluate the various terms in the effective Hamiltonian.
 \begin{flalign*}
-	\textcolor{red}{\mathbf{c_{2 \downarrow}a_2^\uparrow}} &= -\frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\downarrow}\\
+	{\mathbf{c_{2 \downarrow}a_2^\uparrow}} &= -\frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\downarrow}\\
 				     &= -\frac{V \lambda}{E_g}\left[c_{2 \downarrow} + \frac{1}{E_g}\left(H_0^* \right)c_{2 \downarrow} + \sum_k \frac{\epsilon_k}{E_g\sqrt{N^*}}c_{k\downarrow} + \frac{1}{E_g^2}\left(H_0^* \right)^2c_{2 \downarrow} + \sum_k \frac{\epsilon^2_k}{E_g^2\sqrt{N^*}}c_{k\downarrow}\right]c^\dagger_{2\downarrow}\\
 				     &= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c_{2 \downarrow}c^\dagger_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\\
-	\textcolor{green}{\mathbf{c_{2 \uparrow}a_2^\downarrow }}&= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c_{2 \uparrow}c^\dagger_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right) c_{k\uparrow}c^\dagger_{k^\prime\uparrow}\\
-	\textcolor{red}{\mathbf{c^\dagger_{2 \uparrow}a_0^\uparrow}} &= c^\dagger_{2 \uparrow} \frac{V \lambda}{E_g}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c_{2 \uparrow}\\
+{\mathbf{c_{2 \uparrow}a_2^\downarrow }}&= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c_{2 \uparrow}c^\dagger_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right) c_{k\uparrow}c^\dagger_{k^\prime\uparrow}\\
+{\mathbf{c^\dagger_{2 \uparrow}a_0^\uparrow}} &= c^\dagger_{2 \uparrow} \frac{V \lambda}{E_g}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c_{2 \uparrow}\\
 					   &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c^\dagger_{2 \uparrow}c_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\uparrow}c_{k^\prime\uparrow}\\
-	\textcolor{green}{\mathbf{c^\dagger_{2 \downarrow}a_0^\downarrow}} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c^\dagger_{2 \downarrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\\
-	\textcolor{blue}{\mathbf{c_{2 \downarrow}a_2^\downarrow }}&= \frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\uparrow}\\
+{\mathbf{c^\dagger_{2 \downarrow}a_0^\downarrow}} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]c^\dagger_{2 \downarrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\\
+{\mathbf{c_{2 \downarrow}a_2^\downarrow }}&= \frac{V \lambda}{E_g}c_{2 \downarrow}\left[ 1 + \frac{1}{E_g}\left(H_0^* \right) + \frac{1}{E_g^2}\left(H_0^* \right)^2\right] c^\dagger_{2\uparrow}\\
 				       &=\frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \downarrow}c^\dagger_{2\uparrow} + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c_{k\downarrow}c^\dagger_{k^\prime\uparrow}\\
-	\textcolor{yellow}{\mathbf{c_{2 \uparrow}a_2^\uparrow}} &=-\frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \uparrow}c^\dagger_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c_{k\uparrow}c^\dagger_{k^\prime\downarrow}\\
-	\textcolor{blue}{\mathbf{c^\dagger_{2 \uparrow}a_0^\downarrow }}&= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \uparrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\\
-	\textcolor{yellow}{\mathbf{c^\dagger_{2 \downarrow}a_0^\uparrow}} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \downarrow}c_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
-	\textcolor{red}{\mathbf{c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow}} &= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]\times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right)\\
-	\textcolor{blue}{\mathbf{c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow }}&= \frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \downarrow}c^\dagger_{2\uparrow} \times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\downarrow}c^\dagger_{k^\prime\uparrow} + c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right)\\
-	\textcolor{green}{\mathbf{c^\dagger_{2 \downarrow}a_0^\downarrow - c_{2 \uparrow}a_2^\downarrow}} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right)\\
-	\textcolor{yellow}{\mathbf{c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow}} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)
+{\mathbf{c_{2 \uparrow}a_2^\uparrow}} &=-\frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \uparrow}c^\dagger_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c_{k\uparrow}c^\dagger_{k^\prime\downarrow}\\
+{\mathbf{c^\dagger_{2 \uparrow}a_0^\downarrow }}&= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \uparrow}c_{2\downarrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\\
+{\mathbf{c^\dagger_{2 \downarrow}a_0^\uparrow}} &= \frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g}\right]c^\dagger_{2 \downarrow}c_{2\uparrow} - \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
+{\mathbf{c_{2 \downarrow}a_2^\uparrow - c^\dagger_{2 \uparrow}a_0^\uparrow}} &= -\frac{V \lambda}{E_g}\left[1 + \frac{H_0^*}{E_g} + \left(\frac{H_0^*}{E_g}\right)^2\right]\times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k\downarrow}c^\dagger_{k^\prime\downarrow}\right)\\
+{\mathbf{c_{2 \downarrow}a_2^\downarrow - c^\dagger_{2 \uparrow}a_0^\downarrow }}&= \frac{V \lambda}{E_g}\left[1 + \frac{1}{E_g}\left(H_0^* \right)\right]c_{2 \downarrow}c^\dagger_{2\uparrow} \times 2 + \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\downarrow}c^\dagger_{k^\prime\uparrow} + c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right)\\
+{\mathbf{c^\dagger_{2 \downarrow}a_0^\downarrow - c_{2 \uparrow}a_2^\downarrow}} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right)\\
+	{\mathbf{c^\dagger_{2 \downarrow}a_0^\uparrow - c_{2 \uparrow}a_2^\uparrow}} &= \frac{V \lambda}{E_g N^*}\sum_{kk^\prime} \left(\frac{\epsilon_k }{E_g}+ \frac{\epsilon_k^2}{E_g^2}\right)\left(c_{k\uparrow}c^\dagger_{k^\prime\downarrow} - c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\right)
 \end{flalign*}
 In all the expressions, we have dropped terms that have more than 4 operators in product. Also, in the last four equations, we have substituted \(\hat n_{2 \uparrow} - \hat n_{2 \downarrow} = 1\), because this is the effective Hamiltonian for the state with \(s^z = \frac{1}{2}\). We now substitute these expressions into the effective Hamiltonian:
 \begin{equation}\begin{aligned}
