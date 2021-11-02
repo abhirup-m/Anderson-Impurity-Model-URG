@@ -4188,12 +4188,12 @@ The label \(q\) sums over the momentum states being decoupled \(\left( |\epsilon
 The spin part can now be simplified:
 \begin{equation}\begin{aligned}
 	\sum_{a,b} J^a J^b \left(\frac{1}{4}\delta_{ab} + \frac{i}{2}\sum_c \epsilon^{abc}S_d^c\right) \left(\delta_{ab} + i\sum_c \epsilon^{bac}\sigma^c\right)_{\alpha^\prime,\alpha} = \frac{\sum_a {J^a}^2}{4} \delta_{\alpha,\alpha^\prime} + \frac{1}{2}\sum_{a,b,c,c^\prime}J^a J^b \epsilon^{abc}\epsilon^{abc^\prime}S_d^c \left(\sigma^c\right)_{\alpha^\prime\alpha}\\
-	= \frac{\sum_a {J^a}^2}{4} \delta_{\alpha,\alpha^\prime} + \sum_c S_d^c \sigma^c_{\alpha^\prime\alpha}\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right) 
+	= \frac{\sum_a {J^a}^2}{4} \delta_{\alpha,\alpha^\prime} + \frac{1}{2}\sum_c S_d^c \sigma^c_{\alpha^\prime\alpha}\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right)
 \end{aligned}\end{equation}
 The constant part renormalizes a potential scattering, so we drop that part. The renormalization from the other part is
 \begin{equation}\begin{aligned}
-	\sum_{\alpha,\alpha^\prime,c} S_d^c \sigma^c_{\alpha^\prime\alpha} \sum_{k,k^\prime,\gamma}{c^{(\gamma)}_{k\alpha}} {c^{(\gamma)}_{k^\prime\alpha^\prime}}^\dagger \frac{\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right)\rho(0) |\delta D|}{-D}\\
-	= \sum_{\alpha,\alpha^\prime,c} S_d^c \sigma^c_{\alpha^\prime\alpha} \sum_{k,k^\prime,\gamma}{c^{(\gamma)}_{k^\prime\alpha^\prime}}^\dagger {c^{(\gamma)}_{k\alpha}} \frac{\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right)\rho(0) |\delta D|}{D}
+	\sum_{\alpha,\alpha^\prime,c} S_d^c \sigma^c_{\alpha^\prime\alpha} \sum_{k,k^\prime,\gamma}{c^{(\gamma)}_{k\alpha}} {c^{(\gamma)}_{k^\prime\alpha^\prime}}^\dagger \frac{\frac{1}{2}\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right)\rho(0) |\delta D|}{-D}\\
+	= \sum_{\alpha,\alpha^\prime,c} S_d^c \sigma^c_{\alpha^\prime\alpha} \sum_{k,k^\prime,\gamma}{c^{(\gamma)}_{k^\prime\alpha^\prime}}^\dagger {c^{(\gamma)}_{k\alpha}} \frac{\frac{1}{2}\left(\sum_{a,b,\atop{a\neq b}}J^a J^b - 2 J^c\sum_{a \atop{a \neq c}}J^a\right)\rho(0) |\delta D|}{D}
 \end{aligned}\end{equation}
 The virtual hole term \(V^\dagger G_0(E) V\) gives the same contribution. The total renormalization at second order is therefore
 \begin{equation}\begin{aligned}
@@ -4203,14 +4203,12 @@ where \(\left\{c-1,c,c+1\right\}\) is a cyclic permutation of \(\left\{ x,y,z \r
 \begin{equation}\begin{aligned}
 	\delta J^x = \frac{2J^y J^z\rho(0) |\delta D|}{D}
 \end{aligned}\end{equation}
-Cyclic permutations of the labels \(x,y,z\) produce the other equations. If we set \(J^x = J^y = J^t\), we specialize to the more symmetric Kondo model with equal couplings \(J^t\) along the transverse directions: \(J^z S_d^z \sigma^z + J^t\left(S_d^+\sigma^- + S_d^- \sigma^+\right)\). Substituting this in the coupling RG equatons recovers the standard hyperbolic form of the Kondo scaling equations:
+Cyclic permutations of the labels \(x,y,z\) produce the other equations. From here on, we will assume \(J^a = J\) for simplicity. This gives, at second order,
 \begin{equation}\begin{aligned}
-	\frac{\delta J^t}{\delta J^z} &= 2J^z J^t \frac{\rho(0)|\delta D|}{D}\\
-	\delta J^z &= 2{J^t}^2 \frac{\rho(0)|\delta D|}{D}\\
-	\frac{\delta J^t}{\delta J^z} &= \frac{J_z}{J_t}
+	\delta J = \frac{2J^2\rho(0) |\delta D|}{D}
 \end{aligned}\end{equation}
 
-We now consider the third order term. From here on, we will assume \(J^a = J\) for simplicity. The virtual hole three vertex term, \(V^\dagger G_0(E)XG_0(E)V\), is of the form
+We now consider the third order term. The virtual hole three vertex term, \(V^\dagger G_0(E)XG_0(E)V\), is of the form
 \begin{equation}\begin{aligned}
 	J^3\sum_{q,k_1,k_2,k,k^\prime,\atop{\alpha,\alpha^\prime,\alpha_1,\alpha_2,\beta,\atop{\gamma_1,\gamma_2}}}{c^{(\gamma_1)}_{q\beta}}^\dagger {c^{(\gamma_1)}_{k\alpha}}\vec{S_d}\cdot\vec{\sigma}_{\beta \alpha} \frac{1}{E - H_d} {c^{(\gamma_2)}_{k_1 \alpha_1}}^\dagger c_{k_2 \alpha_2}^{(\gamma_2)}\vec{S_d}\cdot\vec{\sigma}_{\alpha_1 \alpha_2} \frac{1}{E - H_d} {c^{(\gamma_1)}_{k^\prime\alpha^\prime}}^\dagger {c^{(\gamma_1)}_{q\beta}}\vec{S_d}\cdot\vec{\sigma}_{\alpha^\prime \beta}
 \end{aligned}\end{equation}
