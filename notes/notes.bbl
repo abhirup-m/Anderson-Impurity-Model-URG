@@ -113,11 +113,11 @@ J.~S. {Langer} and V.~{Ambegaokar}.
 \newblock {Friedel Sum Rule for a System of Interacting Electrons}.
 \newblock {\em Physical Review}, 121, 1961.
 
-\bibitem{holography1}
+\bibitem{anirbanurg1}
 Anirban Mukherjee and Siddhartha Lal.
-\newblock Holographic unitary renormalization group for correlated electrons -
-  i: A tensor network approach.
-\newblock {\em Nuclear Physics B}, 960, 2020.
+\newblock Unitary renormalisation group for correlated electrons-i: a tensor
+  network approach.
+\newblock {\em Nuclear Physics B}, 960:115170, 2020.
 
 \bibitem{seki}
 Kazuhiro Seki and Seiji Yunoki.
@@ -129,6 +129,24 @@ Richard~M Martin.
 \newblock Fermi-surface sum rule and its consequences for periodic kondo and
   mixed-valence systems.
 \newblock {\em Physical Review Letters}, 48(5):362, 1982.
+
+\bibitem{anirbanurg2}
+Anirban Mukherjee and Siddhartha Lal.
+\newblock Unitary renormalisation group for correlated electrons-ii: insights
+  on fermionic criticality.
+\newblock {\em Nuclear Physics B}, 960:115163, 2020.
+
+\bibitem{anirbanmott1}
+Anirban Mukherjee and Siddhartha Lal.
+\newblock Scaling theory for mott{\textendash}hubbard transitions: I. t = 0
+  phase diagram of the 1/2-filled hubbard model.
+\newblock {\em New Journal of Physics}, 22(6):063007, jun 2020.
+
+\bibitem{anirbanmott2}
+Anirban Mukherjee and Siddhartha Lal.
+\newblock Scaling theory for mott{\textendash}hubbard transitions-{II}: quantum
+  criticality of the doped mott insulator.
+\newblock {\em New Journal of Physics}, 22(6):063008, jun 2020.
 
 \bibitem{suzuki}
 Kenji Suzuki.
