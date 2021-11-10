@@ -1,14 +1,14 @@
-\documentclass[openany]{book}
-% \usepackage[draft]{graphicx}
+\documentclass[oneside,openany,12pt]{book}
+\usepackage[draft]{graphicx}
 \usepackage{amsthm,amsmath,amssymb,braket,graphicx,multirow,caption,relsize,tocbibind}
-\usepackage[margin=0.8in,top=0.3in,bottom=1.2in]{geometry}
+\usepackage[margin=0.8in,top=0.3in,bottom=1.4in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[hidelinks,pdfusetitle]{hyperref}
 \renewcommand{\arraystretch}{2}
 \setlength\delimitershortfall{-2pt}
 \pagestyle{headings}
 \setlength{\headheight}{52pt}
-\setcounter{tocdepth}{1}
+% \setcounter{tocdepth}{1}
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
 \allowdisplaybreaks
@@ -20,11 +20,10 @@
 \begin{titlepage}
 	\centering
 	\rule{\textwidth}{3pt}\\
-	\vspace*{25pt}
+	\vspace*{20pt}
 	{
 		\textbf{\LARGE Unitary Renormalization Group Solution}\\[10pt]
-		\textbf{\LARGE of The Single-Impurity Anderson Model}
-	\vspace*{25pt}
+		\textbf{\LARGE of The Single-Impurity Anderson Model}\\[10pt]
 	}
 	\rule{\textwidth}{3pt} % Thick horizontal rule
 	\vfill
@@ -44,9 +43,10 @@
 	\vfill
 	{\Large \textbf{Dr. Siddhartha Lal}\\
 	\vfill
-	\Large Department of Physical Sciences\\
+	\today
 	\vfill
-	\today}
+	\Large Department of Physical Sciences\\
+	}
 	\vfill
 	\includegraphics[scale=0.15]{../figures/logo.png}\\
 	\vspace{0.01\textheight}
@@ -69,9 +69,7 @@ This thesis reports a renormalization group analysis of the single impurity Ande
 \listoffigures
 \listoftables
 \tableofcontents
-
 \mainmatter
-
 \chapter{Introduction}
 \section{Summary of the problem}
 The single-impurity Anderson model (SIAM) is one of the most well-studied models in condensed matter physics and is the prototypical model for magnetism.
@@ -80,8 +78,8 @@ Taking inspiration from this, P.W.Anderson\cite{Anderson} in 1961 designed a mod
 The model consisted of a bath of mobile electrons which interacted with the local impurity.
 The engine of magnetism was the local onsite Coulomb repulsion on the impurity site.
 This repulsion favours the formation of local moments because it makes it harder for the impurity to be doubly-occupied.
-\\\\ Mean-field calculations of the impurity occupation reveal a criterion for the formation of local moments; this criterion is similar to the Stoner criterion for ferromagnetism. This mean-field analysis is of course only valid at high temperatures where electron-correlations are not so important. At low temperatures, it was found that the resistivity of the material reaches a minimum at some temperature, and then increases as \(\ln T\) as we further reduce the temperature. This is in contrast to the previews results. And that was not all; at a sufficiently low temperature, it was found that the \(\ln T\)-dependence disappears and the susceptibility became constant, implying the formation of a singlet state.
-\\\\ The fact that this logarithmic dependence vanishes once the singlet is formed suggests that it arises from the local moment on the impurity; once the local moment disappears (singlet), the log dependence vanishes as well.
+ Mean-field calculations of the impurity occupation reveal a criterion for the formation of local moments; this criterion is similar to the Stoner criterion for ferromagnetism. This mean-field analysis is of course only valid at high temperatures where electron-correlations are not so important. At low temperatures, it was found that the resistivity of the material reaches a minimum at some temperature, and then increases as \(\ln T\) as we further reduce the temperature. This is in contrast to the previews results. And that was not all; at a sufficiently low temperature, it was found that the \(\ln T\)-dependence disappears and the susceptibility became constant, implying the formation of a singlet state.
+ The fact that this logarithmic dependence vanishes once the singlet is formed suggests that it arises from the local moment on the impurity; once the local moment disappears (singlet), the log dependence vanishes as well.
 This led people to design a model in which the impurity interacted with the conduction bath through a Heisenberg-like spin-spin interaction.
 This model can be related to the SIAM through a canonical transformation followed by a projection to the low energy subspace.
 In 1964, Jun Kondo\cite{Kondo} found that a perturbative calculation of the transition probability of electrons from scattering via the impurity, up to second order in the exchange coupling \(J\), revealed a logarithmic dependence of the resistivity on temperature.
@@ -91,28 +89,33 @@ But the mystery of the singlet state at very low temperatures still remained.
 The perturbative analysis would break down at low temperatures, so it was unreliable.
 The log term showed that the physics of the singlet involved all energy scales; one could not hope to capture it simply by taking the first few terms of a perturbative expansion.
 This problem came to be known as the Kondo problem.
-\\\\ In 1970, Anderson attacked this problem by a renormalization group approach to account for all energy scales.
+ In 1970, Anderson attacked this problem by a renormalization group approach to account for all energy scales.
 In his "Poor Man's Scaling" approach, he progressively reduced the bandwidth while taking account of the eliminated states into the couplings via second order perturbation theory.
+
 This showed how the couplings would flow as we went to low temperatures, but it still could not remove the divergence as it was perturbative.
+
 Anderson found that the exchange coupling increased as we go to lower temperatures, so he surmised that the low energy theory was one where \(J=\infty\).
 In 1975, Kenneth Wilson solved the problem by using his numerical renormalization group method in which he iteratively diagonalized chains of increasing length to go to the low energy physics.
 He proved that Anderson's guess was right and the low energy Hamiltonian was the same as that with \(J=\infty\).
 Later calculations with Bethe ansatz in 1980 by Andrei and Wiegmann \cite{andrei_kondo,wiegmann} corroborated Wilson's findings.
-\\\\ A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility \cite{hrk-nrg}. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
-\\\\ The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
+ A similar sequence of events also happened in the context of the Anderson model. In 1977 and 1978, Jefferson and Haldane independently calculated the "Poor Man's" scaling equations for the asymmetric SIAM, in the limit of infinitely large onsite repulsion. They were unable to access the strong-coupling fixed point (analogous to the \(J=\infty\) fixed point in Kondo model), but their equations revealed which were the important regimes to consider. Later, in 1975, Krishnamurthy, Wilkins and Wilson applied the NRG method to the symmetric Anderson model and obtained the non-perturbative fixed points and susceptibility \cite{hrk-nrg}. Their calculations were again supported by later Bethe ansatz calculations by Wiegmann and Tsvelick\cite{Tsvelick}.
+ The physics of the Anderson model and the Kondo model has connotations with quantum field theory. The numerical renormalization group methods ushered in a revolution. The idea that physics on all length scales affect the low energy physics was very deep and has far-reaching consequences. The phenomenon in which the impurity electron strongly couples to one real space lattice site at low temperatures resulting in the screening of the local moment via spin-flip scatterings with the mobile electrons at that site is analogous to the phenomenon of quark confinement in which the quarks become bound at low energies. The high energy fixed point, \(J=0\), corresponds to the phenomenon of asymptotic freedom in which the interactions between particles become asymptotically weaker at high temperatures.
 \section{Some outstanding questions}
 Even though the problem of the SIAM has been essentially solved, some questions and clarifications still remain. In this work, we explore some of these questions.
 \begin{itemize}
     \item \textit{Is it possible to get \textbf{non-perturbative scaling equations} for the whole journey?}
-    Neither NRG nor Bethe ansatz gives us scaling equations for the RG flows. Poor Man's scaling only gives perturbative ones which are valid close to the high energy theories. In the absence of scaling equations that show the complete crossover from the high energy to the low energy theory, it is difficult to visualize how the Hamiltonian is precisely chaining.
+
+	    Neither NRG nor Bethe ansatz gives us scaling equations for the RG flows. Poor Man's scaling only gives perturbative ones which are valid close to the high energy theories. In the absence of scaling equations that show the complete crossover from the high energy to the low energy theory, it is difficult to visualize how the Hamiltonian is precisely chaining.
     % \item \textit{Can we get Hamiltonians and wavefunctions in the \textbf{crossover region} (\(T \sim T_K\))?}
     %     NRG does give us some Hamiltonians, but those are valid very close to the fixed points. The harder challenge is to get Hamiltonians for all energy scales, possibly in the form of some running couplings. That would also show us exactly how the wavefunctions morph as we reduce the bandwidth. \(T_K\) is the temperature at which the crossover occurs, so that is the most interesting regime.
     % \item \textit{What is the nature of the strong-coupling fixed point for a \textbf{finite system} (\(J \neq \infty\))? Will the results change if we introduce a \textbf{non-uniform density of states}?}
     %     NRG and Bethe ansatz work very well for continuum systems where the bandwidth is essentially infinite. As a result, they get an infinite \(J\) strong-coupling fixed point. For a finite lattice, things are different. It would be interesting to know how the finite \(J\) fixed point looks like and whether the conclusions of NRG break down.
     % \item \textit{Can we get \textbf{better estimates of thermodynamic quantities} in the crossover region?}
     %     Calculation of thermodynamic quantities like magnetic susceptibility and specific heat require not just the ground state but the excited states as well. Since NRG projects out most of the states above the ground state, it is difficult to get very accurate estimates of such quantities far away from the fixed point. Bethe ansatz calculations also typically  employ approximations like \(T>>T_K\). Moreover, Bethe ansatz equations have to be solved numerically so they lack the transparency of analytical solutions.
+
     \item \textit{Is it possible to show the \textbf{transfer of spectral weight} along the flow, possibly by tracking the spectral function?}
-    Such an exercise will requite the entire spectrum to be preserved along the flow. NRG, being projective will not work here. If the entire spectrum is available, computing the spectral function along the flow should indicate how the spectral weight is being distributed between the impurity and the conduction bath, or between various states of the impurity. It can also shed light on which terms or processes in the Hamiltonian contribute to which parts of the spectral function.
+
+	    Such an exercise will requite the entire spectrum to be preserved along the flow. NRG, being projective will not work here. If the entire spectrum is available, computing the spectral function along the flow should indicate how the spectral weight is being distributed between the impurity and the conduction bath, or between various states of the impurity. It can also shed light on which terms or processes in the Hamiltonian contribute to which parts of the spectral function.
     \item \textit{How does NRG obtain the local moment in the \textbf{absence of hybridisation}?}
     For the symmetric mode, NRG results show that in the absence of any interaction between the bath and the impurity, the value of the onsite repulsion flows to a large value and we end up with a local moment. The obvious question is, how does the impurity coupling renormalize when there is no term connecting the bath with the impurity?
     \item \textit{Are there any interesting \textbf{topological aspects} of the fixed points?}
@@ -134,31 +137,36 @@ The final Hamiltonians obtained at the fixed point are usually tractable and all
 \end{itemize}
 \section{Layout of the thesis}
 Chapter \ref{prelims} goes over the available work on the single-impurity Anderson model and its derivative - Kondo model. We go over the mean-field calculation of the Anderson model which gives a criteria for magnetism in terms of the onsite repulsion parameter \(U\) and the hybridisation parameter \(\Delta\). We then derive the Kondo model from the SIAM by way of a Schrieffer-Wolff transformation, which we solve using NRG. We also spend some time on the Poor Man's scaling approaches of both the SIAM and the Kondo model, and end the chapter with some discussions on the local Fermi liquid aspects of the fixed point theory.
-\\\\ Chapter \ref{urgform} lays out the URG formalism and prescription. We derive the URG effective Hamiltonian and the unitaries that perform the RG transformations. We discuss several important features of the method and provide a prescription for applying it on models. We also perform the URG explicitly on two models - the star graph model and the Kondo model. We discuss various subtleties, especially the quantum fluctuation parameter \(\omega\) and show that the URG actually diagonalizes the Hamiltonian. We derive many-body creation and annihilation operators \(\eta^\dagger\) and \(\eta\) which rotate the full Hamiltonian into successively more block-diagonal form.
-\\\\ Chapter \ref{urg_canonical} is closely tied to the formalism chapter and develops the connections between URG and other canonical transformations in the literature. We first define and setup each of the other transformations - the Schrieffer-Wolff transformation (SWT), Poor Man's scaling (PMS) and the Continuous Unitary Transformation (CUT) RG. We show that all of these are in some sense perturbative derivatives of URG. A byproduct of the discussion is a demonstration of the fact that PMS and SWT are exactly identical and differ only in the contexts in which they are applied. We also discuss the differences between URG and CUT-RG, and show that URG behaves like a generalized double-bracket flow \cite{Brockett1991}.
-\\\\ Chapter \ref{siamurg} contains the URG analysis of the SIAM and its generalizations, obtained by adding spin-spin and charge-charge interactions to the SIAM. They lay out the foundation for the URG treatment on the full model with both charge and spin fluctuations. We derive the RG equations for these separate models in detail and briefly observe how the couplings flow in certain symmetric settings. 
-\\\\ Chapter \ref{fullurg} performs the URG on the full generalized SIAM, obtains the RG equations and writes down a low-energy effective Hamiltonian for the fixed point theory in the symmetric case. We study the flow of the couplings and identity various fixed points. We also determine how the fixed point values behave with system size. The low-energy effective zero-mode Hamiltonian is solved and the ground state wavefunctions are obtained for both the spin and charge-dominated regimes of the model. We show that a phase transition occurs at some critical value of the couplings, between the spin singlet and the charge singlet.
-\\\\ Chapter \ref{results} computes some important quantities from the fixed point theory like the specific heat, magnetic susceptibility, charge susceptibility, Wilson ratio, Kondo cloud Hamiltonian, entanglement and correlation measures of the Kondo cloud electrons and change in the Luttinger's count of the bath.  The Kondo cloud Hamiltonian is obtained by tracing out the impurity operators from the fixed point Hamiltonian. We compute the mutual information between between various members of the fixed point Hamiltonian, as well as some off-diagonal correlations. We extract a low temperature local Fermi liquid from the Hamiltonian which we then use to calculate the zero temperature Wilson ratio for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume between the fixed points.
+ Chapter \ref{urgform} lays out the URG formalism and prescription. We derive the URG effective Hamiltonian and the unitaries that perform the RG transformations. We discuss several important features of the method and provide a prescription for applying it on models. We also perform the URG explicitly on two models - the star graph model and the Kondo model. We discuss various subtleties, especially the quantum fluctuation parameter \(\omega\) and show that the URG actually diagonalizes the Hamiltonian. We derive many-body creation and annihilation operators \(\eta^\dagger\) and \(\eta\) which rotate the full Hamiltonian into successively more block-diagonal form.
+ Chapter \ref{urg_canonical} is closely tied to the formalism chapter and develops the connections between URG and other canonical transformations in the literature. We first define and setup each of the other transformations - the Schrieffer-Wolff transformation (SWT), Poor Man's scaling (PMS) and the Continuous Unitary Transformation (CUT) RG. We show that all of these are in some sense perturbative derivatives of URG. A byproduct of the discussion is a demonstration of the fact that PMS and SWT are exactly identical and differ only in the contexts in which they are applied. We also discuss the differences between URG and CUT-RG, and show that URG behaves like a generalized double-bracket flow \cite{Brockett1991}.
+ Chapter \ref{siamurg} contains the URG analysis of the SIAM and its generalizations, obtained by adding spin-spin and charge-charge interactions to the SIAM. They lay out the foundation for the URG treatment on the full model with both charge and spin fluctuations. We derive the RG equations for these separate models in detail and briefly observe how the couplings flow in certain symmetric settings. 
+ Chapter \ref{fullurg} performs the URG on the full generalized SIAM, obtains the RG equations and writes down a low-energy effective Hamiltonian for the fixed point theory in the symmetric case. We study the flow of the couplings and identity various fixed points. We also determine how the fixed point values behave with system size. The low-energy effective zero-mode Hamiltonian is solved and the ground state wavefunctions are obtained for both the spin and charge-dominated regimes of the model. We show that a phase transition occurs at some critical value of the couplings, between the spin singlet and the charge singlet.
+ Chapter \ref{results} computes some important quantities from the fixed point theory like the specific heat, magnetic susceptibility, charge susceptibility, Wilson ratio, Kondo cloud Hamiltonian, entanglement and correlation measures of the Kondo cloud electrons and change in the Luttinger's count of the bath.  The Kondo cloud Hamiltonian is obtained by tracing out the impurity operators from the fixed point Hamiltonian. We compute the mutual information between between various members of the fixed point Hamiltonian, as well as some off-diagonal correlations. We extract a low temperature local Fermi liquid from the Hamiltonian which we then use to calculate the zero temperature Wilson ratio for the Kondo regime of the SIAM. We also calculate the change in Luttinger's volume between the fixed points.
 \section{Summary of main results}
 The first of the main results in this work is the connection between URG and other canonical transformations. It is shown that URG is a non-perturbative variation of the most general unitary transformation. Other unitary transformations like the Schrieffer-Wolff transformation and Poor Man's scaling are simpler forms of URG, obtained by trivializing one of the terms in the Green's function that comes up in the URG formalism. CUT-RG is still more different from URG, since it is not only perturbative but also philosophically different in that it gradually suppresses the off-diagonal terms rather than killing more and more terms progressively. URG is thus different in two major ways - it provides non-perturbative equations because of the specific denominator structure as well as accommodates, at least in principle, the feedback effects of the off-diagonal terms through a quantum fluctuation operator in the denominator.
-\\\\We next look at the results concerning the SIAM. In the absence of any spin-exchange or charge isospin-exchange scattering, we do not see any renormalization in the hybridisation and the only flow is towards a local moment fixed point with large impurity onsite energy \(U\). In the presence of those additional exchange scattering terms, the corresponding couplings \(J\)(spin exchange) and \(K\)(isospin exchange) flow to large values for low values of \(\omega\), signaling strong-coupling fixed points.
-\\\\At the spin-screened strong-coupling fixed point (\(J>K\)), the ground state wavefunction is a superposition of a spin singlet and a charge-isospin triplet. The ground state for the isospin-dominated fixed point (\(K>J\)) is an isospin singlet. Thermodynamic quantities are now calculated using zero-mode Hamiltonians of the low energy effective theories. The impurity susceptibility \(\chi_\text{imp}\) goes to the Curie-Weiss value of a four-fold degenerate system at large temperatures, and becomes constant (paramagnetic) at very low temperatures. With \(T_K\) defined suitably, \(\chi_\text{imp}\) takes the zero temperature value of \(\left( 2\pi T_K \right) ^{-1}\). The impurity specific heat has also been calculated, and reveals a two-peak structure.
-\\\\The fixed-point Hamiltonian further allows us to calculate the impurity spectral function. For very small \(U\) we obtain a single-peak structure corresponding to a single spin-spin or isospin-isospin excitation at the Fermi surface, while two other side-peaks emerge at large \(U\) that correspond to excitations between the spin and charge sectors. By tweaking the values of the couplings in the fixed-point Hamiltonian, we can mimic the reverse RG flow and see how the impurity spectral function morphs along this journey. Both the single-peak and three-peak structures revert back to a two-peak spectral function corresponding to that of a local moment.
-\\\\We then extract the effective Hamiltonian for the Kondo cloud, up to two particle interactions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian has both a Fermi liquid piece of the form \(\hat n_{k\sigma}\hat n_{q\sigma^\prime}\) and a two-particle off-diagonal scattering piece of the form \(c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow}c_{q \uparrow}c_{q^\prime \downarrow}\). It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures and correlations. The mutual information between the impurity and a cloud electron, as well as that between two cloud electrons increases as we go from the UV towards the IR fixed point. The off-diagonal correlation also increases from the UV towards the IR, which shows that the growth of the off-diagonal term is concomitant with the screening.
-\\\\We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from the fixed point Hamiltonian. Using the zero charge susceptibility at \(T=0\) in the Kondo regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We also calculate the change in Luttinger's volume along the RG flow. At the free orbital or local moment fixed points, the Luttinger's volume is measured purely by the number of conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger's volume is given by the total number of electrons in the conduction bath as well as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
+We next look at the results concerning the SIAM. In the absence of any spin-exchange or charge isospin-exchange scattering, we do not see any renormalization in the hybridisation and the only flow is towards a local moment fixed point with large impurity onsite energy \(U\). In the presence of those additional exchange scattering terms, the corresponding couplings \(J\)(spin exchange) and \(K\)(isospin exchange) flow to large values for low values of \(\omega\), signaling strong-coupling fixed points.
+At the spin-screened strong-coupling fixed point (\(J>K\)), the ground state wavefunction is a superposition of a spin singlet and a charge-isospin triplet. The ground state for the isospin-dominated fixed point (\(K>J\)) is an isospin singlet. Thermodynamic quantities are now calculated using zero-mode Hamiltonians of the low energy effective theories. The impurity susceptibility \(\chi_\text{imp}\) goes to the Curie-Weiss value of a four-fold degenerate system at large temperatures, and becomes constant (paramagnetic) at very low temperatures. With \(T_K\) defined suitably, \(\chi_\text{imp}\) takes the zero temperature value of \(\left( 2\pi T_K \right) ^{-1}\). The impurity specific heat has also been calculated, and reveals a two-peak structure.
+The fixed-point Hamiltonian further allows us to calculate the impurity spectral function. For very small \(U\) we obtain a single-peak structure corresponding to a single spin-spin or isospin-isospin excitation at the Fermi surface, while two other side-peaks emerge at large \(U\) that correspond to excitations between the spin and charge sectors. By tweaking the values of the couplings in the fixed-point Hamiltonian, we can mimic the reverse RG flow and see how the impurity spectral function morphs along this journey. Both the single-peak and three-peak structures revert back to a two-peak spectral function corresponding to that of a local moment.
+We then extract the effective Hamiltonian for the Kondo cloud, up to two particle interactions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian has both a Fermi liquid piece of the form \(\hat n_{k\sigma}\hat n_{q\sigma^\prime}\) and a two-particle off-diagonal scattering piece of the form \(c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow}c_{q \uparrow}c_{q^\prime \downarrow}\). It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures and correlations. The mutual information between the impurity and a cloud electron, as well as that between two cloud electrons increases as we go from the UV towards the IR fixed point. The off-diagonal correlation also increases from the UV towards the IR, which shows that the growth of the off-diagonal term is concomitant with the screening.
+We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from the fixed point Hamiltonian. Using the zero charge susceptibility at \(T=0\) in the Kondo regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We also calculate the change in Luttinger's volume along the RG flow. At the free orbital or local moment fixed points, the Luttinger's volume is measured purely by the number of conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger's volume is given by the total number of electrons in the conduction bath as well as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
 \chapter{Preliminaries and Existing Results}\label{prelims}
 \section{Some important results of scattering theory}
+
 \subsection{T-matrix and S-matrix}
+
 \(T-\)matrix is defined as\cite{sakurai}
+
 \begin{equation}\begin{aligned}
-\label{Tmatdef}
+	\label{Tmatdef}
 V\ket{\Psi} = T\ket{\Phi}
 \end{aligned}\end{equation}
+
 where \(\ket{\Psi}\) is the total scattered wavefunction and \(\ket{\Phi}\) is the incoming (non-interacting) wavefunction. This equation is supposed to hold for all eigenkets \(\ket{\Phi}\) of the Hamiltonian \(H_0\). 
-\\\\The kets \(\ket{\Psi}\) and \(\ket{\Phi}\) satisfy the Schrodinger equations
+
+The kets \(\ket{\Psi}\) and \(\ket{\Phi}\) satisfy the Schrodinger equations
 \begin{gather}
 	H_0 \ket{\Phi} = E \ket{\Phi}\\
-(H_0 + V)\ket{\Psi} = E \ket{\Psi}
+	(H_0 + V)\ket{\Psi} = E \ket{\Psi}
 \end{gather}
 We will also define an \(S-\)matrix- it is the unitary operator that relates the non-interacting eigenstate to the interacting one:
 \begin{equation}\begin{aligned}
@@ -302,14 +310,14 @@ and the argument of this function will be the total scattering phase shift:
 	arg\left[\text{Det}\left[ T(\omega) \right]\right] = \sum_{lm\sigma} \delta_l(\omega) \equiv \delta(\omega)
 \end{aligned}\end{equation}
 \(\delta(\omega)\) is the total scattering phase shift suffered by the scattering states due to scattering off the potential, at energy \(\omega\).
-\\\\Summing equation \ref{S_in_T} over \(l\) also relates the total \(S\) with the total \(T\):
+Summing equation \ref{S_in_T} over \(l\) also relates the total \(S\) with the total \(T\):
 \begin{equation}\begin{aligned}
 	S(\omega) = 1 - 2\pi i g(\omega) T(\omega)
 \end{aligned}\end{equation}
 
 \subsection{The Friedel sum-rule}
 This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localized scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
-\\\\Consider a Hamiltonian
+Consider a Hamiltonian
 \begin{equation}\begin{aligned}
 	\mathcal{H} = H_0 + V
 \end{aligned}\end{equation}
@@ -322,6 +330,7 @@ The non-interacting Greens function is then
 	G_0(\omega) = \frac{1}{\omega - H_0} - i\pi\delta\left(\omega - H_0\right)
 \end{aligned}\end{equation}
 The dos \(\rho(\omega)\) and total number of states \(N\) are then defined as
+
 \begin{equation}\begin{aligned}
 	\rho(\omega) &= \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \mathcal{H}) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]\\
 	\rho_0(\omega) &=  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
@@ -397,7 +406,7 @@ A consequence of this is, for another scalar E, we can write
 
 \section{Landau's theory of Fermi liquids}
 Since we will be using some results and concepts of Fermi liquids, its best to discuss the relevant details briefly. This section is adapted from ref.~\cite{pethick}. 
-\\\\A ideal Fermi gas is a collection of non-interacting Fermions.
+A ideal Fermi gas is a collection of non-interacting Fermions.
 Since they are non-interacting, the eigenstates of the complete system are just the collections of the eigenstates of the particles and holes.
 The eigenstate will be of  the form \(\{n_{k_1\uparrow},n_{k_1\downarrow},n_{k_2\uparrow},n_{k_2\downarrow},n_{k_3\uparrow},n_{k_3\downarrow},...,\}\), where \(n_{k\sigma}\in\{0,1\}\) is the number of particles with momentum \(k\) and spin \(\sigma\).
 In the ground state,
@@ -406,10 +415,11 @@ n_{k\sigma} = \begin{cases} 1 & k \leq k_F \\ 0 & k>k_F \end{cases}
 \end{aligned}\end{equation}
 Excitations involve adding an electron above \(k_F\) or deleting an electron below \(k_F\).
 The former is called a \textit{particle} while the latter is called a \textit{hole}.
-\textbf{A general excited state of the total system is a collection of particle and hole excitations.}\\\\
+\textbf{A general excited state of the total system is a collection of particle and hole excitations.}
 We next consider interacting systems, but very specific ones.
 That is, we consider interacting systems whose excitations can be mapped one-to-one with the excitations of the ideal system, provided the interactions are turned on sufficiently slowly.
 Alternatively, there exists a sufficiently slow rate of turning off the interactions such that any interacting excited state \(\Psi^*\) continuously flows into some excited state \(\Phi\) of the ideal system as the interactions flow to 0.
+
 \begin{gather}
 \Psi^* \xrightarrow{\text{turn interactions off}} \Phi \\
 \Phi^* \xrightarrow{\text{turn interactions off}} \Psi
@@ -419,7 +429,8 @@ All excited states must flow into some ideal state and vice-versa.
 This means that the interacting excited states can be labeled by the same good quantum numbers \(\vec k\) and \(\sigma\).That is, if some eigenstate of the interacting system flows into the ideal eigenstate \(\{n_{k\sigma}\}\), we can just as well use the distribution \(\{n_{k\sigma}\}\) to label the interacting eigenstate.
 \textit{The particle and hole excitations of the ideal system might flow into some very complicated state of the interacting system, which we call a quasiparticle/quasihole}.
 In other words, a system (ideal ground state + particle of momentum \(k\)) goes to (interacting ground state + quasiparticle of momentum \(k\)).
-If an interacting eigenstate corresponds to the state \(\{n_{k\sigma}\}\), then \(\{n_{k\sigma}\}\) is said to be the quasiparticle distribution function for that interacting state.
+If an interacting eigenstate corresponds to the state \(\{n_{k\sigma}\}\), then \(\{n_{k\sigma}\}\) is
+said to be the quasiparticle distribution function for that interacting state.
 Just as we denote eigenstates of the total ideal system using the collection of particles and holes, similarly we use the quasiparticle and quasiholes to describe eigenstates of the interacting system.
 Let \(k_+>k_F\) and \(k_- < k_F\).
 Then,
@@ -482,7 +493,7 @@ where \(f(k,q) = \frac{\partial{\xi_k}}{\partial{n_q}} = \frac{\partial^2 \mathc
 The first term is the self energy of the quasiparticles, the other they would have had even if no other quasiparticle was present.
 Its sort of like their kinetic energy.
 The second term is the interaction energy between all the quasiparticles.
-Hence, the term \(f(k_1,k_2)\) comes into play only when \(\delta n_{k_1} \neq 0\) and \(\delta n_{k_2} \neq 0\), that is when both the quasiparticles are present.\\\\
+Hence, the term \(f(k_1,k_2)\) comes into play only when \(\delta n_{k_1} \neq 0\) and \(\delta n_{k_2} \neq 0\), that is when both the quasiparticles are present.
 Since the quasiparticles are in direct correspondence with the Fermionic particles, they must also be fermions.
 This allows us to write down the probability of finding a quasiparticle at energy \(\xi\),
 \begin{equation}\begin{aligned}
@@ -492,7 +503,7 @@ where \(\mu = \mathcal{E_0}(N+1) - \mathcal{E_0}(N)= \frac{\partial{\mathcal{E}_
 There is a subtlety here though.
 Since \(\xi\) itself depends on the occupancy, and the occupancy also depends on \(\xi\) through the probability distribution, there is a feedback effect in action here.
 If any perturbation or field modifies the occupation \(n_{k\sigma}\), it will produce a feedback effect on all the occupations, through the \(\xi\).
-\\\\
+
 A temperature-dependent free energy can be concocted using
 \begin{equation}\begin{aligned}
 F[\delta n_k] = \delta \mathcal{E}[\delta n_k] - T S[\delta n_k]
@@ -598,7 +609,7 @@ The difference from \(G^0_d\) can be seen by computing the density of states for
 \end{gather}
 The first density of states is delta function, because \(\epsilon_d\) is an eigenstate in that case, and the poles of the corresponding Green's function are real poles.
 But the presence of the hybridisation means that is no longer the case in the second density of states, so the delta function fades into a Lorentzian in that case, and the poles of the Greens function move off the real axis.
-\\\\The total number of d-electrons can be calculated as:
+The total number of d-electrons can be calculated as:
 \begin{equation}\begin{aligned}
 	\label{total}
 	\langle  n_d\rangle = 2\int d\epsilon \rho_d(\epsilon) = \frac{2\Delta}{\pi} \int \frac{d\epsilon}{(\epsilon-\epsilon_d)^2 + \Delta^2} = \frac{2}{\pi}\cot^{-1}\left(\frac{\epsilon_d}{\Delta}\right)
@@ -611,7 +622,7 @@ T = V + VGT
 We also have
 \begin{equation}\begin{aligned}
 G = G_0 + G_0VG &= G_0 + G_0 T \frac{1}{1+GT}G \\
-        &= G_0 + G_0T(1-GT+...)(G_0+G_0VG_0+...)\\
+		&= G_0 + G_0T(1-GT+...)(G_0+G_0VG_0+...)\\
         &= G_0 + G_0 T G_0 \label{green}
 \end{aligned}\end{equation}
 The conduction electron Green's function can be calculated as
@@ -642,7 +653,7 @@ This is a general relation, because
 	\rho_d = -\frac{1}{\pi}\text{Im}\left[G_d\right] = -\frac{1}{\pi t^2}\text{Im}\left[t^2 G_d\right] = -\frac{1}{\pi t^2}\text{Im}\left[T\right]
 \end{aligned}\end{equation}
 This relation will hold as long as the \(T-\)matrix is of the form \(t^2 G_d\).
-\\\\
+
 If the phase shift of the conduction electrons due to scattering off the impurity is \(\delta\), we have
 \begin{equation}\begin{aligned}
 	T = e^{2i\delta} - 1 = e^{i\delta}\left(e^{i\delta} - e^{-i\delta}\right) \sim \frac{1}{\cot \delta - i}
@@ -682,7 +693,7 @@ Tuning the voltage can make these two levels degenerate.
 eV^* = UN + \epsilon_{N}
 \end{aligned}\end{equation}
 At this voltage, the two levels have the same energy and double occupancy becomes possible.
-Electrons can flow from the source to the sink via double occupation on the dot.\\\\
+Electrons can flow from the source to the sink via double occupation on the dot.
 For a non-interacting resonance, the conductance can be calculated as follows.
 The conductance for perfect transmission is given by the quantum of conductance \(G_0 = \frac{2e^2}{h}\).
 In this case, the transmission is not perfect, but is modulated by the density of states of the dot at the Fermi surface.
@@ -780,7 +791,7 @@ To study the interactions of the spin degrees of freedom, it becomes necessary t
 \(S_i = \sum_{\alpha \beta} c^\dagger_{d\alpha} \sigma^i_{\alpha\beta} c_{d \beta}\). \(s_i =\sum_{k k^\prime\alpha \beta} c^\dagger_{k\alpha} \sigma^i_{\alpha\beta} c_{k^\prime \beta}\).  Note that the impurity onsite energy has also been dropped because we are in the subspace of constant \(\hat n_d\;(= 1)\). 
 \subsection{Derivation of the Kondo Hamiltonian}
 Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\uparrow} \neq \hat n_{d\downarrow}\)) from the doublon and holon subspaces (\(\hat n_{d\uparrow} = \hat n_{d\downarrow}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{Schrieffer_Wolff}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} is shown in \ref{SWT from URG}.
-\\\\The space of the impurity electron can be divided into low energy and high energy subspaces:
+The space of the impurity electron can be divided into low energy and high energy subspaces:
 \begin{equation}\begin{aligned}
 \text{low energy (L)} \rightarrow \begin{cases} \ket{\uparrow} \\ \ket{\downarrow} \end{cases}\\
 \text{high energy (H)} \rightarrow \begin{cases} \ket{} \\ \ket{\uparrow\downarrow} \end{cases}\\
@@ -850,7 +861,7 @@ The \(\ket{H}\) act as the intermediate states during the second order scatterin
 This is a slight generalization from second order perturbation theory.
 In second order perturbation, we only consider the scattering amplitude between the same states, but here we consider the scattering between two potentially different states \(\ket{l},\ket{l^\prime}\).
 The total amplitude is an average of these two amplitudes.
-\\\\If we assume the high energy subspace is very far away from the low energy one (\(E_H \gg E_L\)), we can assume \(E_l \approx E_{l^\prime} = E_L\), we can write
+If we assume the high energy subspace is very far away from the low energy one (\(E_H \gg E_L\)), we can assume \(E_l \approx E_{l^\prime} = E_L\), we can write
 \begin{equation}\begin{aligned}
 \Delta H_{ll^\prime} &=\sum_H v^\dagger_{lH}v_{Hl^\prime}\frac{1}{E_L-E_H}\\
 \implies \Delta H &=V \left(\sum_H \frac{1}{\Delta_{LH}}\ket{H}\bra{H}\right)V
@@ -863,6 +874,7 @@ Therefore,
 \end{aligned}\end{equation}
 Also, \(V = \sum_{k\sigma}\left[V(k) c^\dagger_{k\sigma}c_{d\sigma} + V^*(k) c^\dagger_{d\sigma}c_{k\sigma}\right]\).
 Hence,
+
 \begin{equation}\begin{aligned}
 \Delta H &= V\frac{\ket{0}\bra{0}}{\epsilon_d}V - V\frac{\ket{\uparrow\downarrow}\bra{\uparrow\downarrow}}{\epsilon_d + U}V\\
 	 &= \sum_{k_1,k_2,\sigma_1,\sigma_2}V(k_1)V^*(k_2)\left[\frac{c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}\ket{0}\bra{0}c^\dagger_{k_1\sigma_1} c_{d \sigma_1}}{\epsilon_d} - \frac{c^\dagger_{k_1\sigma_1} c_{d \sigma_1}\ket{\uparrow\downarrow}\bra{\uparrow\downarrow}c^\dagger_{d\sigma_2} c_{k_2 \sigma_2}}{\epsilon_d+U}\right]\\
@@ -1177,7 +1189,7 @@ This is in contrast to the value obtained from the mean field analysis of the An
 \end{aligned}\end{equation}
 For \(n_c =1\) (half-filling), the mean field value is less than the one obtained from the spin-spin scattering.
 This is because the mean-field analysis does not take these scatterings into account.
-The large density of states at the Fermi level means that the spectral function has three peaks in general, two of which are revealed in the mean field analysis, but a third one exists, which is of a width of the order of a very low temperature \(T_K\), and hence is not noticed at higher temperatures.\\\\
+The large density of states at the Fermi level means that the spectral function has three peaks in general, two of which are revealed in the mean field analysis, but a third one exists, which is of a width of the order of a very low temperature \(T_K\), and hence is not noticed at higher temperatures.
 Eq.~\ref{texp} can be written as
 \begin{gather}
 	T_1 = \frac{J/2}{1 - 2 J \gamma - \frac{J}{2}\left(\alpha + \gamma\right)}\\
@@ -1544,7 +1556,7 @@ At this point, both the couplings will stop changing because both the derivative
 So the fixed point in this case is \(g_2 = 0\) and \(g_1\) is some negative value.
 However, if \(|g_1|<g_2\), the representative point will reach the positive y-axis.
 Since \(g_2 \neq 0\) here, \(g_1\) will continue to grow and become positive at some point.
-From there, it becomes the antiferromagnetic case.\\\\
+From there, it becomes the antiferromagnetic case.
 Setting \(g_1 = g_2 =g >0\) and integrating either of the scaling equations gives
 \begin{equation}\begin{aligned}
 	\label{isot}
@@ -1554,7 +1566,7 @@ g(D^\prime) &= \frac{g_0}{1-2g_0\ln\frac{D}{D^\prime}} \\
 where \(T_K = \frac{D}{k_B} \exp\left\{-\frac{1}{2g_0}\right\}\).
 \(D^\prime\) is the running bandwidth and \(D\) is the original bandwidth.
 This is almost the same as the one obtained in eq.~\ref{tk}, because \(g = N J\).
-The expression for \(g_{D^\prime}\) shows that perturbation theory will work only for \(T \gg T_K\), because close to \(T_K\), the expression becomes non-analytic.\\\\
+The expression for \(g_{D^\prime}\) shows that perturbation theory will work only for \(T \gg T_K\), because close to \(T_K\), the expression becomes non-analytic.
 The ferromagnetic case \((g<0)\), on the other hand, remains perturbative.
 \begin{equation}\begin{aligned}
 g(D^\prime) = \frac{g_0}{1-2g_0\ln\frac{D}{D^\prime}} = -\frac{|g_0|}{1+2|g_0|\ln\frac{D}{D^\prime}}
@@ -1676,110 +1688,6 @@ This says that the variation of the coupling from \(g_0\) to \(g\) is
 Since \(g \equiv N J\), we have recovered eq.~\ref{change1}.
 Since eq.~\ref{change1} was obtained as a perturbation calculation, it should have been valid only at \(T \gg T_K\), but the scaling relation holds at all temperatures.
 
-\subsection{Method of pseudo-fermions}
-Spin operators, unlike fermionic creation and annihilation operators,  do not satisfy Wick's theorem.
-To remedy this, they can be factorised into fermionic operators \cite{abrikosov}.
-For example,
-\begin{equation}\begin{aligned}
-	S^z = \frac{\sigma^z}{2} = \sum_{ij} c^\dagger_i \frac{\sigma^z_{ij}}{2} c_j = \frac{1}{2}\left(c^\dagger_\uparrow c_\uparrow - c^\dagger_\downarrow c_\downarrow\right)
-\end{aligned}\end{equation}
-Similarly,
-\begin{equation}\begin{aligned}
-	S^x = \frac{1}{2}\left(c^\dagger_\uparrow c_\downarrow + c^\dagger_\downarrow c_\uparrow\right)\\
-	S^y = \frac{-i}{2}\left(c^\dagger_\uparrow c_\downarrow - c^\dagger_\downarrow c_\uparrow\right)
-\end{aligned}\end{equation}
-Now, the state \(\ket{\uparrow}\) can be represented as
-\begin{equation}\begin{aligned}
-\ket{\uparrow} = c^\dagger_\uparrow \ket{0}
-\end{aligned}\end{equation}
-This however means that we get two other states in the Hilbert space, \(\ket{0}\) and \(\ket{\uparrow\downarrow}\), which are not allowed physically.
-To remove them, we can do the following.
-We can modify the Hamiltonian \(H\), by introducing a complex chemical potential \cite{poppov}
-\begin{equation}\begin{aligned}
-\mu = -i\frac{\pi}{2}k_B T
-\end{aligned}\end{equation}
-The new Hamiltonian is
-\begin{equation}\begin{aligned}
-\widetilde H = H -\mu (n_d - 1)
-\end{aligned}\end{equation}
-The new partition function is then allowed to run over the entire Hilbert space, including the unphysical states.
-The actual partition function for the original Hamiltonian \(H\) is
-\begin{equation}\begin{aligned}
-	Z = \text{Tr}\left[\exp\left\{-\beta H\right\}\right] = \sum_{\sigma_d = \uparrow,\downarrow}\sum_{k}\left[\exp\left\{-\beta H\right\}\right]
-\end{aligned}\end{equation}
-The modified partition function is
-\begin{equation}\begin{aligned}
-	\widetilde Z &= \text{Tr}\left[\exp\left\{-\beta \left(H -  \mu(n_d-1)\right)\right\}\right]\\
-	      &=\text{Tr}\left[\exp\left\{-\beta H - i\frac{\pi}{2}(n_d -1)\right\}\right]\\
-	      &=\sum_{\sigma_d = \uparrow,\downarrow}\sum_{k}\left[\exp\left\{-\beta H\right\}\right] + \sum_{k}\exp\left\{-\beta H + i\frac{\pi}{2}\right\} + \sum_{k}\exp\left\{-\beta H - i\frac{\pi}{2}\right\}\\
-         &= Z\bigg\vert_{n_d = 1} + i Z\bigg\vert_{n_d = 0} - i Z\bigg\vert_{n_d = 0}
-\end{aligned}\end{equation}
-Since the Hamiltonian involves the impurity electrons only as spin operators, and since \(S_d(0) = 0 = S_d(\uparrow\downarrow)\), we have 
-\begin{equation}\begin{aligned}
-Z\bigg\vert_{n_d = 0} = Z\bigg\vert_{n_d = 0}
-\end{aligned}\end{equation}
-Hence,
-\begin{equation}\begin{aligned}
-\widetilde Z = Z
-\end{aligned}\end{equation}
-Thus, we are able to retain the correct partition function because of the introduction of the complex chemical potential.\\\\
-This method can also be used to determine the higher order corrections to the susceptibility.
-The zeroth order diagrams are\\\\
-\begin{figure}[tbh!]
-\centering
-\includegraphics[scale=0.3]{../figures/poppov1.png} 
-\includegraphics[scale=0.3]{../figures/poppov2.png}
-\end{figure}\\\\
-The dotted lines are the impurity Greens function, so that diagram gives the impurity contribution to the susceptibility.
-Similarly, the solid lines are the conduction electron Greens function.
-The first diagram gives
-\begin{equation}\begin{aligned}
-\chi_c = -k_B T \sum_{k,\omega_n,\phi_0} \bra{\phi_0} \sigma^a G(k,i\omega_n)\sigma^bG_k(i\omega_n)\ket{\phi_0}
-\end{aligned}\end{equation}
-The sum over the ground states \(\ket{\phi_0}\) constitutes a trace, so we can write it as
-\begin{equation}\begin{aligned}
-	\chi_c &= -k_B T \sum_{k,\omega_n} \text{Tr}\left[\sigma^a G(k,i\omega_n)\sigma^bG(k,i\omega_n)\right] \\
-       &= -2 k_B T \sum_{k,\omega_n} G^2(k,i\omega_n)\\
-       &= -2 k_B T \sum_{k,\omega_n} \left(i\omega_n - \epsilon_k\right)^{-2}\\
-       &= 2 \sum_k \frac{\:\mathrm{d}}{\:\mathrm{d}\epsilon_k}k_B T\sum_{\omega_n} \left(i\omega_n - \epsilon_k\right)^{-1}
-\end{aligned}\end{equation}
-Now, it can be shown that
-\begin{equation}\begin{aligned}
-	k_B T\sum_{\omega_n} \left(i\omega_n - \epsilon_k\right)^{-1} = f(\epsilon_k) - \frac{1}{2}
-\end{aligned}\end{equation}
-where \(f(\epsilon_k)\) is the FD-distribution at \(\epsilon_k\).
-Therefore,
-\begin{equation}\begin{aligned}
-	\chi_c &=2 \sum_k \frac{\:\mathrm{d}f(\epsilon_k)}{\:\mathrm{d}\epsilon_k}= 2\sum_k \rho(\epsilon_k) = 2 N(0)
-\end{aligned}\end{equation}
-The second diagram gives
-\begin{equation}\begin{aligned}
-	\chi_d^{(0)} = -k_B T \sum_{\omega_n} \text{Tr}\left[\sigma^a G_d(i\omega_n)\sigma^bG_d(i\omega_n)\right] \\
-\end{aligned}\end{equation}
-In the Popov-Fedotov scheme, we replace the impurity Greens function with
-\begin{equation}\begin{aligned}
-G_d = \frac{1}{i\omega_n - \lambda_d}
-\end{aligned}\end{equation}
-where \(\lambda_d = i\pi\frac{1}{2\beta}\) is the imaginary chemical potential introduced.
-Since this is, for mathematical purposes, the same as the conduction Greens function with \(\lambda_d\) replacing \(\epsilon_k\), we again get
-\begin{equation}\begin{aligned}
-	\chi^{(0)}_d &=2 \frac{\:\mathrm{d}f(\lambda_d)}{\:\mathrm{d}\lambda_d}= -2\beta\frac{e^{\beta \lambda_d}}{\left(1+e^{\beta \lambda_d}\right)^2} = \beta
-\end{aligned}\end{equation}
-The first order diagrams are
-%\begin{center} \includegraphics[scale=0.3]{poppov3.png} \end{center}
-%\begin{center} \includegraphics[scale=0.3]{poppov4.png} \end{center}
-The first diagram gives
-\begin{equation}\begin{aligned}
-	\chi^{(1)} = \chi_c \left(-\frac{J}{2}\right) \chi_d = -\beta JN(0)
-\end{aligned}\end{equation}
-The second one gives
-\begin{equation}\begin{aligned}
-	\chi_d^{(1)} = \chi_d \left(-\frac{J}{2}\right) \chi_c = -\beta JN(0)
-\end{aligned}\end{equation}
-The total susceptibility is
-\begin{equation}\begin{aligned}
-	\chi_d = \chi^{(0)}_d + \chi_d^{(1)} = \beta\left(1 - 2 J N(0)\right)
-\end{aligned}\end{equation}
 \subsection{Nozières' local Fermi liquid theory}
 Wilson's numerical renormalization group calculation showed that the low temperature specific heat contribution from the singlet is linear in temperature
 \begin{equation}\begin{aligned}
@@ -3302,9 +3210,7 @@ The total Hamiltonian can be written in the form
 					     \end{aligned}\end{equation}
 We now evaluate the changes:
 \begin{equation}\begin{aligned}
-	\delta \epsilon_d &= \left({\sum_q}^+\frac{|V_q|^2 }{\epsilon_d - \epsilon_q} + 2{\sum_q}^-\frac{|V_q|^2}{\epsilon_d - \epsilon_q}\right) \\
-			  &\approx |V|^2 \rho |\delta D| \left(\frac{1}{\epsilon_d - D} + \frac{2}{\epsilon_d + D}\right)\\
-&=|V|^2 \rho |\delta D|\frac{D - 3\epsilon_d}{D^2 - \epsilon_d^2}
+	\delta \epsilon_d = \left({\sum_q}^+\frac{|V_q|^2 }{\epsilon_d - \epsilon_q} + 2{\sum_q}^-\frac{|V_q|^2}{\epsilon_d - \epsilon_q}\right) \approx |V|^2 \rho |\delta D| \left(\frac{1}{\epsilon_d - D} + \frac{2}{\epsilon_d + D}\right) =|V|^2 \rho |\delta D|\frac{D - 3\epsilon_d}{D^2 - \epsilon_d^2}
 \end{aligned}\end{equation}
 I used the approximation
 \begin{equation}\begin{aligned}
@@ -3312,10 +3218,8 @@ I used the approximation
 \end{aligned}\end{equation}
 Also,
 \begin{equation}\begin{aligned}
-\delta V_k^+ &= {\sum_q}^+ \frac{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
-           &\approx |V|^2 \rho |\delta D|\frac{1}{(D - \epsilon_d)(\epsilon_k - D)}\\
-\delta V_k^- &= 2{\sum_q}^- \frac{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)}\\
-           &\approx -|V|^2 \rho |\delta D|\frac{2}{(D + \epsilon_d)(\epsilon_k + D)}
+\delta V_k^+ &= {\sum_q}^+ \frac{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)} \approx |V|^2 \rho |\delta D|\frac{1}{(D - \epsilon_d)(\epsilon_k - D)}\\
+\delta V_k^- &= 2{\sum_q}^- \frac{|V_q|^2}{(\epsilon_q - \epsilon_d)(\epsilon_k - \epsilon_q)} \approx -|V|^2 \rho |\delta D|\frac{2}{(D + \epsilon_d)(\epsilon_k + D)}
 \end{aligned}\end{equation}
 We now make the following assumptions:
 \begin{itemize}
@@ -3330,7 +3234,7 @@ With these assumptions, we get the scaling equations similar to the ones obtaine
 NRG calculations of the symmetric SIAM were carried out by H. R. Krishnamurthy, Wilkins and Wilson in ref.~\cite{hrk-nrg}. They identified three fixed points in the phase diagram. Two of them, the free-orbital and the local moment, are unstable while the strong-coupling fixed point is stable. These fixed points along with typical RG flows are marked in fig.~\ref{nrg_fp}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/nrg_fpoints.png}
+	\includegraphics[width=0.4\textwidth]{../figures/nrg_fpoints.png}
 	\caption{Schematic diagram of RG flows and fixed points of the symmetric SIAM, as obtained by ref.\cite{hrk-nrg}. The y-axis is the impurity site repulsion \(U = -\frac{1}{2}\epsilon_d\) while the x-axis is the hybridisation parameter \(\Delta \sim \rho V^2\). The abbreviations mark the three fixed-points: FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are described in the text.}
 	\label{nrg_fp}
 \end{figure}
@@ -3456,11 +3360,6 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 \end{center}
 \caption{Three steps of the URG: Decompose the Hamiltonian in a \(2\times 2\) matrix, apply the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.}
 \end{figure}
-% \begin{figure}
-% \def\svgwidth{0.8\columnwidth}
-% \centering
-% \input{../figures/repeat.pdf_tex}
-% \end{figure}
 
 \subsection{Properties of the many-body transition operators}
 The operators \(\eta\) have some important properties. First is the Fermionic nature:
@@ -3745,22 +3644,27 @@ The renormalization due to the entire shell is obtained by summing over all stat
 	\Delta \mathcal{H} = \sum_{q\beta}\left[c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\frac{1}{\omega_1^0 - \mathcal{H}^d_0} \text{Tr}\left(c_{q\beta}^\dagger\mathcal{H}\right) c_{q\beta} + \text{Tr}\left(c_{q\beta}^\dagger \mathcal{H}\right) c_{q\beta}\frac{1}{\omega_0^1 - \mathcal{H}^d_1}c_{q\beta}^\dagger\text{Tr}\left(\mathcal{H} c_{q\beta}\right)\right] 
 \end{aligned}\end{equation}
 These equations will now need to be simplified. For example, in the particle sector, we can set \(\hat n_{q\beta}=0\) in the numerator, because there is no such excitation in the initial state. Similarly, in  the hole sector, we can set \(\hat n_{q\beta}=1\) because that state was occupied in the initial state. Another simplification we typically employ is that \(\mathcal{H}^d_{0,1}\) will, in general, have the energies of all the electrons. But we consider only the energy of the on-shell electrons in the denominator. After integrating out these electrons, we can rearrange the remaining operators to determine which term in the Hamiltonian it renormalizes and what is the renormalization.
-\\\\At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \mathcal{H}\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\left(c^\dagger_{q\beta}\mathcal{H} \right)c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\mathcal{H}^D\) is just the diagonal part of the Hamiltonian.
+
+At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \mathcal{H}\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\left(c^\dagger_{q\beta}\mathcal{H} \right)c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\mathcal{H}^D\) is just the diagonal part of the Hamiltonian.
 \section{URG analysis of the star graph model}
-\begin{minipage}{260pt}
-	The first URG solution of the star graph problem is in ref.~\cite{spa_star}. The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+	The star graph problem has already been analyzed using URG and an extensive study of its entanglement properties has already been carried out, in ref.~\cite{spa_star}. Here we focus on just deriving the RG equations.
+
+\noindent
+\begin{minipage}{0.5\textwidth}
+The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \epsilon_0 S^z_0 + \sum_{i=1}^N\left[\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i\right]
 \end{aligned}\end{equation}
 \end{minipage}
-\hspace*{20pt}
-\begin{minipage}{200pt}
+\hfill
+\begin{minipage}{0.4\textwidth}
 \begin{center}
-\includegraphics[scale=0.2]{../figures/stargraph_.png}
+\includegraphics[width=0.8\textwidth]{../figures/stargraph_.png}
 \captionof{figure}{Star Graph model}
 \end{center}
 \end{minipage}
-\\\\By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
+
+By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamiltonian as
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \epsilon_0 S^z_0 + \sum_{i=1}^N\left[\epsilon_i S^z_i + J_i\left(S^z_0 S^z_i + \frac{1}{2}\left(S_0^+ S^-_i + S_0^- S^+_i\right)\right)\right]
 \end{aligned}\end{equation}
@@ -3769,7 +3673,8 @@ The diagonal terms are the ones that preserve the number or (in this case) spin.
 \mathcal{H}^d =\sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_iS^z_0 S^z_i 
 \end{aligned}\end{equation}
 This is the piece that comes in the denominator. The off-diagonal terms are the ones that change the number or spin. For this problem, they are the last two terms, \(S_0^+ S_i^-\) and \(S_0^- S_i^+\).
-\\\\The RG involves decoupling the nodes \(N\) through 1, and looking at the resultant renormalization in \(\epsilon_i\) and \(J_i\). As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node \(N\). Since node \(0\) is connected to node \(N\), we will keep node \(0\) in the denominator as well. Making this simplification gives
+
+The RG involves decoupling the nodes \(N\) through 1, and looking at the resultant renormalization in \(\epsilon_i\) and \(J_i\). As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node \(N\). Since node \(0\) is connected to node \(N\), we will keep node \(0\) in the denominator as well. Making this simplification gives
 \begin{equation}\begin{aligned}
 	\label{stardiag}
 \mathcal{H}^D =\epsilon_0 S^z_0 + \epsilon_N S^z_N + J_NS^z_0 S^z_N 
@@ -3838,7 +3743,8 @@ Define \(\tilde\omega = \omega + \frac{1}{2}\epsilon + \frac{1}{4}J\).
 	\Delta \epsilon_0 &= -\frac{1}{4}J^2 \frac{1}{\tilde \omega - \frac{1}{2}\epsilon_0}
 \end{aligned}\end{equation}
 Our goal here is to look for a fixed-point condition such that the denominator vanishes at some point of the RG. If we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 > 0\), the denominator will be positive and the RG equation will be irrelevant. This means that \(\epsilon_0\) will keep on decreasing, and the denominator will keep on becoming more and more positive, meaning there cannot be a fixed point in this situation.
-\\\\If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in figure \ref{star1}.
+
+If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \omega - \frac{1}{2}\epsilon_0 < 0\), the denominator will be negative and the RG equation will be relevant. This means that \(\epsilon_0\) will keep on increasing, and the denominator will keep on becoming more and more negative, meaning there cannot be a fixed point in this situation either. These situations are depicted in figure \ref{star1}.
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{star}
@@ -3849,7 +3755,8 @@ Our goal here is to look for a fixed-point condition such that the denominator v
 	\label{star3}
 	\captionof{figure}{RG flow for the two cases with the new \(-\tilde \omega = \omega^\prime - \frac{1}{2}\epsilon + \frac{1}{4}J\). Now we can see that in both cases, the flow is such that the distance (green dotted line) between the couplings decreases. A fixed point is reached when this distance vanishes.}
 \end{figure}
-\\\\Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
+
+Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
 \begin{equation}
 	\eta^\dagger = \frac{1}{\omega^\prime - \mathcal{H}_d}S_N^+ S_0^- = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^+ S_0^-
 \end{equation}
@@ -3914,7 +3821,8 @@ Note that we keep only those terms in the diagonal part that relate to either th
 \mathcal{H}_d = \epsilon_q \tau_{q\beta} + J_z S_d^z \beta \hat n_{q\beta}
 \end{aligned}\end{equation}
 A constant \(\frac{1}{2} \epsilon_q\) has been dropped while transforming the first term.
-\\\\The off-diagonal part involving the electron on the shell is
+
+The off-diagonal part involving the electron on the shell is
 \begin{equation}\begin{aligned}
 	\mathcal{H}^I = J_z\sum_{k}S^z_d\beta\left(c^\dagger_{k\beta}c_{q\beta} +  c^\dagger_{q\beta}c_{k\beta}\right) + J_t \sum_{k}\left(c^\dagger_{d\beta}c_{d\overline\beta} c^\dagger_{k\overline\beta}c_{q\beta} + c^\dagger_{b\overline\beta}c_{d\beta} c^\dagger_{q\beta}c_{k\overline\beta}\right)
 \end{aligned}\end{equation}
@@ -4027,7 +3935,8 @@ There we used \(\sum_\beta \overline\beta \sum_{kk^\prime}c^\dagger_{k\overline\
 	\sum_{q\beta} \frac{1}{\xi} J_t^2 \hat n_{d\overline\beta}\left(1 - \hat n_{d\beta}\right) \sum_{k} = \sum_q \frac{1}{\xi} J_t^2 \left(\hat n_d - \hat n_{d \uparrow} \hat n_{d \downarrow}\right) \sum_k = \sum_q\frac{1}{\xi} J_t^2 \sum_k
 \end{aligned}\end{equation}
 where we used \(\hat n_d = 1\) and \(\hat n_{d \uparrow} \hat n_{d \downarrow} = 0\) in the singly-occupied subspace. This is a spin-independent impurity-independent potential scattering  within the bath, and we will not consider it further, because it will be irrelevant at low \(\omega\), where the \(J\) is relevant and there is a flow to a strong-coupling fixed point.
-\\\\We can now write down the flow equations for \(J_z\) and \(J_t\):
+
+We can now write down the flow equations for \(J_z\) and \(J_t\):
 \begin{equation}\begin{aligned}
 	\Delta J_z &= - 2J_t^2 \sum_q \frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z}\\
 	\Delta J_t &= -2J_z J_t \sum_q\frac{1}{\omega - \frac{1}{2}\epsilon_q+ \frac{1}{2}J_z }
@@ -4065,7 +3974,8 @@ We first describe the formalism of the poor man's scaling (PMS) method, first fo
 \mathcal{H}\ket{\Psi} = E\ket{\Psi}
 \end{aligned}\end{equation}
 \(\mathcal{H}\) is the total Hamiltonian and \(\ket{\Psi}\) and \(E\) are the exact eigenstate and eigenvalue of \(\mathcal{H}\). We imagine a separation of the total Hilbert space into two set of states, and we call these two states \(\ket{0}\) and \(\ket{1}\). This separation depends on which scattering term we want to kill by this transformation. For example, in the URG, we typically select a particular electron \(q\beta\) and then kill the  scattering terms that change the number of this state. In that case, \(\ket{0}\) will refer to the set of states \(\left\{\ket{\hat n_{q\beta}=0}\otimes\ket{\phi_0}\right\}\) and \(\ket{1}\) will refer to the set of states \(\left\{\ket{\hat n_{q\beta}=1}\otimes\ket{\phi_1}\right\}\). \(\ket{\phi_{0,1}}\) refer to the states of all the other electrons. As another example, if we wanted to separate the charge-Kondo and the spin-Kondo from the SIAM, we would want to kill the terms that scatter between the spin-full subspace \(\hat n_d=1\) to the spin-less subspace \(\hat{n_d}=0,2\). These two will then be the \(\ket{0}\) and \(\ket{1}\) sets. 
-\\\\Keeping this separation in mind, the exact eigenstate \(\ket{\Psi}\) can be split as 
+
+Keeping this separation in mind, the exact eigenstate \(\ket{\Psi}\) can be split as 
 \begin{equation}\begin{aligned}
 \ket{\Psi} = \sum_i \ket{\phi_0^i} + \sum \ket{\phi_1^i}
 \end{aligned}\end{equation}
@@ -4261,7 +4171,8 @@ where \(\ket{\Psi_0} = \left(1 - \hat n_{q}\right)\ket{\Psi^N}\) is that part of
 \mathcal{H} = \mathcal{H}^d + V_0 + V_+ + V_-
 \end{aligned}\end{equation}
 \(\mathcal{H}^d\) is the diagonal part; it has the purely energy terms as well as self-energies that may arise from the diagonal parts of interactions; \(V_0\) is the purely off-diagonal term that does not change \(\hat n_q\); it is the scattering \textit{inside} the low energy subspace. \(V_+\) and \(V_-\) are the purely off-diagonal terms that \textit{do} change \(\hat n_q\); \(V_+\) takes you from \(\hat n_q = 0\) to \(\hat n_q = 1\) and \(V_-\) does the opposite.
-\\\\Substituting eqs.~\ref{hami} and \ref{wf} in eq.~\ref{problem} gives
+
+Substituting eqs.~\ref{hami} and \ref{wf} in eq.~\ref{problem} gives
 \begin{equation}\begin{aligned}
 	\left(\mathcal{H}^d + V_0 + V_+ + V_-\right)\left(\ket{\Psi_0} + \ket{\Psi_1}\right) = E\left(\ket{\Psi_0} + \ket{\Psi_1}\right)
 \end{aligned}\end{equation}
@@ -4327,12 +4238,14 @@ We can write down the renormalized Schrodinger equation in the low energy subspa
 	\tilde{\mathcal{H}}_0 \ket{\Psi_0} = E\ket{\Psi_0}
 \end{aligned}\end{equation}
 and again repeat the entire process. \(\tilde{\mathcal{H}}_0\) now takes the place of \(\mathcal{H}\) and \(\ket{\Psi_0}\) takes the place of \(\ket{\Psi}\) in eq.~\ref{problem}.
-\\\\The expression for URG is obtained in an almost identical way. The only difference is that instead of starting with the exact eigenpair (\(E,\ket{\Psi}\)), we start with a more general pair (\(\tilde{\mathcal{H}}, \ket{\Phi}\)) where \(\ket{\Phi}\) is not necessarily an exact eigenstate of \(\mathcal{H}\). It is defined by \(\mathcal{H}^\prime\), which is in turn defined as \(\hat n_q \mathcal{H}^\prime\left(1 - \hat n_q\right) = 0\). \(\ket{\Phi}\) is then defined by
+
+The expression for URG is obtained in an almost identical way. The only difference is that instead of starting with the exact eigenpair (\(E,\ket{\Psi}\)), we start with a more general pair (\(\tilde{\mathcal{H}}, \ket{\Phi}\)) where \(\ket{\Phi}\) is not necessarily an exact eigenstate of \(\mathcal{H}\). It is defined by \(\mathcal{H}^\prime\), which is in turn defined as \(\hat n_q \mathcal{H}^\prime\left(1 - \hat n_q\right) = 0\). \(\ket{\Phi}\) is then defined by
 \begin{equation}\begin{aligned}
 \mathcal{H}\ket{\Phi} = \mathcal{H}^\prime \ket{\Phi}
 \end{aligned}\end{equation}
 This definition of \(\mathcal{H}^\prime\) is the very minimum that we must have in order to fulfill our goal (decouple \(q\)). 
-\\\\The operators \(\eta\) and its conjugate change accordingly:
+
+The operators \(\eta\) and its conjugate change accordingly:
 \begin{equation}\begin{aligned}
 	\left(\eta\right)_\text{URG} &= \frac{1}{\tilde{\mathcal{H}} - \mathcal{H}^d_0 - V_0}V_-\\
      &= \frac{1}{\hat \omega - \mathcal{H}^d_0}V_-\\
@@ -4350,7 +4263,8 @@ This again allows us to write down a unitary operator that decouples the entangl
 	U =  1 - \eta + \eta^\dagger, \left[\hat n_q, U \mathcal{H} U^\dagger\right] = 0
 \end{aligned}\end{equation}
 where \(\tilde{\mathcal{H}} = U^\dagger \mathcal{H} U\). We can now write down a new problem in this decoupled space with the rotated items and attempt to decouple another electron \(q^\prime\). We will again choose some general eigenpair (\(\mathcal{H}^\prime,\ket{\Phi}\)) such that \(\tilde{\mathcal{H}}\ket{\Phi} = \mathcal{H}^{\prime}\ket{\Phi}\) and \(\left[\mathcal{H}^{\prime},\hat n_{q^\prime}\right]=0\).
-\\\\Summarizing, the general Hamiltonian is not diagonal in the Fock space basis.
+
+Summarizing, the general Hamiltonian is not diagonal in the Fock space basis.
 URG, in order to proceed, selects one non-Fock basis of states \(\ket{\Phi}\) such that \(q\) is decoupled in that Hamiltonian.
 Since there can be lots of such basis, there is a freedom in this choice.
 With this basis in mind, URG then finds a unitary operator which when operated on the Hamiltonian takes us to the form in which it is diagonal in the Fock space basis.
@@ -4358,12 +4272,14 @@ Note that this form is a function of the chosen \(\ket{\Phi}\).
 We then select the second degree of freedom and repeat the process.
 What PMS does is, it exploits the freedom of choice and selects the exact eigenstate \(\ket{\Psi}\) of the Hamiltonian as the non-Fock basis \(\ket{\Phi}\).
 Doing that returns a rotated Hamiltonian which is diagonal in \(q\), and is a function of the chosen state, same as URG. The conclusion is that depending on which state we choose as our diagonal non-Fock basis, URG and PMS will cause flows along different lines in general.
-\\\\As the couplings flow, \(V_0\) will also flow, leading to a flow of \(\hat\omega\). Just at the fixed point, the denominator of URG vanishes, giving the equation
+
+As the couplings flow, \(V_0\) will also flow, leading to a flow of \(\hat\omega\). Just at the fixed point, the denominator of URG vanishes, giving the equation
 \begin{equation}\begin{aligned}
 	\left(\hat\omega - \mathcal{H}_1^d\right)V_+\ket{\Psi_0} \text{ or } \left(\hat\omega - \mathcal{H}_1^d\right)V_-\ket{\Psi_1}
 \end{aligned}\end{equation}
 This means that one of the eigenvalues of \(\hat\omega\) matches with the eigenvalue of the diagonal part \(\mathcal{H}^d\), either in the occupied sector (\(\mathcal{H}^d_1\)) or unoccupied sector (\(\mathcal{H}^d_1\)). Since the eigenvalues are unchanged during the unitary renormalization, this implies that \(\omega\) takes up one of the eigenvalues of the whole Hamiltonian \(\mathcal{H}\). This will correspond to the fixed point obtained from PMS if we had started PMS with that eigenvalue.
-\\\\In short, while the PMS flow is parametrised by one of the exact energy eigenvalues \(E\), the URG flow is parametrised by a non-trivial operator \(\hat \omega\) which incorporates both a diagonal part and an off-diagonal part and itself flows under the URG. At the fixed point, the off-diagonal part cancels out and the \(\hat\omega\) finally flows to one of the energy eigenvalues and the URG fixed point matches with one of the PMS fixed points.
+
+In short, while the PMS flow is parametrised by one of the exact energy eigenvalues \(E\), the URG flow is parametrised by a non-trivial operator \(\hat \omega\) which incorporates both a diagonal part and an off-diagonal part and itself flows under the URG. At the fixed point, the off-diagonal part cancels out and the \(\hat\omega\) finally flows to one of the energy eigenvalues and the URG fixed point matches with one of the PMS fixed points.
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{pms_vs_urg.png}
@@ -4391,7 +4307,8 @@ Since \(E\) is the exact eigenvalue, we do not have an expression for it. Instea
 	E - V_0= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} - \frac{1}{2}\epsilon_q + \epsilon_d + \left(\epsilon_d + U\right)\hat n_{d\overline\beta}
 \end{aligned}\end{equation}
 The \(- \frac{1}{2}\epsilon_q\) comes from substituting \(\hat n_{q\beta}=0\) in \(\epsilon_q \tau_{q\beta}\).
-\\\\ Substituting this in \(\Delta V_0\) gives
+
+Substituting this in \(\Delta V_0\) gives
 \begin{equation}\begin{aligned}
 \Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\frac{1}{2}\epsilon_q -\epsilon_q \tau_{q\beta} + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta}\\
 &=  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta}\\
@@ -4433,7 +4350,8 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
     \caption{Flow chart of "Poor Man's" scaling algorithm}
     \label{pmsflow}
 \end{figure}
-\\\\\textbf{Some conclusions}:
+
+\textbf{Some conclusions}:
 \begin{itemize}
 \item The \textit{only} difference in the formalism of PMS and URG is that while PMS uses the exact energy eigenvalue \(E\) to parameterise the flow, URG uses a general intermediate decoupled Hamiltonian to do the same. Since the \(E\) is also, technically, an intermediate decoupled Hamiltonian (it is the final Hamiltonian), PMS can be seen as an URG but with a specific choice for the paramter.
 \item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
@@ -4461,7 +4379,8 @@ where \(H_1\) is diagonal and \(H_2\) is off-diagonal.
 	-\sinh\left(S\right) \mathcal{H}_X \sinh\left(S\right)
 \end{aligned}\end{equation}
 The decoupling condition is \(H_2=0\).
-\\\\For small \(S\), we have \(\sinh S \sim S\) and \(\cosh S \sim 1 + \frac{1}{2} S^2\). Therefore, the off-diagonal part, up to second order, is 
+
+For small \(S\), we have \(\sinh S \sim S\) and \(\cosh S \sim 1 + \frac{1}{2} S^2\). Therefore, the off-diagonal part, up to second order, is 
 \begin{equation}\begin{aligned}
 	H_2 = -\mathcal{H}_0 S + S \mathcal{H}_0 + \mathcal{H}_X + O(S^3) = \left[S,\mathcal{H}_0\right] + \mathcal{H}_X
 \end{aligned}\end{equation}
@@ -4509,7 +4428,8 @@ The off-diagonal part now becomes
 	H_2 = \frac{1}{2}\left(\mathcal{H}_X - \eta^\dagger \mathcal{H}_X \eta^\dagger - \eta \mathcal{H}_X \eta + \left[\eta^\dagger - \eta, \mathcal{H}_0\right]\right)
 \end{aligned}\end{equation}
 The vanishing of this quantity is now the decoupling condition, and is also given in eq 16 of ref.~\cite{anirbanurg1}.
-\\\\To look for a decoupling condition similar to eq.~\ref{dec_cond}, we can re-express the \(\cosh\) and \(\sinh\) in eq.~\ref{cossin} in terms of \(S\), by substituting \(\eta^\dagger - \eta = \frac{4}{\pi}S\):
+
+To look for a decoupling condition similar to eq.~\ref{dec_cond}, we can re-express the \(\cosh\) and \(\sinh\) in eq.~\ref{cossin} in terms of \(S\), by substituting \(\eta^\dagger - \eta = \frac{4}{\pi}S\):
 \begin{equation}\begin{aligned}
 \cosh S = \frac{1}{\sqrt 2},\text{ and } \sinh S = \frac{4}{\sqrt 2 \pi}S
 \end{aligned}\end{equation}
@@ -4582,7 +4502,8 @@ This is the same as the PMS result eq.~\ref{pmsren}. It is easy to see that sinc
 		&= \frac{1}{2} \sum_{jl}\frac{2}{E_0^l - E_1^j}V_{lj}V^\dagger_{lj} - \frac{1}{2} \sum_{ji}\frac{2}{E_0^i - E_1^l}V^\dagger_{il}V_{il}\\
 		&= 0
 \end{aligned}\end{equation}
-\\\\We can also make a comparison to the renormalization obtained from URG.
+
+We can also make a comparison to the renormalization obtained from URG.
 \begin{equation}\begin{aligned}
 	\Delta \mathcal{H} &= \frac{1}{2}\left[\eta^\dagger - \eta,\mathcal{H}\right]
 \end{aligned}\end{equation}
@@ -4641,9 +4562,11 @@ This can be compared with the URG result, eq.~\ref{urg-siam},
 \Delta E_0 &= 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d}\\
 \end{aligned}\end{equation}
 We can transform the URG result to the SWT result if we ignore the effect of the quantum fluctuations in \(\omega\) (arising from the presence of the off-diagonal term \(\mathcal{H}^i\)) and replace it with the renormalised diagonal value of \(-\frac{1}{2}\epsilon_q\). This means that SWT tracks the effect of the off-diagonal terms only in the numerator. Of course, all this assumes we are doing an iterative SWT instead of a one-shot SWT; the latter is the conventional way. A second difference is that URG has a Green's function like structure in the renormalization such that a fixed point is reached when the diagonal part \(\mathcal{H}^d\) matches one of the eigenvalues of \(\omega\) (see \ref{match}). SWT does not have such a fixed point structure.
-\\\\Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
+
+Another point to note is that decoupling a single electron does not generate all the charge-charge or spin-spin interactions that come out when one performs a one-shot SWT. This implies that such terms are a result of decoupling the non-local interactions of the impurity (it is talking to all the mobile electrons), and cannot be generated when we remove just the local interactions of the mobile electrons. Instead, if one performs a URG in which we non-perturbatively kill the 2-point vertices in the SIAM, such 4-point vertices are generated. This is shown in the next subsection.
 \section{Deriving the Kondo model from the Anderson model via a one-shot URG}\label{SWT from URG}
-Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to decoupling the whole band via URG. \\\\There are three departures from the conventional way of doing URG (or PMS).
+Here we will show how we can obtain the spin-spin interaction of the Kondo model by performing a one-shot URG on the SIAM. This should justify that the action of performing an SWT is analogous to decoupling the whole band via URG. 
+There are three departures from the conventional way of doing URG (or PMS).
 \begin{itemize}
     \item We will be severing the connections of the impurity with all the mobile electrons in one-shot, and not iteratively.
     \item We will have to trivialize the quantum fluctuation operator \(\hat \omega\) by replacing it with the diagonal part of the initial state energy.
@@ -4697,7 +4620,8 @@ The renormalization \(\Delta_1\) becomes
 		 &=\sum_{kq\sigma}\left[W_{kq} + \frac{1}{2} \hat n_d J_{kq}\right]c^\dagger_{k\sigma}c_{q\sigma} - \sum_{kq\sigma}\sigma J_{kq} S_d^z c^\dagger_{k\sigma}c_{q\sigma}- \sum_{k\sigma}\left[W_{kk} + \hat n_{d\overline\sigma}J_{kk}\right]\hat n_{d\sigma}
 \end{aligned}\end{equation}
 There we exchanged \(\hat n_{d\overline\sigma}\) for \(S_d^z\) and \(\hat n_d\), in the first term, by using the definitions \(\hat n_{d\sigma} + \hat n_{d\overline\sigma} = \hat n_{d\sigma}\) and \(\hat n_{d\sigma} - \hat n_{d\overline\sigma} = 2\sigma S_d^z\).
-\\\\The second term in the summation comes from the choice \(\sigma = \overline\alpha\).
+
+The second term in the summation comes from the choice \(\sigma = \overline\alpha\).
 \begin{equation}\begin{aligned}
 	\Delta_2 &= \frac{1}{2}\sum_{kq\overline\sigma=\alpha}\left[\left(\frac{\hat n_{d\overline\sigma}}{E_k^1} + \frac{1 - \hat n_{d\overline\sigma}}{E_k^0}\right)\left(V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}\right),V_q c^\dagger_{q\overline\sigma}c_{d\overline\sigma} + V_q^* c^\dagger_{d\overline\sigma}c_{q\overline\sigma}\right]\\
 		 &= \frac{1}{2}\sum_{kq\sigma}\left(V_k c^\dagger_{k\sigma}c_{d\sigma} - V^*_k c^\dagger_{d\sigma}c_{k\sigma}\right)\left[\frac{\hat n_{d\overline\sigma}}{E_k^1} + \frac{1 - \hat n_{d\overline\sigma}}{E_k^0},V_q c^\dagger_{q\overline\sigma}c_{d\overline\sigma} + V_q^* c^\dagger_{d\overline\sigma}c_{q\overline\sigma}\right]\\
@@ -4713,7 +4637,8 @@ We now use the following trick to combine the first and fourth terms:
 &=-\sum_{kq\sigma}J_{kq} c^\dagger_{k\sigma}c_{q\overline\sigma}c^\dagger_{d\overline\sigma}c_{d\sigma} \\
 \end{aligned}\end{equation}
 In the penultimate step, we interchanged the dummy indices \(k\) and \(q\) and changed \(\sigma \leftrightarrow \overline\sigma\) in the second term. 
-\\\\Similarly, for the second term, we get
+
+Similarly, for the second term, we get
 \begin{flalign*}
 &\frac{1}{2}\sum_{kq\sigma}V_k V_q c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\overline\sigma}c_{d\overline\sigma}\left(\frac{1}{E_k^1} - \frac{1}{E_k^0}\right)\\
 &=\frac{1}{4}\sum_{kq\sigma}\left[V_k V_q \left(\frac{1}{E_k^1} - \frac{1}{E_k^0}\right)c^\dagger_{k\sigma}c_{d\sigma} c^\dagger_{q\overline\sigma}c_{d\overline\sigma} + \underbrace{V_k V_q \left(\frac{1}{E_k^1} - \frac{1}{E_k^0}\right)c^\dagger_{k\overline\sigma}c_{d\overline\sigma} c^\dagger_{q\sigma}c_{d\sigma}}_{\sigma \leftrightarrow \overline\sigma}\right]\\
@@ -4896,7 +4821,8 @@ where \(\tilde{\mathcal{H}}^I = \frac{1}{\omega_1 - \omega_0}G\mathcal{H}^I\). T
 	\Delta{\mathcal{H}}(\lambda) = \Delta{\lambda}\left[\left[\mathcal{H}_d,\mathcal{H}_X\right],\mathcal{H}\right]
 \end{aligned}\end{equation}
 Leaving aside the obvious differences in the philosophies (the presence of \(\omega\) in URG or the fact that while URG decouples as a flow in the bandwidth, CUT uses a general parameter \(\lambda\) or the algorithmic difference that while URG decouples one specific node, CUT tries to make the Hamiltonian band-diagonal), the major physical difference is the presence of the total Green's function in the URG equation. It must be noted that while CUT employs the entire off-diagonal part in \(\mathcal{H}_X\), the \(\mathcal{H}^I\) of URG contains only those parts that are off-diagonal with respect to the node being decoupled at this step.
-\\\\To bring the URG form closer to CUT, we can make some approximations. 
+
+To bring the URG form closer to CUT, we can make some approximations. 
 \begin{equation}
 G = \left(\hat \omega - \mathcal{H}^d\right)^{-1} \approx -\left(\mathcal{H}^d\right)^{-1}
 \end{equation}
@@ -4912,14 +4838,19 @@ We can thus make the connection,
 Note that in going from eq.~\ref{dbrack} to the simplified form eq.~\ref{cuturg}, we had to drop all quantum fluctuations in the denominator and we lose the fixed point structure in the process. This results in the distinction that while URG can reach a fixed point theory in a finite number of steps, CUT cannot do so.
 \section{Comparison of the Canonical Transformations}
 We have considered three canonical transformations in this section: the Poor Man's scaling (PMS), the Schrieffer-Wolff transformation (SWT) and the continuous unitary transformation renormalization group (CUT-RG). PMS and SWT are more or less identical; they differ in the context in which they are used. PMS is used when there is an entire spectrum of energies in the model, ranging from a low energy limit to a high energy; it is then employed to decouple the highest energy modes in an iterative fashion. SWT is used when the Hamiltonian can be split into one high and one low energy part, and we need to decouple these two modes. It is clear when seen from this perspective that SWT is like a one-shot PMS; it decouples the UV from the IR in one step, compared to the iterative approach of PMS. However, as has been shown in the previous subsections, both PMS and SWT can be formalized in an identical fashion, so that one can be switched for the other in both contexts.
-\\\\Now that we have established that PMS and SWT are formally identical, we can relate them to URG. URG is similar in philosophy to PMS in the fact that URG also successively decouples high energy modes from the low energy ones. The difference is that URG takes care of the quantum fluctuations, at least in principle, by introducing a new set of energy scales \(\omega\). These \(\omega\) then parameterise the RG flows of URG, compared to the single RG flow of PMS. Since SWT is formally the same as PMS, these is also a comparison between SWT and URG. Both PMS and SWT trivialize the quantum fluctuation scales of URG by replacing it with the bare energy values.
-\\\\CUT-RG is philosophically different from the other transformations. Its goal is to gradually reduce the contributions of the off-diagonal terms by making them decay along a certain scale \(l\). Off-diagonal terms that connect states with large energy differences decay faster. In this sense, there is no sequential dropping out of off-diagonal terms; all off-diagonal terms disappear at \(l=\infty\). In this sense, it is like a continuous version of SWT. While SWT strives to remove an entire off-diagonal term in one-shot, CUT RG does this gradually by introducing a scale \(l\). This separation of scales is absent in SWT. It does exist in URG and PMS, albeit in a different fashion. There, the separation comes in when we decouple single electron states starting from the Brillouin zone boundary \(\Lambda_N\) and come down to the Fermi surface \(\Lambda_0\). Each \(\Lambda\) provides a natural energy scale for separating the high and low energy physics.
-\\\\If one integrates the continuum generator \(\eta\) over all the scales, one should recover something analogous to the SWT generator. This generator is however necessarily perturbative in the off-diagonal term, since by definition \(\eta\) will only be of first order in \(\mathcal{H}_X\). This is in contrast to the non-perturbative generators in URG and, at least in principle, PMS. This non-perturbative form is encapsulated in the presence of a second completely different set of energy scales \(\omega\) (or \(E\) in PMS). This second energy scale is absent in CUT RG because it takes care of at most the second order term.
-\\\\Another point to note is that since SWT keeps the entire off-diagonal piece in the generator, new terms will almost certainly by generated at every step, and they have to be truncated. This is not the case with URG or PMS, becasue in those methods, we decouple just a single-electron at each step, and so those electrons become integrals of motion at that step, leading to their removal from the off-diagonal piece, and very often the Hamiltonian retains the same form as the bare model. This makes the philosophy of URG and PMS easier to work with. Tied to this is the fact that CUT RG often takes a certain type of interaction in the generator part, and not the entire off-diagonal piece. Hence, at the limit of the flow parameter going to \(\infty\), the chosen off-diagonal piece goes to zero but the remaining off-diagonal pieces still remain. As a result, the Hamiltonian is atmost block diagonal at this stage. On the other hand, URG progressively decouples single electrons, meaning all scattering terms corresponding to that electron vanish at each step. 
-\\\\One last thing to note is that URG, being unitarily implemented with a well-defined generator, does not accomodate for spontaneous symmetry breaking (SSB). In order to see SSB, the symmetry-breaking term has to be added to the bare model explicitly; if this term grows under the RG, then the ground state will be symmetry-broken. CUT RG, however, does allow for SSB through the idea that the generator is not uniquely defined. If the generator commutes with a particular symmetry, then the family of Hamiltonians will also have the symmetry \cite{kehrein}. However, if the generator is replaced by something that is normal ordered w.r.t a particular expectation value, then the CUT RG flow will usually be towards either the symmetry-preserved state or the symmetry-broken state, depending on whichever is stable \cite{wegner_normal}.
+
+Now that we have established that PMS and SWT are formally identical, we can relate them to URG. URG is similar in philosophy to PMS in the fact that URG also successively decouples high energy modes from the low energy ones. The difference is that URG takes care of the quantum fluctuations, at least in principle, by introducing a new set of energy scales \(\omega\). These \(\omega\) then parameterise the RG flows of URG, compared to the single RG flow of PMS. Since SWT is formally the same as PMS, these is also a comparison between SWT and URG. Both PMS and SWT trivialize the quantum fluctuation scales of URG by replacing it with the bare energy values.
+
+CUT-RG is philosophically different from the other transformations. Its goal is to gradually reduce the contributions of the off-diagonal terms by making them decay along a certain scale \(l\). Off-diagonal terms that connect states with large energy differences decay faster. In this sense, there is no sequential dropping out of off-diagonal terms; all off-diagonal terms disappear at \(l=\infty\). In this sense, it is like a continuous version of SWT. While SWT strives to remove an entire off-diagonal term in one-shot, CUT RG does this gradually by introducing a scale \(l\). This separation of scales is absent in SWT. It does exist in URG and PMS, albeit in a different fashion. There, the separation comes in when we decouple single electron states starting from the Brillouin zone boundary \(\Lambda_N\) and come down to the Fermi surface \(\Lambda_0\). Each \(\Lambda\) provides a natural energy scale for separating the high and low energy physics.
+
+If one integrates the continuum generator \(\eta\) over all the scales, one should recover something analogous to the SWT generator. This generator is however necessarily perturbative in the off-diagonal term, since by definition \(\eta\) will only be of first order in \(\mathcal{H}_X\). This is in contrast to the non-perturbative generators in URG and, at least in principle, PMS. This non-perturbative form is encapsulated in the presence of a second completely different set of energy scales \(\omega\) (or \(E\) in PMS). This second energy scale is absent in CUT RG because it takes care of at most the second order term.
+
+Another point to note is that since SWT keeps the entire off-diagonal piece in the generator, new terms will almost certainly by generated at every step, and they have to be truncated. This is not the case with URG or PMS, becasue in those methods, we decouple just a single-electron at each step, and so those electrons become integrals of motion at that step, leading to their removal from the off-diagonal piece, and very often the Hamiltonian retains the same form as the bare model. This makes the philosophy of URG and PMS easier to work with. Tied to this is the fact that CUT RG often takes a certain type of interaction in the generator part, and not the entire off-diagonal piece. Hence, at the limit of the flow parameter going to \(\infty\), the chosen off-diagonal piece goes to zero but the remaining off-diagonal pieces still remain. As a result, the Hamiltonian is atmost block diagonal at this stage. On the other hand, URG progressively decouples single electrons, meaning all scattering terms corresponding to that electron vanish at each step. 
+
+One last thing to note is that URG, being unitarily implemented with a well-defined generator, does not accomodate for spontaneous symmetry breaking (SSB). In order to see SSB, the symmetry-breaking term has to be added to the bare model explicitly; if this term grows under the RG, then the ground state will be symmetry-broken. CUT RG, however, does allow for SSB through the idea that the generator is not uniquely defined. If the generator commutes with a particular symmetry, then the family of Hamiltonians will also have the symmetry \cite{kehrein}. However, if the generator is replaced by something that is normal ordered w.r.t a particular expectation value, then the CUT RG flow will usually be towards either the symmetry-preserved state or the symmetry-broken state, depending on whichever is stable \cite{wegner_normal}.
 \begin{center}
 	\includegraphics[scale=0.22]{../figures/unitaries.png}
-	\captionof{figure}{Comparison of the various unitary transformations, depicting how each of them are related to one another.}
+	\captionof{figure}{Comparison of the various unitary transformations and their relationships to each other.}
 \end{center}
 \chapter{URG of the SIAM and its Spin and Charge Generalizations}\label{siamurg}
 \section{URG of the SIAM}
@@ -5001,7 +4932,8 @@ To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we 
 \Delta U &= 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}
 \end{aligned}\end{equation}
 Assuming the upper and lower band edges are symmetrical such that \(\sum_{-D} = \sum_D\), we get \(\Delta \epsilon_d = \Delta U = 0\). 
-\\\\In the regime \(U \gg \epsilon_q \gg \epsilon_d\), the doubly-occupied state is far above the bandwidth. We can now ignore the terms that have \(U\) in the denominator. We get
+
+In the regime \(U \gg \epsilon_q \gg \epsilon_d\), the doubly-occupied state is far above the bandwidth. We can now ignore the terms that have \(U\) in the denominator. We get
 \begin{equation}\begin{aligned}
 \Delta \epsilon_d &= \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}\\
 \Delta U &= 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}  - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} 
@@ -5038,14 +4970,16 @@ We dropped some constant terms in the transformed Hamiltonian. For particle-hole
 	\label{phs}
 \epsilon_d = -\epsilon_d - U \implies \epsilon_d + \frac{1}{2} U = 0
 \end{aligned}\end{equation}
-\begin{minipage}{260pt}
+\begin{minipage}{0.5\textwidth}
     This same condition can be obtained in a more physical way. If we consider the singly-occupied state of the impurity as the reference state, the doubly-occupied state is the particle-excitation and the vacant state is the hole excitation. The energy of this particle state is \(E_2 = 2\epsilon_d + U\) and that of the hole state is \(E_0 = 0\). Particle-hole symmetry then requires the particle and hole levels to be degenerate, which means \(E_2 = E_0\), and we recover the condition eq.~\ref{phs}.
 \end{minipage}
-\hspace*{15pt}\begin{minipage}{200pt}
-    \centering\includegraphics[scale=0.3]{phsymm.png}
+\hfill
+\begin{minipage}{0.4\textwidth}
+    \centering\includegraphics[width=0.8\textwidth]{phsymm.png}
     \captionof{figure}{Particle and hole excitations of the impurity}
 \end{minipage}
-\\\\Since the URG is unitary, if we start from a model that is particle-hole symmetric, the RG equations should uphold that symmetry. What this means is that if we have \(\epsilon_d + \frac{1}{2} U = 0\) in the bare model, the new couplings should also satisfy \(\epsilon_d^\prime + \frac{1}{2} U^\prime = 0\). This means we must have 
+
+Since the URG is unitary, if we start from a model that is particle-hole symmetric, the RG equations should uphold that symmetry. What this means is that if we have \(\epsilon_d + \frac{1}{2} U = 0\) in the bare model, the new couplings should also satisfy \(\epsilon_d^\prime + \frac{1}{2} U^\prime = 0\). This means we must have 
 \begin{equation}\begin{aligned}
 	\Delta\left(\epsilon_d + \frac{1}{2} U\right) = 0
 \end{aligned}\end{equation}
@@ -5178,7 +5112,8 @@ The diagonal parts \(E_i^0\) are
 	E^0_3 &= \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2}\\
 \end{aligned}\end{equation}
 Note that in writing these diagonal parts, we have considered the effect of \(c^\dagger_k\) on the \(J_z\) part. For example, if there is a \(\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)c^\dagger_{k\beta}\) in front of the propagator, that means the intermediate state has \(\hat n_{d\beta} - \hat n_{d\overline\beta} = 1 = \hat n_{k\beta}\) and that will contribute a term \(\frac{J_z}{2} \left(\hat n_{d\beta} - \hat n_{d\overline\beta}\right)\hat n_{k\beta} = \frac{J_z}{2}\) to \(E^0\). Also, while calculating \(E_5\), we have ignored the presence of \(\hat n_{q\overline\beta}\), because it violates the spin reversal symmetry for this term.
-\\\\Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
+
+Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\dagger\) gives
 \begin{equation}\begin{aligned}
 	&\sum_{ij} \left(\frac{1}{\omega_i - E^0_i} + \frac{1}{\omega - E^0_j}\right) T_i T_j^\dagger\\ 
 	&=\frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\overline\beta} \right) \\
@@ -5298,7 +5233,8 @@ where we used \(\xi_4^\prime = \xi_3\). The terms with \(J_t V\) also renormaliz
 	\Delta V_1 &= -\left(\frac{J_z}{4}V_1 + J_t V_1\right) \left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
 \end{aligned}\end{equation}
 There we used \(\xi_5^\prime = \xi_5 = \xi_3\).
-\\\\The remaining terms are all of order \(J^2\). First we look at the \(J_t^2\) terms:
+
+The remaining terms are all of order \(J^2\). First we look at the \(J_t^2\) terms:
 \begin{equation}\begin{aligned}
 &\frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta} c_{k^\prime\overline\beta}c^\dagger_{k\overline\beta} + \frac{1}{\xi^\prime_5}J_t^2 \left( 1 - \hat n_{d\overline\beta} \right) \hat n_{d\beta} c^\dagger_{k\overline\beta} c_{k^\prime\overline\beta}\\
 &=\frac{1}{\xi_3}J_t^2 c^\dagger_{k\overline\beta} c_{k^\prime\overline\beta}\left[\left( 1 - \hat n_{d\overline\beta} \right) \hat n_{d\beta} - \left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta}\right]  + \delta_{kk^\prime} \frac{1}{\xi_3}J_t^2\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta}\\
@@ -5327,7 +5263,8 @@ They renormalize the transverse Kondo coupling. Noting that \(\xi_5 = \xi_4^\pri
 
 \subsection{Scaling equations}
 Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt}, and summing over \(\beta\), we can write down the scaling equations for the Anderson-Kondo model.
-\\\\\begin{minipage}{320pt}
+
+\begin{minipage}{0.6\textwidth}
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - \frac{2|V_0|^2}{\xi_2} + \sum_k \frac{1}{\xi_3}\left(J_t^2  + \frac{1}{2}J_z^2\right)\\
 	\Delta U &= \frac{2|V_1|^2}{\xi_1^\prime} + \frac{2|V_0|^2}{\xi_2} - \frac{2|V_1|^2}{\xi_1} - \frac{2|V_0|^2}{\xi_2^\prime} - \sum_k \frac{1}{\xi_3}\left(2J_t^2 + J_z^2\right)\\
@@ -5337,8 +5274,8 @@ Looking at eqs.~\ref{edU},~\ref{edU2},~\ref{edU3},~\ref{V},~\ref{Jz} and \ref{Jt
 	\Delta J_t &= -\frac{2}{\xi_3}J_t J^z_0
 \end{aligned}\end{equation}
 \end{minipage}
-\vline
-\begin{minipage}{150pt}
+\hfill
+\begin{minipage}{0.3\textwidth}
 \begin{equation*}\begin{aligned}
 	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + \frac{J_z}{2}\\
 	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
@@ -5480,7 +5417,8 @@ Using the expressions of the \(T_i\), this becomes
 \end{aligned}\end{equation}
 The indices \(k,k^\prime\) are summed over.
 \(\xi_i\) is defined exactly as before, \(\omega_i - E_i^0\).
-\\\\The intermediate energies, \(E_i^0\), are
+
+The intermediate energies, \(E_i^0\), are
 \begin{equation}\begin{aligned}
 	E^0_1 = E_3^0 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U\\
 	E^0_2 &= \frac{\epsilon_q}{2} + \epsilon_d \\
@@ -5510,7 +5448,8 @@ where \(\xi^\prime = \omega^\prime = E_i^1\). The intermediate energies in this 
 
 \subsection{Relating the \(\omega\)}
 Just as in the previous subsection, we relate the \(\omega_i\) using their diagonal values.
-\\\\First the particle sector \(\omega_i\):
+
+First the particle sector \(\omega_i\):
 \begin{equation}\begin{aligned}
 	\omega_1 &= -\frac{\epsilon_q}{2} + \epsilon_d\\
 	\omega_2 &= \omega_5 = -\frac{\epsilon_q}{2} - K_z\\
@@ -5734,12 +5673,14 @@ The strong-coupling fixed points is reached for \(\omega - \frac{\epsilon_q}{2} 
 	\end{cases}
 \end{aligned}\end{equation}
 This implies that for \(J>K\), the flow is towards an impurity which is singly-occupied, while \(J < K\) will mean the impurity will be four-fold degenerate with all four levels at the Fermi surface. 
-\\\\The effective Hamiltonian is
+
+The effective Hamiltonian is
 \begin{equation}\begin{aligned}
 	\mathcal{H}^* = \sum_{k\sigma} \epsilon_k \hat n_{k\sigma} - 2 U^* \left(S_d^z\right)^2 + \sum_{kk^\prime < \Lambda^*}\left[J^* \vec{S_d}\cdot\vec{s_{kk^\prime}} + K^* \vec{C_d}\cdot\vec{C_{kk^\prime}}\right] + \sum_{q > \Lambda^*}\left[J_q S_d^z s^z_{q} + K_q C_d^z C^z_{q}\right]
 \end{aligned}\end{equation}
 where \(S_d^z = \frac{1}{2}\left( \hat n_{d\uparrow} - \hat n_{d \downarrow} \right) \). Since the interaction terms do not couple the \(\hat n_{d}=1\) and \(\hat n_{d}=0,2\) subspaces, we can diagonalize the Hamiltonian separately in these subspaces. 
-\\\\In the singly-occupied subspace, the Hamiltonian is
+
+In the singly-occupied subspace, the Hamiltonian is
 \begin{equation}\begin{aligned}
 	\mathcal{H}^*_{1} = \sum_k \epsilon_k \hat n_{k\sigma} - \frac{1}{2} U^* + \sum_{kk^\prime < \Lambda^*}J^* \vec{S_d}\cdot\vec{s_{kk^\prime}}+ \sum_{q > \Lambda^*}J^{**} S_d^z s^z_{q}
 \end{aligned}\end{equation}
@@ -5835,7 +5776,8 @@ This is essentially the charge analogue of the Kondo effect; the relevant transf
 The ground state in this sector will be a charge singlet, as shown in the next section. This was also reported by Taraphder and Coleman in \cite{taraphder}.
 \subsection{Phase diagram for \(V > 0\)}
 We can now summarize the various fixed point phases. The physically relevant ones are the first and third quadrants. The first quadrant features a large spin-exchange coupling \(J\) and a positive \(U\) in the bare model, and the stable flows are towards a large \(J^*\) and a very small (\(\approx 0\)) \(U^*\). The fixed point state will be mostly a spin singlet, in which the impurity polarization gets quenched by the spin-flip scattering of the conduction electrons. The third quadrant is the regime of the charge-Kondo effect, and involves a negative \(U\) at the bare level which physically motivates a large charge-Kondo coupling \(K\). The fixed point again involves flow to a large \(K^*\), but the \(U\) flows to large negative here, implying a state where the charge sectors dominate heavily and the ground state is primarily a charge-singlet in which the destruction or annihilation of the Cooper-pair like states becomes prohibited.
-\\\\These results are summarized in the table below.
+
+These results are summarized in the table below.
 \begin{table}[htpb]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5868,7 +5810,8 @@ The first term is the kinetic energy of all the electrons. The next two terms ar
 	\vec s = \sum_{kk^\prime<\Lambda^*\atop{\alpha\beta}} c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
 \end{aligned}\end{equation}
 The final two terms represent the diagonal pieces of the RG steps that have been completed. These survive because the URG removes only the number-off-diagonal terms; terms like \(S^d_z s_z\) and \(C^d_z C_z\) conserve the number of particles and hence survive. These will also be renormalised, and hence the subscript \(q\) on \(J^z_q\) signifies that it is has been renormalised up to a certain momentum.
-\\\\Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
+
+Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
 \begin{equation}\begin{aligned}
 	\label{fixed_point_ham}
 	\mathcal{H}_{IR} = \sum_{\sigma, k<\Lambda^*}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\uparrow}\hat n_{d\downarrow} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
@@ -5949,13 +5892,16 @@ where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \up
 	\label{twosite}
 
 \end{figure}
-\\\\We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
+
+We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
 \begin{equation}\begin{aligned}
 	\ket{1101} = c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}c^\dagger_{2 \downarrow}\ket{-}
 \end{aligned}\end{equation}
 \(\ket{-}\) is the vacuum state.
-\\\\First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. These states have energy eigenvalues \( \frac{1}{4}k\)
-\\\\The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
+
+First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. These states have energy eigenvalues \( \frac{1}{4}k\)
+
+The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
 \begin{equation}\begin{aligned}
 	\ket{\uparrow,0}, \ket{0,\uparrow}, \ket{\downarrow,0}, \ket{0,\downarrow}
 \end{aligned}\end{equation}
@@ -5982,7 +5928,8 @@ where \(\Delta\left(\epsilon_d , v\right)  = \sqrt{\epsilon_d^2 + 4 v^2}\). The 
 	-4v\ket{\downarrow,0} + 2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v \right)\right] \ket{0, \downarrow}
 \end{aligned}\end{equation}
 with exactly the same eigenvalue.
-\\\\The \(\hat n = 3\) subspace is very similar. We can obtain the basis directly from the \(\hat n = 1\) case by substituting the holes with doubles:
+
+The \(\hat n = 3\) subspace is very similar. We can obtain the basis directly from the \(\hat n = 1\) case by substituting the holes with doubles:
 \begin{equation}\begin{aligned}
 	\ket{\uparrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\uparrow}, \ket{\downarrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\downarrow}
 \end{aligned}\end{equation}
@@ -6052,7 +5999,8 @@ This change is shown in fig.~\ref{gamma}. We have the variation of the probabili
 	\caption{\textit{Left}: Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. \textit{Right}: Variation of \(\gamma\) with system size.}
 	\label{gamma}
 \end{figure}
-\\\\The full list of eigenstates is
+
+The full list of eigenstates is
 \begin{table}[htpb!]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -6074,7 +6022,8 @@ This change is shown in fig.~\ref{gamma}. We have the variation of the probabili
 	\caption{Eigenstates for effective two-site Hamiltonian}
 	\label{tab:label}
 \end{table}
-\\\\Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet checked what is the true ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitors are the one in eq.~\ref{hikari} which we call \(E_c^2\), and the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). We first shown that \(E_-^1 > E_-^2\). The difference between \(E_-^2\) and \(E_-^1\) is
+
+Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet checked what is the true ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitors are the one in eq.~\ref{hikari} which we call \(E_c^2\), and the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). We first shown that \(E_-^1 > E_-^2\). The difference between \(E_-^2\) and \(E_-^1\) is
 \begin{equation}\begin{aligned}
 	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
 \end{aligned}\end{equation}
@@ -6095,19 +6044,22 @@ This result then very easily implies that
 	4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) > \frac{1}{4}\epsilon_d^2 + v^2
 \end{aligned}\end{equation}
 and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is greater that \(E_-^1\).
-\\\\We now compare \(E_-^2\) and \(E_c^2\):
+
+We now compare \(E_-^2\) and \(E_c^2\):
 \begin{equation}\begin{aligned}
 	\Delta E_g \equiv E_-^2 - E_c^2 = \frac{1}{2}\epsilon_d - \frac{3j + k}{8} + k - \sqrt{4v^2 + \left(\frac{3j+k}{8} -\frac{1}{2} \epsilon_d\right) ^2}
 \end{aligned}\end{equation}
 Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
-\\\\These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
+
+These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/gstate.pdf}
 	\captionof{figure}{Shift of ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
 	\label{fig_gstate}
 \end{figure}
-\\\\One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions. This is, as far as we can see, due to two reasons: 
+
+One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions. This is, as far as we can see, due to two reasons: 
 \begin{itemize}
 	\item a higher RG flow rate of \(J\) as compared to \(V\)
 	\item the fact that \(j \sim J N\) while \(v \sim V\sqrt N \)
@@ -6218,7 +6170,8 @@ The solutions are
 	E = \epsilon_d + \frac{1}{4}j + \frac{-j \pm \sqrt{j^2 + B^2}}{2} = \epsilon_d - \frac{1}{4}j \pm \frac{1}{2}\Gamma
 \end{aligned}\end{equation}
 which are the final two eigenvalues.
-\\\\The partition function is
+
+The partition function is
 \begin{equation}\begin{aligned}
 	Z(B) &= 2 \exp\left\{-\beta \frac{k}{4}\right\} + 2\left( \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2} B\right)\right\} + e^0\right) + 2\left( \exp\left\{-\beta\left(\epsilon_d - \frac{1}{2} B\right)\right\} + e^0\right) \\
 	     &+ \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j + \frac{1}{2} B\right)\right\} + \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j - \frac{1}{2} B\right)\right\} \\
@@ -6291,7 +6244,8 @@ For sufficiently large values of \(j\) compared to \(k\), we can also approximat
 	\chi(T = 0) \approx \left(2 \pi T_K\right)^{-1}
 \end{aligned}\end{equation}
 This is in accordance with the results obtained from Bethe ansatz in \cite{okiji_kawakami}. The variation of \(\chi \times T\) and \(\left(T_K \chi\right)^{-1}\) against temperature is shown in fig.~\ref{sus_spin}.
-\\\\On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and \(\Theta\) gives
+
+On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and \(\Theta\) gives
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
@@ -6344,7 +6298,8 @@ This is plotted in fig.~\ref{charge_sus}. The charge susceptibility at large tem
 	\left(\chi_c\times T\right) (T \to \infty) = \frac{1}{8}
 \end{aligned}\end{equation}
 The variation of \(\chi_c \times T\) and \(\chi_c^{-1}\) against temperature is also shown in figs.~\ref{chcT},\ref{one_over_chic}.
-\\\\An important result that we will use later is the value at \(T=0\).
+
+An important result that we will use later is the value at \(T=0\).
 \begin{equation}\begin{aligned}
 	\chi_c(T=0) =  \frac{1}{2k}\lim_{\beta \to \infty} \frac{1}{1 + e^{\frac{3\beta}{4} \left(j-k\right) }}
 \end{aligned}\end{equation}
@@ -6511,7 +6466,8 @@ are all independent, they form a basis. If we apply the operator on these states
 	\hat C_j \hat S_i \ket{C_j} &= 0, &&&&\hat S_i \hat C_j \ket{\hat C_j} = C_j \hat S_i \ket{\hat C_j} = 0 \\
 \end{aligned}\end{equation}
 This shows that each operator acts only on its own subspace. \(S_i\) does not act on the charge sector, and vice-versa. There is no single-particle excitation here.
-\\\\The physics of the side-peaks is that of single number fluctuations on the impurity. These are brought about by the term \(Vc^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.}\).
+
+The physics of the side-peaks is that of single number fluctuations on the impurity. These are brought about by the term \(Vc^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.}\).
 \begin{equation}\begin{aligned}
 	\left( \epsilon_d  \right) \ket{\sigma} & \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{V c^\dagger_{d\overline\sigma}/V c_{d\sigma}}_{V c_{d\overline\sigma}/V c^\dagger_{d\sigma}}}} &\ket{n_d=2,0} \left( 0 \right) \\
 \end{aligned}\end{equation}
@@ -6672,8 +6628,10 @@ The more interesting interaction is the off-diagonal term
 	 \sum_{kk^\prime q q^\prime} F_{kk^\prime qq^\prime}c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}
 \end{aligned}\end{equation}
 This interaction arises from the enhanced entanglement between the impurity and the conduction electrons; removing the impurity from the singlet and the triplet generates these off-diagonal scatterings. As such, this is an indicator of the macroscopic entanglement of the singlet formed at the IR fixed point, and plotted in fig.~\ref{mutI}. 
-\\\\It is also very enlightening to note that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\ref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\ref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
-\\\\We have shown the enhancement of this off-diagonal scattering during the flow towards the IR fixed point by computing it during the reverse RG program, in fig.~\ref{Fkkqq}. It is clear from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
+
+It is also very enlightening to note that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\ref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\ref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
+
+We have shown the enhancement of this off-diagonal scattering during the flow towards the IR fixed point by computing it during the reverse RG program, in fig.~\ref{Fkkqq}. It is clear from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/Fkkqq.pdf}
@@ -6694,7 +6652,8 @@ We know that the ground state for the interacting part is predominantly the spin
 	V = t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.}
 \end{aligned}\end{equation}
 as a weak perturbation. \(\vec r_1\) here sums over the sites that are nearest to the origin. Once that is taken care of, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. The goal here is to see whether the effect of the perturbation is to lower the energy of the singly-occupied state \(\ket{\hat n_1 = 1}\) compared to the doubly-occupied state \(\ket{\hat n_1 = 2}\) or to raise it. If the perturbation shifts the energy of the singly-occupied state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled  by a repulsive term \(|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\). If, on the other hand, the effect is to raise the energy of the singly-occupied state with respect to the \(\hat n_1 = 2\) state, then that effect is equivalent to an attractive term \(-|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\).
-\\\\To be precise, we will compare the energy shifts corresponding to the two states
+
+To be precise, we will compare the energy shifts corresponding to the two states
 \begin{equation}\begin{aligned}
 	\ket{\phi^{(0)}_1} &= \underbrace{\ket{\uparrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) \\
 	\ket{\phi^{(0)}_2} &= \underbrace{\ket{\uparrow, \downarrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) 
@@ -6720,7 +6679,8 @@ for the second order shift, and does not operate on the impurity. Since \(X\) do
 		 &= \frac{t^2}{2}\bra{2}\bra{0} X\ket{2}\ket{0} + \frac{t^2}{2}\bra{0}\bra{2}X \ket{0}\ket{2}
 \end{aligned}\end{equation}
 This proves that the shift is independent of \(\sigma\). The reason we could shift the bra \(\bra{\sigma}\) across the \(X\) without any sign change is that \(X\) will have even number of operators in product, because it operates on \(0\) and \(1\).
-\\\\The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
+
+The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
 \begin{equation}\begin{aligned}
 	E_1^{(0)} = E_2^{(0)} = -\frac{3J^*}{4}
 \end{aligned}\end{equation}
@@ -6753,12 +6713,14 @@ Also, because all the states in \(\left\{ \ket{m^{(0)}} \right\} \) involve \(S_
 	E_{\phi_{1,2}}^{(0)} - E_m^{(0)} = E_{\phi_{1,2}}^{(0)} = -\frac{3J^*}{4}
 \end{aligned}\end{equation}
 The upshot of all this is that the second order shift will be same for both the single and doubly-occupied states, so we will ignore that correction as it can be absorbed into the zero-point energy.
-\\\\The third order correction is given by
+
+The third order correction is given by
 \begin{equation}\begin{aligned}
 	E^{(3)} = \sum_{i^{(0)}, j^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_i\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)} - E_\phi^{(1)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
 \end{aligned}\end{equation}
 This correction can also be argued to be zero, as follows. The second term is of course trivially zero because \(E_\phi^{(1)}\) itself is 0. For the first term, note that \(\ket{i^{(0)}}\) must have \(\hat n_0 = 0,2\) in order to give non-zero inner product with \(V\ket{\phi^{(0)}}\). If we continue this, \(V\ket{i^{(0)}}\) will have \(\hat n_0 = 1\), so \(\ket{j^{(0)}}\) must also have the same. Then, \(V\ket{j^{(0)}}\) will have \(\hat n_0 = 0, 2\) and hence the inner product \(\bra{\phi^{(0)}}V\ket{j^{(0)}}\) will be 0. The third order corrections for both the single and doubly occupied states are thus 0.
-\\\\We move on to the fourth order correction. The general formula is quite formidable, so we only write down the terms that aren't outright zero for this problem:
+
+We move on to the fourth order correction. The general formula is quite formidable, so we only write down the terms that aren't outright zero for this problem:
 \begin{equation}\begin{aligned}
 	E^{(4)} = \sum_{i^{(0)}, j^{(0)}, k^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{k^{(0)}}\bra{k^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_k\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)\left(E^{(0)}_\phi - E^{(0)}_i\right)} - E_\phi^{(2)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
 \end{aligned}\end{equation}
@@ -6808,7 +6770,7 @@ The total system now consists of two decoupled parts - the singlet composed of t
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.99\textwidth]{../figures/lattice_eff.png}
-	\caption{\textit{Left}: The nearest-neighbor hopping described by the effective Hamiltonian. The red circle at the center is the impurity at the origin. The black cloud at the center demarcates the collection of electrons at the origin of the lattice (which couple to the impurity). The green circles represent lattice sites that are nearest to the origin. The blue circles represent next-nearest sites. \textit{Right}: After treating the hopping between origin and its nearest neighbors as perturbation, we get a system consisting of two decoupled parts: one part is the impurity+cloud singlet, the other part is the rest of the lattice sites. The effect of the hopping between the origin and the green sites is a repulsion term on the green sites.}
+	\caption{\textit{Left}: The nearest-neighbor hopping described by the effective Hamiltonian. The red circle is the impurity. The black cloud at the center demarcates the collection of electrons at the origin of the lattice (which couple to the impurity). The green circles represent lattice sites that are nearest to the origin. The blue circles represent next-nearest sites. \textit{Right}: After treating the hopping between origin and its nearest neighbors as perturbation, we get a system consisting of two decoupled parts: one part is the impurity+cloud singlet, the other part is the rest of the lattice sites. The effect of the hopping between the origin and the green sites is a repulsion term on the green sites.}
 \end{figure}
 We will now invoke the mean-field approximation in simplifying this term. We will be dealing with thermodynamic quantities soon, so the operators will be replaced by their thermodynamic values, that is, the values that minimize the free energy functional.
 \begin{equation}\begin{aligned}
@@ -6872,7 +6834,8 @@ Therefore,
 	\implies \chi^c_{imp} &= \rho(0)_{imp} - \rho(0)f_0^s \\
 \end{aligned}\end{equation}
 At an intermediate state, we substituted \(dN\) back into itself and kept only the leading order term. This is justified because \(f_{kk^\prime}\) goes as \(\frac{1}{N J}\). At the fixed point and for a thermodynamically large system, both \(J\) and \(N\) are very large, so keeping only the leading order suffices.
-\\\\From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero, so we can write down the following relation:
+
+From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero, so we can write down the following relation:
 \begin{equation}\begin{aligned}
 	\label{fp_constraint}
 	f_0^s = \frac{\rho(0)_{imp}}{\rho(0)}
@@ -7047,7 +7010,8 @@ If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Lut
 \end{figure}
 This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments in \cite{oshikawa}.
 One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\ref{luttinger_change} would still hold.
-\\\\We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
+
+We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
 \begin{equation}\begin{aligned}
 	\mathcal{H}_\text{LM} = \epsilon_d \hat n_d + U \hat n_{d \uparrow} \hat n_{d \downarrow}
 \end{aligned}\end{equation}
@@ -7111,7 +7075,8 @@ For a particle-hole symmetric system, we can substitute \(\epsilon_d = -|\epsilo
 	G_{d\sigma}(\omega) &= \frac{1}{\omega + |\epsilon_d|} + \frac{U\left< \hat n_{d\overline\sigma}(0)\right>}{\left( \omega + |\epsilon_d| \right) \left(\omega - |\epsilon_d|\right)}
 \end{aligned}\end{equation}
 which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fermi surface. Since the RHS of eq.~\ref{total_lutt} counts the number of poles on or below the FS, we will still count one pole for \(G_{d\sigma}\). Thus, this Green's function is topological similar to the free-orbital one at \(T=0\).
-\\\\The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
+
+The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \bra{GS}\sum_\sigma \hat n_{d\sigma} \ket{GS}
 \end{aligned}\end{equation}
@@ -7124,7 +7089,8 @@ The phase shift is thus
 	\frac{1}{\pi}\sum_\sigma \delta_\sigma(0) = \left<n_d \right> \implies \delta_\sigma(0) = \frac{\pi}{2}
 \end{aligned}\end{equation}
 There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)-symmetric. This line of arguments was first presented for the Kondo model in \cite{martin}.
-\\\\The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
+
+The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
@@ -7141,7 +7107,7 @@ The first process is the forward RG which we used to obtain the scaling equation
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../figures/reverse-rg.png}
-	\caption{Algorithm of reverse RG. We start with a Hamiltonian with an impurity site (red) coupled with two conduction electrons (dark green), with four other decoupled electrons (bright green). The dotted rectangle represents the emergent window \(\left( -\Lambda_j, \Lambda_j \right) \) at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from the IOMS (hence four dark green circles in the second step), leading to an enlargement of the emergent window. The unitary varies for each step, hence the notation \(U_j\).}
+	\caption{We start with a Hamiltonian with an impurity site (red) coupled with two conduction electrons (dark green), with four other decoupled electrons (bright green). The dotted rectangle represents the emergent window \(\left( -\Lambda_j, \Lambda_j \right) \) at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from the IOMS (hence four dark green circles in the second step), leading to an enlargement of the emergent window. The unitary varies for each step, hence the notation \(U_j\).}
 	\label{rev-rg}
 \end{figure}
 \begin{figure}[htpb]
@@ -7164,7 +7130,8 @@ The eigenstate for this operator, with an eigenvalue of \(+ \frac{1}{2}\), is
 \ket{\uparrow} \equiv \frac{1}{N^*}\sum_{k \in \left[-\Lambda^*, \Lambda^*\right]} \ket{k \uparrow} = \frac{1}{N^*}\sum_{k \in \left[-\Lambda^*, \Lambda^*\right]}\ket{\hat n_{k \uparrow} = 1, \hat n_{q\sigma \neq k \uparrow} = 0}
 \end{aligned}\end{equation}
 The state \(\ket{k \uparrow}\) is formally \(c^\dagger_{k \uparrow} \ket{0}\), \(\ket{0}\) being the state with no particles. In other words, the state \(\ket{\uparrow}\) is simply the equal superposition of all states with a single up electron.
-\\\\To show that this is indeed the eigenstate of \(S^z_2\), we compute the action of \(S_2^z\) on this state:
+
+To show that this is indeed the eigenstate of \(S^z_2\), we compute the action of \(S_2^z\) on this state:
 \begin{equation}\begin{aligned}
 	S_2^z \ket{\uparrow} = \frac{1}{2{N^*}^2}\sum_{kk^\prime q}\left(c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow}\right)\ket{q \uparrow}
 \end{aligned}\end{equation}
@@ -7266,8 +7233,10 @@ The results of the reverse RG study are depicted in the following plots. We have
 	I(A: B) = S_A + S_B - S_{AB}
 \end{aligned}\end{equation}
 where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obtained after tracing out all degrees of freedom except those in the subscript of \(S\).
-\\\\The mutual information between two electrons inside the entangled cloud increases as we go towards the IR fixed point. This can be understood in the following manner; as the wavefunction flows towards a smaller sized emergent cloud, the entanglement between those electrons gets distilled out.
-\\\\We have also computed some correlation functions. All of them increase towards the IR fixed point. The increase in the correlation function \(\left<\hat n_{k_1 \uparrow} \hat n_{k_2 \downarrow} \right>\) arises from the crystallization of the spin singlet at the fixed point. The increase in the correlation function \(\left<\hat n_{k \uparrow} \hat n_{k \downarrow} \right>\) arises from the charge triplet content of the wavefunction, showing the increase of the charge contribution on the momenta. The increase in the off-diagonal correlation function \(\left< c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}\right>\) shows that the there is a large and non-trivial interaction between the electrons of the cloud that is being mediated by the impurity electron. This interaction is not of the Fermi liquid type, but instead was obtained in the effective Hamiltonian for the Kondo cloud.
+
+The mutual information between two electrons inside the entangled cloud increases as we go towards the IR fixed point. This can be understood in the following manner; as the wavefunction flows towards a smaller sized emergent cloud, the entanglement between those electrons gets distilled out.
+
+We have also computed some correlation functions. All of them increase towards the IR fixed point. The increase in the correlation function \(\left<\hat n_{k_1 \uparrow} \hat n_{k_2 \downarrow} \right>\) arises from the crystallization of the spin singlet at the fixed point. The increase in the correlation function \(\left<\hat n_{k \uparrow} \hat n_{k \downarrow} \right>\) arises from the charge triplet content of the wavefunction, showing the increase of the charge contribution on the momenta. The increase in the off-diagonal correlation function \(\left< c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}\right>\) shows that the there is a large and non-trivial interaction between the electrons of the cloud that is being mediated by the impurity electron. This interaction is not of the Fermi liquid type, but instead was obtained in the effective Hamiltonian for the Kondo cloud.
 \begin{figure}[htpb!]
 	\centering
 	\includegraphics[width=0.49\textwidth]{../figures/mutI_ee.pdf}
@@ -7289,8 +7258,10 @@ where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obt
 
 \chapter{Conclusions and Future Directions}
 In this work, we have seen that the fate of the SIAM at low temperatures is a growth in the spin, charge and hybridisation couplings \(J,K\) and \(V\). This confirms the NRG and Bethe ansatz result that the low energy behavior is that of a screened impurity. We stress that the spin or the charge exchange coupling, \(J\) or \(K\), is necessary to screen the corresponding degree of freedom on the impurity. The ground state wavefunction for the low energy theory is primarily a spin-singlet with some charge-triplet content in  the spin-Kondo regime.  In the charge-Kondo regime, we find a charge-singlet instead. The susceptibility is seen to increase as we go to lower temperatures, signaling increased spin-flip scattering and providing a justification for the increase in resistivity after the Kondo temperature \(T_K\). At high temperatures the susceptibility saturates to \(\frac{1}{8}\), mimicking a four-fold degenerate object because at high temperatures, the impurity energy scales become blurred. We encountered a maximum in the susceptibility vs temperature plot which is not present in NRG or Bethe Ansatz plots, and we believe it can be attributed to the approximation made in working with a zero mode Hamiltonian. We also calculated the specific heat, and it shows two peaks.
-\\\\We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
-\\\\This work still leaves some problems untouched. Some new questions and interesting prospects have also emerged. We discuss them now.
+
+We also obtain a Hamiltonian for the Kondo cloud (the set of electrons which screen the impurity) - it has a Fermi liquid number diagonal term as well as an off-diagonal non-Fermi liquid piece. It is this off-diagonal piece that is responsible for the strong entanglement between the impurity and the conduction electrons. This contribution is found to increase as we move towards the infrared  fixed point. Higher order scattering processes will give more complicated terms in the effective Hamiltonian. We also calculate information-theoretic quantities like mutual information between impurity and conduction electrons. They show that the conduction electrons become more strongly-entangled as we move towards the infrared fixed point. They also reveal an increase in off-diagonal correlations between conduction electrons which is indicative of an increase in the off-diagonal scattering content in the effective Hamiltonian of the Kondo cloud. We also find the value of the zero-temperature Wilson ratio to be 2 in the Kondo regime. Closely related to this is the result that the Luttinger's volume at the fixed point accommodates the impurity site into the Fermi volume such that Luttinger's count increases by 1 compared to the value at the free-orbital or local moment fixed points. The renormalization of the impurity spectral across the RG shows the emergence of the central resonance at the strong-coupling fixed point.
+
+This work still leaves some problems untouched. Some new questions and interesting prospects have also emerged. We discuss them now.
 \begin{itemize}
 	\item Can we obtain an analytical expression for the finite temperature Wilson ratio? The zero temperature value was obtained using low temperature approximations, so a finite temperature calculation would need to be non-perturbative. In other words, the full effect of the conduction bath will most probably come into play.
 	\item The spectral function of the impurity is another interesting quantity to explore. It is not yet completely certain which parts of the effective Hamiltonian for the cloud lead to which features of the spectral function. It would be interesting to check whether the Fermi liquid part gives the central peak and the non-Fermi liquid the side humps, or something else altogether. We also intend to explore the bath spectral function and its variation under the RG.

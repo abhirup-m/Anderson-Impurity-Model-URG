@@ -1,7 +1,0 @@
-- they show that the partition function can be written as an amplitude times the exponential of a phase
-- the phase N is actually a winding number, and can be shown to be equal to trace of integral of G \times diff( G^{-1}), over a contour that encloses the Fermi surface (not exactly correct)
-- as a result, N is non-trivial iff atleast one of G or G^{-1} has a zero inside the contour. It is zero iff the G has neither zero nor pole. 
-- The surface of poles of G is the Fermi surface, while the surface of zeros is the Luttinger surface (i think so). So, N can pick out both a Fermi surface as well as a Luttinger surface.
-- Combining this with the Atiyah-Singer index theorem then tells us that a non-zero N implies a lower-dimensional manifold of chiral excitations. I didn't really follow how a non-zero N implies the existence of excitations at the FS. For the poles of G its obvious; but I don't get how the zeros of G (which should mean a gap or atleast a pseudogap) would imply the presence of excitations
-- they then show that Luttinger's theorem is maintained by systems with a non-zero DOS at the FS. That is, Luttinger's theorem will not be violated if there are gapless excitations at the FS.
-- since a non-trivial N implies the presence of gapless excitations, we can then conclude that a non-zero N means LT will be maintained.
