@@ -1,5 +1,5 @@
 \documentclass[oneside,openany,12pt]{book}
-\usepackage[draft]{graphicx}
+% \usepackage[draft]{graphicx}
 \usepackage{amsthm,amsmath,amssymb,braket,graphicx,multirow,caption,relsize,tocbibind}
 \usepackage[margin=0.8in,top=0.3in,bottom=1.4in]{geometry}
 \usepackage[T1]{fontenc}
@@ -150,62 +150,62 @@ The fixed-point Hamiltonian further allows us to calculate the impurity spectral
 We then extract the effective Hamiltonian for the Kondo cloud, up to two particle interactions, by tracing out the impurity from the coupled Hamiltonian. The Hamiltonian has both a Fermi liquid piece of the form \(\hat n_{k\sigma}\hat n_{q\sigma^\prime}\) and a two-particle off-diagonal scattering piece of the form \(c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow}c_{q \uparrow}c_{q^\prime \downarrow}\). It is the latter which is responsible for the screening mechanism. This conclusion is further strengthened by the studies of entanglement measures and correlations. The mutual information between the impurity and a cloud electron, as well as that between two cloud electrons increases as we go from the UV towards the IR fixed point. The off-diagonal correlation also increases from the UV towards the IR, which shows that the growth of the off-diagonal term is concomitant with the screening.
 We also obtain the Wilson ratio of the impurity by creating a local Fermi liquid from the fixed point Hamiltonian. Using the zero charge susceptibility at \(T=0\) in the Kondo regime of the SIAM, we can show that the Wilson ratio goes to 2 at the fixed point. We also calculate the change in Luttinger's volume along the RG flow. At the free orbital or local moment fixed points, the Luttinger's volume is measured purely by the number of conduction electrons, but we see that at the strong-coupling fixed point, the correct Luttinger's volume is given by the total number of electrons in the conduction bath as well as the impurity. This is also connected to the increase in Wilson ratio from 1 to 2.
 \chapter{Preliminaries and Existing Results}\label{prelims}
-\section{Some important results of scattering theory}
+This chapter is devoted to an extensive literature survey of the Anderson impurity model (SIAM) (and the Kondo model to some extent, because it is closely related to the SIAM). It also includes discussions and derivations of some topics like the Friedel sum rule and some results from scattering theory, because these topics will often be invoked later.
 
-\subsection{T-matrix and S-matrix}
-
-\(T-\)matrix is defined as\cite{sakurai}
-
+\section{\(T-\) and \(S-\)matrices, Greens function and scattering phase shifts}
+\subsection{\(T-\)matrix and Greens function}
+We will first introduce the \(T-\)matrix and the Greens function operator, and derive a relation between them. It is assumed that we have an interacting system \(H = H_0 + V\). \(H_0\) as the non-interacting part with the spectrum \(\left\{E_i, \ket{\Phi_i}\right\}\). \(V\) represents the interaction between the states \(\ket{\Phi_i}\). The \(T-\)matrix arises naturally when we write down the full Schrodinger equation of the problem:
 \begin{equation}\begin{aligned}
-	\label{Tmatdef}
-V\ket{\Psi} = T\ket{\Phi}
+	\label{full_SE}
+	\left(H_0 + V\right) \ket{\Psi_i} = E_i \ket{\Psi_i}
 \end{aligned}\end{equation}
-
-where \(\ket{\Psi}\) is the total scattered wavefunction and \(\ket{\Phi}\) is the incoming (non-interacting) wavefunction. This equation is supposed to hold for all eigenkets \(\ket{\Phi}\) of the Hamiltonian \(H_0\). 
-
-The kets \(\ket{\Psi}\) and \(\ket{\Phi}\) satisfy the Schrodinger equations
-\begin{gather}
-	H_0 \ket{\Phi} = E \ket{\Phi}\\
-	(H_0 + V)\ket{\Psi} = E \ket{\Psi}
-\end{gather}
-We will also define an \(S-\)matrix- it is the unitary operator that relates the non-interacting eigenstate to the interacting one:
+\(\ket{\Psi_i}\) are the eigenstates of \(H\). The eigenvalues are the same as \(H_0\) because we have assumed elastic scattering. The solutions \(\ket{\Psi_i}\) can be expressed as
 \begin{equation}\begin{aligned}
-\label{Smatdef}
-\ket{\Psi} = S\ket{\Phi}
+	\label{psi_sol}
+	\ket{\Psi_i} = \frac{1}{E_i - H_0}V\ket{\Psi_i} + \ket{\Phi_i}
 \end{aligned}\end{equation}
-Since we are assuming elastic scattering, both \(\ket{\Psi}\) and \(\ket{\Phi}\) have the same energy.
-The Schrodinger equation for \(\ket{\Psi}\) can be rearranged into
+The \(\ket{\Phi_i}\) was inserted  to ensure that \(\ket{\Psi_i} \to \ket{\Phi_i}\) when \(V \to 0\). That eq.~\ref{psi_sol} is equivalent to eq.~\ref{full_SE} is easily verified by multiplying eq.~\ref{psi_sol} from the left with \(E_i - H_0\). That will cancel the last term on the RHS because \(H_0 \ket{\Phi_i} = E_i \ket{\Phi_i}\). Although we have presented eq.~\ref{psi_sol} as a solution for the Hamiltonian \(H\), the problem is that the unknown \(\ket{\Psi_i}\) appears on the RHS. This is where the \(T-\)matrix comes in; we define \(T\) in order to write the RHS completely in terms of \(\ket{\Phi_i}\):
 \begin{equation}\begin{aligned}
-	\label{lse}
-\ket{\Psi} = \ket{\Phi} + G_0V\ket{\Psi}
+	\label{Tmat_def}
+	V\ket{\Psi_i} = T\ket{\Phi_i}
 \end{aligned}\end{equation}
-where \(G_0^{-1}(\omega) = \omega - H_0\) is then on-interacting Greens function.
-This is also called the Lippmann-Schwinger equation.
-Multiplying with the interacting operator \(V\) from the left gives
+With this, the solution becomes
 \begin{equation}\begin{aligned}
-	V\ket{\Psi} &= V\ket{\Phi} + VG_0V\ket{\Psi}\\
-	\implies T\ket{\Phi} &= V\ket{\Phi} + VG_0 T\ket{\Phi} && \left[ \text{eq.~\ref{Tmatdef}} \right] 
+	\label{final_sol_psi}
+	\ket{\Psi_i} = \left(1 + \frac{1}{E_i - H_0}T\right)\ket{\Phi_i}
 \end{aligned}\end{equation}
-Since the last equation should hold for all \(\ket{\Phi}\), and since the set of \(\ket{\Phi}\) form a complete set, we can extract the operator equation
+At this point, we can define the non-interacting Greens function operator \(G_0\):
+\begin{equation}\begin{aligned}
+	G_0(E) = \frac{1}{E - H_0}
+\end{aligned}\end{equation}
+Eq.~\ref{final_sol_psi} becomes
+\begin{equation}\begin{aligned}
+	\ket{\Psi_i} = \left[1 + G_0(E_i)T\right]\ket{\Phi_i}
+\end{aligned}\end{equation}
+To obtain a relation between \(T\) and \(G_0\), we substitue this equation back into the definition of \(T\) (eq.~\ref{Tmat_def}:
+\begin{equation}\begin{aligned}
+	T\ket{\Phi_i} = V\left[1 + G_0(E_i)T\right]\ket{\Phi_i}
+\end{aligned}\end{equation}
+Since the \(\ket{\Phi_i}\) form a complete basis, we get the relation:
 \begin{equation}\begin{aligned}
 	\label{TinG}
-	T = V + V G_0 T
+	T(i) &= V\left[1 + G_0(E_i)T(i)\right]\\
+	T(i) &= \frac{1}{1 - VG_0(E_i)}V
 \end{aligned}\end{equation}
+
 The last equation allows us to perturbatively expand the \(T-\) matrix, by substituting the RHS into the \(T\) on the RHS:
 \begin{equation}\begin{aligned}
-T = V + VG_0V + VG_0VG_0V + ...
+T(i) = V + VG_0(E_i)V + VG_0(E_i)VG_0(E_i)V + ...
 \label{tmatexp}
 \end{aligned}\end{equation}
-We can relate this \(T-\)matrix with the total (interacting) Green's function
+This is equivalent to a Dyson expansion in powers of \(V\). More relations can be obtained by definining the full (interacting) counterpart of \(G_0\):
 \begin{equation}\begin{aligned}
-	G = \frac{1}{\omega - H_0 - V}
+	G(E_i) = \frac{1}{E_i - H} = \frac{1}{E_i - H_0 - V}
 \end{aligned}\end{equation}
 That definition can be massaged into the following identity:
 \begin{equation}\begin{aligned}
 	\label{GinVG}
-	G^{-1} &= G_0^{-1} - V\\
-	\implies G_0 G^{-1} G &= G_0 G_0^{-1} G - G_0 V G\\
-	\implies G &= G_0 + G_0 V G
+	G^{-1} &= G_0^{-1} - V \implies G_0 G^{-1} G &= G_0 G_0^{-1} G - G_0 V G \implies G &= G_0 + G_0 V G
 \end{aligned}\end{equation}
 By re-substituting \(G\) into the RHS, this can be made into a perturbative expansion:
 \begin{equation}\begin{aligned}
@@ -214,108 +214,75 @@ By re-substituting \(G\) into the RHS, this can be made into a perturbative expa
 \end{aligned}\end{equation}
 By comparing with eq.~\ref{tmatexp}, we can recognize the term inside the brackets as the \(T-\)matrix, and write
 \begin{equation}\begin{aligned}
-	G = G_0 + G_0 T G_0
+	G(E_i) = G_0(E_i) + G_0(E_i) T(i) G_0(E_i)
 	\label{G_and_G0}
 \end{aligned}\end{equation}
-By substituting \(\ket{\Psi} = S\ket{\Phi}\) into the L-S equation, we can also extract a relation between \(S\) and \(T\), and hence between \(S\) and \(G\). Combining eqs.~\ref{Tmatdef},\ref{Smatdef} and \ref{lse}, we get
-\begin{align}
-	S\ket{\Phi} &= \ket{\Phi} + G_0 T\ket{\Phi}\\
-	\implies S &= 1 + G_0 T\\
-	\implies SG_0 &= G_0 + G_0 T G_0 = G && \left[\text{eq.~\ref{G_and_G0}}\right]\\
-	\implies S &= G  G_0^{-1} \label{SinG}
-\end{align}
-It is a standard result in scattering theory that the total scattered wavefunction can be written as the sum of the incoming plane wave and an outgoing spherical wave:
+
+\subsection{\(S-\)matrix}
+A plane wave can be represented as the sum of incoming waves \(\chi^-_{k,l}\) and outgoing spherical waves \(\chi^+_{k,l}\). These incoming and outgoing waves are eigenstates of the total angular momentum squared \(L^2\) with eigenvalue \(l(l+1)\).
 \begin{equation}\begin{aligned}
-	\Psi(x) = \left(2\pi\right)^{-\frac{3}{2}}\left[e^{ikx} + f(k^\prime, k) \frac{e^{ikr}}{r}\right]
+	\ket{\Phi_k} = \sum_l\left(\ket{\chi^+_{k,l}} + \ket{\chi^-_{k,l}}\right)
 \end{aligned}\end{equation}
-where the amplitude of the outgoing wave, \(f(k^\prime,k)\), quantifies the amount of scattering and is given by
+It is a standard result in scattering theory that the total scattered wavefunction can be written as the sum of the same incoming spherical wave and a modified outgoing spherical wave:
 \begin{equation}\begin{aligned}
-	f(k^\prime, k) = - \frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}V\ket{\Psi}
+	\ket{\Psi_k} = \sum_l \left[\left(1 + 2i k f_l(k)\right)\ket{\chi^+_{k,l}} + \ket{\chi^-_{k,l}}\right]
 \end{aligned}\end{equation}
-Using the definition of \(T\), we get
+where 
 \begin{equation}\begin{aligned}
-\label{f_in_T}
-f(k^\prime,k) = - \frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{\Phi} = -\frac{\left( 2\pi \right) ^3}{4\pi} \frac{2m}{\hbar^2}\bra{k^\prime}T\ket{k}
+	k f_l(k) = -\pi \rho(E_k) T(k,l) = -\pi \rho(E_k) \bra{l}T(k)\ket{l}
 \end{aligned}\end{equation}
-where we chose the non-interacting eigenkets to be the momentum eigenkets \(\left( \ket{\Phi} = \ket{k} \right) \). By expanding in terms of the eigenstates of \(L^2\) and \(L_z\), this can be written as
+\(\rho(E_k)\) is the density of states at energy \(E_k\). Note that these are the non-interacting density of states: they count energy states that match with the kinetic energy \(E_k\) and do not take into account any self-energy term that may come from some interaction.
+
+The \(S-\)matrix is defined to track the evolution of the outgoing spherical waves at very long time intervals:
 \begin{equation}\begin{aligned}
-	f(k^\prime,k) = - \frac{\pi}{k}\sum_l (2l+1)P_l\left( \cos \theta \right) T_l(\epsilon_k) \equiv \sum_l (2l+1)P_l\left( \cos \theta \right) f_l\left( k \right) 
+	S = \lim_{t \to \infty} U(-t, t)
 \end{aligned}\end{equation}
-where we have chosen \(\vec k\) to be the z-direction and \(\theta\) is the angle between \(k\) and \(k^\prime\). The last part of the equation defines \(f_l(k)\):
+Assuming momentum \(k\) is conserved in the scattering, we can relate the \(S-\)matrix to the \(T-\)matrix:
 \begin{equation}\begin{aligned}
-	f_l(k) = - \frac{\pi}{k} T_l(\epsilon_k)
+	\label{S_k_def}
+	S(k) = \sum_l \ket{\chi^+_{k,l}} \bra{\chi^+_{k,l}}\lim_{t \to \infty} \bra{\chi^+_{k,l}}U(-t, t)\ket{\chi^+_{k,l}} = \sum_l \ket{\chi^+_{k,l}} \bra{\chi^+_{k,l}}\left(1 + 2ikf_l(k)\right) = 1 - 2i \pi \rho(E_k) T(k)
 \end{aligned}\end{equation}
-This enables us to write
+The elements of \(S-\)matrix are called the partial wave \(S-\)matrx element:
 \begin{equation}\begin{aligned}
-	\Psi(x) = \left(2\pi\right)^{-\frac{3}{2}}\left[e^{ikx} + \sum_l (2l+1)P_l\left( \cos \theta \right) f_l\left(k\right) \frac{e^{ikr}}{r}\right]
+	S_l(k) = 1 - 2i \pi \rho(E_k)T_l(k)
 \end{aligned}\end{equation}
-Writing the plane wave in terms of incoming and outgoing spherical waves and expanding the spherical waves in terms of the spherical harmonics gives
+By using the completeness and orthonormality of the kets \(\ket{k}\) and by assuming a uniform density of states \(\rho\), we can write the entire \(S-\)matrix:
 \begin{equation}\begin{aligned}
-	\Psi(x) = \left(2\pi\right)^{-\frac{3}{2}}\sum_l (2l+1) \frac{1}{2ik}P_l\left[\left(1 + 2i k f_l \right) \frac{e^{ikr}}{r} - e^{-i\left( kr - l\pi \right) } \frac{1}{r}\right]
+	S = \sum_k \ket{k}\bra{k} S(k) = 1 - 2\pi i \rho \sum_k \ket{k}\bra{k} T(k) = 1 - 2\pi i \rho T
 \end{aligned}\end{equation}
-From conservation of probabilities, we know that the amplitude squared of the incoming and outgoing waves must be equal. \textit{Assuming a spherically symmetric scattering center means the probabilities will be conserved separately for each value of \(l\)}. This means that the coefficient 
-\begin{equation}\begin{aligned}
-	S_l(k) \equiv 1 + 2i k f_l (k)
-\end{aligned}\end{equation}
-can, at most, be a phase:
-\begin{equation}\begin{aligned}
-	S_l (k)\equiv 1 + 2i k f_l (k) = e^{2i\delta_l(k)}
-\end{aligned}\end{equation}
-From the definition of \(f_l\) in terms of \(T_l\), we can relate \(S(k)\) with the T-matrix \(T(\epsilon_k)\):
-\begin{equation}\begin{aligned}
-	S_l(k) &= 1 + 2i k f_l = 1 - 2 \pi i T_l(\epsilon_k)
-\end{aligned}\end{equation}
-We can express the LHS in terms of energy:
-\begin{equation}\begin{aligned}
-	S_l(\omega) &= \bra{\omega}S_l\ket{\omega} \\
-			   &= \int d\vec k \bra{\omega}\ket{\vec k}\bra{\vec k}S_l\ket{\vec k}\bra{\vec k}\ket{\omega}\\
-			   &= \int d\vec k \delta(\omega - \epsilon_k)S_l(\vec k)\\
-			   &= \int d\vec k \delta(\omega - \epsilon_k)\left[1 - 2 \pi i T_l(\epsilon_k)\right]\\
-			   &= 1 - 2 \pi i \int d\vec k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
-			   &= 1 - 2 \pi i \int g(k) d k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
-			   &= 1 - 2 \pi i \int g(\epsilon_k) d \epsilon_k \delta(\omega - \epsilon_k)T_l(\epsilon_k)\\
-			   &= 1 - 2 \pi i g(\omega) T_l(\omega)
-\end{aligned}\end{equation}
-where \(g(k)\) is the density of states at momentum magnitude \(k = |\vec k|\) and \(g(\epsilon_k)\) is the density of states at that energy. Note that these are the non-interacting density of states: they count energy states that match with the kinetic energy \(\epsilon_k\) and do not take into account any self-energy term that may come from some interaction. The relation between \(S\) and \(T\) is thus
+The \(S-\)matrix at a particular energy \(\omega\) then turns out to be
 \begin{equation}\begin{aligned}
 	\label{S_in_T}
-	S_l(\omega) = 1 - 2 \pi i g(\omega) T_l(\omega)
+	S(\omega) = \braket{\omega| S | \omega} = 1 - 2\pi i \rho T(\omega)
 \end{aligned}\end{equation}
-The scattering phase shifts can be expressed in terms of \(T\):
+
+\subsection{Scattering phase shifts and their relation to \(T-\)matrix}
+\(S(k)\) is unitary because \(U\) is.
+Expanding \(S(k)\) in its eigenbasis \(\left\{ \ket{i} \right\} \) (not necessarily angular momentum) gives
 \begin{equation}\begin{aligned}
-	T_l(\omega) &= \frac{1}{2\pi i g(\omega)}\left[ 1 - S_l(\omega) \right]\\
-		    &= \frac{1}{2\pi i g(\omega)}\left[1 - \exp\left( 2 i \delta_l(\omega) \right)\right]\\
-		    &=\frac{1}{2\pi i g(\omega)}\exp\left(i \delta_l(\omega) \right)\left[\exp\left( - i \delta_l(\omega) \right) - \exp\left(i \delta_l(\omega) \right)\right]
+	S(k)^\dagger S(k) = \sum_i \ket{i}\bra{i} |S_l(k)|^2 = 1 \implies |S_i(k)|^2 = 1 \implies S_i(k) = e^{2 i \delta_i(k)}
 \end{aligned}\end{equation}
-Converting the exponentials inside the box brackets to sines gives
+The parameters \(\delta_i(k)\) are scattering phase shifts of the state \(\ket{i}\). The total phase shift \(\delta(\omega) = \sum_i \delta(\omega)\) in the eigenbasis of \(S\) can be obtained by taking the trace and log of \(S\):
+\begin{equation}\begin{aligned}
+	\ln S = \ln \sum_i \ket{i}\bra{i}e^{2i\delta_i} = 2i\sum_i \ket{i}\bra{i}\delta_i \implies \frac{1}{2i}\text{Trace} \left[\ln S\right] = \delta(\omega)
+\end{aligned}\end{equation}
+
+These phase shifts can be expressed in terms of \(T\).  To prove this, first note that the determinant of the \(S-\)matrix is the exponential of the total phase shift: 
+\begin{equation}\begin{aligned}
+	\text{Det} \left[S(\omega)\right] = e^{2i\sum_i\delta_i(\omega)}= e^{2i\delta(\omega)}~.
+\end{aligned}\end{equation}
+Taking the determinant of eq.~\ref{S_in_T} gives
 \begin{equation}\begin{aligned}
 	\label{tmatphase}
-	T_l(\omega) = -\frac{1}{\pi g(\omega)}\exp\left(i \delta_l(\omega) \right)\sin \delta_l(\omega)
+	e^{2i\delta(\omega)} = 1 - 2\pi i \text{Det}\left[T(\omega)\right] \implies \text{Det}\left[T(\omega)\right] = -\frac{\sin \delta(\omega)}{\pi \rho}e^{i\delta(\omega)}
 \end{aligned}\end{equation}
 If we define the argument of a complex number \(z(r,\phi) = r e^{i\phi}\) as \(arg(z) = \phi\), then we can write
 \begin{equation}\begin{aligned}
-	\delta_l(\omega) = arg\left[ T_l(\omega) \right] 
-\end{aligned}\end{equation}
-Since the total \(T-\)matrix will be 
-\begin{equation}\begin{aligned}
-	T(\omega) = \sum_{lm\sigma} T_l(\omega)
-\end{aligned}\end{equation}
-the determinant of \(T(\omega)\) will be the product of the eigenvalues \(T_l(\omega)\), so we can write
-\begin{equation}\begin{aligned}
-	\text{Det}\left[ T(\omega) \right] = \prod_{lm\sigma} T_l = \exp\left[ i\sum_{lm\sigma} \delta_l(\omega) \right] \prod_{lm\sigma}\left( -\frac{1}{\pi g(\omega)}\right)\sin \delta_l(\omega)
-\end{aligned}\end{equation}
-and the argument of this function will be the total scattering phase shift:
-\begin{equation}\begin{aligned}
 	\label{phase_in_T}
-	arg\left[\text{Det}\left[ T(\omega) \right]\right] = \sum_{lm\sigma} \delta_l(\omega) \equiv \delta(\omega)
-\end{aligned}\end{equation}
-\(\delta(\omega)\) is the total scattering phase shift suffered by the scattering states due to scattering off the potential, at energy \(\omega\).
-Summing equation \ref{S_in_T} over \(l\) also relates the total \(S\) with the total \(T\):
-\begin{equation}\begin{aligned}
-	S(\omega) = 1 - 2\pi i g(\omega) T(\omega)
+	\text{arg}\left[\text{Det}\left[ T(\omega) \right]\right] = \delta(\omega) = \frac{1}{2i}\text{Trace} \left[\ln S\right]
 \end{aligned}\end{equation}
 
-\subsection{The Friedel sum-rule}
+\section{The Friedel sum-rule}
 This is a very general and important theorem that will come up  quite often throughout the calculations. It states that the change in the number of states of a Hamiltonian on introduction of a localized scattering center is equal to the sum of the scattering phase shifts suffered by the conduction electrons at the Fermi surface as they scatter off the scattering center. We can obtain a clearer picture by looking at a simple derivation of this result \cite{hewson}.
 Consider a Hamiltonian
 \begin{equation}\begin{aligned}
@@ -332,12 +299,10 @@ The non-interacting Greens function is then
 The dos \(\rho(\omega)\) and total number of states \(N\) are then defined as
 
 \begin{equation}\begin{aligned}
-	\rho(\omega) &= \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \mathcal{H}) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]\\
-	\rho_0(\omega) &=  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
-	N &= \int_{-\infty}^{\epsilon_F} \rho(\omega) d\omega = - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega\\
-	N_0 &= - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
+	\rho(\omega) &\equiv \sum_\epsilon \delta(\omega - \epsilon) = \text{Tr}\left[ \delta(\omega - \mathcal{H}) \right] = - \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right], && \rho_0(\omega) =  -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]\\
+	N &= \int_{-\infty}^{\epsilon_F} \rho(\omega) d\omega = - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) \right]d\omega, && N_0 = - \int_{-\infty}^{\epsilon_F} \frac{1}{\pi}\text{Im} \text{Tr}\left[ G_0(\omega) \right]d\omega
 \end{aligned}\end{equation}
-Note that \(\rho_0(\omega)\) is nothing but the \(g(\omega)\) that appears in eq.~\ref{S_in_T}. \textit{The quantity \(N\) counts the total number of states in the system below the Fermi surface.} The change in the density of states induced by the interaction term \(V\) is
+The sum \(\sum_\epsilon\) is over all eigenstates of the system, including all degeneracies. \textit{The quantity \(N\) counts the total number of states in the system below the Fermi surface.} The change in the density of states induced by the interaction term \(V\) is
 \begin{equation}\begin{aligned}
 	\label{doschange}
 	\Delta \rho\left( \omega \right)  = \rho\left( \omega \right) - \rho_0\left( \omega \right) = -\frac{1}{\pi}\text{Im} \text{Tr}\left[ G(\omega) - G_0(\omega) \right]
@@ -370,154 +335,21 @@ The change in the dos becomes
 \begin{equation}\begin{aligned}
 	\Delta \rho(\omega) &= \frac{1}{\pi}\text{Im}\left( \frac{\partial{}}{\partial{\omega}} \ln \text{Det}\left[T\right]\right)\\
 &= \frac{1}{\pi}\frac{\partial{}}{\partial{\omega}} \text{Im}\left( \ln \text{Det}\left[T\right]\right)\\
+&= \frac{1}{\pi}\frac{\partial{}}{\partial{\omega}} \text{arg} \left[\text{Det}\left(T\right)\right]\\
 \end{aligned}\end{equation}
-Note that while the \(\text{Det}\left[T\right]\) will have both an argument and an amplitude (as a general complex number), the \(\ln\) followed by the \(\text{Im}\left(  \right) \) will pick out just the argument:
+At the last line, we used the relation \(\text{Im} \ln (z) = \text{arg}(z)\). From eq.~\ref{phase_in_T}, we get
 \begin{equation}\begin{aligned}
-	\text{Im}\left(\ln (r e^{i\phi})\right) = \text{Im}\left( \ln r + i\phi \right) = \phi
-\end{aligned}\end{equation}
-Hence,
-\begin{equation}\begin{aligned}
-\Delta \rho(\omega) &= \frac{1}{\pi}\frac{\partial{}}{\partial{\omega}} \text{arg} \text{Det}\left[T\right]\\
-\end{aligned}\end{equation}
-From eq.~\ref{phase_in_T}, we get
-\begin{equation}\begin{aligned}
-	\Delta \rho(\omega) &=\frac{1}{\pi}\frac{\partial{}}{\partial{\omega}}\delta(\omega)
+	\Delta \rho(\omega) &= \frac{1}{2i\pi}\frac{\partial{}}{\partial{\omega}} \text{Trace}\left[\ln S(\omega)\right]\\
 \end{aligned}\end{equation}
 The change in the total number of states is obtained simply by integrating the dos from \(-\infty\) to the chemical potential \(\epsilon_F\):
 \begin{equation}\begin{aligned}
-	\Delta N  &= \frac{1}{\pi}\int_{-\infty}^{\epsilon_F}\frac{\partial{}}{\partial{\omega}}\delta(\omega) d\omega\\
-		  &= \frac{1}{\pi}\left[ \delta(\epsilon_F) - \delta(-\infty) \right] 
+	\Delta N = \int_{-\infty}^{\epsilon_F}d\omega\frac{1}{2i\pi}\frac{\partial{}}{\partial{\omega}} \text{Trace}\left[\ln S(\omega)\right] = \frac{1}{2\pi i}\text{Trace} \ln \frac{S(\epsilon_F)}{S(-\infty)}
 \end{aligned}\end{equation}
-For \(\omega \to -\infty\), we can write \(\omega - \mathcal{H} \to \omega - H_0\) such that \(G(\omega) \to G_0(\omega)\) and hence \(S(\omega) \to 1\), which means that \(S(\omega)\) becomes real and \(\delta(\omega) \to 0\). Making this substitution, we get the spherically symmetric case of the Friedel sum rule
+For \(\omega \to -\infty\), we can write \(\omega - \mathcal{H} \to \omega - H_0\) such that \(G(\omega) \to G_0(\omega)\) and hence \(S(-\infty) \to 1\). On making this substitution, we derive the generalised Friedel sum rule \cite{langer}
 \begin{equation}\begin{aligned}
-	\Delta N &= \frac{1}{\pi}\delta(\epsilon_F)
+	\Delta N &= \frac{1}{2\pi i}\text{Trace} \left[\ln S(\epsilon_F)\right]
 \end{aligned}\end{equation}
 
-\subsection{An identity}
-If, for some operator \(A\), we have \(\left[H,A\right] = \lambda A\), where \(\lambda\) is some scalar, then we can write
-\begin{equation}\begin{aligned}
-HA = A(\lambda+H)
-\end{aligned}\end{equation}
-A consequence of this is, for another scalar E, we can write
-\begin{gather}
-	(E - H)A = AE - A(\lambda+H) = A\left(E -\lambda -H\right) \\
-\implies A(E - \lambda - H)^{-1} = (E-H)^{-1}A\label{identity}
-\end{gather}
-
-\section{Landau's theory of Fermi liquids}
-Since we will be using some results and concepts of Fermi liquids, its best to discuss the relevant details briefly. This section is adapted from ref.~\cite{pethick}. 
-A ideal Fermi gas is a collection of non-interacting Fermions.
-Since they are non-interacting, the eigenstates of the complete system are just the collections of the eigenstates of the particles and holes.
-The eigenstate will be of  the form \(\{n_{k_1\uparrow},n_{k_1\downarrow},n_{k_2\uparrow},n_{k_2\downarrow},n_{k_3\uparrow},n_{k_3\downarrow},...,\}\), where \(n_{k\sigma}\in\{0,1\}\) is the number of particles with momentum \(k\) and spin \(\sigma\).
-In the ground state,
-\begin{equation}\begin{aligned}
-n_{k\sigma} = \begin{cases} 1 & k \leq k_F \\ 0 & k>k_F \end{cases} 
-\end{aligned}\end{equation}
-Excitations involve adding an electron above \(k_F\) or deleting an electron below \(k_F\).
-The former is called a \textit{particle} while the latter is called a \textit{hole}.
-\textbf{A general excited state of the total system is a collection of particle and hole excitations.}
-We next consider interacting systems, but very specific ones.
-That is, we consider interacting systems whose excitations can be mapped one-to-one with the excitations of the ideal system, provided the interactions are turned on sufficiently slowly.
-Alternatively, there exists a sufficiently slow rate of turning off the interactions such that any interacting excited state \(\Psi^*\) continuously flows into some excited state \(\Phi\) of the ideal system as the interactions flow to 0.
-
-\begin{gather}
-\Psi^* \xrightarrow{\text{turn interactions off}} \Phi \\
-\Phi^* \xrightarrow{\text{turn interactions off}} \Psi
-\end{gather}
-If some state \(\Gamma^*\), instead of flowing into an ideal excited state, gets lost while the interactions are being turned off, then we are not considering that system.
-All excited states must flow into some ideal state and vice-versa.
-This means that the interacting excited states can be labeled by the same good quantum numbers \(\vec k\) and \(\sigma\).That is, if some eigenstate of the interacting system flows into the ideal eigenstate \(\{n_{k\sigma}\}\), we can just as well use the distribution \(\{n_{k\sigma}\}\) to label the interacting eigenstate.
-\textit{The particle and hole excitations of the ideal system might flow into some very complicated state of the interacting system, which we call a quasiparticle/quasihole}.
-In other words, a system (ideal ground state + particle of momentum \(k\)) goes to (interacting ground state + quasiparticle of momentum \(k\)).
-If an interacting eigenstate corresponds to the state \(\{n_{k\sigma}\}\), then \(\{n_{k\sigma}\}\) is
-said to be the quasiparticle distribution function for that interacting state.
-Just as we denote eigenstates of the total ideal system using the collection of particles and holes, similarly we use the quasiparticle and quasiholes to describe eigenstates of the interacting system.
-Let \(k_+>k_F\) and \(k_- < k_F\).
-Then,
-\begin{gather}
-    \ket{IGS}\otimes\ket{k_+} \xrightarrow{\text{turn interactions on}} \ket{RGS}\otimes\ket{k_+}^* \\
-    \ket{IGS}\otimes\ket{k_-} \xrightarrow{\text{turn interactions on}} \ket{RGS}\otimes\ket{k_-}^* \\
-\end{gather}
-\(\ket{}^*\) denotes a quasi-ket.
-"IGS" and "RGS" are ideal and real(interacting) ground states.
-Another way of putting this is
-\begin{gather}
-c^\dagger_{k_+}\ket{IGS} \xrightarrow{\text{turn interactions on}} \eta^\dagger_{k_+}\ket{RGS}\\
-c_{k_-}\ket{IGS} \xrightarrow{\text{turn interactions on}} \eta_{k_-}\ket{RGS}
-\end{gather}
-\(\eta^\dagger\) is the creation operator for the quasiparticle.
-\(n_k\) gives the distribution of momentum \(k\) quasiparticles.
-If \(n^0_k\) is the distribution in the ground state, the excitation can be measured as 
-\begin{equation}\begin{aligned}
-\delta n_k = n_k - n^0_k
-\end{aligned}\end{equation}
-In general, the total energy \(\mathcal{E}\) of the system will be a functional of the distribution function \(n_k\).
-For the ideal system, this function is very simple.
-\begin{equation}\begin{aligned}
-\mathcal{E}^0[n_k] = \sum_k n_k \epsilon_k
-\end{aligned}\end{equation}
-The functional in case of the interacting system might be very complex.
-Up to first order in the functional, we can write
-\begin{equation}\begin{aligned}
-	\mathcal{E}[n_k] = \mathcal{E}[n^0_k] + \sum_k \frac{\partial{\mathcal{E}}}{\partial{n_k}}\delta n_k
-\end{aligned}\end{equation}
-The first order variation in \(\mathcal{E}\) is thus
-\begin{equation}\begin{aligned}
-	\label{tote}
-\delta \mathcal{E} \equiv \mathcal{E}[n_k] -\mathcal{E}[n^0_k] = \sum_k \xi_k \delta n_k
-\end{aligned}\end{equation}
-where \(\xi_k = \frac{\partial{\mathcal{E}}}{\partial{n_k}}\).
-\(\xi_k\) is the energy of the quasiparticles(hole) or momentum \(k\).
-To see this, note that if \(\mathcal{E}[n_k^1]\) and \(\mathcal{E}[n_k^2]\) are the energies before and after adding a quasiparticle of momentum \(q\), we have
-\begin{equation}\begin{aligned}
-n_k^2 - n_k^1 = \begin{cases} 0 & k \neq q\\ 1 & k = q \end{cases}
-\end{aligned}\end{equation}
-Then, up to first order,
-\begin{equation}\begin{aligned}
-	\mathcal{E}[n_k^2] - \mathcal{E}[n_k^1] = \sum_k \xi_k \left(n^2_k - n^1_k\right) = \xi_q
-\end{aligned}\end{equation}
-This shows that the effect of adding a quasiparticle of momentum \(q\) is to raise the total energy by \(\xi_q\).
-It is thus sensible to call that the energy of the quasiparticle.
-\(\xi_k\) itself might depend on whether other quasiparticles are present; there might be interactions among them.
-This effectively means that \(xi_k\) itself is, in general, a functional of \(n_k\).
-Consequently, we expand it up to first order.
-\begin{equation}\begin{aligned}
-	\label{quasienergy}
-	\xi_k = \xi_k^0 + \sum_q \frac{\partial{\xi_k}}{\partial{n_q}} \delta n_q
-\end{aligned}\end{equation}
-Eq.~\ref{tote} then becomes
-\begin{equation}\begin{aligned}
-\delta\mathcal{E} = \sum_k \xi^0_k \delta n_k + \sum_{k,q} f(k,q) \delta n_k \delta n_q
-\end{aligned}\end{equation}
-where \(f(k,q) = \frac{\partial{\xi_k}}{\partial{n_q}} = \frac{\partial^2 \mathcal{E}}{\partial n_k \partial n_q}\) is the interaction between two quasiparticles of momenta \(k\) and \(q\).
-The first term is the self energy of the quasiparticles, the other they would have had even if no other quasiparticle was present.
-Its sort of like their kinetic energy.
-The second term is the interaction energy between all the quasiparticles.
-Hence, the term \(f(k_1,k_2)\) comes into play only when \(\delta n_{k_1} \neq 0\) and \(\delta n_{k_2} \neq 0\), that is when both the quasiparticles are present.
-Since the quasiparticles are in direct correspondence with the Fermionic particles, they must also be fermions.
-This allows us to write down the probability of finding a quasiparticle at energy \(\xi\),
-\begin{equation}\begin{aligned}
-	f(\xi) = \left[e^{(\xi - \mu)\beta} + 1\right]^{-1}
-\end{aligned}\end{equation}
-where \(\mu = \mathcal{E_0}(N+1) - \mathcal{E_0}(N)= \frac{\partial{\mathcal{E}_0}}{\partial{N}}\) is the change in ground state energy on adding one quasiparticle.
-There is a subtlety here though.
-Since \(\xi\) itself depends on the occupancy, and the occupancy also depends on \(\xi\) through the probability distribution, there is a feedback effect in action here.
-If any perturbation or field modifies the occupation \(n_{k\sigma}\), it will produce a feedback effect on all the occupations, through the \(\xi\).
-
-A temperature-dependent free energy can be concocted using
-\begin{equation}\begin{aligned}
-F[\delta n_k] = \delta \mathcal{E}[\delta n_k] - T S[\delta n_k]
-\end{aligned}\end{equation}
-Minimizing this gives an expectation value of the excitation distribution \(\langle \delta n_k\rangle\).
-This in turn gives a temperature-dependent quasiparticle energy
-\begin{equation}\begin{aligned}
-	\label{temp_en}
-	\xi_k(T) = \xi^0_k + \sum_{q} f(k,q)\langle \delta n_q\rangle
-\end{aligned}\end{equation}
-where \(\langle \delta n_q\rangle\) is obtained by
-\begin{equation}\begin{aligned}
-	\frac{\:\mathrm{d}F}{\:\mathrm{d}\delta n_q}\bigg|_{\delta n_q = \langle \delta n_{q}\rangle} = 0
-\end{aligned}\end{equation}
 \section{The single-impurity Anderson model (SIAM)}
 The SIAM consists of a single localized impurity site talking to a conduction bath. The impurity site has an energy \(\epsilon_d\) which is typically below the Fermi surface and hence favours a bound state. We will assume the impurities are from a d or f-electron such that the orbitals are localized and there is a local repulsion \(U\) produced by the localized orbitals.
 \begin{equation}\begin{aligned}
@@ -1395,7 +1227,15 @@ The \(T-\)matrix term is
 \begin{equation}\begin{aligned}
 T_1 = J_T^2\sum_q S_d^- c^\dagger_{k^\prime \uparrow}c_{q\downarrow}\frac{1}{E - H_0}S_d^+ c^\dagger_{q \downarrow}c_{k\uparrow}
 \end{aligned}\end{equation}
-Using eq.~\ref{identity}, we can write
+If, for some operator \(A\), we have \(\left[H,A\right] = \lambda A\), where \(\lambda\) is some scalar, then we can write
+\begin{equation}\begin{aligned}
+HA = A(\lambda+H)
+\end{aligned}\end{equation}
+A consequence of this is, for another scalar E, we can write
+\begin{gather}
+	(E - H)A = AE - A(\lambda+H) = A\left(E -\lambda -H\right) \\
+\implies A(E - \lambda - H)^{-1} = (E-H)^{-1}A
+\end{gather}
 \begin{equation}\begin{aligned}
 (E - H_0)^{-1} c^\dagger_{q \downarrow}c_{k\uparrow} = c^\dagger_{q \downarrow}c_{k\uparrow}(E - \lambda -H_0)^{-1}
 \end{aligned}\end{equation}
@@ -2081,7 +1921,7 @@ Replacing the quasiparticle excitations with their expectation values, the effec
 \begin{equation}\begin{aligned}
 	\epsilon_{k\sigma} = \epsilon_k + U\sum_q \langle \delta n_{q,-\sigma}\rangle \equiv \epsilon_k + U\langle \delta n_{-\sigma}\rangle
 \end{aligned}\end{equation}
-This is analogous to the Landau quasiparticle energy functional, eq.~\ref{temp_en}, \(U\) acting as the interaction between the quasiparticles.
+This is analogous to the Landau quasiparticle energy functional, \(U\) acting as the interaction between the quasiparticles.
 \(\delta n > 0\) acts as the excitations from the ground state.
 \\\\
 The interacting density of states is

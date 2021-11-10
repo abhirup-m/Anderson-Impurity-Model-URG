@@ -80,20 +80,15 @@ R.~Brockett.
   linear programming problems.
 \newblock {\em Linear Algebra and its Applications}, 146:79--91, 1991.
 
-\bibitem{sakurai}
-J.~J. Sakurai.
-\newblock {\em Modern Quantum Mechanics}.
-\newblock Addison Wesley Publishing Company, 1994.
-
 \bibitem{hewson}
 A.~C. Hewson.
 \newblock {\em The Kondo Problem to Heavy Fermions}.
 \newblock Cambridge University Press, 1993.
 
-\bibitem{pethick}
-Jordon Baym and Christopher Pethick.
-\newblock {\em Landau Fermi-Liquid Theory}.
-\newblock Wiley-VCH, 1991.
+\bibitem{langer}
+J.~S. {Langer} and V.~{Ambegaokar}.
+\newblock {Friedel Sum Rule for a System of Interacting Electrons}.
+\newblock {\em Physical Review}, 121, 1961.
 
 \bibitem{piers}
 Piers Coleman.
@@ -119,11 +114,6 @@ K.~G. Wilson.
 A.~C. Hewson.
 \newblock Renormalization group and fermi liquid theory.
 \newblock {\em Advances in Physics}, 43, 1994.
-
-\bibitem{langer}
-J.~S. {Langer} and V.~{Ambegaokar}.
-\newblock {Friedel Sum Rule for a System of Interacting Electrons}.
-\newblock {\em Physical Review}, 121, 1961.
 
 \bibitem{seki}
 Kazuhiro Seki and Seiji Yunoki.
