@@ -3,7 +3,8 @@ The URG method was introduced and formalised in refs.~\cite{anirbanurg1,anirbanu
 \section{Formalism and Results}
 \subsection{Description of the problem}
 We are given a Hamiltonian \(\mathcal{H}\) which is not completely diagonal in the occupation number basis of the electrons, \(\hat n_k\): \(\left[\mathcal{H},n_k\right] \neq 0\). \(k\) labels any set of quantum numbers depending on the system. For spin-less Fermions it can be the momentum of the particle, while for spin-full Fermions it can be the set of momentum and spin. There are terms that scatter electrons from one quantum number \(k\) to another quantum number \(k^\prime\).
-\\\\We take a general Hamiltonian,
+
+We take a general Hamiltonian,
 \begin{equation}\begin{aligned}
 	\mathcal{H} = H_e \hat n_{q\beta} + H_h \left(1 - \hat n_{q\beta}\right) + c^\dagger_{q\beta}T + T^\dagger c_{q\beta}
 \end{aligned}\end{equation}
@@ -353,6 +354,42 @@ This is the constraint that ensures that both unitaries give the same effective 
 \tilde H = \begin{pmatrix} E_1 & 0 \\ 0 & E_0\end{pmatrix}
 \end{aligned}\end{equation}
 Therefore, the trace of the rotated Hamiltonian is \(t_\text{new} = E_1 + E_0 \). The trace of the LHS in the final equation of \ref{trace} is \(\text{tr}\left(\tilde H_1 + \tilde H_0\right) = \text{tr}\left(E_1 \otimes I + E_0 \otimes I\right) = 2\left(E_1 + E_0\right) = 2t_\text{new}\). The trace of the RHS in final equation of \ref{trace} is \(2\times\text{tr}\left(\mathcal{H}_0\right) = 2t_\text{old}\) where \(t_\text{old} = \text{tr}\left(\mathcal{H}_0\right)\) is the trace of the old Hamiltonian. Equating the LHS and RHS gives \(t_\text{new} = t_\text{old}\).
+
+\subsection{Complete generator for the unitary transformation}
+Given some operator \(O_0\), we can generate a family of unitarily-connected operators \(O_j\) using a unitary operator \(U(t)\):
+\begin{equation}\begin{aligned}
+	\label{familiy_O}
+	O_j = U_j O(0) U_j^\dagger, ~ ~ j = 1,2,\ldots
+\end{aligned}\end{equation}
+The discrete change equation for \(O_j\) can be represented in the form of a commutator:
+\begin{equation}\begin{aligned}
+	\label{generator}
+	\Delta O_j \equiv O_{j+1} - O_j = \left[O_j, S_j\right] 
+\end{aligned}\end{equation}
+where 
+\begin{equation}\begin{aligned}
+	S_j = U_j \Delta U^\dagger_j~.
+\end{aligned}\end{equation}
+Note that because \(\Delta \left( U_j U_j^\dagger \right) = 0\), we have \(\left(\Delta U_j\right) U_j^\dagger = -U_j\left(\Delta U_j^\dagger\right)\) and so \(S_j\) is anti-Hermitian. To verify that eq.~\ref{familiy_O} is indeed the solution of eq.~\ref{generator}, we differentiate eq.~\ref{familiy_O}:
+\begin{equation}\begin{aligned}
+	O_{j+1} - O_j = \Delta U_j O(0) U_j^\dagger + U_j O(0) \Delta U_j^\dagger = \Delta U_j U_j^\dagger O_j + O_j U_j \Delta U_j^\dagger = \left[O_j, S_j\right] 
+\end{aligned}\end{equation}
+This shows that given a family of operators eq.~\ref{familiy_O} connected through \(U_j\), we can obtain a generator \(S_j\) that defines the flow equation of \(O_j\).
+
+Since the URG is unitary, we should be able to obtain such a generator for it as well. From the expression of the unitary transformation of URG:
+\begin{equation}\begin{aligned}
+	U_j = \frac{1}{\sqrt 2}\left( 1 + \eta_j^\dagger - \eta_j \right) 
+\end{aligned}\end{equation}
+From the definition of the generator \(S_j\), we then get
+\begin{equation}\begin{aligned}
+	S_j = \frac{1}{2}\left( 1 + \eta_j^\dagger - \eta_j \right) \left(\eta_{j+1} - \eta^\dagger_{j+1} - \eta_j + \eta^\dagger_{j}\right)
+\end{aligned}\end{equation}
+
+
+
+
+
+
 \subsection{A note on the various quantum fluctuation scales \(\pmb\omega_i^j\)}
 At a particular step of the URG, there are two quantum fluctuation energy scales associated with each sector. If we rotate \(\ket{\psi_1}\) to \(\ket{1}\) (particle/occupied sector), the corresponding unitary will be a function of \(\omega_1^{0,1}\). If we, on the other hand, rotate \(\ket{\psi_0}\) to \(\ket{0}\) (hole/unoccupied sector), the unitary will be a function of \(\omega_0^{0,1}\). The superscript \(j\) signifies whether this particular \(\omega_i^j\) is an eigenvalue corresponding to \(\ket{1,\phi_i}\) or \(\ket{0,\phi_i}\). \(\omega^0_i\) occurs in the many-body transition operator \(\eta\), because \(\eta\) is preceded by \(c\) and hence it picks out the eigenstate \(\ket{0,\phi_i}\). On the other hand, \(\omega^1_i\) occurs in the many-body transition operator \(\eta^\dagger\), because that is preceded by \(c^\dagger\). This constrains these two values, because we must have \(\eta(\omega_i^0) = \left(\eta^\dagger(\omega_i^1)\right)^\dagger\) (eq.~\ref{constraint}), for each value of \(i\), giving us two constraints in total. The subscript \(i\) signifies whether \(\omega_i^j\) is a part of the particle sector unitary \(U_1(\omega_1^j)\) or the hole sector unitary \(U_0(\omega_0^j)\). As mentioned in the previous section, since both ways are equivalent, we must have \(U_1 = U_0\) which leads to the constraints \(\eta(\omega_0^j) = -\eta(\omega_1^j)\). All the independent constraints are listed below.
 \begin{equation}\begin{aligned}
