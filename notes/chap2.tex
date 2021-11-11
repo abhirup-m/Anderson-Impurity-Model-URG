@@ -250,7 +250,7 @@ The non-interacting limit consists of a non-interacting impurity site (\(U = 0\)
 	H_\text{non-int} = \epsilon_d n_d + \sum_k \epsilon_k n_k + \sum_{k\sigma} t\left(c^\dagger_{k\sigma}c_{d\sigma}+c^\dagger_{d\sigma}c_{k\sigma}\right)
 \end{aligned}\end{equation}
 This is a single-electron problem and it can be exactly solved. The impurity and conduction electron Greens function can be obtained completely. The calculation of the conduction electron phase shifts also provides a demonstration of the Friedel sum rule.
-\subsubsection{Green's function of impurity site:}
+\subsubsection{Impurity Green's function}
 We want to write down diagonal the \textit{Green's function} \(G_{d\sigma}\) for the excitation \(\ket{d\sigma}\); it is a single-particle state having an electron of spin \(\sigma\) on the impurity site. In the absence of the hybridisation, this Greens function is
 \begin{equation}\begin{aligned}
 	G_0^{d\sigma}(\omega) = \bra{d\sigma}\frac{1}{\omega - H_d}\ket{d\sigma} = \frac{1}{\omega - \epsilon_d}
@@ -279,8 +279,7 @@ The self-energy acts a single term that incorporates all single-particle scatter
 The self-energy can be simplified with some assumptions.
 \begin{gather}
 \frac{1}{t^2}\Sigma(\omega) = \sum_k \frac{1}{\omega - \epsilon_k} = \lim_{\eta \rightarrow 0}\int_{-W}^W d\epsilon \rho(\epsilon) \frac{1}{\omega - \epsilon + i\eta}\\
-\implies \frac{1}{t^2}\text{Re} \left[\Sigma(\omega)\right] = \int_{-W}^W d\epsilon \rho(\epsilon)\frac{1}{\omega - \epsilon}, \text{and }\\
-\frac{1}{t^2}\text{Im} \left[\Sigma(\omega)\right] = \int_{-W}^W d\epsilon \rho(\epsilon) (-i\pi)\delta(\omega-\epsilon)
+\implies \frac{1}{t^2}\text{Re} \left[\Sigma(\omega)\right] = \int_{-W}^W d\epsilon \rho(\epsilon)\frac{1}{\omega - \epsilon}, \text{and }\frac{1}{t^2}\text{Im} \left[\Sigma(\omega)\right] = \int_{-W}^W d\epsilon \rho(\epsilon) (-i\pi)\delta(\omega-\epsilon)
 \end{gather}
 Assuming \(\rho(\omega)\) varies sufficiently slowly, we can neglect the real part,
 \begin{equation}\begin{aligned}
@@ -292,7 +291,7 @@ Therefore,
 \end{aligned}\end{equation}
 The difference from \(G^{d\sigma}_0\) can be seen by computing the density of states for both the bare and the interacting ones:
 \begin{gather}
-	\rho_d^0(E) = -\frac{1}{\pi}\text{Im}\left[G^0_d\right] = -\frac{1}{\pi} \lim_{\eta \rightarrow 0} \frac{1}{E - \epsilon_d + i\eta} = \delta(E - \epsilon_d)\\
+	\rho_d^0(E) = -\frac{1}{\pi}\text{Im}\left[G_0^{d\sigma}\right] = -\frac{1}{\pi} \lim_{\eta \rightarrow 0} \frac{1}{E - \epsilon_d + i\eta} = \delta(E - \epsilon_d)\\
 	\rho_d(E) = -\frac{1}{\pi}\text{Im}\left[G^{d\sigma}\right]= -\frac{1}{\pi} \lim_{\eta \rightarrow 0} \frac{1}{E - \epsilon_d + i(\eta+\Delta)} = \frac{1}{\pi}\frac{\Delta}{(E-\epsilon_d)^2 + \Delta^2}\label{densitys}
 \end{gather}
 The first density of states is delta function, because \(\epsilon_d\) is an eigenstate in that case, and the poles of the corresponding Green's function are real poles.
@@ -302,8 +301,8 @@ The total number of d-electrons can be calculated as:
 	\label{total}
 	\langle  n_d\rangle = 2\int d\epsilon \rho_d(\epsilon) = \frac{2\Delta}{\pi} \int \frac{d\epsilon}{(\epsilon-\epsilon_d)^2 + \Delta^2} = \frac{2}{\pi}\cot^{-1}\left(\frac{\epsilon_d}{\Delta}\right)
 \end{aligned}\end{equation}
-\subsubsection{Phase shift of conduction electron due to scattering off the impurity:}
-\(T-\)matrix is defined by
+\subsubsection{Conduction bath Greens function and scattering phase shift}
+As mentioned before, the \(T-\)matrix satisfies the equation
 \begin{equation}\begin{aligned}
 T = V + VGT 
 \end{aligned}\end{equation}
@@ -315,7 +314,7 @@ G = G_0 + G_0VG &= G_0 + G_0 T \frac{1}{1+GT}G \\
 \end{aligned}\end{equation}
 The conduction electron Green's function can be calculated as
 \begin{equation}\begin{aligned}
-G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t G^0_d t G^0_c(k^\prime) + \\ G_c^0(k)t G^0_d t \sum_q G_c^0(q) t G^0_d t G^0_c(k^\prime) + ...\\
+G_c(k,k^\prime,E) = \delta_{k,k^\prime}G^0_c(k,E) + G_c^0(k)t G_0^{d\sigma} t G^0_c(k^\prime) + \\ G_c^0(k)t G_0^{d\sigma} t \sum_q G_c^0(q) t G_0^{d\sigma} t G^0_c(k^\prime) + ...\\
 \end{aligned}\end{equation}
 Noting that 
 \begin{equation}\begin{aligned}
