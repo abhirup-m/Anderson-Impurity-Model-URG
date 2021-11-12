@@ -384,11 +384,23 @@ From the definition of the generator \(S_j\), we then get
 \begin{equation}\begin{aligned}
 	S_j = \frac{1}{2}\left( 1 + \eta_j^\dagger - \eta_j \right) \left(\eta_{j+1} - \eta^\dagger_{j+1} - \eta_j + \eta^\dagger_{j}\right)
 \end{aligned}\end{equation}
-
-
-
-
-
+The operators \(\eta_j\) and its hermitean conjugate can be thought of as angular momentum creation and annihilation operators acting on the \(2\times 2\) Hilbert space of the occupied and vacant states \(\ket{1}\ket{\phi_{1}}, \ket{0}\ket{\phi_{0}}\):
+\begin{align}
+	\eta_j \ket{1}\ket{\phi_1} = \ket{0}\ket{\phi_{0}},~ ~\eta_j \ket{0}\ket{\phi_0} = 0, && \eta^\dagger_j \ket{0}\ket{\phi_{0}} = \ket{1}\ket{\phi_1},~ ~\eta^\dagger_j \ket{1}\ket{\phi_1} = 0,\\
+\end{align}
+To check whether they have the corect algebra, we design the three spin operators \(S^i, i=\{x,y,z\}\).
+\begin{equation}\begin{aligned}
+	S^x &= \frac{1}{2}\left(S^+ + S^-\right) = \frac{1}{2}\left(\eta^\dagger_j + \eta_j\right) \\
+	S^y &= \frac{1}{2i}\left(S^+ - S^-\right) = \frac{1}{2i}\left(\eta^\dagger_j - \eta_j\right) \\
+	S^z &= \hat n - \frac{1}{2}
+\end{aligned}\end{equation}
+The commutation relations give
+\begin{equation}\begin{aligned}
+	\left[S^x, S^y\right] &= \frac{1}{4i}\left[\eta^\dagger_j + \eta_j, \eta^\dagger_j - \eta_j\right] = \frac{1}{2i}\left[\eta_j, \eta_j^\dagger\right] = \frac{1}{2i}\left(1 - \hat n - \hat n\right) = \frac{-1}{i}\left(\hat n - \frac{1}{2}\right) = i S^z\\
+	\left[S^y, S^z\right] &= \frac{1}{2i}\left[\eta^\dagger_j - \eta_j, \hat n - \frac{1}{2}\right] = \frac{1}{2i}\left[-\eta_j \hat n - \hat n \eta_j^\dagger\right] = \frac{1}{2i}\left(-\eta_j - \eta_j^\dagger\right) = \frac{i}{2}\left(\eta_j^\dagger + \eta_j\right)= i S^x\\
+	\left[S^z, S^x\right] &= \frac{1}{2}\left[\hat n - \frac{1}{2}, \eta^\dagger_j + \eta_j\right] = \frac{1}{2}\left[\hat n \eta_j^\dagger - \eta_j\hat n \right] = \frac{1}{2}\left(\eta_j^\dagger - \eta_j\right) = i\frac{1}{2i}\left(\eta_j^\dagger - \eta_j\right) = i S^y\\
+\end{aligned}\end{equation}
+These operators therefore satisfy the commutation algebra of angular momentum operators \(\left[S^i, S^j\right] = i\epsilon^{ijk}S^k\).
 
 \subsection{A note on the various quantum fluctuation scales \(\pmb\omega_i^j\)}
 At a particular step of the URG, there are two quantum fluctuation energy scales associated with each sector. If we rotate \(\ket{\psi_1}\) to \(\ket{1}\) (particle/occupied sector), the corresponding unitary will be a function of \(\omega_1^{0,1}\). If we, on the other hand, rotate \(\ket{\psi_0}\) to \(\ket{0}\) (hole/unoccupied sector), the unitary will be a function of \(\omega_0^{0,1}\). The superscript \(j\) signifies whether this particular \(\omega_i^j\) is an eigenvalue corresponding to \(\ket{1,\phi_i}\) or \(\ket{0,\phi_i}\). \(\omega^0_i\) occurs in the many-body transition operator \(\eta\), because \(\eta\) is preceded by \(c\) and hence it picks out the eigenstate \(\ket{0,\phi_i}\). On the other hand, \(\omega^1_i\) occurs in the many-body transition operator \(\eta^\dagger\), because that is preceded by \(c^\dagger\). This constrains these two values, because we must have \(\eta(\omega_i^0) = \left(\eta^\dagger(\omega_i^1)\right)^\dagger\) (eq.~\ref{constraint}), for each value of \(i\), giving us two constraints in total. The subscript \(i\) signifies whether \(\omega_i^j\) is a part of the particle sector unitary \(U_1(\omega_1^j)\) or the hole sector unitary \(U_0(\omega_0^j)\). As mentioned in the previous section, since both ways are equivalent, we must have \(U_1 = U_0\) which leads to the constraints \(\eta(\omega_0^j) = -\eta(\omega_1^j)\). All the independent constraints are listed below.
