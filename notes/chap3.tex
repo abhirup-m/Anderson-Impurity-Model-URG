@@ -745,125 +745,78 @@ For \(\omega < D/2\), we get the flow towards the strong-coupling fixed point. T
 \begin{equation}\begin{aligned}
 	\Delta H^{(3)}_j = \underbrace{c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c}_\text{first term} ~+~ \underbrace{T^\dagger c \frac{1}{\omega - H_D} H_X \frac{1}{\omega - H_D} c^\dagger T}_\text{second term}
 \end{aligned}\end{equation}
-A general term of this summation has three sets of spin operators coming from \(c^\dagger T, H_X\) and \(T^\dagger c\). If we had expressed the spin operators in terms of \(S^z, S^\pm\), most of the terms would have atleast one \(S^+\) or \(S^-\), and by the same argument as in the single-channel case, the denominator will have anti-parallel spins and the Ising term will be negative, leading to the form: \(\omega - D/2 + J/4\). The only term that does not have even one \(S^\pm\) is the one with three \(S^z\). We can show that this term will also have the same denominator. An instance of this term (in shorthand) is
+A general term of this summation has three sets of spin operators coming from \(c^\dagger T, H_X\) and \(T^\dagger c\). If we had expressed the spin operators in terms of \(S^z, S^\pm\), most of the terms would have atleast one \(S^+\) or \(S^-\), and by the same argument as in the single-channel case, the denominator will have anti-parallel spins and the Ising term will be negative, leading to the form: \(\omega - D/2 - \epsilon_k/2 + J/4\). \(\epsilon_k\) is the energy of the other electron that will be summed over. The only term that does not have even one \(S^\pm\) is the one with three \(S^z\). We can show that this term will also have the same denominator. An instance of this term (in shorthand) is
 \begin{equation}\begin{aligned}
-	S_d^z c^\dagger_{q \uparrow} \frac{1}{\omega - D/2 + J/2 S_d^z} S_d^z \frac{1}{\omega - D/2 + J/2 S_d^z} S_d^z c_{q \uparrow}\\
+	S_d^z c^\dagger_{q \uparrow} \frac{1}{\omega - D/2 -\epsilon_k/2 + J/2 S_d^z} S_d^z \frac{1}{\omega - D/2 -\epsilon_k/2 + J/2 S_d^z} S_d^z c_{q \uparrow}\\
 \end{aligned}\end{equation}
 This can be split into up and down configurations of the impurity spin using the decomposition \(S_d^z = \frac{1}{2}\left(\frac{1}{2} + S_d^z\right) - \frac{1}{2}\left(\frac{1}{2} - S_d^z \right) \). These configurations will have different quantum fluctuation scales \(\omega, \omega^\prime\):
 \begin{equation}\begin{aligned}
-	\frac{1}{2}S_d^z c^\dagger_{q \uparrow}\left[\frac{1}{\omega - D/2 + J/4}\left(\frac{1}{2} + S_d^z\right) \frac{1}{\omega - D/2 +J/4} - \frac{1}{\omega^\prime - D/2 - J/4}\left(\frac{1}{2} - S_d^z\right) \frac{1}{\omega^\prime - D/2 - J/4}\right]S_d^z c_{q \uparrow}
+	\frac{1}{2}S_d^z c^\dagger_{q \uparrow}\left[\frac{\left(\frac{1}{2} + S_d^z\right)}{\left(\omega - D/2 -\epsilon_k/2 + J/4\right)^2} - \frac{\left(\frac{1}{2} - S_d^z\right)}{\left(\omega^\prime - D/2 -\epsilon_k/2 - J/4\right)^2}\right]S_d^z c_{q \uparrow}
 \end{aligned}\end{equation}
-If we now use poor man's scaling values to relate the two \(\omega\)s, we get \(\omega^\prime - \omega = J/2\). Substituting this will make both the denominators identical: \(\omega - D/2 + J/4\). This means that the denominator for all non-zero terms that renormalize the Hamiltonian is \(\omega - D?2 + J/4\), and we can pull it out of the summation.
+If we now use poor man's scaling values to relate the two \(\omega\)s, we get \(\omega^\prime - \omega = J/2\). Substituting this will make both the denominators identical: \(\omega - D/2 -\epsilon_k/2 + J/4\). This means that the denominator for all non-zero terms that renormalize the Hamiltonian is \(\omega - D/2 - \epsilon_k/2 + J/4\).
 
 \subsubsection{Calculation of first term}
 \begin{equation}\begin{aligned}
-c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = \frac{J^3}{\omega - D/2 + J/4}\sum_{q, k, k^\prime, k_1,k_2,\atop{\beta, \alpha, \alpha^\prime, \alpha_1,\alpha_2,\atop{l_1,l_2,a,b,c}}} c^\dagger_{q\beta,l_1} c_{k\alpha,l_1} S_d^a s^a_{\beta \alpha} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} c^\dagger_{k^\prime\alpha^\prime, l_1} c_{q\beta, l_1} S_d^c s^c_{\alpha^\prime \beta}
+	c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = J^3\sum_{q, k, k_1,k_2,\atop{\beta, \alpha, \alpha_1,\alpha_2,\atop{l_1,l_2,a,b,c}}} \frac{c^\dagger_{q\beta,l_1} c_{k\alpha,l_1} S_d^a s^a_{\beta \alpha} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} c^\dagger_{k\alpha, l_1} c_{q\beta, l_1} S_d^c s^c_{\alpha \beta}}{\left(\omega - D/2 -\epsilon_k/2 + J/4\right)^2}
 \end{aligned}\end{equation}
-\(q\) sums over the momenta being decoupled. \(k, k^\prime, k_1,k_2\) sum over the momenta not being decoupled. \(\beta, \alpha, \alpha^\prime, \alpha_1,\alpha_2\) sum over the spin indices. \(l_1,l_2\) sum over the channels. We will start simplifying this equation by summing over \(q\). \(c^\dagger_{q\beta}\) and \(c_{q\beta}\) can be easily combined to form \(\hat n_{q\beta}\), because they anti-commute with the other momenta. The sum gives \(\sum_q \hat n_{q\beta l_1} = n(D) \). This gives
+\(q\) sums over the momenta being decoupled. \(k, k_1,k_2\) sum over the momenta not being decoupled. \(\beta, \alpha, \alpha_1,\alpha_2\) sum over the spin indices. \(l_1,l_2\) sum over the channels. We will start simplifying this equation by summing over \(q\). \(c^\dagger_{q\beta}\) and \(c_{q\beta}\) can be easily combined to form \(\hat n_{q\beta}\), because they anti-commute with the other momenta. The sum gives \(\sum_q \hat n_{q\beta l_1} = n(D) \). This gives
 \begin{equation}\begin{aligned}
-c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = \frac{J^3 n(D)}{\omega - D/2 + J/4}\sum_{k, k^\prime, k_1,k_2,\atop{\beta, \alpha, \alpha^\prime, \alpha_1,\alpha_2,\atop{l_1,l_2,a,b,c}}} c_{k\alpha,l_1} S_d^a s^a_{\beta \alpha} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} c^\dagger_{k^\prime\alpha^\prime, l_1} S_d^c s^c_{\alpha^\prime \beta}
+	c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = J^3 n(D)\sum_{k, k_1,k_2,\atop{\beta, \alpha, \alpha_1,\alpha_2,\atop{l_1,l_2,a,b,c}}} \frac{c_{k\alpha,l_1} S_d^a s^a_{\beta \alpha} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} c^\dagger_{k\alpha, l_1} S_d^c s^c_{\alpha \beta}}{\left(\omega - D/2 -\epsilon_k/2 + J/4\right)^2}
 \end{aligned}\end{equation}
-The next simplification involves identifying how to contract the operators. The contractions have to be done so as to reproduce the original \(\vec{S_d}\cdot\vec{s}~c^\dagger c\) form such that we can read off the renormalization. Currently, there are four distinct electron labels, \(k,k^\prime,k_1,k_2\). There are two ways to contract them. The first is by choosing \(k_1\alpha_1 = k_2\alpha_2\). However, this term vanishes:
+The operators \(c^\dagger_{k\alpha}\) and its conjugate can be brought together without any change of sign because there will be an even number of flips. The sum over \(k\) gives
 \begin{equation}\begin{aligned}
-	\sum_{k_1\alpha_1,b}S_d^b s^b_{\alpha_1 \alpha_1} c^\dagger_{k_1\alpha_1,l_2}c_{k_1 \alpha_1,l_2} = \sum_{b,k_1\alpha_1}S_d^b s^b_{\alpha_1 \alpha_1}\hat n_{k_1\alpha_1,l_2} &= \sum_{b}S_d^b \left(\sum_{\alpha_1}s^b_{\alpha_1 \alpha_1}\right) \int_{-D + |\delta D|}^0 d\epsilon \rho(\epsilon)\\
-																						      &= \sum_b S_d^b \text{ Trace }(s^b)\int_{-D + |\delta D|}^0 d\epsilon \rho(\epsilon)= 0
+	\sum_k \frac{1 - \hat n_{k\alpha l_1}}{\left(\omega - D/2 -\epsilon_k/2 + J/4\right)^2} =  \rho\int \frac{d\epsilon\left[1 - \hat n(\epsilon)_{\alpha l_1}\right] }{\left(\omega - D/2 -\epsilon/2 + J/4\right)^2} = \rho\int_0^{D-2\left( \omega + J/4 \right) } \frac{d\epsilon}{\left(\omega - D/2 -\epsilon/2 + J/4\right)^2}
 \end{aligned}\end{equation}
-The other way to contract the indices is by selecting \(k\alpha = k^\prime \alpha^\prime\). Those two operators can again be brought together without any change of sign because there will be an even number of flips. Summing over \(k=k^\prime\) and the channel index \(l_1\) then gives \(\sum_{l_1}\sum_k \left(1 - \hat n_{k\alpha}\right) = \sum_{l_1}\int_{-D + |\delta D|}^ 0 n_j = \frac{1}{2}K n_j N_j\), where \(n_j = \rho |\delta D|\) and \(N_j = \rho D\). \(K = \sum_{l_1}\) is the total number of conduction bath channels. The factor of half is inserted to model the probability of transition appropriately; not all values of \(\epsilon_k\) will contribute equally to the renormalization. The entire expression is now
+The integration goes over positive energies only because of the \(1 - \hat n\) operator; the upper limit of the integration is chosen so as to make the denominator double, because this preserves the symmetry of the denominator and this is what happens in poor man's scaling. Performing the integration gives
+\begin{equation}\begin{aligned}
+	\sum_k \frac{1 - \hat n_{k\alpha l_1}}{\left(\omega - D/2 -\epsilon_k/2 + J/4\right)^2} = -\frac{1}{2}\frac{\rho}{\omega - D/2 + J/4}
+\end{aligned}\end{equation}
+The sum over the channel index \(l_1\) produces a factor of \(K\). \(K = \sum_{l_1}\) is the total number of conduction bath channels. The entire expression is now
 \begin{equation}\begin{aligned}
 	\label{first_term}
-	&\sum_{k_1,k_2,\beta,\alpha, \atop{\alpha^\prime, \alpha_1,\alpha_2,\atop{l_2,a,b,c}}}\frac{J^3 K N_j n_j  S_d^a s^a_{\beta \alpha} \left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right)S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right) S_d^c s^c_{\alpha^\prime \beta}}{2\left[\left(\omega^\prime - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\right]^2} \\
-	&= \frac{J^3 K N_j n_j }{2\left[\left(\omega^\prime - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\right]^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}}c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \sum_{\beta,\alpha, \atop{a,b,c}}S_d^a s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta} \left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right)S_d^b \left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right) S_d^c 
+	c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = -\frac{1}{2}\frac{J^3 n(D) \rho K}{\omega - D/2 + J/4}\sum_{\beta, \alpha, \alpha_1,\alpha_2,\atop{a,b,c}} S_d^a s^a_{\beta \alpha} S_d^b s^b_{\alpha_1 \alpha_2} S_d^c s^c_{\alpha \beta} \sum_{k_1,k_2,l_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2}
 \end{aligned}\end{equation}
-We now need to simplify the final summation.
+We now need to simplify the spin products. The sum over \(\alpha,\beta\) can be carried out immediately: \(\sum_{\alpha,\beta} s^a_{\beta \alpha} s^c_{\alpha \beta} = \text{Trace}\left(s^a s^c\right) = \frac{1}{2}\delta^{ac}\). Substituting this gives
 \begin{equation}\begin{aligned}
-	\label{final_sum}
-\sum_{\beta,\alpha, \atop{a,b,c}}s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta} S_d^a \left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right)S_d^b\left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right) S_d^c 
+	c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = -\frac{1}{2}\frac{J^3 n(D) \rho K}{\omega - D/2 + J/4}\frac{1}{2}\sum_{\alpha_1,\alpha_2,a,b} S_d^a S_d^b S_d^a \sum_{k_1,k_2,l_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2}s^b_{\alpha_1 \alpha_2} 
 \end{aligned}\end{equation}
-The internal product can be evaluated as follows:
+The spin product can now be carried out:
 \begin{equation}\begin{aligned}
-	\label{internal_sum}
-	\left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right)S_d^b\left(\omega^\prime - \frac{D}{2} - J \frac{\beta}{2}S_d^z\right) = \left(\omega^\prime - \frac{D}{2}\right)^2 S_d^b - \frac{\beta J}{2}\left(\omega^\prime - \frac{D}{2}\right)\left\{S_d^z, S_d^b\right\} + \frac{J^2}{4}S_d^z S_d^b S_d^z
+	\sum_a S_d^a S_d^b S_d^a = \sum_a S_d^a\left[\frac{1}{4}\delta^{ab} + \frac{i}{2}\sum_c \epsilon^{bac}S_d^c\right] = \frac{1}{4}S_d^b - \frac{1}{4}\sum_{ace}\epsilon^{bac}\epsilon^{ace}S_d^e = \frac{1}{4}S_d^b - \frac{1}{4}S_d^b \sum_{ac}\epsilon^{bac}\epsilon^{acb} \\
+	= -\frac{1}{4}S_d^b
 \end{aligned}\end{equation}
-The anticommutator is \(\left\{S_d^z, S_d^b\right\} = \frac{\delta^{bz}}{2}\). The triple operator product is given by eq.~\ref{identity_SSS}: \(S_d^z S_d^b S_d^z = \frac{1}{4}S_d^b\left(2\delta^{bz} - 1\right)\). The right-hand side of eq.~\ref{internal_sum} becomes
+The renormalization becomes
 \begin{equation}\begin{aligned}
-	\left[\left(\omega^\prime - \frac{D}{2}\right)^2 + \frac{J^2}{16} \left(2\delta^{bz} - 1\right)\right]S_d^b - \frac{\beta J}{4}\delta^{bz}\left(\omega^\prime - \frac{D}{2}\right) \equiv \mathcal{C}_1^b S_d^b + \mathcal{C}_2^b
-\end{aligned}\end{equation}
-Eq.~\ref{final_sum} takes the form
-\begin{equation}\begin{aligned}
-	\sum_{\beta,\alpha, \atop{a,b,c}}s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta}\left(\mathcal{C}_1^b S_d^a S_d^b S_d^c+ \mathcal{C}_2^b S_d^a S_d^c\right)  
-\end{aligned}\end{equation}
-These spin products can again be evaluated using standard identities:
-\begin{equation}\begin{aligned}
-	S_d^a S_d^c = \frac{i}{2}\sum_{e}\epsilon^{ace}S_d^e, ~ ~ ~ S_d^a S_d^b S_d^c = \frac{1}{4}\left(\delta^{ab}S_d^c - \delta^{ac}S_d^b + \delta^{bc}S_d^a\right) 
-\end{aligned}\end{equation}
-We have dropped constant terms in both equations because such terms cannot renormalize the Hamiltonian. This gives, for eq.~\ref{final_sum},
-\begin{equation}\begin{aligned}
-	\label{Cb1Cb2}
-	\sum_{\beta,\alpha, \atop{a,b,c}}s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta}\left[\frac{1}{4}\mathcal{C}_1^b \left(\delta^{ab}S_d^c - \delta^{ac}S_d^b + \delta^{bc}S_d^a\right)+ \mathcal{C}_2^b \frac{i}{2}\sum_{e}\epsilon^{ace}S_d^e\right]
-\end{aligned}\end{equation}
-We take the first term. Define \(\mathcal{C}^b_1 = \mathcal{C}_{11} + \mathcal{C}_{12}\delta^{bz}\). Also note that the indices \(\alpha,\beta\) can be easily summed over: \(\sum_{\alpha\beta}s^a_{\beta\alpha}c^c_{\alpha\beta} = \text{Trace}\left(s^a s^c\right) = \frac{1}{2}\delta^{ac}\). The term in product with \(\mathcal{C}^b_1\) becomes
-\begin{equation}\begin{aligned}
-	\label{Cb1}
-	\frac{1}{2}\sum_{a,b}s^b_{\alpha_1 \alpha_2}\frac{1}{4}\left(\mathcal{C}_{11} + \mathcal{C}_{12}\delta^{bz}\right) \left(2\delta^{ab}S_d^a - S_d^b\right) &= -\frac{1}{8}\sum_{b}s^b_{\alpha_1 \alpha_2}\left(\mathcal{C}_{11} + \mathcal{C}_{12}\delta^{bz}\right)S_d^b = -\frac{1}{8}\left(\mathcal{C}_{11} \vec{S_d}\cdot\vec{s}_{\alpha_1\alpha_2} + \mathcal{C}_{12}s^z_{\alpha_1\alpha_2}S_d^z\right)
-\end{aligned}\end{equation}
-The term in product with \(\mathcal{C}^b_2\) can be written as
-\begin{equation}\begin{aligned}
-	- \frac{i J\left(\omega^\prime - \frac{D}{2}\right)}{8}\sum_{\beta,\alpha, \atop{a,b,c}} \delta^{bz}\beta s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta}\sum_{e}\epsilon^{ace}S_d^e &= - \frac{i J\left(\omega^\prime - \frac{D}{2}\right)}{8}\sum_{\beta,\alpha, \atop{a,c}} \beta s^a_{\beta \alpha} s^z_{\alpha_1 \alpha_2}s^c_{\alpha \beta}\sum_{e}\epsilon^{ace}S_d^e\\
-																									   &=\frac{-iJ\left(\omega^\prime - \frac{D}{2}\right)}{8}\sum_{\beta,a,c,e} \beta \left(s^c s^a\right)_{\beta \beta} s^z_{\alpha_1 \alpha_2}\epsilon^{ace}S_d^e\\
-\end{aligned}\end{equation}
-Since \(a \neq c\) (\(a=c\) would make \(\epsilon^{ace} = 0\)), we can use \(\left(s^c s^a\right)_{\beta \beta} = \frac{i}{2}\sum_f \epsilon^{caf}s^f_{\beta\beta} = \frac{i\beta}{4}\epsilon^{caz}\). Substituting this gives
-\begin{equation}\begin{aligned}
-	\label{Cb2}
-	\frac{J\left(\omega^\prime - \frac{D}{2}\right)}{32}\sum_{a,c,e} s^z_{\alpha_1 \alpha_2}\epsilon^{ace}\epsilon^{caz}S_d^e = \frac{J\left(\omega^\prime - \frac{D}{2}\right)}{16} s^z_{\alpha_1 \alpha_2}S_d^z
-\end{aligned}\end{equation}
-
-Once we note that \(\mathcal{C}_{11} = \left(\omega^\prime - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\) and \(\omega^\prime - D/2 - 2\mathcal{C}_{12}/J = \omega^\prime - D/2 - J/4\) and when we substitute eqs.~\ref{Cb1} and \ref{Cb2} into eq.~\ref{first_term}, we get
-\begin{equation}\begin{aligned}
-	\label{third_term_1}
-	&-\frac{1}{16}\frac{J^3 K N_j n_j }{\left(\omega^\prime - \frac{D}{2}\right)^2 - \frac{1}{16}J^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}}c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \vec{S_d}\cdot\vec{s}_{\alpha_1\alpha_2} + \frac{J^4 K N_j n_j \left( \omega^\prime - D/2 - J/4 \right) }{32\left[\left(\omega^\prime - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\right]^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}} c^\dagger_{k_1 \alpha_1,l_2}c_{k_2 \alpha_2,l_2}S_d^z s^z_{\alpha_1\alpha_2}
+	\Delta H_1 = c^\dagger T \frac{1}{\omega^\prime - H_D} H_X \frac{1}{\omega^\prime - H_D} T^\dagger c = -\frac{1}{2}\frac{J^3 n(D) \rho K}{\omega - D/2 + J/4}\frac{1}{2}\left( -\frac{1}{4} \right) \sum_{k_1,k_2,\alpha_1,\alpha_2,b} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2}\\
+=\frac{1}{16}\frac{J^3 n(D) \rho K}{\omega - D/2 + J/4} \sum_{k_1,k_2,\alpha_1,\alpha_2} \vec{S_d}\cdot\vec{s}_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2}
 \end{aligned}\end{equation}
 
 \subsubsection{Calculation of second term}
-\begin{equation}\begin{aligned}
-	&T^\dagger c \frac{1}{\omega - H_D} H_X \frac{1}{\omega - H_D} c^\dagger T\\
-	&= \sum_{q, k, k^\prime, k_1,k_2,\atop{\beta, \alpha, \alpha^\prime, \alpha_1,\alpha_2,\atop{l_1,l_2,a,b,c}}}c^\dagger_{k^\prime\alpha^\prime, l_1} c_{q\beta, l_1}  S_d^c s^c_{\alpha^\prime \beta} \frac{J^2}{\omega - \epsilon_q\tau_{q\beta} - J S_d^z s_q^z} S_d^b s^b_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \frac{J}{\omega - \epsilon_q\tau_{q\beta} - J S_d^z s_q^z} c^\dagger_{q\beta,l_1} c_{k\alpha,l_1} S_d^a s^a_{\beta \alpha}
-\end{aligned}\end{equation}
-We take similar steps as before: \(1. \epsilon_q \tau_{q\beta} = \frac{D}{2}\), \(2. s^z_q = \frac{\beta}{2}\), \(3.\) Sum over \(q\) to get \(n_j\), \(4.\) Contract \(k\alpha,k^\prime\alpha^\prime\) to get \(K N_j n_j / 2\) and \(5.\) Compute the internal product to obtain \(\mathcal{C}_1^b S_d^b - \mathcal{C}_2^b\).
-The expression at this point is
-\begin{equation}\begin{aligned}
-	\label{Cb1Cb2_2}
-	\frac{J^3 K N_j n_j }{2\left[\left(\omega - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\right]^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}}c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \sum_{\beta,\alpha, \atop{a,b,c}}s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta} S_d^c \left(\mathcal{C}_1^b S_d^b - \mathcal{C}_2^b\right) S_d^a
-\end{aligned}\end{equation}
-\(\mathcal{C}^b_1\) is exactly the same as before, the only difference being \(\omega\) replaces \(\omega^\prime\). The sign of \(\mathcal{C}^b_2\) has also flipped, because \(\beta \to -\beta\). The other difference is that \(S_d^a\) and \(S_d^c\) have switched places. Eq.~\ref{Cb1Cb2} is replaced by
-\begin{equation}\begin{aligned}
-	\label{Cb1Cb2_3}
-	\sum_{\beta,\alpha, \atop{a,b,c}}s^a_{\beta \alpha} s^b_{\alpha_1 \alpha_2}s^c_{\alpha \beta}\left[\frac{1}{4}\mathcal{C}_1^b \left(\delta^{ab}S_d^c - \delta^{ac}S_d^b + \delta^{bc}S_d^a\right) + \mathcal{C}_2^b \frac{i}{2}\sum_{e}\epsilon^{ace}S_d^e\right]
-\end{aligned}\end{equation}
-Note that even though \(\mathcal{C}^b_2\) came with a minus sign in eq.~\ref{Cb1Cb2_2}, that minus sign has been canceled by a second minus sign that arises from the exchange of \(a \leftrightarrow c\) in \(\epsilon^{cae}\). Since eq.~\ref{Cb1Cb2_3} is identical to eq.~\ref{Cb1Cb2}, we can dirctly write down the renormalization in this case:
-\begin{equation}\begin{aligned}
-	\label{third_term_2}
-	-\frac{1}{16}\frac{J^3 K N_j n_j }{\left(\omega - \frac{D}{2}\right)^2 - \frac{1}{16}J^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}}c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \vec{S_d}\cdot\vec{s}_{\alpha_1\alpha_2} + \frac{J^4 K N_j n_j \left( \omega - D/2 - J/4 \right) }{32\left[\left(\omega - \frac{D}{2}\right)^2 - \frac{1}{16}J^2\right]^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}} c^\dagger_{k_1 \alpha_1,l_2}c_{k_2 \alpha_2,l_2}S_d^z s^z_{\alpha_1\alpha_2}
-\end{aligned}\end{equation}
+Like the single-channel case, the renormalization coming from the hole excitations is exactly the Hermitian conjugate of that in the particle sector. And since the renormalization \(\Delta H_1\) is Hermitian, we have \(\Delta H_0 = \Delta H_1\)
 
 \subsection{Total renormalization \(\Delta H^{(3)}\)}
-Similar to the one-loop case, we will choose the require \(\omega\) and \(\omega^\prime\) to be related such that the  RG equations are \(\mathrm{Su}(2)\) symmetric; that is, we will require the terms that renormalize only \(S_d^z s^z\) vanish. The total renormalization at this order is obtained by adding eqs.~\ref{third_term_1} and \ref{third_term_2}.
+The total renormalization is twice that in the particle sector.
 \begin{equation}\begin{aligned}
-	\Delta H^{(3)} = -\frac{J^3 K N_j n_j / 8}{\left(\omega - \frac{D}{2}\right)^2 - \frac{1}{16}J^2}\sum_{k_1,k_2,\atop{\alpha_1,\alpha_2,l_2}}c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2} \vec{S_d}\cdot\vec{s}_{\alpha_1\alpha_2}
+	\Delta H^{(3)} = \frac{1}{8}\frac{J^3 n(D) \rho K}{\omega - D/2 + J/4} \sum_{k_1,k_2,\alpha_1,\alpha_2} \vec{S_d}\cdot\vec{s}_{\alpha_1 \alpha_2} c^\dagger_{k_1\alpha_1,l_2}c_{k_2 \alpha_2,l_2}
 \end{aligned}\end{equation}
-Combining with \(\Delta H^{(2)}\), we get
+Combining with \(\Delta H^{(2)}\) and replacing \(n(D) = \rho |\delta D|\), we get
 \begin{equation}\begin{aligned}
-	\Delta J = \frac{J^2 n_j \left[2 \left(D - 2\omega\right) - \frac{1}{2}J K N_j\right]}{\left(D - 2\omega\right)^2 - \frac{1}{4}J^2}
+	\frac{\Delta J}{|\Delta D|} = -\frac{J^2 \rho}{\omega - D/2 + J/4} + \frac{1}{8}\frac{J^3 \rho^2 K}{\omega - D/2 + J/4} = -\frac{J^2 \rho}{\omega - D/2 + J/4}\left[1 - \frac{1}{8}J\rho K\right] 
 \end{aligned}\end{equation}
-We choose \(\omega = -D/2\) to get a clearer idea of what the equations say. We also set \(N_j = \rho D\) and \(n_j = \rho |\delta D|\). Quantities with zero in the subscript will denote their values in the bare Hamiltonian. Using \(\delta D = -|\delta D|\), we can write the continuum form of the equation:
+We choose \(\omega = -D/2\) to get a clearer idea of what the equations say. 
 \begin{equation}\begin{aligned}
-	\frac{\:\mathrm{d}J}{\:\mathrm{d}t} = -\frac{J^2 \rho D^2 \left(1 - \frac{1}{8}JK\rho\right)}{D^2 - \frac{1}{16}J^2}
+	\label{mchannel}
+	\frac{\Delta J}{|\Delta D|} = -\frac{J^2 \rho}{-D + J/4}\left[1 - \frac{1}{8}J\rho K\right] 
 \end{aligned}\end{equation}
-where \(dt = \frac{dD}{D}\).
+Quantities with zero in the subscript will denote their values in the bare Hamiltonian. Using \(\delta D = -|\delta D|\), we can write the continuum form of the equation:
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}J}{\:\mathrm{d}D} = \frac{J^2 \rho}{D - J/4}\left(\frac{1}{8}J\rho K - 1\right)
+\end{aligned}\end{equation}
 
 For \(D \gg J\), we can ignore the \(J\) in the denominator, and the equation reduces to the one-loop poor man's scaling form
 \begin{equation}\begin{aligned}
 	\label{pms_mchannel}
-	\frac{\:\mathrm{d}J}{\:\mathrm{d}t} \simeq -\frac{J^2 \rho D^2 \left(1 - \frac{1}{8}JK\rho\right)}{D^2} = -J^2 \rho \left(1 - \frac{1}{8}JK\rho\right)
+	\frac{\:\mathrm{d}J}{\:\mathrm{d}D} \simeq  \frac{J^2 \rho}{D}\left(\frac{1}{8}J\rho K - 1\right)
 \end{aligned}\end{equation}
 This equation has a stable fixed point at \(J^* = \frac{8}{\rho K}\).
 
@@ -872,7 +825,7 @@ This equation has a stable fixed point at \(J^* = \frac{8}{\rho K}\).
 	\includegraphics[width=0.4\textwidth]{rg_flow_pms.pdf}
 	\caption{Attractive finite \(J\) fixed point of poor man scaling RG equation}
 \end{figure}
-For \(D\) not so large, the denominator also comes into play, and we get the possibility of two fixed points, one from the numerator and the other from the numerator.
+For \(D\) not so large, the denominator also comes into play, and eq.\ref{mchannel} holds. We get the possibility of two fixed points - one from the numerator and the other from the numerator.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./rg_flow.pdf}
@@ -884,17 +837,17 @@ The numerator and denominator fixed points, \(J_1^*\) and \(J_2^*\) respectively
 \begin{equation}\begin{aligned}
 	J_1^* = \frac{8}{K \rho}, && D^* = \frac{J_2^*}{4}
 \end{aligned}\end{equation}
-For a given \(K\), the position of \(J_1^*\) will be governed by \(\rho\). In general, for each bare bandwidth \(D_0\), there exists a minimal \(\rho\), $\rho_\text{min}(D_0)$, above which the the lower fixed point is the one from the numerator. That is, for \(\rho > \rho_\text{min}\), if we start scaling from small \(J_0\), it grows until it hits \(J_1^*\) which acts as the attractive fixed point, and \(J_2^*\) lies at a higher value and acts as the repulsive fixed point. For \(\rho < \rho_\text{min}\), \(J\) will grow and hit \(J_2^*\) instead, and \(J_1^* > J_2^*\) now becomes the repulsive fixed point.
-\begin{equation}\begin{aligned}
-	\rho_\text{min} = \text{minimum }\left\{\rho, \text{ such that } \frac{8}{K \rho} < 4 D^*(\rho)\right\}
-\end{aligned}\end{equation}
-This behaviour is shown schematically in fig.~\ref{rg_flow_general}. 
-In fig.~\ref{rhomin_vs_D}, we plot \(\rho_\text{min}\) against the bare bandwidth. For large \(D_0\), it essentially shrinks to zero, and the numerator becomes the first fixed point for essentially all \(\rho\).
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.7\textwidth]{./rhomin_D.pdf}
-	\caption{Red curve shows variation of \(\rho_\text{min}\) against \(D_0\). It vanishes at large \(D_0\). Blue curve shows variation of the ratio \(J_1^* / D_0\) with \(D_0\). That shrinks as well, showing that the fixed point \(J_1^*\) remains finite in the thermodynamic limit, and the distance between \(J_1^*\) and \(J_2^*\) keeps growing.}
-	\label{rhomin_vs_D}
-\end{figure}
+% For a given \(K\), the position of \(J_1^*\) will be governed by \(\rho\). In general, for each bare bandwidth \(D_0\), there exists a minimal \(\rho\), $\rho_\text{min}(D_0)$, above which the the lower fixed point is the one from the numerator. That is, for \(\rho > \rho_\text{min}\), if we start scaling from small \(J_0\), it grows until it hits \(J_1^*\) which acts as the attractive fixed point, and \(J_2^*\) lies at a higher value and acts as the repulsive fixed point. For \(\rho < \rho_\text{min}\), \(J\) will grow and hit \(J_2^*\) instead, and \(J_1^* > J_2^*\) now becomes the repulsive fixed point.
+% \begin{equation}\begin{aligned}
+% 	\rho_\text{min} = \text{minimum }\left\{\rho, \text{ such that } \frac{8}{K \rho} < 4 D^*(\rho)\right\}
+% \end{aligned}\end{equation}
+% This behaviour is shown schematically in fig.~\ref{rg_flow_general}. 
+% In fig.~\ref{rhomin_vs_D}, we plot \(\rho_\text{min}\) against the bare bandwidth. For large \(D_0\), it essentially shrinks to zero, and the numerator becomes the first fixed point for essentially all \(\rho\).
+% \begin{figure}[htpb]
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{./rhomin_D.pdf}
+% 	\caption{Red curve shows variation of \(\rho_\text{min}\) against \(D_0\). It vanishes at large \(D_0\). Blue curve shows variation of the ratio \(J_1^* / D_0\) with \(D_0\). That shrinks as well, showing that the fixed point \(J_1^*\) remains finite in the thermodynamic limit, and the distance between \(J_1^*\) and \(J_2^*\) keeps growing.}
+% 	\label{rhomin_vs_D}
+% \end{figure}
 
-If we assume we are at a sufficiently large \(D_0\) and \(\rho > \rho_\text{min}\), the lower fixed point is \(J_1^*\). As shown in fig.~\ref{rhomin_vs_D}, we have \(J_1^* \ll D_0\). If we start with \(J_0\) in the neighborhood of \(J_1^*\), we can use \(J_1^* \ll D_0\) to ignore \(J\) in the denominator and the RG equation reduces to the poor man's scaling form eq.~\ref{pms_mchannel}. The denominator fixed point has effectively moved off to infinity. That this is true can also be argued from the single-channel Kondo model URG results. There, we saw that when the bandwidth is scaled to larger values, the strong-coupling fixed point was stable at successively larger values of \(J^*\). Since the denominator fixed point is identical in structure in both problems, its reasonable that the same thing will happen here.
+% If we assume we are at a sufficiently large \(D_0\) and \(\rho > \rho_\text{min}\), the lower fixed point is \(J_1^*\). As shown in fig.~\ref{rhomin_vs_D}, we have \(J_1^* \ll D_0\). If we start with \(J_0\) in the neighborhood of \(J_1^*\), we can use \(J_1^* \ll D_0\) to ignore \(J\) in the denominator and the RG equation reduces to the poor man's scaling form eq.~\ref{pms_mchannel}. The denominator fixed point has effectively moved off to infinity. That this is true can also be argued from the single-channel Kondo model URG results. There, we saw that when the bandwidth is scaled to larger values, the strong-coupling fixed point was stable at successively larger values of \(J^*\). Since the denominator fixed point is identical in structure in both problems, its reasonable that the same thing will happen here.
