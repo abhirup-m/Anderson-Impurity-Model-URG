@@ -6,7 +6,7 @@ In this section, we will consider the SIAM with both spin and charge fluctuation
 	\mathcal{H} =& \sum_{k\sigma}\tau_{k\sigma} + \epsilon_d \hat n_d + U \hat n_{d\uparrow}\hat n_{d \downarrow} + \sum_{k\sigma}\left( V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.} \right) + J_z S_d^z\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow} \right) \\
 	      &+ J_t \sum_{kk^\prime\sigma}c^\dagger_{d\sigma}c_{d\overline\sigma}c^\dagger_{k\overline\sigma}c_{k^\prime\sigma} + K_z C_d^z \sum_{kk^\prime}\left( c^\dagger_{k\sigma}c_{k^\prime\sigma} - \frac{1}{2}\delta_{kk^\prime} \right) + K_t \sum_{kk^\prime\sigma}\left(c^\dagger_{d\sigma}c^\dagger_{d\overline\sigma}c_{k\overline\sigma}c_{k^\prime\sigma}+\text{h.c.}\right)
 \end{aligned}\end{equation}
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/gen_siam.png}
 	\caption{Schematic diagram of the generalized SIAM model.}
@@ -114,19 +114,19 @@ With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_
 	\Delta K &= - \frac{K^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
 \end{aligned}\end{equation}
 For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For sufficiently small values of \(\frac{J}{K}\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For larger values of \(\frac{J}{K}\), there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\). Both these classes of flows of \(U\) are depicted in fig.~\ref{U_flow}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{../figures/large_w.pdf}
 	\caption{Large \(\omega\). Right Decay of \(J\) towards zero under RG. Left Flow of \(U\) under the same RG. Titles of plots show bare values.}
 	\label{Jdecay}
 \end{figure}
-\begin{figure}[htpb!]
+\begin{figure}[htb!]
 	\centering
 	\includegraphics[width=\textwidth]{../figures/low_w_JK.pdf}
 	\caption{Small \(\omega\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
 	\label{J_sc}
 \end{figure}
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.49\textwidth]{../figures/U_irr.pdf}
 	\includegraphics[width=0.49\textwidth]{../figures/U_rel.pdf}
@@ -139,7 +139,7 @@ From the RG equations for \(J\) and \(K\), we can write down an RG-invariant.
 	\frac{\Delta J}{\Delta K} = \frac{J^2}{K^2} \implies \frac{1}{J} - \frac{1}{K} = \mathcal{C} = \frac{1}{J_0} - \frac{1}{K_0}
 \end{aligned}\end{equation}
 where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is the bare value of \(J\)), we must have \(J=K\). The RG flows in the \(K \text{ vs } J\) plane are shown in fig.~\ref{JvsK}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/JvsK.pdf}
 	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
@@ -192,7 +192,7 @@ with an eigenvalue (besides the energy of the bath)
 	E_{0,2} = - \frac{3}{4}K^* - \frac{1}{4}K^{**}
 \end{aligned}\end{equation}
 Depending on the bare values of \(J,K\) and \(U\), we can have the following fixed point situations:
-\begin{table}[htpb]
+\begin{table}[!htb]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -207,7 +207,7 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \caption{Classification of fixed points for various bare values, at \(V=0\)}
 \label{classes}
 \end{table}
-\begin{figure}[htpb!]
+\begin{figure}[htb!]
 	\centering
 	\includegraphics[scale=0.2]{../figures/phases.pdf}
 	\caption{Fixed point phases in the plane of bare couplings, at \(V=0\).}
@@ -215,16 +215,16 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 \end{figure}
 \subsection{Effect of non-zero \(V\) on the RG flows}
 The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}. It is very similar to that obtained from NRG, as was shown in fig.~\ref{nrg_fp}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figures/UvsJ_new.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/UvsJ_new.pdf}
 	\caption{\(U-J\) multiple RG flows in first quadrant.}
 	\label{Veffect}
 \end{figure}
 
-\begin{figure}[htpb!]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/with_V_new.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/with_V_new.pdf}
 	\caption{Flows of the couplings for bare values in the first quadrant: \(J-K,U>0\).}
 	% \label{Veffect}
 \end{figure}
@@ -232,27 +232,27 @@ The introduction of \(V\) into the RG equations make them analytically intractab
 The first quadrant shows the flow from a free orbital fixed point near \(V=U=J=0\) to an intermediate local moment phase with large \(U\) with a final crossover to a stable fixed point at \(J^* \gg J_0, U^*=0\). The initial free orbital fixed point involves four degenerate impurity states at the impurity, and hence no local moment. The intermediate phase involves a local moment because of the large \(U\). The final stable phase involves an impurity which is strongly-coupled to the impurity because of the large \(V\) and \(J\). This crossover is depicted in fig.~\ref{crossover}.
 
 
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/crossovers_new.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/crossovers_new.pdf}
 	\caption{\(U-J\) and \(U-V\) RG flows.}
 	\label{crossover}
 \end{figure}
 
 We have also checked that the fixed point values of \(J\) and \(V\) go on increasing as we increase the system size.
 
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/J_vs_D_q1.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/V_vs_D_q1.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/J_vs_D_q1.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/V_vs_D_q1.pdf}
 	\caption{Increase in the fixed point values of \(J\) and \(V\) with system size.}
 	\label{JV-system-size}
 \end{figure}
 \paragraph*{Third quadrant}
 In the third quadrant (\(U_0 < 0, K_0 > J_0\)), we see the flow to large negative value of \(U\), leading to a large contribution of the holon-doublon sectors of the impurity subspace, and a large value of \(K^*\) which means that the impurity charge sector couples very strongly with the bath charge sector.
-\begin{figure}[htpb!]
+\begin{figure}[htb!]
 \centering
-\includegraphics[width=\textwidth]{../figures/with_V_q3_new.pdf}
+\includegraphics[width=0.8\textwidth]{../figures/with_V_q3_new.pdf}
 \caption{Flow of \(U\) to large negative value and \(K\) to large positive value in the third quadrant.}
 \label{frac_q3}
 \end{figure}
@@ -265,7 +265,7 @@ The ground state in this sector will be a charge singlet, as shown in the next s
 We can now summarize the various fixed point phases. The physically relevant ones are the first and third quadrants. The first quadrant features a large spin-exchange coupling \(J\) and a positive \(U\) in the bare model, and the stable flows are towards a large \(J^*\) and a very small (\(\approx 0\)) \(U^*\). The fixed point state will be mostly a spin singlet, in which the impurity polarization gets quenched by the spin-flip scattering of the conduction electrons. The third quadrant is the regime of the charge-Kondo effect, and involves a negative \(U\) at the bare level which physically motivates a large charge-Kondo coupling \(K\). The fixed point again involves flow to a large \(K^*\), but the \(U\) flows to large negative here, implying a state where the charge sectors dominate heavily and the ground state is primarily a charge-singlet in which the destruction or annihilation of the Cooper-pair like states becomes prohibited.
 
 These results are summarized in the table below.
-\begin{table}[htpb]
+\begin{table}[!htb]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -280,7 +280,7 @@ These results are summarized in the table below.
 \caption{Classification of fixed points for various bare values, at \(V > 0\)}
 \end{table}
 
-\begin{figure}[htpb!]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.4\textwidth]{../figures/phases_V.png}
 	\caption{Low \(\omega\) fixed point phases for the SIAM with \(V>0\).}
@@ -372,9 +372,9 @@ with \(k = K^* N^*\). The total Hamiltonian for the two-site problem is
 	\mathcal{H}_{IR} = \epsilon_d m_1^2 + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
 where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}=m_1\) is the magnetization on the first site. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/two_site_problem.png}
+	\includegraphics[width=0.4\textwidth]{../figures/two_site_problem.png}
 	\caption{Two-site effective problem of fixed point Hamiltonian}
 	\label{twosite}
 
@@ -488,7 +488,7 @@ This change is shown in fig.~\ref{gamma}. We have the variation of the probabili
 \end{figure}
 
 The full list of eigenstates is
-\begin{table}[htpb!]
+\begin{table}[htb!]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -539,7 +539,7 @@ We now compare \(E_-^2\) and \(E_c^2\):
 Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
 
 These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../figures/gstate.pdf}
 	\captionof{figure}{Shift of ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
