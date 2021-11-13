@@ -475,11 +475,8 @@ By converting the last term into \(S^z\) and \(S^\pm\), we can write the Hamilto
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \epsilon_0 S^z_0 + \sum_{i=1}^N\left[\epsilon_i S^z_i + J_i\left(S^z_0 S^z_i + \frac{1}{2}\left(S_0^+ S^-_i + S_0^- S^+_i\right)\right)\right]
 \end{aligned}\end{equation}
-The diagonal terms are the ones that preserve the number or (in this case) spin.
-\begin{equation}\begin{aligned}
-\mathcal{H}^d =\sum_{i=0}^N \epsilon_i S^z_i + \sum_{i=1}^N J_iS^z_0 S^z_i 
-\end{aligned}\end{equation}
-This is the piece that comes in the denominator. The off-diagonal terms are the ones that change the number or spin. For this problem, they are the last two terms, \(S_0^+ S_i^-\) and \(S_0^- S_i^+\).
+
+\subsection{Calculation of Renormalization}
 
 The RG involves decoupling the nodes \(N\) through 1, and looking at the resultant renormalization in \(\epsilon_i\) and \(J_i\). As a simplification, we will ignore the lower nodes in the denominator and keep only the node currently being decoupled, ie node \(N\). Since node \(0\) is connected to node \(N\), we will keep node \(0\) in the denominator as well. Making this simplification gives
 \begin{equation}\begin{aligned}
@@ -488,52 +485,28 @@ The RG involves decoupling the nodes \(N\) through 1, and looking at the resulta
 \end{aligned}\end{equation}
 The off-diagonal part in the subspace of the node \(N\) is
 \begin{equation}\begin{aligned}
-\mathcal{H}_X = \frac{1}{2}J_N \left(S_N^+ S_0^- + S_N^- S_0^+\right)
+\mathcal{H}_X = S_N^+ T + T^\dagger S_N^- = \frac{1}{2}J_N \left(S_N^+ S_0^- + S_N^- S_0^+\right)
 \end{aligned}\end{equation}
-\subsection{Calculation of Renormalization}
 The renormalization on doing one step of the URG is given by
-\begin{equation}
-	\Delta \mathcal{H} = c_{q\beta}^\dagger T \eta + T^\dagger c_{q\beta} \eta_0^\dagger
-\end{equation}
-There, \(q\beta\) refers to the electron being decoupled. Here, since we are decoupling the spin \(N\), the formula becomes
-\begin{equation}
-	\Delta \mathcal{H} = \left[S_N^+T,\eta\right]
-\end{equation}
-where \(S_N^+T\) is the  off-diagonal term in the Hamiltonian and hence \(T\) is  \(S_0^-\). \(\eta\) is of course given by
-\begin{equation}
-	\eta = \frac{1}{\omega - \mathcal{H}^d}T^\dagger c_{q\beta} \to \frac{1}{\omega - \mathcal{H}^d}\frac{1}{2}J_N S_0^+ S_N^-
-\end{equation}
-and
-\begin{equation}
-	\eta_0^\dagger = \frac{1}{\omega^\prime - \mathcal{H}^d}\frac{1}{2}J_N S_N^+ S_0^-
-\end{equation}
-Substituting the expression for the diagonal part \(\mathcal{H}_d\), we get
-\begin{equation}
-	\label{stareta}
-	\eta  = \frac{1}{\omega - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}\frac{1}{2}J_NS_0^+ S_N^- = \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\frac{1}{2}J_NS_0^+ S_N^-
-\end{equation}
-and
-\begin{equation}
-	\eta_0^\dagger = \frac{1}{\omega^\prime - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}\frac{1}{2}J_NS_N^+ S_0^- = \frac{1}{\omega + \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\frac{1}{2}J_NS_N^+ S_0^-
-\end{equation}
-In the final steps, I substituted \(S_N^z = -\frac{1}{2}\) and \(S_0^z = \frac{1}{2}\) in the denominator of \(\eta\), and the opposite values in the denominator of \(\eta_0^\dagger\), because there is \(S_0^+ S_N^-\)(\(S_N^+ S_0^-\)) in front of the Greens function of \(\eta\) (\(\eta_0^\dagger\)). The renormalization thus becomes
-\begin{equation}
-	\Delta \mathcal{H} = \frac{1}{4}J_N^2 S_N^+S_0^- \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+ S_N^- + \frac{1}{4}J_N^2S_0^+ S_N^- \frac{1}{\omega^\prime + \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N + \frac{1}{4}J_N} S_N^+S_0^-
-\end{equation}
-To compare \(\omega\) and \(\omega^\prime\), we will write down their Poor Man' Scaling counterparts.
 \begin{equation}\begin{aligned}
-	\omega &= \frac{1}{2}\epsilon_N - \frac{1}{2}\epsilon_0 - \frac{1}{4}J_N\\
-	\omega^\prime &= \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N - \frac{1}{4}J_N = -\omega - \frac{1}{2}J_N
+	\Delta \mathcal{H} &=  S_N^+ T \frac{1}{\omega_0^1 - \mathcal{H}^D}T^\dagger  S_N^- + T^\dagger  S_N^- \frac{1}{\omega_1^0 - \mathcal{H}^D} S_N^+ T\\
+			   &= \frac{J_N^2}{4}S_N^+ S_0^- \frac{1}{\omega_0^1 - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N}S_0^+  S_N^- + \frac{J_N^2}{4}S_0^+  S_N^- \frac{1}{\omega_1^0 - \epsilon_0 S^z_0 - \epsilon_N S^z_N - J_NS^z_0 S^z_N} S_N^+ S_0^-
+\end{aligned}\end{equation}
+There, \(N\) refers to the spin being decoupled. The first Greens function has \(S_0^+\) and \(S_N^-\) in front of it, so we substitute \(S_0^z = \frac{1}{2}, S_N^z = -\frac{1}{2}\) in that Greens function. For the other Greens function we do the opposite.
+\begin{equation}\begin{aligned}
+	\Delta \mathcal{H} &= \frac{J_N^2}{4}S_N^+ S_0^- \frac{1}{\omega_1^0 - \frac{1}{2}\epsilon_0  + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}S_0^+  S_N^- + \frac{J_N^2}{4}S_0^+  S_N^- \frac{1}{\omega_0^1 + \frac{1}{2}\epsilon_0 - \frac{1}{2}\epsilon_N + \frac{1}{4}J_N} S_N^+ S_0^-
+\end{aligned}\end{equation}
+
+To relate \(\omega_1^0\) and \(\omega_0^1\), we use eq.~\ref{omegarel}:
+\begin{equation}\begin{aligned}
+	\omega_1^0 + \omega_0^1 = \mathcal{H}^D_0 + \mathcal{H}^D_1 = -\frac{1}{2}J_N \implies \omega_1^0 \equiv \omega, ~ ~\omega_0^1 \equiv \omega^\prime = -\frac{1}{2}J_N - \omega
 \end{aligned}\end{equation}
 So, the renormalization becomes
 \begin{equation}
-	\Delta \mathcal{H} = \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[S_N^+S_0^- S_0^+ S_N^- + S_0^+ S_N^- S_N^+S_0^-\right]
+	\Delta \mathcal{H} = \frac{J_N^2}{4}\frac{1}{\omega - \frac{1}{2}\epsilon_0  + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left(S_N^+ S_0^- S_0^+  S_N^- - S_0^+  S_N^- S_N^+ S_0^-\right) = \frac{J_N^2}{4}\frac{1}{\omega - \frac{1}{2}\epsilon_0  + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left(S_N^z - S_0^z\right)
 \end{equation}
-Using the relations \(S^+ S^- = \frac{1}{2} + S^z\) and \(S^- S^+ = \frac{1}{2} - S^z\), we can write this as
-\begin{equation}\begin{aligned}
-	\Delta \mathcal{H} &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[\left(\frac{1}{2} + S_N^z\right)\left(\frac{1}{2} - S_0^z\right) - \left(\frac{1}{2} - S_N^z\right)\left(\frac{1}{2} + S_0^z\right)\right]\\
-		    &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\left[S_N^z - S_0^z\right]
-\end{aligned}\end{equation}
+There we used  \(S^+ S^- = \frac{1}{2} + S^z\) and \(S^- S^+ = \frac{1}{2} - S^z\).
+
 We can now read off the renormalizations in \(\epsilon_N\) and \(\epsilon_0\).
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_N &= \frac{1}{4}J_N^2 \frac{1}{\omega - \frac{1}{2}\epsilon_0 + \frac{1}{2}\epsilon_N + \frac{1}{4}J_N}\\
@@ -563,15 +536,11 @@ If, on other hand, we start with a bare of \(\epsilon_0\) such that \(\tilde \om
 	\label{star1}
 \end{figure}
 
-Since we cannot find a fixed point, we will use the other \(\omega\) in the URG formalism. Recall that \(\eta\) and \(\eta^\dagger\) will, in general, have different \(\omega\), eq.~\ref{etadefine}.
-\begin{equation}
-	\eta^\dagger = \frac{1}{\omega^\prime - \mathcal{H}_d}S_N^+ S_0^- = \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}S_N^+ S_0^-
-\end{equation}
-Comparing with eq.~\ref{stareta}, and requiring \(\left(\eta\right)^\dagger = \eta^\dagger\), we get the following equation relating \(\omega\) and \(\omega^\prime\):
-\begin{equation}
-	\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J = \omega + \frac{1}{2}\epsilon - \frac{1}{2}\epsilon_0 + \frac{1}{4}J \implies \omega = \omega^\prime - \epsilon + \epsilon_0
-\end{equation}
-Substituting this in eq.~\ref{stareq} gives
+Since we cannot find a fixed point, we will use a different \(\omega\). Instead of \(\omega_1^0\), we will use \(\omega_1^1\). From eq.~\ref{omegarel}, we have 
+\begin{equation}\begin{aligned}
+	\omega_1^0  - \omega_1^1 = \mathcal{H}^D_0 - \mathcal{H}^D_1 = \epsilon_0 - \epsilon_N = \epsilon_0 - \epsilon
+\end{aligned}\end{equation}
+Defining \(\omega_1^1 = \omega^\prime\) and substituting this in eq.~\ref{stareq} gives
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_0 = -\frac{1}{4}J^2 \frac{1}{\omega^\prime - \frac{1}{2}\epsilon + \frac{1}{2}\epsilon_0 + \frac{1}{4}J}
 \end{aligned}\end{equation}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{anirbanurg1}
 Anirban Mukherjee and Siddhartha Lal.
@@ -24,11 +24,16 @@ Anirban Mukherjee and Siddhartha Lal.
   criticality of the doped mott insulator.
 \newblock {\em New Journal of Physics}, 22(6):063008, jun 2020.
 
-\bibitem{suzuki}
-Kenji Suzuki.
-\newblock {Construction of Hermitian Effective Interaction in Nuclei: —
-  General Relation between Hermitian and Non-Hermitian Forms —}.
-\newblock {\em Progress of Theoretical Physics}, 68, 1982.
+\bibitem{hrk-nrg}
+H.~R. Krishna-murthy, K.~G. Wilson, and J.~W. Wilkins.
+\newblock Temperature-dependent susceptibility of the symmetric anderson model:
+  Connection to the kondo model.
+\newblock {\em Phys. Rev. Lett.}, 35:1101--1104, October 1975.
+
+\bibitem{Friedel}
+J.~Friedel.
+\newblock Metallic alloys.
+\newblock {\em Il Nuovo Cimento (1955-1965)}, 7:287--311, 1958.
 
 \bibitem{Anderson}
 P~W Anderson.
@@ -36,6 +41,101 @@ P~W Anderson.
   kondo problem.
 \newblock {\em Journal of Physics C: Solid State Physics}, 3(12):2436--2441,
   dec 1970.
+
+\bibitem{Kondo}
+Jun Kondo.
+\newblock {Resistance Minimum in Dilute Magnetic Alloys}.
+\newblock {\em Progress of Theoretical Physics}, 32(1):37--49, 07 1964.
+
+\bibitem{andrei_kondo}
+N.~Andrei, K.~Furuya, and J.~H. Lowenstein.
+\newblock Solution of the kondo problem.
+\newblock {\em Rev. Mod. Phys.}, 55:331--402, Apr 1983.
+
+\bibitem{wiegmann}
+P~B Wiegmann.
+\newblock Exact solution of the s-d exchange model (kondo problem).
+\newblock {\em Journal of Physics C: Solid State Physics}, 14(10):1463--1478,
+  apr 1981.
+
+\bibitem{Tsvelick}
+A.M. Tsvelick and P.B. Wiegmann.
+\newblock Exact results in the theory of magnetic alloys.
+\newblock {\em Advances in Physics}, 32(4):453--713, 1983.
+
+\bibitem{nozieres}
+P.~Nozières.
+\newblock A fermi-liquid description of the kondo problem at low temperatures.
+\newblock {\em Journal of Low Temperature Physics}, 17, 1974.
+
+\bibitem{am_thesis}
+Anirban Mukherjee.
+\newblock {\em {Unitary renormalization group for correlated electrons}}.
+\newblock PhD thesis, {Indian Institute of Science Education and Research
+  Kolkata}, 2020.
+
+\bibitem{Brockett1991}
+R.~Brockett.
+\newblock Dynamical systems that sort lists, diagonalize matrices, and solve
+  linear programming problems.
+\newblock {\em Linear Algebra and its Applications}, 146:79--91, 1991.
+
+\bibitem{langer}
+J.~S. {Langer} and V.~{Ambegaokar}.
+\newblock {Friedel Sum Rule for a System of Interacting Electrons}.
+\newblock {\em Physical Review}, 121, 1961.
+
+\bibitem{Langreth}
+David~C. Langreth.
+\newblock Friedel sum rule for anderson's model of localized impurity states.
+\newblock {\em Phys. Rev.}, 150:516--518, Oct 1966.
+
+\bibitem{hewson}
+A.~C. Hewson.
+\newblock {\em The Kondo Problem to Heavy Fermions}.
+\newblock Cambridge University Press, 1993.
+
+\bibitem{Schrieffer_Wolff}
+J.~R. Schrieffer and P.~A. Wolff.
+\newblock Relation between the anderson and kondo hamiltonians.
+\newblock {\em Phys. Rev.}, 149:491--492, Sep 1966.
+
+\bibitem{piers}
+Piers Coleman.
+\newblock {\em Introduction to Many-Body Physics}.
+\newblock Cambridge University Press, 2015.
+
+\bibitem{phill}
+Philip Phillips.
+\newblock {\em Advanced Solid State Physics}.
+\newblock Westview Press, 2003.
+
+\bibitem{wilson}
+K.~G. Wilson.
+\newblock The renormalization group: Critical phenomena and the kondo problem.
+\newblock {\em Reviews of Modern Physics}, 47, 1975.
+
+\bibitem{hewsonp}
+A.~C. Hewson.
+\newblock Renormalization group and fermi liquid theory.
+\newblock {\em Advances in Physics}, 43, 1994.
+
+\bibitem{seki}
+Kazuhiro Seki and Seiji Yunoki.
+\newblock Topological interpretation of the luttinger theorem.
+\newblock {\em Physical Review B}, 96, 2017.
+
+\bibitem{martin}
+Richard~M Martin.
+\newblock Fermi-surface sum rule and its consequences for periodic kondo and
+  mixed-valence systems.
+\newblock {\em Physical Review Letters}, 48(5):362, 1982.
+
+\bibitem{suzuki}
+Kenji Suzuki.
+\newblock {Construction of Hermitian Effective Interaction in Nuclei: —
+  General Relation between Hermitian and Non-Hermitian Forms —}.
+\newblock {\em Progress of Theoretical Physics}, 68, 1982.
 
 \bibitem{haldane}
 F.~D.~M. Haldane.
@@ -46,10 +146,80 @@ F.~D.~M. Haldane.
 Siddhartha Patra.
 \newblock {\em unpublished}, 2021.
 
-\bibitem{am_thesis}
-Anirban Mukherjee.
-\newblock {\em {Unitary renormalization group for correlated electrons}}.
-\newblock PhD thesis, {Indian Institute of Science Education and Research
-  Kolkata}, 2020.
+\bibitem{tatha}
+Mengxing Cheng, Tathagata Chowdhury, Aaron Mohammed, and Kevin Ingersent.
+\newblock Phase boundaries of power-law anderson and kondo models: A poor man's
+  scaling study.
+\newblock {\em Phys. Rev. B}, 96, 2017.
+
+\bibitem{raja}
+Rukhsan~Ul {Haq} and N.~S. {Vidhyadhiraja}.
+\newblock {Scaling analysis of the extended single impurity Anderson model:
+  Renormalization due to valence fluctuations}.
+\newblock {\em arXiv e-prints}, 2017.
+
+\bibitem{kehrein}
+Stefan Kehrein.
+\newblock {\em The Flow Equation Approach to Many-Particle Systems}.
+\newblock Springer-Verlag Berlin Heidelberg, 2006.
+
+\bibitem{glazek-wilson}
+Stanis\l{}aw~D. G\l{}azek and Kenneth~G. Wilson.
+\newblock Renormalization of hamiltonians.
+\newblock {\em Phys. Rev. D}, 48:5863--5872, Dec 1993.
+
+\bibitem{wegner_normal}
+Elmar Körding and Franz Wegner.
+\newblock Flow equations and normal ordering.
+\newblock {\em Journal of Physics A: Mathematical and General},
+  39(6):1231--1237, jan 2006.
+
+\bibitem{Jefferson}
+J~H Jefferson.
+\newblock A renormalisation group approach to the mixed valence problem.
+\newblock {\em Journal of Physics C: Solid State Physics}, 10(18):3589--3599,
+  sep 1977.
+
+\bibitem{nambu}
+Yoichiro Nambu.
+\newblock Quasi-particles and gauge invariance in the theory of
+  superconductivity.
+\newblock {\em Phys. Rev.}, 117:648--663, Feb 1960.
+
+\bibitem{anderson_superc}
+P.~W. Anderson.
+\newblock Random-phase approximation in the theory of superconductivity.
+\newblock {\em Phys. Rev.}, 112:1900--1916, Dec 1958.
+
+\bibitem{charge-kondo-Zitko}
+Rok Zitko and Janez Bonca.
+\newblock Spin-charge separation and simultaneous spin and charge kondo effect.
+\newblock {\em Phys. Rev. B}, 74:224411, Dec 2006.
+
+\bibitem{taraphder}
+A.~Taraphder and P.~Coleman.
+\newblock Heavy-fermion behavior in a negative-u anderson model.
+\newblock {\em Phys. Rev. Lett.}, 66:2814--2817, 5 1991.
+
+\bibitem{okiji_kawakami}
+Ayao {Okiji} and Norio {Kawakami}.
+\newblock {Thermodynamic properties of the Anderson model (invited)}.
+\newblock {\em Journal of Applied Physics}, 55(6):1931--1935, March 1984.
+
+\bibitem{bulla_costi_nrg}
+Ralf Bulla, Theo~A. Costi, and Thomas Pruschke.
+\newblock Numerical renormalization group method for quantum impurity systems.
+\newblock {\em Rev. Mod. Phys.}, 80:395--450, Apr 2008.
+
+\bibitem{oshikawa}
+Masaki Oshikawa.
+\newblock Topological approach to luttinger's theorem and the fermi surface of
+  a kondo lattice.
+\newblock {\em Phys. Rev. Lett.}, 84:3370--3373, Apr 2000.
+
+\bibitem{gulacsi}
+Miklos Gulacsi.
+\newblock The kondo lattice model.
+\newblock {\em Philosophical Magazine}, 86(13-14):1907--1946, 2006.
 
 \end{thebibliography}
