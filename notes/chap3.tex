@@ -106,7 +106,7 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
     U_1 &= 1 + \eta
 \end{aligned}\end{equation}
 
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{../figures/URG_method.pdf}
 \caption{Three steps of the URG: Decompose the Hamiltonian in a \(2\times 2\) matrix, apply the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.}
@@ -642,14 +642,14 @@ To recover the one-loop form, we can replace \(\omega\) with the bare value \(-D
 \subsection{Numerical Solutions}
 The symmetric scaling equation \ref{kondosym} was solved numerically with the choice \(\omega = -\frac{\epsilon_q}{2}\), for both positive and negative bare values of \(J\). For sufficiently low values of \(\omega\), the Kondo coupling \(J\) flows to the strong-coupling limit. This limit, as obtained from the URG, is of course finite. This can be reconciled with the NRG result \(J^* = \infty\) by noting the fact that increasing the bare bandwidth \(D\) does increase the value of URG \(J^*\), such that in the thermodynamic limit \(D \to \infty\), URG should give \(J^* \to \infty\). This is shown in fig.~\ref{JvsD-kondo}
 
-\begin{figure}[!htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/relJ.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/rel2J.pdf}
 	\caption{Flow of \(J\) towards the strong-coupling fixed point (right) and the weak coupling saddle-point (left).  The x-axis indicates the index of the energy shell being decoupled. The largest value (UV) is the first step, and we go towards the left (IR).}
 \end{figure}
 
-\begin{figure}[!htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{../figures/JvsD_kondo.pdf}
 	\caption{Variation of the fixed point value \(J^*\) against the bare bandwidth, in log scale.}
@@ -780,13 +780,13 @@ For \(D \gg J\), we can ignore the \(J\) in the denominator, and the equation re
 \end{aligned}\end{equation}
 This equation has a stable fixed point at \(J^* = \frac{8}{\rho K}\).
 
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.4\textwidth]{rg_flow_pms.pdf}
 	\caption{Attractive finite \(J\) fixed point of poor man scaling RG equation}
 \end{figure}
 For \(D\) not so large, the denominator also comes into play, and eq.\ref{mchannel} holds. We get the possibility of two fixed points - one from the numerator and the other from the numerator.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./rg_flow.pdf}
 	\caption{}
@@ -803,7 +803,7 @@ For a given \(K\), the position of \(J_1^*\) will be governed by \(\rho\). In ge
 \end{aligned}\end{equation}
 This behaviour is shown schematically in fig.~\ref{rg_flow_general}. 
 In fig.~\ref{rhomin_vs_D}, we plot \(\rho_\text{min}\) against the bare bandwidth. For large \(D_0\), it essentially shrinks to zero, and the numerator becomes the first fixed point for essentially all \(\rho\).
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./rhomin_D.pdf}
 	\caption{Red curve shows variation of \(\rho_\text{min}\) against \(D_0\). It vanishes at large \(D_0\). Blue curve shows variation of the ratio \(J_1^* / D_0\) with \(D_0\). That shrinks as well, showing that the fixed point \(J_1^*\) remains finite in the thermodynamic limit, and the distance between \(J_1^*\) and \(J_2^*\) keeps growing.}

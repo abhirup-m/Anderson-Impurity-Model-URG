@@ -1,6 +1,5 @@
 \chapter{URG of the SIAM and its Spin and Charge Generalizations}\label{siamurg}
 \section{URG of the SIAM}
-\subsection{Setting up the various terms in the URG}
 The model is the usual single-impurity Anderson model Hamiltonian.
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow}
@@ -10,53 +9,42 @@ To allow the calculation of both particle and hole kinetic energies, we will wri
 	\label{model:siam}
 	\mathcal{H} = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow}
 \end{equation}
+\subsection{Calculation of renormalization}
 The renormalization is
 \begin{equation}\begin{aligned}
 \label{newh}
-c^\dagger_{q\beta}T \eta + T^\dagger c_{q\beta}\eta_0^\dagger
+c^\dagger_{q\beta}T \frac{1}{\omega - H^D}T^\dagger c_{q\beta} + T^\dagger c_{q\beta}\frac{1}{\omega^\prime - H^D}c^\dagger_{q\beta}T
 \end{aligned}\end{equation}
-We will be decoing an electron \(q\beta\) at the energy shell \(\epsilon_q\). The diagonal part (that comes down in the denominator) is
+We will be decoupling an electron \(q\beta\) at the energy shell \(\epsilon_q = \pm D\). The diagonal part (that comes down in the denominator) is
 \begin{equation}\begin{aligned}
 	\label{term1}
-\mathcal{H}_d = \epsilon_q \tau_{q\beta} + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow}
+H^D = \epsilon_q \tau_{q\beta} + \epsilon_{d}\hat n_{d\beta} +  U \hat n_{d\beta} \hat n_{d\bar\beta}
 \end{aligned}\end{equation}
-Since this is the first step of the RG, the shell being decoupled is the highest one, which we call \(\Lambda_N\).
-\subsection{Calculation of renormalization}
-The \(\eta\) is
+The off-diagonal part is
 \begin{equation}\begin{aligned}
-	\eta = \frac{1}{\hat \omega - \mathcal{H}_d}T^\dagger c_{q\beta} &= \frac{1}{\hat \omega - \epsilon_q \tau_{q\beta} - \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} -  U \hat n_{d\uparrow} \hat n_{d\downarrow}}V_q^* c^\dagger_{d\beta}c_{q\beta}\\
-							     &= \frac{1}{\hat \omega + \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\overline\beta}}V_q^* c^\dagger_{d\beta}c_{q\beta}
+	c^\dagger_{q\beta}T = V_q c^\dagger_{q\beta}c_{d\beta}
 \end{aligned}\end{equation}
-We substituted \(\tau_{q\beta} = -\frac{1}{2}\) and \(\hat n_{d\beta} = 1\) because of the off-diagonal terms in the numerator.
-The renormalization in the particle sector (\(\hat n_{q\beta} = \hat n_{q\overline\beta} = 1\)), at an energy \(-\epsilon_q\) is
+
+The renormalization from a single electron \(q\beta\) is
 \begin{equation}\begin{aligned}
-\Delta \mathcal{H} = c^\dagger_{q\beta} T \eta= \frac{|V_q|^2}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\overline\beta}} \left(1 - \hat n_{d\beta}\right)\hat n_{q\beta} 
+	\Delta H &= c^\dagger_{q\beta}c_{d\beta} \frac{1|V_q|^2}{\omega - H^D}c_{d\beta}^\dagger c_{q\beta} + c_{d\beta}^\dagger c_{q\beta}\frac{1|V_q|^2}{\omega^\prime - H^D}c^\dagger_{q\beta}c_{d\beta} \\
+		 &= c^\dagger_{q\beta}c_{d\beta} \frac{|V_q|^2}{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}}c_{d\beta}^\dagger c_{q\beta} + c_{d\beta}^\dagger c_{q\beta}\frac{|V_q|^2}{\omega^\prime - D/2}c^\dagger_{q\beta}c_{d\beta}\\
+		 &=  \frac{\hat n_{q\beta}\left( 1 - \hat n_{d\beta} \right) |V_q|^2}{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}} + \frac{\hat n_{d\beta}\left( 1 - \hat n_{q\beta} \right) |V_q|^2}{\omega^\prime - D/2}
 \end{aligned}\end{equation}
-Similarly, the renormalization in the hole sector (\(\hat n_{q\beta} = \hat n_{q\overline\beta} = 0\)), at an energy \(\epsilon_q\) is:
-\begin{equation}
-	\Delta \mathcal{H} = T^\dagger c \eta_0^\dagger = \frac{|V_q|^2}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d\hat n_{d\overline\beta}}\left(1 - \hat n_{q\beta}\right)\hat n_{d\beta}
-\end{equation}
-Therefore, the total renormalization obtained from decoupling a particle state (\(\hat n_{q\beta}=1\)) at \(-\epsilon_q\) and a hole state (\(\hat n_{q\beta}=0\)) at \(\epsilon_q\) is
+
+For comparing the two \(\omega\)s, we will use the relation eq.~\ref{omegarel}: \(\omega_0^1 + \omega^1_0 = H^D_0 + H^D_1\) where \(\omega_0^1 = \omega^\prime\). \(\omega^1_0\) however is not \(\omega\). This is because the relation assumes the \(\omega\)s to be calculated at the same energy - while \(\omega^\prime\) is calculated at energy \(-D\), \(\omega\) is at energy \(D\). The \(\omega_0^1\) should hence be the \(\omega\) at energy \(-D\), which is \(-\omega\). With this in mind, the relation says
 \begin{equation}\begin{aligned}
-	\Delta \mathcal{H} &= \frac{|V_q|^2 \left(1 - \hat n_{d\beta}\right)}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d - \left(\epsilon_d + U \right)\hat n_{d\overline\beta}} + \frac{|V_q|^2\hat n_{d\beta}}{\hat \omega - \frac{1}{2}\epsilon_q - \epsilon_d \hat n_{d\overline\beta}}\\
-		    &=|V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\omega_1 - \frac{1}{2}\epsilon_q - 2\epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\overline\beta} \right)}{\omega_2 - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\overline\beta}}{\omega_3 - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\overline\beta}\right) }{\omega_4 - \frac{1}{2}\epsilon_q}\right]\\
+	\omega^\prime - \omega = D/2 + \epsilon_d + U \hat n_{d\beta} - D/2 
 \end{aligned}\end{equation}
-To relate the \(\omega_i\), we look at the their values obtained by substituting the energies of the initial states:
+This gives an expression of \(\omega^\prime\) in terms of \(\omega\). Substituting this into \(\Delta H\)  gives
 \begin{equation}\begin{aligned}
-	\omega_1 = \omega_4 &= -\frac{1}{2}\epsilon_q + \epsilon_d\\
-	\omega_2 &= -\frac{1}{2}\epsilon_q\\
-	\omega_3 &= -\frac{1}{2}\epsilon_q + 2\epsilon_d + U\\
+	\Delta H &=  \frac{\hat n_{q\beta}\left( 1 - \hat n_{d\beta} \right) |V_q|^2}{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}} + \frac{\hat n_{d\beta}\left( 1 - \hat n_{q\beta}\right)|V_q|^2}{\omega - D/2 +\epsilon_d + U \hat n_{d\bar\beta}}
 \end{aligned}\end{equation}
-Defining \(\omega \equiv \omega_2\) (because \(\omega_2\) has the simplest form), we can write
-\begin{equation}\begin{aligned}
-	\omega_1 = \omega_4 &= \omega + \epsilon_d\\
-	\omega_2 &= \omega\\
-	\omega_3 &= \omega + 2\epsilon_d + U\\
-\end{aligned}\end{equation}
-The renormalization then becomes
+The total renormalization from the entire shell \(\pm D\) is
 \begin{equation}\begin{aligned}
 	\label{vanilla:siam:ren}
-	\Delta \mathcal{H} = |V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\overline\beta} \right)}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\overline\beta}\right) }{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\right]
+	\Delta H &=  \sum_{q\beta}|V_q|^2\left[\frac{\hat n_{q\beta}\left( 1 - \hat n_{d\beta} \right) }{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}} + \frac{\hat n_{d\beta}\left( 1 - \hat n_{q\beta}\right)}{\omega - D/2 +\epsilon_d + U \hat n_{d\bar\beta}}\right] \\
+		 &= \sum_q |V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\overline\beta} \right)}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\overline\beta}\right) }{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\right]
 \end{aligned}\end{equation}
 \subsection{Scaling equations}
 Once we have the renormalization for decoupling one electronic or hole state, we can just sum over the spins and momenta to get the total renormalization upon decoupling the entire shells \(\pm \epsilon_q\). From the structure of \(\Delta \mathcal{H}\) in eq.~\ref{vanilla:siam:ren}, we can see that there are renormalizations to all three configuration energies of the impurity: the doublon energy \(E_2\) corresponding to the state  \(\hat n_{d\beta}\hat n_{d\overline\beta}\), the single energy \(E_1\) corresponding to (\(\hat n_{d\beta}(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\), and the holon energy \(E_0\) corresponding to \((1 - \hat n_{d\beta})(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\).
@@ -121,7 +109,7 @@ We dropped some constant terms in the transformed Hamiltonian. For particle-hole
 \end{minipage}
 \hfill
 \begin{minipage}{0.4\textwidth}
-    \centering\includegraphics[width=0.8\textwidth]{phsymm.png}
+    \centering\includegraphics[width=0.8\textwidth]{phsymm.pdf}
     \captionof{figure}{Particle and hole excitations of the impurity}
 \end{minipage}
 
