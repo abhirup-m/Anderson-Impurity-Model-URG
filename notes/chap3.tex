@@ -108,16 +108,9 @@ Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the require
 
 \begin{figure}[htpb]
 \begin{center}
-	\includegraphics[width=0.7\textwidth]{../figures/matrix.png}
-\end{center}
-\begin{center}
-\def\svgwidth{0.8\columnwidth}
-\input{../figures/rotation.pdf_tex}
-\end{center}
-\begin{center}
-	\includegraphics[width=0.8\textwidth]{../figures/repeat.png}
-\end{center}
+	\includegraphics[width=0.6\textwidth]{../figures/URG_method.pdf}
 \caption{Three steps of the URG: Decompose the Hamiltonian in a \(2\times 2\) matrix, apply the unitary operator to rotate it, then repeat these steps with one of the rotated blocks.}
+\end{center}
 \end{figure}
 
 \subsection{Properties of the many-body transition operators}
@@ -454,11 +447,9 @@ These equations will now need to be simplified. For example, in the particle sec
 
 At first sight, one might think that we must evaluate lots of traces to obtain the terms in \(\Delta \mathcal{H}\). A little thought reveals that the terms in the numerator are simply the off-diagonal terms in the Hamiltonian; \(\text{Tr}\left(c^\dagger_{q\beta}\mathcal{H} \right)c_{q\beta}\) is the off-diagonal term that has \(c_{q\beta}\) in it, and \(c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\) is the off-diagonal term that has \(c^\dagger_{q\beta}\) in it. \(\mathcal{H}^D\) is just the diagonal part of the Hamiltonian.
 \section{URG analysis of the star graph model}
-	The star graph problem has already been analyzed using URG and an extensive study of its entanglement properties has already been carried out, in ref.~\cite{spa_star}. Here we focus on just deriving the RG equations.
-
 \noindent
 \begin{minipage}{0.5\textwidth}
-The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+	The star graph problem has already been analyzed using URG and an extensive study of its entanglement properties has already been carried out, in ref.~\cite{spa_star}. Here we focus on just deriving the RG equations. The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \epsilon_0 S^z_0 + \sum_{i=1}^N\left[\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i\right]
 \end{aligned}\end{equation}
