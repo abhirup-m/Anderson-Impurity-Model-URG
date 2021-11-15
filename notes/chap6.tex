@@ -73,28 +73,23 @@ The denominator energies are
 \end{aligned}\end{equation}
 The quantum fluctuation scales are
 \begin{equation}\begin{aligned}
-	\omega_1^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z\\
-	\omega_2^\prime&=\omega+\epsilon_d+\frac{1}{2}K_z \\
-	\omega_3^\prime&=\omega_5^\prime=\omega+\epsilon_d + \frac{1}{2}K_z\\
-	\omega_4^\prime&=\omega+\epsilon_d+\frac{1}{2}K_z + J_z \\
-	\omega_6^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z\\
-	\omega_7^\prime&=\omega+\frac{1}{2}J_z + K_z\\
+	\omega_1^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z, &&\omega_2^\prime=\omega+\epsilon_d+\frac{1}{2}K_z \\
+	\omega_3^\prime&=\omega_5^\prime=\omega+\epsilon_d + \frac{1}{2}K_z, &&\omega_4^\prime=\omega+\epsilon_d+\frac{1}{2}K_z + J_z \\
+	\omega_6^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z, &&\omega_7^\prime=\omega+\frac{1}{2}J_z + K_z\\
 	\omega_8^\prime &=\omega+\epsilon_d+\frac{1}{2}J_z \\
 \end{aligned}\end{equation}
 \subsection{Scaling equations}
 The denominators \(\xi_i,\xi_i^\prime\) are
 \begin{equation}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z\\
-	\xi_2 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
+	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z, &&\xi_2 = \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
 	\xi_3 &= \xi_4 = \xi_5 = \xi_6 = \xi_7 = \omega - \frac{\epsilon_q}{2} + \frac{1}{2}J_z + \frac{1}{2}K_z\\
 	\xi_8 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{1}{2}J_z + \frac{1}{2}K_z\\
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z\\
-	\xi_2^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
+	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z, &&\xi_2^\prime = \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
 	\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \xi_6^\prime = \xi_7^\prime = \omega - \frac{\epsilon_q}{2} + \frac{1}{2}J_z + \frac{1}{2}K_z\\
 	\xi_8^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{1}{2}J_z + \frac{1}{2}K_z\\
 \end{aligned}\end{equation}
 The RG equations are
-\begin{equation}\begin{aligned}
+\begin{align}
 	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - 2 \frac{|V_0|^2}{\xi_2} - \sum_k\left( \frac{K_z^2}{2\xi_6} + \frac{K_t^2}{\xi_8} - \frac{J_z^2}{2\xi_3} - \frac{J_t^2}{\xi_3}\right) \\
 	\Delta U &= \frac{2|V_1|^2}{\xi^\prime_1} + \frac{2|V_0|^2}{\xi_2} - \frac{2|V_1|^2}{\xi_1} - \frac{2|V_0|^2}{\xi_2^\prime} + 2\sum_k\left(\frac{K_z^2}{2\xi_6} + \frac{K_t^2}{\xi_8} - \frac{J_z^2}{2\xi_3} - \frac{J_t^2}{\xi_3}\right) \\
 	\Delta V_1 &= - \frac{1}{4}\left[ V_1 \frac{K_z}{2}\left( \frac{1}{\xi_1} + \frac{1}{\xi_6} \right) - V_0 K_t \left( \frac{1}{\xi_2^\prime} + \frac{1}{\xi_8^\prime} \right)\right] - V_1 \left( \frac{J_z}{2} + J_t \right) \left( \frac{1}{\xi_1^\prime} + \frac{1}{\xi_3} \right) \\
@@ -103,7 +98,7 @@ The RG equations are
 	\Delta J_t &= - 2 \frac{J_z J_t}{\xi_3}\\
 	\Delta K_z &= - 2 \frac{K_t^2}{\xi_8}\\
 	\Delta K_t &= - \frac{K_z K_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
-\end{aligned}\end{equation}
+\end{align}
 Note that these are the renormalizations are for each momentum state \(q\) on the isoenergetic shell - the total renormalization is obtained by summing over the \(q\).
 \section{Numerical and analytical analysis of the symmetric model}
 \subsection{Nature of RG flows for the symmetric model at \(V = 0\)}
@@ -116,13 +111,13 @@ With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_
 For \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K > 0\), the flow is towards a weak coupling theory, but these are not URG fixed points. Such flows are shown in fig.~\ref{Jdecay}. For the rest of the values of \(\omega\), we get RG flows towards a strong-coupling fixed point, with large value of \(J\) and \(K\), fig.~\ref{J_sc}. For sufficiently small values of \(\frac{J}{K}\), the flow is towards zero \(U\). All such flows characterise a resonant-level strong coupling fixed point, where the four atomic impurity levels are degenerate and located exactly at the Fermi surface. For larger values of \(\frac{J}{K}\), there exist flows towards a large positive \(U\). Such fixed points energetically favour an impurity occupation of \(1\). Both these classes of flows of \(U\) are depicted in fig.~\ref{U_flow}.
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/large_w.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/large_w.pdf}
 	\caption{Large \(\omega\). Right Decay of \(J\) towards zero under RG. Left Flow of \(U\) under the same RG. Titles of plots show bare values.}
 	\label{Jdecay}
 \end{figure}
 \begin{figure}[htb!]
 	\centering
-	\includegraphics[width=\textwidth]{../figures/low_w_JK.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/low_w_JK.pdf}
 	\caption{Small \(\omega\). Flow of \(J\) and \(K\) to large values, signaling a strong-coupling fixed point.}
 	\label{J_sc}
 \end{figure}
@@ -147,11 +142,11 @@ where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is t
 \end{figure}
 \subsection{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
-\begin{equation}\begin{aligned}
+\begin{align}
 	\Delta U &= 2\sum_k \frac{3}{8}\frac{K^2 - J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \\
 	\Delta J &= - \frac{J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
 	\Delta K &= - \frac{K^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
-\end{aligned}\end{equation}
+\end{align}
 The strong-coupling fixed points is reached for \(\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K < 0\). Since the denominator is thus negative, we will have
 \begin{equation}\begin{aligned}
 	\Delta U \begin{cases}
@@ -192,7 +187,7 @@ with an eigenvalue (besides the energy of the bath)
 	E_{0,2} = - \frac{3}{4}K^* - \frac{1}{4}K^{**}
 \end{aligned}\end{equation}
 Depending on the bare values of \(J,K\) and \(U\), we can have the following fixed point situations:
-\begin{table}[!htb]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
