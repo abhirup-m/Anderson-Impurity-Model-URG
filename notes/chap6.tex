@@ -100,8 +100,7 @@ The RG equations are
 	\Delta K_t &= - \frac{K_z K_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
 \end{align}
 Note that these are the renormalizations are for each momentum state \(q\) on the isoenergetic shell - the total renormalization is obtained by summing over the \(q\).
-\section{Numerical and analytical analysis of the symmetric model}
-\subsection{Nature of RG flows for the symmetric model at \(V = 0\)}
+\section{RG flows for the symmetric model at \(V = 0\)}
 With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_0 = V_1, K_z = K_t = \frac{1}{2}K\),
 \begin{equation}\begin{aligned}
 	\Delta U &= \sum_k \frac{3}{4}\frac{K^2 - J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \\
@@ -140,7 +139,7 @@ where \(\mathcal{C}\) is a constant. For the case of \(J_0 = K_0\) (\(J_0\) is t
 	\caption{RG flows in \(K\) vs \(J\) plane. Legend indicates relations of bare values.}
 	\label{JvsK}
 \end{figure}
-\subsection{Eigenstates of symmetrical model at \(V=0\)}
+\section{Eigenstates of symmetrical model at \(V=0\)}
 For the case of \(V=0\), the RG equations simplify considerably.
 \begin{align}
 	\Delta U &= 2\sum_k \frac{3}{8}\frac{K^2 - J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \\
@@ -208,7 +207,14 @@ Depending on the bare values of \(J,K\) and \(U\), we can have the following fix
 	\caption{Fixed point phases in the plane of bare couplings, at \(V=0\).}
 	\label{siamphases}
 \end{figure}
-\subsection{Effect of non-zero \(V\) on the RG flows}
+\section{Effect of non-zero \(V\) on the RG flows}
+In the presence of a non-zero hybridisation \(V\), the RG equations become
+\begin{equation}\begin{aligned}
+	\Delta U &= 4|V|^2 \left[\frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{U}{2} + \frac{1}{2}J}  - \frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{U}{2} + \frac{1}{2}K}\right] + \sum_{k<\Lambda_j} \frac{3}{4}\frac{K^2 - J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
+	\Delta V &= \frac{V K}{16}\left(\frac{1}{\omega - \frac{\epsilon_q}{2} - \frac{U}{2} + \frac{1}{2}K} + \frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \right) - \frac{3VJ}{4}\left( \frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{U}{2} + \frac{1}{2}J} + \frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K} \right)\\
+	\Delta J &= - \frac{J^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
+	\Delta K &= - \frac{K^2}{\omega - \frac{\epsilon_q}{2} + \frac{1}{4}J + \frac{1}{4}K}\\
+\end{aligned}\end{equation}
 The introduction of \(V\) into the RG equations make them analytically intractable, and we have to solve them numerically. The general observation is that we now get both zero and non-zero values of \(U^*\) in all the phases. The low quantum fluctuation scale behaviour in the first quadrant is shown in fig.~\ref{Veffect}. It is very similar to that obtained from NRG, as was shown in fig.~\ref{nrg_fp}.
 \begin{figure}[!htb]
 	\centering
@@ -256,7 +262,7 @@ This is essentially the charge analogue of the Kondo effect; the relevant transf
 	\ket{\uparrow} \to \ket{2}, \ket{\downarrow} \to \ket{0}, J \to K, U \to -U
 \end{aligned}\end{equation}
 The ground state in this sector will be a charge singlet, as shown in the next section. This was also reported by Taraphder and Coleman in \cite{taraphder}.
-\subsection{Phase diagram for \(V > 0\)}
+\section{Phase diagram for \(V > 0\)}
 We can now summarize the various fixed point phases. The physically relevant ones are the first and third quadrants. The first quadrant features a large spin-exchange coupling \(J\) and a positive \(U\) in the bare model, and the stable flows are towards a large \(J^*\) and a very small (\(\approx 0\)) \(U^*\). The fixed point state will be mostly a spin singlet, in which the impurity polarization gets quenched by the spin-flip scattering of the conduction electrons. The third quadrant is the regime of the charge-Kondo effect, and involves a negative \(U\) at the bare level which physically motivates a large charge-Kondo coupling \(K\). The fixed point again involves flow to a large \(K^*\), but the \(U\) flows to large negative here, implying a state where the charge sectors dominate heavily and the ground state is primarily a charge-singlet in which the destruction or annihilation of the Cooper-pair like states becomes prohibited.
 
 These results are summarized in the table below.
