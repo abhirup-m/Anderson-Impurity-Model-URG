@@ -1,7 +1,8 @@
-\chapter{URG of the SIAM and its Spin and Charge Generalizations}\label{siamurg}
-\section{URG of the SIAM}
+\chapter{URG of the SIAM and its Spin and Charge Generalisations}\label{siamurg}
+\section{The single-impurity Anderson model}
 The model is the usual single-impurity Anderson model Hamiltonian.
 \begin{equation}\begin{aligned}
+	\label{andham}
 	\mathcal{H} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow}
 \end{aligned}\end{equation}
 To allow the calculation of both particle and hole kinetic energies, we will write the kinetic energy part as \(\sum_{k\sigma}\epsilon_k \tau_{k\sigma}\), where \(\tau = \hat n - \frac{1}{2}\) and drop the extra constant part.
@@ -9,8 +10,8 @@ To allow the calculation of both particle and hole kinetic energies, we will wri
 	\label{model:siam}
 	\mathcal{H} = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow}
 \end{equation}
-\subsection{Calculation of renormalization}
-The renormalization is
+\section{Calculation of renormalisation}
+The renormalisation is
 \begin{equation}\begin{aligned}
 \label{newh}
 c^\dagger_{q\beta}T \frac{1}{\omega - H^D}T^\dagger c_{q\beta} + T^\dagger c_{q\beta}\frac{1}{\omega^\prime - H^D}c^\dagger_{q\beta}T
@@ -25,7 +26,7 @@ The off-diagonal part is
 	c^\dagger_{q\beta}T = V_q c^\dagger_{q\beta}c_{d\beta}
 \end{aligned}\end{equation}
 
-The renormalization from a single electron \(q\beta\) is
+The renormalisation from a single electron \(q\beta\) is
 \begin{equation}\begin{aligned}
 	\Delta H &= c^\dagger_{q\beta}c_{d\beta} \frac{1|V_q|^2}{\omega - H^D}c_{d\beta}^\dagger c_{q\beta} + c_{d\beta}^\dagger c_{q\beta}\frac{1|V_q|^2}{\omega^\prime - H^D}c^\dagger_{q\beta}c_{d\beta} \\
 		 &= c^\dagger_{q\beta}c_{d\beta} \frac{|V_q|^2}{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}}c_{d\beta}^\dagger c_{q\beta} + c_{d\beta}^\dagger c_{q\beta}\frac{|V_q|^2}{\omega^\prime - D/2}c^\dagger_{q\beta}c_{d\beta}\\
@@ -40,14 +41,14 @@ This gives an expression of \(\omega^\prime\) in terms of \(\omega\). Substituti
 \begin{equation}\begin{aligned}
 	\Delta H &=  \frac{\hat n_{q\beta}\left( 1 - \hat n_{d\beta} \right) |V_q|^2}{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}} + \frac{\hat n_{d\beta}\left( 1 - \hat n_{q\beta}\right)|V_q|^2}{\omega - D/2 +\epsilon_d + U \hat n_{d\bar\beta}}
 \end{aligned}\end{equation}
-The total renormalization from the entire shell \(\pm D\) is
+The total renormalisation from the entire shell \(\pm D\) is
 \begin{equation}\begin{aligned}
 	\label{vanilla:siam:ren}
 	\Delta H &=  \sum_{q\beta}|V_q|^2\left[\frac{\hat n_{q\beta}\left( 1 - \hat n_{d\beta} \right) }{\omega - D/2 - \epsilon_d - U \hat n_{d\bar\beta}} + \frac{\hat n_{d\beta}\left( 1 - \hat n_{q\beta}\right)}{\omega - D/2 +\epsilon_d + U \hat n_{d\bar\beta}}\right] \\
 		 &= \sum_q |V_q|^2 \left[\frac{\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U} + \frac{\left(1 - \hat n_{d\beta}\right)\left( 1-\hat n_{d\overline\beta} \right)}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} + \frac{\hat n_{d\beta} \hat n_{d\overline\beta}}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U} + \frac{\hat n_{d\beta}\left( 1- \hat n_{d\overline\beta}\right) }{\omega - \frac{1}{2}\epsilon_q + \epsilon_d}\right]
 \end{aligned}\end{equation}
-\subsection{Scaling equations}
-Once we have the renormalization for decoupling one electronic or hole state, we can just sum over the spins and momenta to get the total renormalization upon decoupling the entire shells \(\pm \epsilon_q\). From the structure of \(\Delta \mathcal{H}\) in eq.~\ref{vanilla:siam:ren}, we can see that there are renormalizations to all three configuration energies of the impurity: the doublon energy \(E_2\) corresponding to the state  \(\hat n_{d\beta}\hat n_{d\overline\beta}\), the single energy \(E_1\) corresponding to (\(\hat n_{d\beta}(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\), and the holon energy \(E_0\) corresponding to \((1 - \hat n_{d\beta})(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\).
+\section{Scaling equations for the SIAM}
+Once we have the renormalisation for decoupling one electronic or hole state, we can just sum over the spins and momenta to get the total renormalisation upon decoupling the entire shells \(\pm \epsilon_q\). From the structure of \(\Delta \mathcal{H}\) in eq.~\ref{vanilla:siam:ren}, we can see that there are renormalisations to all three configuration energies of the impurity: the doublon energy \(E_2\) corresponding to the state  \(\hat n_{d\beta}\hat n_{d\overline\beta}\), the single energy \(E_1\) corresponding to (\(\hat n_{d\beta}(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\), and the holon energy \(E_0\) corresponding to \((1 - \hat n_{d\beta})(1 - \hat n_{d\overline\beta}) + \hat n_{d\overline\beta}(1 - \hat n_{d\beta})\).
 \begin{equation}\begin{aligned}
 	\label{urg-siam}
 	\Delta E_2 &= +2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U }\\
@@ -59,7 +60,7 @@ Using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\), we 
 	\Delta \epsilon_d &= +\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d} + \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d}\\
 	\Delta U &= \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U } + \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} - \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d} - \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U}\\
 \end{aligned}\end{equation}
-\subsection{Connection to Poor Man's scaling}\label{urg2pms}
+\section{Connection to poor man's scaling}\label{urg2pms}
 To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
 \begin{equation}\begin{aligned}
 \Delta \epsilon_d &= \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} + \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}\\
@@ -77,21 +78,19 @@ Again assuming symmetrical upper and lower edges, and isotropic dispersion \(\ep
 \Delta U &= 0\\
 \delta \epsilon_d &= -\frac{\Delta}{\pi}\frac{1}{\omega - \frac{1}{2} D}
 \end{aligned}\end{equation}
-There we replaced the difference symbol \(\Delta\) with \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). For low quantum fluctuations, we can ignore the renormalization in the couplings and replace \(\omega\) with the initial conduction electron energy: \(\omega = \epsilon_q\tau_{q\beta} = -\frac{1}{2} D\).
+There we replaced the difference symbol \(\Delta\) with \(\delta\) to avoid confusion with the hybridisation \(\Delta \sim \sum V^2\). For low quantum fluctuations, we can ignore the renormalisation in the couplings and replace \(\omega\) with the initial conduction electron energy: \(\omega = \epsilon_q\tau_{q\beta} = -\frac{1}{2} D\).
 \begin{equation}\begin{aligned}
 \delta \epsilon_d &= \frac{\Delta}{\pi}\frac{\delta D}{D}
 \end{aligned}\end{equation}
 This is the one-loop scaling equation.
-\subsection{Particle-Hole symmetry}
+\section{Preservation of particle-hole symmetry}
 The Anderson model Hamiltonian, eq.~\ref{andham}, has an impurity particle-hole symmetry for a certain condition of the couplings. To see this, we apply the particle-hole transformation \(c_k \to c^\dagger_k, c_d \to -c^\dagger_d\) to the Hamiltonian. Since we are looking at the impurity symmetry, we will only look at the terms involving the impurity. The particle-hole symmetry of the conduction bath is a separate thing and that requires a specific lattice. Hence we will not consider kinetic energy term in this discussion. The rest of the terms transform as
 \begin{gather}
     \epsilon_d \sum_\sigma \hat n_{d\sigma} \to 2\epsilon_d - \epsilon_d \sum_\sigma \hat n_{d\sigma}\label{imp1}\\
 U \hat n_{d\uparrow}\hat n_{d\downarrow} \to U \hat n_{d\uparrow}\hat n_{d\downarrow} - U\sum_\sigma \hat n_{d\sigma} + U\label{imp2}\\
-\sum_{k\sigma}V(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \to \sum_{k\sigma}-V(k)c_{k\sigma}c^\dagger_{d\sigma} + hc = \sum_{k\sigma}V^*(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \label{hop}\\
-S^z\sum_{kq}s^z_{kq} \to \left(-S^z\right)\sum_{kq}\left(-s^z_{kq}\right) = S^z\sum_{kq}s^z_{kq}\label{spin1}\\
-S^{\pm}\sum_{kq}s^{\mp}_{kq} \to \left(-S^{\pm}\right)\sum_{kq}\left(-s^{\mp}_{kq}\right) = S^{\pm}\sum_{kq}s^{\mp}_{kq}\label{spin2}
+\sum_{k\sigma}V(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \to \sum_{k\sigma}-V(k)c_{k\sigma}c^\dagger_{d\sigma} + hc = \sum_{k\sigma}V^*(k)c^\dagger_{k\sigma}c_{d\sigma} + hc \label{hop}
 \end{gather}
-The transformation of the spin terms, eqs.~\ref{spin1} and \ref{spin2}, can be understood from the fact that since a spin degree of freedom can be written in terms of the number operator as \(\hat S = \hat n - \frac{1}{2}\), it must transform by flipping its sign: \(\hat S = \hat n - \frac{1}{2} \to \frac{1}{2} - \hat n = -\hat S\). The spin terms are thus invariant under the particle-hole transformation. The impurity-bath hopping term can be made symmetric by making \(V(k)\) real; then we would have, from eq.~\ref{hop},
+The impurity-bath hopping term can be made symmetric by making \(V(k)\) real; we would then have, from eq.~\ref{hop},
 \begin{equation}\begin{aligned}
 	V(k)\left(c^\dagger_{k\sigma}c_{d\sigma} + c^\dagger_{d\sigma}c_{k\sigma}\right)\to V(k)\left(c^\dagger_{d\sigma}c_{k\sigma} + c^\dagger_{k\sigma}c_{d\sigma}\right)
 \end{aligned}\end{equation}
@@ -117,12 +116,12 @@ Since the URG is unitary, if we start from a model that is particle-hole symmetr
 \begin{equation}\begin{aligned}
 	\Delta\left(\epsilon_d + \frac{1}{2} U\right) = 0
 \end{aligned}\end{equation}
-The quantity \(\gamma = \epsilon_d + \frac{1}{2} U\) is thus an RG-invariant for the particle-hole symmetric model; it does not change under the RG flow. It is often referred to as the asymmetry parameter; it quantifies the asymmetry in the model. We need to check if our equations satisfy this. Looking at the RG equations for \(\epsilon_d\) and \(U\), we can find the RG equation for the asymmetry parameter. The slightly easier way is to just note that the renormalization in \(E_2\) should be equal to the renormalization in \(E_0\), in order for p-h symmetry to hold.
+The quantity \(\gamma = \epsilon_d + \frac{1}{2} U\) is thus an RG-invariant for the particle-hole symmetric model; it does not change under the RG flow. It is often referred to as the asymmetry parameter; it quantifies the asymmetry in the model. We need to check if our equations satisfy this. Looking at the RG equations for \(\epsilon_d\) and \(U\), we can find the RG equation for the asymmetry parameter. The slightly easier way is to just note that the renormalisation in \(E_2\) should be equal to the renormalisation in \(E_0\), in order for p-h symmetry to hold.
 \begin{equation}\begin{aligned}
 \Delta E_2 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D + \epsilon_d + U}, \Delta E_0 &= 2 \frac{\Delta}{\pi}\frac{1}{\omega - D - \epsilon_d}
 \end{aligned}\end{equation}
 If we start with a particle-hole symmetric model, we will have \(-\epsilon_d = \epsilon_d + U\). Substituting that gives \(\Delta E_2= \Delta E_0\). This shows that the doublon and holon states remain equidistant from the single-particle level, thus maintaining particle-hole symmetry along the flow.
-\subsection{Numerical analysis of symmetric SIAM}
+\section{Numerical analysis of the particle-hole symmetric RG equations}
 We will specialize to the particle-hole symmetric case, \(2\epsilon_d + U = 0\), and a symmetric energy shell \(\epsilon_q = D\), and look at the scaling behavior of \(\epsilon_d\).
 \begin{equation}\begin{aligned}
 	\Delta \epsilon_d = -4|V|^2 \frac{\epsilon_d}{\left( \omega - \frac{1}{2}D \right)^2 - \epsilon_d^2}
@@ -132,7 +131,7 @@ Since the equation is symmetric under \(\epsilon_d \to -\epsilon_d\), we might a
 	\Delta |\epsilon_d| = -4|V|^2 \frac{|\epsilon_d|}{\left( \omega - \frac{1}{2}D \right)^2 - \epsilon_d^2}
 \end{aligned}\end{equation}
 Depending on the signature of the denominator, the flows will be either relevant or irrelevant.
-\begin{figure}[htpb]
+\begin{figure}[!htpb]
 	\centering
 	\includegraphics[width=0.99\textwidth]{../figures/ed_pure_siam.pdf}
 	\caption{Left: Irrelevant flow towards \(|\epsilon_d|=0\), at low \(\omega\). Right: Relevant flow towards large \(|\epsilon_d|\), at large \(\omega\). The former can be thought of as the projection of the strong-coupling flow on to the \(\epsilon_d-D\) plane. The latter is the flow towards the local moment fixed point, if we start from a negative \(\epsilon_d\).}
@@ -144,87 +143,207 @@ For the flow to the local moment fixed point, the fixed point value of \(|\epsil
 	\caption{Change in fixed point value of \(|\epsilon_d|\) with system size.}
 	\label{edvsD}
 \end{figure}
-\section{Anderson-Kondo (spin) model URG}
-In order to obtain a renormalization in \(V\), we will introduce a spin-spin interaction between the impurity and the mobile electrons. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
-\subsection{Spin-spin interaction}
-We first consider a general four-Fermion interaction of the form
+\section{Introduction of spin-exchange and charge isospin-exchange interactions into the SIAM: the generalised SIAM}
+We will now study the generalised SIAM obtained by introducing spin-exchange and charge isospin-exchange interactions between the impurity and the conduction bath. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
+
+The spin-exchange interaction has the form
 \begin{equation}\begin{aligned}
-	\mathcal{H}_I = \sum_{k,k^\prime ,\sigma_i}u c^\dagger_{d\sigma_2}c_{d\sigma_4}c_{k^\prime \sigma_3}c^\dagger_{k\sigma_1}\delta_{\left(\sigma_1 + \sigma_2 = \sigma_3 + \sigma_4\right)}
+	J \vec{S_d}\cdot\vec{s} = J \left[S_d^z s^z + \frac{1}{2}\left( S_d^+ s^- + S_d^- s^+ \right) \right] ~,
 \end{aligned}\end{equation}
-The \(u\) in general depends on the spin and the momenta. Expanding the summation by using the delta gives
+where \(\vec S_d = \left(S_d^x, S_d^y, S_d^z\right) = \sum_{\alpha\beta}\vec \sigma_{\alpha\beta}c^\dagger_{d\alpha}c_{d\beta}\) is the impurity spin operator, \(\vec s = \sum_{kk^\prime\alpha\beta}\vec \sigma_{\alpha\beta}c^\dagger_{k\alpha}c_{k^\prime\beta}\) is the spin operator for the conduction bath and \(J\) is the spin-exchange coupling. The bath spin operator actually acts locally, as can be seen by Fourier transforming to real space (using the definition \(f(k) = \frac{1}{\sqrt N}\sum_r g(r)\exp(ikr)\)):
 \begin{equation}\begin{aligned}
-\mathcal{H}_I = \underbrace{\sum_{k,k^\prime ,\sigma,\sigma^\prime}u_1 \hat n_{d\sigma^\prime}c^\dagger_{k\sigma}c_{k^\prime \sigma}}_\text{spin-preserving scattering} + \overbrace{\sum_{k,k^\prime ,\sigma}u_2 c^\dagger_{d\overline\sigma}c_{d\sigma}c^\dagger_{k\sigma}c_{k^\prime \overline\sigma}}^\text{spin-flip scattering}
+	\vec s = \sum_{k k^\prime r r^\prime} \frac{1}{N} e^{ikr - ik^\prime r^\prime} \vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} = \sum_{rr^\prime}\frac{1}{N}\vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} N \delta(r)\delta(r^\prime) = \vec \sigma_{\alpha\beta} c^\dagger_{0\alpha} c_{0\beta}
 \end{aligned}\end{equation}
-At this point, we drop the dependence of \(u\) on the momenta and assume it depends only on the spin transfer. The first term (attached with \(u_1\)) involves no spin-flip between the scattering momenta or the scattering impurity electrons (\(k\sigma \to k^\prime \sigma, d\sigma^\prime \to d\sigma^\prime\)). We label this coupling as \(u_P\). The other coupling involves a spin-flip scattering, so we label that as \(u_A\).
+
+In order to introduce the charge isospin coupling, we define the Nambu spinor \cite{nambu,anderson_superc} \(\psi^k = \left( c_{k\uparrow} \quad c^\dagger_{k\downarrow} \right)\), and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction electrons
 \begin{equation}\begin{aligned}
-\mathcal{H}_{I,N} = \sum_{k,k^\prime ,\sigma,\sigma^\prime}u_P \hat n_{d\sigma^\prime}c^\dagger_{k\sigma}c_{k^\prime\sigma}+ \sum_{k,k^\prime ,\sigma}u_A c^\dagger_{d\overline\sigma}c_{d\sigma}c^\dagger_{k\sigma}c_{k^\prime \overline\sigma}
+\vec C = \sum_{kk^\prime} {\psi^k}^\dagger \vec S \psi^{k^\prime} = \frac{1}{2}\sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
 \end{aligned}\end{equation}
-where the \(N\) in the denominator means the sum is over all momenta up to \(|k| = \Lambda_N\). The parallel scattering has two components, when expanded, is of the form
+The various components of the isospin are
 \begin{equation}\begin{aligned}
-u_{\uparrow\uparrow}\hat n_{d\uparrow}c^\dagger_{k\uparrow}c_{k^\prime\uparrow} + u_{\downarrow\downarrow}\hat n_{d\downarrow}c^\dagger_{k\downarrow}c_{k^\prime\uparrow} + u_{\uparrow\downarrow}\hat n_{d\uparrow}c^\dagger_{k\downarrow}c_{k^\prime\downarrow} + u_{\downarrow\uparrow}\hat n_{d\downarrow}c^\dagger_{k\uparrow}c_{k^\prime\uparrow}
+	C^z &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^z_{\sigma\sigma} \psi^{k^\prime}_\sigma = \frac{1}{2}\sum_{kk^\prime\sigma}\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
+	C^x &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^x_{\sigma\overline\sigma} \psi^{k^\prime}_{\overline\sigma} = \sum_{kk^\prime\sigma} \frac{\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\overline\sigma} + \text{h.c.} \right) \\
+	C^y &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^y_{\sigma\overline\sigma} \psi^{k^\prime}_{\overline\sigma} = \sum_{kk^\prime\sigma} - \frac{i\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\overline\sigma} - \text{h.c.} \right)\\
 \end{aligned}\end{equation}
-We define \(J_z\) and \(J_t\) such that this term can be written as
+It is easy to verify that these operators satisfy the SU(2) commutation algebra. For example, if we write \(C^x = A + A^\dagger\) and \(C^y = B + B^\dagger\), then \(\left[ C^x, C^y \right] = \left[ A, B^\dagger \right] - \text{h.c.}\), where
 \begin{equation}\begin{aligned}
-	\mathcal{H}_{I} &= J_z \frac{\hat n_{d\uparrow} - \hat n_{d\downarrow}}{2}\sum_{kk^\prime}\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) + J_t \sum_{kk^\prime}\left[ c^\dagger_{d\uparrow}c_{d\downarrow}c^\dagger_{k\downarrow}c_{k^\prime\uparrow} + c^\dagger_{d\downarrow}c_{d\uparrow}c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\right]\\
-			&= 2J_z S_d^z s^z + J_t \left(S_d^+ s^- + S_d^- s^+\right)
+	\left[ A, B^\dagger \right] = \frac{1}{4}\sum_{kk^\prime,qq^\prime}\left[ c^\dagger_{k\uparrow}c^\dagger_{k^\prime \downarrow}, i c_{q^\prime \downarrow}c_{q \uparrow} \right] = \frac{i}{4}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right)
 \end{aligned}\end{equation}
-The spin-like operators are defined as
+and therefore
 \begin{equation}\begin{aligned}
-	S^z_d &\equiv \frac{1}{2}\left(\hat n_{d\uparrow} - \hat n_{d\downarrow}\right) \quad&S^+_d &\equiv c^\dagger_{d\uparrow}c_{d\downarrow}\quad &S^-_d \equiv c^\dagger_{d\downarrow}c_{d\uparrow}\\
-	s^z_{kk^\prime} &\equiv \frac{1}{2}\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c^\dagger_{k\downarrow}c_{k^\prime\downarrow}\right) \quad &s^+_{kk^\prime} &\equiv c^\dagger_{k\uparrow}c_{k^\prime\downarrow}\quad &s^-_{kk^\prime} \equiv c^\dagger_{k\downarrow}c_{k^\prime\uparrow}\\
-        &&s^a \equiv \sum_{kk^\prime}s^a_{kk^\prime}
+	\implies \left[ C^x, C^y \right] = \frac{i}{2}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right) = i C^z
 \end{aligned}\end{equation}
-This is the same interaction that constitutes the Kondo model and gives rise to the quenching of the local moment at low energies. The total Hamiltonian for this \textit{Anderson-Kondo model} is thus
+There are similar operators for the impurity electron:
 \begin{equation}\begin{aligned}
-	\label{andham}
-	\mathcal{H} = \sum_{k\sigma}\left(\epsilon_k \hat n_{k\sigma} + V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) + \epsilon_{d}\sum_\sigma  \hat n_{d\sigma} +  U \hat n_{d\uparrow} \hat n_{d\downarrow} + 2J_z S_d^z s^z + J_t \left(S_d^+ s^- + S_d^- s^+\right)
+	\psi_d = \left( c_{d\uparrow} \quad c^\dagger_{d\downarrow}\right), &&\vec C_d = \frac{1}{2}\sum_{\beta} {\psi_{d,\alpha}}^\dagger \vec \sigma_{\alpha\beta} \psi_{d,\beta}
 \end{aligned}\end{equation}
-For the special case of \(2J_z = 2J_t = J\), we get the SU(2) symmetric Heisenberg-like interaction
+The full charge-Kondo interaction can now be written down in terms of these isospins:
 \begin{equation}\begin{aligned}
-	\mathcal{H}_{I} = J \left[S^z_d s^z + \frac{1}{2}\left(S^+_d s^- + S^-_d s^+\right)\right] = J \mathbf{S_d} \cdot \mathbf{s}
+	K \vec{C_d}\cdot\vec{C} = K \left[C_d^z C^z + \frac{1}{2}\left(C_d^+ C^-+ C_d^- C^+\right)\right]
 \end{aligned}\end{equation}
-For the URG, we take two electrons on the shell \(\Lambda_N\), \(q\beta\) and \(q\overline\beta\), then decouple the electron \(q\beta\). The reason for taking two electrons is to allow the symmetries to be preserved. For simplicity, we will only consider those diagonal terms in the denominator that either have both \(q\beta\) and \(q\overline\beta\) or  both \(q\beta\) and \(d\) or both \(q\overline\beta\) and \(d\). Terms that have purely \(q\overline\beta\) will not be considered. Also, the scattering between just \(d\) and \(q\overline\beta\) can be ignored since it is diagonal in \(q\beta\). The Hamiltonian for such a system is
+where \(C^\pm \equiv C^x \pm iC^y\).
 \begin{equation}\begin{aligned}
-\mathcal{H}_N &= H_{N-1} + H_\text{imp} + \epsilon_q\hat n_{q\beta} + 2J_z S^z_d s^z_q + V_q c^\dagger_{q\beta}c_{d\beta} + \text{h.c.} +\\
-	      & \sum_{k<\Lambda_N}\left[J_z S^z_d \beta \left(c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{q\beta}c_{k\beta}\right) + J_t \left(c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{q \beta} + c^\dagger_{d\overline\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\overline\beta}\right)\right]\\
-	      & + J_t \left(c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{q\overline\beta}c_{q \beta} + c^\dagger_{d\overline\beta}c_{d\beta}c^\dagger_{q\beta}c_{q\overline\beta}\right)
+	C^+ = \sum_{kk^\prime} c^\dagger_{k\uparrow}c^\dagger_{k^\prime\downarrow}, && C^- = \sum_{kk^\prime}c_{k^\prime\downarrow}c_{k\uparrow}
 \end{aligned}\end{equation}
-where \(s_q^z = \frac{1}{2}\left(\hat n_{q\uparrow} - \hat n_{q\downarrow}\right)\) and \(H_{imp}\) is the impurity-diagonal part of the Hamiltonian (\(\epsilon_d \hat n_d + U\hat n_{d\uparrow}\hat n_{d\downarrow}\)) and 
+The full generalised Anderson model Hamiltonian, at particle-hole symmetry, is
 \begin{equation}\begin{aligned}
-	H_{N-1} = \sum_{k<\Lambda_N,\sigma}\left[\left(\epsilon_k +  \sigma J_z S^z_d\right)\hat n_{k\sigma} + V_k c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.}\right] + H_{I,N-1}
+	\mathcal{H} = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_d \left( \hat n_{d \uparrow} - \hat n_{d \downarrow} \right) ^2 + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) +J \vec{S_d}\cdot\vec{s} + K \vec{C_d}\cdot\vec{C}
 \end{aligned}\end{equation}
+
+For the URG analysis, at each RG step, we decouple the electronic states \(q\beta\) on the \(k-\)space shell of radius\(\Lambda_j\). For simplicity, we will only consider those diagonal terms in the denominator that either have both \(q\beta\) and \(q\overline\beta\) or  both \(q\beta\) and \(d\) or both \(q\overline\beta\) and \(d\). Terms that have purely \(q\overline\beta\) will not be considered. Also, the scattering between just \(d\) and \(q\overline\beta\) can be ignored since it is diagonal in \(q\beta\). 
 The diagonal (number-preserving) part is
 \begin{equation}\begin{aligned}
-	\mathcal{H}_D = H^D_{N-1} + \epsilon_q\left(\hat n_{q\beta} + \hat n_{q\overline\beta}\right) + 2J_z S^z_ds^z_{q} + H_{imp}\\
+	H_D = \sum_\beta\epsilon_q\tau_{q\beta} + \epsilon_d \left( \hat n_{d \uparrow} - \hat n_{d \downarrow} \right) ^2 + J S^z_ds^z_{q} + K C^z_d C^z_q\\
 \end{aligned}\end{equation}
-In line with the simplifications mentioned above, we will work with the following terms:
+where \(s_q^z = \frac{1}{2}\left(\hat n_{q\uparrow} - \hat n_{q\downarrow}\right)\) and \(C_q^z = \frac{1}{2}\left(\hat n_{q \uparrow} + \hat n_{q \downarrow} - 1\right)\). The off-diagonal part is:
 \begin{equation}\begin{aligned}
-	\label{diag}
-\mathcal{H}_D = \epsilon_q \hat n_{q\beta} + 2J_z S^z_d s^z_q + H_{imp}
+	H_X = \sum_{\beta=\uparrow,\downarrow}\left[V c^\dagger_{q\beta}c_{d\beta} + \frac{1}{2}J \sum_{k<\Lambda_N}\left\{\left(\hat n_{d \beta} - \hat n_{d \overline\beta}\right) \frac{1}{2} c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{q \beta}\right\} + \frac{1}{2}K \sum_{k<\Lambda_N}\left\{\left(\hat n_d -1\right)\frac{1}{2}c^\dagger_{k\beta}c_{q\beta} + \right.\right.\\
+\left.\left.c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{k\overline\beta}c_{q\beta}\right\}\right] + \text{h.c.}~.
 \end{aligned}\end{equation}
- To allow the calculation of hole and particle energies on an equal footing, we will make a transformation at the bare model itself:
- \begin{equation}\begin{aligned}
-\sum_{k\sigma} \epsilon_k \hat n_{k\sigma} &= \sum_{k\sigma} \epsilon_k \hat \tau_{k\sigma} + \mathcal{C}\\
-\end{aligned}\end{equation}
-where \(\tau \equiv \hat n - \frac{1}{2}\) and \(\mathcal{C}\) is non-dynamic and will hence be dropped. This transforms the diagonal part \(\mathcal{H}^D\). Eq.~\ref{diag} becomes
+
+\section{Calculation of renormalisation}
+\subsection{Renormalisation of the impurity energy \(\epsilon_d\)}
+The coupling \(\epsilon_d\) is renormalised by three kinds of vertices: \(V^2\), \(J^2\) and \(K^2\). We now consider these processes in order. We define \(\sum_q \hat n_{q\beta} = \sum_q \left( 1 - \hat n_{q\beta} \right) \equiv n_j\) as the number of states being decoupled in either the particle or the hole sectors at the \(j^\text{th}\) RG step.
+
+The renormalisation arising from the first kind of terms, in the particle sector, is
 \begin{equation}\begin{aligned}
-\mathcal{H}_D = \epsilon_q \tau_{q\beta} + 2J_z S^z_d s^z_q  + H_{imp}\\
+	\sum_{q\beta}c^\dagger_{q\beta}c_{d\beta}\frac{V^2}{\omega - H_D}c^\dagger_{d\beta}c_{q\beta} = \sum_{q\beta}V^2 \hat n_{q\beta} \left( 1 - \hat n_{d\beta} \right)\left( \frac{1-\hat n_{d \overline\beta }}{\omega - E_0} + \frac{\hat n_{d \overline\beta}}{\omega^\prime - E_1}\right) = V^2 n_j\sum_{\beta}\left( 1 - \hat n_{d\beta} \right)\left( \frac{1-\hat n_{d \overline\beta }}{\omega - E_0} + \frac{\hat n_{d \overline\beta}}{\omega^\prime - E_1}\right)
 \end{aligned}\end{equation}
-The entire off-diagonal piece can be split into 6 parts:
+\(q\) runs over the momentum states that are being decoupled at this RG step: \(|q| = \Lambda_j\). \(E_{1,0}\) are the diagonal parts of the Hamiltonian at \(\hat n_{d\overline \beta}=0,1\) respectively. The kinetic energy of the diagonal part is always \(\frac{D}{2}\), because we are either exciting the ground state at energy \(-\frac{D}{2}\) to an excited state at energy \(\frac{D}{2}\). Also, \(\hat n_{d\beta}=1\) because of the \(c^\dagger_{d\beta}\) in front of the Greens function. We assume here that we scatter starting from a state in which \(s_q^z = C_q^z = 0\). That is, \(\left<\hat n_{q \uparrow}\right> = \left<\hat n_{q \downarrow}\right> = \frac{1}{2}\). Applying \(c_{q\beta}\) on such a state leaves us with \(C^z = - \frac{1}{2}\) and \(s^z_q = \frac{1}{2}\overline\beta\). We also know that
 \begin{equation}\begin{aligned}
-	\mathcal{H}_X &= \underbrace{V_1^* c^\dagger_{d\beta}c_{q\beta}\hat n_{d\overline\beta}}_{T^\dagger_1 c_{q\beta}} + \overbrace{V_0^* c^\dagger_{d\beta}c_{q\beta}\left(1 - \hat n_{d\overline\beta}\right)}^{T^\dagger_2 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right) c^\dagger_{k\beta}c_{q\beta}}_{T^\dagger_3 c_{q\beta}} \\
-	       &- \overbrace{\sum_{k<\Lambda_N}J^z_1 \hat n_{d\overline\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{k\beta}c_{q\beta}}^{T^\dagger_4 c_{q\beta}} + \underbrace{\sum_{k<\Lambda_N}J^t c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{q \beta}}_{T^\dagger_5 c_{q\beta}} + \overbrace{J^t c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{q\overline\beta}c_{q \beta}}^{T^\dagger_6 c_{q\beta}} + \text{h.c.}
+	\hat n_{d\beta}=1,
+	\begin{cases}
+		\hat n_{d\overline\beta}=0 &\implies S_d^z = \frac{1}{2}\beta, C_d^z = 0, \epsilon_d\left(\hat n_{d\uparrow} - \hat n_{d \downarrow}\right)^2 = \epsilon_d\\	
+		\hat n_{d\overline\beta}=1 &\implies S_d^z = 0, C_d^z = \frac{1}{2}, \epsilon_d\left(\hat n_{d\uparrow} - \hat n_{d \downarrow}\right)^2 = 0
+	\end{cases}
 \end{aligned}\end{equation}
-The various parts of the off-diagonal piece are
+Combining all this, we can write \(E_1 = \frac{D}{2} - \frac{K}{4}\) and \(E_0 = \frac{D}{2} + \epsilon_d - \frac{J}{4}\). In order to relate \(\omega\) with \(\omega^\prime\), we will replace these quantum fluctuation scales by the current renormalised values of the diagonal part of the initial state from which we started scattering:
 \begin{equation}\begin{aligned}
-	T_1 &= V_1 c_{d\beta}\hat n_{d\overline\beta}\\
-	T_2 &= V_0 c_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)\\
-	T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right) c_{k\beta}\\
-	T_4 &= -\sum_{k<\Lambda_N}J^z_1 \hat n_{d\overline\beta}\left(1 - \hat n_{d\beta}\right) c_{k\beta}\\
-	T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\overline\beta}c_{d\beta}c_{k\overline\beta}
+	\omega = -\frac{D}{2}, \omega^\prime = -\frac{D}{2} + \epsilon_d \implies \omega^\prime = \omega + \epsilon_d
 \end{aligned}\end{equation}
-\subsection{Calculation of renormalization in particle sector}
-We will first look at the renormalization of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The renormalization in the particle sector (\(\hat n_{q\beta}=1\)) is of the form
+Substituting the values of \(E_{0,1}\) and \(\omega^\prime\), we get
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Vp}
+	V^2 n_j\sum_{\beta}\left( 1 - \hat n_{d\beta} \right)\left( \frac{1-\hat n_{d \overline\beta }}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}} + \frac{\hat n_{d \overline\beta}}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}}\right)
+\end{aligned}\end{equation}
+
+Performing a similar calculation for the hole sector gives the contribution:
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Vh}
+	V^2 n_j\sum_{\beta}\hat n_{d\beta}\left( \frac{1-\hat n_{d \overline\beta }}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} + \frac{\hat n_{d \overline\beta}}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}}\right)
+\end{aligned}\end{equation}
+
+We now come to the second type of terms: spin-spin. We first look at the particle sector:
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Jpp}
+	\frac{J^2}{4}\sum_{q\beta}c^\dagger_{d\overline\beta}c_{d\beta}c^\dagger_{q\beta}c_{q\overline\beta} \frac{1}{\omega - H_D}c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{q\overline\beta}c_{q\beta} = \frac{J^2}{4} n_j\frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{\beta}\hat n_{d\overline\beta}\left( 1 - \hat n_{d\beta} \right)
+\end{aligned}\end{equation}
+The diagonal part in the denominator was simple to deduce in this case, because the nature of the scattering requires the spins \(S_d^z\) and \(s_q^z\) to be anti-parallel. In the hole sector, we have
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Jph}
+	\frac{J^2}{4} n_j\frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{\beta}\hat n_{d\beta}\left( 1 - \hat n_{d\overline\beta} \right)
+\end{aligned}\end{equation}
+
+The final kind of scattering is the \(K^2\) type. Similar to the \(J^2\) term, we get the following contribution:. 
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Kpp}
+	\frac{K^2}{4}\sum_{q\beta}c^\dagger_{q\beta}c^\dagger_{q\overline\beta}c_{d\overline\beta}c_{d\beta} \frac{1}{\omega - H_D}c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{q\overline\beta}c_{q\beta} = \frac{K^2}{2} n_j\frac{1}{\omega - \frac{D}{2} + \frac{K}{4}} \left(1 - \hat n_{d \uparrow}\right) \left( 1 - \hat n_{d \downarrow} \right)
+\end{aligned}\end{equation}
+in the particle sector, and
+\begin{equation}\begin{aligned}
+	\label{ren_ed_Kph}
+	\frac{K^2}{2} n_j\frac{1}{\omega - \frac{D}{2} + \frac{K}{4}} \hat n_{d\uparrow}\hat n_{d \downarrow}
+\end{aligned}\end{equation}
+in the hole sector.
+
+We now have all possible renormalisation to the impurity energy \(\epsilon_d\). To actually compute the renormalisation, we will first calculate the renormalisation in the energies \(\epsilon_0, \epsilon_1\) and \(\epsilon_2\) of the impurity states \(\ket{\hat n_d = 0}, \ket{\hat n_d = 1}, \ket{\hat n_d = 2}\) respectively. The renormalisation of these states are given by the following terms:
+\begin{itemize}
+	\item \(\Delta \epsilon_0\) is given by the renormalisation of the term \(\left(1 - \hat n_{d\uparrow}\right)\left(1 - \hat n_{d \downarrow}\right)\)
+	\item \(\Delta \epsilon_1\) is given by the renormalisation of either \(\left(1 - \hat n_{d\uparrow}\right)\hat n_{d \downarrow}\) or \(\left(1 - \hat n_{d\downarrow}\right)\hat n_{d \uparrow}\)
+	\item \(\Delta \epsilon_2\) is given by the renormalisation of \(\hat n_{d\uparrow}\hat n_{d \downarrow}\)
+\end{itemize}
+From eqs.~\ref{ren_ed_Vp}, \ref{ren_ed_Vh}, \ref{ren_ed_Jpp}, \ref{ren_ed_Jph}, \ref{ren_ed_Kpp} and \ref{ren_ed_Kph}, we write
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_0 = \Delta \epsilon_2 = \frac{2V^2 n_j}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}} + \frac{K^2 n_j/2}{\omega - \frac{D}{2} + \frac{K}{4}}, && \Delta \epsilon_1 = \frac{2V^2 n_j}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} + \frac{J^2 n_j/2}{\omega - \frac{D}{2} + \frac{J}{4}}
+\end{aligned}\end{equation}
+We had started with a particle-hole symmetric Hamiltonian \((2\epsilon_d + U = 0)\); the fact that \(\Delta \epsilon_0 = \Delta \epsilon_2\) means the RG transformation has preserved that symmetry. The renormalisation of \(\epsilon_d\) is simply the renormalisation in the energy difference between the singly-occupied and vacant impurity levels: \(\Delta \epsilon_d = \Delta \epsilon_1 - \Delta \epsilon_0\). This gives our first RG equation:
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d = 2V^2 n_j\left(\frac{1}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} - \frac{1}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}}\right) + \frac{n_j}{2}\left(\frac{J^2}{\omega - \frac{D}{2} + \frac{J}{4}} - \frac{K^2}{\omega - \frac{D}{2} + \frac{K}{4}}\right)
+\end{aligned}\end{equation}
+
+\subsection{Renormalisation of the hybridisation \(V\)}
+Renormalisation of \(V\) happens through two kinds of processes: \(VJ\) and \(VK\). In order words, the two vertices involve one single-particle scattering and one spin or isospin exchange respectively. We first look at the vertices that involve a spin-exchange scattering.
+
+Within spin-exchange, the scattering can be either via \(S_d^z\) or through \(S_d^\pm\). For the first kind, we have the following contribution in the particle sector:
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} Vc^\dagger_{q\beta} c_{d\beta} \frac{1}{\omega - H_D}\frac{1}{4}J \sum_{k} \left(\hat n_{d\beta} - \hat n_{d\overline\beta}\right) c^\dagger_{k\beta}c_{q\beta} = \frac{1}{4}V J n_j \frac{1}{\omega^\prime - E} \sum_{k\beta} \left(1 - \hat n_{d\overline\beta}\right) c_{d\beta}c^\dagger_{k\beta}
+\end{aligned}\end{equation}
+Note that the \(c_{d\beta}\) in front of the Greens function resulted in \(\left(\hat n_{d\beta} - \hat n_{d\overline\beta}\right) \to \left(1 - \hat n_{d\overline\beta}\right)\). The intermediate state is characterised by \(\hat n_{d\beta} = 1 - \hat n_{d \overline \beta} = 1\), which means that \(E = \frac{D}{2} + \epsilon_d - \frac{J}{4}\). Moreover, \(\omega^\prime = -\frac{D}{2} + \epsilon_d = \omega + \epsilon_d\). Therefore, the renormalisation becomes
+\begin{equation}\begin{aligned}
+	-\frac{n_j}{4}V J \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta}\left(1 - \hat n_{d\overline\beta}\right) c^\dagger_{k\beta} c_{d\beta}
+\end{aligned}\end{equation}
+One can generate another such process by exchanging the single-particle process and the spin-exchange process:
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} \frac{1}{4}J \sum_{k} \left(\hat n_{d\beta} - \hat n_{d\overline\beta}\right) c^\dagger_{q\beta}c_{k\beta} \frac{1}{\omega - H_D} V c^\dagger_{d\beta} c_{q\beta}
+\end{aligned}\end{equation}
+This is simply the Hermitian conjugate of the previous contribution. Combining this with the previous then gives
+\begin{equation}\begin{aligned}
+	-\frac{n_j}{4}V J \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta}\left(1 - \hat n_{d\overline\beta}\right)\left(c^\dagger_{d\beta} c_{k\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+
+We now consider the spin-exchange processes involving \(S_d^\pm\):
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} Vc^\dagger_{q\beta} c_{d\beta} \frac{1}{\omega - H_D}\frac{1}{2}J \sum_{k} c^\dagger_{d\beta}c_{d\overline\beta} c^\dagger_{k\overline\beta}c_{q\beta} = \frac{1}{2}V J n_j \frac{1}{\omega^\prime - E} \sum_{k\beta} \left(1 - \hat n_{d\beta}\right) c_{d\overline\beta}c^\dagger_{k\overline\beta}
+\end{aligned}\end{equation}
+We again have \(E = \frac{D}{2} + \epsilon_d - \frac{J}{4}\) and \(\omega^\prime = \omega + \epsilon_d\), which gives
+\begin{equation}\begin{aligned}
+	-\frac{1}{2}V J n_j \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta} \left(1 - \hat n_{d\beta}\right)c^\dagger_{k\overline\beta} c_{d\overline\beta}
+\end{aligned}\end{equation}
+Combining this with the Hermitian conjugate obtained from exchanging the processes gives
+\begin{equation}\begin{aligned}
+	-\frac{1}{2}V J n_j \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta} \left(1 - \hat n_{d\beta}\right)\left(c^\dagger_{k\overline\beta} c_{d\overline\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+
+We now look at the hole sector. The first term gives
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} V c^\dagger_{d\beta} c_{q\beta} \frac{1}{\omega - H_D}\frac{1}{4}J \sum_{k} \left(\hat n_{d\beta} - \hat n_{d\overline\beta}\right) c^\dagger_{q\beta}c_{k\beta} = -\frac{1}{4}V J n_j \frac{1}{\omega^\prime - E} \sum_{k\beta} \hat n_{d\overline\beta} c^\dagger_{d\beta}c_{k\beta}
+\end{aligned}\end{equation}
+Using identical arguments as above, we find \(E = \frac{D}{2} + \epsilon_d - \frac{J}{4}\) and \(\omega^\prime = \omega + \epsilon_d\), so the hole contribution becomes
+\begin{equation}\begin{aligned}
+	-\frac{n_j}{4}V J \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta}\hat n_{d\overline\beta} c^\dagger_{d\beta} c_{k\beta}
+\end{aligned}\end{equation}
+The other hole contributions can be similarly obtained; the total renormalisation to \(V\) from \(VJ\) processes are
+\begin{equation}\begin{aligned}
+	-\frac{3n_j}{4}V J \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} \sum_{k\beta}\left(c^\dagger_{d\beta} c_{k\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+
+We now look at the \(VK\) processes. The first one is
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} Vc^\dagger_{q\beta} c_{d\beta} \frac{1}{\omega - H_D}\frac{1}{4}K \sum_{k} \left(\hat n_{d} - 1\right) c^\dagger_{k\beta}c_{q\beta} = -\frac{1}{4}V K n_j \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}  \hat n_d\sum_{k\beta} c^\dagger_{k\beta}c_{d\beta}
+\end{aligned}\end{equation}
+The exchanged process again gives the Hermitian conjugate, so the combined contribution is
+\begin{equation}\begin{aligned}
+	-\frac{1}{4}V K n_j \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}  \hat n_d\sum_{k\beta} \left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right)
+\end{aligned}\end{equation}
+
+The isospin-flip vertex gives
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} V c^\dagger_{q\beta} c_{d\beta} \frac{1}{\omega - H_D}\frac{1}{2}K \sum_{k} c^\dagger_{d\beta}c^\dagger_{d\overline\beta} c_{k\overline\beta} c_{q\beta} = \frac{1}{2}K V n_j \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}} \sum_{k\beta} \left(1 - \hat n_{d\beta}\right) c^\dagger_{d\overline\beta}c_{k\overline\beta}~.
+\end{aligned}\end{equation}
+Combining with Hermitian conjugate gives
+\begin{equation}\begin{aligned}
+	\frac{1}{2}K V n_j \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}} \sum_{k\beta} \left(1 - \hat n_{d\beta}\right) \left(c^\dagger_{d\overline\beta}c_{k\overline\beta} + \text{h.c.}\right)~.
+\end{aligned}\end{equation}
+In the hole sector, we have
+\begin{equation}\begin{aligned}
+	\sum_{q\beta} Vc^\dagger_{d\beta} c_{q\beta} \frac{1}{\omega - H_D}\frac{1}{4}K \sum_{k} \left(\hat n_{d} - 1\right) c^\dagger_{q\beta}c_{k\beta} = \frac{1}{4}V K n_j \frac{1}{\omega - \frac{D}{2} + \frac{K}{4}}  \left(\hat n_d - 2\right)\sum_{k\beta} c^\dagger_{d\beta}c_{k\beta}
+\end{aligned}\end{equation}
+
+
+
+
+\subsection{Calculation of renormalisation in particle sector}
+We will first look at the renormalisation of \(\epsilon_d\), \(U\) and the interaction couplings for the lower shell electrons, so we can ignore \(T_6\) for the time-being. The renormalisation in the particle sector (\(\hat n_{q\beta}=1\)) is of the form
 \begin{equation}\begin{aligned}
 	c^\dagger_{q\beta}T \eta
 \end{aligned}\end{equation}
@@ -256,8 +375,8 @@ Defining \(\xi_i \equiv \omega_i - E_i^0\) and evaluating the terms \(T_i T_j^\d
 	&-\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}\left(c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{k^\prime\beta} + \text{h.c.}\right)
 \end{aligned}\end{equation}
 The indices \(k\) and \(k^\prime\) are being summed over, wherever they appear.
-\subsection{Calculation of renormalization in hole sector}
-The renormalization in the particle sector (\(\hat n_{q\beta}=0\)) is of the form
+\subsection{Calculation of renormalisation in hole sector}
+The renormalisation in the particle sector (\(\hat n_{q\beta}=0\)) is of the form
 \begin{equation}\begin{aligned}
 	T^\dagger_{q\beta}c \eta_0^\dagger
 \end{aligned}\end{equation}
@@ -272,7 +391,7 @@ This will be at an energy \(+\epsilon_q\), because the state is occupied. The sc
 	E^1_3 &= \frac{\epsilon_q}{2} + \epsilon_d + \frac{J_z}{2} \\
 \end{aligned}\end{equation}
 
-The renormalization can be computed by calculating \(\sum_{ij} T_i^\dagger T_j\).
+The renormalisation can be computed by calculating \(\sum_{ij} T_i^\dagger T_j\).
 \begin{flalign*}
 	&\sum_{ij} \left(\frac{1}{\omega^\prime_i - E^1_i} + \frac{1}{\omega^\prime - E^1_j}\right) T_i^\dagger T_j\\ 
 	&=\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\overline\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)\\
@@ -323,11 +442,11 @@ The denominators are therefore
 	\xi_3^\prime = \xi_4^\prime = \xi_5^\prime &= \omega - \frac{\epsilon_q}{2} + \frac{J_z}{2} = \xi_3 = \xi_4 = \xi_5\\
 \end{aligned}\end{equation}
 \subsection{Making sense of the various terms}
-We will now look at each of the renormalizations separately. Note that the indices \(k\) and \(k^\prime\) are being summed over, wherever they appear. The first two terms in each sector form a part of the renormalization in \(\epsilon_d\) and \(U\).
+We will now look at each of the renormalisations separately. Note that the indices \(k\) and \(k^\prime\) are being summed over, wherever they appear. The first two terms in each sector form a part of the renormalisation in \(\epsilon_d\) and \(U\).
 \begin{equation}\begin{aligned}
 \frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\overline\beta} \right) + \frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\overline\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)
 \end{aligned}\end{equation}
-We can read off the renormalizations in the doublon, spin and holon states. Note that the spin (\(\hat n_{d}=1\)) are only renormalizedby half, because the other half of the renormalization comes when you decouple the other spin \(\overline\beta\).
+We can read off the renormalisations in the doublon, spin and holon states. Note that the spin (\(\hat n_{d}=1\)) are only renormalised by half, because the other half of the renormalisation comes when you decouple the other spin \(\overline\beta\).
 \begin{equation}\begin{aligned}
 	\Delta E_2 = \frac{|V_1|^2}{\xi^\prime_1}, && \Delta E_1 =\frac{|V_1|^2}{2\xi_1} + \frac{|V_0|^2}{2\xi_2^\prime}, && \Delta E_0 = \frac{|V_0|^2}{\xi_2}
 \end{aligned}\end{equation}
@@ -345,7 +464,7 @@ There we used \(J_0^z = J_1^z = J_z\). From the expressions of \(\xi_i\) and \(\
 \begin{equation}\begin{aligned}
 	\frac{J_z^2}{4\xi_3}\left[\hat n_{d\beta}\left( 1 - \hat n_{d\overline\beta} \right) + \hat n_{d\overline\beta}\left( 1 - \hat n_{d\beta} \right) \right]\left(c_{k^\prime\beta}c^\dagger_{k\beta} + c^\dagger_{k\beta}c_{k^\prime\beta}\right) = \frac{J_z^2}{4\xi_3}\left[\hat n_{d} - 2\hat n_{d\beta}\hat n_{d\overline\beta} \right]\delta_{kk^\prime}
 \end{aligned}\end{equation}
-This will further renormalize \(\epsilon_d \hat n_d\) and \(U\hat n_{d\beta}\hat n_{d\overline\beta}\), now at \(J^2\) order:
+This will further renormalise \(\epsilon_d \hat n_d\) and \(U\hat n_{d\beta}\hat n_{d\overline\beta}\), now at \(J^2\) order:
 \begin{equation}\begin{aligned}
 	\label{edU2}
 	\Delta \epsilon_d &= \frac{J_z^2}{4\xi_3}\delta_{kk^\prime}\\
@@ -355,12 +474,12 @@ We next look at the \(J_z V\) terms:
 \begin{equation}\begin{aligned}
 	-\frac{J_z}{4}\left[\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\left(1 - \hat n_{d\overline\beta}\right)V_0 c^\dagger_{k\beta}c_{d\beta} + \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\hat n_{d\overline\beta} V_1 c^\dagger_{k\beta}c_{d\beta}\right] + \text{h.c.}
 \end{aligned}\end{equation}
-The first term in the box bracket renormalizes \(V_0 c^\dagger_{k\beta}c_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)\), while the second term renormalizes \(V_1 c^\dagger_{k\beta}c_{d\beta}\hat n_{d\overline\beta}\). Because this renormalizes only one spin component (\(\beta\)), the other spin component will get renormalized when we decouple \(\overline\beta\), and so we attribute only half of this to the total renormalization.
+The first term in the box bracket renormalises \(V_0 c^\dagger_{k\beta}c_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)\), while the second term renormalises \(V_1 c^\dagger_{k\beta}c_{d\beta}\hat n_{d\overline\beta}\). Because this renormalises only one spin component (\(\beta\)), the other spin component will get renormalised when we decouple \(\overline\beta\), and so we attribute only half of this to the total renormalisation.
 \begin{equation}\begin{aligned}
 	\Delta V_0 &= -\frac{1}{2}\frac{J_z}{2}V_0\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
 	\Delta V_1 &= -\frac{1}{2}\frac{J_z}{2}V_1\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi_3}\right)
 \end{aligned}\end{equation}
-where we used \(\xi_4^\prime = \xi_3\). The terms with \(J_t V\) also renormalize the same terms. Combining this with the previous renormalization gives the total renormalization of \(V_0\) and \(V_1\):
+where we used \(\xi_4^\prime = \xi_3\). The terms with \(J_t V\) also renormalise the same terms. Combining this with the previous renormalisation gives the total renormalisation of \(V_0\) and \(V_1\):
 \begin{equation}\begin{aligned}
 	\label{V}
 	\Delta V_0 &= -\left(\frac{J_z}{4}V_0 + J_t V_0\right) \left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\\
@@ -374,12 +493,12 @@ The remaining terms are all of order \(J^2\). First we look at the \(J_t^2\) ter
 &=\frac{1}{\xi_3}J_t^2 c^\dagger_{k\overline\beta} c_{k^\prime\overline\beta}\left[\left( 1 - \hat n_{d\overline\beta} \right) \hat n_{d\beta} - \left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta}\right]  + \delta_{kk^\prime} \frac{1}{\xi_3}J_t^2\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta}\\
 &=-\frac{1}{\xi_3}2J_t^2 c^\dagger_{k\overline\beta} c_{k^\prime\overline\beta}\frac{\hat n_{d\overline\beta} - \hat n_{d\beta}}{2}  + \delta_{kk^\prime} \frac{1}{\xi_3}J_t^2\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta}
 \end{aligned}\end{equation}
-In the second step, we used \(\xi_5^\prime = \xi_5 = \xi_3\) and \(c_k c^\dagger_{k^\prime} = \delta_{kk^\prime} - c^\dagger_{k^\prime}c_k\). The first term in the final expression renormalizes half of the Ising Kondo coupling \(J_z S^z_d s^z\), the other half will be renormalized when we decouple \(q\overline\beta\).
+In the second step, we used \(\xi_5^\prime = \xi_5 = \xi_3\) and \(c_k c^\dagger_{k^\prime} = \delta_{kk^\prime} - c^\dagger_{k^\prime}c_k\). The first term in the final expression renormalises half of the Ising Kondo coupling \(J_z S^z_d s^z\), the other half will be renormalised when we decouple \(q\overline\beta\).
 \begin{equation}\begin{aligned}
 	\label{Jz}
 	\Delta J_z = -\frac{1}{2\xi_3}2J_t^2
 \end{aligned}\end{equation}
-The other term in the final expression renormalizes \(U\) and half of \(\epsilon_d\) (only \(\overline\beta\)).
+The other term in the final expression renormalises \(U\) and half of \(\epsilon_d\) (only \(\overline\beta\)).
 \begin{equation}\begin{aligned}
 	\label{edU3}
 	\Delta \epsilon_d = \frac{1}{2\xi_3}J_t^2 \delta_{kk^\prime}\\
@@ -389,7 +508,7 @@ The remaining terms are those with \(J_z J_t\):
 \begin{equation}\begin{aligned}
 	\left[-\frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{k^\prime\beta}-\frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)\frac{J_t J^z_1}{2}c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{k^\prime\beta}\right] + \text{h.c.}
 \end{aligned}\end{equation}
-They renormalize the transverse Kondo coupling. Noting that \(\xi_5 = \xi_4^\prime = \xi_5^\prime = \xi_3\), we get
+They renormalise the transverse Kondo coupling. Noting that \(\xi_5 = \xi_4^\prime = \xi_5^\prime = \xi_3\), we get
 \begin{equation}\begin{aligned}
 	\label{Jt}
 	\Delta J_t = -\frac{1}{\xi_3}J_t J^z_0
@@ -449,7 +568,7 @@ Setting \(J_z = J_t = \frac{1}{2} J\) makes the interaction \(SU(2)\) symmetric;
 \begin{equation}\begin{aligned}
 \Delta J = -\frac{1}{\xi_3}J^2 = -J^2\frac{1}{\omega - \frac{\epsilon_q}{2} + \frac{J_z}{2}}
 \end{aligned}\end{equation}
-For low quantum fluctuations we can ignore the renormalization and replace \(\omega\) with the bare initial energy value \(-\frac{1}{2}\epsilon_q\).
+For low quantum fluctuations we can ignore the renormalisation and replace \(\omega\) with the bare initial energy value \(-\frac{1}{2}\epsilon_q\).
 \begin{equation}\begin{aligned}
 \Delta J = - J^2 \frac{1}{-\epsilon_q + \frac{1}{4}J}
 \end{aligned}\end{equation}
@@ -461,7 +580,7 @@ This is the Kondo model one-loop form.
 
 \section{Anderson-Kondo (charge) model URG}
 Performing the Schrieffer-Wolff transformation on the SIAM generates four types of terms.
-The simplest terms are ones that renormalize the impurity scales \(\epsilon_d\) and \(U\).
+The simplest terms are ones that renormalise the impurity scales \(\epsilon_d\) and \(U\).
 The next are the potential scattering terms that describe interactions between mobile electrons with the impurity simply acting as a stationary potential.
 The third term is the familiar Kondo model interaction terms that involve a Heisenberg-like interaction between the impurity spin \(S_d^z = \frac{1}{2}\left(\hat n_{d\uparrow} - \hat n_{d\downarrow}\right)\) and the global spin of the mobile electrons \(\frac{1}{2}\sum_{kk^\prime \alpha\beta}c^\dagger_{k\alpha}\vec\sigma_{\alpha\beta}c_{k^\prime\beta}\).
 The fourth term is the interactions that modify the charge of either entity by 2, \(c^\dagger_{k\alpha}c^\dagger_{k^\prime\overline\alpha}c_{d\alpha}c_{d\overline\alpha}\).
@@ -477,8 +596,7 @@ and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction elect
 The various components of the isospin are
 \begin{equation}\begin{aligned}
 	C^z 
-	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^z_{\sigma\sigma} \psi^{k^\prime}_\sigma = \frac{1}{2}\sum_{kk^\prime}\left(c^\dagger_{k\uparrow}c_{k^\prime \uparrow} - c_{k^\prime\downarrow}c^\dagger_{k \downarrow}\right) = \frac{1}{2}\sum_{kk^\prime}\left(c^\dagger_{k\uparrow}c_{k^\prime \uparrow} + c^\dagger_{k\downarrow}c_{k^\prime \downarrow} - \delta_{kk^\prime}\right)\\
-	&= \frac{1}{2}\sum_{kk^\prime\sigma}\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
+	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^z_{\sigma\sigma} \psi^{k^\prime}_\sigma = \frac{1}{2}\sum_{kk^\prime\sigma}\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
 	C^x 
 	&= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^x_{\sigma\overline\sigma} \psi^{k^\prime}_{\overline\sigma} = \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k\uparrow}c^\dagger_{k^\prime \downarrow} + c_{k\downarrow}c_{k^\prime \uparrow} \right) = \sum_{kk^\prime\sigma} \frac{\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\overline\sigma} + \text{h.c.} \right) \\
 	C^y 
@@ -527,8 +645,8 @@ The \(K_z\) part of \(\mathcal{H}_X\) is obtained by noting:
 		      &= \frac{1}{2}\left(c^\dagger_{q\uparrow}c_{k \uparrow} + c^\dagger_{k\uparrow}c_{q \uparrow} + c^\dagger_{q \downarrow}c_{k\downarrow} + c^\dagger_{k\downarrow}c_{q\downarrow}\right)\\
 	&= \frac{1}{2}\sum_{\sigma}\left(c^\dagger_{q\sigma}c_{k\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
-The calculation of renormalization will proceed similar to the spin-Kondo Anderson URG.
-We will again separate the off-diagonal piece \(\mathcal{H}_d^X\) into separate parts \(T_i\), calculate the renormalization in particle and hole sectors, and then finally relate the \(\omega_i\) using their bare values.
+The calculation of renormalisation will proceed similar to the spin-Kondo Anderson URG.
+We will again separate the off-diagonal piece \(\mathcal{H}_d^X\) into separate parts \(T_i\), calculate the renormalisation in particle and hole sectors, and then finally relate the \(\omega_i\) using their bare values.
 The off-diagonal parts for this problem are
 \begin{equation}\begin{aligned}
 	T_1 &= V_1 c_{d\beta}\hat n_{d\overline\beta}\\
@@ -537,8 +655,8 @@ The off-diagonal parts for this problem are
 	T_4 &= -K_z^0 \left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)c_{k\beta}\\
 	T_5 &= K_t c^\dagger_{k\overline\beta}c_{d\overline\beta}c_{d\beta}\\
 \end{aligned}\end{equation}
-\subsection{Calculation of renormalization in particle sector}
-The renormalization in this sector is
+\subsection{Calculation of renormalisation in particle sector}
+The renormalisation in this sector is
 \begin{equation}\begin{aligned}
 	c^\dagger_{q\beta} T \eta
 \end{aligned}\end{equation}
@@ -560,8 +678,8 @@ The intermediate energies, \(E_i^0\), are
 	E_5^0 &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - K_z\\
 \end{aligned}\end{equation}
 The contribution of \(k\overline\beta\) in the denominators of \(E^0_{3,4,5}\) has been considered.
-\subsection{Calculation of renormalization in hole sector}
-The renormalization in the hole sector is given by
+\subsection{Calculation of renormalisation in hole sector}
+The renormalisation in the hole sector is given by
 \begin{equation}\begin{aligned}
 	T^\dagger c_{q\beta}\eta_0^\dagger
 \end{aligned}\end{equation}
