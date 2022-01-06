@@ -2,7 +2,7 @@
 \label{urg_canonical}
 \section{Poor man's scaling (PMS)}
 \subsection{Formalism}
-We first describe the formalism of the poor man's scaling (PMS) method, first formulated by Anderson \cite{Anderson}. The problem is defined as
+We first describe the formalism of the poor man's scaling (PMS) method, first formulated by Anderson \cite{anderson1970}. The problem is defined as
 \begin{equation}\begin{aligned}
 	\label{problem}
 \mathcal{H}\ket{\Psi} = E\ket{\Psi}
@@ -377,7 +377,7 @@ In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = 
 \Delta E_1 &= -\frac{1}{\epsilon_q + \epsilon_d + U} - \frac{1}{\epsilon_q - \epsilon_d}\\
 \Delta E_2 &= -\frac{1}{\epsilon_q - \epsilon_d - U}\\
 \end{aligned}\end{equation}
-These results are also obtained in ref.~\cite{hewson}. The complete process is depicted in fig.~\ref{pmsflow}.
+These results are also obtained in ref.~\cite{hewson1993}. The complete process is depicted in fig.~\ref{pmsflow}.
 \begin{figure}
     \centering
     \includegraphics[scale=0.34]{pms-flowchart.png}
@@ -391,7 +391,7 @@ These results are also obtained in ref.~\cite{hewson}. The complete process is d
 \item In practise, PMS replaces \(E-V_0\) with the diagonal part of the initial state at the current step of the RG. We are talking about the energy of the initial state, not the intermediate state. This is because, from eq.~\ref{problem}, \(E\) is the energy of the initial state on which \(V_\pm\) act. 
 \item The ideal solution would have been to substitute the exact energy and the total scattering term \(V\), but since we do not know \(E\) and keeping the \(V\) would make the thing untractable, we use our current best guess (renormalised diagonal part). As the RG flows, both \(E_j\) and \(V\) flow, such that at the fixed point, \(V\) becomes zero (scattering terms get removed) and \(E_j\) morphs into the exact \(E\). 
 \item In practise, URG replaces the \(\hat \omega\) with a guess for the final energy \(E\). This however ignores the renormalization of \(\hat \omega\). A better approach would be to replace it with \(E_j\), following PMS. That would act like the one-particle renormalization of \(\hat \omega\).
-\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{Anderson} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
+\item PMS usually drops any diagonal component of the scattering from the denominator. For example, in the PMS of the Kondo model by Anderson \cite{anderson1970} or that of the anisotropic power law Kondo model by Chenge et.al \cite{tatha}, they do not keep the term \(J_z S_d^z s^z\) in the denominator although it is number(spin) conserving. Such terms are kept in the denominator of the URG though. It must be mentioned however that ref.~\cite{raja} \textit{does} bring a diagonal charge-charge interaction in the denominator in the PMS of the extended Anderson model.
 \end{itemize}
 \section{Schrieffer-Wolff transformation (SWT)}\label{sc_wl_t}
 \subsection{Formalism}
@@ -724,7 +724,7 @@ This will give
 \end{aligned}\end{equation}
 This proves that the family of Hamiltonians \(\mathcal{H}(l)\) satisfy the flow equation eq.~\ref{flow}. \(\eta(l)\) is referred to as the generator of the flow equation. It is chosen so as to reduce the off-diagonal part of the Hamiltonian, either progressively or in one shot. In Schrieffer-Wolff transformation, the transformation is one-shot, and the \(\eta\) there is the \(S\) that sits on top of the exponential in the unitary transformation. In URG, the generator to decouple one electron \(q\beta\) is \(\eta^\dagger_{q\beta} - \eta_{q\beta}\).
 
-In Continuous unitary transformation (CUT) RG \cite{glazek-wilson}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against the parameter \(l\). The canonical choice of the generator is \(\eta(l) = \left[\mathcal{H}_d,\mathcal{H}_X\right]\), where \(\mathcal{H}_d\) is the diagonal part of the Hamiltonian and \(\mathcal{H}_X = \mathcal{H} - \mathcal{H}_d\) is the off-diagonal part of the Hamiltonian. Therefore,
+In Continuous unitary transformation (CUT) RG \cite{glazek1993renormalization}, we progressively block-diagonalize the Hamiltonian by removing off-diagonal terms that are farthest from the diagonal, through infinitesimal unitary transformations. The change is described as a flow against the parameter \(l\). The canonical choice of the generator is \(\eta(l) = \left[\mathcal{H}_d,\mathcal{H}_X\right]\), where \(\mathcal{H}_d\) is the diagonal part of the Hamiltonian and \(\mathcal{H}_X = \mathcal{H} - \mathcal{H}_d\) is the off-diagonal part of the Hamiltonian. Therefore,
 \begin{equation}\begin{aligned}
 	\label{cut}
 	\frac{\:\mathrm{d}\mathcal{H}}{\:\mathrm{d}l} = \left[\left[\mathcal{H}_d(l),\mathcal{H}_X(l)\right],\mathcal{H}(l)\right]

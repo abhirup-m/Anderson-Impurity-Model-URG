@@ -132,7 +132,7 @@ If we define the argument of a complex number \(z(r,\phi) = r e^{i\phi}\) as \(a
 \end{aligned}\end{equation}
 
 \section{The Friedel sum rule}
-The Friedel sum rule \cite{Friedel,langer,Langreth,hewson} is a very useful theorem that operates in the domain of impurity problems. In the presence of an impurity that interacts with the electrons of the system, the total number of particles in the ground state will generally be different from that in the absence of the impurity. This difference is given directly by the total scattering phase shift suffered by the conduction electrons at the Fermi surface as they scatter off the impurity. The more general version states that the difference in the number of particles is actually related to the scattering local \(S-\)matrix (against the impurity) of the conduction electrons at the Fermi surface. Here we will see a derivation of this theorem.
+The Friedel sum rule \cite{Friedel_1958,langer1961friedel,langreth1966} is a very useful theorem that operates in the domain of impurity problems. In the presence of an impurity that interacts with the electrons of the system, the total number of particles in the ground state will generally be different from that in the absence of the impurity. This difference is given directly by the total scattering phase shift suffered by the conduction electrons at the Fermi surface as they scatter off the impurity. The more general version states that the difference in the number of particles is actually related to the scattering local \(S-\)matrix (against the impurity) of the conduction electrons at the Fermi surface. Here we will see a derivation of this theorem.
 
 Consider a Hamiltonian
 \begin{equation}\begin{aligned}
@@ -195,7 +195,7 @@ The change in the total number of states is obtained simply by integrating the d
 \begin{equation}\begin{aligned}
 	\Delta N = \int_{-\infty}^{\epsilon_F}d\omega\frac{1}{2i\pi}\frac{\partial{}}{\partial{\omega}} \text{Trace}\left[\ln S(\omega)\right] = \frac{1}{2\pi i}\text{Trace} \ln \frac{S(\epsilon_F)}{S(-\infty)}
 \end{aligned}\end{equation}
-For \(\omega \to -\infty\), we can write \(\omega - \mathcal{H} \to \omega - H_0\) such that \(G(\omega) \to G_0(\omega)\) and hence \(S(-\infty) \to 1\). On making this substitution, we derive the generalised Friedel sum rule \cite{langer}
+For \(\omega \to -\infty\), we can write \(\omega - \mathcal{H} \to \omega - H_0\) such that \(G(\omega) \to G_0(\omega)\) and hence \(S(-\infty) \to 1\). On making this substitution, we derive the generalised Friedel sum rule \cite{langer1961friedel}
 \begin{equation}\begin{aligned}
 	\Delta N &= \frac{1}{2\pi i}\text{Trace} \left[\ln S(\epsilon_F)\right]
 \end{aligned}\end{equation}
@@ -445,7 +445,7 @@ To study the interactions of the spin degrees of freedom, it becomes necessary t
 \end{aligned}\end{equation}
 \(S_i = \sum_{\alpha \beta} c^\dagger_{d\alpha} \sigma^i_{\alpha\beta} c_{d \beta}\). \(s_i =\sum_{k k^\prime\alpha \beta} c^\dagger_{k\alpha} \sigma^i_{\alpha\beta} c_{k^\prime \beta}\).  Note that the impurity onsite energy has also been dropped because we are in the subspace of constant \(\hat n_d\;(= 1)\). 
 \subsection{Derivation of the Kondo Hamiltonian}
-Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\uparrow} \neq \hat n_{d\downarrow}\)) from the doublon and holon subspaces (\(\hat n_{d\uparrow} = \hat n_{d\downarrow}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{Schrieffer_Wolff}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} is shown in \ref{SWT from URG}.
+Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\uparrow} \neq \hat n_{d\downarrow}\)) from the doublon and holon subspaces (\(\hat n_{d\uparrow} = \hat n_{d\downarrow}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{schrieffer1966}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} is shown in \ref{SWT from URG}.
 The space of the impurity electron can be divided into low energy and high energy subspaces:
 \begin{equation}\begin{aligned}
 \text{low energy (L)} \rightarrow \begin{cases} \ket{\uparrow} \\ \ket{\downarrow} \end{cases}\\
@@ -1939,7 +1939,7 @@ This can be substituted in the Wilson ratio to give
 R = 1 + \sin^2 \delta(0)
 \end{aligned}\end{equation}
 \section{Topological interpretation of Wilson ratio}
-From the Friedel sum rule\cite{langer}, we can relate the phase shift \(\delta(0)\) due to scattering (at the Fermi surface) off a local impurity to the number of electrons bound in the potential well produced by that impurity:
+From the Friedel sum rule\cite{langer1961friedel}, we can relate the phase shift \(\delta(0)\) due to scattering (at the Fermi surface) off a local impurity to the number of electrons bound in the potential well produced by that impurity:
 \begin{equation}\begin{aligned}
 \widetilde N = \frac{1}{2\pi i}\text{Tr }\ln S(0) = \int_\Gamma dz\partial_z \frac{1}{2\pi i}\text{Tr }\ln S(0)
 \end{aligned}\end{equation}
@@ -1973,7 +1973,7 @@ Since the impurity singlet ground state is rotationally invariant, we have \(\de
 R &= 1 + \sin^2 \left(\frac{\pi}{2}\widetilde N\right)\\
   &= 1 + \sin^2 \left(\frac{\pi}{2}\Delta V_L\right)
 \end{aligned}\end{equation}
-We note that this connection between \(R\) and \(\Delta V_L\) has not been obtained in the existing literature thus far. In the unitary limit, \(\delta(0) = \frac{\pi}{2}\), giving \(\Delta V_L = -1 = -\tilde N\) \cite{martin} (i.e., one electronic state from the impurity has been absorbed into the Luttinger volume of the conduction bath), such that \(R = 2\) in this limit. In this way, we see that a change in the topological quantum number \(\tilde N\) causes the well known renormalisation of the Wilson ratio R from its non-interacting value \((1)\) to the value \((2)\) obtained for the local Fermi liquid \cite{nozieres}.
+We note that this connection between \(R\) and \(\Delta V_L\) has not been obtained in the existing literature thus far. In the unitary limit, \(\delta(0) = \frac{\pi}{2}\), giving \(\Delta V_L = -1 = -\tilde N\) \cite{martin_prl_1982} (i.e., one electronic state from the impurity has been absorbed into the Luttinger volume of the conduction bath), such that \(R = 2\) in this limit. In this way, we see that a change in the topological quantum number \(\tilde N\) causes the well known renormalisation of the Wilson ratio R from its non-interacting value \((1)\) to the value \((2)\) obtained for the local Fermi liquid \cite{nozieres_1974}.
 
 \section{Renormalized perturbation theory}
 This is a perturbative expansion of the Hamiltonian in terms of the renormalized interaction \(\widetilde U\), and the second order results obtained from this approach coincide with the phenomenological results at \(T,h \rightarrow 0\)..
@@ -2894,11 +2894,11 @@ We now make the following assumptions:
 With these assumptions, we get the scaling equations similar to the ones obtained previously.
 %\)
 \section{Numerical Renormalization Group Calculation of the symmetric SIAM}
-NRG calculations of the symmetric SIAM were carried out by H. R. Krishnamurthy, Wilkins and Wilson in ref.~\cite{hrk-nrg}. They identified three fixed points in the phase diagram. Two of them, the free-orbital and the local moment, are unstable while the strong-coupling fixed point is stable. These fixed points along with typical RG flows are marked in fig.~\ref{nrg_fp}.
+NRG calculations of the symmetric SIAM were carried out by H. R. Krishnamurthy, Wilkins and Wilson in ref.~\cite{hrk_wilson_1980}. They identified three fixed points in the phase diagram. Two of them, the free-orbital and the local moment, are unstable while the strong-coupling fixed point is stable. These fixed points along with typical RG flows are marked in fig.~\ref{nrg_fp}.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.4\textwidth]{../figures/nrg_fpoints.png}
-	\caption{Schematic diagram of RG flows and fixed points of the symmetric SIAM, as obtained by ref.\cite{hrk-nrg}. The y-axis is the impurity site repulsion \(U = -\frac{1}{2}\epsilon_d\) while the x-axis is the hybridisation parameter \(\Delta \sim \rho V^2\). The abbreviations mark the three fixed-points: FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are described in the text.}
+	\caption{Schematic diagram of RG flows and fixed points of the symmetric SIAM, as obtained by ref.\cite{hrk_wilson_1980}. The y-axis is the impurity site repulsion \(U = -\frac{1}{2}\epsilon_d\) while the x-axis is the hybridisation parameter \(\Delta \sim \rho V^2\). The abbreviations mark the three fixed-points: FO is free-orbital, LM is local moment and SC is strong-coupling. The fixed-points are described in the text.}
 	\label{nrg_fp}
 \end{figure}
 The free-orbital fixed point is described by \(U=V=0\). The local moment fixed point is described by \(U \to \infty, V=0\). The strong-coupling fixed point is described by \(U=\text{finite}, V \to \infty\). The temperature-dependent susceptibility is found to be very similar to that obtained from the Kondo model, with a suitably-defined \(T_K\). It starts from a constant value at low-temperatures to a Curie-Weiss like form at high temperatures, with the Curie-Weiss constant at very large temperatures being equal to \(\frac{1}{8}\).

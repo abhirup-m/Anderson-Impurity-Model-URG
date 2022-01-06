@@ -154,7 +154,7 @@ On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - 
 \begin{equation}\begin{aligned}
 	\chi\vert_{\beta \to \infty} = 0
 \end{aligned}\end{equation}
-The variation of \(\chi\) against \(T\) is shown in fig.~\ref{sus_T}. The susceptibility goes through a maximum at a certain temperature, and this maximum is not present in NRG or Bethe Ansatz calculations. We suspect that this peak is an artifact of the simplification suffered in restricting the calculation to just the zero mode of the conduction bath. We intend to investigate this by allowing for higher modes of the bath. The speculation that this is due to the zero mode is further strengthened by the fact that a similar maximum was observed in the Kondo model susceptibility as obtained from a URG treatment and zero-mode effective Hamiltonian, in \cite{am_thesis}.
+The variation of \(\chi\) against \(T\) is shown in fig.~\ref{sus_T}. The susceptibility goes through a maximum at a certain temperature, and this maximum is not present in NRG or Bethe Ansatz calculations. We suspect that this peak is an artifact of the simplification suffered in restricting the calculation to just the zero mode of the conduction bath. We intend to investigate this by allowing for higher modes of the bath. The speculation that this is due to the zero mode is further strengthened by the fact that a similar maximum was observed in the Kondo model susceptibility as obtained from a URG treatment and zero-mode effective Hamiltonian, in \cite{kondo_urg}.
 \begin{figure}[htpb!]
 	\centering
 	\includegraphics[width=0.49\textwidth]{../figures/chi_T_new.pdf}
@@ -331,7 +331,7 @@ The spectral function at zero temperature can then be written as
 			    &= \frac{1}{d_0}\frac{1}{\pi}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega - E_0 + E_n\right)\right]\\
 			    &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\delta\left(\omega - E_0 + E_n\right)\right]\\
 \end{aligned}\end{equation}
-Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bulla_costi_nrg}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalized Gaussian functions
+Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bullaNRGreview}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalized Gaussian functions
 \begin{equation}\begin{aligned}
 	\delta(\omega \pm x_n) \to \frac{1}{\eta_n\sqrt \pi}e^{-\left(\frac{\omega \pm x_n}{\eta_n}\right)^2}
 \end{aligned}\end{equation}
@@ -343,7 +343,7 @@ The parameter \(\eta_n\) determines the height and width of the Gaussian, and is
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} &= \sum_{n,0}\frac{1}{d_0 \sqrt \pi \eta_n}\left[||\bra{0}c_{d\sigma}\ket{n}||^2e^{-\left(\frac{\omega - x_n}{\eta_n}\right)^2} + ||\bra{n}c_{d\sigma}\ket{0}||^2e^{-\left(\frac{\omega + x_n}{\eta_n}\right)^2}\right]
 \end{aligned}\end{equation}
-From the results of Langreth \cite{Langreth}, we know that the spectral function at zero frequency is fixed by the occupancy of the impurity. Since we are in the particle-hole symmetric regime, this occupancy is fixed at 1, and hence so is the spectral function height at \(\omega = 0\). This result has been used to fix the spectral function height at the center during the computations. The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_n, \ket{n}\right\}\), for various values of the couplings. The intention here is to get an idea of how the spectral function morphs under the RG. Doing an actual reverse RG (described in \ref{rev_rg}) would require us to diagonalize a huge Hamiltonian. We take the simpler route of tuning the \(U\) from zero to soem large value. This should mimic the journey from the IR theory \((U=0)\) to the UV theory \((U \gg 0)\).
+From the results of Langreth \cite{langreth1966}, we know that the spectral function at zero frequency is fixed by the occupancy of the impurity. Since we are in the particle-hole symmetric regime, this occupancy is fixed at 1, and hence so is the spectral function height at \(\omega = 0\). This result has been used to fix the spectral function height at the center during the computations. The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_n, \ket{n}\right\}\), for various values of the couplings. The intention here is to get an idea of how the spectral function morphs under the RG. Doing an actual reverse RG (described in \ref{rev_rg}) would require us to diagonalize a huge Hamiltonian. We take the simpler route of tuning the \(U\) from zero to soem large value. This should mimic the journey from the IR theory \((U=0)\) to the UV theory \((U \gg 0)\).
 
 \subsection{Pure SIAM: No separate spin, charge interactions}
 The spectral function is plotted for three sets of values in fig.~\ref{spec_func}.
@@ -664,7 +664,7 @@ The last two equations together mean that the effect of the perturbation is to r
 \begin{equation}\begin{aligned}
 	u \sim \frac{t^4}{{J^*}^3}
 \end{aligned}\end{equation}
-and we can replace the perturbative term \(V\) by an effective repulsive term on the first site (a.k.a, the "local Fermi liquid", \cite{nozieres}):
+and we can replace the perturbative term \(V\) by an effective repulsive term on the first site (a.k.a, the "local Fermi liquid", \cite{nozieres_1974}):
 \begin{equation}\begin{aligned}
 	u\hat n_{1 \uparrow}\hat n_{1 \downarrow}
 \end{aligned}\end{equation}
@@ -913,7 +913,7 @@ If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Lut
 	\centering
 	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
 \end{figure}
-This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments in \cite{oshikawa}.
+This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments in \cite{oshikawa2000topological}.
 One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\ref{luttinger_change} would still hold.
 
 We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
@@ -993,7 +993,7 @@ The phase shift is thus
 \begin{equation}\begin{aligned}
 	\frac{1}{\pi}\sum_\sigma \delta_\sigma(0) = \left<n_d \right> \implies \delta_\sigma(0) = \frac{\pi}{2}
 \end{aligned}\end{equation}
-There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)-symmetric. This line of arguments was first presented for the Kondo model in \cite{martin}.
+There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)-symmetric. This line of arguments was first presented for the Kondo model in \cite{martin_prl_1982}.
 
 The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
 \begin{equation}\begin{aligned}
