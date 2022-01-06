@@ -357,20 +357,14 @@ The RG equation for \(K\) is obtained similarly from the charge-Kondo model. Sin
 	\Delta J &= -\frac{n_j J^2}{\omega - \frac{D}{2} + \frac{J}{4}},\\ 
 	\Delta K &= -\frac{n_j K^2}{\omega - \frac{D}{2} + \frac{K}{4}}
 \end{aligned}\end{equation}
+In terms of \(U = -2\epsilon_d\), the equations become
+\begin{gather}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_0} - \frac{1}{d_1}\right) - \frac{n_j}{2}\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\\
+	\Delta V = -\frac{3n_j V}{8}\left[J\left(\frac{1}{d_2} + \frac{1}{d_1}\right) + K \left(\frac{1}{d_3} + \frac{1}{d_0}\right)\right],\\
+	\Delta J = -\frac{n_j J^2}{d_2}, \quad\quad\Delta K = -\frac{n_j K^2}{d_3}
+\end{gather}
+\(d_i\) are the denominators:
+\begin{equation}\begin{aligned}
+	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
+\end{aligned}\end{equation}
 
-\subsection{Particle-hole symmetry and charge SU(2) invariance}
-An important distinction between the SIAM charge Kondo and the SIAM spin-Kondo models is that, unlike the charge Kondo model where we had independent spin-rotation invariance (obtained by setting \(J_z = J_t\)) and impurity particle-hole symmetry (obtained by setting \(\epsilon_d = -\epsilon_d - U\)), this model has a composite particle-hole symmetry and SU(2)-charge symmetry. To see this, consider the impurity part of the model:
-\begin{equation}
-	\epsilon_d \hat n_d + U \hat n_{d\uparrow}\hat n_{d\downarrow} + K_z \left(\hat n_d - 1\right)\left(c^\dagger_{k\uparrow}c_{k^\prime\uparrow} - c_{k^\prime\downarrow}c^\dagger_{k\downarrow}\right) + \frac{K_t}{2}\left(c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{k\beta}c_{k^\prime\overline\beta} + \text{h.c.}\right)
-\end{equation}
-The charge isospin reversal here corresponds to the transformation \(c_d \to c^\dagger_d\) and \(c_k \to c^\dagger_k\), because then \(2C^z_d = \hat n_d - 1 \to 1 - \hat n_d = -2C^z_d\). But this transformation is just the impurity particle-hole transformation we encountered earlier. As a result, the total constraint for SU(2)-charge symmetry and impurity particle-hole symmetry is
-\begin{equation}\begin{aligned}
-	\label{symm-charge}
-	\epsilon_d = -\epsilon_d - U, && V_1 = V_0, &\& & 2K_z = K_t = \frac{K}{2} 
-\end{aligned}\end{equation}
-With these conditions, we get \(\xi_1 = \xi_2^\prime, \xi_1^\prime = \xi_2, \text{ and }\xi_3 = \xi_4 = \xi_5 = \xi_3^\prime = \xi_4^\prime = \xi_5^\prime\), and
-\begin{equation}\begin{aligned}
-	\Delta \epsilon_d &= -\frac{1}{2}\Delta U\\
-	\Delta V_1 &= \Delta V_0 = \frac{V_1 K}{8}\left( \frac{1}{\xi_1} + \frac{1}{\xi_6} \right)\\
-	\Delta K &= K^2 \frac{1}{\xi_5}
-\end{aligned}\end{equation}

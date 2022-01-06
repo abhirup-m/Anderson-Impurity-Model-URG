@@ -1,105 +1,51 @@
-\chapter{URG of Full Generalized SIAM}
+\chapter{Scaling behaviour of generalised SIAM: low energy effective theories}
 \label{fullurg}
-\section{The spin-charge-SIAM Hamiltonian}
-In this section, we will consider the SIAM with both spin and charge fluctuations. This will be a combination of the last two sections. The total Hamiltonian will be
+
+The RG equations have already been derived, we repeat them here for convenience:
+\begin{gather}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_0} - \frac{1}{d_1}\right) - \frac{n_j}{2}\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\\
+	\Delta V = -\frac{3n_j V}{8}\left[J\left(\frac{1}{d_2} + \frac{1}{d_1}\right) + K \left(\frac{1}{d_3} + \frac{1}{d_0}\right)\right],\\
+	\Delta J = -\frac{n_j J^2}{d_2}, \quad\quad\Delta K = -\frac{n_j K^2}{d_3}
+\end{gather}
+We have assumed the impurity levels are particle-hole symmetric (\(\epsilon_d = -\frac{U}{2}\)), and the denominators are given by
 \begin{equation}\begin{aligned}
-	\mathcal{H} =& \sum_{k\sigma}\tau_{k\sigma} + \epsilon_d \hat n_d + U \hat n_{d\uparrow}\hat n_{d \downarrow} + \sum_{k\sigma}\left( V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.} \right) + J_z S_d^z\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c^\dagger_{k \downarrow}c_{k^\prime \downarrow} \right) \\
-	      &+ J_t \sum_{kk^\prime\sigma}c^\dagger_{d\sigma}c_{d\overline\sigma}c^\dagger_{k\overline\sigma}c_{k^\prime\sigma} + K_z C_d^z \sum_{kk^\prime}\left( c^\dagger_{k\sigma}c_{k^\prime\sigma} - \frac{1}{2}\delta_{kk^\prime} \right) + K_t \sum_{kk^\prime\sigma}\left(c^\dagger_{d\sigma}c^\dagger_{d\overline\sigma}c_{k\overline\sigma}c_{k^\prime\sigma}+\text{h.c.}\right)
-\end{aligned}\end{equation}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/gen_siam.png}
-	\caption{Schematic diagram of the generalized SIAM model.}
-\end{figure}
- There are eight different type of scattering terms:
-\begin{equation}\begin{aligned}
-	c^\dagger_{q\beta}T_1 &= V_1 c^\dagger_{q\beta}c_{d\beta}\hat n_{d\overline\beta}, &c^\dagger_{q\beta}T_2 &= V_0 c^\dagger_{q\beta}c_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)\\
-	c^\dagger_{q\beta}T_3 &= \sum_{k<\Lambda_N}J^z_0 \hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right) c^\dagger_{q\beta}c_{k\beta}, &c^\dagger_{q\beta}T_4 &= -\sum_{k<\Lambda_N}J^z_1 \hat n_{d\overline\beta}\left(1 - \hat n_{d\beta}\right) c^\dagger_{q\beta}c_{k\beta}\\
-	c^\dagger_{q\beta}T_5 &= \sum_{k<\Lambda_N}J^t c^\dagger_{d\overline\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\overline\beta}, &c^\dagger_{q\beta}T_6 &= K_z^1 \sum_{k<\Lambda_N}\hat n_{d\beta}\hat n_{d\overline\beta}c^\dagger_{q\beta}c_{k\beta}\\
-	c^\dagger_{q\beta}T_7 &= -K_z^0 \sum_{k<\Lambda_N}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)c^\dagger_{q\beta}c_{k\beta}, &c^\dagger_{q\beta}T_8 &= K_t \sum_{k<\Lambda_N}c^\dagger_{q\beta}c^\dagger_{k\overline\beta}c_{d\overline\beta}c_{d\beta}\\
+	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
 \end{aligned}\end{equation}
 
-\section{Obtaining the RG equations}
-\subsection{Particle Sector}
-Renormalization is
+\section{Nature of RG flows: \(U>0\)}
+For the Hamiltonians with positive on-site correlation, we will assume that the spin-exchange coupling is positive and charge isospin-exchange coupling is negative: \(J>0, K<0\). This choice is motivated by the signs of the corresponding terms when they are generated via a Schrieffer-Wolff transformation~\cite{schrieffer1966}. The impurity-bath hybridisation \(V\) is always positive.
+
+We will in general assume that \(\omega < 0\). The strong-coupling regime is defined as the range of values of \(\omega\) where the hybridisation is relevant. This is ensured by the assumption \(d_1<0\). Note that since \(d_2 < d_1\) for \(U>0\), the assumption of \(d_1 < 0\) also ensures that \(d_2 < 0\). The assumptions of \(\omega < 0\) and \(K < 0\) also mean \(d_0 < 0, d_3 < 0\). In summary, all the denominators are negative: \(d_i = -|d_i|\). The simplest consequence of this is the RG flow of \(K\):
 \begin{equation}\begin{aligned}
-	c^\dagger_{q\beta}T \eta = c^\dagger_{q\beta}\sum_{ij}T_i \eta_j
+	\Delta K= -\frac{n_j K^2}{d_3} = \frac{n_j K^2}{|d_3|} > 0 \implies K_{j+1} > K_j \implies K_0 = -|K_0|, K^* \to 0
 \end{aligned}\end{equation}
-The terms that survive are
+\(K_j\) is the value of \(K\) after the \(j^\text{th}\) RG step, \(K_0\) representing the bare value.
+In other words, since \(d_3 < 0\), the RG equation for \(K\) provides an algebraic increment, and the negative \(K\) increases and flows towards zero. The \(*\) indicates a fixed point value. The isospin coupling is irrelevant in this regime, and we will ignore it.
+
+The coupling \(J\), on the other hand, is relevant and flows from a small positive value towards a large value at strong-coupling.
 \begin{equation}\begin{aligned}
-& c^\dagger_{q\beta}T \eta
-= \sum_{i=1}^8\frac{1}{\omega_i - E_i}\hat n_{q\beta} T_i T_i^\dagger +\left(\frac{1}{\omega_2 - E_2} + \frac{1}{\omega_5 - E_5}\right)\hat n_{q\beta} \left(T_2 T_5^\dagger + T_5 T_2^\dagger \right) \\
-& +\left(\frac{1}{\omega_2 - E_2} + \frac{1}{\omega_3 - E_3}\right)\hat n_{q\beta} \left(T_2 T_3^\dagger + T_3 T_2^\dagger \right) + \left(\frac{1}{\omega_3 - E_3} + \frac{1}{\omega_5 - E_5}\right)\hat n_{q\beta} \left(T_3 T_5^\dagger + T_5 T_3^\dagger \right) \\
-& + \left(\frac{1}{\omega_1 - E_1} + \frac{1}{\omega_6 - E_6}\right)\hat n_{q\beta} \left(T_1 T_6^\dagger + T_6 T_1^\dagger \right) + \left(\frac{1}{\omega_1 - E_1} + \frac{1}{\omega_8 - E_8}\right)\hat n_{q\beta} \left(T_1 T_8^\dagger + T_8 T_1^\dagger \right) \\
-& + \left(\frac{1}{\omega_6 - E_6} + \frac{1}{\omega_8 - E_8}\right)\hat n_{q\beta} \left(T_6 T_8^\dagger + T_8 T_6^\dagger \right)\\
-&=\frac{|V_1|^2}{\xi_1}\left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta} + \frac{|V_0|^2}{\xi_2}\left( 1 - \hat n_{d\beta} \right) \left( 1 - \hat n_{d\overline\beta} \right) + \frac{1}{\xi_5}J_t^2 \left( 1 - \hat n_{d\beta} \right) \hat n_{d\overline\beta} c_{k^\prime\overline\beta}c^\dagger_{k\overline\beta} \\
-&+ \frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\overline\beta} \right) }{\xi_3} + {J_1^z}^2\frac{\hat n_{d\overline\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi_4} \right]c_{k^\prime\beta}c^\dagger_{k\beta} - \frac{1}{2} \left(\frac{1}{\xi_2} + \frac{1}{\xi_5}\right)J_t\left( 1 - \hat n_{d\beta}\right) \left(V_0 c^\dagger_{k\overline\beta}c_{d\overline\beta} + \text{h.c.}\right) \\
-&- \frac{1}{2}\left(\frac{1}{\xi_2} + \frac{1}{\xi_3}\right)\frac{J^z_0}{2}\left(1 - \hat n_{d\overline\beta}\right)\left(V_0 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi_3} + \frac{1}{\xi_5}\right)\frac{J_t J^z_0}{2}\left(c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{k^\prime\beta} + \text{h.c.}\right) \\
-&+ \left[\frac{{K_z^1}^2}{\xi_6}\hat n_{d\beta}\hat n_{d\overline\beta} + \frac{{K_z^0}^2}{\xi_7}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)\right]c_{k^\prime\beta}c^\dagger_{k\beta} + \frac{K_t^2}{\xi_8}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)c^\dagger_{k\overline\beta}c_{k^\prime\overline\beta}\\
-&- \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_6} \right)V_1 K_z^1 \hat n_{d\overline\beta}\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) + \frac{1}{2}\left(\frac{1}{\xi_1} + \frac{1}{\xi_8} \right)V_1 K_t \left(1 - \hat n_{d\beta}\right)\left(c^\dagger_{k\overline\beta}c_{d\overline\beta} + \text{h.c.}\right)\\
-&- \frac{1}{2}\left(\frac{1}{\xi_6} + \frac{1}{\xi_8} \right)K_z^1 K_t \left(c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{k^\prime\overline\beta}c_{k\beta} + \text{h.c.}\right)
+	\Delta J= -\frac{n_j J^2}{d_2} = \frac{n_j J^2}{|d_2|} > 0 \implies J_{j+1} > J_j \implies J_0 \to \text{ large } J^* ~(\text{strong-coupling})
 \end{aligned}\end{equation}
-where \(\xi_i = \omega_i - E_i\) and we substituted \(\hat n_{q\beta}=1\). The energies in the denominators are
+The value of \(J^*\) is obtained when the denominator \(d_2\) vanishes.
+
+Because of the RG irrelevance of \(K\), we can simplify the RG equation for \(V\):
 \begin{equation}\begin{aligned}
-E_1&= E_8 = \frac{\epsilon_q}{2} + 2\epsilon_d+ U - \frac{1}{2}K_z, &&E_2 = E_4 = E_5 = \frac{\epsilon_q}{2} + \epsilon_d - \frac{1}{2}J_z\\
-E_3&=\frac{\epsilon_q}{2} + \epsilon_d + \frac{1}{2}J_z, &&E_6 =\frac{\epsilon_q}{2} + 2\epsilon_d+ U + \frac{1}{2}K_z\\
-E_7&=\frac{\epsilon_q}{2} - \frac{1}{2}K_z, &&E_8=\frac{\epsilon_q}{2}+2\epsilon_d+ U  - \frac{1}{2}K_z
+	\Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right) = \frac{3n_j VJ}{8}\left(\frac{1}{|d_2|} + \frac{1}{|d_1|}\right) > 0
 \end{aligned}\end{equation}
-The quantum fluctuation scales are
+Since both the denominators are positive, \(V\) is relevant. The fixed point value \(V^*\) is attained when the denominator \(d_1\) vanishes (\(d_1\) will vanish earlier than \(d_2\)).
+
+We can compare the rate of flows of \(V\) and \(J\):
 \begin{equation}\begin{aligned}
-\omega_1&=\omega + \epsilon_d+\frac{1}{2}K_z, &&\omega_3 =\omega+\epsilon_d + \frac{1}{2}K_z + J_z\\
-\omega_2& = \omega_8 = \omega+\frac{1}{2}J_z, &&\omega_4 = \omega_5 = \omega + \epsilon_d + \frac{1}{2}K_z\\
-\omega_6&=\omega+2\epsilon_d+U+\frac{1}{2}J_z + K_z, &&\omega_7 =\omega+\frac{1}{2}J_z\\
+	\frac{\Delta V}{\Delta J} = \frac{3V}{8J}\left(1 + \frac{|d_2|}{|d_1|}\right) > \frac{3V}{4J}
 \end{aligned}\end{equation}
-\subsection{Hole sector}
-Renormalization is
+There we used the fact that \(|d_2| > |d_1|\).
+
+We finally come to the RG equation for \(U\):
 \begin{equation}\begin{aligned}
-&\eta c^\dagger_{q\beta}T = \left( 1 - \hat n_{q\beta} \right) \left[\sum_{i=1}^8\frac{1}{\omega^\prime_i - E^\prime_i} T_i T_i^\dagger +\left(\frac{1}{\omega^\prime_1 - E^\prime_1} + \frac{1}{\omega^\prime_4 - E^\prime_4}\right) \left(T_1 T_4^\dagger + T_4 T_1^\dagger \right)\right. \\
-&\left. +\left(\frac{1}{\omega^\prime_1 - E^\prime_1} + \frac{1}{\omega^\prime_5 - E^\prime_5}\right) \left(T_1 T_5^\dagger + T_5 T_1^\dagger \right) + \left(\frac{1}{\omega^\prime_2 - E^\prime_2} + \frac{1}{\omega^\prime_7 - E^\prime_7}\right) \left(T_2 T_7^\dagger + T_7 T_2^\dagger \right) \right.\\
-&\left. + \left(\frac{1}{\omega^\prime_2 - E^\prime_2} + \frac{2}{\omega^\prime_8 - E^\prime_8}\right) \left(T_2 T_8^\dagger + T_8 T_2^\dagger \right) + \left(\frac{1}{\omega^\prime_4 - E^\prime_4} + \frac{1}{\omega^\prime_5 - E^\prime_5}\right) \left(T_4 T_5^\dagger + T_5 T_4^\dagger \right) \right.\\
-&\left. + \left(\frac{1}{\omega^\prime_7 - E^\prime_7} + \frac{1}{\omega^\prime_8 - E^\prime_8}\right)\hat n_{q\beta} \left(T_7 T_8^\dagger + T_8 T_7^\dagger \right)\right]\\
-	&=\frac{|V_1|^2}{\xi^\prime_1}\hat n_{d\overline\beta}\hat n_{d\beta} + \frac{|V_0|^2}{\xi^\prime_2}\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)+\frac{1}{4}\left[ {J_0^z}^2\frac{\hat n_{d\beta}\left( 1 - \hat n_{d\overline\beta} \right) }{\xi^\prime_3} + {J_1^z}^2\frac{\hat n_{d\overline\beta}\left( 1 - \hat n_{d\beta} \right)}{\xi^\prime_4} \right]c^\dagger_{k\beta}c_{k^\prime\beta} \\
-	&+ \frac{1}{\xi^\prime_5}J_t^2 \left( 1 - \hat n_{d\overline\beta} \right) \hat n_{d\beta} c^\dagger_{k\overline\beta} c_{k^\prime\overline\beta} - \frac{1}{2} \left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_1}\right)\frac{J_1^z}{2}\hat n_{d\overline\beta} \left(V_1 c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) \\
-	&- \frac{1}{2}\left(\frac{1}{\xi^\prime_1} + \frac{1}{\xi^\prime_5}\right)J_t \hat n_{d\beta}\left(V_1 c^\dagger_{k\overline\beta}c_{d\overline\beta} + \text{h.c.}\right) - \frac{1}{2}\left(\frac{1}{\xi^\prime_4} + \frac{1}{\xi^\prime_5}\right)\frac{J_t J^z_1}{2}\left(c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{k^\prime\beta} + \text{h.c.}\right)\\
-&+\left[\frac{{K_z^1}^2}{\xi^\prime_6}\hat n_{d\beta}\hat n_{d\overline\beta} + \frac{{K_z^0}^2}{\xi^\prime_7}\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)\right]c^\dagger_{k\beta}c_{k^\prime\beta} + \frac{K_t^2}{\xi^\prime_8}\hat n_{d\beta}\hat n_{d\overline\beta}c_{k^\prime\overline\beta}c^\dagger_{k\overline\beta} \\
-&- \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_7}\right)V_0 K_z^0\left(1 - \hat n_{d\overline\beta}\right)\left(c^\dagger_{k\beta}c_{d\beta} + \text{h.c.}\right) + \frac{1}{2}\left(\frac{1}{\xi^\prime_2} + \frac{1}{\xi^\prime_8}\right)V_0 K_t\hat n_{d\beta}\left(c^\dagger_{k\overline\beta}c_{d\overline\beta} + \text{h.c.}\right) \\
-&- \frac{1}{2}\left(\frac{1}{\xi^\prime_7} + \frac{1}{\xi^\prime_8}\right)K_z^0 K_t\left(c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{k\overline\beta}c_{k^\prime\beta} + \text{h.c.}\right) 
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_0} - \frac{1}{d_1}\right) - \frac{n_j}{2}\frac{J^2}{d_2} = 4V^2\left(U + \frac{J}{4}\right)\frac{n_j}{d_0 d_1} - \frac{n_j J^2}{2d_2}
 \end{aligned}\end{equation}
-The denominator energies are
-\begin{equation}\begin{aligned}
-	E_1^\prime &= E_3^\prime = E_5^\prime = \frac{\epsilon_q}{2} + \epsilon_d - \frac{1}{2}J_z, &&E_4^\prime = \frac{\epsilon_q}{2} + \epsilon_d + \frac{1}{2}J_z\\
-	E_2^\prime &= \frac{\epsilon_q}{2} - \frac{1}{2}K_z, &&E_7^\prime = \frac{\epsilon_q}{2} + \frac{1}{2}K_z\\
-	E_6^\prime &= \frac{\epsilon_q}{2} + 2\epsilon_d + U - \frac{1}{2}K_z, &&E_8^\prime = \frac{\epsilon_q}{2} + \epsilon_d - \frac{1}{2}K_z\\
-\end{aligned}\end{equation}
-The quantum fluctuation scales are
-\begin{equation}\begin{aligned}
-	\omega_1^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z, &&\omega_2^\prime=\omega+\epsilon_d+\frac{1}{2}K_z \\
-	\omega_3^\prime&=\omega_5^\prime=\omega+\epsilon_d + \frac{1}{2}K_z, &&\omega_4^\prime=\omega+\epsilon_d+\frac{1}{2}K_z + J_z \\
-	\omega_6^\prime&=\omega+2\epsilon_d+U+\frac{1}{2}J_z, &&\omega_7^\prime=\omega+\frac{1}{2}J_z + K_z\\
-	\omega_8^\prime &=\omega+\epsilon_d+\frac{1}{2}J_z \\
-\end{aligned}\end{equation}
-\subsection{Scaling equations}
-The denominators \(\xi_i,\xi_i^\prime\) are
-\begin{equation}\begin{aligned}
-	\xi_1 &= \omega - \frac{\epsilon_q}{2} - \epsilon_d - U + K_z, &&\xi_2 = \omega - \frac{\epsilon_q}{2} - \epsilon_d + J_z\\
-	\xi_3 &= \xi_4 = \xi_5 = \xi_6 = \xi_7 = \omega - \frac{\epsilon_q}{2} + \frac{1}{2}J_z + \frac{1}{2}K_z\\
-	\xi_8 &= \omega - \frac{\epsilon_q}{2} - 2\epsilon_d - U + \frac{1}{2}J_z + \frac{1}{2}K_z\\
-	\xi_1^\prime &= \omega - \frac{\epsilon_q}{2} + \epsilon_d + U + J_z, &&\xi_2^\prime = \omega - \frac{\epsilon_q}{2} + \epsilon_d + K_z\\
-	\xi_3^\prime &= \xi_4^\prime = \xi_5^\prime = \xi_6^\prime = \xi_7^\prime = \omega - \frac{\epsilon_q}{2} + \frac{1}{2}J_z + \frac{1}{2}K_z\\
-	\xi_8^\prime &= \omega - \frac{\epsilon_q}{2} + 2\epsilon_d + U + \frac{1}{2}J_z + \frac{1}{2}K_z\\
-\end{aligned}\end{equation}
-The RG equations are
-\begin{align}
-	\Delta \epsilon_d &= \frac{|V_1|^2}{\xi_1} + \frac{|V_0|^2}{\xi_2^\prime} - 2 \frac{|V_0|^2}{\xi_2} - \sum_k\left( \frac{K_z^2}{2\xi_6} + \frac{K_t^2}{\xi_8} - \frac{J_z^2}{2\xi_3} - \frac{J_t^2}{\xi_3}\right) \\
-	\Delta U &= \frac{2|V_1|^2}{\xi^\prime_1} + \frac{2|V_0|^2}{\xi_2} - \frac{2|V_1|^2}{\xi_1} - \frac{2|V_0|^2}{\xi_2^\prime} + 2\sum_k\left(\frac{K_z^2}{2\xi_6} + \frac{K_t^2}{\xi_8} - \frac{J_z^2}{2\xi_3} - \frac{J_t^2}{\xi_3}\right) \\
-	\Delta V_1 &= - \frac{1}{4}\left[ V_1 \frac{K_z}{2}\left( \frac{1}{\xi_1} + \frac{1}{\xi_6} \right) - V_0 K_t \left( \frac{1}{\xi_2^\prime} + \frac{1}{\xi_8^\prime} \right)\right] - V_1 \left( \frac{J_z}{2} + J_t \right) \left( \frac{1}{\xi_1^\prime} + \frac{1}{\xi_3} \right) \\
-	\Delta V_0 &= - \frac{1}{4}\left[ V_0 \frac{K_z}{2}\left( \frac{1}{\xi_2^\prime} + \frac{1}{\xi_7^\prime} \right) - V_1 K_t \left( \frac{1}{\xi_1} + \frac{1}{\xi_8} \right)\right] - V_0 \left( \frac{J_z}{2} + J_t \right) \left( \frac{1}{\xi_2} + \frac{1}{\xi_3} \right) \\
-	\Delta J_z &= - 2 \frac{J_t^2}{\xi_3}\\
-	\Delta J_t &= - 2 \frac{J_z J_t}{\xi_3}\\
-	\Delta K_z &= - 2 \frac{K_t^2}{\xi_8}\\
-	\Delta K_t &= - \frac{K_z K_t}{2}\left( \frac{1}{\xi_6} + \frac{1}{\xi_8} + \frac{1}{\xi_7^\prime} + \frac{1}{\xi_8^\prime}\right) \\
-\end{align}
-Note that these are the renormalizations are for each momentum state \(q\) on the isoenergetic shell - the total renormalization is obtained by summing over the \(q\).
+
+For \(V>J\), we can expect \(U\) to be relevant. The internal consistency check is that a relevant \(U\) will make \(|d_2| > |d_1|\) and ensure \(V>J\). On the other hand, \(V<J\) will make \(U\) irrelevant.
 \section{RG flows for the symmetric model at \(V = 0\)}
 With the conditions \(\epsilon_d = -\epsilon_d - U, J_z = J_t = \frac{1}{2}J, V_0 = V_1, K_z = K_t = \frac{1}{2}K\),
 \begin{equation}\begin{aligned}
