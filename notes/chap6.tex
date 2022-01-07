@@ -1,6 +1,7 @@
 \chapter{Scaling behaviour of generalised SIAM: low energy effective theories}
 \label{fullurg}
 
+\section{RG equations}
 The RG equations have already been derived, we repeat them here for convenience:
 \begin{gather}
 	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\\
@@ -49,8 +50,8 @@ For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) wi
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_irr,U_0.pdf}
-	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_rel,U_0.pdf}
+	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_irr,U_gt_0.pdf}
+	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_rel,U_gt_0.pdf}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
@@ -67,92 +68,24 @@ For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) wi
 	% \label{fig:-spin-charge-symmetrical-UcvsJ-pdf}
 \end{figure}
 
+\section{Nature of RG flows: \(U<0\)}
+Here, we have \(J<0\) and \(K>0\). The RG flows in this regime can be exactly mapped on to those in the positive \(U\) regime by transforming \(J \leftrightarrow K\) and \(d_0 \leftrightarrow d_1\).
+
 \section{Effective Hamiltonian and ground state}
-The fixed point Hamiltonian can be written, in general, as
+The fixed point Hamiltonian can, in general, be written as
 \begin{equation}\begin{aligned}
-	\mathcal{H}^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\uparrow}\hat n_{d\downarrow} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C} \\
-	+ \sum_{q > \Lambda^*}\left(J^z_q S^z_ds^z_q + K^z_q C^z_dC^z_q\right) 
+	\mathcal{H}^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right)^2  + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
 \end{aligned}\end{equation}
 The first term is the kinetic energy of all the electrons. The next two terms are the impurity-diagonal pieces, featuring the renormalised interaction \(U^*\). The next three terms are the residual interactions between the impurity and the metal, with the renormalised couplings \(V^*, J^*\) and \(K^*\). The summations in these terms extend from the fixed point momentum cutoff \(\Lambda^*\) to 0. This is the region of momentum space  which the URG was unable to decouple. The operators \(\vec s\) and \(\vec C\) represent the macroscopic magnetic and charge spins formed by the remaining electrons that are lying inside the window \(\left[ 0, \Lambda^* \right] \):
 \begin{equation}\begin{aligned}
 	\vec s = \sum_{kk^\prime<\Lambda^*\atop{\alpha\beta}} c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
 \end{aligned}\end{equation}
-The final two terms represent the diagonal pieces of the RG steps that have been completed. These survive because the URG removes only the number-off-diagonal terms; terms like \(S^d_z s_z\) and \(C^d_z C_z\) conserve the number of particles and hence survive. These will also be renormalised, and hence the subscript \(q\) on \(J^z_q\) signifies that it is has been renormalised up to a certain momentum.
+Our goal here is to write down the ground state wavefunction for this low-energy Hamiltonian.
 
-Our goal here is to write down the ground state wavefunction for the low-energy Hamiltonian
+To make progress with the ground state, we will simplify the effective Hamiltonian by mapping it onto a two-site problem. One site is of course the impurity site, and this site will be labeled as site 1. The other site will be formed by the center of mass degree of freedom of the conduction electrons, and will be labeled as site 2. The Hamiltonian for this two-site problem is
 \begin{equation}\begin{aligned}
-	\label{fixed_point_ham}
-	\mathcal{H}_{IR} = \sum_{\sigma, k<\Lambda^*}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\hat n_d + U^* \hat n_{d\uparrow}\hat n_{d\downarrow} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
+	\mathcal{H}_{IR} = - \frac{U^*}{2}\left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + V^*\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^*\vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
-To make progress with the ground state, we will simplify the effective Hamiltonian by mapping it onto a two-site problem. One site is of course the impurity site. The other site will be formed by the centre of mass degree of freedom of the conduction electrons, which we define as
-\begin{equation}\begin{aligned}
-	c_{2\sigma} \equiv \frac{1}{\sqrt{N^*}}\sum_{k} c_{k\sigma} = c_\sigma\left( \vec r = 0 \right) 
-\end{aligned}\end{equation}
-where \(N^*\) is the number of electrons inside the window \(\left[-\Lambda^*, \Lambda^*\right]\). This operator essentially creates a conduction electron at the origin. It is easy to prove that this operator is Fermionic:
-\begin{equation}\begin{aligned}
-	\label{site2antic}
-	\left\{c_{2\sigma}, c^\dagger_{2\sigma} \right\}  &= \frac{1}{N^*}\sum_{kk^\prime} \left\{ c_{k\sigma}, c^\dagger_{k^\prime\sigma} \right\} = \frac{1}{N^*}\sum_{kk^\prime} \delta_{kk^\prime} = 1\\
-	\left\{c_{2\sigma}, c_{2\sigma} \right\}  &= \frac{1}{N^*}\sum_{kk^\prime} \left\{ c_{k\sigma}, c_{k^\prime\sigma} \right\} = 0
-\end{aligned}\end{equation}
-The number operator corresponding to this degree of freedom is
-\begin{equation}\begin{aligned}
-	\hat n_{2\sigma} = c^\dagger_{2\sigma}c_{2\sigma} = \frac{1}{N^*}\sum_{kk^\prime}c^\dagger_{k\sigma}c_{k^\prime\sigma}
-\end{aligned}\end{equation}
-Because of the anticommutation algebra in eq.~\ref{site2antic}, this operator behaves essentially like a Fermion: \(\hat n_{2\sigma}^2 = \hat n_{2\sigma}\). For our two-site problem, we will imagine this to be the annihilation operator for the site 2, for the spin sigma. The corresponding operator for the first site is of course just the impurity electron annihilation operator:
-\begin{equation}\begin{aligned}
-	c_{1\sigma} \equiv c_{d\sigma}
-\end{aligned}\end{equation}
-The various terms of the Hamiltonian can now be written in terms of these operators. We write the Fourier decomposition of the dispersion of the conduction bath.
-\begin{equation}\begin{aligned}
-	\epsilon_{\vec{k}} = \frac{1}{N^*}\sum_{\vec r}e^{i \vec{k}\cdot\vec{r}}\epsilon(\vec r)
-\end{aligned}\end{equation}
-The inverse transformation is
-\begin{equation}\begin{aligned}
-	\epsilon(\vec r) = \sum_{|\vec k| < \Lambda^*}e^{-i \vec{k}\cdot\vec{r}}\epsilon_{\vec{k}}
-\end{aligned}\end{equation}
-We now make a simplifying assumption: Guided by the observation that the important degree of freedom at the fixed point is the COM operator \(c_{2\sigma}\), we keep only the \(\vec r=0\) mode of the decomposition:
-\begin{equation}\begin{aligned}
-	\epsilon_{\vec k} \approx \frac{1}{N^*}\epsilon(\vec r=0) = \frac{1}{N^*}\sum_{k<\Lambda^*}\epsilon_k = \frac{1}{N^*}\sum_{\epsilon_k \in [\epsilon_F - D^*, \epsilon_F + D^*]}\epsilon_k = \epsilon_F
-\end{aligned}\end{equation}
-\(\epsilon_F\) is the Fermi energy, which we henceforth set to 0. The energy term for the second site is thus simply zero. The impurity diagonal part of \(\mathcal{H}_{IR}\) will survive only when \(\hat n_d = \hat n_1 = 1\). So we write it as
-\begin{equation}\begin{aligned}
-	- \frac{U^*}{2}\hat n_d + U^* \hat n_{d\uparrow}\hat n_{d\downarrow} = - \frac{U^*}{2}\left(\hat n_{d\uparrow} + \hat n_{d \downarrow} - 2\hat n_{d\uparrow}\hat n_{d\downarrow}\right) = - \frac{U^*}{2} \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \equiv \epsilon_d \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2
-\end{aligned}\end{equation}
-where \(\epsilon_d = - \frac{U^*}{2}\). The off-diagonal terms can also be similarly transformed into a two-site problem. The bath spin can be written as
-\begin{equation}\begin{aligned}
-	\vec S_d &\equiv \vec S_1\\
-	J^*\vec s &= J^* \frac{1}{2}\sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta} \\
-	       &= J^*\frac{1}{2}\sum_{\alpha\beta}c^\dagger_{2\alpha}\vec \sigma_{\alpha\beta}c_{2\beta} \\
-	       &= J^* N^* \frac{1}{2}\left[\hat z\left(c^\dagger_{2 \uparrow}c_{2 \uparrow} - c^\dagger_{2 \downarrow} c_{2 \downarrow} \right) + \hat x \left(c^\dagger_{2 \uparrow}c_{2 \downarrow} + c^\dagger_{2 \downarrow} c_{2 \uparrow} \right) -i \hat y \left( c^\dagger_{2 \uparrow}c_{2 \downarrow} - c^\dagger_{2 \downarrow} c_{2 \uparrow} \right)\right]\\
-	       &\equiv J^*N^* \vec S_2\\
-	       &\equiv j \vec S_2\\
-\end{aligned}\end{equation}
-where \(j \equiv J^* N^*\) and
-\begin{equation}\begin{aligned}
-	\vec S_2 = \frac{1}{2N^*}\sum_{kk^\prime\atop{\alpha\beta}}c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
-\end{aligned}\end{equation}
-. The charge isospins can also be rewritten similarly. From eq.~\ref{diagonalCz},
-\begin{equation}\begin{aligned}
-	K^* C^z &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c_{k^\prime \uparrow} - c_{k^\prime \downarrow}c^\dagger_{k \downarrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \uparrow} - c_{2 \downarrow}c^\dagger_{2\downarrow} \right) = kC_2^z\\
-	K^* C^x &=K^* \frac{1}{2}\sum_{kk^\prime}\left( c^\dagger_{k \uparrow}c^\dagger_{k^\prime \downarrow} + c_{k \downarrow}c^\dagger_{k^\prime \uparrow} \right) = \frac{1}{2}N^* K^*\left( c^\dagger_{2 \uparrow}c_{2 \downarrow} - c_{2 \downarrow}c^\dagger_{2\uparrow} \right) = kC_2^x\\
-\end{aligned}\end{equation}
-and similarly for \(C^y\). We defined \(k \equiv K^* N^*\). The diagonal component \(C^z\) can also be written as
-\begin{equation}\begin{aligned}
-	 C^z = \frac{1}{2}N^* \sum_\sigma\left(c^\dagger_{2\sigma}c_{2\sigma} - \frac{1}{2}\right) = \frac{1}{2}N^*\tau_2
-\end{aligned}\end{equation}
-where \(\tau_2 = \sum_\sigma \tau_{2\sigma} = \sum_\sigma \left( \hat n_{2\sigma} - \frac{1}{2} \right) \). The hybridisation term can be written as
-\begin{equation}\begin{aligned}
-	V\sum_k c^\dagger_{k\sigma} = V\sqrt{N^*} c^\dagger_{2\sigma} = vc^\dagger_{2\sigma}
-\end{aligned}\end{equation}
-where \(v \equiv V\sqrt{N^*}\). The charge isospins can be written down similarly. Combining these, the interaction part can be written as
-\begin{equation}\begin{aligned}
-v\sum_{\sigma}\left( c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k\vec{C_1}\cdot\vec{C_2}
-\end{aligned}\end{equation}
-with \(k = K^* N^*\). The total Hamiltonian for the two-site problem is
-\begin{equation}\begin{aligned}
-	\mathcal{H}_{IR} = \epsilon_d m_1^2 + v\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + j\vec{S_1}\cdot\vec{S_2} + k \vec{C_1}\cdot\vec{C_2}
-\end{aligned}\end{equation}
-where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}=m_1\) is the magnetization on the first site. We will use the following notation to represent kets of this two-site system: \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example, a state \(\ket{1001}\) represents a ket with an up electron on site 1 and a down electron on site 2. This Hamiltonian conserves the total number operator \(\hat n \equiv \hat n_1 + \hat n_2\), so we can analyse the various subspaces corresponding to particular values of \(\hat n\) separately.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.4\textwidth]{../figures/two_site_problem.png}
@@ -160,6 +93,7 @@ where we have dropped the \(*\) on the couplings for brevity and \(\hat n_{1 \up
 	\label{twosite}
 
 \end{figure}
+The subscripts on the operators designate the site on which they act; \(\hat n_1\) is the number operator for the first site.
 
 We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
 \begin{equation}\begin{aligned}
@@ -167,172 +101,59 @@ We will adopt the following notation to represent the states in this Hilbert spa
 \end{aligned}\end{equation}
 \(\ket{-}\) is the vacuum state.
 
-First lets get the trivial cases of \(\hat n = 0, 4\) out of the way. The only possible states are \(\ket{0000}\) and \(\ket{1111}\) respectively. Both these states are eigenstates because the first one has no electron to scatter, and the second one has no vacant state to scatter into. These states have energy eigenvalues \( \frac{1}{4}k\)
-
-The subspaces \(\hat n = 1,3\) are each four-dimensional. More precisely speaking, the \(\hat n=1\) subspace can have the following basis
-\begin{equation}\begin{aligned}
-	\ket{\uparrow,0}, \ket{0,\uparrow}, \ket{\downarrow,0}, \ket{0,\downarrow}
-\end{aligned}\end{equation}
-However, since the Hamiltonian conserves the total spin (both magnetic and charge), we can divide this Hilbert subspace into two smaller subspaces which do not talk to each other - one having the states \(\ket{\uparrow,0}, \ket{0,\uparrow}\) and hence a total spin magnetization of \(+\frac{1}{2}\), and the other having the remaining states and a total spin magnetization of \(-\frac{1}{2}\). The action of the Hamiltonian on this subspace is
-\begin{equation}\begin{aligned}
-	\mathcal{H}_{IR} \ket{1000} &= \left[\epsilon_d m_1^2 + vc^\dagger_{2 \uparrow}c_{1 \uparrow}\right] c^\dagger_{1 \uparrow}\ket{-} = \epsilon_d\ket{1000} + v\ket{0010}\\
-	\mathcal{H}_{IR} \ket{0010} &= \left[\epsilon_d m_1^2 + vc^\dagger_{1 \uparrow}c_{2 \uparrow}\right] c^\dagger_{2 \uparrow}\ket{-} = v\ket{1000}\\
-\end{aligned}\end{equation}
-The Hamiltonian in first subspace can be represented by the matrix
-\begin{equation}\begin{aligned}
-	\label{n1mat}
-	\bordermatrix{~&\ket{\uparrow,0} & \ket{0,\uparrow} \\
-		~&\epsilon_d & v \\
-		~& v & 0 \\
-	}
-\end{aligned}\end{equation}
-The eigenstates (un-normalised) are
-\begin{equation}\begin{aligned}
-\label{low}
-	-4v\ket{\uparrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \uparrow}, && E^1_\pm = \frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v\right)
-\end{aligned}\end{equation}
-where \(\Delta\left(\epsilon_d , v\right)  = \sqrt{\epsilon_d^2 + 4 v^2}\). The other two eigenstates (corresponding to magnetization \(- \frac{1}{2}\) need not be calculated separately; since the Hamiltonian is invariant under the transformation \( \uparrow \leftrightarrow \downarrow\), we can do a similar transformation on the eigenkets to get the eigenkets for the other subspace.
-\begin{equation}\begin{aligned}
-	-4v\ket{\downarrow,0} + 2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v \right)\right] \ket{0, \downarrow}
-\end{aligned}\end{equation}
-with exactly the same eigenvalue.
-
-The \(\hat n = 3\) subspace is very similar. We can obtain the basis directly from the \(\hat n = 1\) case by substituting the holes with doubles:
-\begin{equation}\begin{aligned}
-	\ket{\uparrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\uparrow}, \ket{\downarrow,\uparrow \downarrow}, \ket{\uparrow \downarrow,\downarrow}
-\end{aligned}\end{equation}
-Since a double impurity has the same energy as a vacant impurity (because of p-h symmetry, both are zero), the diagonal part corresponding to the first site will not change. We can then write down the eigenstates and eigenvalues directly from those of \(\hat n=1\), simply by making the transformation \(\ket{0} \to \ket{ \uparrow \downarrow}\).
-\begin{align}
-	\left.
-	\begin{array}{l}
-	-4v \ket{\uparrow,\uparrow \downarrow} +  2\left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)  \right] \ket{\uparrow \downarrow, \uparrow}\\
-	-4v \ket{\downarrow,\uparrow \downarrow} + 2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d, v\right)  \right] \ket{\uparrow \downarrow, \downarrow}\end{array}
-	\right\}
-	E = \frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v \right)
-\end{align}
-The most interesting subspace is \(\hat n=2\). This is six dimensional. Since the Hamiltonian conserves both the total spins \(S^2\) and \(C^2\) as well the z-components \(S^z = S_1^z + S^z_2\) and \(C^z = C_1^z + C^z_2\), it would be prudent to choose our basis with this in mind. The action of the hybridisation term on the various states are
-\begin{equation}\begin{aligned}
-	&v\left( c^\dagger_{1 \downarrow} c_{2 \downarrow} +  c^\dagger_{2 \uparrow} c_{1 \uparrow}\right) c^\dagger_{1 \uparrow}c^\dagger_{2 \downarrow}\ket{-} = v\left(c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow} c_{2 \downarrow}  c^\dagger_{2 \downarrow}+  c^\dagger_{2 \uparrow} c^\dagger_{2 \downarrow}c_{1 \uparrow} c^\dagger_{1 \uparrow}\right)\ket{-} = v \ket{\uparrow \downarrow,0}  + v \ket{0, \uparrow \downarrow}\\
-	&v\left( c^\dagger_{1 \uparrow} c_{2 \uparrow} +  c^\dagger_{2 \downarrow} c_{1 \downarrow}\right) c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow}\ket{-} = v\left(-c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow} c_{2 \uparrow}  c^\dagger_{2 \uparrow} - c^\dagger_{2 \uparrow} c^\dagger_{2 \downarrow}c_{1 \downarrow} c^\dagger_{1 \downarrow}\right)\ket{-} = -v \ket{\uparrow \downarrow,0} -v \ket{0, \uparrow \downarrow}\\
-	&v\left( c^\dagger_{2 \uparrow} c_{1 \uparrow} +  c^\dagger_{2 \downarrow} c_{1 \downarrow}\right) c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}\ket{-} = v\left(-c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow} c_{1 \uparrow}  c^\dagger_{1 \uparrow} + c^\dagger_{1 \uparrow} c^\dagger_{2 \downarrow}c_{1 \downarrow} c^\dagger_{1 \downarrow}\right)\ket{-} = -v \ket{\downarrow, \uparrow} + v \ket{\uparrow, \downarrow} \\
-	&v\left( c^\dagger_{1 \uparrow} c_{2 \uparrow} +  c^\dagger_{1 \downarrow} c_{2 \downarrow}\right) c^\dagger_{2 \uparrow}c^\dagger_{2 \downarrow}\ket{-} = v\left(c^\dagger_{1 \uparrow} c^\dagger_{2 \downarrow}c_{2 \uparrow} c^\dagger_{2 \uparrow}-c^\dagger_{1 \downarrow}c^\dagger_{2 \uparrow} c_{2 \downarrow}  c^\dagger_{2 \downarrow}\right)\ket{-} = v \ket{\uparrow, \downarrow} -v \ket{\downarrow, \uparrow}\\
-\end{aligned}\end{equation}
-\begin{flalign}
-	\mathcal{H}_{IR}\ket{\uparrow, \uparrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\uparrow, \uparrow} \label{1}\\
-	\mathcal{H}_{IR}\ket{\downarrow, \downarrow} &= \left(\epsilon_d + \frac{1}{4}j\right)\ket{\downarrow, \downarrow}\\
-	\mathcal{H}_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\label{2}\\
-	\mathcal{H}_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &= - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\label{hikari}\\
-\mathcal{H}_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &= \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\\
-	\mathcal{H}_{IR}\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) &= \left( \epsilon_d - \frac{3}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + 2v \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)
-\end{flalign}
-The first four states are eigenstates. The last two are not, but they form a two-dimensional subspace which can be easily diagonalized. The eigenstates of this subspace are
-\begin{equation}\begin{aligned}
-	\label{gstate}
-	\ket{\pm} &= c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\\
-	E^2_\pm &= v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j
-\end{aligned}\end{equation}
-The symbol \(\gamma\) stands for the quantity
-\begin{equation}\begin{aligned}
-	\label{gamma_def}
-	\gamma = \frac{1}{2v}\left[ \frac{1}{4}\left( 3j + k \right) - \epsilon_d \right] 
-\end{aligned}\end{equation}
-and the coefficients \(c^{s,c}_\pm\) for the spin and charge singlets (the superscripts \(s,c\) designate which singlet the coefficient sticks to) are
-\begin{equation}\begin{aligned}
-	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\mp
-\end{aligned}\end{equation}
-The ground state is of course \(E^2_-\).
-\begin{equation}\begin{aligned}
-	E^2_- = v\left[ \gamma - \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j
-\end{aligned}\end{equation}
-The probabilities for the spin and charge sectors for the ground state look simpler:
-\begin{equation}\begin{aligned}
-	\left( c^s_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right)\\
-	\left( c^c_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)\\
-\end{aligned}\end{equation}
-In the first quadrant, we will have \(J^* > K^*\). As we increase the system size, \(J^*\) increases, which implies \(j-k\) will increase. In the limit of very large \(j-k\), we can write
-\begin{equation}\begin{aligned}
-	\gamma \to \infty \implies \left( c^s_- \right)^2 \to 1 \text{ and } \left( c^c_- \right)^2 \to 0
-\end{aligned}\end{equation}
-The spin singlet becomes the all-important piece in this situation.
-This change is shown in fig.~\ref{gamma}. We have the variation of the probabilities and of \(\gamma\) for the first quadrant. \(\gamma\) increases with system size, and so does the spin probability \(\left( c_s^- \right)^2\). The ground state in such a limit becomes purely a singlet:
-\begin{equation}\begin{aligned}
-	\label{gstate_kondo}
-	\ket{\Psi}_\text{gs} &\approx \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) \\
-	E_\text{gs} &\approx \epsilon_d - \frac{3j}{4}
-\end{aligned}\end{equation}
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.52\textwidth]{../figures/cscc_q1.pdf}
-	\includegraphics[width=0.46\textwidth]{../figures/gamma_q1.pdf}
-	\caption{\textit{Left}: Variation of the probabilities \(\left(c^s\right)^2\) and \(\left(c^c\right)^2\) with system size. \textit{Right}: Variation of \(\gamma\) with system size.}
-	\label{gamma}
-\end{figure}
-
-The full list of eigenstates is
+The full list of eigenstates is given in Table~\ref{twosite_spectrum}.
 \begin{table}[htb!]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		\(\hat n\) & \(S^z\) & eigenstate & eigenvalue\\
+		\(\hat n\) & \(S_1^z + S_2^z\) & eigenstate & eigenvalue\\
 		\hline
-		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}k\)\\
-		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}k\)\\
-		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \uparrow}\) & \multirow{4}{*}{\(\frac{1}{2} \epsilon_d \pm \frac{1}{2}\Delta\left(\epsilon_d , v\right)\)}\\
-		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,0} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{0, \downarrow}\)  &\\
-		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4v\ket{\uparrow,2} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{2, \uparrow}\) &\\
-		 & - \(\frac{1}{2}\) & \(-4v\ket{\downarrow,2} +2 \left[ \epsilon_d \mp \Delta\left(\epsilon_d , v\right)\right] \ket{2, \downarrow}\)  &\\
-		\multirow{5}{*}{2} & 1,-1 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\) & \multirow{2}{*}{\(\epsilon_d + \frac{1}{4}j\)}\\
-		& \multirow{3}{*}{0} & \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & \\
-		& & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}k\)\\
-		& & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \(v\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] + \epsilon_d - \frac{3}{4}j\)\\
+		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}{K^*}\)\\
+		\hline
+		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}{K^*}\)\\
+		\hline
+		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \downarrow}\)  &\\
+		\hline
+		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \downarrow}\)  &\\
+		\hline
+		\multirow{3}{*}{2} & 1,-1,0 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\), \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & {\(-\frac{1}{2}U^* + \frac{1}{4}{J^*}\)}\\
+		\cline{2-4}
+		& 0 & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}{K^*}\)\\
+		\cline{2-4}
+		& 0 & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \({V^*}\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] -\frac{1}{2}U^* - \frac{3}{4}{J^*}\)\\
 		\hline
 	\end{tabular}
 	\caption{Eigenstates for effective two-site Hamiltonian}
-	\label{tab:label}
+	\label{twosite_spectrum}
 \end{table}
+The quantities \(\Delta\) and \(\gamma\) are defined as
+\begin{equation}\begin{aligned}
+	\label{gamma_def}
+	\Delta\left(U^*, V^*\right) = \frac{1}{2}\sqrt{{U^*}^2 + 16{V^*}^2}, \quad \gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right] 
+\end{aligned}\end{equation}
+and the coefficients \(c^{s,c}_\pm\) for the last eigenstate are given by
+\begin{equation}\begin{aligned}
+	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\mp
+\end{aligned}\end{equation}
 
-Although \(E^2_-\) is the ground state of this two-dimensional subspace, we haven't yet checked what is the true ground state of the full Hilbert space. The eigenstates eq.~\ref{1} through \ref{2} are obviously higher than \(E_-^2\), because of the presence of the singlet \(- \frac{3}{4}j\) and the negative \(\gamma\) contribution in \(E_-^2\) compared to the positive triplet contribution \( \frac{1}{4}j\) in those equations. The only other competitors are the one in eq.~\ref{hikari} which we call \(E_c^2\), and the low energy eigenstate in eq.~\ref{low}, which we call \(E_-^1\). We first shown that \(E_-^1 > E_-^2\). The difference between \(E_-^2\) and \(E_-^1\) is
-\begin{equation}\begin{aligned}
-	E_-^2 - E_-^1= - \frac{3}{4}\left( j + k \right) - \sqrt{4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) } + \sqrt{ \frac{1}{4}\epsilon_d^2 + v^2}
-\end{aligned}\end{equation}
-From the nature of the fixed point phases, we know that 
-\begin{equation}\begin{aligned}
-	J^* > K^* \implies \epsilon_d^* \leq 0
-\end{aligned}\end{equation}
-and
-\begin{equation}\begin{aligned}
-	J^* < K^* \implies \epsilon_d^* \geq 0
-\end{aligned}\end{equation}
-such that
-\begin{equation}\begin{aligned}
-	\epsilon_d\left( j-k \right) \leq 0
-\end{aligned}\end{equation}
-This result then very easily implies that
-\begin{equation}\begin{aligned}
-	4v^2 + \frac{\epsilon_d^2}{4} + \frac{9}{64}\left( j - k \right) ^2 - \frac{3}{8}\epsilon_d\left( j-k \right) > \frac{1}{4}\epsilon_d^2 + v^2
-\end{aligned}\end{equation}
-and we can apply this inequality to the difference between \(E_-^2\) and \(E_-^1\) to see that \(E_-^2\) is greater that \(E_-^1\).
+For \(U>0\), the ground state is given by
+\begin{gather}
+	\ket{\Psi}_\text{gs} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_\text{gs} =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+\end{gather}
 
-We now compare \(E_-^2\) and \(E_c^2\):
+The probabilities for the spin and charge sectors for the ground state are
 \begin{equation}\begin{aligned}
-	\Delta E_g \equiv E_-^2 - E_c^2 = \frac{1}{2}\epsilon_d - \frac{3j + k}{8} + k - \sqrt{4v^2 + \left(\frac{3j+k}{8} -\frac{1}{2} \epsilon_d\right) ^2}
+	\left( c^s_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right), \quad \left( c^c_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)~.
 \end{aligned}\end{equation}
-Because of the presence of the large \(v\) in the first quadrant, this will necessarily be negative there. So, the true ground state in the first quadrant is \(E_-^2\). In the third quadrant, the large value of \(k\) will make the difference positive and the true ground state will be the charge singlet. 
-
-These conclusions have been checked numerically and shown in fig.~\ref{fig_gstate}, where we have plotted the sign of \(\Delta E_g\) as a function of \(K_0 - J_0\). For positive values of \(K_0 - J_0\), we are in the third quadrant, and the sign of \(\Delta E_g\) being \(+1\) implies that \(E_-^2 > E_c^2\), and so the third quadrant ground state is the charge singlet (\(E_c^2\)). On the other hand, as \(K_0 - J_0\) becomes negative, we move into the first quadrant, and the sign of \(\Delta E_g\) also flips, implying that we have a transition from the charge singlet to the (mostly) spin-singlet ground state.
-\begin{figure}[!htb]
+For (roughly) \(J_0 > V_0\), we get \(J^* \gg V^*\) and \(U^* \gg U_0\) so that \(\gamma \gg 1\). This gives \(\left( c^s_- \right) ^2 \sim 1\) and \(\left( c^c_- \right) ^2 \sim 0\). The entire contribution to the ground state then comes from the spin sectors of the two sites. This is calculated numerically in fig.~\ref{cs_cc}.
+\begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/gstate.pdf}
-	\captionof{figure}{Shift of ground state in going from the first to third quadrant, depicted via the switch in sign of \(\Delta E_g\).}
-	\label{fig_gstate}
+	\includegraphics[width=0.8\textwidth]{../spin-charge-symmetrical/coeffs_vs_J.pdf}
+	\caption{Variation of relative weights \(c^s_-\) and \(c^c_-\) with \(J_0\)}
+	\label{cs_cc}
 \end{figure}
-
-One of the most striking conclusions of this chapter is that the renormalized ground state of the SIAM in the Kondo regime is purely a singlet. The holon-doublon contributions of the ground state die out in the limit of large system size, and we are left purely with spin-sector contributions. This is, as far as we can see, due to two reasons: 
-\begin{itemize}
-	\item a higher RG flow rate of \(J\) as compared to \(V\)
-	\item the fact that \(j \sim J N\) while \(v \sim V\sqrt N \)
-\end{itemize}
-These two factors help the s-d interaction term in becoming the most dominant term in the Hamiltonian, at the fixed point.
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
