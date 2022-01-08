@@ -46,7 +46,7 @@ We finally come to the RG equation for \(U\):
 	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2} = -4V^2\left(U + \frac{J}{4}\right)\frac{n_j}{d_0 d_1} - \frac{n_j J^2}{d_2}
 \end{aligned}\end{equation}
 
-For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) will make \(U\) irrelevant.
+For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) makes \(U\) relevant.
 
 \begin{figure}[htpb]
 	\centering
@@ -140,7 +140,7 @@ and the coefficients \(c^{s,c}_\pm\) for the last eigenstate are given by
 
 For \(U>0\), the ground state is given by
 \begin{gather}
-	\ket{\Psi}_\text{gs} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_\text{gs} =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+	\ket{\Psi}_\text{1} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
 
 The probabilities for the spin and charge sectors for the ground state are
@@ -154,6 +154,22 @@ For (roughly) \(J_0 > V_0\), we get \(J^* \gg V^*\) and \(U^* \gg U_0\) so that 
 	\caption{Variation of relative weights \(c^s_-\) and \(c^c_-\) with \(J_0\)}
 	\label{cs_cc}
 \end{figure}
+
+In the other regime of \(U<0\), the two competing states are \(\ket{\Psi}_1\) defined above (with energy \(E_1\)), and \(\ket{\Psi_2}\), the charge singlet: \(\ket{\Psi}_2 = \frac{1}{\sqrt 2}\left( \ket{2,0} - \ket{0,2} \right)\) having energy \(E_2\).
+\begin{equation}\begin{aligned}
+	E_1 - E_2 = -\frac{1}{4}\sqrt{\left( \frac{1}{2}K^* + U^* \right)^2 + (4V^*)^2} - \frac{1}{4}U^* + \frac{3}{4}K^*
+\end{aligned}\end{equation}
+For \(V_0 \gg K_0\), the largest energy scale will be \(V^*\), and we can then approximate this difference as
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq -V^* < 0
+\end{aligned}\end{equation}
+In such a case, \(\ket{\Psi}_1\) will therefore be the ground state. In the other regime \(V_0 \ll K_0\), the largest energy scale will be \(K^*\), and we can then write
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq - \frac{1}{8}K^* + \frac{3}{4}K^* > 0
+\end{aligned}\end{equation}
+In this case, the ground state will be \(\ket{\Psi}_2\). For some critical pair \((K_c, V_c)\), we will a phase transition from the charge singlet \(\ket{\Psi}_2\) to the spin singlet + charge triplet \(\ket{\Psi}_1\).
+
+
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
