@@ -14,9 +14,13 @@ We have assumed the impurity levels are particle-hole symmetric (\(\epsilon_d = 
 \end{aligned}\end{equation}
 
 \section{Nature of RG flows: \(U>0\)}
-For the Hamiltonians with positive on-site correlation, we will assume that the spin-exchange coupling is positive and charge isospin-exchange coupling is negative: \(J>0, K<0\). This choice is motivated by the signs of the corresponding terms when they are generated via a Schrieffer-Wolff transformation~\cite{schrieffer1966}. The impurity-bath hybridisation \(V\) is always positive.
+For the Hamiltonians with positive on-site correlation, we will assume that the spin-exchange coupling is positive and charge isospin-exchange coupling is negative: \(J>0, K<0\). This choice is motivated by the signs of the corresponding terms when they are generated via a Schrieffer-Wolff transformation~\cite{schrieffer1966}. The impurity-bath hybridisation \(V\) is always positive. The sign of the couplings lead to inequalities among the denominators which we will utilise at various points. First of all, since \(U>0\), we have \(d_1 - d_2 = \frac{U}{2} > 0\). Secondly, since \(K<0\), we have \(d_2 - d_3 = \frac{J-K}{4} > 0\). And finally, we have \(d_3 - d_0 = \frac{U}{2} > 0\). Combining these, we can write
+\begin{equation}\begin{aligned}
+	\label{ineq_den}
+	d_1 > d_2 > d_3 > d_0
+\end{aligned}\end{equation}
 
-We will in general assume that \(\omega < 0\). The strong-coupling regime is defined as the range of values of \(\omega\) where the hybridisation is relevant. This is ensured by the assumption \(d_1<0\). Note that since \(d_2 < d_1\) for \(U>0\), the assumption of \(d_1 < 0\) also ensures that \(d_2 < 0\). The assumptions of \(\omega < 0\) and \(K < 0\) also mean \(d_0 < 0, d_3 < 0\). In summary, all the denominators are negative: \(d_i = -|d_i|\). The simplest consequence of this is the RG flow of \(K\):
+The strong-coupling regime is defined as the range of values of \(\omega\) where the hybridisation is relevant. This is ensured by the assumption \(d_1<0\). From eq.~\ref{ineq_den}, we can then conclude that all denominators are negative: \(d_i = - |d_i|\). The simplest consequence of this is the RG flow of \(K\):
 \begin{equation}\begin{aligned}
 	\Delta K= -\frac{n_j K^2}{d_3} = \frac{n_j K^2}{|d_3|} > 0 \implies K_{j+1} > K_j \implies K_0 = -|K_0|, K^* \to 0
 \end{aligned}\end{equation}
