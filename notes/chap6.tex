@@ -44,13 +44,16 @@ We can compare the rate of flows of \(V\) and \(J\):
 	\frac{\Delta V}{\Delta J} = \frac{3V}{8J}\left(1 + \frac{|d_2|}{|d_1|}\right) > \frac{3V}{4J}
 \end{aligned}\end{equation}
 There we used the fact that \(|d_2| > |d_1|\).
-
 We finally come to the RG equation for \(U\):
 \begin{equation}\begin{aligned}
 	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2} = -4V^2\left(U + \frac{J}{4}\right)\frac{n_j}{d_0 d_1} - \frac{n_j J^2}{d_2}
 \end{aligned}\end{equation}
-
 For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) makes \(U\) relevant.
+
+In short, the \(U>0\) regime is characterised by an irrelevant isospin-exchange coupling \(K\) and a relevant spin-exchange coupling \(J\), and the following set of RG equations for the remaining couplings \(U\) and \(V\):
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2}, \quad \Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right)
+\end{aligned}\end{equation}
 
 \begin{figure}[htpb]
 	\centering
@@ -73,7 +76,19 @@ For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) ma
 \end{figure}
 
 \section{Nature of RG flows: \(U<0\)}
-Here, we have \(J<0\) and \(K>0\). The RG flows in this regime can be exactly mapped on to those in the positive \(U\) regime by transforming \(J \leftrightarrow K\) and \(d_0 \leftrightarrow d_1\).
+Here, we have \(J<0\) and \(K>0\). The denominators satisfy the following inequality in this regime:
+\begin{equation}\begin{aligned}
+	d_0 > d_3 > d_2 > d_1
+\end{aligned}\end{equation}
+
+The strong-coupling regime here corresponds to \(d_0 < 0\). This again means that all the denominators are negative. The spin-exchange coupling \(J\) is now irrelevant, because its bare value is negative while its RG equation is positive: \(\Delta J>0\). Moreover, the isospin coupling \(K\) is now positive and so is its RG equation: \(\Delta K>0\), which means it flows to strong-coupling. \(V\) also flows to strong-coupling. The RG equation for \(U\) can be written as
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2\left(\frac{K}{4} - U\right)\frac{n_j}{d_0 d_1} + \frac{n_j K^2}{d_3}
+\end{aligned}\end{equation}
+The first term is necessarily positive, while the second term is negative. This means that for roughly \(V_0 > J_0\), we  will have \(\Delta U > 0\), and since \(U_0 < 0\), this amounts to an irrelevant flow of \(U\) towards zero. On the other hand, for \(J_0 > V_0\), we will have \(\Delta U < 0\), and this corresponds to a relevant flow of \(U\) towards large negative value.
+
+In other words, the RG flows in this regime can be exactly mapped to those in the positive \(U\) regime. The general statement is: in the strong-coupling regime of positive(negative) \(U\), \(V\) is always relevant, \(J\)(\(K\)) is relevant, \(K\)(\(J\)) is irrelevant, and \(U\) is relevant when \(J(K) > V\), otherwise \(U\) is irrelevant.
+
 
 \section{Effective Hamiltonian and ground state}
 The fixed point Hamiltonian can, in general, be written as
@@ -86,7 +101,7 @@ The first term is the kinetic energy of all the electrons. The next two terms ar
 \end{aligned}\end{equation}
 Our goal here is to write down the ground state wavefunction for this low-energy Hamiltonian.
 
-To make progress with the ground state, we will simplify the effective Hamiltonian by mapping it onto a two-site problem. One site is of course the impurity site, and this site will be labeled as site 1. The other site will be formed by the center of mass degree of freedom of the conduction electrons, and will be labeled as site 2. The Hamiltonian for this two-site problem is
+To make progress, we will simplify the effective Hamiltonian by taking the zero bandwidth limit. This reduces it to a two-site problem. One site is of course the impurity site, and this site will be labeled as site 1. The other site will be formed by the center of mass degree of freedom of the conduction electrons, and will be labeled as site 2. The Hamiltonian for this two-site problem is
 \begin{equation}\begin{aligned}
 	\mathcal{H}_{IR} = - \frac{U^*}{2}\left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + V^*\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^*\vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
 \end{aligned}\end{equation}
@@ -144,6 +159,7 @@ and the coefficients \(c^{s,c}_\pm\) for the last eigenstate are given by
 
 For \(U>0\), the ground state is given by
 \begin{gather}
+	\label{gstate}
 	\ket{\Psi}_\text{1} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
 
@@ -171,9 +187,7 @@ In such a case, \(\ket{\Psi}_1\) will therefore be the ground state. In the othe
 \begin{equation}\begin{aligned}
 	E_1 - E_2 \simeq - \frac{1}{8}K^* + \frac{3}{4}K^* > 0
 \end{aligned}\end{equation}
-In this case, the ground state will be \(\ket{\Psi}_2\). For some critical pair \((K_c, V_c)\), we will a phase transition from the charge singlet \(\ket{\Psi}_2\) to the spin singlet + charge triplet \(\ket{\Psi}_1\).
-
-
+In this case, the ground state will be \(\ket{\Psi}_2\). There exists, therefore, a phase transition at a critical plane \((U_c, K_c, V_c)\), where the ground state changes between the charge singlet \(\ket{\Psi}_2\) and the spin singlet + charge triplet \(\ket{\Psi}_1\).
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes

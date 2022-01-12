@@ -1,13 +1,14 @@
 \chapter{Results and Features of the Low-Energy Theory}
 \label{results}
-\section{Magnetic susceptibility}
-The thermal susceptibility is defined as
+\section{Spin and charge susceptibilities}
+The spin susceptibility is defined as
 \begin{equation}\begin{aligned}
 	\label{chi_def}
 	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right)
 \end{aligned}\end{equation}
 There is an alternate way of calculating this. We insert a fictitious magnetic field that couples only to the impurity site. The Hamiltonian in the presence of this field is
 \begin{equation}\begin{aligned}
+	\label{field_ham}
 	\mathcal{H}^\prime(B) = \mathcal{H} + B S_d^z
 \end{aligned}\end{equation}
 The susceptibility is then given by
@@ -37,204 +38,31 @@ The full thing becomes
 	= \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) 
 \end{aligned}\end{equation}
 This completes the proof. 
-\subsection{For \(v=0\)}
-In the presence of a magnetic field coupling term \(B S^z_1\), the eigenvalues become (setting \(v = 0\))
-\begin{equation}\begin{aligned}
-\hat n=0,4 &\rightarrow E^0 = \frac{1}{4}k\\
-\hat n=1,3 &\rightarrow \begin{cases}
-	E^1_{\pm, \uparrow} = \frac{1}{2} \left(\epsilon_d + \frac{1}{2}B\right) \pm \frac{1}{2}\Delta\left(\epsilon_d + \frac{1}{2}B, v\right)  = \epsilon_d + \frac{1}{2}B, 0\\ 
-	E^1_{\pm, \downarrow} = \frac{1}{2} \left(\epsilon_d - \frac{1}{2}B\right) \pm \frac{1}{2}\Delta\left(\epsilon_d - \frac{1}{2}B, v\right)  = \epsilon_d -\frac{1}{2}B, 0
-	\end{cases}\\
-	\hat n=2 &\rightarrow \begin{cases}
-	\epsilon_d + \frac{1}{4}j + \frac{1}{2}B\\
-	\epsilon_d + \frac{1}{4}j - \frac{1}{2}B\\
-	\frac{1}{4}k \\
-	-\frac{3}{4}k \\
-	\epsilon_d -\frac{1}{4}j \pm \frac{1}{2} \Gamma \\
-\end{cases}
-\end{aligned}\end{equation}
-where we defined \(\Gamma = \sqrt{B^2 + j^2}\). The eigenvalues in \(\hat n=2\) can be elaborated upon. The action of the total Hamiltonian \(\mathcal{H}^\prime\) (with \(v=0\)) is
-\begin{flalign}
-	\ket{\uparrow, \uparrow} &\mapsto \left(\epsilon_d + \frac{1}{4}j + \frac{1}{2}B\right)\ket{\uparrow, \uparrow}\\
-	\ket{\downarrow, \downarrow} &\mapsto \left(\epsilon_d + \frac{1}{4}j - \frac{1}{2}B\right)\ket{\downarrow, \downarrow}\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right) &\mapsto \frac{1}{4}k\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right) &\mapsto - \frac{3}{4}k \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} - \ket{0, \uparrow\downarrow}\right)\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d + \frac{1}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right) + \frac{1}{2}B\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right)\\
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) &\mapsto \left( \epsilon_d - \frac{3}{4}j \right) \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + \frac{1}{2}B \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} + \ket{\downarrow, \uparrow}\right)\\
-\end{flalign}
-The first four states directly give the first four eigenvalues in \(\hat n=2\). The remaining two states form the matrix
-\begin{equation}\begin{aligned}
-	\begin{pmatrix} \epsilon_d + \frac{1}{4}j & \frac{1}{2}B \\ \frac{1}{2}B & \epsilon_d - \frac{3}{4}j \end{pmatrix} 
-\end{aligned}\end{equation}
-The eigenvalues satisfy the equation
-\begin{equation}\begin{aligned}
-	0 = \left( E - \epsilon_d + \frac{3}{4}j \right) \left( E - \epsilon_d - \frac{1}{4}j \right) - \frac{1}{4}B^2 = \left( E - \epsilon_d - \frac{1}{4}j \right) ^2 + j \left( E - \epsilon_d - \frac{1}{4}j \right) - \frac{1}{4}B^2
-\end{aligned}\end{equation}
-The solutions are
-\begin{equation}\begin{aligned}
-	E = \epsilon_d + \frac{1}{4}j + \frac{-j \pm \sqrt{j^2 + B^2}}{2} = \epsilon_d - \frac{1}{4}j \pm \frac{1}{2}\Gamma
-\end{aligned}\end{equation}
-which are the final two eigenvalues.
 
-The partition function is
-\begin{equation}\begin{aligned}
-	Z(B) &= 2 \exp\left\{-\beta \frac{k}{4}\right\} + 2\left( \exp\left\{-\beta\left(\epsilon_d + \frac{1}{2} B\right)\right\} + e^0\right) + 2\left( \exp\left\{-\beta\left(\epsilon_d - \frac{1}{2} B\right)\right\} + e^0\right) \\
-	     &+ \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j + \frac{1}{2} B\right)\right\} + \exp\left\{-\beta\left(\epsilon_d + \frac{1}{4}j - \frac{1}{2} B\right)\right\} \\
-	     &+ \exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \exp\left\{-\beta\left(\epsilon_d - \frac{1}{4}j + \frac{1}{2}\Gamma\right)\right\} + \exp\left\{-\beta\left( \epsilon_d- \frac{1}{4}j - \frac{1}{2}\Gamma\right)\right\}\\
-	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d}\cosh \beta \frac{B}{2} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\cosh \beta \frac{B}{2}\\
-	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \beta \frac{1}{2}\Gamma\\
-	     &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right]\cosh \left(\beta \frac{B}{2}\right) \\
-	     &+ 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{1}{2}\Gamma\right)
-\end{aligned}\end{equation}
-We can now compute the derivatives.
-\begin{equation}\begin{aligned}
-	Z^\prime \equiv \frac{\partial{Z}}{\partial{B}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\frac{1}{2}\beta \sinh \left(\frac{1}{2}\beta \Gamma\right) \frac{\partial{\Gamma}}{\partial{B}} \\
-	=& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{\beta}{2}\sinh \left(\beta \frac{B}{2}\right) + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\frac{1}{2}\beta \Gamma \right) \frac{B}{\Gamma}\\
-	Z^{\prime\prime} \equiv \frac{\partial^2{Z}}{\partial{B^2}} =& \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 \cosh \left(\beta \frac{B}{2}\right) \\
-								     &+ e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \left[\cosh \left(\frac{1}{2}\beta \Gamma \right) \times \frac{1}{2}\beta \left(\frac{B}{\Gamma}\right)^2 + \sinh \left(\frac{1}{2}\beta \Gamma \right) \left(-\frac{B}{\Gamma^2}\times \frac{B}{\Gamma} + \frac{1}{\Gamma} \right)\right]
-\end{aligned}\end{equation}
-Taking the limit of \(B \to 0\) gives
-\begin{equation}\begin{aligned}
-	Z\vert_{B=0} &= 4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)\\
-	Z^\prime\vert_{B=0} &= 0\\
-	Z^{\prime\prime}\vert_{B=0} &= \left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}\\
-\end{aligned}\end{equation}
-The susceptibility is thus
-\begin{equation}\begin{aligned}
-	\chi(\beta) &= \frac{1}{\beta}\frac{\left[4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \left(\frac{\beta}{2}\right)^2 + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\beta \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
-		    &=\frac{\left[2e^{-\beta \epsilon_d} + e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)}\right] \frac{1}{2}\beta + e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{4 + 3\exp\left\{-\beta \frac{k}{4}\right\} + \exp\left\{\beta \frac{3k}{4}\right\} + 4e^{-\beta \epsilon_d} + 2e^{-\beta \left(\epsilon_d + \frac{j}{4}\right)} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)}\\
-\end{aligned}\end{equation}
-At high temperatures, we can write
-\begin{equation}\begin{aligned}
-	\frac{\chi}{\beta}\vert_{\beta \to 0} = \frac{\left[4 + 2\right] \frac{1}{4} + \frac{1}{2}\lim_{\beta \to 0}\sinh \left(\beta \frac{j}{2} \right) \frac{2}{\beta j}}{4 + 3 + 1 + \left[4 + 2\right] + 2} = \frac{\frac{3}{2} + \frac{1}{2}}{16} = \frac{1}{8} && \left[\lim_{x \to 0} \frac{\sinh x}{x} = 1\right] \\
-\end{aligned}\end{equation}
-At low temperatures,
-\begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} = \lim_{\beta \to \infty} \frac{e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)} \sinh \left(\beta \frac{j}{2} \right) \frac{1}{j}}{\exp\left\{\beta \frac{3k}{4}\right\} + 2e^{-\beta\left(\epsilon_d - \frac{j}{4}\right)}\cosh \left(\beta \frac{j}{2}\right)} =  \frac{1}{2j}\lim_{\beta \to \infty} \frac{1}{\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} + 1} \\
-\end{aligned}\end{equation}
-There we used \(\sinh x \approx \cosh x \approx \frac{1}{2}e^x \text{ for }x\to \infty\). The exponential will take the following limiting values:
-\begin{equation}\begin{aligned}
-	\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} \to \begin{cases}
-		\infty, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\\
-		1, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} = 0\\
-		0, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0
-	\end{cases}
-\end{aligned}\end{equation}
-which means
-\begin{equation}\begin{aligned}
-	\left[\exp\left\{\beta \left(\frac{3k}{4} + \epsilon_d - \frac{3j}{4}\right)\right\} + 1\right]^{-1} \to \begin{cases}
-		0, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\\
-		\frac{1}{2}, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} = 0\\
-		1, & \text{ if } \frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0
-	\end{cases} = \Theta\left(\frac{3j}{4} - \frac{3k}{4} - \epsilon_d\right) 
-\end{aligned}\end{equation}
-where the theta function (Heaviside function) is defined as 
-\begin{equation}\begin{aligned}
-	\Theta(x) = \begin{cases}
-		1, & \text{ if }x>0\\
-		\frac{1}{2}, & \text{ if }x=0\\
-		0, & \text{ if }x<0\\
-	\end{cases}
-\end{aligned}\end{equation}
-The thermal susceptibility at high temperatures is thus
-\begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} = \frac{1}{2j}\Theta\left(\frac{3j}{4} - \frac{3k}{4} - \epsilon_d\right) 
-\end{aligned}\end{equation}
-If we are in the first quadrant, then the fixed point values are such that \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} < 0\), so the theta function will evaluate to 1, and we can write
-\begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} = \frac{1}{2j}
-\end{aligned}\end{equation}
-For sufficiently large values of \(j\) compared to \(k\), we can also approximate the Kondo temperature \(T_K\) as \(T_K \approx \frac{j}{\pi}\). Then, the zero temperature value of \(\chi\) deep in the first quadrant is
-\begin{equation}\begin{aligned}
-	\chi(T = 0) \approx \left(2 \pi T_K\right)^{-1}
-\end{aligned}\end{equation}
-This is in accordance with the results obtained from Bethe ansatz in \cite{okiji_kawakami}. The variation of \(\chi \times T\) and \(\left(T_K \chi\right)^{-1}\) against temperature is shown in fig.~\ref{sus_spin}.
-
-On the other hand, in the third quadrant, we have \(\frac{3k}{4} + \epsilon_d - \frac{3j}{4} > 0\), and \(\Theta\) gives
-\begin{equation}\begin{aligned}
-	\chi\vert_{\beta \to \infty} = 0
-\end{aligned}\end{equation}
-The variation of \(\chi\) against \(T\) is shown in fig.~\ref{sus_T}. The susceptibility goes through a maximum at a certain temperature, and this maximum is not present in NRG or Bethe Ansatz calculations. We suspect that this peak is an artifact of the simplification suffered in restricting the calculation to just the zero mode of the conduction bath. We intend to investigate this by allowing for higher modes of the bath. The speculation that this is due to the zero mode is further strengthened by the fact that a similar maximum was observed in the Kondo model susceptibility as obtained from a URG treatment and zero-mode effective Hamiltonian, in \cite{kondo_urg}.
-\begin{figure}[htpb!]
-	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/chi_T_new.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/one_over_chi_new.pdf}
-	\caption{\textit{Left}:Variation of $\chi \times T$ over six decades of temperature. The low temperature behavior is characteristic of a local Fermi liquid paramagnetic susceptibility, while at high temperatures we see the Curie-Weiss susceptibility resulting from the local moment. \textit{Right}:Variation of \(\left(T_k \times \chi\right)^{-1}\) with temperature.}
-	\label{sus_spin}
-\end{figure}
+To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian \(\mathcal{H}_{IR}\) and insert a magnetic field to obtain the Hamiltonian in eq.~\ref{field_ham}. For a particular regime of \(U\), only one of \(J\) or \(K\) will be non-zero. We then numerically diagonalise this Hamiltonian to obtain the partition function \(Z(B)\) and its derivatives. The spin susceptibility can then be calculated using eq.~\ref{chi_exp}. The results for \(U>0\) are shown in fig.~\ref{chi}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/chi_new.pdf}
-	\caption{Variation of $\chi$ against temperature. It saturates to a value close to \(\left( 2\pi T_K \right) ^{-1}\)}
-	\label{sus_T}
+	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chiT_J=0.020.pdf}
+	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chiT_J=0.100.pdf}
+	\caption{Spin susceptibility of the impurity times temperature, for two sets of bare parameters, in \(U>0\). At low temperatures, it becomes linear because \(\chi\) itself becomes constant (screening), while at high temperatures, \(\chi\times T\) becomes constant because of the paramagnetic \(\sim 1/T\) form of \(\chi\). For the right panel with a larger value of the spin-exchange coupling, the \(\chi\) tries to go towards the local moment value of \(1/4\) but eventually drops back to the free orbital value of \(1/8\).}
+	\label{chi}
 \end{figure}
 
-\section{Charge Susceptibility}
-We can also calculate the impurity contribution to the charge susceptibility of the system in a very similar fashion. We insert a magnetic field that couples to the impurity charge isospin:
+We can similarly define the charge susceptibility as
+\begin{equation}\begin{aligned}
+	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) = \lim_{B \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B)} \frac{\partial^2{Z(B)}}{\partial{B^2}}-\frac{1}{Z(B)^2} \left(\frac{\partial{Z(B)}}{\partial{B}}\right)^2\right]
+\end{aligned}\end{equation}
+where \(B\) is now a field that couples to the impurity isospin:
 \begin{equation}\begin{aligned}
 	\mathcal{H}^\prime(B) = \mathcal{H} + B C_d^z
 \end{aligned}\end{equation}
-We again work in the simpler case of \(v=0\). The energy eigenvalues for this Hamiltonian are
-\begin{equation}\begin{aligned}
-\hat n=0 & \rightarrow\frac{1}{4}k - \frac{B}{2}\\
-\hat n=4 &\rightarrow\frac{1}{4}k + \frac{B}{2}\\
-\hat n=1,3 &\rightarrow \begin{cases}
-	\epsilon_d - \frac{1}{2}B, 0\\ 
-	\epsilon_d + \frac{1}{2}B, 0
-	\end{cases}\\
-	\hat n=2 &\rightarrow \begin{cases}
-	\left.\epsilon_d + \frac{1}{4}j \right\}\times 3\\
-	\epsilon_d - \frac{3}{4}j \\
-	\epsilon_d -\frac{1}{4}k \pm \frac{1}{2} \Gamma \\
-\end{cases}
-\end{aligned}\end{equation}
-where \(\Gamma \equiv \sqrt{k^2 + B^2}\). We will again use eq.~\ref{chi_exp} to calculate the susceptibility. The partition function and its derivatives are
-\begin{equation}\begin{aligned}
-	\lim_{B \to 0} Z &= 2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 3e^{-\beta\left( \epsilon_d + \frac{j}{4} \right) } + e^{\beta\left( 3\frac{j}{4} - \epsilon_d \right)} + 2e^{\beta \left(\frac{k}{4} - \epsilon_d\right)}\cosh \beta \frac{k}{2}\\
-	\lim_{B \to 0} \frac{\partial{Z}}{\partial{B}} &= 0 \\
-	\lim_{B \to 0} \frac{\partial{^2Z}}{\partial{B^2}} &= \frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta\left(\frac{k}{4} - \epsilon_d\right)}\sinh \beta\frac{k}{2}
-\end{aligned}\end{equation}
-The charge susceptibility is thus
-\begin{equation}\begin{aligned}
-	\chi_c = \frac{1}{\beta}\frac{\frac{\beta^2}{2}\left[e^{-\beta \frac{k}{4}} + 2e^{-\beta \epsilon_d}\right] + \frac{\beta}{k}e^{\beta\left(\frac{k}{4} - \epsilon_d\right)}\sinh \beta\frac{k}{2}}{2e^{-\beta \frac{k}{4}} + 4 + 4e^{-\beta \epsilon_d} + 3e^{-\beta\left( \epsilon_d + \frac{j}{4} \right) } + e^{\beta\left( 3\frac{j}{4} - \epsilon_d \right)} + 2e^{\beta \left(\frac{k}{4} - \epsilon_d\right)}\cosh \beta \frac{k}{2}}
-\end{aligned}\end{equation}
-This is plotted in fig.~\ref{charge_sus}. The charge susceptibility at large temperatures becomes
-\begin{equation}\begin{aligned}
-	\left(\chi_c\times T\right) (T \to \infty) = \frac{1}{8}
-\end{aligned}\end{equation}
-The variation of \(\chi_c \times T\) and \(\chi_c^{-1}\) against temperature is also shown in figs.~\ref{chcT},\ref{one_over_chic}.
-
-An important result that we will use later is the value at \(T=0\).
-\begin{equation}\begin{aligned}
-	\chi_c(T=0) =  \frac{1}{2k}\lim_{\beta \to \infty} \frac{1}{1 + e^{\frac{3\beta}{4} \left(j-k\right) }}
-\end{aligned}\end{equation}
-There we used the observation that near the fixed point, \(\epsilon_d\) is either close to zero or large positive such that \(e^{-\beta \epsilon_d}\) does not affect the value of \(\chi_c\) at \(T=0\). In the Kondo regime of the SIAM \((j \gg k)\), the denominator diverges and the charge susceptibility vanishes at \(T=0\). This is shown in fig.~\ref{chi_c_zero}.
-\begin{equation}\begin{aligned}
-	\chi_c(T=0)\bigg\vert_{j \gg k} = 0
-\end{aligned}\end{equation}
+The charge susceptibility for \(U<0\) is shown in fig.~\ref{chi_charge}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[height=0.27\textheight]{../figures/chi_c_new.pdf}
-	\caption{Variation of \(\chi_c\) over 5 decades of temperature, for the charge-Kondo regime. Similar to the spin susceptibility, it saturates to \(\left( 2\pi T_K \right)^{-1}\).}
-	\label{charge_sus}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[height=0.27\textheight]{../figures/T_chi_c_new.pdf}
-	\caption{Behavior of \(\chi_c\times T\) for the charge-Kondo regime. It is qualitatively very similar to the behavior of the magnetic susceptibility in the spin-Kondo regime.}
-	\label{chcT}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[height=0.27\textheight]{../figures/one_over_chi_c_new.pdf}
-	\caption{Behavior of \(\left(T_K \chi_c\right)^{-1}\) for the charge-Kondo regime.}
-	\label{one_over_chic}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.4\textheight]{../figures/chi_c_zero_new.pdf}
-	\caption{Flow of charge susceptibility to 0 at low temperatures for the spin-Kondo regime (\(J>K\)).}
-	\label{chi_c_zero}
+	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chi_chargeT_K=0.010.pdf}
+	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chi_chargeT_K=0.100.pdf}
+	\label{chi_charge}
+	\caption{Charge susceptibility for the impurity at \(U<0\), for two sets of bare parameters. The physics is very similar to that of the spin susceptibility in \(U>0\).}
 \end{figure}
 
 \section{Specific heat}
@@ -534,7 +362,7 @@ The more interesting interaction is the off-diagonal term
 \end{aligned}\end{equation}
 This interaction arises from the enhanced entanglement between the impurity and the conduction electrons; removing the impurity from the singlet and the triplet generates these off-diagonal scatterings. As such, this is an indicator of the macroscopic entanglement of the singlet formed at the IR fixed point, and plotted in fig.~\ref{mutI}. 
 
-It is also very enlightening to note that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\ref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\ref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
+We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\ref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\ref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
 
 We have shown the enhancement of this off-diagonal scattering during the flow towards the IR fixed point by computing it during the reverse RG program, in fig.~\ref{Fkkqq}. It is clear from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
 \begin{figure}[htpb]
@@ -543,11 +371,12 @@ We have shown the enhancement of this off-diagonal scattering during the flow to
 	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\ref{off_diag_coeff} along the RG flow.}
 	\label{Fkkqq}
 \end{figure}
-\section{Calculation of Wilson ratio from effective local Fermi liquid}
-In this section, we will calculate the zero temperature Wilson ratio of the impurity in the Kondo regime of the SIAM. Since this is a low energy property, our starting point will be the fixed point Hamiltonian of eq.~\ref{fixed_point_ham}, after substituting \(U^*=K^*=0\) (because we are in the first quadrant):
+\section{Obtaining the real space low energy Hamiltonian: the local Fermi liquid}
+The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before) and a kinetic energy part that connects only the remaining sites among themselves.
 \begin{equation}\begin{aligned}
-	\mathcal{H}^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
+	\mathcal{H}^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} - t\sum_{\sigma\left<i,j \right>\atop{i,j\neq 0}}\left(c^\dagger_{i\sigma}c_{j\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
+We start with the ground state \(\ket{\Psi}_1\) and the star graph as the zeroth level ground state and Hamiltonian, and then add a nearest-neighbour hopping term as a perturbation of the zeroth Hamiltonian.
 We also convert \(\tau\) to \(\hat n\), ignoring the constant part, and write the kinetic energy part as a nearest-neighbor hopping problem:
 \begin{equation}\begin{aligned}
 	\mathcal{H}^* = t\sum_{\sigma\left<i,j \right>}\left(c^\dagger_{i\sigma}c_{j\sigma} + \text{h.c.}\right) + \sum_{\sigma}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
@@ -983,9 +812,9 @@ which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fer
 
 The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
-	\left<n_d \right> = \bra{GS}\sum_\sigma \hat n_{d\sigma} \ket{GS}
+	\left<n_d \right> = \bra{\Psi}_\text{1}\sum_\sigma \hat n_{d\sigma} \ket{\Psi}_\text{1}
 \end{aligned}\end{equation}
-\(\ket{GS}\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
+\(\ket{\Psi}_\text{1}\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \left( c_s^- \right)^2 + \left( c_c^- \right)^2 = 1
 \end{aligned}\end{equation}
