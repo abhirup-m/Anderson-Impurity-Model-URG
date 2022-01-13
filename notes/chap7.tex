@@ -1,6 +1,34 @@
-\chapter{Results and Features of the Low-Energy Theory}
+\chapter{Properties of the Low-Energy Theory: Thermodynamics and low-energy excitations}
 \label{results}
-\section{Spin and charge susceptibilities}
+
+\section{Effective temperature scale at the fixed point}
+We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}J}{\:\mathrm{d}\ln D} = n(0)J^2 \frac{1}{\omega - \frac{D}{2} + \frac{J}{4}}
+\end{aligned}\end{equation}
+where we have replaced by the number of states at each shell with that at the Fermi surface (uniform DOS). We can define a dimensionless quantity \(g \equiv \frac{J}{\frac{D}{2}} - \omega\). In terms of \(g\), the continuum RG equation becomes
+\begin{equation}\begin{aligned}
+	-\frac{\:\mathrm{d}g}{\:\mathrm{d}\ln D} + \frac{D g}{2\omega - D} = \frac{n(0) g^2}{1 - \frac{g}{4}}
+\end{aligned}\end{equation}
+Now, for the specific case where \(D\) is small (\(D \to 0\)), we can simplify and integrate this equation:
+\begin{equation}\begin{aligned}
+	\frac{\:\mathrm{d}g}{\:\mathrm{d}\ln D} &= \frac{n(0) g^2}{\frac{g}{4} - 1}\\
+	\implies \left[\frac{1}{g} + \frac{1}{4}\ln g\right]_{g_0}^{g^*} &= n(0)\ln D\big\vert_{D_0}^{D^*}
+\end{aligned}\end{equation}
+\(g^*(_0), D^*(_0)\) are the fixed point (bare) values of \(g, D\). From the denominator structure, the fixed-point value is \(g^* =  4\). This gives an estimate of the bandwidth of the emergent window:
+\begin{equation}\begin{aligned}
+	D^* = D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
+\end{aligned}\end{equation}
+We can now define a temperature scale for the fixed-point theory:
+\begin{equation}\begin{aligned}
+	T_K \equiv \frac{2N^*}{\pi}D^* = \frac{2N^*}{\pi}D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
+\end{aligned}\end{equation}
+The factor of \(2N^*\) is inserted to make the Kondo temperature intensive (we will see below that the \(N^*\) allows it to  be written in terms of parameters of the two-site Hamiltonian) - \(2N^*\) is the total number of momentum states in the fixed point theory. The factor of \(\frac{1}{\pi}\) is for aesthetic reasons. Since we have and will primarily work with \(\omega=0\), the fixed point condition can be used to write \(D^* = \frac{J^* + K^*}{2}\).
+\begin{equation}\begin{aligned}
+	T_K = \frac{2N^*}{\pi}\frac{1}{2}\left(J^* + K^*\right) = \frac{1}{\pi}\left(j + k\right)
+\end{aligned}\end{equation}
+\section{Impurity susceptibilities}
+\subsection{Spin susceptibility}
 The spin susceptibility is defined as
 \begin{equation}\begin{aligned}
 	\label{chi_def}
@@ -48,9 +76,10 @@ To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian
 	\label{chi}
 \end{figure}
 
+\subsection{Charge susceptibility}
 We can similarly define the charge susceptibility as
 \begin{equation}\begin{aligned}
-	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) = \lim_{B_c \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B_c)} \frac{\partial^2{Z(B_c)}}{\partial{B_c^2}}-\frac{1}{Z(B_c)^2} \left(\frac{\partial{Z(B_c)}}{\partial{B_c}}\right)^2\right]
+	\chi(\beta) = \beta \left(\left<\left(C_d^z\right)^2\right> - \left<C_d^z\right>^2\right) = \lim_{B_c \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B_c)} \frac{\partial^2{Z(B_c)}}{\partial{B_c^2}}-\frac{1}{Z(B_c)^2} \left(\frac{\partial{Z(B_c)}}{\partial{B_c}}\right)^2\right]
 \end{aligned}\end{equation}
 where \(B_c\) is now a field that couples to the impurity charge-isospin:
 \begin{equation}\begin{aligned}
@@ -74,6 +103,11 @@ It is interesting to look at the behaviour of the charge susceptibility in the p
 	\caption{Charge susceptibility of the impurity in the positive \(U\) regime, for two values of \(J_0\). The smaller bare value leads to a spin+charge mixed ground state, and hence a non-zero \(\chi_c\) at zero temperature. The larger \(J_0\), however, leads to a purely spin ground state without any number fluctuation, and this gives vanishing \(\chi_c\) at zero temperature.}
 	\label{chi_charge_posU}
 \end{figure}
+
+From eq.~\ref{gstate_kondo}, we know that in the thermodynamic limit, the ground state of \(U>0\) regime reduces to a screened local moment. That then implies that the charge susceptibility vanishes at low temperatures, owing to lack of any charge content in the ground state in the large bandwidth limit.
+\begin{equation}\begin{aligned}
+	\lim_{D_0 \to \infty}\chi_c(U>0, T \to 0) = 0
+\end{aligned}\end{equation}
 
 \section{Specific heat}
 The specific heat is calculated by diagonalizing the fixed point Hamiltonian, numerically. The obtained spectrum is denoted by \(\left\{ \mathcal{E}_i \right\} \). The total average energy of the impurity+cloud at temperature \(T\) is then

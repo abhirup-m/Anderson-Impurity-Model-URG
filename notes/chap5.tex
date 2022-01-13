@@ -368,3 +368,201 @@ In terms of \(U = -2\epsilon_d\), the equations become
 	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
 \end{aligned}\end{equation}
 
+\section{Nature of coupling RG flows}
+\subsection{Repulsive interaction on impurity: \(U>0\)}
+For the Hamiltonians with positive on-site correlation, we will assume that the spin-exchange coupling is positive and charge isospin-exchange coupling is negative: \(J>0, K<0\). This choice is motivated by the signs of the corresponding terms when they are generated via a Schrieffer-Wolff transformation~\cite{schrieffer1966}. The impurity-bath hybridisation \(V\) is always positive. The sign of the couplings lead to inequalities among the denominators which we will utilise at various points. First of all, since \(U>0\), we have \(d_1 - d_2 = \frac{U}{2} > 0\). Secondly, since \(K<0\), we have \(d_2 - d_3 = \frac{J-K}{4} > 0\). And finally, we have \(d_3 - d_0 = \frac{U}{2} > 0\). Combining these, we can write
+\begin{equation}\begin{aligned}
+	\label{ineq_den}
+	d_1 > d_2 > d_3 > d_0
+\end{aligned}\end{equation}
+
+The strong-coupling regime is defined as the range of values of \(\omega\) where the hybridisation is relevant. This is ensured by the assumption \(d_1<0\). From eq.~\ref{ineq_den}, we can then conclude that all denominators are negative: \(d_i = - |d_i|\). The simplest consequence of this is the RG flow of \(K\):
+\begin{equation}\begin{aligned}
+	\Delta K= -\frac{n_j K^2}{d_3} = \frac{n_j K^2}{|d_3|} > 0 \implies K_{j+1} > K_j \implies K_0 = -|K_0|, K^* \to 0
+\end{aligned}\end{equation}
+\(K_j\) is the value of \(K\) after the \(j^\text{th}\) RG step, \(K_0\) representing the bare value.
+In other words, since \(d_3 < 0\), the RG equation for \(K\) provides an algebraic increment, and the negative \(K\) increases and flows towards zero. The \(*\) indicates a fixed point value. The isospin coupling is irrelevant in this regime, and we will ignore it.
+
+The coupling \(J\), on the other hand, is relevant and flows from a small positive value towards a large value at strong-coupling.
+\begin{equation}\begin{aligned}
+	\Delta J= -\frac{n_j J^2}{d_2} = \frac{n_j J^2}{|d_2|} > 0 \implies J_{j+1} > J_j \implies J_0 \to \text{ large } J^* ~(\text{strong-coupling})
+\end{aligned}\end{equation}
+The value of \(J^*\) is obtained when the denominator \(d_2\) vanishes.
+
+Because of the RG irrelevance of \(K\), we can simplify the RG equation for \(V\):
+\begin{equation}\begin{aligned}
+	\Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right) = \frac{3n_j VJ}{8}\left(\frac{1}{|d_2|} + \frac{1}{|d_1|}\right) > 0
+\end{aligned}\end{equation}
+Since both the denominators are positive, \(V\) is relevant. The fixed point value \(V^*\) is attained when the denominator \(d_1\) vanishes (\(d_1\) will vanish earlier than \(d_2\)).
+
+We can compare the rate of flows of \(V\) and \(J\):
+\begin{equation}\begin{aligned}
+	\frac{\Delta V}{\Delta J} = \frac{3V}{8J}\left(1 + \frac{|d_2|}{|d_1|}\right) > \frac{3V}{4J}
+\end{aligned}\end{equation}
+There we used the fact that \(|d_2| > |d_1|\).
+We finally come to the RG equation for \(U\):
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2} = -4V^2\left(U + \frac{J}{4}\right)\frac{n_j}{d_0 d_1} - \frac{n_j J^2}{d_2}
+\end{aligned}\end{equation}
+For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) makes \(U\) relevant.
+
+In short, the \(U>0\) regime is characterised by an irrelevant isospin-exchange coupling \(K\) and a relevant spin-exchange coupling \(J\), and the following set of RG equations for the remaining couplings \(U\) and \(V\):
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2}, \quad \Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right)
+\end{aligned}\end{equation}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.99\textwidth]{../figures/U_irr,U_gt_0.pdf}
+	\includegraphics[width=0.99\textwidth]{../figures/U_rel,U_gt_0.pdf}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.48\textwidth]{../figures/VvsJ_relvsirr.pdf}
+	\hspace*{\fill}
+	\includegraphics[width=0.48\textwidth]{../figures/UvsJ_relvsirr.pdf}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.48\textwidth]{../figures/VcvsJ.pdf}
+	\hspace*{\fill}
+	\includegraphics[width=0.48\textwidth]{../figures/UcvsJ.pdf}
+	% \caption{../figures/UcvsJ.pdf}
+	% \label{fig:-figures-UcvsJ-pdf}
+\end{figure}
+
+\subsection{Attractive interaction on impurity: \(U<0\)}
+Here, we have \(J<0\) and \(K>0\). The denominators satisfy the following inequality in this regime:
+\begin{equation}\begin{aligned}
+	d_0 > d_3 > d_2 > d_1
+\end{aligned}\end{equation}
+
+The strong-coupling regime here corresponds to \(d_0 < 0\). This again means that all the denominators are negative. The spin-exchange coupling \(J\) is now irrelevant, because its bare value is negative while its RG equation is positive: \(\Delta J>0\). Moreover, the isospin coupling \(K\) is now positive and so is its RG equation: \(\Delta K>0\), which means it flows to strong-coupling. \(V\) also flows to strong-coupling. The RG equation for \(U\) can be written as
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2\left(\frac{K}{4} - U\right)\frac{n_j}{d_0 d_1} + \frac{n_j K^2}{d_3}
+\end{aligned}\end{equation}
+The first term is necessarily positive, while the second term is negative. This means that for roughly \(V_0 > J_0\), we  will have \(\Delta U > 0\), and since \(U_0 < 0\), this amounts to an irrelevant flow of \(U\) towards zero. On the other hand, for \(J_0 > V_0\), we will have \(\Delta U < 0\), and this corresponds to a relevant flow of \(U\) towards large negative value.
+
+In other words, the RG flows in this regime can be exactly mapped to those in the positive \(U\) regime. The general statement is: in the strong-coupling regime of positive(negative) \(U\), \(V\) is always relevant, \(J\)(\(K\)) is relevant, \(K\)(\(J\)) is irrelevant, and \(U\) is relevant when \(J(K) > V\), otherwise \(U\) is irrelevant.
+
+
+\section{Effective Hamiltonian and ground state}
+The fixed point Hamiltonian can, in general, be written as
+\begin{equation}\begin{aligned}
+	\mathcal{H}^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right)^2  + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
+\end{aligned}\end{equation}
+The first term is the kinetic energy of all the electrons. The next two terms are the impurity-diagonal pieces, featuring the renormalised interaction \(U^*\). The next three terms are the residual interactions between the impurity and the metal, with the renormalised couplings \(V^*, J^*\) and \(K^*\). The summations in these terms extend from the fixed point momentum cutoff \(\Lambda^*\) to 0. This is the region of momentum space  which the URG was unable to decouple. The operators \(\vec s\) and \(\vec C\) represent the macroscopic magnetic and charge spins formed by the remaining electrons that are lying inside the window \(\left[ 0, \Lambda^* \right] \):
+\begin{equation}\begin{aligned}
+	\vec s = \sum_{kk^\prime<\Lambda^*\atop{\alpha\beta}} c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
+\end{aligned}\end{equation}
+Our goal here is to write down the ground state wavefunction for this low-energy Hamiltonian.
+
+To make progress, we will simplify the effective Hamiltonian by taking the zero bandwidth limit. This reduces it to a two-site problem. One site is of course the impurity site, and this site will be labeled as site 1. The other site will be formed by the center of mass degree of freedom of the conduction electrons, and will be labeled as site 2. The Hamiltonian for this two-site problem is
+\begin{equation}\begin{aligned}
+	\mathcal{H}_{IR} = - \frac{U^*}{2}\left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + V^*\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^*\vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+\end{aligned}\end{equation}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{../figures/two_site_problem.png}
+	\caption{Two-site effective problem of fixed point Hamiltonian}
+	\label{twosite}
+
+\end{figure}
+The subscripts on the operators designate the site on which they act; \(\hat n_1\) is the number operator for the first site.
+
+We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
+\begin{equation}\begin{aligned}
+	\ket{1101} = c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}c^\dagger_{2 \downarrow}\ket{-}
+\end{aligned}\end{equation}
+\(\ket{-}\) is the vacuum state.
+
+% The full list of eigenstates is given in Table~\ref{twosite_spectrum}.
+% \begin{table}[htb!]
+% 	\centering
+% 	\begin{tabular}{|c|c|c|c|}
+% 		\hline
+% 		\(\hat n\) & \(S_1^z + S_2^z\) & eigenstate & eigenvalue\\
+% 		\hline
+% 		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}{K^*}\)\\
+% 		\hline
+% 		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}{K^*}\)\\
+% 		\hline
+% 		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+% 		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \downarrow}\)  &\\
+% 		\hline
+% 		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+% 		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \downarrow}\)  &\\
+% 		\hline
+% 		\multirow{3}{*}{2} & 1,-1,0 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\), \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & {\(-\frac{1}{2}U^* + \frac{1}{4}{J^*}\)}\\
+% 		\cline{2-4}
+% 		& 0 & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}{K^*}\)\\
+% 		\cline{2-4}
+% 		& 0 & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \({V^*}\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] -\frac{1}{2}U^* - \frac{3}{4}{J^*}\)\\
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Eigenstates for effective two-site Hamiltonian}
+% 	\label{twosite_spectrum}
+% \end{table}
+% The quantities \(\Delta\) and \(\gamma\) are defined as
+% \begin{equation}\begin{aligned}
+% 	\label{gamma_def}
+% 	\Delta\left(U^*, V^*\right) = \frac{1}{2}\sqrt{{U^*}^2 + 16{V^*}^2}, \quad \gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right] 
+% \end{aligned}\end{equation}
+
+For \(U>0\), the ground state is given by
+\begin{gather}
+	\label{gstate}
+	\ket{\Psi}_\text{1} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+\end{gather}
+where $\gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right]$. The probabilities for the spin and charge sectors for the ground state are
+\begin{equation}\begin{aligned}
+	\left(c_s\right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right), \quad \left(c_c \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)~.
+\end{aligned}\end{equation}
+For (roughly) \(J_0 > V_0\), we get \(J^* \gg V^*\) and \(U^* \gg U_0\) so that \(\gamma \gg 1\). This gives \(\left( c^s_- \right) ^2 \sim 1\) and \(\left( c^c_- \right) ^2 \sim 0\). The entire contribution to the ground state then comes from the spin sectors of the two sites. This is calculated numerically in fig.~\ref{cs_cc}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../figures/coeffs_vs_J.pdf}
+	\caption{Variation of relative weights \(c^s_-\) and \(c^c_-\) with \(J_0\)}
+	\label{cs_cc}
+\end{figure}
+
+In the other regime of \(U<0\), the two competing states are \(\ket{\Psi}_1\) defined above (with energy \(E_1\)), and \(\ket{\Psi_2}\), the charge singlet: \(\ket{\Psi}_2 = \frac{1}{\sqrt 2}\left( \ket{2,0} - \ket{0,2} \right)\) having energy \(E_2\).
+\begin{equation}\begin{aligned}
+	E_2 = -\frac{3}{4}K^*, \quad E_1 - E_2 = -\frac{1}{4}\sqrt{\left( \frac{1}{2}K^* + U^* \right)^2 + (4V^*)^2} - \frac{1}{4}U^* + \frac{3}{4}K^*
+\end{aligned}\end{equation}
+For \(V_0 \gg K_0\), the largest energy scale will be \(V^*\), and we can then approximate this difference as
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq -V^* < 0
+\end{aligned}\end{equation}
+In such a case, \(\ket{\Psi}_1\) will therefore be the ground state. In the other regime \(V_0 \ll K_0\), the largest energy scale will be \(K^*\), and we can then write
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq - \frac{1}{8}K^* + \frac{3}{4}K^* > 0
+\end{aligned}\end{equation}
+In this case, the ground state will be \(\ket{\Psi}_2\). There exists, therefore, a phase transition at a critical plane \((U_c, K_c, V_c)\), where the ground state changes between the charge singlet \(\ket{\Psi}_2\) and the spin singlet + charge triplet \(\ket{\Psi}_1\).
+
+\section{Approach towards the thermodynamic limit}
+The URG method works strictly on finite systems and leads to finite values of fixed point couplings. The behaviour of the Hamiltonian in the thermodynamic limit can then be determined using finite-size scaling where we increase the bandwidth and decrease the width of each RG step. When applied to the fixed point value of the impurity-bath hybridisation parameter \(V\) (fig.~\ref{V_vs_D}), it can be seen that the fixed point value increases as the system size is increased, implying that the continuum limit of \(V^*\) is \(\infty\). This holds for both \(V_0 > J_0\) and \(V_0 < J_0\), as shown in the two panels of fig.~\ref{V_vs_D}.
+\begin{figure}[htpb]
+	\centering
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_smallV.pdf}
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_largeV.pdf}
+	\hspace*{\fill}
+	\caption{Variation of fixed point value \(V^*\) with increasing bandwith \(D_0\), for both \(V_0 > J_0\) and \(V_0 < J_0\).}
+	\label{V_vs_D}
+\end{figure}
+
+In a similar manner, we checked the variation of the spin and charge probabilities, \(c_s\) and \(c_c\), in the ground state, with increasing bandwith. The result is shown in fig.~\ref{c_vs_D}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/coeffs_vs_D_largeV.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/coeffs_vs_D_smallV.pdf}
+	\caption{Variation of spin and charge fractions, \(c_s\) and \(c_c\), of the ground state, as a function of bare bandwidth \(D_0\). Left and right panels show the cases of \(J_0 < V_0\) and \(J_0 > V_0\) respectively.}
+	\label{c_vs_D}
+\end{figure}
+For both \(V_0 < J_0\) and \(V_0 > J_0\), we see that the spin contribution increases towards unity while the charge contribution vanishes. This indicates that at large bandwidth, the ground state becomes purely a spin singlet, formed purely by singly-occupied impurity states.
+\begin{equation}\begin{aligned}
+	\label{gstate_kondo}
+	\lim_{D_0 \to \infty} \ket{\Psi}_1 = \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) 
+\end{aligned}\end{equation}
