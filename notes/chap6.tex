@@ -57,22 +57,22 @@ In short, the \(U>0\) regime is characterised by an irrelevant isospin-exchange 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_irr,U_gt_0.pdf}
-	\includegraphics[width=0.99\textwidth]{../spin-charge-symmetrical/U_rel,U_gt_0.pdf}
+	\includegraphics[width=0.99\textwidth]{../figures/U_irr,U_gt_0.pdf}
+	\includegraphics[width=0.99\textwidth]{../figures/U_rel,U_gt_0.pdf}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.48\textwidth]{../spin-charge-symmetrical/VvsJ_relvsirr.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/VvsJ_relvsirr.pdf}
 	\hspace*{\fill}
-	\includegraphics[width=0.48\textwidth]{../spin-charge-symmetrical/UvsJ_relvsirr.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/UvsJ_relvsirr.pdf}
 \end{figure}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.48\textwidth]{../spin-charge-symmetrical/VcvsJ.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/VcvsJ.pdf}
 	\hspace*{\fill}
-	\includegraphics[width=0.48\textwidth]{../spin-charge-symmetrical/UcvsJ.pdf}
-	% \caption{../spin-charge-symmetrical/UcvsJ.pdf}
-	% \label{fig:-spin-charge-symmetrical-UcvsJ-pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/UcvsJ.pdf}
+	% \caption{../figures/UcvsJ.pdf}
+	% \label{fig:-figures-UcvsJ-pdf}
 \end{figure}
 
 \section{Nature of RG flows: \(U<0\)}
@@ -120,64 +120,59 @@ We will adopt the following notation to represent the states in this Hilbert spa
 \end{aligned}\end{equation}
 \(\ket{-}\) is the vacuum state.
 
-The full list of eigenstates is given in Table~\ref{twosite_spectrum}.
-\begin{table}[htb!]
-	\centering
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		\(\hat n\) & \(S_1^z + S_2^z\) & eigenstate & eigenvalue\\
-		\hline
-		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}{K^*}\)\\
-		\hline
-		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}{K^*}\)\\
-		\hline
-		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
-		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \downarrow}\)  &\\
-		\hline
-		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
-		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \downarrow}\)  &\\
-		\hline
-		\multirow{3}{*}{2} & 1,-1,0 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\), \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & {\(-\frac{1}{2}U^* + \frac{1}{4}{J^*}\)}\\
-		\cline{2-4}
-		& 0 & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}{K^*}\)\\
-		\cline{2-4}
-		& 0 & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \({V^*}\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] -\frac{1}{2}U^* - \frac{3}{4}{J^*}\)\\
-		\hline
-	\end{tabular}
-	\caption{Eigenstates for effective two-site Hamiltonian}
-	\label{twosite_spectrum}
-\end{table}
-The quantities \(\Delta\) and \(\gamma\) are defined as
-\begin{equation}\begin{aligned}
-	\label{gamma_def}
-	\Delta\left(U^*, V^*\right) = \frac{1}{2}\sqrt{{U^*}^2 + 16{V^*}^2}, \quad \gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right] 
-\end{aligned}\end{equation}
-and the coefficients \(c^{s,c}_\pm\) for the last eigenstate are given by
-\begin{equation}\begin{aligned}
-	c^s_\pm = \frac{1}{\sqrt{2\sqrt{\gamma^2 + 4}}}\sqrt{\sqrt{\gamma^2 + 4} \mp \gamma} = \mp c^c_\mp
-\end{aligned}\end{equation}
+% The full list of eigenstates is given in Table~\ref{twosite_spectrum}.
+% \begin{table}[htb!]
+% 	\centering
+% 	\begin{tabular}{|c|c|c|c|}
+% 		\hline
+% 		\(\hat n\) & \(S_1^z + S_2^z\) & eigenstate & eigenvalue\\
+% 		\hline
+% 		0 & 0 & \(\ket{0,0}\) & \(\frac{1}{4}{K^*}\)\\
+% 		\hline
+% 		4 & 0 & \(\ket{2,2}\) & \(\frac{1}{4}{K^*}\)\\
+% 		\hline
+% 		\multirow{2}{*}{1} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+% 		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,0} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{0, \downarrow}\)  &\\
+% 		\hline
+% 		\multirow{2}{*}{3} & \(\frac{1}{2}\) & \(-4{V^*}\ket{\uparrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \uparrow}\) & \multirow{2}{*}{\(-\frac{1}{4}U^* \pm \frac{1}{2}\Delta\left(U^* , {V^*}\right)\)}\\
+% 		 & - \(\frac{1}{2}\) & \(-4{V^*}\ket{\downarrow,2} +2 \left[-\frac{1}{2}U^* \mp \Delta\left(U^* , {V^*}\right)\right] \ket{2, \downarrow}\)  &\\
+% 		\hline
+% 		\multirow{3}{*}{2} & 1,-1,0 & \(\ket{\uparrow,\uparrow}\), \(\ket{\downarrow,\downarrow}\), \(\ket{\uparrow,\downarrow} + \ket{\downarrow, \uparrow}\) & {\(-\frac{1}{2}U^* + \frac{1}{4}{J^*}\)}\\
+% 		\cline{2-4}
+% 		& 0 & \(\ket{2,0} - \ket{0,2}\) & \(-\frac{3}{4}{K^*}\)\\
+% 		\cline{2-4}
+% 		& 0 & \(c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\) & \({V^*}\left[ \gamma \pm \sqrt{\gamma^2 + 4} \right] -\frac{1}{2}U^* - \frac{3}{4}{J^*}\)\\
+% 		\hline
+% 	\end{tabular}
+% 	\caption{Eigenstates for effective two-site Hamiltonian}
+% 	\label{twosite_spectrum}
+% \end{table}
+% The quantities \(\Delta\) and \(\gamma\) are defined as
+% \begin{equation}\begin{aligned}
+% 	\label{gamma_def}
+% 	\Delta\left(U^*, V^*\right) = \frac{1}{2}\sqrt{{U^*}^2 + 16{V^*}^2}, \quad \gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right] 
+% \end{aligned}\end{equation}
 
 For \(U>0\), the ground state is given by
 \begin{gather}
 	\label{gstate}
 	\ket{\Psi}_\text{1} = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
-
-The probabilities for the spin and charge sectors for the ground state are
+where $\gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right]$. The probabilities for the spin and charge sectors for the ground state are
 \begin{equation}\begin{aligned}
-	\left( c^s_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right), \quad \left( c^c_- \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)~.
+	\left(c_s\right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right), \quad \left(c_c \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)~.
 \end{aligned}\end{equation}
 For (roughly) \(J_0 > V_0\), we get \(J^* \gg V^*\) and \(U^* \gg U_0\) so that \(\gamma \gg 1\). This gives \(\left( c^s_- \right) ^2 \sim 1\) and \(\left( c^c_- \right) ^2 \sim 0\). The entire contribution to the ground state then comes from the spin sectors of the two sites. This is calculated numerically in fig.~\ref{cs_cc}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../spin-charge-symmetrical/coeffs_vs_J.pdf}
+	\includegraphics[width=0.8\textwidth]{../figures/coeffs_vs_J.pdf}
 	\caption{Variation of relative weights \(c^s_-\) and \(c^c_-\) with \(J_0\)}
 	\label{cs_cc}
 \end{figure}
 
 In the other regime of \(U<0\), the two competing states are \(\ket{\Psi}_1\) defined above (with energy \(E_1\)), and \(\ket{\Psi_2}\), the charge singlet: \(\ket{\Psi}_2 = \frac{1}{\sqrt 2}\left( \ket{2,0} - \ket{0,2} \right)\) having energy \(E_2\).
 \begin{equation}\begin{aligned}
-	E_1 - E_2 = -\frac{1}{4}\sqrt{\left( \frac{1}{2}K^* + U^* \right)^2 + (4V^*)^2} - \frac{1}{4}U^* + \frac{3}{4}K^*
+	E_2 = -\frac{3}{4}K^*, \quad E_1 - E_2 = -\frac{1}{4}\sqrt{\left( \frac{1}{2}K^* + U^* \right)^2 + (4V^*)^2} - \frac{1}{4}U^* + \frac{3}{4}K^*
 \end{aligned}\end{equation}
 For \(V_0 \gg K_0\), the largest energy scale will be \(V^*\), and we can then approximate this difference as
 \begin{equation}\begin{aligned}
@@ -188,6 +183,34 @@ In such a case, \(\ket{\Psi}_1\) will therefore be the ground state. In the othe
 	E_1 - E_2 \simeq - \frac{1}{8}K^* + \frac{3}{4}K^* > 0
 \end{aligned}\end{equation}
 In this case, the ground state will be \(\ket{\Psi}_2\). There exists, therefore, a phase transition at a critical plane \((U_c, K_c, V_c)\), where the ground state changes between the charge singlet \(\ket{\Psi}_2\) and the spin singlet + charge triplet \(\ket{\Psi}_1\).
+
+\section{Approach towards the thermodynamic limit}
+The URG method works strictly on finite systems and leads to finite values of fixed point couplings. The behaviour of the Hamiltonian in the thermodynamic limit can then be determined using finite-size scaling where we increase the bandwidth and decrease the width of each RG step. When applied to the fixed point value of the impurity-bath hybridisation parameter \(V\) (fig.~\ref{V_vs_D}), it can be seen that the fixed point value increases as the system size is increased, implying that the continuum limit of \(V^*\) is \(\infty\). This holds for both \(V_0 > J_0\) and \(V_0 < J_0\), as shown in the two panels of fig.~\ref{V_vs_D}.
+\begin{figure}[htpb]
+	\centering
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_smallV.pdf}
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_largeV.pdf}
+	\hspace*{\fill}
+	\caption{Variation of fixed point value \(V^*\) with increasing bandwith \(D_0\), for both \(V_0 > J_0\) and \(V_0 < J_0\).}
+	\label{V_vs_D}
+\end{figure}
+
+In a similar manner, we checked the variation of the spin and charge probabilities, \(c_s\) and \(c_c\), in the ground state, with increasing bandwith. The result is shown in fig.~\ref{c_vs_D}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/coeffs_vs_D_largeV.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/coeffs_vs_D_smallV.pdf}
+	\caption{Variation of spin and charge fractions, \(c_s\) and \(c_c\), of the ground state, as a function of bare bandwidth \(D_0\). Left and right panels show the cases of \(J_0 < V_0\) and \(J_0 > V_0\) respectively.}
+	\label{c_vs_D}
+\end{figure}
+For both \(V_0 < J_0\) and \(V_0 > J_0\), we see that the spin contribution increases towards unity while the charge contribution vanishes. This indicates that at large bandwidth, the ground state becomes purely a spin singlet, formed purely by singly-occupied impurity states.
+\begin{equation}\begin{aligned}
+	\lim_{D_0 \to \infty} \ket{\Psi}_1 = \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) 
+\end{aligned}\end{equation}
+
+
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes

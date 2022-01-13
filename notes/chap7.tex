@@ -42,27 +42,37 @@ This completes the proof.
 To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian \(\mathcal{H}_{IR}\) and insert a magnetic field to obtain the Hamiltonian in eq.~\ref{field_ham}. For a particular regime of \(U\), only one of \(J\) or \(K\) will be non-zero. We then numerically diagonalise this Hamiltonian to obtain the partition function \(Z(B)\) and its derivatives. The spin susceptibility can then be calculated using eq.~\ref{chi_exp}. The results for \(U>0\) are shown in fig.~\ref{chi}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chiT_J=0.020.pdf}
-	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chiT_J=0.100.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chiT_J=0.020.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chiT_J=0.100.pdf}
 	\caption{Spin susceptibility of the impurity times temperature, for two sets of bare parameters, in \(U>0\). At low temperatures, it becomes linear because \(\chi\) itself becomes constant (screening), while at high temperatures, \(\chi\times T\) becomes constant because of the paramagnetic \(\sim 1/T\) form of \(\chi\). For the right panel with a larger value of the spin-exchange coupling, the \(\chi\) tries to go towards the local moment value of \(1/4\) but eventually drops back to the free orbital value of \(1/8\).}
 	\label{chi}
 \end{figure}
 
 We can similarly define the charge susceptibility as
 \begin{equation}\begin{aligned}
-	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) = \lim_{B \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B)} \frac{\partial^2{Z(B)}}{\partial{B^2}}-\frac{1}{Z(B)^2} \left(\frac{\partial{Z(B)}}{\partial{B}}\right)^2\right]
+	\chi(\beta) = \beta \left(\left<\left(S_d^z\right)^2\right> - \left<S_d^z\right>^2\right) = \lim_{B_c \to 0}\frac{1}{\beta}\left[\frac{1}{Z(B_c)} \frac{\partial^2{Z(B_c)}}{\partial{B_c^2}}-\frac{1}{Z(B_c)^2} \left(\frac{\partial{Z(B_c)}}{\partial{B_c}}\right)^2\right]
 \end{aligned}\end{equation}
-where \(B\) is now a field that couples to the impurity isospin:
+where \(B_c\) is now a field that couples to the impurity charge-isospin:
 \begin{equation}\begin{aligned}
-	\mathcal{H}^\prime(B) = \mathcal{H} + B C_d^z
+	\label{charge_field}
+	\mathcal{H}^\prime(B_c) = \mathcal{H} + B_c C_d^z
 \end{aligned}\end{equation}
 The charge susceptibility for \(U<0\) is shown in fig.~\ref{chi_charge}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chi_chargeT_K=0.010.pdf}
-	\includegraphics[width=0.49\textwidth]{../spin-charge-symmetrical/chi_chargeT_K=0.100.pdf}
-	\label{chi_charge}
+	\includegraphics[width=0.49\textwidth]{../figures/chi_chargeT_K=0.010.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chi_chargeT_K=0.100.pdf}
 	\caption{Charge susceptibility for the impurity at \(U<0\), for two sets of bare parameters. The physics is very similar to that of the spin susceptibility in \(U>0\).}
+	\label{chi_charge}
+\end{figure}
+
+It is interesting to look at the behaviour of the charge susceptibility in the positive \(U\) regime, fig.~\ref{chi_charge_posU}. It  is seen that for \(J_0<V_0\), the charge susceptibility is very similar to the spin susceptibility, with a reduced saturation value. This is because, for that range of bare values, the ground state consists of a comparable mixture of the spin and charge states (see fig.~\ref{cs_cc}). This means that the magnetic field term in eq.~\ref{charge_field} can couple to the charge component of the ground state, and give a non-zero charge susceptibility at zero temperature. On the other hand, for \(J_0 > V_0\), we see that \(\chi_c\) vanishes at low temperatures. This can again be understood from the ground state. For that range of bare values, the ground state can be approximated by purely the singlet, because the charge fraction \(c_-^c\) becomes very small. This means that the field \(B_c \) has nothing to couple with. Alternatively, it can be said that since the ground state has only terms with \(\hat n_d=1\), no number fluctuation is possible, and the impurity isospin is not susceptible at all to charge polarisation.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J=small.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J=large.pdf}
+	\caption{Charge susceptibility of the impurity in the positive \(U\) regime, for two values of \(J_0\). The smaller bare value leads to a spin+charge mixed ground state, and hence a non-zero \(\chi_c\) at zero temperature. The larger \(J_0\), however, leads to a purely spin ground state without any number fluctuation, and this gives vanishing \(\chi_c\) at zero temperature.}
+	\label{chi_charge_posU}
 \end{figure}
 
 \section{Specific heat}
