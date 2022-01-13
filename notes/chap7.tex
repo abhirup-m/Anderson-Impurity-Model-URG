@@ -116,22 +116,22 @@ The specific heat is calculated by diagonalizing the fixed point Hamiltonian, nu
 \end{aligned}\end{equation}
 where \(Z = \sum_{i} e^{-\beta E_i}\) is the partition function. The specific heat of this system is thus
 \begin{equation}\begin{aligned}
-	C_v &= \frac{\partial{\left<\mathcal{E} \right>}}{\partial{T}} \\
+	C_V &= \frac{\partial{\left<\mathcal{E} \right>}}{\partial{T}} \\
 	    &= -\frac{1}{k_B T^2} \frac{\partial{\left<\mathcal{E} \right>}}{\partial{\beta}} \\
 	    &= \frac{1}{k_B T^2}\left[\frac{1}{Z}\sum_i \mathcal{E}_i^2 e^{-\beta \mathcal{E}_i} - \left(\frac{1}{Z}\sum_i \mathcal{E}_i e^{-\beta \mathcal{E}_i}\right)^2 \right] 
 \end{aligned}\end{equation}
 In the absence of impurity, the eigenvalues of the Hamiltonian are \(\left\{\mathcal{E}_i^0\right\}\) with a partition function \(Z^0 = \sum_{i} e^{-\beta E_i^0}\), so the bath specific heat is
 \begin{equation}\begin{aligned}
-	C_v^0 &= \frac{1}{k_B T^2}\left[\frac{1}{Z_0}\sum_i \mathcal{E}_i^2 e^{-\beta \mathcal{E}_i^0} - \left(\frac{1}{Z_0}\sum_i \mathcal{E}_i^0 e^{-\beta \mathcal{E}_i^0}\right)^2 \right] 
+	C_V^0 &= \frac{1}{k_B T^2}\left[\frac{1}{Z_0}\sum_i \mathcal{E}_i^2 e^{-\beta \mathcal{E}_i^0} - \left(\frac{1}{Z_0}\sum_i \mathcal{E}_i^0 e^{-\beta \mathcal{E}_i^0}\right)^2 \right] 
 \end{aligned}\end{equation}
 The impurity specific heat is the difference.
 \begin{equation}\begin{aligned}
-	C_v^\text{imp} = C_v - C_v^0
+	C_V^\text{imp} = C_V - C_V^0
 \end{aligned}\end{equation}
 These values were calculated numerically and plotted against temperature in fig.~\ref{cv}.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.65\textwidth]{../figures/Cv_new.pdf}
+	\includegraphics[width=0.6\textwidth]{../figures/Cv.pdf}
 	\caption{Impurity specific heat}
 	\label{cv}
 \end{figure}
@@ -570,7 +570,7 @@ From the form of the quasiparticle energy functional, we can see that there is n
 We will now use this Fermi liquid form to extract the Wilson ratio. We will make use of the following definitions/results:
 \begin{equation}\begin{aligned}
 	dn_{k\sigma} &= \frac{\partial{n}}{\partial{\epsilon_{k\sigma}}}\left( d\epsilon_{k\sigma} - d\mu \right) &&\left[\text{follows from differentiating FD distribution}\right] \\
-	C_v &= \frac{\:\mathrm{d}\epsilon}{\:\mathrm{d}T}\\
+	C_V &= \frac{\:\mathrm{d}\epsilon}{\:\mathrm{d}T}\\
 	\chi^{s,c} &= \frac{\:\mathrm{d}}{\:\mathrm{d}(B, \mu)}\left(n_\uparrow \mp n_\downarrow\right) \\
 	2f_0^{s,a} &= \sum_k\left(f_{kk^\prime \uparrow \uparrow} \pm f_{kk^\prime \uparrow \downarrow}\right)\\
 	F_0^{s,a} &= \rho(0) f_0^{s,a}
