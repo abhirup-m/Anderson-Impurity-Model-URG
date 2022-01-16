@@ -10,3 +10,5 @@
 *.fdb_latexmk
 *.blg
 *.dvi
+*.qu
+*.ipynb_checkpoint*
