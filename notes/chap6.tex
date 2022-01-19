@@ -416,126 +416,78 @@ We have shown the enhancement of this off-diagonal scattering during the flow to
 \end{figure}
 \section{Obtaining the real space low energy Hamiltonian: the local Fermi liquid}
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
-\begin{equation}\begin{aligned}
-	\mathcal{H}^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}
-\end{aligned}\end{equation}
+\begin{gather}
+	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}\\
+	\ket{\Psi}_1 = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+\end{gather}
+These were obtained in eq.~\ref{gstate}. The quantities \(\gamma\) and \(\)
 
 We start with the ground state \(\ket{\Psi}_1\) and the star graph as the zeroth level ground state and Hamiltonian, and then add a nearest-neighbour hopping term as a perturbation of the zeroth Hamiltonian. We know that the ground state for the interacting part is predominantly the spin-singlet (it was shown while calculating the ground states of the effective zero-mode Hamiltonian that the ground state is a mixture of singlet and triplet, and the triplet part dies out at large system sizes, see eq.~\ref{gstate_kondo}), so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
 \begin{equation}\begin{aligned}
-	V = t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.}
+	H_X = t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.} \equiv v^\dagger + v
 \end{aligned}\end{equation}
-as a weak perturbation. \(\vec r_1\) here sums over the sites that are nearest to the origin. Once this perturbation is taken care of up to a certain order, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. The goal here is to see whether the effect of the perturbation is to lower the energy of the singly-occupied state \(\ket{\hat n_1 = 1}\) compared to the doubly-occupied state \(\ket{\hat n_1 = 2}\) or to raise it. If the perturbation shifts the energy of the singly-occupied state below the doubly-occupied state, then we can conclude that the effect of the perturbation is to raise the energy of the doubly-occupied state, which can then be modeled  by a repulsive term \(|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\). If, on the other hand, the effect is to raise the energy of the singly-occupied state with respect to the \(\hat n_1 = 2\) state, then that effect is equivalent to an attractive term \(-|U|\hat n_{1\uparrow}\hat n_{1\downarrow}\).
+as a weak perturbation. \(\vec r_1\) here sums over the sites that are nearest to the origin. Once this perturbation is taken care of up to a certain order, we will have a decoupled singlet formed by the impurity and the zeroth site, and the rest of the lattice formed by \(N-1\) sites along with the interaction induced by the perturbation. To be precise, the goal is to integrate out the perturbation and generate an effective Hamiltonian in the subspace of the minimal energy states of the two site Hamiltonian, and this effective Hamiltonian will therefore describe the lowest excitations on top of the ground state \(\ket{\Psi}_1\). The minimal energy subspace is given by the states:
+\begin{equation}\begin{aligned}
+	\ket{\Phi}_{i} = \ket{\Psi}_1 \otimes \ket{\hat n_{1 \uparrow}, \hat n_{1 \downarrow}}, ~\text{ where }i \in \begin{cases}
+		0: & \hat n_{1 \uparrow} = \hat n_{1 \downarrow} = 0\\
+		1: & 1 - \hat n_{1 \uparrow} =  \hat n_{1 \downarrow} = 0\\
+		2: & \hat n_{1 \uparrow} = 1 - \hat n_{1 \downarrow} = 0\\
+		3: & 1 - \hat n_{1 \uparrow} =  1 - \hat n_{1 \downarrow} = 0
+	\end{cases} 
+\end{aligned}\end{equation}
 
-To be precise, we will compare the energy shifts corresponding to the two states
-\begin{equation}\begin{aligned}
-	\ket{\phi^{(0)}_1} &= \underbrace{\ket{\uparrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) \\
-	\ket{\phi^{(0)}_2} &= \underbrace{\ket{\uparrow, \downarrow}}_\text{site 1}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) 
-\end{aligned}\end{equation}
-In the singlet part, the first entry is the configuration of the zeroth site while the second entry is the configuration of the impurity site. Choosing the \(\uparrow\) configuration for the site 1 is not a problem because both the non-perturbative and the perturbative interactions are SU(2)-symmetric. To demonstrate this, note that all energy shifts will depend on the unperturbed states \(\ket{\phi^{(0)}}\) in two ways: through the energies in the denominator and through the matrix element in the numerator. The unperturbed energy goes not depend on the configuration of the \(\vec r_1\) site, because the energy is dominated by the singlet. The matrix element is also independent of the sigma:
-\begin{equation}\begin{aligned}
-	V\ket{\sigma}\otimes\frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow} \right) &= \left(t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.}\right) \ket{\sigma}\otimes\frac{1}{\sqrt 2}\sum_\alpha\alpha\ket{\alpha, \overline\alpha}\\
-														   &=t\frac{1}{\sqrt 2}\left(\ket{2}\ket{0,\overline\sigma} - \ket{0}\ket{2,\sigma}\right)
-\end{aligned}\end{equation}
-The first order correction will be zero as we will see shortly, but the short version is that \(V\ket{\phi^{(0)}}\) is obviously orthogonal to \(\ket{\phi^{(0)}}\). All higher energy shifts can be represented as
-\begin{equation}\begin{aligned}
-	\bra{\phi^{(0)}} V X V \ket{\phi^{(0)}}
-\end{aligned}\end{equation}
-where \(X\), for example, is 
-\begin{equation}\begin{aligned}
-	\sum_{m^{(0)}}\frac{|\bra{m^{(0)}}\ket{\phi^{(0)}}|^2}{E^{(0)}_\phi - E^{(0)}_m}
-\end{aligned}\end{equation}
-for the second order shift, and does not operate on the impurity. Since \(X\) does not operate on the impurity, the shift can be written as
-\begin{equation}\begin{aligned}
-	\bra{\phi^{(0)}} V X V \ket{\phi^{(0)}} &= \frac{t^2}{2}\left(\bra{2}\bra{0,\overline\sigma} - \bra{0}\bra{2,\sigma}\right)X\left(\ket{2}\ket{0,\overline\sigma} - \ket{0}\ket{2,\sigma}\right)\\
-		 &= \frac{t^2}{2}\bra{2}\bra{0,\overline\sigma} X\ket{2}\ket{0,\overline\sigma} + \frac{t^2}{2}\bra{0}\bra{2,\sigma}X \ket{0}\ket{2,\sigma}\\
-		 &= \frac{t^2}{2}\bra{2}\bra{0} X\ket{2}\ket{0}\bra{\overline\sigma}\ket{\overline\sigma} + \frac{t^2}{2}\bra{0}\bra{2}X \ket{0}\ket{2}\bra{\sigma}\ket{\sigma}\\
-		 &= \frac{t^2}{2}\bra{2}\bra{0} X\ket{2}\ket{0} + \frac{t^2}{2}\bra{0}\bra{2}X \ket{0}\ket{2}
-\end{aligned}\end{equation}
-This proves that the shift is independent of \(\sigma\). The reason we could shift the bra \(\bra{\sigma}\) across the \(X\) without any sign change is that \(X\) will have even number of operators in product, because it operates on \(0\) and \(1\).
+The effective Hamiltonian will be calculated using perturbation theory in \(\frac{H_X^{n}}{{H_0^*}^{n-1}}\). Since an odd number of scattering processes cannot bring the initial state back to itself, such orders will be absent from the effective Hamiltonian. 
 
-The energy corresponding to this singlet state (for both \(\hat n_1=1\) and \(\hat n_1=2\)) is
+ \subsection{Second order effective Hamiltonian}
+ We first consider the case of \(n=2\). The renormalisation of the effective Hamiltonian in the ground state subspace, at this order, is given by
 \begin{equation}\begin{aligned}
-	E_1^{(0)} = E_2^{(0)} = -\frac{3J^*}{4}
+	\Delta H = \sum_{ij,n}\ket{\Phi}_i \bra{\Phi_i}H_X \ket{\Psi}_n \frac{1}{E_\text{gs} - E_n} \bra{\Psi}_n H_X \ket{\Phi}_j \bra{\Phi_j} = \sum_{ij}\ket{\Phi}_i \bra{\Phi_j} \bra{\Phi_i}v + v^\dagger \ket{\Psi}_n \frac{1}{E_\text{gs} - E_n} \bra{\Psi}_n v + v^\dagger \ket{\Phi}_j~.
 \end{aligned}\end{equation}
-The full list of unperturbed eigenstates are 
+Here, \(\ket{\Psi}_n\) are the eigenstates of the two site problem, with eigenvalue \(E_n\). The total scattering process can be described as \(H_X\) acting on \(\ket{\Phi}_j\) to excite to \(\ket{\Psi}_n\), and then a subsequent \(H_X\) acting on \(\ket{\Psi}_n\) to decay back to \(\ket{\Phi}_j\) and into the ground state manifold. Since \(\ket{\Phi}_{i,j}\) are eigenstates of the two site Hamiltonian, they are all eigenstates of the total number operator \(\hat n_{d0} = \sum_\sigma \left(\hat n_{d\sigma} + \hat n_{0\sigma}\right) \) for the two site model, with eigenvalue \(2\). Since we are to finally return to the ground state manifold, only those processes in \(H_X^2\) are allowed that conserve \(\hat n_{d0}\). These processes are \(v, v^\dagger\) and \(v^\dagger,v\). This also means that the total number of particles on site 1 will remain constant in the process, and we wil have \(\ket{\Phi}_i = \ket{\Phi}_j\).
 \begin{equation}\begin{aligned}
-	\left\{\ket{\hat n_1 = 0}, \ket{\hat n_1=1}, \ket{\hat n_1 = 2}\right\} \otimes \left\{ \ket{S=0}, \ket{S=1, S^z=-1,0,1}, \ket{S_0^z \times S_d^z = 0}\right\} 
+	\Delta H = \sum_{i}\ket{\Phi}_i \bra{\Phi_i} \frac{1}{E_\text{gs} - E_n} \left(\bra{\Phi_i}v^\dagger \ket{\Psi}_n \bra{\Psi}_n v \ket{\Phi}_i + \bra{\Phi_i} v \ket{\Psi}_n \bra{\Psi}_n v^\dagger \ket{\Phi}_i\right) ~.
 \end{aligned}\end{equation}
-Since \(V\) takes \(\ket{\phi_{1,2}^{(0)}}\) to completely orthogonal states, the first order corrections are 0:
+If we define the matrix element \(v_{ni} \equiv \bra{\Psi}_n v \ket{\Phi}_i\) of \(v\) and the excitation energy \(\delta E_{n} = E_n - E_\text{gs}\), we can write the renormalisation as
 \begin{equation}\begin{aligned}
-	E_1^{(1)} = \bra{\phi_1^{(0)}} V \ket{\phi_1^{(0)}} = \bra{\phi_1^{(0)}}\frac{t}{\sqrt 2}\left(-\ket{0, 2 ,\uparrow} - \ket{2, 0, \uparrow}\right)  = 0\\
-	E_2^{(1)} = \bra{\phi_2^{(0)}} V \ket{\phi_2^{(0)}} = \bra{\phi_1^{(0)}}\frac{t}{\sqrt 2}\left(\ket{\downarrow, 2 ,\uparrow} - \ket{\uparrow, 2, \downarrow}\right)  = 0
+	\Delta H = \sum_{i,n}\frac{|v_{ni}|^2 + |v_{in}|^2}{-\delta E_{n}} \ket{\Phi}_i \bra{\Phi_i}~.
 \end{aligned}\end{equation}
-The second order correction for a general unperturbed state \(\ket{\phi^{(0)}}\) is given by the formula
-\begin{equation}\begin{aligned}
-	E^{(2)} = \sum_{m^{(0)}\neq\phi^{(0)}}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{E^{(0)}_\phi - E^{(0)}_m}
-\end{aligned}\end{equation}
-The index m sums over all unperturbed eigenstates not equal to \(\ket{\phi^{(0)}}\), and \(E^{(0)}_\phi, E^{(0)}_m\) are the unperturbed energies for the states \(\ket{\phi^{(0)}}\) and \(\ket{m^{(0)}}\). If we look at the forms of \(V\ket{\phi_{1,2}^{(0)}}\) that we calculated above, the only eigenstates \(\ket{m^{(0)}}\) that give non-zero numerators are
-\begin{equation}\begin{aligned}
-	\left\{\ket{m^{(0)}}\right\} = \begin{cases}
-		\ket{0, 2 ,\uparrow}, \ket{2, 0, \uparrow} & \text{ if }\ket{\phi^{(0)}} = \ket{\phi_1^{(0)}} \\
-		\ket{\downarrow, 2 ,\uparrow}, \ket{\uparrow, 2, \downarrow} & \text{ if }\ket{\phi^{(0)}} = \ket{\phi_2^{(0)}}\\
-	\end{cases}
-\end{aligned}\end{equation}
-which then means that the only non-zero value of the numerator is
-\begin{equation}\begin{aligned}
-	\left( \pm \frac{t}{\sqrt 2} \right) ^2 = \frac{t^2}{2}
-\end{aligned}\end{equation}
-Also, because all the states in \(\left\{ \ket{m^{(0)}} \right\} \) involve \(S_0^z = 0\), those states will have zero energy, so all the denominators will have the value
-\begin{equation}\begin{aligned}
-	E_{\phi_{1,2}}^{(0)} - E_m^{(0)} = E_{\phi_{1,2}}^{(0)} = -\frac{3J^*}{4}
-\end{aligned}\end{equation}
-The upshot of all this is that the second order shift will be same for both the single and doubly-occupied states, so we will ignore that correction as it can be absorbed into the zero-point energy.
 
-The third order correction is given by
+We now look at each \(\ket{\Phi_i}\) separately. For \(\ket{\Phi_i} = \ket{\Psi}_1 \otimes \ket{0,0}\), we can write
 \begin{equation}\begin{aligned}
-	E^{(3)} = \sum_{i^{(0)}, j^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_i\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)} - E_\phi^{(1)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
+	v^\dagger \ket{\Phi}_i = 0, ~ v \ket{\Phi}_i = \frac{t}{\sqrt 2}\sum_\sigma \overline\sigma\left(c_s \ket{\sigma, 0} + c_c \ket{0, \sigma}\right) \ket{\overline\sigma}
 \end{aligned}\end{equation}
-This correction can also be argued to be zero, as follows. The second term is of course trivially zero because \(E_\phi^{(1)}\) itself is 0. For the first term, note that \(\ket{i^{(0)}}\) must have \(\hat n_0 = 0,2\) in order to give non-zero inner product with \(V\ket{\phi^{(0)}}\). If we continue this, \(V\ket{i^{(0)}}\) will have \(\hat n_0 = 1\), so \(\ket{j^{(0)}}\) must also have the same. Then, \(V\ket{j^{(0)}}\) will have \(\hat n_0 = 0, 2\) and hence the inner product \(\bra{\phi^{(0)}}V\ket{j^{(0)}}\) will be 0. The third order corrections for both the single and doubly occupied states are thus 0.
+The first relation gives \(v_{in} = \bra{\Phi}_i v \ket{\Psi}_n = \left(\bra{\Psi}_n v^\dagger \ket{\Phi}_i\right)^* = 0\). The set of states that give non-zero \(v^\dagger_{in}\) is
+\begin{equation}\begin{aligned}
+	\ket{\Psi}_n = \ket{\Psi}_\pm^\sigma = -\frac{1}{\mathcal{N}_\pm}\left[4V\ket{\sigma,0} + 2\left(\frac{U}{2} \pm \Delta\right) \ket{0,\sigma}\right]\otimes\ket{\overline\sigma},~\sigma = \uparrow,\downarrow, ~ E_\pm^\sigma = -\frac{U}{4} \pm \frac{1}{2}\Delta~,
+\end{aligned}\end{equation}
+such that  \(v_{\pm\sigma,i} = \braket{\Psi^\sigma_\pm | v | \Phi_i} = \frac{\sigma t}{\mathcal{N}_\pm\sqrt 2} \left[4Vc_s + \left(U \pm 2\Delta\right) c_c\right] \). \(\mathcal{N}_\pm\) is the normalisation factor and \(\Delta = \sqrt{\left(\frac{U}{2}\right)^2 + 4V^2}\). The renormalisation for this value of \(i\) then becomes
+\begin{equation}\begin{aligned}
+	\ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = \ket{\Phi}_0 \bra{\Phi}_0 t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left[4Vc_s + \left(U \pm 2\Delta\right) c_c\right]^2}{\delta E_{\pm}^\sigma}
+\end{aligned}\end{equation}
+where \(\delta E_{\pm}^\sigma = E_\text{gs} - E^\sigma_{\pm}\). For \(i=1\), we get
+\begin{equation}\begin{aligned}
+\ket{\Phi}_1 \bra{\Phi}_1 t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma}
+\end{aligned}\end{equation}
 
-We move on to the fourth order correction. The general formula is quite formidable, so we only write down the terms that aren't outright zero for this problem:
+The total Hamiltonian \(H_0^* + H_X\) is invariant under the transformations \(c^\dagger_\sigma \to c_\sigma, t \to -t\). Since the renormalisations only involve even powers of \(t\), we can conclude that the renormalisation for \(i=2\)  and \(i=3\) will be the same as that of \(i=1\) and \(i=0\) respectively. The total renormalisation at second order is
 \begin{equation}\begin{aligned}
-	E^{(4)} = \sum_{i^{(0)}, j^{(0)}, k^{(0)}\neq\phi}\frac{\bra{\phi^{(0)}}V\ket{k^{(0)}}\bra{k^{(0)}}V\ket{j^{(0)}}\bra{j^{(0)}}V\ket{i^{(0)}}\bra{i^{(0)}}V\ket{\phi^{(0)}}}{\left(E^{(0)}_\phi - E^{(0)}_k\right)\left(E^{(0)}_\phi - E^{(0)}_j\right)\left(E^{(0)}_\phi - E^{(0)}_i\right)} - E_\phi^{(2)}\sum_{m^{(0)}\neq\phi}\frac{|\bra{m^{(0)}}V\ket{\phi^{(0)}}|^2}{\left(E^{(0)}_\phi - E^{(0)}_m\right)^2}
+	\Delta H = \sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma} + \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}
 \end{aligned}\end{equation}
-For the singly-occupied state, the calculation pans out as follows:
+Since the \(\ket{\hat n_{1\sigma}, \hat n_{1\overline\sigma}}\) form a complete set, we have \(\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i = \ket{\Psi}_1 \bra{\Psi}_1\), and the first term becomes a constant. The second term is a local Fermi liquid term on the first site:
 \begin{equation}\begin{aligned}
-	\left\{ \ket{i^{(0)}} \right\} = \begin{cases}
-		\ket{0, 2, \uparrow} &\implies \left\{ \ket{j^{(0)}}\right\} = \begin{cases}
-			\ket{\uparrow}\otimes\ket{S=1,S^z=0} &\implies \left\{\ket{k^{(0)}}\right\} = \begin{cases}
-		\ket{0, 2, \uparrow}	\\
-		\ket{2, 0, \uparrow}
-		\end{cases}\\
-				\ket{\downarrow}\otimes\ket{\uparrow,\uparrow} &\implies \left\{\ket{k^{(0)}}\right\} = \ket{0, 2, \uparrow}\\
-	\end{cases} \\
-			\ket{2, 0, \uparrow}&\implies \left\{ \ket{j^{(0)}}\right\} = \begin{cases}
-			\ket{\uparrow}\otimes\ket{S=1,S^z=0} &\implies \left\{\ket{k^{(0)}}\right\} = \begin{cases}
-		\ket{0, 2, \uparrow}	\\
-		\ket{2, 0, \uparrow}
-		\end{cases}\\
-				\ket{\downarrow}\otimes\ket{\uparrow,\uparrow} &\implies \left\{\ket{k^{(0)}}\right\} = \ket{0, 2, \uparrow}\\
-	\end{cases} \\
-	\end{cases}\\
+	\Delta H &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left\{\hat n_{1 \uparrow}\hat n_{1 \downarrow} + \left(1 - \hat n_{1 \uparrow}\right) \left(1 - \hat n_{1 \downarrow}\right)\right\}\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
+		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
 \end{aligned}\end{equation}
-The inner products in the numerators can be calculated from these states. The energies of the intermediate states are
+
+In the strong-coupling regime, we have \(J,V \gg U\), and we can then approximate:
 \begin{equation}\begin{aligned}
-	E^{(0)}_i &=0, &E^{(0)}_j &= \frac{J^*}{4}, &E^{(0)}_k &= 0
+	\delta E_{\pm}^\sigma \simeq -\frac{3J}{8} - \sqrt{4V^2 + \left(\frac{3J}{8}\right)^2} \mp V, ~~U \pm 2\Delta \simeq \pm 4V, \text{ and }~~ \mathcal{N}_\pm^2 \simeq 32V^2
 \end{aligned}\end{equation}
-which allow calculating the denominators. The total fourth order change for the singly-occupied state is
+Substituting this gives
 \begin{equation}\begin{aligned}
-E_1^{(4)} = -\frac{16t^4}{3{J^*}^3}
+	\Delta H = \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \frac{2t^2V c_s c_c}{2\left(\frac{3J}{8}\right)^2 + 3V^2 + \frac{3J}{4}\sqrt{4V^2 + \left(\frac{3J}{8}\right)^2}}\right]\\
 \end{aligned}\end{equation}
-Carrying out a similar calculation for the doubly-occupied state gives
-\begin{equation}\begin{aligned}
-	E_2^{(4)} = -\frac{16t^4}{9{J^*}^3}
-\end{aligned}\end{equation}
-The last two equations together mean that the effect of the perturbation is to raise the energy of the doubly-occupied state by an amount
-\begin{equation}\begin{aligned}
-	u \sim \frac{t^4}{{J^*}^3}
-\end{aligned}\end{equation}
-and we can replace the perturbative term \(V\) by an effective repulsive term on the first site (a.k.a, the "local Fermi liquid", \cite{nozieres_1974}):
-\begin{equation}\begin{aligned}
-	u\hat n_{1 \uparrow}\hat n_{1 \downarrow}
-\end{aligned}\end{equation}
+
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
@@ -834,9 +786,9 @@ which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fer
 
 The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
-	\left<n_d \right> = \bra{\Psi}_\text{1}\sum_\sigma \hat n_{d\sigma} \ket{\Psi}_\text{1}
+	\left<n_d \right> = \bra{\Psi}_1\sum_\sigma \hat n_{d\sigma} \ket{\Psi}_1
 \end{aligned}\end{equation}
-\(\ket{\Psi}_\text{1}\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
+\(\ket{\Psi}_1\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \left( c_s^- \right)^2 + \left( c_c^- \right)^2 = 1
 \end{aligned}\end{equation}
