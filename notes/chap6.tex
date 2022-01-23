@@ -418,7 +418,7 @@ We have shown the enhancement of this off-diagonal scattering during the flow to
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
 \begin{gather}
 	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}\\
-	\ket{\Psi}_1 = c_\pm^s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^c_\pm \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+	\ket{\Psi}_1 = c_s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c_c \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
 These were obtained in eq.~\ref{gstate}. The quantities \(\gamma\) and \(\)
 
@@ -452,42 +452,77 @@ If we define the matrix element \(v_{ni} \equiv \bra{\Psi}_n v \ket{\Phi}_i\) of
 	\Delta H = \sum_{i,n}\frac{|v_{ni}|^2 + |v_{in}|^2}{-\delta E_{n}} \ket{\Phi}_i \bra{\Phi_i}~.
 \end{aligned}\end{equation}
 
-We now look at each \(\ket{\Phi_i}\) separately. For \(\ket{\Phi_i} = \ket{\Psi}_1 \otimes \ket{0,0}\), we can write
+We now look at each \(\ket{\Phi_i}\) separately. For \(\ket{\Phi_i} = \ket{\Phi}_0 = \ket{\Psi}_1 \otimes \ket{0,0}\), we can write
 \begin{equation}\begin{aligned}
 	v^\dagger \ket{\Phi}_i = 0, ~ v \ket{\Phi}_i = \frac{t}{\sqrt 2}\sum_\sigma \overline\sigma\left(c_s \ket{\sigma, 0} + c_c \ket{0, \sigma}\right) \ket{\overline\sigma}
 \end{aligned}\end{equation}
-The first relation gives \(v_{in} = \bra{\Phi}_i v \ket{\Psi}_n = \left(\bra{\Psi}_n v^\dagger \ket{\Phi}_i\right)^* = 0\). The set of states that give non-zero \(v^\dagger_{in}\) is
+The first relation gives \(v_{in} = \bra{\Phi}_i v \ket{\Psi}_n = \left(\bra{\Psi}_n v^\dagger \ket{\Phi}_i\right)^* = 0\). The set of states that give non-zero \(v^\dagger_{in}\) are specific elements of the set of eigenstates that have a total odd number of electrons on the impurity and zeroth sites:
 \begin{equation}\begin{aligned}
-	\ket{\Psi}_n = \ket{\Psi}_\pm^\sigma = -\frac{1}{\mathcal{N}_\pm}\left[4V\ket{\sigma,0} + 2\left(\frac{U}{2} \pm \Delta\right) \ket{0,\sigma}\right]\otimes\ket{\overline\sigma},~\sigma = \uparrow,\downarrow, ~ E_\pm^\sigma = -\frac{U}{4} \pm \frac{1}{2}\Delta~,
+	\ket{\Psi}_n = \ket{\Psi}_{\pm,\sigma}^{s, p} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,p} + a_{2,\pm} \ket{p,\sigma}\right)\otimes\ket{s},~~ \sigma = \uparrow,\downarrow, ~~ E^{s,p}_{\pm, \sigma} = -\frac{U}{4} \pm \frac{1}{2}\Delta~;
 \end{aligned}\end{equation}
-such that  \(v_{\pm\sigma,i} = \braket{\Psi^\sigma_\pm | v | \Phi_i} = \frac{\sigma t}{\mathcal{N}_\pm\sqrt 2} \left[4Vc_s + \left(U \pm 2\Delta\right) c_c\right] \). \(\mathcal{N}_\pm\) is the normalisation factor and \(\Delta = \sqrt{\left(\frac{U}{2}\right)^2 + 4V^2}\). The renormalisation for this value of \(i\) then becomes
+here, \(s\) is a string from the set \(\left\{0, \uparrow, \downarrow, 2\right\} \) and represents the configuration of the first site in direct product with the impurity and zeroth site entangled state, \(\ket{s}\), and \(p\) is either \(2\) or 0, and \(p+1\) represents the total number of electrons on the impurity and zeroth sites. For \(\ket{\Phi}_0\), only \(s=\overline\sigma\) and \(p=0\) give non-zero inner product. The coefficients are defined as \(a_{1,\pm}=\frac{4V}{\sqrt 2 \mathcal{N}_\pm}, a_{2,\pm}=\frac{U \pm 2\Delta}{\sqrt 2 \mathcal{N}_\pm}\). The inner product is 
 \begin{equation}\begin{aligned}
-	\ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = \ket{\Phi}_0 \bra{\Phi}_0 t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left[4Vc_s + \left(U \pm 2\Delta\right) c_c\right]^2}{\delta E_{\pm}^\sigma}
+	\label{vni}
+	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}c_s + a_{2,\pm} c_c\right]
 \end{aligned}\end{equation}
-where \(\delta E_{\pm}^\sigma = E_\text{gs} - E^\sigma_{\pm}\). For \(i=1\), we get
+ \(\mathcal{N}_\pm\) is the normalisation factor and \(\Delta = \frac{1}{2}\sqrt{U^2 + 16V^2}\). The renormalisation for this value of \(i\) then becomes
 \begin{equation}\begin{aligned}
-\ket{\Phi}_1 \bra{\Phi}_1 t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma}
+	\left(\Delta H\right)_{i=0} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = -\ket{\Phi}_0 \bra{\Phi}_0 2t^2\sum_{\pm}\frac{\left[a_{1,\pm}c_s + a_{2,\pm} c_c\right]^2}{\delta E_{\pm}^\sigma}
 \end{aligned}\end{equation}
+where \(\delta E_{\pm}^\sigma = E^\sigma_{\pm} - E_\text{gs}\). 
 
-The total Hamiltonian \(H_0^* + H_X\) is invariant under the transformations \(c^\dagger_\sigma \to c_\sigma, t \to -t\). Since the renormalisations only involve even powers of \(t\), we can conclude that the renormalisation for \(i=2\)  and \(i=3\) will be the same as that of \(i=1\) and \(i=0\) respectively. The total renormalisation at second order is
+For \(i=1\), we have \(\ket{\Phi}_1 = \ket{\Psi}_1 \otimes \ket{\uparrow}\). Carrying out a similar calculation above, we get
+\begin{gather}
+	v\ket{\phi}_1 = t \frac{1}{\sqrt 2}\left(c_s\ket{\uparrow, 0, 2} + c_c\ket{0, \uparrow, 2}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{2,0}_{\pm,\uparrow}, ~ ~ ~ v_{ni} = -t\left(c_s a_{1,\pm} + c_c a_{2,\pm}\right) \\
+	v^\dagger\ket{\phi}_1 = t \frac{1}{\sqrt 2}\left(c_s\ket{\uparrow, 2, 0} - c_c\ket{2, \uparrow, 0}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{0,2}_{\pm,\uparrow}, ~ ~ ~ v_{in} = -t\left(c_s a_{1,\pm} - c_c a_{2,\pm}\right)\\
+	\left(\Delta H\right)_{i=1} = -\ket{\Phi}_1 \bra{\Phi}_1 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 c_s^2 + a_{2,\pm}^2 c_c^2}{\delta E_{\pm}^\sigma}
+\end{gather}
+
+The total Hamiltonian \(H_0^* + H_X\) is invariant under the transformations \(c^\dagger_\sigma \to c_\sigma, t \to -t\). Since the renormalisation only involves even powers of \(t\), we can conclude that the renormalisation for \(i=2\)  and \(i=3\) will be the same as that of \(i=1\) and \(i=0\) respectively. The total renormalisation at second order is
 \begin{equation}\begin{aligned}
-	\Delta H = \sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma} + \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}
+	\Delta H &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 c_s^2 + a_{2,\pm}^2 c_c^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)4t^2\sum_{\pm}\frac{a_{1,\pm} a_{2,\pm} c_s c_c}{\delta E_{\pm}^\sigma}\\
+		 &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}
 \end{aligned}\end{equation}
 Since the \(\ket{\hat n_{1\sigma}, \hat n_{1\overline\sigma}}\) form a complete set, we have \(\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i = \ket{\Psi}_1 \bra{\Psi}_1\), and the first term becomes a constant. The second term is a local Fermi liquid term on the first site:
 \begin{equation}\begin{aligned}
-	\Delta H &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left\{\hat n_{1 \uparrow}\hat n_{1 \downarrow} + \left(1 - \hat n_{1 \uparrow}\right) \left(1 - \hat n_{1 \downarrow}\right)\right\}\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
-		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
+	\Delta H &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left\{\hat n_{1 \uparrow}\hat n_{1 \downarrow} + \left(1 - \hat n_{1 \uparrow}\right) \left(1 - \hat n_{1 \downarrow}\right)\right\}\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
+		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
 \end{aligned}\end{equation}
 
 In the strong-coupling regime, we have \(J,V \gg U\), and we can then approximate:
 \begin{equation}\begin{aligned}
-	\delta E_{\pm}^\sigma \simeq -\frac{3J}{8} - \sqrt{4V^2 + \left(\frac{3J}{8}\right)^2} \mp V, ~~U \pm 2\Delta \simeq \pm 4V, \text{ and }~~ \mathcal{N}_\pm^2 \simeq 32V^2
+	\delta E_{\pm}^\sigma \simeq \frac{3J}{8} + \sqrt{4V^2 - \left(\frac{3J}{8}\right)^2} \mp V, ~~U \pm 2\Delta \simeq \pm 4V, \text{ and }~~ \mathcal{N}_\pm^2 \simeq 32V^2
 \end{aligned}\end{equation}
 Substituting this gives
 \begin{equation}\begin{aligned}
 	\Delta H = \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \frac{2t^2V c_s c_c}{2\left(\frac{3J}{8}\right)^2 + 3V^2 + \frac{3J}{4}\sqrt{4V^2 + \left(\frac{3J}{8}\right)^2}}\right]\\
 \end{aligned}\end{equation}
 
+\subsection{Fourth order effective Hamiltonian}
+Using fourth order perturbation theory, we can write the effective Hamiltonian renormalisation at that order in the form
+\begin{equation}\begin{aligned}
+	\Delta H &= -\sum_{i}\ket{\Phi}_i\bra{\Phi}_i\left[\sum_{lmn}\frac{\braket{\Phi_i | H_X | \Psi_l}\braket{\Psi_l | H_X | \Psi_m}\braket{\Psi_m | H_X | \Psi_n}\braket{\Psi_n | H_X | \Phi_i}}{\delta E_l ~ \delta E_m ~ \delta E_n} + \Delta^{(2)}H \sum_{n} \frac{|\braket{\Psi_n | H_X | \Phi_i}|^2}{\left(\delta E_n\right)^2}\right]~,\\
+		 &= -\sum_{i}\ket{\Phi}_i\bra{\Phi}_i\left[\sum_{m}\frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 + \Delta^{(2)}H \sum_{n} \frac{1}{\left(\delta E_n\right)^2}\big\Vert\left(H_X\right)_{ni}\big\Vert^2\right]~.
+\end{aligned}\end{equation}
+We can have at most two successive \(v^\dagger\) or two successive \(v\) act on a particular state. Any more would lead to \(c^\dagger_\sigma \ket{\hat n_\sigma =2} = 0\). This limits the possible scattering processes (in the first term) to the following channels:
+\begin{equation}\begin{aligned}
+	a.~v v^\dagger v v^\dagger,~~b.~v^\dagger v v^\dagger v,~~c.~v v v^\dagger v^\dagger,~~d.~v^\dagger v^\dagger v v~.
+\end{aligned}\end{equation}
+
+We start with \(i=0\). Out of the four channels \(a\) through \(d\), only \(b\) and \(d\) survive. For \(i=0\), we already know the relevant \(\ket{\Psi}_n\) and hence the \(\left(H_X\right)_{ni} = v_{ni}\), from eq.~\ref{vni}. For channel \(b\), we then proceed as follows:
+\begin{equation}\begin{aligned}
+	v^\dagger\ket{\Psi}_n = v^\dagger\ket{\Psi}^{\overline\sigma,0}_{\pm,\sigma} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,\overline\sigma} + a_{2,\pm} \ket{0,\sigma\overline\sigma}\right)\otimes\ket{0}\\
+	\ket{\Psi}_m = \begin{cases}
+	\frac{1}{\sqrt 2}\left(\ket{\uparrow,\downarrow} - \ket{\downarrow,\uparrow})\right)\otimes\ket{0} \\
+	\frac{1}{\sqrt 2}\left(\ket{2,0} - \ket{0,2})\right)\otimes\ket{0}\\ 
+	\left[c^+_s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^+_c \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \otimes\ket{0}
+	\end{cases}
+\end{aligned}\end{equation}
+
+
+
+
+\clearpage
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
