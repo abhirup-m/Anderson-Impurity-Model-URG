@@ -418,7 +418,7 @@ We have shown the enhancement of this off-diagonal scattering during the flow to
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
 \begin{gather}
 	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}\\
-	\ket{\Psi}_1 = c_s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c_c \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+	\ket{\Psi}_1 = {c_s^-} \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + {c_c^-} \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
 These were obtained in eq.~\ref{gstate}. The quantities \(\gamma\) and \(\)
 
@@ -454,39 +454,40 @@ If we define the matrix element \(v_{ni} \equiv \bra{\Psi}_n v \ket{\Phi}_i\) of
 
 We now look at each \(\ket{\Phi_i}\) separately. For \(\ket{\Phi_i} = \ket{\Phi}_0 = \ket{\Psi}_1 \otimes \ket{0,0}\), we can write
 \begin{equation}\begin{aligned}
-	v^\dagger \ket{\Phi}_i = 0, ~ v \ket{\Phi}_i = \frac{t}{\sqrt 2}\sum_\sigma \overline\sigma\left(c_s \ket{\sigma, 0} + c_c \ket{0, \sigma}\right) \ket{\overline\sigma}
+	v^\dagger \ket{\Phi}_i = 0, ~ v \ket{\Phi}_i = \frac{t}{\sqrt 2}\sum_\sigma \overline\sigma\left({c_s^-} \ket{\sigma, 0} + {c_c^-} \ket{0, \sigma}\right) \ket{\overline\sigma}
 \end{aligned}\end{equation}
-The first relation gives \(v_{in} = \bra{\Phi}_i v \ket{\Psi}_n = \left(\bra{\Psi}_n v^\dagger \ket{\Phi}_i\right)^* = 0\). The set of states that give non-zero \(v^\dagger_{in}\) are specific elements of the set of eigenstates that have a total odd number of electrons on the impurity and zeroth sites:
+The first relation gives \(v_{in} = \bra{\Phi}_i v \ket{\Psi}_n = \left(\bra{\Psi}_n v^\dagger \ket{\Phi}_i\right)^* = 0\). The set of states that give non-zero \(v^\dagger_{in}\) are specific elements of the set of eigenstates that have a total of either 1 or 3 electrons on the impurity and zeroth sites:
 \begin{equation}\begin{aligned}
 	\ket{\Psi}_n = \ket{\Psi}_{\pm,\sigma}^{s, p} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,p} + a_{2,\pm} \ket{p,\sigma}\right)\otimes\ket{s},~~ \sigma = \uparrow,\downarrow, ~~ E^{s,p}_{\pm, \sigma} = -\frac{U}{4} \pm \frac{1}{2}\Delta~;
 \end{aligned}\end{equation}
-here, \(s\) is a string from the set \(\left\{0, \uparrow, \downarrow, 2\right\} \) and represents the configuration of the first site in direct product with the impurity and zeroth site entangled state, \(\ket{s}\), and \(p\) is either \(2\) or 0, and \(p+1\) represents the total number of electrons on the impurity and zeroth sites. For \(\ket{\Phi}_0\), only \(s=\overline\sigma\) and \(p=0\) give non-zero inner product. The coefficients are defined as \(a_{1,\pm}=\frac{4V}{\sqrt 2 \mathcal{N}_\pm}, a_{2,\pm}=\frac{U \pm 2\Delta}{\sqrt 2 \mathcal{N}_\pm}\). The inner product is 
+here, \(s\) is a string from the set \(\left\{0, \uparrow, \downarrow, 2\right\} \) and represents the configuration of the first site \(\ket{s}\) in direct product with the impurity and zeroth site entangled composite state, and \(p\) is either \(2\) or 0 such that \(p+1 (= 1\text{ or }3)\) represents the total number of electrons on the impurity and zeroth sites. For \(\ket{\Phi}_0\), only \(s=\overline\sigma\) and \(p=0\) give non-zero inner product. The coefficients are defined as \(a_{1,\pm}=\frac{4V}{\sqrt 2 \mathcal{N}_\pm}, a_{2,\pm}=\frac{U \pm 2\Delta}{\sqrt 2 \mathcal{N}_\pm}\). The inner product is 
 \begin{equation}\begin{aligned}
 	\label{vni}
-	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}c_s + a_{2,\pm} c_c\right]
+	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right]
 \end{aligned}\end{equation}
  \(\mathcal{N}_\pm\) is the normalisation factor and \(\Delta = \frac{1}{2}\sqrt{U^2 + 16V^2}\). The renormalisation for this value of \(i\) then becomes
 \begin{equation}\begin{aligned}
-	\left(\Delta H\right)_{i=0} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = -\ket{\Phi}_0 \bra{\Phi}_0 2t^2\sum_{\pm}\frac{\left[a_{1,\pm}c_s + a_{2,\pm} c_c\right]^2}{\delta E_{\pm}^\sigma}
+	\label{eff_ham_0}
+	\left(\Delta H\right)_{i=0} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = -\ket{\Phi}_0 \bra{\Phi}_0 2t^2\sum_{\pm}\frac{\left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right]^2}{\delta E_{\pm}^\sigma}
 \end{aligned}\end{equation}
 where \(\delta E_{\pm}^\sigma = E^\sigma_{\pm} - E_\text{gs}\). 
 
 For \(i=1\), we have \(\ket{\Phi}_1 = \ket{\Psi}_1 \otimes \ket{\uparrow}\). Carrying out a similar calculation above, we get
 \begin{gather}
-	v\ket{\phi}_1 = t \frac{1}{\sqrt 2}\left(c_s\ket{\uparrow, 0, 2} + c_c\ket{0, \uparrow, 2}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{2,0}_{\pm,\uparrow}, ~ ~ ~ v_{ni} = -t\left(c_s a_{1,\pm} + c_c a_{2,\pm}\right) \\
-	v^\dagger\ket{\phi}_1 = t \frac{1}{\sqrt 2}\left(c_s\ket{\uparrow, 2, 0} - c_c\ket{2, \uparrow, 0}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{0,2}_{\pm,\uparrow}, ~ ~ ~ v_{in} = -t\left(c_s a_{1,\pm} - c_c a_{2,\pm}\right)\\
-	\left(\Delta H\right)_{i=1} = -\ket{\Phi}_1 \bra{\Phi}_1 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 c_s^2 + a_{2,\pm}^2 c_c^2}{\delta E_{\pm}^\sigma}
+	v\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 0, 2} + {c_c^-}\ket{0, \uparrow, 2}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{2,0}_{\pm,\uparrow}, ~ ~ ~ v_{ni} = -t\left({c_s^-} a_{1,\pm} + {c_c^-} a_{2,\pm}\right) \label{vvdag_i1}\\
+	v^\dagger\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 2, 0} - {c_c^-}\ket{2, \uparrow, 0}\right), ~ ~ ~\ket{\psi}_n = \ket{\Psi}^{0,2}_{\pm,\uparrow}, ~ ~ ~ v_{in} = -t\left({c_s^-} a_{1,\pm} - {c_c^-} a_{2,\pm}\right)\label{vvdag_i1_2}\\
+	\left(\Delta H\right)_{i=1} = -\ket{\Phi}_1 \bra{\Phi}_1 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 {c_s^-}^2 + a_{2,\pm}^2 {c_c^-}^2}{\delta E_{\pm}^\sigma}
 \end{gather}
 
 The total Hamiltonian \(H_0^* + H_X\) is invariant under the transformations \(c^\dagger_\sigma \to c_\sigma, t \to -t\). Since the renormalisation only involves even powers of \(t\), we can conclude that the renormalisation for \(i=2\)  and \(i=3\) will be the same as that of \(i=1\) and \(i=0\) respectively. The total renormalisation at second order is
 \begin{equation}\begin{aligned}
-	\Delta H &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 c_s^2 + a_{2,\pm}^2 c_c^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)4t^2\sum_{\pm}\frac{a_{1,\pm} a_{2,\pm} c_s c_c}{\delta E_{\pm}^\sigma}\\
-		 &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4Vc_s\right)^2 + \left(U \pm 2\Delta\right)^2 c_c^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}
+	\Delta H &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i 2t^2\sum_{\pm}\frac{a_{1,\pm}^2 {c_s^-}^2 + a_{2,\pm}^2 {c_c^-}^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)4t^2\sum_{\pm}\frac{a_{1,\pm} a_{2,\pm} {c_s^-} {c_c^-}}{\delta E_{\pm}^\sigma}\\
+		 &= -\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i t^2\sum_{\pm}\frac{1}{\mathcal{N}_\pm^2}\frac{\left(4V{c_s^-}\right)^2 + \left(U \pm 2\Delta\right)^2 {c_c^-}^2}{\delta E_{\pm}^\sigma} - \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right)\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V {c_s^-} \left(U \pm 2\Delta\right) {c_c^-}}{\delta E_{\pm}^\sigma}
 \end{aligned}\end{equation}
 Since the \(\ket{\hat n_{1\sigma}, \hat n_{1\overline\sigma}}\) form a complete set, we have \(\sum_{i=0}^3\ket{\Phi}_i \bra{\Phi}_i = \ket{\Psi}_1 \bra{\Psi}_1\), and the first term becomes a constant. The second term is a local Fermi liquid term on the first site:
 \begin{equation}\begin{aligned}
-	\Delta H &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left\{\hat n_{1 \uparrow}\hat n_{1 \downarrow} + \left(1 - \hat n_{1 \uparrow}\right) \left(1 - \hat n_{1 \downarrow}\right)\right\}\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
-		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V c_s \left(U \pm 2\Delta\right) c_c}{\delta E_{\pm}^\sigma}\right]\\
+	\Delta H &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left\{\hat n_{1 \uparrow}\hat n_{1 \downarrow} + \left(1 - \hat n_{1 \uparrow}\right) \left(1 - \hat n_{1 \downarrow}\right)\right\}\sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V {c_s^-} \left(U \pm 2\Delta\right) {c_c^-}}{\delta E_{\pm}^\sigma}\right]\\
+		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V {c_s^-} \left(U \pm 2\Delta\right) {c_c^-}}{\delta E_{\pm}^\sigma}\right]\\
 \end{aligned}\end{equation}
 
 In the strong-coupling regime, we have \(J,V \gg U\), and we can then approximate:
@@ -495,12 +496,13 @@ In the strong-coupling regime, we have \(J,V \gg U\), and we can then approximat
 \end{aligned}\end{equation}
 Substituting this gives
 \begin{equation}\begin{aligned}
-	\Delta H = \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \frac{2t^2V c_s c_c}{2\left(\frac{3J}{8}\right)^2 + 3V^2 + \frac{3J}{4}\sqrt{4V^2 + \left(\frac{3J}{8}\right)^2}}\right]\\
+	\Delta H = \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} - \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \frac{2t^2V {c_s^-} {c_c^-}}{2\left(\frac{3J}{8}\right)^2 + 3V^2 + \frac{3J}{4}\sqrt{4V^2 + \left(\frac{3J}{8}\right)^2}}\right]\\
 \end{aligned}\end{equation}
 
 \subsection{Fourth order effective Hamiltonian}
 Using fourth order perturbation theory, we can write the effective Hamiltonian renormalisation at that order in the form
 \begin{equation}\begin{aligned}
+	\label{eff_ham_4}
 	\Delta H &= -\sum_{i}\ket{\Phi}_i\bra{\Phi}_i\left[\sum_{lmn}\frac{\braket{\Phi_i | H_X | \Psi_l}\braket{\Psi_l | H_X | \Psi_m}\braket{\Psi_m | H_X | \Psi_n}\braket{\Psi_n | H_X | \Phi_i}}{\delta E_l ~ \delta E_m ~ \delta E_n} + \Delta^{(2)}H \sum_{n} \frac{|\braket{\Psi_n | H_X | \Phi_i}|^2}{\left(\delta E_n\right)^2}\right]~,\\
 		 &= -\sum_{i}\ket{\Phi}_i\bra{\Phi}_i\left[\sum_{m}\frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 + \Delta^{(2)}H \sum_{n} \frac{1}{\left(\delta E_n\right)^2}\big\Vert\left(H_X\right)_{ni}\big\Vert^2\right]~.
 \end{aligned}\end{equation}
@@ -509,15 +511,122 @@ We can have at most two successive \(v^\dagger\) or two successive \(v\) act on 
 	a.~v v^\dagger v v^\dagger,~~b.~v^\dagger v v^\dagger v,~~c.~v v v^\dagger v^\dagger,~~d.~v^\dagger v^\dagger v v~.
 \end{aligned}\end{equation}
 
-We start with \(i=0\). Out of the four channels \(a\) through \(d\), only \(b\) and \(d\) survive. For \(i=0\), we already know the relevant \(\ket{\Psi}_n\) and hence the \(\left(H_X\right)_{ni} = v_{ni}\), from eq.~\ref{vni}. For channel \(b\), we then proceed as follows:
+We start with \(i=0\). Out of the four channels \(a\) through \(d\), only \(b\) and \(d\) survive. For \(i=0\), we already know the relevant \(\ket{\Psi}_n\) and hence the \(\left(H_X\right)_{ni} = v_{ni}\), from eq.~\ref{vni}. 
 \begin{equation}\begin{aligned}
-	v^\dagger\ket{\Psi}_n = v^\dagger\ket{\Psi}^{\overline\sigma,0}_{\pm,\sigma} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,\overline\sigma} + a_{2,\pm} \ket{0,\sigma\overline\sigma}\right)\otimes\ket{0}\\
-	\ket{\Psi}_m = \begin{cases}
-	\frac{1}{\sqrt 2}\left(\ket{\uparrow,\downarrow} - \ket{\downarrow,\uparrow})\right)\otimes\ket{0} \\
-	\frac{1}{\sqrt 2}\left(\ket{2,0} - \ket{0,2})\right)\otimes\ket{0}\\ 
-	\left[c^+_s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c^+_c \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \otimes\ket{0}
-	\end{cases}
+	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right] = \sigma t \mathcal{S}^-_\pm
 \end{aligned}\end{equation}
+where we have defined the sum and difference \(\mathcal{S}^\pm_\pm = a_{1,\pm}{c_s^\pm} + a_{2,\pm} {c_c^\pm}, \mathcal{D}^\pm_\pm = a_{1,\pm}{c_s^\pm} - a_{2,\pm} {c_c^\pm}\).
+For channel \(b\), we then proceed as follows:
+\begin{gather}
+	\ket{\Psi}_{\pm,\sigma}^{\overline\sigma, 0} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,0} + a_{2,\pm} \ket{0,\sigma}\right)\otimes\ket{\overline\sigma}\\
+	v^\dagger\ket{\Psi}_n = v^\dagger\ket{\Psi}^{\overline\sigma,0}_{\pm,\sigma} = \sqrt 2 t \left(a_{1,\pm}\ket{\sigma,\overline\sigma} + a_{2,\pm} \ket{0,\sigma\overline\sigma}\right)\otimes\ket{0}\\
+	\ket{\Psi}_m = \begin{cases}
+	\frac{1}{\sqrt 2}\left(\ket{\uparrow,\downarrow} + \ket{\downarrow,\uparrow})\right)\otimes\ket{0} \\
+	\frac{1}{\sqrt 2}\left(\ket{2,0} - \ket{0,2})\right)\otimes\ket{0}\\ 
+	\left[ \frac{c^+_s}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) +  \frac{c^+_c}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \otimes\ket{0}
+	\end{cases}
+	\implies \left(H_X\right)_{m,\pm\sigma} = \begin{cases}
+		t a_{1\pm}\\
+		\overline\sigma t a_{2\pm}\\
+		\sigma t \left(a_{1\pm} {c_s^+} + a_{2\pm}{c_c^+}\right) = \sigma t \mathcal{S}^+_\pm
+	\end{cases}\label{psi_m}\\
+	 \frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 = \begin{cases}
+	 \frac{1}{\delta E_\mathrm{ST}}\left(\sum_{\sigma,\pm}\frac{t^2}{\delta E_\pm}\sigma a_{1\pm}\mathcal{S}^-_\pm\right)^2 = 0\\
+	 \frac{1}{\delta E_\mathrm{CS}}\left(\sum_{\pm,\sigma} \frac{t^2}{\delta E_\pm}a_{2\pm}\mathcal{S}^-_\pm\right)^2 =  \frac{4t^4}{\delta E_\mathrm{CS}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{2\pm}\mathcal{S}^-_\pm\right)^2\\
+	 \frac{1}{\delta E_\mathrm{2}}\left(-\sum_{\pm,\sigma}\frac{t^2}{\delta E_\pm}\mathcal{S}^+_\pm\mathcal{S}^-_\pm\right)^2 = \frac{4t^4}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}\mathcal{S}^+_\pm\mathcal{S}^-_\pm\right)^2
+	\end{cases}
+\end{gather}
+\(E_\mathrm{ST}, E_\mathrm{CS}\) and \(E_2\) are the energies of the spin triplet zero, charge singlet and spin singlet+charge triplet excited states of the set \(\ket{\Psi}_m\) in eq.~\ref{psi_m}.
+
+We now turn to channel \(d\):
+\begin{gather}
+	v\ket{\Psi}_n = v\ket{\Psi}^{\overline\sigma,0}_{\pm,\sigma} = \sqrt 2 t \sigma a_{2\pm} \ket{0,0}\otimes\ket{2},~ ~ ~\ket{\Psi}_m = \ket{0,0,2}, ~ ~ ~ \left(H_X\right)_{m,\pm\sigma} = \sqrt 2 t \sigma a_{2\pm}\\
+\frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 = \frac{8t^4}{\delta E_{00}} \left(\sum_\pm \frac{1}{\delta E_\pm}a_{2\pm}\mathcal{S}^-_\pm\right)^2 
+\end{gather}
+\(E_{00}\) is the energy of the state \(\ket{0,0,2}\).
+
+Having accounted for both channels, we will calculate the second part of the effective Hamiltonian in eq.~\ref{eff_ham_4}, the part involving \(\Delta^{(2)} H\). We already know, from eq.~\ref{eff_ham_0}, that
+\begin{equation}\begin{aligned}
+	\Delta^{(2)} H_{i=0} = -2t^2\sum_\pm \frac{1}{\delta E_\pm}\left(\mathcal{S}^-_\pm\right)^2
+\end{aligned}\end{equation}
+Also, from the expression of \(v_{\pm\sigma,i}\), we get
+\begin{equation}\begin{aligned}
+	\sum_{n} \frac{1}{\left(\delta E_n\right)^2}\big\Vert\left(H_X\right)_{ni}\big\Vert^2 =	\sum_{\pm} \frac{2t^2}{\left(\delta E_\pm\right)^2}\left(\mathcal{S}^-_\pm\right)^2
+\end{aligned}\end{equation}
+Combining it all, the total renormalisation in \(i=0\) is
+\begin{equation}\begin{aligned}
+	- \ket{\Phi}_0 \bra{\Phi}_0 4t^4\left[ \left(\frac{1}{\delta E_\mathrm{CS}} + \frac{2}{\delta E_{00}}\right)  \left(\sum_{\pm}\frac{a_{2\pm}\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \frac{1}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 - \sum_\pm \frac{\left(\mathcal{S}^-_\pm\right)^2}{\delta E_\pm}\sum_{\pm} \left(\frac{\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2\right]\\
+\end{aligned}\end{equation}
+
+We now come to \(i=1\): \(\ket{\Phi}_1 = \ket{\Psi}_1 \otimes \ket{\uparrow}\). Channels \(a\) and \(b\) are non-zero here. We start with channel \(b: v^\dagger v v^\dagger v\). We already know, from eq.~\ref{vvdag_i1}, that
+\begin{gather}
+v\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 0, 2} + {c_c^-}\ket{0, \uparrow, 2}\right), ~ ~ ~ \ket{\psi}_n = \ket{\Psi}^{2,0}_{\pm,\uparrow} = -\sqrt 2\left(a_{1,\pm}\ket{\uparrow,0} + a_{2,\pm} \ket{0,\uparrow}\right)\otimes\ket{2}, ~ ~ ~ \left(H_X\right)_{ni} = -t \mathcal{S}^-_\pm
+\end{gather}
+Moving forward:
+\begin{gather}
+v^\dagger \ket{\Psi}_n = \sqrt 2 t \left(a_{1,\pm}\ket{\uparrow,\uparrow}\otimes\ket{\downarrow} - a_{1,\pm}\ket{\uparrow,\downarrow}\otimes\ket{\uparrow} - a_{2,\pm} \ket{0,2}\otimes\ket{\uparrow}\right)\\
+	\ket{\Psi}_m = \begin{cases}
+	\frac{1}{\sqrt 2}\left(\ket{\uparrow,\downarrow} + \ket{\downarrow,\uparrow})\right)\otimes\ket{\uparrow} \\
+	\frac{1}{\sqrt 2}\left(\ket{2,0} - \ket{0,2})\right)\otimes\ket{\uparrow}\\ 
+	\left[ \frac{c^+_s}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) +  \frac{c^+_c}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \otimes\ket{\uparrow}\\
+	\ket{\uparrow,\uparrow}\otimes\ket{\downarrow}
+	\end{cases}
+	\implies \left(H_X\right)_{m,\pm}\left(H_X\right)_{\pm,i} = \begin{cases}
+		t^2 a_{1\pm} \mathcal{S}^-_\pm\\
+		-t^2 a_{2\pm}\mathcal{S}^-_\pm\\
+		t^2 \mathcal{S}^+_\pm\mathcal{S}^-_\pm\\
+		-\sqrt 2 t^2 a_{1\pm}\mathcal{S}^-_\pm
+	\end{cases}\\
+	\frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 = \begin{cases}
+	 \frac{t^4}{\delta E_\mathrm{ST}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{1\pm}\mathcal{S}^-_\pm\right)^2 \\
+	 \frac{t^4}{\delta E_\mathrm{CS}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{2\pm}\mathcal{S}^-_\pm\right)^2\\
+	 \frac{t^4}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}\mathcal{S}^+_\pm\mathcal{S}^-_\pm\right)^2\\
+	 \frac{2 t^4}{\delta E_\mathrm{\uparrow \uparrow}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{1\pm}\mathcal{S}^-_\pm\right)^2\\
+	\end{cases}
+\end{gather}
+\(E_{\uparrow \uparrow}\) is the energy of the upwards polarised state \(\ket{\uparrow,\uparrow}\otimes\ket{\downarrow}\).
+
+Next is channel \(a : v v^\dagger v v^\dagger\). Using eq.~\ref{vvdag_i1_2} and following the same steps as above, we get:
+\begin{gather}
+	v^\dagger\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 2, 0} - {c_c^-}\ket{2, \uparrow, 0}\right), ~ ~ ~\ket{\Psi}_n = \ket{\Psi}^{0,2}_{\pm,\uparrow} = -\sqrt 2\left(a_{1,\pm}\ket{\uparrow,2} + a_{2,\pm} \ket{2,\uparrow}\right)\otimes\ket{0}, ~ ~ ~ \left(H_X\right)_{ni} = -t \mathcal{D}^-_\pm\\
+	v \ket{\Psi}_n = \sqrt 2 t\left(a_{1,\pm}\ket{\uparrow,\uparrow}\otimes\ket{\downarrow} - a_{1,\pm}\ket{\uparrow,\downarrow}\otimes\ket{\uparrow} + a_{2,\pm} \ket{2,0}\otimes\ket{\uparrow}\right)\\
+		\ket{\Psi}_m = \begin{cases}
+		\frac{1}{\sqrt 2}\left(\ket{\uparrow,\downarrow} + \ket{\downarrow,\uparrow})\right)\otimes\ket{\uparrow} \\
+		\frac{1}{\sqrt 2}\left(\ket{2,0} - \ket{0,2})\right)\otimes\ket{\uparrow}\\ 
+		\left[ \frac{c^+_s}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) +  \frac{c^+_c}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right)\right] \otimes\ket{\uparrow}\\
+		\ket{\uparrow,\uparrow}\otimes\ket{\downarrow}
+		\end{cases}
+		\implies \left(H_X\right)_{m,\pm}\left(H_X\right)_{\pm,i} = \begin{cases}
+			t^2 a_{1\pm} \mathcal{D}^-_\pm\\
+			-t^2 a_{2\pm}\mathcal{D}^-_\pm\\
+			t^2 \mathcal{D}^+_\pm\mathcal{D}^-_\pm\\
+			-\sqrt 2 t^2 a_{1\pm}\mathcal{D}^-_\pm
+		\end{cases}\\
+		\frac{1}{\delta E_m}\big\Vert\sum_n \frac{1}{\delta E_n}\left(H_X\right) _{mn}\left(H_X\right)_{ni}\big\Vert^2 = \begin{cases}
+		\frac{1}{\delta E_\mathrm{ST}}\left(\sum_{\pm}\frac{t^2}{\delta E_\pm}a_{1\pm}\mathcal{D}^-_\pm\right)^2 \\
+		\frac{t^4}{\delta E_\mathrm{CS}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{2\pm}\mathcal{D}^-_\pm\right)^2\\
+		\frac{t^4}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}\mathcal{D}^+_\pm\mathcal{D}^-_\pm\right)^2\\
+		\frac{2 t^4}{\delta E_\mathrm{\uparrow \uparrow}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}a_{1\pm}\mathcal{D}^-_\pm\right)^2\\
+		\end{cases}
+\end{gather}
+
+For the final part, we again use \(\Delta^{(2)} H_{i=1} = -t^2\sum_\pm \frac{1}{\delta E_\pm} \left[\left(\mathcal{S}^-_\pm\right)^2 + \left(\mathcal{D}^-_\pm\right)^2\right]\). Also, since \(\left(H_X\right)_{ni} = \left(v + v^\dagger\right)_{ni}\), we have 
+\begin{equation}\begin{aligned}
+\sum_{n} \frac{1}{\left(\delta E_n\right)^2}\big\Vert\left(H_X\right)_{ni}\big\Vert^2 =	t^2\sum_{\pm} \left[\left(\frac{\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right]
+\end{aligned}\end{equation}
+
+Combining all the terms, we get
+\begin{equation}\begin{aligned}
+	- \ket{\Phi}_1 \bra{\Phi}_1 4t^4\left[\left(\frac{1}{\delta E_\mathrm{ST}} + \frac{2}{\delta E_{\uparrow \uparrow}}\right) \left\{\left(\frac{1}{2}\sum_{\pm}\frac{a_{1\pm}\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{1}{2}\sum_{\pm}\frac{a_{1\pm}\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\} + \frac{1}{\delta E_\mathrm{CS}} \left\{\left(\frac{1}{2}\sum_{\pm}\frac{a_{2\pm}\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2  \right. \right.\\
+	+ \left. \left. \left(\frac{1}{2}\sum_{\pm}\frac{a_{2\pm}\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\} + \frac{1}{\delta E_\mathrm{2}}\left\{\left(\frac{1}{2}\sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{1}{2}\sum_{\pm}\frac{\mathcal{D}^+_\pm\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\} \right. \\
+- \left.\sum_\pm \frac{1}{\delta E_\pm} \frac{1}{2}\left\{\left(\mathcal{S}^-_\pm\right)^2 + \left(\mathcal{D}^-_\pm\right)^2\right\}\sum_\pm \frac{1}{2}\left\{\left(\frac{\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\}\right]\\
+\end{aligned}\end{equation}
+If we define some quantities: \(F_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{S}^-_\pm}{\delta E_\pm}, G_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{D}^-_\pm}{\delta E_\pm}, P = \sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}, Q = \sum_{\pm}\frac{\mathcal{D}^+_\pm\mathcal{D}^-_\pm}{\delta E_\pm}, X_n = \sum_\pm \frac{\left(\mathcal{S}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}, Y_n = \sum_\pm \frac{\left(\mathcal{D}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}\), the total renormalisation can be written as
+\begin{gather}
+	-\left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) 4t^2 \left[\left(\frac{1}{\delta E_\mathrm{CS}} + \frac{2}{\delta E_{00}}\right) F_{2}^2 + \frac{1}{\delta E_\mathrm{2}}P^2 - X_1 X_2\right]\nonumber\\
+	- \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) t^4\left[\left(\frac{1}{\delta E_\mathrm{ST}} + \frac{2}{\delta E_{\uparrow \uparrow}}\right) \left(F_1^2 + G_1^2\right) + \frac{1}{\delta E_\mathrm{CS}} \left(F_2^2 + G_2^2\right)\right.\nonumber\\
+\left. + \frac{1}{\delta E_\mathrm{2}} \left(P^2 + Q^2\right) - \left(X_1 + Y_1\right) \left(X_2 + Y_2\right)\right]\nonumber\\
+\end{gather}
 
 
 
