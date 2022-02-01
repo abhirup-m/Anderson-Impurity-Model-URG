@@ -67,7 +67,7 @@ The full thing becomes
 \end{aligned}\end{equation}
 This completes the proof. 
 
-To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian \(\mathcal{H}_{IR}\) and insert a magnetic field to obtain the Hamiltonian in eq.~\ref{field_ham}. For a particular regime of \(U\), only one of \(J\) or \(K\) will be non-zero. We then numerically diagonalise this Hamiltonian to obtain the partition function \(Z(B)\) and its derivatives. The spin susceptibility can then be calculated using eq.~\ref{chi_exp}. The results for \(U>0\) are shown in fig.~\ref{chi}.
+To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian \(\mathcal{H}_{IR}\) and insert a magnetic field to obtain the Hamiltonian in eq.~\eqref{field_ham}. For a particular regime of \(U\), only one of \(J\) or \(K\) will be non-zero. We then numerically diagonalise this Hamiltonian to obtain the partition function \(Z(B)\) and its derivatives. The spin susceptibility can then be calculated using eq.~\eqref{chi_exp}. The results for \(U>0\) are shown in fig.~\ref{chi}.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.49\textwidth]{../figures/chiT_J=0.020.pdf}
@@ -96,7 +96,7 @@ The charge susceptibility for \(U<0\) is shown in fig.~\ref{chi_charge}.
 	\label{chi_charge}
 \end{figure}
 
-It is interesting to look at the behaviour of the charge susceptibility in the positive \(U\) regime, fig.~\ref{chi_charge_posU}. It  is seen that for \(J_0<V_0\), the charge susceptibility is very similar to the spin susceptibility, with a reduced saturation value. This is because, for that range of bare values, the ground state consists of a comparable mixture of the spin and charge states (see fig.~\ref{cs_cc}). This means that the magnetic field term in eq.~\ref{charge_field} can couple to the charge component of the ground state, and give a non-zero charge susceptibility at zero temperature. On the other hand, for \(J_0 > V_0\), we see that \(\chi_c\) vanishes at low temperatures. This can again be understood from the ground state. For that range of bare values, the ground state can be approximated by purely the singlet, because the charge fraction \(c_-^c\) becomes very small. This means that the field \(B_c \) has nothing to couple with. Alternatively, it can be said that since the ground state has only terms with \(\hat n_d=1\), no number fluctuation is possible, and the impurity isospin is not susceptible at all to charge polarisation.
+It is interesting to look at the behaviour of the charge susceptibility in the positive \(U\) regime, fig.~\ref{chi_charge_posU}. It  is seen that for \(J_0<V_0\), the charge susceptibility is very similar to the spin susceptibility, with a reduced saturation value. This is because, for that range of bare values, the ground state consists of a comparable mixture of the spin and charge states (see fig.~\ref{cs_cc}). This means that the magnetic field term in eq.~\eqref{charge_field} can couple to the charge component of the ground state, and give a non-zero charge susceptibility at zero temperature. On the other hand, for \(J_0 > V_0\), we see that \(\chi_c\) vanishes at low temperatures. This can again be understood from the ground state. For that range of bare values, the ground state can be approximated by purely the singlet, because the charge fraction \(c_-^c\) becomes very small. This means that the field \(B_c \) has nothing to couple with. Alternatively, it can be said that since the ground state has only terms with \(\hat n_d=1\), no number fluctuation is possible, and the impurity isospin is not susceptible at all to charge polarisation.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J=small.pdf}
@@ -105,7 +105,7 @@ It is interesting to look at the behaviour of the charge susceptibility in the p
 	\label{chi_charge_posU}
 \end{figure}
 
-From eq.~\ref{gstate_kondo}, we know that in the thermodynamic limit, the ground state of \(U>0\) regime reduces to a screened local moment. That then implies that the charge susceptibility vanishes at low temperatures, owing to lack of any charge content in the ground state in the large bandwidth limit.
+From eq.~\eqref{gstate_kondo}, we know that in the thermodynamic limit, the ground state of \(U>0\) regime reduces to a screened local moment. That then implies that the charge susceptibility vanishes at low temperatures, owing to lack of any charge content in the ground state in the large bandwidth limit.
 \begin{equation}\begin{aligned}
 	\lim_{D_0 \to \infty}\chi_c(U>0, T \to 0) = 0
 \end{aligned}\end{equation}
@@ -405,24 +405,24 @@ The more interesting interaction is the off-diagonal term
 \end{aligned}\end{equation}
 This interaction arises from the enhanced entanglement between the impurity and the conduction electrons; removing the impurity from the singlet and the triplet generates these off-diagonal scatterings. As such, this is an indicator of the macroscopic entanglement of the singlet formed at the IR fixed point, and plotted in fig.~\ref{mutI}. 
 
-We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\ref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\ref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
+We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\eqref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\eqref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
 
 We have shown the enhancement of this off-diagonal scattering during the flow towards the IR fixed point by computing it during the reverse RG program, in fig.~\ref{Fkkqq}. It is clear from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/Fkkqq.pdf}
-	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\ref{off_diag_coeff} along the RG flow.}
+	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\eqref{off_diag_coeff} along the RG flow.}
 	\label{Fkkqq}
 \end{figure}
 \section{Obtaining the real space low energy Hamiltonian: the local Fermi liquid}
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
 \begin{gather}
 	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}\\
-	\ket{\Psi}_1 = {c_s^-} \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + {c_c^-} \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+	\ket{\Psi}_1 = {c_s} \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + {c_c} \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
-These were obtained in eq.~\ref{gstate}. The quantities \(\gamma\) and \(\)
+These were obtained in eq.~\eqref{gstate}. The quantities \(\gamma\) and \(c_{s,c}\) were defined in and around eq.~\eqref{coeff_def}.
 
-We start with the ground state \(\ket{\Psi}_1\) and the star graph as the zeroth level ground state and Hamiltonian, and then add a nearest-neighbour hopping term as a perturbation of the zeroth Hamiltonian. We know that the ground state for the interacting part is predominantly the spin-singlet (it was shown while calculating the ground states of the effective zero-mode Hamiltonian that the ground state is a mixture of singlet and triplet, and the triplet part dies out at large system sizes, see eq.~\ref{gstate_kondo}), so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
+We start with the ground state \(\ket{\Psi}_1\) and the star graph as the zeroth level ground state and Hamiltonian, and then add a nearest-neighbour hopping term as a perturbation of the zeroth Hamiltonian. We know that the ground state for the interacting part is predominantly the spin-singlet (it was shown while calculating the ground states of the effective zero-mode Hamiltonian that the ground state is a mixture of singlet and triplet, and the triplet part dies out at large system sizes, see eq.~\eqref{gstate_kondo}), so we will take that as our reference state and treat the hopping part that connects the origin to the first site,
 \begin{equation}\begin{aligned}
 	H_X = t\sum_{\vec r_1,\sigma} c^\dagger_{0\sigma}c_{\vec r_1,\sigma} +\text{h.c.} \equiv v^\dagger + v
 \end{aligned}\end{equation}
@@ -465,7 +465,7 @@ here, \(s\) is a string from the set \(\left\{0, \uparrow, \downarrow, 2\right\}
 	\label{vni}
 	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right]
 \end{aligned}\end{equation}
- \(\mathcal{N}_\pm\) is the normalisation factor and \(\Delta = \frac{1}{2}\sqrt{U^2 + 16V^2}\). The renormalisation for this value of \(i\) then becomes
+\(\mathcal{N}_\pm = \sqrt{16V^2 + \left(U \pm 2\Delta\right)^2}\) is the normalisation factor and \(\Delta = \frac{1}{2}\sqrt{U^2 + 16V^2}\). The renormalisation for this value of \(i\) then becomes
 \begin{equation}\begin{aligned}
 	\label{eff_ham_0}
 	\left(\Delta H\right)_{i=0} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{n}\frac{|v_{ni}|^2}{-\delta E_{n}} = \ket{\Phi}_0 \bra{\Phi}_0 \sum_{\sigma,\pm}\frac{|v_{\pm\sigma,i}|^2}{-\delta E_{\pm}^\sigma} = -\ket{\Phi}_0 \bra{\Phi}_0 2t^2\sum_{\pm}\frac{\left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right]^2}{\delta E_{\pm}^\sigma}
@@ -511,11 +511,11 @@ We can have at most two successive \(v^\dagger\) or two successive \(v\) act on 
 	a.~v v^\dagger v v^\dagger,~~b.~v^\dagger v v^\dagger v,~~c.~v v v^\dagger v^\dagger,~~d.~v^\dagger v^\dagger v v~.
 \end{aligned}\end{equation}
 
-We start with \(i=0\). Out of the four channels \(a\) through \(d\), only \(b\) and \(d\) survive. For \(i=0\), we already know the relevant \(\ket{\Psi}_n\) and hence the \(\left(H_X\right)_{ni} = v_{ni}\), from eq.~\ref{vni}. 
+We start with \(i=0\). Out of the four channels \(a\) through \(d\), only \(b\) and \(d\) survive. For \(i=0\), we already know the relevant \(\ket{\Psi}_n\) and hence the \(\left(H_X\right)_{ni} = v_{ni}\), from eq.~\eqref{vni}. 
 \begin{equation}\begin{aligned}
 	v_{\pm\sigma,i} = \braket{\Psi_{\pm,\sigma}^{\overline\sigma,0} | v | \Phi_i} = \sigma t \left[a_{1,\pm}{c_s^-} + a_{2,\pm} {c_c^-}\right] = \sigma t \mathcal{S}^-_\pm
 \end{aligned}\end{equation}
-where we have defined the sum and difference \(\mathcal{S}^\pm_\pm = a_{1,\pm}{c_s^\pm} + a_{2,\pm} {c_c^\pm}, \mathcal{D}^\pm_\pm = a_{1,\pm}{c_s^\pm} - a_{2,\pm} {c_c^\pm}\).
+where we have defined the sum and difference \(\mathcal{S}^\pm_\pm = a_{1,\pm}{c_s^\pm} + a_{2,\pm} {c_c^\pm}, ~ ~ \mathcal{D}^\pm_\pm = a_{1,\pm}{c_s^\pm} - a_{2,\pm} {c_c^\pm}\).
 For channel \(b\), we then proceed as follows:
 \begin{gather}
 	\ket{\Psi}_{\pm,\sigma}^{\overline\sigma, 0} = -\sqrt 2\left(a_{1,\pm}\ket{\sigma,0} + a_{2,\pm} \ket{0,\sigma}\right)\otimes\ket{\overline\sigma}\\
@@ -536,7 +536,7 @@ For channel \(b\), we then proceed as follows:
 	 \frac{1}{\delta E_\mathrm{2}}\left(-\sum_{\pm,\sigma}\frac{t^2}{\delta E_\pm}\mathcal{S}^+_\pm\mathcal{S}^-_\pm\right)^2 = \frac{4t^4}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{1}{\delta E_\pm}\mathcal{S}^+_\pm\mathcal{S}^-_\pm\right)^2
 	\end{cases}
 \end{gather}
-\(E_\mathrm{ST}, E_\mathrm{CS}\) and \(E_2\) are the energies of the spin triplet zero, charge singlet and spin singlet+charge triplet excited states of the set \(\ket{\Psi}_m\) in eq.~\ref{psi_m}.
+\(E_\mathrm{ST}, E_\mathrm{CS}\) and \(E_2\) are the energies of the spin triplet zero, charge singlet and spin singlet+charge triplet excited states of the set \(\ket{\Psi}_m\) in eq.~\eqref{psi_m}.
 
 We now turn to channel \(d\):
 \begin{gather}
@@ -545,7 +545,7 @@ We now turn to channel \(d\):
 \end{gather}
 \(E_{00}\) is the energy of the state \(\ket{0,0,2}\).
 
-Having accounted for both channels, we will calculate the second part of the effective Hamiltonian in eq.~\ref{eff_ham_4}, the part involving \(\Delta^{(2)} H\). We already know, from eq.~\ref{eff_ham_0}, that
+Having accounted for both channels, we will calculate the second part of the effective Hamiltonian in eq.~\eqref{eff_ham_4}, the part involving \(\Delta^{(2)} H\). We already know, from eq.~\eqref{eff_ham_0}, that
 \begin{equation}\begin{aligned}
 	\Delta^{(2)} H_{i=0} = -2t^2\sum_\pm \frac{1}{\delta E_\pm}\left(\mathcal{S}^-_\pm\right)^2
 \end{aligned}\end{equation}
@@ -558,7 +558,7 @@ Combining it all, the total renormalisation in \(i=0\) is
 	- \ket{\Phi}_0 \bra{\Phi}_0 4t^4\left[ \left(\frac{1}{\delta E_\mathrm{CS}} + \frac{2}{\delta E_{00}}\right)  \left(\sum_{\pm}\frac{a_{2\pm}\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \frac{1}{\delta E_\mathrm{2}}\left(\sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 - \sum_\pm \frac{\left(\mathcal{S}^-_\pm\right)^2}{\delta E_\pm}\sum_{\pm} \left(\frac{\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2\right]\\
 \end{aligned}\end{equation}
 
-We now come to \(i=1\): \(\ket{\Phi}_1 = \ket{\Psi}_1 \otimes \ket{\uparrow}\). Channels \(a\) and \(b\) are non-zero here. We start with channel \(b: v^\dagger v v^\dagger v\). We already know, from eq.~\ref{vvdag_i1}, that
+We now come to \(i=1\): \(\ket{\Phi}_1 = \ket{\Psi}_1 \otimes \ket{\uparrow}\). Channels \(a\) and \(b\) are non-zero here. We start with channel \(b: v^\dagger v v^\dagger v\). We already know, from eq.~\eqref{vvdag_i1}, that
 \begin{gather}
 v\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 0, 2} + {c_c^-}\ket{0, \uparrow, 2}\right), ~ ~ ~ \ket{\psi}_n = \ket{\Psi}^{2,0}_{\pm,\uparrow} = -\sqrt 2\left(a_{1,\pm}\ket{\uparrow,0} + a_{2,\pm} \ket{0,\uparrow}\right)\otimes\ket{2}, ~ ~ ~ \left(H_X\right)_{ni} = -t \mathcal{S}^-_\pm
 \end{gather}
@@ -586,7 +586,7 @@ v^\dagger \ket{\Psi}_n = \sqrt 2 t \left(a_{1,\pm}\ket{\uparrow,\uparrow}\otimes
 \end{gather}
 \(E_{\uparrow \uparrow}\) is the energy of the upwards polarised state \(\ket{\uparrow,\uparrow}\otimes\ket{\downarrow}\).
 
-Next is channel \(a : v v^\dagger v v^\dagger\). Using eq.~\ref{vvdag_i1_2} and following the same steps as above, we get:
+Next is channel \(a : v v^\dagger v v^\dagger\). Using eq.~\eqref{vvdag_i1_2} and following the same steps as above, we get:
 \begin{gather}
 	v^\dagger\ket{\Phi}_1 = t \frac{1}{\sqrt 2}\left({c_s^-}\ket{\uparrow, 2, 0} - {c_c^-}\ket{2, \uparrow, 0}\right), ~ ~ ~\ket{\Psi}_n = \ket{\Psi}^{0,2}_{\pm,\uparrow} = -\sqrt 2\left(a_{1,\pm}\ket{\uparrow,2} + a_{2,\pm} \ket{2,\uparrow}\right)\otimes\ket{0}, ~ ~ ~ \left(H_X\right)_{ni} = -t \mathcal{D}^-_\pm\\
 	v \ket{\Psi}_n = \sqrt 2 t\left(a_{1,\pm}\ket{\uparrow,\uparrow}\otimes\ket{\downarrow} - a_{1,\pm}\ket{\uparrow,\downarrow}\otimes\ket{\uparrow} + a_{2,\pm} \ket{2,0}\otimes\ket{\uparrow}\right)\\
@@ -621,21 +621,48 @@ Combining all the terms, we get
 	+ \left. \left. \left(\frac{1}{2}\sum_{\pm}\frac{a_{2\pm}\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\} + \frac{1}{\delta E_\mathrm{2}}\left\{\left(\frac{1}{2}\sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{1}{2}\sum_{\pm}\frac{\mathcal{D}^+_\pm\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\} \right. \\
 - \left.\sum_\pm \frac{1}{\delta E_\pm} \frac{1}{2}\left\{\left(\mathcal{S}^-_\pm\right)^2 + \left(\mathcal{D}^-_\pm\right)^2\right\}\sum_\pm \frac{1}{2}\left\{\left(\frac{\mathcal{S}^-_\pm}{\delta E_\pm}\right)^2 + \left(\frac{\mathcal{D}^-_\pm}{\delta E_\pm}\right)^2\right\}\right]\\
 \end{aligned}\end{equation}
-If we define some quantities: \(F_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{S}^-_\pm}{\delta E_\pm}, G_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{D}^-_\pm}{\delta E_\pm}, P = \sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}, Q = \sum_{\pm}\frac{\mathcal{D}^+_\pm\mathcal{D}^-_\pm}{\delta E_\pm}, X_n = \sum_\pm \frac{\left(\mathcal{S}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}, Y_n = \sum_\pm \frac{\left(\mathcal{D}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}\), the total renormalisation can be written as
+If we define some quantities: \(F_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{S}^-_\pm}{\delta E_\pm}, G_{(1,2)} = \sum_{\pm}\frac{a_{(1,2)\pm}\mathcal{D}^-_\pm}{\delta E_\pm}, P = \sum_{\pm}\frac{\mathcal{S}^+_\pm\mathcal{S}^-_\pm}{\delta E_\pm}, Q = \sum_{\pm}\frac{\mathcal{D}^+_\pm\mathcal{D}^-_\pm}{\delta E_\pm}, X_n = \sum_\pm \frac{\left(\mathcal{S}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}, Y_n = \sum_\pm \frac{\left(\mathcal{D}_\pm^-\right)^2}{\left(\delta E_\pm\right)^n}\), the total renormalisation from second and fourth order can be written as
 \begin{gather}
-	-\left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) 4t^2 \left[\left(\frac{1}{\delta E_\mathrm{CS}} + \frac{2}{\delta E_{00}}\right) F_{2}^2 + \frac{1}{\delta E_\mathrm{2}}P^2 - X_1 X_2\right]\nonumber\\
-	- \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) t^4\left[\left(\frac{1}{\delta E_\mathrm{ST}} + \frac{2}{\delta E_{\uparrow \uparrow}}\right) \left(F_1^2 + G_1^2\right) + \frac{1}{\delta E_\mathrm{CS}} \left(F_2^2 + G_2^2\right)\right.\nonumber\\
-\left. + \frac{1}{\delta E_\mathrm{2}} \left(P^2 + Q^2\right) - \left(X_1 + Y_1\right) \left(X_2 + Y_2\right)\right]\nonumber\\
+	-\left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) 4t^4 \left[\frac{1}{2t^2}X_1 + \left(\frac{1}{\delta E_\mathrm{CS}} + \frac{2}{\delta E_{00}}\right) F_{2}^2 + \frac{1}{\delta E_\mathrm{2}}P^2 - X_1 X_2\right]\nonumber\\
+	- \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) t^4\left[\frac{1}{t^2}\left(X_1 + Y_1\right) + \left(\frac{1}{\delta E_\mathrm{ST}} + \frac{2}{\delta E_{\uparrow \uparrow}}\right) \left(F_1^2 + G_1^2\right) + \frac{1}{\delta E_\mathrm{CS}} \left(F_2^2 + G_2^2\right)\right.\nonumber\\
+\left. + \frac{1}{\delta E_\mathrm{2}} \left(P^2 + Q^2\right) - \left(X_1 + Y_1\right) \left(X_2 + Y_2\right)\right]
 \end{gather}
+The excitation energies are given by
+\begin{equation}
+	\delta E_\mathrm{CS} = \delta E_{00} = \frac{3J}{8} + \frac{U}{4} + \alpha, ~ ~ \delta E_{\uparrow \uparrow} = \delta E_\mathrm{ST}  = -\frac{U}{4} + \frac{5J}{8} + \alpha, ~ ~ \delta E_2 = 2\alpha, ~ ~ \delta E_\pm = \frac{3J}{8} + \alpha \pm \frac{1}{2}\Delta, ~ ~ \alpha \equiv \sqrt{V^2 \gamma^2 + 4V^2}
+\end{equation}
 
+where \(V\gamma = \frac{3J}{8} + \frac{U}{4}\) and \(\Delta = \sqrt{\frac{U^2}{4} + 4V^2}\).
 
+We will now look at the extreme strong-coupling regime \(J \gg V \gg U,t\). There, all the expressions simplify:
+\begin{gather}
+	V\gamma \simeq \frac{3J}{8},~ ~ \Delta \simeq 2V,~ ~ \alpha \simeq \frac{3J}{8}, ~ ~ c_s^+ = -c_c^- \simeq 0, ~ ~ c_s^- = c_c^+ \simeq 1, ~ ~ \mathcal{N}_\pm \simeq 4\sqrt 2 V, ~ ~ a_{1,\pm} \simeq \frac{1}{2}, ~ ~ a_{2,\pm} \simeq \pm \frac{1}{2}~,\nonumber\\
+	\delta E_\pm = \delta E_\mathrm{CS} = \delta E_{00} = \delta E_2 \simeq \frac{3J}{4}, ~ ~ \delta E_\mathrm{ST} = \delta E_{\uparrow \uparrow} \simeq J, ~ ~ \mathcal{S}^-_\pm = \mathcal{D}^-_\pm \simeq \frac{1}{2}, ~ ~ \mathcal{S}^+_\pm = -\mathcal{D}^+_\pm \simeq \pm \frac{1}{2},~\nonumber\\
+	F_1 = G_1 \simeq \frac{2}{3J}, ~ ~ F_2 = G_2 \simeq 0, ~ ~ P = Q \simeq 0,~ ~ X_1 = Y_1 \simeq \frac{2}{3J}, ~ ~ X_2 = Y_2 \simeq \frac{8}{9J^2}
+\end{gather}
+The effective Hamiltonian becomes
+\begin{equation}\begin{aligned}
+	&-\left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) \frac{4t^2}{3J}\left[1 - \frac{16 t^2}{9 J^3}\right] - \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) \frac{4t^2}{3J}\left[1 + \frac{2t^2}{9 J^2} \right]\\
+	=&-\frac{4t^2}{3J}\sum_i \ket{\Phi}_i \bra{\Phi}_i +  \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) \frac{64 t^4}{27 J^3} - \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) \frac{8t^4}{27 J^3}\\
+	=& \ket{\Psi}_1 \bra{\Psi}_1 \left[\text{constant} + \frac{64 t^4}{27 J^3} \mathcal{P}_\text{charge}  - \frac{8t^4}{27 J^3}\mathcal{P}_\text{spin}\right] 
+\end{aligned}\end{equation}
+\(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid~\cite{nozieres1974fermi}.
 
+\begin{figure}[!htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_VJt_U.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_UVt_J.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_UJt_V.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Ut_VJ.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Vt_UJ.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Jt_UV.pdf}
+\end{figure}
 
-\clearpage
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
 \end{aligned}\end{equation}
+We have rewritten the holon term in terms of the spin and doublon operators.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../figures/lattice_eff.png}
@@ -700,7 +727,7 @@ Therefore,
 \end{aligned}\end{equation}
 At an intermediate state, we substituted \(dN\) back into itself and kept only the leading order term. This is justified because \(f_{kk^\prime}\) goes as \(\frac{1}{N J}\). At the fixed point and for a thermodynamically large system, both \(J\) and \(N\) are very large, so keeping only the leading order suffices.
 
-From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero (eq.~\ref{zero_chi_charge}), so we can write down the following relation:
+From a previous calculation, we know that the charge susceptibility at \(T=0\) is zero (eq.~\eqref{zero_chi_charge}), so we can write down the following relation:
 \begin{equation}\begin{aligned}
 	\label{fp_constraint}
 	f_0^s = \frac{\rho(0)_{imp}}{\rho(0)}
@@ -728,7 +755,7 @@ The Wilson ratio for the impurity is defined as
 \begin{equation}\begin{aligned}
 	R = \frac{\chi^s_{imp}}{\frac{C_{imp}}{T}}
 \end{aligned}\end{equation}
-From eq.~\ref{rel_landau}, we have \(f_0^s = -f_0^a\), which, when combined with eq.~\ref{fp_constraint}, gives
+From eq.~\eqref{rel_landau}, we have \(f_0^s = -f_0^a\), which, when combined with eq.~\eqref{fp_constraint}, gives
 \begin{equation}\begin{aligned}
 	\chi^s_{imp} &= 2\rho(0)_{imp}
 \end{aligned}\end{equation}
@@ -864,7 +891,7 @@ If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Lut
 	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
 \end{figure}
 This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments in \cite{oshikawa2000topological}.
-One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\ref{luttinger_change} would still hold.
+One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\eqref{luttinger_change} would still hold.
 
 We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
 \begin{equation}\begin{aligned}
@@ -926,13 +953,13 @@ For a particle-hole symmetric system, we can substitute \(\epsilon_d = -|\epsilo
 \begin{equation}\begin{aligned}
 	G_{d\sigma}(\omega) &= \frac{1}{\omega + |\epsilon_d|} + \frac{U\left< \hat n_{d\overline\sigma}(0)\right>}{\left( \omega + |\epsilon_d| \right) \left(\omega - |\epsilon_d|\right)}
 \end{aligned}\end{equation}
-which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fermi surface. Since the RHS of eq.~\ref{total_lutt} counts the number of poles on or below the FS, we will still count one pole for \(G_{d\sigma}\). Thus, this Green's function is topological similar to the free-orbital one at \(T=0\).
+which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fermi surface. Since the RHS of eq.~\eqref{total_lutt} counts the number of poles on or below the FS, we will still count one pole for \(G_{d\sigma}\). Thus, this Green's function is topological similar to the free-orbital one at \(T=0\).
 
 The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \bra{\Psi}_1\sum_\sigma \hat n_{d\sigma} \ket{\Psi}_1
 \end{aligned}\end{equation}
-\(\ket{\Psi}_1\) is the lower energy state in eq.~\ref{gstate}. Performing the inner product gives
+\(\ket{\Psi}_1\) is the lower energy state in eq.~\eqref{gstate}. Performing the inner product gives
 \begin{equation}\begin{aligned}
 	\left<n_d \right> = \left( c_s^- \right)^2 + \left( c_c^- \right)^2 = 1
 \end{aligned}\end{equation}
@@ -942,7 +969,7 @@ The phase shift is thus
 \end{aligned}\end{equation}
 There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)-symmetric. This line of arguments was first presented for the Kondo model in \cite{martin_prl_1982}.
 
-The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\ref{wilson_luttinger}.
+The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\eqref{wilson_luttinger}.
 \begin{equation}\begin{aligned}
 	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
@@ -983,7 +1010,7 @@ In the \(U>0\) regime, the \(\eta\)s are given by
 	\eta_{0\beta}^\dagger = V \left[\frac{1}{d_0}\left( 1 - \hat n_{d\overline\beta} \right) + \frac{1}{d_1}\hat n_{d\overline\beta}  \right]c^\dagger_{q\beta}c_{d\beta} + \frac{1}{d_2}\frac{J}{2}\sum_{k} \left( S_d^z \beta c^\dagger_{q\beta}c_{k\beta} + c^\dagger_{d\overline\beta}c_{d\beta}c^\dagger_{q\beta}c_{k\overline\beta}\right) ~,\\
 	\eta_{1\beta} = V \left[\frac{1}{d_1}\left( 1 - \hat n_{d\overline\beta} \right) + \frac{1}{d_0}\hat n_{d\overline\beta}  \right]c^\dagger_{d\beta}c_{q\beta} + \frac{1}{d_2}\frac{J}{2}\sum_{k} \left( S_d^z \beta c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{q\beta}\right)~;
 \end{aligned}\end{equation}
-since \(K\) is irrelevant, we have set \(K=0\) here. The denominators have already been defined in eq.~\ref{denominators}.
+since \(K\) is irrelevant, we have set \(K=0\) here. The denominators have already been defined in eq.~\eqref{denominators}.
 \begin{equation}\begin{aligned}
 	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
 \end{aligned}\end{equation}
