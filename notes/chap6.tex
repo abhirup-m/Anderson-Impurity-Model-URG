@@ -632,9 +632,15 @@ The excitation energies are given by
 	\delta E_\mathrm{CS} = \delta E_{00} = \frac{3J}{8} + \frac{U}{4} + \alpha, ~ ~ \delta E_{\uparrow \uparrow} = \delta E_\mathrm{ST}  = -\frac{U}{4} + \frac{5J}{8} + \alpha, ~ ~ \delta E_2 = 2\alpha, ~ ~ \delta E_\pm = \frac{3J}{8} + \alpha \pm \frac{1}{2}\Delta, ~ ~ \alpha \equiv \sqrt{V^2 \gamma^2 + 4V^2}
 \end{equation}
 where \(V\gamma = \frac{3J}{8} + \frac{U}{4}\) and \(\Delta = \sqrt{\frac{U^2}{4} + 4V^2}\). The effective Hamiltonian can be expressed in the general form
+\begin{equation}
+	H_\text{eff} = \ket{\Psi}_1\bra{\Psi}_1\otimes \left[\text{constant} + \alpha_\text{spin} \mathcal{\hat{P}}_\text{spin} + \alpha_\text{charge} \mathcal{\hat{P}}_\text{charge}\right] 
+\end{equation}
+\(\mathcal{\hat  P}_\text{charge}\) and \(\mathcal{\hat P}_\text{spin}\) are projection operators for, respectively, the charge \((\hat n_1 \neq 1)\) and spin \(\left(\hat n_1=1\right) \) sectors of the first site.
+Since \(\mathcal{\hat P}_\text{charge} + \mathcal{\hat P}_\text{spin} = 1\), we can eliminate one of the terms and rewrite the effective Hamiltonian in the simpler form
 \begin{equation}\begin{aligned}
-	H_\text{eff} = \ket{\Psi}_1\bra{\Psi}_1\otimes \left[\text{constant} + \alpha_\text{spin} \mathcal{P}_\text{spin} + \alpha_\text{charge} \mathcal{P}_\text{charge}\right] 
+	H_\text{eff} = \ket{\Psi}_1\bra{\Psi}_1\otimes \left[\text{constant} + \mathcal{F} \mathcal{\hat P}_\text{charge}\right] 
 \end{aligned}\end{equation}
+where \(\mathcal{F} \equiv \alpha_\text{charge} - \alpha_\text{spin}\) is the net energy of the charge sector above the spin sector.
 
 We will now look at the extreme strong-coupling regime \(J \gg V \gg U,t\). There, all the expressions simplify:
 \begin{gather}
@@ -650,7 +656,7 @@ The effective Hamiltonian becomes
 \end{aligned}\end{equation}
 \(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid (LFL)~\cite{nozieres1974fermi}.
 
-The behaviour of the net energy of the charge sector, \(\mathcal{F} \equiv \alpha_\text{charge} - \alpha_\text{spin}\) is shown in the red curves of figs.~\ref{charge_energy}. In each of the figures, the lower inset (blue) tracks the small parameter \(t^2/\delta E\) to make sure that the perturbation theory is valid. The upper insert (green) shows the variation of the gap between the ground state and the first excited state of the two-site model. We will now look at each of the cases separately.
+The behaviour of \(\mathcal{F}\) is shown in the red curves of figs.~\ref{charge_energy}. In each of the figures, the lower inset (blue) tracks the small parameter \(t^2/\delta E\) to make sure that the perturbation theory is valid. The upper insert (green) shows the variation of the gap between the ground state and the first excited state of the two-site model. We will now look at each of the cases separately.
 \begin{itemize}
 	\item In the left figure of the top row, the impurity site repulsion \(U\) is increased, keeping all three other parameters fixed \((t, V, J)\). This results in a lowering of \(\mathcal{F}\), because it now costs more energy for the excitations to break the singlet and go from the spin sector to the charge sector. It ultimately saturates at a value of the order of \(10^{-3}\). The gap (green curve) initially rises but then becomes constant, implying that at large \(U\), both the ground state and the first excited state are changing similarly. The blue curve shows that the perturbation theory remains convergent throughout, and this is not an independent result, but instead is implied by the stabilisation of the green curve. The  LFL picture is thus made stronger in the large \(U\) regime.
 	\item Similar things happen in the next three figures - right figure of the top row and both figures of the second row; there we increase \(V\) and \(J\) respectively, keeping the other three parameters constant. \(\mathcal{F}\) ultimately decreases leading to a very weak LFL, while the small parameter and the gap decrease and increase respectively, stabilising the perturbation theory.
@@ -1034,6 +1040,25 @@ The wavefunction after reversing one step of the RG will thus be
 \end{aligned}\end{equation}
 Here, \(q\) is the first momentum state immediately outside the emergent cloud. Re-entangling further momentum states using their respective unitaries lead to the sequence of wavefunctions \(\ket{\Psi}_2, \ket{\Psi}_3\) and so on.
 
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ee.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ie.pdf}
+	\caption{\textit{Left}: Mutual information between two conduction electrons inside the cloud. \textit{Right}: Mutual information between a conduction electron inside the cloud and an impurity electron. Both the measures increase towards the strong-coupling fixed point, because of the distillation of the Kondo cloud brought about by the RG flow.}
+	\label{mutI}
+\end{figure}
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/corr_same.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/corr_opp.pdf}
+	\caption{Increase in the diagonal correlation functions between cloud electrons under RG flow towards the strong-coupling fixed point. This is consistent with the Fermi liquid pieces generated in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
+\end{figure}
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/corr_od.pdf}
+	\caption{Growth of the off-diagonal correlation function between Kondo cloud electrons towards the strong-coupling fixed point. This is the direct cause of the screening of the impurity spin, and is a reflection of the off-diagonal two-particle scattering terms in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
+\end{figure}
+
 The results of the reverse RG study are depicted in the following plots. We have used two types of quantities in the process - mutual information and correlation functions. The mutual information between two subsystems \(A\) and \(B\) in a wavefunction with many subsystems is defined as
 \begin{equation}\begin{aligned}
 	I(A: B) = S_A + S_B - S_{AB}
@@ -1043,23 +1068,3 @@ where \(S_{ij..q}\) is the von-Neumann entropy of the reduced density matrix obt
 The mutual information between two electrons inside the entangled cloud increases as we go towards the IR fixed point. This can be understood in the following manner; as the wavefunction flows towards a smaller sized emergent cloud, the entanglement between those electrons gets distilled out.
 
 We have also computed some correlation functions. All of them increase towards the IR fixed point. The increase in the correlation function \(\left<\hat n_{k_1 \uparrow} \hat n_{k_2 \downarrow} \right>\) arises from the crystallization of the spin singlet at the fixed point. The increase in the correlation function \(\left<\hat n_{k \uparrow} \hat n_{k \downarrow} \right>\) arises from the charge triplet content of the wavefunction, showing the increase of the charge contribution on the momenta. The increase in the off-diagonal correlation function \(\left< c^\dagger_{k \uparrow}c_{k^\prime \downarrow}c^\dagger_{q \downarrow}c_{q^\prime \uparrow}\right>\) shows that the there is a large and non-trivial interaction between the electrons of the cloud that is being mediated by the impurity electron. This interaction is not of the Fermi liquid type, but instead was obtained in the effective Hamiltonian for the Kondo cloud.
-\begin{figure}[htpb!]
-	\centering
-	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ee.pdf}
-	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ie.pdf}
-	\caption{\textit{Left}: Mutual information between two conduction electrons inside the cloud. \textit{Right}: Mutual information between a conduction electron inside the cloud and an impurity electron. Both the measures increase towards the strong-coupling fixed point, because of the distillation of the Kondo cloud brought about by the RG flow.}
-	\label{mutI}
-\end{figure}
-
-\begin{figure}[htpb!]
-	\centering
-	\includegraphics[width=0.45\textwidth]{../figures/corr_same.pdf}
-	\includegraphics[width=0.45\textwidth]{../figures/corr_opp.pdf}
-	\caption{Increase in the diagonal correlation functions between cloud electrons under RG flow towards the strong-coupling fixed point. This is consistent with the Fermi liquid pieces generated in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
-\end{figure}
-
-\begin{figure}[htpb!]
-	\centering
-	\includegraphics[width=0.45\textwidth]{../figures/corr_od.pdf}
-	\caption{Growth of the off-diagonal correlation function between Kondo cloud electrons towards the strong-coupling fixed point. This is the direct cause of the screening of the impurity spin, and is a reflection of the off-diagonal two-particle scattering terms in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
-\end{figure}
