@@ -631,8 +631,10 @@ The excitation energies are given by
 \begin{equation}
 	\delta E_\mathrm{CS} = \delta E_{00} = \frac{3J}{8} + \frac{U}{4} + \alpha, ~ ~ \delta E_{\uparrow \uparrow} = \delta E_\mathrm{ST}  = -\frac{U}{4} + \frac{5J}{8} + \alpha, ~ ~ \delta E_2 = 2\alpha, ~ ~ \delta E_\pm = \frac{3J}{8} + \alpha \pm \frac{1}{2}\Delta, ~ ~ \alpha \equiv \sqrt{V^2 \gamma^2 + 4V^2}
 \end{equation}
-
-where \(V\gamma = \frac{3J}{8} + \frac{U}{4}\) and \(\Delta = \sqrt{\frac{U^2}{4} + 4V^2}\).
+where \(V\gamma = \frac{3J}{8} + \frac{U}{4}\) and \(\Delta = \sqrt{\frac{U^2}{4} + 4V^2}\). The effective Hamiltonian can be expressed in the general form
+\begin{equation}\begin{aligned}
+	H_\text{eff} = \ket{\Psi}_1\bra{\Psi}_1\otimes \left[\text{constant} + \alpha_\text{spin} \mathcal{P}_\text{spin} + \alpha_\text{charge} \mathcal{P}_\text{charge}\right] 
+\end{aligned}\end{equation}
 
 We will now look at the extreme strong-coupling regime \(J \gg V \gg U,t\). There, all the expressions simplify:
 \begin{gather}
@@ -646,18 +648,33 @@ The effective Hamiltonian becomes
 	=&-\frac{4t^2}{3J}\sum_i \ket{\Phi}_i \bra{\Phi}_i +  \left(\ket{\Phi}_0 \bra{\Phi}_0 + \ket{\Phi}_3 \bra{\Phi}_3\right) \frac{64 t^4}{27 J^3} - \left(\ket{\Phi}_1 \bra{\Phi}_1 + \ket{\Phi}_2 \bra{\Phi}_2\right) \frac{8t^4}{27 J^3}\\
 	=& \ket{\Psi}_1 \bra{\Psi}_1 \left[\text{constant} + \frac{64 t^4}{27 J^3} \mathcal{P}_\text{charge}  - \frac{8t^4}{27 J^3}\mathcal{P}_\text{spin}\right] 
 \end{aligned}\end{equation}
-\(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid~\cite{nozieres1974fermi}.
+\(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid (LFL)~\cite{nozieres1974fermi}.
 
-\begin{figure}[!htpb]
+The behaviour of the net energy of the charge sector, \(\mathcal{F} \equiv \alpha_\text{charge} - \alpha_\text{spin}\) is shown in the red curves of figs.~\ref{charge_energy}. In each of the figures, the lower inset (blue) tracks the small parameter \(t^2/\delta E\) to make sure that the perturbation theory is valid. The upper insert (green) shows the variation of the gap between the ground state and the first excited state of the two-site model. We will now look at each of the cases separately.
+\begin{itemize}
+	\item In the left figure of the top row, the impurity site repulsion \(U\) is increased, keeping all three other parameters fixed \((t, V, J)\). This results in a lowering of \(\mathcal{F}\), because it now costs more energy for the excitations to break the singlet and go from the spin sector to the charge sector. It ultimately saturates at a value of the order of \(10^{-3}\). The gap (green curve) initially rises but then becomes constant, implying that at large \(U\), both the ground state and the first excited state are changing similarly. The blue curve shows that the perturbation theory remains convergent throughout, and this is not an independent result, but instead is implied by the stabilisation of the green curve. The  LFL picture is thus made stronger in the large \(U\) regime.
+	\item Similar things happen in the next three figures - right figure of the top row and both figures of the second row; there we increase \(V\) and \(J\) respectively, keeping the other three parameters constant. \(\mathcal{F}\) ultimately decreases leading to a very weak LFL, while the small parameter and the gap decrease and increase respectively, stabilising the perturbation theory.
+	\item A qualitatively different thing happens in the remaining three figures. We see in the first of these figures that decreasing \(J\) and \(V\) (by moving towards the left of the \(x-\)axis) while keeping \(U\) constant leads to the growth of the small parameter and the vanishing of the gap, both signalling a breakdown of perturbation theory about the strong-coupling fixed point. The growth of \(\mathcal{F}\) implies that the \textit{Fermi liquid is getting more correlated, and will ultimately lead to an insulator state which will restrict single particle transfer. This is a reflection of the sharpening of the Abrikosov-Suhl resonance peakin the impurity spectral function and its ultimate disappearance, as seen from DMFT in the metal-insulator transition}. Exactly the same thing happens when one moves towards the right along the \(x-\)axis of the other two figures. There, we increase \(U\) and simultaneously lower either only \(J\) or both \(J\) and \(V\). The effect is most dramatic in the first and third figures, where we tune both \(J\) and \(V\). We point out that even though we did tune both \(U\) and \(V\) in the right figure of the second row, just \(J\) in the left figure of the same row, and just \(V\) in the right figure of the first row, we did not see the approach towards breakdown of the LFL in those cases, and this suggests that in order to see the breakdown, at least two couplings have to be tuned suitably, and one of them has to be the spin-exchange coupling \(J\).
+\end{itemize}
+
+\begin{figure}
 	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_VJt_U.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_UVt_J.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_UJt_V.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Ut_VJ.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Vt_UJ.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/charge_energy_Jt_UV.pdf}
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_VJt_U.pdf}
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_UVt_J.pdf}
+
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_UJt_V.pdf}
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_Jt_UV.pdf}
+
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_Ut_VJ.pdf}
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_Vt_UJ.pdf}
+
+	\includegraphics[height=0.24\textheight]{../figures/charge_energy_t_UVJ.pdf}
+	\caption{Variation of \(\mathcal{F}\) against the renormalised couplings and the hopping parameter \(t\).}
+	\label{charge_energy}
 \end{figure}
 
+
+\section{Calculating the \(T=0\) Wilson ratio from low energy excitations}
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
