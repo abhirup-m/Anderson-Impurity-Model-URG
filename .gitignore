@@ -11,4 +11,5 @@
 *.blg
 *.dvi
 *.qu
+*.npy
 *.ipynb_checkpoint*
