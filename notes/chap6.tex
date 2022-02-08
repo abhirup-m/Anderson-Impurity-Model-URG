@@ -407,17 +407,10 @@ This interaction arises from the enhanced entanglement between the impurity and 
 
 We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\eqref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\eqref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
 
-We have shown the enhancement of this off-diagonal scattering during the flow towards the IR fixed point by computing it during the reverse RG program, in fig.~\ref{Fkkqq}. It is clear from this plot that the growth of this non-Fermi-liquid type interaction happens simultaneously with the formation of the singlet.
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{../figures/Fkkqq.pdf}
-	\caption{Variation of the coefficient of the two-particle off-diagonal scattering in the effective Hamiltonian, eq.~\eqref{off_diag_coeff} along the RG flow.}
-	\label{Fkkqq}
-\end{figure}
 \section{Obtaining the real space low energy Hamiltonian: the local Fermi liquid}
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
 \begin{gather}
-	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s}\\
+	H^*_0 = \sum_{\sigma}\left( V^* c^\dagger_{0\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} - \frac{1}{2}U^*\left( \hat n_{d \uparrow} - \hat n_{d \downarrow}\right)^2 \\
 	\ket{\Psi}_1 = {c_s} \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + {c_c} \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
 \end{gather}
 These were obtained in eq.~\eqref{gstate}. The quantities \(\gamma\) and \(c_{s,c}\) were defined in and around eq.~\eqref{coeff_def}.
@@ -656,58 +649,99 @@ The effective Hamiltonian becomes
 \end{aligned}\end{equation}
 \(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid (LFL)~\cite{nozieres1974fermi}.
 
-The behaviour of \(\mathcal{F}\) is shown in the red curves of figs.~\ref{charge_energy}. In each of the figures, the lower inset (blue) tracks the small parameter \(t^2/\delta E\) to make sure that the perturbation theory is valid. The upper insert (green) shows the variation of the gap between the ground state and the first excited state of the two-site model. We will now look at each of the cases separately.
-\begin{itemize}
-	\item In the left figure of the top row, the impurity site repulsion \(U\) is increased, keeping all three other parameters fixed \((t, V, J)\). This results in a lowering of \(\mathcal{F}\), because it now costs more energy for the excitations to break the singlet and go from the spin sector to the charge sector. It ultimately saturates at a value of the order of \(10^{-3}\). The gap (green curve) initially rises but then becomes constant, implying that at large \(U\), both the ground state and the first excited state are changing similarly. The blue curve shows that the perturbation theory remains convergent throughout, and this is not an independent result, but instead is implied by the stabilisation of the green curve. The  LFL picture is thus made stronger in the large \(U\) regime.
-	\item Similar things happen in the next three figures - right figure of the top row and both figures of the second row; there we increase \(V\) and \(J\) respectively, keeping the other three parameters constant. \(\mathcal{F}\) ultimately decreases leading to a very weak LFL, while the small parameter and the gap decrease and increase respectively, stabilising the perturbation theory.
-	\item A qualitatively different thing happens in the remaining three figures. We see in the first of these figures that decreasing \(J\) and \(V\) (by moving towards the left of the \(x-\)axis) while keeping \(U\) constant leads to the growth of the small parameter and the vanishing of the gap, both signalling a breakdown of perturbation theory about the strong-coupling fixed point. The growth of \(\mathcal{F}\) implies that the \textit{Fermi liquid is getting more correlated, and will ultimately lead to an insulator state which will restrict single particle transfer. This is a reflection of the sharpening of the Abrikosov-Suhl resonance peakin the impurity spectral function and its ultimate disappearance, as seen from DMFT in the metal-insulator transition}. Exactly the same thing happens when one moves towards the right along the \(x-\)axis of the other two figures. There, we increase \(U\) and simultaneously lower either only \(J\) or both \(J\) and \(V\). The effect is most dramatic in the first and third figures, where we tune both \(J\) and \(V\). We point out that even though we did tune both \(U\) and \(V\) in the right figure of the second row, just \(J\) in the left figure of the same row, and just \(V\) in the right figure of the first row, we did not see the approach towards breakdown of the LFL in those cases, and this suggests that in order to see the breakdown, at least two couplings have to be tuned suitably, and one of them has to be the spin-exchange coupling \(J\).
-\end{itemize}
+\subsection{Increasing correlations in the local Fermi liquid: transition from strong-coupling to local moment behaviour}
+We will now tune the parameters of the fixed point Hamiltonian and study the variation of quantities related to the effective Hamiltonian like the local FL strength \(\mathcal{F}\), the gap in the spectrum of the zeroth Hamiltonian \(H_0^*\) and the value of the small parameter \(t^2/\delta E\), as well as various measures of entanglement like entanglement entropy, mutual information and spin-spin correlations between various sets of members of the real-space impurity+lattice construction. We will trace a specific path through the space of values of fixed point couplings: we will start from the strong-coupling regime \(U \ll J,V\) and go towards the local moment regime \(U \gg J,V\). The context of this study is that the technique of dynamical mean-field theory (DMFT) obtains a metal-insulator transition in the 2D Hubbard model by studying the Anderson impurity model as the auxiliary system for the Hubbard; there, the local moment regime of the impurity corresponds to the insulator in the bulk. Our goal here is to study what precisely happens in the effective Hamiltonian in the journey from the metal to the insulator, and draw a concrete connection between this modification of the effective Hamiltonian, and the simultaneous change of the impurity spectral function in fig.~\ref{spec_func}.
 
+% \begin{minipage}{\textwidth}
+\subsubsection*{\large Behaviour of \(\mathcal{F}\), the gap and the small parameter}
 \begin{center}
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_VJt_U.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_VJt_U.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_VJt_U.pdf}
-
-
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_UVt_J.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_UVt_J.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_UVt_J.pdf}
-
-
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_UJt_V.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_UJt_V.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_UJt_V.pdf}
-
-
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Jt_UV.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Jt_UV.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Jt_UV.pdf}
-
-
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Ut_VJ.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Ut_VJ.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Ut_VJ.pdf}
-
-
-	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Vt_UJ.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Vt_UJ.pdf}
-	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Vt_UJ.pdf}
-
-
-	\includegraphics[width=0.4\textwidth]{../figures/lfl-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/par-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/mi-01-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/mi-d1-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/mi-d0-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/EE-d-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/corr-d0-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/corr-d1-charge_energy_t_UVJ.pdf}
-	\includegraphics[width=0.4\textwidth]{../figures/corr-k-charge_energy_t_UVJ.pdf}
-
-	\captionof{figure}{Variation of \(\mathcal{F}\) against the renormalised couplings and the hopping parameter \(t\).}
-	\label{charge_energy}
+	% \vspace*{10pt}
+	\includegraphics[width=0.32\textwidth]{../figures/gap-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/par-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
 \end{center}
+The vanishing of the gap and the growth of the small parameter indicates the breakdown of perturbation theory around the singlet; this simply shows that there is a degeneracy in the local moment regime, and the efffective Hamiltonian will have to be obtained using degenerate perturbation theory. The presence of degeneracy also suggests that the effective Hamiltonian will be of the non-Fermi liquid type.
+
+\subsubsection*{\large Behaviour of mutual information between various real space members}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d1-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+\end{center}
+The impurity-zeroth site mutual information \(I(d:0)\) remains unchanged at the maximum for an appreciable range of values, and this shows the stability of the singlet. Meanwhile, the mutual information between the zeroth site and the site nearest to it (\(I(0:1)\)) grows, because when the singlet weakens, the zeroth site is able to entangle more with the other sites. It finally saturates to its maximum value, which is the value produced as result of the tight-binding hopping. The mutual information between the impurity and sites beyond the zeroth site (\(I(d:1)\)) show a non-monotonic behaviour; it first increases as the entanglement that was initially restricted to just the impurity and the zeroth sites begins "seeping" into the other sites as well. Beyond a critical value of \(U/J\), \(I(d:1)\) starts dropping, because the entanglement has now mostly shifted out of the impurity+zeroth site system and into conduction bath.
+
+\subsubsection*{\large Behaviour of impurity entanglement entropy}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/EE-d-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+\end{center}
+The von-Neumann entanglement entropy \(S(d)\) of the impurity shows pretty straigtforward behaviour. It is maximum for \(U \ll J\) because it is in a singlet configuration. For \(U \gg J\), the singlet weakens and the impurity begins to decouple from the bath, leading to a reduction in \(S(d)\).
+
+\subsubsection*{\large Behaviour of spin-spin correlations}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d2-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+\end{center}
+
+\subsubsection*{\large Spin-spin correlations as function of distance}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-di-min-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-di-max-t=0.100,J=1_over_U,V=J,N=6,U=0.010,316.228,200.pdf}
+\end{center}
+
+
+% The behaviour of \(\mathcal{F}\) is shown in the red curves of figs.~\ref{charge_energy}. In each of the figures, the lower inset (blue) tracks the small parameter \(t^2/\delta E\) to make sure that the perturbation theory is valid. The upper insert (green) shows the variation of the gap between the ground state and the first excited state of the two-site model. We will now look at each of the cases separately.
+% \begin{itemize}
+% 	\item In the left figure of the top row, the impurity site repulsion \(U\) is increased, keeping all three other parameters fixed \((t, V, J)\). This results in a lowering of \(\mathcal{F}\), because it now costs more energy for the excitations to break the singlet and go from the spin sector to the charge sector. It ultimately saturates at a value of the order of \(10^{-3}\). The gap (green curve) initially rises but then becomes constant, implying that at large \(U\), both the ground state and the first excited state are changing similarly. The blue curve shows that the perturbation theory remains convergent throughout, and this is not an independent result, but instead is implied by the stabilisation of the green curve. The  LFL picture is thus made stronger in the large \(U\) regime.
+% 	\item Similar things happen in the next three figures - right figure of the top row and both figures of the second row; there we increase \(V\) and \(J\) respectively, keeping the other three parameters constant. \(\mathcal{F}\) ultimately decreases leading to a very weak LFL, while the small parameter and the gap decrease and increase respectively, stabilising the perturbation theory.
+% 	\item A qualitatively different thing happens in the remaining three figures. We see in the first of these figures that decreasing \(J\) and \(V\) (by moving towards the left of the \(x-\)axis) while keeping \(U\) constant leads to the growth of the small parameter and the vanishing of the gap, both signalling a breakdown of perturbation theory about the strong-coupling fixed point. The growth of \(\mathcal{F}\) implies that the \textit{Fermi liquid is getting more correlated, and will ultimately lead to an insulator state which will restrict single particle transfer. This is a reflection of the sharpening of the Abrikosov-Suhl resonance peakin the impurity spectral function and its ultimate disappearance, as seen from DMFT in the metal-insulator transition}. Exactly the same thing happens when one moves towards the right along the \(x-\)axis of the other two figures. There, we increase \(U\) and simultaneously lower either only \(J\) or both \(J\) and \(V\). The effect is most dramatic in the first and third figures, where we tune both \(J\) and \(V\). We point out that even though we did tune both \(U\) and \(V\) in the right figure of the second row, just \(J\) in the left figure of the same row, and just \(V\) in the right figure of the first row, we did not see the approach towards breakdown of the LFL in those cases, and this suggests that in order to see the breakdown, at least two couplings have to be tuned suitably, and one of them has to be the spin-exchange coupling \(J\).
+% \end{itemize}
+
+% \begin{center}
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_VJt_U.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_VJt_U.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_VJt_U.pdf}
+
+
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_UVt_J.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_UVt_J.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_UVt_J.pdf}
+
+
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_UJt_V.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_UJt_V.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_UJt_V.pdf}
+
+
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Jt_UV.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Jt_UV.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Jt_UV.pdf}
+
+
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Ut_VJ.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Ut_VJ.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Ut_VJ.pdf}
+
+
+% 	% \includegraphics[width=0.32\textwidth]{../figures/l-charge_energy_Vt_UJ.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_Vt_UJ.pdf}
+% 	% \includegraphics[width=0.4\textwidth]{../figures/mi-charge_energy_Vt_UJ.pdf}
+
+
+% 	\includegraphics[width=0.4\textwidth]{../figures/lfl-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/gap-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/par-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/mi-01-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/mi-d1-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/mi-d0-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/EE-d-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/corr-d0-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/corr-d1-charge_energy_t_UVJ.pdf}
+% 	\includegraphics[width=0.4\textwidth]{../figures/corr-k-charge_energy_t_UVJ.pdf}
+
+% 	\captionof{figure}{Variation of \(\mathcal{F}\) against the renormalised couplings and the hopping parameter \(t\).}
+% 	\label{charge_energy}
+% \end{center}
 
 
 \section{Calculating the \(T=0\) Wilson ratio from low energy excitations}
@@ -1040,7 +1074,7 @@ Throughout, we have assumed that the IOMs below the Fermi surface are occupied w
 	\ket{\Psi}_0 = \left(\otimes_{i=1}^{n_2}\ket{\hat n_{q_i,-,\uparrow}=1}\ket{\hat n_{q_i,-,\downarrow}=1}\right)\ket{\Phi}_\text{cloud}\left(\otimes_{i=1}^{n_2}\ket{\hat n_{q_i,+,\uparrow}=0}\ket{\hat n_{q_i,+,\downarrow}=0}\right)
 \end{aligned}\end{equation}
 \(\ket{\Phi}_\text{cloud}\) will be obtained by diagonalising a small system of \(n_1\) conduction bath \(k\) states. This completes the construction of the IR ground state \(\ket{\Psi}_0\). The algorithm of reverse RG then involves applying unitary transformations on this IR wavefunction; the unitary transformations will be the inverse of those that were applied during the forward RG algorithm. Since the forwards RG transformations decoupled \(k\) states and transformed them into the IOMS, the inverse transformations will take the momentum states in the IOMs and re-entangle them with the impurity+cloud system, one at a time. This is shown in fig.~\ref{rev-rg}.
-\begin{figure}[htpb]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{../figures/reverse-rg.png}
 	\caption{We start with a Hamiltonian with an impurity site (red) coupled with two conduction electrons (dark green), with four other decoupled electrons (bright green). The dotted rectangle represents the emergent window \(\left( -\Lambda_j, \Lambda_j \right) \) at each step; the electrons inside that rectangle are still entangled with the impurity, while the ones inside have been decoupled. The next step of reverse RG involves applying the inverse transformation on the Hamiltonian, which will couple two more electrons from the IOMS (hence four dark green circles in the second step), leading to an enlargement of the emergent window. The unitary varies for each step, hence the notation \(U_j\).}
@@ -1064,26 +1098,29 @@ since \(K\) is irrelevant, we have set \(K=0\) here. The denominators have alrea
 \begin{equation}\begin{aligned}
 	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
 \end{aligned}\end{equation}
+
 The wavefunction after reversing one step of the RG will thus be
 \begin{equation}\begin{aligned}
 	\ket{\Psi}_1 = U^\dagger_{q \uparrow}U^\dagger_{q \downarrow}\ket{\Psi}_0
 \end{aligned}\end{equation}
 Here, \(q\) is the first momentum state immediately outside the emergent cloud. Re-entangling further momentum states using their respective unitaries lead to the sequence of wavefunctions \(\ket{\Psi}_2, \ket{\Psi}_3\) and so on.
 
-\begin{figure}[htpb!]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ee.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ie.pdf}
 	\caption{\textit{Left}: Mutual information between two conduction electrons inside the cloud. \textit{Right}: Mutual information between a conduction electron inside the cloud and an impurity electron. Both the measures increase towards the strong-coupling fixed point, because of the distillation of the Kondo cloud brought about by the RG flow.}
 	\label{mutI}
 \end{figure}
-\begin{figure}[htpb!]
+
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/corr_same.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/corr_opp.pdf}
 	\caption{Increase in the diagonal correlation functions between cloud electrons under RG flow towards the strong-coupling fixed point. This is consistent with the Fermi liquid pieces generated in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
 \end{figure}
-\begin{figure}[htpb!]
+
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/corr_od.pdf}
 	\caption{Growth of the off-diagonal correlation function between Kondo cloud electrons towards the strong-coupling fixed point. This is the direct cause of the screening of the impurity spin, and is a reflection of the off-diagonal two-particle scattering terms in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
