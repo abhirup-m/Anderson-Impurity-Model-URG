@@ -657,58 +657,43 @@ We will now tune the parameters of the fixed point Hamiltonian and study the var
 \subsubsection*{\large Behaviour of \(\mathcal{F}\), the gap and the small parameter}
 \begin{center}
 	% \vspace*{10pt}
-	\includegraphics[width=0.32\textwidth]{../figures/gap-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/par-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/gap-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/par-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 The vanishing of the gap and the growth of the small parameter indicates the breakdown of perturbation theory around the singlet; this simply shows that there is a degeneracy in the local moment regime, and the effective Hamiltonian will have to be obtained using degenerate perturbation theory. The presence of degeneracy also suggests that the effective Hamiltonian will be of the non-Fermi liquid type.
 
-\subsubsection*{\large Behaviour of mutual information within the Kondo cloud}
+\subsubsection*{\large Behaviour of correlation within the Kondo cloud}
 \begin{center}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-k-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-dk-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-diag-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-od-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 The vanishing of the Kondo cloud at large \(U/J\) is clear indication of the destruction of the Kondo cloud and the breakdown of screening. Non-zero mutual information indicates an (impurity-mediated) interaction between the \(k-\)states of the conduction bath; seen differently, it is this interaction that is responsively for the screening of the impurity. The disappearance of the mutual information is indicative of the disappearance of this interaction.
 
 \subsubsection*{\large Behaviour of mutual information between various real space members}
 \begin{center}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-d1-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d1-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 The impurity-zeroth site mutual information \(I(d:0)\) remains unchanged at the maximum for an appreciable range of values, and this shows the stability of the singlet. Meanwhile, the mutual information between the zeroth site and the site nearest to it (\(I(0:1)\)) grows, because when the singlet weakens, the zeroth site is able to entangle more with the other sites. It finally saturates to its maximum value, which is the value produced as result of the tight-binding hopping. The mutual information between the impurity and sites beyond the zeroth site (\(I(d:1)\)) show a non-monotonic behaviour; it first increases as the entanglement that was initially restricted to just the impurity and the zeroth sites begins "seeping" into the other sites as well. Beyond a critical value of \(U/J\), \(I(d:1)\) starts dropping, because the entanglement has now mostly shifted out of the zero mode and into the conduction bath.
 
 \subsubsection*{\large Behaviour of impurity entanglement entropy}
 
 \begin{center}
-	\includegraphics[width=0.35\textwidth]{../figures/EE-d-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
+	\includegraphics[width=0.35\textwidth]{../figures/EE-d-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 
 The von-Neumann entanglement entropy \(S(d)\) of the impurity shows pretty straightforward behaviour. It is maximum for \(U \ll J\) because it is in a singlet configuration. For \(U \gg J\), the singlet weakens and the impurity begins to decouple from the bath, leading to a reduction in \(S(d)\). At sufficiently low values of \(J/U\), the impurity decouples from the zeroth site and the total system can be factorised into a local moment in product with a tight-binding chain, so that the impurity site will now have zero entanglement entropy.
 
 \subsubsection*{\large Behaviour of spin-spin correlations}
 \begin{center}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=0.100,J=1_over_U,V=J,N=4,U=0.032,316.228,150.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 
-\subsubsection*{\Large Plots for 6 sites}
-\begin{center}
-	\includegraphics[width=0.32\textwidth]{../figures/gap-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/par-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-k-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-d1-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/EE-d-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}\\
-	\includegraphics[width=0.32\textwidth]{../figures/corr-di-min-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-di-max-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.6\textwidth]{../figures/corr-all-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	\includegraphics[width=0.6\textwidth]{../figures/I-all-t=0.100,J=1_over_U,V=J,N=6,U=0.032,316.228,150.pdf}
-	
-\end{center}
 
 \section{Calculating the \(T=0\) Wilson ratio from low energy excitations}
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
