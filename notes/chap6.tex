@@ -142,68 +142,11 @@ In this section we will obtain the impurity spectral function, which is defined 
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} = -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] 
 \end{aligned}\end{equation}
-The impurity retarded Green's function (assuming the Hamiltonian to be time-independent, which it is) is defined as
+The zero temperature retarded Green's function for the impurity, in the frequency domain, can be written as (see Appendix.~\ref{appx-spectral-func})
 \begin{equation}\begin{aligned}
-	G_{dd}^\sigma(t) = -i\theta(t) \left<\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\}  \right>
+	\mathcal{A(\omega)} = \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}\mathcal{O}_{\sigma}\ket{n}||^2\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}\mathcal{O}_{\sigma}\ket{0}||^2\delta\left(\omega - E_0 + E_n\right)\right]
 \end{aligned}\end{equation}
-where the average \(\left< \right>\) is over a canonical ensemble at temperature \(T\). What follows is a standard calculation where we write the Green's function in the Lehmann representation. We will write the ensemble average in terms of the exact eigenstates of the fixed point Hamiltonian:
-\begin{equation}\begin{aligned}
-	H^* \ket{n} &= E_n^* \ket{n}\\
-	\left<\hat O \right> &\equiv \frac{1}{Z}\sum_n \bra{n} \hat O \ket{n} e^{-\beta E_n^*}
-\end{aligned}\end{equation}
-where \(Z = \sum_n e^{-\beta E_n^*}\) is the fixed point partition function and \(\left\{ \ket{n} \right\} \) is the set of eigenfunctions of the fixed point Hamiltonian. We can therefore write
-\begin{equation}\begin{aligned}
-	&\left<\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\}  \right> \\
-	&= \frac{1}{Z}\sum_{m}e^{-\beta E_m}\bra{m}\left\{ c_{d\sigma}(t),c^\dagger_{d\sigma} \right\} \ket{m}\\
-	&= \frac{1}{Z}\sum_{m,n}e^{-\beta E_m}\bra{m}\left( c_{d\sigma}(t)\ket{n}\bra{n}c^\dagger_{d\sigma} + c^\dagger_{d\sigma}\ket{n}\bra{n}c_{d\sigma}(t)\right) \ket{m} && \left[\sum_n \ket{n}\bra{n} = 1\right]  \\
-	&= \frac{1}{Z}\sum_{m,n}e^{-\beta E_m}\bra{m}\left( e^{iH^* t}c_{d\sigma}e^{-iH^* t}\ket{n}\bra{n}c^\dagger_{d\sigma} + c^\dagger_{d\sigma}\ket{n}\bra{n}e^{iH^* t}c_{d\sigma}e^{-iH^* t}\right) \ket{m}\\
-	&= \frac{1}{Z}\sum_{m,n}e^{-\beta E_m}\left( e^{i\left( E_m - E_n \right)  t}\bra{m}c_{d\sigma}\ket{n}\bra{n}c^\dagger_{d\sigma} \ket{m} + e^{i\left( E_n - E_m \right)  t}\bra{m}c^\dagger_{d\sigma}\ket{n}\bra{n}c_{d\sigma} \ket{m}\right)\\
-	&= \frac{1}{Z}\sum_{m,n}e^{i\left( E_m - E_n \right)  t}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\\
-\end{aligned}\end{equation}
-The time-domain impurity Green's function can thus be written as (this is the so-called Lehmann representation)
-\begin{equation}\begin{aligned}
-	G_{dd}^\sigma = -i\theta(t)\frac{1}{Z}\sum_{m,n}e^{i\left( E_m - E_n \right)  t}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\\
-\end{aligned}\end{equation}
-We are interested in the frequency domain form.
-\begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega) &= \int_{-\infty}^\infty dt e^{i \omega t}G_{d d}^\sigma(t) \\
-			       &= \frac{1}{Z}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\left(-i\right)\int_{-\infty}^\infty dt \theta(t)e^{i\left( \omega + E_m - E_n \right)t}
-\end{aligned}\end{equation}
-To evaluate the time-integral, we will use the integral representation of the Heaviside function:
-\begin{equation}\begin{aligned}
-	\theta(t) = \frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty \frac{1}{x- i\eta}e^{ixt}dx
-\end{aligned}\end{equation}
-With this definition, the integral in \(G_{dd}^\sigma(\omega)\) becomes
-\begin{equation}\begin{aligned}
-	\left(-i\right)\int_{-\infty}^\infty dt \theta(t)e^{i\left( \omega + E_m - E_n \right)t} &= \left(-i\right)\frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty dx\frac{1}{x- i\eta}\int_{-\infty}^\infty dt e^{i\left( \omega + E_m - E_n + x\right)t} \\
-									     &=\left(-i\right)\frac{1}{2\pi i}\lim_{\eta \to 0^+} \int_{-\infty}^\infty dx\frac{1}{x- i\eta} 2\pi \delta\left( \omega + E_m - E_n + x\right) \\
-									     &=\left(-i\right)\frac{1}{i}\lim_{\eta \to 0^+} \frac{-1}{\omega + E_m - E_n- i\eta} \\
-									     &=\frac{1}{\omega + E_m - E_n} \\
-\end{aligned}\end{equation}
-The frequency-domain Green's function is thus
-\begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega) = \frac{1}{Z}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left( e^{-\beta E_m} + e^{-\beta E_n}\right)\frac{1}{\omega + E_m - E_n}
-\end{aligned}\end{equation}
-The zero temperature Green's function is obtained by taking the limit of \(\beta \to \infty\). In both the partition function as well as inside the summation, the only term that will survive is the exponential of the ground state energy \(E_0\).
-\begin{equation*}\begin{aligned}
-	Z \equiv \sum_m e^{-\beta E_m} \implies \lim_{\beta \to \infty}Z = d_0 e^{-\beta E_0}, && E_0 \equiv \text{min}\left\{ E_n \right\} 
-\end{aligned}\end{equation*}
-where \(d_0\) is the degeneracy of the ground state. The Greens function then simplifies to
-\begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega, \beta \to \infty) &= \frac{1}{d_0e^{-\beta E_0}}\sum_{m,n}||\bra{m}c_{d\sigma}\ket{n}||^2\left[e^{-\beta E_m}\delta_{E_m, E_0} + e^{-\beta E_n}\delta_{E_n, E_0}\right]\frac{1}{\omega + E_m - E_n}\\
-						 &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega + E_0 - E_n} + ||\bra{n}c_{d\sigma}\ket{0}||^2\frac{1}{\omega - E_0 + E_n}\right]\\
-\end{aligned}\end{equation}
-The label 0 sums over all states \(\ket{0}\) with energy \(E_0\). The spectral function is the imaginary part of this Green's function. To extract the imaginary part, we insert an infinitesimal imaginary part in the denominator:
-\begin{equation}\begin{aligned}
-	G_{d d}^\sigma(\omega, \eta) = \frac{1}{d_0}\lim_{\eta \to 0^-}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\frac{1}{\omega + E_0 - E_n + i\eta} + ||\bra{n}c_{d\sigma}\ket{0}||^2\frac{1}{\omega - E_0 + E_n + i\eta}\right]\\
-\end{aligned}\end{equation}
-The spectral function at zero temperature can then be written as
-\begin{equation}\begin{aligned}
-	\mathcal{A(\omega)} &= -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] \\
-			    &= \frac{1}{d_0}\frac{1}{\pi}\text{ Im }\left[\lim_{\eta \to 0^-}\sum_{n,0}\left(\frac{-i\eta ||\bra{0}c_{d\sigma}\ket{n}||^2}{\left(\omega + E_0 - E_n\right)^2 + \eta^2} + \frac{-i\eta ||\bra{n}c_{d\sigma}\ket{0}||^2}{\left(\omega - E_0 + E_n\right)^2 + \eta^2}\right)\right]\\
-			    &= \frac{1}{d_0}\frac{1}{\pi}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\pi\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\pi\delta\left(\omega - E_0 + E_n\right)\right]\\
-			    &= \frac{1}{d_0}\sum_{n,0}\left[||\bra{0}c_{d\sigma}\ket{n}||^2\delta\left(\omega + E_0 - E_n\right) + ||\bra{n}c_{d\sigma}\ket{0}||^2\delta\left(\omega - E_0 + E_n\right)\right]\\
-\end{aligned}\end{equation}
+where \(\mathcal{O}_\sigma = c_{d\sigma} + S_d^- c_{0\overline\sigma} + S_d^z c_{0\sigma}\) is the excitation whose spectral function we are interested in. The excitations defined in \(\mathcal{O}\) incorporates both single-particle excitations brought about by the hybridisation as well as two-particle spin excitations brought about by the spin-exchange term
 Since this is in terms of the exact eigenstates, it is a discrete sum of delta-functions. In practice, we get a continuous distribution. To compare with experiment, we need to convert the discrete sum into a continuous function. Following \cite{bullaNRGreview}, we replace the delta-functions at \(\pm x_n \equiv \pm(E_n - E_0)\) by normalized Gaussian functions
 \begin{equation}\begin{aligned}
 	\delta(\omega \pm x_n) \to \frac{1}{\eta_n\sqrt \pi}e^{-\left(\frac{\omega \pm x_n}{\eta_n}\right)^2}
@@ -649,30 +592,28 @@ The effective Hamiltonian becomes
 \end{aligned}\end{equation}
 \(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid (LFL)~\cite{nozieres1974fermi}.
 
-\subsection{Destruction of the Abrikosov-Suhl resonance: transition from strong-coupling to local moment}
+\section{Destruction of the Abrikosov-Suhl resonance: transition from strong-coupling to local moment}
 
 We will now tune the parameters of the fixed point Hamiltonian and study the variation of quantities related to the effective Hamiltonian like the local FL strength \(\mathcal{F}\), the gap in the spectrum of the zeroth Hamiltonian \(H_0^*\) and the value of the small parameter \(t^2/\delta E\), as well as various measures of entanglement like entanglement entropy, mutual information and spin-spin correlations between various sets of members of the real-space impurity+lattice construction. We will trace a specific path through the space of values of fixed point couplings: we will start from the strong-coupling regime \(U \ll J,V\) and go towards the local moment regime \(U \gg J,V\). The context of this study is that the technique of dynamical mean-field theory (DMFT) obtains a metal-insulator transition in the 2D Hubbard model by studying the Anderson impurity model as the auxiliary system for the Hubbard; there, the local moment regime of the impurity corresponds to the insulator in the bulk. Our goal here is to study what precisely happens in the effective Hamiltonian in the journey from the metal to the insulator, and draw a concrete connection between this modification of the effective Hamiltonian, and the simultaneous change of the impurity spectral function in fig.~\ref{spec_func}.
 
-% \begin{minipage}{\textwidth}
-\subsubsection*{\large Behaviour of \(\mathcal{F}\), the gap and the small parameter}
+\subsection*{\large Behaviour of \(\mathcal{F}\), the gap and the small parameter}
 \begin{center}
-	% \vspace*{10pt}
 	\includegraphics[width=0.32\textwidth]{../figures/gap-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 	\includegraphics[width=0.32\textwidth]{../figures/par-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 The vanishing of the gap and the growth of the small parameter indicates the breakdown of perturbation theory around the singlet; this simply shows that there is a degeneracy in the local moment regime, and the effective Hamiltonian will have to be obtained using degenerate perturbation theory. The presence of degeneracy also suggests that the effective Hamiltonian will be of the non-Fermi liquid type.
 
-\subsubsection*{\large Behaviour of correlation within the Kondo cloud}
+\subsection*{\large Behaviour of correlation within the Kondo cloud}
 \begin{center}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-k-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/mi-dk-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-k-diag-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
-	\includegraphics[width=0.32\textwidth]{../figures/corr-k-od-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.24\textwidth]{../figures/corr-k-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.24\textwidth]{../figures/mi-dk-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.24\textwidth]{../figures/corr-k-diag-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
+	\includegraphics[width=0.24\textwidth]{../figures/corr-k-od-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 The vanishing of the Kondo cloud at large \(U/J\) is clear indication of the destruction of the Kondo cloud and the breakdown of screening. Non-zero mutual information indicates an (impurity-mediated) interaction between the \(k-\)states of the conduction bath; seen differently, it is this interaction that is responsively for the screening of the impurity. The disappearance of the mutual information is indicative of the disappearance of this interaction.
 
-\subsubsection*{\large Behaviour of mutual information between various real space members}
+\subsection*{\large Behaviour of mutual information between various real space members}
 \begin{center}
 	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
@@ -680,20 +621,15 @@ The vanishing of the Kondo cloud at large \(U/J\) is clear indication of the des
 \end{center}
 The impurity-zeroth site mutual information \(I(d:0)\) remains unchanged at the maximum for an appreciable range of values, and this shows the stability of the singlet. Meanwhile, the mutual information between the zeroth site and the site nearest to it (\(I(0:1)\)) grows, because when the singlet weakens, the zeroth site is able to entangle more with the other sites. It finally saturates to its maximum value, which is the value produced as result of the tight-binding hopping. The mutual information between the impurity and sites beyond the zeroth site (\(I(d:1)\)) show a non-monotonic behaviour; it first increases as the entanglement that was initially restricted to just the impurity and the zeroth sites begins "seeping" into the other sites as well. Beyond a critical value of \(U/J\), \(I(d:1)\) starts dropping, because the entanglement has now mostly shifted out of the zero mode and into the conduction bath.
 
-\subsubsection*{\large Behaviour of impurity entanglement entropy}
+\subsection*{\large Behaviour of impurity entanglement entropy and spin-spin correlations}
 
 \begin{center}
-	\includegraphics[width=0.35\textwidth]{../figures/EE-d-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
-\end{center}
-
-The von-Neumann entanglement entropy \(S(d)\) of the impurity shows pretty straightforward behaviour. It is maximum for \(U \ll J\) because it is in a singlet configuration. For \(U \gg J\), the singlet weakens and the impurity begins to decouple from the bath, leading to a reduction in \(S(d)\). At sufficiently low values of \(J/U\), the impurity decouples from the zeroth site and the total system can be factorised into a local moment in product with a tight-binding chain, so that the impurity site will now have zero entanglement entropy.
-
-\subsubsection*{\large Behaviour of spin-spin correlations}
-\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/EE-d-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=1.000,J=1_over_U,V=J,N=4,U=0.010,100.000,100.pdf}
 \end{center}
 
+The von-Neumann entanglement entropy \(S(d)\) of the impurity shows pretty straightforward behaviour. It is maximum for \(U \ll J\) because it is in a singlet configuration. For \(U \gg J\), the singlet weakens and the impurity begins to decouple from the bath, leading to a reduction in \(S(d)\). At sufficiently low values of \(J/U\), the impurity decouples from the zeroth site and the total system can be factorised into a local moment in product with a tight-binding chain, so that the impurity site will now have zero entanglement entropy.
 
 \section{Calculating the \(T=0\) Wilson ratio from low energy excitations}
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
