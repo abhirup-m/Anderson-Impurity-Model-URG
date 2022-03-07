@@ -146,7 +146,7 @@ In this form, this transformation is not unitary. It can however be written in a
 \begin{equation}\begin{aligned}
 U_1 = e^{\eta}
 \end{aligned}\end{equation}
-using the fact that \(\eta^2 = 0\). It is shown in ref.~\cite{suzuki} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
+using the fact that \(\eta^2 = 0\). It is shown in ref.~\cite{suzuki1984general} that corresponding to a similarity transformation \(e^\omega\),there exists a unitary transformation \(e^G\) where
 \begin{equation}\begin{aligned}
 	G = \tanh^{-1}\left(\omega - \omega^\dagger\right)
 \end{aligned}\end{equation}
@@ -434,7 +434,7 @@ We can make one more manipulation: using eq.~\ref{constraint}, we get
 \begin{equation}\begin{aligned}
 	\Delta \mathcal{H} = c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\eta_1 + \text{Tr}\left(c_{q\beta}^\dagger \mathcal{H}\right) c_{q\beta}\eta^\dagger_0 
 \end{aligned}\end{equation}
-This form of the total renormalization is identical to the one we use in the "Poor Man's scaling"-type of renormalization that was used to get the scaling equations in the Kondo and Anderson models \cite{Anderson,haldane}. Writing down the forms of \(\eta\) and \(\eta^\dagger\) explicitly, we get
+This form of the total renormalization is identical to the one we use in the "Poor Man's scaling"-type of renormalization that was used to get the scaling equations in the Kondo and Anderson models \cite{anderson1970,haldane1978scaling}. Writing down the forms of \(\eta\) and \(\eta^\dagger\) explicitly, we get
 \begin{equation}\begin{aligned}
 	\Delta \mathcal{H} = c_{q\beta}^\dagger \text{Tr}\left(\mathcal{H} c_{q\beta}\right)\frac{1}{\omega_1^0 - \mathcal{H}^d_0} \text{Tr}\left(c_{q\beta}^\dagger\mathcal{H}\right) c_{q\beta}+ \text{Tr}\left(c_{q\beta}^\dagger \mathcal{H}\right) c_{q\beta} \frac{1}{\omega_0^1 - \mathcal{H}^d_1}c_{q\beta}^\dagger\text{Tr}\left(\mathcal{H} c_{q\beta}\right)
 \end{aligned}\end{equation}
@@ -449,7 +449,7 @@ At first sight, one might think that we must evaluate lots of traces to obtain t
 \section{URG analysis of the star graph model}
 \noindent
 \begin{minipage}{0.5\textwidth}
-	The star graph problem has already been analyzed using URG and an extensive study of its entanglement properties has already been carried out, in ref.~\cite{spa_star}. Here we focus on just deriving the RG equations. The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
+	The star graph problem has already been analyzed using URG and an extensive study of its entanglement properties has already been carried out, in ref.~\cite{spa_2022}. Here we focus on just deriving the RG equations. The system consists of \(N\) spin-like degrees of freedom (labeled 1 through N) individually talking to a spin at the center (labeled 0). Each spin \(i\) (\(\in \left[0,N\right]\)) has an on-site energy \(\epsilon_i\). The coupling strength between 0 and \(i\) (\(\in \left[1,N\right]\)) is \(J_i\). We choose the on-site energies such that \(\epsilon_{i+1} > \epsilon_i, i\in\left[N-1,1\right]\). In this way, \(\epsilon_1\) is the infrared limit and \(\epsilon_N\) is the ultraviolet limit.
 \begin{equation}\begin{aligned}
 	\mathcal{H} = \epsilon_0 S^z_0 + \sum_{i=1}^N\left[\epsilon_i S^z_i + J_i \vec{S}_0 \cdot \vec{S}_i\right]
 \end{aligned}\end{equation}

@@ -1,7 +1,7 @@
 \documentclass[oneside,openany]{book}
 \usepackage{amsthm,amsmath,amssymb,braket,multirow,caption,relsize,tocbibind,color,appendix}
-% \usepackage[draft]{graphicx}
-\usepackage{graphicx}
+\usepackage[draft]{graphicx}
+% \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage[margin=0.8in,top=0.3in,bottom=1.4in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -14,7 +14,7 @@
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
 \allowdisplaybreaks
-\bibliographystyle{unsrt}
+\bibliographystyle{ieeetr}
 
 
 \begin{document}
@@ -29,13 +29,12 @@
 \include{chap5.tex}
 \include{chap6.tex}
 \include{chap7.tex}
-% \appendixpage
-% \appendixtitleon
-% \appendixtitletocon
-% \begin{appendices}
-% \include{appendix1.tex}
-\include{appendix2.tex}
-% \end{appendices}
+\appendixpage
+\appendixtitleon
+\appendixtitletocon
+\begin{appendices}
+\include{appendix1.tex}
+\end{appendices}
 
 \bibliography{notes}
 

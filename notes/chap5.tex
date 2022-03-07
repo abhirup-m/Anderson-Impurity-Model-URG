@@ -61,7 +61,7 @@ Using the relations \(\epsilon_d = E_1 - E_0\) and \(U = E_2 + E_0 - 2E_1\), we 
 	\Delta U &= \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d + U } + \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d} - \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q + \epsilon_d} - \sum_{q}\frac{2|V_q|^2}{\omega - \frac{1}{2}\epsilon_q - \epsilon_d - U}\\
 \end{aligned}\end{equation}
 \section{Connection to poor man's scaling}\label{urg2pms}
-To obtain the results of Poor Man's scaling \cite{haldane}\cite{Jefferson},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
+To obtain the results of Poor Man's scaling \cite{haldane1978scaling}\cite{jefferson_1977},  we can look at various regimes. First we look at the case when both \(\epsilon_d\) and \(U\) are small such that both the singly-occupied and doubly-occupied subspaces of the impurity are comfortably inside the bandwidth, \(U,\epsilon_d \ll \epsilon_q\). We can then ignore the \(\epsilon_d\) and \(U\) in the denominator compared to the \(\epsilon_q\).
 \begin{equation}\begin{aligned}
 \Delta \epsilon_d &= \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} + \sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}\\
 \Delta U &= 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} + 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q} - 2\sum_{q}\frac{|V_q|^2}{\omega - \frac{1}{2}\epsilon_q}
@@ -155,7 +155,7 @@ where \(\vec S_d = \left(S_d^x, S_d^y, S_d^z\right) = \sum_{\alpha\beta}\vec \si
 	\vec s = \sum_{k k^\prime r r^\prime} \frac{1}{N} e^{ikr - ik^\prime r^\prime} \vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} = \sum_{rr^\prime}\frac{1}{N}\vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} N \delta(r)\delta(r^\prime) = \vec \sigma_{\alpha\beta} c^\dagger_{0\alpha} c_{0\beta}
 \end{aligned}\end{equation}
 
-In order to introduce the charge isospin coupling, we define the Nambu spinor \cite{nambu,anderson_superc} \(\psi^k = \left( c_{k\uparrow} \quad c^\dagger_{k\downarrow} \right)\), and the charge isospin \cite{charge-kondo-Zitko} for the mobile conduction electrons
+In order to introduce the charge isospin coupling, we define the Nambu spinor \cite{anderson1958random,nambu_1960} \(\psi^k = \left( c_{k\uparrow} \quad c^\dagger_{k\downarrow} \right)\), and the charge isospin \cite{zitko_2006} for the mobile conduction electrons
 \begin{equation}\begin{aligned}
 \vec C = \sum_{kk^\prime} {\psi^k}^\dagger \vec S \psi^{k^\prime} = \frac{1}{2}\sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
 \end{aligned}\end{equation}

@@ -1,8 +1,7 @@
-\chapter{Preliminaries and Existing Results}\label{prelims}
+\chapter{Some Preliminary Ideas and Results}\label{prelims}
 This chapter is devoted to an extensive literature survey of the Anderson impurity model (SIAM) (and the Kondo model to some extent, because it is closely related to the SIAM). It also includes discussions and derivations of some topics like the Friedel sum rule and some results from scattering theory, because these topics will often be invoked later.
 
 \section{\(T-\) and \(S-\)matrices, Greens function and scattering phase shifts}
-\subsection{\(T-\)matrix and Greens function}
 We will first introduce the \(T-\)matrix and the Greens function operator, and derive a relation between them. It is assumed that we have an interacting system \(H = H_0 + V\). \(H_0\) as the non-interacting part with the spectrum \(\left\{E_i, \ket{\Phi_i}\right\}\). \(V\) represents the interaction between the states \(\ket{\Phi_i}\). The \(T-\)matrix arises naturally when we write down the full Schrodinger equation of the problem:
 \begin{equation}\begin{aligned}
 	\label{full_SE}
@@ -67,7 +66,6 @@ By comparing with eq.~\ref{tmatexp}, we can recognize the term inside the bracke
 	\label{G_and_G0}
 \end{aligned}\end{equation}
 
-\subsection{\(S-\)matrix}
 A plane wave can be represented as the sum of incoming waves \(\chi^-_{k,l}\) and outgoing spherical waves \(\chi^+_{k,l}\). These incoming and outgoing waves are eigenstates of the total angular momentum squared \(L^2\) with eigenvalue \(l(l+1)\).
 \begin{equation}\begin{aligned}
 	\ket{\Phi_k} = \sum_l\left(\ket{\chi^+_{k,l}} + \ket{\chi^-_{k,l}}\right)
@@ -105,7 +103,6 @@ The \(S-\)matrix at a particular energy \(\omega\) then turns out to be
 	S(\omega) = \braket{\omega| S | \omega} = 1 - 2\pi i \rho T(\omega)
 \end{aligned}\end{equation}
 
-\subsection{Scattering phase shifts and their relation to \(T-\)matrix}
 \(S(k)\) is unitary because \(U\) is.
 Expanding \(S(k)\) in its eigenbasis \(\left\{ \ket{i} \right\} \) (not necessarily angular momentum) gives
 \begin{equation}\begin{aligned}
@@ -132,7 +129,7 @@ If we define the argument of a complex number \(z(r,\phi) = r e^{i\phi}\) as \(a
 \end{aligned}\end{equation}
 
 \section{The Friedel sum rule}
-The Friedel sum rule \cite{Friedel_1958,langer1961friedel,langreth1966} is a very useful theorem that operates in the domain of impurity problems. In the presence of an impurity that interacts with the electrons of the system, the total number of particles in the ground state will generally be different from that in the absence of the impurity. This difference is given directly by the total scattering phase shift suffered by the conduction electrons at the Fermi surface as they scatter off the impurity. The more general version states that the difference in the number of particles is actually related to the scattering local \(S-\)matrix (against the impurity) of the conduction electrons at the Fermi surface. Here we will see a derivation of this theorem.
+The Friedel sum rule \cite{Friedel1958,langer1961friedel,langreth1966} is a very useful theorem that operates in the domain of impurity problems. In the presence of an impurity that interacts with the electrons of the system, the total number of particles in the ground state will generally be different from that in the absence of the impurity. This difference is given directly by the total scattering phase shift suffered by the conduction electrons at the Fermi surface as they scatter off the impurity. The more general version states that the difference in the number of particles is actually related to the scattering local \(S-\)matrix (against the impurity) of the conduction electrons at the Fermi surface. Here we will see a derivation of this theorem.
 
 Consider a Hamiltonian
 \begin{equation}\begin{aligned}
@@ -445,7 +442,7 @@ To study the interactions of the spin degrees of freedom, it becomes necessary t
 \end{aligned}\end{equation}
 \(S_i = \sum_{\alpha \beta} c^\dagger_{d\alpha} \sigma^i_{\alpha\beta} c_{d \beta}\). \(s_i =\sum_{k k^\prime\alpha \beta} c^\dagger_{k\alpha} \sigma^i_{\alpha\beta} c_{k^\prime \beta}\).  Note that the impurity onsite energy has also been dropped because we are in the subspace of constant \(\hat n_d\;(= 1)\). 
 \subsection{Derivation of the Kondo Hamiltonian}
-Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\uparrow} \neq \hat n_{d\downarrow}\)) from the doublon and holon subspaces (\(\hat n_{d\uparrow} = \hat n_{d\downarrow}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{schrieffer1966}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{piers}. An alternate derivation via a projector operator method due to \cite{hewson} is shown in \ref{SWT from URG}.
+Deriving the Kondo Hamiltonian involves separating the impurity spinon subspace (\(\hat n_{d\uparrow} \neq \hat n_{d\downarrow}\)) from the doublon and holon subspaces (\(\hat n_{d\uparrow} = \hat n_{d\downarrow}\)). The canonical (pun intended) way of doing this is via a Schrieffer-Wolff transformation \cite{schrieffer1966}. It involves applying a unitary transformation on the original Hamiltonian such that the terms that scatter between the two subspaces disappear, up to leading order. We are then left with a higher order intra-subspace scattering. It is often referred to as a one-shot renormalization group method, because it kills all the off-diagonal terms in one iteration. The approach here follows that in \cite{coleman2015}. An alternate derivation via a projector operator method due to \cite{hewson1993} is shown in \ref{SWT from URG}.
 The space of the impurity electron can be divided into low energy and high energy subspaces:
 \begin{equation}\begin{aligned}
 \text{low energy (L)} \rightarrow \begin{cases} \ket{\uparrow} \\ \ket{\downarrow} \end{cases}\\
@@ -580,7 +577,7 @@ where
 \(\vec \sigma_e\) is thus the spin density at the origin.
 
 \subsection{Obtaining the resistivity minimum and \(\log\)-dependence}
-The next few sections follow the approach in \cite{phill}. The model we are working with is
+The next few sections follow the approach in the book by Philip Phillips. The model we are working with is
 \begin{equation}\begin{aligned}
 H_K &= H_0 + V = \sum_k \epsilon_k n_k + \frac{J}{2} \sum_{k_1,k_2,\sigma_1,\sigma_2}c^\dagger_{k_1\sigma_1}\vec \sigma_d \cdot \vec\sigma_{\sigma_1\sigma_2}c_{k_2 \sigma_2}
 \end{aligned}\end{equation}
@@ -1382,7 +1379,7 @@ What this means is that although the singlet is stable with respect to energy-co
 This induces an interaction on the site 1.
 Since the interaction on the site 1 is just a manifestation of the polarizability of the singlet, we can either take the singlet with its polarizability and assume the conduction band to be non-interacting, or we can assume the singlet to be static and take the Fermi sea to have a localised interaction at the site 1.
 In the latter picture, we have a frozen singlet (which can be ignored) and an interacting Fermi sea.\\\\
-The goal \cite{nozieres} is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions.
+The goal is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions~\cite{nozieres1974fermi}.
 In the absence of interactions, the scattered wavefunction is
 \begin{equation}\begin{aligned}
 	\label{shift}
@@ -1555,7 +1552,7 @@ R = \frac{\chi/\chi_0}{C_v/C_v^0} = \frac{4\alpha/\pi\mathcal{N}(0)}{2\alpha/\pi
 \end{aligned}\end{equation}
 
 \section{Numerical renormalization group calculation}
-Wilson's idea \cite{wilson} was to remove the limitations of the perturbative nature of Anderson's scaling method.
+Wilson's idea \cite{wilson1975} was to remove the limitations of the perturbative nature of Anderson's scaling method.
 To that end, we transformed the Hamiltonian into a one-dimensional chain, and then iteratively diagonalised chains of increasing length.
 The Hamiltonian we are working with is
 \begin{equation}\begin{aligned}
@@ -1710,7 +1707,7 @@ He set \(J=0.009\) and then then calculated the lowest excitations of the Hamilt
 They indeed correspond to the excitations of the Kondo hamiltonian at \(J = \infty\), meaning that under the application of the NRG, the \(J=0.009\) Hamiltonian flowed to the fixed-point Hamiltonian \(J = \infty\).
 \section{Correspondence between the Kondo model fixed-point and a local Fermi liquid}
 \subsubsection{Local Fermi liquid}
-The fixed-point Hamiltonians \cite{hewsonp} are found to represent interacting Fermi liquids.
+The fixed-point Hamiltonians \cite{hewson1993} are found to represent interacting Fermi liquids.
 The effective Hamiltonian can be shown to resemble the Anderson model, but with modified parameters,
 \begin{equation}\begin{aligned}
 H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}} + U n_{d\uparrow}n_{d\downarrow}
@@ -1958,7 +1955,7 @@ Since \(\text{Tr }\ln \hat O = \sum_\lambda \ln O_\lambda = \ln \prod_\lambda O_
       &\equiv -\int_\Gamma dz\partial_z \frac{1}{2\pi i}\ln D\\
       &= -\int_{\Gamma(D)}\frac{dD}{D}
 \end{aligned}\end{equation}
-From the work of Seki and Yunoki \cite{seki}, we know that this quantity is essentially the winding number of the curve \(\Gamma(D)\) in the complex plane spanned by the real and imaginary parts of \(D\), and is equal to the change in Luttinger's volume \(V_L\) at \(T=0\).
+From the work of Seki and Yunoki \cite{seki2017topological}, we know that this quantity is essentially the winding number of the curve \(\Gamma(D)\) in the complex plane spanned by the real and imaginary parts of \(D\), and is equal to the change in Luttinger's volume \(V_L\) at \(T=0\).
 \begin{equation}\begin{aligned}
 \widetilde N &= -\int_{\Gamma(D)}\frac{dD}{D} = -\Delta V_L
 \end{aligned}\end{equation}
@@ -1973,7 +1970,7 @@ Since the impurity singlet ground state is rotationally invariant, we have \(\de
 R &= 1 + \sin^2 \left(\frac{\pi}{2}\widetilde N\right)\\
   &= 1 + \sin^2 \left(\frac{\pi}{2}\Delta V_L\right)
 \end{aligned}\end{equation}
-We note that this connection between \(R\) and \(\Delta V_L\) has not been obtained in the existing literature thus far. In the unitary limit, \(\delta(0) = \frac{\pi}{2}\), giving \(\Delta V_L = -1 = -\tilde N\) \cite{martin_prl_1982} (i.e., one electronic state from the impurity has been absorbed into the Luttinger volume of the conduction bath), such that \(R = 2\) in this limit. In this way, we see that a change in the topological quantum number \(\tilde N\) causes the well known renormalisation of the Wilson ratio R from its non-interacting value \((1)\) to the value \((2)\) obtained for the local Fermi liquid \cite{nozieres_1974}.
+We note that this connection between \(R\) and \(\Delta V_L\) has not been obtained in the existing literature thus far. In the unitary limit, \(\delta(0) = \frac{\pi}{2}\), giving \(\Delta V_L = -1 = -\tilde N\) \cite{martin1982fermi} (i.e., one electronic state from the impurity has been absorbed into the Luttinger volume of the conduction bath), such that \(R = 2\) in this limit. In this way, we see that a change in the topological quantum number \(\tilde N\) causes the well known renormalisation of the Wilson ratio R from its non-interacting value \((1)\) to the value \((2)\) obtained for the local Fermi liquid \cite{nozieres1974fermi}.
 
 \section{Renormalized perturbation theory}
 This is a perturbative expansion of the Hamiltonian in terms of the renormalized interaction \(\widetilde U\), and the second order results obtained from this approach coincide with the phenomenological results at \(T,h \rightarrow 0\)..
