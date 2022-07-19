@@ -91,14 +91,12 @@ We will later find that it is important to demand that these two be Hermitian co
 Henceforth we will assume that this constraint has been imposed. 
 \\\\In terms of these operators, eq.~\ref{changeb} becomes
 \begin{equation}\begin{aligned}
-    \ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i}\\
-    \ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i}
+    \ket{1}\ket{\phi_1^i} &= {\eta}^\dagger\ket{0}\ket{\phi_0^i}, ~ ~ ~\ket{0}\ket{\phi_0^i} &= \eta\ket{1}\ket{\phi_1^i}
 \end{aligned}\end{equation}
 These allow us to write
 \begin{equation}\begin{aligned}
 	\label{trans}
-	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \left(1 + \eta\right)\ket{1}\ket{\phi_1^i}\\
-	\ket{\psi_0} &= \left(1 + {\eta}^\dagger\right)\ket{0}\ket{\phi_0^i}
+	\ket{\psi_1} &= \ket{1}\ket{\phi_1^i} + \ket{0}\ket{\phi_0^i} = \left(1 + \eta\right)\ket{1}\ket{\phi_1^i}, ~ ~ ~\ket{\psi_0} &= \left(1 + {\eta}^\dagger\right)\ket{0}\ket{\phi_0^i}
 \end{aligned}\end{equation}
 Recalling that \(\ket{\psi_i} = U^\dagger \ket{i}\), we can read off the required transformation:
 \begin{equation}\begin{aligned}
@@ -160,9 +158,7 @@ x = \frac{e^{2y} + 1}{e^{2y} - 1} \implies y = \frac{1}{2} \log\frac{1+x}{1-x} \
 \end{aligned}\end{equation}
 Therefore,
 \begin{equation}\begin{aligned}
-	\exp\left\{\tanh^{-1}\left(\eta - \eta^\dagger\right)\right\} &= \frac{1 + \eta - \eta^\dagger}{\sqrt{\left(1 + \eta^\dagger - \eta\right)\left(1 - \eta^\dagger + \eta\right)}}\\
-                     &= \frac{1 + \eta - \eta^\dagger}{\sqrt{1 + \left\{\eta,\eta^\dagger\right\}}}\\
-		     &= \frac{1}{\sqrt 2}\left(1 + \eta - \eta^\dagger\right)
+	\exp\left\{\tanh^{-1}\left(\eta - \eta^\dagger\right)\right\} &= \frac{1 + \eta - \eta^\dagger}{\sqrt{\left(1 + \eta^\dagger - \eta\right)\left(1 - \eta^\dagger + \eta\right)}} = \frac{1 + \eta - \eta^\dagger}{\sqrt{1 + \left\{\eta,\eta^\dagger\right\}}} = \frac{1}{\sqrt 2}\left(1 + \eta - \eta^\dagger\right)
 \end{aligned}\end{equation}
 The \textit{unitary} operator that transforms the entangled eigenstate \(\ket{\psi_1}\) to the state \(\ket{1}\) is thus
 \begin{equation}\begin{aligned}
@@ -266,12 +262,10 @@ This form will be useful later when we make the connection with one-shot Schrief
 
 To check that the renormalised Hamiltonian indeed commutes with \(\hat n_{q\beta}\),
 \begin{equation}\begin{aligned}
-	\left[\widetilde{\mathcal{H}}, \hat n_{q\beta}\right] &= \left[\left[c_{q\beta}^\dagger T,\eta\right],\hat n_{q\beta}\right]\\
-						      &=\left[c_{q\beta}^\dagger T \eta,\hat n_{q\beta}\right] - \left[\eta c_{q\beta}^\dagger T,\hat n_{q\beta}\right]\\
+	\left[\widetilde{\mathcal{H}}, \hat n_{q\beta}\right] &= \left[\left[c_{q\beta}^\dagger T,\eta\right],\hat n_{q\beta}\right] =\left[c_{q\beta}^\dagger T \eta,\hat n_{q\beta}\right] - \left[\eta c_{q\beta}^\dagger T,\hat n_{q\beta}\right]\\
                    &=c^\dagger_{q\beta} T \eta \hat n_{q\beta} - \hat n_{q\beta}c^\dagger_{q\beta} T \eta &&\left[\text{2\textsuperscript{nd} [ .
 		   ] is 0, }\because c_{q\beta}^\dagger \hat n_{q\beta} = \hat n_{q\beta} \eta=0\right]\\
-                   &=c_{q\beta}^\dagger T \eta - c_{q\beta}^\dagger T \eta\\
-             &=0
+                   &=c_{q\beta}^\dagger T \eta - c_{q\beta}^\dagger T \eta =0
 \end{aligned}\end{equation}
 \subsection{Fixed point condition}\label{match}
 Within the URG, it is a prescription that the fixed point is reached when the denominator of the RG equation vanishes. This is equivalent to either \(\omega_i^1 = \mathcal{H}^d_1 \) or \(\omega_i^0 = \mathcal{H}^d_0 \).
@@ -304,8 +298,7 @@ and so
 \end{aligned}\end{equation}
 The expression for the renormalization will not be just \(\left[c^\dagger T, \eta \right]\) in this case. That form will be non-Hermitian. The correct form is obtained from the more general form \(\left[\eta^\dagger - \eta, \mathcal{H}_X \right]\):
 \begin{equation}\begin{aligned}
-	\Delta \mathcal{H} &= \frac{1}{2}\left[\eta^\dagger - \eta, c^\dagger T + T^\dagger c\right]\\
-		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[c^\dagger T_i - T_i^\dagger c, c^\dagger T_j + T_j^\dagger c\right]\\
+	\Delta \mathcal{H} &= \frac{1}{2}\left[\eta^\dagger - \eta, c^\dagger T + T^\dagger c\right] = \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[c^\dagger T_i - T_i^\dagger c, c^\dagger T_j + T_j^\dagger c\right]\\
 		    &= \frac{1}{2}\sum_{ij} \frac{1}{\omega^0_i - E^0_i}\left[\hat n \left(T_i T_j^\dagger + T_j T_i^\dagger \right) - \left(1 - \hat n\right)\left(T_i^\dagger T_j + T_j^\dagger T_i\right)\right]\\
 		    &= \frac{1}{2}\sum_{ij} \left(\frac{1}{\omega^0_i - E^0_i} + \frac{1}{\omega^0_j - E^0_j}\right)\left[\hat n T_i T_j^\dagger - \left(1 - \hat n\right)T_i^\dagger T_j\right]\\ 
 \end{aligned}\end{equation}
@@ -336,8 +329,7 @@ The \(\omega_j^i\) eigenvalues have both upper and lower indices. The upper inde
 This is the constraint that ensures that both unitaries give the same effective Hamiltonian. The condition \(\eta_1 + \eta_0 = 0\), when expressed without resolving \(\hat \omega\) into its eigenvalues can also be shown to be a statement of the preservation of the partial trace under the RG flow.
 \begin{equation}\begin{aligned}
 	\label{trace}
-\eta_1 &= \frac{1}{\tilde H_1 - \mathcal{H}^i - \mathcal{H}^d}T^\dagger c_{q\beta}\\
-\eta_0 &= \frac{1}{\tilde H_0 - \mathcal{H}^i - \mathcal{H}^d}T^\dagger c_{q\beta}\\
+\eta_1 &= \frac{1}{\tilde H_1 - \mathcal{H}^i - \mathcal{H}^d}T^\dagger c_{q\beta} , ~ ~ \eta_0 = \frac{1}{\tilde H_0 - \mathcal{H}^i - \mathcal{H}^d}T^\dagger c_{q\beta}\\
 \implies  \eta_1 + \eta_0 &= \left[\frac{1}{\tilde H_1 - \mathcal{H}^i - \mathcal{H}^d} + \frac{1}{\tilde H_0 - \mathcal{H}^i - \mathcal{H}^d}\right]T^\dagger c_{q\beta} = 0\\
 \implies \tilde H_1 - \mathcal{H}^i - \mathcal{H}^d &= -\left[\tilde H_0 - \mathcal{H}^i - \mathcal{H}^d\right]\\
 \implies \tilde H_1 + \tilde H_0 &= 2\mathcal{H}_0
@@ -395,7 +387,7 @@ The commutation relations give
 \end{aligned}\end{equation}
 These operators therefore satisfy the commutation algebra of angular momentum operators \(\left[S^i, S^j\right] = i\epsilon^{ijk}S^k\).
 
-\subsection{A note on the various quantum fluctuation scales \(\pmb\omega_i^j\)}
+\subsection{A note on the various quantum fluctuation scales \(\omega_i^j\)}
 At a particular step of the URG, there are two quantum fluctuation energy scales associated with each sector. If we rotate \(\ket{\psi_1}\) to \(\ket{1}\) (particle/occupied sector), the corresponding unitary will be a function of \(\omega_1^{0,1}\). If we, on the other hand, rotate \(\ket{\psi_0}\) to \(\ket{0}\) (hole/unoccupied sector), the unitary will be a function of \(\omega_0^{0,1}\). The superscript \(j\) signifies whether this particular \(\omega_i^j\) is an eigenvalue corresponding to \(\ket{1,\phi_i}\) or \(\ket{0,\phi_i}\). \(\omega^0_i\) occurs in the many-body transition operator \(\eta\), because \(\eta\) is preceded by \(c\) and hence it picks out the eigenstate \(\ket{0,\phi_i}\). On the other hand, \(\omega^1_i\) occurs in the many-body transition operator \(\eta^\dagger\), because that is preceded by \(c^\dagger\). This constrains these two values, because we must have \(\eta(\omega_i^0) = \left(\eta^\dagger(\omega_i^1)\right)^\dagger\) (eq.~\ref{constraint}), for each value of \(i\), giving us two constraints in total. The subscript \(i\) signifies whether \(\omega_i^j\) is a part of the particle sector unitary \(U_1(\omega_1^j)\) or the hole sector unitary \(U_0(\omega_0^j)\). As mentioned in the previous section, since both ways are equivalent, we must have \(U_1 = U_0\) which leads to the constraints \(\eta(\omega_0^j) = -\eta(\omega_1^j)\). All the independent constraints are listed below.
 \begin{equation}\begin{aligned}
 	\label{omegarel}

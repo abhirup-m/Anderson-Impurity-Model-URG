@@ -49,8 +49,7 @@ This is of course a function of whatever exact energy eigenvalue we chose, \(E\)
 \end{aligned}\end{equation}
 Now take the first term and insert complete bases on both sides of \(V\) and \(V^\dagger\).
 \begin{equation}\begin{aligned}
-V\frac{1}{E - H_0}V^\dagger &= \sum_{ijk}\ket{\phi_0^i}\bra{\phi_0^i}V\ket{\phi_1^j}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}\bra{\phi_1^j}V^\dagger\ket{\phi_0^k}\bra{\phi_0^k} \\
-                &= \sum_{ijk}\ket{\phi_0^i}V_{ij}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}V^\dagger_{kj}\bra{\phi_0^k}\\
+V\frac{1}{E - H_0}V^\dagger &= \sum_{ijk}\ket{\phi_0^i}\bra{\phi_0^i}V\ket{\phi_1^j}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}\bra{\phi_1^j}V^\dagger\ket{\phi_0^k}\bra{\phi_0^k} = \sum_{ijk}\ket{\phi_0^i}V_{ij}\bra{\phi_1^j}\frac{1}{E - H_0}\ket{\phi_1^j}V^\dagger_{kj}\bra{\phi_0^k}\\
 \end{aligned}\end{equation}
 where we defined \(\bra{\phi_0^i}V\ket{\phi_1^j} = V_{ij}\). We now approximate \(H_0\) by keeping just the diagonal part, and allowing the balance to redefine \(E\) into \(\omega\). Then, \(\left(E - H_0\right) \ket{\phi_{0,1}^j} \equiv \left(\omega_{0,1} - E_{0,1}^j\right) \ket{\phi_{0,1}^j}\). That gives
 \begin{equation}\begin{aligned}
@@ -71,16 +70,14 @@ This is a general expression that would work irrespective of whether you are dec
 \end{aligned}\end{equation}
 However, closer inspection reveals that this choice makes the renormalization non-Hermitian. So the correct choice is to keep both the initial and final energies.
 \begin{equation}\begin{aligned}
-	\Delta \mathcal{H} &= \frac{1}{2}\sum_{ijk}\frac{1}{\omega_1 - E^j_1}\left(\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}\right)\\
-			   &+\frac{1}{2}\sum_{ijk}\frac{1}{\omega_0 - E^j_0}\left(\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} + \ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}\right)\\
-			   &= \frac{1}{2}\sum_{ijk}\left(\frac{1}{E_0^k - E^j_1}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \frac{1}{E_0^k - E^j_1}\ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}\right)\\
-			   &+\frac{1}{2}\sum_{ijk}\left(\frac{1}{E_1^k - E^j_0}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} + \frac{1}{E_1^k - E^j_0}\ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}\right)
+	\Delta \mathcal{H} = \frac{1}{2}\sum_{ijk}\frac{1}{\omega_1 - E^j_1}\left(\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}\right) +\frac{1}{2}\sum_{ijk}\frac{1}{\omega_0 - E^j_0}\left(\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} + \ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}\right)\\
+			   = \frac{1}{2}\sum_{ijk}\left(\frac{1}{E_0^k - E^j_1}\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} + \frac{1}{E_0^k - E^j_1}\ket{\phi_0^k}\bra{\phi_0^i}V_{kj}V^\dagger_{ij}\right) +\frac{1}{2}\sum_{ijk}\left(\frac{1}{E_1^k - E^j_0}\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk} \right.\\
+		   \left.+ \frac{1}{E_1^k - E^j_0}\ket{\phi_1^k}\bra{\phi_1^i}V^\dagger_{jk}V_{ji}\right)
 \end{aligned}\end{equation}
 Therefore,
 \begin{equation}\begin{aligned}
 	\label{pmsren}
-	\Delta \mathcal{H} &= \frac{1}{2}\sum_{ijk}\left(\frac{1}{E_0^k - E^j_1} + \frac{1}{E_0^i - E^j_1}\right)\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj}\\
-			   &+\frac{1}{2}\sum_{ijk}\left(\frac{1}{E_1^k - E^j_0}+ \frac{1}{E_1^i - E^j_0}\right)\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}\\
+	\Delta \mathcal{H} &= \frac{1}{2}\sum_{ijk}\left(\frac{1}{E_0^k - E^j_1} + \frac{1}{E_0^i - E^j_1}\right)\ket{\phi_0^i}\bra{\phi_0^k}V_{ij}V^\dagger_{kj} +\frac{1}{2}\sum_{ijk}\left(\frac{1}{E_1^k - E^j_0}+ \frac{1}{E_1^i - E^j_0}\right)\ket{\phi_1^i}\bra{\phi_1^k}V^\dagger_{ji}V_{jk}\\
 \end{aligned}\end{equation}
 In summary, the prescription of replacing all \(\omega\) with the initial state energy will be correct only if the initial and final states are the same. This happens when we are decoupling a single-electron state - then the total renormalization is of the form \(c^\dagger T^\dagger c\) such that we start from an initial state, scatter to an intermediate state and then go back to the initial state so that the final state is the same as the initial state. However, if we are using PMS to decouple states in one-shot, each subspace will have multiple states and there might be terms where we do not end up at the initial state we started with. Then the correct prescription would be to use the mean of the initial and final state denominators.
 
@@ -344,32 +341,25 @@ The \(- \frac{1}{2}\epsilon_q\) comes from substituting \(\hat n_{q\beta}=0\) in
 
 Substituting this in \(\Delta V_0\) gives
 \begin{equation}\begin{aligned}
-\Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\frac{1}{2}\epsilon_q -\epsilon_q \tau_{q\beta} + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta}\\
-&=  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta}\\
-&=  c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\frac{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\overline\beta}}\\
-&=  -c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\overline\beta}}\\
-&=  \left(1 - \hat n_{q\beta}\right)\left(\frac{-\hat n_{d\beta}\hat n_{d\overline\beta}}{\epsilon_q - \epsilon_d - U} + \frac{-\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)}{\epsilon_q - \epsilon_d}\right)\\
+\Delta V_0 &=  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\frac{1}{2}\epsilon_q -\epsilon_q \tau_{q\beta} + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta} =  c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\overline\beta}}c^\dagger_{q\beta}c_{d\beta} =  c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\frac{1}{-\epsilon_q + \epsilon_d + U\hat n_{d\overline\beta}}\\
+&=  -c^\dagger_{d\beta}c_{q\beta}c^\dagger_{q\beta}c_{d\beta}\frac{1}{\epsilon_q - \epsilon_d - U\hat n_{d\overline\beta}} =  \left(1 - \hat n_{q\beta}\right)\left(\frac{-\hat n_{d\beta}\hat n_{d\overline\beta}}{\epsilon_q - \epsilon_d - U} + \frac{-\hat n_{d\beta}\left(1 - \hat n_{d\overline\beta}\right)}{\epsilon_q - \epsilon_d}\right)\\
 \end{aligned}\end{equation}
 On the second line, we substituted \(\tau_{q\beta} = \frac{1}{2}\) in the denominator, which is ensured by the \(c^\dagger_{q\beta}\) to the right of the propagator. The first term renormalizes the energy of the doublon state and the second term renormalizes that of the singly-occupied state:
 \begin{equation}\begin{aligned}
-\Delta E_2 &= \frac{-1}{\epsilon_q - \epsilon_d - U}\\
-\Delta E_1 &= \frac{-1}{\epsilon_q - \epsilon_d}
+\Delta E_2 &= \frac{-1}{\epsilon_q - \epsilon_d - U}, ~ ~ \Delta E_1 &= \frac{-1}{\epsilon_q - \epsilon_d}
 \end{aligned}\end{equation}
 The renormalization in the hole sector is
 \begin{equation}\begin{aligned}
-	\Delta V_0 &=  c^\dagger_{q\beta}c_{d\beta}\frac{1}{\left(E - V_0\right) - \hat {\mathcal{H}}^d_0}c^\dagger_{d\beta}c_{q\beta}\\
-		   &=  c^\dagger_{q\beta}c_{d\beta}\frac{1}{\left(E - V_0\right) - \sum_{k,\sigma}\epsilon_k\tau_{k\sigma} - \epsilon_d - \left(\epsilon_d + U\right)\hat n_{d\overline\beta}}c^\dagger_{d\beta}c_{q\beta}
+	\Delta V_0 &=  c^\dagger_{q\beta}c_{d\beta}\frac{1}{\left(E - V_0\right) - \hat {\mathcal{H}}^d_0}c^\dagger_{d\beta}c_{q\beta} =  c^\dagger_{q\beta}c_{d\beta}\frac{1}{\left(E - V_0\right) - \sum_{k,\sigma}\epsilon_k\tau_{k\sigma} - \epsilon_d - \left(\epsilon_d + U\right)\hat n_{d\overline\beta}}c^\dagger_{d\beta}c_{q\beta}
 \end{aligned}\end{equation}
 This time we substitute
 \begin{equation}\begin{aligned}
-E - V_0 &= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \tau_{q\beta} \epsilon^-_q + \epsilon_d\hat n_{d\overline\beta}\\
-&= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \frac{1}{2} \epsilon^-_q + \epsilon_d\hat n_{d\overline\beta}\\
+E - V_0 &= \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \tau_{q\beta} \epsilon^-_q + \epsilon_d\hat n_{d\overline\beta} = \sum_{k<q,\sigma}\epsilon_k \tau_{k\sigma} + \frac{1}{2} \epsilon^-_q + \epsilon_d\hat n_{d\overline\beta}\\
 \end{aligned}\end{equation}
 In the last step we put \(\tau_{q\beta}=\frac{1}{2}\) because the state is occupied in the initial configuratin. Note that since the electron \(q\beta\) was occupied in the intial state, the energy \(\epsilon^-_q\) in this sector must be opposite to that of the particle sector, \(\epsilon_q\). Hence \(\epsilon^-_q = -\epsilon_q\), which gives
 \begin{equation}\begin{aligned}
-\Delta V_0 & = c^\dagger_{q\beta}c_{d\beta}\frac{1}{-\frac{1}{2} \epsilon_q -\epsilon^-_q\tau_{q\beta} - \epsilon_d - U\hat n_{d\overline\beta}}c^\dagger_{d\beta}c_{q\beta}\\
-& = c^\dagger_{q\beta}c_{d\beta}c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\epsilon_q - \epsilon_d - U\hat n_{d\overline\beta}}\\
-& = \hat n_{q\beta}\left(\frac{-\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\epsilon_q + \epsilon_d + U} + \frac{-\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)}{\epsilon_q + \epsilon_d}\right)\\
+\Delta V_0  = c^\dagger_{q\beta}c_{d\beta}\frac{1}{-\frac{1}{2} \epsilon_q -\epsilon^-_q\tau_{q\beta} - \epsilon_d - U\hat n_{d\overline\beta}}c^\dagger_{d\beta}c_{q\beta} = c^\dagger_{q\beta}c_{d\beta}c^\dagger_{d\beta}c_{q\beta}\frac{1}{-\epsilon_q - \epsilon_d - U\hat n_{d\overline\beta}} = \hat n_{q\beta}\left(\frac{-\left(1 - \hat n_{d\beta}\right)\hat n_{d\overline\beta}}{\epsilon_q + \epsilon_d + U} + \right.\\
+\left.\frac{-\left(1 - \hat n_{d\beta}\right)\left(1 - \hat n_{d\overline\beta}\right)}{\epsilon_q + \epsilon_d}\right)\\
 \end{aligned}\end{equation}
 In the second line, we put \(\epsilon^-_q = -\epsilon_q\) and \(\tau_{q\beta} = -\frac{1}{2}\). The first term renormalizes the singly-occupied state while the second term renormalizes the holon state. Combining with the particle sector results, the total renormalization in all the three impurity states (holon, single and doublon) are
 \begin{equation}\begin{aligned}
@@ -510,16 +500,13 @@ Multiplying with \(\bra{\phi_0^a}\) and \(\ket{\phi_1^b}\) from the left and rig
 \end{aligned}\end{equation}
 Since \(V^\dagger\) acts on \(\ket{0}\), it will not affect the LHS. Also, \(\bra{\phi_0^a}V\ket{\phi_1^b} = V_{ab}\). If we now consider only the diagonal part of \(H_0\), we can write \(H_0 (\ket{\phi_0^a},\ket{\phi_1^b}) = (E_{0,a}\ket{\phi_0^a},E_{1,b}\ket{\phi_1^b}))\). We then get
 \begin{equation}\begin{aligned}
-	-V_{ab} &= \bra{\phi_0^a}\sum_i\left[S\ket{\phi_1^i}\bra{\phi_1^i} H_0 - H_0 \ket{\phi_0^i}\bra{\phi_0^i}S\right]\ket{\phi_1^b}\\
-		&= \sum_i\left[S_{ai}E_1^i \delta_{bi} - E^i_0 \delta_{ai}S_{ib}\right]\\
-    &= S_{ab}E_1^b  - E^a_0 S_{ab}\\
+	-V_{ab} &= \bra{\phi_0^a}\sum_i\left[S\ket{\phi_1^i}\bra{\phi_1^i} H_0 - H_0 \ket{\phi_0^i}\bra{\phi_0^i}S\right]\ket{\phi_1^b} = \sum_i\left[S_{ai}E_1^i \delta_{bi} - E^i_0 \delta_{ai}S_{ib}\right] = S_{ab}E_1^b  - E^a_0 S_{ab}\\
 \implies S_{ab} &= \frac{V_{ab}}{E_0^a - E_1^b}
 \end{aligned}\end{equation}
 where we defined \(\bra{\phi_0^x}S\ket{\phi_1^y} = S_{xy}\). The total generator is
 \begin{equation}\begin{aligned}
 	\label{swtgen}
-	S &= \sum_{ij}\left[S_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - S_{ij}^\dagger\ket{\phi_1^j}\bra{\phi_0^i}\right]\\
-	  &= \sum_{ij}\frac{1}{E_0^i - E_1^j}\left[V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}\right]\\
+	S &= \sum_{ij}\left[S_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - S_{ij}^\dagger\ket{\phi_1^j}\bra{\phi_0^i}\right]= \sum_{ij}\frac{1}{E_0^i - E_1^j}\left[V_{ij}\ket{\phi_0^i}\bra{\phi_1^j} - V^\dagger_{ij}\ket{\phi_1^j}\bra{\phi_0^i}\right]\\
 \end{aligned}\end{equation}
 The renormalization is thus
 \begin{equation}\begin{aligned}
@@ -532,9 +519,7 @@ The renormalization is thus
 \end{aligned}\end{equation}
 This is the same as the PMS result eq.~\ref{pmsren}. It is easy to see that since this transformation is unitary, it has zero trace so as to preserve the trace of the Hamiltonian:
 \begin{equation}\begin{aligned}
-	\text{Tr}\left[\mathcal{H}\right] &= \sum_{l}\left(\bra{\phi_0^l} + \bra{\phi_1^l}\right)\Delta \mathcal{H}\left(\ket{\phi_0^l} + \ket{\phi_1^l}\right)\\
-		&= \frac{1}{2} \sum_{jl}\frac{2}{E_0^l - E_1^j}V_{lj}V^\dagger_{lj} - \frac{1}{2} \sum_{ji}\frac{2}{E_0^i - E_1^l}V^\dagger_{il}V_{il}\\
-		&= 0
+	\text{Tr}\left[\mathcal{H}\right] &= \sum_{l}\left(\bra{\phi_0^l} + \bra{\phi_1^l}\right)\Delta \mathcal{H}\left(\ket{\phi_0^l} + \ket{\phi_1^l}\right) = \frac{1}{2} \sum_{jl}\frac{2}{E_0^l - E_1^j}V_{lj}V^\dagger_{lj} - \frac{1}{2} \sum_{ji}\frac{2}{E_0^i - E_1^l}V^\dagger_{il}V_{il} = 0
 \end{aligned}\end{equation}
 
 We can also make a comparison to the renormalization obtained from URG.
@@ -549,8 +534,7 @@ where
 \end{aligned}\end{equation}
 This can be thought of as the generator for the unitary transformations of URG. Comparing with the generator \(S\) of eq.~\ref{swtgen}, the prescription to go from URG to SWT is to replace \(\omega_1^j \to E_1^j\). Doing a similar calculation gives
 \begin{equation}\begin{aligned}
-	\Delta \mathcal{H}_{URG} = \frac{1}{2} \sum_{ijk}\left[\left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^k - \omega_1^j}\right)V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k}\right.\\
-	- \left.\left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^i - \omega_1^k}\right)V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}\right]\\
+	\Delta \mathcal{H}_{URG} = \frac{1}{2} \sum_{ijk}\left[\left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^k - \omega_1^j}\right)V_{ij}V^\dagger_{kj}\ket{\phi_0^i}\bra{\phi_0^k} - \left(\frac{1}{E_0^i - \omega_1^j} + \frac{1}{E_0^i - \omega_1^k}\right)V^\dagger_{ij}V_{ik}\ket{\phi_1^j}\bra{\phi_1^k}\right]\\
 \end{aligned}\end{equation}
 
 \section{A comparison of URG, SWT and PMS on the Anderson model}
@@ -611,8 +595,7 @@ Since we are decoupling the whole band, the off-diagonal part that we want to re
 \end{aligned}\end{equation}
 The diagonal part is the rest of the Hamiltonian.
 \begin{equation}\begin{aligned}
-\mathcal{H}^d &= \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\uparrow}\hat n_{d\downarrow}\\
-&= \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\uparrow}\hat n_{d\downarrow}\\
+\mathcal{H}^d &= \sum_{k\sigma}\epsilon_k\hat n_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\uparrow}\hat n_{d\downarrow} = \sum_{k\sigma}\epsilon_k\tau_{k\sigma} + \epsilon_d\hat n_d + U\hat n_{d\uparrow}\hat n_{d\downarrow}\\
 \end{aligned}\end{equation}
 Following eq.~\ref{renurg}, the renormalization is
 \begin{equation}\begin{aligned}
@@ -621,10 +604,8 @@ Following eq.~\ref{renurg}, the renormalization is
 The transition operator \(\eta\) is
 \begin{equation}\begin{aligned}
 	\label{swturg}
-\eta &= \frac{1}{\omega - \mathcal{H}^d}\sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
-     &= \sum_{k\sigma}\frac{1}{\omega + \frac{1}{2}\epsilon_k - \epsilon_d - \left(\epsilon_d + U\right)\hat n_{d\overline\sigma}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
-     &= \sum_{k\sigma}\left[\frac{\hat n_{d\overline\sigma}}{\omega_1 + \frac{1}{2}\epsilon_k - 2\epsilon_d - U} + \frac{1 - \hat n_{d\overline\sigma}}{\omega_0 + \frac{1}{2}\epsilon_k - \epsilon_d}\right]V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
-     &= \sum_{k\sigma}\left[\frac{\hat n_{d\overline\sigma}}{E_k^1} + \frac{1 - \hat n_{d\overline\sigma}}{E_k^0}\right]V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+\eta &= \frac{1}{\omega - \mathcal{H}^d}\sum_{k\sigma}V^*_k c^\dagger_{d\sigma}c_{k\sigma}= \sum_{k\sigma}\frac{1}{\omega + \frac{1}{2}\epsilon_k - \epsilon_d - \left(\epsilon_d + U\right)\hat n_{d\overline\sigma}}V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
+     &= \sum_{k\sigma}\left[\frac{\hat n_{d\overline\sigma}}{\omega_1 + \frac{1}{2}\epsilon_k - 2\epsilon_d - U} + \frac{1 - \hat n_{d\overline\sigma}}{\omega_0 + \frac{1}{2}\epsilon_k - \epsilon_d}\right]V^*_k c^\dagger_{d\sigma}c_{k\sigma}= \sum_{k\sigma}\left[\frac{\hat n_{d\overline\sigma}}{E_k^1} + \frac{1 - \hat n_{d\overline\sigma}}{E_k^0}\right]V^*_k c^\dagger_{d\sigma}c_{k\sigma}\\
 \end{aligned}\end{equation}
 where \(E_k^1 = \omega_1 + \frac{1}{2}\epsilon_k - 2\epsilon_d - U\) and \(E_k^0 = \omega_0 + \frac{1}{2}\epsilon_k - \epsilon_d\). The total generator is therefore
 \begin{equation}\begin{aligned}
