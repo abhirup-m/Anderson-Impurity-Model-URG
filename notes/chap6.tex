@@ -1,5 +1,251 @@
-\chapter{Properties of the Low-Energy Theory: Thermodynamics and low-energy excitations}
-\label{results}
+\chapter{Physics of the extended single-impurity Anderson model}
+\label{esiam-urg}
+\section{Introduction of spin-exchange and charge isospin-exchange interactions: the origin of the extended SIAM}
+We will now study the {\it extended} SIAM obtained by introducing spin-exchange and charge isospin-exchange interactions between the impurity and the conduction bath~\cite{zitko_2006}. Such terms are generated when one does a Schrieffer-Wolff transformation on the SIAM, but we will find it prudent to keep these terms in the bare model itself.
+
+The spin-exchange interaction has the form
+\begin{equation}\begin{aligned}
+	J \vec{S_d}\cdot\vec{s} = J \left[S_d^z s^z + \frac{1}{2}\left( S_d^+ s^- + S_d^- s^+ \right) \right] ~,
+\end{aligned}\end{equation}
+where \(\vec S_d = \left(S_d^x, S_d^y, S_d^z\right) = \sum_{\alpha\beta}\vec \sigma_{\alpha\beta}c^\dagger_{d\alpha}c_{d\beta}\) is the impurity spin operator, \(\vec s = \sum_{kk^\prime\alpha\beta}\vec \sigma_{\alpha\beta}c^\dagger_{k\alpha}c_{k^\prime\beta}\) is the spin operator for the conduction bath and \(J\) is the spin-exchange coupling. The bath spin operator actually acts locally, as can be seen by Fourier transforming to real space (using the definition \(f(k) = \frac{1}{\sqrt N}\sum_r g(r)\exp(ikr)\)):
+\begin{equation}\begin{aligned}
+	\vec s = \sum_{k k^\prime r r^\prime} \frac{1}{N} e^{ikr - ik^\prime r^\prime} \vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} = \sum_{rr^\prime}\frac{1}{N}\vec \sigma_{\alpha\beta} c^\dagger_{r\alpha} c_{r^\prime\beta} N \delta(r)\delta(r^\prime) = \vec \sigma_{\alpha\beta} c^\dagger_{0\alpha} c_{0\beta}
+\end{aligned}\end{equation}
+
+In order to introduce the charge isospin coupling, we define the Nambu spinor \cite{anderson1958random,nambu_1960} \(\psi^k = \left( c_{k\uparrow} \quad c^\dagger_{k\downarrow} \right)\), and the charge isospin \cite{zitko_2006} for the mobile conduction electrons
+\begin{equation}\begin{aligned}
+\vec C = \sum_{kk^\prime} {\psi^k}^\dagger \vec S \psi^{k^\prime} = \frac{1}{2}\sum_{kk^\prime\alpha\beta} {\psi^k_\alpha}^\dagger \vec \sigma_{\alpha\beta} \psi^{k^\prime}_\beta
+\end{aligned}\end{equation}
+The various components of the isospin are
+\begin{equation}\begin{aligned}
+	C^z &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^z_{\sigma\sigma} \psi^{k^\prime}_\sigma = \frac{1}{2}\sum_{kk^\prime\sigma}\left(c^\dagger_{k\sigma}c_{k^\prime \sigma} - \frac{1}{2}\delta_{kk^\prime}\right)\label{diagonalCz}\\
+	C^x &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^x_{\sigma\overline\sigma} \psi^{k^\prime}_{\overline\sigma} = \sum_{kk^\prime\sigma} \frac{\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\overline\sigma} + \text{h.c.} \right) \\
+	C^y &= \sum_{kk^\prime\sigma}\frac{1}{2} {\psi^k_\sigma}^\dagger \sigma^y_{\sigma\overline\sigma} \psi^{k^\prime}_{\overline\sigma} = \sum_{kk^\prime\sigma} - \frac{i\sigma}{4}\left( c^\dagger_{k\sigma}c^\dagger_{k^\prime\overline\sigma} - \text{h.c.} \right)\\
+\end{aligned}\end{equation}
+It is easy to verify that these operators satisfy the SU(2) commutation algebra. For example, if we write \(C^x = A + A^\dagger\) and \(C^y = B + B^\dagger\), then \(\left[ C^x, C^y \right] = \left[ A, B^\dagger \right] - \text{h.c.}\), where
+\begin{equation}\begin{aligned}
+	\left[ A, B^\dagger \right] = \frac{1}{4}\sum_{kk^\prime,qq^\prime}\left[ c^\dagger_{k\uparrow}c^\dagger_{k^\prime \downarrow}, i c_{q^\prime \downarrow}c_{q \uparrow} \right] = \frac{i}{4}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right)
+\end{aligned}\end{equation}
+and therefore
+\begin{equation}\begin{aligned}
+	\implies \left[ C^x, C^y \right] = \frac{i}{2}\sum_{kq}\left(c^\dagger_{k\uparrow}c_{q \uparrow} - c_{k \downarrow}c^\dagger_{q \downarrow}\right) = i C^z
+\end{aligned}\end{equation}
+There are similar operators for the impurity electron:
+\begin{equation}\begin{aligned}
+	\psi_d = \left( c_{d\uparrow} \quad c^\dagger_{d\downarrow}\right), &&\vec C_d = \frac{1}{2}\sum_{\beta} {\psi_{d,\alpha}}^\dagger \vec \sigma_{\alpha\beta} \psi_{d,\beta}
+\end{aligned}\end{equation}
+The full charge-Kondo interaction can now be written down in terms of these isospins:
+\begin{equation}\begin{aligned}
+	K \vec{C_d}\cdot\vec{C} = K \left[C_d^z C^z + \frac{1}{2}\left(C_d^+ C^-+ C_d^- C^+\right)\right]
+\end{aligned}\end{equation}
+where \(C^\pm \equiv C^x \pm iC^y\).
+\begin{equation}\begin{aligned}
+	C^+ = \sum_{kk^\prime} c^\dagger_{k\uparrow}c^\dagger_{k^\prime\downarrow}, && C^- = \sum_{kk^\prime}c_{k^\prime\downarrow}c_{k\uparrow}
+\end{aligned}\end{equation}
+The full extended Anderson model Hamiltonian, at particle-hole symmetry, is
+\begin{equation}\begin{aligned}
+	\mathcal{H} = \sum_{k\sigma}\epsilon_k \tau_{k\sigma} + \epsilon_d \left( \hat n_{d \uparrow} - \hat n_{d \downarrow} \right) ^2 + \sum_{k\sigma} \left(V_{k} c^\dagger_{k\sigma} c_{d\sigma} + h.c.\right) +J \vec{S_d}\cdot\vec{s} + K \vec{C_d}\cdot\vec{C}
+\end{aligned}\end{equation}
+
+For the URG analysis, at each RG step, we decouple the electronic states \(q\beta\) on the \(k-\)space shell of radius\(\Lambda_j\). For simplicity, we will only consider those diagonal terms in the denominator that either have both \(q\beta\) and \(q\overline\beta\) or  both \(q\beta\) and \(d\) or both \(q\overline\beta\) and \(d\). Terms that have purely \(q\overline\beta\) will not be considered. Also, the scattering between just \(d\) and \(q\overline\beta\) can be ignored since it is diagonal in \(q\beta\). 
+The diagonal (number-preserving) part is
+\begin{equation}\begin{aligned}
+	H_D = \sum_\beta\epsilon_q\tau_{q\beta} + \epsilon_d \left( \hat n_{d \uparrow} - \hat n_{d \downarrow} \right) ^2 + J S^z_ds^z_{q} + K C^z_d C^z_q\\
+\end{aligned}\end{equation}
+where \(s_q^z = \frac{1}{2}\left(\hat n_{q\uparrow} - \hat n_{q\downarrow}\right)\) and \(C_q^z = \frac{1}{2}\left(\hat n_{q \uparrow} + \hat n_{q \downarrow} - 1\right)\). The off-diagonal part is:
+\begin{equation}\begin{aligned}
+	H_X = \sum_{\beta=\uparrow,\downarrow}\left[V c^\dagger_{d\beta}c_{q\beta} + \frac{1}{2}J \sum_{k<\Lambda_N}\left\{\left(\hat n_{d \beta} - \hat n_{d \overline\beta}\right) \frac{1}{2} c^\dagger_{k\beta}c_{q\beta} + c^\dagger_{d\beta}c_{d\overline\beta}c^\dagger_{k\overline\beta}c_{q \beta}\right\} + \frac{1}{2}K \sum_{k<\Lambda_N}\left\{\left(\hat n_d -1\right)\frac{1}{2}c^\dagger_{k\beta}c_{q\beta} + \right.\right.\\
+\left.\left.c^\dagger_{d\beta}c^\dagger_{d\overline\beta}c_{k\overline\beta}c_{q\beta}\right\}\right] + \text{h.c.}~.
+\end{aligned}\end{equation}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../figures/zeromode.pdf}
+	\caption{While we have studied the full model under renormalisation group, often we will turn to a simplified zero-bandwidth version of the model that is obtained by ignoring the kinetic energy part of the Hamiltonian. This zero-bandwidth model is effectively a two site model.}
+\end{figure}
+
+\section{RG equations for extended SIAM}
+The derivation of the RG equations are shown in appendix~\ref{app-derivation}.
+\begin{equation}\begin{aligned}
+	\Delta \epsilon_d &= 2V^2 n_j\left(\frac{1}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}} - \frac{1}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}}\right) + \frac{n_j}{2}\left(\frac{J^2}{\omega - \frac{D}{2} + \frac{J}{4}} - \frac{K^2}{\omega - \frac{D}{2} + \frac{K}{4}}\right),\\
+	\Delta V &= -\frac{3n_j V}{8}\left[J\left(\frac{1}{\omega - \frac{D}{2} + \frac{J}{4}} + \frac{1}{\omega - \frac{D}{2} - \epsilon_d + \frac{J}{4}}\right) + K \left(\frac{1}{\omega - \frac{D}{2} + \frac{K}{4}} + \frac{1}{\omega - \frac{D}{2} + \epsilon_d + \frac{K}{4}}\right)\right],\\
+	\Delta J &= -\frac{n_j J^2}{\omega - \frac{D}{2} + \frac{J}{4}},\\ 
+	\Delta K &= -\frac{n_j K^2}{\omega - \frac{D}{2} + \frac{K}{4}}
+\end{aligned}\end{equation}
+In terms of \(U = -2\epsilon_d\), the equations become
+\begin{gather}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\\
+	\Delta V = -\frac{3n_j V}{8}\left[J\left(\frac{1}{d_2} + \frac{1}{d_1}\right) + K \left(\frac{1}{d_3} + \frac{1}{d_0}\right)\right],\\
+	\Delta J = -\frac{n_j J^2}{d_2}, \quad\quad\Delta K = -\frac{n_j K^2}{d_3}
+\end{gather}
+\(d_i\) are the denominators:
+\begin{equation}\begin{aligned}
+	\label{denominators}
+	d_0 = \omega - \frac{D}{2} - \frac{U}{2} + \frac{K}{4}, \quad d_1 = \omega - \frac{D}{2} + \frac{U}{2} + \frac{J}{4}, \quad d_2 = \omega - \frac{D}{2} + \frac{J}{4}, \quad d_3 = \omega - \frac{D}{2} + \frac{K}{4}
+\end{aligned}\end{equation}
+
+\section{Nature of coupling RG flows}
+\subsection{Repulsive interaction on impurity: \(U>0\)}
+For the Hamiltonians with positive on-site correlation, we will assume that the spin-exchange coupling is positive and charge isospin-exchange coupling is negative: \(J>0, K<0\). This choice is motivated by the signs of the corresponding terms when they are generated via a Schrieffer-Wolff transformation~\cite{schrieffer1966}. The impurity-bath hybridisation \(V\) is always positive. The sign of the couplings lead to inequalities among the denominators which we will utilise at various points. First of all, since \(U>0\), we have \(d_1 - d_2 = \frac{U}{2} > 0\). Secondly, since \(K<0\), we have \(d_2 - d_3 = \frac{J-K}{4} > 0\). And finally, we have \(d_3 - d_0 = \frac{U}{2} > 0\). Combining these, we can write
+\begin{equation}\begin{aligned}
+	\label{ineq_den}
+	d_1 > d_2 > d_3 > d_0
+\end{aligned}\end{equation}
+
+The strong coupling regime is defined as the range of values of \(\omega\) where the hybridisation is relevant. This is ensured by the assumption \(d_1<0\). From eq.~\ref{ineq_den}, we can then conclude that all denominators are negative: \(d_i = - |d_i|\). The simplest consequence of this is the RG flow of \(K\):
+\begin{equation}\begin{aligned}
+	\Delta K= -\frac{n_j K^2}{d_3} = \frac{n_j K^2}{|d_3|} > 0 \implies K_{j+1} > K_j \implies K_0 = -|K_0|, K^* \to 0
+\end{aligned}\end{equation}
+\(K_j\) is the value of \(K\) after the \(j^\text{th}\) RG step, \(K_0\) representing the bare value.
+In other words, since \(d_3 < 0\), the RG equation for \(K\) provides an algebraic increment, and the negative \(K\) increases and flows towards zero. The \(*\) indicates a fixed point value. The isospin coupling is irrelevant in this regime, and we will ignore it.
+
+The coupling \(J\), on the other hand, is relevant and flows from a small positive value towards a large value at strong coupling.
+\begin{equation}\begin{aligned}
+	\Delta J= -\frac{n_j J^2}{d_2} = \frac{n_j J^2}{|d_2|} > 0 \implies J_{j+1} > J_j \implies J_0 \to \text{ large } J^* ~(\text{strong coupling})
+\end{aligned}\end{equation}
+The value of \(J^*\) is obtained when the denominator \(d_2\) vanishes.
+
+Because of the RG irrelevance of \(K\), we can simplify the RG equation for \(V\):
+\begin{equation}\begin{aligned}
+	\Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right) = \frac{3n_j VJ}{8}\left(\frac{1}{|d_2|} + \frac{1}{|d_1|}\right) > 0
+\end{aligned}\end{equation}
+Since both the denominators are positive, \(V\) is relevant. The fixed point value \(V^*\) is attained when the denominator \(d_1\) vanishes (\(d_1\) will vanish earlier than \(d_2\)).
+
+We can compare the rate of flows of \(V\) and \(J\):
+\begin{equation}\begin{aligned}
+	\frac{\Delta V}{\Delta J} = \frac{3V}{8J}\left(1 + \frac{|d_2|}{|d_1|}\right) > \frac{3V}{4J}
+\end{aligned}\end{equation}
+There we used the fact that \(|d_2| > |d_1|\).
+We finally come to the RG equation for \(U\):
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2} = -4V^2\left(U + \frac{J}{4}\right)\frac{n_j}{d_0 d_1} - \frac{n_j J^2}{d_2}
+\end{aligned}\end{equation}
+For \(V>J\), we can expect \(U\) to be irrelevant. On the other hand, \(V<J\) makes \(U\) relevant.
+
+In short, the \(U>0\) regime is characterised by an irrelevant isospin-exchange coupling \(K\) and a relevant spin-exchange coupling \(J\), and the following set of RG equations for the remaining couplings \(U\) and \(V\):
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\frac{J^2}{d_2}, \quad \Delta V = -\frac{3n_j VJ}{8}\left(\frac{1}{d_2} + \frac{1}{d_1}\right)
+\end{aligned}\end{equation}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.32\textwidth]{../figures/U_irr,U_gt_0,U.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/U_irr,U_gt_0,J.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/U_irr,U_gt_0,V.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/U_rel,U_gt_0,U.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/U_rel,U_gt_0,J.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/U_rel,U_gt_0,V.pdf}
+\end{figure}
+
+\subsection{Attractive interaction on impurity: \(U<0\)}
+Here, we have \(J<0\) and \(K>0\). The denominators satisfy the following inequality in this regime:
+\begin{equation}\begin{aligned}
+	d_0 > d_3 > d_2 > d_1
+\end{aligned}\end{equation}
+
+The strong coupling regime here corresponds to \(d_0 < 0\). This again means that all the denominators are negative. The spin-exchange coupling \(J\) is now irrelevant, because its bare value is negative while its RG equation is positive: \(\Delta J>0\). Moreover, the isospin coupling \(K\) is now positive and so is its RG equation: \(\Delta K>0\), which means it flows to strong coupling. \(V\) also flows to strong coupling. The RG equation for \(U\) can be written as
+\begin{equation}\begin{aligned}
+	\Delta U = 4V^2\left(\frac{K}{4} - U\right)\frac{n_j}{d_0 d_1} + \frac{n_j K^2}{d_3}
+\end{aligned}\end{equation}
+The first term is necessarily positive, while the second term is negative. This means that for roughly \(V_0 > J_0\), we  will have \(\Delta U > 0\), and since \(U_0 < 0\), this amounts to an irrelevant flow of \(U\) towards zero. On the other hand, for \(J_0 > V_0\), we will have \(\Delta U < 0\), and this corresponds to a relevant flow of \(U\) towards large negative value.
+
+In other words, the RG flows in this regime can be exactly mapped to those in the positive \(U\) regime. The general statement is: in the strong coupling regime of positive(negative) \(U\), \(V\) is always relevant, \(J\)(\(K\)) is relevant, \(K\)(\(J\)) is irrelevant, and \(U\) is relevant when \(J(K) > V\), otherwise \(U\) is irrelevant.
+
+
+\section{Effective Hamiltonian and ground state}
+The fixed point Hamiltonian can, in general, be written as
+\begin{equation}\begin{aligned}
+	\mathcal{H}^* = \sum_{\sigma, k}\epsilon_k \tau_{k\sigma} - \frac{U^*}{2}\left(\hat n_{d \uparrow} - \hat n_{d \downarrow}\right)^2  + \sum_{\sigma, k < \Lambda^*}\left( V^* c^\dagger_{k\sigma}c_{d\sigma} + \text{h.c.} \right) + J^* \vec{S_d}\cdot\vec{s} + K^* \vec{C_d}\cdot\vec{C}
+\end{aligned}\end{equation}
+The first term is the kinetic energy of all the electrons. The next two terms are the impurity-diagonal pieces, featuring the renormalised interaction \(U^*\). The next three terms are the residual interactions between the impurity and the metal, with the renormalised couplings \(V^*, J^*\) and \(K^*\). The summations in these terms extend from the fixed point momentum cutoff \(\Lambda^*\) to 0. This is the region of momentum space  which the URG was unable to decouple. The operators \(\vec s\) and \(\vec C\) represent the macroscopic magnetic and charge spins formed by the remaining electrons that are lying inside the window \(\left[ 0, \Lambda^* \right] \):
+\begin{equation}\begin{aligned}
+	\vec s = \sum_{kk^\prime<\Lambda^*\atop{\alpha\beta}} c^\dagger_{k\alpha}\vec \sigma_{\alpha\beta}c_{k^\prime\beta}
+\end{aligned}\end{equation}
+Our goal here is to write down the ground state wavefunction for this low-energy Hamiltonian.
+
+To make progress, we will simplify the effective Hamiltonian by taking the zero bandwidth limit. This reduces it to a two-site problem. One site is of course the impurity site, and this site will be labeled as site 1. The other site will be formed by the center of mass degree of freedom of the conduction electrons, and will be labeled as site 2. The Hamiltonian for this two-site problem is
+\begin{equation}\begin{aligned}
+	\mathcal{H}_{IR} = - \frac{U^*}{2}\left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 + V^*\sum_{\sigma}\left(c^\dagger_{1\sigma}c_{2\sigma} + \text{h.c.} \right) + J^*\vec{S_1}\cdot\vec{S_2} + K^* \vec{C_1}\cdot\vec{C_2}
+\end{aligned}\end{equation}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{../figures/two_site_problem.png}
+	\caption{Two-site effective problem of fixed point Hamiltonian}
+	\label{twosite}
+
+\end{figure}
+The subscripts on the operators designate the site on which they act; \(\hat n_1\) is the number operator for the first site.
+
+We will adopt the following notation to represent the states in this Hilbert space. A general state will be represented in the Fock space basis as \(\ket{n_{1 \uparrow}n_{1 \downarrow}n_{2 \uparrow}n_{2 \downarrow}}\). For example,
+\begin{equation}\begin{aligned}
+	\ket{1101} = c^\dagger_{1 \uparrow}c^\dagger_{1 \downarrow}c^\dagger_{2 \downarrow}\ket{-}
+\end{aligned}\end{equation}
+\(\ket{-}\) is the vacuum state.
+
+For \(U>0\), the ground state is given by
+\begin{gather}
+	\label{gstate}
+	\ket{\Psi}_\text{1} = c_s \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) + c_c \frac{1}{\sqrt 2}\left(\ket{\uparrow\downarrow, 0} + \ket{0, \uparrow\downarrow}\right), \quad E_1 =  -V^*\sqrt{\gamma^2 + 4} -\frac{1}{4}U^* - \frac{3}{8}{J^*}
+\end{gather}
+where $\gamma = \frac{1}{2{V^*}}\left[ \frac{1}{4}\left( 3J^* + K^* \right) + \frac{1}{2}U^* \right]$. The probabilities for the spin and charge sectors for the ground state are
+\begin{equation}\begin{aligned}
+	\label{coeff_def}
+	\left(c_s\right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} + \gamma\right), \quad \left(c_c \right)^2 = \frac{1}{2\sqrt{\gamma^2 + 4}}\left(\sqrt{\gamma^2 + 4} - \gamma\right)~.
+\end{aligned}\end{equation}
+For (roughly) \(J_0 > V_0\), we get \(J^* \gg V^*\) and \(U^* \gg U_0\) so that \(\gamma \gg 1\). This gives \(\left( c_s \right) ^2 \sim 1\) and \(\left( c_c \right) ^2 \sim 0\). The entire contribution to the ground state then comes from the spin sectors of the two sites. This is calculated numerically in fig.~\ref{cs_cc}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../figures/coeffs_vs_J.pdf}
+	\caption{Variation of relative weights \(c_s\) and \(c_c\) with \(J_0\)}
+	\label{cs_cc}
+\end{figure}
+
+In the other regime of \(U<0\), the two competing states are \(\ket{\Psi}_1\) defined above (with energy \(E_1\)), and \(\ket{\Psi_2}\), the charge singlet: \(\ket{\Psi}_2 = \frac{1}{\sqrt 2}\left( \ket{2,0} - \ket{0,2} \right)\) having energy \(E_2\).
+\begin{equation}\begin{aligned}
+	E_2 = -\frac{3}{4}K^*, \quad E_1 - E_2 = -\frac{1}{4}\sqrt{\left( \frac{1}{2}K^* + U^* \right)^2 + (4V^*)^2} - \frac{1}{4}U^* + \frac{3}{4}K^*
+\end{aligned}\end{equation}
+For \(V_0 \gg K_0\), the largest energy scale will be \(V^*\), and we can then approximate this difference as
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq -V^* < 0
+\end{aligned}\end{equation}
+In such a case, \(\ket{\Psi}_1\) will therefore be the ground state. In the other regime \(V_0 \ll K_0\), the largest energy scale will be \(K^*\), and we can then write
+\begin{equation}\begin{aligned}
+	E_1 - E_2 \simeq - \frac{1}{8}K^* + \frac{3}{4}K^* > 0
+\end{aligned}\end{equation}
+In this case, the ground state will be \(\ket{\Psi}_2\). There exists, therefore, a phase transition at a critical plane \((U_c, K_c, V_c)\), where the ground state changes between the charge singlet \(\ket{\Psi}_2\) and the spin singlet + charge triplet \(\ket{\Psi}_1\).
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../figures/E1_vs_E3.pdf}
+\end{figure}
+
+\section{Approach towards the thermodynamic limit}
+
+{\bf \Large [Update with V vs D plots]}
+
+The URG method works strictly on finite systems and leads to finite values of fixed point couplings. The behaviour of the Hamiltonian in the thermodynamic limit can then be determined using finite-size scaling where we increase the bandwidth and decrease the width of each RG step. When applied to the fixed point value of the impurity-bath hybridisation parameter \(V\) (fig.~\ref{V_vs_D}), it can be seen that the fixed point value increases as the system size is increased, implying that the continuum limit of \(V^*\) is \(\infty\). This holds for both \(V_0 > J_0\) and \(V_0 < J_0\), as shown in the two panels of fig.~\ref{V_vs_D}.
+\begin{figure}[!htb]
+	\centering
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_smallV.pdf}
+	\hspace*{\fill}
+	\includegraphics[width=0.4\textwidth]{../figures/Vstar_vs_D_largeV.pdf}
+	\hspace*{\fill}
+	\caption{Variation of fixed point value \(V^*\) with increasing bandwith \(D_0\), for both \(V_0 > J_0\) and \(V_0 < J_0\).}
+	\label{V_vs_D}
+\end{figure}
+
+In a similar manner, we checked the variation of the spin and charge probabilities, \(c_s\) and \(c_c\), in the ground state, with increasing bandwith. The result is shown in fig.~\ref{c_vs_D}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.45\textwidth]{../figures/coeffs_vs_D.pdf}
+	\caption{Variation of spin and charge fractions, \(c_s\) and \(c_c\), of the ground state, as a function of bare bandwidth \(D_0\). Left and right panels show the cases of \(J_0 < V_0\) and \(J_0 > V_0\) respectively.}
+	\label{c_vs_D}
+\end{figure}
+For both \(V_0 < J_0\) and \(V_0 > J_0\), we see that the spin contribution increases towards unity while the charge contribution vanishes. This indicates that at large bandwidth, the ground state becomes purely a spin singlet, formed purely by singly-occupied impurity states.
+\begin{equation}\begin{aligned}
+	\label{gstate_kondo}
+	\lim_{D_0 \to \infty} \ket{\Psi}_1 = \frac{1}{\sqrt 2}\left(\ket{\uparrow, \downarrow} - \ket{\downarrow, \uparrow}\right) 
+\end{aligned}\end{equation}
 
 \section{Effective temperature scale at the fixed point}
 We will first change the discrete RG equation to a continuum equation by interpreting \(\Delta J\) as \(\frac{\Delta J}{\Delta \ln D}\), where the denominator is unity: \(\Delta \ln D = 1\). Now, since the bandwidth is decreasing under the RG, we can write \(\Delta \ln D = -d \ln D\). The continuum equation (for \(K=0\)) becomes
@@ -19,7 +265,7 @@ Now, for the specific case where \(D\) is small (\(D \to 0\)), we can simplify a
 \begin{equation}\begin{aligned}
 	D^* = D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
 \end{aligned}\end{equation}
-We can now define a temperature scale for the fixed-point theory:
+We can now define a temperature scale~\cite{wilson1975,hrk_wilson_1980} for the fixed-point theory:
 \begin{equation}\begin{aligned}
 	T_K \equiv \frac{2N^*}{\pi}D^* = \frac{2N^*}{\pi}D_0 \left( \frac{4}{g_0} \right)^\frac{1}{4n(0)}\exp\left\{-\frac{1}{n(0)}\left(\frac{1}{g_0} - \frac{1}{4}\right)\right\}
 \end{aligned}\end{equation}
@@ -68,10 +314,11 @@ The full thing becomes
 This completes the proof. 
 
 To calculate the impurity susceptibility, we take the zero bandwidth Hamiltonian \(\mathcal{H}_{IR}\) and insert a magnetic field to obtain the Hamiltonian in eq.~\eqref{field_ham}. For a particular regime of \(U\), only one of \(J\) or \(K\) will be non-zero. We then numerically diagonalise this Hamiltonian to obtain the partition function \(Z(B)\) and its derivatives. The spin susceptibility can then be calculated using eq.~\eqref{chi_exp}. The results for \(U>0\) are shown in fig.~\ref{chi}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/chiT_J=0.020.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/chiT_J=0.100.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chiT.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chiT_large.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chi.pdf}
 	\caption{Spin susceptibility of the impurity times temperature, for two sets of bare parameters, in \(U>0\). At low temperatures, it becomes linear because \(\chi\) itself becomes constant (screening), while at high temperatures, \(\chi\times T\) becomes constant because of the paramagnetic \(\sim 1/T\) form of \(\chi\). For the right panel with a larger value of the spin-exchange coupling, the \(\chi\) tries to go towards the local moment value of \(1/4\) but eventually drops back to the free orbital value of \(1/8\).}
 	\label{chi}
 \end{figure}
@@ -88,19 +335,19 @@ where \(B_c\) is now a field that couples to the impurity charge-isospin:
 	\mathcal{H}^\prime(B_c) = \mathcal{H} + B_c C_d^z
 \end{aligned}\end{equation}
 The charge susceptibility for \(U<0\) is shown in fig.~\ref{chi_charge}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{../figures/chi_chargeT_K=0.010.pdf}
-	\includegraphics[width=0.49\textwidth]{../figures/chi_chargeT_K=0.100.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chic.pdf}
+	\includegraphics[width=0.49\textwidth]{../figures/chic_T.pdf}
 	\caption{Charge susceptibility for the impurity at \(U<0\), for two sets of bare parameters. The physics is very similar to that of the spin susceptibility in \(U>0\).}
 	\label{chi_charge}
 \end{figure}
 
 It is interesting to look at the behaviour of the charge susceptibility in the positive \(U\) regime, fig.~\ref{chi_charge_posU}. It  is seen that for \(J_0<V_0\), the charge susceptibility is very similar to the spin susceptibility, with a reduced saturation value. This is because, for that range of bare values, the ground state consists of a comparable mixture of the spin and charge states (see fig.~\ref{cs_cc}). This means that the magnetic field term in eq.~\eqref{charge_field} can couple to the charge component of the ground state, and give a non-zero charge susceptibility at zero temperature. On the other hand, for \(J_0 > V_0\), we see that \(\chi_c\) vanishes at low temperatures. This can again be understood from the ground state. For that range of bare values, the ground state can be approximated by purely the singlet, because the charge fraction \(c_-^c\) becomes very small. This means that the field \(B_c \) has nothing to couple with. Alternatively, it can be said that since the ground state has only terms with \(\hat n_d=1\), no number fluctuation is possible, and the impurity isospin is not susceptible at all to charge polarisation.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J=small.pdf}
-	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J=large.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J0=10.pdf}
+	\includegraphics[width=0.48\textwidth]{../figures/chiC_posU_J0=40.pdf}
 	\caption{Charge susceptibility of the impurity in the positive \(U\) regime, for two values of \(J_0\). The smaller bare value leads to a spin+charge mixed ground state, and hence a non-zero \(\chi_c\) at zero temperature. The larger \(J_0\), however, leads to a purely spin ground state without any number fluctuation, and this gives vanishing \(\chi_c\) at zero temperature.}
 	\label{chi_charge_posU}
 \end{figure}
@@ -130,7 +377,7 @@ The impurity specific heat is the difference.
 	C_V^\text{imp} = C_V - C_V^0
 \end{aligned}\end{equation}
 These values were calculated numerically and plotted against temperature in fig.~\ref{cv}.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/Cv.pdf}
 	\caption{Impurity specific heat}
@@ -138,7 +385,7 @@ These values were calculated numerically and plotted against temperature in fig.
 \end{figure}
 
 \section{Renormalization of impurity spectral function}
-In this section we will obtain the impurity spectral function, which is defined in terms of the impurity Green's function as
+In this section we will obtain the impurity spectral function~\cite{costi2000,rosch_costi2003,bullaNRGreview}, which is defined in terms of the impurity Green's function as
 \begin{equation}\begin{aligned}
 	\mathcal{A(\omega)} = -\frac{1}{\pi}\text{ Im }\left[G_{dd}^\sigma\left( \omega \right) \right] 
 \end{aligned}\end{equation}
@@ -162,11 +409,16 @@ The parameter \(\eta_n\) determines the height and width of the Gaussian, and is
 From the results of Langreth \cite{langreth1966}, we know that the spectral function at zero frequency is fixed by the occupancy of the impurity. Since we are in the particle-hole symmetric regime, this occupancy is fixed at 1, and hence so is the spectral function height at \(\omega = 0\). This result has been used to fix the spectral function height at the center during the computations. The fixed-point Hamiltonian \(H^*\) is diagonalized numerically to obtain \(\left\{E_n, \ket{n}\right\}\), for various values of the couplings. The intention here is to get an idea of how the spectral function morphs under the RG. Doing an actual reverse RG (described in \ref{rev_rg}) would require us to diagonalize a huge Hamiltonian. We take the simpler route of tuning the \(U\) from zero to soem large value. This should mimic the journey from the IR theory \((U=0)\) to the UV theory \((U \gg 0)\).
 
 The spectral function is plotted for three sets of values in fig.~\ref{spec_func}. For low values of \(U\), the profile is that of a single peak at zero frequency. This is expected because at the low energy effective theory, the high energy Hubbard side bands have been integrated out. As \(U\) increases, shoulder-like structures appear on either side of the peak, which finally, at larger \(U\), develop into two side-peaks. This is the microscopic theory, where high energy features are also relevant.
-\begin{center}
-	\includegraphics[width=0.8\textwidth]{../figures/gen_siam_spec_func.pdf}
-	\captionof{figure}{Impurity spectral function for multiple values of \(U\). The increase in value of \(U\) is accompanied by the appearance of the side-peaks.}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{../figures/spec_func_Ub=0_U_by_delta=0.00.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/spec_func_Ub=0_U_by_delta=3.00.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/spec_func_Ub=0_U_by_delta=5.00.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/spec_func_Ub=0_U_by_delta=10.00.pdf}
+	\includegraphics[width=0.4\textwidth]{../figures/spec_func_Ub=0_U_by_delta=25.00.pdf}
+	\caption{Impurity spectral function for multiple values of \(U\). The increase in value of \(U\) is accompanied by the appearance of the side-peaks.}
 	\label{spec_func}
-\end{center}
+\end{figure}
 The physics of the three peaks can now be looked into. Since the central peak is at zero energy, it has to do with excitations that do not cost any energy. There are two such excitations: excitations within the spin sector and within the charge sector.
 \begin{equation}\begin{aligned}
 	\ket{\uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{J S_d^-}_{JS_d^+}}}\ket{\downarrow}, &&&&\ket{\Uparrow} \mathrel{\mathlarger{\mathlarger{\mathop{\rightleftarrows}}^{K C_d^-}_{K C_d^+}}}\ket{\Downarrow}\\
@@ -348,7 +600,7 @@ The more interesting interaction is the off-diagonal term
 \end{aligned}\end{equation}
 This interaction arises from the enhanced entanglement between the impurity and the conduction electrons; removing the impurity from the singlet and the triplet generates these off-diagonal scatterings. As such, this is an indicator of the macroscopic entanglement of the singlet formed at the IR fixed point, and plotted in fig.~\ref{mutI}. 
 
-We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong-coupling fixed point, as shown in eq.~\eqref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\eqref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
+We also wish to point out that this scattering is a signature of the change in Luttinger's count in going from the free orbital or local moment fixed point to the strong coupling fixed point, as shown in eq.~\eqref{luttinger_change}. Both this off-diagonal scattering as well as the change in Luttinger's count are a direct consequence of the non-number conserving term \(V c^\dagger_{k} c_d\) in the full Hamiltonian. The topological change of Luttinger's count is concomitant with the presence of the off-diagonal scattering term in the effective Hamiltonian. \textit{Just the Fermi liquid piece in eq.~\eqref{fermiliq} will give neither the enhanced mutual information nor the change in Luttinger's count}.
 
 \section{Obtaining the real space low energy Hamiltonian: the local Fermi liquid}
 The next step is to obtain the lowest excitations of the fixed point Hamiltonian, in real space. We will work in the \(U>0\) regime. For \(V,J \gg 1\), the impurity couples very strongly with the zeroth site, and at zeroth order, it suffices to say that the zeroth site decouples from the rest of the lattice. This zeroth Hamiltonian then consists of two sites interacting with each other through \(V\) and \(J\) (the two site problem analysed before).
@@ -426,7 +678,7 @@ Since the \(\ket{\hat n_{1\sigma}, \hat n_{1\overline\sigma}}\) form a complete 
 		 &= \ket{\Psi}_1 \bra{\Psi}_1\left[\mathrm{constant} + \left(\hat n_{1 \uparrow} - \hat n_{1 \downarrow}\right)^2 \sum_{\pm}\frac{t^2}{\mathcal{N}_\pm^2}\frac{8V {c_s^-} \left(U \pm 2\Delta\right) {c_c^-}}{\delta E_{\pm}^\sigma}\right]\\
 \end{aligned}\end{equation}
 
-In the strong-coupling regime, we have \(J,V \gg U\), and we can then approximate:
+In the strong coupling regime, we have \(J,V \gg U\), and we can then approximate:
 \begin{equation}\begin{aligned}
 	\delta E_{\pm}^\sigma \simeq \frac{3J}{8} + \sqrt{4V^2 - \left(\frac{3J}{8}\right)^2} \mp V, ~~U \pm 2\Delta \simeq \pm 4V, \text{ and }~~ \mathcal{N}_\pm^2 \simeq 32V^2
 \end{aligned}\end{equation}
@@ -578,7 +830,7 @@ Since \(\mathcal{\hat P}_\text{charge} + \mathcal{\hat P}_\text{spin} = 1\), we 
 \end{aligned}\end{equation}
 where \(\mathcal{F} \equiv \alpha_\text{charge} - \alpha_\text{spin}\) is the net energy of the charge sector above the spin sector.
 
-We will now look at the extreme strong-coupling regime \(J \gg V \gg U,t\). There, all the expressions simplify:
+We will now look at the extreme strong coupling regime \(J \gg V \gg U,t\). There, all the expressions simplify:
 \begin{gather}
 	V\gamma \simeq \frac{3J}{8},~ ~ \Delta \simeq 2V,~ ~ \alpha \simeq \frac{3J}{8}, ~ ~ c_s^+ = -c_c^- \simeq 0, ~ ~ c_s^- = c_c^+ \simeq 1, ~ ~ \mathcal{N}_\pm \simeq 4\sqrt 2 V, ~ ~ a_{1,\pm} \simeq \frac{1}{2}, ~ ~ a_{2,\pm} \simeq \pm \frac{1}{2}~,\nonumber\\
 	\delta E_\pm = \delta E_\mathrm{CS} = \delta E_{00} = \delta E_2 \simeq \frac{3J}{4}, ~ ~ \delta E_\mathrm{ST} = \delta E_{\uparrow \uparrow} \simeq J, ~ ~ \mathcal{S}^-_\pm = \mathcal{D}^-_\pm \simeq \frac{1}{2}, ~ ~ \mathcal{S}^+_\pm = -\mathcal{D}^+_\pm \simeq \pm \frac{1}{2},~\nonumber\\
@@ -592,13 +844,90 @@ The effective Hamiltonian becomes
 \end{aligned}\end{equation}
 \(\mathcal{P}_\text{spin}\) and \(\mathcal{P}_\text{charge}\) project, respectively,  onto the spin and charge sectors of the first site. The fact that the charge sector comes with a positive factor means that the holon-doublon states are repulsive, and this renormalisation of the states generates an effective particle-hole symmetric Fermi liquid interaction on the first site - also known as the local Fermi liquid (LFL)~\cite{nozieres1974fermi}.
 
+\section{Destruction of the Abrikosov-Suhl resonance: passage from strong coupling to local moment}
+
+We will now tune the parameters of the fixed point Hamiltonian and study the variation of quantities related to the effective Hamiltonian like the local FL strength \(\mathcal{F}\), the gap in the spectrum of the zeroth Hamiltonian \(H_0^*\) and the value of the small parameter \(t^2/\delta E\), as well as various measures of entanglement like entanglement entropy, mutual information and spin-spin correlations between various sets of members of the real-space impurity+lattice construction. We will trace a specific path through the space of values of fixed point couplings: we will start from the strong coupling regime \(U \ll J,V\) and go towards the local moment regime \(U \gg J,V\). The context of this study is that the technique of dynamical mean-field theory (DMFT) obtains a metal-insulator transition in the 2D Hubbard model by studying the Anderson impurity model as the auxiliary system for the Hubbard; there, the local moment regime of the impurity corresponds to the insulator in the bulk. Our goal here is to study what precisely happens in the effective Hamiltonian in the journey from the metal to the insulator, and draw a concrete connection between this modification of the effective Hamiltonian, and the simultaneous change of the impurity spectral function in fig.~\ref{spec_func}. This is done with the knowledge that the local moment phase of the extended SIAM is never RG-stable.
+
+\subsection*{Perturbation theory parameters}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/gap-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/par-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/lfl-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+\end{center}
+The vanishing of the gap and the growth of the small parameter indicates the breakdown of perturbation theory around the singlet; this simply shows that there is a degeneracy in the local moment regime, and the effective Hamiltonian will have to be obtained using degenerate perturbation theory. The presence of degeneracy also suggests that the effective Hamiltonian will be of the non-Fermi liquid type.
+
+\subsection*{\(k-\)space correlations within the Kondo cloud}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-dk-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-diag-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-k-od-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+\end{center}
+
+The mutual information \(I(d:k)\) between the impurity and the cloud vanishes as \(U/J\) is increased. This is a signature of the loss of entanglement and the breakdown of the singlet. The reduction of the mutual information within the cloud, \(I(k_1:k_2)\), shows that the Kondo cloud is being killed as \(U/J\) is increased; it ultimately drops to zero, characteristic of a decoupled tight-binding chain. The four-Fermion off-diagonal term also vanishes as \(U/J\) increases and this is again a signature of the reduction in the spin-flip processes. The diagonal correlation \(\left<\hat n_{k \uparrow} \hat n_{q \downarrow} \right>\) increasing to 1 shows the formation of a filled Fermi sea.
+
+\subsection*{Mutual information between various real space members}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-01-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d0-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/mi-d1-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+\end{center}
+The impurity-zeroth site mutual information \(I(d:0)\) remains unchanged at the maximum for an appreciable range of values, and this shows the stability of the singlet. Meanwhile, the mutual information between the zeroth site and the site nearest to it (\(I(0:1)\)) grows, because when the singlet weakens, the zeroth site is able to entangle more with the other sites. It finally saturates to its maximum value, which is the value produced as result of the tight-binding hopping. The mutual information between the impurity and sites beyond the zeroth site (\(I(d:1)\)) show a non-monotonic behaviour; it first increases as the entanglement that was initially restricted to just the impurity and the zeroth sites begins "seeping" into the other sites as well. Beyond a critical value of \(U/J\), \(I(d:1)\) starts dropping, because the entanglement has now mostly shifted out of the singlet and into the conduction bath.
+
+\subsection*{Impurity entanglement entropy and spin-spin correlations}
+
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/EE-d-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d0-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/corr-d1-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/r-vec-corr-01-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/r-vec-corr-02-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/r-vec-corr-03-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+
+\end{center}
+
+The von-Neumann entanglement entropy \(S(d)\) of the impurity shows pretty straightforward behaviour. It is maximum for \(U \ll J\) because it is in a singlet configuration. For \(U \gg J\), the singlet weakens and the impurity begins to decouple from the bath, leading to a reduction in \(S(d)\). At sufficiently low values of \(J/U\), the impurity decouples from the zeroth site and the total system can be factorised into a local moment in product with a tight-binding chain, so that the impurity site will now have zero entanglement entropy. The spin-spin correlation \(\vec{S}_d\cdot\vec{S}_0\) is most negative at large \(J\), showing maximum screening at strong-coupling. It decreases to 0 as the singlet breaks. This reduction in the spin-spin correlation between the impurity and the zeroth site is accompanied by the appearance of antiferromagnetic spin-spin correlation \(\vec{S}_0\cdot\vec{S}_1, \vec{S}_0\cdot\vec{S}_3\) between the zeroth site and odd-numbered sites like 1 and 3. This can be understood on the following grounds:since the tight-binding hopping only connects same spin states, an electron on the first site has to have spin opposite to that on the zeroth site in order to hop onto that site. This requirement of opposite spin is what induces an antiferromagnetic superexchange interaction \(J_1\) between the zeroth site and the first site. This interaction strength increases as \(J\) is decreased, because \(J_1 \sim t^2/J\). By the same argument, a ferromagnetic superexchange interaction is induced between the impurity site and the first site, as well as between the zeroth site and the other even-numbered sites. These are also seen in the plots.
+
+\subsection*{Real-space correlations}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/r1p-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/r-od-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/r-opp-t=1.000,J=1_over_U,V=3J,N=4,U=1.000,1.000,50.pdf}
+
+	\includegraphics[width=0.3\textwidth]{../figures/r-par-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.3\textwidth]{../figures/r-ising-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.3\textwidth]{../figures/r-charge-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+\end{center}
+
+The increase of single-particle hopping correlation is another signature of the "handover" of entanglement from the singlet to the tight-binding chain. Exactly the same can be said for the four-Fermion interaction as well.
+
+\subsection*{Real-space correlations as function of distance}
+\begin{center}
+	\includegraphics[width=0.45\textwidth]{../figures/corr-di-min-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/corr-di-max-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+
+	\includegraphics[width=0.45\textwidth]{../figures/corr-all-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+	\includegraphics[width=0.45\textwidth]{../figures/I-all-t=1.000,U=1,V=3J,N=6,J=100.000,0.010,40.pdf}
+\end{center}
+
+The first thing to note in the first two figures is the difference in the order of magnitudes; the correlations are very small in the first figure, because the impurity is being screened almost completely by the zeroth site at \(J \gg U\). This changes in the second figure where, because \(U \gg J\), the singlet has become entangled with the other sites, and the impurity is being screened by multiple sites. The mutual information all vary similarly with distance in the bottom right figure.
+
+\subsection*{Impurity spectral function}
+\begin{center}
+	\includegraphics[width=0.32\textwidth]{../figures/spec-func-gen-siam-U_by_J=0.100.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/spec-func-gen-siam-U_by_J=9.000.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/spec-func-gen-siam-U_by_J=16.000.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/spec-func-gen-siam-U_by_J=20.250.pdf}
+	\includegraphics[width=0.32\textwidth]{../figures/spec-func-gen-siam-U_by_J=36.000.pdf}
+\end{center}
+
 \section{Calculating the \(T=0\) Wilson ratio from low energy excitations}
 The total system now consists of two decoupled parts - the singlet composed of the impurity and the zeroth site, and the remaining lattice composed of N-1 sites with a tight-binding dispersion and a local interaction at the 1-th site. The effective Hamiltonian for the remaining lattice is
 \begin{equation}\begin{aligned}
 	\sum_{i=1\atop{\sigma}}^\infty t\left(c^\dagger_{i\sigma}c_{i+1 \sigma} + c^\dagger_{i+1 \sigma}c_{i\sigma}\right) + u \hat n_{1 \uparrow} \hat n_{1 \downarrow}
 \end{aligned}\end{equation}
 We have rewritten the holon term in terms of the spin and doublon operators.
-\begin{figure}[htpb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../figures/lattice_eff.png}
 	\caption{\textit{Left}: The nearest-neighbor hopping described by the effective Hamiltonian. The red circle is the impurity. The black cloud at the center demarcates the collection of electrons at the origin of the lattice (which couple to the impurity). The green circles represent lattice sites that are nearest to the origin. The blue circles represent next-nearest sites. \textit{Right}: After treating the hopping between origin and its nearest neighbors as perturbation, we get a system consisting of two decoupled parts: one part is the impurity+cloud singlet, the other part is the rest of the lattice sites. The effect of the hopping between the origin and the green sites is a repulsion term on the green sites.}
@@ -683,7 +1012,7 @@ Since the total number remains constant, \(\mu=0\). Therefore,
 \end{aligned}\end{equation}
 
 \subsection{Wilson ratio}
-The Wilson ratio for the impurity is defined as
+The Wilson ratio for the impurity~\cite{wilson1975,nozieres1974fermi,hewson1993} is defined as
 \begin{equation}\begin{aligned}
 	R = \frac{\chi^s_{imp}}{\frac{C_{imp}}{T}}
 \end{aligned}\end{equation}
@@ -697,89 +1026,54 @@ The Wilson ratio becomes
 \end{aligned}\end{equation}
 
 \section{Luttinger's and Friedel's sum rules}
-The subsequent discussions are for the first quadrant where \(U^* = 0\) and \(J^* > K^*\). At high temperatures, we see that the impurity susceptibility attains the value of
+\label{lutt_theorem}
+In this section, we will compute Luttinger's sum for the various fixed-point theories. Luttinger's sum is essentially the volume enclosed by the Fermi surface~\cite{luttinger1960fermi,oshikawa2000topological,seki2017topological}, and Luttinger's theorem states that this volume counts the number of electrons in the system~\cite{luttinger1960fermi,oshikawa2000topological,seki2017topological}.
+
+We first consider the strong-coupling fixed point Hamiltonian, which is essentially just a resonant-level model:
 \begin{equation}\begin{aligned}
-	\frac{1}{8k_B T}
+	\mathcal{H}_\text{res} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \sum_{k\sigma}\left(V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}\right)
 \end{aligned}\end{equation}
-which implies that the impurity behaves as a free orbital in this limit, having no coupling with the bath. We can write down the following effective Hamiltonian for such a limit:
+The impurity Green's function is given by~\cite{anderson_1961,hewson1993,coleman2015}
 \begin{equation}\begin{aligned}
-	\mathcal{H}_\text{high-T} = \tilde \epsilon_d \hat n_d + \sum_{k\sigma} \epsilon_k\hat n_{k\sigma}
+	G_{d}(z) &= \frac{1}{z - \Sigma_d}\ket{d\sigma}\bra{d\sigma}, ~ ~ \Sigma_d = \sum_k \frac{V^2}{z - \epsilon_k}
 \end{aligned}\end{equation}
-Since the impurity is decoupled from the bath, we can immediately write down the Hamiltonian just for the impurity:
+\(\Sigma_d(z)\) is zero at the free orbital fixed point. The conduction electron Green's function is 
+\begin{gather}
+	G_{k}(z) = G_k^0(z) + \left[G_k^0(z)V_k\right]^2 G_{d}(z), ~ ~ G_k^0 = \frac{1}{z - \epsilon_k}, ~ ~ G_c^0(z) = \sum_k G_k^0(z)\ket{k}\bra{k}~,\\
+	G_c(z) = \sum_k G_k(z)\ket{k}\bra{k} = G_c^0 + \left[G_k^0(z)V_k\right]^2 G_{d}(z)\ket{k}\bra{k} 
+\end{gather}
+The total number of electrons is given by the sum of the number of electrons in the conduction bath and at the impurity~\cite{hewson1993,langreth1966}:
 \begin{equation}\begin{aligned}
-	\mathcal{H}_\text{high-T, imp} = \tilde \epsilon_d \hat n_d
+	\label{tot_num}
+	N &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_{d}(z) + G_c(z)\right] = \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_{d}(z) + G_c^0(z) + \left[G_k^0(z)V_k\right]^2 G_{d}(z)\ket{k}\bra{k}\right]
+\end{aligned}\end{equation}
+Since the eigenstates of the system are situated at real poles, the contour \(\Gamma\) encloses only the real axes and hence picks out those real poles to count the total number of particles.
+
+Since \(1/G_{c}^0(z) = z - \sum_k \epsilon_k \hat n_k\), we can write \(\text{Tr}\left[G_{c}^{0}(z)\right] = \text{Tr}\left[G_{c}^{0} \frac{\partial{}}{\partial{z}}\left(1/G_{c}^{0}\right)\right]\) and hence
+\begin{equation}\begin{aligned}
+	\label{simple_bath}
+	\text{Tr}\left[G_c(z)\right] &=\frac{\partial{}}{\partial{z}}\left[\ln \text{Det}\left(1/G_{c}^{0}\right)\right] + \sum_k\left[G_k^0(z)V_k\right]^2 G_{d}(z)
 \end{aligned}\end{equation}
 
-We consider the resonant-level model:
+The impurity part can, on the other hand, be written as
 \begin{equation}\begin{aligned}
-	\mathcal{H}_\text{res} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + \epsilon_d n_d + \sum_{k\sigma}\left(V_k c^\dagger_{k\sigma} c_{d\sigma} + \text{h.c.}\right)
+	\label{self_id}
+	\text{Tr}\left[G_{d}(z)\right] &= \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \Sigma_d(z)}\right] = \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \Sigma_d(z)}\frac{\partial{\left(z\right)}}{\partial{z}} \right] = \text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
 \end{aligned}\end{equation}
-The total Green's function is 
+The fist term can be written as \(\text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] = \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{d}^{-1}(z)\right]\). The second part can be written as \(\frac{\partial{}}{\partial{z}}{\Sigma_d(z)} = -\sum_k V^2 {G_k^0}^2\). Together, we get
 \begin{equation}\begin{aligned}
-	G(z) = \frac{1}{z - \mathcal{H}_\text{res}}
+	\label{simple_imp}
+	\text{Tr}\left[G_{d}(z)\right] = \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}\left(1/G_{d}\right)\right] - \text{Tr}\left[ G_{d}(z)\sum_k V^2 {G_k^0}^2\right]\\
 \end{aligned}\end{equation}
-The impurity diagonal Green's function is
+Substituting eqs.~\ref{simple_bath} and \ref{simple_imp} into eq.~\ref{tot_num}, we get
 \begin{equation}\begin{aligned}
-	G_{dd}(z) &= \frac{1}{z - \epsilon_d - \Sigma_d(z)}, &&	G_d(z) = G_{dd}\ket{d}\bra{d}
-\end{aligned}\end{equation}
-where \(\Sigma_d(z)\) is in general complex and is zero at the free orbital fixed point. The conduction electron Green's function is 
-\begin{equation}\begin{aligned}
-	&G_{kk}(z) = G_k^0(z) + \left[G_k^0(z)V_k\right]^2 G_{dd}(z), & G_c(z) \equiv \sum_k \ket{k}\bra{k}G_{kk}(z), && G_{c0}(z) \equiv \sum_k G_{kk}^0(z)\ket{k}\bra{k}
-\end{aligned}\end{equation}
-The total Green's function can be written as
-\begin{equation}\begin{aligned}
-	G(z) &= \left(\sum_{k}\ket{k}\bra{k} + \ket{d}\bra{d}\right) G \left(\sum_{k}\ket{k}\bra{k} + \ket{d}\bra{d}\right)\\
-	     &= \sum_{k} \ket{k}\bra{k}G_{kk}(z) + G_{dd}(z)\ket{d}\bra{d} + \text{off-diagonal terms}\\
-	     &= G_c(z) + G_{d}(z) + \text{off-diagonal terms}
-\end{aligned}\end{equation}
-The total number of electrons is given by
-\begin{equation}\begin{aligned}
-	N &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G(z) \right]\\
-	  &= \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_{d}(z) + G_c(z)\right]
-\end{aligned}\end{equation}
-The contour \(\Gamma\) counts all the singularities of \(\text{Tr} G(z)\), and thus encloses only the real axis of the complex plane (since \(G(z)\) comes from a Hermitian matrix \(\mathcal{H}_\text{res}\), all its singularities are real).
-At this point, we can use an identity:
-\begin{equation}\begin{aligned}
-	\text{Tr}\left[G_{d}(z)\right] &= \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \epsilon_d - \Sigma_d(z)}\right] = \text{Tr}\left[ \frac{\ket{d}\bra{d}}{z - \epsilon_d - \Sigma_d(z)}\frac{\partial{\left(z - \epsilon_d\right)}}{\partial{z}} \right] = \text{Tr}\left[ \ket{d}\bra{d}G_{dd}\frac{\partial{\left\{G_{dd}^{-1}(z) + \Sigma_d(z)\right\}}}{\partial{z}} \right]\\
-				       &= \text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right] = \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{d}^{-1}(z)\right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]\\
-\end{aligned}\end{equation}
-In the last step, we converted the trace to a determinant using
-\begin{equation}\begin{aligned}
-	\text{Tr}\left[A \frac{\partial{A^{-1}}}{\partial{z}}\right] = \frac{\partial{}}{\partial{z}}\text{Tr}\ln A^{-1} =\frac{\partial{}}{\partial{z}}\sum_i \ln \lambda_i = \frac{\partial{}}{\partial{z}}\ln \prod_i \lambda_i = \frac{\partial{}}{\partial{z}}\ln \text{Det}A^{-1}
-\end{aligned}\end{equation}
-where \(\lambda_i\) are the eigenvalues of \(A^{-1}\). Substituting \(\text{Tr}\left[G_d(z)\right] \) into the total number of particles gives
-\begin{equation}\begin{aligned}
-	N  &= \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \text{Tr}G_c(z)\right]
-\end{aligned}\end{equation}
-The conduction electron part can also be simplified:
-\begin{equation}\begin{aligned}
-	\text{Tr}G_c(z) &= \text{Tr}\left[G_{c0}(z) + \sum_k \left\{G_k^0(z)V_k\right\}^2 G_{dd}(z)\ket{k}\bra{k}\right] =\text{Tr}\left[G_{c0}(z)\right] + \sum_k\left[G_k^0(z)V_k\right]^2 G_{dd}(z)\\
-\end{aligned}\end{equation}
-Since \(G_{c0}^{-1}(z) = z - \sum_k \epsilon_k \hat n_k\), we can write \(\text{Tr}\left[G_{c0}(z)\right] = \text{Tr}\left[G_{c0}(z) \frac{\partial{}}{\partial{z}}G_{c0}^{-1}\right]\) and hence
-\begin{equation}\begin{aligned}
-	\text{Tr}G_c(z) &=\frac{\partial{}}{\partial{z}}\left[\ln \text{Det}G_{c0}^{-1}(z)\right] + \sum_k\left[G_k^0(z)V_k\right]^2 G_{dd}(z)
-\end{aligned}\end{equation}
-Updating the total particles with this leads to
-\begin{equation}\begin{aligned}
-	N  = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} + \text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) + \sum_k\left( V_k G_k^0 \right)^2 G_{dd}(z)\right]
-\end{aligned}\end{equation}
-For the resonant-level model, we have
-\begin{equation}\begin{aligned}
-	\Sigma_d = \sum_k V^2_k G^0_k = \sum_k \frac{V_k^2}{z - \epsilon_k}
-\end{aligned}\end{equation}
-such that
-\begin{equation}\begin{aligned}
-	\text{Tr} \left( G_d(z) \frac{\partial{}}{\partial{z}}\Sigma_d(z) \right) = -G_{dd}(z) \sum_k \left( V_k G_k^0 \right)^2
-\end{aligned}\end{equation}
-which allows us to write
-\begin{equation}\begin{aligned}
-	N  = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} \right]
+	N = \oint \frac{dz}{2\pi i}n_F(z) \left[\frac{\partial{}}{\partial{z}}\left[\ln \text{Det}\left(1/G_{d}\right)\right] + \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}\left(1/G_{c}^{0}\right)\right]\right]
 \end{aligned}\end{equation}
 At \(T=0\), \(n_F\) is defined as 1 below the FS, \(\frac{1}{2}\) at the FS and 0 above it.
 \begin{equation}\begin{aligned}
-	N  = \left[\oint_{\Gamma_<} + \frac{1}{2}\oint_{\Gamma_0}\right]\frac{dz}{2\pi i}\left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{G^{-1}_{c0}(z)\right\} \right]
+N  = \left[\oint_{\Gamma_<} + \frac{1}{2}\oint_{\Gamma_0}\right]\frac{dz}{2\pi i}\left[\frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{1/G_d(z)\right\} + \frac{\partial{}}{\partial{z}} \ln \text{Det} \left\{1/G_{c}^{0}(z)\right\} \right]
 \end{aligned}\end{equation}
-Following Seki and Yunoki, we can define a winding number for a Green's function \(G(z)\):
+Following Seki and Yunoki~\cite{seki2017topological}, we can define a winding number for a Green's function \(G(z)\):
 \begin{equation}\begin{aligned}
 	n_{\text{Det} G^{-1}}(C) = \oint_{C} \frac{dz}{2\pi i} \frac{\partial{\ln\text{Det }G^{-1}(z)}}{\partial{z}} = \oint_{\text{Det} G^{-1}(C)} \frac{\mathrm{d}\; \text{Det }G^{-1}}{\text{Det }G^{-1}}
 \end{aligned}\end{equation}
@@ -789,103 +1083,55 @@ n_{\text{Det }G^{-1}(C)} = P_{\text{Det }G}(C) - Z_{\text{Det }G}(C)
 \end{aligned}\end{equation}
 where \(P_{f(z)}(C)\) is the number of poles of \(f(z)\) enclosed by the contour \(C\), and \(Z\) is the corresponding number of zeros. The total number of particles in the resonant level model can thus be written as
 \begin{equation}\begin{aligned}
-	N = P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right] + P_{\text{Det }G_{c0}}(\Gamma_<) - Z_{\text{Det }G_{c0}}(\Gamma_<) \\
-	+ \frac{1}{2}\left[P_{\text{Det }G_{c0}}(\Gamma_0) - Z_{\text{Det }G_{c0}}(\Gamma_0)\right]
+	N =& \underbrace{P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<)}_{N_\text{imp}^<} + \underbrace{\frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right]}_{N_\text{imp}^0} + \underbrace{P_{\text{Det }G_{c}^{0}}(\Gamma_<) - Z_{\text{Det }G_{c}^{0}}(\Gamma_<)}_{N_\text{L}^<} \\
+	  &+ \underbrace{\frac{1}{2}\left[P_{\text{Det }G_{c}^{0}}(\Gamma_0) - Z_{\text{Det }G_{c}^{0}}(\Gamma_0)\right]}_{N_\text{L}^0}\\
+	  =& N_\text{imp}^< + \frac{1}{2}N_\text{imp}^0 + N_L^< + \frac{1}{2}N_L^0
 \end{aligned}\end{equation}
-The average number of particles can thus be expressed purely in terms of the number of poles and zeros of the impurity and the conduction electron Green's functions. As shown by Seki and Yunoki, the second line gives the Luttinger volume \(V_L\):
+The average number of particles can thus be expressed purely in terms of the number of real poles and real zeros of the impurity and the conduction electron Green's functions. \(N_\text{imp}^<\left(N_\text{imp}^<\right)\) is the number of poles minus the number of zeros of the impurity Greens function inside (on) the Fermi surface. \(N_\text{imp} = N_\text{imp}^0 + \frac{1}{2}N_\text{imp}^0\)  therefore gives the total number of localised eigenstates of the system. Similarly, \(N_L^<\left( N_L^0 \right) \) gives the number of real poles in the conduction electron Greens function minus the number of real zeros, and \(N_L = N_L^< + \frac{1}{2}N_L^0\) gives the total number of delocalised eigenstates of the system.
 \begin{equation}\begin{aligned}
 	\label{total_lutt}
-	N = P_{\text{Det }G_d}(\Gamma_<) - Z_{\text{Det }G_d}(\Gamma_<) + \frac{1}{2}\left[P_{\text{Det }G_d}(\Gamma_0) - Z_{\text{Det }G_d}(\Gamma_0)\right] + V_L
+	N = N_\text{imp} + N_L
 \end{aligned}\end{equation}
-If we start from a non-interacting model (\(V_k = 0\)), we can write
+Note that this also holds at the free orbital fixed point, because it is a special case of the strong-coupling fixed point with \(V=0\).
+
+If we are the local moment fixed point with particle-hole symmetry, we instead have the Hamiltonian
 \begin{equation}\begin{aligned}
-	N = \mathcal{N}^0_{imp} + V_L^0
+	\mathcal{H}_\text{lm} = \sum_{k\sigma}\epsilon_k \hat n_{k\sigma} + H_\text{imp}
 \end{aligned}\end{equation}
-where \(\mathcal{N}^0_{imp}\) is simply the number of singularities of \(G_d\) on the real axis, for the non-interacting case. We now turn up the interaction \(V_k\), keeping the total number of particles conserved at \(N\). With a non-zero \(V_k\), the impurity self-energy can be written (assuming a constant density of states) as
+where \(H_\text{imp} = -(U/2)\hat n_d + U\hat n_{d \uparrow} \hat n_{d \downarrow}\) is the impurity Hamiltonian. In this atomic limit, the impurity Greens function is given by~\cite{phillips2012advanced}
 \begin{equation}\begin{aligned}
-	\Sigma_d(z) = \Sigma_d^\text{real}(z) - i \Delta
+	\label{lm_sigma}
+	G_d = \frac{1}{z - \Sigma_d(z)}, ~ ~ ~\Sigma_d = \frac{U^2}{4}\frac{1}{z}
 \end{aligned}\end{equation}
-so that the impurity Greens function becomes
+Since \(V=0\) at this fixed point, the total number of particles is given by
 \begin{equation}\begin{aligned}
-	G_d(z) = \frac{1}{z - \epsilon_d - \Sigma_d^\text{real}(z) + i \Delta}
+	\label{total_num_lm}
+	N = \oint \frac{dz}{2\pi i}n_F(z) \text{Tr}\left[G_{d}(z) + G_c^0(z)\right]
 \end{aligned}\end{equation}
-We can see that the presence of an imaginary part lifts the pole of \(G_d(z)\) off the real axis, and since the contour \(\Gamma_0\) encloses only the real axis, this will count as a loss in the number of poles of \(G_d(z)\). Also, if we specialize to the case where the renormalized impurity site energy \(\epsilon_d^* = \epsilon_d + \Sigma_d^\text{real} = 0\), this loss will happen at the Fermi surface, and will hence be multiplied by a factor of half. We can therefore write
+We again use eq.~\ref{self_id} to write
 \begin{equation}\begin{aligned}
-	N &= \mathcal{N}_{imp} + V_L = \mathcal{N}^0_{imp} - \frac{1}{2} + V_L \implies V_L &= V_L^0 + \frac{1}{2}
+	\text{Tr}\left[G_{d}(z)\right] = \text{Tr}\left[ G_{d}(z)\frac{\partial{G_{d}^{-1}(z)}}{\partial{z}} \right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right] = \frac{\partial{}}{\partial{z}}\left[\ln \text{Det}\left(1/G_{d}\right)\right] + \text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right]
 \end{aligned}\end{equation}
-If we take into account the spin-degeneracy and redefine \(V_L\) to mean the Luttinger volume for both momentum and spin degrees of freedom, we get
+Performing the integral for the second term gives
+\begin{equation}\begin{aligned}
+	\left(\int_{\Gamma_<} + \frac{1}{2}\int_{\Gamma_0}\right)\frac{dz}{2\pi i}\text{Tr}\left[ G_{d}(z)\frac{\partial{\Sigma_d(z)}}{\partial{z}} \right] = 0
+\end{aligned}\end{equation}
+Here we used the form of \(\Sigma_d\) in eq.~\ref{lm_sigma}. Repeating the same steps as before, we recover eq.~\ref{total_lutt}.
+
+We now compare the Luttinger volume across the fixed points. At the local moment fixed point, the impurity Greens function has a single pole at \(z<0\) and a zero at \(z=0\), so \(N_\text{imp} = 1 - 1/2 = 1/2\), and eq.~\ref{total_lutt} becomes
+\begin{equation}\begin{aligned}
+	N = 1/2 + N_\text{L}^{LM}
+\end{aligned}\end{equation}
+The same thing happens at the free orbital fixed point; there, \(G_d\) has a single pole at \(z=0\), so \(N_\text{imp} = 1/2\) and we again get \(N = 1/2 + N_\text{L}^{FO}\). The change happens when we go to the strong-coupling resonant-level fixed point. There, the impurity self-energy can be written as~\cite{anderson_1961,hewson1993,coleman2015}
+\begin{equation}\begin{aligned}
+	\Sigma_d^\text{sc} = \text{Re}\left[\Sigma_d^\text{sc}\right] - i\Delta
+\end{aligned}\end{equation}
+That is, the self-energy becomes imaginary, so the real pole that existed at the free orbital fixed point moves off the real axis. We therefore have \(N_\text{imp} = 0\). Assuming the number of particles \(N\) remained constant, we obtain \(N = N_\text{L}^{SC}\). The change in the Fermi volume in going from the local moment to the strong coupling fixed point is therefore by \(1/2\). If one defines new a Luttinger volume \(\mathcal{N}_L = 2N_L\) to also account for the spin degeneracy, we can write:
 \begin{equation}\begin{aligned}
 	\label{luttinger_change}
-	V_L = V_L^0 + 1
+	\Delta \mathcal{N}_L = 1
 \end{aligned}\end{equation}
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[scale=0.2]{../figures/luttinger_top_change.png}
-\end{figure}
-This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments in \cite{oshikawa2000topological}.
-One can now ask what happens to this result once we also incorporate the spin-exchange interaction \(J \vec{S_d}\cdot\vec{s}\); we can expect that it will complicate the self-energy of the impurity. It cannot, however, preclude the loss of the real pole, nor can it create a new singularity - to do so would require the self-energy to diverge, and we are working with finite systems here. This suggests that the eq.~\eqref{luttinger_change} would still hold.
-
-We have also not accounted for the RG flow from the local moment fixed point to the strong-coupling fixed point. The local moment fixed point is characterized by a decoupled quantum top:
-\begin{equation}\begin{aligned}
-	\mathcal{H}_\text{LM} = \epsilon_d \hat n_d + U \hat n_{d \uparrow} \hat n_{d \downarrow}
-\end{aligned}\end{equation}
-It can be shown that the single-particle Green's function for this effective Hamiltonian is similar to the one at the free-orbital fixed point. We will use the equation of motion technique to solve for the Green's function. The time-domain retarded Green's function is defined as
-\begin{equation}\begin{aligned}
-	G_{d\sigma}(t, t^\prime) = -i\theta(t-t^\prime) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(t^\prime) \right\} \right>
-\end{aligned}\end{equation}
-Since the Hamiltonian is time-translation invariant, we can drop one of the instants:
-\begin{equation}\begin{aligned}
-	G_{d\sigma}(t, 0) = -i\theta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
-\end{aligned}\end{equation}
-The time derivative is
-\begin{equation}\begin{aligned}
-	\partial_t G_{d\sigma} &= -i \left[\partial_t \theta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> + \theta(t) \partial_t \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\right] \\
-			       &= -i \left[\delta(t) \left<\left\{ c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> + \theta(t) \left<\left\{ \partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\right] = -i \delta(t) -i\theta(t) \left<\left\{ \partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
-\end{aligned}\end{equation}
-From the Heisenberg equations of motion, we get
-\begin{equation}\begin{aligned}
-	i \partial_t c_{d\sigma}(t) = \left[c_{d\sigma}(t), \mathcal{H}_{LM}(t)\right] = \left[\epsilon_d + U \hat n_{d\overline\sigma}(t)\right]c_{d\sigma}(t)
-\end{aligned}\end{equation}
-Substituting this into the time-derivative gives
-\begin{equation}\begin{aligned}
-	\partial_t G_{d\sigma} &= -i \delta(t) -i \theta(t) \left<\left\{ -i\left[\epsilon_d + U \hat n_{d\overline\sigma}(t)\right]c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> = -i \delta(t) - i\epsilon_d G_{d\sigma} - U \theta(t) \left<\hat n_{d\overline\sigma}(t)\left\{c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>\\
-\end{aligned}\end{equation}
-We define another Greens function
-\begin{equation}\begin{aligned}
-	G^\prime = -i \theta(t) \left<\hat n_{d\overline\sigma}(t)\left\{c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
-\end{aligned}\end{equation}
-which satisfies the equation of motion
-\begin{equation}\begin{aligned}
-	\partial_t G^\prime = -i \delta(t) -i\theta(t) \left<\left\{\partial_t \hat n_{d\overline\sigma}(t)c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> -i\theta(t) \left<\left\{\hat n_{d\overline\sigma}(t)\partial_t c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right>
-\end{aligned}\end{equation}
-The second term vanishes because \(\left[\hat n_{d\overline\sigma}, \mathcal{H}_{LM}\right] = 0\) and hence \(\partial_t \hat n_{d\overline\sigma} = 0\). Also,
-\begin{equation}\begin{aligned}
-	\hat n_{d\overline\sigma}(t)\partial_t c_{d\sigma}(t) = -i\hat n_{d\overline\sigma}(t)\left[\epsilon_d + U \hat n_{d\overline\sigma}(t)\right]c_{d\sigma}(t) = -i\left[\epsilon_d + U\right]\hat n_{d\overline\sigma}(t)c_{d\sigma}(t)
-\end{aligned}\end{equation}
-Therefore,
-\begin{equation}\begin{aligned}
-	\partial_t G^\prime = -i \delta(t) \left< \hat n_{d\overline\sigma}(0)\right>- \left[\epsilon_d + U\right]\theta(t) \left<\left\{\hat n_{d\overline\sigma}(t)c_{d\sigma}(t), c^\dagger_{d\sigma}(0) \right\} \right> = -i \delta(t) -i \left( \epsilon_d + U \right) G^\prime
-\end{aligned}\end{equation}
-Changing all quantities to frequency-domain:
-\begin{equation}\begin{aligned}
-	G^\prime(t) &= \int_{-\infty}^\infty d\omega e^{-i\omega t} G^\prime(\omega)\\
-	\partial_t G^\prime(t) &= -\int_{-\infty}^\infty d\omega i \omega e^{-i\omega t} G^\prime(\omega)\\
-	\delta(t) &= \int_{-\infty}^\infty d\omega e^{-i\omega t}
-\end{aligned}\end{equation}
-Substituting these forms in the equation and comparing the coefficients of \(e^{i\omega t}\) gives
-\begin{equation}\begin{aligned}
-	 \omega G^\prime(\omega) =  \left< \hat n_{d\overline\sigma}(0)\right> + \left( \epsilon_d + U \right) G^\prime(\omega)\implies G^\prime(\omega) = \frac{\left< \hat n_{d\overline\sigma}(0)\right>}{\omega - \epsilon_d - U}
-\end{aligned}\end{equation}
-The equation of motion \(G_{d\sigma}\) can now be solved
-\begin{equation}\begin{aligned}
-	\partial_t G_{d\sigma}(t) &= -i \delta(t) - i\epsilon_d G_{d\sigma}(t) - iU G^\prime_{d\sigma}(t) \implies \omega G_{d\sigma}(\omega) = 1 + \epsilon_d G_{d\sigma}(\omega) + U\frac{\left< \hat n_{d\overline\sigma}(0)\right>}{\omega - \epsilon_d - U}\\
-	\implies G_{d\sigma}(\omega) &= \frac{1}{\omega - \epsilon_d} + \frac{U\left< \hat n_{d\overline\sigma}(0)\right>}{\left( \omega - \epsilon_d \right) \left(\omega - \epsilon_d - U\right)}
-\end{aligned}\end{equation}
-For a particle-hole symmetric system, we can substitute \(\epsilon_d = -|\epsilon_d|\) and \(\epsilon_d + U = |\epsilon_d|\).
-\begin{equation}\begin{aligned}
-	G_{d\sigma}(\omega) &= \frac{1}{\omega + |\epsilon_d|} + \frac{U\left< \hat n_{d\overline\sigma}(0)\right>}{\left( \omega + |\epsilon_d| \right) \left(\omega - |\epsilon_d|\right)}
-\end{aligned}\end{equation}
-which reveals two poles at \(\pm |\epsilon_d|\), one above and one below the Fermi surface. Since the RHS of eq.~\eqref{total_lutt} counts the number of poles on or below the FS, we will still count one pole for \(G_{d\sigma}\). Thus, this Green's function is topological similar to the free-orbital one at \(T=0\).
+This is a specific case of the more general result for Kondo lattices obtained by Oshikawa using flux-insertion arguments\cite{oshikawa2000topological}.
 
 The scattering phase shift suffered by the conduction electrons at the Fermi surface, off the impurity, can be calculated from the impurity occupancy, using the Friedel sum rule. From the ground state wavefunction, we can calculate the average number of particles on the impurity:
 \begin{equation}\begin{aligned}
@@ -903,7 +1149,7 @@ There we used \(\delta_\uparrow = \delta_\downarrow\) because the model is SU(2)
 
 The change in Luttinger's number also allows us to calculate the Wilson ratio of the system, from eq.~\eqref{wilson_luttinger}.
 \begin{equation}\begin{aligned}
-	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta N_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
+	R = 1 + \sin^2 \left( \frac{\pi}{2}\Delta \mathcal{N}_L \right) = 1 + \sin^2 \frac{\pi}{2} = 2
 \end{aligned}\end{equation}
 \section{Reverse RG analysis}\label{rev_rg}
 The goal here is to chart the journey starting from the IR fixed point towards the UV regime, by following one particular wavefunction. We will start with a very simple IR ground state wavefunction, and then go back towards the UV ground state by applying the inverse unitary operator \(U^\dagger\):
@@ -913,7 +1159,12 @@ The goal here is to chart the journey starting from the IR fixed point towards t
 \begin{equation*}\begin{aligned}
 	U^\dagger : \underbrace{\ket{1,2,...,N^*}\ket{N^*+1}...\ket{N}}_\text{IR ground state} \rightarrow \ket{1,2,...,N^*+1}\ket{N^*+2}...\ket{N} \rightarrow ... \rightarrow\underbrace{\ket{1,,2,...,N}}_\text{UV ground state}
 \end{aligned}\end{equation*}
-The first process is the forward RG which we used to obtain the scaling equations. The second process is the reverse RG which we will undertake now. In general, we start with an IR wavefunction that consists a certain number of momentum states \(n_1\) still entangled with the impurity, and the remaining momentum states \(n_2\) disentangled from the impurity. The former are said to be part of the emergent Kondo cloud, while the latter are said to be part of the integrals of motion (IOMs) and appear in direct product with the cloud+impurity system in the ground state wavefunction. Each momentum state is tagged with two conduction bath levels, one above the Fermi surface and one below. These will be represented as \(k,\pm\). If we represent the emergent cloud momentum states as \(\left\{k_i\right\} \) and the IOM states as \(\left\{q_i\right\}\), the ground state wavefunction can be written as 
+The first process is the forward RG which we used to obtain the scaling equations.
+The second process is the reverse RG which we will undertake now. The method has already been applied to study the renormalisation of entanglement in various models of strong correlation~\cite{siddharthacpi,anirban_kondo,anirban_mott_ent}.
+In general, we start with an IR wavefunction that consists a certain number of momentum states \(n_1\) still entangled with the impurity, and the remaining momentum states \(n_2\) disentangled from the impurity.
+The former are said to be part of the emergent Kondo cloud, while the latter are said to be part of the integrals of motion (IOMs) and appear in direct product with the cloud+impurity system in the ground state wavefunction.
+Each momentum state is tagged with two conduction bath levels, one above the Fermi surface and one below.
+These will be represented as \(k,\pm\). If we represent the emergent cloud momentum states as \(\left\{k_i\right\} \) and the IOM states as \(\left\{q_i\right\}\), the ground state wavefunction can be written as 
 \begin{equation}\begin{aligned}
 	\ket{\Psi}_0 = \left(\otimes_{i=1}^{n_2}\ket{q_i,-,\uparrow}\ket{q_i,-,\downarrow}\right)\ket{\Phi}_\text{cloud}\left(\otimes_{i=1}^{n_2}\ket{q_i,+,\uparrow}\ket{q_i,+,\downarrow}\right)
 \end{aligned}\end{equation}
@@ -957,7 +1208,7 @@ Here, \(q\) is the first momentum state immediately outside the emergent cloud. 
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ee.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/mut_I_ie.pdf}
-	\caption{\textit{Left}: Mutual information between two conduction electrons inside the cloud. \textit{Right}: Mutual information between a conduction electron inside the cloud and an impurity electron. Both the measures increase towards the strong-coupling fixed point, because of the distillation of the Kondo cloud brought about by the RG flow.}
+	\caption{\textit{Left}: Mutual information between two conduction electrons inside the cloud. \textit{Right}: Mutual information between a conduction electron inside the cloud and an impurity electron. Both the measures increase towards the strong coupling fixed point, because of the distillation of the Kondo cloud brought about by the RG flow.}
 	\label{mutI}
 \end{figure}
 
@@ -965,13 +1216,13 @@ Here, \(q\) is the first momentum state immediately outside the emergent cloud. 
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/corr_same.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/corr_opp.pdf}
-	\caption{Increase in the diagonal correlation functions between cloud electrons under RG flow towards the strong-coupling fixed point. This is consistent with the Fermi liquid pieces generated in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
+	\caption{Increase in the diagonal correlation functions between cloud electrons under RG flow towards the strong coupling fixed point. This is consistent with the Fermi liquid pieces generated in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.45\textwidth]{../figures/corr_od.pdf}
-	\caption{Growth of the off-diagonal correlation function between Kondo cloud electrons towards the strong-coupling fixed point. This is the direct cause of the screening of the impurity spin, and is a reflection of the off-diagonal two-particle scattering terms in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
+	\caption{Growth of the off-diagonal correlation function between Kondo cloud electrons towards the strong coupling fixed point. This is the direct cause of the screening of the impurity spin, and is a reflection of the off-diagonal two-particle scattering terms in the \(k-\)space effective Hamiltonian of the Kondo cloud.}
 \end{figure}
 
 The results of the reverse RG study are depicted in the following plots. We have used two types of quantities in the process - mutual information and correlation functions. The mutual information between two subsystems \(A\) and \(B\) in a wavefunction with many subsystems is defined as

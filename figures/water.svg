@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28.388002mm"
+   height="6.9401445mm"
+   viewBox="0 0 28.388002 6.9401445"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="water.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.63785073"
+     inkscape:cx="285.33322"
+     inkscape:cy="171.67026"
+     inkscape:window-width="1916"
+     inkscape:window-height="1051"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="110.48776"
+       y="377.53006"
+       width="255.5732"
+       height="84.017761"
+       id="rect2234" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-29.42456,-102.69633)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2232"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2234);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="110.48828"
+         y="414.02251"
+         id="tspan3267"><tspan
+           style="font-family:Consolas;-inkscape-font-specification:Consolas"
+           id="tspan3265">water</tspan></tspan></text>
+  </g>
+</svg>
