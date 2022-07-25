@@ -1220,8 +1220,7 @@ From there, it becomes the antiferromagnetic case.
 Setting \(g_1 = g_2 =g >0\) and integrating either of the scaling equations gives
 \begin{equation}\begin{aligned}
 	\label{isot}
-g(D^\prime) &= \frac{g_0}{1-2g_0\ln\frac{D}{D^\prime}} \\
-\implies 2g(D^\prime) &= \frac{1}{\ln \frac{D^\prime}{T_K}}
+g(D^\prime) &= \frac{g_0}{1-2g_0\ln\frac{D}{D^\prime}} \implies 2g(D^\prime) &= \frac{1}{\ln \frac{D^\prime}{T_K}}
 \end{aligned}\end{equation}
 where \(T_K = \frac{D}{k_B} \exp\left\{-\frac{1}{2g_0}\right\}\).
 \(D^\prime\) is the running bandwidth and \(D\) is the original bandwidth.
@@ -1271,16 +1270,12 @@ The transition matrix element is
 \end{aligned}\end{equation}
 Neglecting \(E\) with respect to \(D\) and adding the contributions, we get
 \begin{equation}\begin{aligned}
-	T &= \frac{J^2 N |\delta D|}{D} \left(S_d^a S_d^b\right)_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha}\\
-	  &=\frac{J^2 N |\delta D|}{2D} \left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha}
+	T &= \frac{J^2 N |\delta D|}{D} \left(S_d^a S_d^b\right)_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha} =\frac{J^2 N |\delta D|}{2D} \left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha}
 \end{aligned}\end{equation}
 In the last step, I used \(\left\{S^a,S^b\right\}=0\).
 Now,
 \begin{equation}\begin{aligned}
-	\left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha} &= -\left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^a,\sigma^b\right]_{\beta \alpha}\\
-&= -i\epsilon_{abc}S^c_{\sigma \sigma^\prime} 2 i \epsilon_{abd}\sigma^d_{\beta \alpha}\\
-&=4\delta_{cd}S^c_{\sigma \sigma^\prime} \sigma^d_{\beta \alpha}\\
-&=4\vec S_{\sigma \sigma^\prime} \cdot \vec \sigma_{\beta \alpha}
+	\left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^b,\sigma^a\right]_{\beta \alpha} &= -\left[S_d^a,S_d^b\right]_{\sigma^{\prime}\sigma}\left[\sigma^a,\sigma^b\right]_{\beta \alpha} = -i\epsilon_{abc}S^c_{\sigma \sigma^\prime} 2 i \epsilon_{abd}\sigma^d_{\beta \alpha} =4\delta_{cd}S^c_{\sigma \sigma^\prime} \sigma^d_{\beta \alpha} =4\vec S_{\sigma \sigma^\prime} \cdot \vec \sigma_{\beta \alpha}
 \end{aligned}\end{equation}
 Therefore,
 \begin{equation}\begin{aligned}
@@ -1303,8 +1298,7 @@ It can be integrated from \(g^0(D)\) to \(g(D^\prime)\):
 \end{aligned}\end{equation}
 Defining \(D^\prime = k_B T_K\) to be the temperature where \(g \sim 1\), we can write
 \begin{equation}\begin{aligned}
-	\ln \frac{k_B T_K}{D} = -\int_{g_0}^1\frac{dg}{2g^2}\left(1+g\right) = -\frac{1}{2g_0} + \frac{1}{2}\ln g_0 + O(1)\\
-=-\frac{1}{2g_0} + \frac{1}{2}\ln 2g_0 + O(1)
+	\ln \frac{k_B T_K}{D} = -\int_{g_0}^1\frac{dg}{2g^2}\left(1+g\right) = -\frac{1}{2g_0} + \frac{1}{2}\ln g_0 + O(1) =-\frac{1}{2g_0} + \frac{1}{2}\ln 2g_0 + O(1)
 \end{aligned}\end{equation}
 This gives a better estimate of the Kondo temperature
 \begin{equation}\begin{aligned}
@@ -1324,16 +1318,14 @@ Since \(T_K\) is a physical quantity, it cannot change with our choice of the ba
 \end{aligned}\end{equation}
 Substituting the form of \(T_K\), eq.~\ref{form}, in this equation gives
 \begin{equation}\begin{aligned}
-	y(g) + D\frac{\:\mathrm{d}y(g)}{\:\mathrm{d}D} = 0\\
-	\implies y + D\frac{\:\mathrm{d}y}{\:\mathrm{d}g}\frac{\:\mathrm{d}g}{\:\mathrm{d}D} = 0\\
-	\implies y -2g^2\frac{\:\mathrm{d}y}{\:\mathrm{d}g} = 0\\
-\implies y = e^{-\frac{1}{2g}}
+	y(g) + D\frac{\:\mathrm{d}y(g)}{\:\mathrm{d}D} = 0 \implies y + D\frac{\:\mathrm{d}y}{\:\mathrm{d}g}\frac{\:\mathrm{d}g}{\:\mathrm{d}D} = 0 \implies y -2g^2\frac{\:\mathrm{d}y}{\:\mathrm{d}g} = 0 \implies y = e^{-\frac{1}{2g}}
 \end{aligned}\end{equation}
 This gives almost the same solution as eq.~\ref{sol}:
 \begin{equation}\begin{aligned}
 T_K = \frac{D}{k_B}e^{-\frac{1}{2g}}
 \end{aligned}\end{equation}
-The difference in the pre-factor arises from the extra contribution incorporated in that solution.\\\\
+The difference in the pre-factor arises from the extra contribution incorporated in that solution.
+
 The fact that the scaling equations are universal can be seen by noting that from eq.~\ref{isot}, up to second order, we can write
 \begin{equation}\begin{aligned}
 	g(D^\prime) = g_0\left(1 + 2g_0^2\ln\frac{D}{D^\prime}\right)
@@ -1378,7 +1370,8 @@ With further virtual excitations, it is also possible to go into the triplet sta
 What this means is that although the singlet is stable with respect to energy-conserving transitions, the singlet is virtually polarizable, with the help of the site 1 electron.
 This induces an interaction on the site 1.
 Since the interaction on the site 1 is just a manifestation of the polarizability of the singlet, we can either take the singlet with its polarizability and assume the conduction band to be non-interacting, or we can assume the singlet to be static and take the Fermi sea to have a localised interaction at the site 1.
-In the latter picture, we have a frozen singlet (which can be ignored) and an interacting Fermi sea.\\\\
+In the latter picture, we have a frozen singlet (which can be ignored) and an interacting Fermi sea.
+
 The goal is to calculate the change in phase shift suffered by the conduction electrons in the presence of interactions~\cite{nozieres1974fermi}.
 In the absence of interactions, the scattered wavefunction is
 \begin{equation}\begin{aligned}
@@ -1395,7 +1388,8 @@ n = \sum_\sigma \frac{\delta}{\pi} \implies 1 = \frac{2\delta}{\pi} \implies \de
 \begin{equation}\begin{aligned}
 k_F a = \delta(0) \implies \delta(0) = \frac{\pi}{2a} 2 = \frac{\pi}{2}
 \end{aligned}\end{equation}
-where the formula for \(k_F\) was used.\\\\
+where the formula for \(k_F\) was used.
+
 In a Fermi gas, the energy levels are separated by
 \begin{equation}\begin{aligned}
 	\Delta \epsilon = \frac{\partial{\epsilon}}{\partial{k}}\Delta k
@@ -1412,8 +1406,7 @@ k_nL + \delta(\epsilon_k) = n\pi \implies k_n = \frac{n\pi}{L} - \frac{\delta}{L
 \end{aligned}\end{equation}
 The energy becomes
 \begin{equation}\begin{aligned}
-	\epsilon(k) &= \epsilon(k^0) + \frac{\partial{\epsilon}}{\partial{k}}\left(k - k_0\right)\\
-		    &= \epsilon_k - \frac{\partial{\epsilon}}{\partial{k}}\frac{\delta(\epsilon_k)}{L}
+	\epsilon(k) &= \epsilon(k^0) + \frac{\partial{\epsilon}}{\partial{k}}\left(k - k_0\right) = \epsilon_k - \frac{\partial{\epsilon}}{\partial{k}}\frac{\delta(\epsilon_k)}{L}
 \end{aligned}\end{equation}
 In the Landau formulation of an interacting Fermi liquid, the phase shifts will depend on the quasiparticle occupation probabilities \(n_{k\sigma}\).
 Hence,
@@ -1423,8 +1416,7 @@ Hence,
 In bulk Fermi liquid, we expand the quasiparticle energy in the deviation of the quasiparticle distribution \(n_k\) from the ideal Fermi-Dirac distribution \(n^0_k\),
 \begin{equation}\begin{aligned}
 	\label{fliq}
-	\widetilde \epsilon_p = \underbrace{\epsilon_F}_{\text{Fermi gas}} &+ \overbrace{\frac{p_F^*}{m}\left(p-p_F\right)}^{\text{linear contribution for \textit{p} close to }p_F} \\
-								    &+ \underbrace{\sum_{q\sigma}f(p,q)\left(n_q - n^0_q\right)}_{\text{interacting between two quasiparticles at momenta \textit{p} and \textit{q}}}
+	\widetilde \epsilon_p = \underbrace{\epsilon_F}_{\text{Fermi gas}} + \overbrace{\frac{p_F^*}{m}\left(p-p_F\right)}^{\text{linear contribution for \textit{p} close to }p_F} + \underbrace{\sum_{q\sigma}f(p,q)\left(n_q - n^0_q\right)}_{\text{interacting between two quasiparticles at momenta \textit{p} and \textit{q}}}
 \end{aligned}\end{equation}
 Similarly, for this local Fermi liquid, the phase shift depends on the energy of the quasiparticle \(\widetilde \epsilon\) and the quasiparticle occupation \(n_{q\sigma}\).
 Accordingly,
@@ -1462,15 +1454,15 @@ N(E^\prime = E+\mu) = N(E^\prime = E) + \frac{\:\mathrm{d}N}{\:\mathrm{d}E^\prim
 \end{gather}
 Hence, from eq.~\ref{phases},
 \begin{equation}\begin{aligned}
-	\delta_\uparrow &= \frac{\pi}{2} + \alpha\left(\epsilon_F^\prime - \epsilon_F\right) + \Phi\sum_q \delta n_{q\downarrow}\\
-       &= \delta^0_\uparrow + \alpha\Delta\mu + \Phi \rho \Delta \mu
+	\delta_\uparrow &= \frac{\pi}{2} + \alpha\left(\epsilon_F^\prime - \epsilon_F\right) + \Phi\sum_q \delta n_{q\downarrow}= \delta^0_\uparrow + \alpha\Delta\mu + \Phi \rho \Delta \mu
 \end{aligned}\end{equation}
 Hence the change in the phase is
 \begin{equation}\begin{aligned}
 	0 = \Delta \delta_\uparrow = \Delta \mu\left(\alpha + \Phi \rho\right) \implies \alpha = -\Phi\rho
-\end{aligned}\end{equation}\\\\
+\end{aligned}\end{equation}
 This shows that the interaction term \(\Phi\) is responsible for pinning the resonance at the Fermi level; without that term in the formalism, the occupancy of the impurity site will change.
-This is similar to the fact that the interaction term \(f(k,k^\prime)\) in the bulk Fermi liquid is responsible for making the Landau theory invariant under Galilean transformations.\\\\
+This is similar to the fact that the interaction term \(f(k,k^\prime)\) in the bulk Fermi liquid is responsible for making the Landau theory invariant under Galilean transformations.
+
 Now we can calculate the density of states.
 From the boundary condition, we have
 \begin{equation}\begin{aligned}
@@ -1478,8 +1470,7 @@ n_\sigma = \frac{kL}{\pi} + \frac{\delta_\sigma(E)}{\pi} = n^0 + \frac{\delta_\s
 \end{aligned}\end{equation}
 Hence,
 \begin{equation}\begin{aligned}
-	\rho &= \frac{\:\mathrm{d}n_\sigma}{\:\mathrm{d}E} = \rho^0 + \frac{1}{\pi}\frac{\:\mathrm{d}\delta_\sigma}{\:\mathrm{d}E} \\
-\implies \rho&=\rho^0 + \frac{1}{\pi}\alpha
+	\rho &= \frac{\:\mathrm{d}n_\sigma}{\:\mathrm{d}E} = \rho^0 + \frac{1}{\pi}\frac{\:\mathrm{d}\delta_\sigma}{\:\mathrm{d}E} \implies \rho&=\rho^0 + \frac{1}{\pi}\alpha
 \end{aligned}\end{equation}
 \(\rho^0\) is the density of states in absence of the impurity.
 The low temperature specific heat of an ideal Fermi liquid can be shown to be
@@ -1489,8 +1480,7 @@ C_v^0 = \gamma T = \frac{\pi^2 k_B^2}{3} \mathcal{N}(0) T
 The interacting Fermi liquid is just a renormalised version of the Fermi gas, with a modified density of states \(\frac{1}{\pi}\alpha\).
 Hence, the impurity contribution to the specific heat is
 \begin{equation}\begin{aligned}
-	C_v &= \frac{\pi^2 k_B^2}{3}\left(\rho_\uparrow + \rho_\downarrow\right) T\\
-    &=\frac{2\alpha}{\pi} \frac{\pi^2 k_B^2}{3} T
+	C_v &= \frac{\pi^2 k_B^2}{3}\left(\rho_\uparrow + \rho_\downarrow\right) T=\frac{2\alpha}{\pi} \frac{\pi^2 k_B^2}{3} T
 \end{aligned}\end{equation}
 In presence of a magnetic field \(B\), the magnetization is 
 \begin{equation}\begin{aligned}
@@ -1514,9 +1504,7 @@ Hence,
 \end{aligned}\end{equation}
 This modifies the phase shift at the Fermi surface,
 \begin{equation}\begin{aligned}
-	\delta_\sigma(\epsilon_F) &= \frac{\pi}{2} + \alpha\left(\epsilon_F - \frac{g \mu_B}{2}\sigma B - \epsilon_F\right) + \Phi\sum_q \delta n_{q,-\sigma}\\
-              &= \frac{\pi}{2} - \sigma \frac{g \mu_B}{2}\alpha B + \Phi \rho \frac{g \mu_B}{2}\sigma B\\
-              &= \frac{\pi}{2} - 2\alpha\frac{g \mu_B}{2}\sigma B
+	\delta_\sigma(\epsilon_F) &= \frac{\pi}{2} + \alpha\left(\epsilon_F - \frac{g \mu_B}{2}\sigma B - \epsilon_F\right) + \Phi\sum_q \delta n_{q,-\sigma} = \frac{\pi}{2} - \sigma \frac{g \mu_B}{2}\alpha B + \Phi \rho \frac{g \mu_B}{2}\sigma B = \frac{\pi}{2} - 2\alpha\frac{g \mu_B}{2}\sigma B
 \end{aligned}\end{equation}
 Hence,
 \begin{equation}\begin{aligned}
@@ -1624,7 +1612,8 @@ First, note that up to first order
 \begin{equation}\begin{aligned}
 	\epsilon_k = \epsilon_F + (k-k_F)\frac{\partial{\epsilon_k}}{\partial{k}}
 \end{aligned}\end{equation}
-By choosing \(k_F = \epsilon_F = 0\), we get \(\epsilon_k = k\).\\\\
+By choosing \(k_F = \epsilon_F = 0\), we get \(\epsilon_k = k\).
+
 Wilson divided the conduction band into patches, \([\Lambda^{-(n+1)},\Lambda^{-n}]\), for \(n=1,2,3..\).
 The width of each interval is
 \begin{equation}\begin{aligned}
@@ -1659,7 +1648,8 @@ For the momentum-independent \(J(k,k^\prime)\), the coupling term involves.
 \end{aligned}\end{equation}
 Looking at eq.~\ref{zerom}, we see that the impurity spin is coupled only to the \(m=0\) operators.
 This is where the approximation comes in, in Wilson's scheme.
-All the \(m\) values other than \(m=0\) are ignored.\\\\
+All the \(m\) values other than \(m=0\) are ignored.
+
 Wilson chose
 \begin{equation}\begin{aligned}
 \epsilon_n = 0, \gamma = D^\prime \Lambda^\frac{-n}{2}
@@ -1701,7 +1691,8 @@ The next Hamiltonian is then
 \begin{equation}\begin{aligned}
 	\overline H_{N+1} = \Lambda^\frac{1}{2} \sum_m E_m \ket{m}\bra{m} + \sum_{m.m^\prime}\left( C(m,m^\prime) \ket{m}\bra{m^\prime} + \text{h.c.}\right)
 \end{aligned}\end{equation}
-This is the same equation as eq.~\ref{rec}, with \(\overline H_N\) expressed in its eigenbasis and the creation and annihilation operators also expressed in that basis; the \(C(m,m^\prime)\) are just the matrix elements of \(c\) and \(c^\dagger\) in that basis.\\\\
+This is the same equation as eq.~\ref{rec}, with \(\overline H_N\) expressed in its eigenbasis and the creation and annihilation operators also expressed in that basis; the \(C(m,m^\prime)\) are just the matrix elements of \(c\) and \(c^\dagger\) in that basis.
+
 To check whether the guesses about the fixed points are true, Wilson did the following.
 He set \(J=0.009\) and then then calculated the lowest excitations of the Hamiltonians obtained from the NRG in the limit of large \(N\).
 They indeed correspond to the excitations of the Kondo hamiltonian at \(J = \infty\), meaning that under the application of the NRG, the \(J=0.009\) Hamiltonian flowed to the fixed-point Hamiltonian \(J = \infty\).
@@ -1714,7 +1705,8 @@ H_\text{eff} = \sum_k \epsilon_k n_k + \sum_k{V_k c^\dagger_d c_k + \text{h.c.}}
 \end{aligned}\end{equation}
 The parameters \(\epsilon_k,V_k,U\) are not the same as the Anderson model we start with, but I am using the same symbols for convenience.
 The interaction term \(U\) is the leading irrelevant operator near the low-energy fixed point.
-For \(T \rightarrow 0\), assuming only single excitations, the interacting term will not get invoked.\\\\
+For \(T \rightarrow 0\), assuming only single excitations, the interacting term will not get invoked.
+
 Under mean-field,
 \begin{equation}\begin{aligned}
 n_{d\uparrow}n_{d\downarrow} &\approx \langle  n_{d\uparrow}\rangle n_{d\downarrow} + \langle  n_{d\uparrow}\rangle n_{d\downarrow} - \langle  n_{d\uparrow}\rangle\langle  n_{d\downarrow}\rangle\\
@@ -1743,7 +1735,8 @@ Replacing the quasiparticle excitations with their expectation values, the effec
 \end{aligned}\end{equation}
 This is analogous to the Landau quasiparticle energy functional, \(U\) acting as the interaction between the quasiparticles.
 \(\delta n > 0\) acts as the excitations from the ground state.
-\\\\
+
+
 The interacting density of states is
 \begin{equation}\begin{aligned}
 	\label{dosint}
@@ -1833,7 +1826,8 @@ The susceptibility is
 		&= \chi^{(0)}\frac{\rho_{d}(0)}{\rho_{d}^{(0)}(0)}\left[1 + U\rho_{d}(0)\right]
 \end{aligned}\end{equation}
 There I used the fact that in the absence of any field and \(T \rightarrow 0\), \(\rho_\uparrow = \rho_\downarrow = \rho_d\).
-\\\\
+
+
 The Wilson ratio is
 \begin{equation}\begin{aligned}
 R \equiv \frac{\chi_\text{imp}}{\chi^{(0)}}\frac{\gamma^{(0)}}{\gamma_\text{imp}}= 1+U\rho_d(0)
@@ -1913,7 +1907,8 @@ R = 1+\frac{U} {\pi \Delta}\sin^2 \delta(0)
 \subsubsection{The case of \(\langle  n_d\rangle=1\)}
 Exactly at the strong-coupling fixed point, for particle-hole symmetry, we expect the occupancy of the impurity to be \(\langle  n_d\rangle = 1\), because the singly-occupied state is below the Fermi level while the doubly occupied state is above.
 If we now lower the Fermi level by \(\Delta \mu\) while keeping the particle-hole symmetry intact (by suitably shifting the impurity levels), the resonance in the spectral function at the Fermi surface will persist, because the electrons at the Fermi surface will always form a singlet with the impurity and go into a bound state.
-\\\\
+
+
 Since the energies are measured relative to the Fermi level, all quasiparticle energies will increase by \(\Delta \epsilon_{k\sigma} = \Delta \mu\).
 However, some of the quasiparticles closer to the Fermi surface will now come below it,so that the number of quasiparticles will decrease by \(\Delta n = -\Delta \mu \rho_d(0)\).
 The net change in \(n_\uparrow\) is thus
@@ -1979,7 +1974,8 @@ This approach is obviously more general as all terms in the original Hamiltonian
 This is an alternative to the full microscopic approach.
 In the microscopic approach, we take the exact microscopic Hamiltonian and calculate observables from it.
 In the renormalized perturbation, we separate the Hamiltonian into a non-interacting  quasiparticle Hamiltonian which is like the low-energy free Hamiltonian, and an interacting part, and also a counter-term to prevent divergences.
-The original parameters of the model get replaced by renormalized parameters, and we can analyze the model perturbatively in powers of the renormalized interaction.\\\\
+The original parameters of the model get replaced by renormalized parameters, and we can analyze the model perturbatively in powers of the renormalized interaction.
+
 To do a perturbative expansion of the Hamiltonian in terms of the interaction \(U\), it is useful to introduce the self energy \(\Sigma(E) = \Sigma(0) + E\Sigma^\prime + \Sigma^\text{rem}(E)\).
 In the absence of interaction, the impurity Green's function is
 \begin{equation}\begin{aligned}
@@ -2079,7 +2075,8 @@ Multiplying the numerator and denominator by \(z\), we get the same occupancy in
 	\langle  n_{d\sigma}\rangle = \frac{1}{2} - \frac{1}{\pi}\tan^{-1} \frac{\widetilde\epsilon_d +\widetilde \Sigma(0,h)}{\widetilde\Delta}
 \end{aligned}\end{equation}
 For \(T,h \rightarrow 0\), the counter-term cancels appropriate terms from the quasiparticle Hamiltonian leading to the vanishing of the effects of the self-energy, eq.~\ref{conditions}.
-In that case, \(\langle  n_{d\sigma}\rangle = \langle  n^0_{d\sigma}\rangle\), that is, the quasiparticle distribution becomes the same as the free fermionic distribution.\\\\
+In that case, \(\langle  n_{d\sigma}\rangle = \langle  n^0_{d\sigma}\rangle\), that is, the quasiparticle distribution becomes the same as the free fermionic distribution.
+
 The first order Feynman diagram for the self-energy is of the Hartree type.
 They give a contribution
 \begin{equation}\begin{aligned}
@@ -2126,7 +2123,8 @@ Substituting in to the parent equation, we get
 \begin{equation}\begin{aligned}
 	\chi_d = \frac{1}{2}\left(g \mu_B\right)^2 \rho_d(0) \left(1 + \widetilde U \rho_d(0)\right)
 \end{aligned}\end{equation}
-which is same as the one obtained from mean-field.\\\\
+which is same as the one obtained from mean-field.
+
 It is possible to take higher order contributions into account, but there are identities which show that these results are exact.
 
 \begin{gather}
@@ -2212,7 +2210,8 @@ The situation is such that both the impurity levels are far outside the bandwidt
 The maximum energy scale at which scattering with conduction electrons can take place is of the order of the bandwidth \(D\).
 Since the impurity energies are much higher than the bandwidth, no charge fluctuation can take place.
 The impurity state will be fixed at \(\epsilon_d\).
-The only remaining degree of freedom will be the spin fluctuations, and we can then do the S-W transformation.\\\\
+The only remaining degree of freedom will be the spin fluctuations, and we can then do the S-W transformation.
+
 On the other hand, if we take the situation in the right of fig.~\ref{and} where both the impurity levels are far inside the bandwidth, then both the impurity levels will be on energy scales completely different from the bandwidth.
 So there wont be any renormalization of the impurity levels.
 From another perspective, it can be said that there won't be any renormalization because both the impurity levels \(\ket{0},\ket{1}\) will be able to hybridize with two states each: \(\ket{0}\) can hybridize with \(\ket{k\uparrow},\ket{k\downarrow}\) and \(\ket{1\sigma}\) can hybridize with \(\ket{0},\ket{2}\).
@@ -2230,7 +2229,8 @@ The total Hamiltonian is
 \begin{equation}\begin{aligned}
 	H = \sum_{k\sigma} \epsilon_{k\sigma}n_{k\sigma} + \epsilon_d \sum_\sigma n_{d\sigma} + U n_{d\uparrow}n_{d\downarrow} + \sum_{k\sigma}\left(V_{kd} c^\dagger_{k\sigma}c_{d\sigma} + V^*_{kd}c^\dagger_{d\sigma}c_{k\sigma}\right)
 \end{aligned}\end{equation}
-This means that the doubly-occupied state is decoupled from the conduction band; it cannot hybridize through the \(V_{kd}\) because the virtual transition will involve a huge amount of energy and so it is practically impossible.\\\\
+This means that the doubly-occupied state is decoupled from the conduction band; it cannot hybridize through the \(V_{kd}\) because the virtual transition will involve a huge amount of energy and so it is practically impossible.
+
 At the first iteration, we will reduce the cut-off from \(D\) to \(D - \delta D\).
 The zeroth approximation to this Hamiltonian is
 \begin{equation}\begin{aligned}
@@ -2300,7 +2300,8 @@ The renormalization in \(\epsilon_d\) would then have been
 	\delta \epsilon_d = \frac{\Delta |\delta D|}{\pi}\left(\frac{1}{\epsilon_d - D} - \frac{1}{D + U + \epsilon_d} + \frac{2}{\epsilon_d + D}\right)
 \end{aligned}\end{equation}
 which is zero in the limit of \(U,|\epsilon_d| \ll D\).
-This is the equal renormalization in \(\epsilon_0\) and \(\epsilon_1\) discussed earlier.\\\\
+This is the equal renormalization in \(\epsilon_0\) and \(\epsilon_1\) discussed earlier.
+
 We do not yet know whether \(\Delta\) is a function of the cutoff \(D\).
 To find the renormalization of \(\Delta\), we need to find the renormalization of \(V_{kd}\).
 Note that the lowest order virtual transitions do not cause any actual charge fluctuation, and hence they do not renormalize \(V_{kd}\).
@@ -2345,7 +2346,8 @@ we get
 This result is in the regime \(U + \epsilon_d \gg D \gg |\epsilon_d|\).
 Even if \(U \ll D\) initially, scaling will begin once \(D \sim U\).
 Until then, as mentioned previously, both \(\epsilon_1\) and \(\epsilon_0\) will change equally and there won't be any scaling in \(\epsilon_d\).
-If we start with \(U \ll D\), under scaling, as \(D\) will decrease, there won't be any renormalization until we reach the point \(D \sim U\).\\\\
+If we start with \(U \ll D\), under scaling, as \(D\) will decrease, there won't be any renormalization until we reach the point \(D \sim U\).
+
 Say, as a result of scaling, the bandwidth decreases and \(\epsilon_d\) increases (which it will, as is apparent from the eq.~\ref{const}).
 At some point, \(-D \lesssim \epsilon_d\).
 At this point, perturbation theory breaks down and we resort to SWT.
@@ -2373,7 +2375,8 @@ Assuming \(U \rightarrow \infty\) and \(\epsilon_d\) outside the conduction band
 \end{gather}
 The two forms of the Kondo temperature show that the prefactor is not a universal function; it depends on the starting conditions (the microscopic Hamiltonian from which we start the scaling).
 But the universal fact is that in the local moment regime (\(U \rightarrow \infty\)), all physical quantities will involve only one energy scale, \(T_K\).
-This \(T_K\) itself might be different based on the starting Hamiltonian.\\\\
+This \(T_K\) itself might be different based on the starting Hamiltonian.
+
 For \(\epsilon_d^* \gg \Delta\), the renormalization will stop at \(D \sim \epsilon_d\).
 Note that we had assumed \(D \gg \epsilon_d\).
 That was the starting condition, that is, \(\epsilon_d\) deep inside the Fermi surface.
@@ -2454,7 +2457,8 @@ Applying this to eq.~\ref{sasuke} means
 \end{aligned}\end{equation}
 which is the same as eq.~\ref{sakura}.
 This tells us that scaling all the way down to very low temperatures in regime \(\epsilon_d^* \gg \Delta\) brings us into a Fermi liquid state, characterized by a temperature-independent susceptibility (as is standard in a Fermi liquid).
-The crossovers can be seen by looking at the variation of the Curie constant \(\chi T\).\\\\
+The crossovers can be seen by looking at the variation of the Curie constant \(\chi T\).
+
 Since the susceptibility is proportional to the magnetic moment, presence of degeneracy will reduce this moment because the probability of occupying the states will decrease.
 As a result, the Curie constant is also a measure of the effective degeneracy of the impurity orbital.
 At very high temperatures \(T \gg U,\epsilon_d\), all the impurity levels \(0,\epsilon_d\) and \(2\epsilon_d + U\) will become degenerate on energy scales of the order of \(k_B T\).
@@ -2487,10 +2491,12 @@ Setting \(g \mu_B = k_B = 1\), we get
 \chi T =\frac{1}{2\mathcal{D}}
 \end{aligned}\end{equation}
 where \(Z(h=0) = 2 + 2 = 4 = \mathcal{D}\) is the degeneracy.
-\\\\
+
+
 Similarly, for the triplet case (\(\epsilon_d\) and 0 are degenerate while \(U \gg T\)), the doubly occupied case is essentially cut off from the available states, so \(Z = 1 + 2\cosh \beta h\).
 The proof again goes through similarly.
-But this time, we have \(Z(h=0) = 1 + 2 = 3 = \mathcal{D}\).\\\\
+But this time, we have \(Z(h=0) = 1 + 2 = 3 = \mathcal{D}\).
+
 For \(\epsilon_d = k_B T^* > k_B T\) such that \(k_B T^* \gg \Delta\), we can find the magnetic moment in a perturbative fashion.
 At the zeroth order, we can neglect the hybridisation \(\Delta\).
 Then,
@@ -2558,7 +2564,8 @@ However, if we are not in the mixed valence regime (\(|\epsilon_d| \gg \Delta\))
 If \(\epsilon_d > 0\), then the impurity level is far above the Fermi level and it will most probably not be occupied and the majority of the contribution will come from \(\langle  n_d\rangle = 0\).
 Similarly, if \(\epsilon_d < 0\), then the impurity level is far below the Fermi level and the average occupation will be close to 1.
 The regime of mixed valence is one in which these two contributions are comparable.
-\\\\
+
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{../figures/mixed.png}
@@ -2583,7 +2590,8 @@ The probability of  a transition from, say, \(\ket{n_d = 0}\) to \(\ket{n_d = 1}
 \end{aligned}\end{equation}
 Assuming the thermal fluctuations are more or less of the order \(\Delta\), for \(\epsilon_d \gg \Delta\), this transition will not be possible.
 However, in the mixed valence regime, because \(\epsilon_d \sim \Delta\), these excitations do occur.
-These fluctuations, as well as the ones from the hybridisation with the conduction band, are responsible for the mixing of the singly-occupied and null-occupied states.\\\\
+These fluctuations, as well as the ones from the hybridisation with the conduction band, are responsible for the mixing of the singly-occupied and null-occupied states.
+
 The crossovers in the mixed valence regime are as follows.
 Similar to the previous case, at high and intermediate temperatures, we have \(n_d = 1\) and \(n_d = \frac{2}{3}\) respectively.
 However, while the triplet degeneracy lasted upto \(T \sim T^*\) in the previous case, here it continues up to \(T \sim \Delta\) because that is where the scaling breaks down.

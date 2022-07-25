@@ -1,5 +1,5 @@
 \documentclass[oneside,openany]{book}
-\usepackage{amsthm,amsmath,amssymb,braket,multirow,caption,relsize,tocbibind,color,appendix,cite}
+\usepackage{amsthm,amsmath,amssymb,braket,multirow,caption,relsize,tocbibind,color,appendix,cite,setspace}
 % \usepackage[draft]{graphicx}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
@@ -14,16 +14,24 @@
 \numberwithin{equation}{section}
 \graphicspath{{../figures/}}
 \allowdisplaybreaks
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.1ex}
+}
 \bibliographystyle{ieeetr}
 
 
 \begin{document}
+\setstretch{1}
 
 \frontmatter
 \include{front.tex}
 \mainmatter
 \include{chap1.tex}
-\include{chap2.tex}
+% \include{chap2.tex}
 \include{chap3.tex}
 \include{chap4.tex}
 \include{chap5.tex}
@@ -38,6 +46,7 @@
 \include{appendix2.tex}
 \end{appendices}
 
+\setstretch{0.4}
 \bibliography{notes}
 
 \end{document}

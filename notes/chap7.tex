@@ -18,9 +18,9 @@ We will include a local particle-hole symmetric correlation of strength \(U_b\) 
 The derivation of the RG equations are shown in appendix~\ref{app-derivation}.
 . \(n_j\) is the number of \(k-\)states at the \(j^\text{th}\) isoenergetic shell. 
 \begin{gather}
-	\Delta U_b = 0, ~ ~\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\\
-	\Delta V = -\frac{3n_j V}{8}\left[\left(J + 4U_b/3\right) \left(\frac{1}{d_2} + \frac{1}{d_1}\right) + \left(K + 4U_b/3\right)\left(\frac{1}{d_3} + \frac{1}{d_0}\right)\right],\\
-	\Delta J = -\frac{n_j J\left(J + 4U_b\right)}{d_2},~ ~\Delta K = -\frac{n_j K\left(K + 4U_b\right)}{d_3}
+	\Delta U_b = 0, ~ ~\Delta U = 4V^2 n_j\left(\frac{1}{d_1} - \frac{1}{d_0}\right) - n_j\left(\frac{J^2}{d_2} - \frac{K^2}{d_3}\right),\label{rg-eq1}\\
+	\Delta V = -\frac{3n_j V}{8}\left[\left(J + 4U_b/3\right) \left(\frac{1}{d_2} + \frac{1}{d_1}\right) + \left(K + 4U_b/3\right)\left(\frac{1}{d_3} + \frac{1}{d_0}\right)\right],\label{rg-eq2}\\
+	\Delta J = -\frac{n_j J\left(J + 4U_b\right)}{d_2},~ ~\Delta K = -\frac{n_j K\left(K + 4U_b\right)}{d_3}\label{rg-eq3}
 \end{gather}
 
 The denominators are
@@ -131,6 +131,7 @@ These are the frequency-domain spectral functions for the retarded propagator \(
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_Ub_by_J=-0.188.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_Ub_by_J=-0.250.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_Ub_by_J=-0.26.pdf}
+	\label{spec_func_fig}
 \end{center}
 
 \subsection{Impurity-bath off-diagonal spectral function \(A_{dz}(\omega)\)}
@@ -141,6 +142,12 @@ These are the frequency-domain spectral functions for the off-diagonal retarded 
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_d0_Ub_by_J=-0.188.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_d0_Ub_by_J=-0.250.pdf}
 	\includegraphics[width=0.45\textwidth]{../figures/spec_func_d0_Ub_by_J=-0.26.pdf}
+\end{center}
+
+\subsection{Width of central peak of \(A_{dd}\)}
+
+\begin{center}
+\includegraphics[width=0.45\textwidth]{../figures/spec_func_width_fit.pdf}
 \end{center}
 
 \section{Bath spectral function \(A_{00}(\omega)\) and the relation to DMFT}
@@ -156,7 +163,7 @@ Since the impurity is not coupled with any site beyond the zeroth site, the part
 	+ \frac{J^*}{2}\left( c^\dagger_{d \uparrow}c_{d \downarrow} c^\dagger_{0 \downarrow} c_{0 \uparrow} + \text{h.c.} \right) 
 \end{aligned}\end{equation}
 
-\paragraph{Renormalisation from \({V^*}\)}
+\subsection{Renormalisation from \({V^*}\)}
 From the off-diagonal term involving \({V^*}\), we generate the following term, in the particle sector for \(0\):
 \begin{equation}\begin{aligned}
 	{V^*} \sum_\sigma c^\dagger_{0\sigma}c_{d\sigma} \frac{1}{\tilde \omega - H_d} {V^*} c^\dagger_{d\sigma}c_{0\sigma} = |V^*|^2 \sum_\sigma c^\dagger_{0\sigma}c_{d\sigma} \frac{1}{\tilde \omega + \frac{U^*}{2}\left( 1 - \hat n_{d\bar\sigma} \right)^2 + U_b \hat n_{0\bar\sigma} + \frac{J^*}{4}\left( 1 - \hat n_{d\bar\sigma} \right) \hat n_{0\bar\sigma} } c^\dagger_{d\sigma}c_{0\sigma}
@@ -193,7 +200,7 @@ The total renormalisation arising from \(V\) is therefore
 	\frac{1}{4}|V^*|^2 \sum_\sigma \left[\alpha_1 \left( \hat n_{0\sigma}\hat h_{0\bar\sigma} + \hat h_{0\sigma}\hat n_{0\bar\sigma}\right) + \alpha_2 \left( \hat n_{0\sigma}\hat n_{0\bar\sigma} + \hat h_{0\sigma}\hat h_{0\bar\sigma}\right)\right] = \frac{1}{2}|V*|^2 \left(\alpha_1 - \alpha_2\right) \left(\hat n_{0 \uparrow} - \hat n_{0 \downarrow}\right)^2 + \text{constant}
 \end{aligned}\end{equation}
 
-\paragraph{Renormalisation from \(J\)}
+\subsection{Renormalisation from \(J\)}
 The renormalisation arising from decoupling the Kondo coupling has two terms. The first term arises when the spin of the zeroth site is initially up:
 \begin{equation}\begin{aligned}
 	\frac{{J^*}^2}{4}c^\dagger_{d \downarrow}c_{d \uparrow} c^\dagger_{0 \uparrow}c_{0 \downarrow} \frac{1}{\tilde \omega - H_d} c^\dagger_{0 \downarrow}c_{0 \uparrow} c^\dagger_{d \uparrow}c_{d \downarrow} = c^\dagger_{d \downarrow}c_{d \uparrow} c^\dagger_{0 \uparrow}c_{0 \downarrow} \frac{{J^*}^2/4}{\tilde \omega + \frac{U^*}{2} + U_b + \frac{J^*}{4}} c^\dagger_{0 \downarrow}c_{0 \uparrow} c^\dagger_{d \uparrow}c_{d \downarrow} = \frac{{J^*}^2}{4}\frac{\hat n_{d \downarrow} \hat h_{d \uparrow} \hat n_{ 0 \uparrow} \hat h_{0 \downarrow}}{\tilde \omega + \frac{U^*}{2} + U_b + \frac{J^*}{4}} 
@@ -211,19 +218,33 @@ Adding both sectors, we get
 	\frac{{J^*}^2}{16}\frac{1}{\bar\omega + \frac{U^*}{2} + U_b + \frac{J^*}{4}} \left(\hat n_{ 0\uparrow} - \hat n_{0 \downarrow}\right)^2
 \end{aligned}\end{equation}
 
-\paragraph{Total renormalisation}
+\subsection{Total renormalisation}
 Adding the contributions from both \(V^*\) and \(J^*\),  the net renormalisation is the generation of a local correlation term \(-U_0\left(\hat n_{ 0\uparrow} - \hat n_{0 \downarrow}\right)^2\) on the zeroth site, where \(U_0\) is given by
 \begin{equation}\begin{aligned}
 	U_0 = -\frac{{J^*}^2}{16}\frac{1}{\bar\omega + \frac{U^*}{2} + U_b + \frac{J^*}{4}} - \frac{1}{2}|V^*|^2\left(\frac{1}{\bar\omega + U^* + \frac{J^*}{4}} + \frac{1}{\bar\omega} - \frac{1}{\bar\omega + U^* + 2U_b + \frac{J^*}{2}} - \frac{1}{\bar\omega + 2U_b + \frac{J^*}{4}}\right) 
 \end{aligned}\end{equation}
 
-Deep in the metallic regime, we have the following hierarchy of energy scales: \(|J^*| > |\bar\omega| \gg |V^*| \gg |U_b| \gg |U^*| \simeq 0\).
+The effective Hamiltonian for the zeroth site is therefore
+\begin{equation}\begin{aligned}
+	H_\text{0+rest} = \underbrace{-\left(U_0 + U_b\right)\left(\hat n_{0\uparrow} - \hat n_{0\downarrow}\right)^2}_\text{new correlated impurity} \underbrace{- t\sum_{j\in \text{n.n. of 0},\atop{\sigma}}\left(c^\dagger_{0\sigma}c_{j\sigma} + \text{h.c.}\right)}_\text{hopping between new impurity \& new bath} \underbrace{-t \sum_{\left<i,j \right>}\left(c^\dagger_{i\sigma}c_{j\sigma} + \text{h.c.}\right)}_\text{K.E. of new bath}
+\end{aligned}\end{equation}
 
-\subsection{Width of central peak of \(A_{dd}\)}
+\subsection{Equivalence of the impurity site and the zeroth site: towards self-consistency}
+The fact that we end up with an Anderson impurity model shows that the behaviour of the zeroth site is equivalent to that of a correlated impurity interacting with a conduction bath through single-particle hopping. The correlation for this impurity is given by \(U_\text{eff} = U_0 + U_b\), while the effective hybridisation for this new impurity into the conduction bath is given by \(V = -t\). The new conduction bath is formed by all the sites of the lattice apart from the zeroth site. From Fig.~\ref{pair_fluc}, we know that the the spin-flip correlations are quite dominant up to the transition, indicating that the largest energy scale in the system at low-energies is \(J^*\). Using this, the effective correlation can be expressed to leading order as
+\begin{equation}\begin{aligned}
+	U_\text{eff} \simeq \frac{J^*}{8}
+\end{aligned}\end{equation}
+This is simply a restatement of the fact that upto the transition, the impurity spectral function displays a central peak~(Fig.~\ref{spec_func_fig}); it is the dominant spin-flip scattering processes that lead to both the central peak as well as the induced repulsive correlation \(U_\text{eff}\) at the zeroth site. This also indicates that the bath spectral function will have a similar central peak, owing to the same scattering processes. We conclude that the spin-exchange coupling \(J\) acts as a mechanism of symmetrisation between the impurity and zeroth sites, leading to similar effective local correlations and similar local spectral functions. This also suggests that the self-consistency-based approach towards a bulk model, as used in DMFT, effectively involves finding the impurity model that has identical behaviour across the impurity and zeroth sites. Indeed, such an idea has been used in Ref.~\cite{moeller_1995} to study the behaviour of the Hubbard model near the transition. 
 
-\begin{center}
-\includegraphics[width=0.45\textwidth]{../figures/spec_func_width_fit.pdf}
-\end{center}
+In the spirit of Ref.~\cite{moeller_1995}, near the transition, we can integrate out the charge degrees of freedom of the Anderson model via a canonical Schrieffer-Wolff transformation. Upto second order, this transformation removes the on site correlation \(U\) and the single-particle hybridisation \(V\) by generating an additional spin-exchange term \(J^\prime \sim \frac{V^2}{U+U_b}\). The total s-d coupling then becomes \(\widetilde J = J + J^\prime\), and the effective Hamiltonian after the transformation is
+\begin{equation}\begin{aligned}
+	H_\text{Kondo} = \widetilde J \vec{S}_d\cdot\vec{S}_0 - U_b\left( \hat n_{0 \uparrow} - \hat n_{0 \downarrow} \right)^2 + H_\text{K.E.}
+\end{aligned}\end{equation}
+In this simplified model, the RG equations for \(\widetilde J\) and \(U_b\) can be obtained simply by setting \(U =V = 0\) in the more general RG equations ~\ref{rg-eq1} through \ref{rg-eq3}:
+\begin{equation}\begin{aligned}
+	\Delta \widetilde J = -\frac{n_j \widetilde J\left(\widetilde J + 4U_b\right)}{d_2},~~ \Delta U_b = 0
+\end{aligned}\end{equation}
+This makes it clear that the metal-insulator transition in this model is driven by the competition between Kondo screening generated by \(\tilde J\) and local pair correlation in the bath produced by \(U_b = -|U_b|\). The fact that the only major impurity-bath interaction near the transition is of the spin-exchange kind reiterates the fact that the correlated spin-flip processes play the most important role in the model, and leads to the symmetrisation between the impurity and zeroth sites.
 
 \section{What, then, are the minimal ingredients for a metal-insulator transition?}
 We now return to the question posed at the very beginning in section~\ref{sec:min_model}: What is the minimal auxiliary model that can demonstrate a metal-insulator transition in the bulk? To answer this question, we first recall all the relevant RG equations in the positive \(U\) regime:
