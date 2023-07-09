@@ -12,4 +12,5 @@
 *.dvi
 *.qu
 *.npy
+*.npz
 *.ipynb_checkpoint*
