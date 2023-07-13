@@ -1261,20 +1261,20 @@ where \(\beta = \pm 1\) runs over the spin indices. Note that the first part of 
 \end{aligned}\end{equation}
 The first Kronecker delta in the second term, \(\delta_{s_j(d),(1 + \beta)/2}\), ensures that \(s_j(0)\) is unity when \(\beta = -1\) and zero when \(\beta = 1\). We can now apply the fermionic and spin operators on the states.
 \begin{equation}\begin{aligned}
-	\eta_{q\beta} \ket{\Psi}_l = \sum_{k} \sum_{j=1}^{2^{N_l}} \mathcal{C}_l(s_j) \alpha(q)\left[ \delta_{s_j(k\beta),0}\delta_{s_j(q\beta),1} \left(s_j(d) - \frac{1}{2}\right)\beta \ket{\sigma^z_d=s_j(d)}\ldots \ket{n_{k_1\bar\beta}=1 }\ldots \otimes\ket{n_{q\beta}=0}\ket{n_{q\bar\beta}=s_j(q\bar\beta)} \right.\\
-	\left.+ \delta_{s_j(d),(1 + \bar\beta)/2}\delta_{s_j(k\bar\beta),0}\delta_{s_j(q\beta),1} \ket{\sigma^z_d=\frac{1 + \beta}{2}}\ldots \ket{n_{k_1\bar\beta}=1 }\ldots \otimes\ket{n_{q\beta}=0}\ket{n_{q\bar\beta}=s_j(q\bar\beta)}\right]
+	\eta_{q\beta} \ket{\Psi}_l = \sum_{k} \sum_{j=1}^{2^{N_l}} \mathcal{C}_l(s_j) \alpha(q)\left[ \delta_{s_j(k\beta),0}\delta_{s_j(q\beta),1} \left(s_j(d) - \frac{1}{2}\right)\beta \ket{\sigma^z_d=s_j(d)}\ldots \ket{n_{k\beta}=1 }\ldots \otimes\ket{n_{q\beta}=0}\ket{n_{q\bar\beta}=s_j(q\bar\beta)} \right.\\
+	\left.+ \delta_{s_j(d),(1 + \bar\beta)/2}\delta_{s_j(k\bar\beta),0}\delta_{s_j(q\beta),1} \ket{\sigma^z_d=\frac{1 + \beta}{2}}\ldots \ket{n_{k\bar\beta}=1 }\ldots \otimes\ket{n_{q\beta}=0}\ket{n_{q\bar\beta}=s_j(q\bar\beta)}\right]
 \end{aligned}\end{equation}
-The factor of \(\left(s_j(d) - \frac{1}{2}\right)\) arises from the fact that if \(s_j(d)=1,0\) indicates up and down respectively, then \(S_d^z\ket{s_j(d)} = \left(s_j(d) - \frac{1}{2}\right)\ket{s_j(d)}\). We see that applying the transition operator projects the general state on to some other specific states, by starting from a different set of states (as picked out through the Kronecker delta factors). The entire expression in the above equation then serves as a renormalisation of the classical configurations that the state ends up at, with the renormalisation itself arising from the initial states projected on to by the Kronecker delta factors. For example, the first part of the expression tells us that the initial configuration with \(s_j(k\beta) = 0\) and \(s_j(q\beta)=1\) renormalise the final state with \(s_j(k\beta)=1\) and \(s_j(q\beta)=0\). We can therefore write down the renormalisation equations of the coefficients \(\mathcal{C}_l(s_j)\):
+The factor of \(\left(s_j(d) - \frac{1}{2}\right)\) arises from the fact that if \(s_j(d)=1,0\) indicates up and down respectively, then \(S_d^z\ket{s_j(d)} = \left(s_j(d) - \frac{1}{2}\right)\ket{s_j(d)}\). We see that applying the transition operator projects the general state on to some other specific states, by starting from a different set of states (as picked out through the Kronecker delta factors). The entire expression in the above equation then serves as a renormalisation of the classical configurations that the state ends up at, with the renormalisation itself arising from the initial states projected on to by the Kronecker delta factors. For example, the first part of the expression tells us that the initial configurations with \(s_j(k\beta) = 0\) and \(s_j(q\beta)=1\) renormalise the final state with \(s_j(k\beta)=1\) and \(s_j(q\beta)=0\). We can therefore write down the renormalisation equations of the coefficients \(\mathcal{C}_l(s_j)\):
 \begin{gather}
-	\Delta \mathcal{C}_l\left(s_j;s_j(k\beta) = 0,s_j(q\beta)=1\right) = \alpha \left(s_j(d) - \frac{1}{2}\right) \beta \mathcal{C}_l\left(s_j;s_j(k\beta) = 1,s_j(q\beta)=0\right)\label{particle_renormalisation1}\\
-	\Delta \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 + \beta}{2}, s_j(k\beta) = 0, s_j(q\beta)=1\right) = \alpha \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 - \beta}{2}, s_j(k\beta) = 1,s_j(q\beta)=0\right)\label{particle_renormalisation2}
+	  \Delta \mathcal{C}_l\left(s_j;s_j(k\beta) = 1, s_j(q\beta)=0\right) = \alpha \left(s_j(d) - \frac{1}{2}\right) \beta \mathcal{C}_l\left(s_j;s_j(k\beta) = 0, s_j(q\beta)=1\right)\label{particle_renormalisation1}\\
+	\Delta \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 + \beta}{2}, s_j(k\bar\beta) = 1, s_j(q\beta)=0\right) = \alpha \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 - \beta}{2}, s_j(k\bar\beta) = 0, s_j(q\beta)=1\right)\label{particle_renormalisation2}
 \end{gather}
 These expressions apply individually on all configurations \(s_j\), as long as they satisfy the constraints within the brackets. The indices of \(s_j\) that are not constrained can take any value, as long the values are the same on both sides of the equation. All such expressions of renormalisation will have to be added appropriately to obtain the total renormalisation of a particular coefficient.
 
 This only accounts for particle transition operator \(\eta\). We can similarly apply the hole transition operator \(\eta^\dagger\) to our state. The expressions for that case can be obtained from our existing expression in eqs.~\ref{particle_renormalisation1} and \ref{particle_renormalisation2} simply by performing a particle-hole transformation \(\mathcal{C}_l(s_j) \to \mathcal{C}_l(1 - s_j)\):
 \begin{gather}
-	\Delta \mathcal{C}_l\left(s_j;s_j(k\beta) = 1,s_j(q\beta)=0\right) = \alpha \left(s_j(d) - \frac{1}{2}\right) \beta \mathcal{C}_l\left(s_j;s_j(k\beta) = 0,s_j(q\beta)=1\right)\label{hole_renormalisation1}\\
-	\Delta \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 - \beta}{2}, s_j(k\beta) = 1, s_j(q\beta)=0\right) = \alpha \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 + \beta}{2}, s_j(k\beta) = 0,s_j(q\beta)=1\right)\label{hole_renormalisation2}
+	\Delta \mathcal{C}_l\left(s_j;s_j(k\beta) = 0, s_j(q\beta)=1\right) = \alpha \left(s_j(d) - \frac{1}{2}\right) \beta \mathcal{C}_l\left(s_j;s_j(k\beta) = 1, s_j(q\beta)=0\right)\label{hole_renormalisation1}\\
+	\Delta \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 - \beta}{2}, s_j(k\bar\beta) = 0, s_j(q\beta)=1\right) = \alpha \mathcal{C}_l\left(s_j;s_j(d) = \frac{1 + \beta}{2}, s_j(k\bar\beta) = 1,s_j(q\beta)=0\right)\label{hole_renormalisation2}
 \end{gather}
 Eqs.~\ref{particle_renormalisation1} through eq.~\ref{hole_renormalisation2} completely describe the renormalisation in the coefficients \(\mathcal{C}_l\) arising from applying the reverse URG transformations.
 
@@ -1292,9 +1292,9 @@ The sums are over the occupancies of all the members except \(k_p\). Since all b
 \end{aligned}\end{equation}
 Similarly, the reduced density matrix of a two member subspace \(k_p,k_{p^\prime}\) is \(4\times 4\), whose entries are of the form \(\rho(k_p)[(a_1,b_1), (a_2,b_2)]\). Here, \(a_1\) and \(a_2\) represent the occupancy of \(k_p\) while \(b_1\) and \(b_2\) represents the occupancy of \(k_{p^\prime}\). This \(4\times 4\) matrix is given by
 \begin{equation}\begin{aligned}
-	\rho(k_p)[(a_1,b_1), (a_2,b_2)] = \sum_{j}\mathcal{C}_l^*(s_j;s_j(k_p=a_1),s_j(k_{p^\prime}=b_1))\mathcal{C}_l(s_j;s_j(k_p=a_1),s_j(k_{p^\prime}=b_2)); a_i,b_i \in [0,1]
+	\rho(k_p)[(a_1,b_1), (a_2,b_2)] = \sum_{j}\mathcal{C}_l^*(s_j;s_j(k_p=a_1),s_j(k_{p^\prime}=b_1))\mathcal{C}_l(s_j;s_j(k_p=a_2),s_j(k_{p^\prime}=b_2)); a_i,b_i \in [0,1]
 \end{aligned}\end{equation}
-Using these expressions, entanglement measures like entanglement entropy and mutual information can be obtained easily. One might also wish to static correlation functions along the RG flow. As an example, the spin-flip correlation between the impurity spin and a single \(k-\) state can be written as
+Using these expressions, entanglement measures like entanglement entropy and mutual information can be obtained easily. One might also wish to compute static correlation functions along the RG flow. As an example, the spin-flip correlation between the impurity spin and a single \(k-\) state can be written as
 \begin{equation}\begin{aligned}
 	\braket{\Psi_l | S_d^+S_k^- + \text{h.c.} | \Psi_l} = \sum_j \delta_{s_j(d)=0}\delta_{s_j(k\uparrow)=1}\delta_{s_j(k\downarrow)=0}\mathcal{C}_l(\bar s_j)^*\mathcal{C}_l(s_j) + \text{h.c.}~,
 \end{aligned}\end{equation}
@@ -1303,6 +1303,7 @@ where \(\bar s_j\) is a configuration that is identical to \(s_j\) except for th
 We end by suggesting some general guidelines that can help reduce system load while computing the renormalisation in the coefficients:
 \begin{itemize}
 	\item Start with as few IOMs as possible, and add more IOMS as you go along. This reduces the time and memory required for the initial steps of the RG.
+	\item Typically, most of the coefficients \(\mathcal{C}_l(s)\) of the wavefunction are zero, so it is more efficient to store only the non-zero coefficients. This reduces the size of the coefficients array from exponentially large (\(2^{N_l}\)) to only linearly large (\(\sim N_l\)).
 	\item Try to store as few large arrays at a time as possible. If you need two large arrays \(A_1\) and \(A_2\) but do not need them in the same expression, use the same variable name for them so that the memory of the \(A_1\) gets freed when you reuse its variable to define \(A_2\).
 	\item Try not to retain all the results in memory. Instead, save them in secondary memory by writing to files, and load these files as and when required.
 	\item Separate out memory-intensive tasks into functions which you can call when required; this makes it easier for the system to reallocate that memory when the function has ended.
